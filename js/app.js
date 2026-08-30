@@ -233,9 +233,13 @@ function startReview(){
   }
   startSession(d.slice(0,40).map(flashcard),"review");
 }
+/* SRS cards are keyed by VOCAB index, so data/vocab.js must be append-only.
+   New words are introduced by NT frequency regardless of array position. */
+const LEARN_ORDER=VOCAB.map((_,i)=>i).sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
+
 function startNew(n=5){
   const fresh=[];
-  for(let i=0;i<VOCAB.length && fresh.length<n;i++) if(!S.cards[i]) fresh.push(i);
+  for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i]) fresh.push(i); }
   if(!fresh.length){toast("You've started every word in the deck");return;}
   const q=[];
   fresh.forEach(i=>{ card(i); q.push(flashcard(i)); });
@@ -409,6 +413,8 @@ function openRead(id){
     <div class="passage" id="psg">${r.w.map((w,i)=>
       `<w data-i="${i}">${w[0]}</w>`).join(" ")}</div>
     <div class="gloss" id="gloss"><div class="d">Tap a word.</div></div>
+    <div style="height:14px"></div>
+    <button class="btn ghost" onclick="clozeRead('${id}')">Cloze test — fill in the blanks</button>
     <div style="height:20px"></div>`;
   const seen=new Set();
   document.getElementById("psg").onclick=e=>{
@@ -426,6 +432,32 @@ function openRead(id){
       `<div class="w gk">${r.w[i][0]}</div><div class="d">${info}</div>`;
     if(!seen.has(i)){ seen.add(i); if(seen.size===10) addXp(5); }
   };
+}
+
+/* ---- cloze: blank out substantive words from a passage ---- */
+function clozeRead(id){
+  const r=READINGS.find(x=>x.id===id);
+  // candidates: words with a real gloss and enough substance to be worth testing
+  const cands=r.w.map((w,i)=>({w,i}))
+    .filter(x=>x.w[1] && x.w[0].replace(/[^Ͱ-Ͽἀ-῿]/g,"").length>=4);
+  if(cands.length<6){toast("Passage too short for a cloze test");return;}
+  const step=Math.max(1,Math.floor(cands.length/10));
+  const picks=cands.filter((_,k)=>k%step===0).slice(0,10);
+  const strip=w=>w.replace(/[^Ͱ-Ͽἀ-῿]/g,"");
+  const q=picks.map(p=>{
+    const answer=strip(p.w[0]);
+    const wrong=cands.filter(c=>strip(c.w[0])!==answer)
+      .sort(()=>Math.random()-.5).slice(0,3).map(c=>strip(c.w[0]));
+    const opts=[answer,...wrong].sort(()=>Math.random()-.5);
+    const ctx=r.w.map((w,i)=>{
+      const t=i===p.i?"____":w[0];
+      return Math.abs(i-p.i)<=5?t:null;
+    }).filter(Boolean).join(" ");
+    return mcq(`<span class="gk" style="font-size:1.15rem">… ${ctx} …</span><br><small class="muted">Which word fills the blank? (${r.ref})</small>`,
+      opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(answer),
+      `${answer} — ${p.w[1]}`);
+  });
+  startSession(q,"d");
 }
 
 /* ============================================================
