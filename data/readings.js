@@ -43,7 +43,8 @@ const BADGES=[
 {id:"w150",e:"📚",t:"Half the text",d:"150 words known"},
 {id:"alpha",e:"Α",t:"Alphabet",d:"Pass the alphabet test"},
 {id:"l8",e:"🏛️",t:"Halfway",d:"Finish 8 lessons"},
-{id:"l16",e:"🎓",t:"All sixteen",d:"Finish every lesson"},
+{id:"l16",e:"📖",t:"Half the book",d:"Finish 16 chapters"},
+{id:"l26",e:"🎓",t:"All twenty-six",d:"Finish every chapter"},
 {id:"read",e:"🔍",t:"First reading",d:"Open a passage"}
 ];
 

@@ -78,6 +78,7 @@ function checkBadges(){
   if(knownCount()>=150) grant("w150");
   if(S.lessons.length>=8) grant("l8");
   if(S.lessons.length>=16) grant("l16");
+  if(S.lessons.length>=26) grant("l26");
   if(S.lessons.includes(1)) grant("alpha");
 }
 let tTimer;
@@ -86,6 +87,28 @@ function toast(msg){
   el.textContent=msg; el.classList.add("on");
   clearTimeout(tTimer); tTimer=setTimeout(()=>el.classList.remove("on"),2400);
 }
+
+/* Greek text size preference */
+function applyGk(){ document.body.dataset.gk = S.gk || ""; }
+
+/* Placement: give the N commonest un-started words a 6-day head start
+   instead of walking them through the new-word flow one by one. */
+function seedVocab(n=100){
+  let done=0;
+  for(const i of LEARN_ORDER){
+    if(done>=n) break;
+    if(S.cards[i]) continue;
+    const c=card(i);
+    c.ivl=6; c.reps=2;
+    const d=new Date(); d.setDate(d.getDate()+6);
+    c.due=d.toISOString().slice(0,10);
+    done++;
+  }
+  save(); render();
+  toast(done ? done+" words seeded — first review in 6 days" : "Those words are already in the schedule");
+}
+
+let UNDO=null;   // last-grade snapshot for the session Undo button
 
 /* ============================================================
    NAVIGATION
@@ -100,6 +123,7 @@ function go(name){
   if(name==="learn")renderLessons();
   if(name==="drill")renderDrill();
   if(name==="read")renderRead();
+  if(name==="tables")renderTables();
   if(name==="prog")renderProgress();
 }
 document.querySelectorAll("nav button").forEach(b=>
@@ -138,6 +162,8 @@ document.getElementById("btnNew").onclick=()=>startNew();
 let Q=[], qi=0, mode="";
 function startSession(queue,label){
   Q=queue; qi=0; mode=label;
+  UNDO=null;
+  const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
   if(!Q.length){toast("Nothing to practise here yet");return;}
   touchDay(); go("session"); step();
 }
@@ -193,11 +219,24 @@ function nextIvl(i,g){
   return Math.round(c.ivl*(g===2?c.ease:c.ease*1.3));
 }
 function grade(i,g){
+  UNDO={i, qi, prev:JSON.parse(JSON.stringify(S.cards[i])), requeued:g===0,
+        reviews:S.reviewsToday||0};
   schedule(i,g);
   S.reviewsToday=(S.reviewsToday||0)+1; save();
   if(g===0){ Q.push(flashcard(i)); }
+  document.getElementById("btnUndo").style.display="";
   qi++; step();
 }
+document.getElementById("btnUndo").onclick=()=>{
+  if(!UNDO) return;
+  S.cards[UNDO.i]=UNDO.prev;
+  if(UNDO.requeued) Q.pop();
+  S.reviewsToday=UNDO.reviews;
+  save();
+  qi=UNDO.qi; UNDO=null;
+  document.getElementById("btnUndo").style.display="none";
+  step();
+};
 
 /* ---- multiple choice ---- */
 function mcq(q,opts,ans,why){
@@ -329,6 +368,127 @@ const PARSE=[
 ["λύσας","aorist active participle, nominative singular masculine"],["λύειν","present active infinitive"],
 ["λῦσαι","aorist active infinitive"],["λύῃ","3rd singular present active subjunctive"]
 ];
+/* ---- parsing builder: name every element of the form yourself ---- */
+const BUILD_FORMS=[
+["λύεις",   "pres","act","2","sg"], ["λύομεν",  "pres","act","1","pl"],
+["λύεται",  "pres","m/p","3","sg"], ["λύεσθε",  "pres","m/p","2","pl"],
+["ἔλυεν",   "impf","act","3","sg"], ["ἐλύετε",  "impf","act","2","pl"],
+["ἐλυόμην", "impf","m/p","1","sg"], ["ἐλύοντο", "impf","m/p","3","pl"],
+["λύσει",   "fut","act","3","sg"],  ["λύσομεν", "fut","act","1","pl"],
+["λύσεται", "fut","mid","3","sg"],  ["λυθήσῃ",  "fut","pass","2","sg"],
+["ἔλυσας",  "aor","act","2","sg"],  ["ἐλύσαμεν","aor","act","1","pl"],
+["ἐλύσατο", "aor","mid","3","sg"],  ["ἐλύθην",  "aor","pass","1","sg"],
+["ἐλύθητε", "aor","pass","2","pl"], ["ἐλύθησαν","aor","pass","3","pl"],
+["λέλυκας", "pf","act","2","sg"],   ["λελύκασιν","pf","act","3","pl"],
+["λέλυται", "pf","m/p","3","sg"],   ["λελύμεθα","pf","m/p","1","pl"]
+];
+const BUILD_OPTS={tense:["pres","impf","fut","aor","pf"],voice:["act","mid","pass","m/p"],
+                  person:["1","2","3"],number:["sg","pl"]};
+
+function buildDrill(n=8){
+  const pool=BUILD_FORMS.slice().sort(()=>Math.random()-.5).slice(0,n);
+  return pool.map(f=>()=>{
+    const [form,tense,voice,person,number]=f;
+    const b=document.getElementById("sessBody");
+    const groups=Object.entries(BUILD_OPTS).map(([k,vals])=>`
+      <div class="chip-lbl">${k}</div>
+      <div class="chips" data-k="${k}">${vals.map(v=>`<button data-v="${v}">${v}</button>`).join("")}</div>`).join("");
+    b.innerHTML=`<div class="card" style="text-align:center">
+        <span class="gk" style="font-size:2rem">${form}</span>
+        <p class="muted" style="font-size:.84rem;margin:6px 0 0">Indicative mood. Build the parse:</p></div>
+      ${groups}
+      <button class="btn" id="buildGo" disabled>Check</button><div id="fb"></div>`;
+    const sel={};
+    document.querySelectorAll("#sessBody .chips").forEach(g=>{
+      g.onclick=e=>{
+        if(e.target.tagName!=="BUTTON")return;
+        [...g.children].forEach(c=>c.classList.remove("sel"));
+        e.target.classList.add("sel");
+        sel[g.dataset.k]=e.target.dataset.v;
+        document.getElementById("buildGo").disabled=Object.keys(sel).length<4;
+      };
+    });
+    document.getElementById("buildGo").onclick=()=>{
+      const want={tense,voice,person,number};
+      const ok=Object.keys(want).every(k=>sel[k]===want[k]);
+      document.querySelectorAll("#sessBody .chips button").forEach(c=>c.onclick=null);
+      document.getElementById("buildGo").style.display="none";
+      document.getElementById("fb").innerHTML=
+        `<div class="feedback"><b>${ok?"Correct":"Not quite"}</b>
+         <span class="gk">${form}</span> — ${tense} ${voice} ind ${person}${number}.</div>
+         <button class="btn" onclick="qi++;step()">Continue</button>`;
+      if(ok) addXp(3);
+    };
+  });
+}
+
+/* ---- principal parts ---- */
+const PP=[
+["λέγω","ἐρῶ","εἶπον","εἴρηκα"],["ἔρχομαι","ἐλεύσομαι","ἦλθον","ἐλήλυθα"],
+["γίνομαι","γενήσομαι","ἐγενόμην","γέγονα"],["ὁράω","ὄψομαι","εἶδον","ἑώρακα"],
+["λαμβάνω","λήμψομαι","ἔλαβον","εἴληφα"],["δίδωμι","δώσω","ἔδωκα","δέδωκα"],
+["γινώσκω","γνώσομαι","ἔγνων","ἔγνωκα"],["εὑρίσκω","εὑρήσω","εὗρον","εὕρηκα"],
+["ἔχω","ἕξω","ἔσχον","ἔσχηκα"],["βάλλω","βαλῶ","ἔβαλον","βέβληκα"],
+["μένω","μενῶ","ἔμεινα","μεμένηκα"],["πίνω","πίομαι","ἔπιον","πέπωκα"],
+["πίπτω","πεσοῦμαι","ἔπεσον","πέπτωκα"],["φέρω","οἴσω","ἤνεγκα","—"],
+["ἀκούω","ἀκούσω","ἤκουσα","ἀκήκοα"],["ἐσθίω","φάγομαι","ἔφαγον","—"]
+];
+const PP_LBL=["future","aorist","perfect"];
+function ppDrill(n=10){
+  const qs=[];
+  const pool=PP.slice().sort(()=>Math.random()-.5).slice(0,n);
+  pool.forEach(v=>{
+    let slot=1+Math.floor(Math.random()*3);
+    while(v[slot]==="—") slot=1+Math.floor(Math.random()*3);
+    const wrong=PP.filter(x=>x!==v && x[slot]!=="—").sort(()=>Math.random()-.5).slice(0,3).map(x=>x[slot]);
+    const opts=[v[slot],...wrong].sort(()=>Math.random()-.5);
+    qs.push(mcq(`The ${PP_LBL[slot-1]} of <span class="gk" style="font-size:1.5rem">${v[0]}</span> is:`,
+      opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(v[slot]),
+      `<span class="gk">${v[0]}, ${v[1]}, ${v[2]}, ${v[3]}</span> — say the whole line aloud; the parts stick as a chant.`));
+  });
+  return qs;
+}
+
+/* ---- case functions: the exegetical instinct drill ---- */
+const CASEFN=[
+["ἡ ἀγάπη τοῦ θεοῦ|τοῦ θεοῦ could be:",
+ ["Subjective or objective genitive","Dative of means","Genitive absolute","Accusative of respect"],0,
+ "God's love for us (subjective) or our love for God (objective). Grammar allows both; context decides — this is the classic exegetical fork."],
+["ἐβαπτίσθη ὑπὸ Ἰωάννου|ὑπό + genitive with a passive verb expresses:",
+ ["Location under","Personal agent — by John","Time","Cause"],1,
+ "With a passive verb, ὑπό + genitive names the agent. Under something would be ὑπό + accusative."],
+["ἐσώθημεν τῇ πίστει|τῇ πίστει is most likely a dative of:",
+ ["Indirect object","Means or instrument","Location","Possession"],1,
+ "By means of faith. The dative covers means, sphere, location and the indirect object — always ask which."],
+["ἔμεινεν τὴν ἡμέραν|The accusative here expresses:",
+ ["Direct object","Extent of time — for the day","Respect","Motion toward"],1,
+ "The accusative measures extent of time or space: he stayed the whole day."],
+["θεὸς ἦν ὁ λόγος|The subject is:",
+ ["θεός, because it comes first","ὁ λόγος, marked by the article","Either equally","The verb has no subject"],1,
+ "With a linking verb the articular noun is the subject; anarthrous θεός is predicate. Word order carries emphasis, not grammar."],
+["τοῦ σπείρειν|The articular infinitive in the genitive most naturally expresses:",
+ ["Purpose — in order to sow","Possession","Comparison","Agency"],0,
+ "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work."],
+["ἦλθεν σὺν τοῖς μαθηταῖς|σύν takes the dative because it expresses:",
+ ["Separation","Accompaniment — with the disciples","Motion toward","Agency"],1,
+ "σύν is a one-case preposition: dative of accompaniment. Prepositions fix their cases; learn them as pairs."],
+["πιστεύετε εἰς τὸν κύριον|εἰς + accusative after πιστεύω expresses:",
+ ["Location","Direction of trust — into him","Time when","Instrument"],1,
+ "NT faith-language moves toward its object: believing into Christ. The preposition is part of the theology."],
+["αὐτοῦ διδάσκοντος|A genitive noun + genitive participle standing loose from the clause is:",
+ ["A genitive absolute — while he was teaching","Possession","Objective genitive","A mistake"],0,
+ "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it."],
+["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
+ ["The indirect object","Time when — on the sabbath","Means","Possession"],1,
+ "The bare dative of time answers when. Genitive of time answers during what; accusative for how long."]
+];
+function caseDrill(){
+  return CASEFN.slice().sort(()=>Math.random()-.5).map(c=>{
+    const [gk,q]=c[0].split("|");
+    return mcq(`<span class="gk" style="font-size:1.2rem">${gk}</span><br>${q}`,c[1],c[2],c[3]);
+  });
+}
+
 function pairDrill(bank,prompt,n=12){
   const pool=bank.slice().sort(()=>Math.random()-.5).slice(0,n);
   return pool.map(p=>{
@@ -376,6 +536,9 @@ const DRILLS=[
 ["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:"),"d")],
 ["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
+["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
+["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
+["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")]
 ];
 function renderDrill(){
@@ -461,12 +624,41 @@ function clozeRead(id){
 }
 
 /* ============================================================
+   TABLES  — searchable reference paradigms
+   ============================================================ */
+function renderTables(){
+  const q=(document.getElementById("tablesSearch").value||"").trim().toLowerCase();
+  const hits=PARADIGMS.filter(t=>!q || (t.t+" "+t.tags+" "+t.html).toLowerCase().includes(q));
+  document.getElementById("tablesBody").innerHTML = hits.length ? hits.map((t,k)=>`
+    <div class="ptable ${q?"open":""}" id="pt${k}">
+      <button onclick="document.getElementById('pt${k}').classList.toggle('open')">${t.t}</button>
+      <div class="pt-body">${t.html}</div>
+    </div>`).join("") :
+    `<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${q}".</p></div>`;
+}
+document.getElementById("tablesSearch").oninput=()=>renderTables();
+
+/* ============================================================
    PROGRESS
    ============================================================ */
 function renderProgress(){
   const total=VOCAB.length, started=Object.keys(S.cards).length, known=knownCount();
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
+    <div class="card">
+      <h3 style="margin-top:0">Settings</h3>
+      <div class="setrow"><span>Daily review goal</span>
+        <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+      <div class="setrow"><span>Greek text size</span>
+        <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Studied Greek before?</h3>
+      <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
+      <div class="setrow"><span>Mark chapters done up to</span>
+        <select id="setPlace"><option value="0">—</option>${Array.from({length:26},(_,k)=>`<option value="${k+1}">${k+1}</option>`).join("")}</select></div>
+      <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
+    </div>
     <div class="stat-grid">
       <div class="stat"><b>${S.streak}</b><span>day streak</span></div>
       <div class="stat"><b>${S.best||0}</b><span>best streak</span></div>
@@ -496,7 +688,16 @@ function renderProgress(){
     <div style="height:9px"></div>
     <button class="btn ghost" onclick="resetAll()" style="color:var(--rust)">Reset everything</button>
     <div style="height:26px"></div>`;
+
+  document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
+  document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  document.getElementById("setPlace").onchange=e=>{
+    const n=+e.target.value; if(!n)return;
+    S.lessons=Array.from({length:n},(_,k)=>k+1); save(); checkBadges();
+    toast("Chapters 1–"+n+" marked done");
+  };
 }
+
 function exportData(){
   const blob=new Blob([JSON.stringify(S)],{type:"application/json"});
   const a=document.createElement("a");
@@ -524,4 +725,5 @@ Object.keys(GLOSSARY_RAW).forEach(k=>{ GLOSSARY[norm(k)]=GLOSSARY_RAW[k]; });
 if(S.last && daysBetween(S.last,today())>1) S.streak=0;
 if(S.dayOfReviews!==today()){ S.reviewsToday=0; S.dayOfReviews=today(); }
 save();
+applyGk();
 render();

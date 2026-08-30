@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v4';
+const VERSION = 'v5';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -21,6 +21,7 @@ const SHELL = [
   'data/vocab.js',
   'data/lessons.js',
   'data/readings.js',
+  'data/paradigms.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',

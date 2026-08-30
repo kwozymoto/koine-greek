@@ -75,6 +75,7 @@
   <section class="screen" id="s-session">
     <div class="between" style="margin-bottom:12px">
       <button class="btn ghost small" id="btnQuit">Finish</button>
+      <button class="btn ghost small" id="btnUndo" style="display:none">Undo</button>
       <small class="muted" id="sessCount"></small>
     </div>
     <div class="prog-bar"><i id="sessBar" style="width:0%"></i></div>
@@ -87,6 +88,14 @@
     <p class="sub">Tap any word for its parsing and meaning.</p>
     <div id="readList"></div>
     <div id="readBody"></div>
+  </section>
+
+  <!-- TABLES -->
+  <section class="screen" id="s-tables">
+    <h1>Tables</h1>
+    <p class="sub">Every paradigm in one place. Search by name or form.</p>
+    <input id="tablesSearch" type="search" placeholder="Search: aorist, article, participle…" autocomplete="off">
+    <div id="tablesBody"></div>
   </section>
 
   <!-- PROGRESS -->
@@ -103,7 +112,8 @@
   <button data-go="learn"><span class="ic">β</span>Learn</button>
   <button data-go="drill"><span class="ic">γ</span>Drill</button>
   <button data-go="read"><span class="ic">δ</span>Read</button>
-  <button data-go="prog"><span class="ic">ε</span>Progress</button>
+  <button data-go="tables"><span class="ic">ε</span>Tables</button>
+  <button data-go="prog"><span class="ic">ς</span>Progress</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -113,6 +123,7 @@
 <script src="data/vocab.js"></script>
 <script src="data/lessons.js"></script>
 <script src="data/readings.js"></script>
+<script src="data/paradigms.js"></script>
 <script src="js/app.js"></script>
 <script src="js/pwa.js"></script>
 </body>
