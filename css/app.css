@@ -1,0 +1,166 @@
+:root{
+  --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
+  --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-dim:#8a6d24;
+  --green:#58a88c; --rust:#cd6152; --blue:#6f8fd0;
+  --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --nav-h:60px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--ui);
+  font-size:16px; line-height:1.55; overscroll-behavior-y:contain;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+}
+button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.gk{font-family:var(--gk)}
+
+/* ---------- layout ---------- */
+#app{max-width:640px;margin:0 auto;padding:0 18px}
+.screen{display:none;padding-top:calc(14px + env(safe-area-inset-top))}
+.screen.on{display:block;animation:in .18s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+h1{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
+h2{font-size:1.1rem;font-weight:600;margin:26px 0 10px}
+h3{font-size:.95rem;font-weight:600;margin:18px 0 6px;color:var(--gold)}
+p{margin:0 0 12px}
+.sub{color:var(--muted);font-size:.87rem;margin:0 0 20px}
+.muted{color:var(--muted)}
+small{font-size:.8rem}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.row{display:flex;align-items:center;gap:12px}
+.between{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:block;width:100%;padding:14px 18px;border-radius:12px;
+  background:var(--gold);color:#1a1408;font-weight:650;text-align:center;
+  border:none;transition:transform .08s;
+}
+.btn:active{transform:scale(.985)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text);font-weight:500}
+.btn.small{width:auto;padding:9px 16px;font-size:.87rem;border-radius:10px}
+.btn[disabled]{opacity:.4}
+
+/* ---------- bottom nav ---------- */
+nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  padding-bottom:env(safe-area-inset-bottom);
+  background:rgba(20,27,43,.94);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);display:flex;
+}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:.66rem;letter-spacing:.02em}
+nav button .ic{font-family:var(--gk);font-size:1.15rem;line-height:1}
+nav button.on{color:var(--gold)}
+
+/* ---------- today ---------- */
+.hero{text-align:center;padding:22px 0 6px}
+.ring{width:150px;height:150px;margin:0 auto 14px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .big{font-size:2rem;font-weight:600;line-height:1}
+.streak{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:5px 13px;font-size:.83rem}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
+.stat b{display:block;font-size:1.3rem;font-weight:600}
+.stat span{font-size:.72rem;color:var(--muted)}
+
+/* ---------- flashcard ---------- */
+.fc{
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:26px 20px;margin-bottom:14px;
+}
+.fc .word{font-family:var(--gk);font-size:2.9rem;line-height:1.25;font-weight:400}
+.fc .rule{width:54px;height:2px;background:var(--gold);margin:16px 0;opacity:.75}
+.fc .ans{font-size:1.12rem}
+.fc .meta{color:var(--muted);font-size:.79rem;margin-top:12px}
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.grades button{padding:12px 4px;border-radius:11px;border:1px solid var(--line);font-size:.78rem;font-weight:600;background:var(--surface)}
+.grades button i{display:block;font-style:normal;font-size:.64rem;font-weight:400;color:var(--muted);margin-top:2px}
+.g1{color:var(--rust)}.g2{color:#d6a05e}.g3{color:var(--green)}.g4{color:var(--blue)}
+.prog-bar{height:4px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.prog-bar i{display:block;height:100%;background:var(--gold);transition:width .25s}
+
+/* ---------- quiz ---------- */
+.opt{
+  display:block;width:100%;text-align:left;padding:14px 16px;margin-bottom:9px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s;
+}
+.opt.pick{border-color:var(--gold)}
+.opt.right{border-color:var(--green);background:rgba(88,168,140,.13)}
+.opt.wrong{border-color:var(--rust);background:rgba(205,97,82,.13)}
+.feedback{border-left:3px solid var(--gold);padding:2px 0 2px 13px;margin:14px 0;font-size:.9rem;color:var(--muted)}
+.feedback b{color:var(--text);display:block;margin-bottom:3px}
+
+/* ---------- lessons ---------- */
+.lesson-item{display:flex;align-items:center;gap:13px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;width:100%;text-align:left}
+.lesson-item .n{width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted)}
+.lesson-item.done .n{background:var(--green);border-color:var(--green);color:#0e1a16;font-weight:700}
+.lesson-item .t{flex:1;min-width:0}
+.lesson-item .t b{display:block;font-weight:600;font-size:.94rem}
+.lesson-item .t span{font-size:.76rem;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:.86rem}
+th,td{padding:7px 6px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500;font-size:.74rem}
+td.g{font-family:var(--gk);font-size:1.02rem}
+caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padding-bottom:5px}
+
+.vid{display:flex;align-items:center;gap:11px;padding:12px 14px;background:var(--surface-2);border-radius:11px;margin-bottom:9px;text-decoration:none;color:var(--text)}
+.vid .p{width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--rust);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#fff}
+.vid b{display:block;font-size:.88rem;font-weight:600}
+.vid span{font-size:.74rem;color:var(--muted)}
+
+/* ---------- alphabet ---------- */
+.alpha-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.alpha{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:11px 4px;text-align:center}
+.alpha .l{font-family:var(--gk);font-size:1.5rem;line-height:1.15}
+.alpha .nm{font-size:.66rem;color:var(--muted);margin-top:2px}
+
+/* ---------- reading ---------- */
+.passage{font-family:var(--gk);font-size:1.35rem;line-height:2.05;margin-bottom:16px}
+.passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:0 1px}
+.passage w.tapped{background:rgba(212,165,55,.2);border-radius:3px}
+.gloss{position:sticky;bottom:12px;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
+.gloss .w{font-family:var(--gk);font-size:1.4rem}
+.gloss .d{font-size:.86rem;color:var(--muted);margin-top:3px}
+
+/* ---------- badges ---------- */
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.badge{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 7px;text-align:center;opacity:.32}
+.badge.got{opacity:1;border-color:var(--gold-dim)}
+.badge .e{font-size:1.5rem;line-height:1}
+.badge b{display:block;font-size:.72rem;font-weight:600;margin-top:5px}
+.badge span{font-size:.63rem;color:var(--muted)}
+
+.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 22px);transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:11px 18px;font-size:.87rem;z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+.empty{text-align:center;padding:44px 20px;color:var(--muted)}
+.empty .gk{font-size:2.4rem;display:block;margin-bottom:12px;color:var(--gold);opacity:.5}
+
+/* ---------- pwa ---------- */
+.install{display:none;align-items:center;gap:12px;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:12px 14px;margin-bottom:16px}
+.install.on{display:flex}
+.install .t{flex:1;min-width:0}
+.install .t b{display:block;font-size:.88rem;font-weight:600}
+.install .t span{font-size:.74rem;color:var(--muted);line-height:1.35}
+
+.netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
+.netpill.on{opacity:1}
+
+.update{position:fixed;left:50%;bottom:calc(var(--nav-h) + 22px);transform:translateX(-50%);display:none;align-items:center;gap:14px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:10px 16px;font-size:.87rem;z-index:61}
+.update.on{display:flex}
+.update button{color:var(--gold);font-weight:650}
+
+/* Pronunciation links go off-device, so they are the one thing that cannot
+   work offline. Dim them and say why rather than letting a tap dead-end. */
+.vid .net{display:none;font-size:.72rem;color:var(--rust);margin-top:1px}
+body.off .vid{opacity:.5}
+body.off .vid .net{display:block}

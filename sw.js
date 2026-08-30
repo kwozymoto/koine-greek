@@ -1,6 +1,6 @@
 /* Koine Greek — service worker.
 
-   The app is one static HTML file, so the strategy is cache-first: a hit means
+   The app is a handful of static files, so the strategy is cache-first: a hit means
    it opens instantly and works with no connection at all, and a miss only
    happens on first run. Bump VERSION to ship a change — the old cache is
    dropped on activate and the page is offered a reload.
@@ -9,12 +9,18 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
   '.',
   'index.html',
+  'css/app.css',
+  'js/app.js',
+  'js/pwa.js',
+  'data/vocab.js',
+  'data/lessons.js',
+  'data/readings.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',
