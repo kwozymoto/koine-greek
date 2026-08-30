@@ -1,0 +1,19 @@
+{
+  "name": "Koine Greek",
+  "short_name": "Κοινή",
+  "description": "A refresher in New Testament Greek: alphabet, frequency-tiered vocabulary with spaced review, the core paradigms, and tap-through reading.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#141b2b",
+  "theme_color": "#141b2b",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "icons": [
+    { "src": "icons/icon-192.png",     "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png",     "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
