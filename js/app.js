@@ -403,7 +403,7 @@ function flashcard(i){
         ${VOCAB_AUDIO[i]?`<button class="btn ghost small" style="margin-top:10px" onclick="playWord(${i},null)">\uD83D\uDD0A Hear it</button>`:""}
         <div class="rule"></div>
         <div class="ans" id="ans" style="visibility:hidden">${v[1]}</div>
-        <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span>${extraForms(i).length?` <button class="mini" onclick="playEntry(${i})" aria-label="Hear the whole entry">\uD83D\uDD0A</button>`:""} · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
+        <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span>${VOCAB_AUDIO[i]&&extraForms(i).length?` <button class="mini" onclick="playEntry(${i})" aria-label="Hear the whole entry">\uD83D\uDD0A</button>`:""} · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
       </div>
       <button class="btn" id="show">Show meaning</button>`;
     prepWord(i);
@@ -538,8 +538,8 @@ function startNew(n=5){
 }
 /* Words are introduced by New Testament frequency, which is right for the
    daily button but wrong when you are working a chapter: you finish the
-   second declension and are handed δέ, γάρ and οὖν, particles that do not
-   decline at all. This takes the next five from the chapter's own list.
+   second declension and are handed particles that do not decline at all.
+   This takes the next five from the chapter's own vocabulary list in Black.
    Frequency stays the default everywhere else. */
 function startLessonWords(id,n=5){
   const l=LESSONS.find(x=>x.id===id);
@@ -551,6 +551,11 @@ function lessonWordsLeft(id){
   return (l&&l.v||[]).filter(i=>!S.cards[i] && !skipWord(i)).length;
 }
 function introduce(fresh,emptyMsg){
+  /* An index this build cannot resolve — a chapter list read against an
+     older vocab.js, or a stale cached copy of one of the two — must not take
+     the session down with it. flashcard() already survives that; so does
+     this now. */
+  fresh=fresh.filter(i=>VOCAB[i]);
   if(!fresh.length){toast(emptyMsg);return;}
   const q=[];
   q.__words=fresh;
@@ -590,7 +595,7 @@ function openLesson(id){
     ${l.vids.map(v=>`<a class="vid" href="${v.u}" target="_blank" rel="noopener">
       <span class="p">▶</span><span><b>${v.t}</b><span>${v.s}</span><span class="net">Needs a connection</span></span></a>`).join("")}
     ${(l.v||[]).length?`<h2>This chapter's words</h2>
-    <p class="muted" style="font-size:.87rem">${(l.v||[]).length} words in the course list belong to this chapter's grammar${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} not yet started`:" — all started"}.</p>
+    <p class="muted" style="font-size:.87rem">The ${(l.v||[]).length} words Black introduces in this chapter${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} of them not yet started`:" — all started"}.</p>
     <button class="btn ghost" onclick="startLessonWords(${id})"${lessonWordsLeft(id)?"":" disabled"}>${
       lessonWordsLeft(id)>=5?"Learn five of them"
       :lessonWordsLeft(id)?`Learn the remaining ${lessonWordsLeft(id)}`
@@ -821,8 +826,9 @@ function listenDrill(n=12){
   });
 }
 
-/* There is a clip for all 470 words, precached, and no drill used one:
-   listening practice stopped at naming letters. */
+/* Every recorded word has a clip, precached, and no drill used one:
+   listening practice stopped at naming letters. The pool is filtered on
+   VOCAB_AUDIO, so the later entries that have no recording are skipped. */
 function wordListenDrill(n=12){
   const met=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && VOCAB_AUDIO[i] && !skipWord(i));
   const pool=(met.length>8?met:LEARN_ORDER.filter(i=>VOCAB_AUDIO[i]).slice(0,40))
@@ -1060,7 +1066,7 @@ function renderLookup(){
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
   body.innerHTML = hits.length ? hits.map(({v,i})=>`
     <button class="lk" onpointerdown="prepWord(${i})"
-            onclick="${extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
+            onclick="${VOCAB_AUDIO[i]&&extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
       <span class="w"><b>${v[0]}</b><span>${v[1]}</span></span>
       <span class="fq">${v[2]}\u00d7</span>

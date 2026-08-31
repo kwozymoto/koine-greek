@@ -477,5 +477,52 @@ const VOCAB=[
 ["ἀγοράζω","I buy",30,"verb",4],
 ["ἐγγύς","near",30,"adv",4],
 ["ἴδε","look! behold!",30,"ptcl",4],
-["συνείδησις, -εως, ἡ","conscience",30,"noun",4]
+["συνείδησις, -εως, ἡ","conscience",30,"noun",4],
+
+/* Tier 5 — Black teaches these, but they fall below the 30x floor the rest
+   of the deck was built on, so they sit behind everything in frequency order
+   and are met through their chapter instead. Appended, never inserted: the
+   SRS keys on array position. There are no recordings for them yet, so the
+   "Hear it" button simply does not appear. */
+["διάκονος, -ου, ὁ","servant, minister, deacon",29,"noun",5],
+["δῶρον, -ου, τό","gift",19,"noun",5],
+["ἐπιστολή, -ῆς, ἡ","letter",24,"noun",5],
+["στρατιώτης, -ου, ὁ","soldier",26,"noun",5],
+["τελώνης, -ου, ὁ","tax collector",21,"noun",5],
+["ὑποκριτής, -οῦ, ὁ","hypocrite, pretender",17,"noun",5],
+["Μεσσίας, -ου, ὁ","Messiah",2,"noun",5],
+["νεανίας, -ου, ὁ","young man",4,"noun",5],
+["ἀμνός, -οῦ, ὁ","lamb",4,"noun",5],
+["φίλος, -ου, ὁ","friend",29,"noun",5],
+["μυστήριον, -ου, τό","mystery, secret",26,"noun",5],
+["γένος, -ους, τό","race, kind, family",20,"noun",5],
+["γνῶσις, -εως, ἡ","knowledge",29,"noun",5],
+["κλῆσις, -εως, ἡ","calling, invitation",11,"noun",5],
+["παράκλησις, -εως, ἡ","encouragement, comfort",29,"noun",5],
+["θυγάτηρ, -τρός, ἡ","daughter",28,"noun",5],
+["σοφός, -ή, -όν","wise",19,"adj",5],
+["ἰσχυρός, -ά, -όν","strong, mighty",29,"adj",5],
+["νέος, -α, -ον","new, young",23,"adj",5],
+["ἀδύνατος, -ον","impossible, powerless",10,"adj",5],
+["ἄπιστος, -ον","unbelieving, faithless",23,"adj",5],
+["ἡμέτερος, -α, -ον","our",7,"adj",5],
+["σός, -ή, -όν","your (singular)",25,"adj",5],
+["ὑμέτερος, -α, -ον","your (plural)",11,"adj",5],
+["λείπω","I leave, I lack",6,"verb",5],
+["μανθάνω","I learn",25,"verb",5],
+["φεύγω","I flee",29,"verb",5],
+["ψεύδομαι","I lie, I speak falsely",12,"verb",5],
+["ἐπιτιμάω","I rebuke, I warn",29,"verb",5],
+["μεριμνάω","I worry, I am anxious",19,"verb",5],
+["νικάω","I conquer, I overcome",28,"verb",5],
+["τιμάω","I honour",21,"verb",5],
+["φιλέω","I love, I like",25,"verb",5],
+["δηλόω","I show, I make clear",7,"verb",5],
+["τελειόω","I complete, I perfect",23,"verb",5],
+["ἀγγέλλω","I announce",1,"verb",5],
+["ἀνά","up, among (+acc)",13,"prep",5],
+["ἀντί","instead of, for (+gen)",22,"prep",5],
+["ἀξίως","worthily",6,"adv",5],
+["πότε","when?",48,"adv",5],
+["πρίν","before",13,"conj",5]
 ];

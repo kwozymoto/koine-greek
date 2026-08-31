@@ -73,8 +73,8 @@ async function gntBook(abbr) {
    moment you closed it, none of its vocabulary reached the schedule, and
    there was no way to see which words in it you don't have.
 
-   Matching a corpus lemma to a course word is nearly free. Strip the accents
-   and breathings and 466 of the 470 headwords land on a manifest lemma. */
+   Matching a corpus lemma to a course word is nearly free: strip the accents
+   and breathings and almost every headword lands on a manifest lemma. */
 let gntCur = null;                        // {abbr, ch, meta, verses}
 const gntBare = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
@@ -135,7 +135,7 @@ function showGntUnknown() {
   }
   box.innerHTML = `<div class="card">
     <h3 style="margin-top:0">Words here you don't have</h3>
-    <p class="muted" style="font-size:.84rem;margin-bottom:4px">${all.length} of the 470 course words
+    <p class="muted" style="font-size:.84rem;margin-bottom:4px">${all.length} of the ${VOCAB.length} course words
       ${all.length > UNKNOWN_SHOWN ? `— the ${UNKNOWN_SHOWN} commonest in this chapter are below` : "in this chapter"}.
       Adding one puts it in today's review.</p>
     ${list.map(([i, k]) => `<div class="setrow">

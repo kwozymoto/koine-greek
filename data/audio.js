@@ -46,6 +46,11 @@ const AUDIO_BY_GREEK = Object.fromEntries(AUDIO_CLIPS.map(c => [c[0], c[4]]));
 /* Vocabulary pronunciation — one clip per lemma, indexed by position in
    VOCAB (which is why data/vocab.js is append-only). Files in audio/vocab/.
 
+   This array covers entries 0-469. The tier-5 words appended after them for
+   Black's chapter lists have no recording yet, so VOCAB_AUDIO[i] is
+   undefined for those and every caller treats that as "no audio": the
+   "Hear it" button is not drawn and the lookup speaker stays unlit.
+
    v2, bare citation forms: each clip speaks only the word shown on the card
    front (θεός), not the lexical line (θεός, -οῦ, ὁ). The first pack read the
    whole line, so the voice named three things while the card showed one.
