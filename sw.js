@@ -9,11 +9,14 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v11';
+const VERSION = 'v12';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
-  '.',
+  /* Only index.html — never also '.'. Precaching both stores two copies of
+     the shell under different keys, and a CDN can hand back a stale one for
+     the directory URL. Navigations are routed to this entry below, so there
+     is exactly one shell and it cannot drift. */
   'index.html',
   'css/app.css',
   'js/app.js',
@@ -90,7 +93,15 @@ self.addEventListener('fetch', e => {
   if (new URL(req.url).origin !== self.location.origin) return;
 
   e.respondWith((async () => {
-    const cache  = await caches.open(CACHE);
+    const cache = await caches.open(CACHE);
+
+    // Every navigation resolves to the one cached shell.
+    if (req.mode === 'navigate') {
+      const shell = await cache.match('index.html');
+      if (shell) return shell;
+      try { return await fetch(req); } catch (err) { return Response.error(); }
+    }
+
     const cached = await cache.match(req, { ignoreSearch: true });
     if (cached) return cached;
 
@@ -99,10 +110,6 @@ self.addEventListener('fetch', e => {
       if (res.status === 200 && res.type === 'basic') cache.put(req, res.clone());
       return res;
     } catch (err) {
-      if (req.mode === 'navigate') {
-        const shell = await cache.match('index.html');
-        if (shell) return shell;
-      }
       throw err;
     }
   })());
