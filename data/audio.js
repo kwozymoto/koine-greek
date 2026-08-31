@@ -1,6 +1,6 @@
 /* Pronunciation clips — Erasmian (seminary/academic), one file per letter
    and diphthong. Recorded/produced by the user; cue sheet in
-   audio/Erasmian_Koine_Greek_App_Audio/erasmian_alphabet_cues.json.
+   docs/erasmian_alphabet_cues.json.
    Each clip says the letter name, then its sound.
 
    Format: [greek, name, sound, kind, file]  — file lives in audio/clips/ */
