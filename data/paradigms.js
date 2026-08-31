@@ -4,6 +4,11 @@
 
 const PARADIGMS=[
 
+{t:"Sounds — alphabet and diphthongs",tags:"pronunciation audio erasmian alphabet diphthong sound listen",
+html:`<p class="muted" style="font-size:.83rem;margin-top:0">Tap to hear the name, then the sound. Erasmian.</p>
+<div id="soundTableHere"></div>`},
+
+
 {t:"The article",tags:"ho he to definite",
 html:`<table><caption>Singular</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>

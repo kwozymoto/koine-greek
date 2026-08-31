@@ -195,3 +195,13 @@ body[data-gk="lg"] .passage{font-size:1.6rem}
 body[data-gk="xl"] .passage{font-size:1.85rem}
 body[data-gk="lg"] .fc .word{font-size:3.2rem}
 body[data-gk="xl"] .fc .word{font-size:3.5rem}
+
+/* ---------- pronunciation tiles ---------- */
+.alpha.snd{position:relative;cursor:pointer;width:100%;text-align:center;
+  transition:background .15s,border-color .15s,transform .08s}
+.alpha.snd:active{transform:scale(.96)}
+.alpha.snd .sd{font-size:.62rem;color:var(--gold);opacity:.85;margin-top:2px}
+.alpha.snd::after{content:"\1F50A";position:absolute;top:5px;right:6px;font-size:.6rem;opacity:.3}
+.alpha.snd.playing{background:var(--surface-2);border-color:var(--gold)}
+.alpha.snd.playing::after{opacity:1}
+.alpha.snd.playing .l{color:var(--gold)}

@@ -319,9 +319,16 @@ function openLesson(id){
     <div style="height:34px"></div>`;
   go("lesson");
   const ah=document.getElementById("alphaHere");
-  if(ah) ah.innerHTML=`<div class="alpha-grid">${ALPHABET.map(a=>
-    `<div class="alpha"><div class="l gk">${a[0]}</div><div class="nm">${a[1]}</div></div>`).join("")}</div>
-    <p class="muted" style="font-size:.83rem;margin-top:10px">Sound each one aloud. Silent review does not work here.</p>`;
+  if(ah) ah.innerHTML=
+    soundGridHtml("letter")
+    + playAllHtml("letter")
+    + `<p class="muted" style="font-size:.83rem;margin-top:10px">Tap any letter to hear it: the name, then the sound. Say it back aloud — silent review does not work here.</p>
+    <h3>Diphthongs</h3>
+    <p>Two vowels written together make one sound. These eight are worth knowing before you meet them mid-word.</p>`
+    + soundGridHtml("diphthong")
+    + playAllHtml("diphthong")
+    + `<p style="margin-top:14px"><a class="vid" href="audio/erasmian-alphabet-chart.pdf" target="_blank" rel="noopener">
+        <span class="p">↓</span><span><b>Printable alphabet chart</b><span>One-page PDF: names, sounds and diphthongs</span></span></a></p>`;
 }
 function lessonQuiz(id){
   const l=LESSONS.find(x=>x.id===id);
@@ -505,10 +512,28 @@ function alphaDrill(){
   return pool.map(a=>{
     const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[a[1],...wrong].sort(()=>Math.random()-.5);
-    return mcq(`Name this letter: <span class="gk" style="font-size:2rem">${a[0]}</span>`,
+    const snd=AUDIO_BY_GREEK[a[0]]
+      ? ` <button class="btn ghost small" style="margin-top:8px" onclick="playGreek('${a[0]}',null)">\uD83D\uDD0A Hear it</button>`
+      : "";
+    return mcq(`Name this letter: <span class="gk" style="font-size:2rem">${a[0]}</span>${snd}`,
       opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`);
   });
 }
+/* Listening drill: the clip is the question. */
+function listenDrill(n=12){
+  const pool=AUDIO_CLIPS.slice().sort(()=>Math.random()-.5).slice(0,n);
+  return pool.map(c=>{
+    const wrong=AUDIO_CLIPS.filter(x=>x[1]!==c[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    const opts=[c[1],...wrong].sort(()=>Math.random()-.5);
+    const q=mcq(`<button class="btn" onclick="playGreek('${c[0]}',null)">\uD83D\uDD0A Play the sound</button>
+      <p class="muted" style="font-size:.84rem;margin:10px 0 0">Which ${c[3]} is this?</p>`,
+      opts, opts.indexOf(c[1]),
+      `<span class="gk">${c[0]}</span> — ${c[1]}, sounds like ${c[2]}.`);
+    // autoplay once the question is on screen
+    return ()=>{ q(); playGreek(c[0],null); };
+  });
+}
+
 function reverseVocab(){
   const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i]);
   const pool=(started.length>8?started:VOCAB.map((_,i)=>i).slice(0,40))
@@ -538,6 +563,7 @@ const DRILLS=[
 ["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:"),"d")],
 ["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
+["Listening","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
 ["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
 ["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
 ["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
@@ -637,8 +663,17 @@ function renderTables(){
       <div class="pt-body">${t.html}</div>
     </div>`).join("") :
     `<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${q}".</p></div>`;
+  fillSoundTable();
 }
 document.getElementById("tablesSearch").oninput=()=>renderTables();
+
+/* The sounds table is interactive, so it is filled in after the markup lands. */
+function fillSoundTable(){
+  const el=document.getElementById("soundTableHere");
+  if(!el || typeof soundGridHtml!=="function") return;
+  el.innerHTML = soundGridHtml("letter") + playAllHtml("letter")
+    + `<h3>Diphthongs</h3>` + soundGridHtml("diphthong") + playAllHtml("diphthong");
+}
 
 /* ============================================================
    PROGRESS

@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v6';
+const VERSION = 'v7';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -18,15 +18,52 @@ const SHELL = [
   'css/app.css',
   'js/app.js',
   'js/pwa.js',
+  'js/audio.js',
   'js/sync.js',
   'data/vocab.js',
   'data/lessons.js',
   'data/readings.js',
+  'data/audio.js',
   'data/paradigms.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',
-  'icons/maskable-512.png'
+  'icons/maskable-512.png',
+  'audio/erasmian-alphabet-chart.pdf',
+
+  /* pronunciation clips — 540KB, cached so audio works offline */
+  'audio/clips/01_alpha.mp3',
+  'audio/clips/02_beta.mp3',
+  'audio/clips/03_gamma.mp3',
+  'audio/clips/04_delta.mp3',
+  'audio/clips/05_epsilon.mp3',
+  'audio/clips/06_zeta.mp3',
+  'audio/clips/07_eta.mp3',
+  'audio/clips/08_theta.mp3',
+  'audio/clips/09_iota.mp3',
+  'audio/clips/10_kappa.mp3',
+  'audio/clips/11_lambda.mp3',
+  'audio/clips/12_mu.mp3',
+  'audio/clips/13_nu.mp3',
+  'audio/clips/14_xi.mp3',
+  'audio/clips/15_omicron.mp3',
+  'audio/clips/16_pi.mp3',
+  'audio/clips/17_rho.mp3',
+  'audio/clips/18_sigma.mp3',
+  'audio/clips/19_tau.mp3',
+  'audio/clips/20_upsilon.mp3',
+  'audio/clips/21_phi.mp3',
+  'audio/clips/22_chi.mp3',
+  'audio/clips/23_psi.mp3',
+  'audio/clips/24_omega.mp3',
+  'audio/clips/d01_ai.mp3',
+  'audio/clips/d02_ei.mp3',
+  'audio/clips/d03_oi.mp3',
+  'audio/clips/d04_ui.mp3',
+  'audio/clips/d05_au.mp3',
+  'audio/clips/d06_eu.mp3',
+  'audio/clips/d07_hu.mp3',
+  'audio/clips/d08_ou.mp3'
 ];
 
 self.addEventListener('install', e => {
