@@ -166,7 +166,8 @@
     "freq": 29,
     "tts": "gnosis",
     "source": "black",
-    "duration_s": 1.228
+    "duration_s": 1.228,
+    "verdict": "checked by ear: gamma is sounded, good"
   },
   {
     "index": 483,
@@ -231,7 +232,8 @@
     "freq": 29,
     "tts": "iss koo ros",
     "source": "black",
-    "duration_s": 1.724
+    "duration_s": 1.724,
+    "verdict": "checked by ear: good"
   },
   {
     "index": 488,
@@ -296,7 +298,8 @@
     "freq": 25,
     "tts": "sos",
     "source": "black",
-    "duration_s": 1.567
+    "duration_s": 1.567,
+    "verdict": "measured: reads the string as the initialism S.O.S — regenerate"
   },
   {
     "index": 493,
@@ -361,7 +364,8 @@
     "freq": 12,
     "tts": "pseudo my",
     "source": "black",
-    "duration_s": 1.254
+    "duration_s": 1.254,
+    "verdict": "checked by ear: psi read as plain s, accepted"
   },
   {
     "index": 498,
@@ -504,7 +508,8 @@
     "freq": 6,
     "tts": "axee ohs",
     "source": "black",
-    "duration_s": 1.959
+    "duration_s": 1.959,
+    "verdict": "checked by ear: spells the final letters — regenerate"
   },
   {
     "index": 509,
