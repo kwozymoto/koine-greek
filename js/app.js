@@ -12,6 +12,7 @@ function load(){
 function save(){
   try{localStorage.setItem(KEY,JSON.stringify(S));}
   catch(e){canPersist=false;mem=S;}
+  if(typeof syncPushSoon==="function") syncPushSoon();
 }
 const today=()=>new Date().toISOString().slice(0,10);
 const daysBetween=(a,b)=>Math.round((new Date(b)-new Date(a))/86400000);
@@ -32,6 +33,7 @@ function card(i){
 }
 function schedule(i,g){
   const c=card(i);
+  c.ts=Date.now();
   if(g===0){
     c.lapses++; c.reps=0; c.ivl=0;
     c.ease=Math.max(1.3,c.ease-0.2);
@@ -99,7 +101,7 @@ function seedVocab(n=100){
     if(done>=n) break;
     if(S.cards[i]) continue;
     const c=card(i);
-    c.ivl=6; c.reps=2;
+    c.ivl=6; c.reps=2; c.ts=Date.now();
     const d=new Date(); d.setDate(d.getDate()+6);
     c.due=d.toISOString().slice(0,10);
     done++;
@@ -645,6 +647,7 @@ function renderProgress(){
   const total=VOCAB.length, started=Object.keys(S.cards).length, known=knownCount();
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
+    ${typeof syncCardHtml==="function"?syncCardHtml():""}
     <div class="card">
       <h3 style="margin-top:0">Settings</h3>
       <div class="setrow"><span>Daily review goal</span>

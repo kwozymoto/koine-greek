@@ -1,0 +1,9 @@
+name = "koine-sync"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# KV namespace id is filled in by the deploy step:
+#   npx wrangler kv namespace create KOINE_SYNC
+[[kv_namespaces]]
+binding = "KOINE_SYNC"
+id = "04b628bd2ce645da85ffc5844e4bf22e"
