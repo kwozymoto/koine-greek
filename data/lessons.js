@@ -53,7 +53,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <h3>Punctuation</h3>
 <p>Comma and full stop look like ours. A raised dot <span class="gk">·</span> is a semicolon or colon. And the mark that looks like a semicolon <span class="gk">;</span> is a <b>question mark</b> — this catches everyone at least once.</p>
 <h3>Iota subscript</h3>
-<p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It isn't pronounced, but it is almost always a signal of the <b>dative case</b>. Worth spotting.</p>`,
+<p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It isn't pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23. Worth spotting.</p>`,
 vids:[{t:"Lecture 1: The Letters and Sounds of Greek",s:"Daily Dose of Greek — Rob Plummer (24:37)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-1/"},
       {t:"Alphabet song and Erasmian summary",s:"billmounce.com — free mp3 and worksheet",u:"https://www.billmounce.com/biblestudygreek2/greekalphabet"}],
 quiz:[
@@ -509,9 +509,9 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 <tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
 <p><span class="gk">εἷς</span> (rough breathing) is "one"; <span class="gk">εἰς</span> (smooth, no accent) is the preposition "into". <span class="gk">κύριος εἷς ἐστιν</span> — "the Lord is one." Add οὐδέ or μηδέ and you get <span class="gk">οὐδείς, οὐδεμία, οὐδέν</span> — "no one, nothing" — declined the same way (μηδείς in non-indicative contexts).</p>
 <h3>πολύς and μέγας</h3>
-<p>"Much/many" and "great" are ordinary second/first-declension adjectives except for four short forms each: <span class="gk">πολύς, πολύ, πολύν</span> and <span class="gk">μέγας, μέγα, μέγαν</span> in the masculine/neuter nominative and accusative singular. Everything else is regular: <span class="gk">πολλοῦ, πολλῷ, μεγάλου, μεγάλῳ…</span></p>
+<p>"Much/many" and "great" are ordinary second/first-declension adjectives except in four slots each — masculine and neuter, nominative and accusative singular — which give three forms apiece: <span class="gk">πολύς, πολύν, πολύ</span> and <span class="gk">μέγας, μέγαν, μέγα</span> (the neuter nominative and accusative are identical, as always). Everything else is regular: <span class="gk">πολλοῦ, πολλῷ, μεγάλου, μεγάλῳ…</span></p>
 <h3>Numbers to recognise</h3>
-<p><span class="gk">δύο</span> (two), <span class="gk">τρεῖς, τρία</span> (three), <span class="gk">τέσσαρες, τέσσαρα</span> (four), <span class="gk">πέντε</span> (five), <span class="gk">ἑπτά</span> (seven), <span class="gk">δώδεκα</span> (twelve). From πέντε up they don't decline — met mostly in feeding crowds and numbering apostles.</p>`,
+<p><span class="gk">δύο</span> (two), <span class="gk">τρεῖς, τρία</span> (three), <span class="gk">τέσσαρες, τέσσαρα</span> (four), <span class="gk">πέντε</span> (five), <span class="gk">ἑπτά</span> (seven), <span class="gk">δώδεκα</span> (twelve). From πέντε up to a hundred they don't decline; the hundreds and thousands (<span class="gk">διακόσιοι, χίλιοι, μύριοι</span>) do. Met mostly in feeding crowds and numbering apostles.</p>`,
 vids:[{t:"Lecture 18: Adjectives, Pronouns, and Numerals of the First and Third Declensions",s:"Daily Dose of Greek — Rob Plummer (21:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-18/"}],
 quiz:[
 {q:"εἷς differs from εἰς in that εἷς:",o:["Is the preposition 'into'","Is the numeral 'one' (rough breathing)","Is plural","Means 'if'"],a:1,w:"The breathing and accent are the whole difference. ἄκουε, Ἰσραήλ· κύριος εἷς ἐστιν — the Shema needs the numeral, not the preposition."},

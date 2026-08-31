@@ -24,12 +24,15 @@ const GNT_MOOD  = {I:"indicative",D:"imperative",S:"subjunctive",O:"optative",N:
 const GNT_CASE  = {N:"nominative",G:"genitive",D:"dative",A:"accusative",V:"vocative"};
 const GNT_NUM   = {S:"singular",P:"plural"};
 const GNT_GEND  = {M:"masculine",F:"feminine",N:"neuter"};
+const GNT_DEG   = {C:"comparative",S:"superlative"};
 const GNT_POS   = {"N-":"noun","V-":"verb","A-":"adjective","D-":"adverb","C-":"conjunction",
                    "P-":"preposition","RA":"article","RD":"demonstrative","RP":"pronoun",
                    "RR":"relative","RI":"interrogative/indefinite","X-":"particle","I-":"interjection"};
 
 function gntParse(pos, code) {
-  const [person, tense, voice, mood, cse, num, gend] = code;
+  // Eight characters, not seven: the last is degree. Without it μείζων
+  // ("greater") rendered as plain "adjective · μέγας — great".
+  const [person, tense, voice, mood, cse, num, gend, deg] = code;
   const bits = x => x.filter(Boolean).join(" ");
   if (pos === "RA") return bits([GNT_CASE[cse], GNT_NUM[num], GNT_GEND[gend]]) + " article";
   if (pos === "V-") {
@@ -41,7 +44,8 @@ function gntParse(pos, code) {
   }
   if (["N-","A-","RD","RP","RR","RI"].includes(pos)) {
     const b = bits([GNT_CASE[cse], GNT_NUM[num], GNT_GEND[gend]]);
-    return b ? b + " " + (GNT_POS[pos] || "") : (GNT_POS[pos] || "");
+    const tail = [GNT_DEG[deg], GNT_POS[pos]].filter(Boolean).join(" ");
+    return b ? b + " " + tail : tail;
   }
   return GNT_POS[pos] || "";
 }
@@ -66,7 +70,7 @@ async function openGnt() {
   const body = document.getElementById("readBody");
   document.getElementById("readList").innerHTML =
     `<button class="btn ghost small" onclick="renderRead()">← Passages</button>`;
-  body.innerHTML = `<p class="muted">Loading…</p>`;
+  body.innerHTML = `<div class="empty"><span class="gk">…</span><p>Loading</p></div>`;
   try { await gntLoad(); } catch (e) {
     body.innerHTML = `<div class="empty"><span class="gk">οὐδέν</span>
       <p>The text could not be loaded. If you are offline, open it once with a connection first.</p></div>`;
@@ -83,7 +87,7 @@ async function openGnt() {
 
 async function openGntBook(abbr) {
   const body = document.getElementById("readBody");
-  body.innerHTML = `<p class="muted">Loading…</p>`;
+  body.innerHTML = `<div class="empty"><span class="gk">…</span><p>Loading</p></div>`;
   const meta = GNT.books.find(b => b.a === abbr);
   try { await gntBook(abbr); } catch (e) {
     body.innerHTML = `<div class="empty"><span class="gk">οὐδέν</span>

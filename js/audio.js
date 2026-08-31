@@ -9,6 +9,12 @@
 const AUDIO_DIR = "audio/clips/";
 let sndEl = null, sndTile = null;
 
+/* Bumped by every direct play. A chain (playEntry / playSequence) captures
+   the value and stops as soon as something else has spoken, because
+   replacing .src does not fire 'ended' and its handler would otherwise
+   survive into an unrelated clip. */
+let sndGen = 0;
+
 function sndInit() {
   if (sndEl) return sndEl;
   sndEl = new Audio();
@@ -63,6 +69,7 @@ function playGreek(greek, tile) {
   const file = AUDIO_BY_GREEK[greek];
   if (!file) return false;
   const a = sndInit();
+  sndGen++; a.onended = null;
   sndClear();
   try { a.pause(); } catch (e) {}
   setSrc(a, AUDIO_DIR + file);
@@ -78,16 +85,22 @@ let sndQueue = null;
 function playSequence(list, i = 0) {
   if (i === 0) sndQueue = list;
   if (sndQueue !== list || i >= list.length) return;
-  const tile = document.querySelector(`[data-greek="${CSS.escape(list[i])}"]`);
+  // Only the visible grid: the alphabet grid exists twice once the lesson
+  // has been opened, and the hidden copy was getting the highlight.
+  const tile = document.querySelector(`.screen.on [data-greek="${CSS.escape(list[i])}"]`);
   playGreek(list[i], tile);
   const a = sndInit();
+  const gen = sndGen;
   a.onended = () => {
     sndClear();
-    setTimeout(() => playSequence(list, i + 1), 260);
+    a.onended = null;
+    if (sndGen !== gen) return;      // a tap interrupted the run
+    setTimeout(() => { if (sndGen === gen) playSequence(list, i + 1); }, 260);
   };
 }
 function stopSequence() {
   sndQueue = null;
+  sndGen++;
   if (sndEl) { try { sndEl.pause(); } catch (e) {} sndEl.onended = null; }
   sndClear();
 }
@@ -132,6 +145,7 @@ function playWord(i, tile) {
   const url = VOCAB_AUDIO_DIR + file;
   warmClip(url);
   const a = sndInit();
+  sndGen++; a.onended = null;
   sndClear();
   try { a.pause(); } catch (e) {}
   setSrc(a, url);
@@ -196,6 +210,7 @@ function playForm(form, tile) {
   if (!file) return false;
   warmClip(FORM_AUDIO_DIR + file);
   const a = sndInit();
+  sndGen++; a.onended = null;
   sndClear();
   try { a.pause(); } catch (e) {}
   setSrc(a, FORM_AUDIO_DIR + file);
@@ -209,20 +224,30 @@ function playForm(form, tile) {
 /* Headword, then each extra form in turn — "θεός … ὁ". */
 let formRun = 0;
 function playEntry(i) {
-  const run = ++formRun;
   const extras = extraForms(i);
   const a = sndInit();
   playWord(i, null);
+  const gen = sndGen;            // captured after playWord bumped it
   let k = 0;
   a.onended = () => {
     sndClear();
-    if (run !== formRun || k >= extras.length) { a.onended = null; return; }
+    if (sndGen !== gen || k >= extras.length) { a.onended = null; return; }
     const next = extras[k++];
-    setTimeout(() => { if (run === formRun) playForm(next.form, null); }, 240);
+    setTimeout(() => {
+      if (sndGen !== gen) return;
+      playForm(next.form, null);
+      const g2 = sndGen;
+      a.onended = () => {          // keep the chain on its own generation
+        sndClear();
+        if (sndGen !== g2 || k >= extras.length) { a.onended = null; return; }
+        const nx = extras[k++];
+        setTimeout(() => { if (sndGen === g2) { playForm(nx.form, null); } }, 240);
+      };
+    }, 240);
   };
 }
 function stopEntry() {
-  formRun++;
+  sndGen++;
   if (sndEl) { try { sndEl.pause(); } catch (e) {} sndEl.onended = null; }
   sndClear();
 }

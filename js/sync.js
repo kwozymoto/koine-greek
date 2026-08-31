@@ -30,8 +30,13 @@ async function syncIdFromPhrase(phrase) {
 }
 
 /* ---- merging ---- */
+/* A timestamp from a device with a wrong clock would otherwise win every
+   future merge. Anything more than a day ahead is not trusted. */
+const CLAMP = () => Date.now() + 86400000;
+function tsOf(c) { const t = +c.ts || 0; return t > CLAMP() ? 0 : t; }
+
 function pickCard(a, b) {
-  if ((a.ts || 0) !== (b.ts || 0)) return (a.ts || 0) > (b.ts || 0) ? a : b;
+  if (tsOf(a) !== tsOf(b)) return tsOf(a) > tsOf(b) ? a : b;
   if ((a.reps || 0) !== (b.reps || 0)) return (a.reps || 0) > (b.reps || 0) ? a : b;
   return (a.due || "") >= (b.due || "") ? a : b;
 }
@@ -44,7 +49,9 @@ function mergeStates(local, remote) {
     out.cards[k] = !a ? b : (!b ? a : pickCard(a, b));
   }
   out.xp     = Math.max(local.xp || 0, remote.xp || 0);
-  out.streak = Math.max(local.streak || 0, remote.streak || 0);
+  /* Take the streak from whichever device owns the newer last-studied date;
+     Math.max resurrected a long-dead streak from an idle device. */
+  out.streak = ((local.last || "") >= (remote.last || "")) ? (local.streak || 0) : (remote.streak || 0);
   out.best   = Math.max(local.best || 0, remote.best || 0);
   out.seen   = Math.max(local.seen || 0, remote.seen || 0);
   out.lessons = [...new Set([...(local.lessons || []), ...(remote.lessons || [])])].sort((x, y) => x - y);
@@ -78,8 +85,11 @@ async function syncPull() {
     if (!env || typeof env.data !== "object") return "empty";
     const merged = mergeStates(S, env.data);
     const changedLocal  = JSON.stringify(merged) !== JSON.stringify(S);
-    const changedRemote = JSON.stringify(merged.cards) !== JSON.stringify(env.data.cards)
-                       || merged.xp !== env.data.xp || merged.lessons.length !== (env.data.lessons || []).length;
+    /* goal / gk / sfx are deliberately per-device, so they are not compared —
+       including them would push on every single pull. */
+    const sig = o => JSON.stringify([o.cards, o.xp, o.streak, o.best, o.last,
+                                     o.lessons, o.badges, o.suspended]);
+    const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();
       if (document.getElementById("s-today").classList.contains("on")) render();
@@ -98,6 +108,7 @@ async function syncPushNow() {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ts: Date.now(), data: S }),
+      keepalive: true,          // survives the page being backgrounded
     });
     if (r.ok) { SYNC.last = new Date().toISOString(); syncSave(); }
   } catch (e) { /* offline: the next save or 'online' event retries */ }
@@ -112,11 +123,17 @@ function syncPushSoon(delay = 5000) {
 }
 
 /* ---- lifecycle hooks ---- */
-addEventListener("online", () => syncPushSoon(1000));
+addEventListener("online", async () => {
+  const r = await syncPull();
+  if (r !== "fail") syncPushSoon(1500);
+});
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") syncPull();
   else if (SYNC && SYNC.id) syncPushNow();     // flush when backgrounded
 });
+// visibilitychange alone is unreliable on Android; pagehide is the one that
+// fires when the app is swiped away.
+addEventListener("pagehide", () => { if (SYNC && SYNC.id) syncPushNow(); });
 
 /* ---- UI (rendered into the Progress tab by renderProgress) ---- */
 function syncCardHtml() {

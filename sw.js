@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v21';
+const VERSION = 'v22';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -118,7 +118,8 @@ const SHELL = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)));
+  e.waitUntil(caches.open(CACHE).then(c =>
+    c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))));
 });
 
 self.addEventListener('activate', e => {
@@ -167,7 +168,7 @@ async function fillBulk() {
           }
         } catch (e) { failed++; }
         done++;
-        if (done % 20 === 0) post({ type: 'offline-progress', done, total, failed });
+        if (done % 20 === 0) post({ type: 'offline-progress', done: done - failed, total, failed });
       }
     };
     // Six at a time: enough to be quick, few enough to leave the network
@@ -188,7 +189,7 @@ async function fillBulk() {
         } catch (e) { /* leave it for the next load */ }
       }
     }
-    post({ type: 'offline-progress', done, total, failed, complete: true });
+    post({ type: 'offline-progress', done: done - failed, total, failed, complete: failed === 0 });
   } catch (e) {
     post({ type: 'offline-progress', error: true });
   } finally {
@@ -198,8 +199,8 @@ async function fillBulk() {
 
 self.addEventListener('message', e => {
   if (e.data === 'skip-waiting') self.skipWaiting();
-  if (e.data === 'ensure-offline') fillBulk();
-  if (e.data === 'offline-status') reportStatus();
+  if (e.data === 'ensure-offline') e.waitUntil(fillBulk());
+  if (e.data === 'offline-status') e.waitUntil(reportStatus());
 });
 
 async function reportStatus() {
@@ -223,8 +224,11 @@ self.addEventListener('fetch', e => {
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
 
-    // Every navigation resolves to the one cached shell.
-    if (req.mode === 'navigate') {
+    // Every navigation resolves to the one cached shell — but only real page
+    // navigations. A target="_blank" link to a file (the alphabet PDF) also
+    // arrives as mode:'navigate', and was being handed index.html instead.
+    const leaf = new URL(req.url).pathname.split('/').pop();
+    if (req.mode === 'navigate' && !/\.[a-z0-9]+$/i.test(leaf)) {
       const shell = await cache.match('index.html');
       if (shell) return shell;
       try { return await fetch(req); } catch (err) { return Response.error(); }

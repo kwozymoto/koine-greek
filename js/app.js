@@ -46,7 +46,9 @@ function schedule(i,g){
   } else {
     if(c.reps===0) c.ivl = g===1?1:(g===2?1:3);
     else if(c.reps===1) c.ivl = g===1?3:(g===2?6:9);
-    else c.ivl = Math.round(c.ivl * (g===1?1.2:(g===2?c.ease:c.ease*1.3)));
+    // Capped: uncapped growth reached a date Date could not represent and
+    // threw inside schedule(), aborting grade() mid-session.
+    else c.ivl = Math.min(365, Math.round(c.ivl * (g===1?1.2:(g===2?c.ease:c.ease*1.3))));
     c.ease = Math.min(2.8, Math.max(1.3, c.ease + (g===1?-0.15:(g===2?0:0.1))));
     c.reps++;
     const d=new Date(); d.setDate(d.getDate()+c.ivl);
@@ -163,6 +165,9 @@ let UNDO=null;   // last-grade snapshot for the session Undo button
    NAVIGATION
    ============================================================ */
 function go(name){
+  // Nothing should still be speaking on a screen you have left.
+  if(typeof stopEntry==="function") stopEntry();
+  if(typeof stopSequence==="function") stopSequence();
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("on"));
   document.getElementById("s-"+name).classList.add("on");
   document.querySelectorAll("nav button").forEach(b=>
@@ -183,11 +188,16 @@ document.querySelectorAll("nav button").forEach(b=>
    TODAY
    ============================================================ */
 function render(){
-  const due=dueList().length, goal=S.goal;
-  const pct=Math.min(1, due===0 ? 1 : (S.reviewsToday||0)/Math.max(1,Math.min(goal,due+ (S.reviewsToday||0))));
+  const due=dueList().length, goal=S.goal||20;
+  /* An untouched deck is not a finished day. Measuring against the goal also
+     makes the setting mean something — it previously governed nothing, and a
+     day 292 cards behind could paint a completed circle. */
+  const fresh=Object.keys(S.cards).length===0;
+  const pct=fresh?0:Math.min(1,(S.reviewsToday||0)/goal);
   document.getElementById("ringArc").style.strokeDashoffset = 415-(415*pct);
   document.getElementById("ringNum").textContent = due;
-  document.getElementById("ringLbl").textContent = due===1?"card due":"cards due";
+  document.getElementById("ringLbl").textContent =
+    Object.keys(S.cards).length===0 ? "nothing scheduled yet" : (due===1?"card due":"cards due");
   document.getElementById("streakN").textContent=S.streak;
   document.getElementById("stKnown").textContent=knownCount();
   document.getElementById("stLvl").textContent=level();
@@ -211,7 +221,7 @@ document.getElementById("btnNew").onclick=()=>startNew();
    ============================================================ */
 let Q=[], qi=0, mode="";
 function startSession(queue,label){
-  Q=queue; qi=0; mode=label;
+  Q=queue; qi=0; mode=label; SESSION_XP=0;
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
@@ -237,9 +247,8 @@ function finish(){
   checkBadges();
   b.innerHTML=`<div class="empty"><span class="gk">τέλος</span>
     <p>Session complete.</p>
-    <p><b>+${Q.length*3} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
+    <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
     <button class="btn" onclick="go('today')">Done</button>`;
-  addXp(Q.length*3);
 }
 
 /* ---- flashcard (self-graded, for SRS) ---- */
@@ -282,7 +291,7 @@ function nextIvl(i,g){
   const c=card(i);
   if(c.reps===0)return g===1?1:(g===2?1:3);
   if(c.reps===1)return g===1?3:(g===2?6:9);
-  return Math.round(c.ivl*(g===1?1.2:(g===2?c.ease:c.ease*1.3)));
+  return Math.min(365, Math.round(c.ivl*(g===1?1.2:(g===2?c.ease:c.ease*1.3))));
 }
 function grade(i,g){
   UNDO={i, qi, prev:JSON.parse(JSON.stringify(S.cards[i])), requeued:g===0,
@@ -292,6 +301,8 @@ function grade(i,g){
     S.reviewsToday=(S.reviewsToday||0)+1;
   }
   save();
+  addXp(3);                    // per graded card, so a lapse cannot pay twice
+  SESSION_XP+=3;
   if(g===0){ Q.push(flashcard(i)); }
   document.getElementById("btnUndo").style.display="";
   qi++; step();
@@ -337,6 +348,7 @@ function mcq(q,opts,ans,why){
    55 days would otherwise rewrite it to 150 days out — throwing away the
    retention test that was the point of the interval. */
 let PRACTICE=false;
+let SESSION_XP=0;
 
 function startReview(){
   let d=dueList();
@@ -347,7 +359,7 @@ function startReview(){
     d=started.sort(()=>Math.random()-.5).slice(0,15);  // nothing due: free practice
     PRACTICE=true;
   }
-  const words=d.slice(0,40);
+  const words=d.slice(0, Math.max(5, S.goal||20));
   const q=words.map(flashcard); q.__words=words;
   startSession(q,"review");
 }
@@ -368,10 +380,15 @@ function startNew(n=5){
   if(!fresh.length){toast("You've started every word in the deck");return;}
   const q=[];
   q.__words=fresh;
-  fresh.forEach(i=>{ card(i); q.push(flashcard(i)); });
+  // Do not create the cards up front: quitting after the first word left the
+  // rest counted as started but never introduced. Every downstream path
+  // creates the card lazily.
+  fresh.forEach(i=>{ q.push(flashcard(i)); });
   fresh.forEach(i=>{
     const v=VOCAB[i];
-    const wrong=VOCAB.filter((_,k)=>k!==i).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    // By value, not index: three glosses appear twice in the deck, so an
+    // identical option could be rendered and scored wrong.
+    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k)).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
     q.push(mcq(`What does <span class="gk" style="font-size:1.5rem">${v[0].split(",")[0]}</span> mean?`,
       opts, opts.indexOf(v[1]), `${v[1]} — ${v[3]}, appears about ${v[2]} times in the NT.`));
@@ -609,7 +626,9 @@ function alphaDrill(){
 function listenDrill(n=12){
   const pool=AUDIO_CLIPS.slice().sort(()=>Math.random()-.5).slice(0,n);
   return pool.map(c=>{
-    const wrong=AUDIO_CLIPS.filter(x=>x[1]!==c[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    // Same kind only: a diphthong question with three letter names for
+    // distractors can be answered without listening.
+    const wrong=AUDIO_CLIPS.filter(x=>x[3]===c[3] && x[1]!==c[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[c[1],...wrong].sort(()=>Math.random()-.5);
     const q=mcq(`<button class="btn" onclick="playGreek('${c[0]}',null)">\uD83D\uDD0A Play the sound</button>
       <p class="muted" style="font-size:.84rem;margin:10px 0 0">Which ${c[3]} is this?</p>`,
@@ -620,13 +639,22 @@ function listenDrill(n=12){
   });
 }
 
+/* Only words already met — the drill previously quizzed the whole deck and
+   scored you wrong on words you had never seen. Falls back to the commonest
+   forty before the deck has really started. */
+function g2eBank(){
+  const idx=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && !skipWord(i));
+  const use=idx.length>8?idx:LEARN_ORDER.slice(0,40);
+  return use.map(i=>[VOCAB[i][0].split(",")[0],VOCAB[i][1]]);
+}
+
 function reverseVocab(){
   const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i]);
   const pool=(started.length>8?started:VOCAB.map((_,i)=>i).slice(0,40))
     .sort(()=>Math.random()-.5).slice(0,12);
   return pool.map(i=>{
     const v=VOCAB[i];
-    const wrong=VOCAB.filter((_,k)=>k!==i).sort(()=>Math.random()-.5).slice(0,3)
+    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k)).sort(()=>Math.random()-.5).slice(0,3)
       .map(x=>`<span class="gk">${x[0].split(",")[0]}</span>`);
     const right=`<span class="gk">${v[0].split(",")[0]}</span>`;
     const opts=[right,...wrong].sort(()=>Math.random()-.5);
@@ -644,9 +672,9 @@ function mixedQuiz(){
 const DRILLS=[
 ["Vocabulary due now","Spaced repetition — the words the schedule says you're about to forget",()=>startReview()],
 ["Learn 5 new words","Next five by New Testament frequency",()=>startNew(5)],
-["Greek → English","Recognition, mixed multiple choice",()=>startSession(pairDrill(VOCAB.map(v=>[v[0].split(",")[0],v[1]]),"What does this mean?"),"d")],
+["Greek → English","Recognition, mixed multiple choice",()=>startSession(pairDrill(g2eBank(),"What does this mean?"),"d")],
 ["English → Greek","Harder: production rather than recognition",()=>startSession(reverseVocab(),"d")],
-["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:"),"d")],
+["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length),"d")],
 ["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
 ["Listening","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
@@ -890,7 +918,9 @@ function renderProgress(){
     <h2>Your data</h2>
     <p class="muted" style="font-size:.86rem">
       ${canPersist?"Progress is saved on this device.":"This browser is blocking storage, so progress will be lost when you close the app. Export it, or open the app from a hosted address rather than a local file."}
-      Nothing is sent anywhere.</p>
+      ${typeof SYNC!=="undefined" && SYNC && SYNC.id
+        ? "A copy is also kept on the sync server so your other device can read it."
+        : "Nothing is sent anywhere."}</p>
     ${PRE_IMPORT?`<button class="btn ghost" onclick="undoImport()" style="border-color:var(--rust)">Undo the import</button><div style="height:9px"></div>`:""}
     <button class="btn ghost" onclick="exportData()">Export progress</button>
     <div style="height:9px"></div>

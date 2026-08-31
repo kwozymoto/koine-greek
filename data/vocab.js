@@ -192,7 +192,7 @@ const VOCAB=[
 ["πίπτω","I fall",90,"verb",3],
 ["ἑπτά","seven",88,"adj",3],
 ["οὔτε","and not, neither, nor",87,"conj",3],
-["ἀρχή, -ῆς, ἡ","beginning, ruler, rule",86,"noun",3],
+["ἀρχή, -ῆς, ἡ","beginning, ruler, rule",55,"noun",3],
 ["πληρόω","I fill, fulfil, complete",86,"verb",3],
 ["προσέρχομαι","I come to, approach",86,"verb",3],
 ["δικαιόω","I justify, declare righteous",39,"verb",3],

@@ -76,7 +76,7 @@ html:`<table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-
 <tr><th>Gen pl</th><td class="g">πάντων</td><td class="g">πασῶν</td><td class="g">πάντων</td></tr>
 <tr><th>Dat pl</th><td class="g">πᾶσι(ν)</td><td class="g">πάσαις</td><td class="g">πᾶσι(ν)</td></tr>
 <tr><th>Acc pl</th><td class="g">πάντας</td><td class="g">πάσας</td><td class="g">πάντα</td></tr></table>
-<p class="muted" style="font-size:.83rem">πολύς and μέγας are regular second/first declension except four short forms each: πολύς, πολύ, πολύν and μέγας, μέγα, μέγαν (masc/neut nom and acc singular). Everything else: πολλοῦ, πολλῷ… μεγάλου, μεγάλῳ…</p>`},
+<p class="muted" style="font-size:.83rem">πολύς and μέγας are regular second/first declension except in four slots each — masculine and neuter, nominative and accusative singular — giving three forms apiece: πολύς, πολύν, πολύ and μέγας, μέγαν, μέγα (neuter nominative and accusative are the same). Everything else: πολλοῦ, πολλῷ… μεγάλου, μεγάλῳ…</p>`},
 
 {t:"Personal pronouns",tags:"ego su autos I you he she it",
 html:`<table><caption>ἐγώ and σύ</caption>
@@ -272,6 +272,6 @@ html:`<table><caption>εἷς, μία, ἕν — one (and its negatives)</captio
 <tr><th>Gen</th><td class="g">ἑνός</td><td class="g">μιᾶς</td><td class="g">ἑνός</td></tr>
 <tr><th>Dat</th><td class="g">ἑνί</td><td class="g">μιᾷ</td><td class="g">ἑνί</td></tr>
 <tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
-<p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. δύο (two, dat δυσίν) · τρεῖς, τρία (three) · τέσσαρες, τέσσαρα (four) · πέντε five · ἕξ six · ἑπτά seven · δώδεκα twelve — from πέντε up they don't decline. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
+<p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. δύο (two, dat δυσίν) · τρεῖς, τρία (three) · τέσσαρες, τέσσαρα (four) · πέντε five · ἕξ six · ἑπτά seven · δώδεκα twelve — from πέντε up to a hundred they don't decline; the hundreds and thousands (διακόσιοι, χίλιοι, μύριοι) do. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
 
 ];

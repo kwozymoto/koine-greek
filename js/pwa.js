@@ -25,9 +25,12 @@ if("serviceWorker" in navigator){
     }).catch(()=>{});
   });
 
+  /* claim() fires controllerchange on the first ever load, where there is
+     nothing stale to replace — reloading there just jolts a new user. */
+  const hadController=!!navigator.serviceWorker.controller;
   let reloading=false;
   navigator.serviceWorker.addEventListener("controllerchange",()=>{
-    if(reloading) return;
+    if(!hadController || reloading) return;
     reloading=true;
     location.reload();
   });
@@ -133,6 +136,8 @@ function paintOffline() {
   const el = document.getElementById("offlineState");
   if (!el) return;
   const { have, total, complete } = OFFLINE;
+  if (!("serviceWorker" in navigator)) { el.textContent = "not available in this browser"; return; }
+  if (!navigator.serviceWorker.controller && !total) { el.textContent = "starting…"; return; }
   if (!total) { el.textContent = "checking…"; return; }
   el.textContent = complete
     ? "Ready — the whole app works offline"
