@@ -825,10 +825,8 @@ function renderProgress(){
         <select id="setSfx">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Word audio offline<br><small class="muted">8.8 MB, one tap</small></span>
-        <button class="btn ghost small" onclick="downloadAllAudio(this)">Download</button></div>
-      <div class="setrow"><span>New Testament offline<br><small class="muted">4.4 MB, all 27 books</small></span>
-        <button class="btn ghost small" onclick="downloadGnt(this)">Download</button></div>
+      <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
+        <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
       ${typeof installRowHtml==="function"?installRowHtml():""}
       ${(S.suspended||[]).length?`<div class="setrow"><span>Set-aside words</span>
         <button class="btn ghost small" onclick="unsuspendAll()">Restore ${(S.suspended||[]).length}</button></div>`:""}
@@ -872,6 +870,7 @@ function renderProgress(){
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  if(typeof paintOffline==="function"){ askOffline("offline-status"); paintOffline(); }
   document.getElementById("setSfx").onchange=e=>{
     S.sfx=+e.target.value; save();
     if(S.sfx) sfx("correct");            // let them hear what they picked

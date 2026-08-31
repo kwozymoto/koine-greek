@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v17';
+const VERSION = 'v18';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -29,6 +29,7 @@ const SHELL = [
   'data/readings.js',
   'data/audio.js',
   'data/gnt/manifest.json',
+  'data/offline.json',
   'data/paradigms.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
@@ -125,12 +126,79 @@ self.addEventListener('activate', e => {
     const keys = await caches.keys();
     await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)));
     await self.clients.claim();
+    fillBulk();                       // not awaited: the app is usable already
   })());
 });
 
+/* Everything else — word clips and the New Testament — pulled in the
+   background once the app is running. Deliberately not part of the install:
+   cache.addAll is all-or-nothing, and one failed response among 500 would
+   stop the worker installing at all. Here a failure costs one file.
+
+   Re-running is cheap because anything already cached is skipped, so the
+   page asks for a top-up on every load and an interrupted fill resumes. */
+let filling = false;
+
+async function post(msg) {
+  const cs = await self.clients.matchAll({ includeUncontrolled: true });
+  cs.forEach(c => c.postMessage(msg));
+}
+
+async function fillBulk() {
+  if (filling) return;
+  filling = true;
+  try {
+    const cache = await caches.open(CACHE);
+    const res = await cache.match('data/offline.json') || await fetch('data/offline.json');
+    const { bulk } = await res.json();
+
+    const queue = bulk.slice();
+    let done = 0, failed = 0;
+    const total = bulk.length;
+
+    const worker = async () => {
+      while (queue.length) {
+        const url = queue.shift();
+        try {
+          if (!(await cache.match(url))) {
+            const r = await fetch(url);
+            if (r.status === 200) await cache.put(url, r);
+            else failed++;
+          }
+        } catch (e) { failed++; }
+        done++;
+        if (done % 20 === 0) post({ type: 'offline-progress', done, total, failed });
+      }
+    };
+    // Six at a time: enough to be quick, few enough to leave the network
+    // responsive if the app is being used while this runs.
+    await Promise.all(Array.from({ length: 6 }, worker));
+    post({ type: 'offline-progress', done, total, failed, complete: true });
+  } catch (e) {
+    post({ type: 'offline-progress', error: true });
+  } finally {
+    filling = false;
+  }
+}
+
 self.addEventListener('message', e => {
   if (e.data === 'skip-waiting') self.skipWaiting();
+  if (e.data === 'ensure-offline') fillBulk();
+  if (e.data === 'offline-status') reportStatus();
 });
+
+async function reportStatus() {
+  try {
+    const cache = await caches.open(CACHE);
+    const res = await cache.match('data/offline.json') || await fetch('data/offline.json');
+    const { bulk } = await res.json();
+    let have = 0;
+    for (const u of bulk) if (await cache.match(u)) have++;
+    post({ type: 'offline-status', have, total: bulk.length });
+  } catch (e) {
+    post({ type: 'offline-status', error: true });
+  }
+}
 
 self.addEventListener('fetch', e => {
   const req = e.request;

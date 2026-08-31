@@ -104,3 +104,41 @@ function netState(){
 addEventListener("online",netState);
 addEventListener("offline",netState);
 netState();
+
+
+/* ---------- offline completeness ----------
+   The worker fills the cache on its own; the page nudges it on each load so
+   an interrupted fill resumes, and reports where it has got to. */
+
+let OFFLINE = { have: 0, total: 0, complete: false };
+
+navigator.serviceWorker && navigator.serviceWorker.addEventListener("message", e => {
+  const d = e.data || {};
+  if (d.type === "offline-progress") {
+    OFFLINE = { have: d.done, total: d.total, complete: !!d.complete, failed: d.failed || 0 };
+    paintOffline();
+  }
+  if (d.type === "offline-status" && !d.error) {
+    OFFLINE = { have: d.have, total: d.total, complete: d.have >= d.total };
+    paintOffline();
+  }
+});
+
+function askOffline(what) {
+  const sw = navigator.serviceWorker && navigator.serviceWorker.controller;
+  if (sw) sw.postMessage(what);
+}
+
+function paintOffline() {
+  const el = document.getElementById("offlineState");
+  if (!el) return;
+  const { have, total, complete } = OFFLINE;
+  if (!total) { el.textContent = "checking…"; return; }
+  el.textContent = complete
+    ? "Ready — the whole app works offline"
+    : `Saving for offline… ${have} of ${total}`;
+}
+
+addEventListener("load", () => {
+  setTimeout(() => { askOffline("ensure-offline"); askOffline("offline-status"); }, 1500);
+});
