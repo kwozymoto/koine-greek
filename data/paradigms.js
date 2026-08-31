@@ -253,7 +253,8 @@ html:`<table><caption>One case</caption>
 <tr><th>πρός</th><td>+ acc</td><td>to, toward, with</td></tr>
 <tr><th>σύν</th><td>+ dat</td><td>with</td></tr>
 <tr><th>πρό</th><td>+ gen</td><td>before</td></tr>
-<tr><th>ἀντί</th><td>+ gen</td><td>instead of, for</td></tr></table>
+<tr><th>ἀντί</th><td>+ gen</td><td>instead of, for</td></tr>
+<tr><th>ἀνά</th><td>+ acc</td><td>up, among; distributive — ἀνὰ δύο, two by two</td></tr></table>
 <table><caption>Two cases</caption>
 <tr><th>διά</th><td>gen: through · acc: because of</td></tr>
 <tr><th>μετά</th><td>gen: with · acc: after</td></tr>
@@ -264,6 +265,38 @@ html:`<table><caption>One case</caption>
 <table><caption>Three cases</caption>
 <tr><th>ἐπί</th><td>gen: on, over · dat: on, at, on the basis of · acc: on, against</td></tr>
 <tr><th>παρά</th><td>gen: from (a person) · dat: with, beside · acc: alongside, contrary to</td></tr></table>`},
+
+{t:"Look-alikes — one accent apart",tags:"accent breathing confusable eis heis ho he e ou ou on wn tis look alike",
+html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an accent or a breathing, and each pair is a live reading trap. Adjacent rows are the ones to keep apart.</p>
+<table>
+<tr><th>Form</th><th>What it is</th></tr>
+<tr><td class="g">ἀλλά</td><td>but</td></tr>
+<tr><td class="g">ἄλλα</td><td>other things — neuter plural of ἄλλος</td></tr>
+<tr><td class="g">αὐτή</td><td>she — αὐτός, feminine nominative</td></tr>
+<tr><td class="g">αὕτη</td><td>this woman — οὗτος, feminine nominative</td></tr>
+<tr><td class="g">αὐταί</td><td>they, feminine — αὐτός</td></tr>
+<tr><td class="g">αὗται</td><td>these women — οὗτος</td></tr>
+<tr><td class="g">εἰ</td><td>if</td></tr>
+<tr><td class="g">εἶ</td><td>you are</td></tr>
+<tr><td class="g">εἰς</td><td>into, to (+acc)</td></tr>
+<tr><td class="g">εἷς</td><td>one</td></tr>
+<tr><td class="g">ἔξω</td><td>outside</td></tr>
+<tr><td class="g">ἕξω</td><td>I will have — future of ἔχω</td></tr>
+<tr><td class="g">ἡ</td><td>the — feminine article</td></tr>
+<tr><td class="g">ἥ</td><td>who, which — relative, feminine</td></tr>
+<tr><td class="g">ἤ</td><td>or</td></tr>
+<tr><td class="g">ἦν</td><td>he was</td></tr>
+<tr><td class="g">ἥν</td><td>whom — relative, feminine accusative</td></tr>
+<tr><td class="g">ὁ</td><td>the — masculine article</td></tr>
+<tr><td class="g">ὅ</td><td>which — relative, neuter</td></tr>
+<tr><td class="g">ὄν</td><td>being — participle of εἰμί, neuter</td></tr>
+<tr><td class="g">ὅν</td><td>whom — relative, masculine accusative</td></tr>
+<tr><td class="g">οὐ</td><td>not</td></tr>
+<tr><td class="g">οὗ</td><td>of whom, where — relative, genitive</td></tr>
+<tr><td class="g">τίς, τί</td><td>who? what? — interrogative, always accented</td></tr>
+<tr><td class="g">τις, τι</td><td>someone, something — indefinite</td></tr>
+<tr><td class="g">ὤν</td><td>being — participle of εἰμί, masculine</td></tr>
+<tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>`},
 
 {t:"Numbers",tags:"one two three heis mia hen numerals",
 html:`<table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>

@@ -721,24 +721,66 @@ function buildDrill(n=8){
   });
 }
 
-/* ---- principal parts ---- */
+/* ---- principal parts ----
+   From Black's Appendix 9, with every form checked against the SBLGNT's own
+   parse codes by tense *and* voice — the fourth column is the perfect
+   ACTIVE, so a perfect middle like δεδόξασμαι must not be allowed to stand
+   in for one. A dash means that part does not occur in the New Testament,
+   and the drill never asks for it. ἵστημι is left out on purpose: it has two
+   aorists, ἔστησα "I set" and ἔστην "I stood", so there is no single right
+   answer to ask for. */
 const PP=[
-["λέγω","ἐρῶ","εἶπον","εἴρηκα"],["ἔρχομαι","ἐλεύσομαι","ἦλθον","ἐλήλυθα"],
-["γίνομαι","γενήσομαι","ἐγενόμην","γέγονα"],["ὁράω","ὄψομαι","εἶδον","ἑώρακα"],
-["λαμβάνω","λήμψομαι","ἔλαβον","εἴληφα"],["δίδωμι","δώσω","ἔδωκα","δέδωκα"],
-["γινώσκω","γνώσομαι","ἔγνων","ἔγνωκα"],["εὑρίσκω","εὑρήσω","εὗρον","εὕρηκα"],
-["ἔχω","ἕξω","ἔσχον","ἔσχηκα"],["βάλλω","βαλῶ","ἔβαλον","βέβληκα"],
-["μένω","μενῶ","ἔμεινα","μεμένηκα"],["πίνω","πίομαι","ἔπιον","πέπωκα"],
-["πίπτω","πεσοῦμαι","ἔπεσον","πέπτωκα"],["φέρω","οἴσω","ἤνεγκα","—"],
-["ἀκούω","ἀκούσω","ἤκουσα","ἀκήκοα"],["ἐσθίω","φάγομαι","ἔφαγον","—"]
+["λέγω","ἐρῶ","εἶπον","εἴρηκα"],
+["ἔχω","ἔξω","ἔσχον","ἔσχηκα"],
+["γίνομαι","γενήσομαι","ἐγενόμην","γέγονα"],
+["ἔρχομαι","ἐλεύσομαι","ἦλθον","ἐλήλυθα"],
+["ποιέω","ποιήσω","ἐποίησα","πεποίηκα"],
+["ὁράω","ὄψομαι","εἶδον","ἑώρακα"],
+["ἀκούω","ἀκούσω","ἤκουσα","ἀκήκοα"],
+["δίδωμι","δώσω","ἔδωκα","δέδωκα"],
+["λαμβάνω","λήμψομαι","ἔλαβον","εἴληφα"],
+["πιστεύω","πιστεύσω","ἐπίστευσα","πεπίστευκα"],
+["γινώσκω","γνώσομαι","ἔγνων","ἔγνωκα"],
+["γράφω","γράψω","ἔγραψα","γέγραφα"],
+["εὑρίσκω","εὑρήσω","εὗρον","εὕρηκα"],
+["ἐσθίω","φάγομαι","ἔφαγον","—"],
+["καλέω","καλέσω","ἐκάλεσα","κέκληκα"],
+["ἐγείρω","ἐγερῶ","ἤγειρα","—"],
+["ἀγαπάω","ἀγαπήσω","ἠγάπησα","ἠγάπηκα"],
+["ἀφίημι","ἀφήσω","ἀφῆκα","—"],
+["βάλλω","βαλῶ","ἔβαλον","βέβληκα"],
+["μένω","μενῶ","ἔμεινα","—"],
+["κρίνω","κρινῶ","ἔκρινα","κέκρικα"],
+["σώζω","σώσω","ἔσωσα","σέσωκα"],
+["αἴρω","ἀρῶ","ἦρα","ἦρκα"],
+["τίθημι","θήσω","ἔθηκα","τέθεικα"],
+["διδάσκω","διδάξω","ἐδίδαξα","—"],
+["πίπτω","πεσοῦμαι","ἔπεσον","πέπτωκα"],
+["πέμπω","πέμψω","ἔπεμψα","—"],
+["πίνω","πίομαι","ἔπιον","πέπωκα"],
+["τηρέω","τηρήσω","ἐτήρησα","τετήρηκα"],
+["ἄγω","ἄξω","ἤγαγον","—"],
+["φέρω","οἴσω","ἤνεγκα","—"],
+["δοξάζω","δοξάσω","ἐδόξασα","—"],
+["κηρύσσω","—","ἐκήρυξα","—"],
+["πείθω","πείσω","ἔπεισα","πέποιθα"],
+["θεραπεύω","θεραπεύσω","ἐθεράπευσα","—"],
+["ἁμαρτάνω","ἁμαρτήσω","ἥμαρτον","ἡμάρτηκα"],
+["λύω","—","ἔλυσα","—"],
+["πάσχω","—","ἔπαθον","πέπονθα"],
+["ἑτοιμάζω","—","ἡτοίμασα","ἡτοίμακα"],
+["ἐλπίζω","ἐλπιῶ","ἤλπισα","ἤλπικα"],
+["φιλέω","—","ἐφίλησα","πεφίληκα"]
 ];
 const PP_LBL=["future","aorist","perfect"];
 function ppDrill(n=10){
   const qs=[];
   const pool=PP.slice().sort(()=>Math.random()-.5).slice(0,n);
   pool.forEach(v=>{
-    let slot=1+Math.floor(Math.random()*3);
-    while(v[slot]==="—") slot=1+Math.floor(Math.random()*3);
+    // Choose among the parts this verb actually has. The old loop rerolled
+    // until it missed a dash, which spins for ever on a verb with none.
+    const have=[1,2,3].filter(k=>v[k]!=="—");
+    const slot=have[Math.floor(Math.random()*have.length)];
     const wrong=PP.filter(x=>x!==v && x[slot]!=="—").sort(()=>Math.random()-.5).slice(0,3).map(x=>x[slot]);
     const opts=[v[slot],...wrong].sort(()=>Math.random()-.5);
     qs.push(mcq(`The ${PP_LBL[slot-1]} of <span class="q-gk">${v[0]}</span> is:`,
@@ -746,6 +788,45 @@ function ppDrill(n=10){
       `<span class="gk">${v[0]}, ${v[1]}, ${v[2]}, ${v[3]}</span> — say the whole line aloud; the parts stick as a chant.`));
   });
   return qs;
+}
+
+/* ---- look-alikes ----
+   Words separated by nothing but an accent or a breathing. Each of these has
+   cost a reader a sentence at some point: εἰς/εἷς, ἡ/ἥ/ἤ, οὐ/οὗ, ὤν/ὧν. The
+   distractors are drawn from the same group first, because those are the
+   ones actually confusable — a question answerable without looking closely
+   would teach nothing. */
+const LOOKALIKE=[
+ [["ἀλλά","but"],["ἄλλα","other things — neuter plural of ἄλλος"]],
+ [["αὐτή","she — αὐτός, feminine nominative"],["αὕτη","this woman — οὗτος, feminine nominative"]],
+ [["αὐταί","they, feminine — αὐτός"],["αὗται","these women — οὗτος"]],
+ [["εἰ","if"],["εἶ","you are"]],
+ [["εἰς","into, to (+acc)"],["εἷς","one"]],
+ [["ἔξω","outside"],["ἕξω","I will have — future of ἔχω"]],
+ [["ἡ","the — feminine article"],["ἥ","who, which — relative, feminine"],["ἤ","or"]],
+ [["ἦν","he was"],["ἥν","whom — relative, feminine accusative"]],
+ [["ὁ","the — masculine article"],["ὅ","which — relative, neuter"]],
+ [["ὄν","being — participle of εἰμί, neuter"],["ὅν","whom — relative, masculine accusative"]],
+ [["οὐ","not"],["οὗ","of whom, where — relative, genitive"]],
+ [["τίς","who? what? — interrogative, always accented"],["τις","someone, a certain one — indefinite"]],
+ [["ὤν","being — participle of εἰμί, masculine"],["ὧν","of whom — relative, genitive plural"]]
+];
+function lookalikeDrill(n=12){
+  const flat=[];
+  LOOKALIKE.forEach((g,gi)=>g.forEach(m=>flat.push({form:m[0],desc:m[1],gi})));
+  return flat.sort(()=>Math.random()-.5).slice(0,n).map(x=>{
+    const near=LOOKALIKE[x.gi].map(m=>m[1]).filter(d=>d!==x.desc);
+    const far=flat.filter(y=>y.gi!==x.gi).sort(()=>Math.random()-.5).map(y=>y.desc);
+    const wrong=[...new Set([...near,...far])].filter(d=>d!==x.desc).slice(0,3);
+    const opts=[x.desc,...wrong].sort(()=>Math.random()-.5);
+    return mcq(`<span class="q-gk lg">${x.form}</span>
+      <p class="muted" style="font-size:.84rem;margin:10px 0 0">Which word is this?</p>`,
+      opts, opts.indexOf(x.desc),
+      // The whole group with its meanings: knowing what the other one is,
+      // is the entire point of the exercise.
+      `One accent or breathing apart:<br>${LOOKALIKE[x.gi]
+        .map(m=>`<span class="gk">${m[0]}</span> — ${m[1]}`).join("<br>")}`);
+  });
 }
 
 /* ---- case functions: the exegetical instinct drill ---- */
@@ -893,6 +974,7 @@ const DRILLS=[
 ["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
 ["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
 ["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
+["Look-alikes","εἰς or εἷς · ἡ or ἥ or ἤ — one accent apart",()=>startSession(lookalikeDrill(),"d")],
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")]
 ];
 function renderDrill(){

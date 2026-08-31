@@ -29,3 +29,7 @@ AUDIT.md
 # The app carries an array of VOCAB indices per chapter, never Black's prose,
 # his exercises or his glosses.
 Black/
+
+# Raw pack for the 41 appended words. Only the copies in audio/vocab/ ship;
+# the cue sheet is preserved in docs/erasmian_vocab_cues_v3_black.json.
+audio/Erasmian_Vocab_Append41/

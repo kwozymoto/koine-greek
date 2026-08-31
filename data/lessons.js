@@ -282,7 +282,7 @@ body:`<p>Many Greek prepositions take more than one case, and the case changes t
 <tr><td class="g">διά</td><td>through</td><td>—</td><td>because of</td></tr>
 <tr><td class="g">κατά</td><td>down from, against</td><td>—</td><td>according to</td></tr>
 <tr><td class="g">μετά</td><td>with</td><td>—</td><td>after</td></tr>
-<tr><td class="g">παρά</td><td>from</td><td>beside, with</td><td>alongside</td></tr>
+<tr><td class="g">παρά</td><td>from (a person)</td><td>with, at the side of</td><td>alongside; contrary to</td></tr>
 <tr><td class="g">ὑπέρ</td><td>on behalf of</td><td>—</td><td>above, beyond</td></tr>
 <tr><td class="g">ὑπό</td><td>by (agent)</td><td>—</td><td>under</td></tr>
 <tr><td class="g">ἐπί</td><td>on, over</td><td>on, at</td><td>on, to, against</td></tr></table>
