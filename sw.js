@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v15';
+const VERSION = 'v16';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -35,6 +35,49 @@ const SHELL = [
   'icons/icon-512.png',
   'icons/maskable-512.png',
   'audio/erasmian-alphabet-chart.pdf',
+  /* 42 shared lexical forms — 520KB, small enough to always have */
+  'audio/forms/f01_he.mp3',
+  'audio/forms/f02_ho.mp3',
+  'audio/forms/f03_to.mp3',
+  'audio/forms/f04_ouk.mp3',
+  'audio/forms/f05_ouch.mp3',
+  'audio/forms/f06_he_rel.mp3',
+  'audio/forms/f07_ho_rel.mp3',
+  'audio/forms/f08_pasa.mp3',
+  'audio/forms/f09_pan.mp3',
+  'audio/forms/f10_ex.mp3',
+  'audio/forms/f11_ti_int.mp3',
+  'audio/forms/f12_ti_ind.mp3',
+  'audio/forms/f13_polle.mp3',
+  'audio/forms/f14_polu.mp3',
+  'audio/forms/f15_patros.mp3',
+  'audio/forms/f16_mia.mp3',
+  'audio/forms/f17_hen.mp3',
+  'audio/forms/f18_ges.mp3',
+  'audio/forms/f19_megale.mp3',
+  'audio/forms/f20_mega.mp3',
+  'audio/forms/f21_oudemia.mp3',
+  'audio/forms/f22_ouden.mp3',
+  'audio/forms/f23_andros.mp3',
+  'audio/forms/f24_gunaikos.mp3',
+  'audio/forms/f25_cheiros.mp3',
+  'audio/forms/f26_hetis.mp3',
+  'audio/forms/f27_ho_ti.mp3',
+  'audio/forms/f28_sarkos.mp3',
+  'audio/forms/f29_podos.mp3',
+  'audio/forms/f30_metros.mp3',
+  'audio/forms/f31_photos.mp3',
+  'audio/forms/f32_haute.mp3',
+  'audio/forms/f33_touto.mp3',
+  'audio/forms/f34_medemia.mp3',
+  'audio/forms/f35_meden.mp3',
+  'audio/forms/f36_hudatos.mp3',
+  'audio/forms/f37_puros.mp3',
+  'audio/forms/f38_tria.mp3',
+  'audio/forms/f39_ta.mp3',
+  'audio/forms/f40_orous.mp3',
+  'audio/forms/f41_nuktos.mp3',
+  'audio/forms/f42_otos.mp3',
   'audio/ui/correct.mp3',
   'audio/ui/wrong.mp3',
 

@@ -150,3 +150,42 @@ function sfx(kind) {
   const p = sfxEl.play();
   if (p && p.catch) p.catch(() => {});
 }
+
+/* ---------- lexical forms ---------- */
+const FORM_AUDIO_DIR = "audio/forms/";
+
+function playForm(form, tile) {
+  const file = FORM_AUDIO[form];
+  if (!file) return false;
+  warmClip(FORM_AUDIO_DIR + file);
+  const a = sndInit();
+  sndClear();
+  try { a.pause(); } catch (e) {}
+  a.src = FORM_AUDIO_DIR + file;
+  a.currentTime = 0;
+  if (tile) { sndTile = tile; tile.classList.add("playing"); }
+  const p = a.play();
+  if (p && p.catch) p.catch(() => sndClear());
+  return true;
+}
+
+/* Headword, then each extra form in turn — "θεός … ὁ". */
+let formRun = 0;
+function playEntry(i) {
+  const run = ++formRun;
+  const extras = extraForms(i);
+  const a = sndInit();
+  playWord(i, null);
+  let k = 0;
+  a.onended = () => {
+    sndClear();
+    if (run !== formRun || k >= extras.length) { a.onended = null; return; }
+    const next = extras[k++];
+    setTimeout(() => { if (run === formRun) playForm(next.form, null); }, 240);
+  };
+}
+function stopEntry() {
+  formRun++;
+  if (sndEl) { try { sndEl.pause(); } catch (e) {} sndEl.onended = null; }
+  sndClear();
+}

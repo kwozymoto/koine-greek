@@ -235,7 +235,7 @@ function flashcard(i){
         ${VOCAB_AUDIO[i]?`<button class="btn ghost small" style="margin-top:10px" onclick="playWord(${i},null)">\uD83D\uDD0A Hear it</button>`:""}
         <div class="rule"></div>
         <div class="ans" id="ans" style="visibility:hidden">${v[1]}</div>
-        <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span> · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
+        <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span>${extraForms(i).length?` <button class="mini" onclick="playEntry(${i})" aria-label="Hear the whole entry">\uD83D\uDD0A</button>`:""} · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
       </div>
       <button class="btn" id="show">Show meaning</button>`;
     document.getElementById("show").onclick=()=>{
@@ -769,7 +769,7 @@ function renderLookup(){
              ||(latin && LK_LATIN[x.i].includes(ql)))   // typed in Latin letters
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
   body.innerHTML = hits.length ? hits.map(({v,i})=>`
-    <button class="lk" onclick="playWord(${i},this)">
+    <button class="lk" onclick="${extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
       <span class="w"><b>${v[0]}</b><span>${v[1]}</span></span>
       <span class="fq">${v[2]}\u00d7</span>

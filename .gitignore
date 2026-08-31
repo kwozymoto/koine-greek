@@ -20,3 +20,6 @@ audio/Erasmian_Vocab_Pilot27/
 audio/*.zip
 audio/Erasmian_Koine_Vocab_Bare_v2/
 audio/Erasmian_Vocab_FlaggedFixes/
+extra_forms_worklist.tsv
+extra_forms_pack.json
+audio/Erasmian_Vocab_ExtraForms/

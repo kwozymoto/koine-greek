@@ -239,3 +239,8 @@ body[data-gk="xl"] .fc .word{font-size:3.5rem}
 .install .x{flex:0 0 auto;width:28px;height:28px;border-radius:50%;color:var(--muted);
   font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center}
 .install .x:active{background:var(--surface)}
+
+/* play the whole lexical entry */
+.mini{font-size:.72rem;padding:2px 7px;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);vertical-align:middle;line-height:1.6}
+.mini:active{background:var(--surface-2)}

@@ -1,0 +1,470 @@
+[
+  {
+    "n": 1,
+    "filename": "f01_he.mp3",
+    "greek": "ἡ",
+    "tts": "hay",
+    "used_by_entries": 66,
+    "examples": [
+      "ὁ, ἡ, τό",
+      "ἡμέρα, -ας, ἡ",
+      "γῆ, γῆς, ἡ"
+    ],
+    "duration_s": 0.836
+  },
+  {
+    "n": 2,
+    "filename": "f02_ho.mp3",
+    "greek": "ὁ",
+    "tts": "ho",
+    "used_by_entries": 63,
+    "examples": [
+      "θεός, -οῦ, ὁ",
+      "Ἰησοῦς, -οῦ, ὁ",
+      "κύριος, -ου, ὁ"
+    ],
+    "duration_s": 0.836
+  },
+  {
+    "n": 3,
+    "filename": "f03_to.mp3",
+    "greek": "τό",
+    "tts": "taw",
+    "used_by_entries": 39,
+    "examples": [
+      "ὁ, ἡ, τό",
+      "πνεῦμα, -ατος, τό",
+      "ὄνομα, -ατος, τό"
+    ],
+    "duration_s": 0.94
+  },
+  {
+    "n": 4,
+    "filename": "f04_ouk.mp3",
+    "greek": "οὐκ",
+    "tts": "ook",
+    "used_by_entries": 1,
+    "examples": [
+      "οὐ, οὐκ, οὐχ"
+    ],
+    "duration_s": 0.784
+  },
+  {
+    "n": 5,
+    "filename": "f05_ouch.mp3",
+    "greek": "οὐχ",
+    "tts": "ooch",
+    "used_by_entries": 1,
+    "examples": [
+      "οὐ, οὐκ, οὐχ"
+    ],
+    "duration_s": 1.045
+  },
+  {
+    "n": 6,
+    "filename": "f06_he_rel.mp3",
+    "greek": "ἥ",
+    "tts": "hay",
+    "used_by_entries": 1,
+    "examples": [
+      "ὅς, ἥ, ὅ"
+    ],
+    "duration_s": 0.836
+  },
+  {
+    "n": 7,
+    "filename": "f07_ho_rel.mp3",
+    "greek": "ὅ",
+    "tts": "ho",
+    "used_by_entries": 1,
+    "examples": [
+      "ὅς, ἥ, ὅ"
+    ],
+    "duration_s": 0.836
+  },
+  {
+    "n": 8,
+    "filename": "f08_pasa.mp3",
+    "greek": "πᾶσα",
+    "tts": "pah sah",
+    "used_by_entries": 1,
+    "examples": [
+      "πᾶς, πᾶσα, πᾶν"
+    ],
+    "duration_s": 1.306
+  },
+  {
+    "n": 9,
+    "filename": "f09_pan.mp3",
+    "greek": "πᾶν",
+    "tts": "pahn",
+    "used_by_entries": 1,
+    "examples": [
+      "πᾶς, πᾶσα, πᾶν"
+    ],
+    "duration_s": 0.993
+  },
+  {
+    "n": 10,
+    "filename": "f10_ex.mp3",
+    "greek": "ἐξ",
+    "tts": "ex",
+    "used_by_entries": 1,
+    "examples": [
+      "ἐκ, ἐξ"
+    ],
+    "duration_s": 1.019
+  },
+  {
+    "n": 11,
+    "filename": "f11_ti_int.mp3",
+    "greek": "τί",
+    "tts": "tee",
+    "used_by_entries": 1,
+    "examples": [
+      "τίς, τί"
+    ],
+    "duration_s": 0.784
+  },
+  {
+    "n": 12,
+    "filename": "f12_ti_ind.mp3",
+    "greek": "τι",
+    "tts": "tee",
+    "used_by_entries": 1,
+    "examples": [
+      "τις, τι"
+    ],
+    "duration_s": 0.784
+  },
+  {
+    "n": 13,
+    "filename": "f13_polle.mp3",
+    "greek": "πολλή",
+    "tts": "pol lay",
+    "used_by_entries": 1,
+    "examples": [
+      "πολύς, πολλή, πολύ"
+    ],
+    "duration_s": 1.306
+  },
+  {
+    "n": 14,
+    "filename": "f14_polu.mp3",
+    "greek": "πολύ",
+    "tts": "po loo",
+    "used_by_entries": 1,
+    "examples": [
+      "πολύς, πολλή, πολύ"
+    ],
+    "duration_s": 1.019
+  },
+  {
+    "n": 15,
+    "filename": "f15_patros.mp3",
+    "greek": "πατρός",
+    "tts": "pa tross",
+    "used_by_entries": 1,
+    "examples": [
+      "πατήρ, πατρός, ὁ"
+    ],
+    "duration_s": 1.541
+  },
+  {
+    "n": 16,
+    "filename": "f16_mia.mp3",
+    "greek": "μία",
+    "tts": "mee ah",
+    "used_by_entries": 1,
+    "examples": [
+      "εἷς, μία, ἕν"
+    ],
+    "duration_s": 1.646
+  },
+  {
+    "n": 17,
+    "filename": "f17_hen.mp3",
+    "greek": "ἕν",
+    "tts": "hen",
+    "used_by_entries": 1,
+    "examples": [
+      "εἷς, μία, ἕν"
+    ],
+    "duration_s": 0.888
+  },
+  {
+    "n": 18,
+    "filename": "f18_ges.mp3",
+    "greek": "γῆς",
+    "tts": "gace",
+    "used_by_entries": 1,
+    "examples": [
+      "γῆ, γῆς, ἡ"
+    ],
+    "duration_s": 1.071
+  },
+  {
+    "n": 19,
+    "filename": "f19_megale.mp3",
+    "greek": "μεγάλη",
+    "tts": "meh gah lay",
+    "used_by_entries": 1,
+    "examples": [
+      "μέγας, μεγάλη, μέγα"
+    ],
+    "duration_s": 2.038
+  },
+  {
+    "n": 20,
+    "filename": "f20_mega.mp3",
+    "greek": "μέγα",
+    "tts": "meh gah",
+    "used_by_entries": 1,
+    "examples": [
+      "μέγας, μεγάλη, μέγα"
+    ],
+    "duration_s": 1.541
+  },
+  {
+    "n": 21,
+    "filename": "f21_oudemia.mp3",
+    "greek": "οὐδεμία",
+    "tts": "oo deh mee ah",
+    "used_by_entries": 1,
+    "examples": [
+      "οὐδείς, οὐδεμία, οὐδέν"
+    ],
+    "duration_s": 2.09
+  },
+  {
+    "n": 22,
+    "filename": "f22_ouden.mp3",
+    "greek": "οὐδέν",
+    "tts": "oo den",
+    "used_by_entries": 1,
+    "examples": [
+      "οὐδείς, οὐδεμία, οὐδέν"
+    ],
+    "duration_s": 1.045
+  },
+  {
+    "n": 23,
+    "filename": "f23_andros.mp3",
+    "greek": "ἀνδρός",
+    "tts": "an dross",
+    "used_by_entries": 1,
+    "examples": [
+      "ἀνήρ, ἀνδρός, ὁ"
+    ],
+    "duration_s": 1.306
+  },
+  {
+    "n": 24,
+    "filename": "f24_gunaikos.mp3",
+    "greek": "γυναικός",
+    "tts": "goo nay koss",
+    "used_by_entries": 1,
+    "examples": [
+      "γυνή, γυναικός, ἡ"
+    ],
+    "duration_s": 1.62
+  },
+  {
+    "n": 25,
+    "filename": "f25_cheiros.mp3",
+    "greek": "χειρός",
+    "tts": "chay ross",
+    "used_by_entries": 1,
+    "examples": [
+      "χείρ, χειρός, ἡ"
+    ],
+    "duration_s": 1.149
+  },
+  {
+    "n": 26,
+    "filename": "f26_hetis.mp3",
+    "greek": "ἥτις",
+    "tts": "hay tis",
+    "used_by_entries": 1,
+    "examples": [
+      "ὅστις, ἥτις, ὅ τι"
+    ],
+    "duration_s": 1.384
+  },
+  {
+    "n": 27,
+    "filename": "f27_ho_ti.mp3",
+    "greek": "ὅ τι",
+    "tts": "ho tee",
+    "used_by_entries": 1,
+    "examples": [
+      "ὅστις, ἥτις, ὅ τι"
+    ],
+    "duration_s": 1.149
+  },
+  {
+    "n": 28,
+    "filename": "f28_sarkos.mp3",
+    "greek": "σαρκός",
+    "tts": "sar koss",
+    "used_by_entries": 1,
+    "examples": [
+      "σάρξ, σαρκός, ἡ"
+    ],
+    "duration_s": 1.672
+  },
+  {
+    "n": 29,
+    "filename": "f29_podos.mp3",
+    "greek": "ποδός",
+    "tts": "po doss",
+    "used_by_entries": 1,
+    "examples": [
+      "πούς, ποδός, ὁ"
+    ],
+    "duration_s": 1.228
+  },
+  {
+    "n": 30,
+    "filename": "f30_metros.mp3",
+    "greek": "μητρός",
+    "tts": "may tross",
+    "used_by_entries": 1,
+    "examples": [
+      "μήτηρ, μητρός, ἡ"
+    ],
+    "duration_s": 1.646
+  },
+  {
+    "n": 31,
+    "filename": "f31_photos.mp3",
+    "greek": "φωτός",
+    "tts": "fo toss",
+    "used_by_entries": 1,
+    "examples": [
+      "φῶς, φωτός, τό"
+    ],
+    "duration_s": 1.228
+  },
+  {
+    "n": 32,
+    "filename": "f32_haute.mp3",
+    "greek": "αὕτη",
+    "tts": "how tay",
+    "used_by_entries": 1,
+    "examples": [
+      "οὗτος, αὕτη, τοῦτο"
+    ],
+    "duration_s": 1.202
+  },
+  {
+    "n": 33,
+    "filename": "f33_touto.mp3",
+    "greek": "τοῦτο",
+    "tts": "too toe",
+    "used_by_entries": 1,
+    "examples": [
+      "οὗτος, αὕτη, τοῦτο"
+    ],
+    "duration_s": 1.045
+  },
+  {
+    "n": 34,
+    "filename": "f34_medemia.mp3",
+    "greek": "μηδεμία",
+    "tts": "may deh mee ah",
+    "used_by_entries": 1,
+    "examples": [
+      "μηδείς, μηδεμία, μηδέν"
+    ],
+    "duration_s": 2.273
+  },
+  {
+    "n": 35,
+    "filename": "f35_meden.mp3",
+    "greek": "μηδέν",
+    "tts": "may den",
+    "used_by_entries": 1,
+    "examples": [
+      "μηδείς, μηδεμία, μηδέν"
+    ],
+    "duration_s": 1.202
+  },
+  {
+    "n": 36,
+    "filename": "f36_hudatos.mp3",
+    "greek": "ὕδατος",
+    "tts": "hoo dah toss",
+    "used_by_entries": 1,
+    "examples": [
+      "ὕδωρ, ὕδατος, τό"
+    ],
+    "duration_s": 1.541
+  },
+  {
+    "n": 37,
+    "filename": "f37_puros.mp3",
+    "greek": "πυρός",
+    "tts": "poo ross",
+    "used_by_entries": 1,
+    "examples": [
+      "πῦρ, πυρός, τό"
+    ],
+    "duration_s": 1.254
+  },
+  {
+    "n": 38,
+    "filename": "f38_tria.mp3",
+    "greek": "τρία",
+    "tts": "tree ah",
+    "used_by_entries": 1,
+    "examples": [
+      "τρεῖς, τρία"
+    ],
+    "duration_s": 1.176
+  },
+  {
+    "n": 39,
+    "filename": "f39_ta.mp3",
+    "greek": "τά",
+    "tts": "tah",
+    "used_by_entries": 1,
+    "examples": [
+      "Ἱεροσόλυμα, τά"
+    ],
+    "duration_s": 0.94
+  },
+  {
+    "n": 40,
+    "filename": "f40_orous.mp3",
+    "greek": "ὄρους",
+    "tts": "o rooss",
+    "used_by_entries": 1,
+    "examples": [
+      "ὄρος, ὄρους, τό"
+    ],
+    "duration_s": 1.254
+  },
+  {
+    "n": 41,
+    "filename": "f41_nuktos.mp3",
+    "greek": "νυκτός",
+    "tts": "nook toss",
+    "used_by_entries": 1,
+    "examples": [
+      "νύξ, νυκτός, ἡ"
+    ],
+    "duration_s": 1.541
+  },
+  {
+    "n": 42,
+    "filename": "f42_otos.mp3",
+    "greek": "ὠτός",
+    "tts": "oh toss",
+    "used_by_entries": 1,
+    "examples": [
+      "οὖς, ὠτός, τό"
+    ],
+    "duration_s": 1.306
+  }
+]
