@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v12';
+const VERSION = 'v13';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -35,6 +35,8 @@ const SHELL = [
   'icons/icon-512.png',
   'icons/maskable-512.png',
   'audio/erasmian-alphabet-chart.pdf',
+  'audio/ui/correct.mp3',
+  'audio/ui/wrong.mp3',
 
   /* pronunciation clips — 540KB, cached so audio works offline */
   'audio/clips/01_alpha.mp3',

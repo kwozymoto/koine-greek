@@ -304,6 +304,7 @@ function mcq(q,opts,ans,why){
         document.getElementById("fb").innerHTML=
           `<div class="feedback"><b>${k===ans?"Correct":"Not quite"}</b>${why}</div>
            <button class="btn" onclick="qi++;step()">Continue</button>`;
+        sfx(k===ans?"correct":"wrong");
         if(k===ans) addXp(2);
       };
       box.appendChild(btn);
@@ -480,6 +481,7 @@ function buildDrill(n=8){
         `<div class="feedback"><b>${ok?"Correct":"Not quite"}</b>
          <span class="gk">${form}</span> — ${tense} ${voice} ind ${person}${number}.</div>
          <button class="btn" onclick="qi++;step()">Continue</button>`;
+      sfx(ok?"correct":"wrong");
       if(ok) addXp(3);
     };
   });
@@ -819,6 +821,8 @@ function renderProgress(){
       <h3 style="margin-top:0">Settings</h3>
       <div class="setrow"><span>Daily review goal</span>
         <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+      <div class="setrow"><span>Answer sounds</span>
+        <select id="setSfx">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Word audio offline<br><small class="muted">8.8 MB, one tap</small></span>
@@ -868,6 +872,10 @@ function renderProgress(){
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  document.getElementById("setSfx").onchange=e=>{
+    S.sfx=+e.target.value; save();
+    if(S.sfx) sfx("correct");            // let them hear what they picked
+  };
   document.getElementById("setPlace").onchange=e=>{
     const n=+e.target.value; if(!n)return;
     S.lessons=Array.from({length:n},(_,k)=>k+1); save(); checkBadges();

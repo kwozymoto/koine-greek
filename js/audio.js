@@ -125,3 +125,28 @@ async function downloadAllAudio(btn) {
   if (btn) btn.textContent = failed ? `Downloaded, ${failed} failed` : "Audio saved for offline use";
   toast(failed ? `${failed} clips could not be fetched` : "All word audio is now offline");
 }
+
+/* ---------- answer feedback tones ----------
+   Short sine tones rather than anything voiced: quiet, soft-edged, and under
+   a third of a second, because this plays many times in a ten-minute review
+   and anything sharp would grate by the third day. The wrong-answer tone is
+   a gentle fall, not a buzzer — getting a word wrong is the normal path
+   through a review, not a failure worth punishing.
+
+   Its own Audio element, so a chime can never cut a word clip short. */
+
+const SFX_FILES = { correct: "audio/ui/correct.mp3", wrong: "audio/ui/wrong.mp3" };
+let sfxEl = null;
+
+/* S.sfx — 0 off · 1 correct only · 2 both. */
+function sfx(kind) {
+  const mode = (typeof S === "undefined" || S.sfx === undefined) ? 2 : S.sfx;
+  if (!mode) return;
+  if (kind === "wrong" && mode < 2) return;
+  if (!sfxEl) { sfxEl = new Audio(); sfxEl.preload = "auto"; sfxEl.volume = 0.9; }
+  try { sfxEl.pause(); } catch (e) {}
+  sfxEl.src = SFX_FILES[kind];
+  sfxEl.currentTime = 0;
+  const p = sfxEl.play();
+  if (p && p.catch) p.catch(() => {});
+}
