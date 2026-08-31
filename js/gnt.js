@@ -5,9 +5,10 @@
    you have opened works offline. Settings offers a bulk download.
 
    Data shape (built by scratchpad/build_gnt.py from MorphGNT/SBLGNT):
-     manifest.json  {lemmas[], gloss[], pos[], books[{a,t,ch[]}]}
-     <Abbr>.json    {a,t,c:[ chapter[ verse[ word ] ] ]}
+     manifest.json  {lemmas[], gloss[], pos[], books[{a,t,n[],ch[]}]}
+     <Abbr>.json    {a,t,n:[chapterNo], c:[ chapter[ [verseNo, words] ] ]}
      word           [text, lemmaIdx, posIdx, parseCode]
+   Chapter and verse numbers are stored, never inferred from array position.
 
    Every word gets a full parse; about 85% also carry a gloss, drawn from
    the course vocabulary. The rest show their parse and lemma, which is the
@@ -93,7 +94,7 @@ async function openGntBook(abbr) {
     `<button class="btn ghost small" onclick="openGnt()">← Books</button>`;
   body.innerHTML = `<h2>${meta.t}</h2>
     <div class="ch-grid">${meta.ch.map((_, k) =>
-      `<button class="ch" onclick="openGntChapter('${abbr}',${k})">${k + 1}</button>`).join("")}</div>
+      `<button class="ch" onclick="openGntChapter('${abbr}',${k})">${meta.n?meta.n[k]:k+1}</button>`).join("")}</div>
     <div style="height:20px"></div>`;
 }
 
@@ -106,22 +107,26 @@ async function openGntChapter(abbr, ch) {
   document.getElementById("readList").innerHTML =
     `<button class="btn ghost small" onclick="openGntBook('${abbr}')">← ${meta.t}</button>`;
 
+  /* Each verse is [number, words]. The number is the real reference, not the
+     array position: SBLGNT omits passages such as John 7:53-8:11, so numbering
+     by position made every verse in John 8 read eleven low — a citation you
+     could carry into a sermon. */
   const verses = book.c[ch];
   const html = verses.map((v, vi) =>
-    `<span class="vn">${vi + 1}</span>` +
-    v.map((w, wi) => `<w data-v="${vi}" data-w="${wi}">${w[0]}</w>`).join(" ")
+    `<span class="vn">${v[0]}</span>` +
+    v[1].map((w, wi) => `<w data-v="${vi}" data-w="${wi}">${w[0]}</w>`).join(" ")
   ).join(" ");
 
   document.getElementById("readBody").innerHTML = `
     <div class="between" style="margin-bottom:6px">
-      <h2 style="margin:0">${meta.t} ${ch + 1}</h2>
+      <h2 style="margin:0">${meta.t} ${meta.n?meta.n[ch]:ch+1}</h2>
       <span class="muted" style="font-size:.8rem">${verses.length} verses</span>
     </div>
     <div class="passage gnt" id="psg">${html}</div>
     <div class="gloss" id="gloss"><div class="d">Tap a word for its parsing.</div></div>
     <div class="row" style="margin-top:14px">
-      ${ch > 0 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch - 1})">← ${ch}</button>` : ""}
-      ${ch < meta.ch.length - 1 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch + 1})">${ch + 2} →</button>` : ""}
+      ${ch > 0 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch - 1})">← ${meta.n?meta.n[ch-1]:ch}</button>` : ""}
+      ${ch < meta.ch.length - 1 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch + 1})">${meta.n?meta.n[ch+1]:ch+2} →</button>` : ""}
     </div>
     <div style="height:20px"></div>`;
 
@@ -129,7 +134,7 @@ async function openGntChapter(abbr, ch) {
     if (e.target.tagName !== "W") return;
     document.querySelectorAll("#psg w").forEach(x => x.classList.remove("tapped"));
     e.target.classList.add("tapped");
-    const w = verses[+e.target.dataset.v][+e.target.dataset.w];
+    const w = verses[+e.target.dataset.v][1][+e.target.dataset.w];
     const lemma = GNT.lemmas[w[1]], gloss = GNT.gloss[w[1]];
     const parse = gntParse(GNT.pos[w[2]], w[3]);
     document.getElementById("gloss").innerHTML =

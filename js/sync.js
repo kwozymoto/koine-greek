@@ -64,15 +64,18 @@ function mergeStates(local, remote) {
 }
 
 /* ---- transport ---- */
+/* Returns "ok" | "empty" | "fail". The caller must be able to tell "the
+   server has nothing yet" from "the request failed" — pushing on the second
+   would write this device's empty deck over a good remote one. */
 async function syncPull() {
-  if (!SYNC_URL || !SYNC || !SYNC.id || syncBusy) return false;
+  if (!SYNC_URL || !SYNC || !SYNC.id || syncBusy) return "fail";
   syncBusy = true;
   try {
     const r = await fetch(SYNC_URL + "/sync/" + SYNC.id, { cache: "no-store" });
-    if (r.status === 404) return false;              // nothing remote yet
+    if (r.status === 404) return "empty";            // nothing remote yet
     if (!r.ok) throw new Error(r.status);
     const env = await r.json();
-    if (!env || typeof env.data !== "object") return false;
+    if (!env || typeof env.data !== "object") return "empty";
     const merged = mergeStates(S, env.data);
     const changedLocal  = JSON.stringify(merged) !== JSON.stringify(S);
     const changedRemote = JSON.stringify(merged.cards) !== JSON.stringify(env.data.cards)
@@ -83,8 +86,8 @@ async function syncPull() {
     }
     SYNC.last = new Date().toISOString(); syncSave();
     if (changedRemote) syncPushSoon(2000);
-    return changedLocal;
-  } catch (e) { return false; }
+    return changedLocal ? "ok" : "ok";
+  } catch (e) { return "fail"; }
   finally { syncBusy = false; }
 }
 
@@ -140,11 +143,16 @@ async function syncOn() {
   const phrase = (el.value || "").trim();
   if (phrase.length < 8) { toast("Use at least 8 characters"); return; }
   SYNC = { id: await syncIdFromPhrase(phrase), last: null };
-  syncSave();
   const pulled = await syncPull();
+  if (pulled === "fail") {
+    SYNC = null;                       // do not remember an id we never reached
+    toast("Could not reach sync — check your connection and try again");
+    return;
+  }
+  syncSave();
   await syncPushNow();
   renderProgress();
-  toast(pulled ? "Synced — progress from your other device merged in" : "Sync is on");
+  toast(pulled === "ok" ? "Synced — progress from your other device merged in" : "Sync is on");
 }
 function syncOff() {
   SYNC = null;
@@ -152,7 +160,9 @@ function syncOff() {
   renderProgress(); toast("Sync off — progress stays on this device");
 }
 async function syncNowClicked() {
-  await syncPull(); await syncPushNow();
+  const pulled = await syncPull();
+  if (pulled === "fail") { toast("Could not reach sync — try again"); return; }
+  await syncPushNow();
   renderProgress(); toast("Synced");
 }
 

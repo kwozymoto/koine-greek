@@ -14,7 +14,12 @@ function save(){
   catch(e){canPersist=false;mem=S;}
   if(typeof syncPushSoon==="function") syncPushSoon();
 }
-const today=()=>new Date().toISOString().slice(0,10);
+/* The calendar date where the reader is, not in UTC. toISOString() is UTC,
+   so at +12 the study day was rolling over at noon: cards graded on Monday
+   evening were not due on Tuesday morning, and three consecutive days of
+   study could read as a broken streak. */
+const ymd=d=>new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const today=()=>ymd(new Date());
 const daysBetween=(a,b)=>Math.round((new Date(b)-new Date(a))/86400000);
 
 let S = load() || {
@@ -45,12 +50,15 @@ function schedule(i,g){
     c.ease = Math.min(2.8, Math.max(1.3, c.ease + (g===1?-0.15:(g===2?0:0.1))));
     c.reps++;
     const d=new Date(); d.setDate(d.getDate()+c.ivl);
-    c.due=d.toISOString().slice(0,10);
+    c.due=ymd(d);
   }
   save();
 }
 const isDue=i=>S.cards[i] && S.cards[i].due<=today() && !skipWord(i);
-const dueList=()=>Object.keys(S.cards).filter(isDue).map(Number).sort((a,b)=>a-b);
+/* Number() must come first: Object.keys yields strings, and skipWord uses
+   Set.has / Array.includes, which do not coerce — so every suspended and
+   retired card was silently passing the filter. */
+const dueList=()=>Object.keys(S.cards).map(Number).filter(isDue).sort((a,b)=>a-b);
 const knownCount=()=>Object.values(S.cards).filter(c=>c&&+c.ivl>=6).length;
 const level=()=>Math.floor(Math.sqrt(Math.max(0,+S.xp||0)/45))+1;
 
@@ -125,13 +133,17 @@ function seedVocab(n=100){
     if(done>=n) break;
     if(S.cards[i]) continue;
     const c=card(i);
-    c.ivl=6; c.reps=2; c.ts=Date.now();
-    const d=new Date(); d.setDate(d.getDate()+6);
-    c.due=d.toISOString().slice(0,10);
+    /* No ts: the sync merge compares ts before reps, so a freshly stamped
+       6-day seed would beat the other device's mature copy of the same word.
+       Without one it falls through to reps, which is the honest comparison.
+       Stagger the due dates so the cohort does not all land on one day. */
+    c.ivl=4+(done%14); c.reps=2;
+    const d=new Date(); d.setDate(d.getDate()+c.ivl);
+    c.due=ymd(d);
     done++;
   }
   save(); render();
-  toast(done ? done+" words seeded — first review in 6 days" : "Those words are already in the schedule");
+  toast(done ? done+" words seeded — spread over the next fortnight" : "Those words are already in the schedule");
 }
 
 const LEECH_AT=8;              // lapses before a word is called out
@@ -217,6 +229,10 @@ function step(){
 }
 function finish(){
   const b=document.getElementById("sessBody");
+  /* Undo lives outside sessBody, so it survives this re-render. Left live it
+     would replay the last card and pay the whole session's XP again. */
+  UNDO=null;
+  const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
   document.getElementById("sessBar").style.width="100%";
   checkBadges();
   b.innerHTML=`<div class="empty"><span class="gk">τέλος</span>
@@ -253,24 +269,29 @@ function flashcard(i){
            <a href="#" onclick="suspendWord(${i});return false" style="color:var(--gold)">set it aside</a>.</p>`:""}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
-          <button class="g2" onclick="grade(${i},1)">Hard<i>1d</i></button>
+          <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
           <button class="g3" onclick="grade(${i},2)">Good<i>${nextIvl(i,2)}d</i></button>
           <button class="g4" onclick="grade(${i},3)">Easy<i>${nextIvl(i,3)}d</i></button>
         </div>`;
     };
   };
 }
+/* Mirrors schedule() exactly. It previously had no g===1 branch, so Hard
+   fell through to the Easy path and the button lied in both directions. */
 function nextIvl(i,g){
   const c=card(i);
-  if(c.reps===0)return g===2?1:3;
-  if(c.reps===1)return g===2?6:9;
-  return Math.round(c.ivl*(g===2?c.ease:c.ease*1.3));
+  if(c.reps===0)return g===1?1:(g===2?1:3);
+  if(c.reps===1)return g===1?3:(g===2?6:9);
+  return Math.round(c.ivl*(g===1?1.2:(g===2?c.ease:c.ease*1.3)));
 }
 function grade(i,g){
   UNDO={i, qi, prev:JSON.parse(JSON.stringify(S.cards[i])), requeued:g===0,
-        reviews:S.reviewsToday||0};
-  schedule(i,g);
-  S.reviewsToday=(S.reviewsToday||0)+1; save();
+        reviews:S.reviewsToday||0, practice:PRACTICE};
+  if(!PRACTICE){
+    schedule(i,g);
+    S.reviewsToday=(S.reviewsToday||0)+1;
+  }
+  save();
   if(g===0){ Q.push(flashcard(i)); }
   document.getElementById("btnUndo").style.display="";
   qi++; step();
@@ -312,12 +333,19 @@ function mcq(q,opts,ans,why){
 }
 
 /* ---- session builders ---- */
+/* Free practice must not touch the schedule. Grading a card that was due in
+   55 days would otherwise rewrite it to 150 days out — throwing away the
+   retention test that was the point of the interval. */
+let PRACTICE=false;
+
 function startReview(){
   let d=dueList();
+  PRACTICE=false;
   if(!d.length){
-    const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i]);
+    const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && !skipWord(i));
     if(!started.length){ startNew(5); return; }        // fresh install: introduce instead
     d=started.sort(()=>Math.random()-.5).slice(0,15);  // nothing due: free practice
+    PRACTICE=true;
   }
   const words=d.slice(0,40);
   const q=words.map(flashcard); q.__words=words;
@@ -852,8 +880,8 @@ function renderProgress(){
       <small class="muted">${started} started · ${known} at six days or longer · ${nextWeek} due this week</small>
     </div>
     <div class="card">
-      <div class="between"><span>Lessons</span><b>${S.lessons.length} / 16</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${S.lessons.length/16*100}%"></i></div>
+      <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
     </div>
     <h2>Badges</h2>
     <div class="badges">${BADGES.map(b=>`
@@ -881,7 +909,11 @@ function renderProgress(){
   };
   document.getElementById("setPlace").onchange=e=>{
     const n=+e.target.value; if(!n)return;
-    S.lessons=Array.from({length:n},(_,k)=>k+1); save(); checkBadges();
+    /* Add, never replace: this is a native select on a scrolling screen, and
+       replacing wiped chapters finished beyond n with no confirm or undo. */
+    const add=Array.from({length:n},(_,k)=>k+1);
+    S.lessons=[...new Set([...(S.lessons||[]),...add])].sort((a,b)=>a-b);
+    save(); checkBadges(); renderProgress();
     toast("Chapters 1–"+n+" marked done");
   };
 }
@@ -958,7 +990,11 @@ function undoImport(){
   save(); applyGk(); renderProgress(); toast("Import undone");
 }
 function resetAll(){
-  if(!confirm("Delete all progress on this device? This cannot be undone."))return;
+  const synced = typeof SYNC!=="undefined" && SYNC && SYNC.id;
+  if(!confirm(synced
+    ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
+    : "Delete all progress on this device? This cannot be undone."))return;
+  if(synced && typeof syncOff==="function") syncOff();
   S={cards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null};
   save(); renderProgress(); toast("Everything reset");
 }
