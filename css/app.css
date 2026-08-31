@@ -80,6 +80,7 @@ nav button.on{color:var(--gold)}
   text-align:center;padding:26px 20px;margin-bottom:14px;
 }
 .fc .word{font-family:var(--gk);font-size:2.9rem;line-height:1.25;font-weight:400}
+.fc .word.full{font-size:1.9rem;line-height:1.35}
 .fc .rule{width:54px;height:2px;background:var(--gold);margin:16px 0;opacity:.75}
 .fc .ans{font-size:1.12rem}
 .fc .meta{color:var(--muted);font-size:.79rem;margin-top:12px}
@@ -225,9 +226,6 @@ body[data-gk="xl"] .fc .word{font-size:3.5rem}
 /* leech flag */
 .leech{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;
   background:var(--rust);color:#fff;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:middle}
-
-/* card pronunciation hint */
-.say{font-size:.78rem;color:var(--muted);margin-top:6px;font-style:italic}
 
 /* ---------- Greek New Testament reader ---------- */
 .ch-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
