@@ -46,11 +46,39 @@ function offerUpdate(reg){
 let installEvent=null;
 const installBar=document.getElementById("installBar");
 
+/* Installing is optional — plenty of reasons to just use it in the browser.
+   Dismissing is remembered so the banner does not reappear on every visit;
+   it can still be installed from the browser's own menu, and Progress keeps
+   an entry once dismissed. */
+const INSTALL_DISMISS="koine.installDismissed";
+const installDismissed=()=>{ try{ return localStorage.getItem(INSTALL_DISMISS)==="1"; }catch(e){ return false; } };
+
 addEventListener("beforeinstallprompt",e=>{
   e.preventDefault();
   installEvent=e;
-  installBar.classList.add("on");
+  if(!installDismissed()) installBar.classList.add("on");
 });
+
+document.getElementById("btnInstallNo").onclick=()=>{
+  installBar.classList.remove("on");
+  try{ localStorage.setItem(INSTALL_DISMISS,"1"); }catch(e){}
+  toast("Fine \u2014 you can install later from Progress");
+};
+
+/* Reachable again from the Progress tab rather than lost for good. */
+function installRowHtml(){
+  if(!installEvent) return "";
+  return `<div class="setrow"><span>Install as an app<br><small class="muted">Home screen icon, opens offline</small></span>
+    <button class="btn ghost small" onclick="doInstall()">Install</button></div>`;
+}
+async function doInstall(){
+  if(!installEvent){ toast("Use your browser's menu: Add to home screen"); return; }
+  installEvent.prompt();
+  await installEvent.userChoice;
+  installEvent=null;
+  installBar.classList.remove("on");
+  if(typeof renderProgress==="function") renderProgress();
+}
 
 document.getElementById("btnInstall").onclick=async()=>{
   if(!installEvent) return;

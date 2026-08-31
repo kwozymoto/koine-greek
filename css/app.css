@@ -237,3 +237,8 @@ body[data-gk="xl"] .fc .word{font-size:3.5rem}
 .passage.gnt{font-size:1.25rem;line-height:1.95}
 .passage .vn{font-family:var(--ui);font-size:.62rem;color:var(--gold);
   vertical-align:super;margin-right:3px;opacity:.75}
+
+/* dismiss control on the install banner */
+.install .x{flex:0 0 auto;width:28px;height:28px;border-radius:50%;color:var(--muted);
+  font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center}
+.install .x:active{background:var(--surface)}

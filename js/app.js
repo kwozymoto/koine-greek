@@ -712,16 +712,61 @@ function clozeRead(id){
 /* Accent-insensitive so you can type what you half-remember. */
 const lkNorm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 
+/* Searching by Greek assumes a Greek keyboard, which a phone will not have
+   by default. So every headword also gets a loose Latin key, and Latin
+   queries are folded the same way — "agape", "logos", "christos" all land.
+   The mapping is deliberately lossy: it exists to match typing, not to be a
+   scholarly transliteration. */
+const LK_GK={"α":"a","β":"b","γ":"g","δ":"d","ε":"e","ζ":"z","η":"e","θ":"th",
+ "ι":"i","κ":"k","λ":"l","μ":"m","ν":"n","ξ":"x","ο":"o","π":"p","ρ":"r",
+ "σ":"s","ς":"s","τ":"t","υ":"u","φ":"f","χ":"kh","ψ":"ps","ω":"o"};
+
+function lkLatin(greek){
+  const d=greek.normalize("NFD");
+  let out="";
+  for(let k=0;k<d.length;k++){
+    const ch=d[k];
+    if(ch==="\u0314"){ out="h"+out; continue; }       // rough breathing -> leading h
+    if(/[\u0300-\u036f]/.test(ch)) continue;          // other marks: ignore
+    out += LK_GK[ch.toLowerCase()] ?? (/[a-z]/i.test(ch) ? ch.toLowerCase() : "");
+  }
+  return out;
+}
+
+/* Fold a Latin query into the same shape: ph=f, ch=kh, c=k, y=u, v=b. */
+function lkFoldLatin(q){
+  return q.toLowerCase()
+    .replace(/[\u0304\u0301\u0300]/g,"")
+    .replace(/ph/g,"f").replace(/ch/g,"kh").replace(/ck/g,"k")
+    .replace(/c/g,"k").replace(/q/g,"k").replace(/j/g,"i")
+    .replace(/y/g,"u").replace(/v/g,"b")
+    .replace(/[ēê]/g,"e").replace(/[ōô]/g,"o");
+}
+
+/* Built once: the Latin key for each headword, and for each of its parts
+   (so "hemera" finds ἡμέρα even though the entry reads "ἡμέρα, -ας, ἡ"). */
+const LK_LATIN=VOCAB.map(v=>lkFoldLatin(lkLatin(v[0].split(",")[0].trim())));
+
 function renderLookup(){
   const q=lkNorm((document.getElementById("lookupSearch").value||"").trim());
   const body=document.getElementById("lookupBody");
   if(!q){
-    body.innerHTML=`<p class="muted" style="font-size:.86rem">Type a few letters. Greek matches ignore accents, so <span class="gk">αγαπ</span> finds <span class="gk">ἀγάπη</span>.</p>`;
+    body.innerHTML=`<p class="muted" style="font-size:.86rem">Search three ways, no Greek keyboard needed:</p>
+      <ul class="muted" style="font-size:.86rem;padding-left:20px;margin:0 0 4px">
+        <li><b>English</b> — <i>love</i>, <i>faith</i>, <i>send</i></li>
+        <li><b>Latin letters</b> — <i>agape</i>, <i>logos</i>, <i>christos</i></li>
+        <li><b>Greek</b> — <span class="gk">αγαπ</span>, accents optional</li>
+      </ul>
+      <p class="muted" style="font-size:.8rem">Partial words work. Results are ordered by how often they appear in the New Testament.</p>`;
     return;
   }
+  const ql=lkFoldLatin(q);
+  const latin=/^[a-z\u0304\u0101\u0113\u014d\s-]+$/i.test(q);
   const hits=VOCAB.map((v,i)=>({v,i}))
     .filter(x=>!RETIRED.has(x.i))
-    .filter(x=>lkNorm(x.v[0]).includes(q)||lkNorm(x.v[1]).includes(q))
+    .filter(x=>lkNorm(x.v[0]).includes(q)          // Greek, accents optional
+             ||lkNorm(x.v[1]).includes(q)          // English gloss
+             ||(latin && LK_LATIN[x.i].includes(ql)))   // typed in Latin letters
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
   body.innerHTML = hits.length ? hits.map(({v,i})=>`
     <button class="lk" onclick="playWord(${i},this)">
@@ -776,6 +821,7 @@ function renderProgress(){
         <button class="btn ghost small" onclick="downloadAllAudio(this)">Download</button></div>
       <div class="setrow"><span>New Testament offline<br><small class="muted">4.4 MB, all 27 books</small></span>
         <button class="btn ghost small" onclick="downloadGnt(this)">Download</button></div>
+      ${typeof installRowHtml==="function"?installRowHtml():""}
       ${(S.suspended||[]).length?`<div class="setrow"><span>Set-aside words</span>
         <button class="btn ghost small" onclick="unsuspendAll()">Restore ${(S.suspended||[]).length}</button></div>`:""}
     </div>
