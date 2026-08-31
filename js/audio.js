@@ -75,3 +75,42 @@ function playAllHtml(kind) {
     <button class="btn ghost small" onclick='playSequence(${JSON.stringify(list)})'>▶ Play all</button>
     <button class="btn ghost small" onclick="stopSequence()">Stop</button></div>`;
 }
+
+/* ---------- vocabulary clips ---------- */
+const VOCAB_AUDIO_DIR = "audio/vocab/";
+
+/* Play the citation form for VOCAB[i]. */
+function playWord(i, tile) {
+  const file = VOCAB_AUDIO[i];
+  if (!file) return false;
+  const a = sndInit();
+  sndClear();
+  try { a.pause(); } catch (e) {}
+  a.src = VOCAB_AUDIO_DIR + file;
+  a.currentTime = 0;
+  if (tile) { sndTile = tile; tile.classList.add("playing"); }
+  const p = a.play();
+  if (p && p.catch) p.catch(() => sndClear());
+  return true;
+}
+
+/* Bulk download so the whole set is available offline. The service worker
+   caches each response as it passes through, so a plain fetch is enough. */
+let dlBusy = false;
+async function downloadAllAudio(btn) {
+  if (dlBusy) return;
+  dlBusy = true;
+  const files = VOCAB_AUDIO.map(f => VOCAB_AUDIO_DIR + f);
+  let done = 0, failed = 0;
+  const label = n => { if (btn) btn.textContent = `Downloading ${n}/${files.length}…`; };
+  label(0);
+  for (let k = 0; k < files.length; k += 8) {
+    await Promise.all(files.slice(k, k + 8).map(u =>
+      fetch(u).then(r => { if (!r.ok) failed++; }).catch(() => { failed++; })));
+    done = Math.min(k + 8, files.length);
+    label(done);
+  }
+  dlBusy = false;
+  if (btn) btn.textContent = failed ? `Downloaded, ${failed} failed` : "Audio saved for offline use";
+  toast(failed ? `${failed} clips could not be fetched` : "All word audio is now offline");
+}

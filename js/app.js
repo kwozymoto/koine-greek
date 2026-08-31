@@ -49,7 +49,7 @@ function schedule(i,g){
   }
   save();
 }
-const isDue=i=>S.cards[i] && S.cards[i].due<=today();
+const isDue=i=>S.cards[i] && S.cards[i].due<=today() && !skipWord(i);
 const dueList=()=>Object.keys(S.cards).filter(isDue).map(Number).sort((a,b)=>a-b);
 const knownCount=()=>Object.values(S.cards).filter(c=>c.ivl>=6).length;
 const level=()=>Math.floor(Math.sqrt(S.xp/45))+1;
@@ -90,6 +90,30 @@ function toast(msg){
   clearTimeout(tTimer); tTimer=setTimeout(()=>el.classList.remove("on"),2400);
 }
 
+/* A gentle reminder rather than a nag: only once a fortnight has passed
+   with no export and no sync configured. */
+function backupNudgeHtml(){
+  const synced = typeof SYNC!=="undefined" && SYNC && SYNC.id;
+  if(synced) return "";
+  const last=S.exported;
+  const days=last?daysBetween(last,today()):999;
+  if(days<14) return "";
+  return `<div class="card" style="border-color:var(--gold-dim)">
+    <h3 style="margin-top:0">Back up your progress</h3>
+    <p class="muted" style="font-size:.85rem">${last?`Last exported ${days} days ago.`:"You have never exported your progress."}
+    Turn on sync below, or export a copy — this device is the only place it lives.</p></div>`;
+}
+
+/* Ask the browser to protect this app's data from eviction. Installed PWAs
+   are usually granted it; it is a no-op where unsupported. */
+async function requestPersistence(){
+  try{
+    if(navigator.storage && navigator.storage.persist){
+      if(!(await navigator.storage.persisted())) await navigator.storage.persist();
+    }
+  }catch(e){}
+}
+
 /* Greek text size preference */
 function applyGk(){ document.body.dataset.gk = S.gk || ""; }
 
@@ -110,6 +134,17 @@ function seedVocab(n=100){
   toast(done ? done+" words seeded — first review in 6 days" : "Those words are already in the schedule");
 }
 
+const LEECH_AT=8;              // lapses before a word is called out
+const isLeech=i=>(S.cards[i]?.lapses||0)>=LEECH_AT && !(S.suspended||[]).includes(i);
+function suspendWord(i){
+  S.suspended=[...new Set([...(S.suspended||[]),i])];
+  save(); toast("Suspended — it will stop coming up");
+  qi++; step();
+}
+function unsuspendAll(){
+  S.suspended=[]; save(); renderProgress(); toast("All suspended words are back in the rotation");
+}
+
 let UNDO=null;   // last-grade snapshot for the session Undo button
 
 /* ============================================================
@@ -125,6 +160,7 @@ function go(name){
   if(name==="learn")renderLessons();
   if(name==="drill")renderDrill();
   if(name==="read")renderRead();
+  if(name==="lookup")renderLookup();
   if(name==="tables")renderTables();
   if(name==="prog")renderProgress();
 }
@@ -196,15 +232,22 @@ function flashcard(i){
     b.innerHTML=`
       <div class="fc">
         <div class="word gk">${v[0].split(",")[0]}</div>
+        ${VOCAB_AUDIO[i]?`<button class="btn ghost small" style="margin-top:10px" onclick="playWord(${i},null)">\uD83D\uDD0A Hear it</button>`:""}
         <div class="rule"></div>
         <div class="ans" id="ans" style="visibility:hidden">${v[1]}</div>
-        <div class="meta" id="meta" style="visibility:hidden">${v[3]} · ${v[2]}× in the NT</div>
+        <div class="meta" id="meta" style="visibility:hidden">${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
+        ${VOCAB_SAY[i]?`<div class="say" id="say" style="visibility:hidden">${VOCAB_SAY[i]}</div>`:""}
       </div>
       <button class="btn" id="show">Show meaning</button>`;
     document.getElementById("show").onclick=()=>{
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
+      const sy=document.getElementById("say"); if(sy) sy.style.visibility="visible";
+      playWord(i,null);
       document.getElementById("show").outerHTML=`
+        ${isLeech(i)?`<p class="muted" style="font-size:.8rem;text-align:center;margin:0 0 8px">
+           You have lost this one ${S.cards[i].lapses} times. Make a mnemonic, or
+           <a href="#" onclick="suspendWord(${i});return false" style="color:var(--gold)">set it aside</a>.</p>`:""}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="grade(${i},1)">Hard<i>1d</i></button>
@@ -276,11 +319,18 @@ function startReview(){
 }
 /* SRS cards are keyed by VOCAB index, so data/vocab.js must be append-only.
    New words are introduced by NT frequency regardless of array position. */
-const LEARN_ORDER=VOCAB.map((_,i)=>i).sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
+/* 237 (τέ) duplicates 72 (τε) — the corpus lists the lemma accented and the
+   original deck did not, so the expansion added it twice. Indexes cannot be
+   removed (cards are keyed by them), so it is retired from introduction. */
+const RETIRED=new Set([237]);
+const skipWord=i=>RETIRED.has(i)||(S.suspended||[]).includes(i);
+
+const LEARN_ORDER=VOCAB.map((_,i)=>i).filter(i=>!RETIRED.has(i))
+  .sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
 
 function startNew(n=5){
   const fresh=[];
-  for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i]) fresh.push(i); }
+  for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
   if(!fresh.length){toast("You've started every word in the deck");return;}
   const q=[];
   fresh.forEach(i=>{ card(i); q.push(flashcard(i)); });
@@ -586,7 +636,12 @@ function renderDrill(){
 const norm=s=>s.replace(/[.,;·:!?()\u00b7\u0387\u2019'\u2018]/g,"").trim()
   .normalize("NFD").replace(/[\u0300\u0301\u0342]/g,"").normalize("NFC").toLowerCase();
 function renderRead(){
-  document.getElementById("readList").innerHTML=READINGS.map(r=>`
+  document.getElementById("readList").innerHTML=
+    `<button class="lesson-item" onclick="openGnt()" style="border-color:var(--gold-dim)">
+       <span class="t"><b>The whole Greek New Testament</b><span>Any chapter, every word parsed</span></span>
+       <span class="muted">›</span></button>
+     <h2 style="margin:18px 0 10px">Graded passages</h2>`
+    + READINGS.map(r=>`
     <button class="lesson-item" onclick="openRead('${r.id}')">
       <span class="t"><b>${r.ref}</b><span>${r.w.length} words</span></span>
       <span class="muted">›</span>
@@ -652,6 +707,33 @@ function clozeRead(id){
 }
 
 /* ============================================================
+   WORD LOOKUP
+   ============================================================ */
+/* Accent-insensitive so you can type what you half-remember. */
+const lkNorm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+
+function renderLookup(){
+  const q=lkNorm((document.getElementById("lookupSearch").value||"").trim());
+  const body=document.getElementById("lookupBody");
+  if(!q){
+    body.innerHTML=`<p class="muted" style="font-size:.86rem">Type a few letters. Greek matches ignore accents, so <span class="gk">αγαπ</span> finds <span class="gk">ἀγάπη</span>.</p>`;
+    return;
+  }
+  const hits=VOCAB.map((v,i)=>({v,i}))
+    .filter(x=>!RETIRED.has(x.i))
+    .filter(x=>lkNorm(x.v[0]).includes(q)||lkNorm(x.v[1]).includes(q))
+    .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
+  body.innerHTML = hits.length ? hits.map(({v,i})=>`
+    <button class="lk" onclick="playWord(${i},this)">
+      <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
+      <span class="w"><b>${v[0]}</b><span>${v[1]}</span></span>
+      <span class="fq">${v[2]}\u00d7</span>
+    </button>`).join("")
+    : `<div class="empty"><span class="gk">οὐδέν</span><p>No word matches that.</p></div>`;
+}
+document.getElementById("lookupSearch").oninput=()=>renderLookup();
+
+/* ============================================================
    TABLES  — searchable reference paradigms
    ============================================================ */
 function renderTables(){
@@ -682,6 +764,7 @@ function renderProgress(){
   const total=VOCAB.length, started=Object.keys(S.cards).length, known=knownCount();
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
+    ${backupNudgeHtml()}
     ${typeof syncCardHtml==="function"?syncCardHtml():""}
     <div class="card">
       <h3 style="margin-top:0">Settings</h3>
@@ -689,6 +772,12 @@ function renderProgress(){
         <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Word audio offline<br><small class="muted">8.8 MB, one tap</small></span>
+        <button class="btn ghost small" onclick="downloadAllAudio(this)">Download</button></div>
+      <div class="setrow"><span>New Testament offline<br><small class="muted">4.4 MB, all 27 books</small></span>
+        <button class="btn ghost small" onclick="downloadGnt(this)">Download</button></div>
+      ${(S.suspended||[]).length?`<div class="setrow"><span>Set-aside words</span>
+        <button class="btn ghost small" onclick="unsuspendAll()">Restore ${(S.suspended||[]).length}</button></div>`:""}
     </div>
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
@@ -741,7 +830,7 @@ function exportData(){
   const a=document.createElement("a");
   a.href=URL.createObjectURL(blob);
   a.download="koine-progress-"+today()+".json";
-  a.click(); toast("Progress exported");
+  a.click(); S.exported=today(); save(); toast("Progress exported");
 }
 function importData(inp){
   const f=inp.files[0]; if(!f)return;
@@ -752,7 +841,7 @@ function importData(inp){
 }
 function resetAll(){
   if(!confirm("Delete all progress on this device? This cannot be undone."))return;
-  S={cards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20};
+  S={cards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null};
   save(); renderProgress(); toast("Everything reset");
 }
 
@@ -764,4 +853,5 @@ if(S.last && daysBetween(S.last,today())>1) S.streak=0;
 if(S.dayOfReviews!==today()){ S.reviewsToday=0; S.dayOfReviews=today(); }
 save();
 applyGk();
+requestPersistence();
 render();
