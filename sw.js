@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v9';
+const VERSION = 'v10';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [

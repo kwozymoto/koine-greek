@@ -79,10 +79,21 @@ function playAllHtml(kind) {
 /* ---------- vocabulary clips ---------- */
 const VOCAB_AUDIO_DIR = "audio/vocab/";
 
+/* An <audio> element fetches with a Range header and gets a 206 back, which
+   the worker will not store. So warm the cache with a plain GET alongside
+   playback — after the first hearing the clip is available offline. */
+const warmed = new Set();
+function warmClip(url) {
+  if (warmed.has(url)) return;
+  warmed.add(url);
+  fetch(url).catch(() => warmed.delete(url));
+}
+
 /* Play the citation form for VOCAB[i]. */
 function playWord(i, tile) {
   const file = VOCAB_AUDIO[i];
   if (!file) return false;
+  warmClip(VOCAB_AUDIO_DIR + file);
   const a = sndInit();
   sndClear();
   try { a.pause(); } catch (e) {}
@@ -94,8 +105,8 @@ function playWord(i, tile) {
   return true;
 }
 
-/* Bulk download so the whole set is available offline. The service worker
-   caches each response as it passes through, so a plain fetch is enough. */
+/* Bulk download so the whole set is available offline: a plain fetch returns
+   200, which the worker stores (unlike the 206 an audio element provokes). */
 let dlBusy = false;
 async function downloadAllAudio(btn) {
   if (dlBusy) return;
