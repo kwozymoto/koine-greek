@@ -138,8 +138,10 @@ function warmClip(url) {
   fetch(url).catch(() => warmed.delete(url));
 }
 
-/* Play the citation form for VOCAB[i]. */
-function playWord(i, tile) {
+/* Play the citation form for VOCAB[i]. `quiet` suppresses the failure
+   toast: the automatic play on a card reveal uses it, or an offline review
+   of thirty words would fire thirty toasts. */
+function playWord(i, tile, quiet) {
   const file = VOCAB_AUDIO[i];
   if (!file) return false;
   const url = VOCAB_AUDIO_DIR + file;
@@ -152,12 +154,14 @@ function playWord(i, tile) {
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
   const p = a.play();
-  if (p && p.catch) p.catch(() => sndClear());
+  if (p && p.catch) p.catch(() => { sndClear(); if (!quiet) toast("Could not play that clip"); });
   return true;
 }
 
 /* Bulk download so the whole set is available offline: a plain fetch returns
-   200, which the worker stores (unlike the 206 an audio element provokes). */
+   200, which the worker stores (unlike the 206 an audio element provokes).
+   Not wired to a button — the service worker pre-caches the whole set from
+   data/offline.json without being asked. Kept as a manual fallback. */
 let dlBusy = false;
 async function downloadAllAudio(btn) {
   if (dlBusy) return;

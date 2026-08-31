@@ -1,8 +1,9 @@
 /* The whole Greek New Testament, tap-to-parse.
 
    Books load one at a time (largest is 621KB) rather than all 4.4MB up
-   front; the service worker keeps each one after its first visit, so a book
-   you have opened works offline. Settings offers a bulk download.
+   front. The service worker pre-caches the whole set in the background from
+   data/offline.json, so this works offline without being asked; Settings →
+   Offline → Check tops up anything that failed.
 
    Data shape (built by scratchpad/build_gnt.py from MorphGNT/SBLGNT):
      manifest.json  {lemmas[], gloss[], pos[], books[{a,t,n[],ch[]}]}
@@ -16,7 +17,8 @@
 
 let GNT = null;                 // manifest, once loaded
 const gntBooks = {};            // abbr -> book json
-let gntWhere = { book: null, ch: 0 };
+/* Where the reader last was lives in S.where, so it survives a restart and
+   the Read tab can offer to continue. The chapter opener writes it. */
 
 const GNT_TENSE = {P:"present",I:"imperfect",F:"future",A:"aorist",X:"perfect",Y:"pluperfect"};
 const GNT_VOICE = {A:"active",M:"middle",P:"passive"};
@@ -65,9 +67,107 @@ async function gntBook(abbr) {
   return gntBooks[abbr];
 }
 
+/* ---------- sermon preparation ----------
+   Saturday in your sermon text is the most valuable thing you can do with
+   this app, and the reader knew nothing about it: it forgot the passage the
+   moment you closed it, none of its vocabulary reached the schedule, and
+   there was no way to see which words in it you don't have.
+
+   Matching a corpus lemma to a course word is nearly free. Strip the accents
+   and breathings and 466 of the 470 headwords land on a manifest lemma. */
+let gntCur = null;                        // {abbr, ch, meta, verses}
+const gntBare = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+let VOC_BY_LEMMA = null;
+function vocIndexFor(lemma) {
+  if (!VOC_BY_LEMMA) {
+    VOC_BY_LEMMA = {};
+    // Frequency order, so the first claim on a bare form is the commonest.
+    VOCAB.forEach((v, i) => {
+      const k = gntBare(v[0].split(",")[0].trim());
+      if (!(k in VOC_BY_LEMMA)) VOC_BY_LEMMA[k] = i;
+    });
+  }
+  const i = VOC_BY_LEMMA[gntBare(lemma || "")];
+  return (i === undefined || skipWord(i)) ? -1 : i;
+}
+
+/* Course words in this chapter you have never met, or keep losing. */
+function gntUnknown() {
+  if (!gntCur) return [];
+  const n = new Map();
+  gntCur.verses.forEach(v => v[1].forEach(w => {
+    const i = vocIndexFor(GNT.lemmas[w[1]]);
+    if (i < 0) return;
+    const c = S.cards[i];
+    if (!c || (c.lapses || 0) > 3) n.set(i, (n.get(i) || 0) + 1);
+  }));
+  return [...n.entries()].sort((a, b) => b[1] - a[1] || VOCAB[b[0]][2] - VOCAB[a[0]][2]);
+}
+
+function addToDeck(i, btn) {
+  card(i); S.cards[i].due = today(); save();
+  if (btn) { btn.textContent = "Added"; btn.disabled = true; }
+  else toast(VOCAB[i][0].split(",")[0] + " added to your deck");
+}
+/* A chapter of Mark holds 130 course words, and on a young deck you have met
+   almost none of them — a list that long is a wall, not a help, and adding
+   all of it would bury a week of reviews. Thirty at a time; tap again and
+   the next thirty appear. */
+const UNKNOWN_SHOWN = 30;
+function addAllUnknown() {
+  const list = gntUnknown().slice(0, UNKNOWN_SHOWN);
+  if (!list.length) return;
+  list.forEach(([i]) => { card(i); S.cards[i].due = today(); });
+  save();
+  toast(list.length + " words added — they are in today's review");
+  showGntUnknown();
+}
+
+function showGntUnknown() {
+  const box = document.getElementById("gntTools");
+  if (!box || !gntCur) return;
+  const all = gntUnknown(), list = all.slice(0, UNKNOWN_SHOWN);
+  if (!all.length) {
+    box.innerHTML = `<div class="card"><p class="muted" style="margin:0;font-size:.86rem">
+      Every course word in this chapter is already in your schedule.</p></div>`;
+    return;
+  }
+  box.innerHTML = `<div class="card">
+    <h3 style="margin-top:0">Words here you don't have</h3>
+    <p class="muted" style="font-size:.84rem;margin-bottom:4px">${all.length} of the 470 course words
+      ${all.length > UNKNOWN_SHOWN ? `— the ${UNKNOWN_SHOWN} commonest in this chapter are below` : "in this chapter"}.
+      Adding one puts it in today's review.</p>
+    ${list.map(([i, k]) => `<div class="setrow">
+      <span><b class="gk" style="font-weight:500;font-size:1.05rem">${VOCAB[i][0].split(",")[0]}</b>
+        <br><small class="muted">${VOCAB[i][1]} · ${k}\u00d7 here</small></span>
+      <button class="btn ghost small" onclick="addToDeck(${i},this)">Add</button></div>`).join("")}
+    <button class="btn ghost small" style="margin-top:12px;width:100%"
+            onclick="addAllUnknown()">Add ${all.length > UNKNOWN_SHOWN ? `these ${list.length}` : `all ${list.length}`} to my deck</button></div>`;
+}
+
+/* Pin the week's passage so Today can offer it. */
+const gntPinned = () => !!(gntCur && S.pin && S.pin.a === gntCur.abbr && S.pin.ch === gntCur.ch);
+function paintGntTools() {
+  const b = document.getElementById("btnPin");
+  if (b) b.textContent = gntPinned() ? "\uD83D\uDCCC Pinned for this week" : "\uD83D\uDCCC Pin for this week";
+}
+function togglePin() {
+  if (!gntCur) return;
+  if (gntPinned()) { S.pin = null; toast("Unpinned"); }
+  else {
+    const m = gntCur.meta;
+    S.pin = { a: gntCur.abbr, ch: gntCur.ch, t: m.t,
+              n: m.n ? m.n[gntCur.ch] : gntCur.ch + 1, ts: Date.now() };
+    toast("Pinned — it is on your Today screen");
+  }
+  save(); paintGntTools();
+}
+
 /* ---------- screens ---------- */
 async function openGnt() {
   const body = document.getElementById("readBody");
+  pushNav({ screen: "read", gnt: "books" });
   document.getElementById("readList").innerHTML =
     `<button class="btn ghost small" onclick="renderRead()">← Passages</button>`;
   body.innerHTML = `<div class="empty"><span class="gk">…</span><p>Loading</p></div>`;
@@ -88,7 +188,16 @@ async function openGnt() {
 async function openGntBook(abbr) {
   const body = document.getElementById("readBody");
   body.innerHTML = `<div class="empty"><span class="gk">…</span><p>Loading</p></div>`;
-  const meta = GNT.books.find(b => b.a === abbr);
+  pushNav({ screen: "read", gnt: "book", a: abbr });
+  /* Reachable from a restored history entry, where the manifest has not been
+     loaded yet — GNT.books would throw and leave the tab blank. */
+  let meta;
+  try { await gntLoad(); meta = GNT.books.find(b => b.a === abbr); } catch (e) { meta = null; }
+  if (!meta) {
+    body.innerHTML = `<div class="empty"><span class="gk">οὐδέν</span>
+      <p>That book could not be loaded. If you are offline, open it once with a connection.</p></div>`;
+    return;
+  }
   try { await gntBook(abbr); } catch (e) {
     body.innerHTML = `<div class="empty"><span class="gk">οὐδέν</span>
       <p>${meta.t} is not available offline yet. Open it once with a connection.</p></div>`;
@@ -103,9 +212,30 @@ async function openGntBook(abbr) {
 }
 
 async function openGntChapter(abbr, ch) {
-  const book = await gntBook(abbr);
-  const meta = GNT.books.find(b => b.a === abbr);
-  gntWhere = { book: abbr, ch };
+  /* Openable from the resume row, the pinned passage and a restored history
+     entry — any of which can be the first thing tapped after a cold start.
+     So nothing here assumes the manifest is loaded or that the stored
+     reference still points at a chapter that exists. */
+  if (!document.getElementById("s-read").classList.contains("on")) showScreen("read");
+  // Pushed here, synchronously and after the screen's own entry, so that the
+  // history reads read -> chapter and a replay can suppress both at once.
+  pushNav({ screen: "read", gnt: "ch", a: abbr, c: ch });
+  const body = document.getElementById("readBody");
+  body.innerHTML = `<div class="empty"><span class="gk">…</span><p>Loading</p></div>`;
+  let book, meta;
+  try {
+    await gntLoad();
+    book = await gntBook(abbr);
+    meta = GNT.books.find(b => b.a === abbr);
+    if (!meta || !book.c || !book.c[ch]) throw new Error("range");
+  } catch (e) {
+    body.innerHTML = `<div class="empty"><span class="gk">οὐδέν</span>
+      <p>That chapter could not be loaded. If you are offline, open it once with a connection first.</p></div>`;
+    return;
+  }
+  pushNav({ screen: "read", gnt: "ch", a: abbr, c: ch });
+  S.where = { a: abbr, ch, t: meta.t, n: meta.n ? meta.n[ch] : ch + 1 };
+  save();
   grant("read");
 
   document.getElementById("readList").innerHTML =
@@ -132,23 +262,40 @@ async function openGntChapter(abbr, ch) {
       ${ch > 0 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch - 1})">← ${meta.n?meta.n[ch-1]:ch}</button>` : ""}
       ${ch < meta.ch.length - 1 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch + 1})">${meta.n?meta.n[ch+1]:ch+2} →</button>` : ""}
     </div>
+    <div class="row" style="margin-top:9px">
+      <button class="btn ghost small" id="btnPin" onclick="togglePin()"></button>
+      <button class="btn ghost small" onclick="showGntUnknown()">Words I don't know</button>
+    </div>
+    <div id="gntTools" style="margin-top:12px"></div>
     <div style="height:20px"></div>`;
+  gntCur = { abbr, ch, meta, verses };
+  paintGntTools();
 
+  let counted = false;
   document.getElementById("psg").onclick = e => {
     if (e.target.tagName !== "W") return;
+    // Reading the Greek New Testament is studying. It used to count for
+    // nothing, so the streak broke on the days that mattered most.
+    if (!counted) { counted = true; touchDay(); }
     document.querySelectorAll("#psg w").forEach(x => x.classList.remove("tapped"));
     e.target.classList.add("tapped");
     const w = verses[+e.target.dataset.v][1][+e.target.dataset.w];
     const lemma = GNT.lemmas[w[1]], gloss = GNT.gloss[w[1]];
     const parse = gntParse(GNT.pos[w[2]], w[3]);
+    // A word you have just had to look up is exactly the one worth adding.
+    const vi = vocIndexFor(lemma);
     document.getElementById("gloss").innerHTML =
       `<div class="w gk">${w[0]}</div>
-       <div class="d">${parse}${parse ? " · " : ""}<span class="gk">${lemma}</span>${gloss ? " — " + gloss : ""}</div>`;
+       <div class="d">${parse}${parse ? " · " : ""}<span class="gk">${lemma}</span>${gloss ? " — " + gloss : ""}</div>
+       ${vi >= 0 && !S.cards[vi]
+         ? `<button class="mini" style="margin-top:7px" onclick="addToDeck(${vi},this)">+ add to my deck</button>` : ""}`;
   };
   window.scrollTo(0, 0);
 }
 
-/* Bulk download for offline reading. */
+/* Bulk download for offline reading. Not wired to a button: the service
+   worker fetches every book in the background from data/offline.json, so
+   this is a manual fallback only. */
 let gntDl = false;
 async function downloadGnt(btn) {
   if (gntDl) return;

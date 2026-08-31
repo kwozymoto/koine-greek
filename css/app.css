@@ -5,6 +5,9 @@
   --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   --nav-h:60px;
+  /* "Greek text size" used to reach exactly two places. Everything Greek is
+     sized through this, so the setting means what it says. */
+  --gk-scale:1;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{height:100%}
@@ -12,7 +15,9 @@ html,body{margin:0;padding:0}
 body{min-height:100%}
 body{
   background:var(--bg); color:var(--text); font-family:var(--ui);
-  font-size:16px; line-height:1.55; overscroll-behavior-y:contain;
+  /* rem, not px: every caption around it is already relative, so a fixed
+     body pinned the lesson prose while the captions grew. */
+  font-size:1rem; line-height:1.55; overscroll-behavior-y:contain;
   padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 20px);
 }
 button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer}
@@ -68,6 +73,8 @@ nav button.on{color:var(--gold)}
 .ring .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .ring .big{font-size:2rem;font-weight:600;line-height:1}
 .streak{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:5px 13px;font-size:.83rem}
+.streak i{font-style:normal;color:var(--muted);font-size:.76rem}
+.streak i:empty{display:none}
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
 .stat b{display:block;font-size:1.3rem;font-weight:600}
@@ -79,7 +86,9 @@ nav button.on{color:var(--gold)}
   min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:26px 20px;margin-bottom:14px;
 }
-.fc .word{font-family:var(--gk);font-size:2.9rem;line-height:1.25;font-weight:400}
+/* The cap and the wrap are both safety nets for the longest words at Extra
+   large on a narrow phone; below that nothing here changes the rendering. */
+.fc .word{font-family:var(--gk);font-size:min(calc(2.9rem * var(--gk-scale)),18vw);line-height:1.25;font-weight:400;overflow-wrap:anywhere}
 .fc .rule{width:54px;height:2px;background:var(--gold);margin:16px 0;opacity:.75}
 .fc .ans{font-size:1.12rem}
 .fc .meta{color:var(--muted);font-size:.79rem;margin-top:12px}
@@ -112,7 +121,7 @@ nav button.on{color:var(--gold)}
 table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:.86rem}
 th,td{padding:7px 6px;text-align:left;border-bottom:1px solid var(--line)}
 th{color:var(--muted);font-weight:500;font-size:.74rem}
-td.g{font-family:var(--gk);font-size:1.02rem}
+td.g{font-family:var(--gk)}
 caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padding-bottom:5px}
 
 .vid{display:flex;align-items:center;gap:11px;padding:12px 14px;background:var(--surface-2);border-radius:11px;margin-bottom:9px;text-decoration:none;color:var(--text)}
@@ -123,15 +132,19 @@ caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padd
 /* ---------- alphabet ---------- */
 .alpha-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .alpha{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:11px 4px;text-align:center}
-.alpha .l{font-family:var(--gk);font-size:1.5rem;line-height:1.15}
+.alpha .l{font-family:var(--gk);line-height:1.15}
 .alpha .nm{font-size:.66rem;color:var(--muted);margin-top:2px}
 
 /* ---------- reading ---------- */
-.passage{font-family:var(--gk);font-size:1.35rem;line-height:2.05;margin-bottom:16px}
-.passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:0 1px}
+.passage{font-family:var(--gk);font-size:calc(1.35rem * var(--gk-scale));line-height:2.05;margin-bottom:16px}
+/* 13px tall inside a 39px line box meant a tap in the leading hit the
+   container and was silently dropped. Vertical padding on an inline element
+   does not change the line layout, and the negative margin keeps the
+   horizontal spacing exactly as it was. */
+.passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:5px 2px;margin:0 -1px}
 .passage w.tapped{background:rgba(212,165,55,.2);border-radius:3px}
 .gloss{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 12px);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
-.gloss .w{font-family:var(--gk);font-size:1.4rem}
+.gloss .w{font-family:var(--gk)}
 .gloss .d{font-size:.86rem;color:var(--muted);margin-top:3px}
 
 /* ---------- badges ---------- */
@@ -142,7 +155,10 @@ caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padd
 .badge b{display:block;font-size:.72rem;font-weight:600;margin-top:5px}
 .badge span{font-size:.63rem;color:var(--muted)}
 
-.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 22px);transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:11px 18px;font-size:.87rem;z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+/* Clear of the reading gloss, which is a near-identical panel at an
+   overlapping offset — the toast used to sit entirely inside it. Its own
+   surface colour too, so the two read as different things. */
+.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 22px);transform:translateX(-50%);max-width:min(88vw,420px);text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:11px 18px;font-size:.87rem;z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
 .toast.on{opacity:1}
 .empty{text-align:center;padding:44px 20px;color:var(--muted)}
 .empty .gk{font-size:2.4rem;display:block;margin-bottom:12px;color:var(--gold);opacity:.5}
@@ -157,15 +173,20 @@ caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padd
 .netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
 .netpill.on{opacity:1}
 
-.update{position:fixed;left:50%;bottom:calc(var(--nav-h) + 22px);transform:translateX(-50%);display:none;align-items:center;gap:14px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:10px 16px;font-size:.87rem;z-index:61}
+.update{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 22px);transform:translateX(-50%);display:none;align-items:center;gap:14px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:10px 16px;font-size:.87rem;z-index:61}
 .update.on{display:flex}
 .update button{color:var(--gold);font-weight:650}
 
 /* Pronunciation links go off-device, so they are the one thing that cannot
-   work offline. Dim them and say why rather than letting a tap dead-end. */
-.vid .net{display:none;font-size:.72rem;color:var(--rust);margin-top:1px}
-body.off .vid{opacity:.5}
-body.off .vid .net{display:block}
+   work offline. Say so and make the tap genuinely inert — but dim only the
+   title and the bullet: fading the whole element composited the warning
+   twice and left it at 1.7:1, effectively unreadable. .local marks the
+   things in this list that are precached, such as the alphabet chart. */
+.vid .net{display:none;font-size:.72rem;color:#e8907f;margin-top:1px}
+body.off .vid:not(.local){pointer-events:none}
+body.off .vid:not(.local) .p{opacity:.4}
+body.off .vid:not(.local) b{color:var(--muted)}
+body.off .vid:not(.local) .net{display:block}
 
 /* ---------- tables tab ---------- */
 #tablesSearch{width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);
@@ -174,8 +195,8 @@ body.off .vid .net{display:block}
 .ptable{margin-bottom:6px}
 .ptable>button{width:100%;text-align:left;padding:13px 15px;background:var(--surface);
   border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:.94rem;
-  display:flex;justify-content:space-between;align-items:center}
-.ptable>button::after{content:"›";color:var(--muted);transform:rotate(90deg)}
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ptable>button::after{content:"›";color:var(--muted);transform:rotate(90deg);flex:0 0 auto}
 .ptable.open>button::after{transform:rotate(-90deg)}
 .ptable .pt-body{display:none;padding:2px 4px 10px}
 .ptable.open .pt-body{display:block}
@@ -193,10 +214,21 @@ body.off .vid .net{display:block}
 .setrow select{background:var(--surface-2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}
 
 /* Greek text size preference */
-body[data-gk="lg"] .passage{font-size:1.6rem}
-body[data-gk="xl"] .passage{font-size:1.85rem}
-body[data-gk="lg"] .fc .word{font-size:3.2rem}
-body[data-gk="xl"] .fc .word{font-size:3.5rem}
+body[data-gk="lg"]{--gk-scale:1.18}
+body[data-gk="xl"]{--gk-scale:1.35}
+
+/* Quiz and drill prompts. These were seven inline font-sizes, so the setting
+   could not touch them and the principal-parts drill showed its Greek at
+   body size whatever you picked. */
+.q-gk{font-family:var(--gk);font-size:calc(1.5rem * var(--gk-scale));line-height:1.35}
+.q-gk.sm{font-size:calc(1.2rem * var(--gk-scale))}
+.q-gk.lg{font-size:calc(2rem * var(--gk-scale))}
+.opt .gk{font-size:calc(1.05rem * var(--gk-scale))}
+.gloss .w{font-size:calc(1.4rem * var(--gk-scale))}
+td.g{font-size:calc(1.02rem * var(--gk-scale))}
+.lk .w b{font-size:calc(1.12rem * var(--gk-scale))}
+.alpha .l{font-size:calc(1.5rem * var(--gk-scale))}
+.fc .meta .gk{font-size:calc(.95rem * var(--gk-scale))}
 
 /* ---------- pronunciation tiles ---------- */
 .alpha.snd{position:relative;cursor:pointer;width:100%;text-align:center;
@@ -215,7 +247,7 @@ body[data-gk="xl"] .fc .word{font-size:3.5rem}
 .lk{display:flex;align-items:center;gap:11px;padding:11px 13px;background:var(--surface);
   border:1px solid var(--line);border-radius:11px;margin-bottom:8px;width:100%;text-align:left}
 .lk .w{flex:1;min-width:0}
-.lk .w b{display:block;font-family:var(--gk);font-size:1.12rem;font-weight:500}
+.lk .w b{display:block;font-family:var(--gk);font-weight:500}
 .lk .w span{font-size:.8rem;color:var(--muted)}
 .lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap}
 .lk .pl{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:1px solid var(--line);
@@ -231,14 +263,14 @@ body[data-gk="xl"] .fc .word{font-size:3.5rem}
 .ch{background:var(--surface);border:1px solid var(--line);border-radius:10px;
   padding:12px 0;font-size:.9rem;color:var(--text)}
 .ch:active{background:var(--surface-2)}
-.passage.gnt{font-size:1.25rem;line-height:1.95}
+.passage.gnt{font-size:calc(1.25rem * var(--gk-scale));line-height:1.95}
 .passage .vn{font-family:var(--ui);font-size:.62rem;color:var(--gold);
   vertical-align:super;margin-right:3px;opacity:.75}
 
-/* dismiss control on the install banner */
-.install .x{flex:0 0 auto;width:28px;height:28px;border-radius:50%;color:var(--muted);
+/* dismiss control on the install banner and the update bar */
+.install .x, .update .x{flex:0 0 auto;width:28px;height:28px;border-radius:50%;color:var(--muted);
   font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center}
-.install .x:active{background:var(--surface)}
+.install .x:active, .update .x:active{background:var(--surface)}
 
 /* play the whole lexical entry */
 .mini{font-size:.72rem;padding:2px 7px;border:1px solid var(--line);border-radius:999px;

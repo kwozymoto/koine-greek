@@ -35,7 +35,7 @@
           <small class="muted" id="ringLbl">of 20 due</small>
         </div>
       </div>
-      <span class="streak">🔥 <b id="streakN">0</b>&nbsp;day streak</span>
+      <span class="streak">🔥 <b id="streakN">0</b>&nbsp;day streak<i id="streakRest"></i></span>
     </div>
 
     <div class="stat-grid">
@@ -47,6 +47,8 @@
     <button class="btn" id="btnReview">Start today's review</button>
     <div style="height:9px"></div>
     <button class="btn ghost" id="btnNew">Learn 5 new words</button>
+
+    <div id="pinned"></div>
 
     <h2>Next lesson</h2>
     <div id="nextLesson"></div>
@@ -104,8 +106,8 @@
   <section class="screen" id="s-tables">
     <h1>Tables</h1>
     <p class="sub">Every paradigm in one place. Search by name or form.</p>
-    <button class="btn ghost small" style="margin-bottom:12px" onclick="go('lookup')">🔍 Look up a word</button>
-    <input id="tablesSearch" type="search" placeholder="Search: aorist, article, participle…" autocomplete="off">
+    <input id="tablesSearch" type="search" placeholder="Search paradigms: aorist, article, participle…" autocomplete="off">
+    <button class="btn ghost small" style="margin-bottom:16px" onclick="go('lookup')">🔍 Word list — search all 470 words</button>
     <div id="tablesBody"></div>
   </section>
 
@@ -129,7 +131,7 @@
 
 <div class="toast" id="toast"></div>
 <div class="netpill" id="netPill">Offline</div>
-<div class="update" id="updateBar"><span>New version ready</span><button id="btnReload">Reload</button></div>
+<div class="update" id="updateBar"><span>New version ready</span><button id="btnReload">Reload</button><button class="x" id="btnUpdateNo" aria-label="Later">&times;</button></div>
 
 <script src="data/vocab.js"></script>
 <script src="data/lessons.js"></script>

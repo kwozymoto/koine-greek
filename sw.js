@@ -9,8 +9,22 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v22';
+const VERSION = 'v23';
 const CACHE   = `koine-${VERSION}`;
+
+/* The bulk set — 470 word clips and 27 New Testament books, 497 files and
+   9.5MB — lives in its own cache. One cache name swept on every VERSION bump
+   meant every code change threw all of it away and pulled it down again,
+   with "Hear it" and the reader failing offline until the refill finished.
+   Bump this digit only when a bulk file's *content* changes.
+
+   Safe to keep across versions: the mp3 filenames encode VOCAB array indices
+   and data/vocab.js is append-only, so a kept cache can only ever be missing
+   newly added files — which the next fill adds. It can never map an old file
+   onto a new index. */
+const BULK = 'koine-bulk-1';
+const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
+                    || /data\/gnt\/(?!manifest\.json)[^/]+\.json$/.test(u);
 
 const SHELL = [
   /* Only index.html — never also '.'. Precaching both stores two copies of
@@ -125,7 +139,28 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)));
+
+    /* One-time migration off the single-cache layout: carry the bulk files
+       out of the old cache instead of sweeping them and re-downloading
+       9.5MB. Guarded, because a failure here must not stop the worker
+       activating — the fill would recover it, just slowly. */
+    try {
+      const old = keys.filter(k => k !== CACHE && k !== BULK && k.startsWith('koine-v'));
+      if (old.length) {
+        const bulkCache = await caches.open(BULK);
+        for (const k of old) {
+          const c = await caches.open(k);
+          for (const req of await c.keys()) {
+            if (!isBulkUrl(req.url)) continue;
+            if (await bulkCache.match(req)) continue;
+            const r = await c.match(req);
+            if (r) await bulkCache.put(req, r);
+          }
+        }
+      }
+    } catch (e) { /* fall through to a normal fill */ }
+
+    await Promise.all(keys.filter(k => k !== CACHE && k !== BULK).map(k => caches.delete(k)));
     await self.clients.claim();
     fillBulk();                       // not awaited: the app is usable already
   })());
@@ -149,7 +184,11 @@ async function fillBulk() {
   if (filling) return;
   filling = true;
   try {
+    /* The manifest is a SHELL entry, so it is read from CACHE. Reading it
+       from BULK would miss, fall through to fetch(), and throw when offline
+       — and then no fill would ever run. */
     const cache = await caches.open(CACHE);
+    const bulkCache = await caches.open(BULK);
     const res = await cache.match('data/offline.json') || await fetch('data/offline.json');
     const { bulk } = await res.json();
 
@@ -161,9 +200,9 @@ async function fillBulk() {
       while (queue.length) {
         const url = queue.shift();
         try {
-          if (!(await cache.match(url))) {
+          if (!(await bulkCache.match(url))) {
             const r = await fetch(url);
-            if (r.status === 200) await cache.put(url, r);
+            if (r.status === 200) await bulkCache.put(url, r);
             else failed++;
           }
         } catch (e) { failed++; }
@@ -181,11 +220,11 @@ async function fillBulk() {
        next visit — which is not what "offline by default" should mean. */
     if (failed) {
       const retry = [];
-      for (const url of bulk) if (!(await cache.match(url))) retry.push(url);
+      for (const url of bulk) if (!(await bulkCache.match(url))) retry.push(url);
       for (const url of retry) {
         try {
           const r = await fetch(url);
-          if (r.status === 200) { await cache.put(url, r); failed--; }
+          if (r.status === 200) { await bulkCache.put(url, r); failed--; }
         } catch (e) { /* leave it for the next load */ }
       }
     }
@@ -205,11 +244,12 @@ self.addEventListener('message', e => {
 
 async function reportStatus() {
   try {
-    const cache = await caches.open(CACHE);
+    const cache = await caches.open(CACHE);       // the manifest is a SHELL entry
+    const bulkCache = await caches.open(BULK);
     const res = await cache.match('data/offline.json') || await fetch('data/offline.json');
     const { bulk } = await res.json();
     let have = 0;
-    for (const u of bulk) if (await cache.match(u)) have++;
+    for (const u of bulk) if (await bulkCache.match(u)) have++;
     post({ type: 'offline-status', have, total: bulk.length });
   } catch (e) {
     post({ type: 'offline-status', error: true });
@@ -237,12 +277,17 @@ self.addEventListener('fetch', e => {
     const cached = await cache.match(req, { ignoreSearch: true });
     if (cached) return cached;
 
-    try {
-      const res = await fetch(req);
-      if (res.status === 200 && res.type === 'basic') cache.put(req, res.clone());
-      return res;
-    } catch (err) {
-      throw err;
+    // Word clips and New Testament books are held separately, so that a
+    // version bump does not cost 9.5MB. A runtime miss is stored in
+    // whichever of the two it belongs to.
+    const bulkCache = isBulkUrl(req.url) ? await caches.open(BULK) : null;
+    if (bulkCache) {
+      const hit = await bulkCache.match(req, { ignoreSearch: true });
+      if (hit) return hit;
     }
+
+    const res = await fetch(req);
+    if (res.status === 200 && res.type === 'basic') (bulkCache || cache).put(req, res.clone());
+    return res;
   })());
 });

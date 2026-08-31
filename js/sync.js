@@ -3,10 +3,11 @@
    only the hash travels, acting as both address and secret on a dumb
    key-value store (see sync-worker/).
 
-   Model: pull-merge-push. Every card carries a ts of its last grading,
-   so merging two devices' decks keeps whichever review of each word
-   happened most recently. Counters take the max, sets take the union,
-   and device preferences (goal, text size) stay local.
+   Model: pull-merge-push. Every card carries a ts of its last grading, so
+   merging two devices' decks keeps whichever review of each item happened
+   most recently — vocabulary and grammar questions alike. Counters take the
+   max, sets take the union, and device preferences (goal, text size, sound,
+   and where this device was reading) stay local.
 
    SYNC_URL is empty until the worker is deployed; the UI hides itself
    so the app works identically without the backend. */
@@ -40,14 +41,19 @@ function pickCard(a, b) {
   if ((a.reps || 0) !== (b.reps || 0)) return (a.reps || 0) > (b.reps || 0) ? a : b;
   return (a.due || "") >= (b.due || "") ? a : b;
 }
+function mergeCards(a, b) {
+  const out = {};
+  for (const k of new Set([...Object.keys(a || {}), ...Object.keys(b || {})])) {
+    const x = (a || {})[k], y = (b || {})[k];
+    out[k] = !x ? y : (!y ? x : pickCard(x, y));
+  }
+  return out;
+}
 function mergeStates(local, remote) {
   const out = JSON.parse(JSON.stringify(local));
-  out.cards = {};
-  const keys = new Set([...Object.keys(local.cards || {}), ...Object.keys(remote.cards || {})]);
-  for (const k of keys) {
-    const a = (local.cards || {})[k], b = (remote.cards || {})[k];
-    out.cards[k] = !a ? b : (!b ? a : pickCard(a, b));
-  }
+  out.cards  = mergeCards(local.cards, remote.cards);
+  // Grammar questions are scheduled the same way and merge the same way.
+  out.gcards = mergeCards(local.gcards, remote.gcards);
   out.xp     = Math.max(local.xp || 0, remote.xp || 0);
   /* Take the streak from whichever device owns the newer last-studied date;
      Math.max resurrected a long-dead streak from an idle device. */
@@ -62,6 +68,14 @@ function mergeStates(local, remote) {
   // Take the more recent export so the backup reminder is not shown on one
   // device because the backup was made on the other.
   out.exported = [local.exported, remote.exported].filter(Boolean).sort().pop() || null;
+  /* The later of the two, so switching devices cannot buy a second rest day
+     in the same week. */
+  out.restUsed = [local.restUsed, remote.restUsed].filter(Boolean).sort().pop() || null;
+  /* The passage you pinned for this week's sermon should follow you from the
+     desk to the phone. S.where — the reading position — deliberately does
+     not: that is where *this* device was. */
+  const pa = local.pin, pb = remote.pin;
+  out.pin = (pa && pb) ? ((+pa.ts || 0) >= (+pb.ts || 0) ? pa : pb) : (pa || pb || null);
   out.last    = [local.last, remote.last].filter(Boolean).sort().pop() || null;
   const da = local.dayOfReviews || "", db = remote.dayOfReviews || "";
   if (da === db) out.reviewsToday = Math.max(local.reviewsToday || 0, remote.reviewsToday || 0);
@@ -87,8 +101,8 @@ async function syncPull() {
     const changedLocal  = JSON.stringify(merged) !== JSON.stringify(S);
     /* goal / gk / sfx are deliberately per-device, so they are not compared —
        including them would push on every single pull. */
-    const sig = o => JSON.stringify([o.cards, o.xp, o.streak, o.best, o.last,
-                                     o.lessons, o.badges, o.suspended]);
+    const sig = o => JSON.stringify([o.cards, o.gcards, o.xp, o.streak, o.best, o.last,
+                                     o.lessons, o.badges, o.suspended, o.restUsed, o.pin]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

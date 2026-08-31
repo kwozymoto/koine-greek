@@ -36,26 +36,69 @@ function card(i){
   if(!S.cards[i]) S.cards[i]={ease:2.5,ivl:0,due:today(),reps:0,lapses:0};
   return S.cards[i];
 }
-function schedule(i,g){
-  const c=card(i);
+/* The interval a grade earns, before fuzz. The grade buttons show this, so
+   forecast and scheduler cannot drift apart. */
+function baseIvl(c,g){
+  if(c.reps===0) return g===1?1:(g===2?1:3);
+  if(c.reps===1) return g===1?3:(g===2?6:9);
+  // Capped: uncapped growth reached a date Date could not represent and
+  // threw inside schedule(), aborting grade() mid-session.
+  return Math.min(365, Math.round(c.ivl * (g===1?1.2:(g===2?c.ease:c.ease*1.3))));
+}
+/* One scheduler for both decks: vocabulary keyed by VOCAB index, and the
+   grammar questions keyed by lesson-and-question id. */
+function applyGrade(c,g){
   c.ts=Date.now();
   if(g===0){
     c.lapses++; c.reps=0; c.ivl=0;
     c.ease=Math.max(1.3,c.ease-0.2);
     c.due=today();                       // stays in today's queue
   } else {
-    if(c.reps===0) c.ivl = g===1?1:(g===2?1:3);
-    else if(c.reps===1) c.ivl = g===1?3:(g===2?6:9);
-    // Capped: uncapped growth reached a date Date could not represent and
-    // threw inside schedule(), aborting grade() mid-session.
-    else c.ivl = Math.min(365, Math.round(c.ivl * (g===1?1.2:(g===2?c.ease:c.ease*1.3))));
+    c.ivl = baseIvl(c,g);
+    /* Standard SM-2 fuzz on the longer intervals. Without it a group of
+       cards graded on one day marches in lockstep for ever: the hundred
+       seeded words would keep landing on a single day, all together. */
+    if(c.ivl>=7) c.ivl = Math.min(365, Math.max(7, Math.round(c.ivl*(0.95+Math.random()*0.10))));
     c.ease = Math.min(2.8, Math.max(1.3, c.ease + (g===1?-0.15:(g===2?0:0.1))));
     c.reps++;
     const d=new Date(); d.setDate(d.getDate()+c.ivl);
     c.due=ymd(d);
   }
+}
+function schedule(i,g){ applyGrade(card(i),g); save(); }
+/* ---- grammar cards ----
+   S.cards is keyed by VOCAB index and has to stay that way, so the grammar
+   questions get their own map, keyed "L17q3" — lesson 17, question 3 — and
+   run through the same scheduler.
+
+   Passing lesson 17 used to be the end of it: the id went on a one-way done
+   list and nothing ever brought those questions back. Six months on you
+   would still know three hundred words, because the SRS guarantees that, and
+   still not parse a genitive absolute. That is how the grammar went the
+   first time round. */
+function gcard(k){
+  if(!S.gcards) S.gcards={};
+  if(!S.gcards[k]) S.gcards[k]={ease:2.5,ivl:0,due:today(),reps:0,lapses:0};
+  return S.gcards[k];
+}
+/* Multiple choice is right or wrong, so it maps onto Good and Again. */
+function gradeGrammar(k,ok){
+  applyGrade(gcard(k),ok?2:0);
+  // Only a scheduled review counts toward the daily goal; a lesson test is
+  // studying, but it is not the review the goal is about.
+  if(mode==="review") S.reviewsToday=(S.reviewsToday||0)+1;
   save();
 }
+/* "L17q3" back to its question. A key whose lesson has since been re-written
+   returns null and is skipped rather than breaking a review. */
+function gquestion(k){
+  const m=/^L(\d+)q(\d+)$/.exec(k); if(!m) return null;
+  const l=LESSONS.find(x=>x.id===+m[1]);
+  return (l && l.quiz && l.quiz[+m[2]]) || null;
+}
+const gdueList=()=>Object.keys(S.gcards||{})
+  .filter(k=>S.gcards[k] && S.gcards[k].due<=today() && gquestion(k));
+
 const isDue=i=>S.cards[i] && S.cards[i].due<=today() && !skipWord(i);
 /* Number() must come first: Object.keys yields strings, and skipWord uses
    Set.has / Array.includes, which do not coerce — so every suspended and
@@ -67,11 +110,21 @@ const level=()=>Math.floor(Math.sqrt(Math.max(0,+S.xp||0)/45))+1;
 /* ============================================================
    STREAK + XP + BADGES
    ============================================================ */
+/* One missed day a week does not end the streak. You will always lose the
+   odd Sunday, and a funeral week is exactly when a broken streak would make
+   you stop altogether. It is shown honestly rather than faked — the day is
+   only spent when you actually come back. */
+const restAvailable=()=>!S.restUsed||daysBetween(S.restUsed,today())>=7;
 function touchDay(){
   const t=today();
   if(S.last===t) return;
   if(S.last===null) S.streak=1;
-  else{ const d=daysBetween(S.last,t); S.streak = d===1 ? S.streak+1 : 1; }
+  else{
+    const d=daysBetween(S.last,t);
+    if(d<=1) S.streak=(S.streak||0)+1;
+    else if(d===2 && restAvailable()){ S.streak=(S.streak||0)+1; S.restUsed=t; }
+    else S.streak=1;
+  }
   S.last=t; S.best=Math.max(S.best||0,S.streak);
   S.reviewsToday=0; S.dayOfReviews=t; save();
 }
@@ -93,9 +146,29 @@ function checkBadges(){
   if(S.lessons.length>=26) grant("l26");
   if(S.lessons.includes(1)) grant("alpha");
 }
+/* A PWA with no server cannot send a notification, so the icon badge is the
+   only nudge available. Unsupported everywhere but Chrome on the desktop and
+   installed Android apps — hence the guards. */
+function paintBadge(n){
+  try{
+    if(n>0) navigator.setAppBadge && navigator.setAppBadge(n);
+    else navigator.clearAppBadge && navigator.clearAppBadge();
+  }catch(e){}
+}
+document.addEventListener("visibilitychange",()=>{
+  if(document.visibilityState==="visible" && typeof dueList==="function") paintBadge(dueList().length);
+});
+
 let tTimer;
 function toast(msg){
   const el=document.getElementById("toast");
+  /* Clear whatever is pinned to the bottom of the screen. The reading gloss
+     is a near-identical panel sitting just above the nav, and it grows with
+     its content — so a fixed offset in the stylesheet is not enough and the
+     toast was landing inside it. */
+  const g=document.querySelector(".screen.on .gloss");
+  const lift=(g && g.offsetParent) ? Math.round(g.getBoundingClientRect().height)+22 : 22;
+  el.style.bottom=`calc(var(--nav-h) + env(safe-area-inset-bottom) + ${lift}px)`;
   el.textContent=msg; el.classList.add("on");
   clearTimeout(tTimer); tTimer=setTimeout(()=>el.classList.remove("on"),2400);
 }
@@ -155,8 +228,19 @@ function suspendWord(i){
   save(); toast("Suspended — it will stop coming up");
   qi++; step();
 }
+function unsuspendWord(i){
+  S.suspended=(S.suspended||[]).filter(x=>x!==i);
+  /* Back into today's queue rather than at whatever interval it had when it
+     was set aside — you are asking to see it again. */
+  if(S.cards[i]) S.cards[i].due=today();
+  save(); renderProgress();
+  toast(VOCAB[i][0].split(",")[0]+" is back in the rotation");
+}
 function unsuspendAll(){
-  S.suspended=[]; save(); renderProgress(); toast("All suspended words are back in the rotation");
+  const n=(S.suspended||[]).length;
+  (S.suspended||[]).forEach(i=>{ if(S.cards[i]) S.cards[i].due=today(); });
+  S.suspended=[]; save(); renderProgress();
+  toast(n===1?"That word is back in the rotation":"All "+n+" words are back in the rotation");
 }
 
 let UNDO=null;   // last-grade snapshot for the session Undo button
@@ -164,7 +248,7 @@ let UNDO=null;   // last-grade snapshot for the session Undo button
 /* ============================================================
    NAVIGATION
    ============================================================ */
-function go(name){
+function showScreen(name){
   // Nothing should still be speaking on a screen you have left.
   if(typeof stopEntry==="function") stopEntry();
   if(typeof stopSequence==="function") stopSequence();
@@ -181,6 +265,48 @@ function go(name){
   if(name==="tables")renderTables();
   if(name==="prog")renderProgress();
 }
+
+/* ---- back button ----
+   The manifest asks for "standalone", so on the phone there is no browser
+   chrome and the system back gesture is the only Back there is. With no
+   history of our own it closed the app from any screen — five minutes into
+   John 8, one swipe and you are out. Every destination now leaves an entry.
+
+   Going back replays the entry by re-running the navigation that produced
+   it — which would push a duplicate on top of the entry we just returned
+   to, so Back would land you where you started. NAV_REPLAY suppresses that.
+   Every opener pushes synchronously, before its first await, so the flag
+   covers a whole replay even though the reader loads asynchronously. */
+let NAV_REPLAY=false;
+function pushNav(st){
+  if(NAV_REPLAY) return;
+  // Also stops a re-tapped nav tab stacking identical entries.
+  try{
+    if(JSON.stringify(history.state)===JSON.stringify(st)) return;
+    history.pushState(st,"");
+  }catch(e){}
+}
+function go(name){ showScreen(name); pushNav({screen:name}); }
+
+function navReplay(st){
+  NAV_REPLAY=true;
+  try{
+    if(!st || !st.screen){ showScreen("today"); return; }
+    if(st.screen==="lesson" && st.id){ openLesson(st.id); return; }
+    if(st.screen==="read"){
+      showScreen("read");
+      if(st.gnt==="books") openGnt();
+      else if(st.gnt==="book") openGntBook(st.a);
+      else if(st.gnt==="ch") openGntChapter(st.a,st.c);
+      else if(st.r) openRead(st.r);
+      return;
+    }
+    showScreen(st.screen);
+  } finally { setTimeout(()=>{ NAV_REPLAY=false; },0); }
+}
+addEventListener("popstate",e=>navReplay(e.state));
+try{ history.replaceState({screen:"today"},""); }catch(e){}
+
 document.querySelectorAll("nav button").forEach(b=>
   b.onclick=()=>go(b.dataset.go));
 
@@ -188,22 +314,34 @@ document.querySelectorAll("nav button").forEach(b=>
    TODAY
    ============================================================ */
 function render(){
-  const due=dueList().length, goal=S.goal||20;
+  // Grammar is part of the review, so it is part of the count — capped at the
+  // five the session will actually serve.
+  const due=dueList().length+Math.min(5,gdueList().length), goal=S.goal||20;
   /* An untouched deck is not a finished day. Measuring against the goal also
      makes the setting mean something — it previously governed nothing, and a
      day 292 cards behind could paint a completed circle. */
-  const fresh=Object.keys(S.cards).length===0;
+  const fresh=Object.keys(S.cards).length===0 && !Object.keys(S.gcards||{}).length;
   const pct=fresh?0:Math.min(1,(S.reviewsToday||0)/goal);
   document.getElementById("ringArc").style.strokeDashoffset = 415-(415*pct);
   document.getElementById("ringNum").textContent = due;
   document.getElementById("ringLbl").textContent =
-    Object.keys(S.cards).length===0 ? "nothing scheduled yet" : (due===1?"card due":"cards due");
+    fresh ? "nothing scheduled yet" : (due===1?"card due":"cards due");
   document.getElementById("streakN").textContent=S.streak;
+  const restEl=document.getElementById("streakRest");
+  if(restEl) restEl.textContent =
+    (S.restUsed && daysBetween(S.restUsed,today())<7) ? "\u00b7 rest day used" : "";
+  paintBadge(due);
   document.getElementById("stKnown").textContent=knownCount();
   document.getElementById("stLvl").textContent=level();
   document.getElementById("stXp").textContent=S.xp;
   document.getElementById("btnReview").textContent =
     due>0 ? `Start today's review (${due})` : "Nothing due — practise anyway";
+
+  const pin=S.pin, pinEl=document.getElementById("pinned");
+  if(pinEl) pinEl.innerHTML = (pin&&pin.a) ? `<h2>This week's passage</h2>
+    <button class="lesson-item" onclick="openGntChapter('${pin.a}',${pin.ch})" style="border-color:var(--gold-dim)">
+      <span class="t"><b>${pin.t} ${pin.n}</b><span>Pinned for sermon preparation</span></span>
+      <span class="muted">›</span></button>` : "";
 
   const next=LESSONS.find(l=>!S.lessons.includes(l.id))||LESSONS[LESSONS.length-1];
   document.getElementById("nextLesson").innerHTML=
@@ -220,8 +358,9 @@ document.getElementById("btnNew").onclick=()=>startNew();
    SESSIONS
    ============================================================ */
 let Q=[], qi=0, mode="";
+let REQUEUED={};                 // VOCAB index -> times re-queued this session
 function startSession(queue,label){
-  Q=queue; qi=0; mode=label; SESSION_XP=0;
+  Q=queue; qi=0; mode=label; SESSION_XP=0; REQUEUED={};
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
@@ -271,7 +410,9 @@ function flashcard(i){
     document.getElementById("show").onclick=()=>{
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
-      playWord(i,null);
+      /* Automatic, so it is quiet about a clip it cannot reach — thirty
+         toasts in an offline review would be worse than the silence. */
+      if(S.speak!==0) playWord(i,null,true);
       document.getElementById("show").outerHTML=`
         ${isLeech(i)?`<p class="muted" style="font-size:.8rem;text-align:center;margin:0 0 8px">
            You have lost this one ${S.cards[i].lapses} times. Make a mnemonic, or
@@ -285,14 +426,10 @@ function flashcard(i){
     };
   };
 }
-/* Mirrors schedule() exactly. It previously had no g===1 branch, so Hard
-   fell through to the Easy path and the button lied in both directions. */
-function nextIvl(i,g){
-  const c=card(i);
-  if(c.reps===0)return g===1?1:(g===2?1:3);
-  if(c.reps===1)return g===1?3:(g===2?6:9);
-  return Math.min(365, Math.round(c.ivl*(g===1?1.2:(g===2?c.ease:c.ease*1.3))));
-}
+/* The same arithmetic the scheduler uses, so the button cannot lie. (It
+   once had no g===1 branch, so Hard fell through to the Easy path.) The
+   fuzz applied on top moves the real date by at most a few percent. */
+function nextIvl(i,g){ return baseIvl(card(i),g); }
 function grade(i,g){
   UNDO={i, qi, prev:JSON.parse(JSON.stringify(S.cards[i])), requeued:g===0,
         reviews:S.reviewsToday||0, practice:PRACTICE};
@@ -303,14 +440,29 @@ function grade(i,g){
   save();
   addXp(3);                    // per graded card, so a lapse cannot pay twice
   SESSION_XP+=3;
-  if(g===0){ Q.push(flashcard(i)); }
+  /* The button says "<1m" and Q.push() meant the end of the session — eight
+     to fifteen minutes, by which time the answer you were just shown has
+     gone, so you fail it again and the lapse count calls an ordinary word a
+     sticking point. Three along genuinely is under a minute. Twice per card
+     is the budget: a third pass spins the counter without teaching you
+     anything, and the word is due again today regardless. */
+  if(g===0){
+    const seen=REQUEUED[i]||0;
+    if(seen<2){
+      REQUEUED[i]=seen+1;
+      UNDO.at=Math.min(qi+3,Q.length);
+      Q.splice(UNDO.at,0,flashcard(i));
+    } else UNDO.requeued=false;
+  }
   document.getElementById("btnUndo").style.display="";
   qi++; step();
 }
 document.getElementById("btnUndo").onclick=()=>{
   if(!UNDO) return;
   S.cards[UNDO.i]=UNDO.prev;
-  if(UNDO.requeued) Q.pop();
+  // Give the re-queue back as well, or an undo silently costs the card one
+  // of its two second looks.
+  if(UNDO.requeued){ Q.splice(UNDO.at,1); REQUEUED[UNDO.i]=Math.max(0,(REQUEUED[UNDO.i]||1)-1); }
   S.reviewsToday=UNDO.reviews;
   save();
   qi=UNDO.qi; UNDO=null;
@@ -319,7 +471,7 @@ document.getElementById("btnUndo").onclick=()=>{
 };
 
 /* ---- multiple choice ---- */
-function mcq(q,opts,ans,why){
+function mcq(q,opts,ans,why,gkey){
   return ()=>{
     const b=document.getElementById("sessBody");
     b.innerHTML=`<div class="card"><p style="margin:0;font-size:1.02rem">${q}</p></div>
@@ -337,6 +489,7 @@ function mcq(q,opts,ans,why){
            <button class="btn" onclick="qi++;step()">Continue</button>`;
         sfx(k===ans?"correct":"wrong");
         if(k===ans) addXp(2);
+        if(gkey) gradeGrammar(gkey,k===ans);
       };
       box.appendChild(btn);
     });
@@ -352,8 +505,9 @@ let SESSION_XP=0;
 
 function startReview(){
   let d=dueList();
+  const gd=gdueList().sort(()=>Math.random()-.5).slice(0,5);
   PRACTICE=false;
-  if(!d.length){
+  if(!d.length && !gd.length){
     const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && !skipWord(i));
     if(!started.length){ startNew(5); return; }        // fresh install: introduce instead
     d=started.sort(()=>Math.random()-.5).slice(0,15);  // nothing due: free practice
@@ -361,6 +515,9 @@ function startReview(){
   }
   const words=d.slice(0, Math.max(5, S.goal||20));
   const q=words.map(flashcard); q.__words=words;
+  /* A few grammar questions at the end of the review. Not in free practice:
+     that mode must not touch anything's schedule. */
+  if(!PRACTICE) gd.forEach(k=>{ const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k)); });
   startSession(q,"review");
 }
 /* SRS cards are keyed by VOCAB index, so data/vocab.js must be append-only.
@@ -377,7 +534,24 @@ const LEARN_ORDER=VOCAB.map((_,i)=>i).filter(i=>!RETIRED.has(i))
 function startNew(n=5){
   const fresh=[];
   for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
-  if(!fresh.length){toast("You've started every word in the deck");return;}
+  introduce(fresh,"You've started every word in the deck");
+}
+/* Words are introduced by New Testament frequency, which is right for the
+   daily button but wrong when you are working a chapter: you finish the
+   second declension and are handed δέ, γάρ and οὖν, particles that do not
+   decline at all. This takes the next five from the chapter's own list.
+   Frequency stays the default everywhere else. */
+function startLessonWords(id,n=5){
+  const l=LESSONS.find(x=>x.id===id);
+  const fresh=(l&&l.v||[]).filter(i=>!S.cards[i] && !skipWord(i)).slice(0,n);
+  introduce(fresh,"You have started every word in this chapter");
+}
+function lessonWordsLeft(id){
+  const l=LESSONS.find(x=>x.id===id);
+  return (l&&l.v||[]).filter(i=>!S.cards[i] && !skipWord(i)).length;
+}
+function introduce(fresh,emptyMsg){
+  if(!fresh.length){toast(emptyMsg);return;}
   const q=[];
   q.__words=fresh;
   // Do not create the cards up front: quitting after the first word left the
@@ -390,7 +564,7 @@ function startNew(n=5){
     // identical option could be rendered and scored wrong.
     const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k)).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
-    q.push(mcq(`What does <span class="gk" style="font-size:1.5rem">${v[0].split(",")[0]}</span> mean?`,
+    q.push(mcq(`What does <span class="q-gk">${v[0].split(",")[0]}</span> mean?`,
       opts, opts.indexOf(v[1]), `${v[1]} — ${v[3]}, appears about ${v[2]} times in the NT.`));
   });
   save(); startSession(q,"new");
@@ -415,11 +589,17 @@ function openLesson(id){
     <h2>Watch</h2>
     ${l.vids.map(v=>`<a class="vid" href="${v.u}" target="_blank" rel="noopener">
       <span class="p">▶</span><span><b>${v.t}</b><span>${v.s}</span><span class="net">Needs a connection</span></span></a>`).join("")}
+    ${(l.v||[]).length?`<h2>This chapter's words</h2>
+    <p class="muted" style="font-size:.87rem">${(l.v||[]).length} words in the course list belong to this chapter's grammar${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} not yet started`:" — all started"}.</p>
+    <button class="btn ghost" onclick="startLessonWords(${id})"${lessonWordsLeft(id)?"":" disabled"}>${
+      lessonWordsLeft(id)>=5?"Learn five of them"
+      :lessonWordsLeft(id)?`Learn the remaining ${lessonWordsLeft(id)}`
+      :"All of them started"}</button>`:""}
     <h2>Test yourself</h2>
     <p class="muted" style="font-size:.87rem">${l.quiz.length} questions. Retrieval beats rereading — attempt each one before you look.</p>
     <button class="btn" onclick="lessonQuiz(${id})">Start the test</button>
     <div style="height:34px"></div>`;
-  go("lesson");
+  showScreen("lesson"); pushNav({screen:"lesson",id});
   const ah=document.getElementById("alphaHere");
   if(ah) ah.innerHTML=
     soundGridHtml("letter")
@@ -429,12 +609,14 @@ function openLesson(id){
     <p>Two vowels written together make one sound. These eight are worth knowing before you meet them mid-word.</p>`
     + soundGridHtml("diphthong")
     + playAllHtml("diphthong")
-    + `<p style="margin-top:14px"><a class="vid" href="audio/erasmian-alphabet-chart.pdf" target="_blank" rel="noopener">
+    + `<p style="margin-top:14px"><a class="vid local" href="audio/erasmian-alphabet-chart.pdf" target="_blank" rel="noopener">
         <span class="p">↓</span><span><b>Printable alphabet chart</b><span>One-page PDF: names, sounds and diphthongs</span></span></a></p>`;
 }
 function lessonQuiz(id){
   const l=LESSONS.find(x=>x.id===id);
-  const q=l.quiz.map(x=>mcq(x.q,x.o,x.a,x.w));
+  // Answering here both creates the card and gives it its first grade, so a
+  // lesson you pass starts on the schedule rather than falling off it.
+  const q=l.quiz.map((x,n)=>mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
   q.push(()=>{
     if(!S.lessons.includes(id)){S.lessons.push(id);save();}
     checkBadges();
@@ -505,7 +687,7 @@ function buildDrill(n=8){
       <div class="chip-lbl">${k}</div>
       <div class="chips" data-k="${k}">${vals.map(v=>`<button data-v="${v}">${v}</button>`).join("")}</div>`).join("");
     b.innerHTML=`<div class="card" style="text-align:center">
-        <span class="gk" style="font-size:2rem">${form}</span>
+        <span class="q-gk lg">${form}</span>
         <p class="muted" style="font-size:.84rem;margin:6px 0 0">Indicative mood. Build the parse:</p></div>
       ${groups}
       <button class="btn" id="buildGo" disabled>Check</button><div id="fb"></div>`;
@@ -554,7 +736,7 @@ function ppDrill(n=10){
     while(v[slot]==="—") slot=1+Math.floor(Math.random()*3);
     const wrong=PP.filter(x=>x!==v && x[slot]!=="—").sort(()=>Math.random()-.5).slice(0,3).map(x=>x[slot]);
     const opts=[v[slot],...wrong].sort(()=>Math.random()-.5);
-    qs.push(mcq(`The ${PP_LBL[slot-1]} of <span class="gk" style="font-size:1.5rem">${v[0]}</span> is:`,
+    qs.push(mcq(`The ${PP_LBL[slot-1]} of <span class="q-gk">${v[0]}</span> is:`,
       opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(v[slot]),
       `<span class="gk">${v[0]}, ${v[1]}, ${v[2]}, ${v[3]}</span> — say the whole line aloud; the parts stick as a chant.`));
   });
@@ -597,7 +779,7 @@ const CASEFN=[
 function caseDrill(){
   return CASEFN.slice().sort(()=>Math.random()-.5).map(c=>{
     const [gk,q]=c[0].split("|");
-    return mcq(`<span class="gk" style="font-size:1.2rem">${gk}</span><br>${q}`,c[1],c[2],c[3]);
+    return mcq(`<span class="q-gk sm">${gk}</span><br>${q}`,c[1],c[2],c[3]);
   });
 }
 
@@ -606,7 +788,7 @@ function pairDrill(bank,prompt,n=12){
   return pool.map(p=>{
     const wrong=bank.filter(x=>x[1]!==p[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[p[1],...wrong].sort(()=>Math.random()-.5);
-    return mcq(`${prompt} <span class="gk" style="font-size:1.6rem">${p[0]}</span>`,
+    return mcq(`${prompt} <span class="q-gk">${p[0]}</span>`,
       opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`);
   });
 }
@@ -618,7 +800,7 @@ function alphaDrill(){
     const snd=AUDIO_BY_GREEK[a[0]]
       ? ` <button class="btn ghost small" style="margin-top:8px" onclick="playGreek('${a[0]}',null)">\uD83D\uDD0A Hear it</button>`
       : "";
-    return mcq(`Name this letter: <span class="gk" style="font-size:2rem">${a[0]}</span>${snd}`,
+    return mcq(`Name this letter: <span class="q-gk lg">${a[0]}</span>${snd}`,
       opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`);
   });
 }
@@ -637,6 +819,27 @@ function listenDrill(n=12){
     // autoplay once the question is on screen
     return ()=>{ q(); playGreek(c[0],null); };
   });
+}
+
+/* There is a clip for all 470 words, precached, and no drill used one:
+   listening practice stopped at naming letters. */
+function wordListenDrill(n=12){
+  const met=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && VOCAB_AUDIO[i] && !skipWord(i));
+  const pool=(met.length>8?met:LEARN_ORDER.filter(i=>VOCAB_AUDIO[i]).slice(0,40))
+    .sort(()=>Math.random()-.5).slice(0,n);
+  const q=pool.map(i=>{
+    const v=VOCAB[i];
+    // By value: three glosses appear twice in the deck.
+    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k))
+      .sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
+    const ask=mcq(`<button class="btn" onclick="playWord(${i},null)">\uD83D\uDD0A Play the word</button>
+      <p class="muted" style="font-size:.84rem;margin:10px 0 0">What does it mean?</p>`,
+      opts, opts.indexOf(v[1]), `<span class="gk">${v[0]}</span> — ${v[1]}.`);
+    return ()=>{ ask(); playWord(i,null,true); };
+  });
+  q.__words=pool;                      // so the next few clips are warmed
+  return q;
 }
 
 /* Only words already met — the drill previously quizzed the whole deck and
@@ -662,11 +865,13 @@ function reverseVocab(){
       `${v[0]} — ${v[1]}.`);
   });
 }
+/* The drill now feeds the same schedule the daily review draws from, rather
+   than being twelve unweighted questions in a menu of twelve drills. */
 function mixedQuiz(){
   const all=[];
-  LESSONS.filter(l=>S.lessons.includes(l.id)).forEach(l=>
-    l.quiz.forEach(x=>all.push(mcq(x.q,x.o,x.a,x.w))));
-  if(all.length<5) LESSONS.slice(0,4).forEach(l=>l.quiz.forEach(x=>all.push(mcq(x.q,x.o,x.a,x.w))));
+  const add=l=>l.quiz.forEach((x,n)=>all.push(mcq(x.q,x.o,x.a,x.w,`L${l.id}q${n}`)));
+  LESSONS.filter(l=>S.lessons.includes(l.id)).forEach(add);
+  if(all.length<5) LESSONS.slice(0,4).forEach(add);
   return all.sort(()=>Math.random()-.5).slice(0,12);
 }
 const DRILLS=[
@@ -677,7 +882,8 @@ const DRILLS=[
 ["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length),"d")],
 ["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
-["Listening","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
+["Listening — letters","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
+["Listening — words","Hear a word from the course list and give its meaning",()=>startSession(wordListenDrill(),"d")],
 ["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
 ["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
 ["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
@@ -700,7 +906,15 @@ function renderDrill(){
 const norm=s=>s.replace(/[.,;·:!?()\u00b7\u0387\u2019'\u2018]/g,"").trim()
   .normalize("NFD").replace(/[\u0300\u0301\u0342]/g,"").normalize("NFC").toLowerCase();
 function renderRead(){
-  document.getElementById("readList").innerHTML=
+  pushNav({screen:"read"});
+  /* Reaching Saturday's chapter was Read → whole NT → scroll 27 books →
+     Mark → chapter grid → 6, every morning. The reference is stored rather
+     than the loaded book, so this row paints before the manifest exists. */
+  const w=S.where;
+  const resume = (w&&w.a) ? `<button class="lesson-item" onclick="openGntChapter('${w.a}',${w.ch})">
+       <span class="t"><b>Continue — ${w.t} ${w.n}</b><span>Where you left off</span></span>
+       <span class="muted">›</span></button>` : "";
+  document.getElementById("readList").innerHTML= resume +
     `<button class="lesson-item" onclick="openGnt()" style="border-color:var(--gold-dim)">
        <span class="t"><b>The whole Greek New Testament</b><span>Any chapter, every word parsed</span></span>
        <span class="muted">›</span></button>
@@ -714,6 +928,8 @@ function renderRead(){
 }
 function openRead(id){
   const r=READINGS.find(x=>x.id===id);
+  if(!r) return;
+  pushNav({screen:"read",r:id});
   grant("read");
   document.getElementById("readList").innerHTML=
     `<button class="btn ghost small" onclick="renderRead()">← All passages</button>`;
@@ -729,6 +945,11 @@ function openRead(id){
   const seen=new Set();
   document.getElementById("psg").onclick=e=>{
     if(e.target.tagName!=="W")return;
+    /* Fifteen minutes in your sermon text on a Saturday is the most valuable
+       thing you can do here, and it used to count for nothing: the streak
+       broke on the day you had done the most. Gated on a first tap so that
+       merely opening a passage is not "studying". */
+    if(!seen.size) touchDay();
     document.querySelectorAll("#psg w").forEach(x=>x.classList.remove("tapped"));
     e.target.classList.add("tapped");
     const i=+e.target.dataset.i;
@@ -756,14 +977,19 @@ function clozeRead(id){
   const strip=w=>w.replace(/[^Ͱ-Ͽἀ-῿]/g,"");
   const q=picks.map(p=>{
     const answer=strip(p.w[0]);
-    const wrong=cands.filter(c=>strip(c.w[0])!==answer)
-      .sort(()=>Math.random()-.5).slice(0,3).map(c=>strip(c.w[0]));
+    /* By value and de-duplicated: the same form appears more than once in
+       most passages, so the option list could show one word twice. */
+    const wrong=[...new Set(cands.map(c=>strip(c.w[0])))].filter(w=>w!==answer)
+      .sort(()=>Math.random()-.5).slice(0,3);
     const opts=[answer,...wrong].sort(()=>Math.random()-.5);
+    /* Blank every occurrence inside the window, not just the one being
+       asked: five questions in twelve passages printed their own answer two
+       words from the gap. */
     const ctx=r.w.map((w,i)=>{
-      const t=i===p.i?"____":w[0];
-      return Math.abs(i-p.i)<=5?t:null;
+      if(Math.abs(i-p.i)>5) return null;
+      return (i===p.i||strip(w[0])===answer)?"____":w[0];
     }).filter(Boolean).join(" ");
-    return mcq(`<span class="gk" style="font-size:1.15rem">… ${ctx} …</span><br><small class="muted">Which word fills the blank? (${r.ref})</small>`,
+    return mcq(`<span class="q-gk sm">… ${ctx} …</span><br><small class="muted">Which word fills the blank? (${r.ref})</small>`,
       opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(answer),
       `${answer} — ${p.w[1]}`);
   });
@@ -882,14 +1108,22 @@ function renderProgress(){
         <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
       <div class="setrow"><span>Answer sounds</span>
         <select id="setSfx">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Word audio</span>
+        <select id="setSpeak">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
         <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
       ${typeof installRowHtml==="function"?installRowHtml():""}
-      ${(S.suspended||[]).length?`<div class="setrow"><span>Set-aside words</span>
-        <button class="btn ghost small" onclick="unsuspendAll()">Restore ${(S.suspended||[]).length}</button></div>`:""}
     </div>
+    ${(S.suspended||[]).filter(i=>VOCAB[i]).length?`<div class="card">
+      <h3 style="margin-top:0">Set aside</h3>
+      <p class="muted" style="font-size:.85rem;margin-bottom:4px">These have stopped coming up. Restoring one puts it back in today's queue.</p>
+      ${(S.suspended||[]).filter(i=>VOCAB[i]).map(i=>`<div class="setrow">
+        <span><b class="gk" style="font-weight:500;font-size:1.05rem">${VOCAB[i][0].split(",")[0]}</b><br><small class="muted">${VOCAB[i][1]}</small></span>
+        <button class="btn ghost small" onclick="unsuspendWord(${i})">Restore</button></div>`).join("")}
+      ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
+    </div>`:""}
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
       <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
@@ -910,6 +1144,7 @@ function renderProgress(){
     <div class="card">
       <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
       <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
+      ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
     </div>
     <h2>Badges</h2>
     <div class="badges">${BADGES.map(b=>`
@@ -932,6 +1167,7 @@ function renderProgress(){
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  document.getElementById("setSpeak").onchange=e=>{S.speak=+e.target.value;save();};
   if(typeof paintOffline==="function"){ askOffline("offline-status"); paintOffline(); }
   document.getElementById("setSfx").onchange=e=>{
     S.sfx=+e.target.value; save();
@@ -976,6 +1212,27 @@ function saneState(x){
     exported: typeof x.exported==="string"?x.exported:null,
     gk: ["","lg","xl"].includes(x.gk)?x.gk:"",
     sfx: [0,1,2].includes(+x.sfx)?+x.sfx:2,
+    speak: [0,1].includes(+x.speak)?+x.speak:1,
+    restUsed: /^\d{4}-\d{2}-\d{2}$/.test(x.restUsed)?x.restUsed:null,
+  };
+  /* Where the reader was. Shape-checked because it is rendered straight into
+     the Read tab as a button label. */
+  const chapterRef=r=>(r && typeof r==="object" && typeof r.a==="string"
+    && Number.isInteger(+r.ch) && +r.ch>=0 && typeof r.t==="string")
+    ? {a:r.a.slice(0,8), ch:+r.ch, t:r.t.slice(0,40), n:+r.n||(+r.ch+1)} : null;
+  out.where=chapterRef(x.where);
+  out.pin=chapterRef(x.pin);
+  if(out.pin) out.pin.ts=Number.isFinite(+(x.pin||{}).ts)?+x.pin.ts:0;
+  const saneCard=c=>{
+    const o={
+      ease: Number.isFinite(+c.ease)?Math.min(2.8,Math.max(1.3,+c.ease)):2.5,
+      ivl:  Number.isFinite(+c.ivl)&&+c.ivl>=0?Math.min(365,Math.round(+c.ivl)):0,
+      due:  /^\d{4}-\d{2}-\d{2}$/.test(c.due)?c.due:today(),
+      reps: Number.isFinite(+c.reps)&&+c.reps>=0?Math.round(+c.reps):0,
+      lapses:Number.isFinite(+c.lapses)&&+c.lapses>=0?Math.round(+c.lapses):0,
+    };
+    if(Number.isFinite(+c.ts)) o.ts=+c.ts;
+    return o;
   };
   const cards=(x.cards&&typeof x.cards==="object"&&!Array.isArray(x.cards))?x.cards:{};
   for(const k of Object.keys(cards)){
@@ -983,14 +1240,15 @@ function saneState(x){
     // a card for a word this build does not have would break every review
     if(!Number.isInteger(i)||i<0||i>=VOCAB.length) continue;
     if(!c||typeof c!=="object") continue;
-    out.cards[i]={
-      ease: Number.isFinite(+c.ease)?Math.min(2.8,Math.max(1.3,+c.ease)):2.5,
-      ivl:  Number.isFinite(+c.ivl)&&+c.ivl>=0?Math.round(+c.ivl):0,
-      due:  /^\d{4}-\d{2}-\d{2}$/.test(c.due)?c.due:today(),
-      reps: Number.isFinite(+c.reps)&&+c.reps>=0?Math.round(+c.reps):0,
-      lapses:Number.isFinite(+c.lapses)&&+c.lapses>=0?Math.round(+c.lapses):0,
-    };
-    if(Number.isFinite(+c.ts)) out.cards[i].ts=+c.ts;
+    out.cards[i]=saneCard(c);
+  }
+  const gc=(x.gcards&&typeof x.gcards==="object"&&!Array.isArray(x.gcards))?x.gcards:{};
+  out.gcards={};
+  for(const k of Object.keys(gc)){
+    // the key is the question's address; anything else cannot be scheduled
+    if(!/^L\d{1,2}q\d{1,2}$/.test(k)) continue;
+    if(!gc[k]||typeof gc[k]!=="object") continue;
+    out.gcards[k]=saneCard(gc[k]);
   }
   return out;
 }
@@ -1025,7 +1283,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null};
+  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null};
   save(); renderProgress(); toast("Everything reset");
 }
 
@@ -1033,7 +1291,12 @@ function resetAll(){
    BOOT
    ============================================================ */
 Object.keys(GLOSSARY_RAW).forEach(k=>{ GLOSSARY[norm(k)]=GLOSSARY_RAW[k]; });
-if(S.last && daysBetween(S.last,today())>1) S.streak=0;
+/* A two-day gap is survivable if this week's rest day is unspent; it is not
+   spent here, only when the next session actually happens. */
+if(S.last){
+  const gap=daysBetween(S.last,today());
+  if(gap>2 || (gap===2 && !restAvailable())) S.streak=0;
+}
 if(S.dayOfReviews!==today()){ S.reviewsToday=0; S.dayOfReviews=today(); }
 save();
 applyGk();

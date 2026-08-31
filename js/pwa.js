@@ -45,6 +45,14 @@ function offerUpdate(reg){
   };
 }
 
+/* The bar sat over the bottom of the screen with no way out but reloading,
+   which is the one thing you do not want mid-review. Wired once here rather
+   than inside offerUpdate, so the control is never a dead button. */
+document.getElementById("btnUpdateNo").onclick=()=>{
+  document.getElementById("updateBar").classList.remove("on");
+  toast("It will update next time you open the app");
+};
+
 /* ---------- install ---------- */
 let installEvent=null;
 const installBar=document.getElementById("installBar");
