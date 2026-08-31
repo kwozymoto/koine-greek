@@ -235,18 +235,12 @@ function flashcard(i){
         ${VOCAB_AUDIO[i]?`<button class="btn ghost small" style="margin-top:10px" onclick="playWord(${i},null)">\uD83D\uDD0A Hear it</button>`:""}
         <div class="rule"></div>
         <div class="ans" id="ans" style="visibility:hidden">${v[1]}</div>
-        <div class="meta" id="meta" style="visibility:hidden">${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
+        <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span> · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
       </div>
       <button class="btn" id="show">Show meaning</button>`;
     document.getElementById("show").onclick=()=>{
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
-      /* The clip reads the whole lexical entry — "θεός, -οῦ, ὁ" — so show the
-         whole entry now the answer is out, or the voice says three things
-         while the card shows one. The bare form stays on the front, where
-         recognition is what is being tested. */
-      const wEl=document.getElementById("word");
-      if(v[0]!==v[0].split(",")[0]){ wEl.textContent=v[0]; wEl.classList.add("full"); }
       playWord(i,null);
       document.getElementById("show").outerHTML=`
         ${isLeech(i)?`<p class="muted" style="font-size:.8rem;text-align:center;margin:0 0 8px">
