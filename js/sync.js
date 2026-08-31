@@ -49,6 +49,12 @@ function mergeStates(local, remote) {
   out.seen   = Math.max(local.seen || 0, remote.seen || 0);
   out.lessons = [...new Set([...(local.lessons || []), ...(remote.lessons || [])])].sort((x, y) => x - y);
   out.badges  = [...new Set([...(local.badges || []), ...(remote.badges || [])])];
+  // Setting a leech aside on one device should hold on the other; without
+  // this the remote list was simply discarded.
+  out.suspended = [...new Set([...(local.suspended || []), ...(remote.suspended || [])])];
+  // Take the more recent export so the backup reminder is not shown on one
+  // device because the backup was made on the other.
+  out.exported = [local.exported, remote.exported].filter(Boolean).sort().pop() || null;
   out.last    = [local.last, remote.last].filter(Boolean).sort().pop() || null;
   const da = local.dayOfReviews || "", db = remote.dayOfReviews || "";
   if (da === db) out.reviewsToday = Math.max(local.reviewsToday || 0, remote.reviewsToday || 0);

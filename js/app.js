@@ -51,8 +51,8 @@ function schedule(i,g){
 }
 const isDue=i=>S.cards[i] && S.cards[i].due<=today() && !skipWord(i);
 const dueList=()=>Object.keys(S.cards).filter(isDue).map(Number).sort((a,b)=>a-b);
-const knownCount=()=>Object.values(S.cards).filter(c=>c.ivl>=6).length;
-const level=()=>Math.floor(Math.sqrt(S.xp/45))+1;
+const knownCount=()=>Object.values(S.cards).filter(c=>c&&+c.ivl>=6).length;
+const level=()=>Math.floor(Math.sqrt(Math.max(0,+S.xp||0)/45))+1;
 
 /* ============================================================
    STREAK + XP + BADGES
@@ -230,6 +230,9 @@ function finish(){
 function flashcard(i){
   return ()=>{
     const v=VOCAB[i], b=document.getElementById("sessBody");
+    // A stale or imported card can point past the end of the deck; skip it
+    // rather than letting one bad index end the review.
+    if(!v){ delete S.cards[i]; save(); qi++; step(); return; }
     b.innerHTML=`
       <div class="fc">
         <div class="word gk" id="word">${v[0].split(",")[0]}</div>
@@ -860,6 +863,7 @@ function renderProgress(){
     <p class="muted" style="font-size:.86rem">
       ${canPersist?"Progress is saved on this device.":"This browser is blocking storage, so progress will be lost when you close the app. Export it, or open the app from a hosted address rather than a local file."}
       Nothing is sent anywhere.</p>
+    ${PRE_IMPORT?`<button class="btn ghost" onclick="undoImport()" style="border-color:var(--rust)">Undo the import</button><div style="height:9px"></div>`:""}
     <button class="btn ghost" onclick="exportData()">Export progress</button>
     <div style="height:9px"></div>
     <button class="btn ghost" onclick="document.getElementById('imp').click()">Import progress</button>
@@ -889,12 +893,69 @@ function exportData(){
   a.download="koine-progress-"+today()+".json";
   a.click(); S.exported=today(); save(); toast("Progress exported");
 }
+/* An import replaces the entire study record, so it has to be checked
+   first: this is the only backup route, and handing it the wrong file
+   should not be able to destroy months of scheduling. Anything unexpected
+   is repaired rather than trusted, and the previous state is kept for one
+   undo. */
+function saneState(x){
+  if(!x || typeof x!=="object" || Array.isArray(x)) return null;
+  const num=(v,d)=>Number.isFinite(+v)&&+v>=0 ? +v : d;
+  const arr=v=>Array.isArray(v)?v:[];
+  const out={
+    cards:{}, xp:num(x.xp,0), streak:num(x.streak,0), best:num(x.best,0),
+    seen:num(x.seen,0), goal:[10,20,30,50].includes(+x.goal)?+x.goal:20,
+    lessons:arr(x.lessons).map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=LESSONS.length),
+    badges:arr(x.badges).filter(b=>typeof b==="string"),
+    suspended:arr(x.suspended).map(Number).filter(n=>Number.isInteger(n)&&n>=0&&n<VOCAB.length),
+    last: typeof x.last==="string"?x.last:null,
+    reviewsToday:num(x.reviewsToday,0),
+    dayOfReviews: typeof x.dayOfReviews==="string"?x.dayOfReviews:null,
+    exported: typeof x.exported==="string"?x.exported:null,
+    gk: ["","lg","xl"].includes(x.gk)?x.gk:"",
+    sfx: [0,1,2].includes(+x.sfx)?+x.sfx:2,
+  };
+  const cards=(x.cards&&typeof x.cards==="object"&&!Array.isArray(x.cards))?x.cards:{};
+  for(const k of Object.keys(cards)){
+    const i=Number(k), c=cards[k];
+    // a card for a word this build does not have would break every review
+    if(!Number.isInteger(i)||i<0||i>=VOCAB.length) continue;
+    if(!c||typeof c!=="object") continue;
+    out.cards[i]={
+      ease: Number.isFinite(+c.ease)?Math.min(2.8,Math.max(1.3,+c.ease)):2.5,
+      ivl:  Number.isFinite(+c.ivl)&&+c.ivl>=0?Math.round(+c.ivl):0,
+      due:  /^\d{4}-\d{2}-\d{2}$/.test(c.due)?c.due:today(),
+      reps: Number.isFinite(+c.reps)&&+c.reps>=0?Math.round(+c.reps):0,
+      lapses:Number.isFinite(+c.lapses)&&+c.lapses>=0?Math.round(+c.lapses):0,
+    };
+    if(Number.isFinite(+c.ts)) out.cards[i].ts=+c.ts;
+  }
+  return out;
+}
+
+let PRE_IMPORT=null;
 function importData(inp){
   const f=inp.files[0]; if(!f)return;
   const rd=new FileReader();
-  rd.onload=()=>{ try{ S=JSON.parse(rd.result); save(); renderProgress(); toast("Progress imported"); }
-                  catch(e){ toast("That file could not be read"); } };
+  rd.onload=()=>{
+    let parsed;
+    try{ parsed=JSON.parse(rd.result); }
+    catch(e){ toast("That file could not be read"); return; }
+    const clean=saneState(parsed);
+    if(!clean){ toast("That does not look like a progress file"); return; }
+    const cards=Object.keys(clean.cards).length;
+    const mine=Object.keys(S.cards).length;
+    if(!confirm(`Replace this device's progress?\n\nImporting: ${cards} words, ${clean.xp} XP\nReplacing: ${mine} words, ${S.xp} XP`)) return;
+    PRE_IMPORT=JSON.parse(JSON.stringify(S));
+    S=clean; save(); applyGk(); renderProgress();
+    toast(`Imported ${cards} words`);
+  };
   rd.readAsText(f);
+}
+function undoImport(){
+  if(!PRE_IMPORT) return;
+  S=PRE_IMPORT; PRE_IMPORT=null;
+  save(); applyGk(); renderProgress(); toast("Import undone");
 }
 function resetAll(){
   if(!confirm("Delete all progress on this device? This cannot be undone."))return;
