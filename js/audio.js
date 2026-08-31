@@ -18,6 +18,41 @@ function sndInit() {
   return sndEl;
 }
 
+/* Assigning src restarts the load even when it is the same file, throwing
+   away a decode that has already happened. Only assign when it changes. */
+function setSrc(el, url) {
+  const abs = new URL(url, location.href).href;
+  if (el.src !== abs) el.src = url;
+}
+
+/* Fetch and decode a clip before it is asked for. Called when a card is
+   rendered, so the ~1s of reading time covers what would otherwise be a
+   700ms wait after the tap. */
+function prepGreek(greek) {
+  const file = AUDIO_BY_GREEK[greek];
+  if (!file) return;
+  const a = sndInit();
+  if (a.paused) { setSrc(a, AUDIO_DIR + file); try { a.load(); } catch (e) {} }
+}
+
+function prepWord(i) {
+  const file = VOCAB_AUDIO[i];
+  if (!file) return;
+  const url = VOCAB_AUDIO_DIR + file;
+  warmClip(url);
+  const a = sndInit();
+  if (a.paused) { setSrc(a, url); try { a.load(); } catch (e) {} }
+}
+
+/* Warm the next few clips in the session queue over the network only —
+   without touching the player, which may be mid-sentence. */
+function prepAhead(indices) {
+  indices.slice(0, 4).forEach(i => {
+    const f = VOCAB_AUDIO[i];
+    if (f) warmClip(VOCAB_AUDIO_DIR + f);
+  });
+}
+
 function sndClear() {
   if (sndTile) { sndTile.classList.remove("playing"); sndTile = null; }
 }
@@ -30,7 +65,7 @@ function playGreek(greek, tile) {
   const a = sndInit();
   sndClear();
   try { a.pause(); } catch (e) {}
-  a.src = AUDIO_DIR + file;
+  setSrc(a, AUDIO_DIR + file);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
   const p = a.play();
@@ -61,7 +96,8 @@ function stopSequence() {
 function soundGridHtml(kind) {
   const clips = AUDIO_CLIPS.filter(c => c[3] === kind);
   return `<div class="alpha-grid">${clips.map(c => `
-    <button class="alpha snd" data-greek="${c[0]}" onclick="playGreek('${c[0]}',this)"
+    <button class="alpha snd" data-greek="${c[0]}"
+            onpointerdown="prepGreek('${c[0]}')" onclick="playGreek('${c[0]}',this)"
             aria-label="Play ${c[1]}">
       <div class="l gk">${c[0]}</div>
       <div class="nm">${c[1]}</div>
@@ -93,11 +129,12 @@ function warmClip(url) {
 function playWord(i, tile) {
   const file = VOCAB_AUDIO[i];
   if (!file) return false;
-  warmClip(VOCAB_AUDIO_DIR + file);
+  const url = VOCAB_AUDIO_DIR + file;
+  warmClip(url);
   const a = sndInit();
   sndClear();
   try { a.pause(); } catch (e) {}
-  a.src = VOCAB_AUDIO_DIR + file;
+  setSrc(a, url);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
   const p = a.play();
@@ -161,7 +198,7 @@ function playForm(form, tile) {
   const a = sndInit();
   sndClear();
   try { a.pause(); } catch (e) {}
-  a.src = FORM_AUDIO_DIR + file;
+  setSrc(a, FORM_AUDIO_DIR + file);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
   const p = a.play();

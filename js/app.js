@@ -200,6 +200,7 @@ document.getElementById("btnNew").onclick=()=>startNew();
 let Q=[], qi=0, mode="";
 function startSession(queue,label){
   Q=queue; qi=0; mode=label;
+  if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
   if(!Q.length){toast("Nothing to practise here yet");return;}
@@ -238,6 +239,7 @@ function flashcard(i){
         <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span>${extraForms(i).length?` <button class="mini" onclick="playEntry(${i})" aria-label="Hear the whole entry">\uD83D\uDD0A</button>`:""} · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
       </div>
       <button class="btn" id="show">Show meaning</button>`;
+    prepWord(i);
     document.getElementById("show").onclick=()=>{
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
@@ -314,7 +316,9 @@ function startReview(){
     if(!started.length){ startNew(5); return; }        // fresh install: introduce instead
     d=started.sort(()=>Math.random()-.5).slice(0,15);  // nothing due: free practice
   }
-  startSession(d.slice(0,40).map(flashcard),"review");
+  const words=d.slice(0,40);
+  const q=words.map(flashcard); q.__words=words;
+  startSession(q,"review");
 }
 /* SRS cards are keyed by VOCAB index, so data/vocab.js must be append-only.
    New words are introduced by NT frequency regardless of array position. */
@@ -332,6 +336,7 @@ function startNew(n=5){
   for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
   if(!fresh.length){toast("You've started every word in the deck");return;}
   const q=[];
+  q.__words=fresh;
   fresh.forEach(i=>{ card(i); q.push(flashcard(i)); });
   fresh.forEach(i=>{
     const v=VOCAB[i];
@@ -769,7 +774,8 @@ function renderLookup(){
              ||(latin && LK_LATIN[x.i].includes(ql)))   // typed in Latin letters
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
   body.innerHTML = hits.length ? hits.map(({v,i})=>`
-    <button class="lk" onclick="${extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
+    <button class="lk" onpointerdown="prepWord(${i})"
+            onclick="${extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
       <span class="w"><b>${v[0]}</b><span>${v[1]}</span></span>
       <span class="fq">${v[2]}\u00d7</span>
