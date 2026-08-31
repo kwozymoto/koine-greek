@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v25';
+const VERSION = 'v26';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -25,6 +25,17 @@ const CACHE   = `koine-${VERSION}`;
 const BULK = 'koine-bulk-1';
 const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
                     || /data\/gnt\/(?!manifest\.json)[^/]+\.json$/.test(u);
+
+/* Bulk files whose *content* changed in this release. The bulk cache is
+   deliberately never swept, so a re-recorded clip would otherwise be served
+   from it for ever — the fill only fetches what is missing. Evicting the few
+   that changed costs two small re-downloads instead of all 9.5MB, which is
+   what bumping BULK would cost. Empty this list in the release after the
+   one that fills it. */
+const STALE = [
+  'audio/vocab/492_sos.mp3',      // was reading the string as "S.O.S."
+  'audio/vocab/508_axios.mp3',    // was spelling out the final letters
+];
 
 const SHELL = [
   /* Only index.html — never also '.'. Precaching both stores two copies of
@@ -159,6 +170,15 @@ self.addEventListener('activate', e => {
         }
       }
     } catch (e) { /* fall through to a normal fill */ }
+
+    /* Drop the re-recorded clips so the fill below pulls them again. */
+    try {
+      const bulkCache = await caches.open(BULK);
+      for (const u of STALE) {
+        await bulkCache.delete(u);
+        await bulkCache.delete(u, { ignoreSearch: true });
+      }
+    } catch (e) { /* nothing cached yet */ }
 
     await Promise.all(keys.filter(k => k !== CACHE && k !== BULK).map(k => caches.delete(k)));
     await self.clients.claim();

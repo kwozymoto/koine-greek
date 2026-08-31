@@ -33,3 +33,7 @@ Black/
 # Raw pack for the 41 appended words. Only the copies in audio/vocab/ ship;
 # the cue sheet is preserved in docs/erasmian_vocab_cues_v3_black.json.
 audio/Erasmian_Vocab_Append41/
+
+# Loose cue sheet dropped alongside the clips; the canonical copy with the
+# verdicts lives in docs/erasmian_vocab_cues_v3_black.json.
+audio/erasmian_vocab_append_cues.json

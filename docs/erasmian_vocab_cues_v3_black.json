@@ -296,10 +296,10 @@
     "pos": "adj",
     "tier": 5,
     "freq": 25,
-    "tts": "sos",
+    "tts": "sauce",
     "source": "black",
-    "duration_s": 1.567,
-    "verdict": "measured: reads the string as the initialism S.O.S — regenerate"
+    "duration_s": 1.176,
+    "verdict": "re-recorded as 'sauce'; measured: opens with sibilance now, s-vowel-s, half the length. Fixed."
   },
   {
     "index": 493,
@@ -376,9 +376,9 @@
     "pos": "verb",
     "tier": 5,
     "freq": 29,
-    "tts": "eh pee tee mah oh",
+    "tts": "ehpitee mahoh",
     "source": "black",
-    "duration_s": 3.004
+    "duration_s": 1.724
   },
   {
     "index": 499,
@@ -506,10 +506,10 @@
     "pos": "adv",
     "tier": 5,
     "freq": 6,
-    "tts": "axee ohs",
+    "tts": "axiose",
     "source": "black",
     "duration_s": 1.959,
-    "verdict": "checked by ear: spells the final letters — regenerate"
+    "verdict": "re-recorded as 'axiose'; checked by ear. Structure and onset are right and it is 0.4s shorter, but the ending was verified by listening, not by measurement."
   },
   {
     "index": 509,
