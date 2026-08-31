@@ -7,11 +7,13 @@
   --nav-h:60px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;padding:0;height:100%}
+html{height:100%}
+html,body{margin:0;padding:0}
+body{min-height:100%}
 body{
   background:var(--bg); color:var(--text); font-family:var(--ui);
   font-size:16px; line-height:1.55; overscroll-behavior-y:contain;
-  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 20px);
 }
 button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -128,7 +130,7 @@ caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padd
 .passage{font-family:var(--gk);font-size:1.35rem;line-height:2.05;margin-bottom:16px}
 .passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:0 1px}
 .passage w.tapped{background:rgba(212,165,55,.2);border-radius:3px}
-.gloss{position:sticky;bottom:12px;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
+.gloss{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 12px);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
 .gloss .w{font-family:var(--gk);font-size:1.4rem}
 .gloss .d{font-size:.86rem;color:var(--muted);margin-top:3px}
 
