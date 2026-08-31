@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v18';
+const VERSION = 'v19';
 const CACHE   = `koine-${VERSION}`;
 
 const SHELL = [
@@ -173,6 +173,21 @@ async function fillBulk() {
     // Six at a time: enough to be quick, few enough to leave the network
     // responsive if the app is being used while this runs.
     await Promise.all(Array.from({ length: 6 }, worker));
+
+    /* One retry pass. The first requests go out while the worker is still
+       activating and a couple reliably lose that race, so without this a
+       fresh install finishes a file or two short and only recovers on the
+       next visit — which is not what "offline by default" should mean. */
+    if (failed) {
+      const retry = [];
+      for (const url of bulk) if (!(await cache.match(url))) retry.push(url);
+      for (const url of retry) {
+        try {
+          const r = await fetch(url);
+          if (r.status === 200) { await cache.put(url, r); failed--; }
+        } catch (e) { /* leave it for the next load */ }
+      }
+    }
     post({ type: 'offline-progress', done, total, failed, complete: true });
   } catch (e) {
     post({ type: 'offline-progress', error: true });
