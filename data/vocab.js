@@ -1,7 +1,20 @@
 /* Extracted from the single-file app. Plain script, no modules — load order in index.html matters. */
 
-/* Vocabulary: NT frequency order. Counts are approximate (Nestle-Aland based).
-   Format: [lemma, gloss, freq, part-of-speech, tier] */
+/* Vocabulary: NT frequency order.
+   Format: [lemma, gloss, freq, part-of-speech, tier]
+
+   Counts are Nestle-Aland based. tools/check_vocab.py compares every one
+   against the SBLGNT bundled in data/gnt/: 392 agree exactly, 453 are within
+   one, and the handful that are further apart are text-critical differences
+   between the two editions rather than mistakes. The exceptions the corpus
+   cannot arbitrate — δεῖ and δέω, which MorphGNT counts as one lemma, and
+   the οἶδα/ὁράω boundary, which it draws in a different place — are listed
+   in that checker with the reason.
+
+   The glosses are also the reader's glosses: tools/build_gloss_map.py
+   projects them onto the corpus lemmas to fill gloss[] in
+   data/gnt/manifest.json, so a change here has to be followed by a run of
+   that, or the reader and the flashcards start disagreeing. */
 const VOCAB=[
 ["ὁ, ἡ, τό","the",19870,"art",1],
 ["καί","and, also, even",9161,"conj",1],
@@ -22,7 +35,7 @@ const VOCAB=[
 ["γάρ","for, because",1041,"conj",1],
 ["Ἰησοῦς, -οῦ, ὁ","Jesus",917,"noun",1],
 ["ἐκ, ἐξ","out of, from (+gen)",914,"prep",1],
-["ἐπί","on, over, at",890,"prep",1],
+["ἐπί","on, over, at (+gen/dat/acc)",890,"prep",1],
 ["κύριος, -ου, ὁ","lord, master, Lord",717,"noun",1],
 ["ἔχω","I have, hold",708,"verb",1],
 ["πρός","to, toward (+acc)",700,"prep",1],
@@ -59,7 +72,7 @@ const VOCAB=[
 ["οἶδα","I know",318,"verb",1],
 ["λαλέω","I speak, say",296,"verb",1],
 ["οὐρανός, -οῦ, ὁ","heaven, sky",273,"noun",1],
-["ἐκεῖνος, -η, -ο","that, that one",265,"pron",1],
+["ἐκεῖνος, -η, -ο","that, that one",243,"pron",1],
 ["μαθητής, -οῦ, ὁ","disciple, learner",261,"noun",1],
 ["λαμβάνω","I take, receive",258,"verb",1],
 ["γῆ, γῆς, ἡ","earth, land, ground",250,"noun",1],
@@ -79,7 +92,7 @@ const VOCAB=[
 ["δύναμαι","I am able, can",210,"verb",1],
 ["θέλω","I wish, will, want",208,"verb",1],
 ["οὕτως","thus, in this way",208,"adv",1],
-["ἰδού","behold! look!",200,"part",1],
+["ἰδού","behold! look!",200,"particle",1],
 ["Ἰουδαῖος, -α, -ον","Jewish; (noun) a Jew",195,"adj",1],
 ["εἰσέρχομαι","I go in, enter",194,"verb",1],
 ["νόμος, -ου, ὁ","law, Law",194,"noun",1],
@@ -87,7 +100,7 @@ const VOCAB=[
 ["γράφω","I write",191,"verb",1],
 ["κόσμος, -ου, ὁ","world, universe, adornment",186,"noun",1],
 ["καθώς","just as, as",182,"conj",2],
-["μέν","on the one hand, indeed",179,"part",2],
+["μέν","on the one hand, indeed",179,"particle",2],
 ["χείρ, χειρός, ἡ","hand",177,"noun",2],
 ["εὑρίσκω","I find",176,"verb",2],
 ["ἄγγελος, -ου, ὁ","angel, messenger",175,"noun",2],
@@ -127,7 +140,7 @@ const VOCAB=[
 ["ζωή, -ῆς, ἡ","life",135,"noun",2],
 ["βλέπω","I see, look at",133,"verb",2],
 ["ἀποστέλλω","I send, send out",132,"verb",2],
-["ἀμήν","amen, truly",129,"part",2],
+["ἀμήν","amen, truly",129,"particle",2],
 ["νεκρός, -ά, -όν","dead; (noun) a dead person",128,"adj",2],
 ["σύν","with (+dat)",128,"prep",2],
 ["δοῦλος, -ου, ὁ","slave, servant",124,"noun",2],
@@ -157,7 +170,7 @@ const VOCAB=[
 ["ἀνίστημι","I raise up, rise",108,"verb",2],
 ["σῴζω","I save, rescue, heal",106,"verb",2],
 ["ὥρα, -ας, ἡ","hour, time",106,"noun",2],
-["ἐκεῖ","there",105,"adv",2],
+["ἐκεῖ","there",95,"adv",2],
 ["ὅπου","where",82,"conj",3],
 ["πῶς","how?",103,"adv",3],
 ["ψυχή, -ῆς, ἡ","soul, life, self",103,"noun",3],
@@ -179,7 +192,7 @@ const VOCAB=[
 ["διδάσκω","I teach",97,"verb",3],
 ["περιπατέω","I walk, live, conduct myself",95,"verb",3],
 ["φοβέομαι","I fear, am afraid",95,"verb",3],
-["ἐνώπιον","before, in the presence of",94,"prep",3],
+["ἐνώπιον","before, in the presence of (+gen)",94,"prep",3],
 ["ἔτι","still, yet",93,"adv",3],
 ["οἰκία, -ας, ἡ","house, household",93,"noun",3],
 ["πούς, ποδός, ὁ","foot",93,"noun",3],
@@ -246,7 +259,7 @@ const VOCAB=[
 ["οὗτος, αὕτη, τοῦτο","this; this one",1385,"pron",1],
 ["ἐάν","if (+subjunctive)",331,"conj",1],
 ["τέ","and (enclitic); τε…καί both…and",213,"conj",1],
-["ἄν","(untranslatable) particle of contingency",171,"ptcl",2],
+["ἄν","(untranslatable) particle of contingency",171,"particle",2],
 ["Ἰωάννης, -ου, ὁ","John",135,"name",2],
 ["ὅτε","when",102,"conj",3],
 ["τόπος, -ου, ὁ","place",94,"noun",3],
@@ -322,7 +335,7 @@ const VOCAB=[
 ["Πιλᾶτος, -ου, ὁ","Pilate",55,"name",3],
 ["χρόνος, -ου, ὁ","time (duration)",53,"noun",3],
 ["ὅπως","in order that; how",53,"conj",3],
-["οὐχί","not (emphatic); expects the answer yes",53,"ptcl",3],
+["οὐχί","not (emphatic); expects the answer yes",53,"particle",3],
 ["διό","therefore, for this reason",53,"conj",3],
 ["παιδίον, -ου, τό","child, infant",52,"noun",3],
 ["ἔσχατος, -η, -ον","last",52,"adj",3],
@@ -446,7 +459,7 @@ const VOCAB=[
 ["διακονία, -ας, ἡ","service, ministry",34,"noun",4],
 ["ἐκπορεύομαι","I go out",33,"verb",4],
 ["δείκνυμι","I show",33,"verb",4],
-["ναί","yes, indeed",33,"ptcl",4],
+["ναί","yes, indeed",33,"particle",4],
 ["ἀρνέομαι","I deny",33,"verb",4],
 ["ποῖος, -α, -ον","what sort of? which?",33,"pron",4],
 ["ἐχθρός, -ά, -όν","hostile; (noun) enemy",32,"adj",4],
@@ -476,7 +489,7 @@ const VOCAB=[
 ["ἐπικαλέω","I call upon, name",30,"verb",4],
 ["ἀγοράζω","I buy",30,"verb",4],
 ["ἐγγύς","near",30,"adv",4],
-["ἴδε","look! behold!",30,"ptcl",4],
+["ἴδε","look! behold!",30,"particle",4],
 ["συνείδησις, -εως, ἡ","conscience",30,"noun",4],
 
 /* Tier 5 — Black teaches these, but they fall below the 30x floor the rest
@@ -523,6 +536,6 @@ const VOCAB=[
 ["ἀνά","up, among (+acc)",13,"prep",5],
 ["ἀντί","instead of, for (+gen)",22,"prep",5],
 ["ἀξίως","worthily",6,"adv",5],
-["πότε","when?",48,"adv",5],
+["πότε","when?",19,"adv",5],
 ["πρίν","before",13,"conj",5]
 ];

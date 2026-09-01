@@ -12,8 +12,12 @@
    Chapter and verse numbers are stored, never inferred from array position.
 
    Every word gets a full parse; about 85% also carry a gloss, drawn from
-   the course vocabulary. The rest show their parse and lemma, which is the
-   part you cannot work out for yourself. */
+   the course vocabulary by tools/build_gloss_map.py. The rest show their
+   parse and lemma, which is the part you cannot work out for yourself.
+
+   A lemma is glossed only when the deck actually teaches that lemma. The
+   first version of the table matched on a prefix, which is why ἀξίνη (an
+   axe) once read "worthy" and τρέφω (I feed) read "three". */
 
 let GNT = null;                 // manifest, once loaded
 const gntBooks = {};            // abbr -> book json

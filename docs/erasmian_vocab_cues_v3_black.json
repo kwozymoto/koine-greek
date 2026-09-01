@@ -508,7 +508,7 @@
     "freq": 6,
     "tts": "axiose",
     "source": "black",
-    "duration_s": 1.959,
+    "duration_s": 1.573,
     "verdict": "re-recorded as 'axiose'; checked by ear. Structure and onset are right and it is 0.4s shorter, but the ending was verified by listening, not by measurement."
   },
   {
@@ -519,7 +519,7 @@
     "gloss": "when?",
     "pos": "adv",
     "tier": 5,
-    "freq": 48,
+    "freq": 19,
     "tts": "po teh",
     "source": "black",
     "duration_s": 1.097
