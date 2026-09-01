@@ -390,6 +390,28 @@ function finish(){
     <button class="btn" onclick="go('today')">Done</button>`;
 }
 
+/* The example verse with its word picked out of the line. A gloss tells you
+   what a word means; a verse shows you what it does, and every one of these
+   is short enough and common enough to be read rather than decoded. */
+function exampleHtml(i){
+  const e=(typeof EXAMPLES!=="undefined") && EXAMPLES[i];
+  if(!e) return "";
+  const w=e[1].split(" ");
+  if(e[2]>=0 && e[2]<w.length) w[e[2]]=`<b>${w[e[2]]}</b>`;
+  return `<div class="ex"><span class="gk">${w.join(" ")}</span><span class="ref">${e[0]}</span></div>`;
+}
+/* The principal parts, for the forty-one verbs that have them. They were
+   only ever visible inside one drill; on the card they are seen by anyone
+   reviewing that verb. */
+function partsHtml(i){
+  const head=VOCAB[i][0].split(",")[0].trim();
+  const p=(typeof PP!=="undefined") && PP.find(x=>x[0]===head);
+  if(!p) return "";
+  const shown=p.slice(1).filter(x=>x!=="—");
+  if(!shown.length) return "";
+  return `<div class="parts"><span class="gk">${p[0]}, ${shown.join(", ")}</span></div>`;
+}
+
 /* ---- flashcard (self-graded, for SRS) ---- */
 function flashcard(i){
   return ()=>{
@@ -404,12 +426,14 @@ function flashcard(i){
         <div class="rule"></div>
         <div class="ans" id="ans" style="visibility:hidden">${v[1]}</div>
         <div class="meta" id="meta" style="visibility:hidden">${v[0]!==v[0].split(",")[0]?`<span class="gk">${v[0]}</span>${VOCAB_AUDIO[i]&&extraForms(i).length?` <button class="mini" onclick="playEntry(${i})" aria-label="Hear the whole entry">\uD83D\uDD0A</button>`:""} · `:""}${v[3]} · ${v[2]}× in the NT${isLeech(i)?'<span class="leech">sticking point</span>':""}</div>
+        <div id="extra" style="visibility:hidden">${partsHtml(i)}${exampleHtml(i)}</div>
       </div>
       <button class="btn" id="show">Show meaning</button>`;
     prepWord(i);
     document.getElementById("show").onclick=()=>{
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
+      const ex=document.getElementById("extra"); if(ex) ex.style.visibility="visible";
       /* Automatic, so it is quiet about a clip it cannot reach — thirty
          toasts in an offline review would be worse than the silence. */
       if(S.speak!==0) playWord(i,null,true);
@@ -1150,7 +1174,7 @@ function renderLookup(){
     <button class="lk" onpointerdown="prepWord(${i})"
             onclick="${VOCAB_AUDIO[i]&&extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
-      <span class="w"><b>${v[0]}</b><span>${v[1]}</span></span>
+      <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${exampleHtml(i)}</span>
       <span class="fq">${v[2]}\u00d7</span>
     </button>`).join("")
     : `<div class="empty"><span class="gk">οὐδέν</span><p>No word matches that.</p></div>`;
@@ -1198,6 +1222,8 @@ function renderProgress(){
         <select id="setSfx">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Word audio</span>
         <select id="setSpeak">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Playback speed</span>
+        <select id="setRate">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
@@ -1256,6 +1282,10 @@ function renderProgress(){
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
   document.getElementById("setSpeak").onchange=e=>{S.speak=+e.target.value;save();};
+  document.getElementById("setRate").onchange=e=>{
+    S.rate=+e.target.value; save();
+    playWord(LEARN_ORDER[0],null,true);      // let them hear the difference
+  };
   if(typeof paintOffline==="function"){ askOffline("offline-status"); paintOffline(); }
   document.getElementById("setSfx").onchange=e=>{
     S.sfx=+e.target.value; save();
@@ -1301,6 +1331,7 @@ function saneState(x){
     gk: ["","lg","xl"].includes(x.gk)?x.gk:"",
     sfx: [0,1,2].includes(+x.sfx)?+x.sfx:2,
     speak: [0,1].includes(+x.speak)?+x.speak:1,
+    rate: [1,0.75,0.5].includes(+x.rate)?+x.rate:1,
     restUsed: /^\d{4}-\d{2}-\d{2}$/.test(x.restUsed)?x.restUsed:null,
   };
   /* Where the reader was. Shape-checked because it is rendered straight into

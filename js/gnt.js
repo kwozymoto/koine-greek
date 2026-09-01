@@ -92,6 +92,20 @@ function vocIndexFor(lemma) {
   return (i === undefined || skipWord(i)) ? -1 : i;
 }
 
+/* How much of this chapter is vocabulary you have started. The single most
+   motivating number available, and it is the one that decides whether
+   Saturday's passage is readable — which is not the same question as how
+   many words you know in total. */
+function gntCoverage(verses) {
+  let total = 0, known = 0;
+  verses.forEach(v => v[1].forEach(w => {
+    total++;
+    const i = vocIndexFor(GNT.lemmas[w[1]]);
+    if (i >= 0 && S.cards[i]) known++;
+  }));
+  return { total, known, pct: total ? Math.round(100 * known / total) : 0 };
+}
+
 /* Course words in this chapter you have never met, or keep losing. */
 function gntUnknown() {
   if (!gntCur) return [];
@@ -256,6 +270,12 @@ async function openGntChapter(abbr, ch) {
       <h2 style="margin:0">${meta.t} ${meta.n?meta.n[ch]:ch+1}</h2>
       <span class="muted" style="font-size:.8rem">${verses.length} verses</span>
     </div>
+    <p class="muted" style="font-size:.82rem;margin:0 0 10px">${(()=>{
+      const c=gntCoverage(verses);
+      return c.known
+        ? `You have started <b>${c.pct}%</b> of the ${c.total} words here.`
+        : `${c.total} words. None of them are in your deck yet.`;
+    })()}</p>
     <div class="passage gnt" id="psg">${html}</div>
     <div class="gloss" id="gloss"><div class="d">Tap a word for its parsing.</div></div>
     <div class="row" style="margin-top:14px">

@@ -272,6 +272,18 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center}
 .install .x:active, .update .x:active{background:var(--surface)}
 
+/* example verse and principal parts on the card back */
+.ex{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);text-align:center}
+.ex .gk{display:block;font-size:calc(1rem * var(--gk-scale));line-height:1.5;color:var(--text)}
+.ex .gk b{color:var(--gold);font-weight:500}
+.ex .ref{display:block;font-size:.72rem;color:var(--muted);margin-top:4px}
+.parts{margin-top:10px;font-size:.8rem;color:var(--muted)}
+.parts .gk{font-size:calc(.95rem * var(--gk-scale));color:var(--muted)}
+/* in a lookup row it sits under the gloss, tighter and unbordered */
+.lk .ex{margin-top:5px;padding-top:0;border-top:none;text-align:left}
+.lk .ex .gk{font-size:calc(.92rem * var(--gk-scale));line-height:1.4;color:var(--muted)}
+.lk .ex .ref{display:inline;margin-left:6px;font-size:.68rem}
+
 /* play the whole lexical entry */
 .mini{font-size:.72rem;padding:2px 7px;border:1px solid var(--line);border-radius:999px;
   color:var(--muted);vertical-align:middle;line-height:1.6}

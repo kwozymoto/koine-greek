@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v26';
+const VERSION = 'v27';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,8 +33,7 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  'audio/vocab/492_sos.mp3',      // was reading the string as "S.O.S."
-  'audio/vocab/508_axios.mp3',    // was spelling out the final letters
+  // (v26 evicted 492_sos and 508_axios after they were re-recorded)
 ];
 
 const SHELL = [
@@ -53,6 +52,7 @@ const SHELL = [
   'data/lessons.js',
   'data/readings.js',
   'data/audio.js',
+  'data/examples.js',
   'data/gnt/manifest.json',
   'data/offline.json',
   'data/paradigms.js',

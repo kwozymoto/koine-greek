@@ -15,6 +15,13 @@ let sndEl = null, sndTile = null;
    survive into an unrelated clip. */
 let sndGen = 0;
 
+/* Slowing a clip is the one request a re-learner actually has of playback,
+   and it costs nothing. Re-applied on every play: assigning .src resets it. */
+function sndRate() {
+  const r = (typeof S !== "undefined") ? +S.rate : 1;
+  return [1, 0.75, 0.5].includes(r) ? r : 1;
+}
+
 function sndInit() {
   if (sndEl) return sndEl;
   sndEl = new Audio();
@@ -75,6 +82,7 @@ function playGreek(greek, tile) {
   setSrc(a, AUDIO_DIR + file);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
+  a.playbackRate = sndRate();
   const p = a.play();
   if (p && p.catch) p.catch(() => { sndClear(); toast("Could not play that clip"); });
   return true;
@@ -153,6 +161,7 @@ function playWord(i, tile, quiet) {
   setSrc(a, url);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
+  a.playbackRate = sndRate();
   const p = a.play();
   if (p && p.catch) p.catch(() => { sndClear(); if (!quiet) toast("Could not play that clip"); });
   return true;
@@ -220,6 +229,7 @@ function playForm(form, tile) {
   setSrc(a, FORM_AUDIO_DIR + file);
   a.currentTime = 0;
   if (tile) { sndTile = tile; tile.classList.add("playing"); }
+  a.playbackRate = sndRate();
   const p = a.play();
   if (p && p.catch) p.catch(() => sndClear());
   return true;
