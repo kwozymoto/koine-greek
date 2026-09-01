@@ -272,6 +272,11 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center}
 .install .x:active, .update .x:active{background:var(--surface)}
 
+/* handwriting pad — touch-action:none so a stroke does not scroll the page */
+.pad{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pad canvas{display:block;width:100%;height:250px;touch-action:none;cursor:crosshair}
+@media (min-height:760px){ .pad canvas{height:300px} }
+
 /* example verse and principal parts on the card back */
 .ex{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);text-align:center}
 .ex .gk{display:block;font-size:calc(1rem * var(--gk-scale));line-height:1.5;color:var(--text)}

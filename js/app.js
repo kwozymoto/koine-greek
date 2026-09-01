@@ -638,7 +638,9 @@ function openLesson(id){
     <p>Two vowels written together make one sound. These eight are worth knowing before you meet them mid-word.</p>`
     + soundGridHtml("diphthong")
     + playAllHtml("diphthong")
-    + `<p style="margin-top:14px"><a class="vid local" href="audio/erasmian-alphabet-chart.pdf" target="_blank" rel="noopener">
+    + `<p class="muted" style="font-size:.83rem;margin-top:16px">Writing them is how the shapes settle. Trace each letter with a finger, or the mouse.</p>
+    <button class="btn ghost" onclick="startSession(writeLetterDrill(),'d')">Practise writing the letters</button>
+    <p style="margin-top:14px"><a class="vid local" href="audio/erasmian-alphabet-chart.pdf" target="_blank" rel="noopener">
         <span class="p">↓</span><span><b>Printable alphabet chart</b><span>One-page PDF: names, sounds and diphthongs</span></span></a></p>`;
 }
 function lessonQuiz(id){
@@ -999,6 +1001,8 @@ const DRILLS=[
 ["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
 ["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
 ["Look-alikes","εἰς or εἷς · ἡ or ἥ or ἤ — one accent apart",()=>startSession(lookalikeDrill(),"d")],
+["Write the letters","Trace each one with a finger or the mouse",()=>startSession(writeLetterDrill(),"d")],
+["Write it from memory","No multiple choice — write the word, then mark yourself",()=>startSession(writeWordDrill(),"d")],
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")]
 ];
 function renderDrill(){
