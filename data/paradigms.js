@@ -222,12 +222,13 @@ html:`<table><caption>Present active</caption>
 <p class="muted" style="font-size:.83rem">Aorists: ἔδωκα (impv δός, δότε · ptc δούς) · ἔθηκα (ptc θείς) · ἔστησα trans. / ἔστην intrans. "stood" (ἀνέστη — he rose). ἀφίημι forgives: ἀφῆκεν, ἄφες, ἀφέωνται.</p>`},
 
 {t:"Principal parts — key irregular verbs",tags:"principal parts stems irregular",
-html:`<table><caption>Present · Future · Aorist · Perfect act · Perfect m/p · Aorist pass</caption>
+html:`<p class="muted" style="font-size:.83rem">Six principal parts. Learn these and the rest of the verb follows. A dash means that part does not occur in the New Testament — checked against the text, not assumed.</p>
+<table><caption>Present · Future · Aorist · Perfect act · Perfect m/p · Aorist pass</caption>
 <tr><th>λέγω say</th><td class="g">ἐρῶ, εἶπον, εἴρηκα, εἴρημαι, ἐρρέθην</td></tr>
 <tr><th>ἔρχομαι come</th><td class="g">ἐλεύσομαι, ἦλθον, ἐλήλυθα, —, —</td></tr>
 <tr><th>γίνομαι become</th><td class="g">γενήσομαι, ἐγενόμην, γέγονα, γεγένημαι, ἐγενήθην</td></tr>
 <tr><th>ὁράω see</th><td class="g">ὄψομαι, εἶδον, ἑώρακα, —, ὤφθην</td></tr>
-<tr><th>λαμβάνω take</th><td class="g">λήμψομαι, ἔλαβον, εἴληφα, —, ἐλήμφθην</td></tr>
+<tr><th>λαμβάνω take</th><td class="g">λήμψομαι, ἔλαβον, εἴληφα, —, —</td></tr>
 <tr><th>δίδωμι give</th><td class="g">δώσω, ἔδωκα, δέδωκα, δέδομαι, ἐδόθην</td></tr>
 <tr><th>γινώσκω know</th><td class="g">γνώσομαι, ἔγνων, ἔγνωκα, ἔγνωσμαι, ἐγνώσθην</td></tr>
 <tr><th>εὑρίσκω find</th><td class="g">εὑρήσω, εὗρον, εὕρηκα, —, εὑρέθην</td></tr>
@@ -237,7 +238,7 @@ html:`<table><caption>Present · Future · Aorist · Perfect act · Perfect m/p 
 <tr><th>ἀποστέλλω send</th><td class="g">ἀποστελῶ, ἀπέστειλα, ἀπέσταλκα, ἀπέσταλμαι, ἀπεστάλην</td></tr>
 <tr><th>σῴζω save</th><td class="g">σώσω, ἔσωσα, σέσωκα, σέσῳσμαι, ἐσώθην</td></tr>
 <tr><th>κρίνω judge</th><td class="g">κρινῶ, ἔκρινα, κέκρικα, κέκριμαι, ἐκρίθην</td></tr>
-<tr><th>μένω remain</th><td class="g">μενῶ, ἔμεινα, μεμένηκα, —, —</td></tr>
+<tr><th>μένω remain</th><td class="g">μενῶ, ἔμεινα, —, —, —</td></tr>
 <tr><th>πίνω drink</th><td class="g">πίομαι, ἔπιον, πέπωκα, —, —</td></tr>
 <tr><th>πίπτω fall</th><td class="g">πεσοῦμαι, ἔπεσον, πέπτωκα, —, —</td></tr>
 <tr><th>φέρω carry</th><td class="g">οἴσω, ἤνεγκα, —, —, ἠνέχθην</td></tr>

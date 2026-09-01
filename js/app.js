@@ -1289,7 +1289,7 @@ function renderHelp(){
     <h2>Things worth knowing</h2>
     <table>
       <tr><th>Sermon prep</th><td>Open a chapter in Read and tap <b>Pin for this week</b> — it appears on Today. <b>Words I don't know</b> lists the course vocabulary in that chapter you have not started, and adds it to your deck in one tap.</td></tr>
-      <tr><th>How much you can read</th><td>Every chapter shows what share of its words you have started. The deck covers about 85% of the running text of the New Testament.</td></tr>
+      <tr><th>How much you can read</th><td>Every chapter counts how many of its <i>different</i> words you have started, and how many more the course can still teach you. Counting every occurrence instead would flatter you — twenty words is half the page, because the commonest ones repeat.</td></tr>
       <tr><th>Grading honestly</th><td>Again, Hard, Good and Easy set when a word comes back. Guessing right is not the same as knowing it — press Hard and the schedule will believe you.</td></tr>
       <tr><th>A missed day</th><td>One rest day a week is allowed; the streak survives it and says so.</td></tr>
       <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Progress.</td></tr>

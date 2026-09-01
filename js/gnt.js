@@ -92,18 +92,32 @@ function vocIndexFor(lemma) {
   return (i === undefined || skipWord(i)) ? -1 : i;
 }
 
-/* How much of this chapter is vocabulary you have started. The single most
-   motivating number available, and it is the one that decides whether
-   Saturday's passage is readable — which is not the same question as how
-   many words you know in total. */
+/* How much of this chapter you can actually read.
+
+   Counted by *different* words, not by occurrences. Counting occurrences
+   flatters you badly: twenty words is 48% of Luke 21, because ὁ and καί
+   repeat enough to carry it between them — while 119 of the words that
+   carry the meaning are still unknown. The distinct count is the one that
+   answers "can I read this on Saturday".
+
+   The share of the page is still reported, because it is a real thing to
+   know, but it is not the headline. And the words the course does not teach
+   at all are counted separately: no amount of study here will reach them,
+   and pretending otherwise sets a ceiling you cannot see. */
 function gntCoverage(verses) {
-  let total = 0, known = 0;
+  const seen = new Map();                  // lemma index -> VOCAB index or -1
+  let tokens = 0, tokensKnown = 0;
   verses.forEach(v => v[1].forEach(w => {
-    total++;
-    const i = vocIndexFor(GNT.lemmas[w[1]]);
-    if (i >= 0 && S.cards[i]) known++;
+    tokens++;
+    if (!seen.has(w[1])) seen.set(w[1], vocIndexFor(GNT.lemmas[w[1]]));
+    const i = seen.get(w[1]);
+    if (i >= 0 && S.cards[i]) tokensKnown++;
   }));
-  return { total, known, pct: total ? Math.round(100 * known / total) : 0 };
+  let started = 0, inCourse = 0;
+  seen.forEach(i => { if (i >= 0) { inCourse++; if (S.cards[i]) started++; } });
+  const distinct = seen.size;
+  return { distinct, started, toLearn: inCourse - started, outside: distinct - inCourse,
+           pagePct: tokens ? Math.round(100 * tokensKnown / tokens) : 0 };
 }
 
 /* Course words in this chapter you have never met, or keep losing. */
@@ -270,11 +284,16 @@ async function openGntChapter(abbr, ch) {
       <h2 style="margin:0">${meta.t} ${meta.n?meta.n[ch]:ch+1}</h2>
       <span class="muted" style="font-size:.8rem">${verses.length} verses</span>
     </div>
-    <p class="muted" style="font-size:.82rem;margin:0 0 10px">${(()=>{
-      const c=gntCoverage(verses);
-      return c.known
-        ? `You have started <b>${c.pct}%</b> of the ${c.total} words here.`
-        : `${c.total} words. None of them are in your deck yet.`;
+    <p class="muted" style="font-size:.82rem;margin:0 0 10px;line-height:1.5">${(()=>{
+      const c = gntCoverage(verses);
+      const head = c.started
+        ? `You have started <b>${c.started}</b> of the <b>${c.distinct}</b> different words here — ${c.pagePct}% of the words on the page, since the common ones repeat.`
+        : `<b>${c.distinct}</b> different words here, none of them in your deck yet.`;
+      const more = c.started ? "more " : "";        // "138 more" reads oddly from zero
+      const rest = c.toLearn
+        ? ` ${c.toLearn} ${more}${c.toLearn === 1 ? "is" : "are"} in the course${c.outside ? `; ${c.outside} ${c.outside === 1 ? "is" : "are"} not` : ""}.`
+        : (c.outside ? ` The other ${c.outside} ${c.outside === 1 ? "is" : "are"} not in the course.` : "");
+      return head + rest;
     })()}</p>
     <div class="passage gnt" id="psg">${html}</div>
     <div class="gloss" id="gloss"><div class="d">Tap a word for its parsing.</div></div>
