@@ -48,10 +48,14 @@
     <div style="height:9px"></div>
     <button class="btn ghost" id="btnNew">Learn 5 new words</button>
 
+    <div id="startHere"></div>
     <div id="pinned"></div>
 
     <h2>Next lesson</h2>
     <div id="nextLesson"></div>
+
+    <p style="margin:26px 0 0;text-align:center">
+      <a href="#" onclick="go('help');return false" class="muted" style="font-size:.82rem">How this app works</a></p>
   </section>
 
   <!-- LEARN -->
@@ -93,22 +97,20 @@
     <div id="readBody"></div>
   </section>
 
-  <!-- LOOKUP -->
-  <section class="screen" id="s-lookup">
-    <button class="btn ghost small" onclick="go('tables')">← Tables</button>
-    <h1 style="margin-top:14px">Word lookup</h1>
-    <p class="sub">Search the core vocabulary by Greek or English.</p>
-    <input id="lookupSearch" type="search" placeholder="e.g. αγαπ or love or faith" autocomplete="off">
-    <div id="lookupBody"></div>
+  <!-- LOOK UP — words and paradigms, one search -->
+  <section class="screen" id="s-tables">
+    <h1>Look up</h1>
+    <p class="sub">Any word in the course, and every paradigm. One box — <i>aorist</i> finds the table, <i>agape</i> or <i>love</i> finds the word.</p>
+    <input id="tablesSearch" type="search" placeholder="A word, a meaning, or a paradigm" autocomplete="off">
+    <div id="tablesBody"></div>
   </section>
 
-  <!-- TABLES -->
-  <section class="screen" id="s-tables">
-    <h1>Tables</h1>
-    <p class="sub">Every paradigm in one place. Search by name or form.</p>
-    <input id="tablesSearch" type="search" placeholder="Search paradigms: aorist, article, participle…" autocomplete="off">
-    <button class="btn ghost small" style="margin-bottom:16px" onclick="go('lookup')">🔍 Word list — search the whole vocabulary</button>
-    <div id="tablesBody"></div>
+  <!-- HOW THIS WORKS -->
+  <section class="screen" id="s-help">
+    <button class="btn ghost small" onclick="go('today')">← Today</button>
+    <h1 style="margin-top:14px">How this works</h1>
+    <p class="sub">What is on each tab, and where the less obvious things live.</p>
+    <div id="helpBody"></div>
   </section>
 
   <!-- PROGRESS -->
@@ -125,7 +127,7 @@
   <button data-go="learn"><span class="ic">β</span>Learn</button>
   <button data-go="drill"><span class="ic">γ</span>Drill</button>
   <button data-go="read"><span class="ic">δ</span>Read</button>
-  <button data-go="tables"><span class="ic">ε</span>Tables</button>
+  <button data-go="tables"><span class="ic">ε</span>Look up</button>
   <button data-go="prog"><span class="ic">ς</span>Progress</button>
 </nav>
 

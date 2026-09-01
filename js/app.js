@@ -249,6 +249,9 @@ let UNDO=null;   // last-grade snapshot for the session Undo button
    NAVIGATION
    ============================================================ */
 function showScreen(name){
+  // A history entry can name a screen this build no longer has — "lookup"
+  // was folded into "tables". Fall back rather than throw on a null element.
+  if(!document.getElementById("s-"+name)) name="today";
   // Nothing should still be speaking on a screen you have left.
   if(typeof stopEntry==="function") stopEntry();
   if(typeof stopSequence==="function") stopSequence();
@@ -261,9 +264,9 @@ function showScreen(name){
   if(name==="learn")renderLessons();
   if(name==="drill")renderDrill();
   if(name==="read")renderRead();
-  if(name==="lookup")renderLookup();
   if(name==="tables")renderTables();
   if(name==="prog")renderProgress();
+  if(name==="help")renderHelp();
 }
 
 /* ---- back button ----
@@ -336,6 +339,20 @@ function render(){
   document.getElementById("stXp").textContent=S.xp;
   document.getElementById("btnReview").textContent =
     due>0 ? `Start today's review (${due})` : "Nothing due — practise anyway";
+
+  /* Only while there is nothing to review — the moment the deck has cards
+     this disappears and does not come back. A permanent link at the foot of
+     the screen leads to the same page for anyone returning after a gap. */
+  const startEl=document.getElementById("startHere");
+  if(startEl) startEl.innerHTML = fresh ? `<div class="card" style="border-color:var(--gold-dim)">
+      <h3 style="margin-top:0">Start here</h3>
+      <ol class="muted" style="font-size:.87rem;padding-left:20px;margin:0 0 12px">
+        <li>Read <b>chapter 1</b> in Learn and hear the letters.</li>
+        <li>Tap <b>Learn 5 new words</b> above. Five is a real day's work.</li>
+        <li>Come back tomorrow — the review builds itself from what you graded.</li>
+      </ol>
+      <button class="btn ghost small" onclick="go('help')">What else is in here</button>
+    </div>` : "";
 
   const pin=S.pin, pinEl=document.getElementById("pinned");
   if(pinEl) pinEl.innerHTML = (pin&&pin.a) ? `<h2>This week's passage</h2>
@@ -1005,12 +1022,32 @@ const DRILLS=[
 ["Write it from memory","No multiple choice — write the word, then mark yourself",()=>startSession(writeWordDrill(),"d")],
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")]
 ];
+/* Which heading each drill sits under. Held here rather than in DRILLS so
+   the indices the menu calls by stay exactly as they were. */
+const DRILL_GROUP={
+  "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
+                "Listening — words","Write it from memory"],
+  "Grammar":["The article","Verb parsing","Parsing builder","Principal parts","Case functions",
+             "Mixed grammar review"],
+  "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
+};
 function renderDrill(){
-  document.getElementById("drillMenu").innerHTML=DRILLS.map((d,i)=>`
-    <button class="lesson-item" onclick="DRILLS[${i}][2]()">
-      <span class="t"><b>${d[0]}</b><span>${d[1]}</span></span>
-      <span class="muted">›</span>
-    </button>`).join("");
+  const seen=new Set();
+  let html=Object.entries(DRILL_GROUP).map(([group,names])=>{
+    const items=names.map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0);
+    items.forEach(i=>seen.add(i));
+    return items.length?`<h2 style="margin:22px 0 10px">${group}</h2>`+items.map(i=>`
+      <button class="lesson-item" onclick="DRILLS[${i}][2]()">
+        <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
+        <span class="muted">›</span></button>`).join(""):"";
+  }).join("");
+  // anything added later and not yet filed still appears
+  const rest=DRILLS.map((d,i)=>i).filter(i=>!seen.has(i));
+  if(rest.length) html+=`<h2 style="margin:22px 0 10px">More</h2>`+rest.map(i=>`
+      <button class="lesson-item" onclick="DRILLS[${i}][2]()">
+        <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
+        <span class="muted">›</span></button>`).join("");
+  document.getElementById("drillMenu").innerHTML=html;
 }
 
 /* ============================================================
@@ -1153,50 +1190,67 @@ function lkFoldLatin(q){
    (so "hemera" finds ἡμέρα even though the entry reads "ἡμέρα, -ας, ἡ"). */
 const LK_LATIN=VOCAB.map(v=>lkFoldLatin(lkLatin(v[0].split(",")[0].trim())));
 
-function renderLookup(){
-  const q=lkNorm((document.getElementById("lookupSearch").value||"").trim());
-  const body=document.getElementById("lookupBody");
-  if(!q){
-    body.innerHTML=`<p class="muted" style="font-size:.86rem">Search three ways, no Greek keyboard needed:</p>
-      <ul class="muted" style="font-size:.86rem;padding-left:20px;margin:0 0 4px">
-        <li><b>English</b> — <i>love</i>, <i>faith</i>, <i>send</i></li>
-        <li><b>Latin letters</b> — <i>agape</i>, <i>logos</i>, <i>christos</i></li>
-        <li><b>Greek</b> — <span class="gk">αγαπ</span>, accents optional</li>
-      </ul>
-      <p class="muted" style="font-size:.8rem">Partial words work. Results are ordered by how often they appear in the New Testament.</p>`;
-    return;
-  }
+function lookupHits(raw){
+  const q=lkNorm((raw||"").trim());
+  if(!q) return [];
   const ql=lkFoldLatin(q);
   const latin=/^[a-z\u0304\u0101\u0113\u014d\s-]+$/i.test(q);
-  const hits=VOCAB.map((v,i)=>({v,i}))
+  return VOCAB.map((v,i)=>({v,i}))
     .filter(x=>!RETIRED.has(x.i))
     .filter(x=>lkNorm(x.v[0]).includes(q)          // Greek, accents optional
              ||lkNorm(x.v[1]).includes(q)          // English gloss
              ||(latin && LK_LATIN[x.i].includes(ql)))   // typed in Latin letters
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
-  body.innerHTML = hits.length ? hits.map(({v,i})=>`
+}
+function wordRowsHtml(hits){
+  return hits.map(({v,i})=>`
     <button class="lk" onpointerdown="prepWord(${i})"
             onclick="${VOCAB_AUDIO[i]&&extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
       <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${exampleHtml(i)}</span>
       <span class="fq">${v[2]}\u00d7</span>
-    </button>`).join("")
-    : `<div class="empty"><span class="gk">οὐδέν</span><p>No word matches that.</p></div>`;
+    </button>`).join("");
 }
-document.getElementById("lookupSearch").oninput=()=>renderLookup();
 
 /* ============================================================
    TABLES  — searchable reference paradigms
    ============================================================ */
-function renderTables(){
-  const q=(document.getElementById("tablesSearch").value||"").trim().toLowerCase();
-  const hits=PARADIGMS.filter(t=>!q || (t.t+" "+t.tags+" "+t.html).toLowerCase().includes(q));
-  document.getElementById("tablesBody").innerHTML = hits.length ? hits.map((t,k)=>`
-    <div class="ptable ${q?"open":""}" id="pt${k}">
+/* Words and paradigms answer to the same box. Two searches stacked on one
+   screen was the arrangement before, and the word list sat behind a button
+   most people would never think to press. Keyed on each table's real index
+   so the ids stay unique however the list is filtered. */
+function tableHtml(list){
+  return list.map(({t,k})=>`
+    <div class="ptable open" id="pt${k}">
       <button onclick="document.getElementById('pt${k}').classList.toggle('open')">${t.t}</button>
       <div class="pt-body">${t.html}</div>
-    </div>`).join("") :
-    `<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${q}".</p></div>`;
+    </div>`).join("");
+}
+function renderTables(){
+  const raw=(document.getElementById("tablesSearch").value||"").trim();
+  const q=raw.toLowerCase();
+  const body=document.getElementById("tablesBody");
+  if(!q){
+    // Nothing typed: the paradigms are worth browsing, so show them shut.
+    body.innerHTML=`<p class="muted" style="font-size:.84rem;margin-bottom:12px">
+        Type to search. Greek with or without accents, Latin letters
+        (<i>agape</i>), an English meaning, or the name of a paradigm.</p>`
+      + PARADIGMS.map((t,k)=>`
+        <div class="ptable" id="pt${k}">
+          <button onclick="document.getElementById('pt${k}').classList.toggle('open')">${t.t}</button>
+          <div class="pt-body">${t.html}</div>
+        </div>`).join("");
+    fillSoundTable();
+    return;
+  }
+  const words=lookupHits(raw);
+  const tables=PARADIGMS.map((t,k)=>({t,k}))
+    .filter(({t})=>(t.t+" "+t.tags+" "+t.html).toLowerCase().includes(q));
+  body.innerHTML =
+    (words.length?`<h2 style="margin:4px 0 10px">${words.length===40?"Words (first 40)":words.length===1?"1 word":words.length+" words"}</h2>`+wordRowsHtml(words):"")
+    + (tables.length?`<h2 style="margin:${words.length?"24px":"4px"} 0 10px">${tables.length===1?"1 table":tables.length+" tables"}</h2>`+tableHtml(tables):"")
+    + (!words.length&&!tables.length
+        ?`<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${raw}".</p></div>`:"");
   fillSoundTable();
 }
 document.getElementById("tablesSearch").oninput=()=>renderTables();
@@ -1210,6 +1264,47 @@ function fillSoundTable(){
 }
 
 /* ============================================================
+   HOW THIS WORKS
+   ============================================================
+   Not a walkthrough. A page you can come back to after a fortnight away and
+   find the things that are not obvious from the tab names. */
+function renderHelp(){
+  document.getElementById("helpBody").innerHTML=`
+    <div class="card">
+      <h3 style="margin-top:0">The short version</h3>
+      <p class="muted" style="font-size:.87rem;margin:0">Ten minutes a day. Open <b>Today</b>, do the review it offers,
+      and learn five new words when you want more. Everything else is there when you need it, not before.</p>
+    </div>
+
+    <h2>The tabs</h2>
+    <table>
+      <tr><th>Today</th><td>What is due, your streak, and the next chapter. The passage you pinned shows up here too.</td></tr>
+      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. Each has the teaching, a video, its own vocabulary and a short test. Passing a test puts its questions on the review schedule.</td></tr>
+      <tr><th>Drill</th><td>${DRILLS.length} ways to practise, grouped by vocabulary, grammar, and letters and sounds.</td></tr>
+      <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
+      <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
+      <tr><th>Progress</th><td>Your numbers and badges first, then settings, sync, and your data.</td></tr>
+    </table>
+
+    <h2>Things worth knowing</h2>
+    <table>
+      <tr><th>Sermon prep</th><td>Open a chapter in Read and tap <b>Pin for this week</b> — it appears on Today. <b>Words I don't know</b> lists the course vocabulary in that chapter you have not started, and adds it to your deck in one tap.</td></tr>
+      <tr><th>How much you can read</th><td>Every chapter shows what share of its words you have started. The deck covers about 85% of the running text of the New Testament.</td></tr>
+      <tr><th>Grading honestly</th><td>Again, Hard, Good and Easy set when a word comes back. Guessing right is not the same as knowing it — press Hard and the schedule will believe you.</td></tr>
+      <tr><th>A missed day</th><td>One rest day a week is allowed; the streak survives it and says so.</td></tr>
+      <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Progress.</td></tr>
+      <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the video links need the internet.</td></tr>
+      <tr><th>Two devices</th><td>Progress → Sync. Invent a phrase, enter it on both. Progress merges; the phrase never leaves your device.</td></tr>
+      <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
+    </table>
+
+    <h2>If you have studied before</h2>
+    <p class="muted" style="font-size:.87rem">Progress → <b>Studied Greek before?</b> marks chapters done and seeds the
+    hundred commonest words as familiar, spread over a fortnight rather than landing in one day.</p>
+    <div style="height:20px"></div>`;
+}
+
+/* ============================================================
    PROGRESS
    ============================================================ */
 function renderProgress(){
@@ -1217,9 +1312,27 @@ function renderProgress(){
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
     ${backupNudgeHtml()}
-    ${typeof syncCardHtml==="function"?syncCardHtml():""}
+    <div class="stat-grid">
+      <div class="stat"><b>${S.streak}</b><span>day streak</span></div>
+      <div class="stat"><b>${S.best||0}</b><span>best streak</span></div>
+      <div class="stat"><b>${level()}</b><span>level</span></div>
+    </div>
     <div class="card">
-      <h3 style="margin-top:0">Settings</h3>
+      <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>
+      <small class="muted">${started} started · ${known} at six days or longer · ${nextWeek} due this week</small>
+    </div>
+    <div class="card">
+      <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
+      ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
+    </div>
+    <h2>Badges</h2>
+    <div class="badges">${BADGES.map(b=>`
+      <div class="badge ${S.badges.includes(b.id)?"got":""}">
+        <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
+    <h2>Settings</h2>
+    <div class="card">
       <div class="setrow"><span>Daily review goal</span>
         <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
       <div class="setrow"><span>Answer sounds</span>
@@ -1242,6 +1355,7 @@ function renderProgress(){
         <button class="btn ghost small" onclick="unsuspendWord(${i})">Restore</button></div>`).join("")}
       ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
     </div>`:""}
+    ${typeof syncCardHtml==="function"?syncCardHtml():""}
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
       <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
@@ -1249,25 +1363,6 @@ function renderProgress(){
         <select id="setPlace"><option value="0">—</option>${Array.from({length:26},(_,k)=>`<option value="${k+1}">${k+1}</option>`).join("")}</select></div>
       <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
     </div>
-    <div class="stat-grid">
-      <div class="stat"><b>${S.streak}</b><span>day streak</span></div>
-      <div class="stat"><b>${S.best||0}</b><span>best streak</span></div>
-      <div class="stat"><b>${level()}</b><span>level</span></div>
-    </div>
-    <div class="card">
-      <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>
-      <small class="muted">${started} started · ${known} at six days or longer · ${nextWeek} due this week</small>
-    </div>
-    <div class="card">
-      <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
-      ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
-    </div>
-    <h2>Badges</h2>
-    <div class="badges">${BADGES.map(b=>`
-      <div class="badge ${S.badges.includes(b.id)?"got":""}">
-        <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
     <h2>Your data</h2>
     <p class="muted" style="font-size:.86rem">
       ${canPersist?"Progress is saved on this device.":"This browser is blocking storage, so progress will be lost when you close the app. Export it, or open the app from a hosted address rather than a local file."}

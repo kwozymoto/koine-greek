@@ -244,14 +244,17 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 #lookupSearch{width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);
   background:var(--surface);color:var(--text);font-size:.95rem;margin-bottom:14px}
 #lookupSearch::placeholder{color:var(--muted)}
-.lk{display:flex;align-items:center;gap:11px;padding:11px 13px;background:var(--surface);
+/* Top-aligned: with an example verse a row is several lines tall, and a
+   vertically centred speaker and frequency float away from the headword
+   they belong to. */
+.lk{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;background:var(--surface);
   border:1px solid var(--line);border-radius:11px;margin-bottom:8px;width:100%;text-align:left}
 .lk .w{flex:1;min-width:0}
 .lk .w b{display:block;font-family:var(--gk);font-weight:500}
 .lk .w span{font-size:.8rem;color:var(--muted)}
-.lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap}
+.lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap;margin-top:5px}
 .lk .pl{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;font-size:.8rem}
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:1px}
 .lk .pl.on{background:var(--gold);border-color:var(--gold);color:#1a1408}
 
 /* leech flag */
