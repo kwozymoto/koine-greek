@@ -25,6 +25,11 @@ is correct. That needs a reader.
 """
 import os, subprocess, sys
 
+# The child checkers print Greek. This process must be able to relay it, and
+# on Windows its own stdout defaults to the ANSI codepage, which cannot.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_readings",
           "check_lessons"]
