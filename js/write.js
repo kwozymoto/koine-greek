@@ -214,7 +214,10 @@ function wPadHtml(showGuideHint) {
 function writeLetterDrill(n = 10) {
   const pool = ALPHABET.slice().sort(() => Math.random() - .5).slice(0, n);
   return pool.map(a => () => {
-    const lower = a[0].split(" ").pop();          // "Α α" -> "α"
+    // "Α α" -> "α". Index 1, not the last: sigma is listed "Σ σ ς", and
+    // popping gave the final form, so the one letter whose shape depends on
+    // where it sits was the one being taught in the position it cannot hold.
+    const lower = a[0].split(" ")[1];
     document.getElementById("sessBody").innerHTML = `
       <div class="card" style="text-align:center">
         <p style="margin:0;font-size:1.02rem">Trace <b>${a[1]}</b></p>
