@@ -51,7 +51,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <div id="alphaHere"></div>
 <h3>Three rules that trip people up</h3>
 <p><b>Sigma</b> is written <span class="gk">ς</span> at the end of a word and <span class="gk">σ</span> everywhere else. Same letter, same sound: <span class="gk">λόγος</span>.</p>
-<p><b>Breathings.</b> Every word starting with a vowel carries a mark. Rough (<span class="gk">ἁ</span>) adds an <i>h</i>; smooth (<span class="gk">ἀ</span>) adds nothing. So <span class="gk">ἅγιος</span> is <i>hagios</i>, but <span class="gk">ἀγάπη</span> is <i>agapē</i>. Initial <span class="gk">ῥ</span> always takes the rough breathing.</p>
+<p><b>Breathings.</b> Every word starting with a vowel carries a mark. Rough (<span class="gk">ἁ</span>) adds an <i>h</i>; smooth (<span class="gk">ἀ</span>) adds nothing. So <span class="gk">ἅγιος</span> is <i>hagios</i>, but <span class="gk">ἀγάπη</span> is <i>agapē</i>. Initial <span class="gk">ῥ</span> always takes the rough breathing, though it is generally not sounded as an h: <span class="gk">ῥῆμα</span> is <i>rhēma</i>, near enough <i>rēma</i>.</p>
 <p><b>Gamma nasal.</b> <span class="gk">γ</span> before <span class="gk">γ, κ, χ, ξ</span> is pronounced <i>n</i>. So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not <i>aggelos</i>.</p>
 <h3>A note on pronunciation</h3>
 <p>Erasmian is a scholarly convention, not how anyone spoke in the first century. It survives because it keeps distinct sounds distinct — in modern Greek η, ι, υ, ει and οι have all collapsed into <i>ee</i>, which is punishing for spelling. Stay with Erasmian.</p>
@@ -83,7 +83,7 @@ quiz:[
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
 body:`<p>Before learning any paradigm, get the shape of the whole system. Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five — <span class="gk">λύομεν</span> is first person plural, present, active, indicative: "we loose".</p>
 <h3>Aspect comes first</h3>
-<p>The tenses differ less by <i>when</i> than by <i>how the action is viewed</i>. Greek has three aspects: <b>imperfective</b> (in progress, ongoing — present and imperfect), <b>perfective</b> (viewed as a whole, undefined — aorist), and <b>stative</b> (completed with continuing results — perfect and pluperfect). Time is only fixed in the indicative mood; outside it, aspect is nearly everything.</p>
+<p>The tenses differ less by <i>when</i> than by <i>how the action is viewed</i>. Greek has three aspects: <b>imperfective</b> (in progress, ongoing — present and imperfect), <b>perfective</b> (viewed as a whole, undefined — aorist), and <b>stative</b> (completed with continuing results — perfect and pluperfect). Time is only fixed in the indicative mood; outside it, aspect is nearly everything. <b>A warning about the words:</b> Black calls these three imperfective, <i>aoristic</i> and <i>perfective</i> — so his "perfective" is the perfect, not the aorist. The labels here are the ones most modern grammars use; when you read Black, translate.</p>
 <h3>Two sets of endings</h3>
 <p><b>Primary</b> endings appear on tenses whose indicative refers to present or future time (present, future, perfect). <b>Secondary</b> endings appear on past-time tenses (imperfect, aorist, pluperfect), which also take the <b>augment</b> — an ε prefixed to the stem. Spotting augment + secondary endings tells you "past" before you've identified anything else.</p>
 <h3>Principal parts</h3>
@@ -134,7 +134,7 @@ quiz:[
 {q:"ἔσομαι is the future of which verb?",o:["ἔχω","ἔρχομαι","εἰμί","ἐσθίω"],a:2,w:"The future of 'to be' — and it is middle in form. ἔσται (3rd singular) appears constantly in the Gospels: 'it will be'."}]},
 
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
-body:`<p>Greek nouns fall into three declensions — patterns of endings. The second is the most regular, so start here. Masculine nouns in <span class="gk">-ος</span>, neuter nouns in <span class="gk">-ον</span>.</p>
+body:`<p>Greek nouns fall into three declensions — patterns of endings. The second is the most regular, so start here. Masculine nouns in <span class="gk">-ος</span>, neuter nouns in <span class="gk">-ον</span>. A few <span class="gk">-ος</span> nouns are feminine — <span class="gk">ἡ ὁδός</span> (way) and <span class="gk">ἡ ἔρημος</span> (wilderness) are both in this chapter — and they decline exactly like <span class="gk">λόγος</span>; only the article tells you.</p>
 <table><caption>λόγος, -ου, ὁ — word (masculine)</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">λόγος</td><td class="g">λόγοι</td></tr>
@@ -324,7 +324,7 @@ body:`<p>Pronouns stand in for nouns, and Greek's are everywhere: <span class="g
 <p><b>2. Intensive</b>, in predicate position: <span class="gk">αὐτὸς ὁ κύριος</span> — "the Lord <i>himself</i>" (1 Thess 4:16).</p>
 <p><b>3. Identical</b>, in attributive position: <span class="gk">ὁ αὐτὸς κύριος</span> — "the <i>same</i> Lord" (1 Cor 12:5). Position relative to the article decides between 2 and 3 — the same rule as adjectives.</p>
 <h3>Emphatic subjects</h3>
-<p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς πνεύματι</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Spirit" (Mark 1:8). Every ἐγώ of Jesus in John carries this weight.</p>`,
+<p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Holy Spirit" (Mark 1:8). Every ἐγώ of Jesus in John carries this weight.</p>`,
 v:[2,3,6],
 vids:[{t:"Lecture 9: Personal Pronouns",s:"Daily Dose of Greek — Rob Plummer (15:17)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-9/"}],
 quiz:[
@@ -557,7 +557,7 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 <h3>πολύς and μέγας</h3>
 <p>"Much/many" and "great" are ordinary second/first-declension adjectives except in four slots each — masculine and neuter, nominative and accusative singular — which give three forms apiece: <span class="gk">πολύς, πολύν, πολύ</span> and <span class="gk">μέγας, μέγαν, μέγα</span> (the neuter nominative and accusative are identical, as always). Everything else is regular: <span class="gk">πολλοῦ, πολλῷ, μεγάλου, μεγάλῳ…</span></p>
 <h3>Comparison of adjectives</h3>
-<p>Greek adjectives have three degrees. The comparative normally adds <span class="gk">-τερος, -α, -ον</span> to the masculine stem and the superlative <span class="gk">-τατος, -η, -ον</span>; both then decline as ordinary first-and-second-declension adjectives.</p>
+<p>Greek adjectives have three degrees. The comparative normally adds <span class="gk">-τερος, -α, -ον</span> to the masculine stem and the superlative <span class="gk">-τατος, -η, -ον</span>; a short vowel before the ending lengthens, which is why <span class="gk">σοφός</span> gives <span class="gk">σοφώτερος</span> rather than σοφότερος; both then decline as ordinary first-and-second-declension adjectives.</p>
 <table>
 <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
 <tr><td class="g">δίκαιος</td><td class="g">δικαιότερος</td><td class="g">δικαιότατος</td></tr>

@@ -684,8 +684,8 @@ function lessonQuiz(id){
    DRILLS
    ============================================================ */
 const ART=[
-["ὁ","masculine nominative singular"],["τοῦ","masculine genitive singular"],
-["τῷ","masculine dative singular"],["τόν","masculine accusative singular"],
+["ὁ","masculine nominative singular"],["τοῦ","masculine/neuter genitive singular"],
+["τῷ","masculine/neuter dative singular"],["τόν","masculine accusative singular"],
 ["ἡ","feminine nominative singular"],["τῆς","feminine genitive singular"],
 ["τῇ","feminine dative singular"],["τήν","feminine accusative singular"],
 ["τό","neuter nominative/accusative singular"],["οἱ","masculine nominative plural"],
@@ -698,7 +698,7 @@ const PARSE=[
 ["λύω","1st singular present active indicative"],["λύεις","2nd singular present active indicative"],
 ["λύει","3rd singular present active indicative"],["λύομεν","1st plural present active indicative"],
 ["λύετε","2nd plural present active indicative"],["λύουσιν","3rd plural present active indicative"],
-["ἔλυον","1st singular imperfect active indicative"],["ἐλύομεν","1st plural imperfect active indicative"],
+["ἔλυον","1st singular or 3rd plural imperfect active indicative"],["ἐλύομεν","1st plural imperfect active indicative"],
 ["ἔλυσα","1st singular aorist active indicative"],["ἔλυσεν","3rd singular aorist active indicative"],
 ["ἐλύσαμεν","1st plural aorist active indicative"],["λύεται","3rd singular present middle/passive indicative"],
 ["λυόμεθα","1st plural present middle/passive indicative"],["λύονται","3rd plural present middle/passive indicative"],
@@ -707,7 +707,7 @@ const PARSE=[
 ["ἐστέ","2nd plural present active indicative of εἰμί"],["εἰσίν","3rd plural present active indicative of εἰμί"],
 ["ἦν","3rd singular imperfect active indicative of εἰμί"],["λύων","present active participle, nominative singular masculine"],
 ["λύσας","aorist active participle, nominative singular masculine"],["λύειν","present active infinitive"],
-["λῦσαι","aorist active infinitive"],["λύῃ","3rd singular present active subjunctive"]
+["λῦσαι","aorist active infinitive"],["λύῃ","3rd singular present active subjunctive (also 2nd singular present middle/passive)"]
 ];
 /* ---- parsing builder: name every element of the form yourself ---- */
 const BUILD_FORMS=[
@@ -1279,7 +1279,7 @@ function renderHelp(){
     <h2>The tabs</h2>
     <table>
       <tr><th>Today</th><td>What is due, your streak, and the next chapter. The passage you pinned shows up here too.</td></tr>
-      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. Each has the teaching, a video, its own vocabulary and a short test. Passing a test puts its questions on the review schedule.</td></tr>
+      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. Each has the teaching, a video, its own vocabulary and a short test. Answering a quiz question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, grouped by vocabulary, grammar, and letters and sounds.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
