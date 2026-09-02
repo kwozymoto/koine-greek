@@ -147,7 +147,7 @@ body:`<p>Greek nouns fall into three declensions — patterns of endings. The se
 <tr><th>Gen</th><td class="g">ἔργου</td><td class="g">ἔργων</td></tr>
 <tr><th>Dat</th><td class="g">ἔργῳ</td><td class="g">ἔργοις</td></tr>
 <tr><th>Acc</th><td class="g">ἔργον</td><td class="g">ἔργα</td></tr></table>
-<p>Notice that neuter differs from masculine only in the nominative and accusative — everywhere else the endings are identical.</p>
+<p>Notice that neuter differs from masculine only in the nominative, accusative and vocative — everywhere else the endings are identical. (The neuter has one form for all three: <span class="gk">ἔργον</span> singular, <span class="gk">ἔργα</span> plural.)</p>
 <h3>Why lexicons list three things</h3>
 <p><span class="gk">λόγος, -ου, ὁ</span> gives you the nominative, the genitive ending, and the article. The genitive tells you which declension it follows; the article tells you the gender. You need both, so learn nouns in this full form from the start.</p>
 <h3>The definite article</h3>
@@ -180,7 +180,7 @@ body:`<p>Greek nouns fall into three declensions — patterns of endings. The se
 <h3>Accusative — the direct object</h3>
 <p>Receives the action. Also expresses extent of time or space.</p>
 <h3>Vocative — direct address</h3>
-<p>"O Lord!" Usually looks like the nominative; you'll rarely need to think about it.</p>
+<p>"O Lord!" In the plural it is identical to the nominative, and so is the neuter singular. But the second-declension masculine singular ends in <span class="gk">-ε</span>: <span class="gk">λόγε, κύριε, ἄνθρωπε, δοῦλε</span>. That is worth knowing — only 52 of the 410 singular vocatives in the New Testament look like a nominative, and <span class="gk">κύριε</span> alone accounts for 117 of them.</p>
 <p><b>The discipline:</b> when a commentary says "this is a genitive of source", it is making an interpretive claim, not reporting a fact. Ask what the alternatives are and why this one was chosen.</p>`,
 v:[1,4,8,12,17,20,27,31,32,46,48,51,58,67,79,82,87,88,90,127,132,144,162,167,252,210,219,276,300,330,339,412,470,471],
 vids:[{t:"Lecture 4: Nouns of the Second Declension",s:"Daily Dose of Greek — Rob Plummer (18:22)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-4/"}],
@@ -246,7 +246,7 @@ body:`<p>The imperfect describes past action viewed as ongoing, repeated or atte
 <tr><th>1st</th><td class="g">ἔλυον</td><td class="g">ἐλύομεν</td></tr>
 <tr><th>2nd</th><td class="g">ἔλυες</td><td class="g">ἐλύετε</td></tr>
 <tr><th>3rd</th><td class="g">ἔλυε(ν)</td><td class="g">ἔλυον</td></tr></table>
-<p>First and third person plural are identical (<span class="gk">ἔλυον</span>) — context decides.</p>
+<p>First person <b>singular</b> and third person <b>plural</b> are identical (<span class="gk">ἔλυον</span>) — context decides. The table above shows it: 1st plural is <span class="gk">ἐλύομεν</span>.</p>
 <h3>The augment</h3>
 <p>An <span class="gk">ἐ-</span> prefixed to the stem, marking past time in the indicative. If the verb already begins with a vowel, the vowel lengthens instead: <span class="gk">ἀκούω → ἤκουον</span>, <span class="gk">ἐγείρω → ἤγειρον</span>.</p>
 <p>With compound verbs the augment goes <i>after</i> the preposition, not before: <span class="gk">ἐκβάλλω → ἐξέβαλλον</span>. This trips people up when looking words up.</p>
@@ -390,7 +390,7 @@ body:`<p>Greek has three voices. Active: the subject acts. Passive: the subject 
 <h3>Deponent verbs</h3>
 <p>Some verbs appear only in middle or passive form but are active in meaning: <span class="gk">ἔρχομαι</span> (I come), <span class="gk">γίνομαι</span> (I become), <span class="gk">ἀποκρίνομαι</span> (I answer), <span class="gk">πορεύομαι</span> (I go). Don't try to squeeze a passive sense out of these — they simply are how those verbs work.</p>
 <p>Many grammarians now prefer to call these "middle-only" verbs rather than deponent, arguing that Greek's middle was always broader than the traditional label suggests. If a commentary makes a point about a "true middle", that debate is what lies behind it.</p>`,
-v:[23,28,65,104,243,194,294,299,306,377,391,403,436,497],
+v:[23,28,65,104,243,194,294,299,306,211,377,391,403,436,497],
 vids:[{t:"Lecture 12: Present Middle and Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (14:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-12/"}],
 quiz:[
 {q:"ἔρχομαι is middle in form. What does it mean?",o:["I am come (passive)","I come (active meaning)","I come for myself","I am being sent"],a:1,w:"A deponent, or middle-only, verb. Middle form, active meaning. Forcing a passive sense onto it produces nonsense."},
@@ -430,7 +430,7 @@ body:`<p>One set of secondary middle endings — <span class="gk">-μην, -σο
 <tr><th>1st</th><td class="g">ἐλυόμην</td><td class="g">ἐλυόμεθα</td></tr>
 <tr><th>2nd</th><td class="g">ἐλύου</td><td class="g">ἐλύεσθε</td></tr>
 <tr><th>3rd</th><td class="g">ἐλύετο</td><td class="g">ἐλύοντο</td></tr></table>
-<p>The 2nd singular <span class="gk">ἐλύου</span> looks odd because σ dropped out between vowels and ε+ο contracted (ἐλύεσο → ἐλύου). The same happens in every 2nd singular of this set.</p>
+<p>The 2nd singular <span class="gk">ἐλύου</span> looks odd because σ dropped out between vowels and ε+ο contracted (ἐλύεσο → ἐλύου). That happens wherever a thematic vowel leaves the σ between vowels — so in the imperfect and the aorist middle, but not in the perfect and pluperfect, where the ending goes straight onto the stem and the σ survives: <span class="gk">λέλυσαι</span>, <span class="gk">ἐλέλυσο</span>.</p>
 <table><caption>ἐλυσάμην — aorist middle: I loosed (for myself)</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἐλυσάμην</td><td class="g">ἐλυσάμεθα</td></tr>
@@ -499,7 +499,7 @@ v:[],
 vids:[{t:"Lecture 16: Review of the Indicative Mood",s:"Daily Dose of Greek — Rob Plummer (6:57)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-16/"}],
 quiz:[
 {q:"Parse ἐλύθης:",o:["Aorist passive 2sg — you were loosed","Aorist middle 2sg","Imperfect active 2sg","Future passive 2sg"],a:0,w:"Augment + θη + secondary ending -ς. The algorithm: augment → past; θη → passive; -ς → second singular."},
-{q:"Parse λελύκαμεν:",o:["Aorist active 1pl","Perfect active 1pl — we have loosed","Present middle 1pl","Pluperfect active 1pl"],a:1,w:"Reduplication + κ + primary ending -μεν. No augment, so not pluperfect."},
+{q:"Parse λελύκαμεν:",o:["Aorist active 1pl","Perfect active 1pl — we have loosed","Present middle 1pl","Pluperfect active 1pl"],a:1,w:"Reduplication + κ + the primary ending -μεν. It is the ending that settles it: the pluperfect would be -ειμεν. Do not lean on the augment — 52 of the 88 pluperfects in the New Testament have none."},
 {q:"Parse λύσεται:",o:["Present middle 3sg","Future middle 3sg — he will loose (for himself)","Aorist middle 3sg","Perfect middle 3sg"],a:1,w:"σ + primary middle ending, no augment: future middle. The θη-form λυθήσεται would be the future passive."},
 {q:"Which tense pairs NEVER share middle and passive forms?",o:["Present and imperfect","Perfect and pluperfect","Aorist and future","None — all share"],a:2,w:"Aorist and future keep middle (σ/σα) and passive (θη) distinct. Everywhere else one form serves both voices."},
 {q:"A form with reduplication AND an augment is:",o:["Aorist","Perfect","Pluperfect","Impossible"],a:2,w:"ἐ-λελύκειν: both markers stack. Past completed action with past-continuing results."}]},
@@ -543,9 +543,9 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 <tr><th>Gen</th><td class="g">παντός</td><td class="g">πάσης</td><td class="g">παντός</td></tr>
 <tr><th>Dat</th><td class="g">παντί</td><td class="g">πάσῃ</td><td class="g">παντί</td></tr>
 <tr><th>Acc</th><td class="g">πάντα</td><td class="g">πᾶσαν</td><td class="g">πᾶν</td></tr></table>
-<p>Plural: <span class="gk">πάντες, πᾶσαι, πάντα</span>; genitive <span class="gk">πάντων, πασῶν, πάντων</span>; dative <span class="gk">πᾶσι(ν), πάσαις, πᾶσι(ν)</span>. The stem παντ- behaves exactly as the last lesson taught: τ drops before σ.</p>
+<p>Plural: <span class="gk">πάντες, πᾶσαι, πάντα</span>; genitive <span class="gk">πάντων, πασῶν, πάντων</span>; dative <span class="gk">πᾶσι(ν), πάσαις, πᾶσι(ν)</span>. The stem παντ- meets σ the way the last lesson described, only more so: the whole ντ cluster goes, and the α lengthens to make up for it — παντ- + σι gives <span class="gk">πᾶσι(ν)</span>, not πανσι.</p>
 <h3>How πᾶς reads</h3>
-<p>Without the article: "every" (<span class="gk">πᾶν δένδρον</span>, every tree). With the article: "all/the whole" (<span class="gk">πᾶσα ἡ πόλις</span>, all the city; <span class="gk">πᾶσα γραφή</span>, 2 Tim 3:16 — famously articleless: "every scripture" or "all scripture"? The grammar allows both; context and usage must decide. Now you can see why the commentaries argue).</p>
+<p>Without the article in the <b>singular</b>: "every" (<span class="gk">πᾶν δένδρον</span>, every tree). Without the article in the <b>plural</b> it is "all" (<span class="gk">πάντες ἥμαρτον</span>, all sinned). With the article: "all/the whole" (<span class="gk">πᾶσα ἡ πόλις</span>, all the city; <span class="gk">πᾶσα γραφή</span>, 2 Tim 3:16 — famously articleless: "every scripture" or "all scripture"? The grammar allows both; context and usage must decide. Now you can see why the commentaries argue).</p>
 <h3>One — and no one</h3>
 <table><caption>εἷς, μία, ἕν — one</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
@@ -567,12 +567,12 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 <p>Two cautions for reading. The thing compared against stands either in the genitive — <span class="gk">μείζων τούτων</span>, "greater than these" — or after <span class="gk">ἤ</span>, "than". And in Koine the superlative is fading, further than "fading" suggests: the New Testament has <b>265</b> comparatives to <b>42</b> superlatives, and of those only <b>four</b> are formed with the regular <span class="gk">-τατος</span> ending you have just learned — <span class="gk">ἀκριβεστάτην</span> (Acts 26:5), <span class="gk">ἁγιωτάτῃ</span> (Jude 20) and <span class="gk">τιμιωτάτου</span> and <span class="gk">τιμιωτάτῳ</span> in Revelation. So learn the ending to recognise it, and expect the work to be done by a comparative instead: <span class="gk">μείζων</span> means "greatest" as readily as "greater", and the context decides, not the ending.</p>
 <h3>Numbers to recognise</h3>
 <p><span class="gk">δύο</span> (two), <span class="gk">τρεῖς, τρία</span> (three), <span class="gk">τέσσαρες, τέσσαρα</span> (four), <span class="gk">πέντε</span> (five), <span class="gk">ἑπτά</span> (seven), <span class="gk">δώδεκα</span> (twelve). From πέντε up to a hundred they don't decline; the hundreds and thousands (<span class="gk">διακόσιοι, χίλιοι, μύριοι</span>) do. Met mostly in feeding crowds and numbering apostles.</p>`,
-v:[14,41,60,63,120,242,261,274,390,398,443,232],
+v:[14,41,47,60,63,120,242,261,274,390,398,443,232],
 vids:[{t:"Lecture 18: Adjectives, Pronouns, and Numerals of the First and Third Declensions",s:"Daily Dose of Greek — Rob Plummer (21:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-18/"}],
 quiz:[
 {q:"εἷς differs from εἰς in that εἷς:",o:["Is the preposition 'into'","Is the numeral 'one' (rough breathing)","Is plural","Means 'if'"],a:1,w:"The breathing and accent are the whole difference. ἄκουε, Ἰσραήλ· κύριος εἷς ἐστιν — the Shema needs the numeral, not the preposition."},
 {q:"οὐδέν means:",o:["No one (masculine)","Nothing (neuter)","Never","Not yet"],a:1,w:"Neuter of οὐδείς. χωρὶς ἐμοῦ οὐ δύνασθε ποιεῖν οὐδέν — 'apart from me you can do nothing' (John 15:5)."},
-{q:"πᾶσι(ν) is:",o:["Genitive plural","Dative plural masculine/neuter","Accusative singular","Nominative plural feminine"],a:1,w:"Stem παντ- + σι: the τ drops, exactly like the third-declension nouns you just learned."},
+{q:"πᾶσι(ν) is:",o:["Genitive plural","Dative plural masculine/neuter","Accusative singular","Nominative plural feminine"],a:1,w:"Stem παντ- + σι. The whole ντ cluster drops before σ and the α lengthens to compensate: παντ- + σι gives πᾶσι(ν). Dropping only the τ would leave πανσι."},
 {q:"πᾶσα γραφή (2 Tim 3:16) is grammatically:",o:["Unambiguously 'all Scripture'","Unambiguously 'every scripture'","Open: 'every scripture' or 'all Scripture' — usage and context decide","A scribal error"],a:2,w:"Anarthrous πᾶς usually reads 'every', but abstract or collective nouns blur it. Knowing the grammar means knowing where the real argument lies."},
 {q:"μείζων is the comparative of μέγας. In Koine, how safe is it to translate it 'greater' rather than 'greatest'?",o:["Entirely safe — the comparative never means 'greatest'","Not safe: the superlative is fading, and a comparative often does superlative work","Only in John","Safe in the plural only"],a:1,w:"Koine is losing the superlative, and comparative forms regularly carry superlative force. The ending narrows the options; the context decides between them."}]},
 
@@ -588,7 +588,7 @@ body:`<p>Verbs whose stems end in α, ε or ο <b>contract</b> that vowel with t
 <tr><th>3pl</th><td class="g">ἀγαπῶσι(ν)</td><td class="g">ποιοῦσι(ν)</td><td class="g">πληροῦσι(ν)</td></tr></table>
 <p>Rules worth carrying: <b>ε + ε → ει</b>, <b>ε + ο → ου</b>, <b>ο + anything short → ου</b>, <b>α + e-sound → long α</b>, <b>α + o-sound → ω</b>, and ω swallows everything. But honestly: learn the three columns above by sound, and the rules become descriptions rather than tools.</p>
 <h3>Outside the present, contraction disappears</h3>
-<p>Before a tense sign the stem vowel simply lengthens: <span class="gk">ἀγαπήσω, ἠγάπησα, ἠγάπηκα</span>; <span class="gk">ποιήσω, ἐποίησα</span>; <span class="gk">πληρώσω, ἐπλήρωσα</span>. So the aorist of a contract verb is perfectly regular — the present is the only battlefield.</p>
+<p>Before a tense sign the stem vowel usually lengthens: <span class="gk">ἀγαπήσω, ἠγάπησα, ἠγάπηκα</span>; <span class="gk">ποιήσω, ἐποίησα</span>; <span class="gk">πληρώσω, ἐπλήρωσα</span>. A handful of ε-contracts keep the vowel short instead — <span class="gk">καλέω</span> gives <span class="gk">καλέσω, ἐκάλεσα</span>, and <span class="gk">τελέω</span> does the same. Learn those as they come. So the aorist of a contract verb is perfectly regular — the present is the only battlefield.</p>
 <h3>Liquid verbs</h3>
 <p>Stems ending in λ, μ, ν, ρ refuse the σ of the future. Instead they form an ε-contract future: <span class="gk">μένω → μενῶ</span> ("I will remain" — accent alone distinguishes it from the present μένω), <span class="gk">ἀγγέλλω → ἀγγελῶ</span>. Their aorists also dodge σ, compensating by lengthening the stem: <span class="gk">ἔμεινα</span> (I remained), <span class="gk">ἤγγειλα</span> (I announced), <span class="gk">ἦρα</span> from αἴρω.</p>
 <p>These two families cover an enormous share of NT vocabulary — ἀγαπάω, ζητέω, καλέω, λαλέω, ποιέω, τηρέω, φανερόω, μένω, ἀποστέλλω, ἐγείρω, κρίνω all live here.</p>`,
@@ -660,7 +660,7 @@ body:`<p>Five smaller pronoun systems complete the set. One of them — the rela
 <p><span class="gk">τίς, τί</span> (always acute on the ι) asks "who? what? why?". Unaccented <span class="gk">τις, τι</span> means "someone, a certain, any". <span class="gk">τί ποιεῖτε;</span> — "what are you doing?" vs <span class="gk">ἄνθρωπός τις</span> — "a certain man". Both decline like third-declension stems in ν: τίνος, τίνι, τίνα.</p>
 <h3>ὅστις</h3>
 <p>The compound ὅς + τις — "whoever" — mostly nominative in the NT: <span class="gk">ὅστις, ἥτις, ὅτι*</span>… and in practice near-equivalent to ὅς. (*Printed ὅ τι to avoid confusion with the conjunction ὅτι.)</p>`,
-v:[11,30,52,103,141,163,257,360,406,492,493,491],
+v:[11,30,33,52,103,141,163,257,360,406,492,493,491],
 vids:[{t:"Lecture 22: Additional Pronouns",s:"Daily Dose of Greek — Rob Plummer (21:19)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-22/"}],
 quiz:[
 {q:"A relative pronoun takes its case from:",o:["Its antecedent","Its role in its own clause","The main verb","The nearest article"],a:1,w:"Gender and number from the antecedent; case from its own clause. When this rule appears to break, commentators call it 'attraction' — now you can follow that footnote."},
