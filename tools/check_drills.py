@@ -1,0 +1,209 @@
+# -*- coding: utf-8 -*-
+"""Check the drill data in js/app.js against the SBLGNT in data/gnt/.
+
+    python tools/check_drills.py
+
+Four arrays in js/app.js are hand-written Greek with a hand-written label
+attached, and the label is what the drill marks you right or wrong against.
+The corpus can settle most of it, because it carries a full parse for every
+form it contains:
+
+  ART          all 17 forms of the definite article, each with a parse in
+               English. Every one occurs thousands of times, so this is
+               decisive: if the corpus never tags ὁ as anything but
+               masculine nominative singular, the label is right.
+  PARSE        forms with a parse in English. Mostly λύω, the teaching
+               paradigm, whose forms are largely unattested — those are
+               reported apart from the ones the corpus can judge.
+  BUILD_FORMS  form plus tense/voice/person/number as separate fields, which
+               the parsing-builder drill asks you to assemble.
+  PP           41 verbs with their future, aorist and perfect. Each part
+               should be attested and should carry the tense of its column —
+               but only as confirmation. A future indicative and an aorist
+               subjunctive are frequently the same string, so the corpus
+               tagging πιστεύσω aorist says nothing against it also being the
+               future; those are listed for a human, not failed.
+
+A form the corpus does not contain proves nothing — a paradigm legitimately
+holds forms the New Testament never happens to use. Those are counted and
+listed separately, never failed. What fails is a form the corpus does
+contain and consistently parses some other way.
+"""
+import json, io, os, re, sys, unicodedata, collections
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GNT = os.path.join(ROOT, "data", "gnt")
+GK = "Ͱ-Ͽἀ-῿"
+bare = lambda s: re.sub("[^" + GK + "]", "", s)
+
+def norm(x):
+    """Grave folds to acute — that shift is positional, not lexical."""
+    d = unicodedata.normalize("NFD", x).replace("̀", "́")
+    return unicodedata.normalize("NFC", d).lower()
+
+man = json.load(io.open(os.path.join(GNT, "manifest.json"), encoding="utf-8"))
+LEMMAS, POS = man["lemmas"], man["pos"]
+
+# form -> the parses the corpus gives it, with how often
+PARSES = collections.defaultdict(collections.Counter)
+for b in man["books"]:
+    d = json.load(io.open(os.path.join(GNT, b["a"] + ".json"), encoding="utf-8"))
+    for ch in d["c"]:
+        for vs in ch:
+            for w in vs[1]:
+                PARSES[norm(bare(w[0]))][(POS[w[2]], w[3], LEMMAS[w[1]])] += 1
+
+# ------------------------------------------------------- the app's data ---
+app = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+
+def array(name):
+    m = re.search(r"const " + name + r"=\[([\s\S]*?)\n\];", app)
+    if not m:
+        sys.exit("could not find %s in js/app.js" % name)
+    body = re.sub(r"//[^\n]*", "", m.group(1))
+    body = re.sub(r"/\*[\s\S]*?\*/", "", body)
+    body = re.sub(r",(\s*\])", r"\1", body.strip())
+    return json.loads("[" + "".join(body.splitlines()) + "]")
+
+ART, PARSE, BUILD, PP = array("ART"), array("PARSE"), array("BUILD_FORMS"), array("PP")
+
+# ------------------------------------------------- English -> parse code ---
+CASE = {"nominative": "N", "genitive": "G", "dative": "D", "accusative": "A",
+        "vocative": "V"}
+NUM = {"singular": "S", "plural": "P", "sg": "S", "pl": "P"}
+GEN = {"masculine": "M", "feminine": "F", "neuter": "N"}
+TENSE = {"present": "P", "imperfect": "I", "future": "F", "aorist": "A",
+         "perfect": "X", "pluperfect": "Y",
+         "pres": "P", "impf": "I", "fut": "F", "aor": "A", "pf": "X"}
+VOICE = {"active": "A", "middle": "M", "passive": "P",
+         "act": "A", "mid": "M", "pass": "P"}
+MOOD = {"indicative": "I", "subjunctive": "S", "imperative": "D",
+        "optative": "O", "infinitive": "N", "participle": "P"}
+PERSON = {"1st": "1", "2nd": "2", "3rd": "3", "1": "1", "2": "2", "3": "3"}
+
+def wanted(label):
+    """The parse-code slots an English label commits to."""
+    want = {}
+    low = label.lower()
+    for word in re.split(r"[\s,/]+", low):
+        w = word.strip(".")
+        if w in CASE: want["case"] = CASE[w]
+        elif w in NUM: want["number"] = NUM[w]
+        elif w in GEN: want["gender"] = GEN[w]
+        elif w in TENSE: want["tense"] = TENSE[w]
+        elif w in VOICE: want["voice"] = VOICE[w]
+        elif w in MOOD: want["mood"] = MOOD[w]
+        elif w in PERSON: want["person"] = PERSON[w]
+    # "middle/passive" and "nominative/accusative" name alternatives, and a
+    # form that is genuinely either must not be failed for being one of them
+    alts = {}
+    if "middle/passive" in low or "m/p" in low: alts["voice"] = set("MP")
+    if "nominative/accusative" in low: alts["case"] = set("NA")
+    if "masculine/neuter" in low: alts["gender"] = set("MN")
+    if "all genders" in low: alts["gender"] = set("MFN")
+    return want, alts
+
+SLOT = {"person": 0, "tense": 1, "voice": 2, "mood": 3,
+        "case": 4, "number": 5, "gender": 6}
+
+def judge(form, label, expect_pos=None):
+    """None if the corpus cannot judge; else a list of complaints."""
+    got = PARSES.get(norm(bare(form)))
+    if not got:
+        return None
+    want, alts = wanted(label)
+    if expect_pos:
+        got = collections.Counter({k: v for k, v in got.items() if k[0] == expect_pos})
+        if not got:
+            return ["the corpus never tags it %s" % expect_pos]
+    bad = []
+    for slot, letter in want.items():
+        ok = alts.get(slot, {letter})
+        i = SLOT[slot]
+        hits = sum(n for (p, code, lem), n in got.items()
+                   if len(code) > i and code[i] in ok)
+        if hits:
+            continue
+        seen = collections.Counter()
+        for (p, code, lem), n in got.items():
+            if len(code) > i and code[i] not in "-":
+                seen[code[i]] += n
+        if not seen:
+            continue                       # the corpus says nothing about it
+        # name the letters using this slot's own vocabulary — 'A' is aorist
+        # in the tense slot and active in the voice slot
+        src = {"case": CASE, "number": NUM, "gender": GEN, "tense": TENSE,
+               "voice": VOICE, "mood": MOOD, "person": PERSON}[slot]
+        rev = {}
+        for word, code_letter in src.items():
+            rev.setdefault(code_letter, word)
+        bad.append("%s should be %s, the corpus has %s"
+                   % (slot, rev.get(letter, letter),
+                      "/".join(rev.get(c, c) for c, _ in seen.most_common(3))))
+    return bad
+
+# ------------------------------------------------------------------ run ---
+problems, unattested, homographs, checked = [], [], [], 0
+
+for form, label in ART:
+    r = judge(form, label, "RA")
+    if r is None:
+        unattested.append("ART   %-8s %s" % (form, label))
+    else:
+        checked += 1
+        for c in r:
+            problems.append("ART   %-10s %-42s %s" % (form, label, c))
+
+for form, label in PARSE:
+    r = judge(form, label)
+    if r is None:
+        unattested.append("PARSE %-10s %s" % (form, label))
+    else:
+        checked += 1
+        for c in r:
+            problems.append("PARSE %-10s %-42s %s" % (form, label, c))
+
+for row in BUILD:
+    form, label = row[0], " ".join(row[1:])
+    r = judge(form, label)
+    if r is None:
+        unattested.append("BUILD %-10s %s" % (form, label))
+    else:
+        checked += 1
+        for c in r:
+            problems.append("BUILD %-10s %-42s %s" % (form, label, c))
+
+# principal parts: the tense of the column, and the headword's own present
+PP_TENSE = [None, "future", "aorist", "perfect"]
+for row in PP:
+    for slot in (1, 2, 3):
+        f = row[slot]
+        if f == "—":
+            continue
+        r = judge(f, PP_TENSE[slot])
+        if r is None:
+            unattested.append("PP    %-10s %-9s of %s" % (f, PP_TENSE[slot], row[0]))
+        else:
+            checked += 1
+            for c in r:
+                homographs.append("PP    %-10s %-9s of %-12s %s"
+                                  % (f, PP_TENSE[slot], row[0], c))
+
+print("drill forms the corpus could judge: %d" % checked)
+print("drill forms the corpus does not contain: %d (a paradigm may hold forms "
+      "the NT never uses)" % len(unattested))
+print()
+print("labels contradicted by the corpus: %d" % len(problems))
+for p in problems:
+    print("   " + p)
+print()
+print("principal parts the corpus only ever uses in another tense: %d" % len(homographs))
+print("   (a future and an aorist subjunctive are often spelled alike, so the")
+print("    corpus can confirm a principal part but never refute one)")
+for h in homographs:
+    print("   " + h)
+print()
+print("not in the corpus, so not judged:")
+for u in unattested:
+    print("   " + u)
+sys.exit(1 if problems else 0)
