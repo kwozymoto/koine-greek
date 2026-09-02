@@ -62,8 +62,8 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <tr><td class="g">τις</td><td>someone, a certain (indefinite)</td></tr>
 <tr><td class="g">εἰ</td><td>if</td></tr>
 <tr><td class="g">εἶ</td><td>you are</td></tr>
-<tr><td class="g">αὐτή</td><td>she (nominative)</td></tr>
-<tr><td class="g">αὕτη</td><td>this (feminine)</td></tr></table>
+<tr><td class="g">αὐτή</td><td>she — smooth breathing</td></tr>
+<tr><td class="g">αὕτη</td><td>this (feminine) — rough breathing, not a different accent</td></tr></table>
 <p>Don't memorise accent rules now. Learn accents as part of each word's spelling and move on.</p>
 <h3>Punctuation</h3>
 <p>Comma and full stop look like ours. A raised dot <span class="gk">·</span> is a semicolon or colon. And the mark that looks like a semicolon <span class="gk">;</span> is a <b>question mark</b> — this catches everyone at least once.</p>
@@ -122,7 +122,10 @@ body:`<p>Greek verbs encode <b>person, number, tense, voice and mood</b> in the 
 <tr><th>2nd</th><td class="g">λύσεις</td><td class="g">λύσετε</td></tr>
 <tr><th>3rd</th><td class="g">λύσει</td><td class="g">λύσουσι(ν)</td></tr></table>
 <p>When σ meets a stop, they combine: κ, γ, χ + σ → ξ (<span class="gk">ἄγω → ἄξω</span>); π, β, φ + σ → ψ (<span class="gk">βλέπω → βλέψω</span>); τ, δ, θ simply drop (<span class="gk">πείθω → πείσω</span>). Contract verbs lengthen their final vowel first: <span class="gk">ἀγαπάω → ἀγαπήσω</span>, <span class="gk">ποιέω → ποιήσω</span>.</p>
-<p>Some very common verbs have futures you must simply learn: <span class="gk">εἰμί → ἔσομαι</span>, <span class="gk">γινώσκω → γνώσομαι</span>, <span class="gk">λαμβάνω → λήμψομαι</span>, <span class="gk">ὁράω → ὄψομαι</span>. Notice these are middle in form — a preview of a pattern you'll meet properly later.</p>`,
+<p>Some very common verbs have futures you must simply learn: <span class="gk">εἰμί → ἔσομαι</span>, <span class="gk">γινώσκω → γνώσομαι</span>, <span class="gk">λαμβάνω → λήμψομαι</span>, <span class="gk">ὁράω → ὄψομαι</span>. Notice these are middle in form — a preview of a pattern you'll meet properly later.</p>
+<h3>Saying no</h3>
+<p>Greek has two negatives and they divide by mood. <span class="gk">οὐ</span> negates the <b>indicative</b> — a statement about what is. <span class="gk">μή</span> negates everything else: subjunctive, imperative, infinitive, participle. So <span class="gk">οὐ λύει</span> is "he does not loose", but a prohibition takes <span class="gk">μή</span>.</p>
+<p><span class="gk">οὐ</span> also changes shape to suit the next word: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one — <span class="gk">οὐ λέγει</span>, <span class="gk">οὐκ ἔστιν</span>, <span class="gk">οὐχ οὗτος</span>. Three spellings, one word; the lexicon lists it as <span class="gk">οὐ, οὐκ, οὐχ</span>.</p>`,
 v:[7,10,15,21,40,62,81,122,152,173,250,254,270,212,209,319,361,368,384],
 vids:[{t:"Lecture 3: Present and Future Active Indicative",s:"Daily Dose of Greek — Rob Plummer (14:16)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-3/"}],
 quiz:[
@@ -249,7 +252,7 @@ body:`<p>The imperfect describes past action viewed as ongoing, repeated or atte
 <tr><th>3rd</th><td class="g">ἔλυε(ν)</td><td class="g">ἔλυον</td></tr></table>
 <p>First person <b>singular</b> and third person <b>plural</b> are identical (<span class="gk">ἔλυον</span>) — context decides. The table above shows it: 1st plural is <span class="gk">ἐλύομεν</span>.</p>
 <h3>The augment</h3>
-<p>An <span class="gk">ἐ-</span> prefixed to the stem, marking past time in the indicative. If the verb already begins with a vowel, the vowel lengthens instead: <span class="gk">ἀκούω → ἤκουον</span>, <span class="gk">ἐγείρω → ἤγειρον</span>.</p>
+<p>An <span class="gk">ἐ-</span> prefixed to the stem, marking past time in the indicative. If the verb already begins with a <b>short</b> vowel, that vowel lengthens instead: <span class="gk">ἀκούω → ἤκουον</span>, <span class="gk">ἐγείρω → ἤγειρον</span>. If it already begins with a long vowel or a long diphthong there is nothing left to lengthen, so the past tense looks exactly like the present — <span class="gk">εὑρίσκω</span> keeps its <span class="gk">εὑ-</span> throughout. Where there is no augment, the ending is what tells you the tense.</p>
 <p>With compound verbs the augment goes <i>after</i> the preposition, not before: <span class="gk">ἐκβάλλω → ἐξέβαλλον</span>. This trips people up when looking words up.</p>
 <h3>What it means</h3>
 <p>The imperfect is the past tense of the imperfective aspect — the camera inside the action rather than outside it. Mark uses it constantly for vivid narrative. When an author switches from aorist to imperfect, that shift is usually doing something.</p>
@@ -325,7 +328,7 @@ body:`<p>Pronouns stand in for nouns, and Greek's are everywhere: <span class="g
 <p><b>2. Intensive</b>, in predicate position: <span class="gk">αὐτὸς ὁ κύριος</span> — "the Lord <i>himself</i>" (1 Thess 4:16).</p>
 <p><b>3. Identical</b>, in attributive position: <span class="gk">ὁ αὐτὸς κύριος</span> — "the <i>same</i> Lord" (1 Cor 12:5). Position relative to the article decides between 2 and 3 — the same rule as adjectives.</p>
 <h3>Emphatic subjects</h3>
-<p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Holy Spirit" (Mark 1:8). Every ἐγώ of Jesus in John carries this weight.</p>`,
+<p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Holy Spirit" (Mark 1:8). Most of the ἐγώ εἰμι sayings in John carry this weight — though a pronoun the syntax requires is not emphatic just by being there.</p>`,
 v:[2,3,6],
 vids:[{t:"Lecture 9: Personal Pronouns",s:"Daily Dose of Greek — Rob Plummer (15:17)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-9/"}],
 quiz:[
@@ -405,7 +408,7 @@ body:`<p>The perfect middle/passive is the easiest paradigm you will ever learn:
 <tr><th>1st</th><td class="g">λέλυμαι</td><td class="g">λελύμεθα</td></tr>
 <tr><th>2nd</th><td class="g">λέλυσαι</td><td class="g">λέλυσθε</td></tr>
 <tr><th>3rd</th><td class="g">λέλυται</td><td class="g">λέλυνται</td></tr></table>
-<p>Those endings — <span class="gk">-μαι, -σαι, -ται, -μεθα, -σθε, -νται</span> — are the skeleton of every middle/passive primary tense; here you see them with nothing in the way. <span class="gk">γέγραπται</span> from the last lesson is exactly this form: γε-γραπ-ται.</p>
+<p>Those endings — <span class="gk">-μαι, -σαι, -ται, -μεθα, -σθε, -νται</span> — are the skeleton of every middle/passive primary tense; here you see them with nothing in the way. <span class="gk">γέγραπται</span> from lesson 10 is exactly this form: γε-γραπ-ται.</p>
 <h3>Future middle</h3>
 <p>Future stem (σ) + the same endings with a connecting vowel:</p>
 <table><caption>λύσομαι — I will loose (for myself)</caption>
@@ -446,7 +449,7 @@ vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Mi
 quiz:[
 {q:"ἐγένετο parses as:",o:["Imperfect m/p 3sg of γίνομαι","Aorist middle 3sg of γίνομαι","Aorist passive 3sg","Perfect middle 3sg"],a:1,w:"Second aorist middle: aorist stem γεν- + connecting vowel + -το. 'And it came to pass' opens scene after scene of narrative."},
 {q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Shared with the future, and with no other tense-family. σα + middle endings = aorist middle, θη = aorist passive; σ + middle endings = future middle, θησ = future passive. Present, imperfect, perfect and pluperfect share one m/p form."},
-{q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains 'odd' 2nd singulars across the whole middle system."},
+{q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains the odd 2nd singulars of the imperfect and the aorist middle — not the perfect and pluperfect, where the σ survives."},
 {q:"ἐλύσατο means:",o:["He was loosed","He loosed for himself","He will loose","He had been loosed"],a:1,w:"Aorist middle — subject acting with self-reference. 'He was loosed' would be ἐλύθη, the θη-passive of the next lesson."}]},
 
 {id:15,t:"Aorist and future passive indicative",s:"The θη that changes who does what",
@@ -615,7 +618,7 @@ body:`<p>A participle is a verbal adjective. It has tense and voice like a verb,
 <p><b>Adverbial</b> participles modify the main verb, describing time, cause, means or manner. Usually anarthrous. <span class="gk">ἀκούσας ταῦτα ἀπῆλθεν</span> — "having heard these things, he departed."</p>
 <p><b>Adjectival</b> participles modify a noun, often with an article, and can stand alone as a substantive. <span class="gk">ὁ πιστεύων</span> — "the one who believes".</p>
 <h3>Genitive absolute</h3>
-<p>A participle and its subject both in the genitive, grammatically detached from the main clause: <span class="gk">λέγοντος αὐτοῦ ταῦτα</span> — "while he was saying these things". Common in narrative.</p>`,
+<p>A participle and its subject both in the genitive, the subject being <b>different from the subject of the main verb</b> — that difference is what makes the phrase absolute, and it is how you spot one: <span class="gk">λέγοντος αὐτοῦ ταῦτα</span> — "while he was saying these things", with someone else doing whatever the main verb reports. Common in narrative.</p>`,
 v:[],
 vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
 quiz:[
@@ -702,10 +705,10 @@ body:`<p>The imperative commands. Greek has second-person forms ("do this") <i>a
 <tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυθήτωσαν</td></tr></table>
 <p>No augment — the aorist imperative is not past (a past command is impossible). The difference between λῦε and λῦσον is <b>aspect</b>: the present views the action as ongoing or characteristic, the aorist as a whole. <span class="gk">αἰτεῖτε… ζητεῖτε… κρούετε</span> (Matt 7:7, present): keep asking, keep seeking, keep knocking — or at least, asking as a practice; the aorist would simply say "ask".</p>
 <h3>Prohibitions</h3>
-<p>Two constructions, and the difference preaches: <b>μή + present imperative</b> forbids as a general practice, and can (context permitting) mean "stop doing" what is under way — <span class="gk">μὴ φοβοῦ</span>, "do not fear / stop fearing". <b>μή + aorist subjunctive</b> (not imperative!) forbids the act outright: <span class="gk">μὴ φονεύσῃς</span>, "do not murder". Handle the "stop doing" nuance with care — it is a possibility the context must confirm, not a rule the form guarantees.</p>
+<p>Two constructions, and the difference preaches: <b>μή + present imperative</b> forbids as a general practice, and can (context permitting) mean "stop doing" what is under way — <span class="gk">μὴ φοβοῦ</span>, "do not fear / stop fearing". <b>μή + aorist subjunctive</b> forbids the act outright: <span class="gk">μὴ φονεύσῃς</span>, "do not murder". That is the <i>second-person</i> rule; in the third person Greek does use the aorist imperative — <span class="gk">μὴ καταβάτω</span>, "let him not go down" (Matt 24:17), and <span class="gk">μὴ γνώτω</span> (Matt 6:3). Handle the "stop doing" nuance with care — it is a possibility the context must confirm, not a rule the form guarantees.</p>
 <p>Common irregulars to know on sight: <span class="gk">γίνου</span> (become!), <span class="gk">ἴδε</span> and <span class="gk">ἰδού</span> (behold!), <span class="gk">ἄφες</span> (forgive!/let!), <span class="gk">δός</span> (give!), <span class="gk">ἐλθέτω</span> (let it come — the Lord's Prayer: ἐλθέτω ἡ βασιλεία σου).</p>
 <h3>The optative</h3>
-<p>The mood of wish and remote possibility — only 68 NT occurrences, so recognise rather than memorise. Its badge is οι or ει in the ending. Two forms cover most of your encounters: <span class="gk">εἴη</span> ("might be") and above all <span class="gk">μὴ γένοιτο</span> — Paul's thunderclap in Romans, "may it never be!" — the optative of γίνομαι.</p>`,
+<p>The mood of wish and remote possibility — only 68 NT occurrences, so recognise rather than memorise. Its badge is <span class="gk">οι</span>, <span class="gk">ει</span> or — in the aorist active and middle — <span class="gk">αι</span>. Two forms account for about two in five: <span class="gk">εἴη</span> ("might be", 12 times) and <span class="gk">μὴ γένοιτο</span> — Paul's thunderclap in Romans, "may it never be!", the optative of γίνομαι. The <span class="gk">αι</span> forms are the ones you will preach: <span class="gk">ἁγιάσαι</span> (1 Thess 5:23), <span class="gk">κατευθύναι</span>, <span class="gk">στηρίξαι</span> and <span class="gk">παρακαλέσαι</span> (2 Thess 2:17) — benedictions, every one.</p>`,
 v:[76,345,349,362,366,404,456,451,466,463],
 vids:[{t:"Lecture 24: The Imperative and Optative Moods",s:"Daily Dose of Greek — Rob Plummer (25:06)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-24/"}],
 quiz:[

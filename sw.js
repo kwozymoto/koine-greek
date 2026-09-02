@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v35';
+const VERSION = 'v36';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,7 +33,11 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  // (v26 evicted 492_sos and 508_axios after they were re-recorded)
+  'audio/vocab/023_ginomai.mp3',   // "gin oh my" — a soft English g on γίνομαι
+  'audio/vocab/067_ginosko.mp3',   // "gee noh skoh" — the same soft g
+  'audio/vocab/140_ekklesia.mp3',  // "ecclesia" — read as the English word
+  'audio/vocab/218_naos.mp3',      // "nay oss" — alpha given the eta value
+  'audio/vocab/259_imon.mp3',      // "Simon" — read as the English name
 ];
 
 const SHELL = [

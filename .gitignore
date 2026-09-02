@@ -3,38 +3,32 @@ desktop.ini
 *.log
 .wrangler/
 node_modules/
-
-# Raw audio source pack (masters + WAVs, ~19MB) — kept locally in OneDrive.
-# Only the optimised clips in audio/clips/ ship; cue sheet preserved in docs/.
-audio/Erasmian_Koine_Greek_App_Audio/
-audio/*.mp3
-audio/*.wav
-/erasmian_koine_greek_alphabet.mp3
-audio/Erasmian_Koine_Greek_Vocab_App_Audio/
-
-# local-only audit tool
-audio-audit.html
-vocab_worklist.tsv
-sound-picker.html
-audio/Erasmian_Vocab_Pilot27/
-audio/*.zip
-audio/Erasmian_Koine_Vocab_Bare_v2/
-audio/Erasmian_Vocab_FlaggedFixes/
-extra_forms_worklist.tsv
-extra_forms_pack.json
-audio/Erasmian_Vocab_ExtraForms/
-AUDIT.md
+__pycache__/
 
 # The textbook itself. Reference only, and copyrighted — this repo is public.
 # The app carries an array of VOCAB indices per chapter, never Black's prose,
 # his exercises or his glosses.
 Black/
 
-# Raw pack for the 41 appended words. Only the copies in audio/vocab/ ship;
-# the cue sheet is preserved in docs/erasmian_vocab_cues_v3_black.json.
-audio/Erasmian_Vocab_Append41/
+# Audio delivery packs. Every recording arrives as a folder of clips plus a
+# cue sheet; the clips are copied into audio/vocab, audio/forms or
+# audio/clips and the cue sheet into docs/, and then the pack is deleted —
+# nothing in one is the only copy of anything. These patterns keep a pack
+# out of the repo for as long as it sits here.
+#
+# Only the optimised clips ship. The raw masters and WAVs (~19MB) stay
+# local in OneDrive.
+audio/Erasmian_*/
+audio/*.mp3
+audio/*.wav
+audio/*.zip
+audio/*_cues.json
+/erasmian_koine_greek_alphabet.mp3
 
-# Loose cue sheet dropped alongside the clips; the canonical copy with the
-# verdicts lives in docs/erasmian_vocab_cues_v3_black.json.
-audio/erasmian_vocab_append_cues.json
-__pycache__/
+# Local-only working files
+audio-audit.html
+sound-picker.html
+vocab_worklist.tsv
+extra_forms_worklist.tsv
+extra_forms_pack.json
+AUDIT.md
