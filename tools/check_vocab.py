@@ -340,6 +340,97 @@ for i, e in enumerate(EXAMPLES[:len(VOCAB)]):
     else:
         ex_ok += 1
 
+# ------------------------------------------- principal parts on the card --
+# partsHtml() shows a verb's principal parts on its card by looking the
+# headword up in PP with an exact string match, so a PP headword spelled even
+# slightly differently from vocab.js silently shows nothing — which is how
+# σώζω sat next to the deck's σῴζω and the parts never reached the card.
+pp_bad = []
+_app = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+_m = re.search(r"const PP=\[([\s\S]*?)\n\];", _app)
+if not _m:
+    pp_bad.append("could not find the PP array in js/app.js")
+else:
+    rows = re.sub(r",\s*$", "", _m.group(1).strip())
+    PP = json.loads("[" + "".join(rows.splitlines()) + "]")
+    HEADS = {headword(v) for i, v in enumerate(VOCAB) if i not in RETIRED}
+    for row in PP:
+        if row[0] not in HEADS:
+            near = [h for h in HEADS if flat(h) == flat(row[0])]
+            pp_bad.append("PP %-12s matches no vocabulary headword%s"
+                          % (row[0], ("; vocab.js spells it " + "/".join(near)) if near else ""))
+
+# ------------------------------------------------------------- accents ----
+# Every other check here folds grave into acute and compares, and the
+# paradigm and lesson checkers strip accents entirely — so none of them ever
+# looks at where the accent sits, and a wrong accent is a different word.
+# This one keeps accents: if a token's bare letters occur in the corpus but
+# that exact accentuation never does, it is worth a look.
+GKR = "[" + GK + "]"
+_tok = re.compile("[" + GK + "]+")
+
+def acc(x):
+    return norm("".join(c for c in unicodedata.normalize("NFD", x)
+                        if re.match(GKR, c) or unicodedata.combining(c)))
+
+def minus_one_acute(w):
+    """Every spelling of w with one acute taken away."""
+    d = unicodedata.normalize("NFD", w)
+    return {unicodedata.normalize("NFC", d[:k] + d[k + 1:])
+            for k, ch in enumerate(d) if ch == "́"}
+
+spell = collections.defaultdict(set)
+for b in man["books"]:
+    d = json.load(io.open(os.path.join(GNT, b["a"] + ".json"), encoding="utf-8"))
+    for ch in d["c"]:
+        for vs in ch:
+            for w in vs[1]:
+                spell[flat(w[0])].add(acc(w[0]))
+for l in LEMMAS:
+    spell[flat(l)].add(acc(l))
+
+# Correct forms the New Testament simply never uses with this accent: liquid
+# futures of verbs that are rare or absent, and paradigm cells filling out a
+# table. Each was checked by hand against the rules of accent.
+ACCENT_OK = {
+    "ἀγάπας":  "accusative plural of ἀγάπη; the NT has only ἀγάπαις and ἀγάπην",
+    "ἀγγελῶ":  "liquid future of ἀγγέλλω — contracted, so circumflex",
+    "βαλῶ":    "liquid future of βάλλω — contracted, so circumflex",
+    "μενεῖς":  "liquid future of μένω, against the present μένεις",
+    "ἕξω":     "future of ἔχω; the rough breathing is the aspirate resurfacing",
+    "αὐταί":   "feminine nominative plural of αὐτός, against οὗτος's αὗται",
+}
+accent_bad, accent_ok = [], []
+for f in ("data/lessons.js", "data/paradigms.js", "data/readings.js",
+          "data/vocab.js", "js/app.js"):
+    for n, line in enumerate(io.open(os.path.join(ROOT, f), encoding="utf-8"), 1):
+        # an ending is printed without its accent on purpose — "-εως", "-ους"
+        stripped = re.sub(r"[-‑]" + GKR + "+", "", line)
+        for m in _tok.finditer(stripped):
+            raw = m.group(0)
+            if len(raw) < 3:
+                continue
+            got, want = acc(raw), spell.get(flat(raw))
+            if not want or got in want:
+                continue
+            # An ending or a tense sign is quoted bare, without an accent —
+            # "σα", "θη", "μεν" as the answers to "the aorist passive sign is".
+            if len(raw) <= 4 and not any(unicodedata.combining(c)
+                                         for c in unicodedata.normalize("NFD", raw)):
+                continue
+            # A word standing before an enclitic throws an extra acute onto
+            # its own last syllable (ἐδώκατέ σοι, ἀφῆκά με). The corpus only
+            # ever shows it in that company; the plain form is the citation.
+            if any(got in minus_one_acute(w) for w in want):
+                continue
+            line_s = "%-18s %-5d %-14s corpus has %s" % (f, n, raw,
+                     ", ".join(sorted(want)[:3]))
+            (accent_ok if raw in ACCENT_OK else accent_bad).append(
+                line_s + ("  — " + ACCENT_OK[raw] if raw in ACCENT_OK else ""))
+seen_a = set()
+accent_bad = [x for x in accent_bad if not (x[19:] in seen_a or seen_a.add(x[19:]))]
+excused.extend(sorted(set(accent_ok)))
+
 # ------------------------------------------------------- prepositions ----
 # A preposition's gloss names the case it governs — "in, on, among (+dat)" —
 # and that is a claim about running text, not about the word, so it is not
@@ -520,6 +611,8 @@ section("frequencies more than 6% from the SBLGNT count", [s for _, s in freqbad
 section("lexical lines contradicted by the corpus", citebad)
 section("citation forms that occur nowhere in the SBLGNT", formbad)
 section("example verses that do not show the word", ex_bad)
+section("principal parts that cannot reach their card", pp_bad)
+section("accents the corpus never writes that way", accent_bad, 25)
 section("prepositions whose gloss disagrees with the text", prepbad)
 section("reader glosses sitting on the wrong word", wrong_gloss, 30)
 section("deck words the reader cannot gloss", missing_gloss, 30)
@@ -530,5 +623,6 @@ section("clips whose length no longer matches the cue sheet", cue_soft, 20)
 section("looks wrong, checked, and is not", excused)
 
 hard = (shape + unattested + dupes + posbad + citebad + formbad + prepbad + ex_bad
+        + pp_bad + accent_bad
         + wrong_gloss + missing_gloss + audio_bad + form_bad + cue_bad)
 sys.exit(1 if hard else 0)
