@@ -431,6 +431,65 @@ seen_a = set()
 accent_bad = [x for x in accent_bad if not (x[19:] in seen_a or seen_a.add(x[19:]))]
 excused.extend(sorted(set(accent_ok)))
 
+# ------------------------------------------------------ the cue strings ---
+# The "tts" field is what was fed to the voice, so a cue that reads as
+# English produces English. θεός was "Theos", Σίμων was "Simon", ἐκκλησία
+# was "ecclesia" — and the voice duly said SIGH-mun. Three cheap tests catch
+# most of it: a capital letter (the sheet is otherwise lower case, and a
+# capital is what makes a name look like a name to a voice); a syllable
+# count that does not match the Greek; and a first consonant the cue does
+# not begin with, which is how πνεῦμα lost its pi and μνημεῖον its mu.
+VOWELS = "αειουηωἀἁἐἑἠἡἰἱὀὁὐὑὠὡάέήίόύώὰὲὴὶὸὺὼᾶῆῖῦῶᾳῃῳἄἅἔἕἤἥἴἵὄὅὔὕὤὥ"
+DIPH = ("αι", "ει", "οι", "υι", "αυ", "ευ", "ηυ", "ου")
+ONSET = {"β": "b", "γ": "g", "δ": "d", "ζ": "d", "θ": "t", "κ": "k", "λ": "l",
+         "μ": "m", "ν": "n", "ξ": "k", "π": "p", "ρ": "r", "σ": "s", "τ": "t",
+         "φ": "f", "χ": "k", "ψ": "p"}
+
+def syllables(w):
+    w = flat(bare(w)).lower()
+    n, i = 0, 0
+    while i < len(w):
+        if w[i] in "αειουηω":
+            n += 1
+            i += 2 if w[i:i+2] in DIPH else 1
+        else:
+            i += 1
+    return n
+
+tts_bad = []
+for path in ("docs/erasmian_vocab_cues.json",
+             "docs/erasmian_vocab_cues_v3_black.json"):
+    fp = os.path.join(ROOT, path)
+    if not os.path.isfile(fp):
+        continue
+    for r in json.load(io.open(fp, encoding="utf-8")):
+        gk, tts = r.get("greek", ""), (r.get("tts") or "")
+        tag = "%3s %-14s %-18s" % (r.get("index"), gk, '"' + tts + '"')
+        if not tts:
+            tts_bad.append(tag + " has no cue"); continue
+        if any(c.isupper() for c in tts):
+            tts_bad.append(tag + " has a capital — a voice reads that as a name")
+        # Count vowel groups in the cue, not words: "keffa lay" is two words
+        # and three syllables, and only the syllables matter. A cue more than
+        # one syllable short has swallowed something, which is how δικαιόω
+        # lost its contract vowel; being long is a helper vowel ("puh toh
+        # koss" for πτωχός) and is fine.
+        ns = syllables(gk)
+        nt = len(re.findall(r"[aeiouy]+", tts.lower()))
+        if ns and nt and nt < ns - 1:
+            tts_bad.append(tag + " sounds %d syllables for a %d-syllable word"
+                           % (nt, ns))
+        first = flat(bare(gk))[:1]
+        want = ONSET.get(first)
+        # c, k, ch and q all give /k/; what matters is whether the consonant
+        # is there at all, not which letter spells it
+        SAME = {"k": ("k", "c", "ch", "q"), "t": ("t", "th"), "p": ("p", "ph"),
+                "f": ("f", "ph"), "s": ("s", "ps", "z"), "d": ("d", "dz", "z"),
+                "g": ("g", "gh"), "r": ("r", "rh"), "n": ("n", "gn"),
+                "m": ("m", "mn"), "l": ("l",), "b": ("b",)}
+        if want and not tts.lower().lstrip().startswith(SAME.get(want, (want,))):
+            tts_bad.append(tag + " does not begin with the %s of %s" % (want, gk))
+
 # ------------------------------------------------------- prepositions ----
 # A preposition's gloss names the case it governs — "in, on, among (+dat)" —
 # and that is a claim about running text, not about the word, so it is not
@@ -611,6 +670,7 @@ section("frequencies more than 6% from the SBLGNT count", [s for _, s in freqbad
 section("lexical lines contradicted by the corpus", citebad)
 section("citation forms that occur nowhere in the SBLGNT", formbad)
 section("example verses that do not show the word", ex_bad)
+section("cue strings a voice would read wrongly", tts_bad, 20)
 section("principal parts that cannot reach their card", pp_bad)
 section("accents the corpus never writes that way", accent_bad, 25)
 section("prepositions whose gloss disagrees with the text", prepbad)
@@ -623,6 +683,6 @@ section("clips whose length no longer matches the cue sheet", cue_soft, 20)
 section("looks wrong, checked, and is not", excused)
 
 hard = (shape + unattested + dupes + posbad + citebad + formbad + prepbad + ex_bad
-        + pp_bad + accent_bad
+        + pp_bad + accent_bad + tts_bad
         + wrong_gloss + missing_gloss + audio_bad + form_bad + cue_bad)
 sys.exit(1 if hard else 0)

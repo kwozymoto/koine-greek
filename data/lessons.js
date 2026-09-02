@@ -436,7 +436,7 @@ body:`<p>One set of secondary middle endings — <span class="gk">-μην, -σο
 <tr><th>1st</th><td class="g">ἐλυσάμην</td><td class="g">ἐλυσάμεθα</td></tr>
 <tr><th>2nd</th><td class="g">ἐλύσω</td><td class="g">ἐλύσασθε</td></tr>
 <tr><th>3rd</th><td class="g">ἐλύσατο</td><td class="g">ἐλύσαντο</td></tr></table>
-<p><b>The aorist middle is not passive.</b> The aorist is the one tense-family where middle and passive have fully distinct forms (the passive, with θη, comes next lesson). <span class="gk">ἐλύσατο</span> is "he loosed for himself", never "he was loosed".</p>
+<p><b>The aorist middle is not passive.</b> The aorist and the future are the two tense-families where middle and passive have fully distinct forms (the aorist passive, with θη, comes next lesson). <span class="gk">ἐλύσατο</span> is "he loosed for himself", never "he was loosed".</p>
 <p>Second aorists take the imperfect's connecting vowel with these endings on the aorist stem: <span class="gk">ἐγενόμην</span> (γίνομαι), "I became" — one of the commonest verbs in the NT: <span class="gk">καὶ ἐγένετο</span>, "and it came to pass".</p>
 <h3>Pluperfect middle/passive</h3>
 <p>For recognition only: reduplication + secondary middle endings straight on the stem — <span class="gk">ἐλελύμην, ἐλέλυσο, ἐλέλυτο…</span> A handful of NT occurrences.</p>`,
@@ -444,7 +444,7 @@ v:[75,124,154,284,290,298,509,380,467,508],
 vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Middle and Passive",s:"Daily Dose of Greek — Rob Plummer (15:32)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-14/"}],
 quiz:[
 {q:"ἐγένετο parses as:",o:["Imperfect m/p 3sg of γίνομαι","Aorist middle 3sg of γίνομαι","Aorist passive 3sg","Perfect middle 3sg"],a:1,w:"Second aorist middle: aorist stem γεν- + connecting vowel + -το. 'And it came to pass' opens scene after scene of narrative."},
-{q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Unique among the tense-families. σα + middle endings = middle; θη = passive. Present, imperfect and perfect share one m/p form."},
+{q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Shared with the future, and with no other tense-family. σα + middle endings = aorist middle, θη = aorist passive; σ + middle endings = future middle, θησ = future passive. Present, imperfect, perfect and pluperfect share one m/p form."},
 {q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains 'odd' 2nd singulars across the whole middle system."},
 {q:"ἐλύσατο means:",o:["He was loosed","He loosed for himself","He will loose","He had been loosed"],a:1,w:"Aorist middle — subject acting with self-reference. 'He was loosed' would be ἐλύθη, the θη-passive of the next lesson."}]},
 
@@ -500,7 +500,7 @@ vids:[{t:"Lecture 16: Review of the Indicative Mood",s:"Daily Dose of Greek — 
 quiz:[
 {q:"Parse ἐλύθης:",o:["Aorist passive 2sg — you were loosed","Aorist middle 2sg","Imperfect active 2sg","Future passive 2sg"],a:0,w:"Augment + θη + secondary ending -ς. The algorithm: augment → past; θη → passive; -ς → second singular."},
 {q:"Parse λελύκαμεν:",o:["Aorist active 1pl","Perfect active 1pl — we have loosed","Present middle 1pl","Pluperfect active 1pl"],a:1,w:"Reduplication + κ + primary ending -μεν. No augment, so not pluperfect."},
-{q:"Parse λύσεται:",o:["Present middle 3sg","Future middle/passive-in-sense 3sg — he will loose (for himself)","Aorist middle 3sg","Perfect middle 3sg"],a:1,w:"σ + primary middle ending, no augment: future middle. The θη-form λυθήσεται would be the future passive."},
+{q:"Parse λύσεται:",o:["Present middle 3sg","Future middle 3sg — he will loose (for himself)","Aorist middle 3sg","Perfect middle 3sg"],a:1,w:"σ + primary middle ending, no augment: future middle. The θη-form λυθήσεται would be the future passive."},
 {q:"Which tense pairs NEVER share middle and passive forms?",o:["Present and imperfect","Perfect and pluperfect","Aorist and future","None — all share"],a:2,w:"Aorist and future keep middle (σ/σα) and passive (θη) distinct. Everywhere else one form serves both voices."},
 {q:"A form with reduplication AND an augment is:",o:["Aorist","Perfect","Pluperfect","Impossible"],a:2,w:"ἐ-λελύκειν: both markers stack. Past completed action with past-continuing results."}]},
 

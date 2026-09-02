@@ -164,7 +164,7 @@
     "pos": "noun",
     "tier": 1,
     "freq": 1317,
-    "tts": "Theos",
+    "tts": "theh oss",
     "source": "locked",
     "duration_s": 1.097
   },
@@ -307,7 +307,7 @@
     "pos": "verb",
     "tier": 1,
     "freq": 669,
-    "tts": "gin oh my",
+    "tts": "ghee no my",
     "source": "freq",
     "duration_s": 1.332
   },
@@ -424,7 +424,7 @@
     "pos": "noun",
     "tier": 1,
     "freq": 529,
-    "tts": "Christos",
+    "tts": "khree stoss",
     "source": "locked",
     "duration_s": 0.993
   },
@@ -593,7 +593,7 @@
     "pos": "noun",
     "tier": 1,
     "freq": 379,
-    "tts": "nyoo mah",
+    "tts": "pnew mah",
     "source": "freq",
     "duration_s": 1.202
   },
@@ -879,7 +879,7 @@
     "pos": "verb",
     "tier": 1,
     "freq": 222,
-    "tts": "gee noh skoh",
+    "tts": "ghee noh skoh",
     "source": "g2p",
     "duration_s": 1.985
   },
@@ -1828,7 +1828,7 @@
     "pos": "noun",
     "tier": 2,
     "freq": 114,
-    "tts": "ecclesia",
+    "tts": "ek klay see ah",
     "source": "locked",
     "duration_s": 1.097
   },
@@ -2504,7 +2504,7 @@
     "pos": "verb",
     "tier": 3,
     "freq": 39,
-    "tts": "dee kai oh",
+    "tts": "dee keye oh oh",
     "source": "locked",
     "duration_s": 1.75
   },
@@ -2842,7 +2842,7 @@
     "pos": "noun",
     "tier": 3,
     "freq": 45,
-    "tts": "nay oss",
+    "tts": "nah oss",
     "source": "locked",
     "duration_s": 1.228
   },
@@ -3375,7 +3375,7 @@
     "pos": "name",
     "tier": 3,
     "freq": 75,
-    "tts": "Simon",
+    "tts": "see mohn",
     "source": "locked",
     "duration_s": 0.914
   },
@@ -5052,7 +5052,7 @@
     "pos": "noun",
     "tier": 4,
     "freq": 40,
-    "tts": "nay may on",
+    "tts": "mnay may on",
     "source": "locked",
     "duration_s": 1.384
   },
