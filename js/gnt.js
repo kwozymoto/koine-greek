@@ -77,22 +77,37 @@ async function gntBook(abbr) {
    moment you closed it, none of its vocabulary reached the schedule, and
    there was no way to see which words in it you don't have.
 
-   Matching a corpus lemma to a course word is nearly free: strip the accents
-   and breathings and almost every headword lands on a manifest lemma. */
+   Matching a corpus lemma to a course word keeps the breathing and the
+   accent. Stripping them is what a search box should do, but not this: it
+   merged \u03c4\u03b9\u03c2 "someone" into \u03c4\u03af\u03c2 "who?" and \u03b5\u1f37\u03c2 "one" into \u03b5\u1f30\u03c2 "into", so the
+   reader reported 342 occurrences of "one" as the preposition. Eleven lemmas
+   and about a thousand words were landing on the wrong entry. Grave folds to
+   acute, because that shift is positional rather than lexical. */
 let gntCur = null;                        // {abbr, ch, meta, verses}
+/* Accent-blind and breathing-blind: right for a search box, wrong for
+   identifying a word \u2014 see gntKey. */
 const gntBare = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const gntKey  = s => s.normalize("NFD").replace(/\u0300/g, "\u0301")
+                      .normalize("NFC").toLowerCase();
+
+/* Five headwords a lexicon cites one way and MorphGNT lemmatises another.
+   The same five are in tools/check_vocab.py, tools/build_gloss_map.py and
+   tools/build_examples.py; check_vocab fails if they drift apart. */
+const GNT_CITATION = { "\u03c4\u03ad": "\u03c4\u03b5", "\u03bf\u1f55\u03c4\u03c9(\u03c2)": "\u03bf\u1f55\u03c4\u03c9\u03c2", "\u03b4\u03ad\u03c9": "\u03b4\u03b5\u1fd6",
+                       "\u1f31\u03b5\u03c1\u03cc\u03c2": "\u1f31\u03b5\u03c1\u03cc\u03bd", "\u1f10\u03bb\u03b5\u03ac\u03c9": "\u1f10\u03bb\u03b5\u03ad\u03c9" };
 
 let VOC_BY_LEMMA = null;
 function vocIndexFor(lemma) {
   if (!VOC_BY_LEMMA) {
     VOC_BY_LEMMA = {};
-    // Frequency order, so the first claim on a bare form is the commonest.
+    // Frequency order, so the first claim on a form is the commonest.
     VOCAB.forEach((v, i) => {
-      const k = gntBare(v[0].split(",")[0].trim());
+      const k = gntKey(v[0].split(",")[0].trim());
       if (!(k in VOC_BY_LEMMA)) VOC_BY_LEMMA[k] = i;
     });
   }
-  const i = VOC_BY_LEMMA[gntBare(lemma || "")];
+  const raw = lemma || "";
+  const i = VOC_BY_LEMMA[gntKey(GNT_CITATION[raw] || raw)];
   return (i === undefined || skipWord(i)) ? -1 : i;
 }
 
@@ -167,7 +182,7 @@ function showGntUnknown() {
   }
   box.innerHTML = `<div class="card">
     <h3 style="margin-top:0">Words here you don't have</h3>
-    <p class="muted" style="font-size:.84rem;margin-bottom:4px">${all.length} of the ${VOCAB.length} course words
+    <p class="muted" style="font-size:.84rem;margin-bottom:4px">${all.length} of the ${LEARN_ORDER.length} course words
       ${all.length > UNKNOWN_SHOWN ? `— the ${UNKNOWN_SHOWN} commonest in this chapter are below` : "in this chapter"}.
       Adding one puts it in today's review.</p>
     ${list.map(([i, k]) => `<div class="setrow">

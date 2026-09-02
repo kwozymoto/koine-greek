@@ -774,7 +774,7 @@ function buildDrill(n=8){
    answer to ask for. */
 const PP=[
 ["λέγω","ἐρῶ","εἶπον","εἴρηκα"],
-["ἔχω","ἔξω","ἔσχον","ἔσχηκα"],
+["ἔχω","ἕξω","ἔσχον","ἔσχηκα"],
 ["γίνομαι","γενήσομαι","ἐγενόμην","γέγονα"],
 ["ἔρχομαι","ἐλεύσομαι","ἦλθον","ἐλήλυθα"],
 ["ποιέω","ποιήσω","ἐποίησα","πεποίηκα"],
@@ -1308,7 +1308,9 @@ function renderHelp(){
    PROGRESS
    ============================================================ */
 function renderProgress(){
-  const total=VOCAB.length, started=Object.keys(S.cards).length, known=knownCount();
+  // LEARN_ORDER, not VOCAB: index 237 is retired and no route in the app
+  // can ever create a card for it, so counting it overstates the deck by one.
+  const total=LEARN_ORDER.length, started=Object.keys(S.cards).length, known=knownCount();
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
     ${backupNudgeHtml()}

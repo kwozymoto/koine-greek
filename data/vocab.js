@@ -255,7 +255,14 @@ const VOCAB=[
 /* Additions 2026-08-31: every remaining SBLGNT lemma occurring 30+ times
    (MorphGNT counts). APPEND ONLY — spaced-repetition cards are keyed by
    array index, so existing entries must never be reordered or removed.
-   Tiers: 1 = 186+, 2 = 105-185, 3 = 50-104, 4 = 30-49. */
+   Tier is the batch a word arrived in, not a rule the data obeys: roughly
+   1 = 186+, 2 = 95-185, 3 = 26-155, 4 = 30-49, 5 = the words added for
+   Black's chapter lists. Bands 3 and 4 overlap and 17 entries sit outside
+   the band their number suggests, because the third batch was picked by
+   hand rather than by a frequency cut. Nothing in the app reads this field
+   — words are introduced by frequency, through LEARN_ORDER — so it is a
+   record of how the deck was assembled and should not be treated as a
+   claim about how common a word is. */
 ["οὗτος, αὕτη, τοῦτο","this; this one",1385,"pron",1],
 ["ἐάν","if (+subjunctive)",331,"conj",1],
 ["τέ","and (enclitic); τε…καί both…and",213,"conj",1],

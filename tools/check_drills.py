@@ -183,11 +183,25 @@ for row in PP:
         r = judge(f, PP_TENSE[slot])
         if r is None:
             unattested.append("PP    %-10s %-9s of %s" % (f, PP_TENSE[slot], row[0]))
-        else:
-            checked += 1
-            for c in r:
-                homographs.append("PP    %-10s %-9s of %-12s %s"
-                                  % (f, PP_TENSE[slot], row[0], c))
+            continue
+        checked += 1
+        # A principal part that the corpus contains but never as a verb is a
+        # different word wearing the same letters. ἔξω (smooth breathing) sat
+        # here as the future of ἔχω for exactly that reason: it is the adverb
+        # "outside", 62 times, and never once a form of ἔχω, whose future
+        # takes the rough breathing ἕξω. The tense check could not see it,
+        # because an adverb has no tense to disagree with.
+        tags = {p for (p, code, lem) in PARSES[norm(bare(f))]}
+        if "V-" not in tags:
+            problems.append("PP    %-10s %-9s of %-12s is in the corpus %d times "
+                            "and never as a verb — it is %s"
+                            % (f, PP_TENSE[slot], row[0],
+                               sum(PARSES[norm(bare(f))].values()),
+                               "/".join(sorted(tags))))
+            continue
+        for c in r:
+            homographs.append("PP    %-10s %-9s of %-12s %s"
+                              % (f, PP_TENSE[slot], row[0], c))
 
 print("drill forms the corpus could judge: %d" % checked)
 print("drill forms the corpus does not contain: %d (a paradigm may hold forms "
