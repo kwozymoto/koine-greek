@@ -1,0 +1,3068 @@
+[
+ {
+  "index": 0,
+  "greek": "ὁ",
+  "gloss": "the",
+  "ipa": "ˈho"
+ },
+ {
+  "index": 1,
+  "greek": "καί",
+  "gloss": "and, also, even",
+  "ipa": "ˈkai"
+ },
+ {
+  "index": 2,
+  "greek": "αὐτός",
+  "gloss": "he, she, it; self; same",
+  "ipa": "au.ˈtos"
+ },
+ {
+  "index": 3,
+  "greek": "σύ",
+  "gloss": "you (singular)",
+  "ipa": "ˈsy"
+ },
+ {
+  "index": 4,
+  "greek": "δέ",
+  "gloss": "but, and, now",
+  "ipa": "ˈde"
+ },
+ {
+  "index": 5,
+  "greek": "ἐν",
+  "gloss": "in, on, among (+dat)",
+  "ipa": "ˈen"
+ },
+ {
+  "index": 6,
+  "greek": "ἐγώ",
+  "gloss": "I",
+  "ipa": "e.ˈɡoː"
+ },
+ {
+  "index": 7,
+  "greek": "εἰμί",
+  "gloss": "I am, exist",
+  "ipa": "ei.ˈmi"
+ },
+ {
+  "index": 8,
+  "greek": "λέγω",
+  "gloss": "I say, speak",
+  "ipa": "ˈle.ɡoː"
+ },
+ {
+  "index": 9,
+  "greek": "εἰς",
+  "gloss": "into, to, for (+acc)",
+  "ipa": "ˈeis"
+ },
+ {
+  "index": 10,
+  "greek": "οὐ",
+  "gloss": "not",
+  "ipa": "ˈuː"
+ },
+ {
+  "index": 11,
+  "greek": "ὅς",
+  "gloss": "who, which, that",
+  "ipa": "ˈhos"
+ },
+ {
+  "index": 12,
+  "greek": "θεός",
+  "gloss": "God, god",
+  "ipa": "θe.ˈos"
+ },
+ {
+  "index": 13,
+  "greek": "ὅτι",
+  "gloss": "that, because",
+  "ipa": "ˈho.ti"
+ },
+ {
+  "index": 14,
+  "greek": "πᾶς",
+  "gloss": "all, every",
+  "ipa": "ˈpaːs"
+ },
+ {
+  "index": 15,
+  "greek": "μή",
+  "gloss": "not (with non-indicative)",
+  "ipa": "ˈmeː"
+ },
+ {
+  "index": 16,
+  "greek": "γάρ",
+  "gloss": "for, because",
+  "ipa": "ˈɡar"
+ },
+ {
+  "index": 17,
+  "greek": "Ἰησοῦς",
+  "gloss": "Jesus",
+  "ipa": "i.eː.ˈsuːs"
+ },
+ {
+  "index": 18,
+  "greek": "ἐκ",
+  "gloss": "out of, from (+gen)",
+  "ipa": "ˈek"
+ },
+ {
+  "index": 19,
+  "greek": "ἐπί",
+  "gloss": "on, over, at (+gen/dat/acc)",
+  "ipa": "e.ˈpi"
+ },
+ {
+  "index": 20,
+  "greek": "κύριος",
+  "gloss": "lord, master, Lord",
+  "ipa": "ˈky.ri.os"
+ },
+ {
+  "index": 21,
+  "greek": "ἔχω",
+  "gloss": "I have, hold",
+  "ipa": "ˈe.xoː"
+ },
+ {
+  "index": 22,
+  "greek": "πρός",
+  "gloss": "to, toward (+acc)",
+  "ipa": "ˈpros"
+ },
+ {
+  "index": 23,
+  "greek": "γίνομαι",
+  "gloss": "I become, happen, am",
+  "ipa": "ˈɡi.no.mai"
+ },
+ {
+  "index": 24,
+  "greek": "διά",
+  "gloss": "through (+gen); because of (+acc)",
+  "ipa": "di.ˈa"
+ },
+ {
+  "index": 25,
+  "greek": "ἵνα",
+  "gloss": "in order that, that",
+  "ipa": "ˈhi.na"
+ },
+ {
+  "index": 26,
+  "greek": "ἀπό",
+  "gloss": "from, away from (+gen)",
+  "ipa": "a.ˈpo"
+ },
+ {
+  "index": 27,
+  "greek": "ἀλλά",
+  "gloss": "but, rather",
+  "ipa": "al.ˈla"
+ },
+ {
+  "index": 28,
+  "greek": "ἔρχομαι",
+  "gloss": "I come, go",
+  "ipa": "ˈer.xo.mai"
+ },
+ {
+  "index": 29,
+  "greek": "ποιέω",
+  "gloss": "I do, make",
+  "ipa": "poi.ˈe.oː"
+ },
+ {
+  "index": 30,
+  "greek": "τίς",
+  "gloss": "who? what? why?",
+  "ipa": "ˈtis"
+ },
+ {
+  "index": 31,
+  "greek": "ἄνθρωπος",
+  "gloss": "man, human being, person",
+  "ipa": "ˈan.θroː.pos"
+ },
+ {
+  "index": 32,
+  "greek": "Χριστός",
+  "gloss": "Christ, Messiah, Anointed",
+  "ipa": "xri.ˈstos"
+ },
+ {
+  "index": 33,
+  "greek": "τις",
+  "gloss": "someone, something, a certain",
+  "ipa": "ˈtis"
+ },
+ {
+  "index": 34,
+  "greek": "ὡς",
+  "gloss": "as, like, when",
+  "ipa": "ˈhoːs"
+ },
+ {
+  "index": 35,
+  "greek": "εἰ",
+  "gloss": "if",
+  "ipa": "ˈei"
+ },
+ {
+  "index": 36,
+  "greek": "οὖν",
+  "gloss": "therefore, then",
+  "ipa": "ˈuːn"
+ },
+ {
+  "index": 37,
+  "greek": "κατά",
+  "gloss": "down, against (+gen); according to (+acc)",
+  "ipa": "ka.ˈta"
+ },
+ {
+  "index": 38,
+  "greek": "μετά",
+  "gloss": "with (+gen); after (+acc)",
+  "ipa": "me.ˈta"
+ },
+ {
+  "index": 39,
+  "greek": "ὁράω",
+  "gloss": "I see, perceive",
+  "ipa": "ho.ˈra.oː"
+ },
+ {
+  "index": 40,
+  "greek": "ἀκούω",
+  "gloss": "I hear, listen, obey",
+  "ipa": "a.ˈkuː.oː"
+ },
+ {
+  "index": 41,
+  "greek": "πολύς",
+  "gloss": "much, many",
+  "ipa": "po.ˈlys"
+ },
+ {
+  "index": 42,
+  "greek": "δίδωμι",
+  "gloss": "I give",
+  "ipa": "ˈdi.doː.mi"
+ },
+ {
+  "index": 43,
+  "greek": "πατήρ",
+  "gloss": "father",
+  "ipa": "pa.ˈteːr"
+ },
+ {
+  "index": 44,
+  "greek": "ἡμέρα",
+  "gloss": "day",
+  "ipa": "heː.ˈme.ra"
+ },
+ {
+  "index": 45,
+  "greek": "πνεῦμα",
+  "gloss": "spirit, Spirit, wind, breath",
+  "ipa": "ˈpneu.ma"
+ },
+ {
+  "index": 46,
+  "greek": "υἱός",
+  "gloss": "son",
+  "ipa": "hyi.ˈos"
+ },
+ {
+  "index": 47,
+  "greek": "εἷς",
+  "gloss": "one",
+  "ipa": "ˈheis"
+ },
+ {
+  "index": 48,
+  "greek": "ἀδελφός",
+  "gloss": "brother",
+  "ipa": "a.del.ˈfos"
+ },
+ {
+  "index": 49,
+  "greek": "ἤ",
+  "gloss": "or, than",
+  "ipa": "ˈeː"
+ },
+ {
+  "index": 50,
+  "greek": "περί",
+  "gloss": "concerning (+gen); around (+acc)",
+  "ipa": "pe.ˈri"
+ },
+ {
+  "index": 51,
+  "greek": "λόγος",
+  "gloss": "word, message, account",
+  "ipa": "ˈlo.ɡos"
+ },
+ {
+  "index": 52,
+  "greek": "ἑαυτοῦ",
+  "gloss": "himself, herself, itself",
+  "ipa": "he.au.ˈtuː"
+ },
+ {
+  "index": 53,
+  "greek": "οἶδα",
+  "gloss": "I know",
+  "ipa": "ˈoi.da"
+ },
+ {
+  "index": 54,
+  "greek": "λαλέω",
+  "gloss": "I speak, say",
+  "ipa": "la.ˈle.oː"
+ },
+ {
+  "index": 55,
+  "greek": "οὐρανός",
+  "gloss": "heaven, sky",
+  "ipa": "uː.ra.ˈnos"
+ },
+ {
+  "index": 56,
+  "greek": "ἐκεῖνος",
+  "gloss": "that, that one",
+  "ipa": "e.ˈkei.nos"
+ },
+ {
+  "index": 57,
+  "greek": "μαθητής",
+  "gloss": "disciple, learner",
+  "ipa": "ma.θeː.ˈteːs"
+ },
+ {
+  "index": 58,
+  "greek": "λαμβάνω",
+  "gloss": "I take, receive",
+  "ipa": "lam.ˈba.noː"
+ },
+ {
+  "index": 59,
+  "greek": "γῆ",
+  "gloss": "earth, land, ground",
+  "ipa": "ˈɡeː"
+ },
+ {
+  "index": 60,
+  "greek": "μέγας",
+  "gloss": "great, large",
+  "ipa": "ˈme.ɡas"
+ },
+ {
+  "index": 61,
+  "greek": "πίστις",
+  "gloss": "faith, faithfulness, trust",
+  "ipa": "ˈpi.stis"
+ },
+ {
+  "index": 62,
+  "greek": "πιστεύω",
+  "gloss": "I believe, trust",
+  "ipa": "pi.ˈsteu.oː"
+ },
+ {
+  "index": 63,
+  "greek": "οὐδείς",
+  "gloss": "no one, nothing",
+  "ipa": "uː.ˈdeis"
+ },
+ {
+  "index": 64,
+  "greek": "ἅγιος",
+  "gloss": "holy, set apart; (pl) saints",
+  "ipa": "ˈha.ɡi.os"
+ },
+ {
+  "index": 65,
+  "greek": "ἀποκρίνομαι",
+  "gloss": "I answer, reply",
+  "ipa": "a.po.ˈkri.no.mai"
+ },
+ {
+  "index": 66,
+  "greek": "ὄνομα",
+  "gloss": "name",
+  "ipa": "ˈo.no.ma"
+ },
+ {
+  "index": 67,
+  "greek": "γινώσκω",
+  "gloss": "I know, come to know",
+  "ipa": "ɡi.ˈnoː.skoː"
+ },
+ {
+  "index": 68,
+  "greek": "ὑπό",
+  "gloss": "by (+gen); under (+acc)",
+  "ipa": "hy.ˈpo"
+ },
+ {
+  "index": 69,
+  "greek": "ἐξέρχομαι",
+  "gloss": "I go out, come out",
+  "ipa": "e.ˈkser.xo.mai"
+ },
+ {
+  "index": 70,
+  "greek": "ἀνήρ",
+  "gloss": "man, husband",
+  "ipa": "a.ˈneːr"
+ },
+ {
+  "index": 71,
+  "greek": "γυνή",
+  "gloss": "woman, wife",
+  "ipa": "ɡy.ˈneː"
+ },
+ {
+  "index": 72,
+  "greek": "τε",
+  "gloss": "and, and so",
+  "ipa": "ˈte"
+ },
+ {
+  "index": 73,
+  "greek": "δύναμαι",
+  "gloss": "I am able, can",
+  "ipa": "ˈdy.na.mai"
+ },
+ {
+  "index": 74,
+  "greek": "θέλω",
+  "gloss": "I wish, will, want",
+  "ipa": "ˈθe.loː"
+ },
+ {
+  "index": 75,
+  "greek": "οὕτως",
+  "gloss": "thus, in this way",
+  "ipa": "ˈhuː.toːs"
+ },
+ {
+  "index": 76,
+  "greek": "ἰδού",
+  "gloss": "behold! look!",
+  "ipa": "i.ˈduː"
+ },
+ {
+  "index": 77,
+  "greek": "Ἰουδαῖος",
+  "gloss": "Jewish; (noun) a Jew",
+  "ipa": "i.uː.ˈdai.os"
+ },
+ {
+  "index": 78,
+  "greek": "εἰσέρχομαι",
+  "gloss": "I go in, enter",
+  "ipa": "ei.ˈser.xo.mai"
+ },
+ {
+  "index": 79,
+  "greek": "νόμος",
+  "gloss": "law, Law",
+  "ipa": "ˈno.mos"
+ },
+ {
+  "index": 80,
+  "greek": "παρά",
+  "gloss": "from (+gen); with (+dat); beside, by (+acc)",
+  "ipa": "pa.ˈra"
+ },
+ {
+  "index": 81,
+  "greek": "γράφω",
+  "gloss": "I write",
+  "ipa": "ˈɡra.foː"
+ },
+ {
+  "index": 82,
+  "greek": "κόσμος",
+  "gloss": "world, universe, adornment",
+  "ipa": "ˈkos.mos"
+ },
+ {
+  "index": 83,
+  "greek": "καθώς",
+  "gloss": "just as, as",
+  "ipa": "ka.ˈθoːs"
+ },
+ {
+  "index": 84,
+  "greek": "μέν",
+  "gloss": "on the one hand, indeed",
+  "ipa": "ˈmen"
+ },
+ {
+  "index": 85,
+  "greek": "χείρ",
+  "gloss": "hand",
+  "ipa": "ˈxeir"
+ },
+ {
+  "index": 86,
+  "greek": "εὑρίσκω",
+  "gloss": "I find",
+  "ipa": "heu.ˈri.skoː"
+ },
+ {
+  "index": 87,
+  "greek": "ἄγγελος",
+  "gloss": "angel, messenger",
+  "ipa": "ˈaŋ.ɡe.los"
+ },
+ {
+  "index": 88,
+  "greek": "ὄχλος",
+  "gloss": "crowd, multitude",
+  "ipa": "ˈo.xlos"
+ },
+ {
+  "index": 89,
+  "greek": "ἁμαρτία",
+  "gloss": "sin",
+  "ipa": "ha.mar.ˈti.a"
+ },
+ {
+  "index": 90,
+  "greek": "ἔργον",
+  "gloss": "work, deed",
+  "ipa": "ˈer.ɡon"
+ },
+ {
+  "index": 91,
+  "greek": "δόξα",
+  "gloss": "glory, splendour",
+  "ipa": "ˈdo.ksa"
+ },
+ {
+  "index": 92,
+  "greek": "βασιλεία",
+  "gloss": "kingdom, reign",
+  "ipa": "ba.si.ˈlei.a"
+ },
+ {
+  "index": 93,
+  "greek": "ἔθνος",
+  "gloss": "nation; (pl) Gentiles",
+  "ipa": "ˈeθ.nos"
+ },
+ {
+  "index": 94,
+  "greek": "πόλις",
+  "gloss": "city",
+  "ipa": "ˈpo.lis"
+ },
+ {
+  "index": 95,
+  "greek": "τότε",
+  "gloss": "then, at that time",
+  "ipa": "ˈto.te"
+ },
+ {
+  "index": 96,
+  "greek": "ἐσθίω",
+  "gloss": "I eat",
+  "ipa": "es.ˈθi.oː"
+ },
+ {
+  "index": 97,
+  "greek": "Παῦλος",
+  "gloss": "Paul",
+  "ipa": "ˈpau.los"
+ },
+ {
+  "index": 98,
+  "greek": "καρδία",
+  "gloss": "heart",
+  "ipa": "kar.ˈdi.a"
+ },
+ {
+  "index": 99,
+  "greek": "Πέτρος",
+  "gloss": "Peter",
+  "ipa": "ˈpe.tros"
+ },
+ {
+  "index": 100,
+  "greek": "ἄλλος",
+  "gloss": "other, another",
+  "ipa": "ˈal.los"
+ },
+ {
+  "index": 101,
+  "greek": "πρῶτος",
+  "gloss": "first, foremost",
+  "ipa": "ˈproː.tos"
+ },
+ {
+  "index": 102,
+  "greek": "ἵστημι",
+  "gloss": "I stand, set, establish",
+  "ipa": "ˈhi.steː.mi"
+ },
+ {
+  "index": 103,
+  "greek": "ὅστις",
+  "gloss": "whoever, whatever",
+  "ipa": "ˈho.stis"
+ },
+ {
+  "index": 104,
+  "greek": "πορεύομαι",
+  "gloss": "I go, proceed, live",
+  "ipa": "po.ˈreu.o.mai"
+ },
+ {
+  "index": 105,
+  "greek": "ὑπέρ",
+  "gloss": "on behalf of (+gen); above (+acc)",
+  "ipa": "hy.ˈper"
+ },
+ {
+  "index": 106,
+  "greek": "καλέω",
+  "gloss": "I call, name, invite",
+  "ipa": "ka.ˈle.oː"
+ },
+ {
+  "index": 107,
+  "greek": "νῦν",
+  "gloss": "now",
+  "ipa": "ˈnyːn"
+ },
+ {
+  "index": 108,
+  "greek": "σάρξ",
+  "gloss": "flesh, body, human nature",
+  "ipa": "ˈsarks"
+ },
+ {
+  "index": 109,
+  "greek": "ἕως",
+  "gloss": "until, as far as",
+  "ipa": "ˈhe.oːs"
+ },
+ {
+  "index": 110,
+  "greek": "ἐγείρω",
+  "gloss": "I raise up, wake",
+  "ipa": "e.ˈɡei.roː"
+ },
+ {
+  "index": 111,
+  "greek": "προφήτης",
+  "gloss": "prophet",
+  "ipa": "pro.ˈfeː.teːs"
+ },
+ {
+  "index": 112,
+  "greek": "ἀγαπάω",
+  "gloss": "I love",
+  "ipa": "a.ɡa.ˈpa.oː"
+ },
+ {
+  "index": 113,
+  "greek": "ἀφίημι",
+  "gloss": "I forgive, leave, permit",
+  "ipa": "a.ˈfi.eː.mi"
+ },
+ {
+  "index": 114,
+  "greek": "οὐδέ",
+  "gloss": "and not, nor, not even",
+  "ipa": "uː.ˈde"
+ },
+ {
+  "index": 115,
+  "greek": "λαός",
+  "gloss": "people, nation",
+  "ipa": "la.ˈos"
+ },
+ {
+  "index": 116,
+  "greek": "σῶμα",
+  "gloss": "body",
+  "ipa": "ˈsoː.ma"
+ },
+ {
+  "index": 117,
+  "greek": "πάλιν",
+  "gloss": "again",
+  "ipa": "ˈpa.lin"
+ },
+ {
+  "index": 118,
+  "greek": "ζάω",
+  "gloss": "I live, am alive",
+  "ipa": "ˈdza.oː"
+ },
+ {
+  "index": 119,
+  "greek": "φωνή",
+  "gloss": "voice, sound",
+  "ipa": "foː.ˈneː"
+ },
+ {
+  "index": 120,
+  "greek": "δύο",
+  "gloss": "two",
+  "ipa": "ˈdy.o"
+ },
+ {
+  "index": 121,
+  "greek": "ζωή",
+  "gloss": "life",
+  "ipa": "dzoː.ˈeː"
+ },
+ {
+  "index": 122,
+  "greek": "βλέπω",
+  "gloss": "I see, look at",
+  "ipa": "ˈble.poː"
+ },
+ {
+  "index": 123,
+  "greek": "ἀποστέλλω",
+  "gloss": "I send, send out",
+  "ipa": "a.po.ˈstel.loː"
+ },
+ {
+  "index": 124,
+  "greek": "ἀμήν",
+  "gloss": "amen, truly",
+  "ipa": "a.ˈmeːn"
+ },
+ {
+  "index": 125,
+  "greek": "νεκρός",
+  "gloss": "dead; (noun) a dead person",
+  "ipa": "ne.ˈkros"
+ },
+ {
+  "index": 126,
+  "greek": "σύν",
+  "gloss": "with (+dat)",
+  "ipa": "ˈsyn"
+ },
+ {
+  "index": 127,
+  "greek": "δοῦλος",
+  "gloss": "slave, servant",
+  "ipa": "ˈduː.los"
+ },
+ {
+  "index": 128,
+  "greek": "ὅταν",
+  "gloss": "whenever, when",
+  "ipa": "ˈho.tan"
+ },
+ {
+  "index": 129,
+  "greek": "αἰών",
+  "gloss": "age, eternity",
+  "ipa": "ai.ˈoːn"
+ },
+ {
+  "index": 130,
+  "greek": "ἀρχιερεύς",
+  "gloss": "chief priest, high priest",
+  "ipa": "ar.xi.e.ˈreus"
+ },
+ {
+  "index": 131,
+  "greek": "βάλλω",
+  "gloss": "I throw, put",
+  "ipa": "ˈbal.loː"
+ },
+ {
+  "index": 132,
+  "greek": "θάνατος",
+  "gloss": "death",
+  "ipa": "ˈθa.na.tos"
+ },
+ {
+  "index": 133,
+  "greek": "δύναμις",
+  "gloss": "power, ability, miracle",
+  "ipa": "ˈdy.na.mis"
+ },
+ {
+  "index": 134,
+  "greek": "παραδίδωμι",
+  "gloss": "I hand over, betray, deliver",
+  "ipa": "pa.ra.ˈdi.doː.mi"
+ },
+ {
+  "index": 135,
+  "greek": "μένω",
+  "gloss": "I remain, abide, stay",
+  "ipa": "ˈme.noː"
+ },
+ {
+  "index": 136,
+  "greek": "ἀπέρχομαι",
+  "gloss": "I depart, go away",
+  "ipa": "a.ˈper.xo.mai"
+ },
+ {
+  "index": 137,
+  "greek": "ζητέω",
+  "gloss": "I seek, look for",
+  "ipa": "dzeː.ˈte.oː"
+ },
+ {
+  "index": 138,
+  "greek": "ἀγάπη",
+  "gloss": "love",
+  "ipa": "a.ˈɡa.peː"
+ },
+ {
+  "index": 139,
+  "greek": "βασιλεύς",
+  "gloss": "king",
+  "ipa": "ba.si.ˈleus"
+ },
+ {
+  "index": 140,
+  "greek": "ἐκκλησία",
+  "gloss": "church, assembly",
+  "ipa": "ek.kleː.ˈsi.a"
+ },
+ {
+  "index": 141,
+  "greek": "ἴδιος",
+  "gloss": "one's own",
+  "ipa": "ˈi.di.os"
+ },
+ {
+  "index": 142,
+  "greek": "κρίνω",
+  "gloss": "I judge, decide",
+  "ipa": "ˈkri.noː"
+ },
+ {
+  "index": 143,
+  "greek": "μόνος",
+  "gloss": "only, alone",
+  "ipa": "ˈmo.nos"
+ },
+ {
+  "index": 144,
+  "greek": "οἶκος",
+  "gloss": "house, household",
+  "ipa": "ˈoi.kos"
+ },
+ {
+  "index": 145,
+  "greek": "ἀποθνῄσκω",
+  "gloss": "I die",
+  "ipa": "a.poθ.ˈneː.skoː"
+ },
+ {
+  "index": 146,
+  "greek": "ὅσος",
+  "gloss": "as much as, as many as",
+  "ipa": "ˈho.sos"
+ },
+ {
+  "index": 147,
+  "greek": "ἀλήθεια",
+  "gloss": "truth",
+  "ipa": "a.ˈleː.θei.a"
+ },
+ {
+  "index": 148,
+  "greek": "μέλλω",
+  "gloss": "I am about to, intend",
+  "ipa": "ˈmel.loː"
+ },
+ {
+  "index": 149,
+  "greek": "ὅλος",
+  "gloss": "whole, entire",
+  "ipa": "ˈho.los"
+ },
+ {
+  "index": 150,
+  "greek": "παρακαλέω",
+  "gloss": "I urge, comfort, exhort",
+  "ipa": "pa.ra.ka.ˈle.oː"
+ },
+ {
+  "index": 151,
+  "greek": "ἀνίστημι",
+  "gloss": "I raise up, rise",
+  "ipa": "a.ˈni.steː.mi"
+ },
+ {
+  "index": 152,
+  "greek": "σῴζω",
+  "gloss": "I save, rescue, heal",
+  "ipa": "ˈsoː.dzoː"
+ },
+ {
+  "index": 153,
+  "greek": "ὥρα",
+  "gloss": "hour, time",
+  "ipa": "ˈhoː.ra"
+ },
+ {
+  "index": 154,
+  "greek": "ἐκεῖ",
+  "gloss": "there",
+  "ipa": "e.ˈkei"
+ },
+ {
+  "index": 155,
+  "greek": "ὅπου",
+  "gloss": "where",
+  "ipa": "ˈho.puː"
+ },
+ {
+  "index": 156,
+  "greek": "πῶς",
+  "gloss": "how?",
+  "ipa": "ˈpoːs"
+ },
+ {
+  "index": 157,
+  "greek": "ψυχή",
+  "gloss": "soul, life, self",
+  "ipa": "psy.ˈxeː"
+ },
+ {
+  "index": 158,
+  "greek": "ἀγαθός",
+  "gloss": "good",
+  "ipa": "a.ɡa.ˈθos"
+ },
+ {
+  "index": 159,
+  "greek": "ἐξουσία",
+  "gloss": "authority, right, power",
+  "ipa": "e.ksuː.ˈsi.a"
+ },
+ {
+  "index": 160,
+  "greek": "αἴρω",
+  "gloss": "I take up, take away",
+  "ipa": "ˈai.roː"
+ },
+ {
+  "index": 161,
+  "greek": "δεῖ",
+  "gloss": "it is necessary",
+  "ipa": "ˈdei"
+ },
+ {
+  "index": 162,
+  "greek": "ὁδός",
+  "gloss": "way, road, journey",
+  "ipa": "ho.ˈdos"
+ },
+ {
+  "index": 163,
+  "greek": "ἀλλήλων",
+  "gloss": "one another",
+  "ipa": "al.ˈleː.loːn"
+ },
+ {
+  "index": 164,
+  "greek": "καλός",
+  "gloss": "good, beautiful, fine",
+  "ipa": "ka.ˈlos"
+ },
+ {
+  "index": 165,
+  "greek": "ὀφθαλμός",
+  "gloss": "eye",
+  "ipa": "of.θal.ˈmos"
+ },
+ {
+  "index": 166,
+  "greek": "τίθημι",
+  "gloss": "I put, place, lay",
+  "ipa": "ˈti.θeː.mi"
+ },
+ {
+  "index": 167,
+  "greek": "τέκνον",
+  "gloss": "child",
+  "ipa": "ˈtek.non"
+ },
+ {
+  "index": 168,
+  "greek": "ἕτερος",
+  "gloss": "other, another, different",
+  "ipa": "ˈhe.te.ros"
+ },
+ {
+  "index": 169,
+  "greek": "Φαρισαῖος",
+  "gloss": "Pharisee",
+  "ipa": "fa.ri.ˈsai.os"
+ },
+ {
+  "index": 170,
+  "greek": "αἷμα",
+  "gloss": "blood",
+  "ipa": "ˈhai.ma"
+ },
+ {
+  "index": 171,
+  "greek": "ἄρτος",
+  "gloss": "bread, loaf",
+  "ipa": "ˈar.tos"
+ },
+ {
+  "index": 172,
+  "greek": "γεννάω",
+  "gloss": "I beget, give birth to",
+  "ipa": "ɡen.ˈna.oː"
+ },
+ {
+  "index": 173,
+  "greek": "διδάσκω",
+  "gloss": "I teach",
+  "ipa": "di.ˈda.skoː"
+ },
+ {
+  "index": 174,
+  "greek": "περιπατέω",
+  "gloss": "I walk, live, conduct myself",
+  "ipa": "pe.ri.pa.ˈte.oː"
+ },
+ {
+  "index": 175,
+  "greek": "φοβέομαι",
+  "gloss": "I fear, am afraid",
+  "ipa": "fo.ˈbe.o.mai"
+ },
+ {
+  "index": 176,
+  "greek": "ἐνώπιον",
+  "gloss": "before, in the presence of (+gen)",
+  "ipa": "e.ˈnoː.pi.on"
+ },
+ {
+  "index": 177,
+  "greek": "ἔτι",
+  "gloss": "still, yet",
+  "ipa": "ˈe.ti"
+ },
+ {
+  "index": 178,
+  "greek": "οἰκία",
+  "gloss": "house, household",
+  "ipa": "oi.ˈki.a"
+ },
+ {
+  "index": 179,
+  "greek": "πούς",
+  "gloss": "foot",
+  "ipa": "ˈpuːs"
+ },
+ {
+  "index": 180,
+  "greek": "δικαιοσύνη",
+  "gloss": "righteousness, justice",
+  "ipa": "di.kai.o.ˈsy.neː"
+ },
+ {
+  "index": 181,
+  "greek": "εἰρήνη",
+  "gloss": "peace",
+  "ipa": "ei.ˈreː.neː"
+ },
+ {
+  "index": 182,
+  "greek": "θάλασσα",
+  "gloss": "sea, lake",
+  "ipa": "ˈθa.las.sa"
+ },
+ {
+  "index": 183,
+  "greek": "κάθημαι",
+  "gloss": "I sit, sit down",
+  "ipa": "ˈka.θeː.mai"
+ },
+ {
+  "index": 184,
+  "greek": "ἀκολουθέω",
+  "gloss": "I follow",
+  "ipa": "a.ko.luː.ˈθe.oː"
+ },
+ {
+  "index": 185,
+  "greek": "ἀπόλλυμι",
+  "gloss": "I destroy, lose, perish",
+  "ipa": "a.ˈpol.ly.mi"
+ },
+ {
+  "index": 186,
+  "greek": "πίπτω",
+  "gloss": "I fall",
+  "ipa": "ˈpip.toː"
+ },
+ {
+  "index": 187,
+  "greek": "ἑπτά",
+  "gloss": "seven",
+  "ipa": "hep.ˈta"
+ },
+ {
+  "index": 188,
+  "greek": "οὔτε",
+  "gloss": "and not, neither, nor",
+  "ipa": "ˈuː.te"
+ },
+ {
+  "index": 189,
+  "greek": "ἀρχή",
+  "gloss": "beginning, ruler, rule",
+  "ipa": "ar.ˈxeː"
+ },
+ {
+  "index": 190,
+  "greek": "πληρόω",
+  "gloss": "I fill, fulfil, complete",
+  "ipa": "pleː.ˈro.oː"
+ },
+ {
+  "index": 191,
+  "greek": "προσέρχομαι",
+  "gloss": "I come to, approach",
+  "ipa": "pro.ˈser.xo.mai"
+ },
+ {
+  "index": 192,
+  "greek": "δικαιόω",
+  "gloss": "I justify, declare righteous",
+  "ipa": "di.kai.ˈo.oː"
+ },
+ {
+  "index": 193,
+  "greek": "καιρός",
+  "gloss": "time, appointed time, season",
+  "ipa": "kai.ˈros"
+ },
+ {
+  "index": 194,
+  "greek": "προσεύχομαι",
+  "gloss": "I pray",
+  "ipa": "pro.ˈseu.xo.mai"
+ },
+ {
+  "index": 195,
+  "greek": "κἀγώ",
+  "gloss": "and I, but I",
+  "ipa": "ka.ˈɡoː"
+ },
+ {
+  "index": 196,
+  "greek": "μήτηρ",
+  "gloss": "mother",
+  "ipa": "ˈmeː.teːr"
+ },
+ {
+  "index": 197,
+  "greek": "ὥσπερ",
+  "gloss": "just as",
+  "ipa": "ˈhoː.sper"
+ },
+ {
+  "index": 198,
+  "greek": "ἀνοίγω",
+  "gloss": "I open",
+  "ipa": "a.ˈnoi.ɡoː"
+ },
+ {
+  "index": 199,
+  "greek": "ὑπάγω",
+  "gloss": "I go away, depart",
+  "ipa": "hy.ˈpa.ɡoː"
+ },
+ {
+  "index": 200,
+  "greek": "σημεῖον",
+  "gloss": "sign, miracle",
+  "ipa": "seː.ˈmei.on"
+ },
+ {
+  "index": 201,
+  "greek": "ἐντολή",
+  "gloss": "commandment",
+  "ipa": "en.to.ˈleː"
+ },
+ {
+  "index": 202,
+  "greek": "σκότος",
+  "gloss": "darkness",
+  "ipa": "ˈsko.tos"
+ },
+ {
+  "index": 203,
+  "greek": "φῶς",
+  "gloss": "light",
+  "ipa": "ˈfoːs"
+ },
+ {
+  "index": 204,
+  "greek": "ἐλπίς",
+  "gloss": "hope",
+  "ipa": "el.ˈpis"
+ },
+ {
+  "index": 205,
+  "greek": "χάρις",
+  "gloss": "grace, favour, thanks",
+  "ipa": "ˈxa.ris"
+ },
+ {
+  "index": 206,
+  "greek": "σοφία",
+  "gloss": "wisdom",
+  "ipa": "so.ˈfi.a"
+ },
+ {
+  "index": 207,
+  "greek": "μαρτυρέω",
+  "gloss": "I bear witness, testify",
+  "ipa": "mar.ty.ˈre.oː"
+ },
+ {
+  "index": 208,
+  "greek": "μαρτυρία",
+  "gloss": "testimony, witness",
+  "ipa": "mar.ty.ˈri.a"
+ },
+ {
+  "index": 209,
+  "greek": "κηρύσσω",
+  "gloss": "I proclaim, preach",
+  "ipa": "keː.ˈrys.soː"
+ },
+ {
+  "index": 210,
+  "greek": "εὐαγγέλιον",
+  "gloss": "gospel, good news",
+  "ipa": "eu.aŋ.ˈɡe.li.on"
+ },
+ {
+  "index": 211,
+  "greek": "εὐαγγελίζω",
+  "gloss": "I preach good news",
+  "ipa": "eu.aŋ.ɡe.ˈli.dzoː"
+ },
+ {
+  "index": 212,
+  "greek": "δοξάζω",
+  "gloss": "I glorify, praise",
+  "ipa": "do.ˈksa.dzoː"
+ },
+ {
+  "index": 213,
+  "greek": "σταυρός",
+  "gloss": "cross",
+  "ipa": "stau.ˈros"
+ },
+ {
+  "index": 214,
+  "greek": "σταυρόω",
+  "gloss": "I crucify",
+  "ipa": "stau.ˈro.oː"
+ },
+ {
+  "index": 215,
+  "greek": "ἀπολύω",
+  "gloss": "I release, send away, divorce",
+  "ipa": "a.po.ˈly.oː"
+ },
+ {
+  "index": 216,
+  "greek": "θρόνος",
+  "gloss": "throne",
+  "ipa": "ˈθro.nos"
+ },
+ {
+  "index": 217,
+  "greek": "ἀρνίον",
+  "gloss": "lamb",
+  "ipa": "ar.ˈni.on"
+ },
+ {
+  "index": 218,
+  "greek": "ναός",
+  "gloss": "temple, sanctuary",
+  "ipa": "na.ˈos"
+ },
+ {
+  "index": 219,
+  "greek": "ἱερόν",
+  "gloss": "temple (precinct)",
+  "ipa": "hi.e.ˈron"
+ },
+ {
+  "index": 220,
+  "greek": "θυσία",
+  "gloss": "sacrifice",
+  "ipa": "θy.ˈsi.a"
+ },
+ {
+  "index": 221,
+  "greek": "διαθήκη",
+  "gloss": "covenant, testament",
+  "ipa": "di.a.ˈθeː.keː"
+ },
+ {
+  "index": 222,
+  "greek": "ἐπαγγελία",
+  "gloss": "promise",
+  "ipa": "e.paŋ.ɡe.ˈli.a"
+ },
+ {
+  "index": 223,
+  "greek": "σπέρμα",
+  "gloss": "seed, offspring",
+  "ipa": "ˈsper.ma"
+ },
+ {
+  "index": 224,
+  "greek": "δεξιός",
+  "gloss": "right (hand, side)",
+  "ipa": "de.ksi.ˈos"
+ },
+ {
+  "index": 225,
+  "greek": "μέσος",
+  "gloss": "middle, in the midst",
+  "ipa": "ˈme.sos"
+ },
+ {
+  "index": 226,
+  "greek": "αἰώνιος",
+  "gloss": "eternal",
+  "ipa": "ai.ˈoː.ni.os"
+ },
+ {
+  "index": 227,
+  "greek": "πιστός",
+  "gloss": "faithful, believing",
+  "ipa": "pi.ˈstos"
+ },
+ {
+  "index": 228,
+  "greek": "δίκαιος",
+  "gloss": "righteous, just",
+  "ipa": "ˈdi.kai.os"
+ },
+ {
+  "index": 229,
+  "greek": "πονηρός",
+  "gloss": "evil, wicked",
+  "ipa": "po.neː.ˈros"
+ },
+ {
+  "index": 230,
+  "greek": "πρεσβύτερος",
+  "gloss": "elder, older",
+  "ipa": "pres.ˈby.te.ros"
+ },
+ {
+  "index": 231,
+  "greek": "ἀσθενής",
+  "gloss": "weak, sick",
+  "ipa": "as.θe.ˈneːs"
+ },
+ {
+  "index": 232,
+  "greek": "ἀληθής",
+  "gloss": "true, truthful",
+  "ipa": "a.leː.ˈθeːs"
+ },
+ {
+  "index": 233,
+  "greek": "ἐλεέω",
+  "gloss": "I have mercy on",
+  "ipa": "e.le.ˈe.oː"
+ },
+ {
+  "index": 234,
+  "greek": "ἔλεος",
+  "gloss": "mercy",
+  "ipa": "ˈe.le.os"
+ },
+ {
+  "index": 235,
+  "greek": "οὗτος",
+  "gloss": "this; this one",
+  "ipa": "ˈhuː.tos"
+ },
+ {
+  "index": 236,
+  "greek": "ἐάν",
+  "gloss": "if (+subjunctive)",
+  "ipa": "e.ˈan"
+ },
+ {
+  "index": 237,
+  "greek": "τέ",
+  "gloss": "and (enclitic); τε…καί both…and",
+  "ipa": "ˈte"
+ },
+ {
+  "index": 238,
+  "greek": "ἄν",
+  "gloss": "(untranslatable) particle of contingency",
+  "ipa": "ˈan"
+ },
+ {
+  "index": 239,
+  "greek": "Ἰωάννης",
+  "gloss": "John",
+  "ipa": "i.oː.ˈan.neːs"
+ },
+ {
+  "index": 240,
+  "greek": "ὅτε",
+  "gloss": "when",
+  "ipa": "ˈho.te"
+ },
+ {
+  "index": 241,
+  "greek": "τόπος",
+  "gloss": "place",
+  "ipa": "ˈto.pos"
+ },
+ {
+  "index": 242,
+  "greek": "μηδείς",
+  "gloss": "no one, nothing (non-indicative)",
+  "ipa": "meː.ˈdeis"
+ },
+ {
+  "index": 243,
+  "greek": "ἄρχω",
+  "gloss": "I rule; (middle) I begin",
+  "ipa": "ˈar.xoː"
+ },
+ {
+  "index": 244,
+  "greek": "ὥστε",
+  "gloss": "so that, with the result that",
+  "ipa": "ˈhoː.ste"
+ },
+ {
+  "index": 245,
+  "greek": "ἀναβαίνω",
+  "gloss": "I go up, ascend",
+  "ipa": "a.na.ˈbai.noː"
+ },
+ {
+  "index": 246,
+  "greek": "μᾶλλον",
+  "gloss": "more, rather",
+  "ipa": "ˈmaːl.lon"
+ },
+ {
+  "index": 247,
+  "greek": "ἐκβάλλω",
+  "gloss": "I cast out, send out",
+  "ipa": "ek.ˈbal.loː"
+ },
+ {
+  "index": 248,
+  "greek": "ἕκαστος",
+  "gloss": "each, every",
+  "ipa": "ˈhe.ka.stos"
+ },
+ {
+  "index": 249,
+  "greek": "καταβαίνω",
+  "gloss": "I go down, descend",
+  "ipa": "ka.ta.ˈbai.noː"
+ },
+ {
+  "index": 250,
+  "greek": "πέμπω",
+  "gloss": "I send",
+  "ipa": "ˈpem.poː"
+ },
+ {
+  "index": 251,
+  "greek": "Μωϋσῆς",
+  "gloss": "Moses",
+  "ipa": "moː.y.ˈseːs"
+ },
+ {
+  "index": 252,
+  "greek": "ἀπόστολος",
+  "gloss": "apostle, sent one",
+  "ipa": "a.ˈpo.sto.los"
+ },
+ {
+  "index": 253,
+  "greek": "στόμα",
+  "gloss": "mouth",
+  "ipa": "ˈsto.ma"
+ },
+ {
+  "index": 254,
+  "greek": "βαπτίζω",
+  "gloss": "I baptise, immerse",
+  "ipa": "bap.ˈti.dzoː"
+ },
+ {
+  "index": 255,
+  "greek": "ὕδωρ",
+  "gloss": "water",
+  "ipa": "ˈhy.doːr"
+ },
+ {
+  "index": 256,
+  "greek": "πρόσωπον",
+  "gloss": "face, presence",
+  "ipa": "ˈpro.soː.pon"
+ },
+ {
+  "index": 257,
+  "greek": "ἐμός",
+  "gloss": "my, mine (emphatic)",
+  "ipa": "e.ˈmos"
+ },
+ {
+  "index": 258,
+  "greek": "Ἰερουσαλήμ",
+  "gloss": "Jerusalem (indeclinable)",
+  "ipa": "i.e.ruː.sa.ˈleːm"
+ },
+ {
+  "index": 259,
+  "greek": "Σίμων",
+  "gloss": "Simon",
+  "ipa": "ˈsi.moːn"
+ },
+ {
+  "index": 260,
+  "greek": "κεφαλή",
+  "gloss": "head",
+  "ipa": "ke.fa.ˈleː"
+ },
+ {
+  "index": 261,
+  "greek": "δώδεκα",
+  "gloss": "twelve",
+  "ipa": "ˈdoː.de.ka"
+ },
+ {
+  "index": 262,
+  "greek": "χαίρω",
+  "gloss": "I rejoice; (greeting) hail!",
+  "ipa": "ˈxai.roː"
+ },
+ {
+  "index": 263,
+  "greek": "ἀποκτείνω",
+  "gloss": "I kill",
+  "ipa": "a.pok.ˈtei.noː"
+ },
+ {
+  "index": 264,
+  "greek": "Ἀβραάμ",
+  "gloss": "Abraham (indeclinable)",
+  "ipa": "a.bra.ˈam"
+ },
+ {
+  "index": 265,
+  "greek": "πίνω",
+  "gloss": "I drink",
+  "ipa": "ˈpi.noː"
+ },
+ {
+  "index": 266,
+  "greek": "πῦρ",
+  "gloss": "fire",
+  "ipa": "ˈpyːr"
+ },
+ {
+  "index": 267,
+  "greek": "τηρέω",
+  "gloss": "I keep, guard, observe",
+  "ipa": "teː.ˈre.oː"
+ },
+ {
+  "index": 268,
+  "greek": "αἰτέω",
+  "gloss": "I ask, request",
+  "ipa": "ai.ˈte.oː"
+ },
+ {
+  "index": 269,
+  "greek": "Ἰσραήλ",
+  "gloss": "Israel (indeclinable)",
+  "ipa": "is.ra.ˈeːl"
+ },
+ {
+  "index": 270,
+  "greek": "ἄγω",
+  "gloss": "I lead, bring, go",
+  "ipa": "ˈa.ɡoː"
+ },
+ {
+  "index": 271,
+  "greek": "σάββατον",
+  "gloss": "sabbath, week",
+  "ipa": "ˈsab.ba.ton"
+ },
+ {
+  "index": 272,
+  "greek": "ῥῆμα",
+  "gloss": "word, saying, thing",
+  "ipa": "ˈhreː.ma"
+ },
+ {
+  "index": 273,
+  "greek": "πλοῖον",
+  "gloss": "boat, ship",
+  "ipa": "ˈploi.on"
+ },
+ {
+  "index": 274,
+  "greek": "τρεῖς",
+  "gloss": "three",
+  "ipa": "ˈtreis"
+ },
+ {
+  "index": 275,
+  "greek": "καρπός",
+  "gloss": "fruit, crop, result",
+  "ipa": "kar.ˈpos"
+ },
+ {
+  "index": 276,
+  "greek": "φέρω",
+  "gloss": "I carry, bear, bring",
+  "ipa": "ˈfe.roː"
+ },
+ {
+  "index": 277,
+  "greek": "φημί",
+  "gloss": "I say (ἔφη — he said)",
+  "ipa": "feː.ˈmi"
+ },
+ {
+  "index": 278,
+  "greek": "εἴτε",
+  "gloss": "if, whether; εἴτε…εἴτε whether…or",
+  "ipa": "ˈei.te"
+ },
+ {
+  "index": 279,
+  "greek": "Ἱεροσόλυμα",
+  "gloss": "Jerusalem (Greek spelling)",
+  "ipa": "hi.e.ro.ˈso.ly.ma"
+ },
+ {
+  "index": 280,
+  "greek": "δαιμόνιον",
+  "gloss": "demon",
+  "ipa": "dai.ˈmo.ni.on"
+ },
+ {
+  "index": 281,
+  "greek": "γραμματεύς",
+  "gloss": "scribe",
+  "ipa": "ɡram.ma.ˈteus"
+ },
+ {
+  "index": 282,
+  "greek": "δοκέω",
+  "gloss": "I think, seem",
+  "ipa": "do.ˈke.oː"
+ },
+ {
+  "index": 283,
+  "greek": "ὄρος",
+  "gloss": "mountain, hill",
+  "ipa": "ˈo.ros"
+ },
+ {
+  "index": 284,
+  "greek": "ἔξω",
+  "gloss": "outside, out",
+  "ipa": "ˈe.ksoː"
+ },
+ {
+  "index": 285,
+  "greek": "θέλημα",
+  "gloss": "will, desire",
+  "ipa": "ˈθe.leː.ma"
+ },
+ {
+  "index": 286,
+  "greek": "ἐρωτάω",
+  "gloss": "I ask, request",
+  "ipa": "e.roː.ˈta.oː"
+ },
+ {
+  "index": 287,
+  "greek": "νύξ",
+  "gloss": "night",
+  "ipa": "ˈnyks"
+ },
+ {
+  "index": 288,
+  "greek": "Γαλιλαία",
+  "gloss": "Galilee",
+  "ipa": "ɡa.li.ˈlai.a"
+ },
+ {
+  "index": 289,
+  "greek": "ἀγαπητός",
+  "gloss": "beloved",
+  "ipa": "a.ɡa.peː.ˈtos"
+ },
+ {
+  "index": 290,
+  "greek": "ὧδε",
+  "gloss": "here",
+  "ipa": "ˈhoː.de"
+ },
+ {
+  "index": 291,
+  "greek": "προσκυνέω",
+  "gloss": "I worship, bow down (+dat or +acc)",
+  "ipa": "pro.sky.ˈne.oː"
+ },
+ {
+  "index": 292,
+  "greek": "ἤδη",
+  "gloss": "already, now",
+  "ipa": "ˈeː.deː"
+ },
+ {
+  "index": 293,
+  "greek": "ἱμάτιον",
+  "gloss": "garment, cloak",
+  "ipa": "hi.ˈma.ti.on"
+ },
+ {
+  "index": 294,
+  "greek": "ὑπάρχω",
+  "gloss": "I am, exist; (τὰ ὑπάρχοντα — possessions)",
+  "ipa": "hy.ˈpar.xoː"
+ },
+ {
+  "index": 295,
+  "greek": "Δαυίδ",
+  "gloss": "David (indeclinable)",
+  "ipa": "dau.ˈid"
+ },
+ {
+  "index": 296,
+  "greek": "συνάγω",
+  "gloss": "I gather together",
+  "ipa": "sy.ˈna.ɡoː"
+ },
+ {
+  "index": 297,
+  "greek": "χαρά",
+  "gloss": "joy",
+  "ipa": "xa.ˈra"
+ },
+ {
+  "index": 298,
+  "greek": "εὐθύς",
+  "gloss": "immediately (Mark's favourite); straight",
+  "ipa": "eu.ˈθys"
+ },
+ {
+  "index": 299,
+  "greek": "ἀσπάζομαι",
+  "gloss": "I greet",
+  "ipa": "a.ˈspa.dzo.mai"
+ },
+ {
+  "index": 300,
+  "greek": "λίθος",
+  "gloss": "stone",
+  "ipa": "ˈli.θos"
+ },
+ {
+  "index": 301,
+  "greek": "διδάσκαλος",
+  "gloss": "teacher",
+  "ipa": "di.ˈda.ska.los"
+ },
+ {
+  "index": 302,
+  "greek": "θεωρέω",
+  "gloss": "I look at, behold",
+  "ipa": "θe.oː.ˈre.oː"
+ },
+ {
+  "index": 303,
+  "greek": "μηδέ",
+  "gloss": "and not, nor (with μή)",
+  "ipa": "meː.ˈde"
+ },
+ {
+  "index": 304,
+  "greek": "συναγωγή",
+  "gloss": "synagogue",
+  "ipa": "sy.na.ɡoː.ˈɡeː"
+ },
+ {
+  "index": 305,
+  "greek": "τοιοῦτος",
+  "gloss": "such, of such a kind",
+  "ipa": "toi.ˈuː.tos"
+ },
+ {
+  "index": 306,
+  "greek": "δέχομαι",
+  "gloss": "I receive, welcome",
+  "ipa": "ˈde.xo.mai"
+ },
+ {
+  "index": 307,
+  "greek": "ἐπερωτάω",
+  "gloss": "I question, ask",
+  "ipa": "e.pe.roː.ˈta.oː"
+ },
+ {
+  "index": 308,
+  "greek": "κράζω",
+  "gloss": "I cry out",
+  "ipa": "ˈkra.dzoː"
+ },
+ {
+  "index": 309,
+  "greek": "τρίτος",
+  "gloss": "third",
+  "ipa": "ˈtri.tos"
+ },
+ {
+  "index": 310,
+  "greek": "λοιπός",
+  "gloss": "remaining; (οἱ λοιποί — the rest)",
+  "ipa": "loi.ˈpos"
+ },
+ {
+  "index": 311,
+  "greek": "Πιλᾶτος",
+  "gloss": "Pilate",
+  "ipa": "pi.ˈlaː.tos"
+ },
+ {
+  "index": 312,
+  "greek": "χρόνος",
+  "gloss": "time (duration)",
+  "ipa": "ˈxro.nos"
+ },
+ {
+  "index": 313,
+  "greek": "ὅπως",
+  "gloss": "in order that; how",
+  "ipa": "ˈho.poːs"
+ },
+ {
+  "index": 314,
+  "greek": "οὐχί",
+  "gloss": "not (emphatic); expects the answer yes",
+  "ipa": "uː.ˈxi"
+ },
+ {
+  "index": 315,
+  "greek": "διό",
+  "gloss": "therefore, for this reason",
+  "ipa": "di.ˈo"
+ },
+ {
+  "index": 316,
+  "greek": "παιδίον",
+  "gloss": "child, infant",
+  "ipa": "pai.ˈdi.on"
+ },
+ {
+  "index": 317,
+  "greek": "ἔσχατος",
+  "gloss": "last",
+  "ipa": "ˈes.xa.tos"
+ },
+ {
+  "index": 318,
+  "greek": "σπείρω",
+  "gloss": "I sow",
+  "ipa": "ˈspei.roː"
+ },
+ {
+  "index": 319,
+  "greek": "πείθω",
+  "gloss": "I persuade; (perfect) I trust",
+  "ipa": "ˈpei.θoː"
+ },
+ {
+  "index": 320,
+  "greek": "μακάριος",
+  "gloss": "blessed, happy",
+  "ipa": "ma.ˈka.ri.os"
+ },
+ {
+  "index": 321,
+  "greek": "τυφλός",
+  "gloss": "blind",
+  "ipa": "ty.ˈflos"
+ },
+ {
+  "index": 322,
+  "greek": "παραβολή",
+  "gloss": "parable",
+  "ipa": "pa.ra.bo.ˈleː"
+ },
+ {
+  "index": 323,
+  "greek": "κακός",
+  "gloss": "bad, evil",
+  "ipa": "ka.ˈkos"
+ },
+ {
+  "index": 324,
+  "greek": "γλῶσσα",
+  "gloss": "tongue, language",
+  "ipa": "ˈɡloːs.sa"
+ },
+ {
+  "index": 325,
+  "greek": "παραλαμβάνω",
+  "gloss": "I take along, receive",
+  "ipa": "pa.ra.lam.ˈba.noː"
+ },
+ {
+  "index": 326,
+  "greek": "χρεία",
+  "gloss": "need",
+  "ipa": "ˈxrei.a"
+ },
+ {
+  "index": 327,
+  "greek": "ἄρα",
+  "gloss": "then, therefore (inferential)",
+  "ipa": "ˈa.ra"
+ },
+ {
+  "index": 328,
+  "greek": "ἔτος",
+  "gloss": "year",
+  "ipa": "ˈe.tos"
+ },
+ {
+  "index": 329,
+  "greek": "γραφή",
+  "gloss": "writing, Scripture",
+  "ipa": "ɡra.ˈfeː"
+ },
+ {
+  "index": 330,
+  "greek": "ἔρημος",
+  "gloss": "desert, wilderness; desolate",
+  "ipa": "ˈe.reː.mos"
+ },
+ {
+  "index": 331,
+  "greek": "ἔμπροσθεν",
+  "gloss": "before, in front of (+gen)",
+  "ipa": "ˈem.pros.θen"
+ },
+ {
+  "index": 332,
+  "greek": "ἀποδίδωμι",
+  "gloss": "I give back, repay, render",
+  "ipa": "a.po.ˈdi.doː.mi"
+ },
+ {
+  "index": 333,
+  "greek": "φανερόω",
+  "gloss": "I reveal, make known",
+  "ipa": "fa.ne.ˈro.oː"
+ },
+ {
+  "index": 334,
+  "greek": "ποῦ",
+  "gloss": "where?",
+  "ipa": "ˈpuː"
+ },
+ {
+  "index": 335,
+  "greek": "προσφέρω",
+  "gloss": "I offer, present",
+  "ipa": "pros.ˈfe.roː"
+ },
+ {
+  "index": 336,
+  "greek": "πρό",
+  "gloss": "before (+gen)",
+  "ipa": "ˈpro"
+ },
+ {
+  "index": 337,
+  "greek": "κρίσις",
+  "gloss": "judgment",
+  "ipa": "ˈkri.sis"
+ },
+ {
+  "index": 338,
+  "greek": "φυλακή",
+  "gloss": "prison; watch (of the night)",
+  "ipa": "fy.la.ˈkeː"
+ },
+ {
+  "index": 339,
+  "greek": "ἁμαρτωλός",
+  "gloss": "sinful; (noun) sinner",
+  "ipa": "ha.mar.toː.ˈlos"
+ },
+ {
+  "index": 340,
+  "greek": "κρατέω",
+  "gloss": "I seize, hold fast",
+  "ipa": "kra.ˈte.oː"
+ },
+ {
+  "index": 341,
+  "greek": "φόβος",
+  "gloss": "fear, reverence",
+  "ipa": "ˈfo.bos"
+ },
+ {
+  "index": 342,
+  "greek": "οὐκέτι",
+  "gloss": "no longer",
+  "ipa": "uː.ˈke.ti"
+ },
+ {
+  "index": 343,
+  "greek": "ἄχρι",
+  "gloss": "until, as far as (+gen)",
+  "ipa": "ˈa.xri"
+ },
+ {
+  "index": 344,
+  "greek": "μικρός",
+  "gloss": "small, little",
+  "ipa": "mi.ˈkros"
+ },
+ {
+  "index": 345,
+  "greek": "οὐαί",
+  "gloss": "woe! alas!",
+  "ipa": "uː.ˈai"
+ },
+ {
+  "index": 346,
+  "greek": "θηρίον",
+  "gloss": "beast, wild animal",
+  "ipa": "θeː.ˈri.on"
+ },
+ {
+  "index": 347,
+  "greek": "σωτηρία",
+  "gloss": "salvation",
+  "ipa": "soː.teː.ˈri.a"
+ },
+ {
+  "index": 348,
+  "greek": "ἀπαγγέλλω",
+  "gloss": "I report, announce",
+  "ipa": "a.paŋ.ˈɡel.loː"
+ },
+ {
+  "index": 349,
+  "greek": "καθίζω",
+  "gloss": "I sit down; seat",
+  "ipa": "ka.ˈθi.dzoː"
+ },
+ {
+  "index": 350,
+  "greek": "διώκω",
+  "gloss": "I pursue, persecute",
+  "ipa": "di.ˈoː.koː"
+ },
+ {
+  "index": 351,
+  "greek": "ὅμοιος",
+  "gloss": "like, similar (+dat)",
+  "ipa": "ˈho.moi.os"
+ },
+ {
+  "index": 352,
+  "greek": "θλῖψις",
+  "gloss": "tribulation, affliction",
+  "ipa": "ˈθliː.psis"
+ },
+ {
+  "index": 353,
+  "greek": "Ἰούδας",
+  "gloss": "Judas, Judah",
+  "ipa": "i.ˈuː.das"
+ },
+ {
+  "index": 354,
+  "greek": "Ἰουδαία",
+  "gloss": "Judea",
+  "ipa": "i.uː.ˈdai.a"
+ },
+ {
+  "index": 355,
+  "greek": "κατοικέω",
+  "gloss": "I dwell, inhabit",
+  "ipa": "ka.toi.ˈke.oː"
+ },
+ {
+  "index": 356,
+  "greek": "ἐπιγινώσκω",
+  "gloss": "I recognise, know fully",
+  "ipa": "e.pi.ɡi.ˈnoː.skoː"
+ },
+ {
+  "index": 357,
+  "greek": "δεύτερος",
+  "gloss": "second",
+  "ipa": "ˈdeu.te.ros"
+ },
+ {
+  "index": 358,
+  "greek": "γενεά",
+  "gloss": "generation",
+  "ipa": "ɡe.ne.ˈa"
+ },
+ {
+  "index": 359,
+  "greek": "Ἡρῴδης",
+  "gloss": "Herod",
+  "ipa": "heː.ˈroː.deːs"
+ },
+ {
+  "index": 360,
+  "greek": "σεαυτοῦ",
+  "gloss": "yourself (reflexive)",
+  "ipa": "se.au.ˈtuː"
+ },
+ {
+  "index": 361,
+  "greek": "θεραπεύω",
+  "gloss": "I heal",
+  "ipa": "θe.ra.ˈpeu.oː"
+ },
+ {
+  "index": 362,
+  "greek": "θαυμάζω",
+  "gloss": "I marvel, am amazed",
+  "ipa": "θau.ˈma.dzoː"
+ },
+ {
+  "index": 363,
+  "greek": "φωνέω",
+  "gloss": "I call, cry out; (of a rooster) crow",
+  "ipa": "foː.ˈne.oː"
+ },
+ {
+  "index": 364,
+  "greek": "δέω",
+  "gloss": "I bind, tie",
+  "ipa": "ˈde.oː"
+ },
+ {
+  "index": 365,
+  "greek": "μέρος",
+  "gloss": "part, share",
+  "ipa": "ˈme.ros"
+ },
+ {
+  "index": 366,
+  "greek": "ἐγγίζω",
+  "gloss": "I draw near",
+  "ipa": "eŋ.ˈɡi.dzoː"
+ },
+ {
+  "index": 367,
+  "greek": "Ἰάκωβος",
+  "gloss": "James",
+  "ipa": "i.ˈa.koː.bos"
+ },
+ {
+  "index": 368,
+  "greek": "λύω",
+  "gloss": "I loose, untie, destroy — the paradigm verb",
+  "ipa": "ˈly.oː"
+ },
+ {
+  "index": 369,
+  "greek": "καινός",
+  "gloss": "new, fresh, unused",
+  "ipa": "kai.ˈnos"
+ },
+ {
+  "index": 370,
+  "greek": "χωρίς",
+  "gloss": "apart from, without (+gen)",
+  "ipa": "xoː.ˈris"
+ },
+ {
+  "index": 371,
+  "greek": "πάσχω",
+  "gloss": "I suffer",
+  "ipa": "ˈpas.xoː"
+ },
+ {
+  "index": 372,
+  "greek": "ἁμαρτάνω",
+  "gloss": "I sin",
+  "ipa": "ha.mar.ˈta.noː"
+ },
+ {
+  "index": 373,
+  "greek": "ἀνάστασις",
+  "gloss": "resurrection",
+  "ipa": "a.ˈna.sta.sis"
+ },
+ {
+  "index": 374,
+  "greek": "ἄξιος",
+  "gloss": "worthy",
+  "ipa": "ˈa.ksi.os"
+ },
+ {
+  "index": 375,
+  "greek": "σήμερον",
+  "gloss": "today",
+  "ipa": "ˈseː.me.ron"
+ },
+ {
+  "index": 376,
+  "greek": "ὀλίγος",
+  "gloss": "few, little",
+  "ipa": "o.ˈli.ɡos"
+ },
+ {
+  "index": 377,
+  "greek": "ἐργάζομαι",
+  "gloss": "I work",
+  "ipa": "er.ˈɡa.dzo.mai"
+ },
+ {
+  "index": 378,
+  "greek": "διέρχομαι",
+  "gloss": "I go through, pass through",
+  "ipa": "di.ˈer.xo.mai"
+ },
+ {
+  "index": 379,
+  "greek": "εὐλογέω",
+  "gloss": "I bless",
+  "ipa": "eu.lo.ˈɡe.oː"
+ },
+ {
+  "index": 380,
+  "greek": "πάντοτε",
+  "gloss": "always",
+  "ipa": "ˈpan.to.te"
+ },
+ {
+  "index": 381,
+  "greek": "παρίστημι",
+  "gloss": "I present; stand by",
+  "ipa": "pa.ˈri.steː.mi"
+ },
+ {
+  "index": 382,
+  "greek": "τιμή",
+  "gloss": "honour, price",
+  "ipa": "ti.ˈmeː"
+ },
+ {
+  "index": 383,
+  "greek": "κλαίω",
+  "gloss": "I weep",
+  "ipa": "ˈklai.oː"
+ },
+ {
+  "index": 384,
+  "greek": "ἑτοιμάζω",
+  "gloss": "I prepare",
+  "ipa": "he.toi.ˈma.dzoː"
+ },
+ {
+  "index": 385,
+  "greek": "ἱκανός",
+  "gloss": "sufficient, able, considerable",
+  "ipa": "hi.ka.ˈnos"
+ },
+ {
+  "index": 386,
+  "greek": "μισέω",
+  "gloss": "I hate",
+  "ipa": "mi.ˈse.oː"
+ },
+ {
+  "index": 387,
+  "greek": "οἰκοδομέω",
+  "gloss": "I build, edify",
+  "ipa": "oi.ko.do.ˈme.oː"
+ },
+ {
+  "index": 388,
+  "greek": "μνημεῖον",
+  "gloss": "tomb, monument",
+  "ipa": "mneː.ˈmei.on"
+ },
+ {
+  "index": 389,
+  "greek": "τέλος",
+  "gloss": "end, goal",
+  "ipa": "ˈte.los"
+ },
+ {
+  "index": 390,
+  "greek": "τέσσαρες",
+  "gloss": "four",
+  "ipa": "ˈtes.sa.res"
+ },
+ {
+  "index": 391,
+  "greek": "λογίζομαι",
+  "gloss": "I reckon, count, consider",
+  "ipa": "lo.ˈɡi.dzo.mai"
+ },
+ {
+  "index": 392,
+  "greek": "περισσεύω",
+  "gloss": "I abound, overflow",
+  "ipa": "pe.ris.ˈseu.oː"
+ },
+ {
+  "index": 393,
+  "greek": "θύρα",
+  "gloss": "door",
+  "ipa": "ˈθy.ra"
+ },
+ {
+  "index": 394,
+  "greek": "πρόβατον",
+  "gloss": "sheep",
+  "ipa": "ˈpro.ba.ton"
+ },
+ {
+  "index": 395,
+  "greek": "ἅπτω",
+  "gloss": "I kindle; (middle) I touch (+gen)",
+  "ipa": "ˈhap.toː"
+ },
+ {
+  "index": 396,
+  "greek": "ἐπιτίθημι",
+  "gloss": "I lay upon, place on",
+  "ipa": "e.pi.ˈti.θeː.mi"
+ },
+ {
+  "index": 397,
+  "greek": "πλανάω",
+  "gloss": "I lead astray, deceive",
+  "ipa": "pla.ˈna.oː"
+ },
+ {
+  "index": 398,
+  "greek": "πέντε",
+  "gloss": "five",
+  "ipa": "ˈpen.te"
+ },
+ {
+  "index": 399,
+  "greek": "εὐχαριστέω",
+  "gloss": "I give thanks",
+  "ipa": "eu.xa.ri.ˈste.oː"
+ },
+ {
+  "index": 400,
+  "greek": "ἐπιθυμία",
+  "gloss": "desire, lust",
+  "ipa": "e.pi.θy.ˈmi.a"
+ },
+ {
+  "index": 401,
+  "greek": "ὑποτάσσω",
+  "gloss": "I subject, subordinate",
+  "ipa": "hy.po.ˈtas.soː"
+ },
+ {
+  "index": 402,
+  "greek": "πράσσω",
+  "gloss": "I do, practise",
+  "ipa": "ˈpras.soː"
+ },
+ {
+  "index": 403,
+  "greek": "βούλομαι",
+  "gloss": "I wish, want",
+  "ipa": "ˈbuː.lo.mai"
+ },
+ {
+  "index": 404,
+  "greek": "πειράζω",
+  "gloss": "I test, tempt",
+  "ipa": "pei.ˈra.dzoː"
+ },
+ {
+  "index": 405,
+  "greek": "διακονέω",
+  "gloss": "I serve, minister to (+dat)",
+  "ipa": "di.a.ko.ˈne.oː"
+ },
+ {
+  "index": 406,
+  "greek": "ἐμαυτοῦ",
+  "gloss": "myself (reflexive)",
+  "ipa": "e.mau.ˈtuː"
+ },
+ {
+  "index": 407,
+  "greek": "ἄρχων",
+  "gloss": "ruler, official",
+  "ipa": "ˈar.xoːn"
+ },
+ {
+  "index": 408,
+  "greek": "παραγίνομαι",
+  "gloss": "I arrive, come",
+  "ipa": "pa.ra.ˈɡi.no.mai"
+ },
+ {
+  "index": 409,
+  "greek": "ὀργή",
+  "gloss": "wrath, anger",
+  "ipa": "or.ˈɡeː"
+ },
+ {
+  "index": 410,
+  "greek": "ἄρτι",
+  "gloss": "now, just now",
+  "ipa": "ˈar.ti"
+ },
+ {
+  "index": 411,
+  "greek": "Σατανᾶς",
+  "gloss": "Satan, the adversary",
+  "ipa": "sa.ta.ˈnaːs"
+ },
+ {
+  "index": 412,
+  "greek": "ἀγρός",
+  "gloss": "field, countryside",
+  "ipa": "a.ˈɡros"
+ },
+ {
+  "index": 413,
+  "greek": "Φίλιππος",
+  "gloss": "Philip",
+  "ipa": "ˈfi.lip.pos"
+ },
+ {
+  "index": 414,
+  "greek": "ἐπιστρέφω",
+  "gloss": "I turn, return",
+  "ipa": "e.pis.ˈtre.foː"
+ },
+ {
+  "index": 415,
+  "greek": "οὖς",
+  "gloss": "ear",
+  "ipa": "ˈuːs"
+ },
+ {
+  "index": 416,
+  "greek": "καλῶς",
+  "gloss": "well, rightly",
+  "ipa": "ka.ˈloːs"
+ },
+ {
+  "index": 417,
+  "greek": "προσευχή",
+  "gloss": "prayer",
+  "ipa": "pro.seu.ˈxeː"
+ },
+ {
+  "index": 418,
+  "greek": "περιτομή",
+  "gloss": "circumcision",
+  "ipa": "pe.ri.to.ˈmeː"
+ },
+ {
+  "index": 419,
+  "greek": "καυχάομαι",
+  "gloss": "I boast",
+  "ipa": "kau.ˈxa.o.mai"
+ },
+ {
+  "index": 420,
+  "greek": "Ἰωσήφ",
+  "gloss": "Joseph (indeclinable)",
+  "ipa": "i.oː.ˈseːf"
+ },
+ {
+  "index": 421,
+  "greek": "ὀπίσω",
+  "gloss": "behind, after (+gen)",
+  "ipa": "o.ˈpi.soː"
+ },
+ {
+  "index": 422,
+  "greek": "διάβολος",
+  "gloss": "the devil, slanderer",
+  "ipa": "di.ˈa.bo.los"
+ },
+ {
+  "index": 423,
+  "greek": "εὐθέως",
+  "gloss": "immediately",
+  "ipa": "eu.ˈθe.oːs"
+ },
+ {
+  "index": 424,
+  "greek": "μάρτυς",
+  "gloss": "witness",
+  "ipa": "ˈmar.tys"
+ },
+ {
+  "index": 425,
+  "greek": "ὀφείλω",
+  "gloss": "I owe, ought",
+  "ipa": "o.ˈfei.loː"
+ },
+ {
+  "index": 426,
+  "greek": "ὑποστρέφω",
+  "gloss": "I return",
+  "ipa": "hy.pos.ˈtre.foː"
+ },
+ {
+  "index": 427,
+  "greek": "μετανοέω",
+  "gloss": "I repent",
+  "ipa": "me.ta.no.ˈe.oː"
+ },
+ {
+  "index": 428,
+  "greek": "πτωχός",
+  "gloss": "poor",
+  "ipa": "ptoː.ˈxos"
+ },
+ {
+  "index": 429,
+  "greek": "μέλος",
+  "gloss": "member, limb, body part",
+  "ipa": "ˈme.los"
+ },
+ {
+  "index": 430,
+  "greek": "μήτε",
+  "gloss": "and not; μήτε…μήτε neither…nor",
+  "ipa": "ˈmeː.te"
+ },
+ {
+  "index": 431,
+  "greek": "βλασφημέω",
+  "gloss": "I blaspheme, slander",
+  "ipa": "blas.feː.ˈme.oː"
+ },
+ {
+  "index": 432,
+  "greek": "οἶνος",
+  "gloss": "wine",
+  "ipa": "ˈoi.nos"
+ },
+ {
+  "index": 433,
+  "greek": "ἀσθενέω",
+  "gloss": "I am weak, sick",
+  "ipa": "as.θe.ˈne.oː"
+ },
+ {
+  "index": 434,
+  "greek": "βιβλίον",
+  "gloss": "book, scroll",
+  "ipa": "bi.ˈbli.on"
+ },
+ {
+  "index": 435,
+  "greek": "διακονία",
+  "gloss": "service, ministry",
+  "ipa": "di.a.ko.ˈni.a"
+ },
+ {
+  "index": 436,
+  "greek": "ἐκπορεύομαι",
+  "gloss": "I go out",
+  "ipa": "ek.po.ˈreu.o.mai"
+ },
+ {
+  "index": 437,
+  "greek": "δείκνυμι",
+  "gloss": "I show",
+  "ipa": "ˈdeik.ny.mi"
+ },
+ {
+  "index": 438,
+  "greek": "ναί",
+  "gloss": "yes, indeed",
+  "ipa": "ˈnai"
+ },
+ {
+  "index": 439,
+  "greek": "ἀρνέομαι",
+  "gloss": "I deny",
+  "ipa": "ar.ˈne.o.mai"
+ },
+ {
+  "index": 440,
+  "greek": "ποῖος",
+  "gloss": "what sort of? which?",
+  "ipa": "ˈpoi.os"
+ },
+ {
+  "index": 441,
+  "greek": "ἐχθρός",
+  "gloss": "hostile; (noun) enemy",
+  "ipa": "ex.ˈθros"
+ },
+ {
+  "index": 442,
+  "greek": "ἥλιος",
+  "gloss": "sun",
+  "ipa": "ˈheː.li.os"
+ },
+ {
+  "index": 443,
+  "greek": "ἅπας",
+  "gloss": "all, the whole (intensive πᾶς)",
+  "ipa": "ˈha.pas"
+ },
+ {
+  "index": 444,
+  "greek": "ἀκάθαρτος",
+  "gloss": "unclean",
+  "ipa": "a.ˈka.θar.tos"
+ },
+ {
+  "index": 445,
+  "greek": "παραγγέλλω",
+  "gloss": "I command, order",
+  "ipa": "pa.raŋ.ˈɡel.loː"
+ },
+ {
+  "index": 446,
+  "greek": "ἀναγινώσκω",
+  "gloss": "I read (aloud)",
+  "ipa": "a.na.ɡi.ˈnoː.skoː"
+ },
+ {
+  "index": 447,
+  "greek": "δυνατός",
+  "gloss": "powerful, possible",
+  "ipa": "dy.na.ˈtos"
+ },
+ {
+  "index": 448,
+  "greek": "ὑπομονή",
+  "gloss": "endurance, steadfastness",
+  "ipa": "hy.po.mo.ˈneː"
+ },
+ {
+  "index": 449,
+  "greek": "φαίνω",
+  "gloss": "I shine; (middle/passive) appear",
+  "ipa": "ˈfai.noː"
+ },
+ {
+  "index": 450,
+  "greek": "ἄνεμος",
+  "gloss": "wind",
+  "ipa": "ˈa.ne.mos"
+ },
+ {
+  "index": 451,
+  "greek": "καθαρίζω",
+  "gloss": "I cleanse, purify",
+  "ipa": "ka.θa.ˈri.dzoː"
+ },
+ {
+  "index": 452,
+  "greek": "ἱερεύς",
+  "gloss": "priest",
+  "ipa": "hi.e.ˈreus"
+ },
+ {
+  "index": 453,
+  "greek": "ποτήριον",
+  "gloss": "cup",
+  "ipa": "po.ˈteː.ri.on"
+ },
+ {
+  "index": 454,
+  "greek": "πλήν",
+  "gloss": "but, except, nevertheless",
+  "ipa": "ˈpleːn"
+ },
+ {
+  "index": 455,
+  "greek": "ἔξεστι(ν)",
+  "gloss": "it is lawful, permitted",
+  "ipa": "ˈe.kse.stin"
+ },
+ {
+  "index": 456,
+  "greek": "ἐλπίζω",
+  "gloss": "I hope",
+  "ipa": "el.ˈpi.dzoː"
+ },
+ {
+  "index": 457,
+  "greek": "φυλάσσω",
+  "gloss": "I guard, keep",
+  "ipa": "fy.ˈlas.soː"
+ },
+ {
+  "index": 458,
+  "greek": "φυλή",
+  "gloss": "tribe",
+  "ipa": "fy.ˈleː"
+ },
+ {
+  "index": 459,
+  "greek": "ὁμοίως",
+  "gloss": "likewise",
+  "ipa": "ho.ˈmoi.oːs"
+ },
+ {
+  "index": 460,
+  "greek": "πλῆθος",
+  "gloss": "multitude, crowd",
+  "ipa": "ˈpleː.θos"
+ },
+ {
+  "index": 461,
+  "greek": "παρρησία",
+  "gloss": "boldness, openness",
+  "ipa": "par.reː.ˈsi.a"
+ },
+ {
+  "index": 462,
+  "greek": "συνέρχομαι",
+  "gloss": "I come together, assemble",
+  "ipa": "sy.ˈner.xo.mai"
+ },
+ {
+  "index": 463,
+  "greek": "σκανδαλίζω",
+  "gloss": "I cause to stumble",
+  "ipa": "skan.da.ˈli.dzoː"
+ },
+ {
+  "index": 464,
+  "greek": "διδαχή",
+  "gloss": "teaching, doctrine",
+  "ipa": "di.da.ˈxeː"
+ },
+ {
+  "index": 465,
+  "greek": "ἐπικαλέω",
+  "gloss": "I call upon, name",
+  "ipa": "e.pi.ka.ˈle.oː"
+ },
+ {
+  "index": 466,
+  "greek": "ἀγοράζω",
+  "gloss": "I buy",
+  "ipa": "a.ɡo.ˈra.dzoː"
+ },
+ {
+  "index": 467,
+  "greek": "ἐγγύς",
+  "gloss": "near",
+  "ipa": "eŋ.ˈɡys"
+ },
+ {
+  "index": 468,
+  "greek": "ἴδε",
+  "gloss": "look! behold!",
+  "ipa": "ˈi.de"
+ },
+ {
+  "index": 469,
+  "greek": "συνείδησις",
+  "gloss": "conscience",
+  "ipa": "sy.ˈnei.deː.sis"
+ },
+ {
+  "index": 470,
+  "greek": "διάκονος",
+  "gloss": "servant, minister, deacon",
+  "ipa": "di.ˈa.ko.nos"
+ },
+ {
+  "index": 471,
+  "greek": "δῶρον",
+  "gloss": "gift",
+  "ipa": "ˈdoː.ron"
+ },
+ {
+  "index": 472,
+  "greek": "ἐπιστολή",
+  "gloss": "letter",
+  "ipa": "e.pi.sto.ˈleː"
+ },
+ {
+  "index": 473,
+  "greek": "στρατιώτης",
+  "gloss": "soldier",
+  "ipa": "stra.ti.ˈoː.teːs"
+ },
+ {
+  "index": 474,
+  "greek": "τελώνης",
+  "gloss": "tax collector",
+  "ipa": "te.ˈloː.neːs"
+ },
+ {
+  "index": 475,
+  "greek": "ὑποκριτής",
+  "gloss": "hypocrite, pretender",
+  "ipa": "hy.po.kri.ˈteːs"
+ },
+ {
+  "index": 476,
+  "greek": "Μεσσίας",
+  "gloss": "Messiah",
+  "ipa": "mes.ˈsi.as"
+ },
+ {
+  "index": 477,
+  "greek": "νεανίας",
+  "gloss": "young man",
+  "ipa": "ne.a.ˈni.as"
+ },
+ {
+  "index": 478,
+  "greek": "ἀμνός",
+  "gloss": "lamb",
+  "ipa": "a.ˈmnos"
+ },
+ {
+  "index": 479,
+  "greek": "φίλος",
+  "gloss": "friend",
+  "ipa": "ˈfi.los"
+ },
+ {
+  "index": 480,
+  "greek": "μυστήριον",
+  "gloss": "mystery, secret",
+  "ipa": "my.ˈsteː.ri.on"
+ },
+ {
+  "index": 481,
+  "greek": "γένος",
+  "gloss": "race, kind, family",
+  "ipa": "ˈɡe.nos"
+ },
+ {
+  "index": 482,
+  "greek": "γνῶσις",
+  "gloss": "knowledge",
+  "ipa": "ˈɡnoː.sis"
+ },
+ {
+  "index": 483,
+  "greek": "κλῆσις",
+  "gloss": "calling, invitation",
+  "ipa": "ˈkleː.sis"
+ },
+ {
+  "index": 484,
+  "greek": "παράκλησις",
+  "gloss": "encouragement, comfort",
+  "ipa": "pa.ˈra.kleː.sis"
+ },
+ {
+  "index": 485,
+  "greek": "θυγάτηρ",
+  "gloss": "daughter",
+  "ipa": "θy.ˈɡa.teːr"
+ },
+ {
+  "index": 486,
+  "greek": "σοφός",
+  "gloss": "wise",
+  "ipa": "so.ˈfos"
+ },
+ {
+  "index": 487,
+  "greek": "ἰσχυρός",
+  "gloss": "strong, mighty",
+  "ipa": "is.xy.ˈros"
+ },
+ {
+  "index": 488,
+  "greek": "νέος",
+  "gloss": "new, young",
+  "ipa": "ˈne.os"
+ },
+ {
+  "index": 489,
+  "greek": "ἀδύνατος",
+  "gloss": "impossible, powerless",
+  "ipa": "a.ˈdy.na.tos"
+ },
+ {
+  "index": 490,
+  "greek": "ἄπιστος",
+  "gloss": "unbelieving, faithless",
+  "ipa": "ˈa.pi.stos"
+ },
+ {
+  "index": 491,
+  "greek": "ἡμέτερος",
+  "gloss": "our",
+  "ipa": "heː.ˈme.te.ros"
+ },
+ {
+  "index": 492,
+  "greek": "σός",
+  "gloss": "your (singular)",
+  "ipa": "ˈsos"
+ },
+ {
+  "index": 493,
+  "greek": "ὑμέτερος",
+  "gloss": "your (plural)",
+  "ipa": "hy.ˈme.te.ros"
+ },
+ {
+  "index": 494,
+  "greek": "λείπω",
+  "gloss": "I lack, fall short; I leave",
+  "ipa": "ˈlei.poː"
+ },
+ {
+  "index": 495,
+  "greek": "μανθάνω",
+  "gloss": "I learn",
+  "ipa": "man.ˈθa.noː"
+ },
+ {
+  "index": 496,
+  "greek": "φεύγω",
+  "gloss": "I flee",
+  "ipa": "ˈfeu.ɡoː"
+ },
+ {
+  "index": 497,
+  "greek": "ψεύδομαι",
+  "gloss": "I lie, I speak falsely",
+  "ipa": "ˈpseu.do.mai"
+ },
+ {
+  "index": 498,
+  "greek": "ἐπιτιμάω",
+  "gloss": "I rebuke, I warn",
+  "ipa": "e.pi.ti.ˈma.oː"
+ },
+ {
+  "index": 499,
+  "greek": "μεριμνάω",
+  "gloss": "I worry, I am anxious",
+  "ipa": "me.ri.ˈmna.oː"
+ },
+ {
+  "index": 500,
+  "greek": "νικάω",
+  "gloss": "I conquer, I overcome",
+  "ipa": "ni.ˈka.oː"
+ },
+ {
+  "index": 501,
+  "greek": "τιμάω",
+  "gloss": "I honour",
+  "ipa": "ti.ˈma.oː"
+ },
+ {
+  "index": 502,
+  "greek": "φιλέω",
+  "gloss": "I love, I like",
+  "ipa": "fi.ˈle.oː"
+ },
+ {
+  "index": 503,
+  "greek": "δηλόω",
+  "gloss": "I show, I make clear",
+  "ipa": "deː.ˈlo.oː"
+ },
+ {
+  "index": 504,
+  "greek": "τελειόω",
+  "gloss": "I complete, I perfect",
+  "ipa": "te.lei.ˈo.oː"
+ },
+ {
+  "index": 505,
+  "greek": "ἀγγέλλω",
+  "gloss": "I announce",
+  "ipa": "aŋ.ˈɡel.loː"
+ },
+ {
+  "index": 506,
+  "greek": "ἀνά",
+  "gloss": "up (+acc); in the NT distributive: each, apiece",
+  "ipa": "a.ˈna"
+ },
+ {
+  "index": 507,
+  "greek": "ἀντί",
+  "gloss": "instead of, for (+gen)",
+  "ipa": "an.ˈti"
+ },
+ {
+  "index": 508,
+  "greek": "ἀξίως",
+  "gloss": "worthily",
+  "ipa": "a.ˈksi.oːs"
+ },
+ {
+  "index": 509,
+  "greek": "πότε",
+  "gloss": "when?",
+  "ipa": "ˈpo.te"
+ },
+ {
+  "index": 510,
+  "greek": "πρίν",
+  "gloss": "before",
+  "ipa": "ˈprin"
+ }
+]
