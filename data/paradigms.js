@@ -85,7 +85,7 @@ html:`<table><caption>ἐγώ and σύ</caption>
 <tr><th>Gen</th><td class="g">ἐμοῦ (μου)</td><td class="g">ἡμῶν</td><td class="g">σοῦ (σου)</td><td class="g">ὑμῶν</td></tr>
 <tr><th>Dat</th><td class="g">ἐμοί (μοι)</td><td class="g">ἡμῖν</td><td class="g">σοί (σοι)</td><td class="g">ὑμῖν</td></tr>
 <tr><th>Acc</th><td class="g">ἐμέ (με)</td><td class="g">ἡμᾶς</td><td class="g">σέ (σε)</td><td class="g">ὑμᾶς</td></tr></table>
-<table><caption>αὐτός — he, she, it (declines like the article pattern)</caption>
+<table><caption>αὐτός — he, she, it (declines like ἀγαθός, but the neuter singular is αὐτό, without -ν)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">αὐτός / αὐτοί</td><td class="g">αὐτή / αὐταί</td><td class="g">αὐτό / αὐτά</td></tr>
 <tr><th>Gen</th><td class="g">αὐτοῦ / αὐτῶν</td><td class="g">αὐτῆς / αὐτῶν</td><td class="g">αὐτοῦ / αὐτῶν</td></tr>
@@ -131,7 +131,7 @@ html:`<table><caption>Present, imperfect, future</caption>
 <p class="muted" style="font-size:.83rem">Subjunctive: ὦ, ᾖς, ᾖ, ὦμεν, ἦτε, ὦσι(ν). Infinitive: εἶναι. Participle: ὤν, οὖσα, ὄν.</p>`},
 
 {t:"λύω — active indicative",tags:"luo present imperfect future aorist perfect pluperfect",
-html:`<table><caption>All active indicative tenses</caption>
+html:`<table><caption>The five common active indicative tenses</caption>
 <tr><th></th><th>Pres</th><th>Impf</th><th>Fut</th><th>Aor</th><th>Perf</th></tr>
 <tr><th>1sg</th><td class="g">λύω</td><td class="g">ἔλυον</td><td class="g">λύσω</td><td class="g">ἔλυσα</td><td class="g">λέλυκα</td></tr>
 <tr><th>2sg</th><td class="g">λύεις</td><td class="g">ἔλυες</td><td class="g">λύσεις</td><td class="g">ἔλυσας</td><td class="g">λέλυκας</td></tr>
@@ -238,7 +238,7 @@ html:`<p class="muted" style="font-size:.83rem">Six principal parts. Learn these
 <tr><th>ἀποστέλλω send</th><td class="g">ἀποστελῶ, ἀπέστειλα, ἀπέσταλκα, ἀπέσταλμαι, ἀπεστάλην</td></tr>
 <tr><th>σῴζω save</th><td class="g">σώσω, ἔσωσα, σέσωκα, σέσῳσμαι, ἐσώθην</td></tr>
 <tr><th>κρίνω judge</th><td class="g">κρινῶ, ἔκρινα, κέκρικα, κέκριμαι, ἐκρίθην</td></tr>
-<tr><th>μένω remain</th><td class="g">μενῶ, ἔμεινα, —, —, —</td></tr>
+<tr><th>μένω remain</th><td class="g">μενῶ, ἔμεινα, μεμένηκα, —, —</td></tr>
 <tr><th>πίνω drink</th><td class="g">πίομαι, ἔπιον, πέπωκα, —, —</td></tr>
 <tr><th>πίπτω fall</th><td class="g">πεσοῦμαι, ἔπεσον, πέπτωκα, —, —</td></tr>
 <tr><th>φέρω carry</th><td class="g">οἴσω, ἤνεγκα, —, —, ἠνέχθην</td></tr>

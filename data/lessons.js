@@ -141,6 +141,7 @@ body:`<p>Greek nouns fall into three declensions — patterns of endings. The se
 <tr><th>Gen</th><td class="g">λόγου</td><td class="g">λόγων</td></tr>
 <tr><th>Dat</th><td class="g">λόγῳ</td><td class="g">λόγοις</td></tr>
 <tr><th>Acc</th><td class="g">λόγον</td><td class="g">λόγους</td></tr></table>
+<p>One rule to carry with the neuter: a neuter plural subject regularly takes a <b>singular</b> verb. <span class="gk">πάντα δι’ αὐτοῦ ἐγένετο</span> — "all things came into being through him" (John 1:3), with a singular <span class="gk">ἐγένετο</span>.</p>
 <table><caption>ἔργον, -ου, τό — work (neuter)</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">ἔργον</td><td class="g">ἔργα</td></tr>
@@ -394,7 +395,7 @@ v:[23,28,65,104,243,194,294,299,306,211,377,391,403,436,497],
 vids:[{t:"Lecture 12: Present Middle and Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (14:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-12/"}],
 quiz:[
 {q:"ἔρχομαι is middle in form. What does it mean?",o:["I am come (passive)","I come (active meaning)","I come for myself","I am being sent"],a:1,w:"A deponent, or middle-only, verb. Middle form, active meaning. Forcing a passive sense onto it produces nonsense."},
-{q:"In the present tense, middle and passive forms are:",o:["Always different","Identical — context decides","Distinguished by the augment","Distinguished by accent"],a:1,w:"Identical in the present and imperfect. The aorist and future do distinguish them."},
+{q:"In the present tense, middle and passive forms are:",o:["Always different","Identical — context decides","Distinguished by the augment","Distinguished by accent"],a:1,w:"Identical in the present, imperfect, perfect and pluperfect. Only the aorist and the future distinguish them."},
 {q:"The middle voice indicates the subject:",o:["Is acted upon","Acts with special reference to itself","Acts on a plural object","Is in the past"],a:1,w:"Roughly — the subject has a particular stake or involvement in the action. English needs a paraphrase to catch it."}]},
 
 {id:13,t:"Perfect middle/passive and future middle",s:"Endings straight onto the stem",
@@ -545,7 +546,7 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 <tr><th>Acc</th><td class="g">πάντα</td><td class="g">πᾶσαν</td><td class="g">πᾶν</td></tr></table>
 <p>Plural: <span class="gk">πάντες, πᾶσαι, πάντα</span>; genitive <span class="gk">πάντων, πασῶν, πάντων</span>; dative <span class="gk">πᾶσι(ν), πάσαις, πᾶσι(ν)</span>. The stem παντ- meets σ the way the last lesson described, only more so: the whole ντ cluster goes, and the α lengthens to make up for it — παντ- + σι gives <span class="gk">πᾶσι(ν)</span>, not πανσι.</p>
 <h3>How πᾶς reads</h3>
-<p>Without the article in the <b>singular</b>: "every" (<span class="gk">πᾶν δένδρον</span>, every tree). Without the article in the <b>plural</b> it is "all" (<span class="gk">πάντες ἥμαρτον</span>, all sinned). With the article: "all/the whole" (<span class="gk">πᾶσα ἡ πόλις</span>, all the city; <span class="gk">πᾶσα γραφή</span>, 2 Tim 3:16 — famously articleless: "every scripture" or "all scripture"? The grammar allows both; context and usage must decide. Now you can see why the commentaries argue).</p>
+<p>Without the article in the <b>singular</b>: "every" (<span class="gk">πᾶν δένδρον</span>, every tree). Without the article in the <b>plural</b> it is "all" (<span class="gk">πάντες ἥμαρτον</span>, all sinned). With the article, the position decides: predicate <span class="gk">πᾶσα ἡ πόλις</span> is "all the city", attributive <span class="gk">ἡ πᾶσα πόλις</span> is "the whole city" (<span class="gk">πᾶσα ἡ πόλις</span>, all the city; <span class="gk">πᾶσα γραφή</span>, 2 Tim 3:16 — famously articleless: "every scripture" or "all scripture"? The grammar allows both; context and usage must decide. Now you can see why the commentaries argue).</p>
 <h3>One — and no one</h3>
 <table><caption>εἷς, μία, ἕν — one</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
