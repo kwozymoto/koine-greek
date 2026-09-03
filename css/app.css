@@ -216,6 +216,11 @@ button.vid{width:100%;text-align:left;font:inherit}
    horizontal spacing exactly as it was. */
 .passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:5px 2px;margin:0 -1px}
 .passage w.tapped{background:rgba(212,165,55,.2);border-radius:3px}
+/* the dagger on a gloss that came from a shipped lexicon rather than from
+   the course's own 509. Quiet, but there — a terser, older wording is worth
+   having and worth knowing about. */
+.gloss .src{color:var(--gold);opacity:.75;margin-left:5px;font-size:.8em;cursor:help}
+
 .gloss{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 12px);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
 .gloss .w{font-family:var(--gk)}
 .gloss .d{font-size:.86rem;color:var(--muted);margin-top:3px}

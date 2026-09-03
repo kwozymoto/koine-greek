@@ -38,3 +38,8 @@ AUDIT.md
 # AWS access key downloads. Never in the repo.
 *accessKeys*.csv
 *credentials*.csv
+
+# Source lexicons, cached by tools/build_lexicon.py. Someone else's data, 5MB,
+# and re-fetchable — data/lexicon.js is the thing that ships. Delete this
+# directory to pull them again.
+tools/_sources/

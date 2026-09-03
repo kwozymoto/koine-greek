@@ -4,7 +4,7 @@
     python tools/check_all.py
 
 The app teaches, so the thing that matters about it is whether what it says
-is true. Six checkers put different parts of it to the SBLGNT bundled in
+is true. Seven checkers put different parts of it to the SBLGNT bundled in
 data/gnt/, and this runs the lot:
 
     check_vocab      the 511 lexical entries, their example verses, the
@@ -19,6 +19,10 @@ data/gnt/, and this runs the lot:
     check_lessons    the spelling of every Greek form in the lesson bodies
                      and quizzes, and that each question is asked after the
                      section that teaches it
+    check_lexicon    the 4,832 glosses shipped for words the course does not
+                     itself teach: that each is a real lemma, that none
+                     overrides one of the deck's own, and that the one change
+                     made to the source data matches its own changelog
     check_links      every Watch row: outside pages must still resolve, and
                      an embedded video must still exist and still be the one
                      the row names. The only checker that needs a network —
@@ -37,7 +41,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_readings",
-          "check_lessons", "check_links"]
+          "check_lessons", "check_lexicon", "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
 # straight through to it and leaves the other five untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}

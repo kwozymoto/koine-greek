@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v39';
+const VERSION = 'v40';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -89,6 +89,7 @@ const SHELL = [
   'data/gnt/manifest.json',
   'data/offline.json',
   'data/paradigms.js',
+  'data/lexicon.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',

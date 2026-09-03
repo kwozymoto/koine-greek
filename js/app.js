@@ -1640,10 +1640,19 @@ function renderHelp(){
       <tr><th>A missed day</th><td>One rest day a week is allowed; the streak survives it and says so.</td></tr>
       <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Progress.</td></tr>
       <tr><th>The letters</th><td>Today leads with them until each one has been named correctly ${ALPHA_SOLID} times running, then that row retires and Progress says the alphabet has settled. It comes back if you start missing them.</td></tr>
+      <tr><th>Word meanings</th><td>The ${LEARN_ORDER.length} words this course teaches carry glosses written and checked here. Tap anything else in Read and you still get a meaning — from Tyndale House's brief lexicon, which carries Abbott-Smith's <i>Manual Greek Lexicon</i>, and Dodson's where that has nothing. Those are marked with a <span style="color:var(--gold)">†</span>: they are terser and older, and are not this course's own wording.</td></tr>
       <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the videos need the internet; the songs play inside the app, the lectures open in a browser.</td></tr>
       <tr><th>Two devices</th><td>Progress → Sync. Invent a phrase, enter it on both. Progress merges; the phrase never leaves your device.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
     </table>
+
+    <h2>Where the words come from</h2>
+    <p class="muted" style="font-size:.84rem">The Greek text is the SBL Greek New Testament with MorphGNT's
+    parsing. Glosses for words outside the course come from
+    <b>TBESG</b> — <i>Data created by www.STEPBible.org based on work at Tyndale House Cambridge</i>,
+    CC BY 4.0, carrying G. Abbott-Smith's <i>A Manual Greek Lexicon of the New Testament</i> (1922) —
+    and from Jeff Dodson's public-domain lexicon. Changes made to either are listed in
+    <span class="gk" style="font-family:var(--ui)">docs/lexicon-changes.md</span>.</p>
 
     <h2>If you have studied before</h2>
     <p class="muted" style="font-size:.87rem">Progress → <b>Studied Greek before?</b> marks chapters done and seeds the

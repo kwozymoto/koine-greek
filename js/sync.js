@@ -80,6 +80,30 @@ function mergeStates(local, remote) {
   const da = local.dayOfReviews || "", db = remote.dayOfReviews || "";
   if (da === db) out.reviewsToday = Math.max(local.reviewsToday || 0, remote.reviewsToday || 0);
   else if (db > da) { out.reviewsToday = remote.reviewsToday || 0; out.dayOfReviews = db; }
+
+  /* The alphabet: the best either device has managed for each letter. It is
+     a claim about you, not about a device, so settling delta on the phone
+     should retire it on the desktop too. Added late — mergeStates copies the
+     local object wholesale, so nothing was ever lost, but a change here
+     reached no other device until it was named. */
+  out.alpha = {};
+  for (const k of new Set([...Object.keys(local.alpha || {}),
+                           ...Object.keys(remote.alpha || {})]))
+    out.alpha[k] = Math.max(+(local.alpha || {})[k] || 0, +(remote.alpha || {})[k] || 0);
+
+  /* Where a part-way chapter stopped: whichever device read further. */
+  const la = local.lessonPart, lb = remote.lessonPart;
+  out.lessonPart = (la && lb)
+    ? (la.id !== lb.id ? (la.id > lb.id ? la : lb) : (la.part >= lb.part ? la : lb))
+    : (la || lb || null);
+
+  /* Today's ticks, but only if both devices mean the same day — a plan from
+     yesterday must not tick today's boxes. */
+  const pl = local.plan, pr = remote.plan;
+  out.plan = (pl && pr && pl.day === pr.day)
+    ? { day: pl.day, done: [...new Set([...(pl.done || []), ...(pr.done || [])])] }
+    : ([pl, pr].filter(Boolean).sort((x, y) => (x.day > y.day ? -1 : 1))[0] || null);
+
   // goal and gk stay local: they are per-device preferences.
   return out;
 }
@@ -101,8 +125,12 @@ async function syncPull() {
     const changedLocal  = JSON.stringify(merged) !== JSON.stringify(S);
     /* goal / gk / sfx are deliberately per-device, so they are not compared —
        including them would push on every single pull. */
+    /* Everything mergeStates merges has to be here too, or a change to it
+       alone is merged in but never pushed back out — which is what happened
+       to alpha, plan and lessonPart when they were added. */
     const sig = o => JSON.stringify([o.cards, o.gcards, o.xp, o.streak, o.best, o.last,
-                                     o.lessons, o.badges, o.suspended, o.restUsed, o.pin]);
+                                     o.lessons, o.badges, o.suspended, o.restUsed, o.pin,
+                                     o.alpha, o.plan, o.lessonPart]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

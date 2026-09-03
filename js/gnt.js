@@ -39,6 +39,30 @@ const GNT_POS   = {"N-":"noun","V-":"verb","A-":"adjective","D-":"adverb","C-":"
                    "P-":"preposition","RA":"article","RD":"demonstrative","RP":"pronoun",
                    "RR":"relative","RI":"interrogative/indefinite","X-":"particle","I-":"interjection"};
 
+/* What a word means, and who says so.
+
+   Three sources, in this order, and the order is the whole point:
+
+     1. the deck's own gloss, for the 509 words this course teaches. Written
+        and checked by hand against the corpus, and better than either
+        lexicon — "but, and, now" for δέ where the lexicon says "then".
+     2. anything you have typed yourself, which beats a shipped gloss for a
+        word you have actually studied.
+     3. data/lexicon.js — 4,832 glosses from Tyndale House's brief lexicon
+        (which carries Abbott-Smith) and Dodson's, for everything else.
+
+   The dagger marks the third case. A terser, older gloss is worth having and
+   worth knowing about; what it must not do is pass for the course's own. */
+function glossFor(lemma, deckGloss) {
+  if (deckGloss) return { text: deckGloss, from: "" };
+  const mine = (S.myGloss || {})[lemma];
+  if (mine) return { text: mine, from: "your own wording" };
+  const lex = (typeof LEX !== "undefined") && LEX[lemma];
+  return lex
+    ? { text: lex, from: "Tyndale House / Abbott-Smith — not this course's own gloss" }
+    : { text: "", from: "" };
+}
+
 function gntParse(pos, code) {
   // Eight characters, not seven: the last is degree. Without it μείζων
   // ("greater") rendered as plain "adjective · μέγας — great".
@@ -343,13 +367,15 @@ async function openGntChapter(abbr, ch) {
     document.querySelectorAll("#psg w").forEach(x => x.classList.remove("tapped"));
     e.target.classList.add("tapped");
     const w = verses[+e.target.dataset.v][1][+e.target.dataset.w];
-    const lemma = GNT.lemmas[w[1]], gloss = GNT.gloss[w[1]];
+    const lemma = GNT.lemmas[w[1]];
+    const g = glossFor(lemma, GNT.gloss[w[1]]);
     const parse = gntParse(GNT.pos[w[2]], w[3]);
     // A word you have just had to look up is exactly the one worth adding.
     const vi = vocIndexFor(lemma);
     document.getElementById("gloss").innerHTML =
       `<div class="w gk">${w[0]}</div>
-       <div class="d">${parse}${parse ? " · " : ""}<span class="gk">${lemma}</span>${gloss ? " — " + gloss : ""}</div>
+       <div class="d">${parse}${parse ? " · " : ""}<span class="gk">${lemma}</span>${g.text ? " — " + g.text : ""}${
+         g.from ? `<span class="src" title="${g.from}">†</span>` : ""}</div>
        ${vi >= 0 && !S.cards[vi]
          ? `<button class="mini" style="margin-top:7px" onclick="addToDeck(${vi},this)">+ add to my deck</button>` : ""}`;
   };
