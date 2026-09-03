@@ -100,16 +100,58 @@ def speak_polly(rowset, voice, lang, engine=ENGINE):
         io.open(os.path.join(STAGE, name), "wb").write(out["AudioStream"].read())
         print("   wrote audio/_staging/%s  %s" % (name, r["ipa"]))
 
+def batches(rowset, limit=4500):
+    """Split into documents small enough for the Polly console's input box."""
+    out, cur, n = [], [], 0
+    for r in rowset:
+        piece = len(ssml(r["ipa"], r["greek"])) + 28
+        if cur and n + piece > limit:
+            out.append(cur); cur, n = [], 0
+        cur.append(r); n += piece
+    if cur:
+        out.append(cur)
+    return out
+
+def write_batches(rowset):
+    """The console route, for when the API is blocked. Each batch is one
+       paste and one Download MP3; the 700ms gaps let the file be split back
+       into words afterwards, and split_batches checks it got exactly as many
+       as went in — which is what makes this safe. A split with no expected
+       count is how you silently attach the wrong clip to a word."""
+    os.makedirs(STAGE, exist_ok=True)
+    bs = batches(rowset)
+    man = []
+    for i, b in enumerate(bs, 1):
+        name = "batch%02d" % i
+        io.open(os.path.join(STAGE, name + ".ssml"), "w", encoding="utf-8",
+                newline="\n").write(document(b) + "\n")
+        man.append({"batch": name, "words": [
+            {"index": r["index"], "greek": r["greek"], "ipa": r["ipa"]} for r in b]})
+        print("   %s.ssml  %2d words  %s ... %s"
+              % (name, len(b), b[0]["greek"], b[-1]["greek"]))
+    io.open(os.path.join(STAGE, "batches.json"), "w", encoding="utf-8",
+            newline="\n").write(json.dumps(man, ensure_ascii=False, indent=1) + "\n")
+    print()
+    print("%d batches in audio/_staging/. For each one:" % len(bs))
+    print("  open the .ssml, select all, paste into the Polly console")
+    print("  (German / Daniel / Generative / SSML tab), press Download MP3,")
+    print("  and save it into audio/_staging as batch01.mp3, batch02.mp3 ...")
+    print("Then tell me, and I will split and check them.")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pilot", action="store_true")
     ap.add_argument("--all", action="store_true")
+    ap.add_argument("--batches", action="store_true")
     ap.add_argument("--speak", action="store_true")
     ap.add_argument("--voice", default="de", choices=sorted(VOICES))
     ap.add_argument("--engine", default=ENGINE)
     a = ap.parse_args()
 
     R = rows()
+    if a.batches:
+        write_batches(R)
+        return
     if a.all:
         sel = R
     else:
