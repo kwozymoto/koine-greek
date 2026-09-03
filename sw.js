@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v37';
+const VERSION = 'v38';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -40,6 +40,8 @@ const STALE = [
   'audio/vocab/140_ekklesia.mp3',
   'audio/vocab/218_naos.mp3',
   'audio/vocab/259_imon.mp3',
+  // v38: the last staccato clip
+  'audio/vocab/400_epithumia.mp3',  // ἐπιθυμία
   // v37: staccato and English-word cues, re-recorded
   'audio/vocab/006_ego.mp3',               // ἐγώ
   'audio/vocab/008_lego.mp3',              // λέγω
