@@ -78,8 +78,10 @@ def ssml(ipa, word):
     return '<phoneme alphabet="ipa" ph="%s">%s</phoneme>' % (ipa, word)
 
 def document(rowset, gap="700ms"):
-    """All of them in one <speak>, so the console needs a single paste."""
-    body = "\n".join("  " + ssml(r["ipa"], r["greek"]) + '<break time="%s"/>' % gap
+    """All of them in one <speak>, so the console needs a single paste.
+       No indent: the console counts every character towards its 3,000 limit,
+       markup included, so two spaces a line costs most of a word."""
+    body = "\n".join(ssml(r["ipa"], r["greek"]) + '<break time="%s"/>' % gap
                      for r in rowset)
     return "<speak>\n" + body + "\n</speak>"
 
@@ -100,11 +102,15 @@ def speak_polly(rowset, voice, lang, engine=ENGINE):
         io.open(os.path.join(STAGE, name), "wb").write(out["AudioStream"].read())
         print("   wrote audio/_staging/%s  %s" % (name, r["ipa"]))
 
-def batches(rowset, limit=4500):
-    """Split into documents small enough for the Polly console's input box."""
+def batches(rowset, limit=2800):
+    """Split into documents the console will synthesise directly.
+
+       Anything over 3,000 characters the console sends to an S3 bucket
+       instead of playing, and it counts the markup rather than just the
+       words. 2,800 leaves room for the <speak> wrapper and a margin."""
     out, cur, n = [], [], 0
     for r in rowset:
-        piece = len(ssml(r["ipa"], r["greek"])) + 28
+        piece = len(ssml(r["ipa"], r["greek"])) + 22
         if cur and n + piece > limit:
             out.append(cur); cur, n = [], 0
         cur.append(r); n += piece
