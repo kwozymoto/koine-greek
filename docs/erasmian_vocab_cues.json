@@ -5248,10 +5248,10 @@
     "pos": "noun",
     "tier": 4,
     "freq": 38,
-    "tts": "eh pee thoo mee ah",
+    "tts": "epithoo meeah",
     "source": "locked",
     "duration_s": 1.625,
-    "verdict": "re-recorded 2026-09-03 (Atlas): the spaced cue was 3.29s with a 325ms gap mid-word — the last staccato clip in the pack. Now 1.62s, largest gap 130ms. CUE STRING NOT YET RECORDED — the tts field still holds the old spaced form."
+    "verdict": "re-recorded 2026-09-03 (Atlas): the spaced 'eh pee thoo mee ah' ran 3.29s with a 325ms gap mid-word. Joined to two tokens — the partial join the guide calls for, not a full close-up — it is 1.62s with a largest gap of 130ms."
   },
   {
     "index": 401,
