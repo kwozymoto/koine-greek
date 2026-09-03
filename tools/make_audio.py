@@ -62,9 +62,18 @@ def rows():
         sys.exit("docs/erasmian_ipa.json is missing — run tools/build_ipa.py")
     return json.load(io.open(IPA, encoding="utf-8"))
 
-def ssml(ipa):
-    """Polly and Azure both take this; Google wants the same <phoneme>."""
-    return '<speak><phoneme alphabet="ipa" ph="%s"></phoneme></speak>' % ipa
+def ssml(ipa, word):
+    """One <phoneme> element, with the word INSIDE it. If `ph` is honoured the
+       content is ignored; if the engine rejects `ph` you hear the content
+       instead, which is exactly the diagnostic you want. An empty element is
+       undefined and can simply produce silence."""
+    return '<phoneme alphabet="ipa" ph="%s">%s</phoneme>' % (ipa, word)
+
+def document(rowset, gap="700ms"):
+    """All of them in one <speak>, so the console needs a single paste."""
+    body = "\n".join("  " + ssml(r["ipa"], r["greek"]) + '<break time="%s"/>' % gap
+                     for r in rowset)
+    return "<speak>\n" + body + "\n</speak>"
 
 def speak_polly(rowset, voice, lang):
     try:
@@ -75,9 +84,10 @@ def speak_polly(rowset, voice, lang):
     p = boto3.client("polly")
     os.makedirs(STAGE, exist_ok=True)
     for r in rowset:
-        out = p.synthesize_speech(Text=ssml(r["ipa"]), TextType="ssml",
-                                  OutputFormat="mp3", VoiceId=voice,
-                                  Engine="neural", LanguageCode=lang)
+        out = p.synthesize_speech(
+            Text="<speak>%s</speak>" % ssml(r["ipa"], r["greek"]),
+            TextType="ssml", OutputFormat="mp3", VoiceId=voice,
+            Engine="neural", LanguageCode=lang)
         name = "%03d_%s.mp3" % (r["index"], re.sub(r"\W+", "", r["greek"])[:14])
         io.open(os.path.join(STAGE, name), "wb").write(out["AudioStream"].read())
         print("   wrote audio/_staging/%s  %s" % (name, r["ipa"]))
@@ -101,15 +111,29 @@ def main():
             print("not in the deck, skipped: %s\n" % " ".join(missing))
 
     if not a.speak:
-        print("%d words. Paste any line into the Amazon Polly console "
-              "(console.aws.amazon.com/polly), pick a neural voice, and listen —\n"
-              "no key or install needed to try it.\n" % len(sel))
-        for r in sel:
-            print("%-14s %-24s %s" % (r["greek"], r["ipa"], ssml(r["ipa"])))
-        print("\nSuggested voices: %s"
-              % ", ".join("%s (%s)" % (v[0], v[1]) for v in VOICES.values()))
-        print("German is worth a listen: it has /y/ and /x/ natively, which "
-              "English does not.")
+        print("EASIEST TEST — no account at all")
+        print("  Any site that reads IPA aloud (search \"IPA reader\"; several")
+        print("  front-end Amazon Polly) takes the bare string with no tags.")
+        print("  Paste one of the middle-column strings below and press play.")
+        print("  If it says the Greek word, this route works.")
+        print()
+        print("FULL TEST — free AWS account, hear all %d in one go" % len(sel))
+        print("  1. console.aws.amazon.com/polly")
+        print("  2. Above the text box are two tabs: Plain text and SSML.")
+        print("     CLICK SSML. Left on Plain text the voice reads the tags")
+        print("     out loud — that is what went wrong last time.")
+        print("  3. Engine: Neural. Try Joanna (English), then Vicki (German).")
+        print("     German has /y/ and /x/ natively and English has neither,")
+        print("     so υ and χ are where the two will differ.")
+        print("  4. Paste everything between the cut lines, and press Listen.")
+        print()
+        print("The %d words, in the order you will hear them:" % len(sel))
+        for n, r in enumerate(sel, 1):
+            print("   %2d. %-12s %-16s %s" % (n, r["greek"], r["ipa"], r["gloss"][:28]))
+        print()
+        print("-" * 8 + " cut here " + "-" * 50)
+        print(document(sel))
+        print("-" * 8 + " cut here " + "-" * 50)
         return
     voice, lang = VOICES[a.voice]
     print("speaking %d words as %s (%s) into audio/_staging/" % (len(sel), voice, lang))
