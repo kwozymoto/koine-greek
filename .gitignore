@@ -19,6 +19,8 @@ Black/
 # Only the optimised clips ship. The raw masters and WAVs (~19MB) stay
 # local in OneDrive.
 audio/Erasmian_*/
+# Generated clips and pilot files, listened to and moved across by hand
+audio/_staging/
 audio/*.mp3
 audio/*.wav
 audio/*.zip

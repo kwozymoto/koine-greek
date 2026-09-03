@@ -131,9 +131,23 @@ def main():
         for n, r in enumerate(sel, 1):
             print("   %2d. %-12s %-16s %s" % (n, r["greek"], r["ipa"], r["gloss"][:28]))
         print()
-        print("-" * 8 + " cut here " + "-" * 50)
-        print(document(sel))
-        print("-" * 8 + " cut here " + "-" * 50)
+        # Written to a file, not just printed. Copying twenty lines out of a
+        # terminal drops the tail often enough that the first attempt at this
+        # produced an unclosed <speak> and an "invalid SSML" warning.
+        os.makedirs(STAGE, exist_ok=True)
+        path = os.path.join(STAGE, "pilot.ssml")
+        io.open(path, "w", encoding="utf-8", newline="\n").write(document(sel) + "\n")
+        print("Written to %s" % os.path.relpath(path, ROOT))
+        print("Open it, select all, copy. That cannot lose the closing tag the")
+        print("way a terminal copy can.")
+        print()
+        print("Or start with these three, short enough to copy by eye. Each is")
+        print("a whole document on one line — paste ONE, including <speak>:")
+        print()
+        for r in sel[:3]:
+            print("  " + "<speak>%s</speak>" % ssml(r["ipa"], r["greek"]))
+        print()
+        print("Whatever you paste must begin with <speak> and end with </speak>.")
         return
     voice, lang = VOICES[a.voice]
     print("speaking %d words as %s (%s) into audio/_staging/" % (len(sel), voice, lang))
