@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v36';
+const VERSION = 'v37';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,11 +33,37 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  'audio/vocab/023_ginomai.mp3',   // "gin oh my" — a soft English g on γίνομαι
-  'audio/vocab/067_ginosko.mp3',   // "gee noh skoh" — the same soft g
-  'audio/vocab/140_ekklesia.mp3',  // "ecclesia" — read as the English word
-  'audio/vocab/218_naos.mp3',      // "nay oss" — alpha given the eta value
-  'audio/vocab/259_imon.mp3',      // "Simon" — read as the English name
+  // v36 evicted these five after Grok re-recorded them; kept one more
+  // release so anyone jumping two versions still picks them up.
+  'audio/vocab/023_ginomai.mp3',
+  'audio/vocab/067_ginosko.mp3',
+  'audio/vocab/140_ekklesia.mp3',
+  'audio/vocab/218_naos.mp3',
+  'audio/vocab/259_imon.mp3',
+  // v37: staccato and English-word cues, re-recorded
+  'audio/vocab/006_ego.mp3',               // ἐγώ
+  'audio/vocab/008_lego.mp3',              // λέγω
+  'audio/vocab/014_pas.mp3',               // πᾶς
+  'audio/vocab/019_epi.mp3',               // ἐπί
+  'audio/vocab/020_kurios.mp3',            // κύριος
+  'audio/vocab/077_oudaios.mp3',           // Ἰουδαῖος
+  'audio/vocab/091_doxa.mp3',              // δόξα
+  'audio/vocab/099_etros.mp3',             // Πέτρος
+  'audio/vocab/101_protos.mp3',            // πρῶτος
+  'audio/vocab/121_zoe.mp3',               // ζωή
+  'audio/vocab/177_eti.mp3',               // ἔτι
+  'audio/vocab/213_stauros.mp3',           // σταυρός
+  'audio/vocab/225_mesos.mp3',             // μέσος
+  'audio/vocab/228_dikaios.mp3',           // δίκαιος
+  'audio/vocab/231_asthenes.mp3',          // ἀσθενής
+  'audio/vocab/352_thlipsis.mp3',          // θλῖψις
+  'audio/vocab/354_oudaia.mp3',            // Ἰουδαία
+  'audio/vocab/366_eggizo.mp3',            // ἐγγίζω
+  'audio/vocab/370_choris.mp3',            // χωρίς
+  'audio/vocab/374_axios.mp3',             // ἄξιος
+  'audio/vocab/424_martus.mp3',            // μάρτυς
+  'audio/vocab/449_phaino.mp3',            // φαίνω
+  'audio/vocab/488_neos.mp3',              // νέος
 ];
 
 const SHELL = [

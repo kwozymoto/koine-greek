@@ -86,9 +86,10 @@
     "pos": "pron",
     "tier": 1,
     "freq": 2584,
-    "tts": "eh goh",
-    "source": "freq",
-    "duration_s": 0.993
+    "tts": "e goh",
+    "source": "locked",
+    "duration_s": 1.05,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'eh goh' spelled the English word ego and was read EE-go, stress first. Chosen by ear from several takes."
   },
   {
     "index": 7,
@@ -112,9 +113,10 @@
     "pos": "verb",
     "tier": 1,
     "freq": 2353,
-    "tts": "leh go",
-    "source": "freq",
-    "duration_s": 1.358
+    "tts": "lehgo",
+    "source": "locked",
+    "duration_s": 1.312,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 9,
@@ -192,8 +194,9 @@
     "tier": 1,
     "freq": 1243,
     "tts": "pahss",
-    "source": "freq",
-    "duration_s": 0.993
+    "source": "locked",
+    "duration_s": 1.181,
+    "verdict": "re-recorded 2026-09-03 (Atlas): the old take split into 'pa has'; a fresh take of the same cue did not. Chosen by ear from several takes."
   },
   {
     "index": 15,
@@ -256,9 +259,10 @@
     "pos": "prep",
     "tier": 1,
     "freq": 890,
-    "tts": "eh pee",
-    "source": "freq",
-    "duration_s": 1.045
+    "tts": "eppee",
+    "source": "locked",
+    "duration_s": 0.946,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'eh pee' was read as the letters E. P. — both tokens are letter names. Chosen by ear from several takes."
   },
   {
     "index": 20,
@@ -269,9 +273,10 @@
     "pos": "noun",
     "tier": 1,
     "freq": 717,
-    "tts": "koo ree os",
-    "source": "freq",
-    "duration_s": 1.855
+    "tts": "koo rioss",
+    "source": "locked",
+    "duration_s": 1.573,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'koo ree os' was three equal beats at 1.85s. Chosen by ear from several takes."
   },
   {
     "index": 21,
@@ -1018,9 +1023,10 @@
     "pos": "adj",
     "tier": 1,
     "freq": 195,
-    "tts": "ee oo deye os",
-    "source": "g2p",
-    "duration_s": 3.814
+    "tts": "yoodaios",
+    "source": "locked",
+    "duration_s": 1.547,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'ee oo deye os' was 3.81s and spelled out; yoo stands in for ιου so it binds. Chosen by ear from several takes."
   },
   {
     "index": 78,
@@ -1200,9 +1206,10 @@
     "pos": "noun",
     "tier": 2,
     "freq": 166,
-    "tts": "do ksah",
-    "source": "g2p",
-    "duration_s": 2.011
+    "tts": "doksah",
+    "source": "locked",
+    "duration_s": 1.181,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 92,
@@ -1304,9 +1311,10 @@
     "pos": "noun",
     "tier": 2,
     "freq": 156,
-    "tts": "peh tros",
-    "source": "g2p",
-    "duration_s": 1.593
+    "tts": "pehtros",
+    "source": "locked",
+    "duration_s": 1.468,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 100,
@@ -1330,9 +1338,10 @@
     "pos": "adj",
     "tier": 2,
     "freq": 155,
-    "tts": "proh tos",
-    "source": "g2p",
-    "duration_s": 1.593
+    "tts": "protos",
+    "source": "locked",
+    "duration_s": 1.181,
+    "verdict": "re-recorded 2026-09-03 (Atlas): a closed 'prohtos' came out pro-ho-tos. Chosen by ear from several takes."
   },
   {
     "index": 102,
@@ -1590,9 +1599,10 @@
     "pos": "noun",
     "tier": 2,
     "freq": 135,
-    "tts": "dzoh ay",
-    "source": "g2p",
-    "duration_s": 2.011
+    "tts": "zoh eh",
+    "source": "locked",
+    "duration_s": 1.442,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'zohay' bound but said zoh-high; the initial dz was dropped so Atlas would not spell Z. Chosen by ear from several takes."
   },
   {
     "index": 122,
@@ -2321,9 +2331,10 @@
     "pos": "adv",
     "tier": 3,
     "freq": 93,
-    "tts": "eh tee",
-    "source": "g2p",
-    "duration_s": 1.149
+    "tts": "etih",
+    "source": "locked",
+    "duration_s": 1.024,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'eh tee' was read as E. T., and put a long TEE on the unstressed syllable. Chosen by ear from several takes."
   },
   {
     "index": 178,
@@ -2790,9 +2801,10 @@
     "pos": "noun",
     "tier": 3,
     "freq": 27,
-    "tts": "stow ros",
-    "source": "g2p",
-    "duration_s": 1.62
+    "tts": "stowros",
+    "source": "locked",
+    "duration_s": 1.468,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 214,
@@ -2949,9 +2961,10 @@
     "pos": "adj",
     "tier": 3,
     "freq": 58,
-    "tts": "meh sos",
-    "source": "g2p",
-    "duration_s": 1.593
+    "tts": "mehsos",
+    "source": "locked",
+    "duration_s": 1.599,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 226,
@@ -2988,9 +3001,10 @@
     "pos": "adj",
     "tier": 3,
     "freq": 79,
-    "tts": "dee keye os",
-    "source": "g2p",
-    "duration_s": 2.429
+    "tts": "dee kyeoss",
+    "source": "locked",
+    "duration_s": 1.703,
+    "verdict": "re-recorded 2026-09-03 (Atlas): needs dee-kye-os, not die-kai-os; kye is αι without the preceding d. Chosen by ear from several takes."
   },
   {
     "index": 229,
@@ -3027,9 +3041,10 @@
     "pos": "adj",
     "tier": 3,
     "freq": 26,
-    "tts": "ahs theh nays",
-    "source": "g2p",
-    "duration_s": 2.952
+    "tts": "asthenays",
+    "source": "locked",
+    "duration_s": 1.547,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 232,
@@ -4603,9 +4618,10 @@
     "pos": "noun",
     "tier": 4,
     "freq": 45,
-    "tts": "thlip sis",
+    "tts": "thlipsis",
     "source": "locked",
-    "duration_s": 1.593
+    "duration_s": 1.181,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 353,
@@ -4629,9 +4645,10 @@
     "pos": "name",
     "tier": 4,
     "freq": 44,
-    "tts": "ee oo deye ah",
-    "source": "g2p",
-    "duration_s": 3.135
+    "tts": "youdeyah",
+    "source": "locked",
+    "duration_s": 1.468,
+    "verdict": "re-recorded 2026-09-03 (Atlas): same yoo stand-in as Ἰουδαῖος; was 3.13s. Chosen by ear from several takes."
   },
   {
     "index": 355,
@@ -4785,9 +4802,10 @@
     "pos": "verb",
     "tier": 4,
     "freq": 42,
-    "tts": "ehng gee dzoh",
-    "source": "g2p",
-    "duration_s": 2.508
+    "tts": "ehnggeedzoh",
+    "source": "locked",
+    "duration_s": 1.73,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 367,
@@ -4837,9 +4855,10 @@
     "pos": "prep",
     "tier": 4,
     "freq": 42,
-    "tts": "khoh rees",
-    "source": "g2p",
-    "duration_s": 1.646
+    "tts": "khohrees",
+    "source": "locked",
+    "duration_s": 1.442,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 371,
@@ -4889,9 +4908,10 @@
     "pos": "adj",
     "tier": 4,
     "freq": 41,
-    "tts": "ah ksee os",
-    "source": "g2p",
-    "duration_s": 2.351
+    "tts": "aksios",
+    "source": "locked",
+    "duration_s": 1.286,
+    "verdict": "re-recorded 2026-09-03 (Atlas): 'ah ksee os' was spelled out. Chosen by ear from several takes."
   },
   {
     "index": 375,
@@ -5540,9 +5560,10 @@
     "pos": "noun",
     "tier": 4,
     "freq": 35,
-    "tts": "mahr toos",
-    "source": "g2p",
-    "duration_s": 1.646
+    "tts": "mahrtoos",
+    "source": "locked",
+    "duration_s": 1.52,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 425,
@@ -5865,9 +5886,10 @@
     "pos": "verb",
     "tier": 4,
     "freq": 31,
-    "tts": "feye noh",
-    "source": "g2p",
-    "duration_s": 1.672
+    "tts": "feynoh",
+    "source": "locked",
+    "duration_s": 1.103,
+    "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
   },
   {
     "index": 450,

@@ -456,6 +456,16 @@ def syllables(w):
             i += 1
     return n
 
+# Cues that are a syllable short on purpose. Both begin Ἰου-, and spelling
+# that out gave "ee oo deye os" — 3.81 seconds of the voice listing letters.
+# "yoo" binds the word at the cost of making the initial iota a glide rather
+# than a syllable, which is what most English speakers say anyway. Chosen by
+# ear against the alternative, not by accident.
+CUE_OK = {
+    77:  "ιου bound to 'yoo'; the spelled form ran to 3.81s",
+    354: "ιου bound to 'yoo', as for Ἰουδαῖος",
+}
+
 tts_bad = []
 for path in ("docs/erasmian_vocab_cues.json",
              "docs/erasmian_vocab_cues_v3_black.json"):
@@ -477,8 +487,11 @@ for path in ("docs/erasmian_vocab_cues.json",
         ns = syllables(gk)
         nt = len(re.findall(r"[aeiouy]+", tts.lower()))
         if ns and nt and nt < ns - 1:
-            tts_bad.append(tag + " sounds %d syllables for a %d-syllable word"
-                           % (nt, ns))
+            line = tag + " sounds %d syllables for a %d-syllable word" % (nt, ns)
+            if r.get("index") in CUE_OK:
+                excused.append(line + "  — " + CUE_OK[r["index"]])
+            else:
+                tts_bad.append(line)
         first = flat(bare(gk))[:1]
         want = ONSET.get(first)
         # c, k, ch and q all give /k/; what matters is whether the consonant
