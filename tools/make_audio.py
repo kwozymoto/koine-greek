@@ -16,17 +16,18 @@ to make, which is what stops "see mohn" becoming Sea Moon. The string itself
 is built and checked by tools/build_ipa.py and tools/check_ipa.py before
 anything is spoken.
 
-CHOOSING A VOICE. Two of this course's phonemes are not English: υ is /y/
-("u as in French tu") and χ is /x/ ("ch as in loch"). An en-US voice will
-usually approximate them — often as /u/ and /k/, which is what most English
-speakers say anyway and what the app's own cue sheet already writes. A
-de-DE voice has both natively, and Erasmian is a Continental reading
-tradition, so German is worth hearing in the pilot before deciding. The
-pilot prints both.
+THE VOICE, settled by listening rather than by argument. Joanna (en-US)
+repaired every sound English does not have: ψυχή "psy.ˈxeː" came back as
+"Sue hay" — /ps/ reduced to /s/, /y/ to /uː/, /x/ to /h/ — and πνεῦμα lost
+its pi exactly as the old clip had. Daniel (de-DE) on the generative engine
+read every test word correctly, because German has /y/, /x/ and the initial
+clusters natively. Erasmian is a Continental reading tradition, so this is
+less of a compromise than it sounds.
 
-THE PILOT IS NOT OPTIONAL. The IPA is verified as text; whether a given
-voice honours it is a separate question that only ears can answer. Listen to
-fifteen before committing five hundred.
+Two things were learned the same way and are now in build_ipa.py: a
+diphthong needs its second element marked non-syllabic (u̯, i̯) or the voice
+reads two vowel letters as two segments, and πν- and πτ- need a light helper
+vowel or the stop is dropped.
 """
 import json, io, os, re, sys, argparse
 
@@ -55,7 +56,14 @@ PILOT = [
     "θεός",       # was read as the English "Theos"
 ]
 
-VOICES = {"en": ("Joanna", "en-US"), "de": ("Vicki", "de-DE")}
+# Settled by listening, 2026-09-03. German, because two of this course's
+# phonemes are not English: υ is /y/ and χ is /x/, and an English voice
+# substitutes /uː/ and /h/ for them — ψυχή came back as "Sue hay". German has
+# both natively, and Erasmian is a Continental reading tradition anyway.
+# Daniel on the generative engine was the one that read every test word
+# correctly. English is kept only so the difference can be heard again.
+VOICES = {"de": ("Daniel", "de-DE"), "en": ("Joanna", "en-US")}
+ENGINE = "generative"
 
 def rows():
     if not os.path.isfile(IPA):
@@ -75,7 +83,7 @@ def document(rowset, gap="700ms"):
                      for r in rowset)
     return "<speak>\n" + body + "\n</speak>"
 
-def speak_polly(rowset, voice, lang):
+def speak_polly(rowset, voice, lang, engine=ENGINE):
     try:
         import boto3
     except ImportError:
@@ -87,7 +95,7 @@ def speak_polly(rowset, voice, lang):
         out = p.synthesize_speech(
             Text="<speak>%s</speak>" % ssml(r["ipa"], r["greek"]),
             TextType="ssml", OutputFormat="mp3", VoiceId=voice,
-            Engine="neural", LanguageCode=lang)
+            Engine=engine, LanguageCode=lang)
         name = "%03d_%s.mp3" % (r["index"], re.sub(r"\W+", "", r["greek"])[:14])
         io.open(os.path.join(STAGE, name), "wb").write(out["AudioStream"].read())
         print("   wrote audio/_staging/%s  %s" % (name, r["ipa"]))
@@ -97,7 +105,8 @@ def main():
     ap.add_argument("--pilot", action="store_true")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--speak", action="store_true")
-    ap.add_argument("--voice", default="en", choices=sorted(VOICES))
+    ap.add_argument("--voice", default="de", choices=sorted(VOICES))
+    ap.add_argument("--engine", default=ENGINE)
     a = ap.parse_args()
 
     R = rows()
@@ -111,21 +120,10 @@ def main():
             print("not in the deck, skipped: %s\n" % " ".join(missing))
 
     if not a.speak:
-        print("EASIEST TEST — no account at all")
-        print("  Any site that reads IPA aloud (search \"IPA reader\"; several")
-        print("  front-end Amazon Polly) takes the bare string with no tags.")
-        print("  Paste one of the middle-column strings below and press play.")
-        print("  If it says the Greek word, this route works.")
-        print()
-        print("FULL TEST — free AWS account, hear all %d in one go" % len(sel))
-        print("  1. console.aws.amazon.com/polly")
-        print("  2. Above the text box are two tabs: Plain text and SSML.")
-        print("     CLICK SSML. Left on Plain text the voice reads the tags")
-        print("     out loud — that is what went wrong last time.")
-        print("  3. Engine: Neural. Try Joanna (English), then Vicki (German).")
-        print("     German has /y/ and /x/ natively and English has neither,")
-        print("     so υ and χ are where the two will differ.")
-        print("  4. Paste everything between the cut lines, and press Listen.")
+        print("SETTINGS, settled by listening on 2026-09-03:")
+        print("    Language German (de-DE) · Voice Daniel · Engine Generative")
+        print("    Console: console.aws.amazon.com/polly, and click the SSML tab")
+        print("    before pasting — on Plain text the voice reads the markup out.")
         print()
         print("The %d words, in the order you will hear them:" % len(sel))
         for n, r in enumerate(sel, 1):
@@ -150,8 +148,9 @@ def main():
         print("Whatever you paste must begin with <speak> and end with </speak>.")
         return
     voice, lang = VOICES[a.voice]
-    print("speaking %d words as %s (%s) into audio/_staging/" % (len(sel), voice, lang))
-    speak_polly(sel, voice, lang)
+    print("speaking %d words as %s (%s, %s) into audio/_staging/"
+          % (len(sel), voice, lang, a.engine))
+    speak_polly(sel, voice, lang, a.engine)
     print("\nNothing was written over audio/vocab. Listen first, then move "
           "the ones you keep.")
 

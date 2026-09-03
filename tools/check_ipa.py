@@ -35,7 +35,8 @@ import build_ipa as B
 IPA_PATH = os.path.join(ROOT, "docs", "erasmian_ipa.json")
 
 # Every symbol this course's Erasmian can legitimately produce.
-INVENTORY = set("bdfklmnprstxyaeiouːθŋɡdzkspsˈ.h")
+# ə is the helper vowel, U+032F the non-syllabic mark on a diphthong
+INVENTORY = set("bdfklmnprstxyaeiouːθŋɡdzkspsˈ.hə" + "̯")
 
 # What lesson 1's prose commits each letter to, as IPA. If build_ipa.py and
 # this disagree, one of them has drifted from what the app teaches.
@@ -122,6 +123,9 @@ for r in ROWS:
                         % (r["index"], gk, ipa, rebuilt))
     # syllables
     n_ipa = len([p for p in ipa.split(".") if p])
+    # a helper vowel is a pronunciation aid, not a syllable of the Greek
+    if r.get("helper"):
+        n_ipa -= 1
     n_gk = greek_syllables(gk)
     if n_gk and n_ipa != n_gk:
         bad_syl.append("%3d %-14s %-22s %d syllables for %d Greek vowel groups"

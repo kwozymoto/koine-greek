@@ -54,8 +54,21 @@ SHORT = {"α": "a", "ε": "e", "ι": "i", "ο": "o", "υ": "y"}
 LONG  = {"α": "aː", "ε": "e", "η": "eː", "ι": "iː", "ο": "o", "υ": "yː",
          "ω": "oː"}
 ALWAYS_LONG = {"η": "eː", "ω": "oː"}
-DIPH = {"αι": "ai", "ει": "ei", "οι": "oi", "υι": "yi",
-        "αυ": "au", "ευ": "eu", "ηυ": "eːu", "ου": "uː"}
+# The second element of a diphthong carries the non-syllabic mark (U+032F).
+# Without it a neural voice reads the two vowel letters as two segments —
+# ˈpneu.ma came back as "p-nay-YOU-ma" — because nothing said they were one
+# sound. ου is a plain long monophthong and takes no mark.
+DIPH = {"αι": "ai̯", "ει": "ei̯", "οι": "oi̯", "υι": "yi̯",
+        "αυ": "au̯", "ευ": "eu̯", "ηυ": "eːu̯", "ου": "uː"}
+
+# Clusters no voice produces unaided, given a light helper vowel instead.
+# Two need one, both beginning π + stop or nasal: πνεῦμα came back as
+# "nah-you-ma" with the pi gone, and πτωχός ran its first two sounds
+# together. German says ψ, γν, μν, βλ, θλ and χ cleanly without help. The
+# helper is a pronunciation aid, not a syllable, and check_ipa.py discounts
+# it — the app's own cue sheet has always done the same thing in prose,
+# writing πτωχός as "puh toh koss".
+HELPER = {"πν": "pə", "πτ": "pə"}
 # γ before a velar is the gamma nasal — "ἄγγελος is angelos", lesson 1
 VELAR = "γκχξ"
 
@@ -159,6 +172,15 @@ def stressed_syllable(ph, syls):
                 return si
     return len(syls) - 1
 
+def helper_for(word):
+    """The cluster this word opens with, if it needs a helper vowel."""
+    bare = "".join(c for c in unicodedata.normalize("NFD", word.lower())
+                   if not unicodedata.combining(c))
+    for cl in HELPER:
+        if bare.startswith(cl):
+            return cl
+    return None
+
 def to_ipa(word):
     ph, rough = phonemes(word)
     if not ph:
@@ -171,7 +193,16 @@ def to_ipa(word):
         if si == 0 and rough:
             text = "h" + text
         parts.append(("ˈ" if si == st else "") + text)
-    return ".".join(parts).replace(".ˈ", ".ˈ")
+    cl = helper_for(word)
+    if cl:
+        # the stop moves into its own unstressed syllable: ˈpneu̯.ma -> pə.ˈneu̯.ma
+        first = parts[0]
+        mark = "ˈ" if first.startswith("ˈ") else ""
+        body = first[1:] if mark else first
+        if body.startswith(HELPER[cl][0]):
+            parts[0] = mark + body[1:]
+            parts.insert(0, HELPER[cl])
+    return ".".join(parts)
 
 # ------------------------------------------------------------------ run ---
 def main():
@@ -190,7 +221,8 @@ def main():
         ipa = to_ipa(head)
         if not ipa:
             failed.append((i, head)); continue
-        rows.append({"index": i, "greek": head, "gloss": v[1], "ipa": ipa})
+        rows.append({"index": i, "greek": head, "gloss": v[1], "ipa": ipa,
+                     "helper": bool(helper_for(head))})
     print("headwords converted: %d   failed: %d" % (len(rows), len(failed)))
     for i, h in failed:
         print("   %3d %s" % (i, h))
