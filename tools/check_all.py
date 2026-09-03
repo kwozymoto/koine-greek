@@ -4,7 +4,7 @@
     python tools/check_all.py
 
 The app teaches, so the thing that matters about it is whether what it says
-is true. Five checkers put different parts of it to the SBLGNT bundled in
+is true. Six checkers put different parts of it to the SBLGNT bundled in
 data/gnt/, and this runs the lot:
 
     check_vocab      the 511 lexical entries, their example verses, the
@@ -17,7 +17,12 @@ data/gnt/, and this runs the lot:
     check_readings   the 12 passages, word for word, and every parse claim
                      in their glosses
     check_lessons    the spelling of every Greek form in the lesson bodies
-                     and quizzes
+                     and quizzes, and that each question is asked after the
+                     section that teaches it
+    check_links      every Watch row: outside pages must still resolve, and
+                     an embedded video must still exist and still be the one
+                     the row names. The only checker that needs a network —
+                     pass --offline to skip it, and it will say that it did
 
 Exits non-zero if any of them does. What none of them can check is English:
 whether a gloss is the right translation, whether a grammatical explanation
@@ -32,12 +37,16 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_readings",
-          "check_lessons"]
+          "check_lessons", "check_links"]
+# check_links is the one that reaches outside the repo. --offline passes
+# straight through to it and leaves the other five untouched.
+ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}
 
 env = dict(os.environ, PYTHONIOENCODING="utf-8")
 results, failed = [], []
 for name in CHECKS:
-    out = subprocess.run([sys.executable, os.path.join("tools", name + ".py")],
+    out = subprocess.run([sys.executable, os.path.join("tools", name + ".py")]
+                         + ARGS.get(name, []),
                          cwd=ROOT, capture_output=True, text=True,
                          encoding="utf-8", errors="replace", env=env)
     head = (out.stdout or "").strip().split("\n")

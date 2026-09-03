@@ -71,14 +71,15 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It isn't pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23. Worth spotting.</p>`,
 v:[],
 vids:[{t:"Lecture 1: The Letters and Sounds of Greek",s:"Daily Dose of Greek — Rob Plummer (24:37)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-1/"},
-      {t:"Alphabet song and Erasmian summary",s:"billmounce.com — free mp3 and worksheet",u:"https://www.billmounce.com/biblestudygreek2/greekalphabet"}],
+      {t:"Greek Alphabet Song",s:"Daily Dose of Greek — sing it until the order sticks",yt:"HxwawakLPxw"},
+      {t:"“Shortnin’ Bread” Greek Alphabet Song",s:"Daily Dose of Greek — the same letters, a tune that lodges",yt:"yYU_zfBL6YA"}],
 quiz:[
-{q:"How is ἄγγελος pronounced?",o:["ag-ge-los","an-ge-los","ah-ge-los","ang-khe-los"],a:1,w:"Gamma before another guttural becomes an n sound. This is why the English word is 'angel'."},
-{q:"What does the rough breathing over ἁ add?",o:["Nothing","An h sound","A glottal stop","Length to the vowel"],a:1,w:"Rough breathing = h. ἅγιος is hagios. Smooth breathing adds nothing at all."},
-{q:"Which letter is written two different ways depending on position?",o:["Beta","Sigma","Theta","Omega"],a:1,w:"σ within a word, ς at the end. One letter, one sound."},
-{q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It's a question mark. The raised dot · does the work of our semicolon and colon."},
-{q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: 'someone', 'a certain'. The accent is the only difference."},
-{q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative. It's a silent letter but a loud grammatical clue."}]},
+{q:"How is ἄγγελος pronounced?",o:["ag-ge-los","an-ge-los","ah-ge-los","ang-khe-los"],a:1,w:"Gamma before another guttural becomes an n sound. This is why the English word is 'angel'.",sec:1},
+{q:"What does the rough breathing over ἁ add?",o:["Nothing","An h sound","A glottal stop","Length to the vowel"],a:1,w:"Rough breathing = h. ἅγιος is hagios. Smooth breathing adds nothing at all.",sec:1},
+{q:"Which letter is written two different ways depending on position?",o:["Beta","Sigma","Theta","Omega"],a:1,w:"σ within a word, ς at the end. One letter, one sound.",sec:1},
+{q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It's a question mark. The raised dot · does the work of our semicolon and colon.",sec:4},
+{q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: 'someone', 'a certain'. The accent is the only difference.",sec:3},
+{q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative. It's a silent letter but a loud grammatical clue.",sec:5}]},
 
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
 body:`<p>Before learning any paradigm, get the shape of the whole system. Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five — <span class="gk">λύομεν</span> is first person plural, present, active, indicative: "we loose".</p>
@@ -92,10 +93,10 @@ body:`<p>Before learning any paradigm, get the shape of the whole system. Every 
 v:[],
 vids:[{t:"Lecture 2: The Greek Verbal System",s:"Daily Dose of Greek — Rob Plummer (11:36)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-2/"}],
 quiz:[
-{q:"Parsing a Greek verb means naming:",o:["Tense and mood only","Person, number, tense, voice, mood","Case, gender, number","Stem and ending"],a:1,w:"All five. Person and number identify the subject; tense carries aspect; voice relates subject to action; mood signals reality or potential."},
-{q:"The aorist's aspect presents the action as:",o:["Ongoing","Completed with continuing results","A whole, undefined","Repeated"],a:2,w:"Perfective — a snapshot rather than a film. It says nothing about duration or repetition; it just refers to the action as a whole."},
-{q:"Where is time actually fixed by the tense form?",o:["Everywhere","Only in the indicative mood","Only in the aorist","Only with an augment"],a:1,w:"Only in the indicative. A present participle or aorist infinitive tells you aspect, not time — a distinction that guards you from over-reading."},
-{q:"Augment + secondary endings signals:",o:["Future time","A command","Past time in the indicative","The passive voice"],a:2,w:"The augment (ε- prefix) marks past time and appears only in the indicative: imperfect, aorist, pluperfect."}]},
+{q:"Parsing a Greek verb means naming:",o:["Tense and mood only","Person, number, tense, voice, mood","Case, gender, number","Stem and ending"],a:1,w:"All five. Person and number identify the subject; tense carries aspect; voice relates subject to action; mood signals reality or potential.",sec:0},
+{q:"The aorist's aspect presents the action as:",o:["Ongoing","Completed with continuing results","A whole, undefined","Repeated"],a:2,w:"Perfective — a snapshot rather than a film. It says nothing about duration or repetition; it just refers to the action as a whole.",sec:1},
+{q:"Where is time actually fixed by the tense form?",o:["Everywhere","Only in the indicative mood","Only in the aorist","Only with an augment"],a:1,w:"Only in the indicative. A present participle or aorist infinitive tells you aspect, not time — a distinction that guards you from over-reading.",sec:1},
+{q:"Augment + secondary endings signals:",o:["Future time","A command","Past time in the indicative","The passive voice"],a:2,w:"The augment (ε- prefix) marks past time and appears only in the indicative: imperfect, aorist, pluperfect.",sec:2}]},
 
 {id:3,t:"Present and future active indicative",s:"λύω and λύσω — your first two paradigms",
 body:`<p>Greek verbs encode <b>person, number, tense, voice and mood</b> in the ending. Parsing means naming all five.</p>
@@ -127,14 +128,16 @@ body:`<p>Greek verbs encode <b>person, number, tense, voice and mood</b> in the 
 <p>Greek has two negatives and they divide by mood. <span class="gk">οὐ</span> negates the <b>indicative</b> — a statement about what is. <span class="gk">μή</span> negates everything else: subjunctive, imperative, infinitive, participle. So <span class="gk">οὐ λύει</span> is "he does not loose", but a prohibition takes <span class="gk">μή</span>.</p>
 <p><span class="gk">οὐ</span> also changes shape to suit the next word: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one — <span class="gk">οὐ λέγει</span>, <span class="gk">οὐκ ἔστιν</span>, <span class="gk">οὐχ οὗτος</span>. Three spellings, one word; the lexicon lists it as <span class="gk">οὐ, οὐκ, οὐχ</span>.</p>`,
 v:[7,10,15,21,40,62,81,122,152,173,250,254,270,212,209,319,361,368,384],
-vids:[{t:"Lecture 3: Present and Future Active Indicative",s:"Daily Dose of Greek — Rob Plummer (14:16)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-3/"}],
+vids:[{t:"Lecture 3: Present and Future Active Indicative",s:"Daily Dose of Greek — Rob Plummer (14:16)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-3/"},
+      {t:"The Greek (Active) Verb Song",s:"Daily Dose of Greek — the present active endings, sung",yt:"-L3mzNlR0Uc"},
+      {t:"“Everyday” Active Indicative Verb Endings Song",s:"Daily Dose of Greek — the same endings, a second tune",yt:"B1suAd0Bhos"}],
 quiz:[
-{q:"Parse λύομεν.",o:["1st plural present active indicative","1st singular present active indicative","2nd plural present active indicative","3rd plural present active indicative"],a:0,w:"'We loose.' The ending -ομεν is 1st person plural."},
-{q:"What is the movable nu in λύουσιν?",o:["A plural marker","A meaningless addition before a vowel or pause","A sign of the subjunctive","A negation"],a:1,w:"Purely phonetic — like the English 'a' becoming 'an'. It carries no grammatical weight."},
-{q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. Imperfective means viewed from inside, as ongoing — not necessarily happening right now."},
-{q:"εἶ means:",o:["if","I am","you are","he is"],a:2,w:"'You are' — 2nd singular of εἰμί. Compare unaccented εἰ, 'if'. The accent is doing real work."},
-{q:"The future of βλέπω is:",o:["βλέσω","βλέψω","βλέξω","βλεπήσω"],a:1,w:"A labial (π) plus σ gives ψ. Gutturals give ξ, and dentals drop before σ."},
-{q:"ἔσομαι is the future of which verb?",o:["ἔχω","ἔρχομαι","εἰμί","ἐσθίω"],a:2,w:"The future of 'to be' — and it is middle in form. ἔσται (3rd singular) appears constantly in the Gospels: 'it will be'."}]},
+{q:"Parse λύομεν.",o:["1st plural present active indicative","1st singular present active indicative","2nd plural present active indicative","3rd plural present active indicative"],a:0,w:"'We loose.' The ending -ομεν is 1st person plural.",sec:0},
+{q:"What is the movable nu in λύουσιν?",o:["A plural marker","A meaningless addition before a vowel or pause","A sign of the subjunctive","A negation"],a:1,w:"Purely phonetic — like the English 'a' becoming 'an'. It carries no grammatical weight.",sec:0},
+{q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. Imperfective means viewed from inside, as ongoing — not necessarily happening right now.",sec:2},
+{q:"εἶ means:",o:["if","I am","you are","he is"],a:2,w:"'You are' — 2nd singular of εἰμί. Compare unaccented εἰ, 'if'. The accent is doing real work.",sec:1},
+{q:"The future of βλέπω is:",o:["βλέσω","βλέψω","βλέξω","βλεπήσω"],a:1,w:"A labial (π) plus σ gives ψ. Gutturals give ξ, and dentals drop before σ.",sec:3},
+{q:"ἔσομαι is the future of which verb?",o:["ἔχω","ἔρχομαι","εἰμί","ἐσθίω"],a:2,w:"The future of 'to be' — and it is middle in form. ἔσται (3rd singular) appears constantly in the Gospels: 'it will be'.",sec:3}]},
 
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
 body:`<p>Greek nouns fall into three declensions — patterns of endings. The second is the most regular, so start here. Masculine nouns in <span class="gk">-ος</span>, neuter nouns in <span class="gk">-ον</span>. A few <span class="gk">-ος</span> nouns are feminine — <span class="gk">ἡ ὁδός</span> (way) and <span class="gk">ἡ ἔρημος</span> (wilderness) are both in this chapter — and they decline exactly like <span class="gk">λόγος</span>; only the article tells you.</p>
@@ -189,14 +192,14 @@ body:`<p>Greek nouns fall into three declensions — patterns of endings. The se
 v:[1,4,8,12,17,20,27,31,32,46,48,51,58,67,79,82,87,88,90,127,132,144,162,167,252,210,219,276,300,330,339,412,470,471],
 vids:[{t:"Lecture 4: Nouns of the Second Declension",s:"Daily Dose of Greek — Rob Plummer (18:22)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-4/"}],
 quiz:[
-{q:"λόγῳ is which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative singular — the iota subscript under the omega gives it away."},
-{q:"ἔργα could be:",o:["Nominative or accusative plural","Genitive singular only","Dative plural","Nominative singular"],a:0,w:"Neuter nominative and accusative are always identical, in both singular and plural."},
-{q:"τῶν is which case and number?",o:["Genitive singular","Genitive plural","Dative plural","Accusative plural"],a:1,w:"Genitive plural — and it's the same for all three genders, which makes it easy to spot."},
-{q:"You meet τῇ before an unfamiliar noun. What do you know?",o:["Feminine dative singular","Feminine genitive singular","Masculine dative singular","Neuter nominative plural"],a:0,w:"Feminine dative singular. This is exactly why the article is worth memorising: it parses the noun for you."},
-{q:"Which is true of every neuter noun in Greek?",o:["Nominative and genitive are identical","Nominative and accusative are identical","It has no dative","It never takes the article"],a:1,w:"Neuter nominative and accusative are always the same form. Context and word order decide which is meant."},
-{q:"Which article form is NOT nominative?",o:["ὁ","αἱ","οἱ","τάς"],a:3,w:"τάς is feminine accusative plural. The four forms without an initial tau (ὁ, ἡ, οἱ, αἱ) are all nominative."},
-{q:"ἡ ἀγάπη τοῦ θεοῦ is ambiguous because τοῦ θεοῦ could be:",o:["Nominative or genitive","Subjective or objective genitive","Dative or genitive","Singular or plural"],a:1,w:"God loving us, or us loving God. Both are grammatically available; the context decides."},
-{q:"Which case most often expresses the means or instrument of an action?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"The dative covers instrument, location, sphere, and the indirect object — a wide range, which is why it needs care."}]},
+{q:"λόγῳ is which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative singular — the iota subscript under the omega gives it away.",sec:0},
+{q:"ἔργα could be:",o:["Nominative or accusative plural","Genitive singular only","Dative plural","Nominative singular"],a:0,w:"Neuter nominative and accusative are always identical, in both singular and plural.",sec:0},
+{q:"τῶν is which case and number?",o:["Genitive singular","Genitive plural","Dative plural","Accusative plural"],a:1,w:"Genitive plural — and it's the same for all three genders, which makes it easy to spot.",sec:2},
+{q:"You meet τῇ before an unfamiliar noun. What do you know?",o:["Feminine dative singular","Feminine genitive singular","Masculine dative singular","Neuter nominative plural"],a:0,w:"Feminine dative singular. This is exactly why the article is worth memorising: it parses the noun for you.",sec:2},
+{q:"Which is true of every neuter noun in Greek?",o:["Nominative and genitive are identical","Nominative and accusative are identical","It has no dative","It never takes the article"],a:1,w:"Neuter nominative and accusative are always the same form. Context and word order decide which is meant.",sec:3},
+{q:"Which article form is NOT nominative?",o:["ὁ","αἱ","οἱ","τάς"],a:3,w:"τάς is feminine accusative plural. The four forms without an initial tau (ὁ, ἡ, οἱ, αἱ) are all nominative.",sec:3},
+{q:"ἡ ἀγάπη τοῦ θεοῦ is ambiguous because τοῦ θεοῦ could be:",o:["Nominative or genitive","Subjective or objective genitive","Dative or genitive","Singular or plural"],a:1,w:"God loving us, or us loving God. Both are grammatically available; the context decides.",sec:7},
+{q:"Which case most often expresses the means or instrument of an action?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"The dative covers instrument, location, sphere, and the indirect object — a wide range, which is why it needs care.",sec:8}]},
 
 {id:5,t:"Nouns of the first declension",s:"Mostly feminine, with a few masculines",
 body:`<p>First declension nouns end in <span class="gk">-η</span> or <span class="gk">-α</span> and are usually feminine. The vowel used depends on the letter before it.</p>
@@ -220,12 +223,13 @@ body:`<p>First declension nouns end in <span class="gk">-η</span> or <span clas
 <tr><td class="g">ἀπό</td><td>genitive</td><td>away from</td></tr></table>
 <p>Read the preposition together with what it governs rather than as a word on its own: <span class="gk">ἐν τῷ οἴκῳ</span> is one unit. <span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel.</p>`,
 v:[0,5,9,18,26,44,57,59,89,91,92,98,111,119,121,138,140,147,153,157,159,178,180,181,182,260,201,297,304,189,206,324,322,329,347,400,208,409,418,417,435,221,448,461,464,473,472,474,475,477,476],
-vids:[{t:"Lecture 5: Nouns of the First Declension",s:"Daily Dose of Greek — Rob Plummer (16:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-5/"}],
+vids:[{t:"Lecture 5: Nouns of the First Declension",s:"Daily Dose of Greek — Rob Plummer (16:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-5/"},
+      {t:"Amazing Greek: 1st and 2nd Declension Nouns",s:"Daily Dose of Greek — both declensions to Amazing Grace",yt:"GJ5AAMQhrqM"}],
 quiz:[
-{q:"ὁ μαθητής is masculine even though it looks first-declension. How do you know?",o:["The -ής ending","The article ὁ","The accent","You can't"],a:1,w:"The article. This is why lexical entries always include it — form alone would mislead you here."},
-{q:"Why is it ἡμέρας but δόξης in the genitive singular?",o:["Different declensions","ἡμέρα has a stem ending in ρ, so the alpha is kept","δόξα is masculine","Irregular"],a:1,w:"After ε, ι or ρ the alpha persists. Otherwise it becomes eta in the genitive and dative singular."},
-{q:"ἀγάπῃ is:",o:["Nominative singular","Genitive singular","Dative singular","Accusative plural"],a:2,w:"Dative singular — iota subscript again."},
-{q:"You meet ἐν. Without reading another word, what case follows it?",o:["Genitive","Dative","Accusative","Any of the three"],a:1,w:"Always the dative. ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signals in the text — ἐν dative, εἰς accusative, ἐκ and ἀπό genitive."}]},
+{q:"ὁ μαθητής is masculine even though it looks first-declension. How do you know?",o:["The -ής ending","The article ὁ","The accent","You can't"],a:1,w:"The article. This is why lexical entries always include it — form alone would mislead you here.",sec:1},
+{q:"Why is it ἡμέρας but δόξης in the genitive singular?",o:["Different declensions","ἡμέρα has a stem ending in ρ, so the alpha is kept","δόξα is masculine","Irregular"],a:1,w:"After ε, ι or ρ the alpha persists. Otherwise it becomes eta in the genitive and dative singular.",sec:0},
+{q:"ἀγάπῃ is:",o:["Nominative singular","Genitive singular","Dative singular","Accusative plural"],a:2,w:"Dative singular — iota subscript again.",sec:0},
+{q:"You meet ἐν. Without reading another word, what case follows it?",o:["Genitive","Dative","Accusative","Any of the three"],a:1,w:"Always the dative. ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signals in the text — ἐν dative, εἰς accusative, ἐκ and ἀπό genitive.",sec:2}]},
 
 {id:6,t:"Adjectives of the first and second declension",s:"Attributive versus predicate",
 body:`<p>Adjectives agree with their noun in gender, number and case. But <b>where</b> the adjective sits relative to the article changes the meaning entirely.</p>
@@ -239,9 +243,9 @@ body:`<p>Adjectives agree with their noun in gender, number and case. But <b>whe
 v:[64,100,101,125,143,158,164,168,248,228,229,226,227,289,309,317,323,320,344,357,369,374,447,444,487,488,490,486,489],
 vids:[{t:"Lecture 6: Adjectives of the First and Second Declension",s:"Daily Dose of Greek — Rob Plummer (17:09)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-6/"}],
 quiz:[
-{q:"ὁ ἄνθρωπος ἀγαθός means:",o:["the good man","the man is good","a good man","the man of good"],a:1,w:"Predicate position — the adjective is not preceded by an article, so it asserts, and an unwritten 'is' completes the sense."},
-{q:"οἱ ἅγιοι most naturally means:",o:["the holy ones / the saints","they are holy","holy things","the holy man"],a:0,w:"Substantival use: article plus adjective, no noun. Very common in the epistles."},
-{q:"What single test distinguishes attributive from predicate position?",o:["Word order alone","Whether an article immediately precedes the adjective","The accent","The gender"],a:1,w:"Article immediately before the adjective means attributive. That's the whole test."}]},
+{q:"ὁ ἄνθρωπος ἀγαθός means:",o:["the good man","the man is good","a good man","the man of good"],a:1,w:"Predicate position — the adjective is not preceded by an article, so it asserts, and an unwritten 'is' completes the sense.",sec:2},
+{q:"οἱ ἅγιοι most naturally means:",o:["the holy ones / the saints","they are holy","holy things","the holy man"],a:0,w:"Substantival use: article plus adjective, no noun. Very common in the epistles.",sec:3},
+{q:"What single test distinguishes attributive from predicate position?",o:["Word order alone","Whether an article immediately precedes the adjective","The accent","The gender"],a:1,w:"Article immediately before the adjective means attributive. That's the whole test.",sec:2}]},
 
 {id:7,t:"Imperfect and aorist active indicative",s:"Past time, and the aspect distinction that matters more",
 body:`<p>The imperfect describes past action viewed as ongoing, repeated or attempted. It is formed from the present stem with two changes: an <b>augment</b> on the front and <b>secondary endings</b> on the back.</p>
@@ -269,15 +273,16 @@ body:`<p>The imperfect describes past action viewed as ongoing, repeated or atte
 <p>It does <i>not</i> mean "once for all". The "once-for-all aorist" is one of the most common errors in preaching. An aorist can describe an action lasting decades: <span class="gk">ἐβασίλευσεν</span>, "he reigned", covers a whole reign in one word precisely because the aorist views it as a single whole.</p>
 <p>Outside the indicative, the aorist carries <b>no time reference at all</b>. An aorist participle or subjunctive is not past; it's simply perfective.</p>`,
 v:[86,96,131,372,371,496,495,494],
-vids:[{t:"Lecture 7: Imperfect and Aorist Active Indicative",s:"Daily Dose of Greek — Rob Plummer (23:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-7/"}],
+vids:[{t:"Lecture 7: Imperfect and Aorist Active Indicative",s:"Daily Dose of Greek — Rob Plummer (23:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-7/"},
+      {t:"Jingle Bells Aorist Active and Middle Song",s:"Daily Dose of Greek — aorist active and middle endings",yt:"FPWHsfdjuMg"}],
 quiz:[
-{q:"What does the augment mark?",o:["Plural number","Past time in the indicative","Passive voice","The subjunctive"],a:1,w:"Past time, and only in the indicative mood. Outside the indicative there is no augment because there is no time reference."},
-{q:"The imperfect of ἐκβάλλω is:",o:["ἐἐκβαλλον","ἐκέβαλλον","ἐξέβαλλον","ἤκβαλλον"],a:2,w:"The augment slots in after the prepositional prefix, and ἐκ becomes ἐξ before a vowel."},
-{q:"ἔλυον could be:",o:["1st singular or 3rd plural","1st plural only","2nd singular","3rd singular only"],a:0,w:"Both. Context resolves it — Greek tolerates this ambiguity happily."},
-{q:"Outside the indicative, the aorist communicates:",o:["Past time","Once-for-all action","Perfective aspect only","Completed action with ongoing results"],a:2,w:"Aspect alone. There is no augment and no time reference outside the indicative."},
-{q:"Why is the 'once-for-all aorist' a fallacy?",o:["The aorist is always plural","The aorist can describe actions of any duration","The aorist is only used in narrative","Greek has no aorist"],a:1,w:"ἐβασίλευσεν ('he reigned') covers years. The aorist views the action as a whole, not as brief or unrepeatable."},
-{q:"εἶπον is the aorist of which verb?",o:["εἰμί","λέγω","λαμβάνω","ἔρχομαι"],a:1,w:"A second aorist with a completely different stem from λέγω. These have to be memorised individually."},
-{q:"What distinguishes the perfect tense from the aorist?",o:["The perfect is future","The perfect stresses a completed action with continuing results","The perfect is plural","Nothing"],a:1,w:"The perfect (stative aspect) views an action as completed with an abiding resulting state — τετέλεσται, 'it stands finished'."}]},
+{q:"What does the augment mark?",o:["Plural number","Past time in the indicative","Passive voice","The subjunctive"],a:1,w:"Past time, and only in the indicative mood. Outside the indicative there is no augment because there is no time reference.",sec:1},
+{q:"The imperfect of ἐκβάλλω is:",o:["ἐἐκβαλλον","ἐκέβαλλον","ἐξέβαλλον","ἤκβαλλον"],a:2,w:"The augment slots in after the prepositional prefix, and ἐκ becomes ἐξ before a vowel.",sec:1},
+{q:"ἔλυον could be:",o:["1st singular or 3rd plural","1st plural only","2nd singular","3rd singular only"],a:0,w:"Both. Context resolves it — Greek tolerates this ambiguity happily.",sec:0},
+{q:"Outside the indicative, the aorist communicates:",o:["Past time","Once-for-all action","Perfective aspect only","Completed action with ongoing results"],a:2,w:"Aspect alone. There is no augment and no time reference outside the indicative.",sec:4},
+{q:"Why is the 'once-for-all aorist' a fallacy?",o:["The aorist is always plural","The aorist can describe actions of any duration","The aorist is only used in narrative","Greek has no aorist"],a:1,w:"ἐβασίλευσεν ('he reigned') covers years. The aorist views the action as a whole, not as brief or unrepeatable.",sec:4},
+{q:"εἶπον is the aorist of which verb?",o:["εἰμί","λέγω","λαμβάνω","ἔρχομαι"],a:1,w:"A second aorist with a completely different stem from λέγω. These have to be memorised individually.",sec:3},
+{q:"What distinguishes the perfect tense from the aorist?",o:["The perfect is future","The perfect stresses a completed action with continuing results","The perfect is plural","Nothing"],a:1,w:"The perfect (stative aspect) views an action as completed with an abiding resulting state — τετέλεσται, 'it stands finished'.",sec:4}]},
 
 {id:8,t:"Additional prepositions",s:"Case changes the meaning",
 body:`<p>Many Greek prepositions take more than one case, and the case changes the meaning. This is a place where a lazy reading goes wrong quickly.</p>
@@ -302,10 +307,10 @@ body:`<p>Many Greek prepositions take more than one case, and the case changes t
 v:[19,22,24,37,38,50,68,80,105,126,145,247,198,336,446,507,506],
 vids:[{t:"Lecture 8: Additional Prepositions",s:"Daily Dose of Greek — Rob Plummer (17:43)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-8/"}],
 quiz:[
-{q:"διὰ τοῦτο (accusative) means:",o:["through this","because of this","with this","after this"],a:1,w:"διά with the accusative means 'because of'. With the genitive it means 'through'. Same word, different case, different logic."},
-{q:"Which preposition always takes the dative?",o:["εἰς","ἐν","πρός","ἐκ"],a:1,w:"ἐν is invariably dative — which makes it one of the most useful case-signals in the NT."},
-{q:"ὑπό with the genitive most often marks:",o:["Location under something","The agent of a passive verb","Purpose","Time"],a:1,w:"'By' — the personal agent of a passive verb. With the accusative it means physically 'under'."},
-{q:"The aorist of ἀποθνῄσκω is ἀπέθανον, not ἠποθνῃσκον. Why?",o:["It is irregular and simply has to be learned","The augment goes on the verb, inside the compound, not on the preposition","Compound verbs take no augment","The preposition is dropped in the aorist"],a:1,w:"A compound is a preposition plus a verb, and the augment attaches to the verb. Expect to find it tucked inside the word — which is where to look when you are hunting for the stem."}]},
+{q:"διὰ τοῦτο (accusative) means:",o:["through this","because of this","with this","after this"],a:1,w:"διά with the accusative means 'because of'. With the genitive it means 'through'. Same word, different case, different logic.",sec:0},
+{q:"Which preposition always takes the dative?",o:["εἰς","ἐν","πρός","ἐκ"],a:1,w:"ἐν is invariably dative — which makes it one of the most useful case-signals in the NT.",sec:1},
+{q:"ὑπό with the genitive most often marks:",o:["Location under something","The agent of a passive verb","Purpose","Time"],a:1,w:"'By' — the personal agent of a passive verb. With the accusative it means physically 'under'.",sec:0},
+{q:"The aorist of ἀποθνῄσκω is ἀπέθανον, not ἠποθνῃσκον. Why?",o:["It is irregular and simply has to be learned","The augment goes on the verb, inside the compound, not on the preposition","Compound verbs take no augment","The preposition is dropped in the aorist"],a:1,w:"A compound is a preposition plus a verb, and the augment attaches to the verb. Expect to find it tucked inside the word — which is where to look when you are hunting for the stem.",sec:2}]},
 
 {id:9,t:"Personal pronouns",s:"ἐγώ, σύ, αὐτός — and the three uses of αὐτός",
 body:`<p>Pronouns stand in for nouns, and Greek's are everywhere: <span class="gk">αὐτός</span> alone occurs about 5,600 times. The case comes from the pronoun's own job in its clause; gender and number come from the word it replaces.</p>
@@ -330,12 +335,13 @@ body:`<p>Pronouns stand in for nouns, and Greek's are everywhere: <span class="g
 <h3>Emphatic subjects</h3>
 <p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Holy Spirit" (Mark 1:8). Most of the ἐγώ εἰμι sayings in John carry this weight — though a pronoun the syntax requires is not emphatic just by being there.</p>`,
 v:[2,3,6],
-vids:[{t:"Lecture 9: Personal Pronouns",s:"Daily Dose of Greek — Rob Plummer (15:17)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-9/"}],
+vids:[{t:"Lecture 9: Personal Pronouns",s:"Daily Dose of Greek — Rob Plummer (15:17)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-9/"},
+      {t:"Come Thou Personal Pronouns Song",s:"Daily Dose of Greek — ἐγώ and σύ, sung through",yt:"v2cqHDo2vZw"}],
 quiz:[
-{q:"ὁ αὐτὸς κύριος means:",o:["The Lord himself","The same Lord","His Lord","The Lord alone"],a:1,w:"Attributive position (article immediately before αὐτός) = 'same'. Predicate position (αὐτὸς ὁ κύριος) = 'himself'."},
-{q:"Since verb endings already mark the subject, an explicit ἐγώ or σύ is:",o:["Required for clarity","A politeness marker","Emphatic","Colloquial"],a:2,w:"Emphatic. When Jesus says ἐγώ εἰμι, the pronoun is doing deliberate work — the ending alone would have sufficed for 'I am'."},
-{q:"μου, μοι, με differ from ἐμοῦ, ἐμοί, ἐμέ in that they are:",o:["Plural","Unaccented and unemphatic","Older forms","Only used with prepositions"],a:1,w:"The short enclitic forms are the everyday ones; the long forms carry stress or follow prepositions."},
-{q:"ὑμῶν is:",o:["Genitive plural of σύ","Genitive plural of ἐγώ","Dative plural of σύ","Accusative plural of ἐγώ"],a:0,w:"'Of you (all)' — as in ὁ πατὴρ ὑμῶν, 'your Father'. ἡμῶν is 'our'. One vowel apart; readers confuse them for years, so nail it now."}]},
+{q:"ὁ αὐτὸς κύριος means:",o:["The Lord himself","The same Lord","His Lord","The Lord alone"],a:1,w:"Attributive position (article immediately before αὐτός) = 'same'. Predicate position (αὐτὸς ὁ κύριος) = 'himself'.",sec:1},
+{q:"Since verb endings already mark the subject, an explicit ἐγώ or σύ is:",o:["Required for clarity","A politeness marker","Emphatic","Colloquial"],a:2,w:"Emphatic. When Jesus says ἐγώ εἰμι, the pronoun is doing deliberate work — the ending alone would have sufficed for 'I am'.",sec:2},
+{q:"μου, μοι, με differ from ἐμοῦ, ἐμοί, ἐμέ in that they are:",o:["Plural","Unaccented and unemphatic","Older forms","Only used with prepositions"],a:1,w:"The short enclitic forms are the everyday ones; the long forms carry stress or follow prepositions.",sec:0},
+{q:"ὑμῶν is:",o:["Genitive plural of σύ","Genitive plural of ἐγώ","Dative plural of σύ","Accusative plural of ἐγώ"],a:0,w:"'Of you (all)' — as in ὁ πατὴρ ὑμῶν, 'your Father'. ἡμῶν is 'our'. One vowel apart; readers confuse them for years, so nail it now.",sec:0}]},
 
 {id:10,t:"Perfect and pluperfect active indicative",s:"Completed action, continuing results",
 body:`<p>The perfect is the most theologically loaded tense in the New Testament. It presents an action <b>completed in the past with results continuing in the present</b>. <span class="gk">γέγραπται</span> is not just "it was written" but "it stands written" — written then, authoritative now. <span class="gk">τετέλεσται</span> (John 19:30): finished then, finished still.</p>
@@ -355,10 +361,10 @@ body:`<p>The perfect is the most theologically loaded tense in the New Testament
 v:[13,53],
 vids:[{t:"Lecture 10: Perfect and Pluperfect Active Indicative",s:"Daily Dose of Greek — Rob Plummer (21:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-10/"}],
 quiz:[
-{q:"γέγραπται carries the sense:",o:["It was written once","It stands written","It will be written","Someone used to write"],a:1,w:"Perfect: completed act, abiding result. This is why the formula introduces Scripture citations — what was written remains in force."},
-{q:"The two form-markers of the perfect active are:",o:["Augment and σ","Reduplication and κ","Augment and θη","Reduplication and σ"],a:1,w:"λέ-λυ-κ-α: reduplicated initial consonant plus κ. The augment belongs to past-time indicative tenses; the perfect instead reduplicates."},
-{q:"οἶδα is perfect in form but functions as:",o:["A future","A present — 'I know'","An imperative","A pluperfect"],a:1,w:"One of the most common verbs in the NT. Its pluperfect ᾔδειν likewise just means 'I knew'."},
-{q:"The pluperfect expresses:",o:["Ongoing past action","Completed action with results continuing in the past","Future certainty","Timeless truth"],a:1,w:"'Had loosed' — the perfect's completed-with-results idea, shifted back a step. Rare enough that recognition is the goal."}]},
+{q:"γέγραπται carries the sense:",o:["It was written once","It stands written","It will be written","Someone used to write"],a:1,w:"Perfect: completed act, abiding result. This is why the formula introduces Scripture citations — what was written remains in force.",sec:0},
+{q:"The two form-markers of the perfect active are:",o:["Augment and σ","Reduplication and κ","Augment and θη","Reduplication and σ"],a:1,w:"λέ-λυ-κ-α: reduplicated initial consonant plus κ. The augment belongs to past-time indicative tenses; the perfect instead reduplicates.",sec:1},
+{q:"οἶδα is perfect in form but functions as:",o:["A future","A present — 'I know'","An imperative","A pluperfect"],a:1,w:"One of the most common verbs in the NT. Its pluperfect ᾔδειν likewise just means 'I knew'.",sec:2},
+{q:"The pluperfect expresses:",o:["Ongoing past action","Completed action with results continuing in the past","Future certainty","Timeless truth"],a:1,w:"'Had loosed' — the perfect's completed-with-results idea, shifted back a step. Rare enough that recognition is the goal.",sec:2}]},
 
 {id:11,t:"Demonstrative pronouns",s:"οὗτος and ἐκεῖνος — this and that",
 body:`<p>Greek points with two words: <span class="gk">οὗτος</span> ("this", near) and <span class="gk">ἐκεῖνος</span> ("that", far). Both decline with endings you already know from the article and αὐτός.</p>
@@ -378,10 +384,10 @@ body:`<p>Greek points with two words: <span class="gk">οὗτος</span> ("this
 v:[235,55,56,99,115,165,171,241,193,200,271,273,275,280,216,293,312,316,321,341,218,422,434,441,442,479,213,480,478],
 vids:[{t:"Lecture 11: Demonstrative Pronouns",s:"Daily Dose of Greek — Rob Plummer (12:22)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-11/"}],
 quiz:[
-{q:"οὗτος ὁ λόγος means:",o:["The word itself","This word","The same word","A certain word"],a:1,w:"Demonstrative in predicate position still translates 'this'. αὐτός in that position would be 'itself' — the two look alike until you check the breathing and stem."},
-{q:"αὕτη differs from αὐτή how?",o:["No difference","αὕτη is 'this' (demonstrative); αὐτή is 'she'","αὕτη is plural","αὐτή is accusative"],a:1,w:"Rough breathing marks the demonstrative. The pair is a standing test of whether you're really reading the diacritics."},
-{q:"ταῦτα, one of the commonest forms in the NT, means:",o:["This woman","These things","The same things","Those men"],a:1,w:"Neuter plural of οὗτος: 'after these things' (μετὰ ταῦτα) stitches together John's narrative."},
-{q:"ἐκεῖνος points to:",o:["Something near","Something far / previously mentioned","The speaker","Something owned"],a:1,w:"'That one.' John gives it theological weight — of Christ and the Spirit — so distance can be dignity, not remoteness."}]},
+{q:"οὗτος ὁ λόγος means:",o:["The word itself","This word","The same word","A certain word"],a:1,w:"Demonstrative in predicate position still translates 'this'. αὐτός in that position would be 'itself' — the two look alike until you check the breathing and stem.",sec:1},
+{q:"αὕτη differs from αὐτή how?",o:["No difference","αὕτη is 'this' (demonstrative); αὐτή is 'she'","αὕτη is plural","αὐτή is accusative"],a:1,w:"Rough breathing marks the demonstrative. The pair is a standing test of whether you're really reading the diacritics.",sec:2},
+{q:"ταῦτα, one of the commonest forms in the NT, means:",o:["This woman","These things","The same things","Those men"],a:1,w:"Neuter plural of οὗτος: 'after these things' (μετὰ ταῦτα) stitches together John's narrative.",sec:2},
+{q:"ἐκεῖνος points to:",o:["Something near","Something far / previously mentioned","The speaker","Something owned"],a:1,w:"'That one.' John gives it theological weight — of Christ and the Spirit — so distance can be dignity, not remoteness.",sec:0}]},
 
 {id:12,t:"Present middle and passive indicative",s:"Where English has no equivalent",
 body:`<p>Greek has three voices. Active: the subject acts. Passive: the subject is acted upon. <b>Middle</b>: the subject acts with some special reference to itself — and English has nothing quite like it.</p>
@@ -395,11 +401,13 @@ body:`<p>Greek has three voices. Active: the subject acts. Passive: the subject 
 <p>Some verbs appear only in middle or passive form but are active in meaning: <span class="gk">ἔρχομαι</span> (I come), <span class="gk">γίνομαι</span> (I become), <span class="gk">ἀποκρίνομαι</span> (I answer), <span class="gk">πορεύομαι</span> (I go). Don't try to squeeze a passive sense out of these — they simply are how those verbs work.</p>
 <p>Many grammarians now prefer to call these "middle-only" verbs rather than deponent, arguing that Greek's middle was always broader than the traditional label suggests. If a commentary makes a point about a "true middle", that debate is what lies behind it.</p>`,
 v:[23,28,65,104,243,194,294,299,306,211,377,391,403,436,497],
-vids:[{t:"Lecture 12: Present Middle and Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (14:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-12/"}],
+vids:[{t:"Lecture 12: Present Middle and Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (14:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-12/"},
+      {t:"Present Middle/Passive Endings Memory Device",s:"Daily Dose of Greek — a hook for -ομαι, -ῃ, -εται",yt:"NUq-8hvNgqU"},
+      {t:"Mnemonic Song for the Middle-Passive Endings",s:"Daily Dose of Greek — the same set, sung",yt:"4t5dSkwrMqk"}],
 quiz:[
-{q:"ἔρχομαι is middle in form. What does it mean?",o:["I am come (passive)","I come (active meaning)","I come for myself","I am being sent"],a:1,w:"A deponent, or middle-only, verb. Middle form, active meaning. Forcing a passive sense onto it produces nonsense."},
-{q:"In the present tense, middle and passive forms are:",o:["Always different","Identical — context decides","Distinguished by the augment","Distinguished by accent"],a:1,w:"Identical in the present, imperfect, perfect and pluperfect. Only the aorist and the future distinguish them."},
-{q:"The middle voice indicates the subject:",o:["Is acted upon","Acts with special reference to itself","Acts on a plural object","Is in the past"],a:1,w:"Roughly — the subject has a particular stake or involvement in the action. English needs a paraphrase to catch it."}]},
+{q:"ἔρχομαι is middle in form. What does it mean?",o:["I am come (passive)","I come (active meaning)","I come for myself","I am being sent"],a:1,w:"A deponent, or middle-only, verb. Middle form, active meaning. Forcing a passive sense onto it produces nonsense.",sec:1},
+{q:"In the present tense, middle and passive forms are:",o:["Always different","Identical — context decides","Distinguished by the augment","Distinguished by accent"],a:1,w:"Identical in the present, imperfect, perfect and pluperfect. Only the aorist and the future distinguish them.",sec:0},
+{q:"The middle voice indicates the subject:",o:["Is acted upon","Acts with special reference to itself","Acts on a plural object","Is in the past"],a:1,w:"Roughly — the subject has a particular stake or involvement in the action. English needs a paraphrase to catch it.",sec:0}]},
 
 {id:13,t:"Perfect middle/passive and future middle",s:"Endings straight onto the stem",
 body:`<p>The perfect middle/passive is the easiest paradigm you will ever learn: reduplicate, then add the basic middle endings <b>directly to the stem</b> — no connecting vowel, no tense sign.</p>
@@ -422,10 +430,10 @@ body:`<p>The perfect middle/passive is the easiest paradigm you will ever learn:
 v:[16,36,49,83,95,107,109,114,240,177,155,314,315,343,342,375,416],
 vids:[{t:"Lecture 13: Perfect Middle and Passive, Future Middle Indicative",s:"Daily Dose of Greek — Rob Plummer (9:47)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-13/"}],
 quiz:[
-{q:"The perfect middle/passive attaches its endings:",o:["With a connecting vowel","With the σ tense sign","Directly to the reduplicated stem","With θη"],a:2,w:"λέ-λυ-μαι. No connecting vowel, no tense sign — which is why this paradigm shows you the bare middle endings."},
-{q:"γέγραπται parses as:",o:["Present middle 3sg","Perfect middle/passive 3sg","Aorist passive 3sg","Pluperfect active 3sg"],a:1,w:"Reduplication (γε-) + stem + -ται. 'It stands written' — the citation formula is a perfect passive."},
-{q:"ἔσται means:",o:["He was","He will be","He is","Let him be"],a:1,w:"Future of εἰμί, 3rd singular, with no connecting vowel. καὶ ἔσται — 'and it shall be' — echoes through the prophets' citations."},
-{q:"γνώσομαι is best translated:",o:["I will know","I will be known","I knew for myself","Know!"],a:0,w:"Middle in form, active in meaning — one of several everyday verbs whose future is middle. Form ≠ force; the lexicon has the last word."}]},
+{q:"The perfect middle/passive attaches its endings:",o:["With a connecting vowel","With the σ tense sign","Directly to the reduplicated stem","With θη"],a:2,w:"λέ-λυ-μαι. No connecting vowel, no tense sign — which is why this paradigm shows you the bare middle endings.",sec:0},
+{q:"γέγραπται parses as:",o:["Present middle 3sg","Perfect middle/passive 3sg","Aorist passive 3sg","Pluperfect active 3sg"],a:1,w:"Reduplication (γε-) + stem + -ται. 'It stands written' — the citation formula is a perfect passive.",sec:0},
+{q:"ἔσται means:",o:["He was","He will be","He is","Let him be"],a:1,w:"Future of εἰμί, 3rd singular, with no connecting vowel. καὶ ἔσται — 'and it shall be' — echoes through the prophets' citations.",sec:1},
+{q:"γνώσομαι is best translated:",o:["I will know","I will be known","I knew for myself","Know!"],a:0,w:"Middle in form, active in meaning — one of several everyday verbs whose future is middle. Form ≠ force; the lexicon has the last word.",sec:1}]},
 
 {id:14,t:"Imperfect middle/passive, aorist middle, pluperfect middle/passive",s:"The secondary middle endings",
 body:`<p>One set of secondary middle endings — <span class="gk">-μην, -σο, -το, -μεθα, -σθε, -ντο</span> — serves three paradigms. Learn it once, use it three times.</p>
@@ -445,12 +453,13 @@ body:`<p>One set of secondary middle endings — <span class="gk">-μην, -σο
 <h3>Pluperfect middle/passive</h3>
 <p>For recognition only: reduplication + secondary middle endings straight on the stem — <span class="gk">ἐλελύμην, ἐλέλυσο, ἐλέλυτο…</span> A handful of NT occurrences.</p>`,
 v:[75,124,154,284,290,298,509,380,467,508],
-vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Middle and Passive",s:"Daily Dose of Greek — Rob Plummer (15:32)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-14/"}],
+vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Middle and Passive",s:"Daily Dose of Greek — Rob Plummer (15:32)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-14/"},
+      {t:"Imperfect Middle-Passive Memory Device",s:"Daily Dose of Greek — the secondary middle endings",yt:"4ytjsQSWDkQ"}],
 quiz:[
-{q:"ἐγένετο parses as:",o:["Imperfect m/p 3sg of γίνομαι","Aorist middle 3sg of γίνομαι","Aorist passive 3sg","Perfect middle 3sg"],a:1,w:"Second aorist middle: aorist stem γεν- + connecting vowel + -το. 'And it came to pass' opens scene after scene of narrative."},
-{q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Shared with the future, and with no other tense-family. σα + middle endings = aorist middle, θη = aorist passive; σ + middle endings = future middle, θησ = future passive. Present, imperfect, perfect and pluperfect share one m/p form."},
-{q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains the odd 2nd singulars of the imperfect and the aorist middle — not the perfect and pluperfect, where the σ survives."},
-{q:"ἐλύσατο means:",o:["He was loosed","He loosed for himself","He will loose","He had been loosed"],a:1,w:"Aorist middle — subject acting with self-reference. 'He was loosed' would be ἐλύθη, the θη-passive of the next lesson."}]},
+{q:"ἐγένετο parses as:",o:["Imperfect m/p 3sg of γίνομαι","Aorist middle 3sg of γίνομαι","Aorist passive 3sg","Perfect middle 3sg"],a:1,w:"Second aorist middle: aorist stem γεν- + connecting vowel + -το. 'And it came to pass' opens scene after scene of narrative.",sec:0},
+{q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Shared with the future, and with no other tense-family. σα + middle endings = aorist middle, θη = aorist passive; σ + middle endings = future middle, θησ = future passive. Present, imperfect, perfect and pluperfect share one m/p form.",sec:0},
+{q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains the odd 2nd singulars of the imperfect and the aorist middle — not the perfect and pluperfect, where the σ survives.",sec:0},
+{q:"ἐλύσατο means:",o:["He was loosed","He loosed for himself","He will loose","He had been loosed"],a:1,w:"Aorist middle — subject acting with self-reference. 'He was loosed' would be ἐλύθη, the θη-passive of the next lesson.",sec:0}]},
 
 {id:15,t:"Aorist and future passive indicative",s:"The θη that changes who does what",
 body:`<p>The aorist passive is built on its own stem — the sixth principal part — marked by <b>θη</b>, and then, surprisingly, takes <i>active-looking</i> secondary endings:</p>
@@ -475,10 +484,10 @@ body:`<p>The aorist passive is built on its own stem — the sixth principal par
 v:[],
 vids:[{t:"Lecture 15: Aorist and Future Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (9:49)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-15/"}],
 quiz:[
-{q:"The aorist passive tense sign is:",o:["σα","κ","θη","μεν"],a:2,w:"ἐ-λύ-θη-ν. Spot θη after an augment and you have an aorist passive; θησ without augment is future passive."},
-{q:"ἠγέρθη (Matt 28:6) means:",o:["He rose (of his own power, stated)","He was raised","He will rise","Rise!"],a:1,w:"Aorist passive of ἐγείρω. The NT often frames the resurrection with God as the (sometimes unstated) actor — the passive carries that."},
-{q:"ἀπεκρίθη is passive in form. Its meaning is:",o:["He was answered","He answered","It was decided","He was questioned"],a:1,w:"Active in sense — 'deponent' in the aorist passive. Hundreds of occurrences: 'Jesus answered and said…'"},
-{q:"A 'divine passive' is:",o:["A passive with θεός as subject","A passive used to avoid naming God as the actor","Any aorist passive","A passive in prayers only"],a:1,w:"'They shall be comforted, they shall be filled' — the Comforter and Filler is God, reverently unnamed. Worth noticing in the Beatitudes."}]},
+{q:"The aorist passive tense sign is:",o:["σα","κ","θη","μεν"],a:2,w:"ἐ-λύ-θη-ν. Spot θη after an augment and you have an aorist passive; θησ without augment is future passive.",sec:0},
+{q:"ἠγέρθη (Matt 28:6) means:",o:["He rose (of his own power, stated)","He was raised","He will rise","Rise!"],a:1,w:"Aorist passive of ἐγείρω. The NT often frames the resurrection with God as the (sometimes unstated) actor — the passive carries that.",sec:0},
+{q:"ἀπεκρίθη is passive in form. Its meaning is:",o:["He was answered","He answered","It was decided","He was questioned"],a:1,w:"Active in sense — 'deponent' in the aorist passive. Hundreds of occurrences: 'Jesus answered and said…'",sec:3},
+{q:"A 'divine passive' is:",o:["A passive with θεός as subject","A passive used to avoid naming God as the actor","Any aorist passive","A passive in prayers only"],a:1,w:"'They shall be comforted, they shall be filled' — the Comforter and Filler is God, reverently unnamed. Worth noticing in the Beatitudes.",sec:3}]},
 
 {id:16,t:"Review of the indicative mood",s:"One verb, one chart, whole system",
 body:`<p>You now hold the entire indicative system of the Greek verb. Here it is in one chart — first person singular of λύω throughout:</p>
@@ -502,11 +511,11 @@ body:`<p>You now hold the entire indicative system of the Greek verb. Here it is
 v:[],
 vids:[{t:"Lecture 16: Review of the Indicative Mood",s:"Daily Dose of Greek — Rob Plummer (6:57)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-16/"}],
 quiz:[
-{q:"Parse ἐλύθης:",o:["Aorist passive 2sg — you were loosed","Aorist middle 2sg","Imperfect active 2sg","Future passive 2sg"],a:0,w:"Augment + θη + secondary ending -ς. The algorithm: augment → past; θη → passive; -ς → second singular."},
-{q:"Parse λελύκαμεν:",o:["Aorist active 1pl","Perfect active 1pl — we have loosed","Present middle 1pl","Pluperfect active 1pl"],a:1,w:"Reduplication + κ + the primary ending -μεν. It is the ending that settles it: the pluperfect would be -ειμεν. Do not lean on the augment — 52 of the 88 pluperfects in the New Testament have none."},
-{q:"Parse λύσεται:",o:["Present middle 3sg","Future middle 3sg — he will loose (for himself)","Aorist middle 3sg","Perfect middle 3sg"],a:1,w:"σ + primary middle ending, no augment: future middle. The θη-form λυθήσεται would be the future passive."},
-{q:"Which tense pairs NEVER share middle and passive forms?",o:["Present and imperfect","Perfect and pluperfect","Aorist and future","None — all share"],a:2,w:"Aorist and future keep middle (σ/σα) and passive (θη) distinct. Everywhere else one form serves both voices."},
-{q:"A form with reduplication AND an augment is:",o:["Aorist","Perfect","Pluperfect","Impossible"],a:2,w:"ἐ-λελύκειν: both markers stack. Past completed action with past-continuing results."}]},
+{q:"Parse ἐλύθης:",o:["Aorist passive 2sg — you were loosed","Aorist middle 2sg","Imperfect active 2sg","Future passive 2sg"],a:0,w:"Augment + θη + secondary ending -ς. The algorithm: augment → past; θη → passive; -ς → second singular.",sec:0},
+{q:"Parse λελύκαμεν:",o:["Aorist active 1pl","Perfect active 1pl — we have loosed","Present middle 1pl","Pluperfect active 1pl"],a:1,w:"Reduplication + κ + the primary ending -μεν. It is the ending that settles it: the pluperfect would be -ειμεν. Do not lean on the augment — 52 of the 88 pluperfects in the New Testament have none.",sec:0},
+{q:"Parse λύσεται:",o:["Present middle 3sg","Future middle 3sg — he will loose (for himself)","Aorist middle 3sg","Perfect middle 3sg"],a:1,w:"σ + primary middle ending, no augment: future middle. The θη-form λυθήσεται would be the future passive.",sec:0},
+{q:"Which tense pairs NEVER share middle and passive forms?",o:["Present and imperfect","Perfect and pluperfect","Aorist and future","None — all share"],a:2,w:"Aorist and future keep middle (σ/σα) and passive (θη) distinct. Everywhere else one form serves both voices.",sec:0},
+{q:"A form with reduplication AND an augment is:",o:["Aorist","Perfect","Pluperfect","Impossible"],a:2,w:"ἐ-λελύκειν: both markers stack. Past completed action with past-continuing results.",sec:1}]},
 
 {id:17,t:"Nouns of the third declension",s:"Find the stem in the genitive",
 body:`<p>The third declension holds some of the weightiest words in the New Testament: <span class="gk">πνεῦμα</span> (Spirit), <span class="gk">σάρξ</span> (flesh), <span class="gk">πίστις</span> (faith), <span class="gk">χάρις</span> (grace), <span class="gk">πατήρ</span> (father), <span class="gk">βασιλεύς</span> (king). Its nominatives look chaotic; its secret is simple: <b>the stem hides in the genitive</b>, and one set of endings serves all.</p>
@@ -531,13 +540,14 @@ body:`<p>The third declension holds some of the weightiest words in the New Test
 <h3>The article carries you</h3>
 <p>You need not master every sub-pattern. <span class="gk">τῷ</span> before any third-declension form tells you dative singular whatever the noun does. This is why you drilled the article until it was automatic.</p>`,
 v:[43,45,61,66,70,71,85,93,94,205,108,116,129,130,133,139,170,196,253,255,203,266,272,285,281,287,204,328,337,352,223,365,373,389,407,424,460,202,452,482,484,485,234,481,483],
-vids:[{t:"Lecture 17: Nouns of the Third Declension",s:"Daily Dose of Greek — Rob Plummer (20:21)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-17/"}],
+vids:[{t:"Lecture 17: Nouns of the Third Declension",s:"Daily Dose of Greek — Rob Plummer (20:21)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-17/"},
+      {t:"3rd Declension Song",s:"Daily Dose of Greek — the third declension endings, sung",yt:"Wt1HmUStGgw"}],
 quiz:[
-{q:"Where do you find a third-declension noun's stem?",o:["The nominative singular","The genitive singular minus -ος","The dative plural","The article"],a:1,w:"σαρκός → σαρκ-. This is why lexical entries always give the genitive: the nominative often disguises the stem."},
-{q:"πνεύμασι(ν) is:",o:["Genitive singular","Dative plural","Accusative plural","Nominative plural"],a:1,w:"Dative plural: stem πνευματ- + σι, with the τ dropping before σ. 'In/by the spirits.'"},
-{q:"Why does the nominative of σαρκ- end in ξ?",o:["It is irregular","κ + ς → ξ","The κ dropped","Ionic spelling"],a:1,w:"The nominative ς collides with the stem's final κ. The same collision produces the dative plural σαρξί(ν)."},
-{q:"πίστιν is:",o:["Accusative singular of πίστις","Dative plural","Genitive singular","Nominative plural"],a:0,w:"The -ις/-εως family takes -ιν in the accusative singular: τὴν πίστιν. Its genitive πίστεως is worth recognising on sight."},
-{q:"The vocative of πατήρ, used in the Lord's Prayer, is:",o:["πατήρ","πατρός","πάτερ","πατέρα"],a:2,w:"Πάτερ ἡμῶν — 'Our Father'. One of the few vocatives you'll meet weekly."}]},
+{q:"Where do you find a third-declension noun's stem?",o:["The nominative singular","The genitive singular minus -ος","The dative plural","The article"],a:1,w:"σαρκός → σαρκ-. This is why lexical entries always give the genitive: the nominative often disguises the stem.",sec:0},
+{q:"πνεύμασι(ν) is:",o:["Genitive singular","Dative plural","Accusative plural","Nominative plural"],a:1,w:"Dative plural: stem πνευματ- + σι, with the τ dropping before σ. 'In/by the spirits.'",sec:0},
+{q:"Why does the nominative of σαρκ- end in ξ?",o:["It is irregular","κ + ς → ξ","The κ dropped","Ionic spelling"],a:1,w:"The nominative ς collides with the stem's final κ. The same collision produces the dative plural σαρξί(ν).",sec:0},
+{q:"πίστιν is:",o:["Accusative singular of πίστις","Dative plural","Genitive singular","Nominative plural"],a:0,w:"The -ις/-εως family takes -ιν in the accusative singular: τὴν πίστιν. Its genitive πίστεως is worth recognising on sight.",sec:1},
+{q:"The vocative of πατήρ, used in the Lord's Prayer, is:",o:["πατήρ","πατρός","πάτερ","πατέρα"],a:2,w:"Πάτερ ἡμῶν — 'Our Father'. One of the few vocatives you'll meet weekly.",sec:1}]},
 
 {id:18,t:"Adjectives, pronouns, and numerals of the first and third declensions",s:"πᾶς, εἷς, οὐδείς — small words, large claims",
 body:`<p>A few indispensable words mix third-declension forms (masculine and neuter) with first-declension forms (feminine). Chief among them: <span class="gk">πᾶς, πᾶσα, πᾶν</span> — "all, every" — some 1,240 occurrences.</p>
@@ -574,11 +584,11 @@ body:`<p>A few indispensable words mix third-declension forms (masculine and neu
 v:[14,41,47,60,63,120,242,261,274,390,398,443,232],
 vids:[{t:"Lecture 18: Adjectives, Pronouns, and Numerals of the First and Third Declensions",s:"Daily Dose of Greek — Rob Plummer (21:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-18/"}],
 quiz:[
-{q:"εἷς differs from εἰς in that εἷς:",o:["Is the preposition 'into'","Is the numeral 'one' (rough breathing)","Is plural","Means 'if'"],a:1,w:"The breathing and accent are the whole difference. ἄκουε, Ἰσραήλ· κύριος εἷς ἐστιν — the Shema needs the numeral, not the preposition."},
-{q:"οὐδέν means:",o:["No one (masculine)","Nothing (neuter)","Never","Not yet"],a:1,w:"Neuter of οὐδείς. χωρὶς ἐμοῦ οὐ δύνασθε ποιεῖν οὐδέν — 'apart from me you can do nothing' (John 15:5)."},
-{q:"πᾶσι(ν) is:",o:["Genitive plural","Dative plural masculine/neuter","Accusative singular","Nominative plural feminine"],a:1,w:"Stem παντ- + σι. The whole ντ cluster drops before σ and the α lengthens to compensate: παντ- + σι gives πᾶσι(ν). Dropping only the τ would leave πανσι."},
-{q:"πᾶσα γραφή (2 Tim 3:16) is grammatically:",o:["Unambiguously 'all Scripture'","Unambiguously 'every scripture'","Open: 'every scripture' or 'all Scripture' — usage and context decide","A scribal error"],a:2,w:"Anarthrous πᾶς usually reads 'every', but abstract or collective nouns blur it. Knowing the grammar means knowing where the real argument lies."},
-{q:"μείζων is the comparative of μέγας. In Koine, how safe is it to translate it 'greater' rather than 'greatest'?",o:["Entirely safe — the comparative never means 'greatest'","Not safe: the superlative is fading, and a comparative often does superlative work","Only in John","Safe in the plural only"],a:1,w:"Koine is losing the superlative, and comparative forms regularly carry superlative force. The ending narrows the options; the context decides between them."}]},
+{q:"εἷς differs from εἰς in that εἷς:",o:["Is the preposition 'into'","Is the numeral 'one' (rough breathing)","Is plural","Means 'if'"],a:1,w:"The breathing and accent are the whole difference. ἄκουε, Ἰσραήλ· κύριος εἷς ἐστιν — the Shema needs the numeral, not the preposition.",sec:2},
+{q:"οὐδέν means:",o:["No one (masculine)","Nothing (neuter)","Never","Not yet"],a:1,w:"Neuter of οὐδείς. χωρὶς ἐμοῦ οὐ δύνασθε ποιεῖν οὐδέν — 'apart from me you can do nothing' (John 15:5).",sec:2},
+{q:"πᾶσι(ν) is:",o:["Genitive plural","Dative plural masculine/neuter","Accusative singular","Nominative plural feminine"],a:1,w:"Stem παντ- + σι. The whole ντ cluster drops before σ and the α lengthens to compensate: παντ- + σι gives πᾶσι(ν). Dropping only the τ would leave πανσι.",sec:0},
+{q:"πᾶσα γραφή (2 Tim 3:16) is grammatically:",o:["Unambiguously 'all Scripture'","Unambiguously 'every scripture'","Open: 'every scripture' or 'all Scripture' — usage and context decide","A scribal error"],a:2,w:"Anarthrous πᾶς usually reads 'every', but abstract or collective nouns blur it. Knowing the grammar means knowing where the real argument lies.",sec:1},
+{q:"μείζων is the comparative of μέγας. In Koine, how safe is it to translate it 'greater' rather than 'greatest'?",o:["Entirely safe — the comparative never means 'greatest'","Not safe: the superlative is fading, and a comparative often does superlative work","Only in John","Safe in the plural only"],a:1,w:"Koine is losing the superlative, and comparative forms regularly carry superlative force. The ending narrows the options; the context decides between them.",sec:4}]},
 
 {id:19,t:"Contract and liquid verbs",s:"Why ἀγαπάω never looks like ἀγαπάω",
 body:`<p>Verbs whose stems end in α, ε or ο <b>contract</b> that vowel with the connecting vowel in the present and imperfect. You never meet <span class="gk">ἀγαπάω</span> on the page — only its contracted forms. Lexicons list the uncontracted form so you can tell which class a verb belongs to.</p>
@@ -599,10 +609,10 @@ body:`<p>Verbs whose stems end in α, ε or ο <b>contract</b> that vowel with t
 v:[29,39,54,74,106,110,112,118,123,135,137,142,150,160,172,174,184,190,245,249,207,263,267,268,286,282,291,302,318,333,340,214,364,363,379,386,387,397,192,399,405,433,431,427,465,498,500,502,504,501,499,503,505],
 vids:[{t:"Lecture 19: Contract and Liquid Verbs",s:"Daily Dose of Greek — Rob Plummer (42:00)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-19/"}],
 quiz:[
-{q:"ποιεῖτε comes from ε + ε contracting to:",o:["η","ει","ου","ω"],a:1,w:"ποιέ-ετε → ποιεῖτε. ε+ε→ει and ε+ο→ου do most of the work in the ε-class, the largest of the three."},
-{q:"The aorist of ἀγαπάω is:",o:["ἠγάπησα","ἠγάπασα","ἀγάπησα","ἠγαπῶσα"],a:0,w:"Augment + stem with lengthened vowel (α→η) + σα. Outside the present system, contract verbs behave themselves."},
-{q:"μενῶ differs from μένω how?",o:["It is aorist","It is the liquid future — 'I will remain'","It is subjunctive","No difference"],a:1,w:"Liquid stems reject σ, so the future is an ε-contract: μενῶ, μενεῖς, μενεῖ. In John 15 the difference between 'remain' and 'will remain' can hang on an accent."},
-{q:"ἤγγειλα is the aorist of:",o:["ἄγω","ἀγγέλλω","ἐγείρω","ἀγοράζω"],a:1,w:"A liquid aorist: no σ, stem lengthened (ε→ει). ἀπήγγειλαν — 'they reported' — is everywhere in the resurrection narratives."}]},
+{q:"ποιεῖτε comes from ε + ε contracting to:",o:["η","ει","ου","ω"],a:1,w:"ποιέ-ετε → ποιεῖτε. ε+ε→ει and ε+ο→ου do most of the work in the ε-class, the largest of the three.",sec:0},
+{q:"The aorist of ἀγαπάω is:",o:["ἠγάπησα","ἠγάπασα","ἀγάπησα","ἠγαπῶσα"],a:0,w:"Augment + stem with lengthened vowel (α→η) + σα. Outside the present system, contract verbs behave themselves.",sec:1},
+{q:"μενῶ differs from μένω how?",o:["It is aorist","It is the liquid future — 'I will remain'","It is subjunctive","No difference"],a:1,w:"Liquid stems reject σ, so the future is an ε-contract: μενῶ, μενεῖς, μενεῖ. In John 15 the difference between 'remain' and 'will remain' can hang on an accent.",sec:2},
+{q:"ἤγγειλα is the aorist of:",o:["ἄγω","ἀγγέλλω","ἐγείρω","ἀγοράζω"],a:1,w:"A liquid aorist: no σ, stem lengthened (ε→ει). ἀπήγγειλαν — 'they reported' — is everywhere in the resurrection narratives.",sec:2}]},
 
 {id:20,t:"Participles (verbal adjectives)",s:"The workhorse of Greek prose",
 body:`<p>A participle is a verbal adjective. It has tense and voice like a verb, and gender, number and case like an adjective. Greek uses them constantly where English would use a subordinate clause.</p>
@@ -622,10 +632,10 @@ body:`<p>A participle is a verbal adjective. It has tense and voice like a verb,
 v:[],
 vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
 quiz:[
-{q:"An aorist participle primarily communicates:",o:["Past time","Perfective aspect, often prior action","Ongoing action","Future action"],a:1,w:"Aspect first. Antecedent time is a common by-product, not the meaning itself."},
-{q:"ὁ πιστεύων is:",o:["An adverbial participle","A substantival participle — 'the one who believes'","A genitive absolute","An imperative"],a:1,w:"Article plus participle, no noun: it functions as a noun. Extremely common in John."},
-{q:"A genitive absolute is:",o:["A participle with no subject","A participle and its subject in the genitive, detached from the main clause","A possessive construction","A type of infinitive"],a:1,w:"Grammatically independent of the main clause, usually giving background circumstance."},
-{q:"A present participle usually describes action:",o:["Prior to the main verb","Contemporaneous with the main verb","After the main verb","Without reference to the main verb"],a:1,w:"Imperfective aspect typically yields contemporaneous time relative to the main verb."}]},
+{q:"An aorist participle primarily communicates:",o:["Past time","Perfective aspect, often prior action","Ongoing action","Future action"],a:1,w:"Aspect first. Antecedent time is a common by-product, not the meaning itself.",sec:1},
+{q:"ὁ πιστεύων is:",o:["An adverbial participle","A substantival participle — 'the one who believes'","A genitive absolute","An imperative"],a:1,w:"Article plus participle, no noun: it functions as a noun. Extremely common in John.",sec:2},
+{q:"A genitive absolute is:",o:["A participle with no subject","A participle and its subject in the genitive, detached from the main clause","A possessive construction","A type of infinitive"],a:1,w:"Grammatically independent of the main clause, usually giving background circumstance.",sec:3},
+{q:"A present participle usually describes action:",o:["Prior to the main verb","Contemporaneous with the main verb","After the main verb","Without reference to the main verb"],a:1,w:"Imperfective aspect typically yields contemporaneous time relative to the main verb.",sec:1}]},
 
 {id:21,t:"Infinitives (verbal nouns)",s:"Verbal nouns and their many uses",
 body:`<p>An infinitive is a verbal noun. It has tense and voice but no person or number, and it is indeclinable — though it often takes a neuter article, which then declines and shows you its function.</p>
@@ -642,11 +652,12 @@ body:`<p>An infinitive is a verbal noun. It has tense and voice but no person or
 <p><b>Cause:</b> <span class="gk">διὰ τό</span> + infinitive — "because".</p>
 <p>The subject of an infinitive, when expressed, goes in the <b>accusative</b> — which surprises English readers the first few times.</p>`,
 v:[148,161,244,455,510],
-vids:[{t:"Lecture 21: Infinitives (Verbal Nouns)",s:"Daily Dose of Greek — Rob Plummer (20:54)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-21/"}],
+vids:[{t:"Lecture 21: Infinitives (Verbal Nouns)",s:"Daily Dose of Greek — Rob Plummer (20:54)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-21/"},
+      {t:"Infinitives Song",s:"Daily Dose of Greek — to the tune of Mary Had a Little Lamb",yt:"CZQ8YdVpdos"}],
 quiz:[
-{q:"The subject of an infinitive appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. This looks wrong to English eyes but is entirely standard."},
-{q:"ὥστε + infinitive expresses:",o:["Purpose","Result","Time","Cause"],a:1,w:"Result — 'so that, with the result that'. Purpose and result overlap in Greek, and distinguishing them is often an interpretive judgment."},
-{q:"ἐν τῷ + infinitive most often expresses:",o:["Cause","Contemporaneous time — 'while'","Purpose","Comparison"],a:1,w:"'While' or 'during'. Luke uses this constantly."}]},
+{q:"The subject of an infinitive appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. This looks wrong to English eyes but is entirely standard.",sec:0},
+{q:"ὥστε + infinitive expresses:",o:["Purpose","Result","Time","Cause"],a:1,w:"Result — 'so that, with the result that'. Purpose and result overlap in Greek, and distinguishing them is often an interpretive judgment.",sec:1},
+{q:"ἐν τῷ + infinitive most often expresses:",o:["Cause","Contemporaneous time — 'while'","Purpose","Comparison"],a:1,w:"'While' or 'during'. Luke uses this constantly.",sec:1}]},
 
 {id:22,t:"Additional pronouns",s:"Relative, reflexive, reciprocal, interrogative",
 body:`<p>Five smaller pronoun systems complete the set. One of them — the relative — you have been reading around since John 1.</p>
@@ -667,11 +678,11 @@ body:`<p>Five smaller pronoun systems complete the set. One of them — the rela
 v:[11,30,33,52,103,141,163,257,360,406,492,493,491],
 vids:[{t:"Lecture 22: Additional Pronouns",s:"Daily Dose of Greek — Rob Plummer (21:19)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-22/"}],
 quiz:[
-{q:"A relative pronoun takes its case from:",o:["Its antecedent","Its role in its own clause","The main verb","The nearest article"],a:1,w:"Gender and number from the antecedent; case from its own clause. When this rule appears to break, commentators call it 'attraction' — now you can follow that footnote."},
-{q:"ἥ (with accent and rough breathing) is:",o:["The feminine article","The relative pronoun 'who/which'","'Or'","'Truly'"],a:1,w:"The article ἡ has no accent; the disjunctive ἤ ('or') has a smooth breathing. Three tiny words, three sets of marks."},
-{q:"ἀγαπᾶτε ἀλλήλους means:",o:["Love yourselves","Love one another","Love the others","Love the strangers"],a:1,w:"The reciprocal pronoun. John 13:34 — the new commandment turns on this one word."},
-{q:"τις (no accent) means:",o:["Who?","Someone / a certain","This","No one"],a:1,w:"The indefinite. Accented τίς is the question word. In editions the context and accent together keep them apart."},
-{q:"ὡς σεαυτόν (Mark 12:31) uses which pronoun?",o:["Reciprocal","Reflexive — 'as yourself'","Relative","Demonstrative"],a:1,w:"σεαυτοῦ, the second-person reflexive: the neighbour-love command points the verb back at its own subject."}]},
+{q:"A relative pronoun takes its case from:",o:["Its antecedent","Its role in its own clause","The main verb","The nearest article"],a:1,w:"Gender and number from the antecedent; case from its own clause. When this rule appears to break, commentators call it 'attraction' — now you can follow that footnote.",sec:1},
+{q:"ἥ (with accent and rough breathing) is:",o:["The feminine article","The relative pronoun 'who/which'","'Or'","'Truly'"],a:1,w:"The article ἡ has no accent; the disjunctive ἤ ('or') has a smooth breathing. Three tiny words, three sets of marks.",sec:1},
+{q:"ἀγαπᾶτε ἀλλήλους means:",o:["Love yourselves","Love one another","Love the others","Love the strangers"],a:1,w:"The reciprocal pronoun. John 13:34 — the new commandment turns on this one word.",sec:2},
+{q:"τις (no accent) means:",o:["Who?","Someone / a certain","This","No one"],a:1,w:"The indefinite. Accented τίς is the question word. In editions the context and accent together keep them apart.",sec:3},
+{q:"ὡς σεαυτόν (Mark 12:31) uses which pronoun?",o:["Reciprocal","Reflexive — 'as yourself'","Relative","Demonstrative"],a:1,w:"σεαυτοῦ, the second-person reflexive: the neighbour-love command points the verb back at its own subject.",sec:2}]},
 
 {id:23,t:"The subjunctive mood",s:"Purpose, probability and exhortation",
 body:`<p>The subjunctive is the mood of possibility rather than assertion. It is marked by a <b>lengthened connecting vowel</b> — omicron becomes omega, epsilon becomes eta.</p>
@@ -691,9 +702,9 @@ body:`<p>The subjunctive is the mood of possibility rather than assertion. It is
 v:[25,34,35,236,238,117,128,156,313],
 vids:[{t:"Lecture 23: The Subjunctive Mood",s:"Daily Dose of Greek — Rob Plummer (18:25)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-23/"}],
 quiz:[
-{q:"ἵνα followed by a subjunctive usually indicates:",o:["A condition","Purpose or result","Time","Concession"],a:1,w:"'In order that.' One of the highest-frequency constructions in the NT and a reliable clue to clause structure."},
-{q:"What marks the subjunctive formally?",o:["An augment","A lengthened connecting vowel","A sigma","Reduplication"],a:1,w:"Omicron lengthens to omega, epsilon to eta. No augment, because the subjunctive has no time reference."},
-{q:"ἀγαπῶμεν ἀλλήλους is best taken as:",o:["We love one another","Let us love one another","They loved one another","Do you love one another?"],a:1,w:"A hortatory subjunctive — 1st person plural used as an exhortation. Though the form is ambiguous with the indicative, so context decides."}]},
+{q:"ἵνα followed by a subjunctive usually indicates:",o:["A condition","Purpose or result","Time","Concession"],a:1,w:"'In order that.' One of the highest-frequency constructions in the NT and a reliable clue to clause structure.",sec:1},
+{q:"What marks the subjunctive formally?",o:["An augment","A lengthened connecting vowel","A sigma","Reduplication"],a:1,w:"Omicron lengthens to omega, epsilon to eta. No augment, because the subjunctive has no time reference.",sec:0},
+{q:"ἀγαπῶμεν ἀλλήλους is best taken as:",o:["We love one another","Let us love one another","They loved one another","Do you love one another?"],a:1,w:"A hortatory subjunctive — 1st person plural used as an exhortation. Though the form is ambiguous with the indicative, so context decides.",sec:1}]},
 
 {id:24,t:"The imperative and optative moods",s:"Commands, prohibitions, and μὴ γένοιτο",
 body:`<p>The imperative commands. Greek has second-person forms ("do this") <i>and</i> third-person forms ("let him do this") — English has to paraphrase the latter, so watch for them.</p>
@@ -712,10 +723,10 @@ body:`<p>The imperative commands. Greek has second-person forms ("do this") <i>a
 v:[76,345,349,362,366,404,456,451,466,463],
 vids:[{t:"Lecture 24: The Imperative and Optative Moods",s:"Daily Dose of Greek — Rob Plummer (25:06)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-24/"}],
 quiz:[
-{q:"λυέτω means:",o:["Loose!","Let him loose","He looses","He was loosing"],a:1,w:"Third-person imperative — a real command aimed at a third party. English 'let him' is a translation crutch, not permission-granting."},
-{q:"The aorist imperative λῦσον differs from present λῦε in:",o:["Time — it commands for the past","Aspect — action viewed as a whole vs ongoing","Politeness","Person"],a:1,w:"No augment, no past time. Aspect is the whole difference — which is why Matt 7:7's present imperatives are worth a sermon's attention."},
-{q:"'Do not murder' (μὴ φονεύσῃς) uses:",o:["μή + present imperative","μή + aorist subjunctive","οὐ + future indicative","μή + optative"],a:1,w:"Aorist prohibitions switch to the subjunctive. μή + present imperative is the other pattern, forbidding a practice."},
-{q:"μὴ γένοιτο is:",o:["An imperative — 'don't become'","An optative — 'may it never be!'","A subjunctive — 'lest it happen'","An indicative — 'it did not happen'"],a:1,w:"Aorist optative of γίνομαι. Paul's rhetorical recoil fourteen times in the letters — the optative's finest hour."}]},
+{q:"λυέτω means:",o:["Loose!","Let him loose","He looses","He was loosing"],a:1,w:"Third-person imperative — a real command aimed at a third party. English 'let him' is a translation crutch, not permission-granting.",sec:0},
+{q:"The aorist imperative λῦσον differs from present λῦε in:",o:["Time — it commands for the past","Aspect — action viewed as a whole vs ongoing","Politeness","Person"],a:1,w:"No augment, no past time. Aspect is the whole difference — which is why Matt 7:7's present imperatives are worth a sermon's attention.",sec:0},
+{q:"'Do not murder' (μὴ φονεύσῃς) uses:",o:["μή + present imperative","μή + aorist subjunctive","οὐ + future indicative","μή + optative"],a:1,w:"Aorist prohibitions switch to the subjunctive. μή + present imperative is the other pattern, forbidding a practice.",sec:1},
+{q:"μὴ γένοιτο is:",o:["An imperative — 'don't become'","An optative — 'may it never be!'","A subjunctive — 'lest it happen'","An indicative — 'it did not happen'"],a:1,w:"Aorist optative of γίνομαι. Paul's rhetorical recoil fourteen times in the letters — the optative's finest hour.",sec:2}]},
 
 {id:25,t:"The conjugation of -μι verbs",s:"δίδωμι, τίθημι, ἵστημι, ἀφίημι",
 body:`<p>Greek's oldest verbs attach endings directly to the stem — no connecting vowel — and their first-person singular ends in <span class="gk">-μι</span>. They are few, but they include some of the most important words in the New Testament: <span class="gk">δίδωμι</span> (give), <span class="gk">τίθημι</span> (put, place), <span class="gk">ἵστημι</span> (stand), <span class="gk">ἀφίημι</span> (forgive, leave), <span class="gk">ἀπόλλυμι</span> (destroy). You already know one: <span class="gk">εἰμί</span>.</p>
@@ -739,10 +750,10 @@ body:`<p>Greek's oldest verbs attach endings directly to the stem — no connect
 v:[42,73,102,113,134,151,166,183,185,277,332,396,437],
 vids:[{t:"Lecture 25: The Conjugation of -μι Verbs",s:"Daily Dose of Greek — Rob Plummer (12:28)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-25/"}],
 quiz:[
-{q:"μι-verbs differ from λύω-type verbs chiefly by:",o:["Having no aorist","Attaching endings directly to the stem, no connecting vowel","Being passive only","Lacking an augment"],a:1,w:"Athematic conjugation — the oldest layer of the language, preserved in its commonest verbs (as English keeps 'am/is/was')."},
-{q:"ἔδωκεν parses as:",o:["Aorist active 3sg of δίδωμι — 'he gave'","Imperfect of δοκέω","Perfect of δίδωμι","Aorist passive"],a:0,w:"κ-aorist: augment + δωκ + 3sg. John 3:16's central verb."},
-{q:"ἄφες in the Lord's Prayer (ἄφες ἡμῖν τὰ ὀφειλήματα) is:",o:["A noun — 'forgiveness'","Aorist imperative of ἀφίημι — 'forgive!'","Future indicative","A particle"],a:1,w:"ἀφίημι, the μι-verb of forgiving and leaving. Its κ-aorist ἀφῆκεν and passive ἀφέωνται run through the Gospels."},
-{q:"ἀνέστη means:",o:["He stood up / rose","He was destroyed","He gave back","He placed"],a:0,w:"Second aorist of ἀνίστημι, intransitive: 'he rose'. The resurrection vocabulary uses both this and ἠγέρθη."}]},
+{q:"μι-verbs differ from λύω-type verbs chiefly by:",o:["Having no aorist","Attaching endings directly to the stem, no connecting vowel","Being passive only","Lacking an augment"],a:1,w:"Athematic conjugation — the oldest layer of the language, preserved in its commonest verbs (as English keeps 'am/is/was').",sec:0},
+{q:"ἔδωκεν parses as:",o:["Aorist active 3sg of δίδωμι — 'he gave'","Imperfect of δοκέω","Perfect of δίδωμι","Aorist passive"],a:0,w:"κ-aorist: augment + δωκ + 3sg. John 3:16's central verb.",sec:1},
+{q:"ἄφες in the Lord's Prayer (ἄφες ἡμῖν τὰ ὀφειλήματα) is:",o:["A noun — 'forgiveness'","Aorist imperative of ἀφίημι — 'forgive!'","Future indicative","A particle"],a:1,w:"ἀφίημι, the μι-verb of forgiving and leaving. Its κ-aorist ἀφῆκεν and passive ἀφέωνται run through the Gospels.",sec:2},
+{q:"ἀνέστη means:",o:["He stood up / rose","He was destroyed","He gave back","He placed"],a:0,w:"Second aorist of ἀνίστημι, intransitive: 'he rose'. The resurrection vocabulary uses both this and ἠγέρθη.",sec:2}]},
 
 {id:26,t:"Reading your Greek New Testament",s:"Tools, habits, and the fallacies to avoid",
 body:`<p>This is the lesson the other twenty-five exist for. The grammar you now hold is enough to read the New Testament with help — and reading is the only thing that will keep it.</p>
@@ -764,8 +775,8 @@ v:[],
 vids:[{t:"Lecture 26: Reading Your Greek New Testament",s:"Daily Dose of Greek — Rob Plummer (27:24)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-26/"},
       {t:"Daily Dose of Greek — one verse a day",s:"Free two-minute weekday videos; the habit that keeps the language",u:"https://dailydoseofgreek.com/"}],
 quiz:[
-{q:"Which book is the usual recommendation to read first?",o:["Hebrews","1 John","Luke","2 Peter"],a:1,w:"Short sentences, limited vocabulary, endless repetition. It builds confidence rather than destroying it."},
-{q:"The word-study fallacy involves:",o:["Reading too fast","Treating etymology or every possible sense as the meaning in context","Ignoring the article","Using a lexicon"],a:1,w:"Meaning is determined by usage in context, not by a word's history or the full range of its possible senses."},
-{q:"What is the best defence against losing the language again?",o:["Buying more books","A short daily reading habit tied to your preaching text","Memorising more paradigms","Learning Hebrew as well"],a:1,w:"Frequency beats intensity. Tying it to work you already do each week is what makes it survive a busy season."},
-{q:"The recommended way to use parsing software is:",o:["Avoid it — it weakens you","Let it read for you","Attempt the parse yourself, then check","Only for Hebrew"],a:2,w:"Helps are for momentum, not for outsourcing. The attempt is where the learning happens; the check is where the correcting happens."}]}
+{q:"Which book is the usual recommendation to read first?",o:["Hebrews","1 John","Luke","2 Peter"],a:1,w:"Short sentences, limited vocabulary, endless repetition. It builds confidence rather than destroying it.",sec:2},
+{q:"The word-study fallacy involves:",o:["Reading too fast","Treating etymology or every possible sense as the meaning in context","Ignoring the article","Using a lexicon"],a:1,w:"Meaning is determined by usage in context, not by a word's history or the full range of its possible senses.",sec:5},
+{q:"What is the best defence against losing the language again?",o:["Buying more books","A short daily reading habit tied to your preaching text","Memorising more paradigms","Learning Hebrew as well"],a:1,w:"Frequency beats intensity. Tying it to work you already do each week is what makes it survive a busy season.",sec:4},
+{q:"The recommended way to use parsing software is:",o:["Avoid it — it weakens you","Let it read for you","Attempt the parse yourself, then check","Only for Hebrew"],a:2,w:"Helps are for momentum, not for outsourcing. The attempt is where the learning happens; the check is where the correcting happens.",sec:1}]}
 ];

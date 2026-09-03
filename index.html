@@ -31,28 +31,20 @@
                   stroke-linecap="round" stroke-dasharray="415" stroke-dashoffset="415"/>
         </svg>
         <div class="mid">
-          <span class="big" id="ringNum">0</span>
-          <small class="muted" id="ringLbl">of 20 due</small>
+          <span class="big" id="ringNum">0/0</span>
+          <small class="muted" id="ringLbl">today's plan</small>
         </div>
       </div>
       <span class="streak">🔥 <b id="streakN">0</b>&nbsp;day streak<i id="streakRest"></i></span>
     </div>
 
-    <div class="stat-grid">
-      <div class="stat"><b id="stKnown">0</b><span>words known</span></div>
-      <div class="stat"><b id="stLvl">1</b><span>level</span></div>
-      <div class="stat"><b id="stXp">0</b><span>total XP</span></div>
-    </div>
-
-    <button class="btn" id="btnReview">Start today's review</button>
-    <div style="height:9px"></div>
-    <button class="btn ghost" id="btnNew">Learn 5 new words</button>
+    <!-- Three or four short things, about ten minutes. Words known, level and
+         total XP moved to Progress, where the rest of the numbers live. -->
+    <div id="planList"></div>
+    <button class="btn" id="btnContinue">Continue</button>
 
     <div id="startHere"></div>
     <div id="pinned"></div>
-
-    <h2>Next lesson</h2>
-    <div id="nextLesson"></div>
 
     <p style="margin:26px 0 0;text-align:center">
       <a href="#" onclick="go('help');return false" class="muted" style="font-size:.82rem">How this app works</a></p>
@@ -83,6 +75,7 @@
     <div class="between" style="margin-bottom:12px">
       <button class="btn ghost small" id="btnQuit">Finish</button>
       <button class="btn ghost small" id="btnUndo" style="display:none">Undo</button>
+      <span class="combo" id="sessCombo"></span>
       <small class="muted" id="sessCount"></small>
     </div>
     <div class="prog-bar"><i id="sessBar" style="width:0%"></i></div>

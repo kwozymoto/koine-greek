@@ -15,7 +15,40 @@
    dependencies, no glyph outlines — the guide letter is drawn as text in the
    app's own Greek face, which means it works for any letter or word. */
 
-const WRITE = { grid: 30 };            // resolution of the scoring grid
+/* Every number the trace scorer turns on, in one place — because they were
+   set by feel and were far too kind. A beta whose tail ran well below the
+   glyph scored 99%. They are now set from the table trace-audit.html prints;
+   that page reads them from here, so it calibrates the shipping scorer and
+   not a copy of it. */
+const WRITE = {
+  grid: 48,       // scoring grid, per side, over the whole pad
+  probe: 2.0,     // coverage probe width, as a multiple of the pen
+  pass: 0.70,     // coverage needed to have followed the letter
+  spill: 0.40,    // ink allowed to land off it
+};
+/* What trace-audit.html printed at these settings, over all 24 letters.
+   Spill turned out to be the discriminating half, not coverage — a scribble
+   filling the box covers 96% of the letter, which is exactly why the old
+   rule, reporting coverage alone, was so easy to please.
+
+     trace                       coverage    spill    shown
+     down the middle              85–100     5–30     70–88   pass 24/24
+     wobbled by 5px               95–100    10–38     62–87   pass 24/24
+     middle plus a stray tail     89–100    10–37     64–84   pass 24/24
+     wobbled by 10px              98–100    19–49     51–80   pass 20/24
+     wobbled by 20px              99–100    36–62     36–65   pass  4/24
+     the same shape 28% too big   42–95     43–79      9–53   pass  0/24
+     a scribble                   87–100    57–83     17–41   pass  0/24
+     one straight line            11–35     13–85      2–31   pass  0/24
+
+   0.40 sits in the 38–43 gap and 0.70 in the 35–84 one, so nothing that
+   should pass fails and nothing that should fail passes. The two jitters
+   straddle the line on purpose: a 10px per-point wobble on a 14px pen is a
+   genuinely shaky hand, and where it falls is a judgement.
+
+   The row that matters is the third. A letter followed properly with a fifth
+   of the ink run off the bottom — the beta in Bugs/ — still passes, because
+   it is a good trace with a fault. It now reads about 78 rather than 99. */
 /* The pen scales with the pad, because the guide letter does. A fixed 7px
    nib on a 300px pad is a pencil against a letterform two dozen pixels
    thick, which both feels wrong to draw with and reads as a poor trace. */
@@ -191,13 +224,18 @@ function wScore(s) {
     c.lineCap = c.lineJoin = "round";
     s.strokes.forEach(st => wPath(s, c, st, w));
   });
-  const fat = strokesAt(s.pen * 2.4), thin = strokesAt(s.pen);
+  const fat = strokesAt(s.pen * WRITE.probe), thin = strokesAt(s.pen);
   let m = 0, hit = 0, k = 0, out = 0;
   for (let i = 0; i < mask.length; i++) {
     if (mask[i]) { m++; if (fat[i]) hit++; }
     if (thin[i]) { k++; if (!mask[i]) out++; }
   }
-  return { coverage: m ? hit / m : 0, spill: k ? out / k : 0, drew: k > 0 };
+  const coverage = m ? hit / m : 0, spill = k ? out / k : 0;
+  /* One number, and it is the one shown. Coverage alone was reported and
+     spill was mentioned only past 0.45, so the only figure on screen was
+     the flattering one: a trace that covered the letter and then ran a
+     third of its ink off the bottom still read "99% of the letter". */
+  return { coverage, spill, score: coverage * (1 - spill), drew: k > 0 };
 }
 
 /* ---------- shared markup ---------- */
@@ -211,8 +249,10 @@ function wPadHtml(showGuideHint) {
 }
 
 /* ---------- trace the alphabet ---------- */
-function writeLetterDrill(n = 10) {
-  const pool = ALPHABET.slice().sort(() => Math.random() - .5).slice(0, n);
+function writeLetterDrill(n = 10, from) {
+  // `from` lets the day's plan trace a letter it knows you are shaky on
+  // rather than one at random.
+  const pool = (from || ALPHABET.slice().sort(() => Math.random() - .5)).slice(0, n);
   return pool.map(a => () => {
     // "Α α" -> "α". Index 1, not the last: sigma is listed "Σ σ ς", and
     // popping gave the final form, so the one letter whose shape depends on
@@ -230,28 +270,46 @@ function writeLetterDrill(n = 10) {
     WPAD = wSetup(document.getElementById("pad"), lower);
     wBind(WPAD);
     wPaint(WPAD);
-    /* Judged leniently and never punitively. The measurement is sound at the
-       extremes — random ink scores near zero, a stroke that follows the
-       letterform scores in the nineties — but I could not calibrate the
-       middle against real handwriting, only against synthetic paths, and
-       those flatter round letters and thin ones by turns. So a low score
-       reads as "have another go", not as a mark against you, and there is
-       no wrong-answer tone. The percentage is shown; you can see for
-       yourself whether it is being fair. */
+    /* "Try again" puts the Check button back, so without these two the same
+       letter could be counted several times over — and a retry that then
+       succeeded would have already broken the run. First verdict only, and
+       the XP is paid once. */
+    let judged = false, paid = false;
+    /* Never punitive, but no longer flattering either. The four numbers in
+       WRITE are set from the table trace-audit.html prints: a path down the
+       middle of the glyph, that path jittered, the same path oversized, a
+       scribble and a single line, over all 24 letters. What it still cannot
+       model is a real hand, so a low score reads as "have another go", not
+       as a mark against you, and there is no wrong-answer tone. Both halves
+       of the score are shown; you can see for yourself whether it is fair. */
     document.getElementById("wCheck").onclick = () => {
       const r = wScore(WPAD);
       if (!r.drew) { toast("Trace the letter first"); return; }
-      const good = r.coverage >= 0.6 && r.spill <= 0.45;
+      const good = r.coverage >= WRITE.pass && r.spill <= WRITE.spill;
+      const pc = x => Math.round(x * 100);
+      /* Both halves, always. Which half fell short is the only thing that
+         tells you what to change: too little of the letter means go back
+         over it, too much outside means slow down. */
+      const note = r.coverage < WRITE.pass
+        ? "Some of the letter was missed — go back over the parts you skipped."
+        : r.spill > WRITE.spill
+          ? "You followed it, but a good deal of the ink went outside it."
+          : "";
       document.getElementById("wCheck").style.display = "none";
       document.getElementById("fb").innerHTML = `
-        <div class="feedback"><b>${good ? "That follows it well" : "Have another go at this one"}</b>
-          You went over ${Math.round(r.coverage * 100)}% of the letter${
-            r.spill > 0.45 ? `, and ${Math.round(r.spill * 100)}% of your ink landed outside it` : ""}.</div>
+        <div class="feedback"><b>${good ? "That follows it well" : "Have another go at this one"} — ${pc(r.score)}%</b>
+          You covered ${pc(r.coverage)}% of the letter, and ${pc(r.spill)}% of your
+          ink landed outside it.${note ? " " + note : ""}</div>
         <div class="row">
           <button class="btn ghost small" onclick="wClear();document.getElementById('fb').innerHTML='';document.getElementById('wCheck').style.display=''">Try again</button>
           <button class="btn small" onclick="qi++;step()">Continue</button>
         </div>`;
-      if (good) { sfx("correct"); addXp(2); }
+      /* Counted either way so the run and the session summary are honest,
+         but silent when it falls short — see the note above. A trace that
+         misses says "have another go", not "wrong". */
+      if (!judged) { judged = true; answerFelt(good, null, !good); }
+      else if (good) sfx("correct");
+      if (good && !paid) { paid = true; addXp(2); SESSION_XP += 2; }
     };
   });
 }

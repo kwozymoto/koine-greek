@@ -31,6 +31,10 @@ const GNT_CASE  = {N:"nominative",G:"genitive",D:"dative",A:"accusative",V:"voca
 const GNT_NUM   = {S:"singular",P:"plural"};
 const GNT_GEND  = {M:"masculine",F:"feminine",N:"neuter"};
 const GNT_DEG   = {C:"comparative",S:"superlative"};
+/* The code holds a bare digit. It read "3 singular", which was tolerable in
+   the reader's gloss bar and is not now that every vocabulary card carries a
+   parse under its example verse. */
+const GNT_PERS  = {"1":"1st","2":"2nd","3":"3rd"};
 const GNT_POS   = {"N-":"noun","V-":"verb","A-":"adjective","D-":"adverb","C-":"conjunction",
                    "P-":"preposition","RA":"article","RD":"demonstrative","RP":"pronoun",
                    "RR":"relative","RI":"interrogative/indefinite","X-":"particle","I-":"interjection"};
@@ -46,7 +50,8 @@ function gntParse(pos, code) {
                                    GNT_CASE[cse], GNT_NUM[num], GNT_GEND[gend]]);
     if (mood === "N") return bits([GNT_TENSE[tense], GNT_VOICE[voice], "infinitive"]);
     return bits([GNT_TENSE[tense], GNT_VOICE[voice], GNT_MOOD[mood],
-                 person && num ? person + (num === "S" ? " singular" : " plural") : ""]);
+                 person && num ? (GNT_PERS[person] || person)
+                                 + (num === "S" ? " singular" : " plural") : ""]);
   }
   if (["N-","A-","RD","RP","RR","RI"].includes(pos)) {
     const b = bits([GNT_CASE[cse], GNT_NUM[num], GNT_GEND[gend]]);

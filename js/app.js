@@ -126,9 +126,38 @@ function touchDay(){
     else S.streak=1;
   }
   S.last=t; S.best=Math.max(S.best||0,S.streak);
-  S.reviewsToday=0; S.dayOfReviews=t; save();
+  S.reviewsToday=0; S.dayOfReviews=t;
+  S.plan={day:t,done:[]};        // a new day, a fresh set of ticks
+  save();
 }
 function addXp(n){ S.xp+=n; save(); }
+
+/* ============================================================
+   THE ALPHABET, AND WHETHER IT HAS SETTLED
+   ------------------------------------------------------------
+   The letters lived only in the Drill menu, so a new learner was handed
+   words on day one and had to know to go looking for the alphabet. Today's
+   plan leads with them instead — and has to know when to stop.
+
+   Consecutive correct identifications, per letter. A miss costs one rather
+   than resetting to zero: three in a row across 24 letters is a fair bar,
+   but one slip in week three should not send you back to the start. Tracing
+   does not count towards it — naming a letter and drawing it are different
+   skills, and this is the one the rest of the app depends on.
+   ============================================================ */
+const ALPHA_SOLID=3;
+function alphaSeen(name,ok){
+  if(!name) return;
+  S.alpha=S.alpha||{};
+  const n=+S.alpha[name]||0;
+  S.alpha[name]=ok?Math.min(ALPHA_SOLID,n+1):Math.max(0,n-1);
+  save();
+}
+const alphaScore=a=>+((S.alpha||{})[a[1]])||0;
+const alphaLeft=()=>ALPHABET.filter(a=>alphaScore(a)<ALPHA_SOLID).length;
+/* The ones you are least sure of, not n at random. */
+const alphaWeak=(n=8)=>ALPHABET.slice()
+  .sort((a,b)=>alphaScore(a)-alphaScore(b)||Math.random()-.5).slice(0,n);
 function grant(id){
   if(S.badges.includes(id))return;
   S.badges.push(id); save();
@@ -316,41 +345,153 @@ document.querySelectorAll("nav button").forEach(b=>
 /* ============================================================
    TODAY
    ============================================================ */
+/* ============================================================
+   TODAY'S PLAN
+   ------------------------------------------------------------
+   Three or four short things that together are about ten minutes, ticked off
+   as they are done. Today used to be a ring counting raw reviews and two
+   buttons, which said nothing about what a day's work actually was — and
+   left the alphabet buried in a menu.
+
+   Every task here runs something that already existed. The plan is an order
+   and a set of ticks, not a new kind of session.
+   ============================================================ */
+let PLAN_TASK=null;                 // which plan row the running session is
+
+const planDone=()=>((S.plan&&S.plan.day===today())?S.plan.done:[])||[];
+function planTick(id){
+  const d=today();
+  if(!S.plan||S.plan.day!==d) S.plan={day:d,done:[]};
+  if(!S.plan.done.includes(id)) S.plan.done.push(id);
+  save();
+}
+/* The tick is set when a session ends, so quitting halfway does not count —
+   and for a chapter, only lessonDone() finishes it. */
+function runPlanTask(id){
+  const t=todaysPlan().find(x=>x.id===id);
+  if(!t) return;
+  t.run();                          // startSession clears PLAN_TASK …
+  PLAN_TASK=id;                     // … so claim it afterwards
+}
+
+/* Eight of the letters you are least sure of, then one to trace. */
+function letterWarmup(){
+  const weak=alphaWeak(8);
+  const heard=weak.filter(a=>AUDIO_BY_GREEK && AUDIO_BY_GREEK[a[0]]);
+  const q=alphaDrill(8,weak);
+  // one written, at the end, on a letter that needs it
+  return q.concat(writeLetterDrill(1,(heard.length?heard:weak).slice(0,1)));
+}
+
+function todaysPlan(){
+  const tasks=[];
+  const left=alphaLeft();
+  if(left) tasks.push({id:"letters",
+    label:"Letters and sounds",
+    sub:left===ALPHABET.length
+      ? "Start here — everything else needs them"
+      : `${left} of ${ALPHABET.length} still to settle`,
+    run:()=>startSession(letterWarmup(),"letters")});
+
+  /* On a fresh install there is nothing to review, and startReview() would
+     quietly fall through to introducing words — which is the next row's job.
+     So the row only appears once the deck has been started. */
+  const due=dueList().length+Math.min(5,gdueList().length);
+  if(due || Object.keys(S.cards).length) tasks.push(due
+    ? {id:"review", label:`Review ${due} due card${due===1?"":"s"}`,
+       sub:"The words the schedule says you are about to forget",
+       run:()=>startReview()}
+    : {id:"review", label:"Practise what you know",
+       sub:"Nothing is due — this will not touch the schedule",
+       run:()=>startReview()});
+
+  const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
+  if(fresh) tasks.push({id:"new",
+    label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
+    sub:`${fresh} still to meet in the course`,
+    run:()=>startNew(5)});
+
+  /* The chapter you are part-way through, else the next unread one. */
+  const lp=S.lessonPart;
+  const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
+  if(l){
+    const n=lessonParts(l).length;
+    const at=(lp&&lp.id===l.id)?Math.min(lp.part,n-1):0;
+    /* Once the row is ticked it points at the *next* chapter, so keeping the
+       chapter's name on a struck-through row would say chapter 4 was finished
+       when chapter 1 was. Say what tapping it would do instead. */
+    const already=planDone().includes("lesson");
+    tasks.push({id:"lesson",
+      label:already ? "Another chapter"
+        : at ? `Chapter ${l.id} · from part ${at+1} of ${n}`
+             : `Chapter ${l.id} · ${n} parts`,
+      sub:already ? `Next up: chapter ${l.id}, ${l.t.toLowerCase()}` : l.t,
+      run:()=>lessonWalk(l.id,at)});
+  }
+  return tasks;
+}
+
+function planHtml(){
+  const done=planDone();
+  return todaysPlan().map(t=>{
+    const ok=done.includes(t.id);
+    return `<button class="plan-row${ok?" done":""}" onclick="runPlanTask('${t.id}')">
+      <span class="tick">${ok?"✓":""}</span>
+      <span class="t"><b>${t.label}</b><span>${t.sub}</span></span>
+      <span class="chev">${ok?"":"›"}</span></button>`;
+  }).join("");
+}
+
+/* Offered at the end of a session so finishing one thing leads to the next
+   rather than to a dead end. Replaces the stub defined near finish(). */
+function nextTaskHtml(){
+  const done=planDone();
+  const next=todaysPlan().find(t=>!done.includes(t.id));
+  if(!next) return `<p class="muted" style="text-align:center;font-size:.86rem;margin:0 0 12px">
+    That is today's plan finished.</p>`;
+  return `<button class="btn" onclick="runPlanTask('${next.id}')">Next — ${next.label.replace(/^./,c=>c.toLowerCase())}</button>
+    <div style="height:9px"></div>`;
+}
+
 function render(){
   // Grammar is part of the review, so it is part of the count — capped at the
   // five the session will actually serve.
-  const due=dueList().length+Math.min(5,gdueList().length), goal=S.goal||20;
-  /* An untouched deck is not a finished day. Measuring against the goal also
-     makes the setting mean something — it previously governed nothing, and a
+  const due=dueList().length+Math.min(5,gdueList().length);
+  /* The ring measures the plan now, not raw reviews against a goal. The goal
+     setting still governs how many cards a review serves; what it no longer
+     does is decide whether the day looks finished, which it did badly — a
      day 292 cards behind could paint a completed circle. */
-  const fresh=Object.keys(S.cards).length===0 && !Object.keys(S.gcards||{}).length;
-  const pct=fresh?0:Math.min(1,(S.reviewsToday||0)/goal);
+  const plan=todaysPlan(), pdone=planDone();
+  const ticked=plan.filter(t=>pdone.includes(t.id)).length;
+  const pct=plan.length?ticked/plan.length:0;
   document.getElementById("ringArc").style.strokeDashoffset = 415-(415*pct);
-  document.getElementById("ringNum").textContent = due;
+  document.getElementById("ringNum").textContent = `${ticked}/${plan.length}`;
   document.getElementById("ringLbl").textContent =
-    fresh ? "nothing scheduled yet" : (due===1?"card due":"cards due");
+    ticked>=plan.length ? "plan complete" : "today's plan";
   document.getElementById("streakN").textContent=S.streak;
   const restEl=document.getElementById("streakRest");
   if(restEl) restEl.textContent =
     (S.restUsed && daysBetween(S.restUsed,today())<7) ? "\u00b7 rest day used" : "";
+  // The home-screen icon badge stays a count of work, not of plan steps.
   paintBadge(due);
-  document.getElementById("stKnown").textContent=knownCount();
-  document.getElementById("stLvl").textContent=level();
-  document.getElementById("stXp").textContent=S.xp;
-  document.getElementById("btnReview").textContent =
-    due>0 ? `Start today's review (${due})` : "Nothing due — practise anyway";
+  document.getElementById("planList").innerHTML=planHtml();
+  const nextT=plan.find(t=>!pdone.includes(t.id));
+  const cont=document.getElementById("btnContinue");
+  cont.textContent = nextT ? `Continue — ${nextT.label.replace(/^./,c=>c.toLowerCase())}`
+                           : "Practise anyway";
+  cont.onclick = nextT ? ()=>runPlanTask(nextT.id) : ()=>startReview();
 
-  /* Only while there is nothing to review — the moment the deck has cards
-     this disappears and does not come back. A permanent link at the foot of
-     the screen leads to the same page for anyone returning after a gap. */
+  /* Only until the deck has been touched — then it goes and does not come
+     back. A permanent link at the foot of the screen leads to the same page
+     for anyone returning after a gap. */
+  const fresh=Object.keys(S.cards).length===0 && !Object.keys(S.gcards||{}).length;
   const startEl=document.getElementById("startHere");
   if(startEl) startEl.innerHTML = fresh ? `<div class="card" style="border-color:var(--gold-dim)">
       <h3 style="margin-top:0">Start here</h3>
-      <ol class="muted" style="font-size:.87rem;padding-left:20px;margin:0 0 12px">
-        <li>Read <b>chapter 1</b> in Learn and hear the letters.</li>
-        <li>Tap <b>Learn 5 new words</b> above. Five is a real day's work.</li>
-        <li>Come back tomorrow — the review builds itself from what you graded.</li>
-      </ol>
+      <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above.
+        It is about ten minutes, and it is the same shape every day: the letters
+        until they stick, then the words the schedule brings back, then five new
+        ones, then a few minutes of the chapter you are on.</p>
       <button class="btn ghost small" onclick="go('help')">What else is in here</button>
     </div>` : "";
 
@@ -360,16 +501,8 @@ function render(){
       <span class="t"><b>${pin.t} ${pin.n}</b><span>Pinned for sermon preparation</span></span>
       <span class="muted">›</span></button>` : "";
 
-  const next=LESSONS.find(l=>!S.lessons.includes(l.id))||LESSONS[LESSONS.length-1];
-  document.getElementById("nextLesson").innerHTML=
-    `<button class="lesson-item" onclick="openLesson(${next.id})">
-       <span class="n">${next.id}</span>
-       <span class="t"><b>${next.t}</b><span>${next.s}</span></span>
-     </button>`;
   checkBadges();
 }
-document.getElementById("btnReview").onclick=()=>startReview();
-document.getElementById("btnNew").onclick=()=>startNew();
 
 /* ============================================================
    SESSIONS
@@ -378,6 +511,7 @@ let Q=[], qi=0, mode="";
 let REQUEUED={};                 // VOCAB index -> times re-queued this session
 function startSession(queue,label){
   Q=queue; qi=0; mode=label; SESSION_XP=0; REQUEUED={};
+  COMBO=0; COMBO_BEST=0; RIGHT=0; ASKED=0; REVIEWED=0; comboPaint();
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
@@ -400,11 +534,24 @@ function finish(){
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
   document.getElementById("sessBar").style.width="100%";
+  COMBO=0; comboPaint();
+  // A plan row is ticked by finishing it, not by starting it.
+  if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; }
   checkBadges();
+  /* Worth reading, rather than "+42 XP". Accuracy is only shown when
+     something was actually marked: a vocabulary review is self-graded, so
+     there is no accuracy to report and claiming one would be a lie. */
+  const line=[];
+  if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
+  if(REVIEWED) line.push(`<b>${REVIEWED}</b> card${REVIEWED===1?"":"s"} reviewed`);
+  if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
+  const nx=nextTaskHtml();
   b.innerHTML=`<div class="empty"><span class="gk">τέλος</span>
     <p>Session complete.</p>
+    ${line.length?`<p>${line.join(" · ")}</p>`:""}
     <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
-    <button class="btn" onclick="go('today')">Done</button>`;
+    ${nx}
+    <button class="btn ghost" onclick="go('today')">Back to today</button>`;
 }
 
 /* The example verse with its word picked out of the line. A gloss tells you
@@ -414,8 +561,22 @@ function exampleHtml(i){
   const e=(typeof EXAMPLES!=="undefined") && EXAMPLES[i];
   if(!e) return "";
   const w=e[1].split(" ");
-  if(e[2]>=0 && e[2]<w.length) w[e[2]]=`<b>${w[e[2]]}</b>`;
-  return `<div class="ex"><span class="gk">${w.join(" ")}</span><span class="ref">${e[0]}</span></div>`;
+  const at=e[2];
+  let form="";
+  if(at>=0 && at<w.length){
+    /* Say what the form is. The verse is chosen to show the word as the card
+       spells it where the corpus allows, but 23 of them can only show an
+       augmented or reduplicated verb — ἔλεγον for λέγω — and unlabelled that
+       reads as a different word. e[3] and e[4] are the part of speech and the
+       parse code straight from MorphGNT; gntParse is the same renderer the
+       Read tab uses, and js/gnt.js loads before this file. */
+    if(e[3] && e[4] && typeof gntParse==="function"){
+      const p=gntParse(e[3],e[4]);
+      if(p) form=`<span class="form"><span class="gk">${w[at].replace(/[.,;·:!?]+$/,"")}</span> — ${p}</span>`;
+    }
+    w[at]=`<b>${w[at]}</b>`;
+  }
+  return `<div class="ex"><span class="gk">${w.join(" ")}</span>${form}<span class="ref">${e[0]}</span></div>`;
 }
 /* The principal parts, for the forty-one verbs that have them. They were
    only ever visible inside one drill; on the card they are seen by anyone
@@ -481,6 +642,9 @@ function grade(i,g){
   save();
   addXp(3);                    // per graded card, so a lapse cannot pay twice
   SESSION_XP+=3;
+  REVIEWED++;
+  /* No combo and no accuracy here: you graded yourself, so there is nothing
+     to be right about. Anything else would be a score you awarded yourself. */
   /* The button says "<1m" and Q.push() meant the end of the session — eight
      to fifteen minutes, by which time the answer you were just shown has
      gone, so you fail it again and the lapse count calls an ordinary word a
@@ -511,8 +675,67 @@ document.getElementById("btnUndo").onclick=()=>{
   step();
 };
 
-/* ---- multiple choice ---- */
-function mcq(q,opts,ans,why,gkey){
+/* ============================================================
+   HOW AN ANSWER FEELS
+   ------------------------------------------------------------
+   Someone else was handed the app and called it lifeless. They were right:
+   getting one right tinted a border, printed a paragraph and played a sound,
+   and nothing in the session told you how it was going.
+
+   None of this touches the schedule, the grading or a single word of
+   content. It is sound, motion and a running count. The reduced-motion rule
+   at the top of app.css turns every animation off for anyone who asks for
+   that, and the whole lot is silent when Answer sounds is Off.
+   ============================================================ */
+let COMBO=0, COMBO_BEST=0, RIGHT=0, ASKED=0, REVIEWED=0;
+
+function comboPaint(){
+  const el=document.getElementById("sessCombo");
+  if(!el) return;
+  // Two is not a run. Three is.
+  el.textContent = COMBO>=3 ? `🔥 ${COMBO} in a row` : "";
+  el.className = "combo" + (COMBO>=10 ? " blaze" : COMBO>=5 ? " hot" : "");
+}
+
+/* A "+2" that lifts off the button it was earned on. */
+function floatXp(el,n){
+  if(!el||!el.appendChild) return;
+  const s=document.createElement("span");
+  s.className="xpfly"; s.textContent="+"+n;
+  el.appendChild(s);
+  setTimeout(()=>{ try{ s.remove(); }catch(e){} },1000);
+}
+
+/* One place, so the quiz and the writing pad answer the same way.
+   `silent` is for the trace: a trace that falls short says "have another
+   go", and giving it a wrong-answer buzzer would undo that. */
+function answerFelt(ok,el,silent){
+  ASKED++; if(ok) RIGHT++;
+  if(ok){ COMBO++; COMBO_BEST=Math.max(COMBO_BEST,COMBO); } else COMBO=0;
+  comboPaint();
+  if(!silent) sfx(ok?"correct":"wrong");
+  /* Tied to the Answer sounds setting rather than given one of its own —
+     it is the same decision, how loudly the app should react. A no-op on
+     iOS, and guarded because some browsers throw rather than ignore it. */
+  const snd=(S.sfx===undefined?2:S.sfx);
+  try{
+    if(!silent && navigator.vibrate && (ok ? snd>0 : snd>1))
+      navigator.vibrate(ok?12:[7,40,7]);
+  }catch(e){}
+  if(!ok) return;
+  const bar=document.getElementById("sessBar");
+  if(bar){ bar.classList.remove("hit"); void bar.offsetWidth; bar.classList.add("hit"); }
+  if(el) floatXp(el,2);
+  // Small on purpose: a run must never out-earn the 3 XP a graded card pays,
+  // or the fastest way to level up becomes the one that teaches least.
+  if(COMBO===5||COMBO===10){ addXp(COMBO); SESSION_XP+=COMBO; toast(`${COMBO} in a row · +${COMBO} XP`); }
+}
+
+/* ---- multiple choice ----
+   `after` is an optional callback given the verdict — the letter drills use
+   it to keep their own tally. Sixth and last, so every existing call site
+   is untouched. */
+function mcq(q,opts,ans,why,gkey,after){
   return ()=>{
     const b=document.getElementById("sessBody");
     b.innerHTML=`<div class="card"><p style="margin:0;font-size:1.02rem">${q}</p></div>
@@ -523,14 +746,20 @@ function mcq(q,opts,ans,why,gkey){
       btn.className="opt"; btn.innerHTML=o;
       btn.onclick=()=>{
         [...box.children].forEach(c=>c.onclick=null);
+        const good=k===ans;
         box.children[ans].classList.add("right");
-        if(k!==ans) btn.classList.add("wrong");
+        if(!good) btn.classList.add("wrong");
         document.getElementById("fb").innerHTML=
-          `<div class="feedback"><b>${k===ans?"Correct":"Not quite"}</b>${why}</div>
+          `<div class="feedback"><b>${good?"Correct":"Not quite"}</b>${why}</div>
            <button class="btn" onclick="qi++;step()">Continue</button>`;
-        sfx(k===ans?"correct":"wrong");
-        if(k===ans) addXp(2);
-        if(gkey) gradeGrammar(gkey,k===ans);
+        answerFelt(good, good?box.children[ans]:btn);
+        /* SESSION_XP as well as the total. It was only ever added to by
+           grade(), so a session made entirely of questions — every drill in
+           the Grammar group — really earned the XP and then signed off with
+           "+0 XP". Harmless while the summary was one line; not now. */
+        if(good){ addXp(2); SESSION_XP+=2; }
+        if(gkey) gradeGrammar(gkey,good);
+        if(after) after(good);
       };
       box.appendChild(btn);
     });
@@ -626,15 +855,53 @@ function renderLessons(){
       <span class="t"><b>${l.t}</b><span>${l.s}</span></span>
     </button>`).join("");
 }
+/* ---- Watch ----
+   Daily Dose serves its 26 lectures through its own player — no iframe in
+   the page source, and they are not on its YouTube channel — so those stay
+   as links out. Its songs and memory devices are ordinary YouTube videos and
+   play here instead of throwing you into a browser.
+
+   Nothing off-origin loads until the row is tapped: no thumbnail, no player
+   script, no cookie. The service worker already returns early for
+   cross-origin requests (sw.js), so none of it is cached either, and the
+   existing body.off rule greys the row out when there is no connection. */
+const attr=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;")
+                       .replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function vidRowHtml(v){
+  if(!v.yt) return `<a class="vid" href="${v.u}" target="_blank" rel="noopener">
+      <span class="p">▶</span><span><b>${v.t}</b><span>${v.s}</span><span class="net">Needs a connection</span></span></a>`;
+  return `<button class="vid" data-yt="${attr(v.yt)}" data-t="${attr(v.t)}" onclick="playVid(this)">
+      <span class="p">▶</span><span><b>${v.t}</b><span>${v.s}</span><span class="net">Needs a connection</span></span></button>`;
+}
+function playVid(el){
+  const id=el.dataset.yt, t=el.dataset.t;
+  if(!/^[\w-]{11}$/.test(id)) return;      // an id, not a URL someone slipped in
+  el.outerHTML=`<div class="vidbox"><iframe
+      src="https://www.youtube-nocookie.com/embed/${id}?rel=0"
+      title="${attr(t)}" loading="lazy" allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe></div>`;
+}
+
 function openLesson(id){
   const l=LESSONS.find(x=>x.id===id);
+  const parts=lessonParts(l).length;
+  const at=(S.lessonPart&&S.lessonPart.id===id)?S.lessonPart.part:0;
   document.getElementById("lessonBody").innerHTML=`
     <h1 style="margin-top:14px">${l.t}</h1>
     <p class="sub">${l.s}</p>
+    <div class="card" style="border-color:var(--gold-dim)">
+      <p style="margin:0 0 10px;font-size:.9rem">${
+        at?`You stopped at part <b>${at+1}</b> of ${parts}.`
+          :`<b>${parts} short parts</b> and ${l.quiz.length} questions, about ten minutes — a
+             little reading, then a chance to use it, rather than the whole chapter and a test.`}</p>
+      <button class="btn" onclick="lessonWalk(${id},${at})">${at?"Pick it up again":"Work through it"}</button>
+    </div>
+    <h2 style="margin-top:26px">The chapter</h2>
     ${l.body}
     <h2>Watch</h2>
-    ${l.vids.map(v=>`<a class="vid" href="${v.u}" target="_blank" rel="noopener">
-      <span class="p">▶</span><span><b>${v.t}</b><span>${v.s}</span><span class="net">Needs a connection</span></span></a>`).join("")}
+    ${l.vids.map(vidRowHtml).join("")}
     ${(l.v||[]).length?`<h2>This chapter's words</h2>
     <p class="muted" style="font-size:.87rem">The ${(l.v||[]).length} words Black introduces in this chapter${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} of them not yet started`:" — all started"}.</p>
     <button class="btn ghost" onclick="startLessonWords(${id})"${lessonWordsLeft(id)?"":" disabled"}>${
@@ -642,10 +909,18 @@ function openLesson(id){
       :lessonWordsLeft(id)?`Learn the remaining ${lessonWordsLeft(id)}`
       :"All of them started"}</button>`:""}
     <h2>Test yourself</h2>
-    <p class="muted" style="font-size:.87rem">${l.quiz.length} questions. Retrieval beats rereading — attempt each one before you look.</p>
-    <button class="btn" onclick="lessonQuiz(${id})">Start the test</button>
+    <p class="muted" style="font-size:.87rem">All ${l.quiz.length} questions in one go, with no reading in between. Retrieval beats rereading — attempt each one before you look.</p>
+    <button class="btn ghost" onclick="lessonQuiz(${id})">Start the test</button>
     <div style="height:34px"></div>`;
   showScreen("lesson"); pushNav({screen:"lesson",id});
+  fillAlphaHere();
+}
+/* Chapter 1's body carries an empty <div id="alphaHere">. The sound grids are
+   generated from AUDIO_CLIPS rather than stored, so they have to be poured in
+   after the body is rendered — by the chapter page and by the step-by-step
+   walk alike. Missing this from the walk would empty the alphabet out of the
+   one chapter that is entirely about the alphabet. */
+function fillAlphaHere(){
   const ah=document.getElementById("alphaHere");
   if(ah) ah.innerHTML=
     soundGridHtml("letter")
@@ -665,18 +940,86 @@ function lessonQuiz(id){
   // Answering here both creates the card and gives it its first grade, so a
   // lesson you pass starts on the schedule rather than falling off it.
   const q=l.quiz.map((x,n)=>mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
-  q.push(()=>{
+  q.push(lessonDone(id));
+  startSession(q,"lesson");
+}
+
+/* ---- a chapter, worked through in ten minutes ----
+   The chapter page is 300 words of prose with a test bolted on the end, and
+   reading 300 words then answering six questions is the shape that made this
+   feel like homework. The same material, cut at its own <h3> headings and
+   asked about as you go, is three or four two-minute steps.
+
+   Nothing is rewritten to do it: the parts are the chapter's own sections,
+   the questions are the chapter's own quiz, and they carry the same
+   L{id}q{n} keys, so a question answered here lands on exactly the grammar
+   schedule the end-of-chapter test feeds. The page itself is untouched and
+   still there to re-read. */
+function lessonParts(l){
+  // Lookahead, so each <h3> stays attached to the section it opens. Part 0
+  // is whatever comes before the first heading; chapters 12, 14 and 21 have
+  // only one heading and so run to two parts, which is fine — they are short.
+  return l.body.split(/(?=<h3>)/).filter(s=>s.trim()).map(html=>{
+    const m=html.match(/^<h3>([\s\S]*?)<\/h3>/);
+    return {html, title:m?m[1].replace(/<[^>]+>/g,""):null};
+  });
+}
+function lessonStep(l,parts,k){
+  return ()=>{
+    // Written down every step, so Today can say where you stopped.
+    S.lessonPart={id:l.id,part:k}; save();
+    document.getElementById("sessBody").innerHTML=`
+      <p class="muted" style="font-size:.78rem;margin:0 0 8px">
+        Chapter ${l.id} · part ${k+1} of ${parts.length}${parts[k].title?` · ${parts[k].title}`:""}</p>
+      <div class="card read">${parts[k].html}</div>
+      <button class="btn" onclick="qi++;step()">Continue</button>`;
+    fillAlphaHere();
+  };
+}
+function lessonDone(id){
+  return ()=>{
     if(!S.lessons.includes(id)){S.lessons.push(id);save();}
+    if(S.lessonPart && S.lessonPart.id===id){ S.lessonPart=null; save(); }
+    // This screen stands in for finish(), so it has to tick the plan too.
+    if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; }
+    COMBO=0; comboPaint();
     checkBadges();
+    const line=[];
+    if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
+    if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
     document.getElementById("sessBody").innerHTML=`
       <div class="empty"><span class="gk">εὖγε</span>
-        <p>Lesson ${id} complete.</p></div>
-      <button class="btn" onclick="go('learn')">Back to lessons</button>
-      <div style="height:9px"></div>
-      <button class="btn ghost" onclick="startReview()">Review vocabulary now</button>`;
+        <p>Chapter ${id} complete.</p>
+        ${line.length?`<p>${line.join(" · ")}</p>`:""}</div>
+      ${nextTaskHtml()}
+      <button class="btn ghost" onclick="go('learn')">Back to lessons</button>`;
     document.getElementById("sessBar").style.width="100%";
     addXp(12);
+  };
+}
+function lessonWalk(id,from){
+  const l=LESSONS.find(x=>x.id===id);
+  if(!l) return;
+  const parts=lessonParts(l);
+  const start=Math.min(Math.max(0,from|0),parts.length-1);
+  const q=[];
+  for(let k=start;k<parts.length;k++){
+    q.push(lessonStep(l,parts,k));
+    l.quiz.forEach((x,n)=>{ if(x.sec===k) q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`)); });
+  }
+  /* Everything not filed against a part still gets asked, at the end — which
+     is also what happens for a chapter whose questions carry no sec at all,
+     so this degrades exactly to the old test rather than losing questions.
+     On a resume, a question belonging to a part already read is only re-asked
+     if it was never answered; S.gcards is the record of that. */
+  const g=S.gcards||{};
+  l.quiz.forEach((x,n)=>{
+    const filed=Number.isInteger(x.sec) && x.sec>=0 && x.sec<parts.length;
+    if(filed && x.sec>=start) return;                 // asked inline above
+    if(filed && x.sec<start && g[`L${id}q${n}`]) return;   // answered already
+    q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
   });
+  q.push(lessonDone(id));
   startSession(q,"lesson");
 }
 
@@ -921,8 +1264,8 @@ function pairDrill(bank,prompt,n=12){
       opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`);
   });
 }
-function alphaDrill(){
-  const pool=ALPHABET.slice().sort(()=>Math.random()-.5).slice(0,12);
+function alphaDrill(n=12,from){
+  const pool=(from||ALPHABET.slice().sort(()=>Math.random()-.5)).slice(0,n);
   return pool.map(a=>{
     const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[a[1],...wrong].sort(()=>Math.random()-.5);
@@ -930,7 +1273,8 @@ function alphaDrill(){
       ? ` <button class="btn ghost small" style="margin-top:8px" onclick="playGreek('${a[0]}',null)">\uD83D\uDD0A Hear it</button>`
       : "";
     return mcq(`Name this letter: <span class="q-gk lg">${a[0]}</span>${snd}`,
-      opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`);
+      opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`,
+      null, ok=>alphaSeen(a[1],ok));
   });
 }
 /* Listening drill: the clip is the question. */
@@ -944,7 +1288,8 @@ function listenDrill(n=12){
     const q=mcq(`<button class="btn" onclick="playGreek('${c[0]}',null)">\uD83D\uDD0A Play the sound</button>
       <p class="muted" style="font-size:.84rem;margin:10px 0 0">Which ${c[3]} is this?</p>`,
       opts, opts.indexOf(c[1]),
-      `<span class="gk">${c[0]}</span> — ${c[1]}, sounds like ${c[2]}.`);
+      `<span class="gk">${c[0]}</span> — ${c[1]}, sounds like ${c[2]}.`,
+      null, ok=>{ if(c[3]==="letter") alphaSeen(c[1],ok); });
     // autoplay once the question is on screen
     return ()=>{ q(); playGreek(c[0],null); };
   });
@@ -1272,14 +1617,15 @@ function renderHelp(){
   document.getElementById("helpBody").innerHTML=`
     <div class="card">
       <h3 style="margin-top:0">The short version</h3>
-      <p class="muted" style="font-size:.87rem;margin:0">Ten minutes a day. Open <b>Today</b>, do the review it offers,
-      and learn five new words when you want more. Everything else is there when you need it, not before.</p>
+      <p class="muted" style="font-size:.87rem;margin:0">Ten minutes a day. Open <b>Today</b> and work down the plan —
+      the letters while they are still settling, the words the schedule brings back, five new ones, then a few
+      minutes of the chapter you are on. Everything else is there when you need it, not before.</p>
     </div>
 
     <h2>The tabs</h2>
     <table>
-      <tr><th>Today</th><td>What is due, your streak, and the next chapter. The passage you pinned shows up here too.</td></tr>
-      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. Each has the teaching, a video, its own vocabulary and a short test. Answering a quiz question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
+      <tr><th>Today</th><td>The day's plan, three or four short things, ticked off as you do them. The ring fills as the plan does. Your streak sits under it, and a passage you pinned shows up here too.</td></tr>
+      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, grouped by vocabulary, grammar, and letters and sounds.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
@@ -1293,7 +1639,8 @@ function renderHelp(){
       <tr><th>Grading honestly</th><td>Again, Hard, Good and Easy set when a word comes back. Guessing right is not the same as knowing it — press Hard and the schedule will believe you.</td></tr>
       <tr><th>A missed day</th><td>One rest day a week is allowed; the streak survives it and says so.</td></tr>
       <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Progress.</td></tr>
-      <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the video links need the internet.</td></tr>
+      <tr><th>The letters</th><td>Today leads with them until each one has been named correctly ${ALPHA_SOLID} times running, then that row retires and Progress says the alphabet has settled. It comes back if you start missing them.</td></tr>
+      <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the videos need the internet; the songs play inside the app, the lectures open in a browser.</td></tr>
       <tr><th>Two devices</th><td>Progress → Sync. Invent a phrase, enter it on both. Progress merges; the phrase never leaves your device.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
     </table>
@@ -1314,11 +1661,18 @@ function renderProgress(){
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
     ${backupNudgeHtml()}
+    <!-- These three came off Today when it became the day's plan. Streak and
+         best streak fold into the line beneath: Today already shows the
+         streak, and two tiles for it was one too many. -->
     <div class="stat-grid">
-      <div class="stat"><b>${S.streak}</b><span>day streak</span></div>
-      <div class="stat"><b>${S.best||0}</b><span>best streak</span></div>
+      <div class="stat"><b>${known}</b><span>words known</span></div>
       <div class="stat"><b>${level()}</b><span>level</span></div>
+      <div class="stat"><b>${S.xp}</b><span>total XP</span></div>
     </div>
+    <p class="muted" style="font-size:.82rem;margin:-4px 0 14px;text-align:center">
+      ${S.streak} day streak · best ${S.best||0}${
+        alphaLeft()?` · ${ALPHABET.length-alphaLeft()} of ${ALPHABET.length} letters settled`
+                   :" · alphabet settled"}</p>
     <div class="card">
       <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
       <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>
@@ -1398,6 +1752,12 @@ function renderProgress(){
        replacing wiped chapters finished beyond n with no confirm or undo. */
     const add=Array.from({length:n},(_,k)=>k+1);
     S.lessons=[...new Set([...(S.lessons||[]),...add])].sort((a,b)=>a-b);
+    /* Chapter 1 is the alphabet, so saying you have done it says you can read
+       the letters. Without this, Today would lead someone who has studied
+       Greek for years with eight letter-naming questions a day until they had
+       ground through all 24 three times over. It is not permanent — miss them
+       in a drill and the row comes back. */
+    if(n>=1) ALPHABET.forEach(a=>{ S.alpha=S.alpha||{}; S.alpha[a[1]]=ALPHA_SOLID; });
     save(); checkBadges(); renderProgress();
     toast("Chapters 1–"+n+" marked done");
   };
@@ -1442,6 +1802,29 @@ function saneState(x){
     ? {a:r.a.slice(0,8), ch:+r.ch, t:r.t.slice(0,40), n:+r.n||(+r.ch+1)} : null;
   out.where=chapterRef(x.where);
   out.pin=chapterRef(x.pin);
+  /* Where a part-way chapter stopped, so Today can offer to pick it up.
+     Shape-checked because the part number indexes into an array and the id
+     is rendered straight into a button. */
+  out.lessonPart=(x.lessonPart && typeof x.lessonPart==="object"
+    && Number.isInteger(+x.lessonPart.id) && +x.lessonPart.id>=1
+    && +x.lessonPart.id<=LESSONS.length
+    && Number.isInteger(+x.lessonPart.part) && +x.lessonPart.part>=0
+    && +x.lessonPart.part<200)
+    ? {id:+x.lessonPart.id, part:+x.lessonPart.part} : null;
+  /* Which day's plan the ticks belong to. A plan restored from another day
+     is discarded rather than carried over — touchDay clears it anyway, but
+     an import landing mid-day should not tick today's boxes. */
+  out.plan=(x.plan && typeof x.plan==="object"
+    && /^\d{4}-\d{2}-\d{2}$/.test(x.plan.day) && Array.isArray(x.plan.done))
+    ? {day:x.plan.day, done:x.plan.done.filter(s=>typeof s==="string").slice(0,8)}
+    : null;
+  /* letter -> how many times running it has been named correctly. Capped, so
+     a hand-edited file cannot claim the alphabet is finished with one entry. */
+  out.alpha={};
+  if(x.alpha && typeof x.alpha==="object" && !Array.isArray(x.alpha))
+    for(const k of Object.keys(x.alpha))
+      if(ALPHABET.some(a=>a[1]===k) && Number.isFinite(+x.alpha[k]))
+        out.alpha[k]=Math.max(0,Math.min(ALPHA_SOLID,Math.round(+x.alpha[k])));
   if(out.pin) out.pin.ts=Number.isFinite(+(x.pin||{}).ts)?+x.pin.ts:0;
   const saneCard=c=>{
     const o={
@@ -1503,7 +1886,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null};
+  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null};
   save(); renderProgress(); toast("Everything reset");
 }
 

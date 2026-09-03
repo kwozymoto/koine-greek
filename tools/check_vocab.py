@@ -325,7 +325,8 @@ for i, e in enumerate(EXAMPLES[:len(VOCAB)]):
     if not e:
         ex_none.append("%s no verse short enough to be worth showing" % tag)
         continue
-    ref, txt, at = e
+    ref, txt, at = e[0], e[1], e[2]
+    pos, code = (e[3], e[4]) if len(e) >= 5 else (None, None)
     ws = one_verse(ref)
     if ws is None:
         ex_bad.append("%s %s does not resolve in the corpus" % (tag, ref)); continue
@@ -337,6 +338,18 @@ for i, e in enumerate(EXAMPLES[:len(VOCAB)]):
     if j is not None and ws[at][1] != j:
         ex_bad.append("%s %s highlights %s, which is %s, not %s"
                       % (tag, ref, ws[at][0], LEMMAS[ws[at][1]], headword(VOCAB[i])))
+    # The card labels that form with its parse, so the parse has to be the
+    # corpus's own and not a stale copy. Without this, regenerating the verses
+    # and forgetting to regenerate the codes would put a confident, wrong
+    # grammatical label under every example — the worst kind of error this app
+    # can make, because it looks authoritative.
+    elif pos is None:
+        ex_bad.append("%s %s carries no part of speech or parse code — "
+                      "re-run tools/build_examples.py" % (tag, ref))
+    elif POS[ws[at][2]] != pos or ws[at][3] != code:
+        ex_bad.append("%s %s labels %s %s %s; the corpus says %s %s"
+                      % (tag, ref, ws[at][0], pos, code,
+                         POS[ws[at][2]], ws[at][3]))
     else:
         ex_ok += 1
 

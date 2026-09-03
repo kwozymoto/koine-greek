@@ -29,7 +29,11 @@ button{font-family:inherit;font-size:inherit;color:inherit;background:none;borde
 .screen{display:none;padding-top:calc(14px + env(safe-area-inset-top))}
 .screen.on{display:block;animation:in .18s ease-out}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* The pseudo-elements have to be named. `*` matches elements only, so the
+   tick that scales in on a correct answer would have kept animating for
+   someone who had asked the whole app to stop moving. */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{
+  animation:none!important;transition:none!important}}
 
 h1{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
 h2{font-size:1.1rem;font-weight:600;margin:26px 0 10px}
@@ -75,6 +79,25 @@ nav button.on{color:var(--gold)}
 .streak{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:5px 13px;font-size:.83rem}
 .streak i{font-style:normal;color:var(--muted);font-size:.76rem}
 .streak i:empty{display:none}
+/* ---------- today's plan ----------
+   Built on .lesson-item's shape so the two lists read as one app. The tick
+   is a circle that fills when the row is done, which is the whole point of
+   the screen: you can see what today asks before you start it. */
+.plan-row{display:flex;align-items:center;gap:13px;width:100%;text-align:left;
+  padding:13px 15px;margin-bottom:9px;background:var(--surface);
+  border:1px solid var(--line);border-radius:12px;transition:opacity .2s}
+.plan-row .tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;
+  border:1.5px solid var(--line);display:flex;align-items:center;
+  justify-content:center;font-size:.76rem;font-weight:700;color:#12191a}
+.plan-row .t{flex:1;min-width:0;display:flex;flex-direction:column}
+.plan-row .t b{font-weight:600;font-size:.95rem}
+.plan-row .t span{font-size:.76rem;color:var(--muted);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plan-row .chev{color:var(--muted)}
+.plan-row.done{opacity:.55}
+.plan-row.done .tick{background:var(--green);border-color:var(--green)}
+.plan-row.done .t b{text-decoration:line-through;text-decoration-color:var(--muted)}
+
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
 .stat b{display:block;font-size:1.3rem;font-weight:600}
@@ -107,6 +130,50 @@ nav button.on{color:var(--gold)}
 .opt.pick{border-color:var(--gold)}
 .opt.right{border-color:var(--green);background:rgba(88,168,140,.13)}
 .opt.wrong{border-color:var(--rust);background:rgba(205,97,82,.13)}
+
+/* ---------- how an answer feels ----------
+   A tinted border was the whole of it, which is what "lifeless" meant. The
+   reduced-motion rule near the top of this file switches every animation
+   here off in one line, and the marks and colours stay. */
+.opt{position:relative}
+.opt.right,.opt.wrong{padding-right:44px}
+.opt.right::after,.opt.wrong::after{
+  position:absolute;right:15px;top:50%;margin-top:-11px;
+  width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;
+  font-size:.8rem;font-weight:700;color:#12191a}
+.opt.right::after{content:"✓";background:var(--green);animation:mark .26s cubic-bezier(.2,1.5,.4,1) both}
+.opt.wrong::after{content:"✕";background:var(--rust);color:#1c0f0d}
+.opt.right{animation:pop .2s ease-out}
+.opt.wrong{animation:nudge .22s ease-in-out}
+@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.035)}100%{transform:scale(1)}}
+@keyframes mark{from{transform:scale(0) rotate(-25deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+@keyframes nudge{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* the XP lifting off the button it was earned on */
+.xpfly{position:absolute;right:14px;top:6px;font-size:.76rem;font-weight:700;
+  color:var(--gold);pointer-events:none;animation:fly .9s ease-out forwards}
+@keyframes fly{0%{opacity:0;transform:translateY(4px)}
+  22%{opacity:1;transform:translateY(-4px)}100%{opacity:0;transform:translateY(-26px)}}
+
+/* the run, beside the card count. The header is justify-content:space-between,
+   so this needs no margin of its own — and :empty removes it from the row
+   entirely rather than leaving a gap the other three spread around. */
+.combo{font-size:.76rem;font-weight:650;
+  color:var(--muted);white-space:nowrap;transition:color .2s}
+.combo:empty{display:none}
+.combo.hot{color:var(--gold)}
+.combo.blaze{color:var(--gold);text-shadow:0 0 10px rgba(212,165,55,.5)}
+
+/* the progress bar acknowledging a correct answer */
+.prog-bar i.hit{animation:barhit .45s ease-out}
+@keyframes barhit{0%{box-shadow:0 0 0 0 rgba(212,165,55,.6);filter:brightness(1)}
+  35%{box-shadow:0 0 9px 2px rgba(212,165,55,.55);filter:brightness(1.35)}
+  100%{box-shadow:0 0 0 0 rgba(212,165,55,0);filter:brightness(1)}}
+/* one section of a chapter, inside a session. The prose keeps the page's own
+   type; only the first heading loses its top margin so it sits on the card. */
+.card.read>:first-child{margin-top:0}
+.card.read>:last-child{margin-bottom:0}
+.card.read h3:first-child{margin-top:0}
 .feedback{border-left:3px solid var(--gold);padding:2px 0 2px 13px;margin:14px 0;font-size:.9rem;color:var(--muted)}
 .feedback b{color:var(--text);display:block;margin-bottom:3px}
 
@@ -128,6 +195,12 @@ caption{caption-side:top;text-align:left;color:var(--gold);font-size:.82rem;padd
 .vid .p{width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--rust);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#fff}
 .vid b{display:block;font-size:.88rem;font-weight:600}
 .vid span{font-size:.74rem;color:var(--muted)}
+/* a song that plays here rather than throwing you out to a browser. It is a
+   <button> so it matches the <a> rows around it exactly. */
+button.vid{width:100%;text-align:left;font:inherit}
+.vidbox{position:relative;width:100%;aspect-ratio:16/9;margin-bottom:9px;
+  border-radius:11px;overflow:hidden;background:#000}
+.vidbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ---------- alphabet ---------- */
 .alpha-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -285,12 +358,19 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .ex .gk{display:block;font-size:calc(1rem * var(--gk-scale));line-height:1.5;color:var(--text)}
 .ex .gk b{color:var(--gold);font-weight:500}
 .ex .ref{display:block;font-size:.72rem;color:var(--muted);margin-top:4px}
+/* what the highlighted form actually is — the .gk inside has to go back to
+   inline, or it inherits the display:block above and breaks the line */
+.ex .form{display:block;font-size:.75rem;color:var(--muted);margin-top:6px}
+.ex .form .gk{display:inline;font-size:calc(.84rem * var(--gk-scale));color:var(--gold)}
 .parts{margin-top:10px;font-size:.8rem;color:var(--muted)}
 .parts .gk{font-size:calc(.95rem * var(--gk-scale));color:var(--muted)}
 /* in a lookup row it sits under the gloss, tighter and unbordered */
 .lk .ex{margin-top:5px;padding-top:0;border-top:none;text-align:left}
 .lk .ex .gk{font-size:calc(.92rem * var(--gk-scale));line-height:1.4;color:var(--muted)}
 .lk .ex .ref{display:inline;margin-left:6px;font-size:.68rem}
+/* not in the lookup list: forty results each gaining a second line turns a
+   scannable list into a scroll. The card is where the parse is wanted. */
+.lk .ex .form{display:none}
 
 /* play the whole lexical entry */
 .mini{font-size:.72rem;padding:2px 7px;border:1px solid var(--line);border-radius:999px;

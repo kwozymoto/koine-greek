@@ -95,3 +95,67 @@ n = sum(len(v) for v in flagged.values())
 print("\nnot attested and not filtered: %d" % n)
 for cid in sorted(flagged):
     print("  ch%-3d %s" % (cid, " ".join(sorted(flagged[cid]))))
+
+# ------------------------------------------------- questions in their place --
+# Working through a chapter interleaves its own questions with its own
+# sections: q.sec names the part a question is asked after. Getting that
+# wrong is not cosmetic — it asks about material the reader has not been
+# shown yet, which is the one thing the stepped mode exists to avoid.
+#
+# Two things are checkable without judging the grammar. The index has to be
+# a real part. And no question may quote a form that this chapter introduces
+# *after* it — if a question turns on ἀγαπῶμεν and section 1 is where the
+# hortatory subjunctive is shown, asking it after section 0 is asking about
+# something not yet said. That is the direction that actually hurts.
+#
+# Only forms the chapter itself teaches count. A question about διά quoting
+# τοῦτο, or the Lord's Prayer's ὀφειλήματα, is leaning on ordinary vocabulary
+# rather than on the section — flagging those buries the real thing. So the
+# test is: does this form appear somewhere in the chapter, but not yet?
+# Forms the whole course carries — λύω's paradigm, and any word in the deck —
+# are exempt for the same reason.
+sec_bad, sec_early, filed, unfiled = [], [], 0, 0
+for l in LESSONS:
+    parts = [p for p in re.split(r"(?=<h3>)", l["body"]) if p.strip()]
+    seen = []                       # Greek forms available by the end of part k
+    running = set()
+    for p in parts:
+        for m in re.finditer(r'<(?:span class="gk"|td class="g")>(.*?)</(?:span|td)>', p, re.S):
+            txt = re.sub("<.*?>", "", m.group(1)).replace("(ν)", "ν")
+            for tok in re.split(r"[\s,·/()…—]+", txt):
+                g = bare(tok.strip())
+                if g:
+                    running.add(norm(g))
+        seen.append(set(running))
+    for n_, q in enumerate(l["quiz"]):
+        sec = q.get("sec")
+        if sec is None:
+            unfiled += 1
+            continue
+        if not isinstance(sec, int) or sec < 0 or sec >= len(parts):
+            sec_bad.append("ch%d q%d is filed against part %r, but the chapter "
+                           "has %d" % (l["id"], n_, sec, len(parts)))
+            continue
+        filed += 1
+        asked = set()
+        for src in (q["q"], q["o"][q["a"]]):
+            src = re.sub("<.*?>", " ", src).replace("(ν)", "ν")
+            for tok in re.split(r"[\s,·/()…—;:.!?'\"]+", src):
+                g = bare(tok.strip())
+                if len(g) >= 3 and not LUO.match(flat(g)) and norm(g) not in HEADWORDS:
+                    asked.add(norm(g))
+        # taught by this chapter (seen[-1]) but not yet by this point
+        early = sorted(g for g in asked if g in seen[-1] and g not in seen[sec])
+        if early:
+            first = {g: next(k for k, s in enumerate(seen) if g in s) for g in early}
+            sec_early.append("ch%d q%d is asked after part %d but turns on %s"
+                             % (l["id"], n_, sec,
+                                ", ".join("%s (taught in part %d)" % (g, first[g])
+                                          for g in early)))
+
+print("\nquestions filed against a chapter section: %d (%d not filed)"
+      % (filed, unfiled))
+for s in sec_bad + sec_early:
+    print("   " + s)
+if sec_bad or sec_early:
+    sys.exit(1)

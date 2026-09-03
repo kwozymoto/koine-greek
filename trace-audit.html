@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trace scoring — calibration</title>
+<style>
+  body{background:#141b2b;color:#e9e5da;font:14px/1.5 system-ui,sans-serif;margin:0;padding:20px}
+  h1{font-size:1.1rem;margin:0 0 4px}
+  p.sub{color:#97a1b5;margin:0 0 18px;max-width:70ch}
+  .pad{width:340px;height:300px;position:absolute;left:-9999px;top:0}
+  .pad canvas{display:block;width:100%;height:300px}
+  table{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:13px}
+  th,td{padding:3px 9px;text-align:right;border-bottom:1px solid #38445d}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:#d4a537;position:sticky;top:0;background:#141b2b}
+  tbody tr:hover{background:#1e2739}
+  tfoot td{font-weight:700;border-top:2px solid #38445d;border-bottom:none;padding-top:8px}
+  .pass{color:#58a88c}.fail{color:#cd6152}
+  .knobs{background:#1e2739;border:1px solid #38445d;border-radius:10px;padding:12px 14px;
+         margin-bottom:16px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .knobs label{color:#97a1b5}
+  .knobs input{width:60px;background:#29344a;color:#e9e5da;border:1px solid #38445d;
+               border-radius:6px;padding:4px 6px;font:inherit}
+  button{background:#d4a537;color:#1a1408;border:0;border-radius:8px;padding:8px 16px;
+         font:inherit;font-weight:650;cursor:pointer}
+  .verdict{margin:16px 0;padding:10px 14px;border-left:3px solid #d4a537;background:#1e2739}
+</style>
+</head>
+<body>
+
+<h1>Trace scoring — calibration</h1>
+<p class="sub">
+  Not shipped: this page exists so the four numbers in <code>WRITE</code> are set from a
+  measurement rather than from taste. It reads them out of <code>js/write.js</code> and calls the
+  real <code>wScore()</code>, so it calibrates the scorer the app runs, not a copy of it.
+  Eight synthetic traces are put over all 24 letters. <b>middle</b>, <b>jitter 5</b> and
+  <b>tail</b> should pass; <b>oversize</b>, <b>scribble</b> and <b>line</b> should not;
+  the two heavier jitters are the boundary and may go either way.
+  <b>tail</b> is the reported bug — the letter followed properly, then a fifth of the
+  ink run off the bottom. It should still pass, but it must not read in the nineties,
+  which is what it used to do.
+  The guide is drawn in whatever serif the machine resolves, so absolute numbers shift a
+  little between devices; the gap between the groups is what matters.
+</p>
+
+<div class="knobs">
+  <label>grid <input id="kGrid" type="number" min="8" max="120" step="1"></label>
+  <label>probe <input id="kProbe" type="number" min="0.5" max="4" step="0.1"></label>
+  <label>pass <input id="kPass" type="number" min="0" max="1" step="0.01"></label>
+  <label>spill <input id="kSpill" type="number" min="0" max="1" step="0.01"></label>
+  <button id="run">Run</button>
+  <span id="status" style="color:#97a1b5"></span>
+</div>
+
+<div id="verdict"></div>
+<div id="out"></div>
+
+<div class="pad"><canvas id="pad"></canvas></div>
+
+<script src="data/lessons.js"></script>
+<script src="js/write.js"></script>
+<script>
+/* ---------------------------------------------------------------- traces ---
+   A synthetic trace has to come from the glyph itself, or it is only testing
+   the path I happened to draw. So the mask is rasterised and skeletonised by
+   scanning it twice: once by row, taking the centre of each horizontal run,
+   and once by column. Row-scanning alone loses a horizontal bar — every
+   column of pi's crossbar is one long run whose centre is a single point —
+   and column-scanning alone loses a vertical stem. The union follows both.
+
+   Each skeleton point is emitted as a one-point stroke, which wPath() draws
+   as a filled circle of pen width. A line of those IS a pen stroke, and it
+   is the closest thing to a flawless trace that can be produced without a
+   hand. */
+const STEP = 2;                 // sample every 2px; ~700 points per letter
+
+function maskBits(s) {
+  const w = Math.max(1, Math.round(s.w)), h = Math.max(1, Math.round(s.h));
+  const off = document.createElement("canvas");
+  off.width = w; off.height = h;
+  const c = off.getContext("2d");
+  wGuide(s, c, "#fff");
+  const d = c.getImageData(0, 0, w, h).data;
+  const bits = new Uint8Array(w * h);
+  for (let i = 0; i < w * h; i++) if (d[i * 4 + 3] > 40) bits[i] = 1;
+  return { bits, w, h };
+}
+
+/* Centres of every run along one axis, as fractions of the pad. */
+function runCentres({ bits, w, h }, byRow) {
+  const pts = [];
+  const outer = byRow ? h : w, inner = byRow ? w : h;
+  for (let a = 0; a < outer; a += STEP) {
+    let start = -1;
+    for (let b = 0; b <= inner; b++) {
+      const on = b < inner && bits[byRow ? a * w + b : b * w + a];
+      if (on && start < 0) start = b;
+      if (!on && start >= 0) {
+        const mid = (start + b - 1) / 2;
+        pts.push(byRow ? [mid / w, a / h] : [a / w, mid / h]);
+        start = -1;
+      }
+    }
+  }
+  return pts;
+}
+
+const rnd = (seed => () => (seed = seed * 16807 % 2147483647) / 2147483647)(20260904);
+
+function skeleton(s) {
+  const m = maskBits(s);
+  return runCentres(m, true).concat(runCentres(m, false));
+}
+
+/* Six traces. Each is an array of strokes; a stroke is an array of points. */
+function traces(s) {
+  const sk = skeleton(s);
+  const dot = p => [p];
+  const jitter = px => sk.map(([x, y]) =>
+    dot([x + (rnd() - .5) * 2 * px / s.w, y + (rnd() - .5) * 2 * px / s.h]));
+
+  // Grown about the glyph's own centre: the shape is still right, it just
+  // overshoots. This is the failure in Bugs/Screenshot_20260903-200052.png —
+  // a beta whose tail ran well below the letter — and it used to score 99%.
+  let cx = 0, cy = 0;
+  sk.forEach(([x, y]) => { cx += x; cy += y; });
+  cx /= sk.length; cy /= sk.length;
+  const oversize = sk.map(([x, y]) => dot([cx + (x - cx) * 1.28, cy + (y - cy) * 1.28]));
+
+  const scribble = [];
+  for (let k = 0; k < 6; k++) {
+    const st = [];
+    for (let j = 0; j < 14; j++) st.push([0.15 + rnd() * 0.7, 0.12 + rnd() * 0.76]);
+    scribble.push(st);
+  }
+
+  // The reported bug in its own right: the letter genuinely is followed, and
+  // then a fifth of the ink runs off the bottom of it. This one SHOULD pass —
+  // it is a good trace with a fault — but it must not read 99%.
+  const tail = sk.map(dot);
+  const nTail = Math.max(8, Math.round(sk.length * 0.22));
+  for (let i = 0; i < nTail; i++) tail.push([[0.42, 0.80 + (i / nTail) * 0.19]]);
+
+  return {
+    "middle":    sk.map(dot),
+    "jitter 5":  jitter(5),
+    "tail":      tail,
+    "jitter 10": jitter(10),
+    "jitter 20": jitter(20),
+    "oversize":  oversize,
+    "scribble":  scribble,
+    "line":      [[[0.22, 0.18], [0.78, 0.86]]],
+  };
+}
+
+/* ------------------------------------------------------------------ run ---*/
+const COLS = ["middle", "jitter 5", "tail", "jitter 10", "jitter 20", "oversize", "scribble", "line"];
+const SHOULD_PASS = ["middle", "jitter 5", "tail"];
+const SHOULD_FAIL = ["oversize", "scribble", "line"];
+// jitter 10 and jitter 20 are deliberately neither: a per-point 10px wobble
+// on a 14px pen is a genuinely shaky hand, and where the line falls through
+// it is a judgement, not a bug.
+
+function run() {
+  ["kGrid", "kProbe", "kPass", "kSpill"].forEach((id, n) => {
+    const v = +document.getElementById(id).value;
+    if (Number.isFinite(v)) WRITE[["grid", "probe", "pass", "spill"][n]] = v;
+  });
+  document.getElementById("status").textContent = "measuring…";
+
+  const rows = [], byCol = {};
+  COLS.forEach(c => byCol[c] = []);
+
+  for (const a of ALPHABET) {
+    const letter = a[0].split(" ")[1];
+    const s = wSetup(document.getElementById("pad"), letter);
+    if (!s.w) { document.getElementById("status").textContent = "pad has no size"; return; }
+    const row = { letter, name: a[1], cells: {} };
+    const T = traces(s);
+    for (const c of COLS) {
+      s.strokes = T[c];
+      const r = wScore(s);
+      row.cells[c] = r;
+      byCol[c].push(r.score);
+    }
+    rows.push(row);
+  }
+
+  const pcs = x => Math.round(x * 100);
+  const passed = r => r.coverage >= WRITE.pass && r.spill <= WRITE.spill;
+  document.getElementById("out").innerHTML = `
+    <table>
+      <thead><tr><th>letter</th>${COLS.map(c => `<th>${c}</th>`).join("")}</tr></thead>
+      <tbody>${rows.map(r => `<tr><td>${r.letter} &nbsp;<span style="color:#97a1b5">${r.name}</span></td>${
+        COLS.map(c => { const x = r.cells[c];
+          return `<td class="${passed(x) ? "pass" : "fail"}" title="coverage ${pcs(x.coverage)}% · spill ${pcs(x.spill)}%">${pcs(x.score)}</td>`;
+        }).join("")}</tr>`).join("")}</tbody>
+      <tfoot><tr><td>worst / best</td>${COLS.map(c => {
+        const v = byCol[c];
+        return `<td>${pcs(Math.min(...v))}–${pcs(Math.max(...v))}</td>`;
+      }).join("")}</tr>
+      <tr><td>passing</td>${COLS.map(c => {
+        const n = rows.filter(r => passed(r.cells[c])).length;
+        return `<td>${n}/${rows.length}</td>`;
+      }).join("")}</tr></tfoot>
+    </table>`;
+
+  // The one thing worth reading: does the rule separate the two groups?
+  const wantPass = SHOULD_PASS.flatMap(c => rows.map(r => r.cells[c]));
+  const wantFail = SHOULD_FAIL.flatMap(c => rows.map(r => r.cells[c]));
+  const missP = wantPass.filter(x => !passed(x)).length;
+  const missF = wantFail.filter(x => passed(x)).length;
+  const worstGood = Math.min(...wantPass.map(x => x.score));
+  const bestBad = Math.max(...wantFail.map(x => x.score));
+  document.getElementById("verdict").innerHTML = `
+    <div class="verdict">
+      <b>grid ${WRITE.grid} · probe ${WRITE.probe} · pass ${WRITE.pass} · spill ${WRITE.spill}</b><br>
+      good traces wrongly failed: <span class="${missP ? "fail" : "pass"}">${missP} of ${wantPass.length}</span> ·
+      bad traces wrongly passed: <span class="${missF ? "fail" : "pass"}">${missF} of ${wantFail.length}</span><br>
+      worst good ${pcs(worstGood)} · best bad ${pcs(bestBad)} ·
+      separation <span class="${worstGood > bestBad ? "pass" : "fail"}">${pcs(worstGood - bestBad)}</span>
+    </div>`;
+  document.getElementById("status").textContent =
+    rows.length + " letters × " + COLS.length + " traces";
+}
+
+["kGrid", "kProbe", "kPass", "kSpill"].forEach((id, n) => {
+  document.getElementById(id).value = WRITE[["grid", "probe", "pass", "spill"][n]];
+});
+document.getElementById("run").onclick = run;
+document.fonts.ready.then(run);
+</script>
+</body>
+</html>
