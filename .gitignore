@@ -5,10 +5,12 @@ desktop.ini
 node_modules/
 __pycache__/
 
-# The textbook itself. Reference only, and copyrighted — this repo is public.
-# The app carries an array of VOCAB indices per chapter, never Black's prose,
-# his exercises or his glosses.
+# The textbooks themselves. Reference only, and copyrighted — this repo is
+# public. The app carries an array of VOCAB indices per chapter, never Black's
+# prose, his exercises or his glosses; Huffman is consulted for the modern
+# names of syntax categories and never quoted.
 Black/
+Huffman/
 
 # Audio delivery packs. Every recording arrives as a folder of clips plus a
 # cue sheet; the clips are copied into audio/vocab, audio/forms or

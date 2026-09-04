@@ -1581,7 +1581,40 @@ const CASEFN=[
  "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it."],
 ["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
  ["The indirect object","Time when — on the sabbath","Means","Possession"],1,
- "The bare dative of time answers when. Genitive of time answers during what; accusative for how long."]
+ "The bare dative of time answers when. Genitive of time answers during what; accusative for how long."],
+
+/* Added with the syntax tables. Every Greek phrase below is one of theirs,
+   so check_syntax has already held it to the corpus. */
+["εἴ τις λαλεῖ|εἰ + indicative (1 Peter 4:11) is which class of condition?",
+ ["First — assumed true for the argument","Second — contrary to fact","Third — a future possibility","Fourth — remote"],0,
+ "First class: εἰ with the indicative. It does not mean the condition is true, only that the writer is arguing from it."],
+["εἰ γὰρ ἐπιστεύετε Μωϋσεῖ|εἰ + imperfect, with ἄν in the apodosis, means:",
+ ["It happened","It is assumed not to be so","It may yet happen","It is a general rule"],1,
+ "Second class, contrary to fact: if you did believe Moses — which you do not (John 5:46). The imperfect and the ἄν together are the giveaway."],
+["ἐὰν ἅψωμαι|ἐάν + subjunctive projects:",
+ ["A completed fact","A real future possibility","Something contrary to fact","A wish"],1,
+ "Third class (Mark 5:28). ἐάν plus the subjunctive is the ordinary way to put a live future condition."],
+["εἰ καὶ πάσχοιτε|εἰ + optative is which class — and how common?",
+ ["First, very common","Third, common","Fourth, and never complete in the NT","Second, rare"],2,
+ "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes."],
+["ἀγάπης τοῦ Χριστοῦ|In Romans 8:35 the genitive is best taken as:",
+ ["Objective — our love for Christ","Subjective — Christ's own love","Partitive","Of material"],1,
+ "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides."],
+["τινὲς τῶν γραμματέων|τῶν γραμματέων here is a genitive of:",
+ ["Possession","The part and the whole — some of the scribes","Time","Comparison"],1,
+ "Partitive: the genitive names the whole from which the head noun takes a part (Matthew 9:3)."],
+["πορευθέντες οὖν μαθητεύσατε|The aorist participle before an imperative here is best read as:",
+ ["After you have gone","Go and — sharing the imperative's force","Because you went","While going"],1,
+ "Attendant circumstance: the participle takes the mood of the main verb. Matthew 28:19 is the standing example, and the standing mistranslation."],
+["ταῦτα λέγοντος αὐτοῦ|What makes this construction absolute?",
+ ["It is emphatic","Its subject is not the subject of the main verb","It has no article","The participle is aorist"],1,
+ "Genitive absolute (Luke 13:17): the participle and its subject stand in the genitive, grammatically loose from the main clause — where someone else is the subject."],
+["γάρ|A sentence opening with γάρ is doing what to the one before it?",
+ ["Contrasting with it","Supporting it — giving the ground","Drawing an inference from it","Changing the subject"],1,
+ "γάρ gives the ground. It means the sentence belongs under the previous point rather than beside it — which is structure you can preach from."],
+["οὖν|οὖν most often signals:",
+ ["A new topic","An inference — therefore","A contrast","Simultaneous action"],1,
+ "οὖν draws the inference. In John it often merely resumes the narrative, so read it in context before building on it."]
 ];
 function caseDrill(){
   return CASEFN.slice().sort(()=>Math.random()-.5).map(c=>{

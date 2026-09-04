@@ -628,7 +628,7 @@ body:`<p>A participle is a verbal adjective. It has tense and voice like a verb,
 <p><b>Adverbial</b> participles modify the main verb, describing time, cause, means or manner. Usually anarthrous. <span class="gk">ἀκούσας ταῦτα ἀπῆλθεν</span> — "having heard these things, he departed."</p>
 <p><b>Adjectival</b> participles modify a noun, often with an article, and can stand alone as a substantive. <span class="gk">ὁ πιστεύων</span> — "the one who believes".</p>
 <h3>Genitive absolute</h3>
-<p>A participle and its subject both in the genitive, the subject being <b>different from the subject of the main verb</b> — that difference is what makes the phrase absolute, and it is how you spot one: <span class="gk">λέγοντος αὐτοῦ ταῦτα</span> — "while he was saying these things", with someone else doing whatever the main verb reports. Common in narrative.</p>`,
+<p>A participle and its subject both in the genitive, the subject being <b>different from the subject of the main verb</b> — that difference is what makes the phrase absolute, and it is how you spot one: <span class="gk">ταῦτα λέγοντος αὐτοῦ κατῃσχύνοντο πάντες οἱ ἀντικείμενοι αὐτῷ</span> — "as he said this, all his opponents were put to shame" (Luke 13:17). The one speaking is <span class="gk">αὐτοῦ</span>; the ones shamed are <span class="gk">πάντες</span>. Two different subjects, and that is the whole of it. Common in narrative.</p>`,
 v:[],
 vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
 quiz:[

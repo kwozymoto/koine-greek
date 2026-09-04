@@ -308,4 +308,72 @@ html:`<table><caption>εἷς, μία, ἕν — one (and its negatives)</captio
 <tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
 <p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. δύο (two, dat δυσίν) · τρεῖς, τρία (three) · τέσσαρες, τέσσαρα (four) · πέντε five · ἕξ six · ἑπτά seven · δώδεκα twelve — from πέντε up to a hundred they don't decline; the hundreds and thousands (διακόσιοι, χίλιοι, μύριοι) do. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
 
+/* ---- syntax ----
+   Everything above is forms. These four are what the forms are doing, which
+   is where reading turns into exegesis.
+
+   The category names are the standard modern set — Huffman's Handy Guide was
+   the reference for which labels to use, and for the fact that a conditional
+   has five classes rather than the four most first-year books teach. The
+   wording here is our own and every Greek phrase is taken from the SBLGNT in
+   data/gnt/, not from any grammar.
+
+   Each example carries data-ref, and tools/check_syntax.py holds it to the
+   text: the phrase has to occur in that verse, and where a row claims a
+   construction — a genitive participle, an optative, a subjunctive after
+   ἐάν — the corpus's own parse code has to bear it out. */
+
+{t:"Genitive — what the “of” is doing",tags:"syntax genitive subjective objective possessive partitive absolute case function exegesis of",
+html:`<p class="muted" style="font-size:.83rem;margin-top:0">The genitive is the flexible case, and “of” is rarely the whole answer. These are the readings worth having in mind when a phrase carries weight.</p>
+<table><caption>The common ones</caption>
+<tr><th>Reading</th><th>Example</th><th>Sense</th></tr>
+<tr><td>Possessive</td><td class="g" data-ref="Matthew 8:20" data-claim="gen">υἱὸς τοῦ ἀνθρώπου</td><td>belonging to — the Son <i>of</i> Man</td></tr>
+<tr><td>Subjective</td><td class="g" data-ref="Romans 8:35" data-claim="gen">ἀγάπης τοῦ Χριστοῦ</td><td>the genitive does the loving — Christ’s love</td></tr>
+<tr><td>Objective</td><td class="g" data-ref="Luke 11:42" data-claim="gen">ἀγάπην τοῦ θεοῦ</td><td>the genitive receives it — love <i>for</i> God</td></tr>
+<tr><td>Partitive</td><td class="g" data-ref="Matthew 9:3" data-claim="gen">τινὲς τῶν γραμματέων</td><td>the whole of which the head is a part</td></tr>
+<tr><td>Content</td><td class="g" data-ref="John 21:8" data-claim="gen">τῶν ἰχθύων</td><td>what a thing is full of</td></tr>
+<tr><td>Material</td><td class="g" data-ref="Mark 2:21" data-claim="gen">ῥάκους</td><td>what it is made of</td></tr>
+<tr><td>Comparison</td><td class="g" data-ref="Matthew 6:25" data-claim="gen">τῆς τροφῆς</td><td>after a comparative — more <i>than</i> food</td></tr>
+<tr><td>Time</td><td class="g" data-ref="Luke 18:12" data-claim="gen">τοῦ σαββάτου</td><td><i>during</i> which, not when and not how long</td></tr></table>
+<p><b>The fork worth knowing.</b> Subjective and objective look identical. <span class="gk">ἡ ἀγάπη τοῦ θεοῦ</span> is either God’s love for us or ours for him, and only the argument around it decides. Say which you are taking, and why.</p>
+<p class="muted" style="font-size:.83rem">Genitive of time answers <i>during what</i>; the dative answers <i>when</i>; the accusative answers <i>how long</i>. Three cases, three questions.</p>`},
+
+{t:"Participles — what they are doing",tags:"syntax participle adverbial adjectival substantival genitive absolute attendant circumstance temporal",
+html:`<p class="muted" style="font-size:.83rem;margin-top:0">A participle’s tense gives aspect, and time only relative to the main verb. An aorist participle usually happened first, a present one usually alongside — usually, and context outranks the rule.</p>
+<table><caption>What the participle is doing in the sentence</caption>
+<tr><th>Use</th><th>Example</th><th>Sense</th></tr>
+<tr><td>Temporal</td><td class="g" data-ref="Matthew 8:10" data-claim="ptc">ἀκούσας δὲ ὁ Ἰησοῦς</td><td>aorist, so prior — <i>when</i> he heard</td></tr>
+<tr><td>Substantival</td><td class="g" data-ref="John 6:35" data-claim="ptc">ὁ πιστεύων εἰς ἐμὲ</td><td>article + participle is a noun — the one who believes</td></tr>
+<tr><td>Attendant circumstance</td><td class="g" data-ref="Matthew 28:19" data-claim="ptc">πορευθέντες οὖν μαθητεύσατε</td><td>takes the main verb’s mood — <i>go and</i> make disciples</td></tr>
+<tr><td>Genitive absolute</td><td class="g" data-ref="Luke 13:17" data-claim="gen-abs">ταῦτα λέγοντος αὐτοῦ</td><td>participle and its subject both genitive, the main clause’s subject someone else</td></tr></table>
+<p><b>Spotting a genitive absolute.</b> A genitive participle with a genitive noun or pronoun beside it and no grammatical tie to the rest of the sentence. In Luke 13:17 the one speaking is <span class="gk">αὐτοῦ</span>; the ones put to shame are <span class="gk">πάντες οἱ ἀντικείμενοι</span>. Different subjects — and that difference is what <i>absolute</i> means.</p>
+<p class="muted" style="font-size:.83rem">The commonest error is reading an aorist participle as “after” where the writer meant it as one action with the main verb. Matthew 28:19 is the standing example: not “after you have gone”, but “go and”.</p>`},
+
+{t:"Conditional sentences",tags:"syntax conditional if then protasis apodosis first second third class ean ei contrary to fact",
+html:`<p class="muted" style="font-size:.83rem;margin-top:0">An <i>if</i> clause (protasis) and a <i>then</i> clause (apodosis). Which class it is comes from the particle and the mood, and it changes what the writer is claiming.</p>
+<table><caption>The five classes</caption>
+<tr><th>Class</th><th>Example</th><th>Claim</th></tr>
+<tr><td>First<br><span class="muted gk" style="font-size:.86em">εἰ + indicative</span></td><td class="g" data-ref="1 Peter 4:11" data-claim="cond-1">εἴ τις λαλεῖ</td><td>assumed true for the argument — <i>if, as is so</i></td></tr>
+<tr><td>Second<br><span class="muted gk" style="font-size:.86em">εἰ + past ind., then ἄν</span></td><td class="g" data-ref="John 5:46" data-claim="cond-2">εἰ γὰρ ἐπιστεύετε Μωϋσεῖ</td><td>assumed untrue — <i>if you did, which you do not</i></td></tr>
+<tr><td>Third<br><span class="muted gk" style="font-size:.86em">ἐάν + subjunctive</span></td><td class="g" data-ref="Mark 5:28" data-claim="cond-3">ἐὰν ἅψωμαι</td><td>a real future possibility</td></tr>
+<tr><td>Fourth<br><span class="muted gk" style="font-size:.86em">εἰ + optative</span></td><td class="g" data-ref="1 Peter 3:14" data-claim="cond-4">εἰ καὶ πάσχοιτε</td><td>remote — <i>if you should</i></td></tr>
+<tr><td>Fifth<br><span class="muted gk" style="font-size:.86em">ἐάν + subj., present then</span></td><td class="g" data-ref="Mark 3:24" data-claim="cond-3">ἐὰν βασιλεία ἐφ’ ἑαυτὴν μερισθῇ</td><td>a general truth rather than a prediction</td></tr></table>
+<p><b>The first class does not mean “true”.</b> It means the speaker is arguing <i>from</i> the condition, whether or not it holds. Satan’s <span class="gk">εἰ υἱὸς εἶ τοῦ θεοῦ</span> in Matthew 4:3 is first class and is plainly not a concession.</p>
+<p class="muted" style="font-size:.83rem">No complete fourth-class conditional survives in the New Testament: every instance is missing one half or mixes classes. Recognise it; do not expect to parse a whole one.</p>`},
+
+{t:"Discourse markers",tags:"syntax discourse de oun gar alla tote conjunction structure argument flow particle",
+html:`<p class="muted" style="font-size:.83rem;margin-top:0">These are the joints of an argument. They are small, they are usually dropped in translation, and they are how a paragraph is held together.</p>
+<table><caption>Counts are occurrences in the SBLGNT</caption>
+<tr><th>Word</th><th></th><th>What it is doing</th></tr>
+<tr><td class="g">καί</td><td class="muted">8973</td><td>joins, and in narrative simply moves on. Weight it lightly.</td></tr>
+<tr><td class="g">δέ</td><td class="muted">2766</td><td>a new step, often a mild contrast. Frequently untranslatable.</td></tr>
+<tr><td class="g">γάρ</td><td class="muted">1039</td><td>gives the ground — <i>for</i>. What follows supports what came before.</td></tr>
+<tr><td class="g">ἀλλά</td><td class="muted">638</td><td>strong contrast — <i>but rather</i>. Sharper than δέ.</td></tr>
+<tr><td class="g">οὖν</td><td class="muted">494</td><td>draws the inference — <i>therefore</i>. In John, often just resumes.</td></tr>
+<tr><td class="g">μέν</td><td class="muted">178</td><td>sets up a δέ still to come. Look ahead for the other half.</td></tr>
+<tr><td class="g">τότε</td><td class="muted">159</td><td><i>then</i>, sequentially. Matthew’s favourite hinge.</td></tr>
+<tr><td class="g">διό</td><td class="muted">53</td><td><i>for which reason</i> — an inference with more force than οὖν.</td></tr></table>
+<p><b>Why bother.</b> A <span class="gk">γάρ</span> tells you the next sentence is support, not a new point — so it belongs under the previous heading rather than beside it. An <span class="gk">οὖν</span> says the argument has turned a corner. Tracking these is how you find a passage’s spine before deciding what to preach from it.</p>
+<p class="muted" style="font-size:.83rem">Do not lean on them too hard in narrative, where καί and δέ often carry no more than a full stop would.</p>`},
+
 ];
