@@ -31,6 +31,7 @@ audio/*_cues.json
 audio-audit.html
 sound-picker.html
 vocab_worklist.tsv
+vocab_additions.tsv
 extra_forms_worklist.tsv
 extra_forms_pack.json
 AUDIT.md

@@ -54,9 +54,12 @@ const GNT_POS   = {"N-":"noun","V-":"verb","A-":"adjective","D-":"adverb","C-":"
    The dagger marks the third case. A terser, older gloss is worth having and
    worth knowing about; what it must not do is pass for the course's own. */
 function glossFor(lemma, deckGloss) {
-  if (deckGloss) return { text: deckGloss, from: "" };
+  /* Yours first, and ahead of the deck's — the promise the pencil makes is
+     that your wording wins everywhere, and a word can be promoted into the
+     course after you have already written a better gloss for it. */
   const mine = (S.myGloss || {})[lemma];
   if (mine) return { text: mine, from: "your own wording" };
+  if (deckGloss) return { text: deckGloss, from: "" };
   const lex = (typeof LEX !== "undefined") && LEX[lemma];
   return lex
     ? { text: lex, from: "Tyndale House / Abbott-Smith — not this course's own gloss" }

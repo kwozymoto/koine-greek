@@ -165,6 +165,7 @@ POS_OK = {
     479: "ὁ φίλος, the substantive; MorphGNT lemmatises it as the adjective",
     146: "ὅσος is a correlative — an adjective in form, relative in function",
     298: "εὐθύς is adverbial in almost all of its 59 uses; the lemma is the adjective",
+    550: "ἡ χήρα, the substantive; MorphGNT lemmatises it as the adjective",
 }
 # Lemmas where the corpus count answers a different question from the deck's.
 FREQ_OK = {
@@ -335,7 +336,13 @@ for i, e in enumerate(EXAMPLES[:len(VOCAB)]):
     if not (0 <= at < len(ws)):
         ex_bad.append("%s %s points at word %d of %d" % (tag, ref, at, len(ws))); continue
     j = lemma_index(VOCAB[i])
-    if j is not None and ws[at][1] != j:
+    # norm() lowercases, so a capitalised twin counts as the same lemma. The
+    # corpus lists a few words twice — Ὦ beside ὦ, Θάλασσα beside θάλασσα —
+    # where the capital is only a sentence opening, and the example builder
+    # matches case-blind. Requiring the exact index here would fail a verse
+    # that shows precisely the right word.
+    if j is not None and ws[at][1] != j \
+            and norm(LEMMAS[ws[at][1]]) != norm(LEMMAS[j]):
         ex_bad.append("%s %s highlights %s, which is %s, not %s"
                       % (tag, ref, ws[at][0], LEMMAS[ws[at][1]], headword(VOCAB[i])))
     # The card labels that form with its parse, so the parse has to be the
@@ -550,7 +557,11 @@ if prep_lemma:
         tot = sum(c.values())
         if not tot:
             continue
-        said = {x for x in CASEC.values() if "+" in v[1] and x in v[1]}
+        # Only what is inside the (+…) marker counts as a claim. Searching the
+        # whole gloss read "acc" out of ἕνεκεν's "on account of" and reported a
+        # preposition as claiming a case it never mentions.
+        said = {x for m in re.findall(r"\(\+([^)]*)\)", v[1])
+                for x in CASEC.values() if x in m}
         real = {CASEC[k] for k, n in c.items() if n >= max(3, 0.05 * tot)}
         tag = "%3d %-14s" % (i, headword(v))
         share = ", ".join("%s %d%%" % (CASEC[k], round(100.0 * n / tot))
@@ -598,9 +609,15 @@ audio_bad, cue_bad, cue_soft = [], [], []
 VDIR = os.path.join(ROOT, "audio", "vocab")
 on_disk = set(os.listdir(VDIR)) if os.path.isdir(VDIR) else set()
 
-if len(VOCAB_AUDIO) != len(VOCAB):
-    audio_bad.append("VOCAB_AUDIO has %d entries, VOCAB has %d — the two are "
-                     "indexed together" % (len(VOCAB_AUDIO), len(VOCAB)))
+# Shorter is allowed and expected: the deck grows in one step and the
+# recordings follow in their own time, and VOCAB_AUDIO[i] being undefined is
+# what every caller already reads as "no clip" — no Hear-it button, no lit
+# speaker. Longer is still a fault, because an entry past the end of VOCAB
+# points at a word that does not exist.
+if len(VOCAB_AUDIO) > len(VOCAB):
+    audio_bad.append("VOCAB_AUDIO has %d entries, VOCAB only %d — the two are "
+                     "indexed together, so the extra ones name nothing"
+                     % (len(VOCAB_AUDIO), len(VOCAB)))
 for i, f in enumerate(VOCAB_AUDIO):
     if not f:
         continue
@@ -668,7 +685,7 @@ for path, what in CUES:
             if abs(secs - r["duration_s"]) > 0.05:
                 cue_soft.append("%s cue says %.2fs, the file is %.2fs — "
                                 "re-recorded since?" % (tag, r["duration_s"], secs))
-for i in range(len(VOCAB)):
+for i in range(min(len(VOCAB), len(VOCAB_AUDIO))):
     if i not in covered and VOCAB_AUDIO[i]:
         cue_bad.append("%3d %-14s has a clip but no cue sheet row"
                        % (i, headword(VOCAB[i])))

@@ -2297,6 +2297,31 @@ if(S.last){
   if(gap>2 || (gap===2 && !restAvailable())) S.streak=0;
 }
 if(S.dayOfReviews!==today()){ S.reviewsToday=0; S.dayOfReviews=today(); }
+/* A word met through a passage focus lives in S.lcards, keyed by its lemma,
+   because it was not in the deck. When the deck grows, some of those become
+   real VOCAB entries — and the history has to come across with them, or a
+   release that adds words silently resets the learner's progress on exactly
+   the ones they took the trouble to learn from a passage. Runs on every load
+   and does nothing once there is nothing left to move. */
+(function promoteLemmaCards(){
+  if(!S.lcards || !Object.keys(S.lcards).length) return;
+  let moved=0;
+  for(const l of Object.keys(S.lcards)){
+    const i=vocIndexFor(l);
+    if(i<0) continue;
+    const from=S.lcards[l], to=S.cards[i];
+    // whichever has been through more reviews is the truer record
+    if(!to || (+from.reps||0)>(+to.reps||0)) S.cards[i]=from;
+    delete S.lcards[l];
+    moved++;
+  }
+  if(moved){
+    save();
+    setTimeout(()=>toast(moved===1
+      ? "A word you had met is now in the course, and kept its schedule"
+      : moved+" words you had met are now in the course, and kept their schedules"),900);
+  }
+})();
 save();
 applyGk();
 requestPersistence();

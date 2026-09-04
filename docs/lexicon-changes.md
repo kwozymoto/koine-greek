@@ -11,10 +11,10 @@ these are the transformations applied when building `data/lexicon.js`.
 
 ---
 
-## 1. Verbs recited in the first person singular (1496)
+## 1. Verbs recited in the first person singular (1381)
 
 TBESG cites a verb as *to work*. This course cites it as *I work*,
-because that is how its own 509 hand-written glosses read, and two
+because that is how its own 816 hand-written glosses read, and two
 conventions in one lookup box is worse than either. Applied only where
 the corpus tags the lemma `V-` as its commonest reading.
 
@@ -31,15 +31,12 @@ the corpus tags the lemma `V-` as its commonest reading.
 | αὐθεντέω | to domineer | I domineer |
 | αὐλέω | to play the flute | I play the flute |
 | αὐλίζομαι | to spend the night | I spend the night |
-| αὐξάνω | to grow | I grow |
 | αὐχέω | to boast | I boast |
 | βάπτω | to dip | I dip |
 | βαθύνω | to dig deep | I dig deep |
 | βαρέω | to burden | I burden |
 | βασανίζω | to torture: torture | I torture: torture |
-| βασιλεύω | to reign | I reign |
 | βασκαίνω | to bewitch | I bewitch |
-| βαστάζω | to carry | I carry |
 | βδελύσσομαι | to abhor | I abhor |
 | βεβαιόω | to confirm | I confirm |
 | βεβηλόω | to profane | I profane |
@@ -60,23 +57,18 @@ the corpus tags the lemma `V-` as its commonest reading.
 | βρύω | to pour | I pour |
 | βυθίζω | to sink | I sink |
 | βόσκω | to feed | I feed |
-| γαμέω | to marry | I marry |
 | γαμίζω | to give in marriage | I give in marriage |
 | γαμίσκω | to give in marriage | I give in marriage |
 | γελάω | to laugh | I laugh |
 | γεμίζω | to fill | I fill |
 | γενεαλογέομαι | to trace genealogy | I trace genealogy |
 | γεωργέω | to farm | I farm |
-| γεύομαι | to taste | I taste |
 | γηράσκω | to grow old | I grow old |
-| γνωρίζω | to make known | I make known |
 | γογγύζω | to murmur | I murmur |
 | γονυπετέω | to kneel | I kneel |
-| γρηγορέω | to keep watch | I keep watch |
 | γυμνάζω | to train | I train |
 | δάκνω | to bite | I bite |
 | δέομαι | to pray | I pray |
-| δέρω | to beat up | I beat up |
 | δακρύω | to weep | I weep |
 | δαμάζω | to tame | I tame |
 | δανείζω | to lend/borrow | I lend/borrow |
@@ -106,16 +98,13 @@ the corpus tags the lemma `V-` as its commonest reading.
 | διακαθαρίζω | to clear out | I clear out |
 | διακατελέγχομαι | to refute | I refute |
 | διακούω | to give a hearing | I give a hearing |
-| διακρίνω | to judge/doubt | I judge/doubt |
 | διακωλύω | to hinder | I hinder |
 | διαλέγομαι | to dispute | I dispute |
 | διαλαλέω | to discuss | I discuss |
 | διαλείπω | to stop | I stop |
-| διαλογίζομαι | to discuss | I discuss |
 | διαλύω | to disperse | I disperse |
 | διαμάχομαι | to contend sharply | I contend sharply |
 | διαμένω | to remain | I remain |
-| διαμαρτύρομαι | to testify solemnly | I testify solemnly |
 | διαμερίζω | to divide | I divide |
 | διανέμω | to spread | I spread |
 | διανεύω | to signify | I signify |
@@ -136,7 +125,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | διαστέλλομαι | to give orders | I give orders |
 | διαστρέφω | to pervert | I pervert |
 | διασῴζω | to save | I save |
-| διατάσσω | to direct | I direct |
 | διαταράσσω | to trouble | I trouble |
 | διατελέω | to continue | I continue |
 | διατηρέω | to keep | I keep |
@@ -160,12 +148,10 @@ the corpus tags the lemma `V-` as its commonest reading.
 | διστάζω | to doubt | I doubt |
 | διχάζω | to disunite | I disunite |
 | διχοτομέω | to cut in two | I cut in two |
-| διψάω | to thirst | I thirst |
 | διϊκνέομαι | to penetrate | I penetrate |
 | διϊσχυρίζομαι | to insist | I insist |
 | διϋλίζω | to strain out | I strain out |
 | δογματίζομαι | to decree | I decree |
-| δοκιμάζω | to test | I test |
 | δολιόω | to deceive | I deceive |
 | δολόω | to distort | I distort |
 | δουλαγωγέω | to enslave | I enslave |
@@ -181,13 +167,11 @@ the corpus tags the lemma `V-` as its commonest reading.
 | εἰσδέχομαι | to receive | I receive |
 | εἰσκαλέομαι | to invite | I invite |
 | εἰσπηδάω | to rush into | I rush into |
-| εἰσπορεύομαι | to enter | I enter |
 | εἰστρέχω | to run in | I run in |
 | εἰσφέρω | to bring in | I bring in |
 | εἴκω | to yield | I yield |
 | εἴσειμι | to enter | I enter |
 | εὐαρεστέω | to please | I please |
-| εὐδοκέω | to delight | I delight |
 | εὐεργετέω | to do good | I do good |
 | εὐθυδρομέω | to sail straight | I sail straight |
 | εὐθύνω | to straighten | I straighten |
@@ -211,10 +195,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | θάπτω | to bury | I bury |
 | θαμβέομαι | to astonish | I astonish |
 | θανατόω | to kill | I kill |
-| θεάομαι | to look at | I look at |
 | θεατρίζω | to expose | I expose |
 | θεμελιόω | to found | I found |
-| θερίζω | to reap | I reap |
 | θερμαίνομαι | to warm | I warm |
 | θηλάζω | to suckle | I suckle |
 | θηρεύω | to hunt/catch | I hunt/catch |
@@ -237,10 +219,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | καθάπτω | to attach | I attach |
 | καθέζομαι | to sit down | I sit down |
 | καθίημι | to lower | I lower |
-| καθίστημι | to appoint/conduct | I appoint/conduct |
 | καθαίρω | to prune | I prune |
 | καθαιρέω | to take down | I take down |
-| καθεύδω | to sleep | I sleep |
 | καθοπλίζω | to arm fully | I arm fully |
 | καθοράω | to perceive | I perceive |
 | κακολογέω | to curse/revile | I curse/revile |
@@ -257,14 +237,11 @@ the corpus tags the lemma `V-` as its commonest reading.
 | κατάγνυμι | to break | I break |
 | κατάγω | to bring down | I bring down |
 | κατάκειμαι | to recline | I recline |
-| κατέρχομαι | to descend | I descend |
-| κατέχω | to hold back/fast | I hold back/fast |
 | καταβάλλω | to lay/throw down | I lay/throw down |
 | καταβαρέω | to burden | I burden |
 | καταβαρύνομαι | to burden | I burden |
 | καταβιβάζω | to bring down | I bring down |
 | καταβραβεύω | to disqualify | I disqualify |
-| καταγγέλλω | to proclaim | I proclaim |
 | καταγελάω | to mock | I mock |
 | καταγινώσκω | to condemn | I condemn |
 | καταγωνίζομαι | to conquer | I conquer |
@@ -283,17 +260,14 @@ the corpus tags the lemma `V-` as its commonest reading.
 | κατακληρονομέω | to allot | I allot |
 | κατακλύζω | to flood | I flood |
 | κατακολουθέω | to follow | I follow |
-| κατακρίνω | to condemn | I condemn |
 | κατακρημνίζω | to cast down | I cast down |
 | κατακυριεύω | to master | I master |
 | κατακόπτω | to cut | I cut |
 | καταλέγω | to enrol | I enrol |
 | καταλαλέω | to slander | I slander |
 | καταλαμβάνω | to grasp | I grasp |
-| καταλείπω | to leave behind | I leave behind |
 | καταλιθάζω | to stone | I stone |
 | καταλλάσσω | to reconcile | I reconcile |
-| καταλύω | to destroy/lodge | I destroy/lodge |
 | καταμένω | to stay | I stay |
 | καταμανθάνω | to consider | I consider |
 | καταμαρτυρέω | to testify against | I testify against |
@@ -311,7 +285,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | καταπονέω | to oppress | I oppress |
 | καταποντίζομαι | to sink | I sink |
 | καταράομαι | to curse | I curse |
-| καταργέω | to abate | I abate |
 | καταριθμέω | to number | I number |
 | καταρτίζω | to complete | I complete |
 | κατασείω | to signal | I signal |
@@ -337,12 +310,10 @@ the corpus tags the lemma `V-` as its commonest reading.
 | καταχράομαι | to use up | I use up |
 | καταψύχω | to cool | I cool |
 | κατεξουσιάζω | to rule | I rule |
-| κατεργάζομαι | to workout/produce | I workout/produce |
 | κατεσθίω | to devour | I devour |
 | κατευθύνω | to guide | I guide |
 | κατευλογέω | to bless | I bless |
 | κατεφίστημι | to attack | I attack |
-| κατηγορέω | to accuse | I accuse |
 | κατηχέω | to instruct | I instruct |
 | κατισχύω | to prevail | I prevail |
 | κατιόομαι | to corrode | I corrode |
@@ -351,22 +322,16 @@ the corpus tags the lemma `V-` as its commonest reading.
 | καυματίζω | to scorch | I scorch |
 | καυσόομαι | to burn | I burn |
 | κείρω | to shear | I shear |
-| κελεύω | to order | I order |
 | κενόω | to empty | I empty |
 | κεράννυμι | to mix | I mix |
-| κερδαίνω | to gain | I gain |
-| κεῖμαι | to lay/be appointed | I lay/be appointed |
 | κιθαρίζω | to play the harp | I play the harp |
 | κινέω | to move | I move |
 | κλάω | to break | I break |
 | κλέπτω | to steal | I steal |
 | κλίνω | to bow/lay down | I bow/lay down |
-| κλείω | to shut | I shut |
-| κληρονομέω | to inherit | I inherit |
 | κληρόω | to obtain | I obtain |
 | κλυδωνίζομαι | to toss | I toss |
 | κνήθομαι | to itch | I itch |
-| κοιμάομαι | to sleep | I sleep |
 | κοινωνέω | to participate | I participate |
 | κοινόω | to profane | I profane |
 | κολάζω | to punish | I punish |
@@ -377,29 +342,24 @@ the corpus tags the lemma `V-` as its commonest reading.
 | κομίζω | to bring/be repaid | I bring/be repaid |
 | κονιάω | to whitewash | I whitewash |
 | κοπάζω | to abate | I abate |
-| κοπιάω | to labor | I labor |
 | κορέννυμι | to satisfy | I satisfy |
 | κοσμέω | to arrange | I arrange |
 | κουφίζω | to lighten | I lighten |
 | κραταιόομαι | to strengthen | I strengthen |
 | κραυγάζω | to shout | I shout |
 | κρούω | to knock | I knock |
-| κρύπτω | to hide | I hide |
 | κτάομαι | to posses | I posses |
-| κτίζω | to create | I create |
 | κυκλεύω | to encompass | I encompass |
 | κυκλόω | to surround | I surround |
 | κυλίομαι | to wallow | I wallow |
 | κυριεύω | to lord over | I lord over |
 | κυρόω | to affirm | I affirm |
-| κωλύω | to prevent | I prevent |
 | κόπτω | to cut/mourn | I cut/mourn |
 | κύπτω | to stoop/bend down | I stoop/bend down |
 | λάμπω | to shine | I shine |
 | λαγχάνω | to choose by lot | I choose by lot |
 | λακτίζω | to kick | I kick |
 | λατομέω | to hew | I hew |
-| λατρεύω | to minister | I minister |
 | λειτουργέω | to minister | I minister |
 | λευκαίνω | to bleach | I bleach |
 | λιθάζω | to stone | I stone |
@@ -409,7 +369,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | λοιδορέω | to revile | I revile |
 | λούω | to wash | I wash |
 | λυμαίνομαι | to ravage | I ravage |
-| λυπέω | to grieve | I grieve |
 | λυσιτελεῖ | to profit | I profit |
 | λυτρόομαι | to ransom | I ransom |
 | μάχομαι | to quarrel | I quarrel |
@@ -458,9 +417,7 @@ the corpus tags the lemma `V-` as its commonest reading.
 | μηνύω | to disclose | I disclose |
 | μιαίνω | to stain | I stain |
 | μιμέομαι | to imitate | I imitate |
-| μιμνῄσκομαι | to remember | I remember |
 | μισθόομαι | to hire | I hire |
-| μνημονεύω | to remember | I remember |
 | μνηστεύομαι | to betroth | I betroth |
 | μοιχάομαι | to commit adultery | I commit adultery |
 | μοιχεύω | to commit adultery | I commit adultery |
@@ -474,12 +431,9 @@ the corpus tags the lemma `V-` as its commonest reading.
 | μυρίζω | to anoint | I anoint |
 | μωμάομαι | to criticize | I criticize |
 | νήθω | to spin | I spin |
-| νίπτω | to wash | I wash |
 | νεκρόω | to put to death | I put to death |
 | νεύω | to motion | I motion |
-| νηστεύω | to fast | I fast |
 | νοέω | to understand | I understand |
-| νομίζω | to think | I think |
 | νομοθετέομαι | to give laws | I give laws |
 | νοσφίζομαι | to embezzle | I embezzle |
 | νουθετέω | to admonish | I admonish |
@@ -487,14 +441,12 @@ the corpus tags the lemma `V-` as its commonest reading.
 | νύσσω | to pierce | I pierce |
 | ξενίζω | to host | I host |
 | ξενοδοχέω | to show hospitality | I show hospitality |
-| ξηραίνω | to dry | I dry |
 | ξυράομαι | to shave | I shave |
 | οἰκέω | to dwell | I dwell |
 | οἰκοδεσποτέω | to manage a house | I manage a house |
 | οἰκονομέω | to manage | I manage |
 | πέτομαι | to fly | I fly |
 | πήγνυμι | to set up | I set up |
-| πίμπλημι | to fill | I fill |
 | πίμπρημι | to swell up | I swell up |
 | παίζω | to play | I play |
 | παίω | to strike | I strike |
@@ -502,8 +454,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | παιδεύω | to instruct | I instruct |
 | παλαιόω | to make old | I make old |
 | παράγω | to pass | I pass |
-| παρέρχομαι | to pass by | I pass by |
-| παρέχω | to furnish occasion | I furnish occasion |
 | παρίημι | to neglect | I neglect |
 | παραβάλλω | to arrive | I arrive |
 | παραβαίνω | to transgress | I transgress |
@@ -531,7 +481,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | παραπορεύομαι | to pass by/through | I pass by/through |
 | παραρρέω | to drift away | I drift away |
 | παρασκευάζω | to prepare | I prepare |
-| παρατίθημι | to set before | I set before |
 | παρατείνω | to prolong | I prolong |
 | παρατηρέω | to observe | I observe |
 | παραφέρω | to take away | I take away |
@@ -551,10 +500,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | πατάσσω | to strike | I strike |
 | πατέω | to trample | I trample |
 | παχύνομαι | to thicken | I thicken |
-| παύω | to cease | I cease |
 | πεζεύω | to walk | I walk |
 | πειθαρχέω | to obey | I obey |
-| πεινάω | to hunger | I hunger |
 | πειράω | to try | I try |
 | πελεκίζω | to behead | I behead |
 | πενθέω | to mourn | I mourn |
@@ -566,7 +513,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | περιέχω | to contain | I contain |
 | περιαιρέω | to take away | I take away |
 | περιαστράπτω | to shine | I shine |
-| περιβάλλω | to clothe | I clothe |
 | περιβλέπομαι | to look around | I look around |
 | περιδέω | to wrap around | I wrap around |
 | περιζώννυμι | to gird | I gird |
@@ -580,7 +526,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | περιπείρω | to pierce | I pierce |
 | περιποιέομαι | to gain | I gain |
 | περισπάομαι | to distract | I distract |
-| περιτέμνω | to circumcise | I circumcise |
 | περιτίθημι | to put on | I put on |
 | περιτρέπω | to drive insane | I drive insane |
 | περιτρέχω | to run around | I run around |
@@ -608,11 +553,9 @@ the corpus tags the lemma `V-` as its commonest reading.
 | πολεμέω | to fight | I fight |
 | πορθέω | to lay waste | I lay waste |
 | πορνεύω | to sin sexually | I sin sexually |
-| ποτίζω | to water | I water |
 | πρίζω | to saw (in two) | I saw (in two) |
 | πραγματεύομαι | to trade | I trade |
 | προΐστημι | to set before | I set before |
-| προάγω | to go/bring before | I go/bring before |
 | προέρχομαι | to go before | I go before |
 | προέχομαι | to excel | I excel |
 | προαιρέομαι | to predetermine | I predetermine |
@@ -638,7 +581,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | προκαταρτίζω | to arrange | I arrange |
 | προκηρύσσω | to announce | I announce |
 | προκόπτω | to advance | I advance |
-| προλέγω | to foretell | I foretell |
 | προλαμβάνω | to take beforehand | I take beforehand |
 | προμαρτύρομαι | to predict | I predict |
 | προμελετάω | to premeditate | I premeditate |
@@ -650,7 +592,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | προπέμπω | to help on the way | I help on the way |
 | προπορεύομαι | to go before | I go before |
 | προσάγω | to bring near | I bring near |
-| προσέχω | to watch out | I watch out |
 | προσαγορεύω | to designate | I designate |
 | προσαιτέω | to beg | I beg |
 | προσαναβαίνω | to go up | I go up |
@@ -661,11 +602,9 @@ the corpus tags the lemma `V-` as its commonest reading.
 | προσδέομαι | to need | I need |
 | προσδέχομαι | to wait for/welcome | I wait for/welcome |
 | προσδαπανάω | to spend extra | I spend extra |
-| προσδοκάω | to look for | I look for |
 | προσεάω | to permit | I permit |
 | προσεργάζομαι | to earn more | I earn more |
 | προσηλόω | to nail | I nail |
-| προσκαλέομαι | to call to/summon | I call to/summon |
 | προσκαρτερέω | to continue in/with | I continue in/with |
 | προσκλίνομαι | to lean toward | I lean toward |
 | προσκληρόομαι | to join | I join |
@@ -683,7 +622,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | προσπορεύομαι | to approach | I approach |
 | προσρήγνυμι | to strike | I strike |
 | προστάσσω | to order | I order |
-| προστίθημι | to add (to) | I add (to) |
 | προστρέχω | to hasten | I hasten |
 | προσφωνέω | to call to/summon | I call to/summon |
 | προσψαύω | to touch | I touch |
@@ -691,7 +629,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | προτρέπομαι | to encourage | I encourage |
 | προτρέχω | to outrun | I outrun |
 | προφέρω | to bring out | I bring out |
-| προφητεύω | to prophesy | I prophesy |
 | προφθάνω | to come before | I come before |
 | προχειρίζομαι | to appoint | I appoint |
 | προχειροτονέω | to choose | I choose |
@@ -704,11 +641,9 @@ the corpus tags the lemma `V-` as its commonest reading.
 | πυκτεύω | to box | I box |
 | πυνθάνομαι | to inquire | I inquire |
 | πυρόομαι | to burn | I burn |
-| πωλέω | to sell | I sell |
 | πωρόω | to harden | I harden |
 | σήπω | to rot | I rot |
 | σαίνομαι | to shake | I shake |
-| σαλεύω | to shake | I shake |
 | σαλπίζω | to sound a trumpet | I sound a trumpet |
 | σαρόω | to sweep | I sweep |
 | σβέννυμι | to extinguish | I extinguish |
@@ -747,7 +682,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | στεφανόω | to crown | I crown |
 | στηρίζω | to establish | I establish |
 | στοιχέω | to follow | I follow |
-| στρέφω | to turn | I turn |
 | στρατεύομαι | to battle | I battle |
 | στρατολογέω | to enlist | I enlist |
 | στρεβλόω | to distort | I distort |
@@ -781,7 +715,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | συλαγωγέω | to capture | I capture |
 | συλλέγω | to collect | I collect |
 | συλλαλέω | to talk with | I talk with |
-| συλλαμβάνω | to seize/conceive/help | I seize/conceive/help |
 | συλλογίζομαι | to discuss | I discuss |
 | συμβάλλω | to ponder/confer | I ponder/confer |
 | συμβαίνω | to happen | I happen |
@@ -807,8 +740,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | συνέπομαι | to accompany | I accompany |
 | συνέχω | to hold/oppress | I hold/oppress |
 | συνήδομαι | to delight | I delight |
-| συνίημι | to understand | I understand |
-| συνίστημι | to commend | I commend |
 | συναίρω | to settle accounts | I settle accounts |
 | συναγωνίζομαι | to struggle | I struggle |
 | συναθλέω | to contend | I contend |
@@ -864,7 +795,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | συστρέφω | to gather | I gather |
 | συσχηματίζομαι | to conform to | I conform to |
 | σφάζω | to slaughter | I slaughter |
-| σφραγίζω | to seal | I seal |
 | σχίζω | to split | I split |
 | σωρεύω | to pile up | I pile up |
 | σωφρονίζω | to train | I train |
@@ -872,22 +802,18 @@ the corpus tags the lemma `V-` as its commonest reading.
 | σύρω | to drag | I drag |
 | τάσσω | to appoint | I appoint |
 | τήκομαι | to melt | I melt |
-| τίκτω | to give birth to | I give birth to |
 | τίλλω | to pluck | I pluck |
 | τίνω | to pay | I pay |
 | ταλαιπωρέω | to grieve | I grieve |
 | ταπεινόω | to humble | I humble |
-| ταράσσω | to trouble | I trouble |
 | τεκνογονέω | to have children | I have children |
 | τεκνοτροφέω | to raise children | I raise children |
-| τελέω | to finish | I finish |
 | τελεσφορέω | to mature | I mature |
 | τελευτάω | to decease | I decease |
 | τεφρόω | to turn to ashes | I turn to ashes |
 | τιμωρέω | to punish | I punish |
 | τρέμω | to tremble | I tremble |
 | τρέφω | to feed | I feed |
-| τρέχω | to run | I run |
 | τρίζω | to gnash | I gnash |
 | τραυματίζω | to wound | I wound |
 | τραχηλίζομαι | to lay bare | I lay bare |
@@ -920,7 +846,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | φρίσσω | to shudder | I shudder |
 | φραγελλόω | to whip | I whip |
 | φρεναπατάω | to deceive | I deceive |
-| φρονέω | to reason | I reason |
 | φρουρέω | to guard | I guard |
 | φυλακίζω | to imprison | I imprison |
 | φυσιόω | to inflate | I inflate |
@@ -929,13 +854,11 @@ the corpus tags the lemma `V-` as its commonest reading.
 | φύω | to grow | I grow |
 | χαλάω | to lower | I lower |
 | χαλιναγωγέω | to bridle | I bridle |
-| χαρίζομαι | to give grace | I give grace |
 | χαριτόω | to favor | I favor |
 | χειραγωγέω | to guide | I guide |
 | χειροτονέω | to appoint | I appoint |
 | χλευάζω | to sneer | I sneer |
 | χορηγέω | to provide | I provide |
-| χορτάζω | to feed | I feed |
 | χράομαι | to use | I use |
 | χρή | to ought/need | I ought/need |
 | χρίω | to anoint | I anoint |
@@ -960,8 +883,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀγραυλέω | to live outside | I live outside |
 | ἀγρεύω | to catch | I catch |
 | ἀγωνίζομαι | to struggle | I struggle |
-| ἀδικέω | to harm | I harm |
-| ἀθετέω | to reject | I reject |
 | ἀθλέω | to compete | I compete |
 | ἀθροίζω | to gather | I gather |
 | ἀκαιρέομαι | to lack opportunity | I lack opportunity |
@@ -979,15 +900,12 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀμφιέννυμι | to clothe | I clothe |
 | ἀμφιβάλλω | to cast | I cast |
 | ἀμύνομαι | to defend | I defend |
-| ἀνάγω | to lead | I lead |
 | ἀνάκειμαι | to recline | I recline |
 | ἀνάπτω | to set fire | I set fire |
 | ἀνέρχομαι | to go up | I go up |
-| ἀνέχομαι | to endure | I endure |
 | ἀνίημι | to loosen/leave | I loosen/leave |
 | ἀναβάλλομαι | to defer | I defer |
 | ἀναβιβάζω | to pull up | I pull up |
-| ἀναβλέπω | to look up/again | I look up/again |
 | ἀναβοάω | to cry out | I cry out |
 | ἀναγγέλλω | to report | I report |
 | ἀναγεννάω | to beget | I beget |
@@ -1003,7 +921,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀναθάλλω | to renew | I renew |
 | ἀναθεματίζω | to take an oath | I take an oath |
 | ἀναθεωρέω | to contemplate | I contemplate |
-| ἀναιρέω | to kill | I kill |
 | ἀνακάμπτω | to return | I return |
 | ἀνακαθίζω | to sit up | I sit up |
 | ἀνακαινίζω | to restore | I restore |
@@ -1011,7 +928,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀνακαλύπτω | to unveil | I unveil |
 | ἀνακλίνω | to recline | I recline |
 | ἀνακράζω | to yell | I yell |
-| ἀνακρίνω | to investigate | I investigate |
 | ἀνακύπτω | to straighten up | I straighten up |
 | ἀναλίσκω | to consume | I consume |
 | ἀναλαμβάνω | to take up | I take up |
@@ -1070,8 +986,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀντοφθαλμέω | to face | I face |
 | ἀξιόω | to deem worthy | I deem worthy |
 | ἀπάγχομαι | to strangle | I strangle |
-| ἀπάγω | to lead away | I lead away |
-| ἀπέχω | to have in full | I have in full |
 | ἀπαίρω | to take away | I take away |
 | ἀπαιτέω | to demand | I demand |
 | ἀπαλγέω | to become callous | I become callous |
@@ -1101,7 +1015,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀποθησαυρίζω | to store up | I store up |
 | ἀποθλίβω | to crowd up to | I crowd up to |
 | ἀποκαθίστημι | to restore | I restore |
-| ἀποκαλύπτω | to reveal | I reveal |
 | ἀποκαταλλάσσω | to reconcile | I reconcile |
 | ἀποκεφαλίζω | to behead | I behead |
 | ἀποκλείω | to shut | I shut |
@@ -1142,7 +1055,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀποψύχω | to faint | I faint |
 | ἀπωθέομαι | to reject | I reject |
 | ἀπόκειμαι | to lay up | I lay up |
-| ἀρέσκω | to please | I please |
 | ἀριθμέω | to number | I number |
 | ἀριστάω | to eat early meal | I eat early meal |
 | ἀροτριάω | to plow | I plow |
@@ -1164,7 +1076,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἀφυπνόω | to fall sleep | I fall sleep |
 | ἀφυστερέω | to withhold | I withhold |
 | ἀχρειόομαι | to make worthless | I make worthless |
-| ἁγιάζω | to sanctify | I sanctify |
 | ἁγνίζω | to purify | I purify |
 | ἁλίζω | to salt | I salt |
 | ἁλιεύω | to fish | I fish |
@@ -1204,7 +1115,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐκκομίζω | to carry out | I carry out |
 | ἐκκόπτω | to prevent | I prevent |
 | ἐκλάμπω | to shine out | I shine out |
-| ἐκλέγομαι | to select | I select |
 | ἐκλαλέω | to speak out | I speak out |
 | ἐκλανθάνω | to forget | I forget |
 | ἐκλείπω | to fail | I fail |
@@ -1225,7 +1135,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐκριζόω | to uproot | I uproot |
 | ἐκτίθημι | to explain/expose | I explain/expose |
 | ἐκταράσσω | to disturb greatly | I disturb greatly |
-| ἐκτείνω | to stretch out | I stretch out |
 | ἐκτελέω | to finish up | I finish up |
 | ἐκτινάσσω | to shake out/off | I shake out/off |
 | ἐκτρέπομαι | to turn/wander away | I turn/wander away |
@@ -1234,10 +1143,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐκφεύγω | to escape | I escape |
 | ἐκφοβέω | to terrify | I terrify |
 | ἐκφύω | to put out | I put out |
-| ἐκχέω | to pour out | I pour out |
 | ἐκχωρέω | to go out | I go out |
 | ἐκψύχω | to expire | I expire |
-| ἐλέγχω | to rebuke | I rebuke |
 | ἐλαττονέω | to have little | I have little |
 | ἐλαττόω | to make less | I make less |
 | ἐλαύνω | to drive | I drive |
@@ -1246,7 +1153,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐμέω | to vomit | I vomit |
 | ἐμβάλλω | to throw in | I throw in |
 | ἐμβάπτω | to dip in | I dip in |
-| ἐμβαίνω | to climb | I climb |
 | ἐμβατεύω | to investigate | I investigate |
 | ἐμβιβάζω | to put on board | I put on board |
 | ἐμβλέπω | to look into/upon | I look into/upon |
@@ -1269,7 +1175,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐνδιδύσκω | to dress | I dress |
 | ἐνδυναμόω | to strengthen | I strengthen |
 | ἐνδύνω | to sneak | I sneak |
-| ἐνδύω | to put on | I put on |
 | ἐνεδρεύω | to ambush | I ambush |
 | ἐνειλέω | to enwrap | I enwrap |
 | ἐνθυμέομαι | to reflect on | I reflect on |
@@ -1290,7 +1195,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐξάγω | to lead out | I lead out |
 | ἐξάλλομαι | to leap up | I leap up |
 | ἐξέλκω | to drag out/away | I drag out/away |
-| ἐξίστημι | to amaze | I amaze |
 | ἐξαίρω | to expel | I expel |
 | ἐξαγγέλλω | to proclaim | I proclaim |
 | ἐξαγοράζω | to redeem | I redeem |
@@ -1323,8 +1227,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐπέχω | to hold fast/out | I hold fast/out |
 | ἐπίκειμαι | to lay on | I lay on |
 | ἐπίσταμαι | to know/understand | I know/understand |
-| ἐπαίρω | to lift up | I lift up |
-| ἐπαγγέλλομαι | to profess | I profess |
 | ἐπαγωνίζομαι | to contend | I contend |
 | ἐπαθροίζομαι | to collect/crowd | I collect/crowd |
 | ἐπαινέω | to praise | I praise |
@@ -1342,7 +1244,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐπεισέρχομαι | to enter | I enter |
 | ἐπεκτείνομαι | to reach out to | I reach out to |
 | ἐπηρεάζω | to mistreat | I mistreat |
-| ἐπιβάλλω | to put on/seize | I put on/seize |
 | ἐπιβαίνω | to mount/board | I mount/board |
 | ἐπιβαρέω | to burden | I burden |
 | ἐπιβιβάζω | to mount | I mount |
@@ -1358,15 +1259,12 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐπιδιορθόω | to straighten out | I straighten out |
 | ἐπιδύω | to set | I set |
 | ἐπιζητέω | to seek after | I seek after |
-| ἐπιθυμέω | to long for | I long for |
 | ἐπικαθίζω | to sit on | I sit on |
 | ἐπικαλύπτω | to cover | I cover |
 | ἐπικρίνω | to decide | I decide |
 | ἐπιλέγω | to call/choose | I call/choose |
-| ἐπιλαμβάνομαι | to catch | I catch |
 | ἐπιλανθάνομαι | to forget | I forget |
 | ἐπιλύω | to explain | I explain |
-| ἐπιμένω | to remain/keep on | I remain/keep on |
 | ἐπιμαρτυρέω | to testify to | I testify to |
 | ἐπιμελέομαι | to care | I care |
 | ἐπινεύω | to accept | I accept |
@@ -1391,7 +1289,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐπισωρεύω | to accumulate | I accumulate |
 | ἐπιτάσσω | to command | I command |
 | ἐπιτελέω | to complete | I complete |
-| ἐπιτρέπω | to permit | I permit |
 | ἐπιτυγχάνω | to obtain | I obtain |
 | ἐπιφέρω | to inflict | I inflict |
 | ἐπιφαίνω | to appear | I appear |
@@ -1411,7 +1308,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἐρεύγομαι | to utter/proclaim | I utter/proclaim |
 | ἐρημόομαι | to lay waste | I lay waste |
 | ἐφάλλομαι | to jump on | I jump on |
-| ἐφίστημι | to approach | I approach |
 | ἐφικνέομαι | to reach | I reach |
 | ἐφοράω | to inspect | I inspect |
 | ἑλίσσω | to roll up | I roll up |
@@ -1424,10 +1320,7 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ἔσθω | to devour | I devour |
 | ἕλκω | to draw/persuade | I draw/persuade |
 | ἠχέω | to resound | I resound |
-| ἡγέομαι | to govern | I govern |
 | ἡγεμονεύω | to govern | I govern |
-| ἥκω | to come/be present | I come/be present |
-| ἰάομαι | to heal | I heal |
 | ἱερατεύω | to serve as priest | I serve as priest |
 | ἱεροσυλέω | to despoil a temple | I despoil a temple |
 | ἱερουργέω | to minister | I minister |
@@ -1456,8 +1349,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ὁδοιπορέω | to journey | I journey |
 | ὁμιλέω | to talk | I talk |
 | ὁμοιάζω | to resemble | I resemble |
-| ὁμοιόω | to liken | I liken |
-| ὁμολογέω | to confess/profess | I confess/profess |
 | ὁπλίζομαι | to arm | I arm |
 | ὁρίζω | to determine | I determine |
 | ὁρκίζω | to adjure | I adjure |
@@ -1467,7 +1358,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ὑδροποτέω | to drink water | I drink water |
 | ὑμνέω | to praise | I praise |
 | ὑπέχω | to undergo | I undergo |
-| ὑπακούω | to obey | I obey |
 | ὑπαντάω | to go meet | I go meet |
 | ὑπείκω | to submit | I submit |
 | ὑπεραυξάνω | to increase | I increase |
@@ -1490,7 +1380,6 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ὑπολαμβάνω | to take up/suppose | I take up/suppose |
 | ὑπολείπω | to leave | I leave |
 | ὑπολιμπάνω | to leave behind | I leave behind |
-| ὑπομένω | to remain/endure | I remain/endure |
 | ὑπομιμνῄσκω | to remind | I remind |
 | ὑπονοέω | to suppose | I suppose |
 | ὑποπλέω | to sail the lee | I sail the lee |
@@ -1501,11 +1390,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ὑποφέρω | to endure | I endure |
 | ὑποχωρέω | to withdraw | I withdraw |
 | ὑπωπιάζω | to wear out | I wear out |
-| ὑστερέω | to lack | I lack |
-| ὑψόω | to lift up | I lift up |
 | ὠνέομαι | to buy | I buy |
 | ὠρύομαι | to roar | I roar |
-| ὠφελέω | to help | I help |
 | ᾄδω | to sing | I sing |
 | ῥέω | to flow | I flow |
 | ῥήγνυμι | to throw violently | I throw violently |
@@ -1515,9 +1401,8 @@ the corpus tags the lemma `V-` as its commonest reading.
 | ῥαπίζω | to slap | I slap |
 | ῥιζόομαι | to root | I root |
 | ῥιπίζομαι | to toss about | I toss about |
-| ῥύομαι | to rescue | I rescue |
 
-## 2. Headwords matched through a spelling variant (259)
+## 2. Headwords matched through a spelling variant (245)
 
 MorphGNT lists a deponent under its middle form where a lexicon has the
 active, and brackets an optional final consonant. An exact match is always
@@ -1527,7 +1412,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | corpus lemma | matched | source | gloss |
 |---|---|---|---|
 | Αὐγοῦστος | Αὐγοῦστος | TBESG | Augustus |
-| Βαρναβᾶς | Βαρναβᾶς | TBESG | Barnabas |
 | Βελιάρ | Βελιάρ | Dodson | Beliar |
 | Βηθλέεμ | Βηθλέεμ | TBESG | Bethlehem |
 | Γαββαθα | Γαββαθα | TBESG | Gabbatha |
@@ -1561,7 +1445,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | βάϊον | βάϊον | TBESG | palm branch |
 | βουλεύομαι | βουλεύω | TBESG | I plan |
 | γενεαλογέομαι | γενεαλογέω | TBESG | I trace genealogy |
-| γεύομαι | γεύω | TBESG | I taste |
 | διαβεβαιόομαι | διαβεβαιόω | TBESG | I insist |
 | διαλέγομαι | διαλέγω | TBESG | I dispute |
 | διαλλάσσομαι | διαλλάσσω | TBESG | be reconciled |
@@ -1575,7 +1458,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | δωρέομαι | δωρέω | TBESG | I give |
 | εφφαθα | εφφαθα | TBESG | open! |
 | εἰσκαλέομαι | εἰσκαλέω | TBESG | I invite |
-| εἰσπορεύομαι | εἰσπορεύω | TBESG | I enter |
 | εἴκοσι(ν) | εἴκοσι | TBESG | twenty |
 | εὐοδόομαι | εὐοδόω | TBESG | I get along well |
 | εὐπορέομαι | εὐπορέω | TBESG | be prosperous |
@@ -1595,13 +1477,11 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | καυσόομαι | καυσόω | TBESG | I burn |
 | κλυδωνίζομαι | κλυδωνίζω | TBESG | I toss |
 | κνήθομαι | κνήθω | TBESG | I itch |
-| κοιμάομαι | κοιμάω | TBESG | I sleep |
 | κολλάομαι | κολλάω | TBESG | I join |
 | κραταιόομαι | κραταιόω | TBESG | I strengthen |
 | κυλίομαι | κυλίω | TBESG | I wallow |
 | λάθρᾳ | λάθρᾳ | TBESG | quietly |
 | λυτρόομαι | λυτρόω | TBESG | I ransom |
-| μέχρι(ς) | μέχρι | TBESG | until |
 | μακροθύμως | μακροθύμως | TBESG | patiently |
 | μαραίνομαι | μαραίνω | TBESG | I fade |
 | ματαιόομαι | ματαιόω | TBESG | I make futile |
@@ -1612,7 +1492,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | μεταπέμπομαι | μεταπέμπω | TBESG | I summon |
 | μετεωρίζομαι | μετεωρίζω | TBESG | I worry |
 | μηκύνομαι | μηκύνω | TBESG | I grow |
-| μιμνῄσκομαι | μιμνῄσκω | TBESG | I remember |
 | μισθόομαι | μισθόω | TBESG | I hire |
 | μνηστεύομαι | μνηστεύω | TBESG | I betroth |
 | μοιχάομαι | μοιχάω | TBESG | I commit adultery |
@@ -1644,7 +1523,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | προπορεύομαι | προπορεύω | TBESG | I go before |
 | προσαπειλέομαι | προσαπειλέω | TBESG | I threaten further |
 | προσδέομαι | προσδέω | TBESG | I need |
-| προσκαλέομαι | προσκαλέω | TBESG | I call to/summon |
 | προσκλίνομαι | προσκλίνω | TBESG | I lean toward |
 | προσκληρόομαι | προσκληρόω | TBESG | I join |
 | προσκολλάομαι | προσκολλάω | TBESG | I join |
@@ -1688,13 +1566,11 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | τύφομαι | τύφω | TBESG | I smoulder |
 | φαντάζομαι | φαντάζω | TBESG | I make visible |
 | χαλκοῦς | χαλκοῦς | Dodson | made of bronze |
-| χαρίζομαι | χαρίζω | TBESG | I give grace |
 | χειμάζομαι | χειμάζω | TBESG | be storm-tossed |
 | χράομαι | χράω | TBESG | I use |
 | ψύχομαι | ψύχω | TBESG | I cool |
 | ἀκαιρέομαι | ἀκαιρέω | TBESG | I lack opportunity |
 | ἀμύνομαι | ἀμύνω | TBESG | I defend |
-| ἀνέχομαι | ἀνέχω | TBESG | I endure |
 | ἀναβάλλομαι | ἀναβάλλω | TBESG | I defer |
 | ἀναγνωρίζομαι | ἀναγνωρίζω | TBESG | I recognize |
 | ἀναμιμνῄσκω | ἀναμιμνῄσκω | TBESG | I remind |
@@ -1730,7 +1606,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | ἐκδαπανάομαι | ἐκδαπανάω | TBESG | I expend |
 | ἐκθαμβέομαι | ἐκθαμβέω | TBESG | be awe-struck |
 | ἐκκαίομαι | ἐκκαίω | TBESG | be enflamed |
-| ἐκλέγομαι | ἐκλέγω | TBESG | I select |
 | ἐκλύομαι | ἐκλύω | TBESG | I faint |
 | ἐκπλήσσομαι | ἐκπλήσσω | TBESG | be astonished |
 | ἐκστρέφομαι | ἐκστρέφω | TBESG | be warped |
@@ -1743,10 +1618,8 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | ἐξαιτέομαι | ἐξαιτέω | TBESG | I demand/ask for |
 | ἐξαπορέομαι | ἐξαπορέω | TBESG | I despair |
 | ἐξηχέομαι | ἐξηχέω | TBESG | I ring/sound out |
-| ἐπαγγέλλομαι | ἐπαγγέλλω | TBESG | I profess |
 | ἐπαναπαύομαι | ἐπαναπαύω | TBESG | I rest/rely on |
 | ἐπενδύομαι | ἐπενδύω | TBESG | be clothed |
-| ἐπιλαμβάνομαι | ἐπιλαμβάνω | TBESG | I catch |
 | ἐπιλανθάνομαι | ἐπιλανθάνω | TBESG | I forget |
 | ἐπισκευάζομαι | ἐπισκευάζω | TBESG | I repair |
 | ἐπισπάομαι | ἐπισπάω | TBESG | I uncircumcise |
@@ -1760,8 +1633,6 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | Ἑσλί | Ἑσλί | TBESG | Esli |
 | Ἑσρώμ | Ἑσρώμ | TBESG | Hezron |
 | Ἔβερ | Ἔβερ | TBESG | Eber |
-| Ἠλίας | Ἠλίας | TBESG | Elijah |
-| Ἠσαΐας | Ἠσαΐας | TBESG | Isaiah |
 | Ἡρῳδίων | Ἡρῳδίων | TBESG | Herodion |
 | Ἡρῳδιάς | Ἡρῳδιάς | TBESG | Herodias |
 | Ἡρῳδιανοί | Ἡρῳδιανοί | TBESG | Herodian |
@@ -1786,7 +1657,7 @@ variants — bracket stripped, `-ομαι` to `-ω`, or accent-blind.
 | Ῥαγαύ | Ῥαγαύ | TBESG | Reu |
 | Ῥαμά | Ῥαμά | TBESG | Ramah |
 
-## 3. Case variants given the deck's own gloss (5)
+## 3. Case variants given the deck's own gloss (7)
 
 The corpus tags a few words twice, once capitalised. Only one of each pair
 carries the deck's hand-written gloss; the other is handed the same one, so
@@ -1798,21 +1669,22 @@ the word does not read differently at the start of a sentence.
 | Θάλασσα | sea, lake |
 | Καλός | good, beautiful, fine |
 | Πόλις | city |
+| Στέφανος | crown |
 | Τρεῖς | three |
+| Ὦ | oh! |
 
-## 4. Proper nouns glossed by their own name (36)
+## 4. Proper nouns glossed by their own name (34)
 
 Neither lexicon carries these, and none is needed: the corpus tags them
 `N-` and they are capitalised, so the name is the gloss.
 
-## 5. Left with no gloss (120)
+## 5. Left with no gloss (119)
 
-219 tokens, 0.16% of the New Testament. The app says so rather than
+197 tokens, 0.14% of the New Testament. The app says so rather than
 guessing, and any of them can be written in and kept.
 
 | lemma | occurrences | part of speech |
 |---|---|---|
-| τεσσεράκοντα | 22 | A- |
 | ἀφίσταμαι | 14 | V- |
 | εἰδωλόθυτον | 9 | A- |
 | ἐραυνάω | 6 | V- |
