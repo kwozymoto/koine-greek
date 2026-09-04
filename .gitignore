@@ -30,6 +30,9 @@ audio/*_cues.json
 /erasmian_koine_greek_alphabet.mp3
 
 # Local-only working files
+# .claude/launch.json is how this machine serves the app for testing; it is
+# a tool setting, not part of the app.
+.claude/
 audio-audit.html
 sound-picker.html
 vocab_worklist.tsv

@@ -8,12 +8,13 @@ Live at **https://kwozymoto.github.io/koine-greek/**
 
 It follows David Alan Black, *Learn to Read New Testament Greek* (3rd ed.) —
 26 chapters, each with its own vocabulary and a short test — and carries an
-818-word deck on a spaced-repetition schedule, 24 reference tables, 12 graded
+818-word deck on a spaced-repetition schedule, 28 reference tables — 20 of
+which are also playable as fill-in-the-blank paradigm rounds — 12 graded
 passages, and the whole Greek New Testament with every word parsed.
 
 ## Everything it teaches is checked against the corpus
 
-`python tools/check_all.py` runs eight checkers, all of them against the
+`python tools/check_all.py` runs ten checkers, all of them against the
 SBLGNT bundled in `data/gnt/`. They exist because this app makes claims about
 a language, and a confident wrong answer is worse than no answer:
 
@@ -21,11 +22,13 @@ a language, and a confident wrong answer is worse than no answer:
 |---|---|
 | `check_vocab` | the 818 entries, their example verses and the parse under each, the reader's gloss table, the audio chain, principal parts, accents |
 | `check_drills` | the hand-written drill arrays in `js/app.js` — form against label |
-| `check_paradigms` | the 24 reference tables, cell by cell, by parse code |
+| `check_paradigms` | the 28 reference tables, cell by cell, by parse code |
+| `check_grids` | the 45 paradigm rounds derived from those tables: every table meant to be playable still is, no round is more than a minute's work, no empty cell reaches the tray |
 | `check_readings` | the 12 passages word for word, and every parse claim in their glosses |
 | `check_lessons` | the spelling of every Greek form in the chapters, and that each question is asked after the section teaching it |
 | `check_forms` | the 1,477 real inflected forms the parsing drill marks you against — each occurs, carries that parse everywhere it occurs, and belongs to the headword shown |
 | `check_lexicon` | the 4,526 shipped glosses: real lemmas, none overriding the course's own, the one edit matching its changelog |
+| `check_syntax` | the syntax tables' examples: each phrase occurs in the verse it names, and the construction claimed is borne out by the parse codes |
 | `check_links` | every Watch row still resolves, and every embedded video is still the one named |
 
 What none of them can check is English: whether a gloss is the right

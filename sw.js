@@ -80,6 +80,7 @@ const SHELL = [
   'js/audio.js',
   'js/gnt.js',
   'js/write.js',
+  'js/grid.js',
   'js/sync.js',
   'data/vocab.js',
   'data/lessons.js',

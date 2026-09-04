@@ -4,7 +4,7 @@
     python tools/check_all.py
 
 The app teaches, so the thing that matters about it is whether what it says
-is true. Nine checkers put different parts of it to the SBLGNT bundled in
+is true. Ten checkers put different parts of it to the SBLGNT bundled in
 data/gnt/, and this runs the lot:
 
     check_vocab      the 511 lexical entries, their example verses, the
@@ -13,7 +13,11 @@ data/gnt/, and this runs the lot:
     check_drills     the hand-written drill arrays in js/app.js — the
                      article, verb parsing, the parsing builder, principal
                      parts — form against label
-    check_paradigms  the 24 reference tables, cell by cell, by parse code
+    check_paradigms  the 28 reference tables, cell by cell, by parse code
+    check_grids      the paradigm rounds js/grid.js makes out of those
+                     tables: that every table meant to be playable still is,
+                     that no round is bigger than a minute's work, and that
+                     no empty cell reaches the tray
     check_readings   the 12 passages, word for word, and every parse claim
                      in their glosses
     check_lessons    the spelling of every Greek form in the lesson bodies
@@ -46,11 +50,11 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_readings",
-          "check_lessons", "check_forms", "check_lexicon", "check_syntax",
-          "check_links"]
+CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
+          "check_readings", "check_lessons", "check_forms", "check_lexicon",
+          "check_syntax", "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
-# straight through to it and leaves the other five untouched.
+# straight through to it and leaves the other nine untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}
 
 env = dict(os.environ, PYTHONIOENCODING="utf-8")

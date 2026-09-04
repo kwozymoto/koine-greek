@@ -56,6 +56,17 @@ function mergeStates(local, remote) {
   out.gcards = mergeCards(local.gcards, remote.gcards);
   // So are the passage words the course does not teach, keyed by lemma.
   out.lcards = mergeCards(local.lcards, remote.lcards);
+  /* And the paradigm rounds — except that each also carries the fastest fill
+     of that grid, and fastest is the smaller number. The one place in this
+     file where max is the wrong answer. Copied rather than mutated:
+     mergeCards hands back whichever card it picked, and writing through it
+     would edit S itself before the caller has compared them. */
+  out.grids = mergeCards(local.grids, remote.grids);
+  for (const k of Object.keys(out.grids)) {
+    const bs = [(local.grids || {})[k], (remote.grids || {})[k]]
+      .map(c => c && c.best).filter(b => typeof b === "number" && b > 0);
+    if (bs.length) out.grids[k] = Object.assign({}, out.grids[k], { best: Math.min(...bs) });
+  }
   out.xp     = Math.max(local.xp || 0, remote.xp || 0);
   /* Take the streak from whichever device owns the newer last-studied date;
      Math.max resurrected a long-dead streak from an idle device. */
@@ -103,7 +114,9 @@ function mergeStates(local, remote) {
      yesterday must not tick today's boxes. */
   const pl = local.plan, pr = remote.plan;
   out.plan = (pl && pr && pl.day === pr.day)
-    ? { day: pl.day, done: [...new Set([...(pl.done || []), ...(pr.done || [])])] }
+    ? { day: pl.day, done: [...new Set([...(pl.done || []), ...(pr.done || [])])],
+        // work past the plan, counted on whichever device did more of it
+        extra: Math.max(pl.extra || 0, pr.extra || 0) }
     : ([pl, pr].filter(Boolean).sort((x, y) => (x.day > y.day ? -1 : 1))[0] || null);
 
   /* A gloss you wrote yourself. Union, and where both devices have written
@@ -149,7 +162,8 @@ async function syncPull() {
     const sig = o => JSON.stringify([o.cards, o.gcards, o.xp, o.streak, o.best, o.last,
                                      o.lessons, o.badges, o.suspended, o.restUsed, o.pin,
                                      o.alpha, o.plan, o.lessonPart,
-                                     o.lcards, o.myGloss, o.focus, o.focusDone]);
+                                     o.lcards, o.myGloss, o.focus, o.focusDone,
+                                     o.grids]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

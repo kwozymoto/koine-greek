@@ -559,6 +559,42 @@ function planTick(id){
   if(!S.plan.done.includes(id)) S.plan.done.push(id);
   save();
 }
+/* Work done past the plan. The ring fills at the last tick and stops, so
+   anything beyond it left no mark on Today at all — which quietly says the
+   plan is a ceiling. It is a floor. */
+const extraDone=()=>((S.plan&&S.plan.day===today())?(S.plan.extra||0):0);
+function planExtra(){
+  const d=today();
+  if(!S.plan||S.plan.day!==d) S.plan={day:d,done:[]};
+  S.plan.extra=Math.min(99,(S.plan.extra||0)+1);
+  save();
+}
+
+/* What "more" means once every row is ticked. The button used to say
+   "Practise anyway", which reads like it does not count, and led to a
+   review whether or not a review was the useful thing left. */
+function extraTask(){
+  const f=S.focus;
+  if(f){
+    const fresh=focusFresh(f);
+    if(fresh.length) return {label:`Learn ${Math.min(5,fresh.length)} more from ${focusRef(f)}`,
+                             run:()=>startFocusNew(5)};
+  }else{
+    const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
+    if(fresh) return {label:`Learn ${Math.min(5,fresh)} more word${fresh===1?"":"s"}`,
+                      run:()=>startNew(5)};
+  }
+  const lp=S.lessonPart;
+  const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
+  if(l){
+    const at=(lp&&lp.id===l.id)?lp.part:0;
+    return {label:at?`More of chapter ${l.id}`:`Start chapter ${l.id}`,
+            run:()=>lessonWalk(l.id,at)};
+  }
+  return {label:"Practise what you know",run:()=>startReview()};
+}
+function runExtra(){ const x=extraTask(); if(x) x.run(); }
+
 /* The tick is set when a session ends, so quitting halfway does not count —
    and for a chapter, only lessonDone() finishes it. */
 function runPlanTask(id){
@@ -630,6 +666,26 @@ function todaysPlan(){
       run:()=>startNew(5)});
   }
 
+  /* Paradigms are the one part of Greek that comes down to repetition, so
+     they go on the schedule rather than in a menu you have to remember to
+     open. The row waits until the course has reached a table — chapter 2 is
+     the verbal system and chapter 3 is the first paradigm — and after that
+     it is there whenever one is due. */
+  const gd=(typeof gridDue==="function")?gridDue():[];
+  if(gd.length){
+    const k=Math.min(3,gd.length);
+    tasks.push({id:"grids",
+      label:`Fill in ${k} paradigm${k===1?"":"s"}`,
+      sub:gd.length>k?`${gd.length} due · ${gridName(gd[0])} first`:gd.map(gridName).join(" · "),
+      run:()=>startSession(gridDrill(3),"grids")});
+  }else if(typeof gridRounds==="function" && S.lessons.length>=2
+           && gridStarted().length<gridRounds().length){
+    tasks.push({id:"grids",
+      label:"A paradigm to fill in",
+      sub:`${gridRounds().length-gridStarted().length} of ${gridRounds().length} not tried yet`,
+      run:()=>startSession(gridDrill(1),"grids")});
+  }
+
   /* The chapter you are part-way through, else the next unread one. A focus
      with the whole day steps this aside until the passage is marked done. */
   const lp=S.lessonPart;
@@ -642,11 +698,18 @@ function todaysPlan(){
        chapter's name on a struck-through row would say chapter 4 was finished
        when chapter 1 was. Say what tapping it would do instead. */
     const already=planDone().includes("lesson");
+    /* Name the sitting, not the chapter. Chapter 4 is eleven parts and 642
+       words against chapter 21's two and 129, and the row said nothing to
+       tell them apart — so ten minutes was sometimes twenty. */
+    const to=Math.min(at+LESSON_DOSE,n);
+    const span=to-at===1?`part ${at+1} of ${n}`:`parts ${at+1}–${to} of ${n}`;
     tasks.push({id:"lesson",
-      label:already ? "Another chapter"
-        : at ? `Chapter ${l.id} · from part ${at+1} of ${n}`
-             : `Chapter ${l.id} · ${n} parts`,
-      sub:already ? `Next up: chapter ${l.id}, ${l.t.toLowerCase()}` : l.t,
+      label:already
+        ? (at?`More of chapter ${l.id}`:"Another chapter")
+        : (n<=LESSON_DOSE?`Chapter ${l.id} · ${n} parts`:`Chapter ${l.id} · ${span}`),
+      sub:already
+        ? (at?span:`Next up: chapter ${l.id}, ${l.t.toLowerCase()}`)
+        : l.t,
       run:()=>lessonWalk(l.id,at)});
   }
   return tasks;
@@ -659,7 +722,7 @@ function planHtml(){
     return `<button class="plan-row${ok?" done":""}" onclick="runPlanTask('${t.id}')">
       <span class="tick">${ok?"✓":""}</span>
       <span class="t"><b>${t.label}</b><span>${t.sub}</span></span>
-      <span class="chev">${ok?"":"›"}</span></button>`;
+      <span class="chev">›</span></button>`;
   }).join("");
 }
 
@@ -668,8 +731,14 @@ function planHtml(){
 function nextTaskHtml(){
   const done=planDone();
   const next=todaysPlan().find(t=>!done.includes(t.id));
-  if(!next) return `<p class="muted" style="text-align:center;font-size:.86rem;margin:0 0 12px">
-    That is today's plan finished.</p>`;
+  if(!next){
+    const x=extraTask(), more=extraDone();
+    return `<p class="muted" style="text-align:center;font-size:.86rem;margin:0 0 12px">
+      That is today's plan finished${more?`, and ${more} more past it`:""}.</p>
+      <button class="btn ghost" onclick="runExtra()">Keep going — ${
+        x.label.replace(/^./,c=>c.toLowerCase())}</button>
+      <div style="height:9px"></div>`;
+  }
   return `<button class="btn" onclick="runPlanTask('${next.id}')">Next — ${next.label.replace(/^./,c=>c.toLowerCase())}</button>
     <div style="height:9px"></div>`;
 }
@@ -687,8 +756,9 @@ function render(){
   const pct=plan.length?ticked/plan.length:0;
   document.getElementById("ringArc").style.strokeDashoffset = 415-(415*pct);
   document.getElementById("ringNum").textContent = `${ticked}/${plan.length}`;
+  const xtra=extraDone();
   document.getElementById("ringLbl").textContent =
-    ticked>=plan.length ? "plan complete" : "today's plan";
+    ticked>=plan.length ? (xtra?`+${xtra} past the plan`:"plan complete") : "today's plan";
   document.getElementById("streakN").textContent=S.streak;
   const restEl=document.getElementById("streakRest");
   if(restEl) restEl.textContent =
@@ -698,9 +768,10 @@ function render(){
   document.getElementById("planList").innerHTML=planHtml();
   const nextT=plan.find(t=>!pdone.includes(t.id));
   const cont=document.getElementById("btnContinue");
+  const xt=nextT?null:extraTask();
   cont.textContent = nextT ? `Continue — ${nextT.label.replace(/^./,c=>c.toLowerCase())}`
-                           : "Practise anyway";
-  cont.onclick = nextT ? ()=>runPlanTask(nextT.id) : ()=>startReview();
+                           : `Keep going — ${xt.label.replace(/^./,c=>c.toLowerCase())}`;
+  cont.onclick = nextT ? ()=>runPlanTask(nextT.id) : xt.run;
 
   /* Only until the deck has been touched — then it goes and does not come
      back. A permanent link at the foot of the screen leads to the same page
@@ -783,7 +854,7 @@ function finish(){
   document.getElementById("sessBar").style.width="100%";
   COMBO=0; comboPaint();
   // A plan row is ticked by finishing it, not by starting it.
-  if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; }
+  if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
   checkBadges();
   /* Worth reading, rather than "+42 XP". Accuracy is only shown when
      something was actually marked: a vocabulary review is self-graded, so
@@ -1140,10 +1211,13 @@ function openLesson(id){
     <p class="sub">${l.s}</p>
     <div class="card" style="border-color:var(--gold-dim)">
       <p style="margin:0 0 10px;font-size:.9rem">${
-        at?`You stopped at part <b>${at+1}</b> of ${parts}.`
-          :`<b>${parts} short parts</b> and ${l.quiz.length} questions, about ten minutes — a
-             little reading, then a chance to use it, rather than the whole chapter and a test.`}</p>
-      <button class="btn" onclick="lessonWalk(${id},${at})">${at?"Pick it up again":"Work through it"}</button>
+        at?`You stopped at part <b>${at+1}</b> of ${parts}. This button takes the rest in one
+            go; Today gives it to you ${LESSON_DOSE} parts at a time.`
+          :`<b>${parts} short parts</b> and ${l.quiz.length} questions — a little reading, then a
+             chance to use it, rather than the whole chapter and a test.${
+             parts>LESSON_DOSE?` All of it in one sitting here; Today takes it
+             ${LESSON_DOSE} parts at a time.`:""}`}</p>
+      <button class="btn" onclick="lessonWalk(${id},${at},true)">${at?"Finish the chapter":"Work through it"}</button>
     </div>
     <h2 style="margin-top:26px">The chapter</h2>
     ${l.body}
@@ -1202,6 +1276,17 @@ function lessonQuiz(id){
    L{id}q{n} keys, so a question answered here lands on exactly the grammar
    schedule the end-of-chapter test feeds. The page itself is untouched and
    still there to re-read. */
+/* One sitting's worth of a chapter. Measured over the twenty-six: 105 parts
+   in all, a median of four to a chapter, but chapter 4 has eleven and 642
+   words where chapter 21 has two and 129. A row reading "Chapter 4" told you
+   none of that. Three parts is the dose; a longer chapter comes back
+   tomorrow, and anyone who wants the rest tonight is one button away.
+
+   One part a day was the other option and it is wrong: a part is about sixty
+   words, the whole course would take 105 days of grammar in slivers, and
+   several parts are a single paradigm that has to be read in one piece. */
+const LESSON_DOSE=3;
+
 function lessonParts(l){
   // Lookahead, so each <h3> stays attached to the section it opens. Part 0
   // is whatever comes before the first heading; chapters 12, 14 and 21 have
@@ -1228,7 +1313,7 @@ function lessonDone(id){
     if(!S.lessons.includes(id)){S.lessons.push(id);save();}
     if(S.lessonPart && S.lessonPart.id===id){ S.lessonPart=null; save(); }
     // This screen stands in for finish(), so it has to tick the plan too.
-    if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; }
+    if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
     COMBO=0; comboPaint();
     checkBadges();
     const line=[];
@@ -1244,13 +1329,45 @@ function lessonDone(id){
     addXp(12);
   };
 }
-function lessonWalk(id,from){
+/* The end of a dose, not of the chapter. Ticks the plan exactly as finishing
+   would — the day's work is done — and then puts the next part one tap away,
+   so the dose is a resting place and never a stop sign. */
+function lessonPause(id,at,total){
+  return ()=>{
+    S.lessonPart={id,part:at}; save();
+    if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
+    COMBO=0; comboPaint();
+    checkBadges();
+    const line=[];
+    if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
+    if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
+    document.getElementById("sessBody").innerHTML=`
+      <div class="empty"><span class="gk">καλῶς</span>
+        <p>Chapter ${id} · part ${at} of ${total} done.</p>
+        ${line.length?`<p>${line.join(" · ")}</p>`:""}
+        <p class="muted" style="font-size:.86rem">That is the day's reading. It picks up here
+          next time, or carry straight on.</p></div>
+      <button class="btn" onclick="lessonWalk(${id},${at})">Keep going — part ${at+1} of ${total}</button>
+      <div style="height:9px"></div>
+      ${nextTaskHtml()}
+      <button class="btn ghost" onclick="go('learn')">Back to lessons</button>`;
+    document.getElementById("sessBar").style.width="100%";
+    addXp(6);
+  };
+}
+
+/* `all` walks the chapter to its end — what the chapter page's own button
+   does, since opening a chapter there is a deliberate sitting down with it.
+   Today's plan passes nothing and gets a dose. */
+function lessonWalk(id,from,all){
   const l=LESSONS.find(x=>x.id===id);
   if(!l) return;
   const parts=lessonParts(l);
   const start=Math.min(Math.max(0,from|0),parts.length-1);
+  const stop=all?parts.length:Math.min(start+LESSON_DOSE,parts.length);
+  const last=stop>=parts.length;
   const q=[];
-  for(let k=start;k<parts.length;k++){
+  for(let k=start;k<stop;k++){
     q.push(lessonStep(l,parts,k));
     l.quiz.forEach((x,n)=>{ if(x.sec===k) q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`)); });
   }
@@ -1258,15 +1375,20 @@ function lessonWalk(id,from){
      is also what happens for a chapter whose questions carry no sec at all,
      so this degrades exactly to the old test rather than losing questions.
      On a resume, a question belonging to a part already read is only re-asked
-     if it was never answered; S.gcards is the record of that. */
-  const g=S.gcards||{};
-  l.quiz.forEach((x,n)=>{
-    const filed=Number.isInteger(x.sec) && x.sec>=0 && x.sec<parts.length;
-    if(filed && x.sec>=start) return;                 // asked inline above
-    if(filed && x.sec<start && g[`L${id}q${n}`]) return;   // answered already
-    q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
-  });
-  q.push(lessonDone(id));
+     if it was never answered; S.gcards is the record of that. Only on the
+     last dose: a mid-chapter pause has not reached them yet, and asking an
+     unread chapter's closing questions three parts in would be a test on
+     material the reader has not been given. */
+  if(last){
+    const g=S.gcards||{};
+    l.quiz.forEach((x,n)=>{
+      const filed=Number.isInteger(x.sec) && x.sec>=0 && x.sec<parts.length;
+      if(filed && x.sec>=start) return;                 // asked inline above
+      if(filed && x.sec<start && g[`L${id}q${n}`]) return;   // answered already
+      q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
+    });
+  }
+  q.push(last?lessonDone(id):lessonPause(id,stop,parts.length));
   startSession(q,"lesson");
 }
 
@@ -1738,15 +1860,19 @@ const DRILLS=[
 ["Look-alikes","εἰς or εἷς · ἡ or ἥ or ἤ — one accent apart",()=>startSession(lookalikeDrill(),"d")],
 ["Write the letters","Trace each one with a finger or the mouse",()=>startSession(writeLetterDrill(),"d")],
 ["Write it from memory","No multiple choice — write the word, then mark yourself",()=>startSession(writeWordDrill(),"d")],
-["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")]
+["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")],
+["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3),"grids")],
+["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(),"d")],
+["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
 const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
                 "Listening — words","Write it from memory"],
+  "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
-             "Principal parts","Case functions","Mixed grammar review"],
+             "Case functions","Mixed grammar review"],
   "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
 };
 function renderDrill(){
@@ -2065,6 +2191,17 @@ function renderProgress(){
       <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
       ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
     </div>
+    ${gridStarted().length?(()=>{
+      const all=gridRounds(), st=gridStarted();
+      // fastest fill, which is the number anyone who plays these will want
+      const fast=st.filter(g=>S.grids[g.key].best)
+                   .sort((a,b)=>S.grids[a.key].best-S.grids[b.key].best)[0];
+      return `<div class="card">
+      <div class="between"><span>Paradigms</span><b>${st.length} / ${all.length}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${st.length/all.length*100}%"></i></div>
+      <small class="muted">${st.length} round${st.length===1?"":"s"} started · ${
+        gridDue().length} due${fast?` · fastest ${gridName(fast)} in ${mmss(S.grids[fast.key].best)}`:""}</small>
+    </div>`;})():""}
     ${(S.focusDone||[]).length?`<div class="card">
       <div class="between"><span>Passages worked</span><b>${S.focusDone.length}</b></div>
       <small class="muted">${S.focusDone.slice(0,6).map(r=>
@@ -2210,7 +2347,8 @@ function saneState(x){
      an import landing mid-day should not tick today's boxes. */
   out.plan=(x.plan && typeof x.plan==="object"
     && /^\d{4}-\d{2}-\d{2}$/.test(x.plan.day) && Array.isArray(x.plan.done))
-    ? {day:x.plan.day, done:x.plan.done.filter(s=>typeof s==="string").slice(0,8)}
+    ? {day:x.plan.day, done:x.plan.done.filter(s=>typeof s==="string").slice(0,8),
+       extra:Math.max(0,Math.min(99,Math.floor(+x.plan.extra)||0))}
     : null;
   /* letter -> how many times running it has been named correctly. Capped, so
      a hand-edited file cannot claim the alphabet is finished with one entry. */
@@ -2282,6 +2420,18 @@ function saneState(x){
   /* Cards for words outside the deck, keyed by lemma rather than by a VOCAB
      position. Down here because saneCard is declared above it and a const
      cannot be called before its declaration is reached. */
+  /* Paradigm rounds, keyed by table title, caption and starting column —
+     content, not a position, so a re-worded caption starts that round again
+     rather than quietly inheriting another round's schedule. `best` is the
+     fastest fill in seconds and rides on the same card. */
+  out.grids={};
+  const gr=(x.grids&&typeof x.grids==="object"&&!Array.isArray(x.grids))?x.grids:{};
+  for(const k of Object.keys(gr)){
+    if(k.length>160 || !gr[k] || typeof gr[k]!=="object") continue;
+    const c=saneCard(gr[k]), b=Math.floor(+gr[k].best);
+    if(Number.isFinite(b) && b>0 && b<86400) c.best=b;
+    out.grids[k]=c;
+  }
   out.lcards={};
   const lc=(x.lcards&&typeof x.lcards==="object"&&!Array.isArray(x.lcards))?x.lcards:{};
   for(const k of Object.keys(lc))
@@ -2319,7 +2469,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
+  S={cards:{},gcards:{},grids:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
   save(); renderProgress(); toast("Everything reset");
 }
 

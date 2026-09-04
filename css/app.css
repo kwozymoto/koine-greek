@@ -387,3 +387,39 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .mini{font-size:.72rem;padding:2px 7px;border:1px solid var(--line);border-radius:999px;
   color:var(--muted);vertical-align:middle;line-height:1.6}
 .mini:active{background:var(--surface-2)}
+
+/* ---------- fill the grid ----------
+   The same table markup the Tables tab renders, so a paradigm looks the same
+   whether you are reading it or filling it in. Only the empty cells and the
+   tray of forms below are new. */
+.pgcard{padding:12px 10px}
+/* A wide paradigm scrolls inside its own card rather than pushing the page
+   sideways — the third declension is five nouns across. */
+.pgwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;display:flex;justify-content:center}
+/* auto, not the global 100%: a two-column round stretched into two wide bars
+   with nothing in them. Sized to its cells, centred, and scrolled inside the
+   card when it is wider than the phone. */
+.pg{margin:4px 0 2px;width:auto}
+.pg th:first-child{white-space:nowrap;padding-right:12px}
+.pg td{text-align:center;font-family:var(--gk);font-size:calc(1rem * var(--gk-scale))}
+.pgs{min-width:74px;height:38px;border-radius:8px;
+  background:var(--surface-2);border:1px dashed var(--line);
+  border-bottom:1px dashed var(--line);cursor:pointer;transition:border-color .15s,background .15s}
+.pgs.live{border-style:solid;border-color:var(--gold);background:rgba(212,165,55,.10)}
+.pgs.on{border-style:solid;border-color:var(--green);background:rgba(88,168,140,.10);cursor:default;
+  animation:pgin .22s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pgin{from{transform:scale(.86);opacity:.4}to{transform:none;opacity:1}}
+
+/* which cell is armed, said in words — the grid is small on a phone and a
+   gold border alone is not enough to read a slot from */
+.pgnow{text-align:center;font-size:.84rem;color:var(--muted);margin:2px 0 10px;min-height:1.2em}
+.pgnow b{color:var(--text);font-weight:600}
+
+.tray{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px}
+.tray button{padding:9px 13px;border-radius:11px;border:1px solid var(--line);
+  background:var(--surface);font-size:calc(.96rem * var(--gk-scale));line-height:1.2}
+.tray button.gone{opacity:0;pointer-events:none;transition:opacity .18s}
+.tray button.no{border-color:var(--rust);background:rgba(205,97,82,.13);
+  animation:pgno .3s both}
+@keyframes pgno{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}
+  75%{transform:translateX(-3px)}100%{transform:none}}
