@@ -98,6 +98,35 @@ def fit_band(x):
        verse. Within a band the old ordering decides, exactly as before."""
     return 2 if x >= 0.8 else 1 if x >= 0.5 else 0
 
+
+# The citation form itself, where the text offers one, beats every near miss.
+# autos was drawing autois: a top-band fit, since four of its five letters
+# survive, and a dative plural under a card headed "autos, -e, -o". The
+# highlight is meant to be the word the card just taught.
+#
+# Verbs are exempt. A verb's citation form is the first person singular
+# present, which narrative almost never uses, so insisting on it would trade a
+# real sentence for a rare one - and an inflected verb is exactly what reading
+# presents. The card labels its parse underneath.
+CITE_FIRST = {"noun", "adj", "pron", "name", "prep", "art",
+              "conj", "adv", "part", "num"}
+_punct = lambda w: re.sub(r"[^\wͰ-Ͽἀ-῿]", "", w)
+
+# Accent-blind but not breathing- or subscript-blind. flat() drops every
+# combining mark, and the iota subscript is one: under it hemera-dative
+# passed as the nominative on the card, which is precisely the swap this is
+# here to stop. Only the three accents are folded, because a token's accent
+# shifts with enclitics while its letters do not.
+_accents = str.maketrans("", "", "̀́͂")
+same = lambda a, b: (unicodedata.normalize("NFD", _punct(a)).translate(_accents)
+                     == unicodedata.normalize("NFD", _punct(b)).translate(_accents))
+
+
+def band(token, head, pos):
+    if pos in CITE_FIRST and same(token, head):
+        return 3
+    return fit_band(fit(token, head))
+
 def entry_for(w):
     """Which VOCAB entry, if any, this token is an example of."""
     for i in L2V.get(w[1], ()):
@@ -140,7 +169,8 @@ def pick(lo, hi, mincov, need, best):
             if x in NUMBER and v["tok"][at][3][5:6] != NUMBER[x]:
                 continue
             head = V[x][0].split(",")[0].strip()
-            score = (fit_band(fit(v["words"][at], head)), round(v["cover"], 3), -n)
+            score = (band(v["words"][at], head, V[x][3]),
+                     round(v["cover"], 3), -n)
             cur = best.get(x)
             if not cur or score > cur[0]:
                 best[x] = (score, v, at)

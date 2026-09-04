@@ -1637,11 +1637,15 @@ function alphaDrill(n=12,from){
   return pool.map(a=>{
     const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
     const opts=[a[1],...wrong].sort(()=>Math.random()-.5);
+    /* The clip says the letter's name, so on the question it is not a hint,
+       it is the answer read aloud. It belongs in the feedback, where hearing
+       the name beside the shape is worth something and cannot be used to
+       skip the recall. */
     const snd=AUDIO_BY_GREEK[a[0]]
-      ? ` <button class="btn ghost small" style="margin-top:8px" onclick="playGreek('${a[0]}',null)">\uD83D\uDD0A Hear it</button>`
+      ? `<br><button class="btn ghost small" style="margin-top:10px" onclick="playGreek('${a[0]}',null)">\uD83D\uDD0A Hear it</button>`
       : "";
-    return mcq(`Name this letter: <span class="q-gk lg">${a[0]}</span>${snd}`,
-      opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`,
+    return mcq(`Name this letter: <span class="q-gk lg">${a[0]}</span>`,
+      opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.${snd}`,
       null, ok=>alphaSeen(a[1],ok));
   });
 }
