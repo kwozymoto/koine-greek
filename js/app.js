@@ -1348,8 +1348,8 @@ function buildDrill(n=8){
         `<div class="feedback"><b>${ok?"Correct":"Not quite"}</b>
          <span class="gk">${form}</span> — ${tense} ${voice} ind ${person}${number}.</div>
          <button class="btn" onclick="qi++;step()">Continue</button>`;
-      sfx(ok?"correct":"wrong");
-      if(ok) addXp(3);
+      answerFelt(ok);
+      if(ok){ addXp(3); SESSION_XP+=3; }
     };
   });
 }
@@ -1362,6 +1362,94 @@ function buildDrill(n=8){
    and the drill never asks for it. ἵστημι is left out on purpose: it has two
    aorists, ἔστησα "I set" and ἔστην "I stood", so there is no single right
    answer to ask for. */
+/* ---- parse a form somebody actually wrote ----
+   Every other parsing drill here uses λύω: a verb that does not occur in the
+   New Testament, conjugated into forms nobody ever wrote. That is the right
+   way to show a paradigm and a poor way to practise reading, because the
+   shapes are not the difficulty — ἐποίησεν in Acts 7:50 is.
+
+   data/forms.js holds 1,431 of them, every one carrying the same parse at
+   every occurrence in the corpus, so a wrong answer here is genuinely wrong.
+   Forms with two honest readings — ἔλεγον, first singular or third plural —
+   are deliberately absent; PARSE above names both of those by hand.
+
+   Participles and infinitives are not asked. A participle needs tense, voice,
+   case, number and gender at once, which is a different question with a
+   different shape, and chapters 20 and 21 are where it lives. */
+const REAL_OPTS={
+  "V-":{tense:[["P","pres"],["I","impf"],["F","fut"],["A","aor"],["X","perf"],["Y","plpf"]],
+        voice:[["A","act"],["M","mid"],["P","pass"]],
+        mood:[["I","ind"],["D","impv"],["S","subj"],["O","opt"]],
+        person:[["1","1st"],["2","2nd"],["3","3rd"]],
+        number:[["S","sg"],["P","pl"]]},
+  "N-":{"case":[["N","nom"],["G","gen"],["D","dat"],["A","acc"],["V","voc"]],
+        number:[["S","sg"],["P","pl"]],
+        gender:[["M","masc"],["F","fem"],["N","neut"]]}
+};
+REAL_OPTS["A-"]=REAL_OPTS["N-"];
+// where each question sits in the eight-character parse code
+const REAL_AT={person:0,tense:1,voice:2,mood:3,"case":4,number:5,gender:6};
+
+/* Words you are working on, not words at random: the passage if one is in
+   focus, else the deck you have started, else the commonest forms in the New
+   Testament — the same fallback the listening drills use. */
+function realFormPool(){
+  if(typeof FORMS==="undefined") return [];
+  const f=S.focus;
+  if(f){
+    const want=new Set(f.deck.map(([i])=>i));
+    const hit=FORMS.filter(r=>want.has(r[1]));
+    if(hit.length>=8) return hit;
+  }
+  const met=FORMS.filter(r=>S.cards[r[1]] && !skipWord(r[1]));
+  return met.length>=8 ? met : FORMS.slice(0,300);
+}
+
+function parseRealDrill(n=10){
+  const pool=realFormPool().slice().sort(()=>Math.random()-.5).slice(0,n);
+  return pool.map(r=>()=>{
+    const [form,vi,pos,code,ref]=r;
+    const opts=REAL_OPTS[pos];
+    const b=document.getElementById("sessBody");
+    const groups=Object.entries(opts).map(([k,vals])=>`
+      <div class="chip-lbl">${k}</div>
+      <div class="chips" data-k="${k}">${vals.map(([v,lbl])=>
+        `<button data-v="${v}">${lbl}</button>`).join("")}</div>`).join("");
+    b.innerHTML=`<div class="card" style="text-align:center">
+        <span class="q-gk lg">${form}</span>
+        <p class="muted" style="font-size:.84rem;margin:6px 0 0">${
+          pos==="V-"?"A verb, in a finite mood.":"Parse the ending."} Build the parse:</p></div>
+      ${groups}
+      <button class="btn" id="realGo" disabled>Check</button><div id="fb"></div>`;
+    const sel={}, need=Object.keys(opts).length;
+    document.querySelectorAll("#sessBody .chips").forEach(g=>{
+      g.onclick=e=>{
+        if(e.target.tagName!=="BUTTON") return;
+        [...g.children].forEach(c=>c.classList.remove("sel"));
+        e.target.classList.add("sel");
+        sel[g.dataset.k]=e.target.dataset.v;
+        document.getElementById("realGo").disabled=Object.keys(sel).length<need;
+      };
+    });
+    document.getElementById("realGo").onclick=()=>{
+      const ok=Object.keys(opts).every(k=>sel[k]===code[REAL_AT[k]]);
+      document.querySelectorAll("#sessBody .chips button").forEach(c=>c.onclick=null);
+      document.getElementById("realGo").style.display="none";
+      /* The headword and the reference, so a miss teaches something: this is
+         a real word in a real verse you can go and read. */
+      const head=VOCAB[vi]?VOCAB[vi][0].split(",")[0]:"";
+      const gloss=VOCAB[vi]?VOCAB[vi][1]:"";
+      document.getElementById("fb").innerHTML=
+        `<div class="feedback"><b>${ok?"Correct":"Not quite"}</b>
+          <span class="gk">${form}</span> — ${gntParse(pos,code)}.<br>
+          From <span class="gk">${head}</span>${gloss?`, ${gloss}`:""} · ${ref}</div>
+         <button class="btn" onclick="qi++;step()">Continue</button>`;
+      answerFelt(ok);
+      if(ok){ addXp(3); SESSION_XP+=3; }
+    };
+  });
+}
+
 const PP=[
 ["λέγω","ἐρῶ","εἶπον","εἴρηκα"],
 ["ἔχω","ἕξω","ἔσχον","ἔσχηκα"],
@@ -1607,6 +1695,7 @@ const DRILLS=[
 ["Listening — letters","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
 ["Listening — words","Hear a word from the course list and give its meaning",()=>startSession(wordListenDrill(),"d")],
 ["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
+["Parse a real form","Words from the Greek New Testament, not from λύω",()=>startSession(parseRealDrill(),"d")],
 ["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
 ["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
 ["Look-alikes","εἰς or εἷς · ἡ or ἥ or ἤ — one accent apart",()=>startSession(lookalikeDrill(),"d")],
@@ -1619,8 +1708,8 @@ const DRILLS=[
 const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
                 "Listening — words","Write it from memory"],
-  "Grammar":["The article","Verb parsing","Parsing builder","Principal parts","Case functions",
-             "Mixed grammar review"],
+  "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
+             "Principal parts","Case functions","Mixed grammar review"],
   "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
 };
 function renderDrill(){
