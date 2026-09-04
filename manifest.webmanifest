@@ -2,6 +2,7 @@
   "name": "Koine Greek",
   "short_name": "Κοινή",
   "description": "A refresher in New Testament Greek: alphabet, frequency-tiered vocabulary with spaced review, the core paradigms, and tap-through reading.",
+  "id": "/koine-greek/",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

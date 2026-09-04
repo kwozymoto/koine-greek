@@ -7,24 +7,25 @@ JavaScript; no build step, no framework, no server. It runs from
 Live at **https://kwozymoto.github.io/koine-greek/**
 
 It follows David Alan Black, *Learn to Read New Testament Greek* (3rd ed.) —
-26 chapters, each with its own vocabulary and a short test — and carries a
-511-word deck on a spaced-repetition schedule, 24 reference tables, 12 graded
+26 chapters, each with its own vocabulary and a short test — and carries an
+818-word deck on a spaced-repetition schedule, 24 reference tables, 12 graded
 passages, and the whole Greek New Testament with every word parsed.
 
 ## Everything it teaches is checked against the corpus
 
-`python tools/check_all.py` runs seven checkers, all of them against the
+`python tools/check_all.py` runs eight checkers, all of them against the
 SBLGNT bundled in `data/gnt/`. They exist because this app makes claims about
 a language, and a confident wrong answer is worse than no answer:
 
 | | |
 |---|---|
-| `check_vocab` | the 511 entries, their example verses and the parse under each, the reader's gloss table, the audio chain, principal parts, accents |
+| `check_vocab` | the 818 entries, their example verses and the parse under each, the reader's gloss table, the audio chain, principal parts, accents |
 | `check_drills` | the hand-written drill arrays in `js/app.js` — form against label |
 | `check_paradigms` | the 24 reference tables, cell by cell, by parse code |
 | `check_readings` | the 12 passages word for word, and every parse claim in their glosses |
 | `check_lessons` | the spelling of every Greek form in the chapters, and that each question is asked after the section teaching it |
-| `check_lexicon` | the 4,832 shipped glosses: real lemmas, none overriding the course's own, the one edit matching its changelog |
+| `check_forms` | the 1,477 real inflected forms the parsing drill marks you against — each occurs, carries that parse everywhere it occurs, and belongs to the headword shown |
+| `check_lexicon` | the 4,526 shipped glosses: real lemmas, none overriding the course's own, the one edit matching its changelog |
 | `check_links` | every Watch row still resolves, and every embedded video is still the one named |
 
 What none of them can check is English: whether a gloss is the right
@@ -60,9 +61,14 @@ is that note: every verb recited in the first person to match this course's
 own convention, every headword matched through a spelling variant, and every
 lemma left with no gloss at all.
 
-The 509 glosses for the course's own vocabulary are **not** from either
-lexicon. They were written and checked here, they always take precedence, and
+The 816 glosses for the course's own vocabulary are **not** served from this
+file. They live in the manifest, they always take precedence, and
 `check_lexicon.py` fails if a shipped gloss ever tries to override one.
+
+**The app's own code** — © 2026 Fraser Adams. **All rights reserved.**
+There is deliberately no LICENSE file: this is published so it can be read and
+used, not relicensed or redistributed. The bundled text and lexicons keep
+their own terms, set out above, and those are unaffected.
 
 **Not in this repository** — David Alan Black's textbook is copyrighted and
 this repository is public. None of his prose, exercises or glosses is stored
@@ -75,9 +81,10 @@ teaching written independently. Video lectures are linked, never copied.
 data/       vocabulary, chapters, readings, paradigms, examples, lexicon
             gnt/    the SBLGNT, one JSON per book, plus a manifest
 js/         app, reader, audio, handwriting, sync, service-worker glue
-tools/      the builders and the seven checkers
+tools/      the builders and the eight checkers
 docs/       the pronunciation cue guide and the lexicon changelog
 audio/      511 word clips, letters, and lexical forms
+            (the deck is 818; the newest words have no recording yet)
 ```
 
 `data/vocab.js` is **append-only**: cards, audio filenames and example verses

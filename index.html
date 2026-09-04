@@ -4,11 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#141b2b">
+<meta name="description" content="A refresher in New Testament Greek: the alphabet, 818 words on a spaced-repetition schedule, Black's 26 chapters, the core paradigms, and the whole Greek New Testament with every word parsed. Works offline.">
 <meta name="mobile-web-app-capable" content="yes">
+<!-- Safari has honoured the standard name only since iOS 17.4; without the
+     old one an iPhone a couple of releases behind opens the home-screen icon
+     in a browser tab with the address bar showing, which is not what somebody
+     who installed it asked for. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Κοινή">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Κοινή — Koine Greek</title>
 <link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<!-- 180 is the size iOS actually wants; anything else it rescales itself. -->
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="css/app.css">
 </head>
@@ -144,3 +152,4 @@
 <script src="js/sync.js"></script>
 <script src="js/pwa.js"></script>
 </body>
+</html>
