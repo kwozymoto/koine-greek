@@ -54,6 +54,8 @@ function mergeStates(local, remote) {
   out.cards  = mergeCards(local.cards, remote.cards);
   // Grammar questions are scheduled the same way and merge the same way.
   out.gcards = mergeCards(local.gcards, remote.gcards);
+  // So are the passage words the course does not teach, keyed by lemma.
+  out.lcards = mergeCards(local.lcards, remote.lcards);
   out.xp     = Math.max(local.xp || 0, remote.xp || 0);
   /* Take the streak from whichever device owns the newer last-studied date;
      Math.max resurrected a long-dead streak from an idle device. */
@@ -104,6 +106,22 @@ function mergeStates(local, remote) {
     ? { day: pl.day, done: [...new Set([...(pl.done || []), ...(pr.done || [])])] }
     : ([pl, pr].filter(Boolean).sort((x, y) => (x.day > y.day ? -1 : 1))[0] || null);
 
+  /* A gloss you wrote yourself. Union, and where both devices have written
+     one for the same word the local wins — you are on this device, looking at
+     it, and a silent overwrite from elsewhere is the worse surprise. */
+  out.myGloss = Object.assign({}, remote.myGloss || {}, local.myGloss || {});
+
+  /* The passage being worked. It is one choice, not an accumulation, so the
+     newer of the two wins outright; ties go to the local copy. Its word lists
+     are derived from the passage and identical on both sides. */
+  const fa = local.focus, fb = remote.focus;
+  out.focus = (fa && fb) ? ((fa.started || "") >= (fb.started || "") ? fa : fb)
+                         : (fa || fb || null);
+  const seen = new Set();
+  out.focusDone = [...(local.focusDone || []), ...(remote.focusDone || [])]
+    .filter(r => r && r.ref && !seen.has(r.ref + r.on) && seen.add(r.ref + r.on))
+    .sort((x, y) => (y.on || "").localeCompare(x.on || "")).slice(0, 20);
+
   // goal and gk stay local: they are per-device preferences.
   return out;
 }
@@ -130,7 +148,8 @@ async function syncPull() {
        to alpha, plan and lessonPart when they were added. */
     const sig = o => JSON.stringify([o.cards, o.gcards, o.xp, o.streak, o.best, o.last,
                                      o.lessons, o.badges, o.suspended, o.restUsed, o.pin,
-                                     o.alpha, o.plan, o.lessonPart]);
+                                     o.alpha, o.plan, o.lessonPart,
+                                     o.lcards, o.myGloss, o.focus, o.focusDone]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

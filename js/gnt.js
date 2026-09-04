@@ -224,9 +224,53 @@ function showGntUnknown() {
 
 /* Pin the week's passage so Today can offer it. */
 const gntPinned = () => !!(gntCur && S.pin && S.pin.a === gntCur.abbr && S.pin.ch === gntCur.ch);
+const gntFocused = () => !!(gntCur && S.focus && S.focus.a === gntCur.abbr
+                            && S.focus.ch === gntCur.ch);
 function paintGntTools() {
   const b = document.getElementById("btnPin");
   if (b) b.textContent = gntPinned() ? "\uD83D\uDCCC Pinned for this week" : "\uD83D\uDCCC Pin for this week";
+  const f = document.getElementById("btnFocus");
+  if (f) f.textContent = gntFocused() ? "\u25C9 Focused" : "\u25CE Focus on this";
+}
+
+/* Pinning says "this is the week's passage"; focusing says "point the whole
+   deck at it". Whole chapter or a verse range, because a sermon text is
+   Philippians 2:5-11 far more often than it is all of Philippians 2 \u2014 seven
+   verses against thirty is a different amount of work.
+
+   Two number inputs rather than a tap-to-select: the range is a fact you
+   already know when you arrive, and there is no new screen to learn. */
+function askFocus() {
+  if (!gntCur) return;
+  if (gntFocused()) { go("today"); return; }
+  const first = gntCur.verses[0][0];
+  const last = gntCur.verses[gntCur.verses.length - 1][0];
+  const box = document.getElementById("gntTools");
+  box.innerHTML = `<div class="card" style="border-color:var(--gold-dim)">
+    <h3 style="margin-top:0">Focus on this passage</h3>
+    <p class="muted" style="font-size:.84rem;margin-bottom:12px">Today's review and new
+      words come from here alone until you mark it complete. Everything else \u2014 your
+      streak, your XP, the schedule \u2014 carries on as normal.</p>
+    <div class="setrow"><span>Whole chapter</span>
+      <button class="btn ghost small" onclick="setFocus(0,0);go('today')">${gntCur.meta.t} ${
+        gntCur.meta.n ? gntCur.meta.n[gntCur.ch] : gntCur.ch + 1}</button></div>
+    <div class="setrow"><span>Verses</span><span>
+      <input id="fLo" type="number" min="${first}" max="${last}" value="${first}"
+             inputmode="numeric" style="width:62px">
+      <span class="muted">to</span>
+      <input id="fHi" type="number" min="${first}" max="${last}" value="${last}"
+             inputmode="numeric" style="width:62px"></span></div>
+    <button class="btn" style="margin-top:12px" onclick="focusRange()">Focus on these verses</button>
+  </div>`;
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+function focusRange() {
+  const lo = +document.getElementById("fLo").value;
+  const hi = +document.getElementById("fHi").value;
+  if (!lo || !hi || hi < lo) { toast("Check the verse numbers"); return; }
+  setFocus(lo, hi);
+  document.getElementById("gntTools").innerHTML = "";
+  go("today");
 }
 function togglePin() {
   if (!gntCur) return;
@@ -351,6 +395,7 @@ async function openGntChapter(abbr, ch) {
     </div>
     <div class="row" style="margin-top:9px">
       <button class="btn ghost small" id="btnPin" onclick="togglePin()"></button>
+      <button class="btn ghost small" id="btnFocus" onclick="askFocus()"></button>
       <button class="btn ghost small" onclick="showGntUnknown()">Words I don't know</button>
     </div>
     <div id="gntTools" style="margin-top:12px"></div>

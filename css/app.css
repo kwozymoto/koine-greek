@@ -98,6 +98,12 @@ nav button.on{color:var(--gold)}
 .plan-row.done .tick{background:var(--green);border-color:var(--green)}
 .plan-row.done .t b{text-decoration:line-through;text-decoration-color:var(--muted)}
 
+/* the passage you are working. Gold-edged like the pinned row, because it is
+   the same kind of thing: something you chose, that the day now bends around. */
+.card.focus{border-color:var(--gold-dim);margin-top:14px}
+.card.focus h3{margin:0 0 2px;color:var(--text);font-size:.98rem}
+.card.focus .prog-bar{margin-bottom:6px}
+
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
 .stat b{display:block;font-size:1.3rem;font-weight:600}

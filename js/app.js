@@ -346,6 +346,200 @@ document.querySelectorAll("nav button").forEach(b=>
    TODAY
    ============================================================ */
 /* ============================================================
+   WORDS THE COURSE DOES NOT TEACH
+   ------------------------------------------------------------
+   The deck is 511 words chosen by New Testament frequency, and it is the
+   right shape for building Greek from nothing. It is the wrong shape for the
+   week you are preaching Ephesians 2, where a third of what stops you is
+   outside it — 49 of that chapter's 144 words, 19 of Philippians 2:5-11's 54.
+
+   Those get cards of their own, keyed by the lemma rather than by a VOCAB
+   position, because they are not in VOCAB and never will be. Same card shape
+   as S.cards, same scheduler: applyGrade and baseIvl are reused untouched, so
+   there is one algorithm in this app and not two. S.gcards already
+   established the pattern for a second store with its own small API.
+
+   Keyed by the lemma string and not by its index in the corpus manifest: an
+   index would make that file's ordering load-bearing for somebody's own
+   progress, and a rebuilt corpus would silently hand their cards to different
+   words.
+   ============================================================ */
+function lcard(l){
+  if(!S.lcards) S.lcards={};
+  if(!S.lcards[l]) S.lcards[l]={ease:2.5,ivl:0,due:today(),reps:0,lapses:0};
+  return S.lcards[l];
+}
+const lDueList=()=>Object.keys(S.lcards||{})
+  .filter(l=>S.lcards[l] && S.lcards[l].due<=today());
+function lgrade(l,g){
+  applyGrade(lcard(l),g);
+  if(!PRACTICE) S.reviewsToday=(S.reviewsToday||0)+1;
+  save();
+  addXp(3); SESSION_XP+=3; REVIEWED++;
+  qi++; step();
+}
+const lNextIvl=(l,g)=>baseIvl(lcard(l),g);
+
+/* The same three sources the reader uses, in the same order: your own
+   wording first, then the shipped lexicon. There is no deck gloss here by
+   definition — a word the deck teaches never becomes an lcard. */
+const lexGloss=l=>(S.myGloss||{})[l] || ((typeof LEX!=="undefined" && LEX[l]) || "");
+
+/* Your wording beats the shipped one, everywhere, for ever. This is what
+   makes shipping a terser lexicon honest: the words you actually study get
+   better as you meet them, instead of a chore before every passage. */
+function editGloss(l){
+  const now=lexGloss(l);
+  const next=prompt(`What does ${l} mean?\n\nYours replaces the lexicon's wherever it appears.`, now);
+  if(next===null) return;
+  S.myGloss=S.myGloss||{};
+  const t=next.trim().slice(0,120);
+  if(!t || t===(typeof LEX!=="undefined" && LEX[l])) delete S.myGloss[l];
+  else S.myGloss[l]=t;
+  save();
+  toast(S.myGloss[l] ? "Saved — that is what it says now" : "Back to the lexicon's wording");
+  if(document.getElementById("lgloss"))
+    document.getElementById("lgloss").textContent=lexGloss(l) || "no gloss yet";
+}
+
+/* ---- a flashcard for one of them ----
+   No audio and no example verse: neither exists for a word outside the deck,
+   and every caller already treats both as optional. What it has instead is
+   the passage itself — how often the word turns up in it, and where it first
+   does, which is a better hook than a verse chosen from elsewhere. */
+function lexcard(l,count,verse){
+  return ()=>{
+    const b=document.getElementById("sessBody");
+    const f=S.focus;
+    const where=(f&&verse)?`${f.t} ${f.n}:${verse}`:"";
+    b.innerHTML=`
+      <div class="fc">
+        <div class="word gk">${l}</div>
+        <div class="rule"></div>
+        <div class="ans" id="ans" style="visibility:hidden"><span id="lgloss">${lexGloss(l)||"no gloss yet"}</span>
+          <button class="mini" style="margin-left:8px" onclick="editGloss('${l}')" aria-label="Edit this meaning">✎</button></div>
+        <div class="meta" id="meta" style="visibility:hidden">${
+          count>1?`${count}× in this passage`:"once in this passage"}${
+          where?` · first at ${where}`:""}<span class="leech" style="background:var(--surface-2);color:var(--muted)">not in the course</span></div>
+      </div>
+      <button class="btn" id="show">Show meaning</button>`;
+    document.getElementById("show").onclick=()=>{
+      document.getElementById("ans").style.visibility="visible";
+      document.getElementById("meta").style.visibility="visible";
+      document.getElementById("show").outerHTML=`
+        <div class="grades">
+          <button class="g1" onclick="lgrade('${l}',0)">Again<i>&lt;1m</i></button>
+          <button class="g2" onclick="lgrade('${l}',1)">Hard<i>${lNextIvl(l,1)}d</i></button>
+          <button class="g3" onclick="lgrade('${l}',2)">Good<i>${lNextIvl(l,2)}d</i></button>
+          <button class="g4" onclick="lgrade('${l}',3)">Easy<i>${lNextIvl(l,3)}d</i></button>
+        </div>`;
+    };
+  };
+}
+
+/* ============================================================
+   FOCUS — one passage, until you say it is done
+   ------------------------------------------------------------
+   The word lists are worked out once, when the focus is set, and stored with
+   it. todaysPlan() is synchronous and the book JSON is not, so computing them
+   on demand would mean the plan could not name its own rows. The passage does
+   not change, so a cached list cannot go stale.
+   ============================================================ */
+const focusTotal=f=>(f?f.deck.length+f.lex.length:0);
+/* Learned, on the same test the rest of the app uses: six days or longer. */
+function focusKnown(f){
+  if(!f) return 0;
+  return f.deck.filter(([i])=>S.cards[i] && +S.cards[i].ivl>=6).length
+       + f.lex.filter(([l])=>S.lcards&&S.lcards[l] && +S.lcards[l].ivl>=6).length;
+}
+const focusRef=f=>f ? `${f.t} ${f.n}${f.lo?`:${f.lo}${f.hi>f.lo?"–"+f.hi:""}`:""}` : "";
+
+function focusDueList(f){
+  const d=f.deck.map(([i])=>i).filter(isDue);
+  const l=f.lex.map(([x])=>x).filter(x=>S.lcards&&S.lcards[x]&&S.lcards[x].due<=today());
+  return {deck:d, lex:l, n:d.length+l.length};
+}
+/* Commonest in the passage first — the word repeated eight times in these
+   verses is worth more here than the one that appears once, whatever their
+   New Testament frequency. */
+function focusFresh(f,n){
+  const deck=f.deck.filter(([i])=>!S.cards[i]);
+  const lex=f.lex.filter(([l])=>!(S.lcards||{})[l]);
+  return [...deck.map(r=>["d",...r]),...lex.map(r=>["l",...r])]
+    .sort((a,b)=>b[2]-a[2]).slice(0,n===undefined?1e9:n);
+}
+
+function startFocusReview(){
+  PRACTICE=false;
+  const f=S.focus, due=focusDueList(f);
+  const q=[...due.deck.map(flashcard),
+           ...due.lex.map(l=>{ const r=f.lex.find(x=>x[0]===l)||[l,1,0];
+                               return lexcard(l,r[1],r[2]); })]
+          .sort(()=>Math.random()-.5);
+  q.__words=due.deck;
+  startSession(q,"review");
+}
+function startFocusNew(n=5){
+  const f=S.focus, fresh=focusFresh(f,n);
+  if(!fresh.length){ toast("Every word in this passage has been started"); return; }
+  const q=[]; const words=[];
+  fresh.forEach(([kind,x,count,verse])=>{
+    if(kind==="d"){ q.push(flashcard(x)); words.push(x); }
+    else q.push(lexcard(x,count,verse));
+  });
+  q.__words=words;
+  startSession(q,"new");
+}
+/* Reading the passage is a plan step in its own right when the focus has the
+   whole day: the point of the words is the verses. */
+function openFocusPassage(){
+  const f=S.focus;
+  if(f) openGntChapter(f.a,f.ch);
+  if(PLAN_TASK==="passage"){ planTick("passage"); PLAN_TASK=null; }
+}
+
+function setFocus(lo,hi){
+  if(typeof gntCur==="undefined" || !gntCur) return;
+  const m=gntCur.meta;
+  const vs=gntCur.verses.filter(v=>!lo || (v[0]>=lo && v[0]<=hi));
+  if(!vs.length){ toast("No verses in that range"); return; }
+  const deck=new Map(), lex=new Map(), bare=new Set();
+  vs.forEach(v=>v[1].forEach(w=>{
+    const lemma=GNT.lemmas[w[1]];
+    const i=vocIndexFor(lemma);
+    if(i>=0){ const r=deck.get(i)||[0,v[0]]; deck.set(i,[r[0]+1,r[1]]); return; }
+    if(lexGloss(lemma)){ const r=lex.get(lemma)||[0,v[0]]; lex.set(lemma,[r[0]+1,r[1]]); return; }
+    bare.add(lemma);        // no gloss anywhere — said plainly, never guessed
+  }));
+  S.focus={ a:gntCur.abbr, ch:gntCur.ch, t:m.t, n:m.n?m.n[gntCur.ch]:gntCur.ch+1,
+            lo:lo||null, hi:hi||null, mode:"all", started:today(),
+            deck:[...deck].map(([i,r])=>[i,r[0],r[1]]),
+            lex:[...lex].map(([l,r])=>[l,r[0],r[1]]),
+            bare:[...bare] };
+  save();
+  toast(`Focused on ${focusRef(S.focus)} — ${focusTotal(S.focus)} words`);
+  if(typeof paintGntTools==="function") paintGntTools();
+}
+function clearFocus(done){
+  const f=S.focus;
+  if(!f) return;
+  if(done){
+    S.focusDone=(S.focusDone||[]);
+    S.focusDone.unshift({ref:focusRef(f), n:focusTotal(f), on:today()});
+    S.focusDone=S.focusDone.slice(0,20);
+  }
+  S.focus=null; save();
+  toast(done?`${focusRef(f)} marked complete — its words stay on the schedule`:"Focus cleared");
+  render();
+  if(typeof paintGntTools==="function") paintGntTools();
+}
+function toggleFocusMode(){
+  if(!S.focus) return;
+  S.focus.mode=S.focus.mode==="vocab"?"all":"vocab";
+  save(); render();
+}
+
+/* ============================================================
    TODAY'S PLAN
    ------------------------------------------------------------
    Three or four short things that together are about ten minutes, ticked off
@@ -393,27 +587,54 @@ function todaysPlan(){
       : `${left} of ${ALPHABET.length} still to settle`,
     run:()=>startSession(letterWarmup(),"letters")});
 
-  /* On a fresh install there is nothing to review, and startReview() would
-     quietly fall through to introducing words — which is the next row's job.
-     So the row only appears once the deck has been started. */
-  const due=dueList().length+Math.min(5,gdueList().length);
-  if(due || Object.keys(S.cards).length) tasks.push(due
-    ? {id:"review", label:`Review ${due} due card${due===1?"":"s"}`,
-       sub:"The words the schedule says you are about to forget",
-       run:()=>startReview()}
-    : {id:"review", label:"Practise what you know",
-       sub:"Nothing is due — this will not touch the schedule",
-       run:()=>startReview()});
+  /* A focus redirects the vocabulary rows at the passage rather than adding a
+     row of its own. On "all" it also puts the passage itself in the plan and
+     steps the chapter walkthrough aside — the point of the words is the
+     verses. On "vocab" only these two rows change and Black carries on. */
+  const f=S.focus;
+  if(f){
+    const ref=focusRef(f), due=focusDueList(f), fresh=focusFresh(f);
+    if(f.mode==="all") tasks.push({id:"passage",
+      label:`Read ${ref}`,
+      sub:`${focusKnown(f)} of ${focusTotal(f)} of its words are settled`,
+      run:()=>openFocusPassage()});
+    if(due.n) tasks.push({id:"review",
+      label:`Review ${due.n} from ${ref}`,
+      sub:"Only this passage's words — the rest of the deck waits",
+      run:()=>startFocusReview()});
+    if(fresh.length) tasks.push({id:"new",
+      label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
+      sub:`${fresh.length} of its words not started yet`,
+      run:()=>startFocusNew(5)});
+    if(!due.n && !fresh.length) tasks.push({id:"review",
+      label:`${ref} — nothing due`,
+      sub:"Every word started and none due back today",
+      run:()=>startFocusReview()});
+  } else {
+    /* On a fresh install there is nothing to review, and startReview() would
+       quietly fall through to introducing words — which is the next row's job.
+       So the row only appears once the deck has been started. */
+    const due=dueList().length+Math.min(5,gdueList().length);
+    if(due || Object.keys(S.cards).length) tasks.push(due
+      ? {id:"review", label:`Review ${due} due card${due===1?"":"s"}`,
+         sub:"The words the schedule says you are about to forget",
+         run:()=>startReview()}
+      : {id:"review", label:"Practise what you know",
+         sub:"Nothing is due — this will not touch the schedule",
+         run:()=>startReview()});
 
-  const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
-  if(fresh) tasks.push({id:"new",
-    label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
-    sub:`${fresh} still to meet in the course`,
-    run:()=>startNew(5)});
+    const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
+    if(fresh) tasks.push({id:"new",
+      label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
+      sub:`${fresh} still to meet in the course`,
+      run:()=>startNew(5)});
+  }
 
-  /* The chapter you are part-way through, else the next unread one. */
+  /* The chapter you are part-way through, else the next unread one. A focus
+     with the whole day steps this aside until the passage is marked done. */
   const lp=S.lessonPart;
-  const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
+  const l=(f&&f.mode==="all") ? null
+    : (lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
   if(l){
     const n=lessonParts(l).length;
     const at=(lp&&lp.id===l.id)?Math.min(lp.part,n-1):0;
@@ -494,6 +715,32 @@ function render(){
         ones, then a few minutes of the chapter you are on.</p>
       <button class="btn ghost small" onclick="go('help')">What else is in here</button>
     </div>` : "";
+
+  /* The passage you are working, and the two controls that matter: how much
+     of the day it takes, and saying it is finished. */
+  const fc=document.getElementById("focusCard");
+  if(fc) fc.innerHTML=(()=>{
+    const f=S.focus;
+    if(!f) return "";
+    const known=focusKnown(f), all=focusTotal(f);
+    const pc=all?Math.round(100*known/all):0;
+    return `<div class="card focus">
+      <div class="between" style="align-items:flex-start">
+        <div><h3 style="margin:0">${focusRef(f)}</h3>
+          <span class="muted" style="font-size:.78rem">${f.deck.length} from the course · ${f.lex.length} beyond it${
+            f.bare&&f.bare.length?` · ${f.bare.length} with no gloss`:""}</span></div>
+        <span class="muted" style="font-size:.78rem;white-space:nowrap">${known}/${all}</span>
+      </div>
+      <div class="prog-bar" style="margin:10px 0 8px"><i style="width:${pc}%"></i></div>
+      <span class="muted" style="font-size:.76rem">settled — six days or longer between reviews</span>
+      <div class="row" style="margin-top:12px">
+        <button class="btn ghost small" onclick="toggleFocusMode()">${
+          f.mode==="all"?"Whole plan":"Vocabulary only"}</button>
+        <button class="btn ghost small" onclick="clearFocus(true)">Mark complete</button>
+        <button class="mini" style="margin-left:auto" onclick="clearFocus(false)" aria-label="Stop focusing">✕</button>
+      </div>
+    </div>`;
+  })();
 
   const pin=S.pin, pinEl=document.getElementById("pinned");
   if(pinEl) pinEl.innerHTML = (pin&&pin.a) ? `<h2>This week's passage</h2>
@@ -1692,6 +1939,18 @@ function renderProgress(){
       <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
       ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
     </div>
+    ${(S.focusDone||[]).length?`<div class="card">
+      <div class="between"><span>Passages worked</span><b>${S.focusDone.length}</b></div>
+      <small class="muted">${S.focusDone.slice(0,6).map(r=>
+        `${r.ref} — ${r.n} word${r.n===1?"":"s"}`).join(" · ")}${
+        S.focusDone.length>6?` · and ${S.focusDone.length-6} more`:""}</small>
+    </div>`:""}
+    ${Object.keys(S.lcards||{}).length?`<div class="card">
+      <div class="between"><span>Beyond the course</span><b>${Object.keys(S.lcards).length}</b></div>
+      <small class="muted">Words met in a passage that the ${LEARN_ORDER.length}-word course does
+        not teach, on the same schedule as the rest${
+        Object.keys(S.myGloss||{}).length?` · ${Object.keys(S.myGloss).length} glossed in your own words`:""}.</small>
+    </div>`:""}
     <h2>Badges</h2>
     <div class="badges">${BADGES.map(b=>`
       <div class="badge ${S.badges.includes(b.id)?"got":""}">
@@ -1834,6 +2093,38 @@ function saneState(x){
     for(const k of Object.keys(x.alpha))
       if(ALPHABET.some(a=>a[1]===k) && Number.isFinite(+x.alpha[k]))
         out.alpha[k]=Math.max(0,Math.min(ALPHA_SOLID,Math.round(+x.alpha[k])));
+
+  const lok=k=>typeof k==="string" && k.length<40 && /^[Ͱ-Ͽἀ-῿()]+$/.test(k);
+  /* Your own wording for a word, which beats the shipped lexicon. */
+  out.myGloss={};
+  const mg=(x.myGloss&&typeof x.myGloss==="object"&&!Array.isArray(x.myGloss))?x.myGloss:{};
+  for(const k of Object.keys(mg))
+    if(lok(k) && typeof mg[k]==="string" && mg[k].trim())
+      out.myGloss[k]=mg[k].trim().slice(0,120);
+
+  /* The passage being worked. Every field is rendered, and the two word lists
+     drive the plan, so each row is checked rather than trusted. */
+  const focusRow=(r,keyIsLemma)=>Array.isArray(r) && r.length===3
+    && (keyIsLemma ? lok(r[0])
+                   : Number.isInteger(+r[0]) && +r[0]>=0 && +r[0]<VOCAB.length)
+    && Number.isFinite(+r[1]) && Number.isFinite(+r[2]);
+  const fx=x.focus;
+  out.focus=(fx && typeof fx==="object" && typeof fx.a==="string"
+    && Number.isInteger(+fx.ch) && +fx.ch>=0 && typeof fx.t==="string"
+    && Array.isArray(fx.deck) && Array.isArray(fx.lex))
+    ? { a:fx.a.slice(0,8), ch:+fx.ch, t:fx.t.slice(0,40), n:+fx.n||(+fx.ch+1),
+        lo:Number.isFinite(+fx.lo)&&+fx.lo>0?+fx.lo:null,
+        hi:Number.isFinite(+fx.hi)&&+fx.hi>0?+fx.hi:null,
+        mode:fx.mode==="vocab"?"vocab":"all",
+        started:/^\d{4}-\d{2}-\d{2}$/.test(fx.started)?fx.started:today(),
+        deck:fx.deck.filter(r=>focusRow(r,false)).map(r=>[+r[0],+r[1],+r[2]]).slice(0,600),
+        lex:fx.lex.filter(r=>focusRow(r,true)).map(r=>[r[0],+r[1],+r[2]]).slice(0,600),
+        bare:(Array.isArray(fx.bare)?fx.bare:[]).filter(lok).slice(0,200) }
+    : null;
+  out.focusDone=(Array.isArray(x.focusDone)?x.focusDone:[])
+    .filter(r=>r && typeof r.ref==="string")
+    .map(r=>({ref:r.ref.slice(0,40), n:+r.n||0,
+              on:/^\d{4}-\d{2}-\d{2}$/.test(r.on)?r.on:null})).slice(0,20);
   if(out.pin) out.pin.ts=Number.isFinite(+(x.pin||{}).ts)?+x.pin.ts:0;
   const saneCard=c=>{
     const o={
@@ -1862,6 +2153,13 @@ function saneState(x){
     if(!gc[k]||typeof gc[k]!=="object") continue;
     out.gcards[k]=saneCard(gc[k]);
   }
+  /* Cards for words outside the deck, keyed by lemma rather than by a VOCAB
+     position. Down here because saneCard is declared above it and a const
+     cannot be called before its declaration is reached. */
+  out.lcards={};
+  const lc=(x.lcards&&typeof x.lcards==="object"&&!Array.isArray(x.lcards))?x.lcards:{};
+  for(const k of Object.keys(lc))
+    if(lok(k) && lc[k] && typeof lc[k]==="object") out.lcards[k]=saneCard(lc[k]);
   return out;
 }
 
@@ -1895,7 +2193,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null};
+  S={cards:{},gcards:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
   save(); renderProgress(); toast("Everything reset");
 }
 
