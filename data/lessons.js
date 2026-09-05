@@ -47,14 +47,15 @@ const ALPHABET=[
    introduces them, and the frequency path on Today still reaches them. */
 const LESSONS=[
 {id:1,t:"The letters and sounds of Greek",s:"The alphabet, breathings, accents and punctuation",
-body:`<p>Everything downstream depends on being able to sound a word out. If you can't pronounce it, you can't hold it in memory. Spend two or three days here before moving on.</p>
+body:`<p>Everything downstream depends on being able to sound a word out. If you cannot pronounce it, you cannot hold it in your memory, and a word you cannot hold is a word you will meet as a stranger every time. Spend two or three days here before moving on. It is the only chapter where that is true.</p>
+<p>There are twenty-four letters and you already know several of them. Some are ours exactly, some are ours in disguise, and only a handful are genuinely new.</p>
 <div id="alphaHere"></div>
 <h3>Three rules that trip people up</h3>
-<p><b>Sigma</b> is written <span class="gk">ς</span> at the end of a word and <span class="gk">σ</span> everywhere else. Same letter, same sound: <span class="gk">λόγος</span>.</p>
+<p><b>Sigma</b> is written <span class="gk">ς</span> at the end of a word and <span class="gk">σ</span> everywhere else. Same letter, same sound: <span class="gk">λόγος</span> has both.</p>
 <p><b>Breathings.</b> Every word starting with a vowel carries a mark. Rough (<span class="gk">ἁ</span>) adds an <i>h</i>; smooth (<span class="gk">ἀ</span>) adds nothing. So <span class="gk">ἅγιος</span> is <i>hagios</i>, but <span class="gk">ἀγάπη</span> is <i>agapē</i>. Initial <span class="gk">ῥ</span> always takes the rough breathing, though it is generally not sounded as an h: <span class="gk">ῥῆμα</span> is <i>rhēma</i>, near enough <i>rēma</i>.</p>
-<p><b>Gamma nasal.</b> <span class="gk">γ</span> before <span class="gk">γ, κ, χ, ξ</span> is pronounced <i>n</i>. So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not <i>aggelos</i>.</p>
+<p><b>Gamma nasal.</b> <span class="gk">γ</span> before <span class="gk">γ, κ, χ, ξ</span> is pronounced <i>n</i>. So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not <i>aggelos</i> — which is where our word angel comes from.</p>
 <h3>A note on pronunciation</h3>
-<p>Erasmian is a scholarly convention, not how anyone spoke in the first century. It survives because it keeps distinct sounds distinct — in modern Greek η, ι, υ, ει and οι have all collapsed into <i>ee</i>, which is punishing for spelling. Stay with Erasmian.</p>
+<p>Erasmian is a scholarly convention, not how anyone spoke in the first century. It survives because it keeps distinct sounds distinct — in modern Greek η, ι, υ, ει and οι have all collapsed into <i>ee</i>, which is punishing when you are trying to learn to spell. Stay with Erasmian. Nobody is going to overhear you and object.</p>
 <h3>Accents</h3>
 <p>Greek has three accents: acute (<span class="gk">ά</span>), grave (<span class="gk">ὰ</span>) and circumflex (<span class="gk">ᾶ</span>). In Koine they no longer marked pitch, and for reading purposes they mostly matter for one reason: <b>they distinguish otherwise identical words</b>.</p>
 <table><tr><th>Word</th><th>Meaning</th></tr>
@@ -64,81 +65,126 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <tr><td class="g">εἶ</td><td>you are</td></tr>
 <tr><td class="g">αὐτή</td><td>she — smooth breathing</td></tr>
 <tr><td class="g">αὕτη</td><td>this (feminine) — rough breathing, not a different accent</td></tr></table>
-<p>Don't memorise accent rules now. Learn accents as part of each word's spelling and move on.</p>
+<p>Do not memorise accent rules now. Learn the accent as part of each word's spelling, the way you learned that receive has an e before the i, and move on. The Look-alikes drill exists for exactly this list and will keep bringing it back.</p>
 <h3>Punctuation</h3>
-<p>Comma and full stop look like ours. A raised dot <span class="gk">·</span> is a semicolon or colon. And the mark that looks like a semicolon <span class="gk">;</span> is a <b>question mark</b> — this catches everyone at least once.</p>
+<p>Comma and full stop look like ours. A raised dot <span class="gk">·</span> does the work of our colon and semicolon, and it very often introduces speech:</p>
+<p class="v" data-ref="Matthew 3:2">καὶ λέγων· Μετανοεῖτε, ἤγγικεν γὰρ ἡ βασιλεία τῶν οὐρανῶν</p>
+<p>"and saying, Repent, for the kingdom of heaven has come near." The dot after <span class="gk">λέγων</span> is where our editors would open a quotation mark.</p>
+<p>And the mark that looks like a semicolon is a <b>question mark</b>. This catches everyone at least once:</p>
+<p class="v" data-ref="Matthew 11:3">Σὺ εἶ ὁ ἐρχόμενος ἢ ἕτερον προσδοκῶμεν;</p>
+<p>"Are you the one who is to come, or should we expect another?" John's disciples are asking a question, and the only thing on the page that tells you so is that final mark.</p>
 <h3>Iota subscript</h3>
-<p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It isn't pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23. Worth spotting.</p>`,
+<p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It is not pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23.</p>
+<p>It is a silent letter and a loud grammatical clue, and it is easy to miss when you are reading quickly. Train your eye for it now.</p>
+<h3>What to watch for</h3>
+<p>The letters that will cost you time are the ones that look like English letters and are not: <span class="gk">ρ</span> is <i>r</i>, not <i>p</i>. <span class="gk">η</span> is a long <i>e</i>, not <i>n</i>. <span class="gk">υ</span> is <i>u</i>, not <i>v</i>. <span class="gk">χ</span> is the <i>ch</i> of loch, not <i>x</i>. <span class="gk">ω</span> is a long <i>o</i>, not <i>w</i>.</p>
+<p>You will misread each of these at least once. That is not a sign you are doing badly; it is a sign you are reading. Tracing the letters by hand is the fastest way to stop, which is why there is a drill for it.</p>`,
 v:[],
 vids:[{t:"Lecture 1: The Letters and Sounds of Greek",s:"Daily Dose of Greek — Rob Plummer (24:37)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-1/"},
       {t:"Greek Alphabet Song",s:"Daily Dose of Greek — sing it until the order sticks",yt:"HxwawakLPxw"},
       {t:"“Shortnin’ Bread” Greek Alphabet Song",s:"Daily Dose of Greek — the same letters, a tune that lodges",yt:"yYU_zfBL6YA"}],
 quiz:[
-{q:"How is ἄγγελος pronounced?",o:["ag-ge-los","an-ge-los","ah-ge-los","ang-khe-los"],a:1,w:"Gamma before another guttural becomes an n sound. This is why the English word is 'angel'.",sec:1},
-{q:"What does the rough breathing over ἁ add?",o:["Nothing","An h sound","A glottal stop","Length to the vowel"],a:1,w:"Rough breathing = h. ἅγιος is hagios. Smooth breathing adds nothing at all.",sec:1},
-{q:"Which letter is written two different ways depending on position?",o:["Beta","Sigma","Theta","Omega"],a:1,w:"σ within a word, ς at the end. One letter, one sound.",sec:1},
-{q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It's a question mark. The raised dot · does the work of our semicolon and colon.",sec:4},
-{q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: 'someone', 'a certain'. The accent is the only difference.",sec:3},
-{q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative. It's a silent letter but a loud grammatical clue.",sec:5}]},
-
+{q:"How is ἄγγελος pronounced?",o:["ag-ge-los","an-ge-los","ah-ge-los","ang-khe-los"],a:1,w:"Gamma before another guttural becomes an n sound. This is why the English word is angel.",sec:1},
+{q:"What does the rough breathing over ἁ add?",o:["Nothing","An h sound","A glottal stop","Length to the vowel"],a:1,w:"Rough breathing means h. ἅγιος is hagios. Smooth breathing adds nothing at all.",sec:1},
+{q:"Which letter is written two different ways depending on position?",o:["Beta","Sigma","Theta","Omega"],a:1,w:"σ within a word, ς at the end. One letter, one sound — λόγος has both.",sec:1},
+{q:"Why does this course use Erasmian rather than modern Greek pronunciation?",o:["It is how the first century sounded","It keeps distinct sounds distinct, which helps spelling","It is easier to say","Modern Greek has no h"],a:1,w:"Erasmian is a convention, not a reconstruction. It survives because η, ι, υ, ει and οι have all collapsed into ee in modern Greek, which makes spelling much harder to learn.",sec:2},
+{q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: someone, a certain. The accent is the only difference between them.",sec:3},
+{q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It is a question mark. The raised dot · does the work of our semicolon and colon, and often opens speech.",sec:4},
+{q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative, about five times in six. It is a silent letter and a loud grammatical clue.",sec:5},
+{q:"Which of these is most likely to be misread by an English speaker?",o:["ρ as p","β as b","δ as d","κ as k"],a:0,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:6}]},
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
-body:`<p>Before learning any paradigm, get the shape of the whole system. Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five — <span class="gk">λύομεν</span> is first person plural, present, active, indicative: "we loose".</p>
+body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 26 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
+<p>Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required.</p>
 <h3>Aspect comes first</h3>
-<p>The tenses differ less by <i>when</i> than by <i>how the action is viewed</i>. Greek has three aspects: <b>imperfective</b> (in progress, ongoing — present and imperfect), <b>perfective</b> (viewed as a whole, undefined — aorist), and <b>stative</b> (completed with continuing results — perfect and pluperfect). Time is only fixed in the indicative mood; outside it, aspect is nearly everything. <b>A warning about the words:</b> Black calls these three imperfective, <i>aoristic</i> and <i>perfective</i> — so his "perfective" is the perfect, not the aorist. The labels here are the ones most modern grammars use; when you read Black, translate.</p>
+<p>This is the single most important thing in the chapter, and it is the thing most likely to have been taught to you wrongly.</p>
+<p>Greek tenses differ less by <i>when</i> the action happened than by <i>how</i> the writer chose to present it. That choice is called aspect, and there are three:</p>
+<table><tr><th>Aspect</th><th>Presents the action as</th><th>Tenses</th></tr>
+<tr><td>Imperfective</td><td>going on, from inside</td><td>present, imperfect</td></tr>
+<tr><td>Perfective</td><td>a single whole, from outside</td><td>aorist</td></tr>
+<tr><td>Stative</td><td>a state resulting from it</td><td>perfect, pluperfect</td></tr></table>
+<p>An English speaker naturally hears "he loosed" and thinks: past. A Greek reader hears <span class="gk">ἔλυσεν</span> and thinks: presented as one complete act. The two often coincide. They are not the same claim, and where they come apart is where careful reading pays.</p>
+<h3>A warning about the words</h3>
+<p>Black calls the three aspects imperfective, <i>aoristic</i> and <i>perfective</i> — so in his usage "perfective" means the perfect, not the aorist. Most modern grammars use perfective for the aorist, which is what this course does.</p>
+<p>Neither is wrong; they are simply different conventions, and you will meet both. When you read Black, translate.</p>
+<h3>Time is only fixed in the indicative</h3>
+<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive is not past at all — you saw that in Philippians, where <span class="gk">τὸ ἀποθανεῖν</span> is not "to have died".</p>
+<p>This is why chapter 21 said the infinitive is the easiest place to see aspect. There is no time there to distract you.</p>
 <h3>Two sets of endings</h3>
-<p><b>Primary</b> endings appear on tenses whose indicative refers to present or future time (present, future, perfect). <b>Secondary</b> endings appear on past-time tenses (imperfect, aorist, pluperfect), which also take the <b>augment</b> — an ε prefixed to the stem. Spotting augment + secondary endings tells you "past" before you've identified anything else.</p>
+<p><b>Primary</b> endings appear on the tenses whose indicative refers to present or future time: present, future, perfect. <b>Secondary</b> endings appear on the past-time tenses: imperfect, aorist, pluperfect. Those also take the <b>augment</b>, an <span class="gk">ἐ</span> prefixed to the stem.</p>
+<p>This is worth more than it looks. Spotting an augment and a secondary ending tells you "past" before you have identified the verb, the person, or even the word. You are reading the shape before you read the word, which is what fluency in an inflected language actually consists of.</p>
 <h3>Principal parts</h3>
-<p>Each verb has up to six principal parts, the building blocks from which every form is made: present, future, aorist active, perfect active, perfect middle/passive, aorist passive. For <span class="gk">λύω</span>: <span class="gk">λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην</span>. Regular verbs derive all six from one stem; the common irregulars must be learned — but there are far fewer of them than in English.</p>
-<p><b>The discipline:</b> from now on, never say a form means something until you have parsed it. The endings are small; the payoff is the whole language.</p>`,
+<p>Each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.</p>
+<p>For <span class="gk">λύω</span>: <span class="gk">λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην</span>.</p>
+<p>Regular verbs build all six from one stem. The common irregulars have to be learned, and there is a drill here for exactly the forty-one that are worth the trouble. Take heart: there are far fewer irregular verbs in Greek than in English, and unlike English they were at least irregular on purpose.</p>
+<h3>The discipline</h3>
+<p>From here on, never say a form means something until you have parsed it. Not because parsing is the goal — it is not, reading is — but because the ending is where the meaning lives, and guessing from the stem is how confident mistranslations are made.</p>
+<p>The endings are small. The payoff is the whole language.</p>`,
 v:[],
 vids:[{t:"Lecture 2: The Greek Verbal System",s:"Daily Dose of Greek — Rob Plummer (11:36)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-2/"}],
 quiz:[
-{q:"Parsing a Greek verb means naming:",o:["Tense and mood only","Person, number, tense, voice, mood","Case, gender, number","Stem and ending"],a:1,w:"All five. Person and number identify the subject; tense carries aspect; voice relates subject to action; mood signals reality or potential.",sec:0},
-{q:"The aorist's aspect presents the action as:",o:["Ongoing","Completed with continuing results","A whole, undefined","Repeated"],a:2,w:"Perfective — a snapshot rather than a film. It says nothing about duration or repetition; it just refers to the action as a whole.",sec:1},
-{q:"Where is time actually fixed by the tense form?",o:["Everywhere","Only in the indicative mood","Only in the aorist","Only with an augment"],a:1,w:"Only in the indicative. A present participle or aorist infinitive tells you aspect, not time — a distinction that guards you from over-reading.",sec:1},
-{q:"Augment + secondary endings signals:",o:["Future time","A command","Past time in the indicative","The passive voice"],a:2,w:"The augment (ε- prefix) marks past time and appears only in the indicative: imperfect, aorist, pluperfect.",sec:2}]},
-
+{q:"Parsing a Greek verb means naming:",o:["Tense and voice","Person, number, tense, voice and mood","Stem and ending","Case, number and gender"],a:1,w:"All five. Every finite Greek verb form encodes person, number, tense, voice and mood in one word.",sec:0},
+{q:"The aorist presents an action as:",o:["Going on","A single whole","A completed state","Future"],a:1,w:"Perfective aspect: viewed from outside, as one complete act. That is a claim about presentation, not necessarily about time.",sec:1},
+{q:"Black uses the word perfective for which tense?",o:["The aorist","The perfect","The present","The imperfect"],a:1,w:"Black calls the aorist aoristic and reserves perfective for the perfect. Most modern grammars, and this course, use perfective for the aorist. Translate as you read him.",sec:2},
+{q:"Where is time actually fixed by the tense form?",o:["Everywhere","Only in the indicative","Only in participles","Nowhere"],a:1,w:"Only in the indicative. Elsewhere the tense is telling you about aspect, which is why an aorist participle is not automatically past.",sec:3},
+{q:"Augment plus secondary endings signals:",o:["Future time","Past time","Passive voice","The subjunctive"],a:1,w:"Past time — imperfect, aorist or pluperfect. Recognising the shape before you recognise the word is most of what reading an inflected language is.",sec:4},
+{q:"How many principal parts does a Greek verb have?",o:["Three","Four","Up to six","As many as needed"],a:2,w:"Up to six: present, future, aorist active, perfect active, perfect middle/passive, aorist passive. Regular verbs build all six from one stem.",sec:5}]},
 {id:3,t:"Present and future active indicative",s:"λύω and λύσω — your first two paradigms",
-body:`<p>Greek verbs encode <b>person, number, tense, voice and mood</b> in the ending. Parsing means naming all five.</p>
-<table><caption>λύω — I loose, untie</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+body:`<p>Here is your first paradigm. Learn it properly and the next dozen come much more easily, because most of them are variations on it.</p>
+<p><span class="gk">λύω</span> — I loose, untie</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">λύω</td><td class="g">λύομεν</td></tr>
 <tr><th>2nd</th><td class="g">λύεις</td><td class="g">λύετε</td></tr>
 <tr><th>3rd</th><td class="g">λύει</td><td class="g">λύουσι(ν)</td></tr></table>
-<p>The stem is <span class="gk">λυ-</span>; everything after it is ending. The <span class="gk">ν</span> in brackets is a "movable nu", added before a vowel or at a pause — it carries no meaning.</p>
-<h3>εἰμί — the verb "to be"</h3>
-<p>Irregular and extremely common. Learn it separately.</p>
-<table>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<p>The stem is <span class="gk">λυ-</span>; everything after it is ending. The <span class="gk">ν</span> in brackets is a movable nu, added before a vowel or at a pause, and it carries no meaning at all — it is there for the ear.</p>
+<p>Notice what you do <i>not</i> need. There is no word for I, you or we anywhere in that table. The ending carries it. When Greek does write out a pronoun as well, it is usually making a point of it.</p>
+<h3>εἰμί — the verb to be</h3>
+<p>Irregular, and about as common as a word can get. Learn it separately and learn it now.</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">εἰμί</td><td class="g">ἐσμέν</td></tr>
 <tr><th>2nd</th><td class="g">εἶ</td><td class="g">ἐστέ</td></tr>
 <tr><th>3rd</th><td class="g">ἐστί(ν)</td><td class="g">εἰσί(ν)</td></tr></table>
+<p class="v" data-ref="Matthew 28:6">οὐκ ἔστιν ὧδε, ἠγέρθη γὰρ</p>
+<p>"He is not here, for he has been raised." Two verbs, and between them most of chapter 2: <span class="gk">ἔστιν</span> is present, <span class="gk">ἠγέρθη</span> is aorist passive with its augment showing.</p>
+<p class="v" data-ref="John 6:48">ἐγώ εἰμι ὁ ἄρτος τῆς ζωῆς</p>
+<p>"I am the bread of life." Here the pronoun <span class="gk">ἐγώ</span> <i>is</i> written out, even though <span class="gk">εἰμι</span> already says I. That is the emphasis I mentioned above, and in John's Gospel it is doing a great deal of work.</p>
 <h3>The present is not simply "now"</h3>
-<p>Greek tense encodes <b>aspect</b> primarily and time secondarily. The present is imperfective: the action viewed from inside, as ongoing or repeated. <span class="gk">πιστεύει</span> can be "he believes", "he is believing", "he keeps on believing" — the form itself doesn't settle which.</p>
+<p>Greek tense encodes aspect first and time second. The present is imperfective: the action seen from inside, as going on or repeated.</p>
+<p>So <span class="gk">πιστεύει</span> can be "he believes", "he is believing", or "he keeps on believing". The form does not settle which, and a translation has to choose. When a sermon leans hard on "keeps on believing", this is the grammar it is leaning on — and the honest thing to say is that the present allows it rather than requires it.</p>
 <h3>The future: add σ</h3>
-<p>The future active is the present with a σ between stem and ending:</p>
-<table><caption>λύσω — I will loose</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<p>The future active is the present with a <span class="gk">σ</span> between stem and ending.</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">λύσω</td><td class="g">λύσομεν</td></tr>
 <tr><th>2nd</th><td class="g">λύσεις</td><td class="g">λύσετε</td></tr>
 <tr><th>3rd</th><td class="g">λύσει</td><td class="g">λύσουσι(ν)</td></tr></table>
-<p>When σ meets a stop, they combine: κ, γ, χ + σ → ξ (<span class="gk">ἄγω → ἄξω</span>); π, β, φ + σ → ψ (<span class="gk">βλέπω → βλέψω</span>); τ, δ, θ simply drop (<span class="gk">πείθω → πείσω</span>). Contract verbs lengthen their final vowel first: <span class="gk">ἀγαπάω → ἀγαπήσω</span>, <span class="gk">ποιέω → ποιήσω</span>.</p>
-<p>Some very common verbs have futures you must simply learn: <span class="gk">εἰμί → ἔσομαι</span>, <span class="gk">γινώσκω → γνώσομαι</span>, <span class="gk">λαμβάνω → λήμψομαι</span>, <span class="gk">ὁράω → ὄψομαι</span>. Notice these are middle in form — a preview of a pattern you'll meet properly later.</p>
+<p>When that <span class="gk">σ</span> meets a stop consonant they combine, and the combinations are worth knowing because they hide the stem: <span class="gk">κ, γ, χ + σ → ξ</span> (<span class="gk">ἄγω → ἄξω</span>); <span class="gk">π, β, φ + σ → ψ</span> (<span class="gk">βλέπω → βλέψω</span>); <span class="gk">τ, δ, θ</span> simply drop (<span class="gk">πείθω → πείσω</span>).</p>
+<p class="v" data-ref="Matthew 4:19">ποιήσω ὑμᾶς ἁλιεῖς ἀνθρώπων</p>
+<p>"I will make you fishers of men." <span class="gk">ποιήσω</span> is <span class="gk">ποιέω</span> with the future sigma; the contract verb has lengthened its final vowel first, which is a pattern you meet properly in chapter 19.</p>
+<p>Some very common verbs have futures you will simply have to learn: <span class="gk">εἰμί → ἔσομαι, γινώσκω → γνώσομαι, λαμβάνω → λήμψομαι, ὁράω → ὄψομαι</span>. Notice they are middle in form. That is a preview of chapter 12, and not something to worry about yet.</p>
 <h3>Saying no</h3>
-<p>Greek has two negatives and they divide by mood. <span class="gk">οὐ</span> negates the <b>indicative</b> — a statement about what is. <span class="gk">μή</span> negates everything else: subjunctive, imperative, infinitive, participle. So <span class="gk">οὐ λύει</span> is "he does not loose", but a prohibition takes <span class="gk">μή</span>.</p>
-<p><span class="gk">οὐ</span> also changes shape to suit the next word: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one — <span class="gk">οὐ λέγει</span>, <span class="gk">οὐκ ἔστιν</span>, <span class="gk">οὐχ οὗτος</span>. Three spellings, one word; the lexicon lists it as <span class="gk">οὐ, οὐκ, οὐχ</span>.</p>`,
+<p>Greek has two negatives and they divide by mood, not by strength.</p>
+<p><span class="gk">οὐ</span> negates the indicative — a statement about what is:</p>
+<p class="v" data-ref="Matthew 4:7">Οὐκ ἐκπειράσεις κύριον τὸν θεόν σου</p>
+<p>"You shall not put the Lord your God to the test." A future indicative, so <span class="gk">οὐ</span>.</p>
+<p><span class="gk">μή</span> negates everything else — subjunctive, imperative, infinitive, participle:</p>
+<p class="v" data-ref="Matthew 6:13">καὶ μὴ εἰσενέγκῃς ἡμᾶς εἰς πειρασμόν</p>
+<p>"And lead us not into temptation." That is a subjunctive, so <span class="gk">μή</span>. If you can see which negative a writer used, you already know something about the mood of the verb before you have parsed it.</p>
+<p><span class="gk">οὐ</span> also changes shape to suit what follows: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one. Three spellings, one word.</p>
+<h3>What to watch for</h3>
+<p>The third person singular <span class="gk">λύει</span> and the second person singular <span class="gk">λύεις</span> differ by one letter, and you will read past that letter more than once. So will the future <span class="gk">λύσει</span>, which differs from the present <span class="gk">λύει</span> by the sigma alone.</p>
+<p>There is no trick for this. It is why the grid drill exists, and why filling the table in from memory is worth more than reading it ten times.</p>`,
 v:[7,10,15,21,40,62,81,122,152,173,250,254,270,212,209,319,361,368,384],
 vids:[{t:"Lecture 3: Present and Future Active Indicative",s:"Daily Dose of Greek — Rob Plummer (14:16)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-3/"},
       {t:"The Greek (Active) Verb Song",s:"Daily Dose of Greek — the present active endings, sung",yt:"-L3mzNlR0Uc"},
       {t:"“Everyday” Active Indicative Verb Endings Song",s:"Daily Dose of Greek — the same endings, a second tune",yt:"B1suAd0Bhos"}],
 quiz:[
-{q:"Parse λύομεν.",o:["1st plural present active indicative","1st singular present active indicative","2nd plural present active indicative","3rd plural present active indicative"],a:0,w:"'We loose.' The ending -ομεν is 1st person plural.",sec:0},
-{q:"What is the movable nu in λύουσιν?",o:["A plural marker","A meaningless addition before a vowel or pause","A sign of the subjunctive","A negation"],a:1,w:"Purely phonetic — like the English 'a' becoming 'an'. It carries no grammatical weight.",sec:0},
-{q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. Imperfective means viewed from inside, as ongoing — not necessarily happening right now.",sec:2},
-{q:"εἶ means:",o:["if","I am","you are","he is"],a:2,w:"'You are' — 2nd singular of εἰμί. Compare unaccented εἰ, 'if'. The accent is doing real work.",sec:1},
-{q:"The future of βλέπω is:",o:["βλέσω","βλέψω","βλέξω","βλεπήσω"],a:1,w:"A labial (π) plus σ gives ψ. Gutturals give ξ, and dentals drop before σ.",sec:3},
-{q:"ἔσομαι is the future of which verb?",o:["ἔχω","ἔρχομαι","εἰμί","ἐσθίω"],a:2,w:"The future of 'to be' — and it is middle in form. ἔσται (3rd singular) appears constantly in the Gospels: 'it will be'.",sec:3}]},
-
+{q:"Parse λύομεν.",o:["1st singular present active indicative","1st plural present active indicative","2nd plural present active indicative","1st plural future active indicative"],a:1,w:"First person plural, present, active, indicative — we loose. The ending -ομεν carries the we.",sec:0},
+{q:"Why is ἐγώ written out in ἐγώ εἰμι, when εἰμι already means I am?",o:["It is required","For emphasis","It is a different verb","To mark the tense"],a:1,w:"The ending already carries the person, so writing the pronoun as well is a choice — usually an emphatic one. John 6:48 is making a point of who is speaking.",sec:1},
+{q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. πιστεύει can be he believes, he is believing, or he keeps on believing — the form allows all three and requires none.",sec:2},
+{q:"The future of βλέπω is:",o:["βλέπσω","βλέψω","βλέξω","ἐβλέψα"],a:1,w:"π + σ combine into ψ. The same happens with β and φ; κ, γ and χ give ξ; and τ, δ, θ simply drop out.",sec:3},
+{q:"ἔσομαι is the future of which verb?",o:["ἔχω","εἰμί","ἔρχομαι","ἐσθίω"],a:1,w:"εἰμί. It is middle in form, like several other very common futures — a preview of chapter 12.",sec:3},
+{q:"Which negative goes with a subjunctive?",o:["οὐ","μή","Either","Neither; the subjunctive is not negated"],a:1,w:"μή negates everything outside the indicative. Seeing which negative a writer used tells you something about the mood before you have parsed the verb.",sec:4},
+{q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:4},
+{q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:5}]},
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
 body:`<p>Greek nouns fall into three declensions — patterns of endings. The second is the most regular, so start here. Masculine nouns in <span class="gk">-ος</span>, neuter nouns in <span class="gk">-ον</span>. A few <span class="gk">-ος</span> nouns are feminine — <span class="gk">ἡ ὁδός</span> (way) and <span class="gk">ἡ ἔρημος</span> (wilderness) are both in this chapter — and they decline exactly like <span class="gk">λόγος</span>; only the article tells you.</p>
 <table><caption>λόγος, -ου, ὁ — word (masculine)</caption>
