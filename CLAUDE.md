@@ -32,7 +32,12 @@ So, mechanically:
 - **Prefer surgical edits** to rewriting a record. If a script rewrites an
   entry, it must carry every field it is not deliberately changing.
 - If a fact came from Black, Huffman or any book, **open the book**. They are
-  in `../Greek App Reference/` — read only, never copied into the repo.
+  in `../Greek App Reference/` — read only, never copied into the repo. They
+  parse cleanly; `tools/check_black.py` reads Black's vocabulary sections
+  every run. An earlier attempt at that looked unreliable and was not: the
+  extractor required each English gloss to begin with a capital, which
+  silently dropped μή and οὐ. **Before concluding a source cannot be parsed,
+  check that the parser is not the thing at fault.**
 
 ## 2. Run the checkers, and read what they say
 
@@ -40,15 +45,19 @@ So, mechanically:
 python tools/check_all.py
 ```
 
-Twelve checkers, all against the SBLGNT in `data/gnt/`. Green before every
-commit, no exceptions. `--offline` skips only `check_links`, the one that
-needs the network.
+Thirteen checkers. Green before every commit, no exceptions. `--offline`
+skips only `check_links`, the one that needs the network.
 
 `check_frozen` is the odd one and the important one. It does not ask whether
 anything is true; it asks whether a protected field changed since `git HEAD`
 and makes you say you meant it (`--accept`). Protected: each chapter's `v:`
 and `vids:`, every existing `VOCAB` row, `VOCAB_AUDIO`, and paradigm titles
 and captions. Those have no derivable truth — only a history.
+
+`check_black` is the third guard on `v:`, and the only one that can say the
+array is *wrong* rather than merely changed: it reads Black's own vocabulary
+sections and confirms every word. Currently 395 of 395. The books are outside
+the repo, so it says so and exits clean when they are not on the machine.
 
 When you add data of a kind no checker covers, **write the checker in the
 same commit.** Every hand-written Greek array in `js/app.js` now has one —
