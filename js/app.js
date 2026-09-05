@@ -690,6 +690,20 @@ function todaysPlan(){
       run:()=>startSession(gridDrill(1),"grids")});
   }
 
+  /* One sentence a day, from the text rather than from a paradigm. Waits for
+     chapter 5, by which point there are verbs and two declensions to find —
+     before that the questions would be about endings nobody has been shown.
+     A focus aims it at the passage, like everything else here. */
+  if(typeof clauseDrill==="function"
+     && (S.lessons.length?Math.max(...S.lessons):0)>=5){
+    const f2=S.focus;
+    tasks.push({id:"sent",
+      label:"Read a sentence",
+      sub:f2?`Six questions from ${focusRef(f2)} and around it`
+            :"Six questions on real verses — the verb, the case, the subject",
+      run:()=>startSession(clauseDrill(6),"sent")});
+  }
+
   /* The chapter you are part-way through, else the next unread one. A focus
      with the whole day steps this aside until the passage is marked done. */
   const lp=S.lessonPart;
@@ -1913,16 +1927,18 @@ const DRILLS=[
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")],
 ["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3),"grids")],
 ["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(),"d")],
-["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")]
+["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
+["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
 const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
                 "Listening — words","Write it from memory"],
+  "Reading":["Read a sentence","Case functions"],
   "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
-             "Case functions","Mixed grammar review"],
+             "Mixed grammar review"],
   "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
 };
 function renderDrill(){

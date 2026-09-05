@@ -439,3 +439,15 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   animation:pgno .3s both}
 @keyframes pgno{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}
   75%{transform:translateX(-3px)}100%{transform:none}}
+
+/* ---------- read a sentence ----------
+   A verse you tap a word in, rather than a verse you tap every word in.
+   Smaller than the Read passage because it sits inside a card and has to
+   fit on one screen with the question and the answer under it. */
+.clause{font-family:var(--gk);font-size:calc(1.1rem * var(--gk-scale));
+  line-height:1.95;text-align:center}
+.clause .lit{background:rgba(212,165,55,.16);border-radius:4px;padding:2px 4px;font-weight:600}
+.passage.clause{margin:0}
+.passage.clause w{border-radius:5px;transition:background .15s}
+.passage.clause w.right{background:rgba(88,168,140,.22);font-weight:600}
+.passage.clause w.wrong{background:rgba(205,97,82,.2)}
