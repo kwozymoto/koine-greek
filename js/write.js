@@ -47,8 +47,9 @@ const WRITE = {
    genuinely shaky hand, and where it falls is a judgement.
 
    The row that matters is the third. A letter followed properly with a fifth
-   of the ink run off the bottom — the beta in Bugs/ — still passes, because
-   it is a good trace with a fault. It now reads about 78 rather than 99. */
+   of the ink run off the bottom — the beta that started this, screenshotted
+   on a phone — still passes, because it is a good trace with a fault. It now
+   reads about 78 rather than 99. */
 /* The pen scales with the pad, because the guide letter does. A fixed 7px
    nib on a 300px pad is a pencil against a letterform two dozen pixels
    thick, which both feels wrong to draw with and reads as a poor trace. */

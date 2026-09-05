@@ -5,12 +5,18 @@ desktop.ini
 node_modules/
 __pycache__/
 
-# The textbooks themselves. Reference only, and copyrighted — this repo is
-# public. The app carries an array of VOCAB indices per chapter, never Black's
-# prose, his exercises or his glosses; Huffman is consulted for the modern
-# names of syntax categories and never quoted.
+# The textbooks, the publisher's contents page and the phone screenshots now
+# live in ../Greek App Reference/, outside this repository, where no command
+# run in here can reach them at all. See that folder's README for why.
+#
+# These patterns stay as a second line of defence, in case a copy is ever
+# dropped back in. They are not the defence: a .gitignore only protects what
+# somebody listed in advance, and hg_toc.pdf reached a commit precisely
+# because it post-dated the list.
 Black/
 Huffman/
+Bugs/
+hg_toc.pdf
 
 # Audio delivery packs. Every recording arrives as a folder of clips plus a
 # cue sheet; the clips are copied into audio/vocab, audio/forms or
@@ -30,12 +36,6 @@ audio/*_cues.json
 /erasmian_koine_greek_alphabet.mp3
 
 # Local-only working files
-# Screenshots of faults, sent from a phone. Useful while fixing one and
-# nothing to do with the app; 1.5MB of them nearly went into a public repo.
-Bugs/
-# A publisher's contents page, retrieved to find where Huffman treats what.
-# Same rule as Huffman/ itself: reference only, never in the repo.
-hg_toc.pdf
 # .claude/launch.json is how this machine serves the app for testing; it is
 # a tool setting, not part of the app.
 .claude/

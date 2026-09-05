@@ -121,8 +121,8 @@ function traces(s) {
     dot([x + (rnd() - .5) * 2 * px / s.w, y + (rnd() - .5) * 2 * px / s.h]));
 
   // Grown about the glyph's own centre: the shape is still right, it just
-  // overshoots. This is the failure in Bugs/Screenshot_20260903-200052.png —
-  // a beta whose tail ran well below the letter — and it used to score 99%.
+  // overshoots. This is the failure that started the whole calibration — a
+  // beta whose tail ran well below the letter — and it used to score 99%.
   let cx = 0, cy = 0;
   sk.forEach(([x, y]) => { cx += x; cy += y; });
   cx /= sk.length; cy /= sk.length;

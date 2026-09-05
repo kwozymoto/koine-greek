@@ -80,13 +80,18 @@ this repository is public. None of his prose, exercises or glosses is stored
 here; `data/lessons.js` carries an array of vocabulary indices per chapter and
 teaching written independently. Video lectures are linked, never copied.
 
+The books themselves live in a folder outside this one, so that no command
+run in here can reach them at all. A `.gitignore` is a blocklist and only
+protects what somebody listed in advance, which is one guarantee short of
+the one that is wanted.
+
 ## Layout
 
 ```
 data/       vocabulary, chapters, readings, paradigms, examples, lexicon
             gnt/    the SBLGNT, one JSON per book, plus a manifest
 js/         app, reader, audio, handwriting, sync, service-worker glue
-tools/      the builders and the eight checkers
+tools/      the builders and the eleven checkers
 docs/       the pronunciation cue guide and the lexicon changelog
 audio/      511 word clips, letters, and lexical forms
             (the deck is 818; the newest words have no recording yet)
