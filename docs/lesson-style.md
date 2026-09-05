@@ -94,8 +94,26 @@ someone to read, not performing.
 
 ## The shape of a chapter
 
-Each `<h3>` is one part, and Today serves three parts a sitting, so a part
-should be a coherent two minutes. Aim for 5 to 8 parts and 900–1,400 words.
+Each `<h3>` is one part, and Today serves **three parts a sitting**
+(`LESSON_DOSE` in `js/app.js`), so design the part breaks before writing the
+prose, not after. A part should be a coherent two minutes, and each group of
+three should be a coherent sitting.
+
+**The part count decides how the chapter divides.** Six is 3+3, eight is
+3+3+2, nine is 3+3+3. **Seven is 3+3+1** — you open Today, get one short
+section, and it is over. Ten is the same. Aim for 6, 8 or 9 and never 7;
+`check_lessons` fails a finished chapter that divides badly.
+
+Chapters 1, 3 and 5 were each seven, because I wrote the prose and let the
+headings fall where they landed. Merging two overlapping sections fixed two of
+them and the third gained the section on elided prepositions it was missing
+anyway — which is the usual outcome. A chapter that divides badly is often a
+chapter with a section too many or one too few.
+
+Then check what each sitting actually contains. Chapter 4 reads masculine /
+neuter / the article; chapter 7 reads how the imperfect is built / what it
+means and the aorist / εἰμί and the traps. If a sitting has no theme, the
+breaks are in the wrong place.
 
 ```
 <h3>The idea</h3>          what this form is, and why Greek has it

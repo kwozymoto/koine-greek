@@ -73,8 +73,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <p>And the mark that looks like a semicolon is a <b>question mark</b>. This catches everyone at least once:</p>
 <p class="v" data-ref="Matthew 11:3">Σὺ εἶ ὁ ἐρχόμενος ἢ ἕτερον προσδοκῶμεν;</p>
 <p>"Are you the one who is to come, or should we expect another?" John's disciples are asking a question, and the only thing on the page that tells you so is that final mark.</p>
-<h3>Iota subscript</h3>
-<p>A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It is not pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23.</p>
+<p><b>The iota subscript.</b> A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It is not pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23.</p>
 <p>It is a silent letter and a loud grammatical clue, and it is easy to miss when you are reading quickly. Train your eye for it now.</p>
 <h3>What to watch for</h3>
 <p>The letters that will cost you time are the ones that look like English letters and are not: <span class="gk">ρ</span> is <i>r</i>, not <i>p</i>. <span class="gk">η</span> is a long <i>e</i>, not <i>n</i>. <span class="gk">υ</span> is <i>u</i>, not <i>v</i>. <span class="gk">χ</span> is the <i>ch</i> of loch, not <i>x</i>. <span class="gk">ω</span> is a long <i>o</i>, not <i>w</i>.</p>
@@ -91,7 +90,7 @@ quiz:[
 {q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: someone, a certain. The accent is the only difference between them.",sec:3},
 {q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It is a question mark. The raised dot · does the work of our semicolon and colon, and often opens speech.",sec:4},
 {q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative, about five times in six. It is a silent letter and a loud grammatical clue.",sec:5},
-{q:"Which of these is most likely to be misread by an English speaker?",o:["ρ as p","β as b","δ as d","κ as k"],a:0,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:6}]},
+{q:"Which of these is most likely to be misread by an English speaker?",o:["ρ as p","β as b","δ as d","κ as k"],a:0,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:5}]},
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
 body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 26 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
 <p>Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required.</p>
@@ -165,8 +164,7 @@ body:`<p>Here is your first paradigm. Learn it properly and the next dozen come 
 <h3>The present is not simply "now"</h3>
 <p>Greek tense encodes aspect first and time second. The present is imperfective: the action seen from inside, as going on or repeated.</p>
 <p>So <span class="gk">πιστεύει</span> can be "he believes", "he is believing", or "he keeps on believing". The form does not settle which, and a translation has to choose. When a sermon leans hard on "keeps on believing", this is the grammar it is leaning on — and the honest thing to say is that the present allows it rather than requires it.</p>
-<h3>Three things the present does</h3>
-<p>Because the present is about aspect rather than time, one form covers several jobs that English splits between different constructions.</p>
+<p>Because it is about aspect rather than time, one form covers several jobs that English splits between different constructions.</p>
 <p>The <b>simple present</b> just states it: <i>I loose</i>.</p>
 <p>The <b>progressive present</b> presents it as under way, and it is very common in narrative and in speech:</p>
 <p class="v" data-ref="Matthew 8:25">Κύριε, σῶσον, ἀπολλύμεθα</p>
@@ -205,13 +203,13 @@ quiz:[
 {q:"Parse λύομεν.",o:["1st singular present active indicative","1st plural present active indicative","2nd plural present active indicative","1st plural future active indicative"],a:1,w:"First person plural, present, active, indicative — we loose. The ending -ομεν carries the we.",sec:0},
 {q:"Why is ἐγώ written out in ἐγώ εἰμι, when εἰμι already means I am?",o:["It is required","For emphasis","It is a different verb","To mark the tense"],a:1,w:"The ending already carries the person, so writing the pronoun as well is a choice — usually an emphatic one. John 6:48 is making a point of who is speaking.",sec:1},
 {q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. πιστεύει can be he believes, he is believing, or he keeps on believing — the form allows all three and requires none.",sec:2},
-{q:"Mark writes ἔρχεται, a present, about a past event. What is that called?",o:["A mistake","The historical present","The gnomic present","A future"],a:1,w:"The historical present: a past event told in the present tense for vividness. Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",sec:3},
-{q:"ἀπολλύμεθα in Matthew 8:25 is best read as:",o:["We perish","We are perishing","We will perish","We perished"],a:1,w:"The progressive present: presented as under way. The disciples are in the middle of it, not stating a general truth.",sec:3},
-{q:"The future of βλέπω is:",o:["βλέπσω","βλέψω","βλέξω","ἐβλέψα"],a:1,w:"π + σ combine into ψ. The same happens with β and φ; κ, γ and χ give ξ; and τ, δ, θ simply drop out.",sec:4},
-{q:"ἔσομαι is the future of which verb?",o:["ἔχω","εἰμί","ἔρχομαι","ἐσθίω"],a:1,w:"εἰμί. It is middle in form, like several other very common futures — a preview of chapter 12.",sec:4},
-{q:"Which negative goes with a subjunctive?",o:["οὐ","μή","Either","Neither; the subjunctive is not negated"],a:1,w:"μή negates everything outside the indicative. Seeing which negative a writer used tells you something about the mood before you have parsed the verb.",sec:5},
-{q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:5},
-{q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:6}]},
+{q:"Mark writes ἔρχεται, a present, about a past event. What is that called?",o:["A mistake","The historical present","The gnomic present","A future"],a:1,w:"The historical present: a past event told in the present tense for vividness. Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",sec:2},
+{q:"ἀπολλύμεθα in Matthew 8:25 is best read as:",o:["We perish","We are perishing","We will perish","We perished"],a:1,w:"The progressive present: presented as under way. The disciples are in the middle of it, not stating a general truth.",sec:2},
+{q:"The future of βλέπω is:",o:["βλέπσω","βλέψω","βλέξω","ἐβλέψα"],a:1,w:"π + σ combine into ψ. The same happens with β and φ; κ, γ and χ give ξ; and τ, δ, θ simply drop out.",sec:3},
+{q:"ἔσομαι is the future of which verb?",o:["ἔχω","εἰμί","ἔρχομαι","ἐσθίω"],a:1,w:"εἰμί. It is middle in form, like several other very common futures — a preview of chapter 12.",sec:3},
+{q:"Which negative goes with a subjunctive?",o:["οὐ","μή","Either","Neither; the subjunctive is not negated"],a:1,w:"μή negates everything outside the indicative. Seeing which negative a writer used tells you something about the mood before you have parsed the verb.",sec:4},
+{q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:4},
+{q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:5}]},
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
 body:`<p>English tells you what a noun is doing by where it sits. The dog bit the man means something different from the man bit the dog, and nothing has changed but the order.</p>
 <p>Greek does it with endings. That is why word order in Greek can be so free, and it is why the ending is not a detail to be got through on the way to the meaning — it <i>is</i> the meaning.</p>
@@ -309,8 +307,15 @@ body:`<p>The second declension gave you <span class="gk">-ος</span> and <span 
 <tr><td class="g">εἰς</td><td>accusative</td><td>into, to, for</td></tr>
 <tr><td class="g">ἐκ</td><td>genitive</td><td>out of, from</td></tr>
 <tr><td class="g">ἀπό</td><td>genitive</td><td>away from</td></tr></table>
-<p>Read a preposition together with the noun it governs, as one unit, rather than as a word on its own: <span class="gk">ἐν τῷ οἴκῳ</span> is a single idea. <span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel, for the same reason <span class="gk">οὐ</span> becomes <span class="gk">οὐκ</span>.</p>
+<p>Read a preposition together with the noun it governs, as one unit, rather than as a word on its own: <span class="gk">ἐν τῷ οἴκῳ</span> is a single idea.</p>
 <p>Once you can see a preposition and predict the case that follows it, you are reading ahead of the sentence rather than behind it.</p>
+<h3>Small words change shape before a vowel</h3>
+<p>You met this in chapter 3 with the negative: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one. Prepositions do the same thing, and for the same reason — Greek adjusts a small word to whatever follows it.</p>
+<p><span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel: 669 times against 227 in the New Testament, so you will meet both.</p>
+<p><span class="gk">ἀπό</span> drops its vowel and becomes <span class="gk">ἀπ’</span> before a vowel, and <span class="gk">ἀφ’</span> before a rough breathing — the pi turning into a phi for exactly the reason the kappa of <span class="gk">οὐκ</span> turns into the chi of <span class="gk">οὐχ</span>.</p>
+<p class="v" data-ref="1 Thessalonians 2:6">ἐξ ἀνθρώπων δόξαν, οὔτε ἀφ’ ὑμῶν οὔτε ἀπ’ ἄλλων</p>
+<p>"glory from men, neither from you nor from others." Three of these in one line: <span class="gk">ἐξ</span> before a vowel, <span class="gk">ἀφ’</span> before the rough breathing of <span class="gk">ὑμῶν</span>, and <span class="gk">ἀπ’</span> before the smooth breathing of <span class="gk">ἄλλων</span>.</p>
+<p>None of this changes the meaning or the case. It is the same preposition, dressed for the word in front of it — and worth recognising, because a lexicon lists <span class="gk">ἀπό</span> and the page says <span class="gk">ἀφ’</span>.</p>
 <h3>What to watch for</h3>
 <p class="v" data-ref="Hebrews 13:25">ἡ χάρις μετὰ πάντων ὑμῶν</p>
 <p>"Grace be with you all." <span class="gk">χάρις</span> is not first declension at all — it is third, which is chapter 17 — and it is a good reminder that a noun ending in a vowel is not automatically first declension. The article and the genitive in the lexicon entry are what settle it.</p>
@@ -325,8 +330,9 @@ quiz:[
 {q:"How do you know μαθητής is masculine?",o:["The ending","The article — ὁ μαθητής","The accent","The genitive plural"],a:1,w:"The article. The ending looks feminine; the article settles it, as it did for ἡ ὁδός in chapter 4.",sec:3},
 {q:"What is always true of a first declension genitive plural?",o:["It ends -ας","It ends -ῶν with a circumflex","It has no accent","It is identical to the nominative"],a:1,w:"-ῶν with a circumflex, wherever the accent falls elsewhere in the word. One of the few accent rules worth learning as a rule.",sec:4},
 {q:"Which case does ἐν take?",o:["Genitive","Dative","Accusative","Any of them"],a:1,w:"Dative, always. ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signposts in the text.",sec:5},
-{q:"Why does ἐκ become ἐξ before a vowel?",o:["It is a different word","For the same reason οὐ becomes οὐκ — ease of sound","It marks a different case","Manuscript variation"],a:1,w:"Sound, not grammar. Greek adjusts small words to what follows them; you saw the same with οὐ, οὐκ and οὐχ in chapter 3.",sec:5},
-{q:"χάρις ends in a vowel sound. Is it first declension?",o:["Yes","No — it is third declension","Only in the plural","Only when feminine"],a:1,w:"Third, which is chapter 17. A noun ending in a vowel is not automatically first declension; the genitive and the article in the lexicon entry are what settle it.",sec:6}]},
+{q:"Why does ἐκ become ἐξ before a vowel?",o:["It is a different word","For the same reason οὐ becomes οὐκ — ease of sound","It marks a different case","Manuscript variation"],a:1,w:"Sound, not grammar. Greek adjusts small words to what follows them; you saw the same with οὐ, οὐκ and οὐχ in chapter 3.",sec:6},
+{q:"Why does ἀπό appear as ἀφ’ before ὑμῶν?",o:["It is a different preposition","The rough breathing turns the pi into a phi","It is plural","A scribal variant"],a:1,w:"The same adjustment as οὐκ becoming οὐχ. The meaning and the case are unchanged — it is the preposition dressed for the word in front of it.",sec:6},
+{q:"χάρις ends in a vowel sound. Is it first declension?",o:["Yes","No — it is third declension","Only in the plural","Only when feminine"],a:1,w:"Third, which is chapter 17. A noun ending in a vowel is not automatically first declension; the genitive and the article in the lexicon entry are what settle it.",sec:7}]},
 {id:6,t:"Adjectives of the first and second declension",s:"Attributive versus predicate",
 body:`<p>Adjectives use endings you already know. A first-and-second declension adjective takes second declension endings for masculine and neuter and first declension endings for feminine, so <span class="gk">ἀγαθός, ἀγαθή, ἀγαθόν</span> is three familiar patterns rather than a new one.</p>
 <p>An adjective agrees with its noun in <b>gender, number and case</b>. That is the easy part, and it is not what this chapter is about.</p>

@@ -50,6 +50,12 @@ exist. Nothing else would have found that.
 Part 0 is exempt: it is whatever precedes the first heading, usually an
 opening paragraph. BARE below lists the headed sections that legitimately
 carry no question, with the reason.
+
+And the shape. Today serves a chapter LESSON_DOSE parts at a time, so the
+part count decides how it divides. Seven parts against a dose of three is
+3+3+1 — you open Today, get one short section, and it is over. Six, eight and
+nine all divide well; seven and ten do not. Chapters 1, 3 and 5 were each
+seven, which is what prompted this.
 """
 import json, io, os, re, sys, unicodedata, collections, subprocess
 
@@ -247,10 +253,25 @@ BARE = {
 # the example it gives.
 DONE = {1, 2, 3, 4, 5, 6, 7, 21}
 
-no_question, pending_q = [], 0
+# The dose is defined in js/app.js and read from it, not repeated here.
+DOSE = 3
+try:
+    DOSE = int(re.search(r"const LESSON_DOSE\s*=\s*(\d+)",
+                         io.open(os.path.join(ROOT, "js", "app.js"),
+                                 encoding="utf-8").read()).group(1))
+except Exception:
+    pass
+
+no_question, pending_q, badly_shaped = [], 0, []
 for l in LESSONS:
     parts = [p for p in re.split(r"(?=<h3>)", l["body"]) if p.strip()]
     filed = {q.get("sec") for q in l["quiz"]}
+    # a final sitting of one part is a page you open and close
+    if len(parts) > DOSE and len(parts) % DOSE == 1 and l["id"] in DONE:
+        badly_shaped.append("ch%-3d %d parts divides %s — the last sitting is one section"
+                            % (l["id"], len(parts),
+                               "+".join(str(min(DOSE, len(parts) - k))
+                                        for k in range(0, len(parts), DOSE))))
     for i, part in enumerate(parts):
         if i == 0 or i in filed:
             continue
@@ -271,5 +292,10 @@ print("sections with no question, in chapters that claim to be finished: %d"
 for n in no_question:
     print("   " + n)
 
-if sec_bad or sec_early or verse_bad or no_question:
+print()
+print("chapters that divide badly into sittings of %d: %d" % (DOSE, len(badly_shaped)))
+for b in badly_shaped:
+    print("   " + b)
+
+if sec_bad or sec_early or verse_bad or no_question or badly_shaped:
     sys.exit(1)

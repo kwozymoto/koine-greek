@@ -124,6 +124,12 @@ use `data-ref` and `data-claim` the same way.
 Fraser's own sermons and teaching notes with each trait quoted from its
 source. Read it before writing or editing a chapter.
 
+**Design the part breaks before writing the prose.** Today serves three parts
+a sitting, so the part count decides how a chapter divides: six is 3+3, eight
+is 3+3+2, nine is 3+3+3, and **seven is 3+3+1** — a final sitting of one short
+section. Aim for 6, 8 or 9, never 7 or 10, and check that each group of three
+has a theme. `check_lessons` fails a finished chapter that divides badly.
+
 **Rewriting a chapter means rewriting its quiz in the same pass.** The
 questions belong to the sections: `sec` counts the opening as part 0,
 inserting a section shifts every `sec` after it, and every headed part needs
