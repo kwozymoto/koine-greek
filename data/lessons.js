@@ -350,10 +350,32 @@ body:`<p>Two past tenses, and the difference between them is not when the action
 <tr><th>3rd</th><td class="g">ἔλυσε(ν)</td><td class="g">ἔλυσαν</td></tr></table>
 <p>The aorist presents the action as a single whole, viewed from outside. That is all it claims. It does not say the action was quick, or once only, or finished — those are things the sentence may tell you, and the tense does not.</p>
 <p>This matters more than almost anything else in first-year Greek, because sermons are built on the opposite claim all the time. The aorist is not the once-for-all tense. It is the tense that declines to comment.</p>
+<h3>Second aorists: the same tense, a different shape</h3>
+<p>Everything above describes the <b>first</b> aorist, the one with the sigma. There is a second pattern, and it is not a variant or an exception — it is more than half of what you will actually read.</p>
+<p>A second aorist takes an augment and the <i>present</i> stem endings, with no sigma at all, on a changed stem. <span class="gk">λέγω</span> gives <span class="gk">εἶπον</span>; <span class="gk">ἔρχομαι</span> gives <span class="gk">ἦλθον</span>; <span class="gk">βάλλω</span> gives <span class="gk">ἔβαλον</span>; <span class="gk">ὁράω</span> gives <span class="gk">εἶδον</span>.</p>
+<p class="v" data-ref="Matthew 20:32">καὶ στὰς ὁ Ἰησοῦς ἐφώνησεν αὐτοὺς καὶ εἶπεν</p>
+<p>"And Jesus stopped, called them, and said." Both verbs are aorist active indicative, third singular, and they look nothing alike. <span class="gk">ἐφώνησεν</span> has the sigma; <span class="gk">εἶπεν</span> has a stem you would not have predicted from <span class="gk">λέγω</span>.</p>
+<p class="v" data-ref="John 1:11">εἰς τὰ ἴδια ἦλθεν</p>
+<p>"He came to his own." Same tense again, same endings as an imperfect would take, and no sigma anywhere.</p>
+<p>Two things follow, and both matter more than the label does.</p>
+<p><b>The endings do not tell you the tense here — the stem does.</b> <span class="gk">ἔβαλον</span> and <span class="gk">ἔβαλλον</span> differ by one lambda: the aorist against the imperfect of the same verb. That single letter is the whole distinction.</p>
+<p><b>And you cannot look a second aorist up by its own spelling.</b> <span class="gk">εἶπεν</span> is not under epsilon in a lexicon; it is under <span class="gk">λέγω</span>. This is what the principal parts are for, and it is why the third one is worth learning for the common verbs even though the drill for it feels like rote.</p>
+<p>There is no difference in meaning. A second aorist is aorist, with exactly the aspect described above. It is a different way of building the same tense, kept by the verbs that have been in the language longest — which is why the commonest verbs are the irregular ones, here as in English.</p>
+<h3>εἰμί in the past</h3>
+<p>The verb to be has no aorist. It has an imperfect, and you will meet it constantly.</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>1st</th><td class="g">ἤμην</td><td class="g">ἦμεν</td></tr>
+<tr><th>2nd</th><td class="g">ἦς</td><td class="g">ἦτε</td></tr>
+<tr><th>3rd</th><td class="g">ἦν</td><td class="g">ἦσαν</td></tr></table>
+<p class="v" data-ref="John 1:2">οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν</p>
+<p>"He was in the beginning with God." <span class="gk">ἦν</span> alone accounts for most of these 455 occurrences, and John 1 uses it to hold a state open rather than to report an event — which is the imperfective aspect doing exactly what this chapter has been describing.</p>
+<p class="v" data-ref="Mark 15:25">ἦν δὲ ὥρα τρίτη</p>
+<p>"And it was the third hour." Learn <span class="gk">ἦν</span> and <span class="gk">ἦσαν</span> first; between them they cover most of what you will see.</p>
 <h3>What to watch for</h3>
 <p class="v" data-ref="Matthew 5:2">ἐδίδασκεν αὐτούς</p>
 <p>"He was teaching them" — the sentence that opens the Sermon on the Mount. An aorist there would have said he taught them, and closed it. The imperfect holds it open, and everything that follows is what he was saying.</p>
-<p>The two traps are mechanical. <span class="gk">ἔλυον</span> is first singular or third plural, and you cannot tell from the word. And a verb beginning with a long vowel has no visible augment at all, so an imperfect can look exactly like a present until you read the ending.</p>`,
+<p>The traps are mechanical. <span class="gk">ἔλυον</span> is first singular or third plural, and you cannot tell from the word. A verb beginning with a long vowel has no visible augment, so an imperfect can look exactly like a present until you read the ending. And <span class="gk">ἔβαλον</span> against <span class="gk">ἔβαλλον</span> is one lambda between an aorist and an imperfect.</p>
+<p>None of those can be reasoned out. They are recognised, and recognition comes from meeting them often, which is what the drills are for.</p>`,
 v:[86,96,131,372,371,496,495,494],
 vids:[{t:"Lecture 7: Imperfect and Aorist Active Indicative",s:"Daily Dose of Greek — Rob Plummer (23:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-7/"},
       {t:"Jingle Bells Aorist Active and Middle Song",s:"Daily Dose of Greek — aorist active and middle endings",yt:"FPWHsfdjuMg"}],
@@ -364,8 +386,12 @@ quiz:[
 {q:"In ἐξέβαλεν, where has the augment gone?",o:["Onto the front of the whole word","Between the preposition and the stem","Nowhere; there is none","Onto the ending"],a:1,w:"Inside the compound, after ἐκ-. This is why compound verbs are awkward to look up: the form no longer begins with the letters the lexicon lists.",sec:2},
 {q:"In ἄγγελοι προσῆλθον καὶ διηκόνουν αὐτῷ, why do translations often render the second verb 'were ministering'?",o:["It is plural","It is imperfect, so the action is presented as open","It is passive","It is a different tense entirely"],a:1,w:"προσῆλθον is aorist — one event, closed. διηκόνουν is imperfect, and the ministering does not close. The switch between them is doing something.",sec:3},
 {q:"What does the aorist claim about an action?",o:["That it happened once and for all","That it was quick","That it is presented as a single whole","That it is finished with continuing results"],a:2,w:"Only that it is viewed as a whole, from outside. It is not the once-for-all tense; that claim is made about it constantly and the grammar does not support it.",sec:4},
-{q:"Matthew 5:2 has ἐδίδασκεν rather than an aorist. What does that do?",o:["Nothing; they are interchangeable","It holds the teaching open, and what follows is what he was saying","It makes it passive","It moves it into the present"],a:1,w:"An aorist would have said he taught them and closed it. The imperfect holds it open — and the Sermon on the Mount follows.",sec:5},
-{q:"A verb beginning with a long vowel has no visible augment. What tells you the tense?",o:["The accent","The ending","Nothing can","The context alone"],a:1,w:"The secondary ending. εὑρίσκω keeps its εὑ- throughout, so the ending is the only thing distinguishing the imperfect from the present.",sec:5}]},
+{q:"Matthew 5:2 has ἐδίδασκεν rather than an aorist. What does that do?",o:["Nothing; they are interchangeable","It holds the teaching open, and what follows is what he was saying","It makes it passive","It moves it into the present"],a:1,w:"An aorist would have said he taught them and closed it. The imperfect holds it open — and the Sermon on the Mount follows.",sec:7},
+{q:"A verb beginning with a long vowel has no visible augment. What tells you the tense?",o:["The accent","The ending","Nothing can","The context alone"],a:1,w:"The secondary ending. εὑρίσκω keeps its εὑ- throughout, so the ending is the only thing distinguishing the imperfect from the present.",sec:7},
+{q:"ἐφώνησεν and εἶπεν stand side by side in Matthew 20:32. How do they differ?",o:["One is imperfect","Not at all in tense — one is a first aorist, one a second","One is passive","One is plural"],a:1,w:"Both are aorist active indicative third singular. ἐφώνησεν has the sigma; εἶπεν is built on a changed stem with no sigma. Second aorists are 58% of the aorist active indicatives in the New Testament.",sec:5},
+{q:"Why can you not look εἶπεν up under epsilon?",o:["It is misspelled","It is the second aorist of λέγω, and lexicons list the present","It is not a real word","It is a proper name"],a:1,w:"A second aorist is built on a different stem, so the form on the page does not begin with the letters the lexicon lists. This is what the principal parts are for.",sec:5},
+{q:"ἔβαλον and ἔβαλλον differ by one letter. What is the difference?",o:["Person","Aorist against imperfect","Active against middle","Nothing; both spellings occur"],a:1,w:"One lambda. ἔβαλον is the second aorist, ἔβαλλον the imperfect, and here the stem carries the tense rather than the ending.",sec:5},
+{q:"What is the aorist of εἰμί?",o:["ἦν","ἐγενόμην","There is none — it has only an imperfect","ἔσομαι"],a:2,w:"εἰμί has no aorist. Its past is the imperfect: ἤμην, ἦς, ἦν, ἦμεν, ἦτε, ἦσαν — and ἦν alone accounts for most of its 455 occurrences.",sec:6}]},
 {id:8,t:"Additional prepositions",s:"Case changes the meaning",
 body:`<p>Many Greek prepositions take more than one case, and the case changes the meaning. This is a place where a lazy reading goes wrong quickly.</p>
 <table>
