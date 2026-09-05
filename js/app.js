@@ -1742,10 +1742,10 @@ function ppDrill(n=10){
 const LOOKALIKE=[
  [["ἀλλά","but"],["ἄλλα","other things — neuter plural of ἄλλος"]],
  [["αὐτή","she — αὐτός, feminine nominative"],["αὕτη","this woman — οὗτος, feminine nominative"]],
- [["αὐταί","they, feminine — αὐτός"],["αὗται","these women — οὗτος"]],
+ [["αὐταί","they, feminine — αὐτός. A real form the NT never happens to use; αὗται is what you will meet"],["αὗται","these women — οὗτος"]],
  [["εἰ","if"],["εἶ","you are"]],
  [["εἰς","into, to (+acc)"],["εἷς","one"]],
- [["ἔξω","outside"],["ἕξω","I will have — future of ἔχω"]],
+ [["ἔξω","outside"],["ἕξω","I will have — future of ἔχω. This exact form is not in the NT, but ἕξει and ἕξεις are, thirteen times"]],
  [["ἡ","the — feminine article"],["ἥ","who, which — relative, feminine"],["ἤ","or"]],
  [["ἦν","he was"],["ἥν","whom — relative, feminine accusative"]],
  [["ὁ","the — masculine article"],["ὅ","which — relative, neuter"]],

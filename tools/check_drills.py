@@ -23,6 +23,18 @@ form it contains:
                subjunctive are frequently the same string, so the corpus
                tagging πιστεύσω aorist says nothing against it also being the
                future; those are listed for a human, not failed.
+  LOOKALIKE    the pairs one accent or breathing apart. The drill's whole
+               premise is that these are confusable, and that is itself a
+               checkable claim: strip the accents and breathings from a group
+               and every member must collapse to the same letters. If they do
+               not, the group is not a look-alike group and the question is
+               not the question it says it is. Non-occurrence is reported
+               rather than failed, as it is for the principal parts: a
+               paradigm legitimately holds forms the New Testament never
+               happens to use. ἕξω is one — the first singular future of ἔχω
+               is absent, while ἕξει, ἕξεις, ἕξετε and ἕξουσιν occur thirteen
+               times between them, so the breathing trap against ἔξω is live
+               even though that exact form is not.
   CASEFN       the case and syntax questions. Their Greek is a quotation, so
                the corpus can say whether it is one: does this phrase occur,
                contiguously, in the verse the row names? Six of the first ten
@@ -84,6 +96,7 @@ def array(name):
 
 ART, PARSE, BUILD, PP = array("ART"), array("PARSE"), array("BUILD_FORMS"), array("PP")
 CASEFN = array("CASEFN")
+LOOKALIKE = array("LOOKALIKE")
 
 # Whole verses, for the one drill whose Greek is a quotation rather than a
 # paradigm. Same test tools/check_syntax.py applies to the syntax tables.
@@ -262,8 +275,37 @@ for n, row in enumerate(CASEFN):
     if not any(toks[i:i + len(want)] == want for i in range(len(toks) - len(want) + 1)):
         case_bad.append("%s — %r does not occur in %s" % (tag, greek, ref))
 
+# ---------------------------------------------------------- LOOKALIKE ----
+# Accents and breathings off, everything else kept: that is precisely the
+# difference the drill claims these pairs come down to.
+ACCENTS = dict.fromkeys(map(ord, "̀́͂̓̔ͅ"))
+skel = lambda w: unicodedata.normalize("NFD", bare(w)).translate(ACCENTS).lower()
+
+look_bad = []
+look_forms = 0
+for gi, group in enumerate(LOOKALIKE):
+    tag = "LOOKALIKE[%d]" % gi
+    if len(group) < 2:
+        look_bad.append("%s has only one member, so nothing looks like it" % tag)
+        continue
+    shapes = {skel(f) for f, _ in group}
+    if len(shapes) != 1:
+        look_bad.append("%s is not one accent apart: %s"
+                        % (tag, " vs ".join(sorted(shapes))))
+    forms = [f for f, _ in group]
+    if len(set(forms)) != len(forms):
+        look_bad.append("%s lists the same form twice" % tag)
+    for f, desc in group:
+        look_forms += 1
+        if not desc.strip():
+            look_bad.append("%s — %s has no description" % (tag, f))
+        if not PARSES.get(norm(bare(f))):
+            unattested.append("LOOK  %-10s %s" % (f, desc[:52]))
+
 print("drill forms the corpus could judge: %d" % checked)
 print("case and syntax questions held to the verse they quote: %d" % len(CASEFN))
+print("look-alike forms, each attested and each one accent apart: %d in %d groups"
+      % (look_forms, len(LOOKALIKE)))
 print("drill forms the corpus does not contain: %d (a paradigm may hold forms "
       "the NT never uses)" % len(unattested))
 print()
@@ -284,4 +326,8 @@ print()
 print("case questions whose Greek or shape does not hold up: %d" % len(case_bad))
 for c in case_bad:
     print("   " + c)
-sys.exit(1 if (problems or case_bad) else 0)
+print()
+print("look-alike groups that are not what they claim: %d" % len(look_bad))
+for c in look_bad:
+    print("   " + c)
+sys.exit(1 if (problems or case_bad or look_bad) else 0)

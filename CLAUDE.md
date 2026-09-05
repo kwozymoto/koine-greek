@@ -51,8 +51,9 @@ and `vids:`, every existing `VOCAB` row, `VOCAB_AUDIO`, and paradigm titles
 and captions. Those have no derivable truth — only a history.
 
 When you add data of a kind no checker covers, **write the checker in the
-same commit.** `LOOKALIKE` in `js/app.js` is currently the one hand-written
-Greek array with no checker; it is the next `CASEFN` waiting to happen.
+same commit.** Every hand-written Greek array in `js/app.js` now has one —
+`ART`, `PARSE`, `BUILD_FORMS`, `PP`, `CASEFN` and `LOOKALIKE`. The next thing
+added without one is the next `CASEFN`.
 
 ## 3. Files keyed by position are append-only
 
