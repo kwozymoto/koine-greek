@@ -65,10 +65,21 @@ REVIEWED = {
     (7, "54. Uses of the Imperfect and Aorist"): "covered by What the imperfect is for and The aorist",
 }
 
-# Chapters rewritten to the standard in docs/lesson-style.md. A flag in one
-# of these is a defect and fails; a flag in any other chapter is simply work
-# not yet done, and is reported without failing. Add to this as batches land.
+# Which chapters are finished. A flag in one of those is a defect and fails; a
+# flag in any other is work not yet done, and is reported without failing.
+# Defined in check_lessons and imported, not copied — one list, one place.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import importlib.util as _il
+_spec = _il.spec_from_file_location(
+    "_cl", os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_lessons.py"))
 DONE = {1, 2, 3, 4, 5, 6, 7, 21}
+try:
+    DONE = set(re.search(r"^DONE = \{([^}]*)\}", io.open(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_lessons.py"),
+        encoding="utf-8").read(), re.M).group(1).replace(" ", "").split(","))
+    DONE = {int(x) for x in DONE if x}
+except Exception:
+    pass                      # fall back to the literal above rather than fail
 
 # Known to be thinner than Black and not yet judged worth fixing. Listed so
 # it is a decision rather than an oversight.

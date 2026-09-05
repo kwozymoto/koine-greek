@@ -37,6 +37,19 @@ fixed in chapter 20. Prose written from memory does that.
 The markup is worth its keystrokes. It is the difference between a checker
 that can say "that phrase is not in that verse" and one that can only say
 "that verse exists".
+
+Last, the other direction. It has always checked that a question is asked
+after the section teaching it. It now also checks that every section *has* a
+question, because rewriting a chapter is where that breaks: a lesson is
+served three parts at a time and a part with nothing to answer is a page you
+read and close. Adding sections to chapter 2 shifted every sec: after them,
+and adding questions for the new ones deleted an old one by using it as an
+anchor — silently, because "none unfiled" only counts questions that still
+exist. Nothing else would have found that.
+
+Part 0 is exempt: it is whatever precedes the first heading, usually an
+opening paragraph. BARE below lists the headed sections that legitimately
+carry no question, with the reason.
 """
 import json, io, os, re, sys, unicodedata, collections, subprocess
 
@@ -223,5 +236,40 @@ print("verses the text does not bear out: %d" % len(verse_bad))
 for v in verse_bad:
     print("   " + v)
 
-if sec_bad or sec_early or verse_bad:
+# ------------------------------------ every section has a question -------
+# Headed sections that legitimately carry none.
+BARE = {
+    (1, "The alphabet"): "the sound grid and the tracing drill ask for themselves",
+}
+# Chapters rewritten to the standard in docs/lesson-style.md. tools/
+# check_coverage.py imports this rather than keeping its own copy — CLAUDE.md
+# warns about exactly this kind of duplication, and RETIRED in four files is
+# the example it gives.
+DONE = {1, 2, 3, 4, 5, 6, 7, 21}
+
+no_question, pending_q = [], 0
+for l in LESSONS:
+    parts = [p for p in re.split(r"(?=<h3>)", l["body"]) if p.strip()]
+    filed = {q.get("sec") for q in l["quiz"]}
+    for i, part in enumerate(parts):
+        if i == 0 or i in filed:
+            continue
+        m = re.match(r"<h3>(.*?)</h3>", part)
+        title = re.sub("<[^>]+>", "", m.group(1)) if m else "(opening)"
+        if any(c == l["id"] and title.startswith(t) for c, t in BARE):
+            continue
+        if l["id"] in DONE:
+            no_question.append("ch%-3d part %d, %r, has no question filed against it"
+                               % (l["id"], i, title[:38]))
+        else:
+            pending_q += 1
+
+print()
+print("sections with no question, in chapters not yet rewritten: %d" % pending_q)
+print("sections with no question, in chapters that claim to be finished: %d"
+      % len(no_question))
+for n in no_question:
+    print("   " + n)
+
+if sec_bad or sec_early or verse_bad or no_question:
     sys.exit(1)

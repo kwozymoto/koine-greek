@@ -105,9 +105,25 @@ should be a coherent two minutes. Aim for 5 to 8 parts and 900–1,400 words.
 <h3>What to watch for</h3> the mistake a reader actually makes
 ```
 
-Every part that teaches something gets at least one quiz question filed
-against it with `sec:`, so the walkthrough asks about a part right after
-reading it.
+**Rewrite the quiz in the same pass as the body, never afterwards.** A
+chapter's questions belong to its sections, and changing the sections without
+changing the questions breaks both.
+
+Every headed part gets at least one question filed against it with `sec:`.
+Today serves three parts a sitting, and a part with nothing to answer is a
+page you read and close. `check_lessons` fails a finished chapter that has
+one.
+
+`sec` counts the **opening as part 0** — whatever precedes the first `<h3>` —
+so a chapter with six headings has parts 0 to 6. Inserting a section shifts
+every `sec` after it. Getting this wrong files a question before the section
+that teaches it, which the checker also catches.
+
+And when a script edits a quiz, **never use an existing question as a
+replace-anchor without re-emitting it.** Doing that deleted chapter 2's
+question on the augment silently, and "none unfiled" does not notice, because
+it only counts questions that still exist. Count the questions before and
+after.
 
 ---
 

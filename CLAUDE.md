@@ -124,6 +124,12 @@ use `data-ref` and `data-claim` the same way.
 Fraser's own sermons and teaching notes with each trait quoted from its
 source. Read it before writing or editing a chapter.
 
+**Rewriting a chapter means rewriting its quiz in the same pass.** The
+questions belong to the sections: `sec` counts the opening as part 0,
+inserting a section shifts every `sec` after it, and every headed part needs
+at least one question. `check_lessons` enforces both for chapters in its
+`DONE` set — add yours to it when a batch lands.
+
 Length is settled: about 950 words and 6–8 parts per chapter. Black is taught
 at a chapter a week over a year, and the week goes on paradigms and
 vocabulary, not on reading. The prose is scaffolding.
