@@ -105,10 +105,28 @@ LUO = re.compile(r"^(λυ|ελυ|λελυ|ελελυ)")
 
 flagged, total, attested, skipped = collections.defaultdict(set), 0, 0, collections.Counter()
 for l in LESSONS:
-    chunks = [l["body"]] + [q["q"] + " " + q["w"] + " " + " ".join(q["o"]) for q in l["quiz"]]
-    for src in chunks:
-        for m in re.finditer(r'<(?:span class="gk"|td class="g")>(.*?)</(?:span|td)>', src, re.S):
-            txt = re.sub("<.*?>", "", m.group(1)).replace("(ν)", "ν")
+    # A body marks its Greek up; a quiz does not — q, o and w are plain
+    # strings with bare Greek in them. Matching only the markup meant this
+    # pass had never read a word of Greek out of a quiz, which is how
+    # ἐγινόμην and ἠρχόμην reached v58 after being fixed in the prose.
+    # So: markup in the body, and every run of Greek letters in the quiz.
+    marked = [(l["body"], True)]
+    # The question, the explanation and the RIGHT answer are things the app
+    # asserts. The other options are meant to be wrong — "the future of
+    # βλέπω is: βλέπσω / βλέψω / βλέξω" needs three forms that do not exist —
+    # so holding those to the corpus is a false positive by construction.
+    marked += [(q["q"] + " | " + q["w"] + " | " + q["o"][q["a"]], False)
+               for q in l["quiz"]]
+    for src, is_markup in marked:
+        if is_markup:
+            found = [re.sub("<.*?>", "", m.group(1))
+                     for m in re.finditer(
+                         r'<(?:span class="gk"|td class="g")>(.*?)</(?:span|td)>',
+                         src, re.S)]
+        else:
+            found = re.findall("[" + GK + "\u2019\u02bc(),·\\s-]{2,}", src)
+        for raw in found:
+            txt = raw.replace("(ν)", "ν")
             # split on everything except the hyphen, so that "-ος" can still
             # be recognised as an ending rather than a word
             for tok in re.split(r"[\s,·/()…—]+", txt):
@@ -164,6 +182,16 @@ UNATTESTED = {
     # lexical citation forms that are not VOCAB headwords
     (12, "ἄρχομαι"): "the middle of ἄρχω, cited as a headword",
     (15, "ἐγράφην"): "the sixth principal part of γράφω; ἐγράφη occurs",
+    (15, "βαπτιδ"): "the stem of βαπτίζω, written βαπτιδ-",
+    (9, "αὐτ"): "the fragment in 'the two αὐτ- forms'",
+    # Forms a chapter deliberately shows as WRONG, in a question or an
+    # explanation rather than in a distractor. Being unattested is the whole
+    # point of them, and having to list one is useful: it makes the checker
+    # confirm that the contrast the chapter draws is real.
+    (7, "ἐάκουον"): "the augment ἀκούω does not take; ἤκουον is the form",
+    (10, "γεγνωκεν"): "the reduplication γινώσκω does not take; ἔγνωκεν is",
+    (10, "φεφανέρωται"): "the reduplication φανερόω does not take; πεφανέρωται is",
+    (13, "γέγραφται"): "the spelling γράφω does not take; γέγραπται is",
 }
 
 print("Greek forms in the lesson bodies and quizzes: %d" % total)

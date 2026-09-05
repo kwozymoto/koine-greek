@@ -66,6 +66,14 @@ array is *wrong* rather than merely changed: it reads Black's own vocabulary
 sections and confirms every word. Currently 395 of 395. The books are outside
 the repo, so it says so and exits clean when they are not on the machine.
 
+**Check that a checker looks where you think it looks.** The unattested-forms
+pass claimed to read "the lesson bodies and quizzes" and had never read a word
+of Greek out of a quiz: it collected by matching `<span class="gk">`, which a
+body has and a quiz does not. It was blind to 900 tokens, nearly half. So a
+form corrected in the prose and left standing in the quiz explanation shipped
+in v58, after the guard against exactly that had been written. **When a
+checker's own summary line names a source, confirm it reads it.**
+
 **A checker that only reports is a checker that does not exist.**
 `check_lessons` has always listed Greek in a lesson body occurring nowhere in
 the corpus, and could not fail on it, because a paradigm legitimately prints
