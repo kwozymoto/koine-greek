@@ -4,7 +4,7 @@
     python tools/check_all.py
 
 The app teaches, so the thing that matters about it is whether what it says
-is true. Eleven checkers put different parts of it to the SBLGNT bundled in
+is true. Twelve checkers put different parts of it to the SBLGNT bundled in
 data/gnt/, and this runs the lot:
 
     check_vocab      the 511 lexical entries, their example verses, the
@@ -44,6 +44,15 @@ data/gnt/, and this runs the lot:
                      the row names. The only checker that needs a network —
                      pass --offline to skip it, and it will say that it did
 
+check_frozen is the odd one out and does not ask whether anything is true.
+It asks whether a field changed that nobody meant to change, by diffing the
+working tree against git HEAD. Some data has no truth to check against, only
+a history: a chapter's `v:` array is the list of VOCAB positions naming which
+words it teaches, nothing in the repo can derive the right answer, and one
+wrong digit silently changes the course. That is exactly the field that was
+nearly corrupted by being retyped from memory rather than lifted from the
+file, which is the fault this whole set exists to make impossible.
+
 Exits non-zero if any of them does. What none of them can check is English:
 whether a gloss is the right translation, whether a grammatical explanation
 is correct. That needs a reader.
@@ -58,7 +67,7 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
           "check_readings", "check_lessons", "check_forms", "check_lexicon",
-          "check_syntax", "check_clauses", "check_links"]
+          "check_syntax", "check_clauses", "check_frozen", "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
 # straight through to it and leaves the other nine untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}
