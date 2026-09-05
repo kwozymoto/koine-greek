@@ -360,7 +360,7 @@ function paintLit() {
   });
 }
 
-async function openGntChapter(abbr, ch) {
+async function openGntChapter(abbr, ch, verse) {
   /* Openable from the resume row, the pinned passage and a restored history
      entry — any of which can be the first thing tapped after a cold start.
      So nothing here assumes the manifest is loaded or that the stored
@@ -410,7 +410,8 @@ async function openGntChapter(abbr, ch) {
   const inFocus = f && f.a === abbr && f.ch === ch
     ? (n => !f.lo || (n >= f.lo && n <= f.hi)) : null;
   const html = verses.map((v, vi) =>
-    `<span class="vn">${v[0]}</span>` +
+    // addressable, so a card's example verse can open the chapter *at* it
+    `<span class="vn" id="v${v[0]}">${v[0]}</span>` +
     v[1].map((w, wi) => `<w data-v="${vi}" data-w="${wi}"${
       inFocus && inFocus(v[0]) ? ' class="inf"' : ""}>${w[0]}</w>`).join(" ")
   ).join(" ");
@@ -470,7 +471,18 @@ async function openGntChapter(abbr, ch) {
        ${vi >= 0 && !S.cards[vi]
          ? `<button class="mini" style="margin-top:7px" onclick="addToDeck(${vi},this)">+ add to my deck</button>` : ""}`;
   };
-  window.scrollTo(0, 0);
+  /* To the verse asked for, else to the top. Half a screen above it, so
+     the line has something over it and does not read as the first line of
+     the chapter. */
+  const target = verse && document.getElementById("v" + verse);
+  if (target) {
+    const y = target.getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo(0, Math.max(0, y));
+    target.classList.add("hit");
+    setTimeout(() => target.classList.remove("hit"), 2200);
+  } else {
+    window.scrollTo(0, 0);
+  }
 }
 
 /* Bulk download for offline reading. Not wired to a button: the service

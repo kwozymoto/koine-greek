@@ -316,6 +316,23 @@ def one_verse(ref):
             return vs[1]
     return None
 
+
+def verse_addr(ref):
+    """(book abbreviation, chapter index, verse number) for a reference, which
+       is what openGntChapter takes. The index is not the number: SBLGNT omits
+       passages such as John 7:53-8:11, so books[].n carries the real numbers
+       and the position in that list is the address."""
+    m = re.match(r"^(.*?)\s+(\d+):(\d+)$", ref.strip())
+    b = BOOK.get(m.group(1)) if m else None
+    if not b:
+        return None
+    if b["a"] not in _vcache:
+        _vcache[b["a"]] = json.load(io.open(os.path.join(GNT, b["a"] + ".json"),
+                                            encoding="utf-8"))
+    nums = b.get("n") or list(range(1, len(_vcache[b["a"]]["c"]) + 1))
+    ch = int(m.group(2))
+    return (b["a"], nums.index(ch), int(m.group(3))) if ch in nums else None
+
 if len(EXAMPLES) != len(VOCAB):
     ex_bad.append("EXAMPLES has %d entries, VOCAB has %d — the two are indexed "
                   "together" % (len(EXAMPLES), len(VOCAB)))
@@ -328,6 +345,15 @@ for i, e in enumerate(EXAMPLES[:len(VOCAB)]):
         continue
     ref, txt, at = e[0], e[1], e[2]
     pos, code = (e[3], e[4]) if len(e) >= 5 else (None, None)
+    # the reader address the card's reference button opens: book abbreviation,
+    # chapter *index* (not number — SBLGNT omits passages), verse number
+    addr = tuple(e[5:8]) if len(e) >= 8 else None
+    if addr is None:
+        ex_bad.append("%s %s carries no reader address — re-run "
+                      "tools/build_examples.py" % (tag, ref))
+    elif addr != verse_addr(ref):
+        ex_bad.append("%s %s says the reader should open %s; that reference is "
+                      "at %s" % (tag, ref, addr, verse_addr(ref)))
     ws = one_verse(ref)
     if ws is None:
         ex_bad.append("%s %s does not resolve in the corpus" % (tag, ref)); continue

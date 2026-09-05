@@ -180,6 +180,7 @@ function gridFill(g) {
     const at = (ri, ci) => slots.findIndex(s => s.r === ri && s.c === ci);
     const tray = slots.map(s => s.want).sort(() => Math.random() - .5);
     let live = 0, errs = 0;
+    const missed = new Set();          // the cells, not just how many
     const t0 = Date.now();
     const best = gridCard(g.key).best;
 
@@ -245,6 +246,7 @@ function gridFill(g) {
       if (!s || s.got) return;
       if (tray[+btn.dataset.k] !== s.want) {
         errs++;
+        missed.add(s.want);
         btn.classList.remove("no"); void btn.offsetWidth; btn.classList.add("no");
         answerFelt(false, null);
         return;
@@ -269,6 +271,18 @@ function gridFill(g) {
       gridGrade(g.key, errs === 0 ? 3 : errs <= 2 ? 2 : errs <= 4 ? 1 : 0);
       const card = gridCard(g.key);
       if (pb) { card.best = t; save(); }
+      /* The cells you actually missed, with somewhere to go and see one.
+         "23 wrong tries" tells you nothing you can act on; λελύκαμεν at
+         Colossians 1:9 is a sentence you can go and read. Only forms the
+         corpus attests get a reference — most of λύω's paradigm is a
+         teaching fiction the New Testament never uses, and saying so by
+         silence is better than inventing one. */
+      const bare = x => x.replace(/[^Ͱ-Ͽἀ-῿]/g, "");
+      const sightings = [...missed].slice(0, 3).map(f => {
+        const hit = typeof FORMS !== "undefined"
+          && FORMS.find(r => bare(r[0]) === bare(f));
+        return hit ? `<span class="gk">${hit[0]}</span> — ${hit[4]}` : null;
+      }).filter(Boolean);
       const xp = 3 + Math.max(0, 5 - errs);
       addXp(xp); SESSION_XP += xp;
       body.querySelectorAll(".pgs").forEach(x => x.classList.remove("live"));
@@ -280,7 +294,9 @@ function gridFill(g) {
           !best ? "" : pb ? " · <b>your best yet</b>" : ` · best ${mmss(best)}`}<br>
           <span class="muted">${card.ivl
             ? `Back in ${card.ivl} day${card.ivl === 1 ? "" : "s"}.`
-            : "Back again today — that one has not settled."}</span></div>
+            : "Back again today — that one has not settled."}</span>${
+          sightings.length ? `<br><span class="muted">In the text: ${
+            sightings.join(" · ")}</span>` : ""}</div>
          <button class="btn" onclick="qi++;step()">Continue</button>`;
     };
 

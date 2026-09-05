@@ -30,6 +30,12 @@ audio/*_cues.json
 /erasmian_koine_greek_alphabet.mp3
 
 # Local-only working files
+# Screenshots of faults, sent from a phone. Useful while fixing one and
+# nothing to do with the app; 1.5MB of them nearly went into a public repo.
+Bugs/
+# A publisher's contents page, retrieved to find where Huffman treats what.
+# Same rule as Huffman/ itself: reference only, never in the repo.
+hg_toc.pdf
 # .claude/launch.json is how this machine serves the app for testing; it is
 # a tool setting, not part of the app.
 .claude/

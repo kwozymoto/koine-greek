@@ -254,6 +254,30 @@ function seedVocab(n=100){
   toast(done ? done+" words seeded — spread over the next fortnight" : "Those words are already in the schedule");
 }
 
+/* Your own note on a word — the mnemonic the leech prompt has been asking
+   for and giving nowhere to put. Keyed by VOCAB index, and deliberately not
+   S.myGloss: that is a lemma-keyed *gloss* override which glossFor() prefers
+   over the deck's own wording in the reader, so a mnemonic written there
+   would quietly replace the meaning of the word. */
+const noteOf=i=>(S.notes||{})[i]||"";
+function editNote(i){
+  const was=noteOf(i);
+  const t=prompt(`A note on ${VOCAB[i][0].split(",")[0]} — a mnemonic, a verse, `
+    + `whatever makes it stick. Leave it empty to remove it.`, was);
+  if(t===null) return;
+  if(!S.notes) S.notes={};
+  const v=t.trim().slice(0,160);
+  if(v) S.notes[i]=v; else delete S.notes[i];
+  save();
+  const el=document.getElementById("noteBox");
+  if(el) el.innerHTML=noteHtml(i);
+}
+const noteHtml=i=>{
+  const n=noteOf(i);
+  return `<button class="mini" onclick="editNote(${i})">${
+    n?`✎ ${n.replace(/</g,"&lt;")}`:"+ note to self"}</button>`;
+};
+
 const LEECH_AT=8;              // lapses before a word is called out
 const isLeech=i=>(S.cards[i]?.lapses||0)>=LEECH_AT && !(S.suspended||[]).includes(i);
 function suspendWord(i){
@@ -577,25 +601,50 @@ function planExtra(){
 /* What "more" means once every row is ticked. The button used to say
    "Practise anyway", which reads like it does not count, and led to a
    review whether or not a review was the useful thing left. */
+/* Short named rounds, offered in turn. Whichever is picked, it is named on
+   the button — "Keep going" that always says the same thing is a door you
+   stop noticing. */
+function extraRounds(){
+  const r=[];
+  if(typeof clauseDrill==="function" && (S.lessons.length?Math.max(...S.lessons):0)>=5)
+    r.push({label:"four sentences",run:()=>startSession(clauseDrill(4),"sent")});
+  if(typeof gridSprint==="function" && gridStarted().length)
+    r.push({label:"a paradigm sprint",run:()=>startSession(gridSprint(10),"d")});
+  if(typeof caseEarned==="function" && caseEarned().length>=4)
+    r.push({label:"four case questions",run:()=>startSession(caseDrill(4),"d")});
+  r.push({label:"ninety seconds of look-alikes",
+          run:()=>startSession(lookalikeDrill(8),"d")});
+  if(typeof dailyMix==="function")
+    r.push({label:"a daily mix",run:()=>startSession(dailyMix(),"d")});
+  return r;
+}
+
 function extraTask(){
-  const f=S.focus;
-  if(f){
-    const fresh=focusFresh(f);
-    if(fresh.length) return {label:`Learn ${Math.min(5,fresh.length)} more from ${focusRef(f)}`,
-                             run:()=>startFocusNew(5)};
-  }else{
-    const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
-    if(fresh) return {label:`Learn ${Math.min(5,fresh)} more word${fresh===1?"":"s"}`,
-                      run:()=>startNew(5)};
+  /* Two helpings of the plan's own work first — more words, more of the
+     chapter — and after that a round, because "Keep going · learn 5 more
+     words" offered for the fourth time in an evening is not an invitation. */
+  if(extraDone()<2){
+    const f=S.focus;
+    if(f){
+      const fresh=focusFresh(f);
+      if(fresh.length) return {label:`Learn ${Math.min(5,fresh.length)} more from ${focusRef(f)}`,
+                               run:()=>startFocusNew(5)};
+    }else{
+      const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
+      if(fresh) return {label:`Learn ${Math.min(5,fresh)} more word${fresh===1?"":"s"}`,
+                        run:()=>startNew(5)};
+    }
+    const lp=S.lessonPart;
+    const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
+    if(l){
+      const at=(lp&&lp.id===l.id)?lp.part:0;
+      return {label:at?`More of chapter ${l.id}`:`Start chapter ${l.id}`,
+              run:()=>lessonWalk(l.id,at)};
+    }
   }
-  const lp=S.lessonPart;
-  const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
-  if(l){
-    const at=(lp&&lp.id===l.id)?lp.part:0;
-    return {label:at?`More of chapter ${l.id}`:`Start chapter ${l.id}`,
-            run:()=>lessonWalk(l.id,at)};
-  }
-  return {label:"Practise what you know",run:()=>startReview()};
+  const r=extraRounds();
+  return r.length ? r[extraDone()%r.length]
+                  : {label:"Practise what you know",run:()=>startReview()};
 }
 function runExtra(){ const x=extraTask(); if(x) x.run(); }
 
@@ -893,7 +942,13 @@ function finish(){
 /* The example verse with its word picked out of the line. A gloss tells you
    what a word means; a verse shows you what it does, and every one of these
    is short enough and common enough to be read rather than decoded. */
-function exampleHtml(i){
+/* `plain` suppresses the reference button. The lookup list renders each
+   result as a <button> that plays the word, and a button inside a button is
+   invalid HTML — the parser closes the outer one early and the row comes
+   apart. There is nothing to lose there anyway: tapping the row already does
+   something, and a second control inside it would be a target you hit by
+   accident. */
+function exampleHtml(i,plain){
   const e=(typeof EXAMPLES!=="undefined") && EXAMPLES[i];
   if(!e) return "";
   const w=e[1].split(" ");
@@ -912,7 +967,15 @@ function exampleHtml(i){
     }
     w[at]=`<b>${w[at]}</b>`;
   }
-  return `<div class="ex"><span class="gk">${w.join(" ")}</span>${form}<span class="ref">${e[0]}</span></div>`;
+  /* The reference is a door. A card that shows you a verse and then leaves
+     you to go and find it is asking you to do the one thing the app is for.
+     e[5..7] are the address openGntChapter takes — book abbreviation,
+     chapter index, verse number — resolved by tools/build_examples.py so
+     that no reference parser is needed here. */
+  const ref = (e.length>=8 && !plain)
+    ? `<button class="ref link" onclick="event.stopPropagation();openGntChapter('${e[5]}',${e[6]},${e[7]})">${e[0]} ›</button>`
+    : `<span class="ref">${e[0]}</span>`;
+  return `<div class="ex"><span class="gk">${w.join(" ")}</span>${form}${ref}</div>`;
 }
 /* The principal parts, for the forty-one verbs that have them. They were
    only ever visible inside one drill; on the card they are seen by anyone
@@ -953,8 +1016,9 @@ function flashcard(i){
       if(S.speak!==0) playWord(i,null,true);
       document.getElementById("show").outerHTML=`
         ${isLeech(i)?`<p class="muted" style="font-size:.8rem;text-align:center;margin:0 0 8px">
-           You have lost this one ${S.cards[i].lapses} times. Make a mnemonic, or
+           You have lost this one ${S.cards[i].lapses} times. Write yourself a note below, or
            <a href="#" onclick="suspendWord(${i});return false" style="color:var(--gold)">set it aside</a>.</p>`:""}
+        <div id="noteBox" style="text-align:center;margin:0 0 10px">${noteHtml(i)}</div>
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
@@ -1897,6 +1961,27 @@ function reverseVocab(){
 }
 /* The drill now feeds the same schedule the daily review draws from, rather
    than being twelve unweighted questions in a menu of twelve drills. */
+/* One of each. Interleaving is the least comfortable way to practise and the
+   one the evidence keeps favouring: blocked practice feels fluent because the
+   next question is the same kind as the last, which is exactly why it does
+   not transfer. Everything here is a drill that already exists; what is new
+   is that they arrive shuffled together instead of one menu entry at a time.
+
+   Built from whatever is available, so a learner three chapters in gets a
+   shorter mix rather than a broken one. */
+function dailyMix(){
+  const take=(fn,n)=>{ try{ const q=fn(); return (q||[]).slice(0,n); }catch(e){ return []; } };
+  const q=[
+    ...take(()=>dueList().slice(0,2).map(flashcard),2),
+    ...take(()=>lookalikeDrill(1),1),
+    ...take(()=>parseRealDrill(1),1),
+    ...take(()=>typeof caseDrill==="function"?caseDrill(1):[],1),
+    ...take(()=>typeof gridSprint==="function"?gridSprint(2):[],2),
+    ...take(()=>typeof clauseDrill==="function"?clauseDrill(2):[],2),
+  ];
+  return q.sort(()=>Math.random()-.5);
+}
+
 function mixedQuiz(){
   const all=[];
   const add=l=>l.quiz.forEach((x,n)=>all.push(mcq(x.q,x.o,x.a,x.w,`L${l.id}q${n}`)));
@@ -1928,7 +2013,8 @@ const DRILLS=[
 ["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3),"grids")],
 ["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(),"d")],
 ["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
-["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")]
+["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],
+["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
@@ -1936,6 +2022,7 @@ const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
                 "Listening — words","Write it from memory"],
   "Reading":["Read a sentence","Case functions"],
+  "Everything":["Daily mix"],
   "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
              "Mixed grammar review"],
@@ -2183,7 +2270,7 @@ function wordRowsHtml(hits){
     <button class="lk" onpointerdown="prepWord(${i})"
             onclick="${VOCAB_AUDIO[i]&&extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
-      <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${exampleHtml(i)}</span>
+      <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${exampleHtml(i,true)}</span>
       <span class="fq">${v[2]}\u00d7</span>
     </button>`).join("");
 }
@@ -2566,6 +2653,16 @@ function saneState(x){
      content, not a position, so a re-worded caption starts that round again
      rather than quietly inheriting another round's schedule. `best` is the
      fastest fill in seconds and rides on the same card. */
+  /* Your own notes, by VOCAB index. Length-capped because they are rendered
+     into the card, and index-checked because a note on a word that does not
+     exist is a note nobody will ever see. */
+  out.notes={};
+  const nt=(x.notes&&typeof x.notes==="object"&&!Array.isArray(x.notes))?x.notes:{};
+  for(const k of Object.keys(nt)){
+    const i=Number(k);
+    if(Number.isInteger(i) && i>=0 && i<VOCAB.length && typeof nt[k]==="string"
+       && nt[k].trim()) out.notes[i]=nt[k].trim().slice(0,160);
+  }
   out.grids={};
   const gr=(x.grids&&typeof x.grids==="object"&&!Array.isArray(x.grids))?x.grids:{};
   for(const k of Object.keys(gr)){
@@ -2611,7 +2708,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},grids:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
+  S={cards:{},gcards:{},grids:{},notes:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
   save(); renderProgress(); toast("Everything reset");
 }
 

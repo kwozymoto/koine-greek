@@ -61,6 +61,11 @@ function mergeStates(local, remote) {
      file where max is the wrong answer. Copied rather than mutated:
      mergeCards hands back whichever card it picked, and writing through it
      would edit S itself before the caller has compared them. */
+  /* Notes you wrote on a card. Union, and where both devices have written
+     one for the same word the local wins — you are on this device, looking at
+     it, and a silent overwrite from elsewhere is the worse surprise. Same
+     rule as myGloss, for the same reason. */
+  out.notes = Object.assign({}, remote.notes || {}, local.notes || {});
   out.grids = mergeCards(local.grids, remote.grids);
   for (const k of Object.keys(out.grids)) {
     const bs = [(local.grids || {})[k], (remote.grids || {})[k]]
@@ -163,7 +168,7 @@ async function syncPull() {
                                      o.lessons, o.badges, o.suspended, o.restUsed, o.pin,
                                      o.alpha, o.plan, o.lessonPart,
                                      o.lcards, o.myGloss, o.focus, o.focusDone,
-                                     o.grids]);
+                                     o.grids, o.notes]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

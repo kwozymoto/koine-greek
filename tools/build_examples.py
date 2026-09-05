@@ -146,6 +146,11 @@ for b in man["books"]:
             known = sum(1 for x in vidx if x is not None)
             verses.append({
                 "ref": "%s %d:%d" % (b["t"], chno, vs[0]),
+                # the address the reader opens by, as opposed to the one a
+                # person reads: openGntChapter takes a book abbreviation and
+                # a chapter *index*, and resolving "Luke 9:55" to those in
+                # JavaScript would mean a second reference parser
+                "at_book": b["a"], "at_ch": ci, "at_v": vs[0],
                 "words": [w[0] for w in ws],
                 # the whole token, so the chosen word can carry its parse onto
                 # the card — [text, lemmaIdx, posIdx, parseCode]
@@ -191,8 +196,9 @@ for i in range(len(V)):
         continue
     _, v, at = e
     text = " ".join(v["words"]).replace('"', "'")
-    rows.append('["%s","%s",%d,"%s","%s"]'
-                % (v["ref"], text, at, POS[v["tok"][at][2]], v["tok"][at][3]))
+    rows.append('["%s","%s",%d,"%s","%s","%s",%d,%d]'
+                % (v["ref"], text, at, POS[v["tok"][at][2]], v["tok"][at][3],
+                   v["at_book"], v["at_ch"], v["at_v"]))
 
 out = '''/* One example verse per word, chosen from the SBLGNT in data/gnt/ by
    tools/build_examples.py — not written by hand, and not copied from
@@ -201,12 +207,18 @@ out = '''/* One example verse per word, chosen from the SBLGNT in data/gnt/ by
    preferring one where the word is still recognisably the word on the card.
 
    [reference, verse text, index of the target word, its part of speech,
-    its parse code]
+    its parse code, book abbreviation, chapter index, verse number]
    null where the corpus offers nothing short enough to be useful.
 
-   The last two are what the card labels the highlighted form with, through
-   the same gntParse() the Read tab uses — so an augmented aorist stops being
-   a puzzle and starts being the thing the chapter is teaching.
+   Elements 3 and 4 are what the card labels the highlighted form with,
+   through the same gntParse() the Read tab uses — so an augmented aorist
+   stops being a puzzle and starts being the thing the chapter is teaching.
+
+   The last three are the address the reader opens by, which is not the one a
+   person reads: openGntChapter takes a book abbreviation and a chapter
+   *index*, and SBLGNT omits passages, so the index is not the number. They
+   are resolved here rather than in JavaScript, which would have meant a
+   second reference parser for the sake of one button.
 
    Regenerate whenever data/vocab.js grows. Indexed by VOCAB position, like
    VOCAB_AUDIO, which is why vocab.js stays append-only. */
