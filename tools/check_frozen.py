@@ -2,7 +2,14 @@
 """Notice when a field changed that nobody meant to change.
 
     python tools/check_frozen.py
-    python tools/check_frozen.py --accept       # yes, I meant those
+    python tools/check_frozen.py --accept          # yes, I meant those
+    python tools/check_frozen.py --since 6555230   # against an older baseline
+
+`--since` matters more than it looks. This compares against HEAD, so once a
+change is committed it becomes the new baseline and the checker can no longer
+see it. Anything written before this file existed is therefore unexamined by
+it, and the fields most at risk are exactly the ones in the commits that
+prompted it. Point it at the commit before the work started.
 
 Every other checker asks "is this true?" and answers it against the corpus.
 This one asks a different question, because some fields have no truth to
@@ -53,11 +60,15 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ACCEPT = "--accept" in sys.argv
+BASE = "HEAD"
+if "--since" in sys.argv:
+    BASE = sys.argv[sys.argv.index("--since") + 1]
 
 
 def head_version(rel):
-    """The file as HEAD has it, or None if it is not committed yet."""
-    r = subprocess.run(["git", "show", "HEAD:" + rel], cwd=ROOT,
+    """The file as the baseline commit has it, or None if it has no version
+       there — a file added since is simply new, not changed."""
+    r = subprocess.run(["git", "show", "%s:%s" % (BASE, rel)], cwd=ROOT,
                        capture_output=True, text=True, encoding="utf-8")
     return None if r.returncode else r.stdout
 
@@ -168,8 +179,8 @@ for label, new, old in pairs:
             changed.append("%s\n       was: %s\n       now: GONE — these files are "
                            "append-only" % (k, json.dumps(old[k], ensure_ascii=False)[:110]))
 
-print("protected fields compared against HEAD: %d"
-      % sum(len(n) for _, n, o in pairs if n and o))
+print("protected fields compared against %s: %d" % (BASE,
+        sum(len(n) for _, n, o in pairs if n and o)))
 print("new entries (append is the normal case): %d" % added)
 print()
 print("existing entries that changed: %d" % len(changed))
