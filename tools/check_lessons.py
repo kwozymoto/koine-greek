@@ -251,7 +251,7 @@ BARE = {
 # check_coverage.py imports this rather than keeping its own copy — CLAUDE.md
 # warns about exactly this kind of duplication, and RETIRED in four files is
 # the example it gives.
-DONE = {1, 2, 3, 4, 5, 6, 7, 21}
+DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 21}
 
 # The dose is defined in js/app.js and read from it, not repeated here.
 DOSE = 3

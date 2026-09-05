@@ -110,6 +110,14 @@ them and the third gained the section on elided prepositions it was missing
 anyway — which is the usual outcome. A chapter that divides badly is often a
 chapter with a section too many or one too few.
 
+**A part is 110 to 130 words of prose**, tables not counted. That is not a
+target invented in advance; it is the range the approved chapters actually
+occupy, from chapter 5's 85 to chapter 3's 137. Batch 4 first came in at
+128–141 words a part with chapter 8 heavy in every one of them, and trimming
+it back was a matter of cutting sentences that restated the one before, not
+of cutting teaching. A part far outside the range is padded or crammed, and
+you can tell which by reading it aloud.
+
 Then check what each sitting actually contains. Chapter 4 reads masculine /
 neuter / the article; chapter 7 reads how the imperfect is built / what it
 means and the aorist / εἰμί and the traps. If a sitting has no theme, the

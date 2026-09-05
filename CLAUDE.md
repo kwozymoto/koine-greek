@@ -136,7 +136,10 @@ inserting a section shifts every `sec` after it, and every headed part needs
 at least one question. `check_lessons` enforces both for chapters in its
 `DONE` set — add yours to it when a batch lands.
 
-Length is settled: about 950 words and 6–8 parts per chapter. Black is taught
+Length is settled: 6, 8 or 9 parts, and about 110–130 words of prose in each
+of them — so 650 words for a short chapter and 1,200 for a dense one, tables
+not counted. That range is measured off the chapters already approved; a part
+much outside it is either padded or crammed. Black is taught
 at a chapter a week over a year, and the week goes on paradigms and
 vocabulary, not on reading. The prose is scaffolding.
 

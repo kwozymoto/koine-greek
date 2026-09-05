@@ -442,109 +442,300 @@ quiz:[
 {q:"ἔβαλον and ἔβαλλον differ by one letter. What is the difference?",o:["Person","Aorist against imperfect","Active against middle","Nothing; both spellings occur"],a:1,w:"One lambda. ἔβαλον is the second aorist, ἔβαλλον the imperfect, and here the stem carries the tense rather than the ending.",sec:5},
 {q:"What is the aorist of εἰμί?",o:["ἦν","ἐγενόμην","There is none — it has only an imperfect","ἔσομαι"],a:2,w:"εἰμί has no aorist. Its past is the imperfect: ἤμην, ἦς, ἦν, ἦμεν, ἦτε, ἦσαν — and ἦν alone accounts for most of its 455 occurrences.",sec:6}]},
 {id:8,t:"Additional prepositions",s:"Case changes the meaning",
-body:`<p>Many Greek prepositions take more than one case, and the case changes the meaning. This is a place where a lazy reading goes wrong quickly.</p>
+body:`<p>Prepositions are small words carrying a great deal of a sentence's logic. In chapter 5 you met four of them — <span class="gk">ἐν, εἰς, ἐκ</span> and <span class="gk">ἀπό</span> — and each one took a single case.</p>
+<p>Most of the common prepositions are not so simple. They take two cases, and two of them take three, and the case is not decoration. <span class="gk">διά</span> with the genitive means <i>through</i>; <span class="gk">διά</span> with the accusative means <i>because of</i>. Same word, different case, different logic. So reading a preposition means reading two things — the word, and the case of whatever follows it.</p>
+<h3>Two cases, two meanings</h3>
+<p>Six prepositions carry most of this weight. The proportions are counted from the text itself, and a preposition's commoner case is the one to reach for first.</p>
 <table>
-<tr><th>Prep</th><th>+ Gen</th><th>+ Dat</th><th>+ Acc</th></tr>
-<tr><td class="g">διά</td><td>through</td><td>—</td><td>because of</td></tr>
-<tr><td class="g">κατά</td><td>down from, against</td><td>—</td><td>according to</td></tr>
-<tr><td class="g">μετά</td><td>with</td><td>—</td><td>after</td></tr>
-<tr><td class="g">παρά</td><td>from (a person)</td><td>with, at the side of</td><td>alongside; contrary to</td></tr>
-<tr><td class="g">ὑπέρ</td><td>on behalf of</td><td>—</td><td>above, beyond</td></tr>
-<tr><td class="g">ὑπό</td><td>by (agent)</td><td>—</td><td>under</td></tr>
-<tr><td class="g">ἐπί</td><td>on, over</td><td>on, at</td><td>on, to, against</td></tr></table>
-<h3>More single-case prepositions</h3>
-<p>You met <span class="gk">ἐν, εἰς, ἐκ</span> and <span class="gk">ἀπό</span> in chapter 5. These join them, and they too take one case only.</p>
-<p><b>Genitive only:</b> <span class="gk">πρό</span> (before), <span class="gk">ἀντί</span> (instead of).<br>
-<b>Dative only:</b> <span class="gk">σύν</span> (with).<br>
-<b>Accusative only:</b> <span class="gk">πρός</span> (to, toward), <span class="gk">ἀνά</span> (up, among).</p>
-<p>Because <span class="gk">ἐν</span> is always dative and <span class="gk">εἰς</span> always accusative, those two remain the most reliable signposts in the text.</p>
+<tr><th>Prep</th><th>+ Genitive</th><th>+ Accusative</th></tr>
+<tr><td class="g">διά</td><td>through (58%)</td><td>because of (42%)</td></tr>
+<tr><td class="g">κατά</td><td>against, down from (16%)</td><td>according to (84%)</td></tr>
+<tr><td class="g">μετά</td><td>with (78%)</td><td>after (22%)</td></tr>
+<tr><td class="g">περί</td><td>concerning (89%)</td><td>around (11%)</td></tr>
+<tr><td class="g">ὑπέρ</td><td>on behalf of (87%)</td><td>above (13%)</td></tr>
+<tr><td class="g">ὑπό</td><td>by (77%)</td><td>under (23%)</td></tr></table>
+<p class="v" data-ref="1 Corinthians 15:3">Χριστὸς ἀπέθανεν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν κατὰ τὰς γραφάς</p>
+<p>"Christ died for our sins according to the Scriptures." Both prepositions here are doing exactly what their case says. <span class="gk">ὑπέρ</span> has the genitive, so it is <i>on behalf of</i>; <span class="gk">κατά</span> has the accusative, so it is <i>according to</i>. Put <span class="gk">κατά</span> with a genitive instead and the same sentence says Christ died <i>against</i> the Scriptures.</p>
+<h3>ἐπί and παρά: three cases each</h3>
+<p><span class="gk">ἐπί</span> is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183. The honest thing to say is that the distinctions have largely worn away, and all three can mean simply <i>on</i>.</p>
+<p class="v" data-ref="Matthew 6:19">Μὴ θησαυρίζετε ὑμῖν θησαυροὺς ἐπὶ τῆς γῆς</p>
+<p class="v" data-ref="Matthew 10:29">οὐ πεσεῖται ἐπὶ τὴν γῆν</p>
+<p>"Do not store up treasures on earth"; "will not fall to the ground." Genitive in the first, accusative in the second, and the case is not what separates them. With <span class="gk">ἐπί</span>, read the sentence.</p>
+<p><span class="gk">παρά</span> is the opposite. It occurs 193 times, and all three of its cases are still clean.</p>
+<p class="v" data-ref="John 6:45">πᾶς ὁ ἀκούσας παρὰ τοῦ πατρὸς</p>
+<p class="v" data-ref="Luke 1:30">εὗρες γὰρ χάριν παρὰ τῷ θεῷ</p>
+<p class="v" data-ref="Matthew 4:18">Περιπατῶν δὲ παρὰ τὴν θάλασσαν</p>
+<p>Genitive, <i>from</i> the Father. Dative, <i>with</i> God. Accusative, <i>beside</i> the sea. One word, three cases, three plainly different things.</p>
+<h3>The picture behind the case</h3>
+<p>Those three <span class="gk">παρά</span> phrases are not a coincidence. Underneath them is one idea that makes the whole list easier to hold.</p>
+<p>Broadly: the <b>genitive</b> is movement <i>away from</i>, the <b>dative</b> is position <i>at</i>, and the <b>accusative</b> is movement <i>towards</i>. From, at, to.</p>
+<p>You have already met it without being told. Chapter 5's prepositions are the same picture in miniature — <span class="gk">ἐκ</span> with the genitive is <i>out of</i>, <span class="gk">ἐν</span> with the dative is <i>in</i>, <span class="gk">εἰς</span> with the accusative is <i>into</i>. <span class="gk">παρά</span> does all three at once.</p>
+<p>It is a picture and not a rule. <span class="gk">κατά</span> with the accusative means <i>according to</i>, and nothing is moving anywhere. Use it to remember the pattern, not to argue a point in a sermon.</p>
+<h3>The ones that take a single case</h3>
+<p>Five more, each locked to one case, which makes them the easiest words on the page.</p>
+<p><b>Genitive:</b> <span class="gk">πρό</span>, before (47) · <span class="gk">ἀντί</span>, instead of (22).<br>
+<b>Dative:</b> <span class="gk">σύν</span>, with — 129 occurrences, 129 datives.<br>
+<b>Accusative:</b> <span class="gk">πρός</span>, to or towards (688 of its 696) · <span class="gk">ἀνά</span>, up (5, and in the New Testament nearly always distributive — <i>two by two</i>).</p>
+<p><span class="gk">πρός</span> is worth singling out: the fifth commonest preposition in the New Testament, and accusative in all but a handful of its occurrences. With <span class="gk">ἐν</span> and <span class="gk">εἰς</span>, it is one of the few genuinely reliable case-signals in the text.</p>
+<p class="v" data-ref="Mark 10:45">δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν</p>
+<p>"To give his life a ransom in place of many." Twenty-two occurrences, and <span class="gk">ἀντί</span> is the plainest word Greek has for one thing standing where another would have stood.</p>
+<h3>By whom, and through whom</h3>
+<p>Two of these prepositions divide up a job English does with a single word. <span class="gk">ὑπό</span> with the genitive names the one who did it; <span class="gk">διά</span> with the genitive names the one it was done <i>through</i>.</p>
+<p class="v" data-ref="Matthew 1:22">τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου</p>
+<p>"What was spoken by the Lord through the prophet." Both prepositions inside five words, and the distinction is deliberate: the Lord is the speaker, the prophet the means. Matthew uses the formula again at 2:15.</p>
+<p class="v" data-ref="John 1:3">πάντα δι’ αὐτοῦ ἐγένετο</p>
+<p>"All things came into being through him."</p>
+<p>Do not press the line harder than it will bear — Greek can use <span class="gk">διά</span> where English says <i>by</i>. But where a writer sets the two side by side in one clause, as Matthew does, he means the difference.</p>
 <h3>Compound verbs</h3>
-<p>A great many New Testament verbs are a preposition glued to the front of a simple verb, and the preposition usually still carries its own sense. <span class="gk">βάλλω</span> "I throw" gives <span class="gk">ἐκβάλλω</span> "I throw out"; <span class="gk">ἔρχομαι</span> "I come" gives <span class="gk">εἰσέρχομαι</span> (in), <span class="gk">ἐξέρχομαι</span> (out), <span class="gk">ἀπέρχομαι</span> (away) and <span class="gk">προσέρχομαι</span> (toward). Learn the simple verb and you have read a dozen.</p>
-<p>Two things follow. The augment goes on the <b>verb</b>, not the front of the word, so the aorist of <span class="gk">ἀποθνῄσκω</span> is <span class="gk">ἀπέθανον</span> with the vowel tucked inside — worth remembering when you are hunting for a stem. And a compound sometimes drifts away from the sum of its parts, so the preposition is a strong hint and never a proof.</p>`,
+<p>A great many New Testament verbs are a preposition glued to the front of a simpler verb, and the preposition usually still means what it means.</p>
+<p><span class="gk">ἔρχομαι</span>, "I come", is the clearest case. On its own it occurs 631 times, and it heads a family of seventeen compounds worth 759 more between them: <span class="gk">ἐξέρχομαι</span> go out (216), <span class="gk">εἰσέρχομαι</span> go in (193), <span class="gk">ἀπέρχομαι</span> go away (117), <span class="gk">προσέρχομαι</span> come to (86), <span class="gk">διέρχομαι</span> go through (41), <span class="gk">συνέρχομαι</span> come together (30). Learn one verb and you have read most of a page.</p>
+<p>The same trick works elsewhere: <span class="gk">βάλλω</span> is "I throw", so <span class="gk">ἐκβάλλω</span> is "I throw out".</p>
+<p>But it is a hint and not a proof, and this chapter's own vocabulary supplies the counter-example. <span class="gk">ἀναγινώσκω</span> is <span class="gk">ἀνά</span> plus <span class="gk">γινώσκω</span>, and it means "I read" — not "I know up".</p>
+<h3>Where the augment goes</h3>
+<p>The augment marks past time and belongs to the verb, so in a compound it lands <b>inside</b> the word, between the preposition and the stem.</p>
+<p class="v" data-ref="Matthew 21:12">Καὶ εἰσῆλθεν Ἰησοῦς εἰς τὸ ἱερόν, καὶ ἐξέβαλεν πάντας</p>
+<p>"And Jesus entered the temple and threw out everyone." The augment is buried in both verbs — <span class="gk">εἰσ-ῆλθεν</span> and <span class="gk">ἐξ-έ-βαλεν</span> — and <span class="gk">ἐκ</span> has become <span class="gk">ἐξ</span> before the augment's vowel, the adjustment chapter 5 described.</p>
+<p>So when a word will not give up its stem, look past the front of it. <span class="gk">ἀπέθανεν</span>, "he died", is <span class="gk">ἀπό</span> plus the augment plus the aorist stem of <span class="gk">ἀποθνῄσκω</span>, and staring at the first three letters will never produce it.</p>
+<p>One more thing sits in that verse: <span class="gk">εἰσῆλθεν … εἰς</span>. Greek often repeats the preposition after a compound verb, and it adds nothing. Translate it once.</p>
+<h3>What to watch for</h3>
+<p>Three habits.</p>
+<p><b>Read the case, not only the word.</b> The noun that follows is doing as much of the work as the preposition is.</p>
+<p><b>Expect the shortened forms.</b> Chapter 5 covered why they happen; what it could not say is how often — <span class="gk">διά</span> occurs 666 times and is written <span class="gk">δι’</span> in 149 of them. Add <span class="gk">κατ’</span> and <span class="gk">καθ’</span>, <span class="gk">μετ’</span> and <span class="gk">μεθ’</span>, <span class="gk">ἐπ’</span> and <span class="gk">ἐφ’</span>, <span class="gk">ὑπ’</span> and <span class="gk">ὑφ’</span>. Only <span class="gk">περί</span> and <span class="gk">πρό</span> never shorten.</p>
+<p class="v" data-ref="Luke 9:23">ἀράτω τὸν σταυρὸν αὐτοῦ καθ’ ἡμέραν</p>
+<p>"Let him take up his cross daily." <span class="gk">καθ’ ἡμέραν</span> is <span class="gk">κατά</span> with the accusative, set hard as an idiom, and you will meet it seventeen times.</p>
+<p><b>And do not build on a compound.</b> The preposition tells you where to look. The sentence tells you what it means.</p>`,
 v:[19,22,24,37,38,50,68,80,105,126,145,247,198,336,446,507,506],
 vids:[{t:"Lecture 8: Additional Prepositions",s:"Daily Dose of Greek — Rob Plummer (17:43)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-8/"}],
 quiz:[
-{q:"διὰ τοῦτο (accusative) means:",o:["through this","because of this","with this","after this"],a:1,w:"διά with the accusative means 'because of'. With the genitive it means 'through'. Same word, different case, different logic.",sec:0},
-{q:"Which preposition always takes the dative?",o:["εἰς","ἐν","πρός","ἐκ"],a:1,w:"ἐν is invariably dative — which makes it one of the most useful case-signals in the NT.",sec:1},
-{q:"ὑπό with the genitive most often marks:",o:["Location under something","The agent of a passive verb","Purpose","Time"],a:1,w:"'By' — the personal agent of a passive verb. With the accusative it means physically 'under'.",sec:0},
-{q:"The aorist of ἀποθνῄσκω is ἀπέθανον, not ἠποθνῃσκον. Why?",o:["It is irregular and simply has to be learned","The augment goes on the verb, inside the compound, not on the preposition","Compound verbs take no augment","The preposition is dropped in the aorist"],a:1,w:"A compound is a preposition plus a verb, and the augment attaches to the verb. Expect to find it tucked inside the word — which is where to look when you are hunting for the stem.",sec:2}]},
+{q:"διὰ τοῦτο — τοῦτο is accusative. What does it mean?",o:["through this","because of this","with this","after this"],a:1,w:"διά with the accusative is 'because of'; with the genitive it is 'through'. Same word, different case, different logic.",sec:0},
+{q:"κατά takes the accusative in 84% of its occurrences. What does it mean there?",o:["against","according to","down from","alongside"],a:1,w:"κατὰ τὰς γραφάς, 'according to the Scriptures' (1 Cor 15:3). With the genitive the same word means 'against' — which would turn that verse inside out.",sec:1},
+{q:"ἐπί takes all three cases. What follows from that?",o:["Each case has a sharply distinct meaning","The distinctions have largely worn away — read the sentence","It is always genitive in practice","It is a compound of two prepositions"],a:1,w:"ἐπὶ τῆς γῆς and ἐπὶ τὴν γῆν both mean 'on the earth'. With ἐπί the case is a weak guide and the context is the strong one.",sec:2},
+{q:"παρὰ τοῦ πατρός, παρὰ τῷ θεῷ, παρὰ τὴν θάλασσαν. What are the three?",o:["From, with, beside","Beside, from, with","With, beside, from","All three mean 'from'"],a:0,w:"Genitive from, dative with, accusative beside. παρά is the one preposition where all three cases are still cleanly distinct.",sec:2},
+{q:"The picture behind the cases is:",o:["Genitive at, dative from, accusative towards","Genitive from, dative at, accusative towards","Genitive towards, dative from, accusative at","There is no pattern"],a:1,w:"From, at, to. ἐκ out of (gen), ἐν in (dat), εἰς into (acc) is the same picture in three words. It is a memory aid, not a rule — κατά with the accusative means 'according to' and nothing is moving.",sec:3},
+{q:"σύν occurs 129 times. How many take the dative?",o:["About half","All 129","Only when it means 'together'","None — it takes the genitive"],a:1,w:"Every one. σύν, πρό, ἀντί, πρός and ἀνά are locked to a single case each, which makes them the easiest prepositions to read.",sec:4},
+{q:"λύτρον ἀντὶ πολλῶν (Mark 10:45). What is ἀντί doing?",o:["Naming a price","Marking substitution — in place of","Marking time","Marking direction"],a:1,w:"'A ransom in place of many.' ἀντί occurs only 22 times, and it is the plainest word Greek has for one thing standing where another would have stood.",sec:4},
+{q:"τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου. Why two prepositions?",o:["They are interchangeable","ὑπό names who spoke, διά names the one it came through","διά is a scribal addition","ὑπό marks place and διά marks time"],a:1,w:"ὑπό with the genitive is the agent; διά with the genitive is the means. The Lord is the speaker, the prophet the instrument — and Matthew sets them side by side deliberately.",sec:5},
+{q:"ἀναγινώσκω is ἀνά + γινώσκω. What does it mean?",o:["I know thoroughly","I read","I know from above","I recognise"],a:1,w:"'I read.' The preposition on a compound is a strong hint and never a proof — ἐκβάλλω really is 'I throw out', but this one is not 'I know up'.",sec:6},
+{q:"The aorist of ἀποθνῄσκω is ἀπέθανεν. Where is the augment?",o:["There is none","Inside the word, between the preposition and the stem","On the front, before ἀπό","On the ending"],a:1,w:"The augment belongs to the verb, so a compound carries it internally: ἀπ-έ-θανεν, εἰσ-ῆλθεν, ἐξ-έ-βαλεν. When a word will not give up its stem, look past the front of it.",sec:7},
+{q:"In Matthew 21:12, εἰσῆλθεν is followed by εἰς. How should the εἰς be translated?",o:["Twice, for emphasis","Once — Greek often repeats the preposition and it adds nothing","As 'out of'","It marks a second clause"],a:1,w:"Repeating the preposition after a compound verb is normal Greek and carries no extra weight.",sec:7},
+{q:"Which two prepositions never elide before a vowel?",o:["ἀπό and ἐπί","περί and πρό","κατά and μετά","ὑπό and διά"],a:1,w:"Everything else shortens: δι’, κατ’, καθ’, μετ’, μεθ’, ἐπ’, ἐφ’, ὑπ’, ὑφ’. διά alone is written δι’ in 149 of its 666 occurrences, so the shortened forms are not a curiosity.",sec:8},
+]},
 
 {id:9,t:"Personal pronouns",s:"ἐγώ, σύ, αὐτός — and the three uses of αὐτός",
-body:`<p>Pronouns stand in for nouns, and Greek's are everywhere: <span class="gk">αὐτός</span> alone occurs about 5,600 times. The case comes from the pronoun's own job in its clause; gender and number come from the word it replaces.</p>
-<table><caption>ἐγώ — I / ἡμεῖς — we</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>Nom</th><td class="g">ἐγώ</td><td class="g">ἡμεῖς</td></tr>
-<tr><th>Gen</th><td class="g">ἐμοῦ (μου)</td><td class="g">ἡμῶν</td></tr>
-<tr><th>Dat</th><td class="g">ἐμοί (μοι)</td><td class="g">ἡμῖν</td></tr>
-<tr><th>Acc</th><td class="g">ἐμέ (με)</td><td class="g">ἡμᾶς</td></tr></table>
-<table><caption>σύ — you / ὑμεῖς — you (plural)</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>Nom</th><td class="g">σύ</td><td class="g">ὑμεῖς</td></tr>
-<tr><th>Gen</th><td class="g">σοῦ (σου)</td><td class="g">ὑμῶν</td></tr>
-<tr><th>Dat</th><td class="g">σοί (σοι)</td><td class="g">ὑμῖν</td></tr>
-<tr><th>Acc</th><td class="g">σέ (σε)</td><td class="g">ὑμᾶς</td></tr></table>
-<p>The bracketed short forms are unaccented and lean on the previous word; they are the normal choice. The long forms carry emphasis or follow prepositions.</p>
-<p><span class="gk">αὐτός, αὐτή, αὐτό</span> declines exactly like the article pattern you know (<span class="gk">αὐτός, αὐτοῦ, αὐτῷ, αὐτόν…</span>), with the neuter <span class="gk">αὐτό</span> — no ν, like <span class="gk">τό</span>.</p>
-<h3>The three uses of αὐτός</h3>
-<p><b>1. Personal pronoun</b> (the overwhelming majority): <span class="gk">εἶδον αὐτόν</span> — "I saw him".</p>
-<p><b>2. Intensive</b>, in predicate position: <span class="gk">αὐτὸς ὁ κύριος</span> — "the Lord <i>himself</i>" (1 Thess 4:16).</p>
-<p><b>3. Identical</b>, in attributive position: <span class="gk">ὁ αὐτὸς κύριος</span> — "the <i>same</i> Lord" (1 Cor 12:5). Position relative to the article decides between 2 and 3 — the same rule as adjectives.</p>
-<h3>Emphatic subjects</h3>
-<p>The verb ending already tells you the subject, so a nominative pronoun is never required. When it appears, it is emphatic: <span class="gk">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</span> — "<i>I</i> baptised you with water, but <i>he</i> will baptise you with the Holy Spirit" (Mark 1:8). Most of the ἐγώ εἰμι sayings in John carry this weight — though a pronoun the syntax requires is not emphatic just by being there.</p>`,
+body:`<p>Pronouns stand in for nouns so that a sentence need not keep repeating them, and Greek uses them constantly. <span class="gk">αὐτός</span> alone occurs 5,546 times — four times more often than <span class="gk">θεός</span>, the commonest noun in the New Testament — and <span class="gk">ἐγώ</span> and <span class="gk">σύ</span> add 5,466 more between them. You will not read a paragraph without one.</p>
+<p>One rule governs all of them, and it is worth having before the forms. A pronoun takes its <b>gender and number from the word it stands for</b>, and its <b>case from its own job in its own clause</b>. Those come from different places, and keeping them apart is most of the skill.</p>
+<h3>First and second person</h3>
+<table><caption>ἐγώ and σύ</caption>
+<tr><th></th><th>I</th><th>we</th><th>you</th><th>you (pl)</th></tr>
+<tr><th>Nom</th><td class="g">ἐγώ</td><td class="g">ἡμεῖς</td><td class="g">σύ</td><td class="g">ὑμεῖς</td></tr>
+<tr><th>Gen</th><td class="g">ἐμοῦ (μου)</td><td class="g">ἡμῶν</td><td class="g">σοῦ (σου)</td><td class="g">ὑμῶν</td></tr>
+<tr><th>Dat</th><td class="g">ἐμοί (μοι)</td><td class="g">ἡμῖν</td><td class="g">σοί (σοι)</td><td class="g">ὑμῖν</td></tr>
+<tr><th>Acc</th><td class="g">ἐμέ (με)</td><td class="g">ἡμᾶς</td><td class="g">σέ (σε)</td><td class="g">ὑμᾶς</td></tr></table>
+<p>The bracketed forms are the ordinary ones: no accent of their own, leaning on the word in front. The longer forms carry emphasis, and are also the ones used after a preposition — <span class="gk">ἀπ’ ἐμοῦ</span>, not <span class="gk">ἀπό μου</span>.</p>
+<p>Now the pair that catches people for years. <span class="gk">ἡμεῖς</span> is "we"; <span class="gk">ὑμεῖς</span> is "you". One letter and one breathing apart, all the way down: <span class="gk">ἡμῶν / ὑμῶν</span>, <span class="gk">ἡμῖν / ὑμῖν</span>, <span class="gk">ἡμᾶς / ὑμᾶς</span>. The mnemonic worth having is that the last letter of the English word is the first letter of the Greek one: "w<b>e</b>" ends in an e and <span class="gk">ἡμεῖς</span> begins with eta, while "yo<b>u</b>" ends in a u and <span class="gk">ὑμεῖς</span> begins with upsilon.</p>
+<p class="v" data-ref="John 4:22">ὑμεῖς προσκυνεῖτε ὃ οὐκ οἴδατε, ἡμεῖς προσκυνοῦμεν ὃ οἴδαμεν</p>
+<p>"You worship what you do not know; we worship what we know." Both in one line, and the whole point of the sentence is the contrast. Read them the wrong way round and you have reversed what Jesus said to the woman at the well.</p>
+<h3>αὐτός: the third person</h3>
+<table><caption>αὐτός — he, she, it (singular / plural)</caption>
+<tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
+<tr><th>Nom</th><td class="g">αὐτός / αὐτοί</td><td class="g">αὐτή / αὐταί</td><td class="g">αὐτό / αὐτά</td></tr>
+<tr><th>Gen</th><td class="g">αὐτοῦ / αὐτῶν</td><td class="g">αὐτῆς / αὐτῶν</td><td class="g">αὐτοῦ / αὐτῶν</td></tr>
+<tr><th>Dat</th><td class="g">αὐτῷ / αὐτοῖς</td><td class="g">αὐτῇ / αὐταῖς</td><td class="g">αὐτῷ / αὐτοῖς</td></tr>
+<tr><th>Acc</th><td class="g">αὐτόν / αὐτούς</td><td class="g">αὐτήν / αὐτάς</td><td class="g">αὐτό / αὐτά</td></tr></table>
+<p>There is almost nothing new here. It declines like <span class="gk">ἀγαθός</span> from chapter 6, with one exception you have met in the article: the neuter singular is <span class="gk">αὐτό</span>, with no final ν, exactly as the article's neuter is <span class="gk">τό</span>. That single letter is the difference between "it" and "him".</p>
+<p>None of the personal pronouns has a vocative. You do not address a pronoun.</p>
+<h3>Where each part of a pronoun comes from</h3>
+<p class="v" data-ref="John 1:10">ὁ κόσμος δι’ αὐτοῦ ἐγένετο, καὶ ὁ κόσμος αὐτὸν οὐκ ἔγνω</p>
+<p>"The world came into being through him, and the world did not know him." Both pronouns stand for the Word, so both are masculine singular. But <span class="gk">αὐτοῦ</span> is genitive because <span class="gk">διά</span> demands a genitive, and <span class="gk">αὐτόν</span> is accusative because it is the object of <span class="gk">ἔγνω</span>.</p>
+<p>That is the rule working: gender and number reach backwards to the noun, and case is decided by what the pronoun is doing where it stands. The relative pronoun behaves the same way, so it is worth settling now.</p>
+<h3>His, her, their</h3>
+<p>The commonest thing a Greek pronoun does is show possession, and it does it with a genitive placed <i>after</i> the noun. <span class="gk">ὁ λόγος μου</span> is literally "the word of me", which is to say "my word".</p>
+<p class="v" data-ref="Matthew 6:8">οἶδεν γὰρ ὁ πατὴρ ὑμῶν</p>
+<p>"For your Father knows." Notice the order: the article stays with its noun and the possessing pronoun follows. English puts it first and drops the article, which is why a literal rendering sounds odd.</p>
+<p>This is not a minor use. Of <span class="gk">αὐτός</span>'s 5,546 occurrences, 2,140 are genitive — nearly two in five — and most are somebody's something.</p>
+<h3>When the pronoun is emphatic</h3>
+<p>A verb ending already names its subject, so a nominative pronoun is never <i>required</i>. Greek uses one when it wants weight there, and the numbers show how marked that choice is: only 272 of <span class="gk">αὐτός</span>'s occurrences are nominative, fewer than one in twenty.</p>
+<p class="v" data-ref="Matthew 5:22">ἐγὼ δὲ λέγω ὑμῖν</p>
+<p>"But I say to you." The <span class="gk">-ω</span> of <span class="gk">λέγω</span> had already said "I". The <span class="gk">ἐγώ</span> is there because Jesus is setting himself against what was said to those of old.</p>
+<p class="v" data-ref="Mark 1:8">ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ</p>
+<p>"I baptised you with water, but he will baptise you with the Holy Spirit." Two nominative pronouns, and the sentence turns on the distance between them.</p>
+<p>Do not overclaim it, though. A pronoun the syntax needed is not emphatic simply by being there. Ask whether the sentence would have been complete without it.</p>
+<h3>αὐτός as "self" and as "same"</h3>
+<p><span class="gk">αὐτός</span> has two further uses, and position decides between them — the same rule that governed adjectives in chapter 6.</p>
+<p><b>Predicate position</b>, with no article in front of it, means <i>self</i>.</p>
+<p class="v" data-ref="1 Thessalonians 4:16">αὐτὸς ὁ κύριος ἐν κελεύσματι</p>
+<p>"The Lord himself, with a cry of command." And again:</p>
+<p class="v" data-ref="Revelation 21:3">αὐτὸς ὁ θεὸς μετ’ αὐτῶν ἔσται</p>
+<p>"God himself will be with them" — where the <span class="gk">αὐτῶν</span> in the same line is the ordinary pronoun, "them". One word doing two jobs in the space of five.</p>
+<p><b>Attributive position</b>, with the article immediately in front, means <i>same</i>.</p>
+<p class="v" data-ref="1 Corinthians 12:5">καὶ ὁ αὐτὸς κύριος</p>
+<p>"And the same Lord." Move one article and "the Lord himself" becomes "the same Lord".</p>
+
+<p class="v" data-ref="Matthew 1:21">αὐτὸς γὰρ σώσει τὸν λαὸν αὐτοῦ ἀπὸ τῶν ἁμαρτιῶν αὐτῶν</p>
+<p>"For he himself will save his people from their sins." Three forms of one word in eight, doing three different jobs: an intensive nominative, then two genitives of possession.</p>
+<h3>What to watch for</h3>
+<p><span class="gk">ἡμεῖς</span> and <span class="gk">ὑμεῖς</span>, and the whole column under them. This is the mistake that survives longest, because both readings usually make sense.</p>
+<p><span class="gk">αὐτοῦ</span> is "his", and "of it", and also just the genitive a preposition asked for. The gloss follows the job, not the form.</p>
+<p>The neuter <span class="gk">αὐτό</span> has no ν; <span class="gk">αὐτόν</span> is masculine accusative.</p>
+<p>And one pair to have in mind before chapter 11: <span class="gk">αὐτή</span> with a smooth breathing is "she", while <span class="gk">αὕτη</span> with a rough one is "this". Ten occurrences against seventy-two — so the odds favour the demonstrative, and odds are not reading.</p>`,
 v:[2,3,6],
 vids:[{t:"Lecture 9: Personal Pronouns",s:"Daily Dose of Greek — Rob Plummer (15:17)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-9/"},
       {t:"Come Thou Personal Pronouns Song",s:"Daily Dose of Greek — ἐγώ and σύ, sung through",yt:"v2cqHDo2vZw"}],
 quiz:[
-{q:"ὁ αὐτὸς κύριος means:",o:["The Lord himself","The same Lord","His Lord","The Lord alone"],a:1,w:"Attributive position (article immediately before αὐτός) = 'same'. Predicate position (αὐτὸς ὁ κύριος) = 'himself'.",sec:1},
-{q:"Since verb endings already mark the subject, an explicit ἐγώ or σύ is:",o:["Required for clarity","A politeness marker","Emphatic","Colloquial"],a:2,w:"Emphatic. When Jesus says ἐγώ εἰμι, the pronoun is doing deliberate work — the ending alone would have sufficed for 'I am'.",sec:2},
-{q:"μου, μοι, με differ from ἐμοῦ, ἐμοί, ἐμέ in that they are:",o:["Plural","Unaccented and unemphatic","Older forms","Only used with prepositions"],a:1,w:"The short enclitic forms are the everyday ones; the long forms carry stress or follow prepositions.",sec:0},
-{q:"ὑμῶν is:",o:["Genitive plural of σύ","Genitive plural of ἐγώ","Dative plural of σύ","Accusative plural of ἐγώ"],a:0,w:"'Of you (all)' — as in ὁ πατὴρ ὑμῶν, 'your Father'. ἡμῶν is 'our'. One vowel apart; readers confuse them for years, so nail it now.",sec:0}]},
+{q:"A pronoun takes its gender and number from one place and its case from another. Which is which?",o:["Both from the antecedent","Gender and number from the antecedent; case from its own clause","Both from its own clause","Case from the antecedent; gender from the verb"],a:1,w:"In John 1:10 both αὐτοῦ and αὐτόν stand for the Word, so both are masculine singular — but one is genitive after διά and the other accusative as the object of ἔγνω.",sec:0},
+{q:"μου, μοι, με differ from ἐμοῦ, ἐμοί, ἐμέ how?",o:["They are plural","They are unaccented and unemphatic — the everyday forms","They are older","They are only used in questions"],a:1,w:"The short forms lean on the word before them and carry no stress. The long forms are used for emphasis and after prepositions: ἀπ’ ἐμοῦ, not ἀπό μου.",sec:1},
+{q:"ἡμεῖς and ὑμεῖς differ by:",o:["Nothing — they are variants","One letter and one breathing: 'we' against 'you'","Case","Number"],a:1,w:"And it runs all the way down: ἡμῶν/ὑμῶν, ἡμῖν/ὑμῖν, ἡμᾶς/ὑμᾶς. In John 4:22 both appear in one line and the whole sentence is the contrast.",sec:1},
+{q:"The neuter singular of αὐτός is:",o:["αὐτόν","αὐτό — no final ν, like the article τό","αὐτῷ","αὐτός"],a:1,w:"The one irregularity in the paradigm, and it copies the article. αὐτόν is masculine accusative; αὐτό is neuter.",sec:2},
+{q:"In ὁ κόσμος αὐτὸν οὐκ ἔγνω, why is αὐτόν accusative?",o:["Because the Word is masculine","Because it is the object of ἔγνω","Because κόσμος is nominative","Because John prefers the accusative"],a:1,w:"Case comes from the job. Gender and number came from the antecedent — masculine singular, because it stands for the Word.",sec:3},
+{q:"ὁ πατὴρ ὑμῶν means:",o:["The Father of us","Your Father","The Father himself","That Father"],a:1,w:"A genitive pronoun after the noun is the ordinary way Greek shows possession — literally 'the Father of you'. Nearly two in five occurrences of αὐτός are genitive, and most are possessive.",sec:4},
+{q:"Since the verb ending already names the subject, what does an added ἐγώ signal?",o:["Politeness","Emphasis on the subject","That the verb is plural","Nothing; it is required"],a:1,w:"Only 272 of αὐτός's 5,546 occurrences are nominative — under one in twenty. When a nominative pronoun appears, it is doing work. But a pronoun the syntax needed is not emphatic just by being there.",sec:5},
+{q:"αὐτὸς ὁ κύριος means:",o:["The same Lord","The Lord himself","His Lord","That Lord"],a:1,w:"Predicate position — no article in front of αὐτός — gives 'self'. 1 Thessalonians 4:16.",sec:6},
+{q:"ὁ αὐτὸς κύριος means:",o:["The Lord himself","The same Lord","The Lord alone","Their Lord"],a:1,w:"Attributive position — the article immediately before αὐτός — gives 'same'. 1 Corinthians 12:5. One article decides which of the two you are reading.",sec:6},
+{q:"In Matthew 1:21, αὐτὸς γὰρ σώσει τὸν λαὸν αὐτοῦ, the two αὐτ- forms are:",o:["Both intensive","Intensive nominative, then a genitive of possession","Both possessive","A misprint for one word"],a:1,w:"'He himself will save his people.' The nominative is intensive; the genitive after the noun is 'his'. The verse adds a third, αὐτῶν, 'their sins'.",sec:6},
+{q:"αὐτοῦ can be 'his', 'of it', or simply the case a preposition asked for. What decides?",o:["The accent","The job it is doing in the sentence","The book it appears in","It is always possessive"],a:1,w:"The form is the same; the gloss follows the job. This is why parsing and translating are two steps and not one.",sec:7}
+]},
 
 {id:10,t:"Perfect and pluperfect active indicative",s:"Completed action, continuing results",
-body:`<p>The perfect is the most theologically loaded tense in the New Testament. It presents an action <b>completed in the past with results continuing in the present</b>. <span class="gk">γέγραπται</span> is not just "it was written" but "it stands written" — written then, authoritative now. <span class="gk">τετέλεσται</span> (John 19:30): finished then, finished still.</p>
-<h3>The form: reduplication + κ</h3>
-<p>The perfect doubles the initial consonant with ε (<span class="gk">λύω → λέλυκα</span>, <span class="gk">πιστεύω → πεπίστευκα</span>) and adds κ before the ending:</p>
-<table><caption>λέλυκα — I have loosed</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>1st</th><td class="g">λέλυκα</td><td class="g">λελύκαμεν</td></tr>
-<tr><th>2nd</th><td class="g">λέλυκας</td><td class="g">λελύκατε</td></tr>
-<tr><th>3rd</th><td class="g">λέλυκε(ν)</td><td class="g">λελύκασι(ν)</td></tr></table>
-<p>Verbs beginning with a vowel lengthen it instead of reduplicating: <span class="gk">ἀγαπάω → ἠγάπηκα</span>. Verbs beginning with φ, θ, χ reduplicate with the smooth partner: <span class="gk">φανερόω → πεφανέρωκα</span>. Some perfects lack the κ ("second perfects"): <span class="gk">γέγονα</span> from γίνομαι, <span class="gk">ἀκήκοα</span> from ἀκούω.</p>
-<p>A special case worth knowing: <span class="gk">οἶδα</span> ("I know") is perfect in form but present in meaning, and it is everywhere.</p>
+body:`<p>You have met three of the Greek verb's principal parts: the present, the future and the aorist. This chapter introduces the fourth, the perfect, and with it the pluperfect that is built on the same stem.</p>
+<p>The perfect is the tense most often preached on and the one most often overstated. What it actually claims is narrow, and worth holding precisely.</p>
+<h3>Completed action, continuing state</h3>
+<p>The perfect presents an action as <b>complete</b>, and presents the state resulting from it as <b>still standing</b>. The weight usually falls on the present state rather than on the past act.</p>
+<p>Paul puts the contrast inside one sentence:</p>
+<p class="v" data-ref="1 Corinthians 15:4">καὶ ὅτι ἐτάφη, καὶ ὅτι ἐγήγερται τῇ ἡμέρᾳ τῇ τρίτῃ κατὰ τὰς γραφάς</p>
+<p>"And that he was buried, and that he has been raised on the third day according to the Scriptures." <span class="gk">ἐτάφη</span> is an aorist — an event, reported, finished. <span class="gk">ἐγήγερται</span> is a perfect. Paul is not only saying that the resurrection happened; he is saying that it happened and that Christ is risen still. Swap in an aorist and the sentence still reports the event and stops saying the second thing.</p>
+<p>That is what the form is <i>for</i>. It is not a promise about what every instance of it achieves, which is where this chapter ends.</p>
+<h3>The form: reduplication and κα</h3>
+<p>Three things happen, and none of them is an augment.</p>
+<p><b>1.</b> The first consonant of the stem is doubled with an <span class="gk">ε</span> between: <span class="gk">λυ-</span> becomes <span class="gk">λελυ-</span>. This is <i>reduplication</i>, and it is the perfect's signature.<br>
+<b>2.</b> <span class="gk">κα</span> is added after the stem.<br>
+<b>3.</b> The endings are the secondary active ones you already know.</p>
+<p>So <span class="gk">λύω</span> gives <span class="gk">λέλυκα, λέλυκας, λέλυκε(ν), λελύκαμεν, λελύκατε, λελύκασι(ν)</span> — the full column is in Tables, beside the four tenses you already have. Note that the first singular has no ν and the third ends in <span class="gk">-ε(ν)</span>, which is what keeps them apart.</p>
+<p>Real examples look exactly like that. First person: <span class="gk">πιστεύω → πεπίστευκα</span>, <span class="gk">λαλέω → λελάληκα</span>. Third: <span class="gk">ποιέω → πεποίηκεν</span>, <span class="gk">μαρτυρέω → μεμαρτύρηκεν</span>.</p>
+<h3>When the reduplication is not a plain doubling</h3>
+<p>Three kinds of stem will not take a doubled consonant. You do not need the rules to recite, only the shapes to recognise.</p>
+<p><b>A stem beginning with a vowel</b> lengthens it instead, which makes it look exactly like an augment:</p>
+<p class="v" data-ref="Matthew 10:7">Ἤγγικεν ἡ βασιλεία τῶν οὐρανῶν</p>
+<p>"The kingdom of heaven has drawn near." <span class="gk">ἐγγίζω</span> becomes <span class="gk">ἤγγικεν</span>, and the perfect is the point: it has come near, and it is near.</p>
+<p><b>A stem beginning with two consonants</b> gives up and uses a bare <span class="gk">ἐ-</span>. <span class="gk">γινώσκω</span> becomes <span class="gk">ἔγνωκεν</span> — the root behind it is <span class="gk">γνο-</span>, and you cannot double a <span class="gk">γν</span>.</p>
+<p><b>A stem beginning with an aspirate</b> — <span class="gk">φ, θ, χ</span> — reduplicates with the unaspirated partner <span class="gk">π, τ, κ</span>, because Greek will not have two rough sounds in successive syllables:</p>
+<p class="v" data-ref="Romans 3:21">δικαιοσύνη θεοῦ πεφανέρωται</p>
+<p>"A righteousness of God has been revealed." <span class="gk">φανερόω</span> gives <span class="gk">πε-</span>, not <span class="gk">φε-</span>.</p>
+<p>The habit is simpler than the rules: a doubled first syllable, or a lengthened first vowel with a <span class="gk">κ</span> further in, means perfect.</p>
+<h3>Second perfects</h3>
+<p>Some verbs form the perfect without the <span class="gk">κ</span>. They are conjugated identically otherwise, and — as with first and second aorists in chapter 7 — the difference is one of form only. A second perfect means everything a first perfect means.</p>
+<p><span class="gk">γίνομαι → γέγονεν</span> · <span class="gk">γράφω → γέγραφα</span> · <span class="gk">ἔρχομαι → ἐλήλυθεν</span> · <span class="gk">λαμβάνω → εἴληφεν</span> · <span class="gk">πείθω → πέποιθεν</span> · <span class="gk">ἀκούω → ἀκηκόαμεν</span></p>
+<p class="v" data-ref="John 19:22">Ὃ γέγραφα γέγραφα</p>
+<p>"What I have written, I have written." Pilate says it twice, in the perfect both times, and the tense is why the sentence closes the matter. Not "I wrote it" but "it is written, and it stands".</p>
+<h3>The perfect in the text</h3>
+<p><span class="gk">γέγραπται</span> is the standard formula for introducing Scripture — 67 occurrences — and it is a perfect. Not "it was written once", but "it stands written".</p>
+<p class="v" data-ref="John 19:30">εἶπεν· Τετέλεσται</p>
+<p>"He said, 'It is finished.'" One word: finished then, finished still. (Both of these are passives, which come later; the tense is what is in view.)</p>
+<p class="v" data-ref="2 Timothy 4:7">τὸν καλὸν ἀγῶνα ἠγώνισμαι, τὸν δρόμον τετέλεκα, τὴν πίστιν τετήρηκα</p>
+<p>"I have fought the good fight, I have finished the race, I have kept the faith." Three perfects in a row — not three past events, but where Paul now stands as a result of them.</p>
 <h3>The pluperfect</h3>
-<p>Past completed action with results continuing <i>in the past</i>: "had loosed". Augment + reduplication + κ + secondary endings: <span class="gk">ἐλελύκειν, ἐλελύκεις, ἐλελύκει…</span> It is rare (under 90 NT occurrences) — recognise it, don't drill it. <span class="gk">ᾔδειν</span>, the pluperfect of οἶδα, simply means "I knew".</p>
+<p>The pluperfect is the past of the perfect: complete, with results that stood at some past moment. It takes an augment <i>as well as</i> the reduplication and inserts <span class="gk">-ει-</span> before the endings — <span class="gk">ἐλελύκειν, ἐλελύκεις, ἐλελύκει</span>.</p>
+<p class="v" data-ref="Mark 15:10">ἐγίνωσκεν γὰρ ὅτι διὰ φθόνον παραδεδώκεισαν αὐτὸν οἱ ἀρχιερεῖς</p>
+<p>"For he knew that the chief priests had handed him over out of envy." <span class="gk">παραδεδώκεισαν</span> does exactly what it says: they had done it, and it stood done while Pilate weighed what to do next.</p>
+<p>It is rare — 88 pluperfects in the whole New Testament against 1,572 perfects — so recognition is the goal and drilling it is not worth your week. And of those 88, thirty-four belong to <span class="gk">οἶδα</span> and thirteen to <span class="gk">ἵστημι</span>, and neither of those is translated as a past perfect at all. Which brings us to the largest fact in the chapter.</p>
+<h3>οἶδα, and ᾔδειν</h3>
+<p><span class="gk">οἶδα</span> means "I know". It is perfect in form and present in meaning, and it occurs 296 times.</p>
+<p>Here it is. <b>210 of those are perfect active indicatives — one in three of every perfect active indicative in the New Testament — and not one means "I have known".</b> Parse <span class="gk">οἶδα</span> as a present and its pluperfect <span class="gk">ᾔδειν</span> as an imperfect, "I knew", as every reference work does.</p>
+<p><span class="gk">ἵστημι</span> behaves the same way: <span class="gk">ἕστηκα</span> is "I have taken my stand", which in English is simply "I am standing".</p>
+<p class="v" data-ref="John 1:26">μέσος ὑμῶν ἕστηκεν ὃν ὑμεῖς οὐκ οἴδατε</p>
+<p>"Among you stands one whom you do not know." Two perfects, neither rendered as a perfect in any English Bible — because in both the resulting state is the point and the past act has receded from view. Which is the perfect working exactly as described.</p>
 <h3>Don't over-preach it</h3>
-<p>The perfect's force is real but not magic. Some perfects are simply how a verb is idiomatically used. Ask whether the author chose the form for its weight before building a sermon point on it.</p>`,
+<p>This is the tense most likely to be pushed too far from a pulpit, and it is worth naming what pushing it looks like.</p>
+<p><b>The form does not guarantee emphasis.</b> Some verbs simply live in the perfect — <span class="gk">οἶδα</span>, <span class="gk">ἕστηκα</span>, <span class="gk">γέγονεν</span>, <span class="gk">πέποιθα</span>. There it is a fact about the vocabulary, not a decision by the author.</p>
+<p><b>The choice belongs to the writer's viewpoint, not to the events.</b> A perfect says the writer wanted the result in view; it does not say the event was different.</p>
+<p>So ask two questions before building on it. Could an aorist have stood here, and does the sentence around it care about the result? Where the answer to both is yes — Paul on the resurrection, John at the cross — the perfect is carrying real weight, and it is worth saying so.</p>
+<p>That is not scepticism. The perfect really is the most exegetically loaded tense in Greek. It is simply not loaded every time.</p>`,
 v:[13,53],
 vids:[{t:"Lecture 10: Perfect and Pluperfect Active Indicative",s:"Daily Dose of Greek — Rob Plummer (21:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-10/"}],
 quiz:[
-{q:"γέγραπται carries the sense:",o:["It was written once","It stands written","It will be written","Someone used to write"],a:1,w:"Perfect: completed act, abiding result. This is why the formula introduces Scripture citations — what was written remains in force.",sec:0},
-{q:"The two form-markers of the perfect active are:",o:["Augment and σ","Reduplication and κ","Augment and θη","Reduplication and σ"],a:1,w:"λέ-λυ-κ-α: reduplicated initial consonant plus κ. The augment belongs to past-time indicative tenses; the perfect instead reduplicates.",sec:1},
-{q:"οἶδα is perfect in form but functions as:",o:["A future","A present — 'I know'","An imperative","A pluperfect"],a:1,w:"One of the most common verbs in the NT. Its pluperfect ᾔδειν likewise just means 'I knew'.",sec:2},
-{q:"The pluperfect expresses:",o:["Ongoing past action","Completed action with results continuing in the past","Future certainty","Timeless truth"],a:1,w:"'Had loosed' — the perfect's completed-with-results idea, shifted back a step. Rare enough that recognition is the goal.",sec:2}]},
+{q:"The perfect is the fourth principal part. Which three came before it?",o:["Present, imperfect, aorist","Present, future, aorist","Aorist, imperfect, pluperfect","Present, future, imperfect"],a:1,w:"Present, future and aorist active. The perfect stem gives the perfect, the pluperfect and the rare future perfect.",sec:0},
+{q:"In 1 Corinthians 15:4, ἐτάφη is aorist and ἐγήγερται is perfect. What does the change do?",o:["Nothing — they are stylistic variants","The burial is reported as an event; the resurrection as an event whose result still stands","It marks a change of subject","The perfect makes it less certain"],a:1,w:"Paul is not only saying the resurrection happened. He is saying Christ is risen still. Replace the perfect with an aorist and the sentence stops saying the second thing.",sec:1},
+{q:"The two form-markers of the perfect active are:",o:["Augment and σ","Reduplication and κα","Augment and θη","Reduplication and σ"],a:1,w:"λέ-λυ-κ-α. The augment belongs to past-time indicatives; the perfect reduplicates instead — which is why the perfect is not, strictly, a past tense at all.",sec:2},
+{q:"γινώσκω forms its perfect as ἔγνωκεν rather than γεγνωκεν. Why?",o:["It is irregular for no reason","The stem begins with two consonants, so the reduplication collapses to ἐ-","It is a second perfect","The κ was lost"],a:1,w:"Doubling a consonant cluster is unpronounceable, so Greek falls back to a plain ἐ-. Vowel-initial stems lengthen instead, and aspirates reduplicate with their unaspirated partner.",sec:3},
+{q:"φανερόω gives πεφανέρωται, not φεφανέρωται. What is happening?",o:["A spelling variant","Greek avoids two aspirates in successive syllables, so φ reduplicates as π","The stem changed","It is a second perfect"],a:1,w:"Deaspiration. φ, θ and χ reduplicate as π, τ and κ. Romans 3:21.",sec:3},
+{q:"A second perfect differs from a first perfect in:",o:["Meaning — it is weaker","Form only — it has no κ","Time — it refers further back","Voice"],a:1,w:"γέγονεν, γέγραφα, ἐλήλυθεν, εἴληφεν, πέποιθεν. Exactly the situation with first and second aorists in chapter 7: a different way of building the same tense.",sec:4},
+{q:"Ὃ γέγραφα γέγραφα (John 19:22). Why does the perfect close the matter?",o:["Because Pilate repeats it","Because the perfect presents the writing as done and standing done","Because it is passive","Because γράφω is irregular"],a:1,w:"'What I have written, I have written.' Not a report of an act but a statement about a state — which is why it functions as a refusal.",sec:4},
+{q:"γέγραπται introduces Scripture 67 times. What does it convey?",o:["It was written once","It stands written","It will be written","Someone used to write"],a:1,w:"The perfect: the writing was completed and its result is in force. That is why it is the citation formula.",sec:5},
+{q:"How many pluperfects are there in the New Testament?",o:["About 900","88","Around 400","None"],a:1,w:"88, against 1,572 perfects — and 47 of the 88 belong to οἶδα and ἵστημι, which are not translated 'had —' at all. Recognise it; do not spend your week on it.",sec:6},
+{q:"The pluperfect is built with:",o:["Reduplication alone","An augment as well as the reduplication, plus -ει- before the endings","κα and no reduplication","The aorist stem"],a:1,w:"ἐ-λε-λύ-κ-ει-ν. It is a past tense, so unlike the perfect it does take an augment — though the augment is often left off.",sec:6},
+{q:"οἶδα is perfect in form. What is it in meaning?",o:["Past","Present — 'I know'","Future","Conditional"],a:1,w:"And it is not a curiosity: 210 of the 602 perfect active indicatives in the New Testament are οἶδα. One in three, and none of them means 'I have known'. Its pluperfect ᾔδειν likewise just means 'I knew'.",sec:7},
+{q:"Before building a point on a perfect, what is worth asking?",o:["Whether the verb is common","Whether an aorist could have stood there, and whether the sentence cares about the result","Whether it is in the Gospels","Whether it has a κ"],a:1,w:"Some verbs simply live in the perfect — οἶδα, ἕστηκα, γέγονεν — and there the tense is lexical, not rhetorical. Where the writer had a choice and the context cares about the result, the perfect is carrying real weight.",sec:8}
+]},
 
 {id:11,t:"Demonstrative pronouns",s:"οὗτος and ἐκεῖνος — this and that",
-body:`<p>Greek points with two words: <span class="gk">οὗτος</span> ("this", near) and <span class="gk">ἐκεῖνος</span> ("that", far). Both decline with endings you already know from the article and αὐτός.</p>
-<table><caption>οὗτος — singular</caption>
+body:`<p>Greek points with two words. <span class="gk">οὗτος</span> is "this", for what is near at hand; <span class="gk">ἐκεῖνος</span> is "that", for what is further off. Between them they occur 1,627 times, and both decline with endings you already have.</p>
+<p>What has to be learnt here is not the forms. It is the three quite different jobs a demonstrative does, and the one place where a breathing mark is the whole difference between two words.</p>
+<h3>οὗτος: the forms</h3>
+<table><caption>οὗτος — this (singular / plural)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
-<tr><th>Nom</th><td class="g">οὗτος</td><td class="g">αὕτη</td><td class="g">τοῦτο</td></tr>
-<tr><th>Gen</th><td class="g">τούτου</td><td class="g">ταύτης</td><td class="g">τούτου</td></tr>
-<tr><th>Dat</th><td class="g">τούτῳ</td><td class="g">ταύτῃ</td><td class="g">τούτῳ</td></tr>
-<tr><th>Acc</th><td class="g">τοῦτον</td><td class="g">ταύτην</td><td class="g">τοῦτο</td></tr></table>
-<p>Plural: <span class="gk">οὗτοι, αὗται, ταῦτα</span> and so on. Two patterns to spot: the forms mirror the article (rough breathing where the article lacks τ, initial τ elsewhere), and the first vowel echoes the ending's vowel — ου before ο-endings, αυ before α/η-endings. <span class="gk">ἐκεῖνος</span> is fully regular: <span class="gk">ἐκεῖνος, ἐκείνη, ἐκεῖνο</span>.</p>
-<h3>Position</h3>
-<p>With a noun, demonstratives take <b>predicate position</b> — outside the article group — yet still mean "this X": <span class="gk">οὗτος ὁ ἄνθρωπος</span> or <span class="gk">ὁ ἄνθρωπος οὗτος</span>, "this man". Standing alone, they are pronouns: <span class="gk">οὗτός ἐστιν ὁ υἱός μου</span> — "this is my Son" (Matt 3:17).</p>
+<tr><th>Nom</th><td class="g">οὗτος / οὗτοι</td><td class="g">αὕτη / αὗται</td><td class="g">τοῦτο / ταῦτα</td></tr>
+<tr><th>Gen</th><td class="g">τούτου / τούτων</td><td class="g">ταύτης / τούτων</td><td class="g">τούτου / τούτων</td></tr>
+<tr><th>Dat</th><td class="g">τούτῳ / τούτοις</td><td class="g">ταύτῃ / ταύταις</td><td class="g">τούτῳ / τούτοις</td></tr>
+<tr><th>Acc</th><td class="g">τοῦτον / τούτους</td><td class="g">ταύτην / ταύτας</td><td class="g">τοῦτο / ταῦτα</td></tr></table>
+<p>Two patterns make this far less work than the table looks.</p>
+<p><b>The τ goes where the article's τ goes.</b> Every form begins with <span class="gk">τ</span> except the four nominatives where the article also has none — <span class="gk">ὁ, ἡ, οἱ, αἱ</span> against <span class="gk">οὗτος, αὕτη, οὗτοι, αὗται</span>. If you know the article, you already know this.</p>
+<p><b>The stem vowel echoes the ending.</b> <span class="gk">ου</span> before an o-sound, <span class="gk">αυ</span> before an a or η: <span class="gk">τούτου</span> but <span class="gk">ταύτης</span>, <span class="gk">τούτῳ</span> but <span class="gk">ταύτῃ</span>. Notice that and the paradigm nearly predicts itself.</p>
+<h3>ἐκεῖνος: the forms</h3>
+<p><span class="gk">ἐκεῖνος, ἐκείνη, ἐκεῖνο</span> — and after that there is nothing to learn. It declines exactly like <span class="gk">αὐτός</span>, which declines like <span class="gk">ἀγαθός</span>, including the same exception in the same place: the neuter singular <span class="gk">ἐκεῖνο</span> has no final ν.</p>
+<p class="v" data-ref="Matthew 24:19">ἐν ἐκείναις ταῖς ἡμέραις</p>
+<p>"In those days" — dative plural feminine, agreeing with <span class="gk">ἡμέραις</span>, and a phrase you will meet often in the Gospels.</p>
+<p><span class="gk">ἐκεῖνος</span> occurs 242 times against <span class="gk">οὗτος</span>'s 1,385, much the rarer of the two. But where it turns up it is often doing something deliberate, which is the last part of this chapter.</p>
+<h3>With a noun: outside the article, still "this"</h3>
+<p>When a demonstrative modifies a noun, the noun keeps its article and the demonstrative stands <b>outside</b> the article group. That is predicate position — and here, unlike with an adjective, it does not make a predicate. It still means "this".</p>
+<p>Either side of the noun will do, and Mark and Luke happen to give us one of each in the same scene:</p>
+<p class="v" data-ref="Mark 15:39">Ἀληθῶς οὗτος ὁ ἄνθρωπος υἱὸς θεοῦ ἦν</p>
+<p class="v" data-ref="Luke 23:47">Ὄντως ὁ ἄνθρωπος οὗτος δίκαιος ἦν</p>
+<p>Mark reports "truly this man was God's Son", Luke "certainly this man was righteous". The reported words differ; what does not is <span class="gk">οὗτος ὁ ἄνθρωπος</span> against <span class="gk">ὁ ἄνθρωπος οὗτος</span> — before the article in one, after the noun in the other, both "this man". Matthew, reporting the same centurion, gives a third option:</p>
+<p class="v" data-ref="Matthew 27:54">Ἀληθῶς θεοῦ υἱὸς ἦν οὗτος</p>
+<p>"Truly this was God's Son." No <span class="gk">ἄνθρωπος</span> at all, so <span class="gk">οὗτος</span> is standing on its own — which is the next section.</p>
+<p>Compare that with chapter 6. An adjective in predicate position — <span class="gk">ἀγαθὸς ὁ ἄνθρωπος</span> — means "the man <i>is</i> good". A demonstrative there does not; it is simply where demonstratives live.</p>
+<p class="v" data-ref="1 Corinthians 11:25">Τοῦτο τὸ ποτήριον ἡ καινὴ διαθήκη ἐστὶν</p>
+<p>"This cup is the new covenant." <span class="gk">Τοῦτο</span> sits outside the article and modifies <span class="gk">ποτήριον</span>; what is predicated is <span class="gk">ἡ καινὴ διαθήκη</span>.</p>
+<h3>Standing on its own</h3>
+<p>With no article-bearing noun to modify, a demonstrative is simply a pronoun: "this one", "that one", "these things".</p>
+<p class="v" data-ref="Matthew 3:17">Οὗτός ἐστιν ὁ υἱός μου ὁ ἀγαπητός</p>
+<p>"This is my beloved Son." Nothing for <span class="gk">οὗτος</span> to modify, so it is the subject on its own.</p>
+<p class="v" data-ref="Acts 9:36">αὕτη ἦν πλήρης ἔργων ἀγαθῶν</p>
+<p>"She was full of good works" — of Tabitha. The form is feminine, so English needs "she" rather than "this".</p>
+<p class="v" data-ref="John 10:1">ἐκεῖνος κλέπτης ἐστὶν καὶ λῃστής</p>
+<p>"That man is a thief and a robber." <span class="gk">κλέπτης</span> has no article, so it is the predicate rather than the thing <span class="gk">ἐκεῖνος</span> modifies.</p>
+<p>The test is short: an articular noun to go with, and it modifies it; none, and it stands alone. The two commonest forms of <span class="gk">οὗτος</span> are both neuter and both usually stand alone — <span class="gk">τοῦτο</span>, "this", 303 times, and <span class="gk">ταῦτα</span>, "these things", 235, of which <span class="gk">μετὰ ταῦτα</span> accounts for 26.</p>
+<h3>Pointing back at what was just said</h3>
+<p>The third use is a demonstrative reaching back to someone named a moment earlier, where English would simply say "he".</p>
+<p class="v" data-ref="John 1:8">οὐκ ἦν ἐκεῖνος τὸ φῶς</p>
+<p>"He was not the light." <span class="gk">ἐκεῖνος</span> is John the Baptist, named in the verse before, and every English translation gives it as "he".</p>
+<p>This is worth knowing precisely because the translation flattens it. The writer chose a word that points; the English gives you a pronoun. Nothing is hidden — but to see where a writer is directing attention, you have to read the Greek.</p>
 <h3>Watch the breathing</h3>
-<p><span class="gk">αὕτη</span> (rough breathing) is "this woman/this"; <span class="gk">αὐτή</span> (smooth) is "she". <span class="gk">ταῦτα</span> ("these things") is not <span class="gk">ταύτας</span> ("these", fem acc pl). Small marks, different words — a place where careful reading pays.</p>
+<p><span class="gk">αὕτη</span>, with a rough breathing, is "this" — the demonstrative in this chapter. <span class="gk">αὐτή</span>, with a smooth one, is "she" — the personal pronoun from chapter 9. Nothing else separates them.</p>
+<p>The counts are lopsided, and knowing that helps: <span class="gk">αὕτη</span> occurs 72 times, <span class="gk">αὐτή</span> 10. In the plural, more so — <span class="gk">αὗται</span> twice, and <span class="gk">αὐταί</span> not once in the New Testament.</p>
+<p>So the odds favour the demonstrative. Odds are not reading, and this is where skimming the diacritics finally costs something. Keep one more pair apart while you are here: <span class="gk">ταῦτα</span>, "these things", against <span class="gk">ταύτας</span>, "these", feminine accusative plural.</p>
 <h3>ἐκεῖνος in John</h3>
-<p>John uses <span class="gk">ἐκεῖνος</span> with unusual frequency, sometimes as a weighty "he" — of Christ (1 John 2:6) and of the Spirit (John 16:13-14). When you meet it, ask who is being pointed at from a distance.</p>`,
+<p>John uses <span class="gk">ἐκεῖνος</span> more than any other writer — 70 of its 242 occurrences, in a Gospel a good deal shorter than Luke's — and often of a person, with weight rather than distance.</p>
+<p class="v" data-ref="1 John 2:6">ὀφείλει καθὼς ἐκεῖνος περιεπάτησεν καὶ αὐτὸς περιπατεῖν</p>
+<p>"He ought himself to walk as that one walked." <span class="gk">ἐκεῖνος</span> is Christ, and John does not name him — the pointing word does it.</p>
+<p class="v" data-ref="John 16:13">ὅταν δὲ ἔλθῃ ἐκεῖνος, τὸ πνεῦμα τῆς ἀληθείας</p>
+<p>"When that one comes, the Spirit of truth."</p>
+<p>A note on that verse, because it gets pressed too hard. <span class="gk">ἐκεῖνος</span> is masculine while <span class="gk">πνεῦμα</span> is neuter, and this is sometimes offered as grammatical proof of the Spirit's personhood. The grammar will not carry it. <span class="gk">ἐκεῖνος</span> agrees with <span class="gk">ὁ παράκλητος</span>, the masculine noun John used back in verse 7 — ordinary agreement with the antecedent. The doctrine rests on what John says about the Spirit across the passage, which is a great deal, and it does not need a pronoun's gender.</p>
+<p>Which is what noticing a demonstrative is for: to ask who is being pointed at, and then read on for the answer.</p>`,
 v:[235,55,56,99,115,165,171,241,193,200,271,273,275,280,216,293,312,316,321,341,218,422,434,441,442,479,213,480,478],
 vids:[{t:"Lecture 11: Demonstrative Pronouns",s:"Daily Dose of Greek — Rob Plummer (12:22)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-11/"}],
 quiz:[
-{q:"οὗτος ὁ λόγος means:",o:["The word itself","This word","The same word","A certain word"],a:1,w:"Demonstrative in predicate position still translates 'this'. αὐτός in that position would be 'itself' — the two look alike until you check the breathing and stem.",sec:1},
-{q:"αὕτη differs from αὐτή how?",o:["No difference","αὕτη is 'this' (demonstrative); αὐτή is 'she'","αὕτη is plural","αὐτή is accusative"],a:1,w:"Rough breathing marks the demonstrative. The pair is a standing test of whether you're really reading the diacritics.",sec:2},
-{q:"ταῦτα, one of the commonest forms in the NT, means:",o:["This woman","These things","The same things","Those men"],a:1,w:"Neuter plural of οὗτος: 'after these things' (μετὰ ταῦτα) stitches together John's narrative.",sec:2},
-{q:"ἐκεῖνος points to:",o:["Something near","Something far / previously mentioned","The speaker","Something owned"],a:1,w:"'That one.' John gives it theological weight — of Christ and the Spirit — so distance can be dignity, not remoteness.",sec:0}]},
+{q:"Greek's two demonstratives are:",o:["αὐτός and ἐκεῖνος","οὗτος (this, near) and ἐκεῖνος (that, far)","ὁ and οὗτος","τοῦτο and ταῦτα"],a:1,w:"1,385 occurrences of οὗτος and 242 of ἐκεῖνος. Both decline with endings you already know.",sec:0},
+{q:"Where does οὗτος begin with τ rather than a rough breathing?",o:["Everywhere","Everywhere except the nominatives that the article also spells without τ","Only in the plural","Only in the neuter"],a:1,w:"οὗτος, αὕτη, οὗτοι, αὗται match ὁ, ἡ, οἱ, αἱ — the four places the article has no τ. Everywhere else the demonstrative has one, exactly as the article does.",sec:1},
+{q:"Why is it ταύτης but τούτου?",o:["They are different words","The stem vowel echoes the ending — αυ before α or η, ου before an o-sound","One is older","An accent rule"],a:1,w:"τούτῳ but ταύτῃ, τοῦτον but ταύτην. Once you see it, the paradigm nearly predicts itself.",sec:1},
+{q:"ἐκεῖνος declines like:",o:["The article","αὐτός — and so like ἀγαθός, neuter ἐκεῖνο with no ν","οὗτος","A third-declension noun"],a:1,w:"There is genuinely nothing new to learn in its endings, including the missing ν on the neuter singular.",sec:2},
+{q:"In οὗτος ὁ ἄνθρωπος, the demonstrative stands outside the article. What does that mean?",o:["'The man is this'","'This man' — predicate position is simply where demonstratives live","'The same man'","It is ungrammatical"],a:1,w:"Unlike an adjective, a demonstrative in predicate position does not predicate. Mark 15:39 has οὗτος ὁ ἄνθρωπος and Luke 23:47 has ὁ ἄνθρωπος οὗτος of the same centurion's words — both 'this man'.",sec:3},
+{q:"An adjective in predicate position — ἀγαθὸς ὁ ἄνθρωπος — means 'the man is good'. A demonstrative there means:",o:["'The man is this'","'This man' — the rule does not carry across","Nothing; it is not allowed","'The same man'"],a:1,w:"This is the one place the position rule from chapter 6 does not transfer, and it is worth fixing now.",sec:3},
+{q:"ἐκεῖνος κλέπτης ἐστὶν καὶ λῃστής (John 10:1). Why is ἐκεῖνος not modifying κλέπτης?",o:["It is the wrong gender","κλέπτης has no article, so it is the predicate — the demonstrative stands alone as subject","It is plural","ἐκεῖνος never modifies a noun"],a:1,w:"The test: an articular noun to modify, and it modifies it; no article, and it stands alone. 'That man is a thief and a robber.'",sec:4},
+{q:"ταῦτα, 235 occurrences, means:",o:["This woman","These things","The same things","Those men"],a:1,w:"Neuter plural of οὗτος. μετὰ ταῦτα, 'after these things', accounts for 26 of them.",sec:4},
+{q:"In οὐκ ἦν ἐκεῖνος τὸ φῶς (John 1:8), ἐκεῖνος refers to:",o:["The Word","John the Baptist, named in the verse before","The light","God"],a:1,w:"A demonstrative pointing back at someone just mentioned. Every English translation renders it 'he' — which is right, and is also why you have to read the Greek to see that John chose a word that points.",sec:5},
+{q:"αὕτη and αὐτή differ by:",o:["Nothing","A breathing — αὕτη is 'this', αὐτή is 'she'","Number","Case"],a:1,w:"72 occurrences against 10, and in the plural αὗται occurs twice while αὐταί never occurs at all. The odds favour the demonstrative; odds are not reading.",sec:6},
+{q:"In John 16:13, ἐκεῖνος is masculine while πνεῦμα is neuter. Why?",o:["It proves the Spirit's personhood grammatically","It agrees with ὁ παράκλητος, the masculine noun in verse 7","It is a scribal error","Greek demonstratives have no gender"],a:1,w:"Ordinary agreement with the antecedent. The doctrine of the Spirit's personhood rests on what John says across the passage, and does not need a pronoun's gender — claiming otherwise hands an opponent an easy answer.",sec:7}
+]},
 
 {id:12,t:"Present middle and passive indicative",s:"Where English has no equivalent",
 body:`<p>Greek has three voices. Active: the subject acts. Passive: the subject is acted upon. <b>Middle</b>: the subject acts with some special reference to itself — and English has nothing quite like it.</p>
