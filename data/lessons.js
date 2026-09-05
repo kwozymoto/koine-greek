@@ -186,150 +186,186 @@ quiz:[
 {q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:4},
 {q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:5}]},
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
-body:`<p>Greek nouns fall into three declensions — patterns of endings. The second is the most regular, so start here. Masculine nouns in <span class="gk">-ος</span>, neuter nouns in <span class="gk">-ον</span>. A few <span class="gk">-ος</span> nouns are feminine — <span class="gk">ἡ ὁδός</span> (way) and <span class="gk">ἡ ἔρημος</span> (wilderness) are both in this chapter — and they decline exactly like <span class="gk">λόγος</span>; only the article tells you.</p>
-<table><caption>λόγος, -ου, ὁ — word (masculine)</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+body:`<p>English tells you what a noun is doing by where it sits. The dog bit the man means something different from the man bit the dog, and nothing has changed but the order.</p>
+<p>Greek does it with endings. That is why word order in Greek can be so free, and it is why the ending is not a detail to be got through on the way to the meaning — it <i>is</i> the meaning.</p>
+<p>Nouns fall into three declensions, which are just three patterns of endings. The second is the most regular, so it comes first.</p>
+<h3>λόγος — masculine</h3>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">λόγος</td><td class="g">λόγοι</td></tr>
 <tr><th>Gen</th><td class="g">λόγου</td><td class="g">λόγων</td></tr>
 <tr><th>Dat</th><td class="g">λόγῳ</td><td class="g">λόγοις</td></tr>
 <tr><th>Acc</th><td class="g">λόγον</td><td class="g">λόγους</td></tr></table>
-<p>One rule to carry with the neuter: a neuter plural subject regularly takes a <b>singular</b> verb. <span class="gk">πάντα δι’ αὐτοῦ ἐγένετο</span> — "all things came into being through him" (John 1:3), with a singular <span class="gk">ἐγένετο</span>.</p>
-<table><caption>ἔργον, -ου, τό — work (neuter)</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<p>A few nouns ending in <span class="gk">-ος</span> are feminine — <span class="gk">ἡ ὁδός</span> (way) and <span class="gk">ἡ ἔρημος</span> (wilderness) are both in this chapter. They decline exactly like <span class="gk">λόγος</span>, and only the article tells you they are feminine at all. That is the first hint of how much work the article does.</p>
+<h3>The same word, three jobs</h3>
+<p>Here is <span class="gk">λόγος</span> doing three different things, in three real sentences. Watch only the ending.</p>
+<p class="v" data-ref="John 1:1">Ἐν ἀρχῇ ἦν ὁ λόγος</p>
+<p>Nominative — the subject. "In the beginning was the Word."</p>
+<p class="v" data-ref="Matthew 19:22">ἀκούσας δὲ ὁ νεανίσκος τὸν λόγον ἀπῆλθεν</p>
+<p>Accusative — the object. "But when the young man heard the saying, he went away." The young man is the subject and the saying is what he heard, and you know that from <span class="gk">-ον</span> against <span class="gk">-ος</span>.</p>
+<p class="v" data-ref="Luke 1:2">ὑπηρέται γενόμενοι τοῦ λόγου</p>
+<p>Genitive — "having become servants of the word." The of is in the ending.</p>
+<h3>ἔργον — neuter</h3>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">ἔργον</td><td class="g">ἔργα</td></tr>
 <tr><th>Gen</th><td class="g">ἔργου</td><td class="g">ἔργων</td></tr>
 <tr><th>Dat</th><td class="g">ἔργῳ</td><td class="g">ἔργοις</td></tr>
 <tr><th>Acc</th><td class="g">ἔργον</td><td class="g">ἔργα</td></tr></table>
-<p>Notice that neuter differs from masculine only in the nominative, accusative and vocative — everywhere else the endings are identical. (The neuter has one form for all three: <span class="gk">ἔργον</span> singular, <span class="gk">ἔργα</span> plural.)</p>
+<p>Neuter differs from masculine only in the nominative and accusative, and in those two it has one form doing both jobs. Everywhere else the endings are identical.</p>
+<p class="v" data-ref="1 Corinthians 3:14">εἴ τινος τὸ ἔργον μενεῖ</p>
+<p>"If anyone's work remains." Nominative or accusative? Only the sentence can tell you, and here <span class="gk">μενεῖ</span> needs a subject, so it is nominative.</p>
+<h3>A neuter plural takes a singular verb</h3>
+<p>This looks like a mistake the first several times and it is not.</p>
+<p class="v" data-ref="John 1:3">πάντα δι’ αὐτοῦ ἐγένετο</p>
+<p>"All things came into being through him." <span class="gk">πάντα</span> is neuter plural; <span class="gk">ἐγένετο</span> is singular. Greek regularly treats a neuter plural subject as a single collective, so the verb agrees with the idea rather than the number. Do not correct it.</p>
 <h3>Why lexicons list three things</h3>
-<p><span class="gk">λόγος, -ου, ὁ</span> gives you the nominative, the genitive ending, and the article. The genitive tells you which declension it follows; the article tells you the gender. You need both, so learn nouns in this full form from the start.</p>
+<p><span class="gk">λόγος, -ου, ὁ</span> gives you the nominative, the genitive ending and the article. The genitive tells you which declension the word follows; the article tells you its gender. You need both, and neither is guessable from the nominative alone — which is why <span class="gk">ἡ ὁδός</span> exists to catch you.</p>
+<p>Learn every noun in that full form from the first day. It costs a second and saves an hour.</p>
 <h3>The definite article</h3>
-<p>The article appears about 19,870 times in the New Testament — roughly one word in every seven. It agrees with its noun in <b>gender, number and case</b>, so once you know it you can read the case of almost any noun it's attached to, even when you don't know the noun.</p>
-<p>Learn this paradigm cold. It is the highest-return memorisation in the language.</p>
-<table><caption>Singular</caption>
-<tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
-<tr><th>Nom</th><td class="g">ὁ</td><td class="g">ἡ</td><td class="g">τό</td></tr>
-<tr><th>Gen</th><td class="g">τοῦ</td><td class="g">τῆς</td><td class="g">τοῦ</td></tr>
-<tr><th>Dat</th><td class="g">τῷ</td><td class="g">τῇ</td><td class="g">τῷ</td></tr>
-<tr><th>Acc</th><td class="g">τόν</td><td class="g">τήν</td><td class="g">τό</td></tr></table>
-<table><caption>Plural</caption>
-<tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
-<tr><th>Nom</th><td class="g">οἱ</td><td class="g">αἱ</td><td class="g">τά</td></tr>
-<tr><th>Gen</th><td class="g">τῶν</td><td class="g">τῶν</td><td class="g">τῶν</td></tr>
-<tr><th>Dat</th><td class="g">τοῖς</td><td class="g">ταῖς</td><td class="g">τοῖς</td></tr>
-<tr><th>Acc</th><td class="g">τούς</td><td class="g">τάς</td><td class="g">τά</td></tr></table>
-<h3>Shortcuts</h3>
-<p>Genitive plural is <span class="gk">τῶν</span> in all three genders. Neuter nominative and accusative are always identical — true of every neuter word in Greek. Only four forms lack an initial τ: <span class="gk">ὁ, ἡ, οἱ, αἱ</span>, and all four are nominative.</p>
-<h3>Greek uses the article where English doesn't</h3>
-<p><span class="gk">ὁ θεός</span> is simply "God", not "the God". Conversely its absence can be significant. Don't over-read either way without checking how that author normally writes.</p>
-<h3>What the cases do</h3>
-<p>Endings are only useful if you know what each case <i>does</i>. This is where translation turns into exegesis.</p>
-<h3>Nominative — the subject</h3>
-<p>Names the subject, or the predicate after a linking verb: <span class="gk">θεὸς ἦν ὁ λόγος</span>. Note that in that clause the article marks <span class="gk">ὁ λόγος</span> as the subject even though <span class="gk">θεός</span> comes first.</p>
-<h3>Genitive — description and separation</h3>
-<p>Usually rendered "of". But it covers many relationships: possession, source, content, and the crucial <b>subjective/objective</b> distinction. <span class="gk">ἡ ἀγάπη τοῦ θεοῦ</span> can mean God's love for us (subjective) or our love for God (objective). Grammar cannot decide it; context must.</p>
-<h3>Dative — the indirect object, and more</h3>
-<p>"To" or "for", but also instrument ("by means of"), location ("in"), and sphere. <span class="gk">τῇ πίστει</span> could be "by faith", "in faith", or "for faith" depending on context.</p>
-<h3>Accusative — the direct object</h3>
-<p>Receives the action. Also expresses extent of time or space.</p>
-<h3>Vocative — direct address</h3>
-<p>"O Lord!" In the plural it is identical to the nominative, and so is the neuter singular. But the second-declension masculine singular ends in <span class="gk">-ε</span>: <span class="gk">λόγε, κύριε, ἄνθρωπε, δοῦλε</span>. That is worth knowing — only 52 of the 410 singular vocatives in the New Testament look like a nominative, and <span class="gk">κύριε</span> alone accounts for 117 of them.</p>
-<p><b>The discipline:</b> when a commentary says "this is a genitive of source", it is making an interpretive claim, not reporting a fact. Ask what the alternatives are and why this one was chosen.</p>`,
+<p>The article occurs <b>19,770</b> times in the New Testament — one word in every seven. It agrees with its noun in gender, number and case, which means that once you know the article you can read the case of almost any noun attached to one, even a noun you have never met.</p>
+<p>That is the single highest return in first-year Greek. Seventeen forms, and they parse a quarter of the sentences you will read. There is a drill for exactly these seventeen, and it is worth doing until it is boring.</p>
+<p>Greek has no indefinite article. <span class="gk">λόγος</span> on its own is a word or the word, and only the sentence decides.</p>
+<h3>What to watch for</h3>
+<p><span class="gk">λόγων</span> is genitive plural and so is <span class="gk">ἔργων</span> — the genitive plural is <span class="gk">-ων</span> in every gender and every declension you will meet. That makes it easy to spot and useless for telling you the gender, so take the gender from the article.</p>
+<p>And the dative singular ends in a long vowel with an iota written underneath it: <span class="gk">λόγῳ</span>, <span class="gk">ἔργῳ</span>. It is silent, it is small, and at reading speed it looks like a plain omega. Chapter 1 said to train your eye for the subscript. This is the ending it was for.</p>`,
 v:[1,4,8,12,17,20,27,31,32,46,48,51,58,67,79,82,87,88,90,127,132,144,162,167,252,210,219,276,300,330,339,412,470,471],
 vids:[{t:"Lecture 4: Nouns of the Second Declension",s:"Daily Dose of Greek — Rob Plummer (18:22)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-4/"}],
 quiz:[
-{q:"λόγῳ is which case?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"Dative singular — the iota subscript under the omega gives it away.",sec:0},
-{q:"ἔργα could be:",o:["Nominative or accusative plural","Genitive singular only","Dative plural","Nominative singular"],a:0,w:"Neuter nominative and accusative are always identical, in both singular and plural.",sec:0},
-{q:"τῶν is which case and number?",o:["Genitive singular","Genitive plural","Dative plural","Accusative plural"],a:1,w:"Genitive plural — and it's the same for all three genders, which makes it easy to spot.",sec:2},
-{q:"You meet τῇ before an unfamiliar noun. What do you know?",o:["Feminine dative singular","Feminine genitive singular","Masculine dative singular","Neuter nominative plural"],a:0,w:"Feminine dative singular. This is exactly why the article is worth memorising: it parses the noun for you.",sec:2},
-{q:"Which is true of every neuter noun in Greek?",o:["Nominative and genitive are identical","Nominative and accusative are identical","It has no dative","It never takes the article"],a:1,w:"Neuter nominative and accusative are always the same form. Context and word order decide which is meant.",sec:3},
-{q:"Which article form is NOT nominative?",o:["ὁ","αἱ","οἱ","τάς"],a:3,w:"τάς is feminine accusative plural. The four forms without an initial tau (ὁ, ἡ, οἱ, αἱ) are all nominative.",sec:3},
-{q:"ἡ ἀγάπη τοῦ θεοῦ is ambiguous because τοῦ θεοῦ could be:",o:["Nominative or genitive","Subjective or objective genitive","Dative or genitive","Singular or plural"],a:1,w:"God loving us, or us loving God. Both are grammatically available; the context decides.",sec:7},
-{q:"Which case most often expresses the means or instrument of an action?",o:["Nominative","Genitive","Dative","Accusative"],a:2,w:"The dative covers instrument, location, sphere, and the indirect object — a wide range, which is why it needs care.",sec:8}]},
-
+{q:"Why can Greek word order be freer than English?",o:["It has fewer words","The ending shows what a noun is doing","It has no subject","Greek writers preferred it"],a:1,w:"The case ending carries the job. English uses position for the same purpose, which is why moving a word in English changes the meaning and moving one in Greek often does not.",sec:0},
+{q:"In ἀκούσας δὲ ὁ νεανίσκος τὸν λόγον ἀπῆλθεν, what is τὸν λόγον?",o:["The subject","The object","Possessive","Indirect object"],a:1,w:"Accusative, so the object — what he heard. ὁ νεανίσκος is nominative and does the hearing.",sec:2},
+{q:"How does neuter ἔργον differ from masculine λόγος?",o:["Everywhere","Only in the genitive","Only in the nominative and accusative","Only in the plural"],a:2,w:"Only there, and in those two it uses one form for both. Every other ending is identical.",sec:3},
+{q:"πάντα δι’ αὐτοῦ ἐγένετο has a plural subject and a singular verb. Why?",o:["It is an error in the manuscripts","A neuter plural subject regularly takes a singular verb","πάντα is singular","The verb agrees with αὐτοῦ"],a:1,w:"Greek treats a neuter plural as a collective, so the verb agrees with the idea rather than the count. It is regular, and it is not to be corrected.",sec:4},
+{q:"Why do lexicons list λόγος, -ου, ὁ rather than just λόγος?",o:["Tradition","The genitive gives the declension and the article gives the gender","To show the accent","To show the plural"],a:1,w:"Neither is guessable from the nominative — ἡ ὁδός looks masculine and is not. Learn nouns in the full form from the start.",sec:5},
+{q:"Roughly how often does the definite article occur in the New Testament?",o:["One word in every twenty","One word in every seven","One word in every three","About a thousand times"],a:1,w:"19,770 times, one word in every seven. Knowing its seventeen forms lets you read the case of almost any noun attached to one.",sec:6},
+{q:"What does the genitive plural ending -ων tell you about gender?",o:["Masculine","Neuter","Feminine","Nothing at all"],a:3,w:"Nothing. It is -ων in every gender and every declension, which makes it easy to spot and useless for gender. Take that from the article.",sec:7},
+{q:"What does the iota written under the omega of λόγῳ signal?",o:["Nothing; it is decorative","The dative","The plural","An accent shift"],a:1,w:"The dative. It is silent and at reading speed it looks like a plain omega, which is exactly why chapter 1 said to train your eye for it.",sec:7}]},
 {id:5,t:"Nouns of the first declension",s:"Mostly feminine, with a few masculines",
-body:`<p>First declension nouns end in <span class="gk">-η</span> or <span class="gk">-α</span> and are usually feminine. The vowel used depends on the letter before it.</p>
-<table><caption>ἀγάπη, -ης, ἡ — love</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+body:`<p>The second declension gave you <span class="gk">-ος</span> and <span class="gk">-ον</span>. The first gives you <span class="gk">-η</span> and <span class="gk">-α</span>, and its nouns are usually feminine.</p>
+<p>You already know more of these than you think. <span class="gk">ἀγάπη, ἁμαρτία, βασιλεία, ἐκκλησία, δόξα, ζωή, ἡμέρα, καρδία</span> — the vocabulary of the New Testament is full of them.</p>
+<h3>ἀγάπη — the basic pattern</h3>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">ἀγάπη</td><td class="g">ἀγάπαι</td></tr>
 <tr><th>Gen</th><td class="g">ἀγάπης</td><td class="g">ἀγαπῶν</td></tr>
 <tr><th>Dat</th><td class="g">ἀγάπῃ</td><td class="g">ἀγάπαις</td></tr>
 <tr><th>Acc</th><td class="g">ἀγάπην</td><td class="g">ἀγάπας</td></tr></table>
-<p>If the stem ends in <span class="gk">ε, ι</span> or <span class="gk">ρ</span>, the alpha is kept throughout: <span class="gk">ἡμέρα, ἡμέρας, ἡμέρᾳ, ἡμέραν</span>. Otherwise the alpha shifts to eta in the genitive and dative singular: <span class="gk">δόξα, δόξης, δόξῃ, δόξαν</span>.</p>
-<h3>Masculine first declension</h3>
-<p>A handful of important nouns look feminine but are masculine — always take the masculine article. <span class="gk">μαθητής</span> (disciple), <span class="gk">προφήτης</span> (prophet), <span class="gk">Μεσσίας</span> (Messiah). Note <span class="gk">ὁ μαθητής</span>, not <span class="gk">ἡ</span>.</p>
-<p>Every plural in this declension has <span class="gk">-ῶν</span> in the genitive, with a circumflex, regardless of where the accent falls elsewhere.</p>
-<h3>Four prepositions to meet now</h3>
-<p>A preposition tells you how its noun relates to the rest of the sentence, and in Greek it fixes that noun's case. These four take one case only, which makes them the most reliable case signposts in the text.</p>
-<table>
-<tr><th>Preposition</th><th>Case</th><th>Core sense</th></tr>
+<p class="v" data-ref="1 Corinthians 16:14">πάντα ὑμῶν ἐν ἀγάπῃ γινέσθω</p>
+<p>"Let all that you do be done in love." That is the dative, with its iota subscript, sitting after <span class="gk">ἐν</span> — which is the pairing the last section of this chapter is about.</p>
+<h3>Alpha or eta?</h3>
+<p>The vowel depends on the letter before it, and the rule is worth knowing because it decides two of the four singular endings.</p>
+<p>If the stem ends in <span class="gk">ε, ι</span> or <span class="gk">ρ</span>, the alpha is kept all the way through: <span class="gk">ἡμέρα, ἡμέρας, ἡμέρᾳ, ἡμέραν</span>.</p>
+<p>Otherwise the alpha shifts to eta in the genitive and dative singular: <span class="gk">δόξα, δόξης, δόξῃ, δόξαν</span>. Note that it comes back for the accusative.</p>
+<p>Everything else — the whole plural, and the nominative and accusative singular — behaves the same either way.</p>
+<h3>The masculines</h3>
+<p>A handful of important nouns look feminine and are not: <span class="gk">μαθητής</span> (disciple), <span class="gk">προφήτης</span> (prophet), <span class="gk">Μεσσίας</span> (Messiah).</p>
+<p>They decline in this declension but take the masculine article, and the article is how you know. <span class="gk">ὁ μαθητής</span>, never <span class="gk">ἡ μαθητής</span>. This is the second time the article has settled a gender the ending could not, and it will not be the last.</p>
+<h3>The genitive plural always has a circumflex</h3>
+<p>Every first-declension noun ends its genitive plural in <span class="gk">-ῶν</span>, with a circumflex, wherever the accent falls in the rest of the word. <span class="gk">ἀγαπῶν</span> from <span class="gk">ἀγάπη</span>; <span class="gk">ἡμερῶν</span> from <span class="gk">ἡμέρα</span>.</p>
+<p>It is one of the few accent rules worth learning as a rule, because it never varies and it identifies the form on sight.</p>
+<h3>Four prepositions worth meeting now</h3>
+<p>A preposition tells you how its noun relates to the rest of the sentence, and in Greek it fixes that noun's case. These four take one case each, which makes them the most reliable case signposts in the text.</p>
+<table><tr><th>Preposition</th><th>Case</th><th>Core sense</th></tr>
 <tr><td class="g">ἐν</td><td>dative</td><td>in, on, among</td></tr>
 <tr><td class="g">εἰς</td><td>accusative</td><td>into, to, for</td></tr>
 <tr><td class="g">ἐκ</td><td>genitive</td><td>out of, from</td></tr>
 <tr><td class="g">ἀπό</td><td>genitive</td><td>away from</td></tr></table>
-<p>Read the preposition together with what it governs rather than as a word on its own: <span class="gk">ἐν τῷ οἴκῳ</span> is one unit. <span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel.</p>`,
+<p>Read a preposition together with the noun it governs, as one unit, rather than as a word on its own: <span class="gk">ἐν τῷ οἴκῳ</span> is a single idea. <span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel, for the same reason <span class="gk">οὐ</span> becomes <span class="gk">οὐκ</span>.</p>
+<p>Once you can see a preposition and predict the case that follows it, you are reading ahead of the sentence rather than behind it.</p>
+<h3>What to watch for</h3>
+<p class="v" data-ref="Hebrews 13:25">ἡ χάρις μετὰ πάντων ὑμῶν</p>
+<p>"Grace be with you all." <span class="gk">χάρις</span> is not first declension at all — it is third, which is chapter 17 — and it is a good reminder that a noun ending in a vowel is not automatically first declension. The article and the genitive in the lexicon entry are what settle it.</p>
+<p>And <span class="gk">ἀγάπῃ</span> against <span class="gk">ἀγάπη</span>: dative against nominative, one silent letter apart, and the difference between love acting and love being acted in.</p>`,
 v:[0,5,9,18,26,44,57,59,89,91,92,98,111,119,121,138,140,147,153,157,159,178,180,181,182,260,201,297,304,189,206,324,322,329,347,400,208,409,418,417,435,221,448,461,464,473,472,474,475,477,476],
 vids:[{t:"Lecture 5: Nouns of the First Declension",s:"Daily Dose of Greek — Rob Plummer (16:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-5/"},
       {t:"Amazing Greek: 1st and 2nd Declension Nouns",s:"Daily Dose of Greek — both declensions to Amazing Grace",yt:"GJ5AAMQhrqM"}],
 quiz:[
-{q:"ὁ μαθητής is masculine even though it looks first-declension. How do you know?",o:["The -ής ending","The article ὁ","The accent","You can't"],a:1,w:"The article. This is why lexical entries always include it — form alone would mislead you here.",sec:1},
-{q:"Why is it ἡμέρας but δόξης in the genitive singular?",o:["Different declensions","ἡμέρα has a stem ending in ρ, so the alpha is kept","δόξα is masculine","Irregular"],a:1,w:"After ε, ι or ρ the alpha persists. Otherwise it becomes eta in the genitive and dative singular.",sec:0},
-{q:"ἀγάπῃ is:",o:["Nominative singular","Genitive singular","Dative singular","Accusative plural"],a:2,w:"Dative singular — iota subscript again.",sec:0},
-{q:"You meet ἐν. Without reading another word, what case follows it?",o:["Genitive","Dative","Accusative","Any of the three"],a:1,w:"Always the dative. ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signals in the text — ἐν dative, εἰς accusative, ἐκ and ἀπό genitive.",sec:2}]},
-
+{q:"First declension nouns are usually which gender?",o:["Masculine","Feminine","Neuter","It varies evenly"],a:1,w:"Feminine, with a handful of important masculines like μαθητής and προφήτης that take the masculine article.",sec:0},
+{q:"Why is it ἡμέρας but δόξης in the genitive singular?",o:["ἡμέρα is irregular","The stem of ἡμέρα ends in ρ, so the alpha is kept","δόξα is masculine","Accent placement"],a:1,w:"After ε, ι or ρ the alpha is kept throughout. Otherwise it shifts to eta in the genitive and dative singular — and comes back for the accusative.",sec:2},
+{q:"How do you know μαθητής is masculine?",o:["The ending","The article — ὁ μαθητής","The accent","The genitive plural"],a:1,w:"The article. The ending looks feminine; the article settles it, as it did for ἡ ὁδός in chapter 4.",sec:3},
+{q:"What is always true of a first declension genitive plural?",o:["It ends -ας","It ends -ῶν with a circumflex","It has no accent","It is identical to the nominative"],a:1,w:"-ῶν with a circumflex, wherever the accent falls elsewhere in the word. One of the few accent rules worth learning as a rule.",sec:4},
+{q:"Which case does ἐν take?",o:["Genitive","Dative","Accusative","Any of them"],a:1,w:"Dative, always. ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signposts in the text.",sec:5},
+{q:"Why does ἐκ become ἐξ before a vowel?",o:["It is a different word","For the same reason οὐ becomes οὐκ — ease of sound","It marks a different case","Manuscript variation"],a:1,w:"Sound, not grammar. Greek adjusts small words to what follows them; you saw the same with οὐ, οὐκ and οὐχ in chapter 3.",sec:5},
+{q:"χάρις ends in a vowel sound. Is it first declension?",o:["Yes","No — it is third declension","Only in the plural","Only when feminine"],a:1,w:"Third, which is chapter 17. A noun ending in a vowel is not automatically first declension; the genitive and the article in the lexicon entry are what settle it.",sec:6}]},
 {id:6,t:"Adjectives of the first and second declension",s:"Attributive versus predicate",
-body:`<p>Adjectives agree with their noun in gender, number and case. But <b>where</b> the adjective sits relative to the article changes the meaning entirely.</p>
-<h3>Attributive — inside the article-noun unit</h3>
-<p><span class="gk">ὁ ἀγαθὸς ἄνθρωπος</span> — "the good man". Also <span class="gk">ὁ ἄνθρωπος ὁ ἀγαθός</span>, with the article repeated. The adjective modifies.</p>
-<h3>Predicate — outside it</h3>
-<p><span class="gk">ὁ ἄνθρωπος ἀγαθός</span> — "the man <i>is</i> good". No verb is written; Greek supplies "is". The adjective asserts.</p>
-<p>The test is simple: <b>is the adjective immediately preceded by an article?</b> If yes, attributive. If no, predicate.</p>
-<h3>Substantival use</h3>
-<p>An adjective with an article and no noun becomes a noun itself. <span class="gk">ὁ ἅγιος</span> — "the holy one". <span class="gk">οἱ ἅγιοι</span> — "the saints". <span class="gk">τὸ ἀγαθόν</span> — "the good thing", "that which is good". This is very common and worth watching for.</p>`,
+body:`<p>Adjectives use endings you already know. A first-and-second declension adjective takes second declension endings for masculine and neuter and first declension endings for feminine, so <span class="gk">ἀγαθός, ἀγαθή, ἀγαθόν</span> is three familiar patterns rather than a new one.</p>
+<p>An adjective agrees with its noun in <b>gender, number and case</b>. That is the easy part, and it is not what this chapter is about.</p>
+<p>What matters here is <i>position</i> — where the adjective sits in relation to the article — because in Greek that is not a matter of style. It changes what the sentence claims.</p>
+<h3>Attributive: inside the article-noun unit</h3>
+<p>If the adjective is immediately preceded by an article, it is modifying the noun. It describes.</p>
+<p class="v" data-ref="Mark 5:8">τὸ πνεῦμα τὸ ἀκάθαρτον</p>
+<p>"The unclean spirit." The article is repeated before the adjective, which is the commonest way Greek marks this, and it puts a little weight on the description.</p>
+<p class="v" data-ref="John 10:11">ἐγώ εἰμι ὁ ποιμὴν ὁ καλός</p>
+<p>"I am the good shepherd." Same construction. Not <i>a</i> shepherd who happens to be good, but the shepherd, the good one.</p>
+<h3>Predicate: outside it</h3>
+<p>If the adjective is <i>not</i> preceded by an article while the noun is, the adjective is not describing the noun. It is asserting something about it — and Greek supplies the verb to be without writing it.</p>
+<p class="v" data-ref="Matthew 5:5">μακάριοι οἱ πραεῖς</p>
+<p>"Blessed <i>are</i> the meek." There is no verb on the page. <span class="gk">μακάριοι</span> has no article, <span class="gk">οἱ πραεῖς</span> has one, and that is the whole signal. It is a statement, not a description — which is why the Beatitudes land as pronouncements rather than as a list of adjectives.</p>
+<h3>The test</h3>
+<p>Is the adjective immediately preceded by an article?</p>
+<p>Yes: <b>attributive</b>. It describes, and you translate it as an adjective — the good shepherd.</p>
+<p>No, while the noun has one: <b>predicate</b>. It asserts, and you supply is or are — the shepherd is good.</p>
+<p>That is the entire rule, and it is worth more than it looks. A great many arguments about a verse come down to whether an adjective is describing or asserting, and the article settles it before any of the theology starts.</p>
+<h3>Substantival: the adjective becomes the noun</h3>
+<p>Give an adjective an article and no noun at all, and it becomes a noun itself.</p>
+<p>Look at <span class="gk">οἱ πραεῖς</span> again in that verse from Matthew. There is no word for people in it. The article plus a masculine plural adjective is enough: <i>the meek ones</i>, <i>the meek</i>.</p>
+<p>You will meet this constantly. <span class="gk">ὁ ἅγιος</span>, the holy one. <span class="gk">οἱ ἅγιοι</span>, the saints. <span class="gk">τὸ ἀγαθόν</span>, the good — the thing that is good, neuter because it is an abstraction rather than a person.</p>
+<p>The gender is doing real work there. Masculine plural for people, neuter singular for a quality or a thing. When you meet an article with no noun after it, read the gender first.</p>
+<h3>What to watch for</h3>
+<p>Word order alone will not tell you which position you are looking at. <span class="gk">ὁ ἀγαθὸς ἄνθρωπος</span> and <span class="gk">ὁ ἄνθρωπος ὁ ἀγαθός</span> are both attributive and both mean the good man; the adjective has moved and nothing has changed.</p>
+<p>Only the article decides. Look for it, not for the position on the line — and where the noun has no article at all, the construction is ambiguous and the context is all you have.</p>`,
 v:[64,100,101,125,143,158,164,168,248,228,229,226,227,289,309,317,323,320,344,357,369,374,447,444,487,488,490,486,489],
 vids:[{t:"Lecture 6: Adjectives of the First and Second Declension",s:"Daily Dose of Greek — Rob Plummer (17:09)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-6/"}],
 quiz:[
-{q:"ὁ ἄνθρωπος ἀγαθός means:",o:["the good man","the man is good","a good man","the man of good"],a:1,w:"Predicate position — the adjective is not preceded by an article, so it asserts, and an unwritten 'is' completes the sense.",sec:2},
-{q:"οἱ ἅγιοι most naturally means:",o:["the holy ones / the saints","they are holy","holy things","the holy man"],a:0,w:"Substantival use: article plus adjective, no noun. Very common in the epistles.",sec:3},
-{q:"What single test distinguishes attributive from predicate position?",o:["Word order alone","Whether an article immediately precedes the adjective","The accent","The gender"],a:1,w:"Article immediately before the adjective means attributive. That's the whole test.",sec:2}]},
-
+{q:"An adjective agrees with its noun in:",o:["Gender and number","Gender, number and case","Case only","Number and case"],a:1,w:"All three. That part is mechanical; what this chapter is about is position, which is not.",sec:0},
+{q:"In τὸ πνεῦμα τὸ ἀκάθαρτον, the adjective is:",o:["Attributive — the unclean spirit","Predicate — the spirit is unclean","Substantival","Ambiguous"],a:0,w:"Attributive: the article is repeated before it. It describes the noun rather than asserting something about it.",sec:1},
+{q:"μακάριοι οἱ πραεῖς has no verb. Why not?",o:["It was lost in copying","The adjective is predicate, so Greek supplies 'are'","It is a fragment","μακάριοι is a verb"],a:1,w:"Predicate position: the adjective has no article while the noun does, so Greek supplies the verb to be. Blessed are the meek.",sec:2},
+{q:"What is the test for attributive against predicate?",o:["Word order","Whether an article immediately precedes the adjective","The accent","The gender"],a:1,w:"The article, and only the article. ὁ ἀγαθὸς ἄνθρωπος and ὁ ἄνθρωπος ὁ ἀγαθός are both attributive despite the different order.",sec:3},
+{q:"οἱ πραεῖς has no noun in it. What supplies one?",o:["A word left out by the scribe","The article plus the adjective's gender and number","The previous verse","Nothing; it is incomplete"],a:1,w:"An article with an adjective and no noun makes the adjective a noun. Masculine plural gives you the meek ones.",sec:4},
+{q:"τὸ ἀγαθόν is neuter singular. What does that tell you?",o:["It refers to one man","It is an abstraction — the good, that which is good","It is plural in meaning","It is feminine in disguise"],a:1,w:"Neuter singular for a quality or a thing, masculine plural for people. When an article has no noun after it, read the gender first.",sec:4},
+{q:"ὁ ἄνθρωπος ἀγαθός means:",o:["The good man","The man is good","A good man","The man, the good one"],a:1,w:"Predicate — the adjective has no article, so it asserts. The man is good. Moving ἀγαθός in front of ἄνθρωπος without an article would not change that.",sec:5}]},
 {id:7,t:"Imperfect and aorist active indicative",s:"Past time, and the aspect distinction that matters more",
-body:`<p>The imperfect describes past action viewed as ongoing, repeated or attempted. It is formed from the present stem with two changes: an <b>augment</b> on the front and <b>secondary endings</b> on the back.</p>
-<table><caption>ἔλυον — I was loosing</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+body:`<p>Two past tenses, and the difference between them is not when the action happened. Both are past. The difference is how the writer chose to present it, which is what chapter 2 called aspect — and this is the chapter where that stops being theory.</p>
+<h3>The imperfect: inside the action</h3>
+<p>Built from the present stem, with two changes: an augment on the front and secondary endings on the back.</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἔλυον</td><td class="g">ἐλύομεν</td></tr>
 <tr><th>2nd</th><td class="g">ἔλυες</td><td class="g">ἐλύετε</td></tr>
 <tr><th>3rd</th><td class="g">ἔλυε(ν)</td><td class="g">ἔλυον</td></tr></table>
-<p>First person <b>singular</b> and third person <b>plural</b> are identical (<span class="gk">ἔλυον</span>) — context decides. The table above shows it: 1st plural is <span class="gk">ἐλύομεν</span>.</p>
+<p>First person singular and third person plural are both <span class="gk">ἔλυον</span>. Nothing in the form separates them; the sentence has to.</p>
 <h3>The augment</h3>
-<p>An <span class="gk">ἐ-</span> prefixed to the stem, marking past time in the indicative. If the verb already begins with a <b>short</b> vowel, that vowel lengthens instead: <span class="gk">ἀκούω → ἤκουον</span>, <span class="gk">ἐγείρω → ἤγειρον</span>. If it already begins with a long vowel or a long diphthong there is nothing left to lengthen, so the past tense looks exactly like the present — <span class="gk">εὑρίσκω</span> keeps its <span class="gk">εὑ-</span> throughout. Where there is no augment, the ending is what tells you the tense.</p>
-<p>With compound verbs the augment goes <i>after</i> the preposition, not before: <span class="gk">ἐκβάλλω → ἐξέβαλλον</span>. This trips people up when looking words up.</p>
-<h3>What it means</h3>
-<p>The imperfect is the past tense of the imperfective aspect — the camera inside the action rather than outside it. Mark uses it constantly for vivid narrative. When an author switches from aorist to imperfect, that shift is usually doing something.</p>
-<p>The aorist active indicative typically shows an augment, the stem, a <span class="gk">σα</span> marker, and secondary endings: <span class="gk">ἔλυσα</span> — "I loosed".</p>
-<table><caption>ἔλυσα</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<p>An <span class="gk">ἐ-</span> on the front, marking past time in the indicative. Three things happen to it in practice.</p>
+<p>If the verb already begins with a short vowel, that vowel lengthens instead of taking a prefix: <span class="gk">ἀκούω → ἤκουον</span>.</p>
+<p>If it begins with a long vowel or a long diphthong there is nothing left to lengthen, so the past looks exactly like the present. <span class="gk">εὑρίσκω</span> keeps its <span class="gk">εὑ-</span> throughout, and the ending is then the only thing telling you the tense.</p>
+<p>And with a compound verb the augment goes <i>inside</i>, after the preposition:</p>
+<p class="v" data-ref="Matthew 8:16">ἐξέβαλεν τὰ πνεύματα λόγῳ</p>
+<p>"He cast out the spirits with a word." The verb is <span class="gk">ἐκβάλλω</span>; the augment has landed between <span class="gk">ἐκ-</span> and the stem. This is what makes compound verbs awkward to look up, because the form on the page no longer starts with the letters the lexicon lists.</p>
+<h3>What the imperfect is for</h3>
+<p>It is the past tense of the imperfective aspect: the camera inside the action rather than outside it. Ongoing, repeated, attempted, or simply held open.</p>
+<p class="v" data-ref="Matthew 4:11">ἄγγελοι προσῆλθον καὶ διηκόνουν αὐτῷ</p>
+<p>"Angels came and were ministering to him." Both verbs are past, and they are not the same kind of past. <span class="gk">προσῆλθον</span> is aorist — they came, one event, done. <span class="gk">διηκόνουν</span> is imperfect — and the ministering does not close. Most translations say <i>were ministering</i> or <i>began to minister</i> for exactly that reason.</p>
+<p>Mark uses the imperfect constantly for vivid narrative. When an author switches between the two, the switch is usually doing something, and it is worth stopping to ask what.</p>
+<h3>The aorist: the whole thing at once</h3>
+<p>Augment, stem, a <span class="gk">σα</span> marker, and secondary endings.</p>
+<table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἔλυσα</td><td class="g">ἐλύσαμεν</td></tr>
 <tr><th>2nd</th><td class="g">ἔλυσας</td><td class="g">ἐλύσατε</td></tr>
 <tr><th>3rd</th><td class="g">ἔλυσε(ν)</td><td class="g">ἔλυσαν</td></tr></table>
-<h3>Second aorists</h3>
-<p>Some verbs form the aorist by changing the stem instead: <span class="gk">λαμβάνω → ἔλαβον</span>, <span class="gk">λέγω → εἶπον</span>, <span class="gk">ἔρχομαι → ἦλθον</span>. The endings look like the imperfect; the stem is what tells you it's aorist. These are irregular and simply have to be learned.</p>
-<h3>The thing to get right</h3>
-<p>The aorist is <b>perfective aspect</b>: the action viewed from outside, as a whole, without regard to its internal progress. That is all it means.</p>
-<p>It does <i>not</i> mean "once for all". The "once-for-all aorist" is one of the most common errors in preaching. An aorist can describe an action lasting decades: <span class="gk">ἐβασίλευσεν</span>, "he reigned", covers a whole reign in one word precisely because the aorist views it as a single whole.</p>
-<p>Outside the indicative, the aorist carries <b>no time reference at all</b>. An aorist participle or subjunctive is not past; it's simply perfective.</p>`,
+<p>The aorist presents the action as a single whole, viewed from outside. That is all it claims. It does not say the action was quick, or once only, or finished — those are things the sentence may tell you, and the tense does not.</p>
+<p>This matters more than almost anything else in first-year Greek, because sermons are built on the opposite claim all the time. The aorist is not the once-for-all tense. It is the tense that declines to comment.</p>
+<h3>What to watch for</h3>
+<p class="v" data-ref="Matthew 5:2">ἐδίδασκεν αὐτούς</p>
+<p>"He was teaching them" — the sentence that opens the Sermon on the Mount. An aorist there would have said he taught them, and closed it. The imperfect holds it open, and everything that follows is what he was saying.</p>
+<p>The two traps are mechanical. <span class="gk">ἔλυον</span> is first singular or third plural, and you cannot tell from the word. And a verb beginning with a long vowel has no visible augment at all, so an imperfect can look exactly like a present until you read the ending.</p>`,
 v:[86,96,131,372,371,496,495,494],
 vids:[{t:"Lecture 7: Imperfect and Aorist Active Indicative",s:"Daily Dose of Greek — Rob Plummer (23:20)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-7/"},
       {t:"Jingle Bells Aorist Active and Middle Song",s:"Daily Dose of Greek — aorist active and middle endings",yt:"FPWHsfdjuMg"}],
 quiz:[
-{q:"What does the augment mark?",o:["Plural number","Past time in the indicative","Passive voice","The subjunctive"],a:1,w:"Past time, and only in the indicative mood. Outside the indicative there is no augment because there is no time reference.",sec:1},
-{q:"The imperfect of ἐκβάλλω is:",o:["ἐἐκβαλλον","ἐκέβαλλον","ἐξέβαλλον","ἤκβαλλον"],a:2,w:"The augment slots in after the prepositional prefix, and ἐκ becomes ἐξ before a vowel.",sec:1},
-{q:"ἔλυον could be:",o:["1st singular or 3rd plural","1st plural only","2nd singular","3rd singular only"],a:0,w:"Both. Context resolves it — Greek tolerates this ambiguity happily.",sec:0},
-{q:"Outside the indicative, the aorist communicates:",o:["Past time","Once-for-all action","Perfective aspect only","Completed action with ongoing results"],a:2,w:"Aspect alone. There is no augment and no time reference outside the indicative.",sec:4},
-{q:"Why is the 'once-for-all aorist' a fallacy?",o:["The aorist is always plural","The aorist can describe actions of any duration","The aorist is only used in narrative","Greek has no aorist"],a:1,w:"ἐβασίλευσεν ('he reigned') covers years. The aorist views the action as a whole, not as brief or unrepeatable.",sec:4},
-{q:"εἶπον is the aorist of which verb?",o:["εἰμί","λέγω","λαμβάνω","ἔρχομαι"],a:1,w:"A second aorist with a completely different stem from λέγω. These have to be memorised individually.",sec:3},
-{q:"What distinguishes the perfect tense from the aorist?",o:["The perfect is future","The perfect stresses a completed action with continuing results","The perfect is plural","Nothing"],a:1,w:"The perfect (stative aspect) views an action as completed with an abiding resulting state — τετέλεσται, 'it stands finished'.",sec:4}]},
-
+{q:"What separates the imperfect from the aorist?",o:["When the action happened","How the writer presents it — aspect","One is passive","One is a mood"],a:1,w:"Both are past. The imperfect views the action from inside as ongoing; the aorist views it as a single whole from outside.",sec:0},
+{q:"ἔλυον is which person and number?",o:["First singular","Third plural","Either — the form does not say","Second plural"],a:2,w:"Both first singular and third plural are ἔλυον. Nothing in the form separates them, so the sentence has to.",sec:1},
+{q:"Why does ἀκούω become ἤκουον rather than ἐάκουον?",o:["It is irregular","A short initial vowel lengthens instead of taking a prefix","The augment was lost","η is easier to say"],a:1,w:"The augment lengthens a short initial vowel rather than being prefixed to it. And a long initial vowel has nothing left to lengthen, so the past can look exactly like the present.",sec:2},
+{q:"In ἐξέβαλεν, where has the augment gone?",o:["Onto the front of the whole word","Between the preposition and the stem","Nowhere; there is none","Onto the ending"],a:1,w:"Inside the compound, after ἐκ-. This is why compound verbs are awkward to look up: the form no longer begins with the letters the lexicon lists.",sec:2},
+{q:"In ἄγγελοι προσῆλθον καὶ διηκόνουν αὐτῷ, why do translations often render the second verb 'were ministering'?",o:["It is plural","It is imperfect, so the action is presented as open","It is passive","It is a different tense entirely"],a:1,w:"προσῆλθον is aorist — one event, closed. διηκόνουν is imperfect, and the ministering does not close. The switch between them is doing something.",sec:3},
+{q:"What does the aorist claim about an action?",o:["That it happened once and for all","That it was quick","That it is presented as a single whole","That it is finished with continuing results"],a:2,w:"Only that it is viewed as a whole, from outside. It is not the once-for-all tense; that claim is made about it constantly and the grammar does not support it.",sec:4},
+{q:"Matthew 5:2 has ἐδίδασκεν rather than an aorist. What does that do?",o:["Nothing; they are interchangeable","It holds the teaching open, and what follows is what he was saying","It makes it passive","It moves it into the present"],a:1,w:"An aorist would have said he taught them and closed it. The imperfect holds it open — and the Sermon on the Mount follows.",sec:5},
+{q:"A verb beginning with a long vowel has no visible augment. What tells you the tense?",o:["The accent","The ending","Nothing can","The context alone"],a:1,w:"The secondary ending. εὑρίσκω keeps its εὑ- throughout, so the ending is the only thing distinguishing the imperfect from the present.",sec:5}]},
 {id:8,t:"Additional prepositions",s:"Case changes the meaning",
 body:`<p>Many Greek prepositions take more than one case, and the case changes the meaning. This is a place where a lazy reading goes wrong quickly.</p>
 <table>
