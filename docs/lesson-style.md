@@ -171,6 +171,20 @@ chapter 20. Prose written from memory does this. Quote from `data/gnt/`.
 Bare references in the prose (`Matt 3:17`) are also resolved by the checker,
 so they cannot point at a verse that does not exist.
 
+**And the same applies to a form quoted outside a verse.** A paradigm cell may
+legitimately be a form nobody ever wrote — `λέλυκα` and `ἐλύθην` are the
+textbook's own skeleton — but a form set in the prose as evidence must be one
+a reader can meet. Batch 5 offered `ἐγινόμην` against `ἐγενόμην` to show that
+one vowel separates an imperfect from an aorist. The point is right and
+`ἐγινόμην` occurs nowhere; `ἐγίνετο` against `ἐγένετο` says the same thing in
+words that exist. Batch 4's chapter 15 draft did the same with `ἤχθην` and
+`ἐβαπτίσθην`, which are lexicon citation forms — correct, but the attested
+`ἤχθη` and `ἐβαπτίσθη` teach the rule better.
+
+`check_lessons` now fails a finished chapter carrying an unattested form that
+is not listed, with its reason, in `UNATTESTED`. **When you write a form to
+prove a point, search for it first.**
+
 ---
 
 ## What the corpus can do for you

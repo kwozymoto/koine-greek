@@ -738,104 +738,304 @@ quiz:[
 ]},
 
 {id:12,t:"Present middle and passive indicative",s:"Where English has no equivalent",
-body:`<p>Greek has three voices. Active: the subject acts. Passive: the subject is acted upon. <b>Middle</b>: the subject acts with some special reference to itself — and English has nothing quite like it.</p>
-<p>In the present and imperfect, middle and passive share identical forms. Only context tells you which is meant.</p>
-<table><caption>λύομαι — present middle/passive</caption>
+body:`<p>Voice describes how the subject of a verb relates to the action. Every verb you have read so far has been <b>active</b>: the subject does the thing. This chapter introduces the other two.</p>
+<p>The <b>passive</b> English has too — the subject receives the action. The <b>middle</b> it does not, and that is the difficulty. In the middle, the subject acts with reference to itself: on itself, for itself, or in its own interest.</p>
+<p>This is not a corner of the language. Middle and passive indicatives are 3,799 of the New Testament's 15,589 — one in four.</p>
+<h3>One set of endings, two voices</h3>
+<p>The primary middle and passive endings are:</p>
+<table><caption>Primary middle/passive endings</caption>
+<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>1st</th><td class="g">-μαι</td><td class="g">-μεθα</td></tr>
+<tr><th>2nd</th><td class="g">-σαι</td><td class="g">-σθε</td></tr>
+<tr><th>3rd</th><td class="g">-ται</td><td class="g">-νται</td></tr></table>
+<p>One set, and both voices use it. In the present, imperfect, perfect and pluperfect, <b>a middle and a passive are spelled identically</b>. The form cannot tell you which is meant. Only the verb and the sentence can.</p>
+<p>Worth being honest about what follows from that. When this app's reader labels a form "middle" or "passive", that is an editorial judgement about the sentence, not something read off the letters — and you are entitled to disagree with it.</p>
+<h3>The paradigm, and the odd second singular</h3>
+<table><caption>λύομαι — present middle and passive</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">λύομαι</td><td class="g">λυόμεθα</td></tr>
 <tr><th>2nd</th><td class="g">λύῃ</td><td class="g">λύεσθε</td></tr>
 <tr><th>3rd</th><td class="g">λύεται</td><td class="g">λύονται</td></tr></table>
+<p>The connecting vowel ο/ε shows plainly in five of the six. The exception is the second singular, and it is worth a minute now because the same thing happens in each of the next three chapters.</p>
+<p><span class="gk">λύῃ</span> began as <span class="gk">λύεσαι</span>. The σ dropped out between two vowels, and the ε and α contracted, taking the ι underneath. Greek does this whenever an ending starting with σ meets a connecting vowel — so every second person singular in the middle looks irregular, and none of them is.</p>
+<h3>What the passive says</h3>
+<p>The subject receives the action, exactly as in English. What differs is that Greek does with one word what English needs two or three for: <span class="gk">λύομαι</span> is "I am being loosed".</p>
+<p>Prefer that longer rendering while you are learning. "I am loosed" is closer to the Greek perfect passive, which is the next chapter, and blurring the two costs you the difference between them.</p>
+<p class="v" data-ref="Matthew 11:5">λεπροὶ καθαρίζονται καὶ κωφοὶ ἀκούουσιν, καὶ νεκροὶ ἐγείρονται καὶ πτωχοὶ εὐαγγελίζονται</p>
+<p>"Lepers are being cleansed and deaf people hear, and dead people are being raised and poor people have good news preached to them." <span class="gk">καθαρίζονται</span>, <span class="gk">ἐγείρονται</span> and <span class="gk">εὐαγγελίζονται</span> are all present passives, and Jesus does not say by whom — a point we come back to.</p>
+<h3>What the middle says</h3>
+<p>There is no single English rendering, because the middle does not name <i>how</i> the subject is involved. It only says that it is. <span class="gk">λύομαι</span> as a middle could be "I am loosing myself", "I am loosing for myself", or "I myself am loosing", and the sentence decides.</p>
+<p>The clearest evidence that it is doing real work is a verb that means two different things in the two voices. <span class="gk">ἄρχω</span>, active, means "I rule". <span class="gk">ἄρχομαι</span>, middle, means "I begin" — and 84 of that verb's 86 occurrences are middle.</p>
+<p>Be careful not to overstate it. Where Greek wants a plain reflexive it usually says so with an active verb and a reflexive pronoun:</p>
+<p class="v" data-ref="John 17:19">ὑπὲρ αὐτῶν ἐγὼ ἁγιάζω ἐμαυτόν</p>
+<p>"For their sake I sanctify myself." Active verb, reflexive pronoun, nothing left to the middle at all.</p>
 <h3>Deponent verbs</h3>
-<p>Some verbs appear only in middle or passive form but are active in meaning: <span class="gk">ἔρχομαι</span> (I come), <span class="gk">γίνομαι</span> (I become), <span class="gk">ἀποκρίνομαι</span> (I answer), <span class="gk">πορεύομαι</span> (I go). Don't try to squeeze a passive sense out of these — they simply are how those verbs work.</p>
-<p>Many grammarians now prefer to call these "middle-only" verbs rather than deponent, arguing that Greek's middle was always broader than the traditional label suggests. If a commentary makes a point about a "true middle", that debate is what lies behind it.</p>`,
+<p>A great many Greek verbs have middle or passive forms and no active ones. They are called <b>deponent</b>, from the Latin for "laid aside", on the theory that the active forms were dropped somewhere in the language's history. They are middle in form and active in meaning.</p>
+<p>Here is the number that ought to change how you read the middle: <b>443 of the 683 present middle indicatives in the New Testament — two in three — belong to verbs that have no active form anywhere.</b> The two commonest are <span class="gk">ἔρχεται</span> (85) and <span class="gk">δύναται</span> (69), and neither means anything reflexive.</p>
+<p>So when you meet a middle, the first question is not "what is the middle voice doing here?" It is "does this verb have an active at all?" Usually it does not, and the ending is simply how the word is spelled.</p>
+<p>One practical oddity: some of these take an object in a case other than the accusative. <span class="gk">ἀποκρίνομαι</span> takes the dative, and <span class="gk">ἄρχω</span> the genitive.</p>
+<h3>By whom, through whom, by what</h3>
+<p>A passive often names the agent, and Greek has three ways of doing it — two of them from chapter 8.</p>
+<p><b>Direct agent:</b> <span class="gk">ὑπό</span> with the genitive.</p>
+<p class="v" data-ref="1 Corinthians 14:24">ἐλέγχεται ὑπὸ πάντων, ἀνακρίνεται ὑπὸ πάντων</p>
+<p>"He is convicted by all, he is called to account by all."</p>
+<p><b>Intermediate agent:</b> <span class="gk">διά</span> with the genitive — the one <i>through</i> whom the first agent acts.</p>
+<p><b>Impersonal means:</b> the bare dative, with or without <span class="gk">ἐν</span>.</p>
+<p class="v" data-ref="Ephesians 2:8">τῇ γὰρ χάριτί ἐστε σεσῳσμένοι διὰ πίστεως</p>
+<p>"For by grace you have been saved through faith." Both at once: grace in the dative as the means, faith with <span class="gk">διά</span> as what it comes through. (<span class="gk">σεσῳσμένοι</span> is a perfect passive — the next chapter.)</p>
+<p>Very often no agent is named at all, and when the unnamed agent is plainly God the construction is called a <b>divine passive</b>. It is common in the sayings of Jesus.</p>
+<p class="v" data-ref="Matthew 5:4">μακάριοι οἱ πενθοῦντες, ὅτι αὐτοὶ παρακληθήσονται</p>
+<p>"Blessed are those who mourn, for they shall be comforted" — by God, and Matthew does not need to say so.</p>
+<h3>What to watch for</h3>
+<p><b>The form will not decide it for you.</b> Middle and passive share endings in four tenses. Ask what the verb means before asking what the voice is doing.</p>
+<p><b>Most middles are lexical.</b> Two in three are deponent. Reach for "the middle voice is emphasising something" last, not first.</p>
+<p><b>Translate the present passive as "is being —".</b> It keeps the tense's aspect visible and it keeps the perfect free to mean what it means.</p>
+<p><b>And <span class="gk">λύῃ</span> is second singular</b>, not third, however much it looks like <span class="gk">λύει</span> with a subscript.</p>`,
 v:[23,28,65,104,243,194,294,299,306,211,377,391,403,436,497],
 vids:[{t:"Lecture 12: Present Middle and Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (14:35)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-12/"},
       {t:"Present Middle/Passive Endings Memory Device",s:"Daily Dose of Greek — a hook for -ομαι, -ῃ, -εται",yt:"NUq-8hvNgqU"},
       {t:"Mnemonic Song for the Middle-Passive Endings",s:"Daily Dose of Greek — the same set, sung",yt:"4t5dSkwrMqk"}],
 quiz:[
-{q:"ἔρχομαι is middle in form. What does it mean?",o:["I am come (passive)","I come (active meaning)","I come for myself","I am being sent"],a:1,w:"A deponent, or middle-only, verb. Middle form, active meaning. Forcing a passive sense onto it produces nonsense.",sec:1},
-{q:"In the present tense, middle and passive forms are:",o:["Always different","Identical — context decides","Distinguished by the augment","Distinguished by accent"],a:1,w:"Identical in the present, imperfect, perfect and pluperfect. Only the aorist and the future distinguish them.",sec:0},
-{q:"The middle voice indicates the subject:",o:["Is acted upon","Acts with special reference to itself","Acts on a plural object","Is in the past"],a:1,w:"Roughly — the subject has a particular stake or involvement in the action. English needs a paraphrase to catch it.",sec:0}]},
+{q:"Greek has three voices. What does the middle add that English lacks?",o:["A politer form","The subject acting with reference to itself","A past tense","A way of marking plurals"],a:1,w:"Active: the subject does it. Passive: the subject receives it. Middle: the subject acts on itself, for itself, or in its own interest — and English has no single construction for it.",sec:0},
+{q:"In the present, how do you tell a middle from a passive by its form?",o:["The accent","The connecting vowel","You cannot — they are spelled identically","The augment"],a:2,w:"One set of endings serves both, in the present, imperfect, perfect and pluperfect. Only the verb and the sentence decide, which is why a parsing that says 'middle' is a judgement rather than a reading.",sec:1},
+{q:"The primary middle/passive endings are:",o:["-ω, -εις, -ει…","-μαι, -σαι, -ται, -μεθα, -σθε, -νται","-ν, -ς, —, -μεν, -τε, -σαν","-μην, -σο, -το…"],a:1,w:"Learn these six. They reappear on the perfect middle/passive and the future middle in the next chapter, straight onto a different stem.",sec:1},
+{q:"Why is the second singular λύῃ rather than λύεσαι?",o:["It is irregular and must be memorised","The σ dropped between vowels and ε + αι contracted","It is a different verb","A scribal simplification"],a:1,w:"Greek drops σ between vowels. The same thing happens in the future middle (λύσῃ) and again in the secondary endings, so it is one fact, not three exceptions.",sec:2},
+{q:"λύομαι as a passive is best rendered:",o:["I loose","I am being loosed","I have been loosed","I loosed"],a:1,w:"'I am loosed' belongs to the perfect passive. Keeping 'I am being loosed' for the present preserves the imperfective aspect and keeps the two tenses distinct.",sec:3},
+{q:"In Matthew 11:5, who is named as doing the cleansing and raising?",o:["Jesus","The disciples","No one — the agent is left unstated","The crowds"],a:2,w:"Three present passives with no agent. Where the unnamed agent is plainly God, the construction is called a divine passive, and it is very common in the sayings of Jesus.",sec:3},
+{q:"ἄρχω is 'I rule'. What does the middle ἄρχομαι mean?",o:["I am ruled","I begin","I rule myself","I am ruling"],a:1,w:"A different word in the middle, and 84 of the verb's 86 occurrences are middle. A verb whose two voices mean two things is the clearest evidence the middle is doing real work.",sec:4},
+{q:"John 17:19 has ἐγὼ ἁγιάζω ἐμαυτόν. Why is that worth noticing here?",o:["ἁγιάζω is a middle","Greek usually expresses a plain reflexive with an active verb and a reflexive pronoun, not with the middle","It is the only reflexive in John","ἐμαυτόν is a middle ending"],a:1,w:"'I sanctify myself' — active verb, reflexive pronoun. Strictly reflexive middles are much rarer than the textbook categories suggest.",sec:4},
+{q:"What proportion of present middle indicatives belong to verbs with no active form at all?",o:["About a tenth","Two in three","All of them","None"],a:1,w:"443 of 683. ἔρχεται and δύναται alone are 154 of them. So the first question about a middle is whether the verb even has an active — usually it does not.",sec:5},
+{q:"ἀποκρίνομαι takes its object in which case?",o:["Accusative","Dative","Genitive","Nominative"],a:1,w:"ἀπεκρίθη αὐτοῖς — 'he answered them'. ἄρχω takes the genitive. A handful of verbs simply do not use the accusative, and the lexicon says which.",sec:5},
+{q:"Greek marks the agent of a passive three ways. Which marks impersonal means?",o:["ὑπό + genitive","διά + genitive","The bare dative, with or without ἐν","πρός + accusative"],a:2,w:"τῇ χάριτι, 'by grace' (Ephesians 2:8). ὑπό + genitive is the direct agent; διά + genitive the one it came through.",sec:6},
+{q:"λύῃ is which person?",o:["Third singular","Second singular","First plural","Third plural"],a:1,w:"Second singular middle/passive — not λύει with a subscript. The pair is a standing trap, and the contracted second singular is the reason.",sec:7}
+]},
 
 {id:13,t:"Perfect middle/passive and future middle",s:"Endings straight onto the stem",
-body:`<p>The perfect middle/passive is the easiest paradigm you will ever learn: reduplicate, then add the basic middle endings <b>directly to the stem</b> — no connecting vowel, no tense sign.</p>
-<table><caption>λέλυμαι — I have been loosed</caption>
+body:`<p>Two more sets of forms, and no new endings to learn. Both use the primary middle and passive endings from chapter 12 — <span class="gk">-μαι, -σαι, -ται, -μεθα, -σθε, -νται</span> — attached to a stem you already know how to build.</p>
+<p>The perfect middle and passive is the verb's <b>fifth principal part</b>. What is new about it is not the endings but where they go: straight onto the reduplicated stem, with no connecting vowel in between.</p>
+<h3>The perfect middle and passive</h3>
+<table><caption>λέλυμαι — perfect middle and passive</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">λέλυμαι</td><td class="g">λελύμεθα</td></tr>
 <tr><th>2nd</th><td class="g">λέλυσαι</td><td class="g">λέλυσθε</td></tr>
 <tr><th>3rd</th><td class="g">λέλυται</td><td class="g">λέλυνται</td></tr></table>
-<p>Those endings — <span class="gk">-μαι, -σαι, -ται, -μεθα, -σθε, -νται</span> — are the skeleton of every middle/passive primary tense; here you see them with nothing in the way. <span class="gk">γέγραπται</span> from lesson 10 is exactly this form: γε-γραπ-ται.</p>
-<h3>Future middle</h3>
-<p>Future stem (σ) + the same endings with a connecting vowel:</p>
-<table><caption>λύσομαι — I will loose (for myself)</caption>
+<p>Reduplication exactly as in chapter 10, then the ending. Because there is no connecting vowel the σ of the second singular survives here — <span class="gk">λέλυσαι</span>, not a contracted form.</p>
+<p>The meaning is the perfect's meaning: a completed action whose result stands. As a passive, <span class="gk">λέλυμαι</span> is "I have been loosed", or simply "I am loosed".</p>
+<p>One form dominates this whole category. <span class="gk">γέγραπται</span> — "it stands written" — accounts for 67 of the 202 perfect passive indicatives in the New Testament, one in three.</p>
+<p class="v" data-ref="John 20:31">ταῦτα δὲ γέγραπται ἵνα πιστεύητε</p>
+<p>"But these things have been written so that you may believe." Written then, and standing written now, which is why John chose the tense.</p>
+<h3>When the stem ends in a consonant</h3>
+<p>These endings begin with <span class="gk">μ, σ, τ</span> and <span class="gk">ν</span>, and a stem ending in a consonant has to meet them. The result is a spelling change, and there is no point learning the rules.</p>
+<p><span class="gk">γράφω</span> has the stem <span class="gk">γραφ-</span>. Before the <span class="gk">-ται</span> of the third singular the φ hardens to π: <span class="gk">γέγραπται</span>.</p>
+<p class="v" data-ref="Romans 8:38">πέπεισμαι γὰρ ὅτι οὔτε θάνατος οὔτε ζωὴ</p>
+<p>"For I am convinced that neither death nor life…" <span class="gk">πείθω</span> has the stem <span class="gk">πειθ-</span>, and before the <span class="gk">-μαι</span> the θ becomes σ: <span class="gk">πέπεισμαι</span>. Note the sense — not "I was persuaded" but "I stand persuaded", which is the perfect doing its work.</p>
+<p>What to take from this is recognition, not derivation. A doubled first syllable and one of these endings means a perfect middle or passive, whatever has happened to the consonant in between.</p>
+<h3>The future middle</h3>
+<table><caption>λύσομαι — future middle</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">λύσομαι</td><td class="g">λυσόμεθα</td></tr>
 <tr><th>2nd</th><td class="g">λύσῃ</td><td class="g">λύσεσθε</td></tr>
 <tr><th>3rd</th><td class="g">λύσεται</td><td class="g">λύσονται</td></tr></table>
-<p>Its real importance: many common verbs use a middle future with active meaning — <span class="gk">ἔσομαι</span> (I will be), <span class="gk">γνώσομαι</span> (I will know), <span class="gk">ὄψομαι</span> (I will see), <span class="gk">λήμψομαι</span> (I will receive). Note <span class="gk">ἔσται</span>, "he/it will be", drops the connecting vowel — you will meet it constantly.</p>
-<h3>Reading note</h3>
-<p>The perfect middle and perfect passive are identical in form. <span class="gk">λέλυμαι</span> could be "I have loosed for myself" or "I have been loosed"; only context decides. In practice the passive sense dominates in the NT.</p>`,
+<p>This one is simply the future stem — the second principal part, with its σ — plus a connecting vowel plus the same endings. And because there is a connecting vowel, the second singular contracts again: <span class="gk">λύσῃ</span>, from <span class="gk">λύσεσαι</span>.</p>
+<p>The future passive is built on a different stem altogether and waits until chapter 15.</p>
+<p class="v" data-ref="Matthew 26:64">ἀπ’ ἄρτι ὄψεσθε τὸν υἱὸν τοῦ ἀνθρώπου</p>
+<p>"From now on you will see the Son of Man." <span class="gk">ὄψεσθε</span> is the future middle of <span class="gk">ὁράω</span> — middle in form and plainly active in meaning.</p>
+<h3>ἔσομαι: the future of εἰμί</h3>
+<table><caption>ἔσομαι — I will be</caption>
+<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>1st</th><td class="g">ἔσομαι</td><td class="g">ἐσόμεθα</td></tr>
+<tr><th>2nd</th><td class="g">ἔσῃ</td><td class="g">ἔσεσθε</td></tr>
+<tr><th>3rd</th><td class="g">ἔσται</td><td class="g">ἔσονται</td></tr></table>
+<p>Built on the stem <span class="gk">ἐσ-</span> with the same endings, and with this the paradigm of <span class="gk">εἰμί</span> is complete in every tense you need.</p>
+<p>Learn it properly, because it is not a footnote: <b>186 of the 489 future middle indicatives in the New Testament belong to <span class="gk">εἰμί</span></b> — two in five. <span class="gk">ἔσται</span> alone occurs 117 times.</p>
+<p class="v" data-ref="Revelation 21:7">ἔσομαι αὐτῷ θεὸς καὶ αὐτὸς ἔσται μοι υἱός</p>
+<p>"I will be God to him, and he will be a son to me."</p>
+<h3>Telling them apart</h3>
+<p>You now have three sets of forms ending in <span class="gk">-μαι</span> and <span class="gk">-ται</span>, and they are told apart by what sits in front of the ending.</p>
+<table>
+<tr><th>Form</th><th>Marker</th><th>Tense</th></tr>
+<tr><td class="g">λύεται</td><td>connecting vowel, nothing else</td><td>present</td></tr>
+<tr><td class="g">λέλυται</td><td>reduplication, no connecting vowel</td><td>perfect</td></tr>
+<tr><td class="g">λύσεται</td><td>σ before the connecting vowel</td><td>future</td></tr></table>
+<p>Three words, one ending, and the whole difference is in the middle of them. This is the habit worth building from this chapter: read the front of the verb, not the back.</p>
+<h3>Adverbs</h3>
+<p>An adverb qualifies a verb, an adjective or another adverb, and Greek adverbs do not decline, which makes them the easiest words you will learn.</p>
+<p>Many are made from adjectives by putting <span class="gk">-ως</span> where the genitive plural has <span class="gk">-ων</span>: <span class="gk">καλῶν</span> gives <span class="gk">καλῶς</span>, "well". Others are frozen case endings — <span class="gk">σήμερον</span>, "today", is an accusative. The rest simply have to be met and learned.</p>
+<p>One in this chapter's list is worth a note. <span class="gk">εὐθύς</span>, "immediately", occurs 59 times in the New Testament and <b>42 of them are in Mark</b> — in the shortest of the Gospels. It is the single clearest fingerprint of his style, and you will feel it as soon as you read him in Greek.</p>
+<h3>μέν … δέ</h3>
+<p>These two little words work as a pair, marking a contrast: <span class="gk">μέν</span> sets something up, and <span class="gk">δέ</span> answers it. "On the one hand… on the other."</p>
+<p class="v" data-ref="1 Corinthians 1:12">Ἐγὼ μέν εἰμι Παύλου, Ἐγὼ δὲ Ἀπολλῶ</p>
+<p>"I am of Paul; and I of Apollos." Usually the best English leaves <span class="gk">μέν</span> untranslated and renders <span class="gk">δέ</span> as "but" — the balance is in the Greek structure and does not need a word of its own.</p>
+<p>With the plural article the pair means "some… others":</p>
+<p class="v" data-ref="Acts 14:4">οἱ μὲν ἦσαν σὺν τοῖς Ἰουδαίοις οἱ δὲ σὺν τοῖς ἀποστόλοις</p>
+<p>"Some were with the Jews, and others with the apostles."</p>
+<p>Both words are postpositive — they never begin their clause, and stand second. <span class="gk">μέν</span> occurs 178 times, so this is a pattern to recognise rather than a curiosity.</p>`,
 v:[16,36,49,83,95,107,109,114,240,177,155,314,315,343,342,375,416],
 vids:[{t:"Lecture 13: Perfect Middle and Passive, Future Middle Indicative",s:"Daily Dose of Greek — Rob Plummer (9:47)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-13/"}],
 quiz:[
-{q:"The perfect middle/passive attaches its endings:",o:["With a connecting vowel","With the σ tense sign","Directly to the reduplicated stem","With θη"],a:2,w:"λέ-λυ-μαι. No connecting vowel, no tense sign — which is why this paradigm shows you the bare middle endings.",sec:0},
-{q:"γέγραπται parses as:",o:["Present middle 3sg","Perfect middle/passive 3sg","Aorist passive 3sg","Pluperfect active 3sg"],a:1,w:"Reduplication (γε-) + stem + -ται. 'It stands written' — the citation formula is a perfect passive.",sec:0},
-{q:"ἔσται means:",o:["He was","He will be","He is","Let him be"],a:1,w:"Future of εἰμί, 3rd singular, with no connecting vowel. καὶ ἔσται — 'and it shall be' — echoes through the prophets' citations.",sec:1},
-{q:"γνώσομαι is best translated:",o:["I will know","I will be known","I knew for myself","Know!"],a:0,w:"Middle in form, active in meaning — one of several everyday verbs whose future is middle. Form ≠ force; the lexicon has the last word.",sec:1}]},
+{q:"The perfect middle/passive attaches its endings:",o:["With a connecting vowel, as in the present","Straight onto the reduplicated stem, with no connecting vowel","To the aorist stem","After an augment"],a:1,w:"λέ-λυ-μαι. That is why the second singular keeps its σ — λέλυσαι — where the present contracts to λύῃ.",sec:0},
+{q:"γέγραπται accounts for how much of the perfect passive in the New Testament?",o:["A handful of verses","67 of 202 — one in three","Nearly all of it","Fewer than ten"],a:1,w:"'It stands written.' Learning one form gives you a third of the category, and the tense is why it works as a citation formula.",sec:1},
+{q:"Why is it γέγραπται and not γέγραφται?",o:["A scribal error","The φ of the stem hardens to π before the τ of the ending","γράφω is irregular","It is a second perfect"],a:1,w:"A stem ending in a consonant has to meet an ending beginning with one. πείθω does the same: πέπεισμαι, with θ becoming σ. Recognise the shape; do not derive it.",sec:2},
+{q:"πέπεισμαι (Romans 8:38) means:",o:["I was persuaded","I stand persuaded — I am convinced","I will be persuaded","I persuade"],a:1,w:"The perfect's completed act with a standing result, in the middle/passive. 'For I am convinced that neither death nor life…'",sec:2},
+{q:"The future middle is built on:",o:["The reduplicated stem","The future stem — the second principal part, with its σ","The aorist stem","The present stem with an augment"],a:1,w:"λύ-σ-ομαι, plus a connecting vowel and the same primary middle endings. The future passive uses a different stem again and waits for chapter 15.",sec:3},
+{q:"ὄψεσθε is the future middle of ὁράω. What does it mean?",o:["You will be seen","You will see","You see","You saw"],a:1,w:"'From now on you will see the Son of Man' (Matthew 26:64). Middle in form, plainly active in meaning — the deponent pattern from chapter 12, in the future.",sec:3},
+{q:"How much of the future middle in the New Testament is the verb εἰμί?",o:["A tenth","186 of 489 — two in five","All of it","None; εἰμί has no future"],a:1,w:"ἔσται alone occurs 117 times. Learning ἔσομαι properly is worth more than any other single paradigm in this chapter.",sec:4},
+{q:"λύεται, λέλυται and λύσεται share an ending. What separates them?",o:["The accent","What sits in front of it — a bare connecting vowel, reduplication, or σ","Nothing; context alone","The person"],a:1,w:"Present, perfect, future. The habit this chapter is really teaching is to read the front of a verb rather than the back.",sec:5},
+{q:"How are many Greek adverbs formed from adjectives?",o:["By adding -ος","By replacing the -ων of the genitive plural with -ως","By adding an augment","By reduplication"],a:1,w:"καλῶν gives καλῶς, 'well'. Others are frozen case forms — σήμερον, 'today', is an accusative — and adverbs never decline.",sec:6},
+{q:"εὐθύς occurs 59 times. Where are 42 of them?",o:["John","Mark","Acts","Paul's letters"],a:1,w:"In the shortest of the Gospels. 'Immediately' is the clearest single fingerprint of Mark's style, and you feel it at once reading him in Greek.",sec:6},
+{q:"In Ἐγὼ μέν εἰμι Παύλου, Ἐγὼ δὲ Ἀπολλῶ, what is μέν doing?",o:["Negating","Setting up a contrast that δέ answers","Asking a question","Marking the past"],a:1,w:"'On the one hand… on the other.' The best English usually leaves μέν untranslated and gives δέ as 'but'. With the plural article the pair means 'some… others'.",sec:7}
+]},
 
 {id:14,t:"Imperfect middle/passive, aorist middle, pluperfect middle/passive",s:"The secondary middle endings",
-body:`<p>One set of secondary middle endings — <span class="gk">-μην, -σο, -το, -μεθα, -σθε, -ντο</span> — serves three paradigms. Learn it once, use it three times.</p>
-<table><caption>ἐλυόμην — imperfect middle/passive: I was being loosed</caption>
+body:`<p>Chapter 12 gave the primary middle and passive endings, used by the present, the perfect and the future. This chapter gives the other set — the <b>secondary</b> middle and passive endings, used by the past tenses — and then applies them to four stems you already know how to build.</p>
+<p>There is genuinely one new thing here. Everything after it is assembly.</p>
+<h3>The secondary middle and passive endings</h3>
+<table><caption>Secondary middle/passive endings</caption>
+<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>1st</th><td class="g">-μην</td><td class="g">-μεθα</td></tr>
+<tr><th>2nd</th><td class="g">-σο</td><td class="g">-σθε</td></tr>
+<tr><th>3rd</th><td class="g">-το</td><td class="g">-ντο</td></tr></table>
+<p>Compare them with the primary set from chapter 12 and the family resemblance is obvious: the plurals <span class="gk">-μεθα</span> and <span class="gk">-σθε</span> are identical, and the singulars differ only in their final vowel.</p>
+<p>As with the primary set, <b>one series does duty for both voices</b>. In the imperfect and the pluperfect, middle and passive are spelled the same, and only the sentence separates them.</p>
+<h3>The imperfect middle and passive</h3>
+<table><caption>ἐλυόμην — imperfect middle and passive</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἐλυόμην</td><td class="g">ἐλυόμεθα</td></tr>
 <tr><th>2nd</th><td class="g">ἐλύου</td><td class="g">ἐλύεσθε</td></tr>
 <tr><th>3rd</th><td class="g">ἐλύετο</td><td class="g">ἐλύοντο</td></tr></table>
-<p>The 2nd singular <span class="gk">ἐλύου</span> looks odd because σ dropped out between vowels and ε+ο contracted (ἐλύεσο → ἐλύου). That happens wherever a thematic vowel leaves the σ between vowels — so in the imperfect and the aorist middle, but not in the perfect and pluperfect, where the ending goes straight onto the stem and the σ survives: <span class="gk">λέλυσαι</span>, <span class="gk">ἐλέλυσο</span>.</p>
-<table><caption>ἐλυσάμην — aorist middle: I loosed (for myself)</caption>
+<p>Augment, present stem, connecting vowel, secondary ending. The second singular <span class="gk">ἐλύου</span> is <span class="gk">ἐλύεσο</span> with the σ dropped and the vowels contracted — the same change that produced <span class="gk">λύῃ</span> and <span class="gk">λύσῃ</span>, and the last time it will surprise you.</p>
+<p class="v" data-ref="Matthew 3:6">καὶ ἐβαπτίζοντο ἐν τῷ Ἰορδάνῃ ποταμῷ ὑπ’ αὐτοῦ</p>
+<p>"And they were being baptised in the river Jordan by him." An imperfect passive with its agent named, and the imperfective aspect is the point — a queue of people, not a single event.</p>
+<p class="v" data-ref="Matthew 7:28">ἐξεπλήσσοντο οἱ ὄχλοι ἐπὶ τῇ διδαχῇ αὐτοῦ</p>
+<p>"The crowds were astonished at his teaching." Passive in form; in English we would not call it passive at all.</p>
+<h3>The aorist middle</h3>
+<table><caption>ἐλυσάμην — first aorist middle</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἐλυσάμην</td><td class="g">ἐλυσάμεθα</td></tr>
 <tr><th>2nd</th><td class="g">ἐλύσω</td><td class="g">ἐλύσασθε</td></tr>
 <tr><th>3rd</th><td class="g">ἐλύσατο</td><td class="g">ἐλύσαντο</td></tr></table>
-<p><b>The aorist middle is not passive.</b> The aorist and the future are the two tense-families where middle and passive have fully distinct forms (the aorist passive, with θη, comes next lesson). <span class="gk">ἐλύσατο</span> is "he loosed for himself", never "he was loosed".</p>
-<p>Second aorists take the imperfect's connecting vowel with these endings on the aorist stem: <span class="gk">ἐγενόμην</span> (γίνομαι), "I became" — one of the commonest verbs in the NT: <span class="gk">καὶ ἐγένετο</span>, "and it came to pass".</p>
-<h3>Pluperfect middle/passive</h3>
-<p>For recognition only: reduplication + secondary middle endings straight on the stem — <span class="gk">ἐλελύμην, ἐλέλυσο, ἐλέλυτο…</span> A handful of NT occurrences.</p>`,
+<p>Augment, then the first aorist stem with its <span class="gk">σα</span>, then the same endings. Set it beside the imperfect above and the only difference is that <span class="gk">σα</span>.</p>
+<p>The aorist <i>passive</i> is a different stem entirely and is the whole of chapter 15. So in the aorist, unlike everywhere else in this chapter, the middle and the passive really are distinguishable.</p>
+<p class="v" data-ref="Ephesians 1:4">καθὼς ἐξελέξατο ἡμᾶς ἐν αὐτῷ πρὸ καταβολῆς κόσμου</p>
+<p>"Just as he chose us in him before the foundation of the world." <span class="gk">ἐξελέξατο</span> is a middle, and here the voice is doing real work: God chose <i>for himself</i>.</p>
+<h3>Second aorist middles</h3>
+<p>A verb with a second aorist forms its middle on that stem, and conjugates it exactly like an imperfect middle. The stem is the only difference — which means the two are told apart by the stem and nothing else.</p>
+<p>One verb dominates the category. <span class="gk">γίνομαι</span> gives <span class="gk">ἐγενόμην</span>, and <span class="gk">ἐγένετο</span> alone occurs 201 times: <b>nearly a third of every aorist middle in the New Testament.</b></p>
+<p class="v" data-ref="John 1:6">Ἐγένετο ἄνθρωπος ἀπεσταλμένος παρὰ θεοῦ</p>
+<p>"There came a man sent from God." Learn <span class="gk">ἐγένετο</span> as a word in its own right, rather than as a paradigm slot, and a third of the aorist middles in the New Testament come free with it.</p>
+<h3>The pluperfect middle and passive</h3>
+<table><caption>ἐλελύμην — pluperfect middle and passive</caption>
+<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>1st</th><td class="g">ἐλελύμην</td><td class="g">ἐλελύμεθα</td></tr>
+<tr><th>2nd</th><td class="g">ἐλέλυσο</td><td class="g">ἐλέλυσθε</td></tr>
+<tr><th>3rd</th><td class="g">ἐλέλυτο</td><td class="g">ἐλέλυντο</td></tr></table>
+<p>Augment, reduplicated perfect stem, secondary endings straight on with no connecting vowel. The augment is often dropped, since the reduplication already identifies it.</p>
+<p>Now the number, because it should govern how long you spend here. <b>There are seven pluperfect middle or passive indicatives in the whole New Testament</b> — seven different verbs, one occurrence each. Recognise the shape and move on.</p>
+<p class="v" data-ref="Matthew 7:25">οὐκ ἔπεσεν, τεθεμελίωτο γὰρ ἐπὶ τὴν πέτραν</p>
+<p>"It did not fall, for it had been founded on the rock." That is one of the seven, and it is the house on the rock — so you have already met the form without knowing it.</p>
+<h3>How much of this you actually meet</h3>
+<p>Four chapters of middle and passive forms invite the question of where a week is best spent. The New Testament answers it:</p>
+<table>
+<tr><th>Form</th><th>Indicatives</th></tr>
+<tr><td>aorist passive</td><td>863</td></tr>
+<tr><td>present middle</td><td>683</td></tr>
+<tr><td>aorist middle</td><td>641</td></tr>
+<tr><td>future middle</td><td>489</td></tr>
+<tr><td>future passive</td><td>292</td></tr>
+<tr><td>present passive</td><td>274</td></tr>
+<tr><td>imperfect middle</td><td>233</td></tr>
+<tr><td>perfect passive</td><td>202</td></tr>
+<tr><td>imperfect passive</td><td>83</td></tr>
+<tr><td>perfect middle</td><td>32</td></tr>
+<tr><td>pluperfect middle and passive</td><td>7</td></tr></table>
+<p>The aorist passive is next chapter and is the largest of them. The pluperfect middle and passive is a rounding error. Spend accordingly.</p>
+<h3>What to watch for</h3>
+<p><b>The imperfect middle and the second aorist middle are identical but for the stem.</b> <span class="gk">ἐγίνετο</span> against <span class="gk">ἐγένετο</span> — one vowel, and it is the whole tense.</p>
+<p><b>The second singular contracts, again.</b> <span class="gk">ἐλύου</span> and <span class="gk">ἐλύσω</span> do not look like they belong to their paradigms. They do.</p>
+<p><b>Deponents stay deponent in the past.</b> <span class="gk">ἔρχομαι</span> gives <span class="gk">ἤρχετο</span>, <span class="gk">πορεύομαι</span> gives <span class="gk">ἐπορεύετο</span>. If the present had no active, neither does the imperfect.</p>`,
 v:[75,124,154,284,290,298,509,380,467,508],
 vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Middle and Passive",s:"Daily Dose of Greek — Rob Plummer (15:32)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-14/"},
       {t:"Imperfect Middle-Passive Memory Device",s:"Daily Dose of Greek — the secondary middle endings",yt:"4ytjsQSWDkQ"}],
 quiz:[
-{q:"ἐγένετο parses as:",o:["Imperfect m/p 3sg of γίνομαι","Aorist middle 3sg of γίνομαι","Aorist passive 3sg","Perfect middle 3sg"],a:1,w:"Second aorist middle: aorist stem γεν- + connecting vowel + -το. 'And it came to pass' opens scene after scene of narrative.",sec:0},
-{q:"In the aorist, middle and passive are:",o:["Identical in form","Fully distinct forms","Both marked with θη","Both marked with σα"],a:1,w:"Shared with the future, and with no other tense-family. σα + middle endings = aorist middle, θη = aorist passive; σ + middle endings = future middle, θησ = future passive. Present, imperfect, perfect and pluperfect share one m/p form.",sec:0},
-{q:"The 2nd singular ἐλύου arose because:",o:["The σ of -σο dropped and vowels contracted","It borrows from the imperative","The augment absorbed it","It is irregular"],a:0,w:"ἐλύεσο → ἐλύεο → ἐλύου. Knowing this one sound-change explains the odd 2nd singulars of the imperfect and the aorist middle — not the perfect and pluperfect, where the σ survives.",sec:0},
-{q:"ἐλύσατο means:",o:["He was loosed","He loosed for himself","He will loose","He had been loosed"],a:1,w:"Aorist middle — subject acting with self-reference. 'He was loosed' would be ἐλύθη, the θη-passive of the next lesson.",sec:0}]},
+{q:"How do the secondary middle/passive endings relate to the primary set?",o:["They are unrelated","The plurals -μεθα and -σθε are identical; the singulars differ in their last vowel","They are the active endings","They are used only in the perfect"],a:1,w:"-μην, -σο, -το against -μαι, -σαι, -ται. Learning the second set is mostly a matter of noticing how little of it is new.",sec:1},
+{q:"Which tenses use the secondary middle/passive endings?",o:["Present and future","The past tenses — imperfect, aorist middle, pluperfect","Perfect only","All of them"],a:1,w:"Primary endings for the present, perfect and future; secondary for the past tenses. The same division you met with the active in chapter 7.",sec:0},
+{q:"The imperfect middle/passive is built from:",o:["The aorist stem plus σα","Augment + present stem + connecting vowel + secondary ending","Reduplication + ending","The future stem"],a:1,w:"ἐ-λυ-ό-μην. Since it uses the present stem, a verb deponent in the present is deponent in the imperfect too — ἔρχομαι gives ἠρχόμην.",sec:2},
+{q:"In Matthew 3:6, ἐβαπτίζοντο … ὑπ’ αὐτοῦ. What does the imperfect contribute?",o:["It marks a single completed event","It presents the baptising as under way — a queue of people, not one act","It marks the future","Nothing; it is stylistic"],a:1,w:"Imperfective aspect in a past tense. ὑπ’ αὐτοῦ names the agent, which is what tells you this one is passive rather than middle.",sec:2},
+{q:"What separates the first aorist middle from the imperfect middle?",o:["The augment","The σα of the aorist stem","The endings","The accent"],a:1,w:"ἐλυόμην against ἐλυσάμην. Same augment, same endings; the aspect morpheme is the whole difference.",sec:3},
+{q:"ἐξελέξατο (Ephesians 1:4) is a middle. What does the voice add?",o:["Nothing — it is deponent","That God chose for himself","That God was chosen","That the choosing is ongoing"],a:1,w:"'Just as he chose us in him before the foundation of the world.' One of the places where the middle is genuinely carrying sense rather than just being how the verb is spelled.",sec:3},
+{q:"ἐγένετο occurs 201 times. That is what share of the aorist middle?",o:["About a twentieth","Nearly a third","All of it","Half"],a:1,w:"641 aorist middle indicatives in the New Testament, and one form is 201 of them. Learn ἐγένετο as a word in its own right.",sec:4},
+{q:"A second aorist middle is conjugated:",o:["Like the perfect","Exactly like an imperfect middle, but on the second aorist stem","With σα","With an added θη"],a:1,w:"Which is why ἐγινόμην and ἐγενόμην are told apart by one vowel in the stem and by nothing else at all.",sec:4},
+{q:"How many pluperfect middle or passive indicatives are there in the New Testament?",o:["About 90","Seven","Around 300","None"],a:1,w:"Seven, spread across seven different verbs, one each. τεθεμελίωτο in Matthew 7:25 — the house founded on the rock — is one of them. Recognise the shape and spend your week elsewhere.",sec:5},
+{q:"Which middle or passive form is commonest in the New Testament?",o:["The perfect passive","The aorist passive, at 863","The pluperfect","The present passive"],a:1,w:"And it is the whole of the next chapter. The present middle is next at 683, the aorist middle at 641; the perfect middle is 32 and the pluperfect middle/passive is 7.",sec:6},
+{q:"ἐλύου and ἐλύσω look irregular. Why are they not?",o:["They are irregular","The σ of the ending dropped between vowels and the vowels contracted — the same process as λύῃ","They belong to different verbs","They are imperatives"],a:1,w:"Third time in three chapters. One sound change explains every odd-looking second person singular in the middle.",sec:7}
+]},
 
 {id:15,t:"Aorist and future passive indicative",s:"The θη that changes who does what",
-body:`<p>The aorist passive is built on its own stem — the sixth principal part — marked by <b>θη</b>, and then, surprisingly, takes <i>active-looking</i> secondary endings:</p>
-<table><caption>ἐλύθην — I was loosed</caption>
+body:`<p>The aorist passive is the last principal part, and with it the set is complete: <span class="gk">λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην</span>. Six forms, and from them every form of the verb can be built.</p>
+<p>It is also the commonest of these forms by a wide margin. There are 863 aorist passive indicatives in the New Testament — more than any other middle or passive form — which makes this the chapter of the four to get right.</p>
+<h3>The first aorist passive</h3>
+<table><caption>ἐλύθην — first aorist passive</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">ἐλύθην</td><td class="g">ἐλύθημεν</td></tr>
 <tr><th>2nd</th><td class="g">ἐλύθης</td><td class="g">ἐλύθητε</td></tr>
 <tr><th>3rd</th><td class="g">ἐλύθη</td><td class="g">ἐλύθησαν</td></tr></table>
-<p><span class="gk">ἐβαπτίσθη</span> — "he was baptised" (Mark 1:9). <span class="gk">ἠγέρθη</span> — "he was raised" (Matt 28:6). The resurrection is announced in this form: God is the unstated actor.</p>
-<h3>Future passive</h3>
-<p>θη + σ + primary middle endings:</p>
-<table><caption>λυθήσομαι — I will be loosed</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>1st</th><td class="g">λυθήσομαι</td><td class="g">λυθησόμεθα</td></tr>
-<tr><th>2nd</th><td class="g">λυθήσῃ</td><td class="g">λυθήσεσθε</td></tr>
-<tr><th>3rd</th><td class="g">λυθήσεται</td><td class="g">λυθήσονται</td></tr></table>
-<p><span class="gk">σωθήσεται</span> — "will be saved" (Rom 10:13; Joel's promise).</p>
+<p>Three pieces: the augment, then <span class="gk">θη</span> — the passive marker, and the thing to look for — then the endings.</p>
+<p>And here is the surprise. Those endings are the <b>secondary active</b> ones from chapter 7: <span class="gk">-ν, -ς, —, -μεν, -τε, -σαν</span>. A passive built with active endings. Do not fight it; just note that <span class="gk">θη</span> is what marks the voice, and the endings mark nothing but the person.</p>
+<p>The third singular <span class="gk">ἐλύθη</span> has no ending at all, which makes it the shortest and the commonest shape you will meet.</p>
+<h3>When the stem ends in a consonant</h3>
+<p>A stem ending in a consonant collides with the θ, and the two combine. The three rules are worth reading once and then leaving:</p>
+<table>
+<tr><td class="g">κ, γ, χ</td><td>+ θ →</td><td class="g">χθ</td><td><span class="gk">ἄγω → ἤχθη</span></td></tr>
+<tr><td class="g">π, β, φ</td><td>+ θ →</td><td class="g">φθ</td><td><span class="gk">πέμπω → ἐπέμφθη</span></td></tr>
+<tr><td class="g">τ, δ, θ</td><td>+ θ →</td><td class="g">σθ</td><td><span class="gk">βαπτίζω → ἐβαπτίσθη</span></td></tr></table>
+<p>These are the same three groupings that governed the future in chapter 3 and the aorist active in chapter 7. It is one sound rule you have now met three times, and the useful residue is simply this: <b>a θ preceded by χ, φ or σ is very often an aorist passive.</b></p>
 <h3>Second aorist passives</h3>
-<p>Some verbs drop the θ: <span class="gk">ἐγράφην</span> (γράφω), <span class="gk">ἀπεστάλην</span> (ἀποστέλλω), <span class="gk">ἐσπάρην</span> (σπείρω — the sower parable's seed "was sown"). Same endings, same meaning.</p>
+<p>Some verbs form the aorist passive with no θ at all — the <span class="gk">η</span> attaches straight to the stem. As with second aorists and second perfects, the difference is form only.</p>
+<p class="v" data-ref="Romans 15:4">ὅσα γὰρ προεγράφη, εἰς τὴν ἡμετέραν διδασκαλίαν ἐγράφη</p>
+<p>"For whatever was written beforehand was written for our instruction." <span class="gk">γράφω</span> gives <span class="gk">ἐγράφην</span>, and both verbs here are that form.</p>
+<p class="v" data-ref="Luke 1:26">ἀπεστάλη ὁ ἄγγελος Γαβριὴλ ἀπὸ τοῦ θεοῦ</p>
+<p>"The angel Gabriel was sent from God." <span class="gk">ἀποστέλλω</span> gives <span class="gk">ἀπεστάλην</span> — again no θ, and again the augment tucked inside the compound.</p>
+<p>A verb with a second aorist passive has a second future passive too, likewise without the θ.</p>
+<h3>The future passive</h3>
+<p>Build the aorist passive stem, drop the augment, add <span class="gk">σ</span> and the <i>primary middle</i> endings from chapter 12: <span class="gk">λυθήσομαι, λυθήσῃ, λυθήσεται…</span></p>
+<p>So a future passive carries both marks at once — the <span class="gk">θη</span> of the passive and the <span class="gk">σ</span> of the future — which makes it one of the most recognisable forms in the language. The commonest are <span class="gk">δοθήσεται</span> (16), <span class="gk">σωθήσεται</span> (13) and <span class="gk">ἀφεθήσεται</span> (11).</p>
+<p class="v" data-ref="Matthew 5:4">μακάριοι οἱ πενθοῦντες, ὅτι αὐτοὶ παρακληθήσονται</p>
+<p>"Blessed are those who mourn, for they shall be comforted." A future passive with no agent named — the divine passive of chapter 12, and one of the places where leaving God unnamed is the whole force of the line.</p>
+<h3>The passive at work</h3>
+<p class="v" data-ref="1 Timothy 3:16">ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ</p>
+<p>"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory."</p>
+<p>Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, <span class="gk">θη</span> or its consonant variant, ending. <span class="gk">ἐκηρύχθη</span> shows the κ-group rule and <span class="gk">ἀνελήμφθη</span> the π-group. The rhythm, and the bare <span class="gk">Ὅς</span> that opens it with no antecedent, are why this is usually taken to be an existing hymn being quoted rather than composed.</p>
+<p>Notice too what the passive is doing across the whole hymn. Christ is the subject of every line and the actor in none of them. That is a deliberate choice, and it is not available in an English translation that turns the verbs active.</p>
+<p class="v" data-ref="Matthew 28:18">Ἐδόθη μοι πᾶσα ἐξουσία ἐν οὐρανῷ καὶ ἐπὶ τῆς γῆς</p>
+<p>"All authority in heaven and on earth has been given to me." Given by whom is not said, and does not need to be.</p>
 <h3>Passive in form, active in sense</h3>
-<p><span class="gk">ἀπεκρίθη</span> ("he answered") and <span class="gk">ἐφοβήθην</span> ("I feared") use passive forms with no passive meaning — like the middle-only verbs you know. And keep an eye out for the <b>divine passive</b>: "they shall be comforted" (Matt 5:4) names no comforter because reverent Jewish idiom leaves God unnamed. Grammar becomes theology here.</p>`,
+<p>Now the warning this chapter exists for, and it is the same shape as <span class="gk">οἶδα</span> in chapter 10.</p>
+<p><b>The commonest aorist passive in the New Testament is not passive.</b> <span class="gk">ἀποκρίνομαι</span> supplies 104 of the 863, more than any other verb, and <span class="gk">ἀπεκρίθη</span> means "he answered" — not "he was answered".</p>
+<p class="v" data-ref="Mark 15:9">ὁ δὲ Πιλᾶτος ἀπεκρίθη αὐτοῖς λέγων</p>
+<p>"But Pilate answered them, saying." A passive form, an active meaning, and a dative object.</p>
+<p>It is not alone. <span class="gk">ἐπορεύθη</span> is "he went", <span class="gk">ἐγενήθη</span> is "it became", <span class="gk">ἐφοβήθησαν</span> is "they were afraid". Altogether <b>251 of the 863 aorist passives — nearly one in three — belong to verbs that have no active form anywhere in the New Testament.</b></p>
+<p>So the <span class="gk">θη</span> tells you the form. It does not, on its own, tell you the meaning.</p>
+<h3>What to watch for</h3>
+<p><b>Look for θη, not for an ending.</b> The endings are the secondary active ones, and they will mislead you if you read them first.</p>
+<p><b>Check whether the verb has an active.</b> One aorist passive in three does not, and translating those as passives produces nonsense.</p>
+<p><b>Both marks together mean future passive.</b> <span class="gk">θη</span> plus <span class="gk">σ</span>, as in <span class="gk">σωθήσεται</span>.</p>
+<p><b>And when no agent is named, that may be the point.</b> Ask whether the writer is avoiding saying "God" — in the Gospels, very often he is.</p>`,
 v:[],
 vids:[{t:"Lecture 15: Aorist and Future Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (9:49)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-15/"}],
 quiz:[
-{q:"The aorist passive tense sign is:",o:["σα","κ","θη","μεν"],a:2,w:"ἐ-λύ-θη-ν. Spot θη after an augment and you have an aorist passive; θησ without augment is future passive.",sec:0},
-{q:"ἠγέρθη (Matt 28:6) means:",o:["He rose (of his own power, stated)","He was raised","He will rise","Rise!"],a:1,w:"Aorist passive of ἐγείρω. The NT often frames the resurrection with God as the (sometimes unstated) actor — the passive carries that.",sec:0},
-{q:"ἀπεκρίθη is passive in form. Its meaning is:",o:["He was answered","He answered","It was decided","He was questioned"],a:1,w:"Active in sense — 'deponent' in the aorist passive. Hundreds of occurrences: 'Jesus answered and said…'",sec:3},
-{q:"A 'divine passive' is:",o:["A passive with θεός as subject","A passive used to avoid naming God as the actor","Any aorist passive","A passive in prayers only"],a:1,w:"'They shall be comforted, they shall be filled' — the Comforter and Filler is God, reverently unnamed. Worth noticing in the Beatitudes.",sec:3}]},
+{q:"The six principal parts of λύω end with:",o:["λέλυκα","λέλυμαι","ἐλύθην — the aorist passive","ἔλυσα"],a:2,w:"λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην. Every form of the verb is built from one of those six.",sec:0},
+{q:"The first aorist passive is built with:",o:["Reduplication and κα","Augment + stem + θη + secondary ACTIVE endings","σα and the middle endings","An augment alone"],a:1,w:"A passive with active endings, which is the surprise of the chapter. θη marks the voice; the endings mark only the person.",sec:1},
+{q:"Which piece of ἐλύθην tells you it is passive?",o:["The augment","The θη","The -ν","The accent"],a:1,w:"Look for θη, not for an ending. The third singular ἐλύθη has no ending at all, and it is the commonest shape in the paradigm.",sec:1},
+{q:"βαπτίζω has the stem βαπτιδ-. Why is the aorist passive ἐβαπτίσθην?",o:["A scribal variant","τ, δ and θ become σ before the θ of the passive","The δ is dropped without trace","It is a second aorist passive"],a:1,w:"The same three consonant groupings that governed the future in chapter 3 and the aorist active in chapter 7. κ/γ/χ give χθ, π/β/φ give φθ, τ/δ/θ give σθ.",sec:2},
+{q:"ἐγράφη and ἀπεστάλη have no θ. What are they?",o:["Actives","Second aorist passives — the same tense built without the θ","Perfects","Imperfects"],a:1,w:"As with second aorists and second perfects, the difference is form only. A verb with a second aorist passive also has a second future passive, likewise without the θ.",sec:3},
+{q:"The future passive is built from the aorist passive stem plus:",o:["A second augment","σ and the primary middle endings","κα","Reduplication"],a:1,w:"λυθήσομαι. Both marks at once — θη for the passive and σ for the future — which makes it one of the most recognisable forms in Greek.",sec:4},
+{q:"In Matthew 5:4, παρακληθήσονται names no agent. Why not?",o:["The agent is unknown","It is a divine passive — the unnamed comforter is God","Greek passives never name an agent","A textual variant"],a:1,w:"'They shall be comforted.' Leaving God unnamed is the force of the line, and the construction is common in the sayings of Jesus.",sec:4},
+{q:"1 Timothy 3:16 has six verbs in a row. What are they?",o:["Six aorist actives","Six aorist passive indicatives","Six perfects","Six futures"],a:1,w:"ἐφανερώθη, ἐδικαιώθη, ὤφθη, ἐκηρύχθη, ἐπιστεύθη, ἀνελήμφθη. Christ is the subject of every line and the actor in none — a choice an English translation with active verbs cannot show.",sec:5},
+{q:"ἐκηρύχθη shows which consonant rule?",o:["π, β, φ + θ → φθ","κ, γ, χ + θ → χθ","τ, δ, θ + θ → σθ","None; it is irregular"],a:1,w:"κηρύσσω has a stem in κ, so the aorist passive is ἐκηρύχθη. In the same verse ἀνελήμφθη shows the π-group.",sec:5},
+{q:"Which verb supplies the most aorist passives in the New Testament?",o:["σῴζω","ἀποκρίνομαι — 104 of 863","γράφω","βαπτίζω"],a:1,w:"And ἀπεκρίθη means 'he answered', not 'he was answered'. The commonest aorist passive in the book is not passive at all.",sec:6},
+{q:"How many of the 863 aorist passives belong to verbs with no active form anywhere?",o:["A handful","251 — nearly one in three","All of them","None"],a:1,w:"ἀπεκρίθη 'he answered', ἐπορεύθη 'he went', ἐγενήθη 'it became', ἐφοβήθησαν 'they were afraid'. The θη tells you the form; it does not on its own tell you the meaning.",sec:6},
+{q:"Before translating a θη form as a passive, what is worth checking?",o:["The accent","Whether the verb has an active form at all","The book it is in","Whether it is plural"],a:1,w:"One aorist passive in three does not, and rendering those as passives produces nonsense. The lexicon answers it in a second.",sec:7}
+]},
 
 {id:16,t:"Review of the indicative mood",s:"One verb, one chart, whole system",
 body:`<p>You now hold the entire indicative system of the Greek verb. Here it is in one chart — first person singular of λύω throughout:</p>

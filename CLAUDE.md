@@ -66,6 +66,15 @@ array is *wrong* rather than merely changed: it reads Black's own vocabulary
 sections and confirms every word. Currently 395 of 395. The books are outside
 the repo, so it says so and exits clean when they are not on the machine.
 
+**A checker that only reports is a checker that does not exist.**
+`check_lessons` has always listed Greek in a lesson body occurring nowhere in
+the corpus, and could not fail on it, because a paradigm legitimately prints
+forms the New Testament never uses. So it printed, and batch 5 went in with
+four invented or badly-chosen forms that it had named. The fix is an explicit
+list with a reason beside each entry — `UNATTESTED` in `check_lessons`, like
+`REVIEWED` in `check_coverage` and `SPELLING` in `check_black`. **If a report
+cannot fail, give it an allow-list so that anything new in it does.**
+
 When you add data of a kind no checker covers, **write the checker in the
 same commit.** Every hand-written Greek array in `js/app.js` now has one —
 `ART`, `PARSE`, `BUILD_FORMS`, `PP`, `CASEFN` and `LOOKALIKE`. The next thing

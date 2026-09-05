@@ -129,6 +129,43 @@ for l in LESSONS:
                 else:
                     flagged[l["id"]].add(g)
 
+# Greek in a finished chapter that occurs nowhere in the SBLGNT, and the
+# reason it is allowed to. The list above cannot simply fail: a paradigm
+# legitimately prints forms the New Testament never uses — λύομαι, λέλυκα and
+# ἐλύθην are all unattested and all correct — which is why λύω and the
+# citation forms are filtered out wholesale above.
+#
+# But that left a report, and a report is not read. Batch 5 went in with
+# ἐγινόμην, ἠρχόμην, ἤχθην and ἐλήμφθην set in the prose as though they were
+# words. Two were invented outright; two were principal-part citation forms
+# where an attested third person teaches the same rule better. This checker
+# printed all four, and I read the end of the run.
+#
+# So a flagged form in a chapter in DONE now fails until it is named here.
+# Adding a line is cheap. Finding you cannot write one honestly is the point.
+UNATTESTED = {
+    # teaching examples of the σ + stop rule, given as first-person futures
+    # the way a lexicon lists them. ch15 makes the same point with attested
+    # third-person forms, which is better; these are grandfathered.
+    (3, "ἄξω"): "future of ἄγω, showing κ/γ/χ + σ → ξ",
+    (3, "βλέψω"): "future of βλέπω, showing π/β/φ + σ → ψ",
+    (3, "πείσω"): "future of πείθω, showing τ/δ/θ dropping",
+    (3, "λήμψομαι"): "future of λαμβάνω; the 1sg does not occur, the 3sg does",
+    # paradigm cells for a noun whose plural the New Testament never uses
+    (5, "ἀγάπαι"): "first-declension paradigm cell",
+    (5, "ἀγάπας"): "first-declension paradigm cell",
+    # the look-alike pair, of which only one half is ever written
+    (9, "αὐταί"): "paradigm cell, and half of the αὐταί/αὗται pair",
+    (11, "αὐταί"): "the chapter's own point is that this one never occurs",
+    # roots and stems, written as roots and stems
+    (10, "γνο"): "the root of γινώσκω, written γνο-",
+    (13, "γραφ"): "the stem of γράφω, written γραφ-",
+    (13, "πειθ"): "the stem of πείθω, written πειθ-",
+    # lexical citation forms that are not VOCAB headwords
+    (12, "ἄρχομαι"): "the middle of ἄρχω, cited as a headword",
+    (15, "ἐγράφην"): "the sixth principal part of γράφω; ἐγράφη occurs",
+}
+
 print("Greek forms in the lesson bodies and quizzes: %d" % total)
 print("attested in the SBLGNT: %d (%.0f%%)" % (attested, 100 * attested / total))
 for k, n in skipped.most_common():
@@ -137,6 +174,9 @@ n = sum(len(v) for v in flagged.values())
 print("\nnot attested and not filtered: %d" % n)
 for cid in sorted(flagged):
     print("  ch%-3d %s" % (cid, " ".join(sorted(flagged[cid]))))
+
+# DONE is defined further down, with the rest of the per-chapter policy, so
+# this pass runs there rather than here.
 
 # ------------------------------------------------- questions in their place --
 # Working through a chapter interleaves its own questions with its own
@@ -251,7 +291,7 @@ BARE = {
 # check_coverage.py imports this rather than keeping its own copy — CLAUDE.md
 # warns about exactly this kind of duplication, and RETIRED in four files is
 # the example it gives.
-DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 21}
+DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21}
 
 # The dose is defined in js/app.js and read from it, not repeated here.
 DOSE = 3
@@ -293,9 +333,19 @@ for n in no_question:
     print("   " + n)
 
 print()
+unlisted = sorted((cid, g) for cid in flagged for g in flagged[cid]
+                  if cid in DONE and (cid, g) not in UNATTESTED)
+print()
+print("unattested Greek in a finished chapter, unexplained: %d" % len(unlisted))
+for cid, g in unlisted:
+    print("   ch%-3d %s" % (cid, g))
+if unlisted:
+    print("   Either the form is wrong, or it is a paradigm cell and belongs")
+    print("   in UNATTESTED at the top of this file, with the reason.")
+
 print("chapters that divide badly into sittings of %d: %d" % (DOSE, len(badly_shaped)))
 for b in badly_shaped:
     print("   " + b)
 
-if sec_bad or sec_early or verse_bad or no_question or badly_shaped:
+if sec_bad or sec_early or verse_bad or no_question or badly_shaped or unlisted:
     sys.exit(1)
