@@ -21,8 +21,31 @@ them buries everything else:
 What is left is short enough to read, and every entry deserves a look.
 Finding nothing does not mean the prose is right — this cannot check a claim
 about grammar, only the spelling of the Greek that carries it.
+
+Then the verses. A lesson that quotes the New Testament makes a claim that
+can be settled, and this app has already been caught making one wrongly: six
+of the twenty syntax questions in js/app.js quoted Greek occurring nowhere in
+the text, one of them a genitive absolute that had already been found and
+fixed in chapter 20. Prose written from memory does that.
+
+  * A quotation marked up as <p class="v" data-ref="Mark 2:12">...</p> must
+    occur, contiguously, in the verse it names. This is the strict form, and
+    the one the rewritten chapters use.
+  * A bare reference in the prose - "Matt 3:17", "1 Thess 4:16" - must at
+    least resolve to a verse that exists.
+
+The markup is worth its keystrokes. It is the difference between a checker
+that can say "that phrase is not in that verse" and one that can only say
+"that verse exists".
 """
 import json, io, os, re, sys, unicodedata, collections, subprocess
+
+# Prints Greek, and the Windows console is cp1252. Every checker needs this;
+# without it a clean run dies on its own report.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GNT = os.path.join(ROOT, "data", "gnt")
@@ -157,5 +180,48 @@ print("\nquestions filed against a chapter section: %d (%d not filed)"
       % (filed, unfiled))
 for s in sec_bad + sec_early:
     print("   " + s)
-if sec_bad or sec_early:
+
+# --------------------------------------------------------- the verses ----
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from corpus import verse_tokens, book_named            # noqa: E402
+
+QUOTE = re.compile(r'<p class="v" data-ref="([^"]+)">(.*?)</p>', re.S)
+# A bare reference in prose. corpus.book_named knows the full titles, the SBL
+# abbreviations, and the way a person writing quickly puts it.
+BARE = re.compile(r"((?:[1-3] )?[A-Z][A-Za-z]+) (NUM+):(NUM+)".replace("NUM", chr(92) + "d"))
+
+quoted = refs = 0
+verse_bad = []
+for l in LESSONS:
+    body = l["body"]
+    for ref, inner in QUOTE.findall(body):
+        quoted += 1
+        toks, err = verse_tokens(ref)
+        if err or toks is None:
+            verse_bad.append("ch%-3d %s - %s" % (l["id"], ref, err or "did not resolve"))
+            continue
+        want = [norm(bare(w)) for w in re.sub("<[^>]+>", " ", inner).split() if bare(w)]
+        have = [norm(bare(t[1])) for t in toks]
+        if not want:
+            verse_bad.append("ch%-3d %s - the quotation has no Greek in it" % (l["id"], ref))
+        elif not any(have[i:i + len(want)] == want
+                     for i in range(len(have) - len(want) + 1)):
+            verse_bad.append("ch%-3d %s - %r does not occur there"
+                             % (l["id"], ref, re.sub("<[^>]+>", "", inner).strip()[:44]))
+    for m in BARE.finditer(re.sub("<[^>]+>", " ", body)):
+        if not book_named(m.group(1)):
+            continue                    # an ordinary capitalised word, not a book
+        refs += 1
+        _, err = verse_tokens(m.group(0))
+        if err:
+            verse_bad.append("ch%-3d %s - %s" % (l["id"], m.group(0), err))
+
+print()
+print("verses quoted and held to the text: %d   bare references resolved: %d"
+      % (quoted, refs))
+print("verses the text does not bear out: %d" % len(verse_bad))
+for v in verse_bad:
+    print("   " + v)
+
+if sec_bad or sec_early or verse_bad:
     sys.exit(1)

@@ -461,3 +461,14 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .ex .ref.link:active{opacity:.6}
 /* and the verse it lands on, said briefly */
 .vn.hit{background:rgba(212,165,55,.28);border-radius:3px;padding:0 3px}
+
+/* ---------- a verse quoted in a lesson ----------
+   Marked up as <p class="v" data-ref="Mark 2:12">, and every one is held to
+   that verse by tools/check_lessons.py. Set apart from the prose because it
+   is the text rather than a claim about the text. */
+.read .v, .card.read .v{font-family:var(--gk);
+  font-size:calc(1.06rem * var(--gk-scale));line-height:1.75;
+  margin:14px 0;padding:10px 0 10px 14px;border-left:2px solid var(--gold-dim);
+  color:var(--text)}
+.read .v::after{content:attr(data-ref);display:block;font-family:inherit;
+  font-size:.72rem;color:var(--muted);margin-top:6px;letter-spacing:.02em}

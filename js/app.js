@@ -669,7 +669,7 @@ function letterWarmup(){
 function todaysPlan(){
   const tasks=[];
   const left=alphaLeft();
-  if(left) tasks.push({id:"letters",
+  if(left) tasks.push({id:"letters", mins:2,
     label:"Letters and sounds",
     sub:left===ALPHABET.length
       ? "Start here — everything else needs them"
@@ -683,19 +683,19 @@ function todaysPlan(){
   const f=S.focus;
   if(f){
     const ref=focusRef(f), due=focusDueList(f), fresh=focusFresh(f);
-    if(f.mode==="all") tasks.push({id:"passage",
+    if(f.mode==="all") tasks.push({id:"passage", mins:3,
       label:`Read ${ref}`,
       sub:`${focusKnown(f)} of ${focusTotal(f)} of its words are settled`,
       run:()=>openFocusPassage()});
-    if(due.n) tasks.push({id:"review",
+    if(due.n) tasks.push({id:"review", mins:Math.max(1,Math.round(due.n*8/60)),
       label:`Review ${due.n} from ${ref}`,
       sub:"Only this passage's words — the rest of the deck waits",
       run:()=>startFocusReview()});
-    if(fresh.length) tasks.push({id:"new",
+    if(fresh.length) tasks.push({id:"new", mins:2,
       label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
       sub:`${fresh.length} of its words not started yet`,
       run:()=>startFocusNew(5)});
-    if(!due.n && !fresh.length) tasks.push({id:"review",
+    if(!due.n && !fresh.length) tasks.push({id:"review", mins:2,
       label:`${ref} — nothing due`,
       sub:"Every word started and none due back today",
       run:()=>startFocusReview()});
@@ -705,15 +705,16 @@ function todaysPlan(){
        So the row only appears once the deck has been started. */
     const due=dueList().length+Math.min(5,gdueList().length);
     if(due || Object.keys(S.cards).length) tasks.push(due
-      ? {id:"review", label:`Review ${due} due card${due===1?"":"s"}`,
+      ? {id:"review", mins:Math.max(1,Math.round(Math.min(due,Math.max(5,S.goal||20))*8/60)),
+         label:`Review ${due} due card${due===1?"":"s"}`,
          sub:"The words the schedule says you are about to forget",
          run:()=>startReview()}
-      : {id:"review", label:"Practise what you know",
+      : {id:"review", mins:2, label:"Practise what you know",
          sub:"Nothing is due — this will not touch the schedule",
          run:()=>startReview()});
 
     const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
-    if(fresh) tasks.push({id:"new",
+    if(fresh) tasks.push({id:"new", mins:2,
       label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
       sub:`${fresh} still to meet in the course`,
       run:()=>startNew(5)});
@@ -727,13 +728,13 @@ function todaysPlan(){
   const gd=(typeof gridDue==="function")?gridDue():[];
   if(gd.length){
     const k=Math.min(3,gd.length);
-    tasks.push({id:"grids",
+    tasks.push({id:"grids", mins:Math.max(1,k),
       label:`Fill in ${k} paradigm${k===1?"":"s"}`,
       sub:gd.length>k?`${gd.length} due · ${gridName(gd[0])} first`:gd.map(gridName).join(" · "),
       run:()=>startSession(gridDrill(3),"grids")});
   }else if(typeof gridRounds==="function" && S.lessons.length>=2
            && gridStarted().length<gridRounds().length){
-    tasks.push({id:"grids",
+    tasks.push({id:"grids", mins:1,
       label:"A paradigm to fill in",
       sub:`${gridRounds().length-gridStarted().length} of ${gridRounds().length} not tried yet`,
       run:()=>startSession(gridDrill(1),"grids")});
@@ -746,7 +747,7 @@ function todaysPlan(){
   if(typeof clauseDrill==="function"
      && (S.lessons.length?Math.max(...S.lessons):0)>=5){
     const f2=S.focus;
-    tasks.push({id:"sent",
+    tasks.push({id:"sent", mins:2,
       label:"Read a sentence",
       sub:f2?`Six questions from ${focusRef(f2)} and around it`
             :"Six questions on real verses — the verb, the case, the subject",
@@ -770,7 +771,7 @@ function todaysPlan(){
        tell them apart — so ten minutes was sometimes twenty. */
     const to=Math.min(at+LESSON_DOSE,n);
     const span=to-at===1?`part ${at+1} of ${n}`:`parts ${at+1}–${to} of ${n}`;
-    tasks.push({id:"lesson",
+    tasks.push({id:"lesson", mins:Math.max(2,(to-at)+1),
       label:already
         ? (at?`More of chapter ${l.id}`:"Another chapter")
         : (n<=LESSON_DOSE?`Chapter ${l.id} · ${n} parts`:`Chapter ${l.id} · ${span}`),
@@ -826,6 +827,15 @@ function render(){
   const xtra=extraDone();
   document.getElementById("ringLbl").textContent =
     ticked>=plan.length ? (xtra?`+${xtra} past the plan`:"plan complete") : "today's plan";
+  /* How long today actually is, added up from the rows rather than asserted.
+     "About ten minutes" was written when the plan was three rows; it is now
+     as many as six, and the review row alone is unbounded — a learner two
+     hundred cards behind has a long day whatever else is trimmed. A promise
+     the app can keep every day beats a number that was true once. */
+  const mins=plan.filter(t=>!pdone.includes(t.id)).reduce((a,t)=>a+(t.mins||2),0);
+  const el=document.getElementById("planMins");
+  if(el) el.textContent = ticked>=plan.length ? ""
+    : `${plan.length-ticked} left · about ${mins} minute${mins===1?"":"s"}`;
   document.getElementById("streakN").textContent=S.streak;
   const restEl=document.getElementById("streakRest");
   if(restEl) restEl.textContent =
@@ -848,9 +858,10 @@ function render(){
   if(startEl) startEl.innerHTML = fresh ? `<div class="card" style="border-color:var(--gold-dim)">
       <h3 style="margin-top:0">Start here</h3>
       <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above.
-        It is about ten minutes, and it is the same shape every day: the letters
-        until they stick, then the words the schedule brings back, then five new
-        ones, then a few minutes of the chapter you are on.</p>
+        It is the same shape every day: the letters until they stick, then the
+        words the schedule brings back, then five new ones, then a few minutes
+        of the chapter you are on. How long it will take is at the top, and it
+        is added up from the list rather than promised in advance.</p>
       <button class="btn ghost small" onclick="go('help')">What else is in here</button>
     </div>` : "";
 

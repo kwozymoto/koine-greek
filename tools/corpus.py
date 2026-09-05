@@ -50,6 +50,34 @@ GK = "Ͱ-Ͽἀ-῿"
 bare = lambda s: re.sub("[^" + GK + "]", "", s)
 
 
+# Every way a book gets written in a lesson body. Built on the manifest's own
+# two forms — SBL abbreviation and full title — plus the ones a person
+# actually types. A reference nobody can resolve is a reference nobody can
+# check, and the point of this file is that they all resolve.
+_ALIAS = {
+    "Matt": "Matthew", "Rom": "Romans",
+    "1 Cor": "1 Corinthians", "2 Cor": "2 Corinthians",
+    "Gal": "Galatians", "Eph": "Ephesians", "Phil": "Philippians",
+    "Col": "Colossians",
+    "1 Thess": "1 Thessalonians", "2 Thess": "2 Thessalonians",
+    "1 Tim": "1 Timothy", "2 Tim": "2 Timothy",
+    "Tit": "Titus", "Phlm": "Philemon", "Philem": "Philemon",
+    "Heb": "Hebrews", "Jas": "James", "Jam": "James",
+    "1 Pet": "1 Peter", "2 Pet": "2 Peter",
+    "Rev": "Revelation",
+}
+
+
+def book_named(title):
+    """A book by full title, by SBL abbreviation, or by the way people write
+       it. Matthew is 'Matthew', 'Mt' and 'Matt', and a lesson may use any."""
+    for b in manifest()["books"]:
+        if b["t"] == title or b["a"] == title:
+            return b
+    full = _ALIAS.get(title)
+    return next((b for b in manifest()["books"] if b["t"] == full), None) if full else None
+
+
 def parse_ref(ref):
     """'John 1:1-5' -> (book record, chapter array index, first verse, last).
 
@@ -62,7 +90,7 @@ def parse_ref(ref):
         return None, "reference not understood"
     title, ch = m.group(1), int(m.group(2))
     v1, v2 = int(m.group(3)), int(m.group(4) or m.group(3))
-    b = next((x for x in manifest()["books"] if x["t"] == title), None)
+    b = book_named(title)
     if not b:
         return None, "no book called %r" % title
     d = book(b["a"])

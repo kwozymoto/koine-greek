@@ -638,27 +638,65 @@ quiz:[
 {q:"A present participle usually describes action:",o:["Prior to the main verb","Contemporaneous with the main verb","After the main verb","Without reference to the main verb"],a:1,w:"Imperfective aspect typically yields contemporaneous time relative to the main verb.",sec:1}]},
 
 {id:21,t:"Infinitives (verbal nouns)",s:"Verbal nouns and their many uses",
-body:`<p>An infinitive is a verbal noun. It has tense and voice but no person or number, and it is indeclinable — though it often takes a neuter article, which then declines and shows you its function.</p>
+body:`<p>An infinitive is a verbal noun.</p>
+<p>That is worth saying slowly, because it is doing two jobs at once. As a verb it has tense and voice, it can take an object, and it can have a subject of its own. As a noun it is neuter, it can take the article, and it can sit anywhere in a sentence that a noun can sit.</p>
+<p>What it does not have is person and number. We translate <span class="gk">λύομεν</span> as "we loose" because the ending <span class="gk">-μεν</span> tells us who. An infinitive tells us nothing about who, and that is exactly what the name means: not limited.</p>
+<h3>The forms</h3>
 <table>
 <tr><th>Tense</th><th>Active</th><th>Meaning</th></tr>
 <tr><td>Present</td><td class="g">λύειν</td><td>to be loosing</td></tr>
 <tr><td>Aorist</td><td class="g">λῦσαι</td><td>to loose</td></tr>
 <tr><td>Perfect</td><td class="g">λελυκέναι</td><td>to have loosed</td></tr>
 </table>
-<h3>Common constructions</h3>
-<p><b>Purpose:</b> plain infinitive, or <span class="gk">τοῦ</span> + infinitive, or <span class="gk">εἰς τό</span> + infinitive.</p>
-<p><b>Result:</b> <span class="gk">ὥστε</span> + infinitive — "so that, with the result that".</p>
-<p><b>Time:</b> <span class="gk">πρὸ τοῦ</span> (before), <span class="gk">ἐν τῷ</span> (while, during), <span class="gk">μετὰ τό</span> (after) + infinitive. The <span class="gk">ἐν τῷ</span> + infinitive construction is a favourite of Luke's.</p>
-<p><b>Cause:</b> <span class="gk">διὰ τό</span> + infinitive — "because".</p>
-<p>The subject of an infinitive, when expressed, goes in the <b>accusative</b> — which surprises English readers the first few times.</p>`,
+<p>The middle and passive forms sit alongside these in Tables, under Infinitives. Two things here are worth noticing.</p>
+<p>The first is that the aorist has no augment. Infinitives never do. The augment marks past time and belongs to the indicative, and an infinitive is not making a claim about when.</p>
+<p>Which is the second thing. Tense here is aspect, not time. <span class="gk">λύειν</span> does not mean "to loose in the present"; it presents the loosing as going on. <span class="gk">λῦσαι</span> presents it as a single whole. This is the easiest place in the entire verb to see what aspect actually is, precisely because there is no time getting in the way.</p>
+<h3>The article makes it a noun you can use</h3>
+<p>An infinitive on its own is indeclinable. Put the neuter article in front of it and the article declines instead, and its case then tells you what the infinitive is doing in the sentence.</p>
+<p class="v" data-ref="Philippians 1:21">ἐμοὶ γὰρ τὸ ζῆν Χριστὸς καὶ τὸ ἀποθανεῖν κέρδος</p>
+<p>"For to me, to live is Christ and to die is gain." There is no finite verb in that sentence at all. <span class="gk">τὸ ζῆν</span> and <span class="gk">τὸ ἀποθανεῖν</span> are the subjects, each turned into a noun by that small <span class="gk">τό</span>, and Christ and gain are what is said about them. We do not translate the article, but it is carrying the sentence.</p>
+<p>So: <span class="gk">τοῦ</span> is genitive, <span class="gk">τῷ</span> after <span class="gk">ἐν</span> is dative, <span class="gk">τό</span> after <span class="gk">διά</span> or <span class="gk">μετά</span> is accusative. Watch the article and whatever preposition stands in front of it, and you will usually know what an infinitive is there for before you have worked out anything else about the sentence.</p>
+<h3>Purpose and result</h3>
+<p>Purpose is why someone acted. It can be a plain infinitive, or <span class="gk">τοῦ</span> + infinitive, or <span class="gk">εἰς τό</span> + infinitive.</p>
+<p class="v" data-ref="Matthew 2:13">μέλλει γὰρ Ἡρῴδης ζητεῖν τὸ παιδίον τοῦ ἀπολέσαι αὐτό</p>
+<p>"For Herod is about to search for the child in order to destroy him." The searching has a purpose, and <span class="gk">τοῦ ἀπολέσαι</span> is it.</p>
+<p>Result is what actually followed, intended or not, and it is usually marked by <span class="gk">ὥστε</span>.</p>
+<p class="v" data-ref="Matthew 13:32">ὥστε ἐλθεῖν τὰ πετεινὰ τοῦ οὐρανοῦ</p>
+<p>"so that the birds of the air come" and nest in its branches. The mustard seed did not grow in order to house birds. That is simply what came of it.</p>
+<p>Be careful here, though. Greek does not always keep purpose and result apart, and neither does English — "he came to save" can be read either way. Where an argument about a verse turns on intention, this is very often the grammar it turns on. The construction narrows the options. It does not always settle them.</p>
+<h3>Time</h3>
+<p>Three prepositions with the articular infinitive do most of the work: <span class="gk">πρὸ τοῦ</span> before, <span class="gk">ἐν τῷ</span> while, <span class="gk">μετὰ τό</span> after.</p>
+<p>The parable of the sower puts two uses of one verb in consecutive verses, which is about as clear a demonstration as the New Testament offers. First the purpose:</p>
+<p class="v" data-ref="Matthew 13:3">ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν</p>
+<p>"A sower went out to sow." Then, in the very next verse, the time:</p>
+<p class="v" data-ref="Matthew 13:4">καὶ ἐν τῷ σπείρειν αὐτὸν</p>
+<p>"And while he was sowing." Same verb, same form. The only things that have changed are the preposition and the case of the article.</p>
+<p class="v" data-ref="Mark 1:14">Καὶ μετὰ τὸ παραδοθῆναι τὸν Ἰωάννην</p>
+<p>"And after John was handed over." Luke in particular uses <span class="gk">ἐν τῷ</span> + infinitive constantly, so it is worth being able to recognise on sight.</p>
+<h3>Cause</h3>
+<p><span class="gk">διὰ τό</span> + infinitive gives the reason.</p>
+<p class="v" data-ref="Luke 2:4">διὰ τὸ εἶναι αὐτὸν ἐξ οἴκου καὶ πατριᾶς Δαυίδ</p>
+<p>"because he was of the house and family of David." That is Luke telling us why Joseph went up to Bethlehem rather than staying where he was.</p>
+<h3>The subject goes in the accusative</h3>
+<p>An infinitive has no ending to show who is doing it. So when the doer needs naming, Greek names it, and it names it in the accusative.</p>
+<p>Look at that last verse again. <span class="gk">διὰ τό</span> tells us why; <span class="gk">αὐτόν</span> tells us who. "Because <b>he</b> was of the house of David." To English eyes the accusative looks like the wrong case for a subject, and it takes a few encounters before it stops looking odd. It is entirely standard.</p>
+<h3>What to watch for</h3>
+<p>An accusative sitting beside an infinitive is not automatically its subject. It may just as easily be its object, and the two look identical.</p>
+<p class="v" data-ref="Matthew 1:19">μὴ θέλων αὐτὴν δειγματίσαι</p>
+<p>"not willing to expose her." Here Joseph is the one who would be doing the exposing, and <span class="gk">αὐτήν</span> is the one it would be done to. That is an object. In Luke 2:4 the shape was the same and <span class="gk">αὐτόν</span> was the subject.</p>
+<p>The grammar permits both readings. What decides between them is the sense of the sentence — and being able to say which one you have taken, and why, is most of what reading Greek carefully amounts to.</p>`,
 v:[148,161,244,455,510],
 vids:[{t:"Lecture 21: Infinitives (Verbal Nouns)",s:"Daily Dose of Greek — Rob Plummer (20:54)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-21/"},
       {t:"Infinitives Song",s:"Daily Dose of Greek — to the tune of Mary Had a Little Lamb",yt:"CZQ8YdVpdos"}],
 quiz:[
-{q:"The subject of an infinitive appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. This looks wrong to English eyes but is entirely standard.",sec:0},
-{q:"ὥστε + infinitive expresses:",o:["Purpose","Result","Time","Cause"],a:1,w:"Result — 'so that, with the result that'. Purpose and result overlap in Greek, and distinguishing them is often an interpretive judgment.",sec:1},
-{q:"ἐν τῷ + infinitive most often expresses:",o:["Cause","Contemporaneous time — 'while'","Purpose","Comparison"],a:1,w:"'While' or 'during'. Luke uses this constantly.",sec:1}]},
-
+{q:"An infinitive lacks which two things a finite verb has?",o:["Tense and voice","Person and number","Case and gender","Mood and aspect"],a:1,w:"Person and number. It keeps tense and voice, which is why it can still show aspect, but nothing in the form tells you who is doing it.",sec:0},
+{q:"Why does the aorist infinitive λῦσαι have no augment?",o:["It is irregular","The augment marks past time and belongs to the indicative","Aorist infinitives are rare","The article takes its place"],a:1,w:"The augment marks past time and appears only in the indicative. An infinitive is not making a claim about when, so it has nothing to augment.",sec:1},
+{q:"In τὸ ζῆν Χριστός, what is the article τό doing?",o:["Making the infinitive definite","Making the infinitive a noun, so it can be the subject","Marking past time","Nothing — it is untranslatable filler"],a:1,w:"It turns the infinitive into a noun that can take a role in the sentence. Philippians 1:21 has no finite verb at all: to live and to die are its subjects.",sec:2},
+{q:"ὥστε + infinitive expresses:",o:["Purpose","Result","Time","Cause"],a:1,w:"Result — so that, with the result that. Purpose and result do overlap in Greek, and telling them apart is often an interpretive judgment rather than a grammatical one.",sec:3},
+{q:"Matthew 13:3 has τοῦ σπείρειν and 13:4 has ἐν τῷ σπείρειν. What has changed?",o:["The tense","The voice","What the infinitive is doing — purpose, then time","Nothing; they are the same construction"],a:2,w:"The verb form is identical. The preposition and the case of the article change it from why he went out into when the seed fell.",sec:4},
+{q:"διὰ τό + infinitive expresses:",o:["Cause","Purpose","Result","Comparison"],a:0,w:"Cause — because. Luke 2:4 gives the reason Joseph went up to Bethlehem.",sec:5},
+{q:"The subject of an infinitive, when it is expressed, appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. It looks wrong to English eyes and is entirely standard.",sec:6},
+{q:"In μὴ θέλων αὐτὴν δειγματίσαι (Matthew 1:19), αὐτήν is:",o:["The subject of the infinitive","The object of the infinitive","In the wrong case","A possessive"],a:1,w:"The object. Joseph is the one who would do the exposing. An accusative beside an infinitive can be either subject or object, and only the sense decides.",sec:7}]},
 {id:22,t:"Additional pronouns",s:"Relative, reflexive, reciprocal, interrogative",
 body:`<p>Five smaller pronoun systems complete the set. One of them — the relative — you have been reading around since John 1.</p>
 <h3>The relative pronoun: ὅς, ἥ, ὅ</h3>
