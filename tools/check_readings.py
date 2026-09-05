@@ -9,7 +9,7 @@ grammatical claim — "impf act ind 3sg of εἰμί", "dat sg fem of ἀρχή"
 corpus carries a full parse for every token of the same text, so both the
 Greek and the claims about it can be checked rather than trusted.
 
-Three passes:
+Four passes:
 
   1. The text. Each passage is aligned word for word against the verses its
      reference names. A missing, extra or misspelled word shows up here.
@@ -19,6 +19,14 @@ Three passes:
      tense, voice, mood, person, and the lemma named after "of".
 
   3. The references themselves: does the passage span the verses it says?
+
+  4. The four fields tools/build_readings.py appends to each word — lemma,
+     part of speech, parse code and VOCAB index. These are generated rather
+     than written, so what is checked is that they have not gone stale: a
+     regenerated data/vocab.js moves the last of them, exactly as it moves
+     data/examples.js, and a passage still carrying yesterday's indices would
+     colour the reader by the wrong words and offer a cloze the wrong
+     distractors.
 
 What it does not check is the English after the em dash. A gloss is a
 translation choice in context and the corpus cannot arbitrate it.
@@ -141,8 +149,20 @@ def check(tok, code, pos, lemma, gloss):
     return bad
 
 # ------------------------------------------------------------------ run ---
-text_problems, parse_problems, ref_problems = [], [], []
-words_checked = claims_checked = 0
+text_problems, parse_problems, ref_problems, stale = [], [], [], []
+words_checked = claims_checked = coded = 0
+
+# The deck, for the VOCAB index each word now carries.
+V = re.findall(r'^\["(.*?)","(.*?)",(\d+),"(\w+)",(\d)\]',
+               io.open(os.path.join(ROOT, "data", "vocab.js"), encoding="utf-8").read(), re.M)
+RETIRED = {237}
+CITATION = {"τε": "τέ", "οὕτως": "οὕτω(ς)", "δεῖ": "δέω",
+            "ἱερόν": "ἱερός", "ἐλεέω": "ἐλεάω"}
+VIDX = {}
+for i, v in enumerate(V):
+    if i not in RETIRED:
+        h = v[0].split(",")[0].strip()
+        VIDX.setdefault(norm(CITATION.get(h, h)), i)
 
 for r in READINGS:
     toks, err = verses_for(r["ref"])
@@ -155,28 +175,43 @@ for r in READINGS:
     if len(mine) != len(toks):
         text_problems.append("%s (%s): %d words in the app, %d in the SBLGNT"
                              % (r["id"], r["ref"], len(mine), len(toks)))
-    for i, (w, g) in enumerate(mine):
+    for i, row in enumerate(mine):
         if i >= len(toks):
             break
+        w, g = row[0], row[1]
         _, form, code, lemma, pos = toks[i]
         words_checked += 1
         if norm(bare(w)) != norm(bare(form)):
             text_problems.append("%s word %d: app has %r, the SBLGNT has %r"
                                  % (r["id"], i + 1, w, form))
             continue
+        # the generated fields, if the file has been through build_readings
+        if len(row) >= 6:
+            coded += 1
+            want = [lemma, pos, code, VIDX.get(norm(lemma), -1)]
+            if row[2:6] != want:
+                stale.append("%s word %d (%s): carries %r, the corpus and the "
+                             "deck give %r — re-run tools/build_readings.py"
+                             % (r["id"], i + 1, form, row[2:6], want))
+        elif len(row) != 2:
+            stale.append("%s word %d (%s): has %d fields, which is neither the "
+                         "old two nor the generated six" % (r["id"], i + 1, form, len(row)))
         if g.strip():
             claims_checked += 1
             for c in check(form, code, pos, lemma, g):
                 parse_problems.append("%-8s %-14s %-46s %s  [corpus: %s %s %s]"
                                       % (r["id"], form, g[:46], c, pos, code, lemma))
 
-print("passages: %d   words aligned: %d   glosses with a claim: %d"
-      % (len(READINGS), words_checked, claims_checked))
+print("passages: %d   words aligned: %d   glosses with a claim: %d   "
+      "words carrying a parse: %d"
+      % (len(READINGS), words_checked, claims_checked, coded))
 print()
 print("reference problems: %d" % len(ref_problems))
 for p in ref_problems: print("   " + p)
 print("text differences from the SBLGNT: %d" % len(text_problems))
 for p in text_problems: print("   " + p)
+print("generated fields out of date: %d" % len(stale))
+for p in stale: print("   " + p)
 print("parse claims contradicted: %d" % len(parse_problems))
 for p in parse_problems: print("   " + p)
-sys.exit(1 if (text_problems or parse_problems or ref_problems) else 0)
+sys.exit(1 if (text_problems or parse_problems or ref_problems or stale) else 0)

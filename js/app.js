@@ -1989,6 +1989,16 @@ function renderRead(){
     </button>`).join("");
   document.getElementById("readBody").innerHTML="";
 }
+/* How well a word is known, as one of the four classes css/app.css dims by.
+   The graded passages carry their VOCAB index (tools/build_readings.py puts
+   it there); the GNT reader has to look its own up, which is why paintLit in
+   js/gnt.js does that part itself and then calls this. */
+function litClass(vi){
+  if(!(vi>=0)) return "k0";
+  const c=S.cards[vi];
+  return !c ? "k1" : (c.ivl>=6 ? "k3" : "k2");
+}
+
 function openRead(id){
   const r=READINGS.find(x=>x.id===id);
   if(!r) return;
@@ -2000,7 +2010,7 @@ function openRead(id){
     <h2>${r.ref}</h2>
     <p class="muted" style="font-size:.87rem">${r.note}</p>
     <div class="passage" id="psg">${r.w.map((w,i)=>
-      `<w data-i="${i}">${w[0]}</w>`).join(" ")}</div>
+      `<w data-i="${i}"${S.lit!==0?` class="${litClass(w[5])}"`:""}>${w[0]}</w>`).join(" ")}</div>
     <div class="gloss" id="gloss"><div class="d">Tap a word.</div></div>
     <div style="height:14px"></div>
     <button class="btn ghost" onclick="clozeRead('${id}')">Cloze test — fill in the blanks</button>
@@ -2028,33 +2038,89 @@ function openRead(id){
   };
 }
 
-/* ---- cloze: blank out substantive words from a passage ---- */
+/* ---- cloze: which form fills the gap ----
+   This used to blank a word and offer three others taken from anywhere in
+   the passage over four letters long. Nothing made the four alternatives
+   plausible in the slot — a verb, a preposition and two nouns in different
+   cases could all be on offer, so it was often answerable without reading
+   the Greek at all, by asking which one could grammatically go there.
+
+   Now that tools/build_readings.py has poured the corpus into the passages,
+   every word carries its lemma, its parse and its place in the deck. So the
+   distractors can be *other real forms of the same word*, out of
+   data/forms.js — which turns "which word" into "which form", the question
+   the endings exist to answer. Where all four share an opening it is
+   stripped off and shown once, as the paradigm sprint does, and what is
+   asked for is the ending.
+
+   Two fallbacks, because the corpus does not supply a paradigm for
+   everything: forms.js carries only unambiguous finite verbs and declined
+   nouns, so 44% of candidates get a real paradigm. Failing that, three words
+   from this passage of the same part of speech and the same case — still
+   four things that could fill the slot. Failing that, the old behaviour. */
 function clozeRead(id){
   const r=READINGS.find(x=>x.id===id);
-  // candidates: words with a real gloss and enough substance to be worth testing
-  const cands=r.w.map((w,i)=>({w,i}))
-    .filter(x=>x.w[1] && x.w[0].replace(/[^Ͱ-Ͽἀ-῿]/g,"").length>=4);
-  if(cands.length<6){toast("Passage too short for a cloze test");return;}
-  const step=Math.max(1,Math.floor(cands.length/10));
-  const picks=cands.filter((_,k)=>k%step===0).slice(0,10);
   const strip=w=>w.replace(/[^Ͱ-Ͽἀ-῿]/g,"");
+  const cands=r.w.map((w,i)=>({w,i}))
+    .filter(x=>x.w[1] && strip(x.w[0]).length>=4);
+  if(cands.length<6){toast("Passage too short for a cloze test");return;}
+
+  /* Other attested forms of the same word. FORMS is [form, VOCAB index, pos,
+     code, reference] and is keyed by VOCAB position, which is why
+     build_readings puts that index on every word. */
+  const family=x=>{
+    const vi=x.w[5];
+    if(vi===undefined || vi<0 || typeof FORMS==="undefined") return [];
+    const me=strip(x.w[0]);
+    return [...new Set(FORMS.filter(f=>f[1]===vi && f[3]!==x.w[4] && strip(f[0])!==me)
+      .map(f=>strip(f[0])))];
+  };
+  // same kind of word, same case: still four things that could go there
+  const peers=x=>[...new Set(r.w
+    .filter(y=>y[3]===x.w[3] && y[4] && x.w[4] && y[4][4]===x.w[4][4]
+              && strip(y[0])!==strip(x.w[0]))
+    .map(y=>strip(y[0])))];
+
+  /* Prefer the candidates a real paradigm can be built for, then the rest,
+     then spread the choice across the passage rather than taking the first
+     ten of anything. */
+  const scored=cands.map(x=>({...x, fam:family(x), peer:peers(x)}));
+  const rank=x=>x.fam.length>=3?0:(x.peer.length>=3?1:2);
+  const picks=scored.slice().sort((a,b)=>rank(a)-rank(b)||a.i-b.i)
+    .slice(0,14).sort((a,b)=>a.i-b.i).slice(0,10);
+
+  const lcp=a=>{ let n=0;
+    while(n<a[0].length && a.every(x=>x[n]===a[0][n])) n++;
+    return a[0].slice(0,n); };
+
   const q=picks.map(p=>{
     const answer=strip(p.w[0]);
-    /* By value and de-duplicated: the same form appears more than once in
-       most passages, so the option list could show one word twice. */
-    const wrong=[...new Set(cands.map(c=>strip(c.w[0])))].filter(w=>w!==answer)
+    const from = p.fam.length>=3 ? p.fam : (p.peer.length>=3 ? p.peer : null);
+    const wrong=(from || [...new Set(cands.map(c=>strip(c.w[0])))].filter(w=>w!==answer))
       .sort(()=>Math.random()-.5).slice(0,3);
-    const opts=[answer,...wrong].sort(()=>Math.random()-.5);
+    const forms=[answer,...wrong];
+    // Only when the four are one word's own forms is a shared opening a stem
+    // rather than a coincidence.
+    const pre=p.fam.length>=3?lcp(forms):"";
+    const cut=pre.length>=2?pre.length:0;
+    const show=f=>`<span class="gk">${cut?"-"+f.slice(cut):f}</span>`;
+    const opts=forms.slice().sort(()=>Math.random()-.5).map(show);
     /* Blank every occurrence inside the window, not just the one being
        asked: five questions in twelve passages printed their own answer two
        words from the gap. */
+    // a shorter blank for an ending than for a whole word, and underscores
+    // rather than dashes: three em dashes read as punctuation in the line
+    const gap=cut?`${pre}___`:"____";
     const ctx=r.w.map((w,i)=>{
       if(Math.abs(i-p.i)>5) return null;
-      return (i===p.i||strip(w[0])===answer)?"____":w[0];
+      return (i===p.i||strip(w[0])===answer)?gap:w[0];
     }).filter(Boolean).join(" ");
-    return mcq(`<span class="q-gk sm">… ${ctx} …</span><br><small class="muted">Which word fills the blank? (${r.ref})</small>`,
-      opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(answer),
-      `${answer} — ${p.w[1]}`);
+    const parse=(p.w[3]&&p.w[4]&&typeof gntParse==="function")?gntParse(p.w[3],p.w[4]):"";
+    return mcq(`<span class="q-gk sm">… ${ctx} …</span><br><small class="muted">${
+        cut?"Which ending?":"Which form fills the blank?"} (${r.ref})</small>`,
+      opts, opts.indexOf(show(answer)),
+      `<span class="gk">${answer}</span>${parse?` — ${parse}`:""}<br>
+       <span class="muted">${p.w[1]}</span>`);
   });
   startSession(q,"d");
 }

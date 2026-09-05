@@ -353,11 +353,9 @@ function paintLit() {
     el.classList.remove("k0", "k1", "k2", "k3");
     if (!lit) return;
     const w = gntCur.verses[+el.dataset.v][1][+el.dataset.w];
-    if (!known.has(w[1])) {
-      const i = vocIndexFor(GNT.lemmas[w[1]]);
-      const c = i >= 0 ? S.cards[i] : null;
-      known.set(w[1], i < 0 ? "k0" : !c ? "k1" : (c.ivl >= 6 ? "k3" : "k2"));
-    }
+    // litClass lives in js/app.js, where the graded passages use it too —
+    // one definition of "known", so the two readers cannot disagree
+    if (!known.has(w[1])) known.set(w[1], litClass(vocIndexFor(GNT.lemmas[w[1]])));
     el.classList.add(known.get(w[1]));
   });
 }
