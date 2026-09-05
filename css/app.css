@@ -222,6 +222,22 @@ button.vid{width:100%;text-align:left;font:inherit}
    horizontal spacing exactly as it was. */
 .passage w{cursor:pointer;border-bottom:1px dotted transparent;padding:5px 2px;margin:0 -1px}
 .passage w.tapped{background:rgba(212,165,55,.2);border-radius:3px}
+
+/* How well you know the word, in four steps. Opacity only — colour here
+   would fight .tapped, which is the one thing on the page that has to be
+   unmistakable. Settled words are full strength and the rest recede, so a
+   chapter fills in as the deck grows instead of staying uniformly grey.
+   Never below .42: this is a reading surface, and a word you cannot read is
+   worse than a word you do not know. */
+.passage w.k3{opacity:1}
+.passage w.k2{opacity:.82}
+.passage w.k1{opacity:.6}
+.passage w.k0{opacity:.44}
+/* .tapped outranks all four: looking a word up is how you stop it being k0 */
+.passage w.tapped{opacity:1}
+/* the verses a focus is aimed at */
+.passage w.inf{background:rgba(212,165,55,.07)}
+.passage w.inf.tapped{background:rgba(212,165,55,.2)}
 /* the dagger on a gloss that came from a shipped lexicon rather than from
    the course's own 509. Quiet, but there — a terser, older wording is worth
    having and worth knowing about. */

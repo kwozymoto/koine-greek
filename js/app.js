@@ -89,9 +89,13 @@ function gradeGrammar(k,ok){
   if(mode==="review") S.reviewsToday=(S.reviewsToday||0)+1;
   save();
 }
-/* "L17q3" back to its question. A key whose lesson has since been re-written
-   returns null and is skipped rather than breaking a review. */
+/* "L17q3" back to its lesson question, "C7" back to the seventh syntax
+   question. A key whose lesson has since been re-written, or an index past
+   the end of CASEFN, returns null and is skipped rather than breaking a
+   review — which is what happens to any key when its content moves. */
 function gquestion(k){
+  const c=/^C(\d+)$/.exec(k);
+  if(c) return (typeof CASEFN!=="undefined" && CASEFN[+c[1]]) ? caseQ(CASEFN[+c[1]]) : null;
   const m=/^L(\d+)q(\d+)$/.exec(k); if(!m) return null;
   const l=LESSONS.find(x=>x.id===+m[1]);
   return (l && l.quiz && l.quiz[+m[2]]) || null;
@@ -1103,9 +1107,16 @@ function startReview(){
   }
   const words=d.slice(0, Math.max(5, S.goal||20));
   const q=words.map(flashcard); q.__words=words;
-  /* A few grammar questions at the end of the review. Not in free practice:
+  /* A few grammar questions at the end of the review, and one syntax
+     question the chapters have earned but the schedule has not met yet —
+     which is how CASEFN gets onto the schedule at all. Not in free practice:
      that mode must not touch anything's schedule. */
-  if(!PRACTICE) gd.forEach(k=>{ const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k)); });
+  if(!PRACTICE){
+    gd.forEach(k=>{ const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k)); });
+    caseNew().sort(()=>Math.random()-.5).slice(0,1).forEach(i=>{
+      const x=caseQ(CASEFN[i]); q.push(mcq(x.q,x.o,x.a,x.w,`C${i}`));
+    });
+  }
   startSession(q,"review");
 }
 /* SRS cards are keyed by VOCAB index, so data/vocab.js must be append-only.
@@ -1672,76 +1683,112 @@ function lookalikeDrill(n=12){
   });
 }
 
-/* ---- case functions: the exegetical instinct drill ---- */
+/* ---- case and syntax questions: the exegetical instinct drill ----
+   The only content in the app that asks what a construction is *doing*
+   rather than what it is. Hand-written, so each row carries the two things
+   that make it checkable and schedulable:
+
+     [4] the earliest chapter that earns the question — Black teaches the
+         optative in 24, and asking about a fourth-class condition in week
+         two is not a test, it is a trick
+     [5] the verse the Greek is quoted from
+
+   Six of the first ten did not occur in the New Testament at all. They were
+   plausible Greek assembled from memory — ἐβαπτίσθη ὑπὸ Ἰωάννου, ἐσώθημεν
+   τῇ πίστει, αὐτοῦ διδάσκοντος — and one of them was the same fabricated
+   genitive absolute check_syntax.py had already caught in chapter 20. Every
+   phrase here is now quoted, and tools/check_drills.py holds each to the
+   verse it names. */
 const CASEFN=[
 ["ἡ ἀγάπη τοῦ θεοῦ|τοῦ θεοῦ could be:",
- ["Subjective or objective genitive","Dative of means","Genitive absolute","Accusative of respect"],0,
- "God's love for us (subjective) or our love for God (objective). Grammar allows both; context decides — this is the classic exegetical fork."],
-["ἐβαπτίσθη ὑπὸ Ἰωάννου|ὑπό + genitive with a passive verb expresses:",
- ["Location under","Personal agent — by John","Time","Cause"],1,
- "With a passive verb, ὑπό + genitive names the agent. Under something would be ὑπό + accusative."],
-["ἐσώθημεν τῇ πίστει|τῇ πίστει is most likely a dative of:",
- ["Indirect object","Means or instrument","Location","Possession"],1,
- "By means of faith. The dative covers means, sphere, location and the indirect object — always ask which."],
-["ἔμεινεν τὴν ἡμέραν|The accusative here expresses:",
- ["Direct object","Extent of time — for the day","Respect","Motion toward"],1,
- "The accusative measures extent of time or space: he stayed the whole day."],
+ ["Subjective or objective genitive", "Dative of means", "Genitive absolute", "Accusative of respect"],0,
+ "God's love for us (subjective) or our love for God (objective). Grammar allows both; context decides — this is the classic exegetical fork.", 4,"Romans 5:5"],
+["βαπτισθῆναι ὑπ’ αὐτοῦ|ὑπό + genitive with a passive verb expresses:",
+ ["Location under", "Personal agent — by him", "Time", "Cause"],1,
+ "With a passive verb ὑπό + genitive names the agent: Jesus came to be baptised by John. Under something would be ὑπό + accusative.", 15,"Matthew 3:13"],
+["δικαιοῦσθαι πίστει ἄνθρωπον|πίστει here is a dative of:",
+ ["Indirect object", "Means or instrument", "Location", "Possession"],1,
+ "By means of faith — a person is justified by faith, apart from works. The dative covers means, sphere, location and the indirect object; always ask which.", 8,"Romans 3:28"],
+["ἔμειναν τὴν ἡμέραν|The accusative here expresses:",
+ ["Direct object", "Extent of time — for the day", "Respect", "Motion toward"],1,
+ "The accusative measures extent of time or space: they stayed with him the whole day.", 7,"John 1:39"],
 ["θεὸς ἦν ὁ λόγος|The subject is:",
- ["θεός, because it comes first","ὁ λόγος, marked by the article","Either equally","The verb has no subject"],1,
- "With a linking verb the articular noun is the subject; anarthrous θεός is predicate. Word order carries emphasis, not grammar."],
+ ["θεός, because it comes first", "ὁ λόγος, marked by the article", "Either equally", "The verb has no subject"],1,
+ "With a linking verb the articular noun is the subject; anarthrous θεός is predicate. Word order carries emphasis, not grammar.", 4,"John 1:1"],
 ["τοῦ σπείρειν|The articular infinitive in the genitive most naturally expresses:",
- ["Purpose — in order to sow","Possession","Comparison","Agency"],0,
- "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work."],
-["ἦλθεν σὺν τοῖς μαθηταῖς|σύν takes the dative because it expresses:",
- ["Separation","Accompaniment — with the disciples","Motion toward","Agency"],1,
- "σύν is a one-case preposition: dative of accompaniment. Prepositions fix their cases; learn them as pairs."],
-["πιστεύετε εἰς τὸν κύριον|εἰς + accusative after πιστεύω expresses:",
- ["Location","Direction of trust — into him","Time when","Instrument"],1,
- "NT faith-language moves toward its object: believing into Christ. The preposition is part of the theology."],
-["αὐτοῦ διδάσκοντος|A genitive noun + genitive participle standing loose from the clause is:",
- ["A genitive absolute — while he was teaching","Possession","Objective genitive","A mistake"],0,
- "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it."],
+ ["Purpose — in order to sow", "Possession", "Comparison", "Agency"],0,
+ "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work.", 21,"Matthew 13:3"],
+["σὺν τοῖς μαθηταῖς|σύν takes the dative because it expresses:",
+ ["Separation", "Accompaniment — with the disciples", "Motion toward", "Agency"],1,
+ "σύν is a one-case preposition: dative of accompaniment. Prepositions fix their cases; learn them as pairs.", 8,"Mark 8:34"],
+["ἐπίστευσαν εἰς αὐτὸν|εἰς + accusative after πιστεύω expresses:",
+ ["Location", "Direction of trust — into him", "Time when", "Instrument"],1,
+ "NT faith-language moves toward its object: believing into Christ. The preposition is part of the theology.", 8,"John 2:11"],
+["καθίσαντος αὐτοῦ|A genitive participle with its own genitive subject, loose from the clause, is:",
+ ["A genitive absolute — when he had sat down", "Possession", "Objective genitive", "A mistake"],0,
+ "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it — this one opens the Sermon on the Mount.", 20,"Matthew 5:1"],
 ["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
- ["The indirect object","Time when — on the sabbath","Means","Possession"],1,
- "The bare dative of time answers when. Genitive of time answers during what; accusative for how long."],
-
-/* Added with the syntax tables. Every Greek phrase below is one of theirs,
-   so check_syntax has already held it to the corpus. */
+ ["The indirect object", "Time when — on the sabbath", "Means", "Possession"],1,
+ "The bare dative of time answers when. Genitive of time answers during what; accusative for how long.", 8,"Luke 6:7"],
 ["εἴ τις λαλεῖ|εἰ + indicative (1 Peter 4:11) is which class of condition?",
- ["First — assumed true for the argument","Second — contrary to fact","Third — a future possibility","Fourth — remote"],0,
- "First class: εἰ with the indicative. It does not mean the condition is true, only that the writer is arguing from it."],
+ ["First — assumed true for the argument", "Second — contrary to fact", "Third — a future possibility", "Fourth — remote"],0,
+ "First class: εἰ with the indicative. It does not mean the condition is true, only that the writer is arguing from it.", 16,"1 Peter 4:11"],
 ["εἰ γὰρ ἐπιστεύετε Μωϋσεῖ|εἰ + imperfect, with ἄν in the apodosis, means:",
- ["It happened","It is assumed not to be so","It may yet happen","It is a general rule"],1,
- "Second class, contrary to fact: if you did believe Moses — which you do not (John 5:46). The imperfect and the ἄν together are the giveaway."],
+ ["It happened", "It is assumed not to be so", "It may yet happen", "It is a general rule"],1,
+ "Second class, contrary to fact: if you did believe Moses — which you do not (John 5:46). The imperfect and the ἄν together are the giveaway.", 16,"John 5:46"],
 ["ἐὰν ἅψωμαι|ἐάν + subjunctive projects:",
- ["A completed fact","A real future possibility","Something contrary to fact","A wish"],1,
- "Third class (Mark 5:28). ἐάν plus the subjunctive is the ordinary way to put a live future condition."],
+ ["A completed fact", "A real future possibility", "Something contrary to fact", "A wish"],1,
+ "Third class (Mark 5:28). ἐάν plus the subjunctive is the ordinary way to put a live future condition.", 23,"Mark 5:28"],
 ["εἰ καὶ πάσχοιτε|εἰ + optative is which class — and how common?",
- ["First, very common","Third, common","Fourth, and never complete in the NT","Second, rare"],2,
- "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes."],
+ ["First, very common", "Third, common", "Fourth, and never complete in the NT", "Second, rare"],2,
+ "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes.", 24,"1 Peter 3:14"],
 ["ἀγάπης τοῦ Χριστοῦ|In Romans 8:35 the genitive is best taken as:",
- ["Objective — our love for Christ","Subjective — Christ's own love","Partitive","Of material"],1,
- "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides."],
-["τινὲς τῶν γραμματέων|τῶν γραμματέων here is a genitive of:",
- ["Possession","The part and the whole — some of the scribes","Time","Comparison"],1,
- "Partitive: the genitive names the whole from which the head noun takes a part (Matthew 9:3)."],
+ ["Objective — our love for Christ", "Subjective — Christ's own love", "Partitive", "Of material"],1,
+ "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides.", 4,"Romans 8:35"],
+["τινες τῶν γραμματέων|τῶν γραμματέων here is a genitive of:",
+ ["Possession", "The part and the whole — some of the scribes", "Time", "Comparison"],1,
+ "Partitive: the genitive names the whole from which the head noun takes a part (Matthew 9:3).", 17,"Matthew 9:3"],
 ["πορευθέντες οὖν μαθητεύσατε|The aorist participle before an imperative here is best read as:",
- ["After you have gone","Go and — sharing the imperative's force","Because you went","While going"],1,
- "Attendant circumstance: the participle takes the mood of the main verb. Matthew 28:19 is the standing example, and the standing mistranslation."],
+ ["After you have gone", "Go and — sharing the imperative's force", "Because you went", "While going"],1,
+ "Attendant circumstance: the participle takes the mood of the main verb. Matthew 28:19 is the standing example, and the standing mistranslation.", 24,"Matthew 28:19"],
 ["ταῦτα λέγοντος αὐτοῦ|What makes this construction absolute?",
- ["It is emphatic","Its subject is not the subject of the main verb","It has no article","The participle is aorist"],1,
- "Genitive absolute (Luke 13:17): the participle and its subject stand in the genitive, grammatically loose from the main clause — where someone else is the subject."],
+ ["It is emphatic", "Its subject is not the subject of the main verb", "It has no article", "The participle is aorist"],1,
+ "Genitive absolute (Luke 13:17): the participle and its subject stand in the genitive, grammatically loose from the main clause — where someone else is the subject.", 20,"Luke 13:17"],
 ["γάρ|A sentence opening with γάρ is doing what to the one before it?",
- ["Contrasting with it","Supporting it — giving the ground","Drawing an inference from it","Changing the subject"],1,
- "γάρ gives the ground. It means the sentence belongs under the previous point rather than beside it — which is structure you can preach from."],
+ ["Contrasting with it", "Supporting it — giving the ground", "Drawing an inference from it", "Changing the subject"],1,
+ "γάρ gives the ground. It means the sentence belongs under the previous point rather than beside it — which is structure you can preach from.", 6,"Matthew 1:20"],
 ["οὖν|οὖν most often signals:",
- ["A new topic","An inference — therefore","A contrast","Simultaneous action"],1,
- "οὖν draws the inference. In John it often merely resumes the narrative, so read it in context before building on it."]
+ ["A new topic", "An inference — therefore", "A contrast", "Simultaneous action"],1,
+ "οὖν draws the inference. In John it often merely resumes the narrative, so read it in context before building on it.", 6,"Matthew 1:17"]
 ];
-function caseDrill(){
-  return CASEFN.slice().sort(()=>Math.random()-.5).map(c=>{
-    const [gk,q]=c[0].split("|");
-    return mcq(`<span class="q-gk sm">${gk}</span><br>${q}`,c[1],c[2],c[3]);
+/* One row as the {q,o,a,w} shape gquestion() hands back for a lesson
+   question, so a syntax question can be served from the review queue by
+   exactly the same code. The pipe in [0] separates the Greek from the stem. */
+function caseQ(c){
+  const [gk,q]=c[0].split("|");
+  return {q:`<span class="q-gk sm">${gk}</span><br>${q}`, o:c[1], a:c[2],
+          w:`${c[3]}${c[5]?` <span class="muted">· ${c[5]}</span>`:""}`};
+}
+/* Which of them the course has reached, and which the schedule has never
+   seen. Lesson questions enter S.gcards by being asked at the end of a
+   chapter; these had no such door, which is why twenty of the best questions
+   in the app were reachable only from a menu and wrote nothing when you
+   answered one. startReview introduces one per review. */
+function caseNew(){
+  const done=S.lessons.length?Math.max(...S.lessons):0;
+  return CASEFN.map((c,i)=>i).filter(i=>CASEFN[i][4]<=done && !(S.gcards||{})[`C${i}`]);
+}
+const caseEarned=()=>{
+  const done=S.lessons.length?Math.max(...S.lessons):0;
+  return CASEFN.map((c,i)=>i).filter(i=>CASEFN[i][4]<=done);
+};
+/* Keyed now, so answering one puts it on the grammar schedule. Twelve rather
+   than all twenty: a run you can finish is a run you will start. */
+function caseDrill(n=12){
+  const pool=(caseEarned().length>=6?caseEarned():CASEFN.map((c,i)=>i));
+  return pool.sort(()=>Math.random()-.5).slice(0,n).map(i=>{
+    const x=caseQ(CASEFN[i]);
+    return mcq(x.q,x.o,x.a,x.w,`C${i}`);
   });
 }
 
@@ -1841,6 +1888,9 @@ function mixedQuiz(){
   const add=l=>l.quiz.forEach((x,n)=>all.push(mcq(x.q,x.o,x.a,x.w,`L${l.id}q${n}`)));
   LESSONS.filter(l=>S.lessons.includes(l.id)).forEach(add);
   if(all.length<5) LESSONS.slice(0,4).forEach(add);
+  // and the syntax questions the chapters have earned — they belong in a
+  // mixed grammar review more than anything else here does
+  caseEarned().forEach(i=>{ const x=caseQ(CASEFN[i]); all.push(mcq(x.q,x.o,x.a,x.w,`C${i}`)); });
   return all.sort(()=>Math.random()-.5).slice(0,12);
 }
 const DRILLS=[
@@ -2228,6 +2278,8 @@ function renderProgress(){
         <select id="setSpeak">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Playback speed</span>
         <select id="setRate">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
+        <select id="setLit">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
@@ -2267,6 +2319,11 @@ function renderProgress(){
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  document.getElementById("setLit").onchange=e=>{
+    S.lit=+e.target.value; save();
+    // repaints a chapter already rendered; a no-op if Read was never opened
+    if(typeof paintLit==="function") paintLit();
+  };
   document.getElementById("setSpeak").onchange=e=>{S.speak=+e.target.value;save();};
   document.getElementById("setRate").onchange=e=>{
     S.rate=+e.target.value; save();
@@ -2324,6 +2381,8 @@ function saneState(x){
     sfx: [0,1,2].includes(+x.sfx)?+x.sfx:2,
     speak: [0,1].includes(+x.speak)?+x.speak:1,
     rate: [1,0.75,0.5].includes(+x.rate)?+x.rate:1,
+    // whether the reader dims words you have not met; per-device like the rest
+    lit: [0,1].includes(+x.lit)?+x.lit:1,
     restUsed: /^\d{4}-\d{2}-\d{2}$/.test(x.restUsed)?x.restUsed:null,
   };
   /* Where the reader was. Shape-checked because it is rendered straight into
@@ -2412,8 +2471,9 @@ function saneState(x){
   const gc=(x.gcards&&typeof x.gcards==="object"&&!Array.isArray(x.gcards))?x.gcards:{};
   out.gcards={};
   for(const k of Object.keys(gc)){
-    // the key is the question's address; anything else cannot be scheduled
-    if(!/^L\d{1,2}q\d{1,2}$/.test(k)) continue;
+    // the key is the question's address — L{chapter}q{n} for a lesson
+    // question, C{n} for a syntax one; anything else cannot be scheduled
+    if(!/^(L\d{1,2}q\d{1,2}|C\d{1,2})$/.test(k)) continue;
     if(!gc[k]||typeof gc[k]!=="object") continue;
     out.gcards[k]=saneCard(gc[k]);
   }

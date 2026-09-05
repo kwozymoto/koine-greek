@@ -186,6 +186,7 @@ function gntUnknown() {
 
 function addToDeck(i, btn) {
   card(i); S.cards[i].due = today(); save();
+  paintLit();                    // the word you just added stops being faint
   if (btn) { btn.textContent = "Added"; btn.disabled = true; }
   else toast(VOCAB[i][0].split(",")[0] + " added to your deck");
 }
@@ -334,6 +335,33 @@ async function openGntBook(abbr) {
     <div style="height:20px"></div>`;
 }
 
+/* Light the chapter by what you know: settled words at full strength, the
+   ones still to come faint, so a chapter fills in as the deck grows instead
+   of staying uniformly grey. Everything this needs was already computed —
+   gntCoverage walks the same lemmas to write one sentence above the passage —
+   and then spent on prose, while every token rendered identically.
+
+   Applied after the fact rather than baked into the HTML, so the Settings
+   toggle and adding a word from the gloss bar can both repaint what is on
+   screen without rebuilding the page or navigating anywhere. */
+function paintLit() {
+  const psg = document.getElementById("psg");
+  if (!psg || !gntCur) return;
+  const lit = S.lit !== 0;
+  const known = new Map();                 // lemma index -> class, computed once
+  psg.querySelectorAll("w").forEach(el => {
+    el.classList.remove("k0", "k1", "k2", "k3");
+    if (!lit) return;
+    const w = gntCur.verses[+el.dataset.v][1][+el.dataset.w];
+    if (!known.has(w[1])) {
+      const i = vocIndexFor(GNT.lemmas[w[1]]);
+      const c = i >= 0 ? S.cards[i] : null;
+      known.set(w[1], i < 0 ? "k0" : !c ? "k1" : (c.ivl >= 6 ? "k3" : "k2"));
+    }
+    el.classList.add(known.get(w[1]));
+  });
+}
+
 async function openGntChapter(abbr, ch) {
   /* Openable from the resume row, the pinned passage and a restored history
      entry — any of which can be the first thing tapped after a cold start.
@@ -369,9 +397,24 @@ async function openGntChapter(abbr, ch) {
      by position made every verse in John 8 read eleven low — a citation you
      could carry into a sermon. */
   const verses = book.c[ch];
+  /* Lit by what you know. Everything needed for this was already computed —
+     gntCoverage walks the same lemmas to write one sentence above the
+     passage — and then spent on prose, while every token rendered identically.
+     A page you can mostly read should look like one: settled words at full
+     strength, and the ones still to come faint, so the chapter fills in as
+     the deck grows rather than staying uniformly grey.
+
+     The verse range of a focus is marked too. It could not be before: this
+     HTML is built before gntCur is assigned and never re-rendered, so
+     anything reading gntCur here would be a chapter behind. S.focus is state
+     and is available now. */
+  const f = S.focus;
+  const inFocus = f && f.a === abbr && f.ch === ch
+    ? (n => !f.lo || (n >= f.lo && n <= f.hi)) : null;
   const html = verses.map((v, vi) =>
     `<span class="vn">${v[0]}</span>` +
-    v[1].map((w, wi) => `<w data-v="${vi}" data-w="${wi}">${w[0]}</w>`).join(" ")
+    v[1].map((w, wi) => `<w data-v="${vi}" data-w="${wi}"${
+      inFocus && inFocus(v[0]) ? ' class="inf"' : ""}>${w[0]}</w>`).join(" ")
   ).join(" ");
 
   document.getElementById("readBody").innerHTML = `
@@ -404,6 +447,7 @@ async function openGntChapter(abbr, ch) {
     <div id="gntTools" style="margin-top:12px"></div>
     <div style="height:20px"></div>`;
   gntCur = { abbr, ch, meta, verses };
+  paintLit();
   paintGntTools();
 
   let counted = false;
@@ -412,7 +456,8 @@ async function openGntChapter(abbr, ch) {
     // Reading the Greek New Testament is studying. It used to count for
     // nothing, so the streak broke on the days that mattered most.
     if (!counted) { counted = true; touchDay(); }
-    document.querySelectorAll("#psg w").forEach(x => x.classList.remove("tapped"));
+    // remove(), not className="": the word also carries how well you know it
+    document.querySelectorAll("#psg w.tapped").forEach(x => x.classList.remove("tapped"));
     e.target.classList.add("tapped");
     const w = verses[+e.target.dataset.v][1][+e.target.dataset.w];
     const lemma = GNT.lemmas[w[1]];

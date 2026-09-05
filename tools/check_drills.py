@@ -23,6 +23,15 @@ form it contains:
                subjunctive are frequently the same string, so the corpus
                tagging πιστεύσω aorist says nothing against it also being the
                future; those are listed for a human, not failed.
+  CASEFN       the case and syntax questions. Their Greek is a quotation, so
+               the corpus can say whether it is one: does this phrase occur,
+               contiguously, in the verse the row names? Six of the first ten
+               did not occur anywhere in the New Testament — plausible Greek
+               assembled from memory, including a genitive absolute that had
+               already been caught and fixed once in chapter 20. Also checked:
+               four distinct options, an answer index inside them, and a
+               chapter gate that is a real chapter, since that gate decides
+               when the question is allowed to reach a learner.
 
 A form the corpus does not contain proves nothing — a paradigm legitimately
 holds forms the New Testament never happens to use. Those are counted and
@@ -30,6 +39,14 @@ listed separately, never failed. What fails is a form the corpus does
 contain and consistently parses some other way.
 """
 import json, io, os, re, sys, unicodedata, collections
+
+# This prints Greek and the Windows console is cp1252. Every other checker
+# guards this; without it a clean run still crashes on its own report,
+# which only showed up once a failure had Greek in it.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GNT = os.path.join(ROOT, "data", "gnt")
@@ -66,6 +83,17 @@ def array(name):
     return json.loads("[" + "".join(body.splitlines()) + "]")
 
 ART, PARSE, BUILD, PP = array("ART"), array("PARSE"), array("BUILD_FORMS"), array("PP")
+CASEFN = array("CASEFN")
+
+# Whole verses, for the one drill whose Greek is a quotation rather than a
+# paradigm. Same test tools/check_syntax.py applies to the syntax tables.
+VERSES = {}
+for b in man["books"]:
+    d = json.load(io.open(os.path.join(GNT, b["a"] + ".json"), encoding="utf-8"))
+    nums = b.get("n") or list(range(1, len(d["c"]) + 1))
+    for ci, ch in enumerate(d["c"]):
+        for vs in ch:
+            VERSES["%s %d:%d" % (b["t"], nums[ci], vs[0])] = [norm(bare(w[0])) for w in vs[1]]
 
 # ------------------------------------------------- English -> parse code ---
 CASE = {"nominative": "N", "genitive": "G", "dative": "D", "accusative": "A",
@@ -203,7 +231,39 @@ for row in PP:
             homographs.append("PP    %-10s %-9s of %-12s %s"
                               % (f, PP_TENSE[slot], row[0], c))
 
+# ------------------------------------------------------------- CASEFN ----
+case_bad = []
+for n, row in enumerate(CASEFN):
+    tag = "CASEFN[%d]" % n
+    if len(row) != 6:
+        case_bad.append("%s has %d fields, not 6 — prompt, options, answer, "
+                        "why, chapter, reference" % (tag, len(row)))
+        continue
+    prompt, opts, ans, why, chapter, ref = row
+    if "|" not in prompt:
+        case_bad.append("%s has no | separating the Greek from the question" % tag)
+        continue
+    greek = prompt.split("|")[0]
+    if len(opts) != 4 or len(set(opts)) != 4:
+        case_bad.append("%s does not offer four distinct options" % tag)
+    if not isinstance(ans, int) or not 0 <= ans < len(opts):
+        case_bad.append("%s answers %r, which is not one of its options" % (tag, ans))
+    if not isinstance(chapter, int) or not 1 <= chapter <= 26:
+        case_bad.append("%s is gated on chapter %r, which Black does not have"
+                        % (tag, chapter))
+    toks = VERSES.get(ref)
+    if toks is None:
+        case_bad.append("%s cites %s, which is not a verse in the corpus" % (tag, ref))
+        continue
+    want = [norm(bare(w)) for w in greek.split() if bare(w)]
+    if not want:
+        case_bad.append("%s has no Greek in it" % tag)
+        continue
+    if not any(toks[i:i + len(want)] == want for i in range(len(toks) - len(want) + 1)):
+        case_bad.append("%s — %r does not occur in %s" % (tag, greek, ref))
+
 print("drill forms the corpus could judge: %d" % checked)
+print("case and syntax questions held to the verse they quote: %d" % len(CASEFN))
 print("drill forms the corpus does not contain: %d (a paradigm may hold forms "
       "the NT never uses)" % len(unattested))
 print()
@@ -220,4 +280,8 @@ print()
 print("not in the corpus, so not judged:")
 for u in unattested:
     print("   " + u)
-sys.exit(1 if problems else 0)
+print()
+print("case questions whose Greek or shape does not hold up: %d" % len(case_bad))
+for c in case_bad:
+    print("   " + c)
+sys.exit(1 if (problems or case_bad) else 0)
