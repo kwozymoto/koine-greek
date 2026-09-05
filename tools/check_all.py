@@ -4,7 +4,7 @@
     python tools/check_all.py
 
 The app teaches, so the thing that matters about it is whether what it says
-is true. Thirteen checkers put different parts of it to the SBLGNT bundled in
+is true. Fourteen checkers put different parts of it to the SBLGNT bundled in
 data/gnt/, and this runs the lot:
 
     check_vocab      the 511 lexical entries, their example verses, the
@@ -53,6 +53,13 @@ wrong digit silently changes the course. That is exactly the field that was
 nearly corrupted by being retyped from memory rather than lifted from the
 file, which is the fault this whole set exists to make impossible.
 
+check_coverage asks whether a chapter covers what Black's chapter covers.
+It exists because chapter 7 taught the first aorist and nothing about second
+aorists — 58% of the aorist active indicatives in the New Testament — and no
+checker found that; a person did, once, by reading the two side by side. It
+fails only for chapters already rewritten, and reports the rest as a work
+list.
+
 check_black is the other exception. It reads Black's own vocabulary lists to
 verify each chapter's `v:` array — the one field with no derivable truth in
 the repo — and the books are deliberately outside it, so it says so and exits
@@ -73,7 +80,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
           "check_readings", "check_lessons", "check_forms", "check_lexicon",
           "check_syntax", "check_clauses", "check_frozen", "check_black",
-          "check_links"]
+          "check_coverage", "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
 # straight through to it and leaves the other nine untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}

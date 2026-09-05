@@ -109,6 +109,17 @@ body:`<p>Before learning any paradigm, get the shape of the whole system. It is 
 <h3>Time is only fixed in the indicative</h3>
 <p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive is not past at all — you saw that in Philippians, where <span class="gk">τὸ ἀποθανεῖν</span> is not "to have died".</p>
 <p>This is why chapter 21 said the infinitive is the easiest place to see aspect. There is no time there to distract you.</p>
+<h3>Mood: how the speaker relates it to reality</h3>
+<p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p>
+<p>The <b>indicative</b> affirms. It presents the action as fact: <i>he has mercy</i>. Almost everything you read in the New Testament is indicative, and the whole of chapters 3 to 16 stays inside it.</p>
+<p>The <b>imperative</b> commands: <i>Lord, have mercy</i>. The <b>subjunctive</b> presents the action as contingent, projected, not yet settled: <i>if he should have mercy</i>. The <b>optative</b> is rarer still, and by the Koine period it is fading; you will meet it perhaps sixty times.</p>
+<p>The <b>infinitive</b> and the <b>participle</b> are not moods in the same sense. They are verb forms that decline to specify a person at all — the infinitive a verbal noun, the participle a verbal adjective. Both have tense and voice, and neither has a subject of its own in the ordinary way.</p>
+<p>Two consequences worth carrying. Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when. And the negative follows the mood, not the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. You meet that in the next chapter.</p>
+<h3>Voice: how the subject relates to the action</h3>
+<p>The <b>active</b> voice presents the subject as doing the action. <span class="gk">ἀκούω</span>, I hear.</p>
+<p>The <b>passive</b> presents the subject as being acted upon. I am heard. Where the agent is named, it is usually <span class="gk">ὑπό</span> with the genitive.</p>
+<p>The <b>middle</b> is the one English has no equivalent for, and it is worth knowing now that it exists rather than being surprised by it in chapter 12. The subject acts <i>with reference to itself</i> — on itself, for itself, or in its own interest. It is not reflexive exactly, and it is not passive.</p>
+<p>The practical difficulty is that middle and passive share their endings in most tenses, so the form alone often cannot tell you which one is meant. Only the verb and the sentence can. A great many verbs are also <i>deponent</i> — middle in form and active in meaning, like <span class="gk">ἔρχομαι</span>, I come — which looks like an exception and is really the middle doing something English has no way to say.</p>
 <h3>Two sets of endings</h3>
 <p><b>Primary</b> endings appear on the tenses whose indicative refers to present or future time: present, future, perfect. <b>Secondary</b> endings appear on the past-time tenses: imperfect, aorist, pluperfect. Those also take the <b>augment</b>, an <span class="gk">ἐ</span> prefixed to the stem.</p>
 <p>This is worth more than it looks. Spotting an augment and a secondary ending tells you "past" before you have identified the verb, the person, or even the word. You are reading the shape before you read the word, which is what fluency in an inflected language actually consists of.</p>
@@ -126,8 +137,10 @@ quiz:[
 {q:"The aorist presents an action as:",o:["Going on","A single whole","A completed state","Future"],a:1,w:"Perfective aspect: viewed from outside, as one complete act. That is a claim about presentation, not necessarily about time.",sec:1},
 {q:"Black uses the word perfective for which tense?",o:["The aorist","The perfect","The present","The imperfect"],a:1,w:"Black calls the aorist aoristic and reserves perfective for the perfect. Most modern grammars, and this course, use perfective for the aorist. Translate as you read him.",sec:2},
 {q:"Where is time actually fixed by the tense form?",o:["Everywhere","Only in the indicative","Only in participles","Nowhere"],a:1,w:"Only in the indicative. Elsewhere the tense is telling you about aspect, which is why an aorist participle is not automatically past.",sec:3},
-{q:"Augment plus secondary endings signals:",o:["Future time","Past time","Passive voice","The subjunctive"],a:1,w:"Past time — imperfect, aorist or pluperfect. Recognising the shape before you recognise the word is most of what reading an inflected language is.",sec:4},
-{q:"How many principal parts does a Greek verb have?",o:["Three","Four","Up to six","As many as needed"],a:2,w:"Up to six: present, future, aorist active, perfect active, perfect middle/passive, aorist passive. Regular verbs build all six from one stem.",sec:5}]},
+{q:"What does mood tell you?",o:["When the action happened","How the speaker presents it in relation to reality","Who is doing it","Whether it is finished"],a:1,w:"The kind of claim being made: the indicative affirms, the imperative commands, the subjunctive presents the action as contingent. Only the indicative fixes time.",sec:4},
+{q:"In the middle voice, the subject:",o:["Is acted upon","Acts with reference to itself","Does nothing","Is plural"],a:1,w:"Acts on itself, for itself, or in its own interest. English has no equivalent, which is why chapter 12 is called what it is — and why deponent verbs like ἔρχομαι look like exceptions and are not.",sec:5},
+{q:"Why can the form alone often not tell you middle from passive?",o:["They are the same voice","They share their endings in most tenses","The middle is rare","Scribes confused them"],a:1,w:"The endings are shared in most tenses, so only the verb and the sentence can settle it. That ambiguity is real and it does not go away.",sec:5},
+{q:"How many principal parts does a Greek verb have?",o:["Three","Four","Up to six","As many as needed"],a:2,w:"Up to six: present, future, aorist active, perfect active, perfect middle/passive, aorist passive. Regular verbs build all six from one stem.",sec:7}]},
 {id:3,t:"Present and future active indicative",s:"λύω and λύσω — your first two paradigms",
 body:`<p>Here is your first paradigm. Learn it properly and the next dozen come much more easily, because most of them are variations on it.</p>
 <p><span class="gk">λύω</span> — I loose, untie</p>
@@ -150,6 +163,16 @@ body:`<p>Here is your first paradigm. Learn it properly and the next dozen come 
 <h3>The present is not simply "now"</h3>
 <p>Greek tense encodes aspect first and time second. The present is imperfective: the action seen from inside, as going on or repeated.</p>
 <p>So <span class="gk">πιστεύει</span> can be "he believes", "he is believing", or "he keeps on believing". The form does not settle which, and a translation has to choose. When a sermon leans hard on "keeps on believing", this is the grammar it is leaning on — and the honest thing to say is that the present allows it rather than requires it.</p>
+<h3>Three things the present does</h3>
+<p>Because the present is about aspect rather than time, one form covers several jobs that English splits between different constructions.</p>
+<p>The <b>simple present</b> just states it: <i>I loose</i>.</p>
+<p>The <b>progressive present</b> presents it as under way, and it is very common in narrative and in speech:</p>
+<p class="v" data-ref="Matthew 8:25">Κύριε, σῶσον, ἀπολλύμεθα</p>
+<p>"Lord, save us — we are perishing." Not <i>we perish</i>. The disciples are in the middle of it.</p>
+<p>The <b>historical present</b> is a past event told in the present tense, for vividness:</p>
+<p class="v" data-ref="Mark 1:40">Καὶ ἔρχεται πρὸς αὐτὸν λεπρὸς</p>
+<p>"And a leper comes to him." The event is past; Mark writes <span class="gk">ἔρχεται</span>, present, and puts you in the room. He does this constantly, and most English translations quietly convert it to a past tense — so if you have only ever read this in English, you have never seen it.</p>
+<p>None of these is a different tense. They are one form, and the sentence decides which reading it carries. That is what it means to say Greek encodes aspect first and time second.</p>
 <h3>The future: add σ</h3>
 <p>The future active is the present with a <span class="gk">σ</span> between stem and ending.</p>
 <table><tr><th></th><th>Singular</th><th>Plural</th></tr>
@@ -180,11 +203,13 @@ quiz:[
 {q:"Parse λύομεν.",o:["1st singular present active indicative","1st plural present active indicative","2nd plural present active indicative","1st plural future active indicative"],a:1,w:"First person plural, present, active, indicative — we loose. The ending -ομεν carries the we.",sec:0},
 {q:"Why is ἐγώ written out in ἐγώ εἰμι, when εἰμι already means I am?",o:["It is required","For emphasis","It is a different verb","To mark the tense"],a:1,w:"The ending already carries the person, so writing the pronoun as well is a choice — usually an emphatic one. John 6:48 is making a point of who is speaking.",sec:1},
 {q:"The Greek present tense primarily encodes:",o:["Present time","Imperfective aspect","Completed action","Future intention"],a:1,w:"Aspect first, time second. πιστεύει can be he believes, he is believing, or he keeps on believing — the form allows all three and requires none.",sec:2},
-{q:"The future of βλέπω is:",o:["βλέπσω","βλέψω","βλέξω","ἐβλέψα"],a:1,w:"π + σ combine into ψ. The same happens with β and φ; κ, γ and χ give ξ; and τ, δ, θ simply drop out.",sec:3},
-{q:"ἔσομαι is the future of which verb?",o:["ἔχω","εἰμί","ἔρχομαι","ἐσθίω"],a:1,w:"εἰμί. It is middle in form, like several other very common futures — a preview of chapter 12.",sec:3},
-{q:"Which negative goes with a subjunctive?",o:["οὐ","μή","Either","Neither; the subjunctive is not negated"],a:1,w:"μή negates everything outside the indicative. Seeing which negative a writer used tells you something about the mood before you have parsed the verb.",sec:4},
-{q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:4},
-{q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:5}]},
+{q:"Mark writes ἔρχεται, a present, about a past event. What is that called?",o:["A mistake","The historical present","The gnomic present","A future"],a:1,w:"The historical present: a past event told in the present tense for vividness. Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",sec:3},
+{q:"ἀπολλύμεθα in Matthew 8:25 is best read as:",o:["We perish","We are perishing","We will perish","We perished"],a:1,w:"The progressive present: presented as under way. The disciples are in the middle of it, not stating a general truth.",sec:3},
+{q:"The future of βλέπω is:",o:["βλέπσω","βλέψω","βλέξω","ἐβλέψα"],a:1,w:"π + σ combine into ψ. The same happens with β and φ; κ, γ and χ give ξ; and τ, δ, θ simply drop out.",sec:4},
+{q:"ἔσομαι is the future of which verb?",o:["ἔχω","εἰμί","ἔρχομαι","ἐσθίω"],a:1,w:"εἰμί. It is middle in form, like several other very common futures — a preview of chapter 12.",sec:4},
+{q:"Which negative goes with a subjunctive?",o:["οὐ","μή","Either","Neither; the subjunctive is not negated"],a:1,w:"μή negates everything outside the indicative. Seeing which negative a writer used tells you something about the mood before you have parsed the verb.",sec:5},
+{q:"Why is it οὐκ ἐκπειράσεις rather than οὐ ἐκπειράσεις?",o:["It is a different word","οὐκ appears before a smooth breathing","οὐκ is emphatic","It is a spelling error in some manuscripts"],a:1,w:"οὐ before a consonant, οὐκ before a smooth breathing, οὐχ before a rough one. Three spellings, one word.",sec:5},
+{q:"λύει and λύσει differ how?",o:["Person","Number","Tense — the σ makes it future","Mood"],a:2,w:"One letter, and it moves the verb from present to future. This is why filling the grid in from memory is worth more than re-reading it.",sec:6}]},
 {id:4,t:"Nouns of the second declension",s:"λόγος, ἔργον — and the article that parses them for you",
 body:`<p>English tells you what a noun is doing by where it sits. The dog bit the man means something different from the man bit the dog, and nothing has changed but the order.</p>
 <p>Greek does it with endings. That is why word order in Greek can be so free, and it is why the ending is not a detail to be got through on the way to the meaning — it <i>is</i> the meaning.</p>
@@ -204,6 +229,9 @@ body:`<p>English tells you what a noun is doing by where it sits. The dog bit th
 <p>Accusative — the object. "But when the young man heard the saying, he went away." The young man is the subject and the saying is what he heard, and you know that from <span class="gk">-ον</span> against <span class="gk">-ος</span>.</p>
 <p class="v" data-ref="Luke 1:2">ὑπηρέται γενόμενοι τοῦ λόγου</p>
 <p>Genitive — "having become servants of the word." The of is in the ending.</p>
+<p>The dative is the fourth, and chapter 5 introduces it properly with the prepositions that take it. There is a fifth: the <b>vocative</b>, used for addressing someone directly, and it occurs 668 times.</p>
+<p class="v" data-ref="Matthew 8:25">Κύριε, σῶσον</p>
+<p>"Lord, save!" That is <span class="gk">κύριε</span>, not <span class="gk">κύριος</span> — the disciples are speaking <i>to</i> him. In the plural the vocative is identical to the nominative, so it usually goes unnoticed; in the singular of the second declension it ends in <span class="gk">-ε</span>, and once you have seen it you will see it everywhere.</p>
 <h3>ἔργον — neuter</h3>
 <table><tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>Nom</th><td class="g">ἔργον</td><td class="g">ἔργα</td></tr>
@@ -224,6 +252,14 @@ body:`<p>English tells you what a noun is doing by where it sits. The dog bit th
 <p>The article occurs <b>19,770</b> times in the New Testament — one word in every seven. It agrees with its noun in gender, number and case, which means that once you know the article you can read the case of almost any noun attached to one, even a noun you have never met.</p>
 <p>That is the single highest return in first-year Greek. Seventeen forms, and they parse a quarter of the sentences you will read. There is a drill for exactly these seventeen, and it is worth doing until it is boring.</p>
 <p>Greek has no indefinite article. <span class="gk">λόγος</span> on its own is a word or the word, and only the sentence decides.</p>
+<h3>What the article's absence tells you</h3>
+<p>Greek has no indefinite article, so the choice is not between <i>the</i> and <i>a</i> — it is between the article and nothing, and the nothing is meaningful.</p>
+<p>Broadly: the article points at <b>particular identity</b>, and its absence throws the weight onto <b>quality or character</b>. Both are choices the writer made.</p>
+<p class="v" data-ref="Luke 18:13">ἱλάσθητί μοι τῷ ἁμαρτωλῷ</p>
+<p>"Be merciful to me, <i>the</i> sinner." The tax collector does not say a sinner. He uses the article, and identifies himself as the one — which most English translations lose, and which is the whole force of the prayer.</p>
+<p class="v" data-ref="Galatians 1:1">Παῦλος ἀπόστολος</p>
+<p>"Paul, an apostle." No article. Paul is not claiming to be the apostle to the exclusion of others; he is asserting the character of his apostleship, and the argument of the whole letter follows from it.</p>
+<p>Do not over-read this. Greek uses the article in plenty of places English would not — with abstract nouns, with proper names, with whole categories — and its absence after a preposition often means nothing at all. But when a writer had a choice and took it, that is worth noticing, and you cannot notice it in a translation.</p>
 <h3>What to watch for</h3>
 <p><span class="gk">λόγων</span> is genitive plural and so is <span class="gk">ἔργων</span> — the genitive plural is <span class="gk">-ων</span> in every gender and every declension you will meet. That makes it easy to spot and useless for telling you the gender, so take the gender from the article.</p>
 <p>And the dative singular ends in a long vowel with an iota written underneath it: <span class="gk">λόγῳ</span>, <span class="gk">ἔργῳ</span>. It is silent, it is small, and at reading speed it looks like a plain omega. Chapter 1 said to train your eye for the subscript. This is the ending it was for.</p>`,
@@ -232,12 +268,15 @@ vids:[{t:"Lecture 4: Nouns of the Second Declension",s:"Daily Dose of Greek — 
 quiz:[
 {q:"Why can Greek word order be freer than English?",o:["It has fewer words","The ending shows what a noun is doing","It has no subject","Greek writers preferred it"],a:1,w:"The case ending carries the job. English uses position for the same purpose, which is why moving a word in English changes the meaning and moving one in Greek often does not.",sec:0},
 {q:"In ἀκούσας δὲ ὁ νεανίσκος τὸν λόγον ἀπῆλθεν, what is τὸν λόγον?",o:["The subject","The object","Possessive","Indirect object"],a:1,w:"Accusative, so the object — what he heard. ὁ νεανίσκος is nominative and does the hearing.",sec:2},
+{q:"In Κύριε, σῶσον, why is it κύριε rather than κύριος?",o:["A spelling variant","It is vocative — they are speaking to him","It is genitive","It is plural"],a:1,w:"The vocative, for direct address. 668 of them in the New Testament. In the plural it is identical to the nominative, but in the second declension singular it ends in -ε.",sec:2},
 {q:"How does neuter ἔργον differ from masculine λόγος?",o:["Everywhere","Only in the genitive","Only in the nominative and accusative","Only in the plural"],a:2,w:"Only there, and in those two it uses one form for both. Every other ending is identical.",sec:3},
 {q:"πάντα δι’ αὐτοῦ ἐγένετο has a plural subject and a singular verb. Why?",o:["It is an error in the manuscripts","A neuter plural subject regularly takes a singular verb","πάντα is singular","The verb agrees with αὐτοῦ"],a:1,w:"Greek treats a neuter plural as a collective, so the verb agrees with the idea rather than the count. It is regular, and it is not to be corrected.",sec:4},
 {q:"Why do lexicons list λόγος, -ου, ὁ rather than just λόγος?",o:["Tradition","The genitive gives the declension and the article gives the gender","To show the accent","To show the plural"],a:1,w:"Neither is guessable from the nominative — ἡ ὁδός looks masculine and is not. Learn nouns in the full form from the start.",sec:5},
 {q:"Roughly how often does the definite article occur in the New Testament?",o:["One word in every twenty","One word in every seven","One word in every three","About a thousand times"],a:1,w:"19,770 times, one word in every seven. Knowing its seventeen forms lets you read the case of almost any noun attached to one.",sec:6},
-{q:"What does the genitive plural ending -ων tell you about gender?",o:["Masculine","Neuter","Feminine","Nothing at all"],a:3,w:"Nothing. It is -ων in every gender and every declension, which makes it easy to spot and useless for gender. Take that from the article.",sec:7},
-{q:"What does the iota written under the omega of λόγῳ signal?",o:["Nothing; it is decorative","The dative","The plural","An accent shift"],a:1,w:"The dative. It is silent and at reading speed it looks like a plain omega, which is exactly why chapter 1 said to train your eye for it.",sec:7}]},
+{q:"The tax collector says τῷ ἁμαρτωλῷ, with the article. What does that do?",o:["Nothing; Greek always uses it","Identifies him as the sinner, not a sinner","Makes it plural","Marks the dative only"],a:1,w:"The article points at particular identity. He does not say a sinner. Most English translations lose it, and it is the whole force of the prayer.",sec:7},
+{q:"Paul writes Παῦλος ἀπόστολος with no article. Why does that matter?",o:["He is being modest","Absence throws the weight onto character rather than identity","It is a scribal slip","Names never take the article"],a:1,w:"The article points at identity; its absence emphasises quality. Paul is asserting the character of his apostleship, not claiming to be the only apostle.",sec:7},
+{q:"What does the genitive plural ending -ων tell you about gender?",o:["Masculine","Neuter","Feminine","Nothing at all"],a:3,w:"Nothing. It is -ων in every gender and every declension, which makes it easy to spot and useless for gender. Take that from the article.",sec:8},
+{q:"What does the iota written under the omega of λόγῳ signal?",o:["Nothing; it is decorative","The dative","The plural","An accent shift"],a:1,w:"The dative. It is silent and at reading speed it looks like a plain omega, which is exactly why chapter 1 said to train your eye for it.",sec:8}]},
 {id:5,t:"Nouns of the first declension",s:"Mostly feminine, with a few masculines",
 body:`<p>The second declension gave you <span class="gk">-ος</span> and <span class="gk">-ον</span>. The first gives you <span class="gk">-η</span> and <span class="gk">-α</span>, and its nouns are usually feminine.</p>
 <p>You already know more of these than you think. <span class="gk">ἀγάπη, ἁμαρτία, βασιλεία, ἐκκλησία, δόξα, ζωή, ἡμέρα, καρδία</span> — the vocabulary of the New Testament is full of them.</p>

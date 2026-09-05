@@ -45,7 +45,7 @@ So, mechanically:
 python tools/check_all.py
 ```
 
-Thirteen checkers. Green before every commit, no exceptions. `--offline`
+Fourteen checkers. Green before every commit, no exceptions. `--offline`
 skips only `check_links`, the one that needs the network.
 
 `check_frozen` is the odd one and the important one. It does not ask whether
@@ -53,6 +53,13 @@ anything is true; it asks whether a protected field changed since `git HEAD`
 and makes you say you meant it (`--accept`). Protected: each chapter's `v:`
 and `vids:`, every existing `VOCAB` row, `VOCAB_AUDIO`, and paradigm titles
 and captions. Those have no derivable truth — only a history.
+
+`check_coverage` reads Black's section list beside each chapter and asks
+what has no counterpart. It exists because chapter 7 taught the first aorist
+and nothing about second aorists — 58% of the aorist active indicatives in
+the corpus — and no checker found it; a person did, once. It fails for
+chapters listed as done and reports the rest as a work list. **Add a chapter
+to its DONE set when you finish it.**
 
 `check_black` is the third guard on `v:`, and the only one that can say the
 array is *wrong* rather than merely changed: it reads Black's own vocabulary

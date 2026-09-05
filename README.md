@@ -15,7 +15,7 @@ New Testament with every word parsed and lit by what you know.
 
 ## Everything it teaches is checked against the corpus
 
-`python tools/check_all.py` runs thirteen checkers, eleven of them against the
+`python tools/check_all.py` runs fourteen checkers, eleven of them against the
 SBLGNT bundled in `data/gnt/`. They exist because this app makes claims about
 a language, and a confident wrong answer is worse than no answer:
 
@@ -33,6 +33,7 @@ a language, and a confident wrong answer is worse than no answer:
 | `check_clauses` | the 630 sentence questions: each verse is the corpus's word for word, the word it points at carries the parse it claims, and the filter that made the question answerable still holds |
 | `check_frozen` | the only one that asks a different question: did a field change that nobody meant to change? Some data has no truth to check against, only a history — a chapter's vocabulary indices, an existing deck row, a paradigm's title — so it diffs them against git HEAD |
 | `check_black` | each chapter's vocabulary against Black's own lists — 395 of 395 confirmed. The textbook is copyrighted and lives outside this repository, so this one says so and passes when it is not present |
+| `check_coverage` | what Black's chapter covers that the app's does not. It found that chapter 7 taught the first aorist and nothing about second aorists, which are 58% of the aorist active indicatives in the New Testament |
 | `check_links` | every Watch row still resolves, and every embedded video is still the one named |
 
 What none of them can check is English: whether a gloss is the right
