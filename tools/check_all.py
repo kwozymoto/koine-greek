@@ -27,6 +27,9 @@ data/gnt/, and this runs the lot:
                      an option other than the keyed one, an absolute a quiz
                      asserts and its chapter never makes, and a figure the
                      chapter itself does not state
+    check_deck       every card against the chapter that teaches it: a gloss
+                     saying what its own chapter strikes out. ἀνά was glossed
+                     "up" in a chapter that says the NT never uses it so
     check_ipa        docs/erasmian_ipa.json against lesson 1's own sound
                      table and against the Greek, letter by letter. It was
                      written, it passed, and it was never added here — so
@@ -95,7 +98,8 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
           "check_readings", "check_lessons", "check_quiz", "check_forms",
-          "check_lexicon", "check_syntax", "check_clauses", "check_ipa",
+          "check_lexicon", "check_syntax", "check_clauses", "check_deck",
+          "check_ipa",
           "check_frozen", "check_black", "check_coverage", "check_claims",
           "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes

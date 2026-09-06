@@ -540,7 +540,7 @@ const VOCAB=[
 ["δηλόω","I show, I make clear",7,"verb",5],
 ["τελειόω","I complete, I perfect",23,"verb",5],
 ["ἀγγέλλω","I announce",1,"verb",5],
-["ἀνά","up (+acc); in the NT distributive: each, apiece",13,"prep",5],
+["ἀνά","each, apiece (+acc); in ἀνὰ μέσον, in the midst of",13,"prep",5],
 ["ἀντί","instead of, for (+gen)",22,"prep",5],
 ["ἀξίως","worthily",6,"adv",5],
 ["πότε","when?",19,"adv",5],

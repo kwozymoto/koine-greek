@@ -34,25 +34,15 @@ The Vimeo titles below are the chapter titles — this is the verified sequence.
 | 25 | The Conjugation of -μι Verbs | /learn-biblical-greek/learn-25/ | 104324039 | 12:28 |
 | 26 | Reading Your Greek New Testament | /learn-biblical-greek/learn-26/ | 104323947 | 27:24 |
 
-## Existing app units → Black chapters
+## The app's chapters against Black's
 
-| Old unit | Title | Black ch. |
-|----------|-------|-----------|
-| 1 | The alphabet | 1 |
-| 2 | Accents, breathings, syllables | 1 (merge) |
-| 3 | The article | spread: 4–6 (Black introduces the article with 2nd decl.) |
-| 4 | Second declension nouns | 4 |
-| 5 | First declension nouns | 5 |
-| 6 | What the cases do | 4–5 (merge into noun chapters + own appendix) |
-| 7 | Present active indicative | 3 (add future) |
-| 8 | Adjectives; attributive/predicate | 6 |
-| 9 | Prepositions | 8 |
-| 10 | The imperfect | 7 (merge with aorist) |
-| 11 | Aorist / verbal aspect | 7 |
-| 12 | Middle and passive voice | 12 |
-| 13 | Participles | 20 |
-| 14 | The subjunctive | 23 |
-| 15 | The infinitive | 21 |
-| 16 | Exegetical fallacies | 26 (merge into "Reading your GNT") |
+The restructure this table used to plan is finished. The app has **27**
+chapters of its own prose, following Black's progression rather than
+reproducing his chapters, and since the participle split they are no longer
+the same number: app 20 and 21 are both Black 20, and app 22-27 are his
+21-26.
 
-New chapters to write: 2, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 22, 24, 25.
+That correspondence is recorded in exactly one place, `tools/blackmap.py`,
+which `check_black` and `check_coverage` both go through and which
+`check_coverage` prints on every run. Do not re-derive it here; this file is
+the lecture list above and nothing else.

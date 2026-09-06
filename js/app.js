@@ -774,9 +774,9 @@ function todaysPlan(){
        chapter's name on a struck-through row would say chapter 4 was finished
        when chapter 1 was. Say what tapping it would do instead. */
     const already=planDone().includes("lesson");
-    /* Name the sitting, not the chapter. Chapter 4 is eleven parts and 642
-       words against chapter 21's two and 129, and the row said nothing to
-       tell them apart — so ten minutes was sometimes twenty. */
+    /* Name the sitting, not the chapter. A chapter is six, eight or nine
+       parts, so "Chapter 4" on its own never said whether that meant one
+       sitting or three. */
     const to=Math.min(at+LESSON_DOSE,n);
     const span=to-at===1?`part ${at+1} of ${n}`:`parts ${at+1}–${to} of ${n}`;
     tasks.push({id:"lesson", mins:Math.max(2,(to-at)+1),
@@ -1384,21 +1384,23 @@ function lessonQuiz(id){
    L{id}q{n} keys, so a question answered here lands on exactly the grammar
    schedule the end-of-chapter test feeds. The page itself is untouched and
    still there to re-read. */
-/* One sitting's worth of a chapter. Measured over the twenty-six: 105 parts
-   in all, a median of four to a chapter, but chapter 4 has eleven and 642
-   words where chapter 21 has two and 129. A row reading "Chapter 4" told you
-   none of that. Three parts is the dose; a longer chapter comes back
-   tomorrow, and anyone who wants the rest tonight is one button away.
+/* One sitting's worth of a chapter. The rule was written when chapters ran
+   from two parts to eleven and a row reading "Chapter 4" told you nothing
+   about whether it meant five minutes or twenty. The rewrite settled the
+   shape — 27 chapters, 210 parts, six or eight or nine each — so that spread
+   is gone, and the dose still earns its place: eight parts is three sittings.
+   A longer chapter comes back tomorrow, and anyone who wants the rest
+   tonight is one button away.
 
-   One part a day was the other option and it is wrong: a part is about sixty
-   words, the whole course would take 105 days of grammar in slivers, and
+   One part a day was the other option and it is wrong: a part runs to about
+   120 words, the whole course would be 210 days of grammar in slivers, and
    several parts are a single paradigm that has to be read in one piece. */
 const LESSON_DOSE=3;
 
 function lessonParts(l){
   // Lookahead, so each <h3> stays attached to the section it opens. Part 0
-  // is whatever comes before the first heading; chapters 12, 14 and 21 have
-  // only one heading and so run to two parts, which is fine — they are short.
+  // is whatever comes before the first heading, so a chapter with five
+  // headings is six parts. check_lessons holds every chapter to 6, 8 or 9.
   return l.body.split(/(?=<h3>)/).filter(s=>s.trim()).map(html=>{
     const m=html.match(/^<h3>([\s\S]*?)<\/h3>/);
     return {html, title:m?m[1].replace(/<[^>]+>/g,""):null};
