@@ -23,6 +23,14 @@ data/gnt/, and this runs the lot:
     check_lessons    the spelling of every Greek form in the lesson bodies
                      and quizzes, and that each question is asked after the
                      section that teaches it
+    check_quiz       what the questions say: an explanation that argues for
+                     an option other than the keyed one, an absolute a quiz
+                     asserts and its chapter never makes, and a figure the
+                     chapter itself does not state
+    check_ipa        docs/erasmian_ipa.json against lesson 1's own sound
+                     table and against the Greek, letter by letter. It was
+                     written, it passed, and it was never added here — so
+                     for two commits it guarded nothing
     check_forms      the 1,431 real inflected forms the parsing drill marks
                      you against: each occurs, carries that parse everywhere
                      it occurs, and belongs to the headword shown
@@ -86,9 +94,10 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
-          "check_readings", "check_lessons", "check_forms", "check_lexicon",
-          "check_syntax", "check_clauses", "check_frozen", "check_black",
-          "check_coverage", "check_claims", "check_links"]
+          "check_readings", "check_lessons", "check_quiz", "check_forms",
+          "check_lexicon", "check_syntax", "check_clauses", "check_ipa",
+          "check_frozen", "check_black", "check_coverage", "check_claims",
+          "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
 # straight through to it and leaves the rest untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}

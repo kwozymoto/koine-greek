@@ -45,8 +45,13 @@ So, mechanically:
 python tools/check_all.py
 ```
 
-Fourteen checkers. Green before every commit, no exceptions. `--offline`
-skips only `check_links`, the one that needs the network.
+Seventeen checkers, ten of them putting the app's content to the corpus.
+Green before every commit, no exceptions. `--offline` skips only
+`check_links`, the one that needs the network.
+
+**A checker not in `CHECKS` is not a checker.** `check_ipa` was written,
+passed, and sat outside `check_all.py` for two commits. Register it in the
+same commit that creates it.
 
 `check_frozen` is the odd one and the important one. It does not ask whether
 anything is true; it asks whether a protected field changed since `git HEAD`
