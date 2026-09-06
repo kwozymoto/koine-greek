@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v64';
+const VERSION = 'v65';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -76,6 +76,7 @@ const SHELL = [
   'index.html',
   'css/app.css',
   'js/app.js',
+  'js/report.js',
   'js/pwa.js',
   'js/audio.js',
   'js/gnt.js',
@@ -298,6 +299,9 @@ self.addEventListener('message', e => {
   if (e.data === 'skip-waiting') self.skipWaiting();
   if (e.data === 'ensure-offline') e.waitUntil(fillBulk());
   if (e.data === 'offline-status') e.waitUntil(reportStatus());
+  /* The version lives here and nowhere else. A problem report asks for
+     it rather than carrying a copy that can go stale. */
+  if (e.data === 'version') post({ type: 'version', version: VERSION });
 });
 
 async function reportStatus() {

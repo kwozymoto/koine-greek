@@ -385,9 +385,28 @@ if unlisted:
     print("   Either the form is wrong, or it is a paradigm cell and belongs")
     print("   in UNATTESTED at the top of this file, with the reason.")
 
+# ------------------------------------------- where the answer sits ---------
+# 250 of the 271 questions once keyed option 1 — 92%. That is a defect twice
+# over. A learner who notices it can score without reading, so the quiz stops
+# measuring anything; and writing a:1 became reflex, which is how two
+# questions ended up keyed to the wrong option and marking a student wrong for
+# knowing the chapter. An outside audit found those two; nothing here did.
+#
+# No position should carry more than 40% of the answers.
+pos = collections.Counter(q["a"] for l in LESSONS for q in l["quiz"])
+nq = sum(pos.values())
+skew = [(i, n) for i, n in sorted(pos.items()) if n > nq * 0.40]
+print()
+print("answer position: " + "  ".join("[%d] %d (%.0f%%)" % (i, n, 100 * n / nq)
+                                      for i, n in sorted(pos.items())))
+if skew:
+    print("   too many answers in one position: %s"
+          % ", ".join("option %d holds %d of %d" % (i, n, nq) for i, n in skew))
+    print("   a predictable answer position makes the quiz measurable without reading.")
+
 print("chapters that divide badly into sittings of %d: %d" % (DOSE, len(badly_shaped)))
 for b in badly_shaped:
     print("   " + b)
 
-if sec_bad or sec_early or verse_bad or no_question or badly_shaped or unlisted:
+if sec_bad or sec_early or verse_bad or no_question or badly_shaped or unlisted or skew:
     sys.exit(1)

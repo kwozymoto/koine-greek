@@ -346,7 +346,12 @@ function pushNav(st){
     history.pushState(st,"");
   }catch(e){}
 }
-function go(name){ showScreen(name); pushNav({screen:name}); }
+function go(name){
+  // A problem report says where the tester had been, not just where they
+  // are when they open the form. One line, and report.js is optional.
+  if(typeof reportTrail==="function") reportTrail(name);
+  showScreen(name); pushNav({screen:name});
+}
 
 function navReplay(st){
   NAV_REPLAY=true;
@@ -2475,6 +2480,7 @@ function renderProgress(){
       ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
     </div>`:""}
     ${typeof syncCardHtml==="function"?syncCardHtml():""}
+    ${typeof reportCardHtml==="function"?reportCardHtml():""}
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
       <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
