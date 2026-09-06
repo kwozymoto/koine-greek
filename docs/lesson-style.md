@@ -145,6 +145,16 @@ so a chapter with six headings has parts 0 to 6. Inserting a section shifts
 every `sec` after it. Getting this wrong files a question before the section
 that teaches it, which the checker also catches.
 
+**After any correction pass, grep the whole file for the string you
+replaced.** A chapter says most things twice — once in the prose and once in
+a quiz explanation — and a targeted replacement only ever catches the copy it
+matched. ἐγινόμην and ἠρχόμην shipped in v58 that way, τοῖς πνεύμασιν and a
+wrong chapter range in v60. The fix costs one command and finds them all:
+
+```bash
+for w in "old phrase" "another"; do grep -o "$w" data/lessons.js | wc -l; done
+```
+
 And when a script edits a quiz, **never use an existing question as a
 replace-anchor without re-emitting it.** Doing that deleted chapter 2's
 question on the augment silently, and "none unfiled" does not notice, because

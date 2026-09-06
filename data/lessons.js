@@ -1097,7 +1097,7 @@ quiz:[
 {q:"In John 13:7, οἶδας is perfect in form. What does it mean?",o:["You have known","You know","You will know","You knew"],a:1,w:"One of the traps chapter 10 exists for: 210 of the 602 perfect active indicatives in the New Testament are οἶδα, and none of them means 'I have known'.",sec:4},
 {q:"γνώσῃ has a σ before the ending and no augment. What is it?",o:["Aorist","Future","Perfect","Imperfect"],a:1,w:"Future middle, second singular — 'you will know'. The middle ending does not make it passive; ὁράω and γινώσκω both take middle futures with active meanings.",sec:4},
 {q:"Which element of the Greek verb genuinely marks time?",o:["The ending","The augment, and only in the indicative","The stem","The connecting vowel"],a:1,w:"It appears nowhere outside the indicative. Everywhere else a tense gives aspect and nothing more.",sec:5},
-{q:"An aorist participle therefore tells you:",o:["That the action was past","How the writer is viewing the action — as a whole","That the action is complete and continuing","Nothing at all"],a:1,w:"Aspect, not time. Ask 'how is this being viewed?' rather than 'when did it happen?' — which is the question chapters 20 to 24 all turn on.",sec:5}
+{q:"An aorist participle therefore tells you:",o:["That the action was past","How the writer is viewing the action — as a whole","That the action is complete and continuing","Nothing at all"],a:1,w:"Aspect, not time. Ask 'how is this being viewed?' rather than 'when did it happen?' — which is the question every chapter after this one turns on.",sec:5}
 ]},
 
 {id:17,t:"Nouns of the third declension",s:"Find the stem in the genitive",
@@ -1154,7 +1154,7 @@ quiz:[
 {q:"πίστις has the genitive:",o:["πίστιος","πίστεως","πίστιδος","πίστεος"],a:1,w:"The vowel-stem group breaks the -ος rule: πίστις/πίστεως, πόλις/πόλεως, δύναμις/δυνάμεως. Learn the pair and the whole group comes with it.",sec:4},
 {q:"What is unexpected about γυνή?",o:["It is masculine","Its genitive is γυναικός — nothing in the nominative prepares you","It does not decline","It has no plural"],a:1,w:"Along with πατήρ/πατρός and ἀνήρ/ἀνδρός. These are learned by meeting them rather than by rule, which is what the deck is for.",sec:5},
 {q:"χερσίν and ἀνδράσιν are which case and number?",o:["Genitive plural","Dative plural","Accusative plural","Nominative plural"],a:1,w:"-σι(ν) added straight onto the stem, with whatever was there crushed in the collision — χειρ- gives χερσίν, ἀνδρ- gives ἀνδράσιν. Nothing else in Greek ends that way.",sec:6},
-{q:"What makes the third declension much less work than its paradigms suggest?",o:["The endings are all the same","Nouns usually carry the article, which you already know","There are only a few of them","They never appear in the plural"],a:1,w:"τοῖς πνεύμασιν is dative plural neuter on the strength of τοῖς alone. Read the article, learn each noun's genitive, and let meeting the words do the rest.",sec:7}
+{q:"What makes the third declension much less work than its paradigms suggest?",o:["The endings are all the same","Nouns usually carry the article, which you already know","There are only a few of them","They never appear in the plural"],a:1,w:"τοῖς ἔθνεσιν is dative plural neuter on the strength of τοῖς alone. Read the article, learn each noun's genitive, and let meeting the words do the rest.",sec:7}
 ]},
 
 {id:18,t:"Adjectives, pronouns, and numerals of the first and third declensions",s:"πᾶς, εἷς, οὐδείς — small words, large claims",
