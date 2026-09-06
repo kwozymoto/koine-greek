@@ -1813,7 +1813,7 @@ const CASEFN=[
  "The accusative measures extent of time or space: they stayed with him the whole day.", 7,"John 1:39"],
 ["θεὸς ἦν ὁ λόγος|The subject is:",
  ["θεός, because it comes first", "ὁ λόγος, marked by the article", "Either equally", "The verb has no subject"],1,
- "With a linking verb the articular noun is the subject; anarthrous θεός is predicate. Word order carries emphasis, not grammar.", 4,"John 1:1"],
+ "Where one of the two has the article and the other does not, the articular one is the subject — whatever the order. Both can carry it, and then the two are being equated instead. Here only ὁ λόγος does.", 4,"John 1:1"],
 ["τοῦ σπείρειν|The articular infinitive in the genitive most naturally expresses:",
  ["Purpose — in order to sow", "Possession", "Comparison", "Agency"],0,
  "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work.", 21,"Matthew 13:3"],
