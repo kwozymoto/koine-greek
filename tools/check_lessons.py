@@ -198,6 +198,13 @@ UNATTESTED = {
     (19, "μενσω"): "step 1 of μενσω → μενέσω → μενέω → μενῶ",
     (19, "μενέσω"): "step 2 of the same derivation",
     (19, "μενέω"): "step 3 of the same derivation",
+    # Paradigm cells of a real verb. λύω is filtered wholesale because it is
+    # invented; δίδωμι is not, so its empty cells have to be named. The
+    # chapter says in so many words that these two never occur.
+    (25, "δίδως"): "present paradigm cell of δίδωμι; never written",
+    (25, "δίδομεν"): "present paradigm cell of δίδωμι; never written",
+    (25, "δόω"): "the -ω lexical form δίδωμι does NOT have, shown as the wrong place to look",
+    (25, "ἵημι"): "the simplex behind ἀφίημι; it occurs only in compounds",
 }
 
 print("Greek forms in the lesson bodies and quizzes: %d" % total)
@@ -325,7 +332,7 @@ BARE = {
 # check_coverage.py imports this rather than keeping its own copy — CLAUDE.md
 # warns about exactly this kind of duplication, and RETIRED in four files is
 # the example it gives.
-DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21}
+DONE = set(range(1, 27))          # all 26
 
 # The dose is defined in js/app.js and read from it, not repeated here.
 DOSE = 3

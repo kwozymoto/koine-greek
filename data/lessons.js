@@ -1434,123 +1434,316 @@ quiz:[
 {q:"The subject of an infinitive, when it is expressed, appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. It looks wrong to English eyes and is entirely standard.",sec:6},
 {q:"In μὴ θέλων αὐτὴν δειγματίσαι (Matthew 1:19), αὐτήν is:",o:["The subject of the infinitive","The object of the infinitive","In the wrong case","A possessive"],a:1,w:"The object. Joseph is the one who would do the exposing. An accusative beside an infinitive can be either subject or object, and only the sense decides.",sec:7}]},
 {id:22,t:"Additional pronouns",s:"Relative, reflexive, reciprocal, interrogative",
-body:`<p>Five smaller pronoun systems complete the set. One of them — the relative — you have been reading around since John 1.</p>
-<h3>The relative pronoun: ὅς, ἥ, ὅ</h3>
-<table><caption>who, which, that</caption>
+body:`<p>Chapter 9 gave you the personal pronouns and chapter 11 the demonstratives. This chapter finishes the set: five more kinds, all of them common, and none of them with endings you have not already met.</p>
+<p>The one that matters most is the relative pronoun, which occurs 1,408 times and is the main way Greek joins one clause to another.</p>
+<h3>The relative pronoun</h3>
+<p><span class="gk">ὅς, ἥ, ὅ</span> — "who", "which", "that". Its endings are the ordinary ones, and its shape is almost the article without the τ:</p>
+<table><caption>ὅς, ἥ, ὅ — singular / plural</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ὅς / οἵ</td><td class="g">ἥ / αἵ</td><td class="g">ὅ / ἅ</td></tr>
 <tr><th>Gen</th><td class="g">οὗ / ὧν</td><td class="g">ἧς / ὧν</td><td class="g">οὗ / ὧν</td></tr>
 <tr><th>Dat</th><td class="g">ᾧ / οἷς</td><td class="g">ᾗ / αἷς</td><td class="g">ᾧ / οἷς</td></tr>
 <tr><th>Acc</th><td class="g">ὅν / οὕς</td><td class="g">ἥν / ἅς</td><td class="g">ὅ / ἅ</td></tr></table>
-<p>It looks like the article without τ — but always with a rough breathing <i>and</i> an accent (which distinguishes ἥ from ἡ, and ὅ from ὁ). The rule that matters: a relative takes its <b>gender and number from its antecedent</b>, but its <b>case from its role in its own clause</b>. <span class="gk">ὁ λόγος ὃν ἤκουσας</span> — "the word which you heard": ὅν is masculine singular (agreeing with λόγος) but accusative (object of ἤκουσας).</p>
-<h3>Reflexive and reciprocal</h3>
-<p><span class="gk">ἐμαυτοῦ</span> (myself), <span class="gk">σεαυτοῦ</span> (yourself), <span class="gk">ἑαυτοῦ</span> (himself/herself/itself) — genitive, dative and accusative only, since a reflexive can't be a subject. <span class="gk">ἀγαπήσεις τὸν πλησίον σου ὡς σεαυτόν</span>. The plural ἑαυτῶν serves all persons. <span class="gk">ἀλλήλων</span> — "one another" — is the great ethic-word of the epistles: ἀγαπᾶτε ἀλλήλους.</p>
-<h3>Interrogative and indefinite: the accent war</h3>
-<p><span class="gk">τίς, τί</span> (always acute on the ι) asks "who? what? why?". Unaccented <span class="gk">τις, τι</span> means "someone, a certain, any". <span class="gk">τί ποιεῖτε;</span> — "what are you doing?" vs <span class="gk">ἄνθρωπός τις</span> — "a certain man". Both decline like third-declension stems in ν: τίνος, τίνι, τίνα.</p>
-<h3>ὅστις</h3>
-<p>The compound ὅς + τις — "whoever" — mostly nominative in the NT: <span class="gk">ὅστις, ἥτις, ὅτι*</span>… and in practice near-equivalent to ὅς. (*Printed ὅ τι to avoid confusion with the conjunction ὅτι.)</p>`,
+<p>Every form carries a rough breathing and an accent, and that is what separates it from the article: <span class="gk">ἥ</span> is "who", <span class="gk">ἡ</span> is "the". One mark.</p>
+<h3>Where a relative gets its gender and its case</h3>
+<p>The rule is the one from chapter 9, and it is worth saying again because this is where it earns its keep.</p>
+<p><b>Gender and number come from the antecedent. Case comes from the relative's own clause.</b></p>
+<p class="v" data-ref="John 6:63">τὰ ῥήματα ἃ ἐγὼ λελάληκα ὑμῖν πνεῦμά ἐστιν</p>
+<p>"The words that I have spoken to you are spirit." <span class="gk">ἅ</span> is neuter plural because <span class="gk">τὰ ῥήματα</span> is; it is accusative because it is the object of <span class="gk">λελάληκα</span> inside its own clause. Two facts from two different places, in one word.</p>
+<p>So when you meet a relative, ask it two questions rather than one. What does it point back to, and what is it doing where it stands?</p>
+<h3>ὅστις, the indefinite relative</h3>
+<p><span class="gk">ὅστις, ἥτις, ὅ τι</span> is <span class="gk">ὅς</span> welded to <span class="gk">τις</span>, and both halves decline. It occurs 144 times against <span class="gk">ὅς</span>'s 1,408 — so <span class="gk">ὅς</span> is the rule and this is the exception.</p>
+<p>It sometimes carries a qualitative sense: not just "who" but "who is of such a kind that". More often it is simply <span class="gk">ὅς</span> with no discernible difference, and in the New Testament it appears almost only in the nominative.</p>
+<p>Do not build much on it. The qualitative force is real in some places and absent in others, and there is no way to tell from the form which you have.</p>
+<h3>τίς and τις: one accent apart</h3>
+<p>Two words, identical in every letter, distinguished only by their accent — and they are almost equally common. <span class="gk">τίς</span>, the interrogative, occurs 554 times; <span class="gk">τις</span>, the indefinite, 530.</p>
+<p><b><span class="gk">τίς, τί</span></b> with an acute accent asks a question: "who?", "what?", "why?"</p>
+<p class="v" data-ref="Mark 8:27">Τίνα με λέγουσιν οἱ ἄνθρωποι εἶναι</p>
+<p>"Who do people say that I am?"</p>
+<p><b><span class="gk">τις, τι</span></b> with no accent of its own means "someone", "something", "a certain".</p>
+<p class="v" data-ref="Luke 10:30">Ἄνθρωπός τις κατέβαινεν ἀπὸ Ἰερουσαλὴμ εἰς Ἰεριχώ</p>
+<p>"A certain man was going down from Jerusalem to Jericho." Used with a noun like this it is adjectival, and it is how the parables begin.</p>
+<p>The indefinite is an enclitic: it never begins a clause, and it throws its accent back onto the word before. So position helps as much as the accent does.</p>
+<h3>Reflexive pronouns</h3>
+<p>A reflexive points back at the subject, so it has no nominative — there is nothing for it to do there.</p>
+<p><span class="gk">ἑαυτοῦ</span>, "himself, herself, itself" (333 occurrences), declines like <span class="gk">αὐτός</span>. The first and second persons are <span class="gk">ἐμαυτοῦ</span>, "myself" (37), and <span class="gk">σεαυτοῦ</span>, "yourself" (43), both built from the personal pronoun plus <span class="gk">αὐτός</span>. In the plural, <span class="gk">ἑαυτῶν</span> does duty for all three persons.</p>
+<p class="v" data-ref="Mark 8:34">Εἴ τις θέλει ὀπίσω μου ἐλθεῖν, ἀπαρνησάσθω ἑαυτὸν</p>
+<p>"If anyone wants to come after me, let him deny himself." Note <span class="gk">τις</span> in the same line, indefinite and unaccented — "anyone".</p>
+<p class="v" data-ref="1 John 1:8">ἐὰν εἴπωμεν ὅτι ἁμαρτίαν οὐκ ἔχομεν, ἑαυτοὺς πλανῶμεν</p>
+<p>"If we say we have no sin, we deceive ourselves." Here the plural <span class="gk">ἑαυτούς</span> is doing first person duty.</p>
+<h3>ἀλλήλων: one another</h3>
+<p>The reciprocal pronoun, formed from <span class="gk">ἄλλος</span>, "other". It occurs 100 times and only ever in three plural forms — <span class="gk">ἀλλήλων</span>, <span class="gk">ἀλλήλοις</span>, <span class="gk">ἀλλήλους</span> — which makes it the smallest paradigm in the language.</p>
+<p class="v" data-ref="John 13:34">ἐντολὴν καινὴν δίδωμι ὑμῖν ἵνα ἀγαπᾶτε ἀλλήλους</p>
+<p>"A new commandment I give you, that you love one another."</p>
+<p>The distinction worth holding is between this and the reflexive. <span class="gk">ἑαυτούς</span> is "themselves"; <span class="gk">ἀλλήλους</span> is "each other". English blurs them and Greek does not, so a "one another" command in the New Testament is always about the plural acting on its members, never about each person acting on himself.</p>
+<h3>Possessives, and what to watch for</h3>
+<p>Greek has possessive adjectives — <span class="gk">ἐμός</span> "my", <span class="gk">σός</span> "your", <span class="gk">ἡμέτερος</span> "our", <span class="gk">ὑμέτερος</span> "your" — which decline as ordinary adjectives and stand in attributive position.</p>
+<p>But they are not the usual way to say it. <span class="gk">ἐμός</span> occurs 76 times, <span class="gk">σός</span> 25, <span class="gk">ἡμέτερος</span> 7 and <span class="gk">ὑμέτερος</span> 11, while the plain genitive of the personal pronoun does the job over two thousand times. So when a writer reaches for <span class="gk">ὁ ἐμὸς λόγος</span> instead of <span class="gk">ὁ λόγος μου</span>, that is a choice, and usually an emphatic one.</p>
+<p><span class="gk">ἴδιος</span>, "one's own" (114), belongs here too, and it can be pointed:</p>
+<p class="v" data-ref="John 1:11">εἰς τὰ ἴδια ἦλθεν, καὶ οἱ ἴδιοι αὐτὸν οὐ παρέλαβον</p>
+<p>"He came to his own things, and his own people did not receive him."</p>
+<p><b>What to watch for.</b> <span class="gk">ἥ</span> against <span class="gk">ἡ</span>, and <span class="gk">τίς</span> against <span class="gk">τις</span> — two pairs where the accent is the entire word. And a relative pronoun needs both its questions asked, not one.</p>`,
 v:[11,30,33,52,103,141,163,257,360,406,492,493,491],
 vids:[{t:"Lecture 22: Additional Pronouns",s:"Daily Dose of Greek — Rob Plummer (21:19)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-22/"}],
 quiz:[
-{q:"A relative pronoun takes its case from:",o:["Its antecedent","Its role in its own clause","The main verb","The nearest article"],a:1,w:"Gender and number from the antecedent; case from its own clause. When this rule appears to break, commentators call it 'attraction' — now you can follow that footnote.",sec:1},
-{q:"ἥ (with accent and rough breathing) is:",o:["The feminine article","The relative pronoun 'who/which'","'Or'","'Truly'"],a:1,w:"The article ἡ has no accent; the disjunctive ἤ ('or') has a smooth breathing. Three tiny words, three sets of marks.",sec:1},
-{q:"ἀγαπᾶτε ἀλλήλους means:",o:["Love yourselves","Love one another","Love the others","Love the strangers"],a:1,w:"The reciprocal pronoun. John 13:34 — the new commandment turns on this one word.",sec:2},
-{q:"τις (no accent) means:",o:["Who?","Someone / a certain","This","No one"],a:1,w:"The indefinite. Accented τίς is the question word. In editions the context and accent together keep them apart.",sec:3},
-{q:"ὡς σεαυτόν (Mark 12:31) uses which pronoun?",o:["Reciprocal","Reflexive — 'as yourself'","Relative","Demonstrative"],a:1,w:"σεαυτοῦ, the second-person reflexive: the neighbour-love command points the verb back at its own subject.",sec:2}]},
+{q:"The relative pronoun occurs how often in the New Testament?",o:["About 200 times","1,408 times — the main way Greek joins clauses","Fewer than 50","Only in John"],a:1,w:"Which is why it is worth more attention than the other four kinds in this chapter put together.",sec:0},
+{q:"What separates the relative ἥ from the article ἡ?",o:["Nothing","The accent — every form of the relative carries one","The breathing","The ending"],a:1,w:"Both have a rough breathing; only the relative is accented. Its endings are otherwise the article's without the τ.",sec:1},
+{q:"In τὰ ῥήματα ἃ ἐγὼ λελάληκα ὑμῖν, why is ἅ neuter plural and accusative?",o:["Both from τὰ ῥήματα","Neuter plural from τὰ ῥήματα; accusative because it is the object of λελάληκα","Both from λελάληκα","It agrees with πνεῦμα"],a:1,w:"Gender and number from the antecedent, case from its own clause. Two facts from two places, in one word — so ask a relative two questions, not one.",sec:2},
+{q:"ὅστις occurs 144 times against ὅς's 1,408. What follows?",o:["It is the normal relative","ὅς is the rule and ὅστις the exception","They are different words entirely","ὅστις is only in Paul"],a:1,w:"It sometimes carries a qualitative sense — 'who is of such a kind that' — and often carries none at all, with no way to tell from the form. Do not build much on it.",sec:3},
+{q:"τίς and τις differ how?",o:["In number","Only in accent — τίς asks 'who?', τις means 'someone'","In gender","In case"],a:1,w:"554 occurrences against 530, so they are almost equally common and identical in every letter. The indefinite is enclitic and never begins a clause, so position helps as much as the accent.",sec:4},
+{q:"Ἄνθρωπός τις κατέβαινεν — what is τις doing?",o:["Asking a question","Adjectival: 'a certain man'","Marking the object","Negating"],a:1,w:"It is how the parables begin. With a noun the indefinite is adjectival; on its own it is 'someone'.",sec:4},
+{q:"Why does the reflexive pronoun have no nominative?",o:["It was lost","It points back at the subject, so there is nothing for it to do there","It is only ever plural","Greek has no reflexives"],a:1,w:"ἑαυτοῦ (333), ἐμαυτοῦ (37), σεαυτοῦ (43), and in the plural ἑαυτῶν does duty for all three persons — which is why 1 John 1:8 has ἑαυτοὺς πλανῶμεν, 'we deceive ourselves'.",sec:5},
+{q:"ἀλλήλους and ἑαυτούς both come out as something like 'each other' in English. What is the difference?",o:["None","ἀλλήλους is 'one another'; ἑαυτούς is 'themselves'","ἀλλήλους is singular","ἑαυτούς is a verb"],a:1,w:"English blurs them and Greek does not. A 'one another' command is always about the plural acting on its members, never each person acting on himself.",sec:6},
+{q:"ἐμός occurs 76 times while the genitive μου does the same job over two thousand. What follows when a writer chooses ἐμός?",o:["Nothing; they are interchangeable","It is a choice, and usually an emphatic one","It marks the plural","It is a later form"],a:1,w:"ὁ λόγος μου is the ordinary way to say 'my word'. ὁ ἐμὸς λόγος is not, and that is the point of it.",sec:7}
+]},
 
 {id:23,t:"The subjunctive mood",s:"Purpose, probability and exhortation",
-body:`<p>The subjunctive is the mood of possibility rather than assertion. It is marked by a <b>lengthened connecting vowel</b> — omicron becomes omega, epsilon becomes eta.</p>
-<table><caption>λύω — present subjunctive</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>1st</th><td class="g">λύω</td><td class="g">λύωμεν</td></tr>
-<tr><th>2nd</th><td class="g">λύῃς</td><td class="g">λύητε</td></tr>
-<tr><th>3rd</th><td class="g">λύῃ</td><td class="g">λύωσι(ν)</td></tr></table>
-<p>Note that <span class="gk">λύω</span> is identical to the present active indicative. Context alone distinguishes them.</p>
-<h3>Where you will meet it</h3>
-<p><b>ἵνα + subjunctive</b> — purpose or result: "in order that". The single most common use, and structurally important: it tells you how two clauses relate.</p>
-<p><b>ἐάν + subjunctive</b> — the third-class conditional: "if, and it may well happen".</p>
-<p><b>Hortatory subjunctive</b> — 1st person plural: "let us...". <span class="gk">ἀγαπῶμεν ἀλλήλους</span> — "let us love one another".</p>
-<p><b>οὐ μή + aorist subjunctive</b> — emphatic denial: "by no means will...".</p>
-<h3>Why this matters for preaching</h3>
-<p>Identifying a <span class="gk">ἵνα</span> clause tells you the logical spine of a sentence — what is the point and what is subordinate to it. That is structural information you can build a sermon on.</p>`,
+body:`<p>Chapters 3 to 16 worked through the indicative, the mood that asserts. This chapter introduces one that does not.</p>
+<p>The subjunctive presents an action as <b>contingent</b> — wanted, intended, possible, feared — rather than as fact. English has almost lost it; we keep a trace in "if I <i>were</i> you" and "God <i>bless</i> you". Greek uses it 1,856 times, so there is no reading around it.</p>
+<h3>The forms are the easy part</h3>
+<p>Genuinely easy, and there are only two tenses to learn.</p>
+<p><b>1.</b> The stem is the same as the indicative's.<br>
+<b>2.</b> There is <b>never an augment</b>, even in the aorist — because the subjunctive does not mark time.<br>
+<b>3.</b> The connecting vowel lengthens: <span class="gk">ο</span> becomes <span class="gk">ω</span>, <span class="gk">ε</span> becomes <span class="gk">η</span>.<br>
+<b>4.</b> The endings are the primary ones, in the aorist as well as the present.</p>
+<p>So <span class="gk">λύω, λύῃς, λύῃ, λύωμεν, λύητε, λύωσι(ν)</span> in the present, and <span class="gk">λύσω, λύσῃς, λύσῃ…</span> in the aorist, where the <span class="gk">σα</span> has become <span class="gk">σ</span> before the long vowel.</p>
+<p><b>The practical signal is a long vowel where you expected a short one</b>, and no augment. That is the whole of recognising a subjunctive.</p>
+<h3>The aorist is the default</h3>
+<p>Because the subjunctive marks no time, its tenses give aspect and nothing else — exactly as chapter 16 said. And the split is lopsided: of the 1,856 subjunctives in the New Testament, <b>1,387 are aorist and 459 present</b>, three to one.</p>
+<p>That matters for how you read them. The aorist is the unmarked choice, the one a writer reaches for by default, so it carries no particular weight. A <i>present</i> subjunctive is the marked one, and is where a writer has chosen to present the action as going on.</p>
+<p>Ten perfect subjunctives exist in the whole New Testament. Ignore them until one stops you.</p>
+<h3>ἵνα, and purpose</h3>
+<p>The commonest subjunctive by far is the one after <span class="gk">ἵνα</span>, "in order that" — which occurs 662 times and is followed by a subjunctive almost every time.</p>
+<p class="v" data-ref="John 1:7">οὗτος ἦλθεν εἰς μαρτυρίαν, ἵνα μαρτυρήσῃ περὶ τοῦ φωτός</p>
+<p>"He came for a witness, in order that he might testify about the light." <span class="gk">ὅπως</span> does the same work 53 times, and <span class="gk">ἵνα μή</span> gives "lest".</p>
+<p>A caution worth having early: <span class="gk">ἵνα</span> in Koine had already begun to spread beyond purpose into result and simple content — "that", introducing what somebody said or wanted. So <span class="gk">ἵνα</span> is not always purpose, and reading purpose into every one of the 662 will produce sermons the text does not support.</p>
+<h3>Let us — the hortatory subjunctive</h3>
+<p>In the first person plural, the subjunctive urges the speaker's own group to act. English needs "let us".</p>
+<p class="v" data-ref="1 John 4:7">Ἀγαπητοί, ἀγαπῶμεν ἀλλήλους</p>
+<p>"Beloved, let us love one another." Present, so: keep on loving, make it your habit.</p>
+<p class="v" data-ref="Hebrews 12:1">δι’ ὑπομονῆς τρέχωμεν τὸν προκείμενον ἡμῖν ἀγῶνα</p>
+<p>"Let us run with endurance the race set before us." Present again, and the tense is the whole exhortation — not run once, but keep running.</p>
+<p>This is the construction to know for preaching, because it is how the New Testament says "we", including the writer in the command he is giving.</p>
+<h3>Do not start — μή with the aorist subjunctive</h3>
+<p>Greek prohibits in two ways, and they are not interchangeable.</p>
+<p><span class="gk">μή</span> with the <b>aorist subjunctive</b> generally forbids an action being begun.</p>
+<p class="v" data-ref="Matthew 6:34">μὴ οὖν μεριμνήσητε εἰς τὴν αὔριον</p>
+<p>"So do not worry about tomorrow." The other way — <span class="gk">μή</span> with the present imperative — generally means stop something already going on, and that is the next chapter.</p>
+<p>"Generally" is the important word. The contrast is a tendency in the aspect, not a rule, and it is regularly overstated from pulpits. Where the aorist is doing something beyond the default it usually adds urgency rather than a fine distinction about beginnings.</p>
+<h3>οὐ μή — the strongest negative in Greek</h3>
+<p>Two negatives together, with the aorist subjunctive, and they do not cancel. They intensify.</p>
+<p class="v" data-ref="Matthew 5:20">οὐ μὴ εἰσέλθητε εἰς τὴν βασιλείαν τῶν οὐρανῶν</p>
+<p>"You will certainly not enter the kingdom of heaven." Render it "never" or "certainly not"; a plain "not" loses what the construction is for.</p>
+<p>It is worth spotting because it is emphatic by construction rather than by context — one of the few places in Greek where the grammar itself, and not the sentence around it, is doing the emphasising.</p>
+<h3>Conditions</h3>
+<p>The subjunctive is also how Greek frames a condition that is open rather than settled. The marker is <span class="gk">ἐάν</span> — which is simply <span class="gk">εἰ</span> + <span class="gk">ἄν</span> — and it occurs 331 times.</p>
+<p class="v" data-ref="1 John 1:8">ἐὰν εἴπωμεν ὅτι ἁμαρτίαν οὐκ ἔχομεν, ἑαυτοὺς πλανῶμεν</p>
+<p>"If we say we have no sin, we deceive ourselves."</p>
+<p>Set that against a condition with the indicative, where the speaker treats the premise as real:</p>
+<p class="v" data-ref="John 11:21">Κύριε, εἰ ἦς ὧδε οὐκ ἂν ἀπέθανεν ὁ ἀδελφός μου</p>
+<p>"Lord, if you had been here, my brother would not have died" — <span class="gk">εἰ</span> with a past indicative and <span class="gk">ἄν</span> in the main clause, which is the contrary-to-fact pattern. Martha means: you were not here, and he did die.</p>
+<p>The full set of classes is in Tables, and it is worth reading once you have met a few in the wild.</p>
+<h3>What to watch for</h3>
+<p><b>A long vowel and no augment</b> is the signal. <span class="gk">λύσῃ</span> is subjunctive; <span class="gk">ἔλυσε</span> is indicative.</p>
+<p><b>Some forms are ambiguous.</b> The present active subjunctive first singular <span class="gk">λύω</span> is spelled exactly like the indicative, and the aorist subjunctive <span class="gk">λύσω</span> exactly like the future indicative. Only the construction around them decides.</p>
+<p><b>The negative is <span class="gk">μή</span>, not <span class="gk">οὐ</span></b> — as chapter 3 said, the negative follows the mood rather than the meaning.</p>
+<p><b>And <span class="gk">ἵνα</span> is not always purpose.</b> It is the single easiest place in this chapter to overclaim.</p>`,
 v:[25,34,35,236,238,117,128,156,313],
 vids:[{t:"Lecture 23: The Subjunctive Mood",s:"Daily Dose of Greek — Rob Plummer (18:25)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-23/"}],
 quiz:[
-{q:"ἵνα followed by a subjunctive usually indicates:",o:["A condition","Purpose or result","Time","Concession"],a:1,w:"'In order that.' One of the highest-frequency constructions in the NT and a reliable clue to clause structure.",sec:1},
-{q:"What marks the subjunctive formally?",o:["An augment","A lengthened connecting vowel","A sigma","Reduplication"],a:1,w:"Omicron lengthens to omega, epsilon to eta. No augment, because the subjunctive has no time reference.",sec:0},
-{q:"ἀγαπῶμεν ἀλλήλους is best taken as:",o:["We love one another","Let us love one another","They loved one another","Do you love one another?"],a:1,w:"A hortatory subjunctive — 1st person plural used as an exhortation. Though the form is ambiguous with the indicative, so context decides.",sec:1}]},
+{q:"What does the subjunctive present an action as?",o:["A completed fact","Contingent — wanted, intended, possible, rather than fact","Past","A command"],a:1,w:"English keeps a trace of it in 'if I were you'. Greek uses it 1,856 times, so it cannot be read around.",sec:0},
+{q:"How do you recognise a subjunctive?",o:["By the augment","By a long vowel where you expected a short one, and no augment","By reduplication","By the θη"],a:1,w:"ο lengthens to ω and ε to η, the stem is the indicative's, and there is never an augment — because the subjunctive marks no time.",sec:1},
+{q:"Of the 1,856 subjunctives in the New Testament, how many are aorist?",o:["About half","1,387 — three in four","Fewer than 200","All of them"],a:1,w:"So the aorist is the unmarked default and carries no particular weight. A present subjunctive is the marked choice, and is where a writer has chosen to present the action as going on.",sec:2},
+{q:"An aorist subjunctive has no augment. Why not?",o:["It was dropped for brevity","The augment marks time, and only the indicative marks time","Aorist subjunctives are really presents","It is an irregularity"],a:1,w:"Straight from chapter 16. In every mood but the indicative, tense gives aspect and nothing more.",sec:2},
+{q:"ἵνα occurs 662 times. What is the caution?",o:["It always means 'in order that'","It had already spread beyond purpose into result and simple content, so it is not always purpose","It never takes the subjunctive","It is only in John"],a:1,w:"Reading purpose into every one of the 662 will produce sermons the text does not support. This is the easiest place in the chapter to overclaim.",sec:3},
+{q:"ἀγαπῶμεν ἀλλήλους (1 John 4:7) is first person plural subjunctive. How is it translated?",o:["We love one another","Let us love one another","We will love one another","Do we love one another?"],a:1,w:"The hortatory subjunctive, and the construction to know for preaching — it is how the New Testament says 'we', including the writer in his own command.",sec:4},
+{q:"μή with the aorist subjunctive generally forbids:",o:["Continuing something already happening","Beginning an action","Anything in the past","Nothing; it is emphatic only"],a:1,w:"And μή with the present imperative generally means stop. 'Generally' matters: the contrast is a tendency in the aspect, not a rule, and it is regularly overstated.",sec:5},
+{q:"οὐ μή with the aorist subjunctive means:",o:["The negatives cancel, so it is positive","Certainly not — the two negatives intensify","Perhaps not","A question"],a:1,w:"One of the few places where the grammar itself is doing the emphasising rather than the context. Render it 'never'; a plain 'not' loses the construction.",sec:6},
+{q:"ἐάν with the subjunctive frames a condition that is:",o:["Contrary to fact","Open rather than settled","Already known to be true","Impossible"],a:1,w:"ἐάν is εἰ + ἄν, 331 occurrences. Contrast John 11:21, where εἰ with a past indicative and ἄν in the main clause makes it contrary to fact: you were not here, and he did die.",sec:7},
+{q:"λύσω can be two things. Which?",o:["Aorist subjunctive or future indicative","Present or perfect","Imperative or infinitive","Only a future"],a:1,w:"And the present subjunctive λύω is spelled exactly like the indicative. Only the construction around them decides, which is why ἵνα and ἐάν are worth watching for.",sec:8},
+{q:"The negative used with the subjunctive is:",o:["οὐ","μή","οὐδέ","οὐχί"],a:1,w:"The negative follows the mood rather than the meaning, as chapter 3 said: οὐ with the indicative, μή with everything else.",sec:8}
+]},
 
 {id:24,t:"The imperative and optative moods",s:"Commands, prohibitions, and μὴ γένοιτο",
-body:`<p>The imperative commands. Greek has second-person forms ("do this") <i>and</i> third-person forms ("let him do this") — English has to paraphrase the latter, so watch for them.</p>
-<table><caption>Imperative of λύω</caption>
-<tr><th></th><th>Present act.</th><th>Aorist act.</th><th>Aorist pass.</th></tr>
-<tr><th>2sg</th><td class="g">λῦε</td><td class="g">λῦσον</td><td class="g">λύθητι</td></tr>
-<tr><th>3sg</th><td class="g">λυέτω</td><td class="g">λυσάτω</td><td class="g">λυθήτω</td></tr>
-<tr><th>2pl</th><td class="g">λύετε</td><td class="g">λύσατε</td><td class="g">λύθητε</td></tr>
-<tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυθήτωσαν</td></tr></table>
-<p>No augment — the aorist imperative is not past (a past command is impossible). The difference between λῦε and λῦσον is <b>aspect</b>: the present views the action as ongoing or characteristic, the aorist as a whole. <span class="gk">αἰτεῖτε… ζητεῖτε… κρούετε</span> (Matt 7:7, present): keep asking, keep seeking, keep knocking — or at least, asking as a practice; the aorist would simply say "ask".</p>
-<h3>Prohibitions</h3>
-<p>Two constructions, and the difference preaches: <b>μή + present imperative</b> forbids as a general practice, and can (context permitting) mean "stop doing" what is under way — <span class="gk">μὴ φοβοῦ</span>, "do not fear / stop fearing". <b>μή + aorist subjunctive</b> forbids the act outright: <span class="gk">μὴ φονεύσῃς</span>, "do not murder". That is the <i>second-person</i> rule; in the third person Greek does use the aorist imperative — <span class="gk">μὴ καταβάτω</span>, "let him not go down" (Matt 24:17), and <span class="gk">μὴ γνώτω</span> (Matt 6:3). Handle the "stop doing" nuance with care — it is a possibility the context must confirm, not a rule the form guarantees.</p>
-<p>Common irregulars to know on sight: <span class="gk">γίνου</span> (become!), <span class="gk">ἴδε</span> and <span class="gk">ἰδού</span> (behold!), <span class="gk">ἄφες</span> (forgive!/let!), <span class="gk">δός</span> (give!), <span class="gk">ἐλθέτω</span> (let it come — the Lord's Prayer: ἐλθέτω ἡ βασιλεία σου).</p>
+body:`<p>The imperative is the mood of command, and Greek uses it 1,618 times. It has no first person — you cannot command yourself — and its negative is <span class="gk">μή</span>.</p>
+<p>What it does not have is time. Like the subjunctive, it marks aspect only, and that single fact is the whole of this chapter's usefulness.</p>
+<h3>The forms</h3>
+<p>Second and third person, present and aorist. The full grid is in Tables; these are the shapes to know.</p>
+<table><caption>Present active imperative of λύω</caption>
+<tr><th></th><th>Singular</th><th>Plural</th></tr>
+<tr><th>2nd</th><td class="g">λῦε</td><td class="g">λύετε</td></tr>
+<tr><th>3rd</th><td class="g">λυέτω</td><td class="g">λυέτωσαν</td></tr></table>
+<p>The third person is the one English cannot do. <span class="gk">λυέτω</span> means "let him loose" — not a permission but a command addressed to a third party, and English has to borrow "let" to say it.</p>
+<p>Two warnings about the forms. The second plural <span class="gk">λύετε</span> is spelled exactly like the indicative "you loose", and only context separates them. And the aorist imperative has <b>no augment</b>, for the reason you now expect.</p>
+<h3>Aspect, not urgency</h3>
+<p>Here is what the tense of an imperative actually tells you.</p>
+<p><b>Present imperative:</b> imperfective. The action viewed as going on — keep doing, make it your habit.<br>
+<b>Aorist imperative:</b> aoristic. The action viewed as a whole — simply, do it.</p>
+<p>The split in the New Testament is almost even: <b>853 present against 761 aorist</b>. Neither is the default, which means a writer's choice between them is a real choice more often than with the subjunctive.</p>
+<p>As a rough tendency, narrative prefers the aorist and teaching prefers the present — which fits, since a general precept is naturally "make a habit of this" and a specific instruction is naturally "do it".</p>
+<h3>The Lord's Prayer, both ways</h3>
+<p>The clearest illustration in the New Testament is one petition reported twice.</p>
+<p class="v" data-ref="Matthew 6:11">τὸν ἄρτον ἡμῶν τὸν ἐπιούσιον δὸς ἡμῖν σήμερον</p>
+<p class="v" data-ref="Luke 11:3">τὸν ἄρτον ἡμῶν τὸν ἐπιούσιον δίδου ἡμῖν τὸ καθ’ ἡμέραν</p>
+<p>Matthew has <span class="gk">δός</span>, aorist: "give us today". Luke has <span class="gk">δίδου</span>, present: "keep giving us, day by day". And each Evangelist matches his adverb to his aspect — <span class="gk">σήμερον</span>, "today", with the aorist; <span class="gk">τὸ καθ’ ἡμέραν</span>, "daily", with the present.</p>
+<p>Neither is more urgent than the other and neither is more spiritual. They are two views of the same asking, and the choice of aspect is visible only in Greek.</p>
+<h3>Prohibition: two ways, and the one that is overstated</h3>
+<p>Putting this chapter beside the last gives the pair:</p>
+<table>
+<tr><th>Construction</th><th>Generally</th></tr>
+<tr><td class="g">μή + present imperative</td><td>stop doing what you are doing</td></tr>
+<tr><td class="g">μή + aorist subjunctive</td><td>do not start</td></tr></table>
+<p class="v" data-ref="1 Thessalonians 5:19">τὸ πνεῦμα μὴ σβέννυτε</p>
+<p>"Do not quench the Spirit" — or, if the context supports it, "stop quenching the Spirit".</p>
+<p>Now the caution, and it matters more than the rule. <b>This distinction is the single most over-preached point in Greek grammar.</b> It is a tendency in the aspect, not a rule about beginnings and stoppings, and the context has to carry the weight rather than the form. Where a present imperative genuinely means "stop", the sentence around it will say so. Where it does not, do not make it.</p>
+<h3>Command, entreaty, and permission</h3>
+<p>The same form covers a range English splits up.</p>
+<p class="v" data-ref="1 Thessalonians 5:16-18">πάντοτε χαίρετε, ἀδιαλείπτως προσεύχεσθε, ἐν παντὶ εὐχαριστεῖτε</p>
+<p>"Rejoice always, pray without ceasing, give thanks in everything." Three present imperatives in a row — habitual, and the aspect is the argument.</p>
+<p>But an imperative can also be a <b>request</b> rather than an order — a servant to a master, or a man to God — and there the natural English is "please". It can be a <b>permission</b>: "let him do it". And two aorist imperatives of <span class="gk">ὁράω</span>, <span class="gk">ἴδε</span> and <span class="gk">ἰδού</span>, have hardened into interjections meaning "look!" or "behold!", which is why <span class="gk">ἰδού</span> occurs 200 times without commanding anybody to see anything.</p>
+<p>So the form tells you it is an imperative. Who is speaking to whom tells you what kind.</p>
 <h3>The optative</h3>
-<p>The mood of wish and remote possibility — only 68 NT occurrences, so recognise rather than memorise. Its badge is <span class="gk">οι</span>, <span class="gk">ει</span> or — in the aorist active and middle — <span class="gk">αι</span>. Two forms account for about two in five: <span class="gk">εἴη</span> ("might be", 12 times) and <span class="gk">μὴ γένοιτο</span> — Paul's thunderclap in Romans, "may it never be!", the optative of γίνομαι. The <span class="gk">αι</span> forms are the ones you will preach: <span class="gk">ἁγιάσαι</span> (1 Thess 5:23), <span class="gk">κατευθύναι</span>, <span class="gk">στηρίξαι</span> and <span class="gk">παρακαλέσαι</span> (2 Thess 2:17) — benedictions, every one.</p>`,
+<p>The fourth mood, and a dying one. In classical Greek it was everywhere; by the New Testament it occurs <b>68 times</b>, in the present and aorist only.</p>
+<p>Its main use is to express a wish.</p>
+<p class="v" data-ref="1 Thessalonians 5:23">Αὐτὸς δὲ ὁ θεὸς τῆς εἰρήνης ἁγιάσαι ὑμᾶς ὁλοτελεῖς</p>
+<p>"May the God of peace himself sanctify you completely."</p>
+<p>You can usually recognise one by an <span class="gk">οι</span>, <span class="gk">αι</span> or <span class="gk">ει</span> after the stem. And one optative accounts for a fifth of them all:</p>
+<p class="v" data-ref="Romans 3:4">μὴ γένοιτο· γινέσθω δὲ ὁ θεὸς ἀληθής</p>
+<p>"By no means! Let God be true." <span class="gk">μὴ γένοιτο</span> occurs 15 times, and 14 of those are Paul's — ten of them in Romans. It is his way of throwing out a conclusion he has just raised in order to reject it.</p>
+<h3>What to watch for</h3>
+<p><b>The aorist imperative has no augment.</b> Nothing outside the indicative does.</p>
+<p><b><span class="gk">λύετε</span> is imperative or indicative</b>, and only the sentence decides. The same is true of several other second person plurals.</p>
+<p><b>Do not over-preach the prohibition rule.</b> It is the most reliable way to say something about a text that the text does not say.</p>
+<p><b>And <span class="gk">ἰδού</span> is not really a command.</b> Nor is <span class="gk">ἴδε</span>. Both are just "look".</p>`,
 v:[76,345,349,362,366,404,456,451,466,463],
 vids:[{t:"Lecture 24: The Imperative and Optative Moods",s:"Daily Dose of Greek — Rob Plummer (25:06)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-24/"}],
 quiz:[
-{q:"λυέτω means:",o:["Loose!","Let him loose","He looses","He was loosing"],a:1,w:"Third-person imperative — a real command aimed at a third party. English 'let him' is a translation crutch, not permission-granting.",sec:0},
-{q:"The aorist imperative λῦσον differs from present λῦε in:",o:["Time — it commands for the past","Aspect — action viewed as a whole vs ongoing","Politeness","Person"],a:1,w:"No augment, no past time. Aspect is the whole difference — which is why Matt 7:7's present imperatives are worth a sermon's attention.",sec:0},
-{q:"'Do not murder' (μὴ φονεύσῃς) uses:",o:["μή + present imperative","μή + aorist subjunctive","οὐ + future indicative","μή + optative"],a:1,w:"Aorist prohibitions switch to the subjunctive. μή + present imperative is the other pattern, forbidding a practice.",sec:1},
-{q:"μὴ γένοιτο is:",o:["An imperative — 'don't become'","An optative — 'may it never be!'","A subjunctive — 'lest it happen'","An indicative — 'it did not happen'"],a:1,w:"Aorist optative of γίνομαι. Paul's rhetorical recoil fourteen times in the letters — the optative's finest hour.",sec:2}]},
+{q:"The imperative has no first person. Why not?",o:["The forms were lost","You cannot command yourself","It is always plural","Greek uses the subjunctive instead"],a:1,w:"Greek uses the hortatory subjunctive for 'let us'. The imperative covers second and third person, 1,618 times, with μή as its negative.",sec:0},
+{q:"λυέτω means:",o:["He looses","Let him loose — a third person command","You loose","He may loose"],a:1,w:"English has no third person imperative and has to borrow 'let' to say it. It is a command addressed to a third party, not a permission.",sec:1},
+{q:"The present and aorist imperative are split 853 to 761. What follows?",o:["The aorist is the default","Neither is the default, so a writer's choice between them is a real choice","The present is rare","The counts are unreliable"],a:1,w:"Unlike the subjunctive, where the aorist is three to one. As a rough tendency, narrative prefers the aorist and teaching prefers the present.",sec:2},
+{q:"Matthew has δὸς ἡμῖν σήμερον and Luke δίδου ἡμῖν τὸ καθ’ ἡμέραν. What differs?",o:["The meaning of the petition","The aspect — aorist 'give us today' against present 'keep giving us daily'","The person","One is a question"],a:1,w:"And each Evangelist matches his adverb to his aspect. Neither is more urgent or more spiritual; they are two views of the same asking, visible only in Greek.",sec:3},
+{q:"μή with the present imperative generally means:",o:["Do not start","Stop doing what you are doing","Never do it","It is not a prohibition"],a:1,w:"Against μή with the aorist subjunctive, which generally forbids beginning. But this is the single most over-preached point in Greek grammar — a tendency in the aspect, not a rule.",sec:4},
+{q:"Before preaching that a present imperative means 'stop', what has to be true?",o:["Nothing; the form settles it","The context has to say so","The verb must be transitive","It must be in the Gospels"],a:1,w:"Where a present imperative genuinely means 'stop', the sentence around it will show it. Where it does not, do not make it. The form is a tendency and the context carries the weight.",sec:4},
+{q:"ἰδού occurs 200 times. What is it?",o:["A noun","An aorist imperative of ὁράω that has hardened into an interjection — 'look', 'behold'","A conjunction","A subjunctive"],a:1,w:"So is ἴδε. Neither is really commanding anyone to see anything, which is why English translations render them as exclamations.",sec:5},
+{q:"How often does the optative occur in the New Testament?",o:["Around 600 times","68 times","Never","About the same as the subjunctive"],a:1,w:"A dying mood — common in classical Greek, nearly gone by the Koine. Present and aorist only, usually recognisable by an οι, αι or ει after the stem.",sec:6},
+{q:"μὴ γένοιτο occurs 15 times. Where?",o:["Spread evenly","14 of them in Paul, ten in Romans","Only in the Gospels","Only in Revelation"],a:1,w:"'By no means!' It is Paul's way of raising a conclusion in order to throw it out, and it is the commonest optative in the New Testament.",sec:6},
+{q:"λύετε is which mood?",o:["Imperative","Indicative","Either — only the sentence decides","Subjunctive"],a:1,w:"The second person plural is identical in both, and several other forms are too. Along with the missing augment, this is what makes imperatives easy to read past.",sec:7}
+]},
 
 {id:25,t:"The conjugation of -μι verbs",s:"δίδωμι, τίθημι, ἵστημι, ἀφίημι",
-body:`<p>Greek's oldest verbs attach endings directly to the stem — no connecting vowel — and their first-person singular ends in <span class="gk">-μι</span>. They are few, but they include some of the most important words in the New Testament: <span class="gk">δίδωμι</span> (give), <span class="gk">τίθημι</span> (put, place), <span class="gk">ἵστημι</span> (stand), <span class="gk">ἀφίημι</span> (forgive, leave), <span class="gk">ἀπόλλυμι</span> (destroy). You already know one: <span class="gk">εἰμί</span>.</p>
-<h3>The pattern, via δίδωμι</h3>
-<p>The present reduplicates with ι (δι-δω-), and the stem vowel alternates long/short:</p>
-<table><caption>δίδωμι — present active</caption>
+body:`<p>Greek has two conjugations. Everything so far has been the <span class="gk">-ω</span> conjugation; this chapter is the other one, named for the fact that its lexical form ends in <span class="gk">-μι</span>.</p>
+<p>It is small but unavoidable. Outside <span class="gk">εἰμί</span> — which is itself a <span class="gk">-μι</span> verb, and occurs 2,456 times — there are 90 such verbs in the New Testament, worth 1,743 occurrences between them. Four of those carry most of the weight.</p>
+<h3>What makes them different</h3>
+<p>One thing, and it is smaller than it looks: <b>in the present, imperfect and second aorist, a <span class="gk">-μι</span> verb adds its endings straight to the stem, with no connecting vowel.</b></p>
+<p>An <span class="gk">-ω</span> verb has <span class="gk">λυ-ο-μεν</span>. A <span class="gk">-μι</span> verb has <span class="gk">δίδο-μεν</span>. That is the difference, and everywhere else — future, first aorist, perfect, passive — they behave exactly like the verbs you already know.</p>
+<p>So the whole irregularity is confined to three tenses of about ninety verbs, and the rest of the New Testament's <span class="gk">-μι</span> forms will look familiar.</p>
+<h3>Present reduplication</h3>
+<p>The second oddity, and it explains most of what looks strange in the present.</p>
+<p>These verbs build their present stem by <b>reduplicating with an iota</b>, not an epsilon. So the verb stem <span class="gk">δο-</span> gives the present stem <span class="gk">διδο-</span>; <span class="gk">θε-</span> gives <span class="gk">τιθε-</span>; <span class="gk">στα-</span> gives <span class="gk">ἱστα-</span>.</p>
+<table>
+<tr><th>Verb</th><th>Verb stem</th><th>Present stem</th></tr>
+<tr><td class="g">δίδωμι</td><td class="g">δο-</td><td class="g">διδο-</td></tr>
+<tr><td class="g">τίθημι</td><td class="g">θε-</td><td class="g">τιθε-</td></tr>
+<tr><td class="g">ἵστημι</td><td class="g">στα-</td><td class="g">ἱστα-</td></tr></table>
+<p>Two of those need a word. <span class="gk">τιθε-</span> was <span class="gk">θιθε-</span> and lost its first aspirate, the deaspiration you met in chapter 10. <span class="gk">ἱστα-</span> was <span class="gk">σιστα-</span>, and the initial σ became the rough breathing — which is why the verb has one.</p>
+<p>The stem also lengthens in the singular: <span class="gk">διδο-</span> becomes <span class="gk">διδω-</span>, <span class="gk">τιθε-</span> becomes <span class="gk">τιθη-</span>, <span class="gk">ἱστα-</span> becomes <span class="gk">ἱστη-</span>. That is where the <span class="gk">-ωμι</span>, <span class="gk">-ημι</span> of the lexical forms comes from.</p>
+<h3>δίδωμι in the present</h3>
+<table><caption>δίδωμι — present active indicative</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>
 <tr><th>1st</th><td class="g">δίδωμι</td><td class="g">δίδομεν</td></tr>
 <tr><th>2nd</th><td class="g">δίδως</td><td class="g">δίδοτε</td></tr>
 <tr><th>3rd</th><td class="g">δίδωσι(ν)</td><td class="g">διδόασι(ν)</td></tr></table>
-<p>The aorist is a κ-aorist — where λύω has ἔλυσα, δίδωμι has:</p>
-<table><caption>ἔδωκα — I gave</caption>
-<tr><th></th><th>Singular</th><th>Plural</th></tr>
-<tr><th>1st</th><td class="g">ἔδωκα</td><td class="g">ἐδώκαμεν</td></tr>
-<tr><th>2nd</th><td class="g">ἔδωκας</td><td class="g">ἐδώκατε</td></tr>
-<tr><th>3rd</th><td class="g">ἔδωκε(ν)</td><td class="g">ἔδωκαν</td></tr></table>
-<p><span class="gk">οὕτως γὰρ ἠγάπησεν ὁ θεὸς τὸν κόσμον, ὥστε τὸν υἱὸν τὸν μονογενῆ ἔδωκεν</span> — you have been reading this form since John 3:16.</p>
-<h3>Forms to know on sight</h3>
-<p><span class="gk">δός, δότε</span> — give! (aorist imperatives: δὸς ἡμῖν σήμερον…) · <span class="gk">τίθησιν</span> — he lays down (John 10: the shepherd τὴν ψυχὴν αὐτοῦ τίθησιν) · <span class="gk">ἔθηκεν</span> — he laid · <span class="gk">ἀφίενται</span> / <span class="gk">ἀφέωνται</span> — they are forgiven · <span class="gk">ἄφες ἡμῖν</span> — forgive us · <span class="gk">ἀνέστη</span> — he rose (ἵστημι's intransitive second aorist; ἀνάστηθι — rise!) · <span class="gk">παρέδωκεν</span> — he handed over (παραδίδωμι, the verb of both betrayal and Rom 8:32).</p>
-<p>Strategy: learn the present and aorist of δίδωμι properly, then treat the rest as vocabulary — the lexicon and the article will carry you through the remaining forms until frequency makes them familiar.</p>`,
+<p>Long vowel in the singular, short in the plural, no connecting vowel anywhere, and the first singular ending <span class="gk">-μι</span> that names the class.</p>
+<p>And before you memorise it: only four of those six forms occur in the New Testament at all. <span class="gk">δίδωσιν</span> is there 11 times, <span class="gk">δίδωμι</span> 9, <span class="gk">δίδοτε</span> and <span class="gk">διδόασιν</span> once each — and <span class="gk">δίδως</span> and <span class="gk">δίδομεν</span> never. Which is a hint about where the effort belongs.</p>
+<p class="v" data-ref="John 13:34">ἐντολὴν καινὴν δίδωμι ὑμῖν ἵνα ἀγαπᾶτε ἀλλήλους</p>
+<p>"A new commandment I give you, that you love one another." Three chapters in one line: a <span class="gk">-μι</span> verb, an <span class="gk">ἵνα</span> clause with the subjunctive, and the reciprocal pronoun.</p>
+<h3>The aorist is where you actually meet them</h3>
+<p>Here is that hint spelled out: most of what you will read is not the present.</p>
+<p>Of <span class="gk">δίδωμι</span>'s 415 occurrences, the commonest single forms are <span class="gk">ἔδωκεν</span> (62), <span class="gk">δοῦναι</span> (31) and <span class="gk">ἐδόθη</span> (30) — an aorist indicative, an aorist infinitive and an aorist passive. The whole present active indicative, all four attested forms of it, comes to 21.</p>
+<p>So the pattern to fix in your memory is the aorist stem: <span class="gk">δο-</span>, <span class="gk">θε-</span>, <span class="gk">στα-</span>. A short stem with no reduplication and no <span class="gk">σα</span> is one of these verbs in the aorist, and that is what you will meet.</p>
+<p>One oddity there. <span class="gk">δίδωμι</span> and <span class="gk">τίθημι</span> form their aorist with a <span class="gk">κ</span> instead of a <span class="gk">σ</span> — <span class="gk">ἔδωκα</span>, <span class="gk">ἔθηκα</span> — which makes them look perfect. They are not; there is no reduplication.</p>
+<h3>τίθημι and ἵστημι</h3>
+<p><span class="gk">τίθημι</span>, "I put, place" (100 occurrences). Aorist <span class="gk">ἔθηκεν</span>, infinitive <span class="gk">θεῖναι</span>, participle <span class="gk">θείς</span>. Once you know the stem <span class="gk">θε-</span>, none of those is a surprise.</p>
+<p><span class="gk">ἵστημι</span>, "I set, stand" (153), is the difficult one, and not because of its forms. It is <b>transitive in some tenses and intransitive in others</b>: "I set something up" in the first aorist, but "I stand" in the second aorist <span class="gk">ἔστη</span> and the perfect <span class="gk">ἕστηκα</span>.</p>
+<p>You met that perfect in chapter 10 — "I have taken my stand", which in English is simply "I am standing". So the same verb, in two tenses, is doing two different things to the sentence around it. That is not a subtlety of emphasis; it decides who is acting on what.</p>
+<h3>ἀφίημι, and the compounds</h3>
+<p><span class="gk">ἀφίημι</span>, "I forgive, leave, permit" (143), is <span class="gk">ἀπό</span> + <span class="gk">ἵημι</span>, so the augment goes inside the word exactly as chapter 8 said: <span class="gk">ἀφῆκεν</span>.</p>
+<p>It is worth learning for its own sake, because it is the New Testament's ordinary word for forgiveness — <span class="gk">ἀφεθήσεται</span>, "it will be forgiven", occurs 11 times, and <span class="gk">ἄφες</span>, "forgive", is what the Lord's Prayer asks.</p>
+<p>The compounds are where the rest of the conjugation lives, and they are all built on the four stems you now have: <span class="gk">παραδίδωμι</span>, "I hand over" (119) · <span class="gk">ἀνίστημι</span>, "I raise up, rise" (108) · <span class="gk">ἀποδίδωμι</span>, "I give back" (48) · <span class="gk">ἐπιτίθημι</span>, "I lay on" (39).</p>
+<p>So learn four stems — <span class="gk">δο-</span> for <span class="gk">δίδωμι</span>, <span class="gk">θε-</span> for <span class="gk">τίθημι</span>, <span class="gk">στα-</span> for <span class="gk">ἵστημι</span> and <span class="gk">ἑ-</span> for <span class="gk">ἀφίημι</span> — and the ninety verbs come down to four families.</p>
+<h3>What to watch for</h3>
+<p><b>Short stem, no connecting vowel</b> is the signal. If a verb looks a syllable too short, it is probably one of these.</p>
+<p><b>The lexical form ends in <span class="gk">-μι</span></b>, so you cannot look it up under <span class="gk">-ω</span>. <span class="gk">ἔδωκεν</span> is listed under <span class="gk">δίδωμι</span>, and there is no <span class="gk">δόω</span> to find.</p>
+<p><b><span class="gk">ἔδωκα</span> and <span class="gk">ἔθηκα</span> are aorists</b>, not perfects, despite the κ. The absence of reduplication is what tells you.</p>
+<p><b>And <span class="gk">ἵστημι</span> changes meaning with its tense.</b> Transitive in the first aorist, intransitive in the second aorist and the perfect. That is not a subtlety; it is the difference between setting something up and standing there.</p>`,
 v:[42,73,102,113,134,151,166,183,185,277,332,396,437],
 vids:[{t:"Lecture 25: The Conjugation of -μι Verbs",s:"Daily Dose of Greek — Rob Plummer (12:28)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-25/"}],
 quiz:[
-{q:"μι-verbs differ from λύω-type verbs chiefly by:",o:["Having no aorist","Attaching endings directly to the stem, no connecting vowel","Being passive only","Lacking an augment"],a:1,w:"Athematic conjugation — the oldest layer of the language, preserved in its commonest verbs (as English keeps 'am/is/was').",sec:0},
-{q:"ἔδωκεν parses as:",o:["Aorist active 3sg of δίδωμι — 'he gave'","Imperfect of δοκέω","Perfect of δίδωμι","Aorist passive"],a:0,w:"κ-aorist: augment + δωκ + 3sg. John 3:16's central verb.",sec:1},
-{q:"ἄφες in the Lord's Prayer (ἄφες ἡμῖν τὰ ὀφειλήματα) is:",o:["A noun — 'forgiveness'","Aorist imperative of ἀφίημι — 'forgive!'","Future indicative","A particle"],a:1,w:"ἀφίημι, the μι-verb of forgiving and leaving. Its κ-aorist ἀφῆκεν and passive ἀφέωνται run through the Gospels.",sec:2},
-{q:"ἀνέστη means:",o:["He stood up / rose","He was destroyed","He gave back","He placed"],a:0,w:"Second aorist of ἀνίστημι, intransitive: 'he rose'. The resurrection vocabulary uses both this and ἠγέρθη.",sec:2}]},
+{q:"How many -μι verbs are there in the New Testament outside εἰμί?",o:["Three","90 lemmas, 1,743 occurrences","Over a thousand","Only δίδωμι"],a:1,w:"Small but unavoidable, and four families carry most of it: δίδωμι, τίθημι, ἵστημι and ἀφίημι, with their compounds.",sec:0},
+{q:"What is the one structural difference between a -μι verb and an -ω verb?",o:["The endings are entirely different","No connecting vowel in the present, imperfect and second aorist","They have no aorist","They never take an augment"],a:1,w:"λυ-ο-μεν against δίδο-μεν. Everywhere else — future, first aorist, perfect, passive — they behave like the verbs you already know.",sec:1},
+{q:"δίδωμι builds its present stem διδο- how?",o:["With an augment","By reduplicating with an iota","With κα","By contraction"],a:1,w:"Present reduplication: δο- gives διδο-, θε- gives τιθε-, στα- gives ἱστα-. And the stem lengthens in the singular, which is where the -ωμι of the lexical form comes from.",sec:2},
+{q:"Why does ἵστημι have a rough breathing?",o:["It is a Semitic word","Its present stem was σιστα-, and the initial σ became the rough breathing","Because its aorist is irregular","No reason; it is arbitrary"],a:1,w:"And τιθε- was θιθε- before losing its first aspirate — the deaspiration from chapter 10. The oddities have reasons, even if you only need to recognise the results.",sec:2},
+{q:"In the present of δίδωμι, what distinguishes singular from plural?",o:["The augment","A long stem vowel in the singular, short in the plural","The accent only","Nothing"],a:1,w:"δίδωμι, δίδως, δίδωσι(ν) against δίδομεν, δίδοτε, διδόασι(ν). No connecting vowel anywhere, and the -μι that names the class.",sec:3},
+{q:"δίδωμι occurs 415 times. Its commonest forms are ἔδωκεν, δοῦναι and ἐδόθη. What does that tell you?",o:["The present is the form to master","Most of what you meet is the aorist, so fix the aorist stems δο-, θε-, στα-","The verb is rare","Those are all presents"],a:1,w:"δίδωσιν, the present, occurs 11 times against ἔδωκεν's 62. A short stem with no reduplication and no σα is one of these verbs in the aorist.",sec:4},
+{q:"ἔδωκα has a κ. Is it a perfect?",o:["Yes","No — it is an aorist; there is no reduplication","Yes, a second perfect","It is a present"],a:1,w:"δίδωμι and τίθημι form their aorist with κ instead of σ, which makes ἔδωκα and ἔθηκα look perfect. The absence of reduplication is what tells you.",sec:4},
+{q:"ἵστημι is the awkward one. Why?",o:["It has no aorist","It is transitive in some tenses and intransitive in others","It is only in Acts","It never takes an object"],a:1,w:"'I set something up' in the first aorist, but 'I stand' in the second aorist ἔστη and the perfect ἕστηκα. That is not a subtlety; it changes what the sentence says.",sec:5},
+{q:"ἀφίημι is ἀπό + ἵημι. Where does the augment go?",o:["On the front","Inside, between the preposition and the stem — ἀφῆκεν","There is none","On the ending"],a:1,w:"The compound rule from chapter 8. And it is worth learning for its own sake: ἀφίημι is the New Testament's ordinary word for forgiveness.",sec:6},
+{q:"You meet ἔδωκεν and cannot find it in a lexicon. What went wrong?",o:["It is misspelled","You looked under -ω; the lexical form is δίδωμι","It is a noun","It is a variant reading"],a:1,w:"A -μι verb is listed under its -μι form. If a verb looks a syllable too short and will not resolve, this is the conjugation to try.",sec:7}
+]},
 
 {id:26,t:"Reading your Greek New Testament",s:"Tools, habits, and the fallacies to avoid",
-body:`<p>This is the lesson the other twenty-five exist for. The grammar you now hold is enough to read the New Testament with help — and reading is the only thing that will keep it.</p>
-<h3>Tools</h3>
-<p>Get a <b>reader's edition</b> of the Greek NT (rare words glossed at the foot of the page) or use software: Logos, Accordance, or the free STEP Bible and Blue Letter Bible give instant parsing. Use helps to keep moving, not to avoid thinking — try the parse yourself before you tap.</p>
-<p>For a daily rhythm, <b>Daily Dose of Greek</b> sends a two-minute video each weekday: Rob Plummer works through one verse, parsing as he goes. It is the single best habit-former for the year after a first course.</p>
-<p>You now have enough to start reading. What follows determines whether the language survives.</p>
-<h3>Read daily, in easy texts</h3>
-<p>Ten minutes every day beats an hour on Saturday. Start with <b>1 John</b> — short sentences, small vocabulary, heavy repetition. Then <b>John's Gospel</b>, then <b>Mark</b>. Leave Hebrews, Luke's prologue and 2 Peter alone for now; the Greek is genuinely hard.</p>
+body:`<p>You now have the whole of the morphology: six principal parts, four moods, three voices, three declensions, and about 800 words. That is enough to read the New Testament with a lexicon beside you, and not enough to read it fluently. This chapter is about the distance between those two.</p>
+<p>Nothing here is new grammar. It is what to do with the grammar you have, and what not to do with it.</p>
+<h3>Read every day, in the easiest thing you can find</h3>
+<p>The single largest predictor of whether someone keeps their Greek is whether they read it daily, and the second is whether what they read is easy enough to enjoy.</p>
+<p>Start with 1 John — short sentences, small vocabulary, endless repetition. Then Mark, then John, then Acts. Leave Hebrews, Luke's prologue and 2 Peter until much later; they are the hardest Greek in the book and they will convince you that you have learned nothing.</p>
+<p>Ten minutes a day beats an hour on Saturday. The Read tab holds twelve graded passages for exactly this, and the reader will parse any word you tap.</p>
 <h3>Read forward, not sideways</h3>
-<p>Resist the urge to parse every word. Read the sentence, get the sense, and only stop for words that block comprehension. Parsing everything turns reading into decoding and kills the habit.</p>
-<h3>Tie it to your sermon text</h3>
-<p>The single best thing you can do is read the Greek of the passage you are preaching, every week, before you consult a commentary. Even where it changes nothing in the sermon, it changes how you see the text — and it makes the language earn its keep rather than becoming a hobby that gets crowded out.</p>
-<h3>Guard against the word-study fallacy</h3>
-<p>Three habits to avoid: reading a word's etymology as its meaning; importing every possible sense of a word into one occurrence; and treating a grammatical category as if it settled an interpretive question. Usage in context determines meaning. If a point can't survive being stated in English, it usually wasn't in the Greek.</p>
-<h3>Expect to plateau</h3>
-<p>Progress in a language is not linear. There is a long stretch where you feel you're not improving, and it is exactly the stretch where quitting is most tempting and most costly. Keep the daily ten minutes and the plateau ends.</p>`,
+<p>The temptation, when a sentence resists, is to stop and take it apart. Sometimes that is right. Usually it is the thing that kills the habit.</p>
+<p><b>Read to the end of the sentence first.</b> Greek puts its clues everywhere, and the word that unlocks a clause is often three words later. Parsing left to right, one word at a time, is how a reader gets stuck on a participle for ten minutes and then discovers that the article two words on had settled it.</p>
+<p>Then go back for what you missed. Two passes at speed teach more than one pass at a crawl.</p>
+<h3>Observe the aspect</h3>
+<p>If you take one habit from this course into your reading, take this one. English asks <i>when did it happen</i>. Greek asks <i>how is it being viewed</i>.</p>
+<p>The aorist is the unmarked aspect — the default, the background. The present and imperfect are marked, and put the process in the foreground. The perfect is the most marked of all, and puts the resulting state in front of everything.</p>
+<p class="v" data-ref="1 Corinthians 15:3">Χριστὸς ἀπέθανεν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν κατὰ τὰς γραφάς</p>
+<p>Aorist: he did, in fact, die. Then in the next verse <span class="gk">ἐγήγερται</span>, perfect: raised, and risen still. The whole argument of the chapter is carried on a change of aspect, and it is invisible in most English translations.</p>
+<h3>Observe the voice, and the article</h3>
+<p>The active is unmarked; the middle and passive both throw weight onto the subject. So a passive is often not about hiding the agent but about foregrounding the person affected — which is what makes the divine passive work.</p>
+<p>The article is the other place to look, and it is everywhere: 19,769 occurrences, which makes it the commonest word in the New Testament by more than two to one over <span class="gk">καί</span>. Its presence points at particular identity; its absence throws the weight onto character or quality.</p>
+<p class="v" data-ref="Luke 18:13">ὁ θεός, ἱλάσθητί μοι τῷ ἁμαρτωλῷ</p>
+<p>"God, be merciful to me, <i>the</i> sinner." Not "a sinner". The article is the whole force of the prayer, and almost every English translation loses it.</p>
+<h3>Observe the order</h3>
+<p>Greek word order is free in the sense that it does not carry grammar, and it is not free at all in the sense that it carries emphasis. A word out of its expected place is usually there for a reason.</p>
+<p>The things to notice: what has been pulled to the front of its clause, what has been held back to the end, and whether a modifier has been separated from what it modifies.</p>
+<p>This is the observation most likely to be over-read, because word order carries stylistic weight as well as emphatic weight, and the two are not easy to separate. Notice it, then look for confirmation elsewhere in the sentence before you build on it.</p>
+<h3>The word-study fallacy</h3>
+<p>Now the fallacies, because a little Greek is genuinely dangerous and this is the commonest way it goes wrong.</p>
+<p><b>A word's history is not its meaning.</b> <span class="gk">ἐκκλησία</span> is built from <span class="gk">ἐκ</span> and a form meaning "call", and it does not mean "the called-out ones" — it means an assembly, which is what it meant to everyone who read it. English "goodbye" came from "God be with you" and means neither God nor with nor you.</p>
+<p><b>A word does not carry all its meanings at once.</b> <span class="gk">σάρξ</span> can mean flesh, body, human nature, or sinful nature. In any given sentence it means one of those, and the sentence chooses which — not the lexicon entry, and not the meaning you would prefer.</p>
+<p><b>And a word is not a concept.</b> Studying every occurrence of <span class="gk">ἀγάπη</span> tells you about the word, not about love in the New Testament, most of which is expressed without using it.</p>
+<h3>What the grammar cannot settle</h3>
+<p>Worth saying plainly at the end of a grammar course: most interpretive disputes are not grammatical.</p>
+<p>Where two readings of a passage are both grammatically possible, the grammar has done its work by telling you that, and the decision belongs to context, to the argument of the book, and to the rest of Scripture. Announcing that "the Greek says" what is really one of two available readings is the fastest way to lose the confidence of anyone who knows better.</p>
+<p>The honest form is the useful one: "the Greek allows this, and here is why I think the context settles it that way". That is a stronger argument, not a weaker one, because it is one your hearers can check.</p>
+<h3>Where to go from here</h3>
+<p>You will plateau. Everyone does, usually a few months in, when the vocabulary is no longer new and the reading is not yet fluent. It passes, and it passes faster if you keep reading than if you go back to grammar.</p>
+<p>Three things worth having beside you. Two lexicons — a reader's lexicon for reading, and a full one for deciding. An intermediate grammar, for the questions this course cannot answer. And a habit: a paragraph a day, in something easy, before you look at any translation.</p>
+<p>This app will keep serving you words, forms and sentences for as long as you keep opening it. But it is scaffolding. The point was never to finish the course; it was to be able to open the New Testament in the language it was written in, and understand a little more than you did before.</p>
+<p>That, you can now do.</p>`,
 v:[],
 vids:[{t:"Lecture 26: Reading Your Greek New Testament",s:"Daily Dose of Greek — Rob Plummer (27:24)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-26/"},
       {t:"Daily Dose of Greek — one verse a day",s:"Free two-minute weekday videos; the habit that keeps the language",u:"https://dailydoseofgreek.com/"}],
 quiz:[
-{q:"Which book is the usual recommendation to read first?",o:["Hebrews","1 John","Luke","2 Peter"],a:1,w:"Short sentences, limited vocabulary, endless repetition. It builds confidence rather than destroying it.",sec:2},
-{q:"The word-study fallacy involves:",o:["Reading too fast","Treating etymology or every possible sense as the meaning in context","Ignoring the article","Using a lexicon"],a:1,w:"Meaning is determined by usage in context, not by a word's history or the full range of its possible senses.",sec:5},
-{q:"What is the best defence against losing the language again?",o:["Buying more books","A short daily reading habit tied to your preaching text","Memorising more paradigms","Learning Hebrew as well"],a:1,w:"Frequency beats intensity. Tying it to work you already do each week is what makes it survive a busy season.",sec:4},
-{q:"The recommended way to use parsing software is:",o:["Avoid it — it weakens you","Let it read for you","Attempt the parse yourself, then check","Only for Hebrew"],a:2,w:"Helps are for momentum, not for outsourcing. The attempt is where the learning happens; the check is where the correcting happens.",sec:1}]}
+{q:"What is the best predictor of whether someone keeps their Greek?",o:["How much grammar they memorised","Whether they read it daily, in something easy enough to enjoy","Which textbook they used","How fast they finished"],a:1,w:"Ten minutes a day beats an hour on Saturday. Start with 1 John, then Mark, then John — and leave Hebrews and 2 Peter alone for a long while.",sec:0},
+{q:"Which books are the wrong place to start?",o:["1 John and Mark","Hebrews, Luke's prologue and 2 Peter","John and Acts","The Gospels"],a:1,w:"They are the hardest Greek in the New Testament and they will convince you that you have learned nothing. 1 John has short sentences, small vocabulary and endless repetition.",sec:1},
+{q:"When a sentence resists, what is usually the better move?",o:["Parse each word before moving on","Read to the end of the sentence first, then go back","Consult a commentary","Switch to English"],a:1,w:"Greek scatters its clues, and the word that unlocks a clause is often three words later. Two passes at speed teach more than one pass at a crawl.",sec:2},
+{q:"English asks 'when did it happen'. What does Greek ask?",o:["Who did it","How is it being viewed","Where did it happen","Why did it happen"],a:1,w:"Aspect is the one habit most worth carrying out of this course. The aorist is unmarked and backgrounds; the present and imperfect foreground the process; the perfect foregrounds the result.",sec:3},
+{q:"In 1 Corinthians 15:3-4, Paul writes ἀπέθανεν and then ἐγήγερται. What carries the argument?",o:["The vocabulary","The change of aspect — aorist to perfect","The word order","The article"],a:1,w:"He died, as a fact; he has been raised, and is risen still. It is invisible in most English translations, and it is the whole point of the passage.",sec:4},
+{q:"ἱλάσθητί μοι τῷ ἁμαρτωλῷ — what does the article do?",o:["Nothing; Greek uses it freely","Makes it 'the sinner', not 'a sinner' — the whole force of the prayer","Marks the dative","Marks the vocative"],a:1,w:"The article's presence points at particular identity, its absence at character or quality. With 19,769 occurrences it is the commonest word in the New Testament, and the easiest to read past.",sec:4},
+{q:"Greek word order is free in what sense?",o:["Completely — it never matters","It does not carry grammar, but it does carry emphasis","Only in poetry","It is not free at all"],a:1,w:"A word pulled to the front or held to the end is usually there for a reason. But this is the observation most likely to be over-read, because style and emphasis are hard to separate — look for confirmation before building on it.",sec:5},
+{q:"ἐκκλησία is built from ἐκ and a root meaning 'call'. What does it mean?",o:["The called-out ones","An assembly — which is what it meant to everyone who read it","Those who are chosen","A building"],a:1,w:"A word's history is not its meaning. English 'goodbye' came from 'God be with you' and means neither God nor with nor you.",sec:6},
+{q:"σάρξ can mean flesh, body, human nature or sinful nature. In a given sentence it means:",o:["All of them at once","One of them, and the sentence chooses which","Whichever the lexicon lists first","Whichever suits the argument"],a:1,w:"Loading every possible sense into one occurrence is the commonest way a little Greek goes wrong. Neither the lexicon entry nor your preference decides it.",sec:6},
+{q:"Two readings of a passage are both grammatically possible. What has the grammar told you?",o:["Nothing useful","That both are possible — and the decision belongs to context and argument","That the first is correct","That the passage is corrupt"],a:1,w:"Saying 'the Greek says' what is really one of two available readings is the fastest way to lose anyone who knows better. 'The Greek allows this, and here is why the context settles it' is a stronger argument, because your hearers can check it.",sec:7},
+{q:"You have plateaued a few months in. What helps most?",o:["Going back to the grammar","Keeping on reading","Starting a harder book","Taking a break"],a:1,w:"It passes, and it passes faster if you keep reading. A paragraph a day in something easy, before you look at any translation.",sec:8}
+]}
 ];
