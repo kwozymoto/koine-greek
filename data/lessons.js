@@ -113,7 +113,7 @@ body:`<p>Before learning any paradigm, get the shape of the whole system. It is 
 <p>Neither is wrong; they are simply different conventions, and you will meet both. When you read Black, translate.</p>
 <p>And the three-way division is itself a convention rather than a discovery. The stative is the contested one: some grammarians give the perfect and pluperfect an aspect of their own, as the table does, and others fold them into the other two. Nothing in this course turns on which you prefer.</p>
 <h3>Time is only fixed in the indicative</h3>
-<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive is not past at all: <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 22 comes back to it.</p>
+<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive carries no time of its own: <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 22 comes back to it. The one exception is reported speech, where an infinitive's tense can carry time relative to the main verb.</p>
 <p>It is why chapter 22 will call the infinitive the easiest place in the verb to see aspect: there is no time there to distract you.</p>
 <h3>Mood: how the speaker relates it to reality</h3>
 <p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p>
@@ -784,7 +784,7 @@ body:`<p>Voice describes how the subject of a verb relates to the action. Every 
 <p>So when you meet a middle, the first question is not "what is the middle voice doing here?" It is "does this verb have an active at all?" Usually it does not, and the ending is simply how the word is spelled.</p>
 <p>One practical oddity: some of these take an object in a case other than the accusative. <span class="gk">ἀποκρίνομαι</span> takes the dative, and <span class="gk">ἄρχω</span> the genitive.</p>
 <h3>By whom, through whom, by what</h3>
-<p>A passive often names the agent, and Greek has three ways of doing it — two of them from chapter 8.</p>
+<p>A passive often names the agent, and Greek has three main ways of doing it — two of them from chapter 8. (There are rarer ones: ἀπό, ἐκ and παρά all mark an agent occasionally.)</p>
 <p><b>Direct agent:</b> <span class="gk">ὑπό</span> with the genitive.</p>
 <p class="v" data-ref="1 Corinthians 14:24">ἐλέγχεται ὑπὸ πάντων, ἀνακρίνεται ὑπὸ πάντων</p>
 <p>"He is convicted by all, he is called to account by all."</p>
@@ -815,7 +815,7 @@ quiz:[
 {q:"John 17:19 has ἐγὼ ἁγιάζω ἐμαυτόν. Why is that worth noticing here?",o:["Greek usually expresses a plain reflexive with an active verb and a reflexive pronoun, not with the middle","ἁγιάζω is a middle","It is the only reflexive in John","ἐμαυτόν is a middle ending"],a:0,w:"'I sanctify myself' — active verb, reflexive pronoun. Strictly reflexive middles are much rarer than the textbook categories suggest.",sec:4},
 {q:"What proportion of present middle indicatives belong to verbs with no active form at all?",o:["About a tenth","Two in three","All of them","None"],a:1,w:"443 of 683. ἔρχεται and δύναται alone are 160 of them. So the first question about a middle is whether the verb even has an active — usually it does not.",sec:5},
 {q:"ἀποκρίνομαι takes its object in which case?",o:["Accusative","Genitive","Dative","Nominative"],a:2,w:"ἀπεκρίθη αὐτοῖς — 'he answered them'. ἄρχω takes the genitive. A handful of verbs simply do not use the accusative, and the lexicon says which.",sec:5},
-{q:"Greek marks the agent of a passive three ways. Which marks impersonal means?",o:["ὑπό + genitive","διά + genitive","The bare dative, with or without ἐν","πρός + accusative"],a:2,w:"τῇ χάριτι, 'by grace' (Ephesians 2:8). ὑπό + genitive is the direct agent; διά + genitive the one it came through.",sec:6},
+{q:"Of the three main ways Greek marks the agent of a passive, which marks impersonal means?",o:["ὑπό + genitive","διά + genitive","The bare dative, with or without ἐν","πρός + accusative"],a:2,w:"τῇ χάριτι, 'by grace' (Ephesians 2:8). ὑπό + genitive is the direct agent; διά + genitive the one it came through.",sec:6},
 {q:"λύῃ is which person?",o:["Third singular","Second singular","First plural","Third plural"],a:1,w:"Second singular middle/passive — not λύει with a subscript. The pair is a standing trap, and the contracted second singular is the reason.",sec:7}
 ]},
 
