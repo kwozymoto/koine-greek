@@ -81,19 +81,28 @@ function gcard(k){
   if(!S.gcards[k]) S.gcards[k]={ease:2.5,ivl:0,due:today(),reps:0,lapses:0};
   return S.gcards[k];
 }
-/* Multiple choice is right or wrong, so it maps onto Good and Again. */
-function gradeGrammar(k,ok){
-  applyGrade(gcard(k),ok?2:0);
+/* A typed answer knows more than right or wrong — first time, right after
+   being shown which letters were off, or having to be told. So the grade is
+   passed in, on the same 0-1-2-3 scale applyGrade already uses. */
+function gradeGrammarAt(k,g){
+  applyGrade(gcard(k),g);
   // Only a scheduled review counts toward the daily goal; a lesson test is
   // studying, but it is not the review the goal is about.
   if(mode==="review") S.reviewsToday=(S.reviewsToday||0)+1;
   save();
 }
+/* Multiple choice is right or wrong, so it maps onto Good and Again. */
+function gradeGrammar(k,ok){ gradeGrammarAt(k, ok?2:0); }
 /* "L17q3" back to its lesson question, "C7" back to the seventh syntax
    question. A key whose lesson has since been re-written, or an index past
    the end of CASEFN, returns null and is skipped rather than breaking a
    review — which is what happens to any key when its content moves. */
 function gquestion(k){
+  /* "W12:----GSM-" back to the row of data/forms.js it names. Rebuilt from
+     the bank rather than stored, so a card outlives forms.js being
+     regenerated — and returns null, and is skipped, if the form has gone. */
+  if(/^W\d{1,4}:/.test(k))
+    return (typeof typeRowFor==="function") ? typeRowFor(k) : null;
   const c=/^C(\d+)$/.exec(k);
   if(c) return (typeof CASEFN!=="undefined" && CASEFN[+c[1]]) ? caseQ(CASEFN[+c[1]]) : null;
   const m=/^L(\d+)q(\d+)$/.exec(k); if(!m) return null;
@@ -1209,7 +1218,12 @@ function startReview(){
      which is how CASEFN gets onto the schedule at all. Not in free practice:
      that mode must not touch anything's schedule. */
   if(!PRACTICE){
-    gd.forEach(k=>{ const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k)); });
+    gd.forEach(k=>{
+      /* A typed question is not multiple choice, so it brings its own
+         renderer rather than being squeezed into mcq's shape. */
+      if(/^W\d{1,4}:/.test(k)){ const t=typeStepFor(k); if(t) q.push(t); return; }
+      const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k));
+    });
     caseNew().sort(()=>Math.random()-.5).slice(0,1).forEach(i=>{
       const x=caseQ(CASEFN[i]); q.push(mcq(x.q,x.o,x.a,x.w,`C${i}`));
     });
@@ -2640,8 +2654,9 @@ function saneState(x){
   out.gcards={};
   for(const k of Object.keys(gc)){
     // the key is the question's address — L{chapter}q{n} for a lesson
-    // question, C{n} for a syntax one; anything else cannot be scheduled
-    if(!/^(L\d{1,2}q\d{1,2}|C\d{1,2})$/.test(k)) continue;
+    // question, C{n} for a syntax one, W{lemma}:{parse} for a form to type;
+    // anything else cannot be scheduled, and is dropped rather than kept
+    if(!/^(L\d{1,2}q\d{1,2}|C\d{1,2}|W\d{1,4}:[A-Z0-9-]{8})$/.test(k)) continue;
     if(!gc[k]||typeof gc[k]!=="object") continue;
     out.gcards[k]=saneCard(gc[k]);
   }

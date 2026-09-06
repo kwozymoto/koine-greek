@@ -153,20 +153,35 @@ function gkKeyboard(opts) {
    treated differently at all: being told to try again helps you only if you
    were close.
    --------------------------------------------------------------------- */
-function typeDrill(n = 8) {
-  if (typeof FORMS === "undefined") return [];
-  const by = {};
-  FORMS.forEach(f => (by[f[1]] = by[f[1]] || []).push(f));
-  const ok = k => by[k].length >= 3;
-  const met = Object.keys(by).filter(k => ok(k) && S.cards[k] && !skipWord(+k));
-  const use = met.length >= 6 ? met : Object.keys(by).filter(ok).slice(0, 60);
-  if (!use.length) return [];
+/* A typed question's address on the schedule: the lemma and the parse, not
+   the spelling. "The genitive singular of κόσμος" is one thing to know, and
+   it is the same thing tomorrow, so the key has to survive data/forms.js
+   being rebuilt with a different verse behind the same cell. */
+const typeKey = row => `W${row[1]}:${row[3]}`;
 
-  return use.sort(() => Math.random() - .5).slice(0, n).map(k => () => {
-    const rows = by[k].slice().sort(() => Math.random() - .5);
-    const want = rows[0];
-    const others = rows.slice(1, 6).map(r => r[0]);
-    const v = VOCAB[+k];
+/* Rebuild a typed question from its key, for a review. Null if the form has
+   gone from the bank since — the same courtesy gquestion pays a lesson
+   question whose chapter has been rewritten. */
+function typeRowFor(key) {
+  const m = /^W(\d{1,4}):(.{8})$/.exec(key || "");
+  if (!m || typeof FORMS === "undefined") return null;
+  return FORMS.find(f => +f[1] === +m[1] && f[3] === m[2]) || null;
+}
+
+function typeStepFor(key) {
+  const want = typeRowFor(key);
+  if (!want) return null;
+  const others = FORMS.filter(f => +f[1] === +want[1] && f[3] !== want[3])
+                      .slice(0, 5).map(f => f[0]);
+  return typeStep(want, others);
+}
+
+/* One typed question. Split out of typeDrill so a review can put the same
+   question back — which is the whole point of giving it a key. */
+function typeStep(want, others) {
+  const key = typeKey(want);
+  return () => {
+    const v = VOCAB[+want[1]];
     const head = v ? v[0].split(",")[0] : "";
     const b = document.getElementById("sessBody");
     b.innerHTML =
@@ -182,12 +197,23 @@ function typeDrill(n = 8) {
     document.getElementById("kb").appendChild(kb.el);
 
     const gk = s => `<span class="gk">${s}</span>`;
+    /* Three grades, not two. A multiple-choice question is right or wrong so
+       it maps onto Good and Again, but a typed one knows more than that:
+       first time is Good, right after the letters were flagged is Hard, and
+       having to be shown it is Again. Same scale applyGrade already uses. */
+    let graded = false;
+    const grade = g => {
+      if (graded) return;                    // one grade per question
+      graded = true;
+      gradeGrammarAt(key, g);
+    };
     const done = good => {
       fb.innerHTML = `<div class="feedback"><b>${good ? "Correct" : "Now you have it"}</b>
         ${gk(want[0])} — ${gntParse(want[2], want[3])} of ${gk(head)} · ${want[4]}</div>
         <button class="btn" onclick="qi++;step()">Continue</button>`;
       kb.el.querySelectorAll("button").forEach(x => x.disabled = true);
       answerFelt(good, kb.el);
+      grade(good ? 2 : (stage === 1 ? 1 : 0));
       if (good) { addXp(3); SESSION_XP += 3; }
     };
 
@@ -199,7 +225,8 @@ function typeDrill(n = 8) {
           ${gk(want[0])}.</div>
           <button class="btn" onclick="qi++;step()">Continue</button>`;
         kb.el.querySelectorAll("button").forEach(x => x.disabled = true);
-        answerFelt(true, kb.el); addXp(3); SESSION_XP += 3;
+        answerFelt(true, kb.el); grade(stage === 0 ? 2 : 1);
+        addXp(3); SESSION_XP += 3;
         return;
       }
       if (stage === 2) {                      // copying it back
@@ -221,6 +248,7 @@ function typeDrill(n = 8) {
         return;
       }
       stage = 2;
+      grade(0);                    // recorded now: an abandoned reveal is still a miss
       const said = m.verdict === "other"
         ? `That is ${gk(m.wrote)}.`
         : "";
@@ -228,5 +256,20 @@ function typeDrill(n = 8) {
         It is ${gk(want[0])} — write it once more.</div>`;
       kb.clear();
     }
+  };
+}
+
+/* The drill. Lemmas the learner has met, one parse each, and the other cells
+   of the same verb handed to gkMark so "you wrote the perfect" can be said. */
+function typeDrill(n = 8) {
+  if (typeof FORMS === "undefined") return [];
+  const by = {};
+  FORMS.forEach(f => (by[f[1]] = by[f[1]] || []).push(f));
+  const ok = k => by[k].length >= 3;
+  const met = Object.keys(by).filter(k => ok(k) && S.cards[k] && !skipWord(+k));
+  const use = met.length >= 6 ? met : Object.keys(by).filter(ok).slice(0, 60);
+  return use.sort(() => Math.random() - .5).slice(0, n).map(k => {
+    const rows = by[k].slice().sort(() => Math.random() - .5);
+    return typeStep(rows[0], rows.slice(1, 6).map(r => r[0]));
   });
 }
