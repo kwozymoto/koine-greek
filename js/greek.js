@@ -197,3 +197,60 @@ function gkMark(typed, target, others) {
     return Object.assign(r, { verdict: "close", wrong: gkDiff(t, target) });
   return Object.assign(r, { verdict: "wrong" });
 }
+
+
+/* ---------------------------------------------------------------------
+   Building a Greek word up, rather than comparing two.
+
+   The keyboard in js/keys.js needs to put a mark on the letter just typed
+   and take it off again. That is the same decompose-and-recompose this
+   file already does, so it happens here: one file touches NFD.
+   --------------------------------------------------------------------- */
+/* mark -> [the letters it may sit on]. Counted from all 137,554 words of the
+   New Testament: these pairs occur and no others do. */
+const MARK_OK = {
+  "́": "αεηιουω",     // acute
+  "̀": "αεηιουω",     // grave
+  "͂": "αηιυω",       // circumflex — never ε or ο, which are always short
+  "̓": "αεηιουω",     // smooth breathing
+  "̔": "αεηιουωρ",    // rough — and ῥ, 231 times
+  "ͅ": "αηω",         // iota subscript, under exactly three letters
+  "̈": "ιυ",          // diaeresis
+};
+
+/* The base letter of the last character, with its marks — what the dimming
+   and the toggling both need. */
+function gkLastLetter(s) {
+  const d = (s || "").normalize("NFD");
+  let i = d.length - 1;
+  while (i >= 0 && MARK_OK[d[i]]) i--;         // step back over the marks
+  if (i < 0) return null;
+  return { base: d[i].toLowerCase(), at: i, marks: d.slice(i + 1) };
+}
+
+/* Add or remove a mark on the last letter. Composed back to NFC so what
+   leaves here is spelled the way data/gnt/ spells it. */
+function gkApplyMark(s, mark) {
+  const last = gkLastLetter(s);
+  if (!last || !MARK_OK[mark].includes(last.base)) return s;
+  const d = s.normalize("NFD");
+  const head = d.slice(0, last.at + 1);
+  const marks = last.marks.includes(mark)
+    ? last.marks.replace(mark, "")                       // tap again to remove
+    : last.marks + mark;
+  return (head + marks).normalize("NFC");
+}
+
+/* σ is written ς at the end of a word and σ everywhere else, so the keyboard
+   settles it rather than the learner. */
+function gkFinalSigma(s) {
+  return (s || "").replace(/σ(?=$)/, "ς").replace(/ς(?=.)/g, "σ");
+}
+
+/* Backspace: take off the last letter and everything sitting on it, rather
+   than one codepoint, which would strip an accent and leave the vowel. */
+function gkDropLast(s) {
+  const last = gkLastLetter(s);
+  if (!last) return "";
+  return s.normalize("NFD").slice(0, last.at).normalize("NFC");
+}

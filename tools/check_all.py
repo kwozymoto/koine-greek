@@ -14,6 +14,9 @@ data/gnt/, and this runs the lot:
     check_mark       the mark scheme for typed Greek, against a table of
                      worked cases: what each of the six verdicts is for, and
                      which real New Testament forms produce it
+    check_keys       the Greek keyboard: that the marks it dims are the ones
+                     the New Testament never writes, and that every form the
+                     app could ask for can be typed on it
     check_vocab      the 511 lexical entries, their example verses, the
                      reader's gloss table, the audio chain, the principal
                      parts, and accent placement across every data file
@@ -103,7 +106,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHECKS = ["check_greek_norm", "check_mark", "check_vocab", "check_drills",
+CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_vocab",
+          "check_drills",
           "check_paradigms",
           "check_grids",
           "check_readings", "check_lessons", "check_quiz", "check_forms",

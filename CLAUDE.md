@@ -45,7 +45,7 @@ So, mechanically:
 python tools/check_all.py
 ```
 
-Twenty checkers, ten of them putting the app's content to the corpus.
+Twenty-one checkers, ten of them putting the app's content to the corpus.
 Green before every commit, no exceptions. `--offline` skips only
 `check_links`, the one that needs the network.
 

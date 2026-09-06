@@ -484,3 +484,38 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   color:var(--text)}
 .read .v::after{content:attr(data-ref);display:block;font-family:inherit;
   font-size:.72rem;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+
+/* ---------- the Greek keyboard ----------
+   Eight columns because the alphabet divides into three rows of eight, so
+   the grid is the alphabet rather than a layout that happens to fit. Keys
+   are sized off the row rather than fixed, so the whole thing scales to the
+   phone instead of overflowing on a small one. */
+.gkb{margin-top:12px}
+.gkb-out{
+  min-height:52px;padding:11px 14px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--line);
+  font-family:var(--gk);font-size:calc(1.5rem * var(--gk-scale));
+  line-height:1.3;word-break:break-word;
+}
+.gkb-out.empty::after{content:"…";color:var(--muted)}
+.gkb-keys{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.gkb-row{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.gkb-k{
+  padding:11px 0;border-radius:10px;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--text);
+  font-family:var(--gk);font-size:1.15rem;line-height:1.1;
+  transition:transform .06s,background .12s;
+}
+.gkb-k:active{transform:scale(.94);background:var(--line)}
+
+/* The marks sit above the letters and are always there. Dimmed, not hidden:
+   a circumflex greyed out over ε is the keyboard teaching that ε is short,
+   which a missing key could not say. */
+.gkb-marks .gkb-k{font-size:1.3rem;color:var(--gold);background:var(--surface)}
+.gkb-marks .gkb-k.on{background:var(--gold);color:#1a1408}
+.gkb-marks .gkb-k.off{opacity:.28;color:var(--muted)}
+.gkb-last{grid-template-columns:repeat(4,1fr)}
+.gkb-wide{grid-column:span 1}
+.gkb-go{background:var(--gold);color:#1a1408;font-weight:650}
+.gkb-go:active{background:var(--gold-dim)}
+@media (max-width:340px){ .gkb-k{padding:9px 0;font-size:1.05rem} }

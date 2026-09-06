@@ -2034,6 +2034,7 @@ const DRILLS=[
 ["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3),"grids")],
 ["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(),"d")],
 ["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
+["Write a real form","Name the slot, type the word — no options to choose from",()=>startSession(typeDrill(),"d")],
 ["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],
 ["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")]
 ];
@@ -2044,7 +2045,7 @@ const DRILL_GROUP={
                 "Listening — words","Write it from memory"],
   "Reading":["Read a sentence","Case functions"],
   "Everything":["Daily mix"],
-  "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Principal parts"],
+  "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Write a real form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
              "Mixed grammar review"],
   "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]

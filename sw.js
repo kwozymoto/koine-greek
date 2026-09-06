@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v75';
+const VERSION = 'v76';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -81,6 +81,7 @@ const SHELL = [
   'js/greek.js',
   'js/audio.js',
   'js/gnt.js',
+  'js/keys.js',
   'js/write.js',
   'js/grid.js',
   'js/clause.js',
