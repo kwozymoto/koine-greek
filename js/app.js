@@ -842,7 +842,25 @@ function render(){
   const plan=todaysPlan(), pdone=planDone();
   const ticked=plan.filter(t=>pdone.includes(t.id)).length;
   const pct=plan.length?ticked/plan.length:0;
-  document.getElementById("ringArc").style.strokeDashoffset = 415-(415*pct);
+  const arc=document.getElementById("ringArc");
+  /* Full a moment ago and full now is not a moment; becoming full is. The
+     class is added only on the transition, so re-opening Today does not
+     replay a celebration the learner has already had. */
+  const wasFull=arc.dataset.full==="1", isFull=plan.length>0 && ticked>=plan.length;
+  arc.style.strokeDashoffset = 415-(415*pct);
+  arc.dataset.full = isFull?"1":"0";
+  const rEl=arc.closest(".ring");
+  if(rEl){
+    if(isFull && !wasFull){
+      /* remove, reflow, re-add, or a second completion in one session gets
+         no animation because the class was already there */
+      rEl.classList.remove("just-done"); void rEl.offsetWidth;
+      rEl.classList.add("just-done");
+    } else if(!isFull){
+      /* and take it off again, or tomorrow's empty ring is still green */
+      rEl.classList.remove("just-done");
+    }
+  }
   document.getElementById("ringNum").textContent = `${ticked}/${plan.length}`;
   const xtra=extraDone();
   document.getElementById("ringLbl").textContent =
@@ -962,12 +980,24 @@ function finish(){
   if(REVIEWED) line.push(`<b>${REVIEWED}</b> card${REVIEWED===1?"":"s"} reviewed`);
   if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
   const nx=nextTaskHtml();
-  b.innerHTML=`<div class="empty"><span class="gk">τέλος</span>
-    <p>Session complete.</p>
+  /* The ring shows what was actually measured. A vocabulary review is
+     self-graded, so there is no accuracy to draw and it counts cards
+     instead — claiming a score there would be inventing one. */
+  const scored=ASKED>0;
+  const pct=scored?RIGHT/ASKED:1;
+  const big=scored?`${RIGHT}/${ASKED}`:(REVIEWED||SESSION_XP?`${REVIEWED}`:"✓");
+  const small=scored?"right":(REVIEWED?`card${REVIEWED===1?"":"s"} reviewed`:"done");
+  const clean=scored&&RIGHT===ASKED;
+  b.innerHTML=`<div class="empty summary">
+    ${typeof ringHtml==="function"
+      ? ringHtml(pct,big,small,`sring${clean?" clean":""}`)
+      : ""}
+    <span class="gk">${clean?"εὖγε":"τέλος"}</span>
     ${line.length?`<p>${line.join(" · ")}</p>`:""}
     <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
     ${nx}
     <button class="btn ghost" onclick="go('today')">Back to today</button>`;
+  if(typeof ringFill==="function") ringFill(b);
 }
 
 /* The example verse with its word picked out of the line. A gloss tells you

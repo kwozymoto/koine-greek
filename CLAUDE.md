@@ -148,6 +148,16 @@ use `data-ref` and `data-claim` the same way.
 - Testing locally: the service worker caches hard. Unregister it and clear
   `caches` **before each round**, then reload twice, or you are testing stale
   JavaScript and will believe a fix failed when it did not.
+- **The preview server caches too, and it is the one you will not suspect.**
+  With the service worker gone and every asset re-fetched with
+  `cache:"reload"`, a `fetch()` still came back with the previous build —
+  the file on disk was right and the server was serving an old copy. It
+  cost four rounds of "the fix did not work". Compare the byte count on
+  disk against what the browser fetched; when they differ, stop the preview
+  server and start it again. Nothing short of that clears it.
+- `getComputedStyle(el).stroke` on an SVG element reports the presentation
+  attribute, not the rule that is actually painting. It said gold while the
+  screenshot showed green. Judge colour from the screenshot.
 
 ## 7. Lessons
 

@@ -609,3 +609,28 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   .fan-emblem,.fan-ring,.fan-spark,.fan-say{animation:fan-in .2s ease both}
   .fan-spark{display:none}
 }
+
+/* ---------- rings that fill ----------
+   The arc is mounted empty and the real value is set a frame later, so every
+   ring sweeps up to its number instead of appearing at it. */
+#ringArc,.ring-arc{
+  transition:stroke-dashoffset .9s cubic-bezier(.3,.85,.3,1), stroke .4s ease;
+}
+/* The plan finishing — the one ring event worth marking. Green, once. */
+.ring.just-done #ringArc,.ring.just-done .ring-arc{stroke:var(--green)}
+.ring.just-done{animation:ring-pop .7s cubic-bezier(.25,1.4,.4,1)}
+@keyframes ring-pop{0%{transform:scale(1)}38%{transform:scale(1.055)}100%{transform:scale(1)}}
+
+/* The session summary's ring is the same thing, smaller. */
+.summary{display:flex;flex-direction:column;align-items:center}
+.ring.sring{width:118px;height:118px;margin:2px auto 10px}
+.ring.sring svg{width:118px;height:118px}
+.ring.sring .big{font-size:1.42rem}
+.ring.sring .mid small{font-size:.7rem}
+.ring.sring.clean{--ring-tone:var(--green)}
+.summary .gk{font-size:1.5rem;color:var(--gold);display:block;margin-bottom:2px}
+
+@media (prefers-reduced-motion:reduce){
+  #ringArc,.ring-arc{transition:none}
+  .ring.just-done{animation:none}
+}

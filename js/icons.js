@@ -138,3 +138,52 @@ function badgeFanfare(badge) {
   /* long enough to read the line under it, short enough not to be in the way */
   setTimeout(go, 2600);
 }
+
+
+/* ---------------------------------------------------------------------
+   A ring that fills.
+
+   Today already had one and it jumped: strokeDashoffset was assigned, so
+   the circle simply was however full it was. The work that filled it had
+   just been done and the app showed the result rather than the change.
+
+   So the arc now has a transition and is mounted empty, which means every
+   ring in the app sweeps up to its value on the way in. That is the whole
+   trick — one CSS property and a frame's delay — and it is why the session
+   summary can reuse it without any code of its own.
+
+   The circumference is 415 because r=66, and that number was already in
+   app.js twice before this file existed. It is here once now. */
+const RING_LEN = 415;
+
+/* One ring. `tone` is a CSS colour, `big` the number in the middle. */
+function ringHtml(pct, big, small, cls) {
+  return `<div class="ring ${cls || ""}">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <circle cx="75" cy="75" r="66" fill="none" stroke="var(--line)" stroke-width="10"/>
+      <circle class="ring-arc" cx="75" cy="75" r="66" fill="none"
+        stroke="var(--ring-tone, var(--gold))" stroke-width="10" stroke-linecap="round"
+        stroke-dasharray="${RING_LEN}" stroke-dashoffset="${RING_LEN}"
+        data-fill="${Math.max(0, Math.min(1, pct))}"/>
+    </svg>
+    <div class="mid"><span class="big">${big}</span>
+      <small class="muted">${small}</small></div>
+  </div>`;
+}
+
+/* Set the real value, having first made the browser commit to the empty one.
+   Both values in one style recalculation and nothing moves, so the two have
+   to be separated — and reading a layout property is what separates them.
+
+   This began as a pair of nested requestAnimationFrames, which is the usual
+   advice and is wrong here: rAF does not run while the page is not being
+   painted, so a ring mounted in a tab that was hidden, or in a browser
+   throttling a background frame, simply stayed empty until something else
+   caused a repaint. Testing caught it because the pane was not painting.
+   Forcing the reflow does not care whether anyone is looking. */
+function ringFill(root) {
+  (root || document).querySelectorAll(".ring-arc[data-fill]").forEach(arc => {
+    void arc.getBoundingClientRect().width;          // commit the empty value
+    arc.style.strokeDashoffset = RING_LEN - RING_LEN * (+arc.dataset.fill);
+  });
+}
