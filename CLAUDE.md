@@ -172,6 +172,30 @@ vocabulary, not on reading. The prose is scaffolding.
 ## 8. What no checker can do
 
 None of them can check English. Whether a gloss is the right translation, or
-a grammatical explanation correct, needs a reader. That is the standing
-limitation, it is why lesson batches are reviewed before the next begins, and
-it is not a reason to relax anything above — it is the reason not to.
+a grammatical explanation correct, needs a reader.
+
+**"Needs a reader" does not mean "cannot be checked here."** Reading each
+batch back has caught a great deal that no tool would: that "nothing else in
+Greek ends in -σι(ν)" is false, that δώδεκα is not "almost always the
+disciples", that δίδωσιν was given as 11 in one section and 10 two sections
+later. Do that pass on every chapter, every time. It is not optional and it
+is not a formality.
+
+But be clear about what it cannot reach. Re-reading my own prose checks it
+against the same understanding that produced it, so **a confident
+misunderstanding survives the review that should catch it.** The corpus
+checkers escape that trap because they appeal to the text rather than to me;
+reading does not, for any claim about what the grammar *means*.
+
+So the division is not machine against human. It is:
+
+- **mechanically verifiable** — Greek forms, verse quotations, counts, cross
+  references, structure. Automate all of it; assume none of it.
+- **catchable by reading** — contradictions, overclaims, slips, a number that
+  disagrees with itself. Read every chapter back, aloud if possible.
+- **needs a source or a second reader** — whether a grammatical explanation
+  is correct. Open Black or Huffman, or ask Fraser.
+
+That third row is the standing limitation. It is why lesson batches are
+reviewed before the next begins, and it is not a reason to relax anything
+above — it is the reason not to.

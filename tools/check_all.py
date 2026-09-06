@@ -53,6 +53,14 @@ wrong digit silently changes the course. That is exactly the field that was
 nearly corrupted by being retyped from memory rather than lifted from the
 file, which is the fault this whole set exists to make impossible.
 
+check_claims re-derives every "X occurs N times" in a lesson. The chapters
+argue from counted facts, and a wrong count is the most dangerous thing this
+project can ship: precise, confident, plausible, and not something a reader
+can check. Sixteen were wrong when it was first written — all from one
+mistake, tallying a form on its raw spelling so that capitalised and
+enclitic-accented occurrences were silently dropped. Nothing but re-deriving
+them would have found it.
+
 check_coverage asks whether a chapter covers what Black's chapter covers.
 It exists because chapter 7 taught the first aorist and nothing about second
 aorists — 58% of the aorist active indicatives in the New Testament — and no
@@ -80,9 +88,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = ["check_vocab", "check_drills", "check_paradigms", "check_grids",
           "check_readings", "check_lessons", "check_forms", "check_lexicon",
           "check_syntax", "check_clauses", "check_frozen", "check_black",
-          "check_coverage", "check_links"]
+          "check_coverage", "check_claims", "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
-# straight through to it and leaves the other nine untouched.
+# straight through to it and leaves the rest untouched.
 ARGS = {"check_links": ["--offline"] if "--offline" in sys.argv else []}
 
 env = dict(os.environ, PYTHONIOENCODING="utf-8")
