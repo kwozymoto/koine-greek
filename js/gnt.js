@@ -118,9 +118,8 @@ async function gntBook(abbr) {
 let gntCur = null;                        // {abbr, ch, meta, verses}
 /* Accent-blind and breathing-blind: right for a search box, wrong for
    identifying a word \u2014 see gntKey. */
-const gntBare = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-const gntKey  = s => s.normalize("NFD").replace(/\u0300/g, "\u0301")
-                      .normalize("NFC").toLowerCase();
+const gntBare = gkLoose;      // js/greek.js's ladder, rungs 3 and 1
+const gntKey  = gkKey;
 
 /* Five headwords a lexicon cites one way and MorphGNT lemmatises another.
    The same five are in tools/check_vocab.py, tools/build_gloss_map.py and

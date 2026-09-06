@@ -2074,8 +2074,7 @@ function renderDrill(){
 /* Strip punctuation, then neutralise acute/grave/circumflex — Greek shifts an
    acute to a grave before a following word, so τόν and τὸν are the same form.
    Breathings and iota subscript are kept: they distinguish real words. */
-const norm=s=>s.replace(/[.,;·:!?()\u00b7\u0387\u2019'\u2018]/g,"").trim()
-  .normalize("NFD").replace(/[\u0300\u0301\u0342]/g,"").normalize("NFC").toLowerCase();
+const norm=gkPhrase;          // js/greek.js: the only file that says what that means
 function renderRead(){
   pushNav({screen:"read"});
   /* Reaching Saturday's chapter was Read → whole NT → scroll 27 books →
@@ -2237,39 +2236,16 @@ function clozeRead(id){
    WORD LOOKUP
    ============================================================ */
 /* Accent-insensitive so you can type what you half-remember. */
-const lkNorm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const lkNorm=gkLoose;         // rung 3 — right for a search box, wrong for marking
 
 /* Searching by Greek assumes a Greek keyboard, which a phone will not have
    by default. So every headword also gets a loose Latin key, and Latin
    queries are folded the same way — "agape", "logos", "christos" all land.
    The mapping is deliberately lossy: it exists to match typing, not to be a
    scholarly transliteration. */
-const LK_GK={"α":"a","β":"b","γ":"g","δ":"d","ε":"e","ζ":"z","η":"e","θ":"th",
- "ι":"i","κ":"k","λ":"l","μ":"m","ν":"n","ξ":"x","ο":"o","π":"p","ρ":"r",
- "σ":"s","ς":"s","τ":"t","υ":"u","φ":"f","χ":"kh","ψ":"ps","ω":"o"};
-
-function lkLatin(greek){
-  const d=greek.normalize("NFD");
-  let out="";
-  for(let k=0;k<d.length;k++){
-    const ch=d[k];
-    if(ch==="\u0314"){ out="h"+out; continue; }       // rough breathing -> leading h
-    if(/[\u0300-\u036f]/.test(ch)) continue;          // other marks: ignore
-    out += LK_GK[ch.toLowerCase()] ?? (/[a-z]/i.test(ch) ? ch.toLowerCase() : "");
-  }
-  return out;
-}
-
-/* Fold a Latin query into the same shape: ph=f, ch=kh, c=k, y=u, v=b. */
-function lkFoldLatin(q){
-  return q.toLowerCase()
-    .replace(/[\u0304\u0301\u0300]/g,"")
-    .replace(/ph/g,"f").replace(/ch/g,"kh").replace(/ck/g,"k")
-    .replace(/c/g,"k").replace(/q/g,"k").replace(/j/g,"i")
-    .replace(/y/g,"u").replace(/v/g,"b")
-    .replace(/[ēê]/g,"e").replace(/[ōô]/g,"o");
-}
-
+/* LK_GK, lkLatin and lkFoldLatin live in js/greek.js: they are the same
+   concern as the ladder, and keeping them there lets check_greek_norm
+   say that greek.js is the ONLY file that touches NFD. */
 /* Built once: the Latin key for each headword, and for each of its parts
    (so "hemera" finds ἡμέρα even though the entry reads "ἡμέρα, -ας, ἡ"). */
 const LK_LATIN=VOCAB.map(v=>lkFoldLatin(lkLatin(v[0].split(",")[0].trim())));

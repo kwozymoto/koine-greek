@@ -277,7 +277,7 @@ function gridFill(g) {
          corpus attests get a reference — most of λύω's paradigm is a
          teaching fiction the New Testament never uses, and saying so by
          silence is better than inventing one. */
-      const bare = x => x.replace(/[^Ͱ-Ͽἀ-῿]/g, "");
+      const bare = gkOnly;
       const sightings = [...missed].slice(0, 3).map(f => {
         const hit = typeof FORMS !== "undefined"
           && FORMS.find(r => bare(r[0]) === bare(f));

@@ -50,6 +50,31 @@ GK = "Ͱ-Ͽἀ-῿"
 bare = lambda s: re.sub("[^" + GK + "]", "", s)
 
 
+# The other two rungs of the ladder js/greek.js defines. norm() above is rung
+# 1 and bare() is the letters-only filter; these are rungs 2 and 3. They exist
+# here so a checker can ask the same question the app asks, and
+# tools/check_greek_norm.py proves the two implementations agree — which
+# matters because the checkers verify content with these and the app grades a
+# learner's typing with the JavaScript.
+_ACCENTS = "̀́͂"          # grave, acute, circumflex
+
+
+def plain(x):
+    """Rung 2. The accent is not the point; breathing, iota subscript and
+       diaeresis still are — ὁ against ὅ, αὐταί against αὗται."""
+    d = unicodedata.normalize("NFD", x)
+    d = "".join(c for c in d if c not in _ACCENTS)
+    return unicodedata.normalize("NFC", d).lower()
+
+
+def loose(x):
+    """Rung 3. Letters only, every combining mark gone. Right for a search
+       box; it cannot tell εἰς from εἷς, so never mark an answer with it."""
+    d = unicodedata.normalize("NFD", x)
+    d = "".join(c for c in d if not (0x300 <= ord(c) <= 0x36f))
+    return unicodedata.normalize("NFC", d).lower()
+
+
 # Every way a book gets written in a lesson body. Built on the manifest's own
 # two forms — SBL abbreviation and full title — plus the ones a person
 # actually types. A reference nobody can resolve is a reference nobody can
