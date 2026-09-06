@@ -176,7 +176,10 @@ function checkBadges(){
   if(knownCount()>=150) grant("w150");
   if(S.lessons.length>=8) grant("l8");
   if(S.lessons.length>=16) grant("l16");
-  if(S.lessons.length>=26) grant("l26");
+  // Counted against LESSONS, not a literal: the chapter count changed once
+  // when participles became two chapters, and will again for second-year
+  // material. The badge id stays l26 because it is an opaque key in S.badges.
+  if(S.lessons.length>=LESSONS.length) grant("l26");
   if(S.lessons.includes(1)) grant("alpha");
 }
 /* A PWA with no server cannot send a notification, so the icon badge is the
@@ -2485,7 +2488,7 @@ function renderProgress(){
       <h3 style="margin-top:0">Studied Greek before?</h3>
       <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
       <div class="setrow"><span>Mark chapters done up to</span>
-        <select id="setPlace"><option value="0">—</option>${Array.from({length:26},(_,k)=>`<option value="${k+1}">${k+1}</option>`).join("")}</select></div>
+        <select id="setPlace"><option value="0">—</option>${LESSONS.map(l=>`<option value="${l.id}">${l.id}</option>`).join("")}</select></div>
       <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
     </div>
     <h2>Your data</h2>

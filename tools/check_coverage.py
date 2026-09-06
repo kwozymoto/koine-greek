@@ -26,6 +26,8 @@ The books are outside this repository and always will be. If they are not on
 the machine, this says so and passes, like tools/check_black.py.
 """
 import glob, io, json, os, re, subprocess, sys, unicodedata, zipfile
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from blackmap import app_chapters, describe              # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -169,13 +171,19 @@ is_thin = lambda cid, head: any(c == cid and head.startswith(pre) for c, pre in 
 black = black_sections()
 unexamined, pending, thin_seen, checked, skipped = [], [], [], 0, 0
 for cid in sorted(black):
-    l = LESSONS.get(cid)
-    if not l:
+    # One of Black's chapters may be covered by more than one of the app's:
+    # his chapter 20 is the app's 20 and 21. A section counts as covered if
+    # EITHER half has it, so the Greek of all of them is pooled.
+    ours = [LESSONS[a] for a in app_chapters(cid) if a in LESSONS]
+    if not ours:
         continue
-    app = {norm(w) for w in re.findall(
-        "[%s]{3,}" % GK,
-        re.sub("<[^>]+>", " ", l["body"]) + " " +
-        json.dumps(l["quiz"], ensure_ascii=False))}
+    l = ours[0]
+    app = set()
+    for one in ours:
+        app |= {norm(w) for w in re.findall(
+            "[%s]{3,}" % GK,
+            re.sub("<[^>]+>", " ", one["body"]) + " " +
+            json.dumps(one["quiz"], ensure_ascii=False))}
     for head, words, forms in black[cid]:
         why = reviewed(cid, head)
         if why:
@@ -191,10 +199,12 @@ for cid in sorted(black):
             continue
         checked += 1
         if not (forms & app):
-            (unexamined if cid in DONE else pending).append(
+            (unexamined if all(a in DONE for a in app_chapters(cid)) else pending).append(
                 "ch%-3d %-44s %4d words, %d forms, none in the app"
                 % (cid, head[:44], words, len(forms)))
 
+for line in describe():
+    print("chapter mapping: %s" % line)
 print("Black sections compared: %d   (%d judged already or with no Greek to compare)"
       % (checked, skipped))
 print()

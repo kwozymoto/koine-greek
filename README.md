@@ -6,8 +6,10 @@ JavaScript; no build step, no framework, no server. It runs from
 
 Live at **https://kwozymoto.github.io/koine-greek/**
 
-It follows David Alan Black, *Learn to Read New Testament Greek* (3rd ed.) —
-26 chapters, each with its own vocabulary and a short test — and carries an
+It follows the progression of David Alan Black, *Learn to Read New Testament
+Greek* (3rd ed.) across 27 chapters of its own — his 26, with participles
+split in two because they are a quarter of every verb form in the book — and
+carries an
 818-word deck on a spaced-repetition schedule, 28 reference tables — 20 of
 which are also playable as fill-in-the-blank paradigm rounds — 12 graded
 passages, 630 sentence questions generated from the text, and the whole Greek

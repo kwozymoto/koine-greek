@@ -36,6 +36,8 @@ Two asymmetries, both deliberate:
     that reason.
 """
 import glob, io, json, os, re, subprocess, sys, unicodedata, zipfile
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from blackmap import black_chapter                       # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -136,7 +138,9 @@ if not black:
 missing, extra, checked = [], [], 0
 for l in LESSONS:
     app = {head(i) for i in (l.get("v") or [])}
-    bl = {norm(w) for w in black.get(l["id"], [])}
+    # app chapter -> Black chapter; the two stopped being the same number
+    # when chapter 20 became two chapters.
+    bl = {norm(w) for w in black.get(black_chapter(l["id"]), [])}
     if not app:
         continue
     if not bl:

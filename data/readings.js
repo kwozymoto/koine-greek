@@ -882,7 +882,7 @@ const BADGES=[
 {id:"alpha",e:"Α",t:"Alphabet",d:"Pass the alphabet test"},
 {id:"l8",e:"🏛️",t:"Eight chapters",d:"Finish 8 chapters"},
 {id:"l16",e:"🔖",t:"Sixteen chapters",d:"Finish 16 chapters"},
-{id:"l26",e:"🎓",t:"All twenty-six",d:"Finish every chapter"},
+{id:"l26",e:"🎓",t:"Every chapter",d:"Finish every chapter"},
 {id:"read",e:"🔍",t:"First reading",d:"Open a passage"}
 ];
 

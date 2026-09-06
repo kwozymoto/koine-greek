@@ -1,5 +1,8 @@
-/* Lessons — 26 chapters written for this app, following the progression
+/* Lessons — 27 chapters written for this app, following the progression
    of David Alan Black, Learn to Read New Testament Greek (3rd ed.).
+   His 26, with participles split across two chapters: they are a quarter
+   of every verb form in the New Testament. tools/blackmap.py holds the
+   correspondence, and both checkers that need it read it from there.
    The chapters are ours; the sequence and the vocabulary lists are his,
    and docs/lesson-style.md is the standard they are written to. Each
    also carries an optional video lecture from dailydoseofgreek.com
@@ -76,7 +79,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <p>And the mark that looks like a semicolon is a <b>question mark</b>. This catches everyone at least once:</p>
 <p class="v" data-ref="Matthew 11:3">Σὺ εἶ ὁ ἐρχόμενος ἢ ἕτερον προσδοκῶμεν;</p>
 <p>"Are you the one who is to come, or should we expect another?" John's disciples are asking a question, and the only thing on the page that tells you so is that final mark.</p>
-<p><b>The iota subscript.</b> A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It is not pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 23.</p>
+<p><b>The iota subscript.</b> A small iota written under a long vowel: <span class="gk">ᾳ, ῃ, ῳ</span>. It is not pronounced, but it usually signals the <b>dative case</b> — about five times in six. The main exception is subjunctive endings, which you meet in chapter 24.</p>
 <p>It is a silent letter and a loud grammatical clue, and it is easy to miss when you are reading quickly. Train your eye for it now.</p>
 <h3>What to watch for</h3>
 <p>The letters that will cost you time are the ones that look like English letters and are not: <span class="gk">ρ</span> is <i>r</i>, not <i>p</i>. <span class="gk">η</span> is a long <i>e</i>, not <i>n</i>. <span class="gk">υ</span> is <i>u</i>, not <i>v</i>. <span class="gk">χ</span> is the <i>ch</i> of loch, not <i>x</i>. <span class="gk">ω</span> is a long <i>o</i>, not <i>w</i>.</p>
@@ -95,7 +98,7 @@ quiz:[
 {q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Dative","Nominative","Genitive","Accusative"],a:0,w:"Dative, about five times in six. It is a silent letter and a loud grammatical clue.",sec:5},
 {q:"Which of these is most likely to be misread by an English speaker?",o:["β as b","δ as d","ρ as p","κ as k"],a:2,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:5}]},
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
-body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 26 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
+body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 27 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
 <p>Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required.</p>
 <h3>Aspect comes first</h3>
 <p>This is the single most important thing in the chapter, and it is the thing most likely to have been taught to you wrongly.</p>
@@ -109,8 +112,8 @@ body:`<p>Before learning any paradigm, get the shape of the whole system. It is 
 <p>Black calls the three aspects imperfective, <i>aoristic</i> and <i>perfective</i> — so in his usage "perfective" means the perfect, not the aorist. Most modern grammars use perfective for the aorist, which is what this course does.</p>
 <p>Neither is wrong; they are simply different conventions, and you will meet both. When you read Black, translate.</p>
 <h3>Time is only fixed in the indicative</h3>
-<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive is not past at all: <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 21 comes back to it.</p>
-<p>It is why chapter 21 will call the infinitive the easiest place in the verb to see aspect: there is no time there to distract you.</p>
+<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive is not past at all: <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 22 comes back to it.</p>
+<p>It is why chapter 22 will call the infinitive the easiest place in the verb to see aspect: there is no time there to distract you.</p>
 <h3>Mood: how the speaker relates it to reality</h3>
 <p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p>
 <p>The <b>indicative</b> affirms. It presents the action as fact: <i>he has mercy</i>. Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it.</p>
@@ -1176,7 +1179,7 @@ body:`<p>A group of very common words decline in the third declension for their 
 <p class="v" data-ref="Matthew 8:34">καὶ ἰδοὺ πᾶσα ἡ πόλις ἐξῆλθεν εἰς ὑπάντησιν τῷ Ἰησοῦ</p>
 <p>"And behold, the whole city went out to meet Jesus." Article present, <span class="gk">πᾶσα</span> outside it — so "the whole", not "every".</p>
 <p class="v" data-ref="John 3:16">ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται</p>
-<p>"So that everyone who believes in him should not perish." <span class="gk">πᾶς</span> with an articular participle — "everyone who…" — is one of the commonest constructions in John, and you will meet the participle half of it in chapter 20.</p>
+<p>"So that everyone who believes in him should not perish." <span class="gk">πᾶς</span> with an articular participle — "everyone who…" — is one of the commonest constructions in John, and you will meet the participle half of it in chapter 21.</p>
 <h3>εἷς, οὐδείς and μηδείς</h3>
 <p><span class="gk">εἷς, μία, ἕν</span> is "one" (342 occurrences), and it is 3-1-3 like <span class="gk">πᾶς</span>: <span class="gk">ἑνός, ἑνί, ἕνα</span> in the masculine.</p>
 <p>Two words are built straight onto it. <span class="gk">οὐδείς, οὐδεμία, οὐδέν</span> is <span class="gk">οὐδέ</span> + <span class="gk">εἷς</span>, "not even one" — so, "no one", "nothing" (232). <span class="gk">μηδείς</span> is the same word with <span class="gk">μή</span> in front, used where <span class="gk">μή</span> would be the negative — outside the indicative (90).</p>
@@ -1293,9 +1296,10 @@ quiz:[
 {q:"A lexicon lists ἀγαπάω, a form that never appears in the New Testament. Why?",o:["It is the uncontracted form, used as the verb's name so the type is visible","It is an error","It occurs only in the Septuagint","It is a variant reading"],a:0,w:"The citation form shows you the stem vowel, which is the one thing the contracted forms hide. ἀγαπῶ on the page tells you nothing about the type.",sec:7}
 ]},
 
-{id:20,t:"Participles (verbal adjectives)",s:"The workhorse of Greek prose",
+{id:20,t:"Participles: the forms",s:"One verb form in four, and how to spot them",
 body:`<p>The participle is the workhorse of Greek prose, and it is where most readers of Greek finally get stuck. It is worth knowing what you are taking on.</p>
 <p>There are <b>6,640 participles in the New Testament — 24% of its verb forms, one in four.</b> That is more than the infinitives, subjunctives, imperatives and optatives put together. Greek writers build sentences out of participles the way English builds them out of subordinate clauses, and there is no reading the New Testament around them.</p>
+<p>So they get two chapters. This one is about recognising a participle when you see one. The next is about working out what it is doing.</p>
 <h3>A verbal adjective</h3>
 <p>A participle is an adjective made out of a verb, and it keeps the properties of both.</p>
 <p><b>From the verb</b> it takes tense and voice, and it can take an object.<br>
@@ -1303,17 +1307,17 @@ body:`<p>The participle is the workhorse of Greek prose, and it is where most re
 <p>Five pieces of information in one word, which is why a participle can do the work of a whole English clause. <span class="gk">ἀκούσας</span> means "having heard" — aorist, active, nominative, singular, masculine — and whoever it agrees with is the one who heard.</p>
 <p>English has participles too, but only two, and fills the gaps with helping verbs: <i>loving</i>, <i>being loved</i>, <i>having loved</i>. Greek has a full set and uses them constantly.</p>
 <h3>Tense is aspect, not time</h3>
-<p>This is the single most important thing in the chapter, and it follows from chapter 16: <b>the augment marks time, and a participle has no augment.</b></p>
+<p>This is the most important thing in the chapter, and it follows from chapter 16: <b>the augment marks time, and a participle has no augment.</b></p>
 <p>So a participle's tense gives you <b>aspect</b> — how the writer is viewing the action — and time only in relation to the main verb.</p>
 <p><b>Present participle:</b> imperfective. Usually the action is going on at the same time as the main verb.<br>
 <b>Aorist participle:</b> aoristic. Usually the action happened before the main verb.<br>
 <b>Perfect participle:</b> a standing result.</p>
-<p>"Usually" is doing real work there. The relation is a tendency, not a rule, and context outranks it every time. What is <i>not</i> a tendency is the main point: an aorist participle does not mean "past", it means the action is viewed as a whole.</p>
-<p>The future participle exists and can be ignored — twelve in the New Testament.</p>
+<p>"Usually" is doing real work there: the relation is a tendency, not a rule. What is <i>not</i> a tendency is that an aorist participle does not mean "past" — it means the action is viewed as a whole.</p>
+<p>The future participle exists and can be ignored: twelve in the New Testament.</p>
 <h3>The present participle</h3>
 <p>Two shapes to know, and you have met the endings already.</p>
 <p><b>Active:</b> <span class="gk">λύων, λύουσα, λῦον</span> — genitive <span class="gk">λύοντος</span>. It is <b>3-1-3</b>, the pattern from chapter 18: third declension masculine and neuter on the stem <span class="gk">λυοντ-</span>, first declension feminine.</p>
-<p><b>Middle and passive:</b> <span class="gk">λυόμενος, λυομένη, λυόμενον</span> — an ordinary 2-1-2 adjective, and the easiest forms in the chapter. Anything ending <span class="gk">-μενος</span> is a participle.</p>
+<p><b>Middle and passive:</b> <span class="gk">λυόμενος, λυομένη, λυόμενον</span> — an ordinary 2-1-2 adjective, and the easiest forms in the chapter.</p>
 <p>The two commonest are <span class="gk">λέγων</span> (178) and <span class="gk">λέγοντες</span> (150), which between them introduce most of the direct speech in the Gospels.</p>
 <p class="v" data-ref="Mark 1:14">ἦλθεν ὁ Ἰησοῦς εἰς τὴν Γαλιλαίαν κηρύσσων τὸ εὐαγγέλιον τοῦ θεοῦ</p>
 <p>"Jesus came into Galilee preaching the gospel of God." <span class="gk">κηρύσσων</span> is present, so the preaching runs alongside the coming — and it takes an object, <span class="gk">τὸ εὐαγγέλιον</span>, exactly as a verb would.</p>
@@ -1324,57 +1328,86 @@ body:`<p>The participle is the workhorse of Greek prose, and it is where most re
 <p class="v" data-ref="Matthew 2:10">ἰδόντες δὲ τὸν ἀστέρα ἐχάρησαν χαρὰν μεγάλην σφόδρα</p>
 <p>"And when they saw the star they rejoiced exceedingly with great joy." <span class="gk">ἰδόντες</span> is aorist, so the seeing came first, which is why English wants "when they saw" rather than "seeing".</p>
 <p>The commonest aorist participle in the book is <span class="gk">ἀποκριθείς</span>, 94 occurrences: aorist <i>passive</i> in form, from a deponent verb, and it means "answering".</p>
-<h3>The perfect participle</h3>
-<p>Less common than the other two and easy to spot, because it carries the reduplication from chapter 10.</p>
+<h3>The perfect participle, and the shapes to know on sight</h3>
+<p>The perfect is less common than the other two and easy to spot, because it carries the reduplication from chapter 10.</p>
 <p><b>Active:</b> <span class="gk">λελυκώς, λελυκυῖα, λελυκός</span> — genitive <span class="gk">λελυκότος</span>.<br>
-<b>Middle and passive:</b> <span class="gk">λελυμένος, λελυμένη, λελυμένον</span> — the <span class="gk">-μενος</span> shape again, with a doubled first syllable.</p>
+<b>Middle and passive:</b> <span class="gk">λελυμένος, λελυμένη, λελυμένον</span>.</p>
 <p>The middle and passive is much the commoner: 412 occurrences against 225, and <span class="gk">γεγραμμένον</span>, "written", is the one you meet most.</p>
 <p>One form deserves naming on its own: <span class="gk">ὤν, οὖσα, ὄν</span>, the participle of <span class="gk">εἰμί</span>, "being", genitive <span class="gk">ὄντος</span>. It is 3-1-3 like the rest.</p>
-<h3>Three ways to read one</h3>
-<p>Everything above was form. This is what you do with it, and there are three cases.</p>
-<p><b>1. Attributive</b> — with the article, modifying a noun. Translate with a relative clause.<br>
-<span class="gk">ὁ ἄνθρωπος ὁ λέγων ταῦτα</span>, "the man who is saying these things".</p>
-<p><b>2. Substantival</b> — with the article and no noun. The participle <i>is</i> the noun.</p>
-<p class="v" data-ref="John 3:16">πᾶς ὁ πιστεύων εἰς αὐτὸν</p>
-<p>"Everyone who believes in him." Article plus participle and no noun anywhere — the participle carries it, and this is one of the commonest constructions in the New Testament.</p>
-<p><b>3. Adverbial</b> — no article, describing the circumstances of the main verb. Translate with <i>when</i>, <i>after</i>, <i>because</i>, <i>while</i>, or <i>by</i>, and let the context choose.</p>
-<p>The counting settles which matters most: 1,433 participles carry an article, while <b>3,918 are anarthrous nominatives</b> — the adverbial workhorse. So the third use is much the commonest, and it is the one with no signposts.</p>
-<p><b>The test is the article.</b> Article present, it is attributive or substantival. Article absent, it is adverbial.</p>
-<h3>The genitive absolute</h3>
-<p>One construction worth learning by name, because it is unmistakable once you have seen it.</p>
-<p>When a participle has a subject of its own — someone other than the subject of the main verb — the participle and that subject both go into the <b>genitive</b>, and the phrase stands loose from the sentence. Hence "absolute", from the Latin for "loosed".</p>
-<p class="v" data-ref="Matthew 2:1">Τοῦ δὲ Ἰησοῦ γεννηθέντος ἐν Βηθλέεμ τῆς Ἰουδαίας</p>
-<p>"Now when Jesus had been born in Bethlehem of Judea…" — and the main clause that follows is about the magi, not about Jesus. Two different subjects, so the participle goes genitive.</p>
-<p class="v" data-ref="Matthew 2:13">Ἀναχωρησάντων δὲ αὐτῶν ἰδοὺ ἄγγελος κυρίου φαίνεται</p>
-<p>"And when they had departed, behold, an angel of the Lord appears." <span class="gk">αὐτῶν</span> is the subject of the participle; the angel is the subject of the verb.</p>
-<p>There are 735 genitive participles in the New Testament, and this is the main reason a participle turns up in that case without an article. When you meet one, ask who its subject is — it will not be the subject of the sentence.</p>
-<h3>What to watch for</h3>
-<p><b>Aorist does not mean past.</b> It means the action is viewed as a whole. The relation to the main verb is a tendency, not a rule.</p>
-<p><b>Find the article first.</b> It divides the three uses, and it is the fastest question you can ask.</p>
-<p><b>Check the agreement.</b> A participle agrees in gender, number and case with whatever it belongs to, and that agreement is often the only thing telling you which noun it goes with.</p>
-<p><b><span class="gk">-μενος</span> is very nearly a guarantee</b> — 444 of the 446 words that end in it are participles. The two that are not are <span class="gk">λιμένος</span> and <span class="gk">ἀρχιποίμενος</span>, genitives of nouns in <span class="gk">-μην</span>, which is a chapter 17 pattern.</p>
-<p><b><span class="gk">-οντ-</span> is not a guarantee at all.</b> It is in <span class="gk">ἄρχοντος</span>, <span class="gk">ὀδόντος</span>, <span class="gk">λέοντος</span> and in every numeral from <span class="gk">τριάκοντα</span> upward. Take it as a prompt to look, not as an answer.</p>
-<p>And do not be discouraged. Participles are the last genuinely hard thing in the morphology, and the only way through is meeting a great many — which, at one verb form in four, you will.</p>`,
+<p>So, the endings worth carrying in your head. <span class="gk">-μενος</span> is very nearly a guarantee: 444 of the 446 words ending that way are participles, the exceptions being <span class="gk">λιμένος</span> and <span class="gk">ἀρχιποίμενος</span>. <span class="gk">-οντ-</span>, <span class="gk">-σαντ-</span> and <span class="gk">-θεντ-</span> are strong hints and not guarantees — <span class="gk">-οντ-</span> is also in <span class="gk">ἄρχοντος</span>, <span class="gk">ὀδόντος</span> and every numeral from <span class="gk">τριάκοντα</span> up.</p>
+<p>Recognising the form is half the work. The other half is the next chapter.</p>`,
 v:[],
 vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
 quiz:[
-{q:"How many participles are there in the New Testament?",o:["About 1,500","6,640 — 24% of all verb forms","Around 300","Fewer than the infinitives"],a:1,w:"One verb form in four, and more than the infinitives, subjunctives, imperatives and optatives put together. Greek builds sentences out of participles the way English builds them out of subordinate clauses.",sec:0},
-{q:"A participle carries five pieces of information. Which set comes from its adjective side?",o:["Gender, number and case","Tense, voice and mood","Person, number and voice","Tense and aspect only"],a:0,w:"Tense and voice come from the verb, along with the ability to take an object; gender, number and case from the adjective. That is why one word can do the work of an English clause.",sec:1},
-{q:"Why does a participle's tense not tell you when something happened?",o:["Greek participles have no tense","The augment marks time, and a participle has no augment","Participles are always present","Time is marked by the case"],a:1,w:"So the tense gives aspect, and time only relative to the main verb. This follows straight from chapter 16.",sec:2},
-{q:"An aorist participle usually describes action that is:",o:["Future","Simultaneous with the main verb","Continuing into the present","Prior to the main verb, and viewed as a whole"],a:3,w:"Usually — the relation is a tendency and context outranks it. What is not a tendency is that aorist means aspect, not past time.",sec:2},
-{q:"Anything ending -μενος is:",o:["A noun","An adjective","A middle or passive participle","An infinitive"],a:2,w:"λυόμενος, λελυμένος, ἐρχόμενος. An ordinary 2-1-2 adjective and the easiest forms in the chapter. 444 of the 446 words ending that way are participles; the two that are not, λιμένος and ἀρχιποίμενος, are genitives of -μην nouns.",sec:3},
-{q:"In Mark 1:14, κηρύσσων takes the object τὸ εὐαγγέλιον. What does that show?",o:["It is really a noun","It is in the accusative","A participle keeps the verb's ability to take an object","The verb is passive"],a:2,w:"'Jesus came into Galilee preaching the gospel of God.' Present tense, so the preaching runs alongside the coming.",sec:3},
-{q:"ἰδών, ἐλθών and λαβών are aorist participles with no σα. Why?",o:["They are presents","The σα was lost","They are perfects","They are second aorists — the second aorist stem with present participle endings"],a:3,w:"Exactly the arrangement chapter 7 described for the indicative: a different way of building the same tense, on a changed stem.",sec:4},
-{q:"ἀποκριθείς is the commonest aorist participle in the New Testament, at 94 occurrences. What does it mean?",o:["Having been answered","About to answer","Answering","Having been asked"],a:2,w:"Aorist passive in form, from a deponent verb, and active in sense — the chapter 15 warning arriving in participle form.",sec:4},
-{q:"How do you spot a perfect participle?",o:["By the augment","By the reduplication — a doubled first syllable","By the σα","By the article"],a:1,w:"λελυκώς, λελυμένος, γεγραμμένον. The middle/passive is much the commoner of the two: 412 occurrences against 225.",sec:5},
-{q:"ὢν, οὖσα, ὄν is the participle of which verb?",o:["εἰμί","ἔρχομαι","ὁράω","οἶδα"],a:0,w:"'Being', genitive ὄντος, and 3-1-3 like the rest. Worth naming on its own because it turns up everywhere and looks like nothing else.",sec:5},
-{q:"What single question separates the three uses of a participle?",o:["Is there an article?","What tense is it?","Is it plural?","What voice is it?"],a:0,w:"Article present: attributive or substantival. Article absent: adverbial. 1,433 participles carry an article; 3,918 are anarthrous nominatives, so the adverbial use is much the commonest.",sec:6},
-{q:"πᾶς ὁ πιστεύων εἰς αὐτόν has an article and no noun. What is the participle doing?",o:["Modifying πᾶς","Describing the circumstances","Nothing; it is adverbial","Standing as a noun in its own right — 'everyone who believes'"],a:3,w:"The substantival use. Article plus participle with no noun anywhere, and the participle carries the whole phrase. One of the most common constructions in the New Testament.",sec:6},
-{q:"In a genitive absolute, why are the participle and its subject in the genitive?",o:["Because they are possessive","Because the verb takes a genitive","Because it follows a preposition","Because the participle's subject is someone other than the subject of the main verb"],a:3,w:"The phrase stands loose from the sentence — 'absolute', from the Latin for 'loosed'. In Matthew 2:1 Jesus is born and the magi arrive: two subjects, so the participle goes genitive.",sec:7},
-{q:"When you meet a participle, what is worth checking after the article?",o:["Its agreement — gender, number and case","Its accent","Whether it is compound","Its length"],a:0,w:"The agreement is often the only thing telling you which noun a participle belongs to, and in a genitive absolute the answer is: none of them in the main clause.",sec:8}
+{q:"How many participles are there in the New Testament?",o:["About 1,500","Around 300","6,640 — 24% of all verb forms","Fewer than the infinitives"],a:2,w:"One verb form in four, and more than the infinitives, subjunctives, imperatives and optatives put together. Greek builds sentences out of participles the way English builds them out of subordinate clauses.",sec:0},
+{q:"A participle carries five pieces of information. Which set comes from its adjective side?",o:["Tense, voice and mood","Person, number and voice","Tense and aspect only","Gender, number and case"],a:3,w:"Tense and voice come from the verb, along with the ability to take an object; gender, number and case from the adjective. That is why one word can do the work of an English clause.",sec:1},
+{q:"Why does a participle's tense not tell you when something happened?",o:["The augment marks time, and a participle has no augment","Greek participles have no tense","Participles are always present","Time is marked by the case"],a:0,w:"So the tense gives aspect, and time only relative to the main verb. This follows straight from chapter 16.",sec:2},
+{q:"An aorist participle usually describes action that is:",o:["Future","Simultaneous with the main verb","Prior to the main verb, and viewed as a whole","Continuing into the present"],a:2,w:"Usually — the relation is a tendency and context outranks it. What is not a tendency is that aorist means aspect, not past time.",sec:2},
+{q:"Anything ending -μενος is:",o:["A noun","An infinitive","An adjective","Almost certainly a middle or passive participle"],a:3,w:"444 of the 446 words ending that way are participles. The two that are not — λιμένος and ἀρχιποίμενος — are genitives of -μην nouns, which is a chapter 17 pattern.",sec:5},
+{q:"In Mark 1:14, κηρύσσων takes the object τὸ εὐαγγέλιον. What does that show?",o:["It is really a noun","A participle keeps the verb's ability to take an object","It is in the accusative","The verb is passive"],a:1,w:"'Jesus came into Galilee preaching the gospel of God.' Present tense, so the preaching runs alongside the coming.",sec:3},
+{q:"ἰδών, ἐλθών and λαβών are aorist participles with no σα. Why?",o:["They are presents","The σα was lost","They are second aorists — the second aorist stem with present participle endings","They are perfects"],a:2,w:"Exactly the arrangement chapter 7 described for the indicative: a different way of building the same tense, on a changed stem.",sec:4},
+{q:"ἀποκριθείς is the commonest aorist participle in the New Testament, at 94 occurrences. What does it mean?",o:["Having been answered","Answering","About to answer","Having been asked"],a:1,w:"Aorist passive in form, from a deponent verb, and active in sense — the chapter 15 warning arriving in participle form.",sec:4},
+{q:"How do you spot a perfect participle?",o:["By the augment","By the σα","By the article","By the reduplication — a doubled first syllable"],a:3,w:"λελυκώς, λελυμένος, γεγραμμένον. The middle/passive is much the commoner of the two: 412 occurrences against 225.",sec:5},
+{q:"ὢν, οὖσα, ὄν is the participle of which verb?",o:["ἔρχομαι","ὁράω","οἶδα","εἰμί"],a:3,w:"'Being', genitive ὄντος, and 3-1-3 like the rest. Worth naming on its own because it turns up everywhere and looks like nothing else.",sec:5},
+{q:"Is -οντ- a reliable sign of a participle?",o:["Yes, always","No — it is also in ἄρχοντος, ὀδόντος and every numeral from τριάκοντα up","Only in the Gospels","Only in the plural"],a:1,w:"A strong hint, not a guarantee. -μενος is very nearly one; -οντ-, -σαντ- and -θεντ- are worth a look rather than an answer.",sec:5}
 ]},
 
-{id:21,t:"Infinitives (verbal nouns)",s:"Verbal nouns and their many uses",
+{id:21,t:"Participles: the three uses",s:"The article decides, and the genitive absolute",
+body:`<p>You can now recognise a participle. This chapter is about the harder half: working out what one is doing in the sentence in front of you.</p>
+<p>There are three answers, and <b>one question separates them</b>. Ask it first, every time, before anything else about the form:</p>
+<p><b>Is there an article?</b></p>
+<p>Article present, it is behaving like an adjective or a noun. Article absent, it is describing the circumstances of the main verb. The counting says which matters most: 1,433 participles carry an article, and <b>3,918 are anarthrous nominatives</b> — so the third use is much the commonest, and the one with no signposts.</p>
+<h3>With the article, beside a noun</h3>
+<p>The <b>attributive</b> use. The participle modifies the noun, exactly as an adjective would, and it agrees with it in gender, number and case.</p>
+<p class="v" data-ref="Matthew 7:13">εὐρύχωρος ἡ ὁδὸς ἡ ἀπάγουσα εἰς τὴν ἀπώλειαν</p>
+<p>"Broad is the road that leads to destruction." Note the shape: article, noun, article, participle — <span class="gk">ἡ ὁδὸς ἡ ἀπάγουσα</span>. That repeated article is how Greek usually marks an attributive participle, and it is the construction chapter 6 gave you for adjectives.</p>
+<p><b>Translate it with a relative clause.</b> Not "the leading road" but "the road that leads": English participles will not carry the weight and a relative clause always will.</p>
+<p class="v" data-ref="Matthew 4:16">ὁ λαὸς ὁ καθήμενος ἐν σκοτίᾳ φῶς εἶδεν</p>
+<p>"The people who sat in darkness saw a light." Same shape, and again a relative clause is the natural English.</p>
+<h3>With the article and no noun</h3>
+<p>The <b>substantival</b> use. Give a participle an article and no noun to modify and it becomes the noun itself, exactly as an adjective does in chapter 6, where <span class="gk">οἱ πραεῖς</span> is "the meek".</p>
+<p class="v" data-ref="John 3:36">ὁ πιστεύων εἰς τὸν υἱὸν ἔχει ζωὴν αἰώνιον· ὁ δὲ ἀπειθῶν τῷ υἱῷ οὐκ ὄψεται ζωήν</p>
+<p>"The one who believes in the Son has eternal life; the one who disobeys the Son will not see life." Two of them set against each other, with no noun anywhere in either half — the whole verse is carried on them.</p>
+<p>The gender tells you what kind of thing is meant, as it did with adjectives: masculine for a person, neuter for a thing or a quality.</p>
+<p class="v" data-ref="Matthew 5:4">μακάριοι οἱ πενθοῦντες</p>
+<p>"Blessed are those who mourn." It is one of the commonest constructions in the book.</p>
+<h3>Without the article</h3>
+<p>The <b>adverbial</b> use — much the commonest, and the one with no marker at all. The participle is not describing a noun but the circumstances under which the main verb happens.</p>
+<p>Translate it with a clause and let the context choose the conjunction: <i>when</i>, <i>after</i>, <i>because</i>, <i>while</i>, <i>by</i>, or simply <i>and</i>.</p>
+<p class="v" data-ref="Acts 19:5">ἀκούσαντες δὲ ἐβαπτίσθησαν εἰς τὸ ὄνομα τοῦ κυρίου Ἰησοῦ</p>
+<p>"And when they heard, they were baptised into the name of the Lord Jesus." Aorist, so the hearing came first.</p>
+<p class="v" data-ref="Matthew 9:36">Ἰδὼν δὲ τοὺς ὄχλους ἐσπλαγχνίσθη περὶ αὐτῶν</p>
+<p>"And when he saw the crowds, he had compassion on them" — or "because he saw the crowds". Greek does not say which, and both are honest. <b>That ambiguity is the normal case, not a problem to be solved</b>: the participle states the circumstance and leaves the relation open. Where you need <i>because</i> rather than <i>when</i>, the sentence has to supply it.</p>
+<h3>The genitive absolute</h3>
+<p>One construction worth learning by name. When a participle has a subject of its own — someone other than the subject of the main verb — both go into the <b>genitive</b>, and the phrase stands loose from the sentence. Hence "absolute", from the Latin for "loosed".</p>
+<p class="v" data-ref="Matthew 2:1">Τοῦ δὲ Ἰησοῦ γεννηθέντος ἐν Βηθλέεμ τῆς Ἰουδαίας</p>
+<p>"Now when Jesus had been born in Bethlehem of Judea…" — and the main clause that follows is about the magi, not about Jesus. Two different subjects, so the participle goes genitive.</p>
+<p class="v" data-ref="Matthew 2:13">Ἀναχωρησάντων δὲ αὐτῶν ἰδοὺ ἄγγελος κυρίου φαίνεται</p>
+<p>"And when they had departed, behold, an angel of the Lord appears." <span class="gk">αὐτῶν</span> is the participle's subject; the angel is the verb's.</p>
+<p>There are 735 genitive participles in the New Testament, and this is the main reason one turns up in that case without an article. Ask who its subject is: the answer will not be the subject of the sentence.</p>
+<h3>What to watch for</h3>
+<p><b>Find the article first.</b> It divides the three uses and it is the fastest question you can ask. Everything else about the participle can wait behind it.</p>
+<p><b>Check the agreement.</b> It is often the only thing telling you which noun a participle goes with, especially in a long sentence where the two are far apart.</p>
+<p><b>Do not force the adverbial sense.</b> <i>When</i>, <i>because</i> and <i>after</i> are your additions, not the writer's.</p>
+<p><b>And aorist still does not mean past.</b> It means the action is viewed as a whole.</p>
+<p>Participles are the last genuinely hard thing in the morphology, and the only way through is meeting a great many — which, at one verb form in four, you will.</p>`,
+v:[],
+vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
+quiz:[
+{q:"What single question separates the three uses of a participle?",o:["Is there an article?","What tense is it?","Is it plural?","What voice is it?"],a:0,w:"Article present: attributive or substantival. Article absent: adverbial. 1,433 participles carry an article; 3,918 are anarthrous nominatives, so the adverbial use is much the commonest.",sec:0},
+{q:"Which use is by far the commonest?",o:["Attributive","Substantival","Adverbial — and it is the one with no marker","They are about equal"],a:2,w:"3,918 anarthrous nominatives against 1,433 articular participles altogether. The commonest use is the one Greek gives you no signpost for, which is why the article question comes first.",sec:0},
+{q:"ἡ ὁδὸς ἡ ἀπάγουσα — what is the repeated article doing?",o:["Marking the plural","Marking an attributive participle, as it does an attributive adjective","Making it a noun","Nothing; it is stylistic"],a:1,w:"Article, noun, article, participle. The same construction chapter 6 gave you for adjectives — ὁ ποιμὴν ὁ καλός — and it means the participle is modifying the noun.",sec:1},
+{q:"How should an attributive participle be translated?",o:["As an English participle","With a relative clause","As a command","As a noun"],a:1,w:"Not 'the leading road' but 'the road that leads'. English participles will not carry the weight; a relative clause always will.",sec:1},
+{q:"In ὁ πιστεύων εἰς τὸν υἱόν, what is the participle doing?",o:["Modifying υἱόν","Describing the circumstances","Standing as a noun in its own right — 'the one who believes'","Nothing; it is the main verb"],a:2,w:"Article plus participle with no noun anywhere. John 3:36 sets two of them against each other — ὁ πιστεύων and ὁ ἀπειθῶν — and the whole verse rests on them.",sec:2},
+{q:"In a substantival participle, what does the gender tell you?",o:["Nothing","What kind of thing is meant — masculine for a person, neuter for a thing or quality","The tense","Which noun it modifies"],a:1,w:"Exactly as with a substantival adjective in chapter 6: οἱ πραεῖς is 'the meek', τὸ ἀγαθόν is 'the good'.",sec:2},
+{q:"An anarthrous participle beside a main verb is:",o:["Attributive","Substantival","Adverbial — describing the circumstances of the main verb","Ungrammatical"],a:2,w:"Translate it with a clause and let the context choose the conjunction: when, after, because, while, by, or simply and.",sec:3},
+{q:"Ἰδὼν δὲ τοὺς ὄχλους ἐσπλαγχνίσθη can be 'when he saw' or 'because he saw'. What follows?",o:["One of them is wrong","The ambiguity is normal — the participle states the circumstance and leaves the relation open","The tense settles it","The case settles it"],a:1,w:"Greek does not say which. Both are honest translations, and where you need 'because' rather than 'when', the sentence has to supply it — not the participle.",sec:3},
+{q:"In a genitive absolute, why are the participle and its subject in the genitive?",o:["Because they are possessive","Because the verb takes a genitive","Because the participle's subject is someone other than the subject of the main verb","Because it follows a preposition"],a:2,w:"The phrase stands loose from the sentence — 'absolute', from the Latin for 'loosed'. In Matthew 2:1 Jesus is born and the magi arrive: two subjects, so the participle goes genitive.",sec:4},
+{q:"You meet a genitive participle with no article. What should you ask?",o:["What tense is it?","Who its subject is — it will not be the subject of the sentence","Whether it is plural","Which noun it modifies"],a:1,w:"735 participles in the New Testament are genitive, and the genitive absolute is the main reason one turns up in that case without an article.",sec:4},
+{q:"Before building an argument on an adverbial participle, what is worth remembering?",o:["That the tense settles the relation","That 'when', 'because' and 'after' are your additions, not the writer's","That it must be temporal","That it always agrees with the object"],a:1,w:"Say what the participle allows and let the passage decide the rest. This is the commonest place a first-year reader over-reads a construction.",sec:5}
+]},
+
+{id:22,t:"Infinitives (verbal nouns)",s:"Verbal nouns and their many uses",
 body:`<p>An infinitive is a verbal noun.</p>
 <p>That is worth saying slowly, because it is doing two jobs at once. As a verb it has tense and voice, it can take an object, and it can have a subject of its own. As a noun it is neuter, it can take the article, and it can sit anywhere in a sentence that a noun can sit.</p>
 <p>What it does not have is person and number. We translate <span class="gk">λύομεν</span> as "we loose" because the ending <span class="gk">-μεν</span> tells us who. An infinitive tells us nothing about who, and that is exactly what the name means: not limited.</p>
@@ -1434,7 +1467,7 @@ quiz:[
 {q:"διὰ τό + infinitive expresses:",o:["Cause","Purpose","Result","Comparison"],a:0,w:"Cause — because. Luke 2:4 gives the reason Joseph went up to Bethlehem.",sec:5},
 {q:"The subject of an infinitive, when it is expressed, appears in which case?",o:["Nominative","Genitive","Dative","Accusative"],a:3,w:"Accusative. It looks wrong to English eyes and is entirely standard.",sec:6},
 {q:"In μὴ θέλων αὐτὴν δειγματίσαι (Matthew 1:19), αὐτήν is:",o:["The subject of the infinitive","In the wrong case","A possessive","The object of the infinitive"],a:3,w:"The object. Joseph is the one who would do the exposing. An accusative beside an infinitive can be either subject or object, and only the sense decides.",sec:7}]},
-{id:22,t:"Additional pronouns",s:"Relative, reflexive, reciprocal, interrogative",
+{id:23,t:"Additional pronouns",s:"Relative, reflexive, reciprocal, interrogative",
 body:`<p>Chapter 9 gave you the personal pronouns and chapter 11 the demonstratives. This chapter finishes the set: five more kinds, all of them common, and none of them with endings you have not already met.</p>
 <p>The one that matters most is the relative pronoun, which occurs 1,408 times and is the main way Greek joins one clause to another.</p>
 <h3>The relative pronoun</h3>
@@ -1498,7 +1531,7 @@ quiz:[
 {q:"ἐμός occurs 76 times while the genitive μου does the same job over two thousand. What follows when a writer chooses ἐμός?",o:["Nothing; they are interchangeable","It marks the plural","It is a later form","It is a choice, and usually an emphatic one"],a:3,w:"ὁ λόγος μου is the ordinary way to say 'my word'. ὁ ἐμὸς λόγος is not, and that is the point of it.",sec:7}
 ]},
 
-{id:23,t:"The subjunctive mood",s:"Purpose, probability and exhortation",
+{id:24,t:"The subjunctive mood",s:"Purpose, probability and exhortation",
 body:`<p>Chapters 3 to 16 worked through the indicative, the mood that asserts. This chapter introduces one that does not.</p>
 <p>The subjunctive presents an action as <b>contingent</b> — wanted, intended, possible, feared — rather than as fact. English has almost lost it; we keep a trace in "if I <i>were</i> you" and "God <i>bless</i> you". Greek uses it 1,856 times, so there is no reading around it.</p>
 <h3>The forms are the easy part</h3>
@@ -1565,7 +1598,7 @@ quiz:[
 {q:"The negative used with the subjunctive is:",o:["οὐ","μή","οὐδέ","οὐχί"],a:1,w:"The negative follows the mood rather than the meaning, as chapter 3 said: οὐ with the indicative, μή with everything else.",sec:8}
 ]},
 
-{id:24,t:"The imperative and optative moods",s:"Commands, prohibitions, and μὴ γένοιτο",
+{id:25,t:"The imperative and optative moods",s:"Commands, prohibitions, and μὴ γένοιτο",
 body:`<p>The imperative is the mood of command, and Greek uses it 1,618 times. It has no first person — you cannot command yourself — and its negative is <span class="gk">μή</span>.</p>
 <p>What it does not have is time. Like the subjunctive, it marks aspect only, and that single fact is the whole of this chapter's usefulness.</p>
 <h3>The forms</h3>
@@ -1631,7 +1664,7 @@ quiz:[
 {q:"λύετε is which mood?",o:["Imperative","Indicative","Subjunctive","Either — only the sentence decides"],a:3,w:"The second person plural is identical in both, and several other forms are too. Along with the missing augment, this is what makes imperatives easy to read past.",sec:7}
 ]},
 
-{id:25,t:"The conjugation of -μι verbs",s:"δίδωμι, τίθημι, ἵστημι, ἀφίημι",
+{id:26,t:"The conjugation of -μι verbs",s:"δίδωμι, τίθημι, ἵστημι, ἀφίημι",
 body:`<p>Greek has two conjugations. Everything so far has been the <span class="gk">-ω</span> conjugation; this chapter is the other one, named for the fact that its lexical form ends in <span class="gk">-μι</span>.</p>
 <p>It is small but unavoidable. Outside <span class="gk">εἰμί</span> — which is itself a <span class="gk">-μι</span> verb, and occurs 2,456 times — there are 90 such verbs in the New Testament, worth 1,743 occurrences between them. Four of those carry most of the weight.</p>
 <h3>What makes them different</h3>
@@ -1692,7 +1725,7 @@ quiz:[
 {q:"You meet ἔδωκεν and cannot find it in a lexicon. What went wrong?",o:["It is misspelled","It is a noun","It is a variant reading","You looked under -ω; the lexical form is δίδωμι"],a:3,w:"A -μι verb is listed under its -μι form. If a verb looks a syllable too short and will not resolve, this is the conjugation to try.",sec:7}
 ]},
 
-{id:26,t:"Reading your Greek New Testament",s:"Tools, habits, and the fallacies to avoid",
+{id:27,t:"Reading your Greek New Testament",s:"Tools, habits, and the fallacies to avoid",
 body:`<p>You now have the whole of the morphology: six principal parts, four moods, three voices, three declensions, and about 800 words. That is enough to read the New Testament with a lexicon beside you, and not enough to read it fluently. This chapter is about the distance between those two.</p>
 <p>Nothing here is new grammar. It is what to do with the grammar you have, and what not to do with it.</p>
 <h3>Read every day, in the easiest thing you can find</h3>

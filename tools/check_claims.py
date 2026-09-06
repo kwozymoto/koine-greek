@@ -159,14 +159,14 @@ CATEGORY_CLAIMS = [
     (16, "indicatives", 15589),
     (20, "participles", 6640),
     (20, "future participle", 12),
-    (23, "subjunctives", 1856),
-    (23, "aorist subjunctive", 1387),
-    (23, "present subjunctive", 459),
-    (23, "perfect subjunctive", 10),
-    (24, "imperatives", 1618),
-    (24, "present imperative", 853),
-    (24, "aorist imperative", 761),
-    (24, "optatives", 68),
+    (24, "subjunctives", 1856),
+    (24, "aorist subjunctive", 1387),
+    (24, "present subjunctive", 459),
+    (24, "perfect subjunctive", 10),
+    (25, "imperatives", 1618),
+    (25, "present imperative", 853),
+    (25, "aorist imperative", 761),
+    (25, "optatives", 68),
     (15, "aorist passive indicative", 863),
     (14, "aorist passive indicative", 863),
     (12, "present middle indicative", 683),
@@ -187,7 +187,7 @@ CATEGORY_CLAIMS = [
     (10, "pluperfect active indicative", 81),
     (10, "perfect, all moods", 1572),
     (7, "imperfect of εἰμί", 455),
-    (20, "genitive participles", 735),
+    (21, "genitive participles", 735),
 ]
 
 # ------------------------------------------------------------- word claims
@@ -241,11 +241,11 @@ IGNORE = {
     (8, "ἐπί", 480): "ἐπί's accusatives, a slice by case, given in the same sentence",
     (18, "εἷς", 232): "οὐδείς's count — the word being defined, not one of its parts",
     (18, "μή", 90): "μηδείς's count — the word being defined, not one of its parts",
-    (20, "αὐτῶν", 735): "genitive participles, checked as a category below",
-    (22, "τις", 144): "ὅστις's count, named at the head of the same sentence",
-    (22, "ἄλλος", 100): "ἀλλήλων's count — the word being defined, not its root",
-    (23, "ἄν", 331): "ἐάν's count — the word being defined, not one of its parts",
-    (24, "μή", 15): "part of the phrase μὴ γένοιτο, counted as a phrase and verified separately",
+    (21, "αὐτῶν", 735): "genitive participles, checked as a category below",
+    (23, "τις", 144): "ὅστις's count, named at the head of the same sentence",
+    (23, "ἄλλος", 100): "ἀλλήλων's count — the word being defined, not its root",
+    (24, "ἄν", 331): "ἐάν's count — the word being defined, not one of its parts",
+    (25, "μή", 15): "part of the phrase μὴ γένοιτο, counted as a phrase and verified separately",
 }
 
 # keyed on the normalised word, so writing μή where the text has μὴ cannot

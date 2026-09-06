@@ -1,9 +1,16 @@
 # How the chapters are written
 
-The 26 chapters are being rewritten from summaries into lessons — from about
-7,200 words to about 31,000 — so that the app teaches Greek on its own rather
-than depending on an outside video series. This is the standard they are
-written to.
+The chapters were rewritten from summaries into lessons — from about 7,200
+words to 24,000 across 27 chapters — so that the app teaches Greek on its own
+rather than depending on an outside video series. This is the standard they
+are written to, and the standard anything added to them is held to.
+
+The count is 27 and not 26 because the chapters are the app's own. They follow
+Black's progression, which is what a reader working through the book alongside
+them needs, but they are not tied to it chapter for chapter: participles are
+24% of every verb form in the New Testament and got one chapter, so they now
+get two. `tools/blackmap.py` is where the divergence is written down, and it
+is the file to edit the next time the app parts company with the book.
 
 The voice is Fraser's, taken from 55 sermon manuscripts (119,000 words) in
 `Documents/Fraser Sermons`, the adult Sunday school material in
