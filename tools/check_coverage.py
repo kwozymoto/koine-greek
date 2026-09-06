@@ -25,7 +25,7 @@ why, so that what this prints is only what has not yet been judged.
 The books are outside this repository and always will be. If they are not on
 the machine, this says so and passes, like tools/check_black.py.
 """
-import glob, json, os, re, subprocess, sys, unicodedata, zipfile
+import glob, io, json, os, re, subprocess, sys, unicodedata, zipfile
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -63,23 +63,42 @@ REVIEWED = {
     (7, "48. The Secondary Active Suffixes"): "the theory of endings, as with 18",
     (7, "50. Amalgamation in the Aorist"): "the same sigma-plus-stop rules the app gives for the future in ch3",
     (7, "54. Uses of the Imperfect and Aorist"): "covered by What the imperfect is for and The aorist",
+    # judged when the last batch landed, and when this checker started
+    # actually reading DONE instead of a stale literal
+    (14, "95. The Second Aorist Middle"): "the chapter's Second aorist middles section, on γίνομαι rather than Black's λείπω",
+    (16, "109. Overview of εἰμί"): "the paradigm itself; Tables carries all of εἰμί and ch13 teaches ἔσομαι",
+    (16, "110. Guidelines for Verb Identification"): "this IS the chapter's How to take a verb apart, worked on John 13:7 rather than Black's made-up forms",
+    (26, "166. Introduction"): "Black's own overview of the six areas; the chapter covers aspect, voice, article and order in sections of their own",
 }
 
 # Which chapters are finished. A flag in one of those is a defect and fails; a
 # flag in any other is work not yet done, and is reported without failing.
 # Defined in check_lessons and imported, not copied — one list, one place.
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+#
+# This used to scrape check_lessons.py with a regex and fall back to a
+# hard-coded list inside `except Exception: pass`. When DONE was rewritten as
+# set(range(1, 27)) the regex stopped matching, the exception was swallowed,
+# and this checker quietly went on believing eight chapters were finished —
+# reporting four flagged sections as future work instead of failing on them.
+# A silent fallback in a checker is worse than no checker, because it reports
+# green. So: import the module, and if that cannot be done, say so and stop.
+_here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _here)
 import importlib.util as _il
-_spec = _il.spec_from_file_location(
-    "_cl", os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_lessons.py"))
-DONE = {1, 2, 3, 4, 5, 6, 7, 21}
+_spec = _il.spec_from_file_location("_cl", os.path.join(_here, "check_lessons.py"))
+_cl = _il.module_from_spec(_spec)
+_cl.__dict__["__SKIP_MAIN__"] = True
 try:
-    DONE = set(re.search(r"^DONE = \{([^}]*)\}", io.open(
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_lessons.py"),
-        encoding="utf-8").read(), re.M).group(1).replace(" ", "").split(","))
-    DONE = {int(x) for x in DONE if x}
-except Exception:
-    pass                      # fall back to the literal above rather than fail
+    _src = io.open(os.path.join(_here, "check_lessons.py"), encoding="utf-8").read()
+    _ns = {}
+    exec(compile(re.search(r"^DONE = \{.*?\}", _src, re.M | re.S).group(0),
+                 "check_lessons.DONE", "exec"), _ns)
+    DONE = _ns["DONE"]
+    assert isinstance(DONE, set) and DONE and all(isinstance(x, int) for x in DONE)
+except Exception as e:
+    sys.exit("could not read DONE out of check_lessons.py (%s).\n"
+             "That list decides which chapters this checker can fail on, so\n"
+             "guessing it would make this run meaningless." % e)
 
 # Known to be thinner than Black and not yet judged worth fixing. Listed so
 # it is a decision rather than an oversight.

@@ -66,6 +66,15 @@ array is *wrong* rather than merely changed: it reads Black's own vocabulary
 sections and confirms every word. Currently 395 of 395. The books are outside
 the repo, so it says so and exits clean when they are not on the machine.
 
+**A checker that falls back silently is worse than no checker**, because it
+reports green. `check_coverage` claimed to import `DONE` from `check_lessons`
+— "one list, one place" — inside `try: ... except Exception: pass`, and it
+never once worked: `io` was not imported in that file. For every batch it ran
+against a stale literal naming eight finished chapters, so batches 4 to 6
+were never actually held to it. It now exits with an error rather than
+guessing. **Never write `except: pass` around the thing a checker needs to
+know.**
+
 **Check that a checker looks where you think it looks.** The unattested-forms
 pass claimed to read "the lesson bodies and quizzes" and had never read a word
 of Greek out of a quiz: it collected by matching `<span class="gk">`, which a
