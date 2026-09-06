@@ -94,6 +94,14 @@ def array(name):
     body = re.sub(r",(\s*\])", r"\1", body.strip())
     return json.loads("[" + "".join(body.splitlines()) + "]")
 
+# How many chapters the app has. CASEFN[4] gates a question on the highest
+# chapter the learner has finished, which is an APP chapter — it stopped being
+# one of Black's when chapter 20 became two, and this bound was still 26.
+CHAPTERS = max(int(m) for m in re.findall(
+    r"^\{id:(\d+),",
+    io.open(os.path.join(ROOT, "data", "lessons.js"), encoding="utf-8").read(),
+    re.M))
+
 ART, PARSE, BUILD, PP = array("ART"), array("PARSE"), array("BUILD_FORMS"), array("PP")
 CASEFN = array("CASEFN")
 LOOKALIKE = array("LOOKALIKE")
@@ -261,9 +269,9 @@ for n, row in enumerate(CASEFN):
         case_bad.append("%s does not offer four distinct options" % tag)
     if not isinstance(ans, int) or not 0 <= ans < len(opts):
         case_bad.append("%s answers %r, which is not one of its options" % (tag, ans))
-    if not isinstance(chapter, int) or not 1 <= chapter <= 26:
-        case_bad.append("%s is gated on chapter %r, which Black does not have"
-                        % (tag, chapter))
+    if not isinstance(chapter, int) or not 1 <= chapter <= CHAPTERS:
+        case_bad.append("%s is gated on chapter %r; the app has %d"
+                        % (tag, chapter, CHAPTERS))
     toks = VERSES.get(ref)
     if toks is None:
         case_bad.append("%s cites %s, which is not a verse in the corpus" % (tag, ref))

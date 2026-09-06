@@ -334,9 +334,9 @@ html:`<p class="muted" style="font-size:.83rem;margin-top:0">The genitive is the
 <tr><td>Content</td><td class="g" data-ref="John 21:8" data-claim="gen">τῶν ἰχθύων</td><td>what a thing is full of</td></tr>
 <tr><td>Material</td><td class="g" data-ref="Mark 2:21" data-claim="gen">ῥάκους</td><td>what it is made of</td></tr>
 <tr><td>Comparison</td><td class="g" data-ref="Matthew 6:25" data-claim="gen">τῆς τροφῆς</td><td>after a comparative — more <i>than</i> food</td></tr>
-<tr><td>Time</td><td class="g" data-ref="Luke 18:12" data-claim="gen">τοῦ σαββάτου</td><td><i>during</i> which, not when and not how long</td></tr></table>
+<tr><td>Time</td><td class="g" data-ref="Luke 18:12" data-claim="gen">τοῦ σαββάτου</td><td><i>within</i> which — not the point, and not the duration</td></tr></table>
 <p><b>The fork worth knowing.</b> Subjective and objective look identical. <span class="gk">ἡ ἀγάπη τοῦ θεοῦ</span> is either God’s love for us or ours for him, and only the argument around it decides. Say which you are taking, and why.</p>
-<p class="muted" style="font-size:.83rem">Genitive of time answers <i>during what</i>; the dative answers <i>when</i>; the accusative answers <i>how long</i>. Three cases, three questions.</p>`},
+<p class="muted" style="font-size:.83rem">Genitive of time gives the period <i>within which</i>; the dative, the point <i>when</i>; the accusative, <i>how long</i>. Three cases, three questions — and, like most tidy rules, it leaks: an accusative can mark a point of time too (John 4:52).</p>`},
 
 {t:"Participles — what they are doing",tags:"syntax participle adverbial adjectival substantival genitive absolute attendant circumstance temporal",
 html:`<p class="muted" style="font-size:.83rem;margin-top:0">A participle’s tense gives aspect, and time only relative to the main verb. An aorist participle usually happened first, a present one usually alongside — usually, and context outranks the rule.</p>

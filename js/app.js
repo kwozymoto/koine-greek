@@ -1801,7 +1801,7 @@ function lookalikeDrill(n=12){
 const CASEFN=[
 ["ἡ ἀγάπη τοῦ θεοῦ|τοῦ θεοῦ could be:",
  ["Subjective or objective genitive", "Dative of means", "Genitive absolute", "Accusative of respect"],0,
- "God's love for us (subjective) or our love for God (objective). Grammar allows both; context decides — this is the classic exegetical fork.", 4,"Romans 5:5"],
+ "God's love for us (subjective) or our love for God (objective). Grammar allows both and context decides — the classic exegetical fork. With this noun the usage is lopsided, though: Abbott could find only a couple of objective genitives with it in the New Testament, Luke 11:42 among them.", 4,"Romans 5:5"],
 ["βαπτισθῆναι ὑπ’ αὐτοῦ|ὑπό + genitive with a passive verb expresses:",
  ["Location under", "Personal agent — by him", "Time", "Cause"],1,
  "With a passive verb ὑπό + genitive names the agent: Jesus came to be baptised by John. Under something would be ὑπό + accusative.", 15,"Matthew 3:13"],
@@ -1828,7 +1828,7 @@ const CASEFN=[
  "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it — this one opens the Sermon on the Mount.", 20,"Matthew 5:1"],
 ["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
  ["The indirect object", "Time when — on the sabbath", "Means", "Possession"],1,
- "The bare dative of time answers when. Genitive of time answers during what; accusative for how long.", 8,"Luke 6:7"],
+ "The bare dative of time answers when. The genitive gives the period within which, the accusative how long — though an accusative can mark a point of time too (John 4:52).", 8,"Luke 6:7"],
 ["εἴ τις λαλεῖ|εἰ + indicative (1 Peter 4:11) is which class of condition?",
  ["First — assumed true for the argument", "Second — contrary to fact", "Third — a future possibility", "Fourth — remote"],0,
  "First class: εἰ with the indicative. It does not mean the condition is true, only that the writer is arguing from it.", 16,"1 Peter 4:11"],
