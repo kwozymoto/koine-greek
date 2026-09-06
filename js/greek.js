@@ -103,3 +103,97 @@ function lkFoldLatin(q){
     .replace(/y/g,"u").replace(/v/g,"b")
     .replace(/[ēê]/g,"e").replace(/[ōô]/g,"o");
 }
+
+
+/* ---------------------------------------------------------------------
+   Marking what somebody typed.
+
+   The obvious rule is a similarity percentage — "over 60% right, tell them
+   where they slipped; under it, show the answer". Measured against the New
+   Testament, that rule does not work, and it is worth writing down why so
+   nobody puts it back.
+
+   A single slip is worth a different percentage on every length of word:
+   0.33 on λύω, 0.92 on a twelve-letter compound. At a flat 60% a long word
+   tolerates four wrong letters before it stops saying "close".
+
+   Worse, Greek is crowded. Take any form occurring five times or more and
+   the nearest DIFFERENT attested form is usually 0.80 to 0.90 similar. At
+   length five, one slip scores 0.80 and 61 of 63 words have a real
+   neighbour at least that close. The two distributions — "knew it and
+   slipped" and "wrote another word entirely" — sit on top of each other, so
+   no threshold on similarity separates them.
+
+   What does separate them is the count of edits, which does not care how
+   long the word is, together with the one test a generic app cannot make
+   and this one can: is the attempt as close to some OTHER form in front of
+   the learner? If it is, they have not nearly got it. They have written
+   something else, and the useful thing to say is which.
+
+   Six verdicts, and each rung of the ladder earns its place:
+
+     correct    right to the accent
+     accent     letters and breathings right, accent adrift. Still right:
+                the accent is not what most drills are asking.
+     breathing  letters right, breathing wrong — εἰς for εἷς is a different
+                word, so this is an error and not a slip
+     other      what they typed is one of the other forms on offer
+     close      within the edit budget: flag the letters, offer another go
+     wrong      show it, and ask for it once more
+   --------------------------------------------------------------------- */
+
+/* Two edits is a slip on a long word and a different word on a short one.
+   The table in tools/check_mark.py settled where the line goes: ἐλάβομεν is
+   exactly two edits from ἔλαβεν, and those are two real cells of the same
+   verb, not a near-miss. So six letters or fewer get a budget of one. */
+const gkEditBudget = t => (t.length <= 6 ? 1 : 2);
+
+/* Levenshtein, on letters only, so a letter and its accent are one unit
+   rather than two codepoints pretending to be two mistakes. */
+function gkEdits(a, b) {
+  a = gkLoose(a); b = gkLoose(b);
+  if (a === b) return 0;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= b.length; j++)
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+                        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[b.length];
+}
+
+/* Which letters to mark. Positions in the TYPED string that do not survive
+   into the target, aligned so an inserted or dropped letter shifts the rest
+   rather than reporting every letter after it as wrong. */
+function gkDiff(typed, target) {
+  const a = gkLoose(typed), b = gkLoose(target), out = [];
+  let i = 0, j = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    if (gkEdits(a.slice(i + 1), b.slice(j)) < gkEdits(a.slice(i), b.slice(j + 1)))
+      { out.push(i); i++; }                       // extra letter typed
+    else if (gkEdits(a.slice(i), b.slice(j + 1)) < gkEdits(a.slice(i + 1), b.slice(j + 1)))
+      { j++; }                                    // letter missing
+    else { out.push(i); i++; j++; }               // wrong letter
+  }
+  while (i < a.length) out.push(i++);
+  return out;
+}
+
+/* others: the rest of the forms on offer in this round, so "you wrote the
+   perfect" can be said instead of "close". */
+function gkMark(typed, target, others) {
+  const t = (typed || "").trim();
+  const r = { typed: t, target, edits: gkEdits(t, target), wrong: [] };
+  if (!t) return Object.assign(r, { verdict: "wrong" });
+  if (gkKey(t) === gkKey(target))     return Object.assign(r, { verdict: "correct" });
+  if (gkPlain(t) === gkPlain(target)) return Object.assign(r, { verdict: "accent" });
+  if (gkLoose(t) === gkLoose(target)) return Object.assign(r, { verdict: "breathing" });
+  const hit = (others || []).find(o => gkLoose(o) === gkLoose(t));
+  if (hit) return Object.assign(r, { verdict: "other", wrote: hit });
+  if (r.edits <= gkEditBudget(gkLoose(target)))
+    return Object.assign(r, { verdict: "close", wrong: gkDiff(t, target) });
+  return Object.assign(r, { verdict: "wrong" });
+}

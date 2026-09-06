@@ -11,6 +11,9 @@ data/gnt/, and this runs the lot:
                      rungs nest, that each is idempotent, that js/greek.js and
                      tools/corpus.py agree word for word over the whole New
                      Testament, and that no other file normalises on its own
+    check_mark       the mark scheme for typed Greek, against a table of
+                     worked cases: what each of the six verdicts is for, and
+                     which real New Testament forms produce it
     check_vocab      the 511 lexical entries, their example verses, the
                      reader's gloss table, the audio chain, the principal
                      parts, and accent placement across every data file
@@ -100,7 +103,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHECKS = ["check_greek_norm", "check_vocab", "check_drills", "check_paradigms",
+CHECKS = ["check_greek_norm", "check_mark", "check_vocab", "check_drills",
+          "check_paradigms",
           "check_grids",
           "check_readings", "check_lessons", "check_quiz", "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
