@@ -17,7 +17,7 @@ New Testament with every word parsed and lit by what you know.
 
 ## Everything it teaches is checked against the corpus
 
-`python tools/check_all.py` runs twenty-two checkers, ten of them against the
+`python tools/check_all.py` runs twenty-three checkers, ten of them against the
 SBLGNT bundled in `data/gnt/`. They exist because this app makes claims about
 a language, and a confident wrong answer is worse than no answer:
 
@@ -96,7 +96,7 @@ the one that is wanted.
 data/       vocabulary, chapters, readings, paradigms, examples, lexicon
             gnt/    the SBLGNT, one JSON per book, plus a manifest
 js/         app, reader, audio, handwriting, sync, service-worker glue
-tools/      the builders and the twenty-two checkers
+tools/      the builders and the twenty-three checkers
 docs/       the pronunciation cue guide and the lexicon changelog
 audio/      511 word clips, letters, and lexical forms
             (the deck is 818; the newest words have no recording yet)
