@@ -30,6 +30,9 @@ data/gnt/, and this runs the lot:
                      no empty cell reaches the tray
     check_readings   the 12 passages, word for word, and every parse claim
                      in their glosses
+    check_gloss      the English half of every reading gloss, against the
+                     app's own words for that lemma. 606 claims that until
+                     now nothing read at all
     check_lessons    the spelling of every Greek form in the lesson bodies
                      and quizzes, and that each question is asked after the
                      section that teaches it
@@ -110,7 +113,8 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_vocab",
           "check_drills",
           "check_paradigms",
           "check_grids",
-          "check_readings", "check_lessons", "check_quiz", "check_forms",
+          "check_readings", "check_gloss", "check_lessons", "check_quiz",
+          "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
           "check_ipa",
           "check_frozen", "check_black", "check_coverage", "check_claims",
