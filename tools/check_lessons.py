@@ -131,7 +131,12 @@ for l in LESSONS:
             # be recognised as an ending rather than a word
             for tok in re.split(r"[\s,·/()…—]+", txt):
                 tok = tok.strip()
-                is_ending = tok.startswith("-") or tok.startswith("‑")
+                # A leading hyphen marks an ending, a trailing one a stem,
+                # and neither is a word the corpus could be expected to
+                # contain. "-ος" and "σαρκ-" are the same kind of thing
+                # written at opposite ends.
+                is_ending = (tok.startswith("-") or tok.startswith("‑")
+                             or tok.endswith("-") or tok.endswith("‑"))
                 g = bare(tok)
                 if not g:
                     continue
@@ -139,7 +144,7 @@ for l in LESSONS:
                 if norm(g) in FORMS:
                     attested += 1
                 elif is_ending or len(g) < 3:
-                    skipped["endings and single letters"] += 1
+                    skipped["endings, stems and single letters"] += 1
                 elif LUO.match(flat(g)):
                     skipped["λύω, an invented verb"] += 1
                 elif norm(g) in HEADWORDS:
@@ -176,14 +181,9 @@ UNATTESTED = {
     (9, "αὐταί"): "paradigm cell, and half of the αὐταί/αὗται pair",
     (11, "αὐταί"): "the chapter's own point is that this one never occurs",
     # roots and stems, written as roots and stems
-    (10, "γνο"): "the root of γινώσκω, written γνο-",
-    (13, "γραφ"): "the stem of γράφω, written γραφ-",
-    (13, "πειθ"): "the stem of πείθω, written πειθ-",
     # lexical citation forms that are not VOCAB headwords
     (12, "ἄρχομαι"): "the middle of ἄρχω, cited as a headword",
     (15, "ἐγράφην"): "the sixth principal part of γράφω; ἐγράφη occurs",
-    (15, "βαπτιδ"): "the stem of βαπτίζω, written βαπτιδ-",
-    (9, "αὐτ"): "the fragment in 'the two αὐτ- forms'",
     # Forms a chapter deliberately shows as WRONG, in a question or an
     # explanation rather than in a distractor. Being unattested is the whole
     # point of them, and having to list one is useful: it makes the checker
@@ -192,12 +192,18 @@ UNATTESTED = {
     (10, "γεγνωκεν"): "the reduplication γινώσκω does not take; ἔγνωκεν is",
     (10, "φεφανέρωται"): "the reduplication φανερόω does not take; πεφανέρωται is",
     (13, "γέγραφται"): "the spelling γράφω does not take; γέγραπται is",
+    # Reconstructed steps in a sound change, shown so the result stops looking
+    # arbitrary. None of the three was ever written by anybody; that is the
+    # point of showing them.
+    (19, "μενσω"): "step 1 of μενσω → μενέσω → μενέω → μενῶ",
+    (19, "μενέσω"): "step 2 of the same derivation",
+    (19, "μενέω"): "step 3 of the same derivation",
 }
 
 print("Greek forms in the lesson bodies and quizzes: %d" % total)
 print("attested in the SBLGNT: %d (%.0f%%)" % (attested, 100 * attested / total))
 for k, n in skipped.most_common():
-    print("not attested, filtered — %-28s %d" % (k + ":", n))
+    print("not attested, filtered — %-31s %d" % (k + ":", n))
 n = sum(len(v) for v in flagged.values())
 print("\nnot attested and not filtered: %d" % n)
 for cid in sorted(flagged):
@@ -319,7 +325,7 @@ BARE = {
 # check_coverage.py imports this rather than keeping its own copy — CLAUDE.md
 # warns about exactly this kind of duplication, and RETIRED in four files is
 # the example it gives.
-DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21}
+DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21}
 
 # The dose is defined in js/app.js and read from it, not repeated here.
 DOSE = 3
