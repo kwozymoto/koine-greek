@@ -175,7 +175,10 @@ function grant(id){
   if(S.badges.includes(id))return;
   S.badges.push(id); save();
   const b=BADGES.find(x=>x.id===id);
-  if(b) toast(b.e+"  "+b.t+" unlocked");
+  /* A badge is the one thing in the app worth stopping for, so it gets its
+     own moment rather than the grey panel an undo uses. */
+  if(b && typeof badgeFanfare==="function") badgeFanfare(b);
+  else if(b) toast(b.e+"  "+b.t+" unlocked");
 }
 function checkBadges(){
   if(S.xp>0) grant("first");
@@ -2069,15 +2072,18 @@ function renderDrill(){
   let html=Object.entries(DRILL_GROUP).map(([group,names])=>{
     const items=names.map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0);
     items.forEach(i=>seen.add(i));
-    return items.length?`<h2 style="margin:22px 0 10px">${group}</h2>`+items.map(i=>`
-      <button class="lesson-item" onclick="DRILLS[${i}][2]()">
+    const tone=(typeof GROUP_TONE!=="undefined" && GROUP_TONE[group])||"muted";
+    return items.length?`<h2 class="dgroup" data-tone="${tone}">${group}</h2>`+items.map(i=>`
+      <button class="lesson-item drill-item" data-tone="${tone}" onclick="DRILLS[${i}][2]()">
+        <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
         <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
         <span class="muted">›</span></button>`).join(""):"";
   }).join("");
   // anything added later and not yet filed still appears
   const rest=DRILLS.map((d,i)=>i).filter(i=>!seen.has(i));
-  if(rest.length) html+=`<h2 style="margin:22px 0 10px">More</h2>`+rest.map(i=>`
-      <button class="lesson-item" onclick="DRILLS[${i}][2]()">
+  if(rest.length) html+=`<h2 class="dgroup" data-tone="muted">More</h2>`+rest.map(i=>`
+      <button class="lesson-item drill-item" data-tone="muted" onclick="DRILLS[${i}][2]()">
+        <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
         <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
         <span class="muted">›</span></button>`).join("");
   document.getElementById("drillMenu").innerHTML=html;

@@ -519,3 +519,93 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .gkb-go{background:var(--gold);color:#1a1408;font-weight:650}
 .gkb-go:active{background:var(--gold-dim)}
 @media (max-width:340px){ .gkb-k{padding:9px 0;font-size:1.05rem} }
+
+/* ---------- drill icons ----------
+   The kind of task, drawn, so the screen can be scanned instead of read. The
+   tone is the group's, set on the card and inherited by the icon through
+   currentColor, which is why one icon set serves six groups and both themes. */
+:root{ --violet:#9c86d6; }
+.dgroup{margin:22px 0 10px;display:flex;align-items:center;gap:9px}
+.dgroup::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--tone)}
+.dgroup[data-tone="gold"],.drill-item[data-tone="gold"]{--tone:var(--gold)}
+.dgroup[data-tone="blue"],.drill-item[data-tone="blue"]{--tone:var(--blue)}
+.dgroup[data-tone="rust"],.drill-item[data-tone="rust"]{--tone:var(--rust)}
+.dgroup[data-tone="green"],.drill-item[data-tone="green"]{--tone:var(--green)}
+.dgroup[data-tone="violet"],.drill-item[data-tone="violet"]{--tone:var(--violet)}
+.dgroup[data-tone="muted"],.drill-item[data-tone="muted"]{--tone:var(--muted)}
+
+.dwell{
+  width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--tone);
+  /* the tone at low alpha, so the well tints without a second colour token */
+  background:color-mix(in srgb, var(--tone) 14%, transparent);
+  border:1px solid color-mix(in srgb, var(--tone) 26%, transparent);
+  transition:transform .16s ease, background .16s ease;
+}
+/* color-mix is recent; a browser without it still gets a legible well */
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+  .dwell{background:var(--surface-2);border-color:var(--line)}
+}
+.dicon{width:21px;height:21px;display:block}
+.drill-item{transition:border-color .16s ease, transform .08s ease}
+.drill-item:active{transform:scale(.99)}
+.drill-item:hover{border-color:color-mix(in srgb, var(--tone) 45%, var(--line))}
+.drill-item:hover .dwell{transform:scale(1.06)}
+@media (prefers-reduced-motion:reduce){
+  .dwell,.drill-item{transition:none}
+  .drill-item:hover .dwell{transform:none}
+}
+
+/* ---------- a badge landing ----------
+   Keyframes only. The ring opens, the emblem comes up to meet it, eight
+   sparks go out, and the whole thing leaves on its own. */
+.fanfare{
+  position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;
+  background:rgba(20,27,43,.72);backdrop-filter:blur(2px);
+  animation:fan-in .22s ease both;
+}
+.fanfare.out{animation:fan-out .3s ease both}
+@keyframes fan-in{from{opacity:0}to{opacity:1}}
+@keyframes fan-out{to{opacity:0}}
+
+.fan-card{position:relative;width:132px;height:132px;display:grid;place-items:center}
+.fan-emblem{
+  font-size:3.3rem;line-height:1;
+  animation:fan-emblem .62s cubic-bezier(.2,1.5,.4,1) both .06s;
+}
+@keyframes fan-emblem{
+  from{transform:scale(.2) translateY(14px);opacity:0}
+  to{transform:none;opacity:1}
+}
+.fan-ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:2px solid var(--gold);
+  animation:fan-ring .85s cubic-bezier(.2,.7,.3,1) both;
+}
+@keyframes fan-ring{
+  from{transform:scale(.35);opacity:0}
+  55%{opacity:.9}
+  to{transform:scale(1.28);opacity:0}
+}
+.fan-spark{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+  transform:rotate(var(--a)) translateY(0) scale(0);
+  animation:fan-spark .8s cubic-bezier(.25,.8,.3,1) both .1s;
+}
+@keyframes fan-spark{
+  30%{transform:rotate(var(--a)) translateY(-46px) scale(1)}
+  to{transform:rotate(var(--a)) translateY(-74px) scale(0);opacity:0}
+}
+.fan-say{text-align:center;max-width:260px;animation:fan-say .5s ease both .3s}
+.fan-say b{display:block;font-size:1.12rem}
+.fan-say span{font-size:.85rem;color:var(--muted)}
+@keyframes fan-say{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Nothing travels for anyone who has asked for that. */
+@media (prefers-reduced-motion:reduce){
+  .fan-emblem,.fan-ring,.fan-spark,.fan-say{animation:fan-in .2s ease both}
+  .fan-spark{display:none}
+}

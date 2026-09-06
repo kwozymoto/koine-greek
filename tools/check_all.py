@@ -17,6 +17,9 @@ data/gnt/, and this runs the lot:
     check_keys       the Greek keyboard: that the marks it dims are the ones
                      the New Testament never writes, and that every form the
                      app could ask for can be typed on it
+    check_icons      that every drill has an icon chosen for it rather than
+                     falling back to the generic one, that every icon named
+                     is drawn, and that every group has a colour
     check_vocab      the 511 lexical entries, their example verses, the
                      reader's gloss table, the audio chain, the principal
                      parts, and accent placement across every data file
@@ -112,7 +115,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_vocab",
+CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
+          "check_vocab",
           "check_drills",
           "check_paradigms",
           "check_grids",
