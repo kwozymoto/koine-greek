@@ -102,6 +102,37 @@ CHAPTERS = max(int(m) for m in re.findall(
     io.open(os.path.join(ROOT, "data", "lessons.js"), encoding="utf-8").read(),
     re.M))
 
+# id -> title, so a gate can be pinned to the chapter it was chosen for
+# rather than to a number. See GATE_TITLE.
+TITLE = dict((int(a), b) for a, b in re.findall(
+    r'^\{id:(\d+),t:"([^"]+)"',
+    io.open(os.path.join(ROOT, "data", "lessons.js"), encoding="utf-8").read(),
+    re.M))
+
+# CASEFN[4] is the earliest chapter that earns the question, and it is a
+# NUMBER — which is precisely what a renumber breaks. When chapter 20 became
+# two chapters, six of these silently began unlocking a chapter early: the
+# genitive absolute was offered after the forms half rather than the uses
+# half that teaches it, the subjunctive question after "Additional pronouns",
+# the optative one after the subjunctive. Every one had been right before the
+# split and nothing noticed for fifteen commits.
+#
+# So each gate is written down here against the TITLE it was chosen for. The
+# number may move; the chapter it means must not.
+GATE_TITLE = {
+    0: "Nouns of the second declension", 1: "Aorist and future passive indicative",
+    2: "Additional prepositions", 3: "Imperfect and aorist active indicative",
+    4: "Nouns of the second declension", 5: "Infinitives (verbal nouns)",
+    6: "Additional prepositions", 7: "Additional prepositions",
+    8: "Participles: the three uses", 9: "Additional prepositions",
+    10: "Review of the indicative mood", 11: "Review of the indicative mood",
+    12: "The subjunctive mood", 13: "The imperative and optative moods",
+    14: "Nouns of the second declension", 15: "Nouns of the third declension",
+    16: "The imperative and optative moods", 17: "Participles: the three uses",
+    18: "Adjectives of the first and second declension",
+    19: "Adjectives of the first and second declension",
+}
+
 ART, PARSE, BUILD, PP = array("ART"), array("PARSE"), array("BUILD_FORMS"), array("PP")
 CASEFN = array("CASEFN")
 LOOKALIKE = array("LOOKALIKE")
@@ -272,6 +303,17 @@ for n, row in enumerate(CASEFN):
     if not isinstance(chapter, int) or not 1 <= chapter <= CHAPTERS:
         case_bad.append("%s is gated on chapter %r; the app has %d"
                         % (tag, chapter, CHAPTERS))
+    elif n not in GATE_TITLE:
+        case_bad.append("%s is new and has no entry in GATE_TITLE; write the "
+                        "chapter title its gate of %d was chosen for, so a "
+                        "later renumber cannot move it" % (tag, chapter))
+    elif TITLE.get(chapter) != GATE_TITLE[n]:
+        case_bad.append("%s is gated on chapter %d, which is now %r; the gate "
+                        "was chosen for %r. %s"
+                        % (tag, chapter, TITLE.get(chapter), GATE_TITLE[n],
+                           "A renumber has moved it."
+                           if GATE_TITLE[n] in TITLE.values()
+                           else "That chapter has been renamed — see below."))
     toks = VERSES.get(ref)
     if toks is None:
         case_bad.append("%s cites %s, which is not a verse in the corpus" % (tag, ref))
@@ -282,6 +324,18 @@ for n, row in enumerate(CASEFN):
         continue
     if not any(toks[i:i + len(want)] == want for i in range(len(toks) - len(want) + 1)):
         case_bad.append("%s — %r does not occur in %s" % (tag, greek, ref))
+
+# A gate recorded against a title no chapter carries any more is a rename,
+# not a renumber, and the fix is the other way round: the table follows the
+# chapter. Say so rather than leaving it to be inferred from the row above.
+for n, want_title in sorted(GATE_TITLE.items()):
+    if n >= len(CASEFN):
+        case_bad.append("GATE_TITLE records CASEFN[%d], which no longer exists"
+                        % n)
+    elif want_title not in TITLE.values():
+        case_bad.append("GATE_TITLE[%d] names %r, which is not the title of "
+                        "any chapter; a chapter has been renamed and the "
+                        "table has to follow it" % (n, want_title))
 
 # ---------------------------------------------------------- LOOKALIKE ----
 # Accents and breathings off, everything else kept: that is precisely the

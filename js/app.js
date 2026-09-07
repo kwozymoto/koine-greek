@@ -1913,7 +1913,7 @@ const CASEFN=[
  "Where one of the two has the article and the other does not, the articular one is the subject — whatever the order. Both can carry it, and then the two are being equated instead. Here only ὁ λόγος does.", 4,"John 1:1"],
 ["τοῦ σπείρειν|The articular infinitive in the genitive most naturally expresses:",
  ["Purpose — in order to sow", "Possession", "Comparison", "Agency"],0,
- "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work.", 21,"Matthew 13:3"],
+ "τοῦ + infinitive frequently marks purpose. The article's case is doing real syntactic work.", 22,"Matthew 13:3"],
 ["σὺν τοῖς μαθηταῖς|σύν takes the dative because it expresses:",
  ["Separation", "Accompaniment — with the disciples", "Motion toward", "Agency"],1,
  "σύν is a one-case preposition: dative of accompaniment. Prepositions fix their cases; learn them as pairs.", 8,"Mark 8:34"],
@@ -1922,7 +1922,7 @@ const CASEFN=[
  "NT faith-language moves toward its object: believing into Christ. The preposition is part of the theology.", 8,"John 2:11"],
 ["καθίσαντος αὐτοῦ|A genitive participle with its own genitive subject, loose from the clause, is:",
  ["A genitive absolute — when he had sat down", "Possession", "Objective genitive", "A mistake"],0,
- "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it — this one opens the Sermon on the Mount.", 20,"Matthew 5:1"],
+ "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it — this one opens the Sermon on the Mount.", 21,"Matthew 5:1"],
 ["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
  ["The indirect object", "Time when — on the sabbath", "Means", "Possession"],1,
  "The bare dative of time answers when. The genitive gives the period within which, the accusative how long — though an accusative can mark a point of time too (John 4:52).", 8,"Luke 6:7"],
@@ -1934,10 +1934,10 @@ const CASEFN=[
  "Second class, contrary to fact: if you did believe Moses — which you do not (John 5:46). The imperfect and the ἄν together are the giveaway.", 16,"John 5:46"],
 ["ἐὰν ἅψωμαι|ἐάν + subjunctive projects:",
  ["A completed fact", "A real future possibility", "Something contrary to fact", "A wish"],1,
- "Third class (Mark 5:28). ἐάν plus the subjunctive is the ordinary way to put a live future condition.", 23,"Mark 5:28"],
+ "Third class (Mark 5:28). ἐάν plus the subjunctive is the ordinary way to put a live future condition.", 24,"Mark 5:28"],
 ["εἰ καὶ πάσχοιτε|εἰ + optative is which class — and how common?",
  ["First, very common", "Third, common", "Fourth, and never complete in the NT", "Second, rare"],2,
- "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes.", 24,"1 Peter 3:14"],
+ "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes.", 25,"1 Peter 3:14"],
 ["ἀγάπης τοῦ Χριστοῦ|In Romans 8:35 the genitive is best taken as:",
  ["Objective — our love for Christ", "Subjective — Christ's own love", "Partitive", "Of material"],1,
  "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides.", 4,"Romans 8:35"],
@@ -1946,10 +1946,10 @@ const CASEFN=[
  "Partitive: the genitive names the whole from which the head noun takes a part (Matthew 9:3).", 17,"Matthew 9:3"],
 ["πορευθέντες οὖν μαθητεύσατε|The aorist participle before an imperative here is best read as:",
  ["After you have gone", "Go and — sharing the imperative's force", "Because you went", "While going"],1,
- "Attendant circumstance: the participle takes the mood of the main verb. Matthew 28:19 is the standing example, and the standing mistranslation.", 24,"Matthew 28:19"],
+ "Attendant circumstance: the participle takes the mood of the main verb. Matthew 28:19 is the standing example, and the standing mistranslation.", 25,"Matthew 28:19"],
 ["ταῦτα λέγοντος αὐτοῦ|What makes this construction absolute?",
  ["It is emphatic", "Its subject is not the subject of the main verb", "It has no article", "The participle is aorist"],1,
- "Genitive absolute (Luke 13:17): the participle and its subject stand in the genitive, grammatically loose from the main clause — where someone else is the subject.", 20,"Luke 13:17"],
+ "Genitive absolute (Luke 13:17): the participle and its subject stand in the genitive, grammatically loose from the main clause — where someone else is the subject.", 21,"Luke 13:17"],
 ["γάρ|A sentence opening with γάρ is doing what to the one before it?",
  ["Contrasting with it", "Supporting it — giving the ground", "Drawing an inference from it", "Changing the subject"],1,
  "γάρ gives the ground. It means the sentence belongs under the previous point rather than beside it — which is structure you can preach from.", 6,"Matthew 1:20"],
@@ -2484,8 +2484,8 @@ function renderHelp(){
     <h2>The tabs</h2>
     <table>
       <tr><th>Today</th><td>The day's plan, three or four short things, ticked off as you do them. The ring fills as the plan does. Your streak sits under it, and a passage you pinned shows up here too.</td></tr>
-      <tr><th>Learn</th><td>Black's ${LESSONS.length} chapters. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
-      <tr><th>Drill</th><td>${DRILLS.length} ways to practise, grouped by vocabulary, grammar, and letters and sounds.</td></tr>
+      <tr><th>Learn</th><td>${LESSONS.length} chapters following Black's progression. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
+      <tr><th>Drill</th><td>${DRILLS.length} ways to practise, in ${Object.keys(DRILL_GROUP).length} groups. Where a drill depends on how far you have got, it says what it is worth to you today, and dims when there is nothing in it for you yet.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
       <tr><th>Progress</th><td>Your numbers and badges first, then settings, sync, and your data.</td></tr>
