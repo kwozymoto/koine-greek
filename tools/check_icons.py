@@ -107,6 +107,43 @@ for g in ORDER:
         bad.append("DRILL_ORDER names %r, which is not a group" % g)
 print("groups in the drawing order: %d of %d" % (len(ORDER), len(groups)))
 
+# ------------------------------------------- manifest shortcuts ----------
+# A long-press shortcut opens ./?go=<screen>. The screen names are the nav's
+# own data-go attributes, and js/app.js reads them off the buttons rather than
+# repeating them — but the manifest is a third file that cannot, so this is
+# where the three are made to agree. A shortcut naming a screen that does not
+# exist opens the app and silently does nothing, and no one long-presses their
+# own app icon often enough to notice.
+mf = json.load(io.open(os.path.join(ROOT, "manifest.webmanifest"),
+                       encoding="utf-8"))
+html = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+SCREENS = set(re.findall(r'data-go="([a-z]+)"', html)) | {"help"}
+SHORTCUTS = mf.get("shortcuts", [])
+print("nav screens: %d   manifest shortcuts: %d"
+      % (len(SCREENS), len(SHORTCUTS)))
+
+for s in SHORTCUTS:
+    url = s.get("url", "")
+    m = re.search(r"[?&]go=([a-z]+)", url)
+    if not m:
+        bad.append("the shortcut %r has no ?go= target, so it just opens the "
+                   "app" % s.get("name"))
+    elif m.group(1) not in SCREENS:
+        bad.append("the shortcut %r opens ?go=%s, which is not a screen; the "
+                   "nav has %s" % (s.get("name"), m.group(1),
+                                   ", ".join(sorted(SCREENS))))
+    for ic in s.get("icons", []):
+        p = os.path.join(ROOT, ic.get("src", ""))
+        if not os.path.isfile(p):
+            bad.append("the shortcut %r names the icon %r, which is not in "
+                       "the repo" % (s.get("name"), ic.get("src")))
+
+# and the app has to actually honour ?go=, or the shortcuts are decorative
+app_src = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+if SHORTCUTS and 'get("go")' not in app_src:
+    bad.append("the manifest declares shortcuts but js/app.js never reads a "
+               "go parameter, so every one of them opens Today")
+
 print("\nfaults: %d" % len(bad))
 for b in bad:
     print("   " + b)

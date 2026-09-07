@@ -2964,3 +2964,29 @@ save();
 applyGk();
 requestPersistence();
 render();
+
+/* ---------------------------------------------------- ?go=<screen> -------
+   A home-screen shortcut or a shared link can name the screen to open:
+   everydaykoine.app/?go=read. That is the whole of it — an entry point, not
+   routing. The app deliberately does not put its state in the URL (pushNav
+   passes "" so the address never changes), and adding that would mean
+   reworking navReplay, which is load-bearing and works.
+
+   The valid names are read off the nav's own data-go attributes rather than
+   written out here, so the list cannot drift from the buttons that define
+   it — the same fault as a chapter gate hard-coded as a number. Anything
+   unrecognised is ignored and Today stands.
+
+   The query is then removed with replaceState: without it, a reload would
+   keep sending you back to wherever the shortcut pointed, long after you had
+   navigated somewhere else. */
+(function openFromQuery(){
+  try{
+    const want=new URLSearchParams(location.search).get("go");
+    if(!want) return;
+    const screens=new Set([...document.querySelectorAll("nav [data-go]")]
+      .map(b=>b.dataset.go).concat("help"));
+    if(screens.has(want)) go(want);
+    history.replaceState(history.state, "", location.pathname);
+  }catch(e){}
+})();

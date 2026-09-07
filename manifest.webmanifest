@@ -12,6 +12,17 @@
   "lang": "en",
   "dir": "ltr",
   "categories": ["education", "books"],
+  "shortcuts": [
+    { "name": "Drill", "short_name": "Drill", "url": "./?go=drill",
+      "description": "Practise vocabulary, grammar, paradigms and sounds",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Read", "short_name": "Read", "url": "./?go=read",
+      "description": "The graded passages and the whole Greek New Testament",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Look up", "short_name": "Look up", "url": "./?go=tables",
+      "description": "Any word in the course, and every paradigm table",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ],
   "icons": [
     { "src": "icons/icon-192.png",     "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "icons/icon-512.png",     "sizes": "512x512", "type": "image/png", "purpose": "any" },
