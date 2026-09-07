@@ -1,4 +1,7 @@
-# Κοινή — Koine Greek
+# Everyday Koine
+
+*Κοινή — the everyday tongue, and the name says so twice on purpose.*
+[everydaykoine.app](https://everydaykoine.app/)
 
 A single-user study app for New Testament Greek. Vanilla HTML, CSS and
 JavaScript; no build step, no framework, no server. It runs from

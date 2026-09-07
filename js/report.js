@@ -97,7 +97,7 @@ function reportDiag() {
 
 function reportText() {
   const what = (document.getElementById("repWhat") || {}).value || "";
-  return "Koine Greek — problem report\n\n" +
+  return "Everyday Koine — problem report\n\n" +
     (what.trim() || "(no description given)") +
     "\n\n---- what the app knows ----\n" + reportDiag() + "\n";
 }
@@ -173,8 +173,8 @@ async function reportSend() {
   try {
     if (navigator.share) {
       await navigator.share(canFile
-        ? { title: "Koine Greek — problem report", text, files: [REPORT_FILE] }
-        : { title: "Koine Greek — problem report", text });
+        ? { title: "Everyday Koine — problem report", text, files: [REPORT_FILE] }
+        : { title: "Everyday Koine — problem report", text });
       reportDone(REPORT_FILE && !canFile
         ? "Sent — attach the screenshot yourself, this browser cannot"
         : "Sent");
