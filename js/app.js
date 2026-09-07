@@ -226,6 +226,14 @@ function toast(msg){
 function backupNudgeHtml(){
   const synced = typeof SYNC!=="undefined" && SYNC && SYNC.id;
   if(synced) return "";
+  /* Nothing to lose yet, so nothing to warn about. A first-run walk-through
+     found this: the very first thing a new user saw on Progress was a gold
+     warning that "this device is the only place it lives" — under 0 words
+     known, 0 XP and 0 chapters. An alarm about losing nothing reads as a nag
+     and teaches people to ignore the one that matters later. */
+  const worthKeeping = Object.keys(S.cards||{}).length >= 5
+                    || (S.lessons||[]).length >= 1;
+  if(!worthKeeping) return "";
   const last=S.exported;
   const days=last?daysBetween(last,today()):999;
   if(days<14) return "";
@@ -2684,7 +2692,7 @@ function renderProgress(){
     <div style="height:9px"></div>
     <button class="btn ghost" onclick="resetAll()" style="color:var(--rust)">Reset everything</button>
     <p class="muted" style="font-size:.82rem;margin:18px 0 0">
-      <a href="privacy.html" style="color:var(--muted)">Privacy policy</a> — what is
+      <a href="privacy.html" class="tappable" style="color:var(--muted)">Privacy policy</a> — what is
       stored, what sync sends, and how to delete it. Google Play requires this
       link to be in the app as well as on the listing.</p>
     <div style="height:26px"></div>`;

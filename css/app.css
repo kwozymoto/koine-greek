@@ -41,6 +41,12 @@ h3{font-size:.95rem;font-weight:600;margin:18px 0 6px;color:var(--gold)}
 p{margin:0 0 12px}
 .sub{color:var(--muted);font-size:.87rem;margin:0 0 20px}
 .muted{color:var(--muted)}
+/* An inline text link is about 18px tall, which is half of any touch-target
+   guideline — Apple asks 44pt, Android 48dp. The padding grows the tappable
+   box to 44px and the negative margin gives the space back to the layout, so
+   nothing moves on screen and the link simply becomes possible to hit. Used
+   on the two standalone links: "How this app works" and "Privacy policy". */
+.tappable{display:inline-block;padding:13px 6px;margin:-13px -6px}
 small{font-size:.8rem}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
@@ -55,7 +61,7 @@ small{font-size:.8rem}
 }
 .btn:active{transform:scale(.985)}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text);font-weight:500}
-.btn.small{width:auto;padding:9px 16px;font-size:.87rem;border-radius:10px}
+.btn.small{width:auto;padding:9px 16px;font-size:.87rem;border-radius:10px;min-height:44px}
 .btn[disabled]{opacity:.4}
 
 /* ---------- bottom nav ---------- */
@@ -323,7 +329,10 @@ body.off .vid:not(.local) .net{display:block}
 #repShotPrev{display:block;max-width:100%;max-height:16em;margin:10px 0 0;
   border:1px solid var(--line);border-radius:10px}
 .setrow:last-child{border-bottom:none}
-.setrow select{background:var(--surface-2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}
+/* min-height 44: a settings dropdown measured 34px tall, which is under both
+   touch-target floors (Apple 44pt, Android 48dp). Raising the minimum rather
+   than the padding leaves the text where it was. */
+.setrow select{background:var(--surface-2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem;min-height:44px}
 
 /* Greek text size preference */
 body[data-gk="lg"]{--gk-scale:1.18}

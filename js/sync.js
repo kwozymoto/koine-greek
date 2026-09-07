@@ -233,7 +233,8 @@ function syncCardHtml() {
   return `<div class="card">
     <h3 style="margin-top:0">Sync across devices</h3>
     <p class="muted" style="font-size:.85rem">Invent a private phrase and enter the same one on each device. Progress merges automatically — the phrase never leaves this device, only a fingerprint of it. Treat it like a password; anyone who knows it shares this deck.</p>
-    <input id="syncPhrase" type="password" placeholder="Your sync phrase (min 8 characters)"
+    <input id="syncPhrase" type="password" aria-label="Your sync phrase, at least 8 characters"
+      placeholder="Your sync phrase (min 8 characters)"
       style="width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font-size:.95rem;margin-bottom:9px">
     <button class="btn small" onclick="syncOn()">Turn on sync</button></div>`;
 }
