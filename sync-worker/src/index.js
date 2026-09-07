@@ -9,13 +9,32 @@
 
    All merging happens client-side. No other state, no logs of content. */
 
-const ORIGIN = "https://kwozymoto.github.io";
+/* Two origins, on purpose and temporarily.
+
+   The app is moving from the github.io path to its own domain. Browser
+   storage is keyed by origin, so a deck lives at whichever origin it was
+   built on, and the only way across is a sync. If this worker accepted just
+   one of the two there would be a window where the device you are trying to
+   copy FROM cannot reach the store — which is precisely the moment the sync
+   has to work.
+
+   So both are allowed until everyone has moved. The github.io entry can be
+   dropped after that; nothing breaks while it stays. */
+const ORIGINS = [
+  "https://everydaykoine.app",
+  "https://kwozymoto.github.io",
+];
 const MAX_BYTES = 300000;
 
 export default {
   async fetch(req, env) {
+    /* Access-Control-Allow-Origin takes one value, never a list, so the
+       request's own origin is echoed when it is allowed. Vary: Origin keeps
+       a cache from handing one origin's response to the other. */
+    const sent = req.headers.get("Origin");
     const cors = {
-      "Access-Control-Allow-Origin": ORIGIN,
+      "Access-Control-Allow-Origin": ORIGINS.includes(sent) ? sent : ORIGINS[0],
+      "Vary": "Origin",
       "Access-Control-Allow-Methods": "GET,PUT,OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Cache-Control": "no-store",
