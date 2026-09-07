@@ -691,3 +691,13 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .lesson-item.here{border-color:color-mix(in srgb,var(--gold) 34%,var(--line))}
 .lesson-item.here .t .lmeta{color:var(--gold)}
 .lesson-item.done .t .lmeta{color:var(--green)}
+
+/* ---------- the fortnight ahead ----------
+   Fourteen bars, scaled to the tallest, so the shape of the coming load is
+   readable at a glance. Today is picked out because it is the one you can
+   do something about. */
+.fcast{display:flex;align-items:flex-end;gap:3px;height:46px;margin:10px 0 7px}
+.fcast i{flex:1;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:3px 3px 0 0;min-height:3px;transition:height .5s cubic-bezier(.3,.85,.3,1)}
+.fcast i.now{background:var(--gold);border-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){ .fcast i{transition:none} }

@@ -1268,6 +1268,11 @@ function startReview(){
 /* 237 (τέ) duplicates 72 (τε) — the corpus lists the lemma accented and the
    original deck did not, so the expansion added it twice. Indexes cannot be
    removed (cards are keyed by them), so it is retired from introduction. */
+/* Running words in the SBLGNT. Written down because the app would otherwise
+   have to load 4.4MB of book JSON to count them, and the Progress page is
+   not worth that. tools/check_vocab.py counts them every run and fails if
+   this drifts — it already had the number in its summary line. */
+const NT_TOKENS=137554;
 const RETIRED=new Set([237]);
 const skipWord=i=>RETIRED.has(i)||(S.suspended||[]).includes(i);
 
@@ -2195,6 +2200,22 @@ function renderDrill(){
    acute to a grave before a following word, so τόν and τὸν are the same form.
    Breathings and iota subscript are kept: they distinguish real words. */
 const norm=gkPhrase;          // js/greek.js: the only file that says what that means
+/* How much of a passage you already know, on the app's one test of knowing:
+   six days or longer, the same test knownCount, litClass and focusKnown use.
+   Counted over the words that are in the deck at all — a passage carries its
+   VOCAB index per word, so the ones outside it are simply not askable and
+   counting them would make every passage look unreadable for ever. */
+function readingKnown(r){
+  let deck=0, known=0;
+  const seen=new Set();
+  for(const w of r.w){
+    const i=w[5];
+    if(!(i>=0) || seen.has(i)) continue;
+    seen.add(i); deck++;
+    if(S.cards[i] && +S.cards[i].ivl>=6) known++;
+  }
+  return {deck, known};
+}
 function renderRead(){
   pushNav({screen:"read"});
   /* Reaching Saturday's chapter was Read → whole NT → scroll 27 books →
@@ -2209,11 +2230,14 @@ function renderRead(){
        <span class="t"><b>The whole Greek New Testament</b><span>Any chapter, every word parsed</span></span>
        <span class="muted">›</span></button>
      <h2 style="margin:18px 0 10px">Graded passages</h2>`
-    + READINGS.map(r=>`
-    <button class="lesson-item" onclick="openRead('${r.id}')">
-      <span class="t"><b>${r.ref}</b><span>${r.w.length} words</span></span>
+    + READINGS.map(r=>{
+    const k=readingKnown(r), pct=k.deck?Math.round(100*k.known/k.deck):0;
+    return `<button class="lesson-item" onclick="openRead('${r.id}')">
+      <span class="t"><b>${r.ref}</b><span>${r.w.length} words</span>
+        <span class="lmeta">${k.known} of ${k.deck} of its words settled</span>
+        <span class="lbar"><i style="width:${pct}%"></i></span></span>
       <span class="muted">›</span>
-    </button>`).join("");
+    </button>`;}).join("");
   document.getElementById("readBody").innerHTML="";
 }
 /* How well a word is known, as one of the four classes css/app.css dims by.
@@ -2498,6 +2522,54 @@ function renderHelp(){
 /* ============================================================
    PROGRESS
    ============================================================ */
+/* What the deck is FOR, in the only unit that answers it: how much of the
+   running text your settled words account for. Six hundred words is an
+   abstraction; two thirds of every word in front of you is not. The number
+   is the sum of the frequencies of the words you have settled, over every
+   running word in the New Testament. */
+function coverageHtml(){
+  let n=0;
+  for(const k of Object.keys(S.cards)){
+    const i=+k, c=S.cards[k];
+    if(!(i>=0) || !VOCAB[i] || skipWord(i)) continue;
+    if(c && +c.ivl>=6) n+=(+VOCAB[i][2]||0);
+  }
+  const pct=n/NT_TOKENS*100;
+  const shown=pct>=10?pct.toFixed(0):pct.toFixed(1);
+  return `<div class="card">
+    <div class="between"><span>Of the New Testament</span><b>${shown}%</b></div>
+    <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,pct)}%"></i></div>
+    <small class="muted">Your settled words account for ${n.toLocaleString()} of its
+      ${NT_TOKENS.toLocaleString()} running words</small></div>`;
+}
+
+/* What is coming, which the schedule knows to the day and never showed. A
+   fortnight of bars says "Thursday is heavy" in a way a single due count
+   cannot, and it is the one thing on this page that is about tomorrow
+   rather than about what has already happened. */
+function forecastHtml(){
+  const days=14, bars=[];
+  for(let d=0;d<days;d++){
+    const dt=new Date(); dt.setDate(dt.getDate()+d);
+    const key=ymd(dt);
+    let n=0;
+    for(const k of Object.keys(S.cards)){
+      const c=S.cards[k];
+      if(!c || skipWord(+k)) continue;
+      if(d===0 ? c.due<=key : c.due===key) n++;
+    }
+    bars.push(n);
+  }
+  const top=Math.max(1,...bars);
+  if(!bars.some(Boolean)) return "";
+  return `<div class="card">
+    <div class="between"><span>The fortnight ahead</span><b>${bars[0]} due today</b></div>
+    <div class="fcast">${bars.map((n,d)=>`
+      <i style="height:${Math.max(3,Math.round(100*n/top))}%" class="${d===0?"now":""}"
+         title="${n} on ${d?`day +${d}`:"today"}"></i>`).join("")}</div>
+    <small class="muted">Tallest day: ${top} card${top===1?"":"s"}</small></div>`;
+}
+
 function renderProgress(){
   // LEARN_ORDER, not VOCAB: index 237 is retired and no route in the app
   // can ever create a card for it, so counting it overstates the deck by one.
@@ -2517,6 +2589,8 @@ function renderProgress(){
       ${S.streak} day streak · best ${S.best||0}${
         alphaLeft()?` · ${ALPHABET.length-alphaLeft()} of ${ALPHABET.length} letters settled`
                    :" · alphabet settled"}</p>
+    ${coverageHtml()}
+    ${forecastHtml()}
     <div class="card">
       <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
       <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>

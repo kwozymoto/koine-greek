@@ -725,8 +725,24 @@ def section(title, items, limit=None):
         print("   ... and %d more" % (len(items) - limit))
     print()
 
+# js/app.js writes the corpus's running-word count down rather than loading
+# 4.4MB of book JSON to count it on the Progress page. Counted here every
+# run, because a number written down is a number that drifts.
+_appjs = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+_m = re.search(r"const NT_TOKENS=(\d+);", _appjs)
+nt_bad = []
+if not _m:
+    nt_bad.append("js/app.js no longer declares NT_TOKENS")
+elif int(_m.group(1)) != sum(count.values()):
+    nt_bad.append("js/app.js says the New Testament has %s running words; the "
+                  "corpus has %d" % (_m.group(1), sum(count.values())))
+
 print("vocabulary entries: %d (%d retired)   corpus lemmas: %d   tokens: %d"
       % (len(VOCAB), len(RETIRED), len(LEMMAS), sum(count.values())))
+print("running words the app writes down, against the corpus: %s"
+      % ("disagree" if nt_bad else "agree"))
+for _b in nt_bad:
+    print("   " + _b)
 print("example verses: %d verified word for word, %d entries without one"
       % (ex_ok, len(ex_none)))
 print()
@@ -753,5 +769,5 @@ section("looks wrong, checked, and is not", excused)
 
 hard = (shape + unattested + dupes + posbad + citebad + formbad + prepbad + ex_bad
         + pp_bad + accent_bad + tts_bad
-        + wrong_gloss + missing_gloss + audio_bad + form_bad + cue_bad)
+        + wrong_gloss + missing_gloss + audio_bad + form_bad + cue_bad + nt_bad)
 sys.exit(1 if hard else 0)
