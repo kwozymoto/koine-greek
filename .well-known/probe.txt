@@ -1,0 +1,3 @@
+Dot-directories are being served from this repo, so .well-known/assetlinks.json
+will work. If this returns 404, .nojekyll has gone missing and Android domain
+verification will fail silently. See CLAUDE.md.
