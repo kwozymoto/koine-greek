@@ -335,6 +335,33 @@ BARE = {
 DONE = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
         15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27}
 
+# Chapters deliberately NOT yet held to that standard, and what is left to do
+# on each. Empty, and it should stay that way between batches.
+#
+# It exists because DONE is what switches this file's three real tests on —
+# the part-break shape, a question against every headed part, and unattested
+# Greek. A chapter outside DONE is not merely unfinished, it is UNCHECKED, and
+# it says so nowhere: the counts go into `pending_q` and print as a number.
+# Today DONE happens to name all twenty-seven, so nothing is skipped; a
+# twenty-eighth chapter would drop out of all three and the run would stay
+# green. So a chapter must now be declared one or the other, and being
+# overlooked is not one of the options.
+PENDING = {}
+
+_ids = {l["id"] for l in LESSONS}
+undeclared = sorted(_ids - DONE - set(PENDING))
+phantom = sorted((DONE | set(PENDING)) - _ids)
+both = sorted(DONE & set(PENDING))
+policy = []
+for cid in undeclared:
+    policy.append("ch%-3d is in neither DONE nor PENDING, so its part breaks, "
+                  "its questions and its Greek go unchecked and this file says "
+                  "nothing about it" % cid)
+for cid in phantom:
+    policy.append("ch%-3d is named in DONE or PENDING and is not a chapter" % cid)
+for cid in both:
+    policy.append("ch%-3d is in DONE and in PENDING at once" % cid)
+
 # The dose is defined in js/app.js and read from it, not repeated here.
 DOSE = 3
 try:
@@ -408,5 +435,17 @@ print("chapters that divide badly into sittings of %d: %d" % (DOSE, len(badly_sh
 for b in badly_shaped:
     print("   " + b)
 
-if sec_bad or sec_early or verse_bad or no_question or badly_shaped or unlisted or skew:
+print()
+print("chapters held to the standard: %d of %d%s"
+      % (len(DONE & _ids), len(_ids),
+         "" if not PENDING else "   (%d pending: %s)"
+         % (len(PENDING), ", ".join("ch%d %s" % (c, w)
+                                    for c, w in sorted(PENDING.items())))))
+if policy:
+    print("chapters neither finished nor declared unfinished: %d" % len(policy))
+    for p in policy:
+        print("   " + p)
+
+if (sec_bad or sec_early or verse_bad or no_question or badly_shaped
+        or unlisted or skew or policy):
     sys.exit(1)

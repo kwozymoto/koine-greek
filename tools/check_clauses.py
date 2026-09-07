@@ -34,6 +34,12 @@ it with the corpus's authority behind it. Every row is put back:
 What it does not check is that the question is worth asking. A short verse
 made of common words is a better question than a long one, but that is a
 judgement, and the builder's caps make it rather than this.
+
+It also checks WHEN the drill is offered. CLAUSE_CH in js/app.js is a bare
+chapter number, and a bare chapter number is what shifted six CASEFN
+questions a chapter early when 20 was split into two — silently, for fifteen
+commits, because a number has no opinion about what it points at. So it is
+pinned here to the title of the chapter it was chosen for.
 """
 import collections, io, json, os, re, sys, unicodedata
 
@@ -180,9 +186,32 @@ for r in ROWS:
     else:
         fail(r, "is a kind this checker does not know")
 
+# ------------------------------------------------------- when it opens ----
+# The gate the drill waits for, pinned to the chapter it was chosen for
+# rather than to that chapter's number. See the note at the top.
+GATE_TITLE = "Nouns of the first declension"
+_app = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+_m = re.search(r"const CLAUSE_CH\s*=\s*(\d+)", _app)
+if not _m:
+    sys.exit("could not find CLAUSE_CH in js/app.js — the sentence drill's "
+             "gate has been renamed or inlined, and this check is now blind")
+GATE = int(_m.group(1))
+TITLE = dict((int(a), b) for a, b in re.findall(
+    r'^\{id:(\d+),t:"([^"]+)"',
+    io.open(os.path.join(ROOT, "data", "lessons.js"), encoding="utf-8").read(),
+    re.M))
+if TITLE.get(GATE) != GATE_TITLE:
+    bad.append("the sentence drill opens after chapter %d, which is now %r; "
+               "the gate was chosen for %r. %s"
+               % (GATE, TITLE.get(GATE), GATE_TITLE,
+                  "A renumber has moved it." if GATE_TITLE in TITLE.values()
+                  else "That chapter has been renamed — the gate has to "
+                       "follow it."))
+
 print("sentence questions: %d across %d verses · %s"
       % (len(ROWS), len({(r[1], r[2], r[3]) for r in ROWS if len(r) == 10}),
          " ".join("%s %d" % kv for kv in sorted(kinds.items()))))
+print("the drill opens after chapter %d, %r" % (GATE, TITLE.get(GATE)))
 print()
 print("rows the corpus does not bear out: %d" % len(bad))
 for b in bad:

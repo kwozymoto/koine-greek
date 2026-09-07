@@ -621,12 +621,20 @@ function planExtra(){
 /* What "more" means once every row is ticked. The button used to say
    "Practise anyway", which reads like it does not count, and led to a
    review whether or not a review was the useful thing left. */
+/* The chapter the clause drill waits for. Both places that offer a sentence
+   read this rather than repeating the number, and check_clauses pins it to
+   that chapter's title — a bare gate number is what shifted six CASEFN
+   questions a chapter early when 20 was split, silently, for fifteen
+   commits. */
+const CLAUSE_CH=5;
+const chapterReached=()=>S.lessons.length?Math.max(...S.lessons):0;
+
 /* Short named rounds, offered in turn. Whichever is picked, it is named on
    the button — "Keep going" that always says the same thing is a door you
    stop noticing. */
 function extraRounds(){
   const r=[];
-  if(typeof clauseDrill==="function" && (S.lessons.length?Math.max(...S.lessons):0)>=5)
+  if(typeof clauseDrill==="function" && chapterReached()>=CLAUSE_CH)
     r.push({label:"four sentences",run:()=>startSession(clauseDrill(4),"sent")});
   if(typeof gridSprint==="function" && gridStarted().length)
     r.push({label:"a paradigm sprint",run:()=>startSession(gridSprint(10),"d")});
@@ -761,11 +769,10 @@ function todaysPlan(){
   }
 
   /* One sentence a day, from the text rather than from a paradigm. Waits for
-     chapter 5, by which point there are verbs and two declensions to find —
+     CLAUSE_CH, by which point there are verbs and two declensions to find —
      before that the questions would be about endings nobody has been shown.
      A focus aims it at the passage, like everything else here. */
-  if(typeof clauseDrill==="function"
-     && (S.lessons.length?Math.max(...S.lessons):0)>=5){
+  if(typeof clauseDrill==="function" && chapterReached()>=CLAUSE_CH){
     const f2=S.focus;
     tasks.push({id:"sent", mins:2,
       label:"Read a sentence",
@@ -1971,11 +1978,11 @@ function caseQ(c){
    in the app were reachable only from a menu and wrote nothing when you
    answered one. startReview introduces one per review. */
 function caseNew(){
-  const done=S.lessons.length?Math.max(...S.lessons):0;
+  const done=chapterReached();
   return CASEFN.map((c,i)=>i).filter(i=>CASEFN[i][4]<=done && !(S.gcards||{})[`C${i}`]);
 }
 const caseEarned=()=>{
-  const done=S.lessons.length?Math.max(...S.lessons):0;
+  const done=chapterReached();
   return CASEFN.map((c,i)=>i).filter(i=>CASEFN[i][4]<=done);
 };
 /* Keyed now, so answering one puts it on the grammar schedule. Twelve rather
