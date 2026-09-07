@@ -1,7 +1,13 @@
 :root{
   --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
   --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-dim:#8a6d24;
-  --green:#58a88c; --rust:#cd6152; --blue:#6f8fd0;
+  /* --rust is TEXT ("Reset everything", a wrong option, a grade-1 pip) and
+     --rust-solid is the same red as a BACKGROUND with white on it. They pull
+     opposite ways against WCAG: as text the red has to be light enough to
+     clear 4.5:1 on the card, and behind white it has to be dark enough to do
+     the same. #cd6152 was doing both jobs and failed both — 4.44 as text,
+     3.87 behind the offline pill. Measured, not guessed. */
+  --green:#58a88c; --rust:#df6a59; --rust-solid:#bb584b; --blue:#6f8fd0;
   --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   --nav-h:60px;
@@ -276,7 +282,7 @@ button.vid{width:100%;text-align:left;font:inherit}
 .install .t b{display:block;font-size:.88rem;font-weight:600}
 .install .t span{font-size:.74rem;color:var(--muted);line-height:1.35}
 
-.netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
+.netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust-solid);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
 .netpill.on{opacity:1}
 
 .update{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 22px);transform:translateX(-50%);display:none;align-items:center;gap:14px;white-space:nowrap;background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:11px;padding:10px 16px;font-size:.87rem;z-index:61}
