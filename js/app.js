@@ -2097,25 +2097,49 @@ const DRILL_GROUP={
              "Mixed grammar review"],
   "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
 };
+/* The order the page is drawn in, which is not the order the groups were
+   written in. "Everything" is one row — Daily mix, the answer to "just give
+   me something" — and that is the commonest thing to want on a page you
+   opened because you did not want the plan, so it goes first. Letters used
+   to be last, which is exactly backwards for a beginner and exactly right
+   for everyone else; that tension belongs in the badges, not in the running
+   order, so the order is fixed and the badges move. A page used daily earns
+   muscle memory, and one that reshuffles itself destroys it. */
+const DRILL_ORDER=["Everything","Vocabulary","Letters and sounds","Grammar",
+                   "Paradigms","Reading"];
+/* One card: the icon, the title, what it is, and — where the number changes
+   with your progress — what it is worth today. A drill that would run on its
+   cold-start pool rather than on your own work is dimmed and says why, the
+   same way the keyboard greys an accent that cannot go on the letter you
+   have just typed. */
+function drillCard(i,tone){
+  const st=(typeof drillState==="function")?drillState(DRILLS[i][0]):null;
+  const badge=st && (st.n!==undefined || st.note)
+    ? `<span class="dbadge${st.ready?"":" cold"}">${
+        st.n!==undefined?`<b>${st.n}</b> `:""}${st.note}</span>` : "";
+  return `<button class="lesson-item drill-item${st&&!st.ready?" not-ready":""}"
+      data-tone="${tone}" onclick="DRILLS[${i}][2]()">
+      <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
+      <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span>${badge}</span>
+      <span class="muted">›</span></button>`;
+}
 function renderDrill(){
   const seen=new Set();
-  let html=Object.entries(DRILL_GROUP).map(([group,names])=>{
+  const ordered=(typeof DRILL_ORDER!=="undefined"
+    ? DRILL_ORDER.filter(g=>DRILL_GROUP[g]).map(g=>[g,DRILL_GROUP[g]])
+    : Object.entries(DRILL_GROUP));
+  let html=ordered.map(([group,names])=>{
     const items=names.map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0);
     items.forEach(i=>seen.add(i));
     const tone=(typeof GROUP_TONE!=="undefined" && GROUP_TONE[group])||"muted";
-    return items.length?`<h2 class="dgroup" data-tone="${tone}">${group}</h2>`+items.map(i=>`
-      <button class="lesson-item drill-item" data-tone="${tone}" onclick="DRILLS[${i}][2]()">
-        <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
-        <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
-        <span class="muted">›</span></button>`).join(""):"";
+    return items.length?`<h2 class="dgroup" data-tone="${tone}">${group}${
+      items.length>1?`<small>${items.length}</small>`:""}</h2>`
+      +items.map(i=>drillCard(i,tone)).join(""):"";
   }).join("");
   // anything added later and not yet filed still appears
   const rest=DRILLS.map((d,i)=>i).filter(i=>!seen.has(i));
-  if(rest.length) html+=`<h2 class="dgroup" data-tone="muted">More</h2>`+rest.map(i=>`
-      <button class="lesson-item drill-item" data-tone="muted" onclick="DRILLS[${i}][2]()">
-        <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
-        <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span></span>
-        <span class="muted">›</span></button>`).join("");
+  if(rest.length) html+=`<h2 class="dgroup" data-tone="muted">More<small>${
+      rest.length}</small></h2>`+rest.map(i=>drillCard(i,"muted")).join("");
   document.getElementById("drillMenu").innerHTML=html;
 }
 

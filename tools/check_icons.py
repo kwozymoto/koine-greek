@@ -76,6 +76,37 @@ unused = KINDS - set(KIND_OF.values())
 for k in sorted(unused):
     bad.append("the icon %r is drawn and no drill uses it" % k)
 
+# --------------------------------------------------- state and order ------
+# Every drill either reports what it is worth today or is declared as one
+# whose content does not change. Neither by accident: a new drill with no
+# badge should be a decision, not an omission.
+STATE = set(re.findall(r'^\s*"([^"]+)":\s*\(\) =>',
+                       block(icons, "DRILL_STATE", r"\};"), re.M))
+m = re.search(r"const DRILL_STATIC = \[(.*?)\];", icons, re.S)
+STATIC = set(re.findall(r'"([^"]+)"', m.group(1))) if m else set()
+print("drills reporting a count: %d   declared unchanging: %d"
+      % (len(STATE), len(STATIC)))
+
+for t in titles:
+    if t not in STATE and t not in STATIC:
+        bad.append("the drill %r neither reports what it is worth nor is "
+                   "declared unchanging" % t)
+    if t in STATE and t in STATIC:
+        bad.append("the drill %r is in both DRILL_STATE and DRILL_STATIC" % t)
+for t in (STATE | STATIC) - set(titles):
+    bad.append("%r has a state or is declared static, and is not a drill" % t)
+
+# the page is drawn in DRILL_ORDER, so a group missing from it disappears
+m = re.search(r"const DRILL_ORDER=\[(.*?)\];", app, re.S)
+ORDER = re.findall(r'"([^"]+)"', m.group(1)) if m else []
+for g in groups:
+    if g not in ORDER:
+        bad.append("the group %r is not in DRILL_ORDER, so it is not drawn" % g)
+for g in ORDER:
+    if g not in groups:
+        bad.append("DRILL_ORDER names %r, which is not a group" % g)
+print("groups in the drawing order: %d of %d" % (len(ORDER), len(groups)))
+
 print("\nfaults: %d" % len(bad))
 for b in bad:
     print("   " + b)

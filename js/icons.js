@@ -187,3 +187,102 @@ function ringFill(root) {
     arc.style.strokeDashoffset = RING_LEN - RING_LEN * (+arc.dataset.fill);
   });
 }
+
+
+/* ---------------------------------------------------------------------
+   What a drill is worth right now.
+
+   The page offered twenty-three things as though they were equally
+   available. They are not. On a fresh install "Vocabulary due now" sat first
+   with nothing due; "Case functions" offered all twenty questions when
+   caseEarned() was nought of twenty, every one of them about genitive
+   absolutes and conditional classes from chapters the learner had not
+   reached; and "Write a real form" fell through to its cold-start pool and
+   asked for γυναικῶν on day one.
+
+   Those fallbacks are deliberate — a drill that refuses to run is worse than
+   one that runs on borrowed material. What was missing is that the page never
+   said which was happening.
+
+   So each drill can report a count and whether it is ready. The rule that
+   keeps this honest: READY IS COMPUTED FROM THE DRILL'S OWN THRESHOLD, not
+   from a number chosen to look right here. caseDrill uses its earned
+   questions when there are six or more; so the badge says ready at six.
+   typeDrill uses lemmas you have met when there are six or more; same. If
+   the badge and the builder ever disagree, the badge is lying about what is
+   about to happen, which is worse than saying nothing.
+
+   Drills whose content does not change with progress say nothing at all. A
+   count that is always 17 is decoration, and this file already argued that
+   an icon meaning nothing is worse than no icon. */
+const DRILL_STATE = {
+  "Vocabulary due now": () => {
+    const n = dueList().length + Math.min(5, gdueList().length);
+    return n ? { n, note: "due" } : { note: "nothing due today", ready: false };
+  },
+  "Learn 5 new words": () => {
+    const left = VOCAB.map((_, i) => i)
+      .filter(i => !S.cards[i] && !skipWord(i)).length;
+    return left ? { n: left, note: "not started" }
+                : { note: "every word started", ready: false };
+  },
+  "Alphabet": () => {
+    const left = alphaLeft();
+    return left ? { n: left, note: `of ${ALPHABET.length} unsettled` }
+                : { note: "all settled", ready: true };
+  },
+  "Case functions": () => {
+    const e = caseEarned().length;
+    /* caseDrill: earned questions when there are six or more, else all of
+       them. Below six it is teaching from chapters you have not read. */
+    return e >= 6 ? { n: e, note: `of ${CASEFN.length} earned` }
+                  : { n: e, note: `of ${CASEFN.length} earned — chapters first`,
+                      ready: false };
+  },
+  "Mixed grammar review": () => {
+    const done = S.lessons.length;
+    return done ? { n: done, note: "chapters to draw on" }
+                : { note: "finish a chapter first", ready: false };
+  },
+  "Fill the grid": () => {
+    const d = (typeof gridDue === "function") ? gridDue().length : 0;
+    return d ? { n: d, note: "due" } : { note: "none due — free practice" };
+  },
+  "Paradigm sprint": () => {
+    const d = (typeof gridDue === "function") ? gridDue().length : 0;
+    return d ? { n: d, note: "due" } : { note: "none due — free practice" };
+  },
+  "Write a real form": () => metForms(),
+  "Produce a real form": () => metForms(),
+};
+
+/* Both real-form drills gate on the same thing, computed the same way they
+   compute it: lemmas with three or more forms that you have actually met. */
+function metForms() {
+  if (typeof FORMS === "undefined") return { ready: false, note: "no forms" };
+  const by = {};
+  FORMS.forEach(f => (by[f[1]] = by[f[1]] || []).push(f));
+  const met = Object.keys(by).filter(k => by[k].length >= 3 && S.cards[k] && !skipWord(+k));
+  return met.length >= 6
+    ? { n: met.length, note: "of your words" }
+    : { n: met.length, note: "of your words — learn a few more", ready: false };
+}
+
+/* Drills whose content is the same on day one and day four hundred. They get
+   no badge, and tools/check_icons.py insists every drill is either here or
+   in DRILL_STATE, so a new one cannot quietly get neither. */
+const DRILL_STATIC = [
+  "Greek → English", "English → Greek", "The article", "Verb parsing",
+  "Listening — letters", "Listening — words", "Parsing builder",
+  "Parse a real form", "Principal parts", "Look-alikes", "Write the letters",
+  "Write it from memory", "Read a sentence", "Daily mix",
+];
+
+function drillState(title) {
+  const f = DRILL_STATE[title];
+  if (!f) return null;
+  try {
+    const s = f() || {};
+    return { n: s.n, note: s.note || "", ready: s.ready !== false };
+  } catch (e) { return null; }
+}

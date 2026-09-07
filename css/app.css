@@ -634,3 +634,41 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   #ringArc,.ring-arc{transition:none}
   .ring.just-done{animation:none}
 }
+
+/* ---------- what a drill is worth today ----------
+   The badge carries a number the app already knew and never showed. Dimming
+   rather than hiding, because a drill that runs on its cold-start pool is
+   still worth having — it just should not look like the one with twelve
+   cards due. */
+.dbadge{
+  /* block, or it flows into the middle of the wrapped description and the
+     pill radius turns it into a blob sitting on the text. width:fit-content
+     keeps it as wide as its words rather than the whole card. */
+  display:block;width:fit-content;max-width:100%;
+  /* nowrap, or fit-content inside a min-width:0 flex item collapses to
+     min-content and the pill wraps into a two-line blob */
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  margin-top:6px;padding:2px 8px;border-radius:999px;
+  font-size:.7rem;line-height:1.5;color:var(--tone);
+  background:color-mix(in srgb, var(--tone) 13%, transparent);
+  border:1px solid color-mix(in srgb, var(--tone) 30%, transparent);
+}
+/* Two rules already in this file reach into the badge and had to be beaten,
+   which is why these selectors are longer than they look as though they need
+   to be. `.lesson-item .t b{display:block}` put the number on a line of its
+   own and turned every pill into a two-line blob. `.lesson-item .t span` is
+   more specific than `.dbadge`, so it repainted the text muted and the tone
+   never showed. */
+.lesson-item .t .dbadge{color:var(--tone);font-size:.7rem}
+.lesson-item .t .dbadge.cold{color:var(--muted)}
+.lesson-item .t .dbadge b{display:inline;font-weight:700;font-size:inherit}
+.dbadge.cold{color:var(--muted);background:transparent;border-color:var(--line)}
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+  .dbadge{background:var(--surface-2);border-color:var(--line)}
+}
+.drill-item.not-ready{opacity:.62}
+.drill-item.not-ready .dwell{filter:grayscale(.55)}
+.dgroup small{
+  margin-left:auto;font-size:.72rem;font-weight:500;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:1px 8px;
+}
