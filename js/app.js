@@ -1321,12 +1321,57 @@ function introduce(fresh,emptyMsg){
 /* ============================================================
    LESSONS
    ============================================================ */
+/* What a chapter costs, worked out rather than written down: how many parts
+   it divides into and how many words it teaches. On the Drill page a count
+   that never changes was decoration, and it is not here — the question that
+   page asks is "is this worth doing now", which a fixed number cannot
+   answer, and the question this one asks is "how big is this", which is
+   exactly what a fixed number answers. */
+function lessonMeta(l){
+  const parts=lessonParts(l).length;
+  const words=(l.v||[]).length;
+  return [`${parts} parts`, words?`${words} words`:null].filter(Boolean).join(" · ");
+}
 function renderLessons(){
-  document.getElementById("lessonList").innerHTML=LESSONS.map(l=>`
-    <button class="lesson-item ${S.lessons.includes(l.id)?"done":""}" onclick="openLesson(${l.id})">
-      <span class="n">${S.lessons.includes(l.id)?"✓":l.id}</span>
-      <span class="t"><b>${l.t}</b><span>${l.s}</span></span>
-    </button>`).join("");
+  const done=S.lessons.length;
+  const at=S.lessonPart;
+  /* Where you are, at the top, because that is what the page is for. The app
+     has recorded a part-way chapter since doses were introduced — Today
+     offers to pick it up — and the Lessons page, which is where anyone would
+     go to resume, showed nothing at all: a chapter stopped halfway looked
+     exactly like one never opened. */
+  const nextId=(LESSONS.find(l=>!S.lessons.includes(l.id))||{}).id;
+  let head="";
+  if(at && LESSONS.some(l=>l.id===at.id)){
+    const l=LESSONS.find(x=>x.id===at.id), n=lessonParts(l).length;
+    head=`<button class="lesson-item resume" onclick="lessonWalk(${l.id},${at.part})">
+      <span class="dwell">${typeof drillIcon==="function"?drillIcon("Read a sentence"):""}</span>
+      <span class="t"><b>Carry on — ${l.t}</b>
+        <span>Chapter ${l.id}, part ${at.part+1} of ${n}</span>
+        <span class="lbar"><i style="width:${Math.round(100*at.part/n)}%"></i></span></span>
+      <span class="muted">›</span></button>`;
+  } else if(nextId){
+    const l=LESSONS.find(x=>x.id===nextId);
+    head=`<button class="lesson-item resume" onclick="openLesson(${l.id})">
+      <span class="dwell">${typeof drillIcon==="function"?drillIcon("Read a sentence"):""}</span>
+      <span class="t"><b>${done?"Next":"Start here"} — ${l.t}</b>
+        <span>Chapter ${l.id} · ${lessonMeta(l)}</span></span>
+      <span class="muted">›</span></button>`;
+  }
+  const list=LESSONS.map(l=>{
+    const fin=S.lessons.includes(l.id);
+    const here=at && at.id===l.id;
+    const n=lessonParts(l).length;
+    return `<button class="lesson-item ${fin?"done":""}${here?" here":""}"
+        onclick="openLesson(${l.id})">
+      <span class="n">${fin?"✓":l.id}</span>
+      <span class="t"><b>${l.t}</b><span>${l.s}</span>
+        <span class="lmeta">${here?`part ${at.part+1} of ${n} · carry on`
+          :(fin?"finished":lessonMeta(l))}</span></span>
+    </button>`;}).join("");
+  document.getElementById("lessonList").innerHTML=
+    `<p class="lcount">${done} of ${LESSONS.length} finished</p>${head}${
+      head?'<h2 class="dgroup" data-tone="muted">All chapters<small>'+LESSONS.length+'</small></h2>':""}${list}`;
 }
 /* ---- Watch ----
    Daily Dose serves its 26 lectures through its own player — no iframe in

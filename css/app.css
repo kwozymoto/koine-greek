@@ -672,3 +672,22 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   margin-left:auto;font-size:.72rem;font-weight:500;color:var(--muted);
   border:1px solid var(--line);border-radius:999px;padding:1px 8px;
 }
+
+/* ---------- the lessons list ----------
+   A chapter stopped halfway used to look exactly like one never opened. */
+.lcount{margin:-4px 0 14px;font-size:.8rem;color:var(--muted)}
+.lesson-item.resume{--tone:var(--gold);border-color:color-mix(in srgb,var(--gold) 38%,var(--line));
+  background:color-mix(in srgb,var(--gold) 7%, var(--surface))}
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+  .lesson-item.resume{background:var(--surface-2);border-color:var(--gold-dim)}
+}
+.lesson-item.resume .t b{color:var(--gold)}
+/* how far into the chapter you are, on the card that offers to carry on */
+.lbar{display:block;height:4px;margin-top:7px;border-radius:3px;background:var(--line);overflow:hidden}
+.lbar i{display:block;height:100%;background:var(--gold);border-radius:3px;
+  transition:width .5s cubic-bezier(.3,.85,.3,1)}
+/* the size of a chapter, or where you stopped in it */
+.lesson-item .t .lmeta{display:block;margin-top:4px;font-size:.7rem;color:var(--muted)}
+.lesson-item.here{border-color:color-mix(in srgb,var(--gold) 34%,var(--line))}
+.lesson-item.here .t .lmeta{color:var(--gold)}
+.lesson-item.done .t .lmeta{color:var(--green)}
