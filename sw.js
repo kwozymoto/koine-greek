@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v87';
+const VERSION = 'v88';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -74,6 +74,11 @@ const SHELL = [
      the directory URL. Navigations are routed to this entry below, so there
      is exactly one shell and it cannot drift. */
   'index.html',
+  /* Play requires the privacy policy to be reachable from inside the app, and
+     an in-app link that fails on a train is not reachable. It has a .html
+     extension, so the navigation router below leaves it alone rather than
+     handing back the shell. */
+  'privacy.html',
   'css/app.css',
   'js/app.js',
   'js/report.js',

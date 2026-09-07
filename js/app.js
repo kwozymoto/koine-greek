@@ -2683,6 +2683,10 @@ function renderProgress(){
     <input type="file" id="imp" accept=".json" style="display:none" onchange="importData(this)">
     <div style="height:9px"></div>
     <button class="btn ghost" onclick="resetAll()" style="color:var(--rust)">Reset everything</button>
+    <p class="muted" style="font-size:.82rem;margin:18px 0 0">
+      <a href="privacy.html" style="color:var(--muted)">Privacy policy</a> — what is
+      stored, what sync sends, and how to delete it. Google Play requires this
+      link to be in the app as well as on the listing.</p>
     <div style="height:26px"></div>`;
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};

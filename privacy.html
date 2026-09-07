@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy — Everyday Koine</title>
+<meta name="description" content="Privacy policy for Everyday Koine. No accounts, no analytics, no ads. Progress stays on your device unless you turn on sync.">
+<meta name="theme-color" content="#141b2b">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+  :root{
+    --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
+    --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --rust:#cd6152;
+    --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:2.25rem 1.25rem 5rem; background:var(--bg); color:var(--text);
+    font:16px/1.65 var(--ui);
+  }
+  main{max-width:44rem; margin:0 auto}
+  a{color:var(--gold)}
+  .back{display:inline-block; margin-bottom:1.75rem; color:var(--muted); font-size:.9rem}
+  h1{font-size:1.75rem; line-height:1.2; margin:0 0 .3rem; text-wrap:balance}
+  .date{color:var(--muted); font-size:.86rem; margin:0 0 1.75rem}
+  h2{
+    font-size:1.06rem; margin:2.25rem 0 .6rem; padding-bottom:.35rem;
+    border-bottom:1px solid var(--line); text-wrap:balance;
+  }
+  h3{font-size:.95rem; margin:1.5rem 0 .4rem; color:var(--gold)}
+  p,li{color:var(--text)}
+  ul{padding-left:1.15rem}
+  li{margin:.3rem 0}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.88em; background:var(--surface-2); padding:.1em .38em; border-radius:5px;
+  }
+  .lede{
+    background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--gold);
+    border-radius:10px; padding:1rem 1.15rem; margin:0 0 .5rem;
+  }
+  .lede p{margin:0}
+  .lede p + p{margin-top:.6rem}
+  .warn{border-left-color:var(--rust)}
+  table{width:100%; border-collapse:collapse; margin:.7rem 0; font-size:.93rem; display:block; overflow-x:auto}
+  th,td{text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--line); vertical-align:top}
+  th{color:var(--muted); font-weight:600; white-space:nowrap}
+  footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">&lsaquo; Everyday Koine</a>
+
+  <h1>Privacy policy</h1>
+  <p class="date">Everyday Koine · last updated 7 September 2026</p>
+
+  <div class="lede">
+    <p><b>The app has no accounts and collects nothing about you.</b> There is
+    no sign-up, no email address, no analytics, no advertising and no tracking
+    of any kind.</p>
+    <p>Everything you do is stored on your own device. Nothing is sent anywhere
+    unless you deliberately turn on sync, which is off until you do.</p>
+  </div>
+
+  <h2>Who to contact</h2>
+  <p>Everyday Koine is made and run by one person. For any question about
+  privacy, or to ask for something to be deleted, write to
+  <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>.</p>
+
+  <h2>What is stored on your device</h2>
+  <p>The app keeps your progress in your browser's local storage, under two
+  keys:</p>
+  <table>
+    <tr><th><code>koine.v1</code></th><td>Your progress: which words you have
+      studied and when each is next due, which chapters you have read, your
+      XP, streak and badges, your settings, and any notes or alternative
+      glosses you have typed against a word.</td></tr>
+    <tr><th><code>koine.sync</code></th><td>Present only if you turn on sync.
+      Holds a fingerprint of your sync phrase — see below — and the time of
+      the last sync.</td></tr>
+  </table>
+  <p>That is the whole of it. The app does not ask for or store your name,
+  email address, phone number, location, contacts, photos, or any device or
+  advertising identifier.</p>
+
+  <h2>No analytics, no advertising</h2>
+  <p>There is no analytics package, no crash reporter, no advertising SDK and
+  no third-party tracking script in the app. Nobody, including me, can see how
+  you use it.</p>
+
+  <h2>Sync, if you choose to turn it on</h2>
+  <p>Sync exists so the same progress can be used on a phone and a laptop. It
+  is <b>off by default</b> and does nothing until you switch it on in
+  Progress&nbsp;→&nbsp;Sync.</p>
+
+  <h3>How it works</h3>
+  <ul>
+    <li>You invent a private phrase and type it on each device.</li>
+    <li>Your device computes a SHA-256 hash of that phrase. <b>The phrase
+      itself is never sent anywhere</b> — only the hash leaves the device.</li>
+    <li>The hash is used as the address of a single record in a store run on
+      Cloudflare. Your progress is written there and read back.</li>
+    <li>What is sent is your progress data, as described above. Because it is
+      sent whole, that includes any notes or alternative glosses you have
+      typed.</li>
+  </ul>
+
+  <div class="lede warn">
+    <p><b>Worth understanding before you use it.</b> The hash of your phrase is
+    both the address of your record and the only thing protecting it. Anyone
+    who knows or can guess your phrase can read, overwrite or delete that
+    record.</p>
+    <p>Treat the phrase like a password: make it long, and do not reuse one you
+    use elsewhere. There is no account and so there is no password reset — that
+    is the trade for not having to sign up for anything. If you lose the
+    phrase, the record cannot be recovered.</p>
+  </div>
+
+  <h3>Deleting the synced copy</h3>
+  <p>Progress&nbsp;→&nbsp;Sync&nbsp;→&nbsp;<b>Delete synced copy</b> removes the
+  record from the store for good. Your device keeps its own progress. Turning
+  sync <i>off</i> is different and deliberately so: it leaves the stored copy
+  in place, so another device can still find it.</p>
+
+  <h2>Other services involved</h2>
+  <table>
+    <tr><th>GitHub Pages</th><td>Hosts the website and the app. Like any web
+      host, GitHub's servers see the requests that fetch the pages, including
+      your IP address, as an ordinary part of serving them. This happens
+      whether or not you use sync, and is governed by GitHub's own privacy
+      policy.</td></tr>
+    <tr><th>Cloudflare</th><td>Runs the domain's DNS, and hosts the sync
+      endpoint and its store. The sync endpoint is only contacted if you have
+      turned sync on. Cloudflare may keep its own operational logs under its
+      own privacy policy.</td></tr>
+    <tr><th>YouTube</th><td>Some chapters offer a video lecture. These are
+      embedded through <code>youtube-nocookie.com</code>, Google's
+      privacy-enhanced address, and nothing is sent to YouTube unless you
+      actually play one. If you do play a video, Google receives data about
+      that under its own privacy policy.</td></tr>
+    <tr><th>Outbound links</th><td>Some chapters link to other teaching sites.
+      Following a link takes you to that site, where its own policy
+      applies.</td></tr>
+  </table>
+  <p>No data is sold, shared for advertising, or passed to anyone else.</p>
+
+  <h2>The Android app</h2>
+  <p>The Android version requests <b>no permissions at all</b>. It shows the
+  same website inside Chrome, using Android's Trusted Web Activity, so the
+  browser does the network access and the app itself asks nothing of your
+  device.</p>
+
+  <h2>Keeping it, and getting rid of it</h2>
+  <ul>
+    <li><b>On your device</b> — progress stays until you remove it.
+      Progress&nbsp;→&nbsp;<b>Reset everything</b> clears it, and so does
+      clearing the site's data in your browser or uninstalling the app.</li>
+    <li><b>The synced copy</b> — kept until you delete it, using the button
+      described above. There is no separate backup of it.</li>
+    <li><b>Export</b> — Progress&nbsp;→&nbsp;<b>Export progress</b> writes
+      everything the app holds to a file, so you can see exactly what that
+      is.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>The app is a New Testament Greek course intended for adult learners. It is
+  not directed at children, and since it collects no personal information from
+  anyone, it collects none from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the date at the top of the page changes with it.
+  The app is open source, so what it actually does can be checked rather than
+  taken on trust: the source is at
+  <a href="https://github.com/kwozymoto/koine-greek">github.com/kwozymoto/koine-greek</a>.</p>
+
+  <footer>
+    Everyday Koine · <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>
+    · <a href="/">everydaykoine.app</a>
+  </footer>
+</main>
+</body>
+</html>
