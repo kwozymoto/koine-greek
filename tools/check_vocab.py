@@ -514,7 +514,8 @@ CUE_OK = {
 
 tts_bad = []
 for path in ("docs/erasmian_vocab_cues.json",
-             "docs/erasmian_vocab_cues_v3_black.json"):
+             "docs/erasmian_vocab_cues_v3_black.json",
+             "docs/erasmian_vocab_cues_v4_tail.json"):
     fp = os.path.join(ROOT, path)
     if not os.path.isfile(fp):
         continue
@@ -629,7 +630,8 @@ for j, g in sorted(own.items(), key=lambda kv: -count[kv[0]]):
 
 # ------------------------------------------------------------- the audio --
 CUES = [("docs/erasmian_vocab_cues.json", "the original 470"),
-        ("docs/erasmian_vocab_cues_v3_black.json", "the 41 for Black")]
+        ("docs/erasmian_vocab_cues_v3_black.json", "the 41 for Black"),
+        ("docs/erasmian_vocab_cues_v4_tail.json", "the 307 tail")]
 audio_bad, cue_bad, cue_soft = [], [], []
 
 VDIR = os.path.join(ROOT, "audio", "vocab")

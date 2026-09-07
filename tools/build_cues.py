@@ -179,8 +179,17 @@ def strip_marks(w):
 
 
 def has_rough(w):
-    """A rough breathing anywhere in the first vowel cluster, or initial rho."""
+    """A rough breathing on an initial VOWEL, which is where the guide's rule
+       applies: "a word starting ἁ ἑ ἡ ὁ ὑ ὡ takes an h" [58/59 of the pack].
+
+       Initial rho carries a rough breathing too, and it must NOT take one.
+       ῥίζα is an r, not an h — check_vocab caught three cues this produced
+       (`hree zah`, `hroo o my`, `hrahb bee`) with "does not begin with the r
+       of ῥίζα". Transliteration writes rh; the sound is a plain r, and the
+       cue spells sounds."""
     d = unicodedata.normalize("NFD", w)
+    if not d or strip_marks(d[0]) not in VOWELS:
+        return False
     for c in d[:4]:
         if c in ROUGH:
             return True
