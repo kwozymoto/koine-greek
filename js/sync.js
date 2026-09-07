@@ -226,7 +226,9 @@ function syncCardHtml() {
       <div class="row">
         <button class="btn small" onclick="syncNowClicked()">Sync now</button>
         <button class="btn ghost small" onclick="syncOff()">Turn off</button>
-      </div></div>`;
+        <button class="btn ghost small" onclick="syncDelete()">Delete synced copy</button>
+      </div>
+      <p class="muted" style="font-size:.8rem;margin-bottom:0">Turning off leaves the stored copy where it is, so another device can still reach it. Deleting removes it for good — this device keeps its own progress.</p></div>`;
   }
   return `<div class="card">
     <h3 style="margin-top:0">Sync across devices</h3>
@@ -255,6 +257,31 @@ function syncOff() {
   SYNC = null;
   try { localStorage.removeItem(SYNC_KEY); } catch (e) {}
   renderProgress(); toast("Sync off — progress stays on this device");
+}
+
+/* Turning sync off only ever forgot the id here; the stored copy stayed in
+   KV with no way to reach it again, let alone remove it. That is the thing a
+   privacy policy has to be able to describe, so it needs to be true before
+   the policy says it.
+
+   The device keeps its own progress: only the stored copy goes. */
+async function syncDelete() {
+  if (!SYNC_URL || !SYNC || !SYNC.id) return;
+  if (!confirm("Delete the synced copy of your progress?\n\n"
+             + "This device keeps everything it has. Other devices using the "
+             + "same phrase will stop finding it, and it cannot be undone."))
+    return;
+  try {
+    const r = await fetch(SYNC_URL + "/sync/" + SYNC.id, { method: "DELETE" });
+    if (!r.ok) throw new Error(r.status);
+  } catch (e) {
+    toast("Could not reach sync — nothing was deleted");
+    return;
+  }
+  SYNC = null;
+  try { localStorage.removeItem(SYNC_KEY); } catch (e) {}
+  renderProgress();
+  toast("Synced copy deleted — this device keeps its progress");
 }
 async function syncNowClicked() {
   const pulled = await syncPull();

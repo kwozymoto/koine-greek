@@ -4,8 +4,16 @@
    phrase, so the phrase itself never leaves the device; the hash acts
    as both address and secret. The worker is a dumb store:
 
-     GET  /sync/<64-hex>  -> stored envelope JSON, 404 if none
-     PUT  /sync/<64-hex>  -> store envelope JSON (size-capped)
+     GET    /sync/<64-hex>  -> stored envelope JSON, 404 if none
+     PUT    /sync/<64-hex>  -> store envelope JSON (size-capped)
+     DELETE /sync/<64-hex>  -> remove it
+
+   DELETE exists because "turn off sync" only ever forgot the id on the
+   device; the stored copy stayed in KV with nothing able to remove it. A
+   privacy policy has to state how data is deleted, and there was no true
+   answer to give. Knowing the phrase is the only authorisation there is —
+   the same authorisation that reads and writes — so a delete is available
+   to exactly whoever could already overwrite the record with nothing.
 
    All merging happens client-side. No other state, no logs of content. */
 
@@ -35,7 +43,7 @@ export default {
     const cors = {
       "Access-Control-Allow-Origin": ORIGINS.includes(sent) ? sent : ORIGINS[0],
       "Vary": "Origin",
-      "Access-Control-Allow-Methods": "GET,PUT,OPTIONS",
+      "Access-Control-Allow-Methods": "GET,PUT,DELETE,OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Cache-Control": "no-store",
     };
@@ -63,6 +71,11 @@ export default {
       }
       await env.KOINE_SYNC.put(key, body);
       return new Response('{"ok":true}', { headers: { ...cors, "Content-Type": "application/json" } });
+    }
+
+    if (req.method === "DELETE") {
+      await env.KOINE_SYNC.delete(key);
+      return new Response('{"deleted":true}', { headers: { ...cors, "Content-Type": "application/json" } });
     }
 
     return new Response("method not allowed", { status: 405, headers: cors });
