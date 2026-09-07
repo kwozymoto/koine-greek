@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.everydaykoine",
+        "sha256_cert_fingerprints": ["93:2F:B7:AC:41:A8:11:B4:35:12:E2:69:31:6A:14:90:7A:59:1D:6F:EE:3D:42:06:40:57:2D:31:DC:0A:20:0E"]
+      }
+    }]
