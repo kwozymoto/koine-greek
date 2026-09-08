@@ -49,6 +49,7 @@ checker's. Recording the decision is the checker's.
 The books are not in this repository and never will be. Like `check_black`,
 this exits clean and says so when they are not on the machine.
 """
+import hashlib
 import io
 import json
 import os
@@ -66,6 +67,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BLACK1 = os.path.join(os.path.dirname(ROOT), "Greek App Reference", "Black",
                       "1.docx")
 CLIP_DIR = os.path.join(ROOT, "audio", "clips")
+CUES = os.path.join(ROOT, "docs", "erasmian_alphabet_cues.json")
 
 # ------------------------------------------------------------ the pin ------
 # Greek key -> (grid cue in AUDIO_CLIPS, gloss in ALPHABET, why they agree).
@@ -213,8 +215,8 @@ ALPHABET, CLIPS = app_tables()
 LETTERS = [c for c in CLIPS if c[3] == "letter"]
 DIPHS = [c for c in CLIPS if c[3] == "diphthong"]
 
-bad_struct, bad_pin, bad_diph, bad_file, bad_black, bad_depart = \
-    [], [], [], [], [], []
+bad_struct, bad_pin, bad_diph, bad_file, bad_black, bad_depart, bad_cue = \
+    [], [], [], [], [], [], []
 
 # 1 — the two tables cover the same letters, in the same order
 if len(LETTERS) != len(ALPHABET):
@@ -263,11 +265,58 @@ for key in DIPH:
     if key not in seen_d:
         bad_diph.append("DIPH pins %s, which is no longer in the grid" % key)
 
-# 4 — every clip named actually exists
+# 4 — every clip named actually exists, and the record of what was spoken
+#     still describes the file on disk.
+#
+# docs/erasmian_alphabet_cues.json is the only record of what each clip was
+# actually asked to say, and until now nothing read it — not this repo, not
+# the app. So a clip could be replaced and the record left describing the
+# clip it replaced, which is the same falsification as editing `tts` to match
+# a clip after the fact. The sha1 makes that impossible to do quietly.
+#
+# `sound` in the sheet is deliberately NOT compared to the grid cue. The sheet
+# records what was spoken; the grid records what the learner is told. Those
+# come apart on purpose — ζ is cued "zuh" and labelled "dz", because /z/ is
+# what the voice can produce and [dz] is what Black teaches.
 for c in CLIPS:
     if not os.path.isfile(os.path.join(CLIP_DIR, c[4])):
         bad_file.append("%s names audio/clips/%s, which is not there"
                         % (c[0], c[4]))
+
+if not os.path.isfile(CUES):
+    bad_cue.append("docs/erasmian_alphabet_cues.json is missing — it is the "
+                   "only record of what these clips were asked to say")
+else:
+    sheet = json.load(io.open(CUES, encoding="utf-8"))
+    rows = {r["file_mp3"]: r for r in sheet["clips"]}
+    for c in CLIPS:
+        r = rows.pop(c[4], None)
+        if r is None:
+            bad_cue.append("%s has no row in the cue sheet — nothing records "
+                           "what audio/clips/%s was asked to say"
+                           % (c[0], c[4]))
+            continue
+        for field, got, want in (("greek", r.get("greek"), c[0]),
+                                 ("name", r.get("name"), c[1]),
+                                 ("kind", r.get("kind"), c[3])):
+            if got != want:
+                bad_cue.append("%s: the cue sheet's %s is %r, the grid says %r"
+                               % (c[4], field, got, want))
+        path = os.path.join(CLIP_DIR, c[4])
+        if os.path.isfile(path):
+            got = hashlib.sha1(io.open(path, "rb").read()).hexdigest()[:12]
+            if not r.get("sha1"):
+                bad_cue.append("%s has no sha1 in the cue sheet" % c[4])
+            elif r["sha1"] != got:
+                bad_cue.append(
+                    "%s has changed since the cue sheet was written (%s on "
+                    "disk, %s recorded). If it was re-recorded, update the "
+                    "row's sound/source/sha1 to say what was actually spoken "
+                    "— do not just restamp the hash"
+                    % (c[4], got, r["sha1"]))
+    for leftover in rows:
+        bad_cue.append("the cue sheet has a row for %s, which the grid no "
+                       "longer names" % leftover)
 
 # 5 — Black
 cells = black_cells()
@@ -340,6 +389,7 @@ section("letters the two tables disagree about", bad_struct)
 section("grid cues or lesson glosses that have moved", bad_pin)
 section("diphthong cues that have moved", bad_diph)
 section("clips named but not present", bad_file)
+section("clips out of step with the record of what was spoken", bad_cue)
 section("diphthongs that no longer match Black", bad_black)
 section("glosses departing from Black without a declared reason", bad_depart)
 
@@ -354,5 +404,6 @@ if sound_departures:
             print("          " + line.strip())
     print()
 
-hard = (bad_struct + bad_pin + bad_diph + bad_file + bad_black + bad_depart)
+hard = (bad_struct + bad_pin + bad_diph + bad_file + bad_black
+        + bad_depart + bad_cue)
 sys.exit(1 if hard else 0)
