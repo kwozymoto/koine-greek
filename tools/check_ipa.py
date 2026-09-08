@@ -46,7 +46,7 @@ FROM_LESSON = {
     "ks": "x as in axe", "p": "p", "r": "r (trilled)", "s": "s", "t": "t",
     "f": "ph as in phone", "x": "ch as in loch", "ps": "ps as in lips",
     "a": "a as in father", "e": "e as in met", "eː": "e as in obey (long)",
-    "i": "i as in pit / machine", "o": "o as in not", "y": "u as in French tu",
+    "i": "i as in pit / machine", "o": "o as in not", "u": "u as in lute / put",
     "oː": "o as in tone (long)",
 }
 
@@ -194,5 +194,39 @@ section("syllable counts that do not match the Greek", bad_syl, 20)
 section("words without exactly one primary stress", bad_stress, 15)
 section("rows out of step with vocab.js", bad_align, 10)
 
-hard = bad_inv + bad_table + bad_trip + bad_syl + bad_stress + bad_align
+# ------------------------------------------- the printable chart ---------
+# audio/erasmian-alphabet-chart.pdf is generated from ALPHABET, and a PDF
+# cannot be read back cheaply, so the generator leaves a stamp of what it
+# built from. This compares the stamp to the live tables.
+#
+# It exists because the chart was hand-made and drifted: it printed upsilon
+# as "ew / ü — few / German ü" long after the course had settled on Black's
+# "u — lute (long), put (short)". Nothing noticed, because nothing was
+# looking at a binary.
+bad_chart = []
+_stamp = os.path.join(ROOT, "docs", "alphabet-chart.stamp.json")
+_pdf = os.path.join(ROOT, "audio", "erasmian-alphabet-chart.pdf")
+if not os.path.isfile(_stamp):
+    bad_chart.append("docs/alphabet-chart.stamp.json is missing — run "
+                     "tools/build_alphabet_chart.py")
+else:
+    _s = json.load(io.open(_stamp, encoding="utf-8"))
+    _src = io.open(os.path.join(ROOT, "data", "audio.js"), encoding="utf-8").read()
+    _live_d = [list(t) for t in
+               re.findall(r'\["([^"]*)","([^"]*)","([^"]*)","diphthong"', _src)]
+    _live_l = [list(a[:4]) for a in ALPHABET]
+    if [l[:4] for l in _s.get("letters", [])] != _live_l:
+        bad_chart.append("the chart was built from a different ALPHABET than "
+                         "data/lessons.js now has — re-run "
+                         "tools/build_alphabet_chart.py")
+    if _s.get("diphthongs") != _live_d:
+        bad_chart.append("the chart's diphthongs no longer match "
+                         "data/audio.js — re-run tools/build_alphabet_chart.py")
+    if not os.path.isfile(_pdf):
+        bad_chart.append("the stamp exists but the chart itself does not")
+
+section("the printable chart disagreeing with the app", bad_chart)
+
+hard = (bad_inv + bad_table + bad_trip + bad_syl + bad_stress + bad_align
+        + bad_chart)
 sys.exit(1 if hard else 0)

@@ -24,7 +24,7 @@
   "index": 3,
   "greek": "σύ",
   "gloss": "you (singular)",
-  "ipa": "ˈsy",
+  "ipa": "ˈsu",
   "helper": false
  },
  {
@@ -143,7 +143,7 @@
   "index": 20,
   "greek": "κύριος",
   "gloss": "lord, master, Lord",
-  "ipa": "ˈky.ri.os",
+  "ipa": "ˈku.ri.os",
   "helper": false
  },
  {
@@ -290,7 +290,7 @@
   "index": 41,
   "greek": "πολύς",
   "gloss": "much, many",
-  "ipa": "po.ˈlys",
+  "ipa": "po.ˈlus",
   "helper": false
  },
  {
@@ -325,7 +325,7 @@
   "index": 46,
   "greek": "υἱός",
   "gloss": "son",
-  "ipa": "hyi̯.ˈos",
+  "ipa": "hui̯.ˈos",
   "helper": false
  },
  {
@@ -479,7 +479,7 @@
   "index": 68,
   "greek": "ὑπό",
   "gloss": "by (+gen); under (+acc)",
-  "ipa": "hy.ˈpo",
+  "ipa": "hu.ˈpo",
   "helper": false
  },
  {
@@ -500,7 +500,7 @@
   "index": 71,
   "greek": "γυνή",
   "gloss": "woman, wife",
-  "ipa": "ɡy.ˈneː",
+  "ipa": "ɡu.ˈneː",
   "helper": false
  },
  {
@@ -514,7 +514,7 @@
   "index": 73,
   "greek": "δύναμαι",
   "gloss": "I am able, can",
-  "ipa": "ˈdy.na.mai̯",
+  "ipa": "ˈdu.na.mai̯",
   "helper": false
  },
  {
@@ -738,7 +738,7 @@
   "index": 105,
   "greek": "ὑπέρ",
   "gloss": "on behalf of (+gen); above (+acc)",
-  "ipa": "hy.ˈper",
+  "ipa": "hu.ˈper",
   "helper": false
  },
  {
@@ -752,7 +752,7 @@
   "index": 107,
   "greek": "νῦν",
   "gloss": "now",
-  "ipa": "ˈnyːn",
+  "ipa": "ˈnuːn",
   "helper": false
  },
  {
@@ -843,7 +843,7 @@
   "index": 120,
   "greek": "δύο",
   "gloss": "two",
-  "ipa": "ˈdy.o",
+  "ipa": "ˈdu.o",
   "helper": false
  },
  {
@@ -885,7 +885,7 @@
   "index": 126,
   "greek": "σύν",
   "gloss": "with (+dat)",
-  "ipa": "ˈsyn",
+  "ipa": "ˈsun",
   "helper": false
  },
  {
@@ -934,7 +934,7 @@
   "index": 133,
   "greek": "δύναμις",
   "gloss": "power, ability, miracle",
-  "ipa": "ˈdy.na.mis",
+  "ipa": "ˈdu.na.mis",
   "helper": false
  },
  {
@@ -1102,7 +1102,7 @@
   "index": 157,
   "greek": "ψυχή",
   "gloss": "soul, life, self",
-  "ipa": "psy.ˈxeː",
+  "ipa": "psu.ˈxeː",
   "helper": false
  },
  {
@@ -1263,7 +1263,7 @@
   "index": 180,
   "greek": "δικαιοσύνη",
   "gloss": "righteousness, justice",
-  "ipa": "di.kai̯.o.ˈsy.neː",
+  "ipa": "di.kai̯.o.ˈsu.neː",
   "helper": false
  },
  {
@@ -1298,7 +1298,7 @@
   "index": 185,
   "greek": "ἀπόλλυμι",
   "gloss": "I destroy, lose, perish",
-  "ipa": "a.ˈpol.ly.mi",
+  "ipa": "a.ˈpol.lu.mi",
   "helper": false
  },
  {
@@ -1396,7 +1396,7 @@
   "index": 199,
   "greek": "ὑπάγω",
   "gloss": "I go away, depart",
-  "ipa": "hy.ˈpa.ɡoː",
+  "ipa": "hu.ˈpa.ɡoː",
   "helper": false
  },
  {
@@ -1452,21 +1452,21 @@
   "index": 207,
   "greek": "μαρτυρέω",
   "gloss": "I bear witness, testify",
-  "ipa": "mar.ty.ˈre.oː",
+  "ipa": "mar.tu.ˈre.oː",
   "helper": false
  },
  {
   "index": 208,
   "greek": "μαρτυρία",
   "gloss": "testimony, witness",
-  "ipa": "mar.ty.ˈri.a",
+  "ipa": "mar.tu.ˈri.a",
   "helper": false
  },
  {
   "index": 209,
   "greek": "κηρύσσω",
   "gloss": "I proclaim, preach",
-  "ipa": "keː.ˈrys.soː",
+  "ipa": "keː.ˈrus.soː",
   "helper": false
  },
  {
@@ -1508,7 +1508,7 @@
   "index": 215,
   "greek": "ἀπολύω",
   "gloss": "I release, send away, divorce",
-  "ipa": "a.po.ˈly.oː",
+  "ipa": "a.po.ˈlu.oː",
   "helper": false
  },
  {
@@ -1543,7 +1543,7 @@
   "index": 220,
   "greek": "θυσία",
   "gloss": "sacrifice",
-  "ipa": "θy.ˈsi.a",
+  "ipa": "θu.ˈsi.a",
   "helper": false
  },
  {
@@ -1613,7 +1613,7 @@
   "index": 230,
   "greek": "πρεσβύτερος",
   "gloss": "elder, older",
-  "ipa": "pres.ˈby.te.ros",
+  "ipa": "pres.ˈbu.te.ros",
   "helper": false
  },
  {
@@ -1760,7 +1760,7 @@
   "index": 251,
   "greek": "Μωϋσῆς",
   "gloss": "Moses",
-  "ipa": "moː.y.ˈseːs",
+  "ipa": "moː.u.ˈseːs",
   "helper": false
  },
  {
@@ -1788,7 +1788,7 @@
   "index": 255,
   "greek": "ὕδωρ",
   "gloss": "water",
-  "ipa": "ˈhy.doːr",
+  "ipa": "ˈhu.doːr",
   "helper": false
  },
  {
@@ -1865,7 +1865,7 @@
   "index": 266,
   "greek": "πῦρ",
   "gloss": "fire",
-  "ipa": "ˈpyːr",
+  "ipa": "ˈpuːr",
   "helper": false
  },
  {
@@ -1956,7 +1956,7 @@
   "index": 279,
   "greek": "Ἱεροσόλυμα",
   "gloss": "Jerusalem (Greek spelling)",
-  "ipa": "hi.e.ro.ˈso.ly.ma",
+  "ipa": "hi.e.ro.ˈso.lu.ma",
   "helper": false
  },
  {
@@ -2012,7 +2012,7 @@
   "index": 287,
   "greek": "νύξ",
   "gloss": "night",
-  "ipa": "ˈnyks",
+  "ipa": "ˈnuks",
   "helper": false
  },
  {
@@ -2040,7 +2040,7 @@
   "index": 291,
   "greek": "προσκυνέω",
   "gloss": "I worship, bow down (+dat or +acc)",
-  "ipa": "pro.sky.ˈne.oː",
+  "ipa": "pro.sku.ˈne.oː",
   "helper": false
  },
  {
@@ -2061,7 +2061,7 @@
   "index": 294,
   "greek": "ὑπάρχω",
   "gloss": "I am, exist; (τὰ ὑπάρχοντα — possessions)",
-  "ipa": "hy.ˈpar.xoː",
+  "ipa": "hu.ˈpar.xoː",
   "helper": false
  },
  {
@@ -2075,7 +2075,7 @@
   "index": 296,
   "greek": "συνάγω",
   "gloss": "I gather together",
-  "ipa": "sy.ˈna.ɡoː",
+  "ipa": "su.ˈna.ɡoː",
   "helper": false
  },
  {
@@ -2089,7 +2089,7 @@
   "index": 298,
   "greek": "εὐθύς",
   "gloss": "immediately (Mark's favourite); straight",
-  "ipa": "eu̯.ˈθys",
+  "ipa": "eu̯.ˈθus",
   "helper": false
  },
  {
@@ -2131,7 +2131,7 @@
   "index": 304,
   "greek": "συναγωγή",
   "gloss": "synagogue",
-  "ipa": "sy.na.ɡoː.ˈɡeː",
+  "ipa": "su.na.ɡoː.ˈɡeː",
   "helper": false
  },
  {
@@ -2250,7 +2250,7 @@
   "index": 321,
   "greek": "τυφλός",
   "gloss": "blind",
-  "ipa": "ty.ˈflos",
+  "ipa": "tu.ˈflos",
   "helper": false
  },
  {
@@ -2369,7 +2369,7 @@
   "index": 338,
   "greek": "φυλακή",
   "gloss": "prison; watch (of the night)",
-  "ipa": "fy.la.ˈkeː",
+  "ipa": "fu.la.ˈkeː",
   "helper": false
  },
  {
@@ -2579,7 +2579,7 @@
   "index": 368,
   "greek": "λύω",
   "gloss": "I loose, untie, destroy — the paradigm verb",
-  "ipa": "ˈly.oː",
+  "ipa": "ˈlu.oː",
   "helper": false
  },
  {
@@ -2754,7 +2754,7 @@
   "index": 393,
   "greek": "θύρα",
   "gloss": "door",
-  "ipa": "ˈθy.ra",
+  "ipa": "ˈθu.ra",
   "helper": false
  },
  {
@@ -2803,14 +2803,14 @@
   "index": 400,
   "greek": "ἐπιθυμία",
   "gloss": "desire, lust",
-  "ipa": "e.pi.θy.ˈmi.a",
+  "ipa": "e.pi.θu.ˈmi.a",
   "helper": false
  },
  {
   "index": 401,
   "greek": "ὑποτάσσω",
   "gloss": "I subject, subordinate",
-  "ipa": "hy.po.ˈtas.soː",
+  "ipa": "hu.po.ˈtas.soː",
   "helper": false
  },
  {
@@ -2971,7 +2971,7 @@
   "index": 424,
   "greek": "μάρτυς",
   "gloss": "witness",
-  "ipa": "ˈmar.tys",
+  "ipa": "ˈmar.tus",
   "helper": false
  },
  {
@@ -2985,7 +2985,7 @@
   "index": 426,
   "greek": "ὑποστρέφω",
   "gloss": "I return",
-  "ipa": "hy.pos.ˈtre.foː",
+  "ipa": "hu.pos.ˈtre.foː",
   "helper": false
  },
  {
@@ -3062,7 +3062,7 @@
   "index": 437,
   "greek": "δείκνυμι",
   "gloss": "I show",
-  "ipa": "ˈdei̯k.ny.mi",
+  "ipa": "ˈdei̯k.nu.mi",
   "helper": false
  },
  {
@@ -3132,14 +3132,14 @@
   "index": 447,
   "greek": "δυνατός",
   "gloss": "powerful, possible",
-  "ipa": "dy.na.ˈtos",
+  "ipa": "du.na.ˈtos",
   "helper": false
  },
  {
   "index": 448,
   "greek": "ὑπομονή",
   "gloss": "endurance, steadfastness",
-  "ipa": "hy.po.mo.ˈneː",
+  "ipa": "hu.po.mo.ˈneː",
   "helper": false
  },
  {
@@ -3202,14 +3202,14 @@
   "index": 457,
   "greek": "φυλάσσω",
   "gloss": "I guard, keep",
-  "ipa": "fy.ˈlas.soː",
+  "ipa": "fu.ˈlas.soː",
   "helper": false
  },
  {
   "index": 458,
   "greek": "φυλή",
   "gloss": "tribe",
-  "ipa": "fy.ˈleː",
+  "ipa": "fu.ˈleː",
   "helper": false
  },
  {
@@ -3237,7 +3237,7 @@
   "index": 462,
   "greek": "συνέρχομαι",
   "gloss": "I come together, assemble",
-  "ipa": "sy.ˈner.xo.mai̯",
+  "ipa": "su.ˈner.xo.mai̯",
   "helper": false
  },
  {
@@ -3272,7 +3272,7 @@
   "index": 467,
   "greek": "ἐγγύς",
   "gloss": "near",
-  "ipa": "eŋ.ˈɡys",
+  "ipa": "eŋ.ˈɡus",
   "helper": false
  },
  {
@@ -3286,7 +3286,7 @@
   "index": 469,
   "greek": "συνείδησις",
   "gloss": "conscience",
-  "ipa": "sy.ˈnei̯.deː.sis",
+  "ipa": "su.ˈnei̯.deː.sis",
   "helper": false
  },
  {
@@ -3328,7 +3328,7 @@
   "index": 475,
   "greek": "ὑποκριτής",
   "gloss": "hypocrite, pretender",
-  "ipa": "hy.po.kri.ˈteːs",
+  "ipa": "hu.po.kri.ˈteːs",
   "helper": false
  },
  {
@@ -3363,7 +3363,7 @@
   "index": 480,
   "greek": "μυστήριον",
   "gloss": "mystery, secret",
-  "ipa": "my.ˈsteː.ri.on",
+  "ipa": "mu.ˈsteː.ri.on",
   "helper": false
  },
  {
@@ -3398,7 +3398,7 @@
   "index": 485,
   "greek": "θυγάτηρ",
   "gloss": "daughter",
-  "ipa": "θy.ˈɡa.teːr",
+  "ipa": "θu.ˈɡa.teːr",
   "helper": false
  },
  {
@@ -3412,7 +3412,7 @@
   "index": 487,
   "greek": "ἰσχυρός",
   "gloss": "strong, mighty",
-  "ipa": "is.xy.ˈros",
+  "ipa": "is.xu.ˈros",
   "helper": false
  },
  {
@@ -3426,7 +3426,7 @@
   "index": 489,
   "greek": "ἀδύνατος",
   "gloss": "impossible, powerless",
-  "ipa": "a.ˈdy.na.tos",
+  "ipa": "a.ˈdu.na.tos",
   "helper": false
  },
  {
@@ -3454,7 +3454,7 @@
   "index": 493,
   "greek": "ὑμέτερος",
   "gloss": "your (plural)",
-  "ipa": "hy.ˈme.te.ros",
+  "ipa": "hu.ˈme.te.ros",
   "helper": false
  },
  {
@@ -3713,7 +3713,7 @@
   "index": 530,
   "greek": "ἐνδύω",
   "gloss": "I put on",
-  "ipa": "en.ˈdy.oː",
+  "ipa": "en.ˈdu.oː",
   "helper": false
  },
  {
@@ -3727,7 +3727,7 @@
   "index": 532,
   "greek": "ἰσχύω",
   "gloss": "be strong",
-  "ipa": "is.ˈxy.oː",
+  "ipa": "is.ˈxu.oː",
   "helper": false
  },
  {
@@ -3818,7 +3818,7 @@
   "index": 545,
   "greek": "λυπέω",
   "gloss": "I grieve",
-  "ipa": "ly.ˈpe.oː",
+  "ipa": "lu.ˈpe.oː",
   "helper": false
  },
  {
@@ -3839,7 +3839,7 @@
   "index": 548,
   "greek": "συνίημι",
   "gloss": "I understand",
-  "ipa": "sy.ˈni.eː.mi",
+  "ipa": "su.ˈni.eː.mi",
   "helper": false
  },
  {
@@ -3860,7 +3860,7 @@
   "index": 551,
   "greek": "ἀποκαλύπτω",
   "gloss": "I reveal",
-  "ipa": "a.po.ka.ˈlyp.toː",
+  "ipa": "a.po.ka.ˈlup.toː",
   "helper": false
  },
  {
@@ -3881,7 +3881,7 @@
   "index": 554,
   "greek": "ὀμνύω",
   "gloss": "I swear, take an oath",
-  "ipa": "o.ˈmny.oː",
+  "ipa": "o.ˈmnu.oː",
   "helper": false
  },
  {
@@ -3895,7 +3895,7 @@
   "index": 556,
   "greek": "Αἴγυπτος",
   "gloss": "Egypt",
-  "ipa": "ˈai̯.ɡyp.tos",
+  "ipa": "ˈai̯.ɡup.tos",
   "helper": false
  },
  {
@@ -4112,7 +4112,7 @@
   "index": 587,
   "greek": "θυσιαστήριον",
   "gloss": "altar",
-  "ipa": "θy.si.a.ˈsteː.ri.on",
+  "ipa": "θu.si.a.ˈsteː.ri.on",
   "helper": false
  },
  {
@@ -4140,7 +4140,7 @@
   "index": 591,
   "greek": "κωλύω",
   "gloss": "I prevent",
-  "ipa": "koː.ˈly.oː",
+  "ipa": "koː.ˈlu.oː",
   "helper": false
  },
  {
@@ -4308,7 +4308,7 @@
   "index": 615,
   "greek": "συνέδριον",
   "gloss": "council",
-  "ipa": "sy.ˈne.dri.on",
+  "ipa": "su.ˈne.dri.on",
   "helper": false
  },
  {
@@ -4441,7 +4441,7 @@
   "index": 634,
   "greek": "ὑπακούω",
   "gloss": "I obey",
-  "ipa": "hy.pa.ˈkuː.oː",
+  "ipa": "hu.pa.ˈkuː.oː",
   "helper": false
  },
  {
@@ -4469,7 +4469,7 @@
   "index": 638,
   "greek": "μαρτύριον",
   "gloss": "testimony",
-  "ipa": "mar.ˈty.ri.on",
+  "ipa": "mar.ˈtu.ri.on",
   "helper": false
  },
  {
@@ -4483,14 +4483,14 @@
   "index": 640,
   "greek": "νυνί",
   "gloss": "now",
-  "ipa": "ny.ˈni",
+  "ipa": "nu.ˈni",
   "helper": false
  },
  {
   "index": 641,
   "greek": "ξύλον",
   "gloss": "wood",
-  "ipa": "ˈksy.lon",
+  "ipa": "ˈksu.lon",
   "helper": false
  },
  {
@@ -4525,14 +4525,14 @@
   "index": 646,
   "greek": "ἀκροβυστία",
   "gloss": "uncircumcision",
-  "ipa": "a.kro.by.ˈsti.a",
+  "ipa": "a.kro.bu.ˈsti.a",
   "helper": false
  },
  {
   "index": 647,
   "greek": "ἀργύριον",
   "gloss": "money",
-  "ipa": "ar.ˈɡy.ri.on",
+  "ipa": "ar.ˈɡu.ri.on",
   "helper": false
  },
  {
@@ -4560,7 +4560,7 @@
   "index": 651,
   "greek": "ἰχθύς",
   "gloss": "fish",
-  "ipa": "ix.ˈθys",
+  "ipa": "ix.ˈθus",
   "helper": false
  },
  {
@@ -4574,14 +4574,14 @@
   "index": 653,
   "greek": "ὑπηρέτης",
   "gloss": "servant",
-  "ipa": "hy.peː.ˈre.teːs",
+  "ipa": "hu.peː.ˈre.teːs",
   "helper": false
  },
  {
   "index": 654,
   "greek": "ὑψόω",
   "gloss": "I lift up",
-  "ipa": "hy.ˈpso.oː",
+  "ipa": "hu.ˈpso.oː",
   "helper": false
  },
  {
@@ -4637,7 +4637,7 @@
   "index": 662,
   "greek": "κρύπτω",
   "gloss": "I hide",
-  "ipa": "ˈkryp.toː",
+  "ipa": "ˈkrup.toː",
   "helper": false
  },
  {
@@ -4749,7 +4749,7 @@
   "index": 678,
   "greek": "θυμός",
   "gloss": "wrath",
-  "ipa": "θy.ˈmos",
+  "ipa": "θu.ˈmos",
   "helper": false
  },
  {
@@ -4833,7 +4833,7 @@
   "index": 690,
   "greek": "πυλών",
   "gloss": "gate",
-  "ipa": "py.ˈloːn",
+  "ipa": "pu.ˈloːn",
   "helper": false
  },
  {
@@ -4945,7 +4945,7 @@
   "index": 706,
   "greek": "καταλύω",
   "gloss": "I destroy/lodge",
-  "ipa": "ka.ta.ˈly.oː",
+  "ipa": "ka.ta.ˈlu.oː",
   "helper": false
  },
  {
@@ -4959,7 +4959,7 @@
   "index": 708,
   "greek": "κρυπτός",
   "gloss": "hidden",
-  "ipa": "kryp.ˈtos",
+  "ipa": "krup.ˈtos",
   "helper": false
  },
  {
@@ -5029,7 +5029,7 @@
   "index": 718,
   "greek": "χρυσοῦς",
   "gloss": "golden",
-  "ipa": "xry.ˈsuːs",
+  "ipa": "xru.ˈsuːs",
   "helper": false
  },
  {
@@ -5043,7 +5043,7 @@
   "index": 720,
   "greek": "ἀποκάλυψις",
   "gloss": "revelation",
-  "ipa": "a.po.ˈka.ly.psis",
+  "ipa": "a.po.ˈka.lu.psis",
   "helper": false
  },
  {
@@ -5120,7 +5120,7 @@
   "index": 731,
   "greek": "ὑπομένω",
   "gloss": "I remain/endure",
-  "ipa": "hy.po.ˈme.noː",
+  "ipa": "hu.po.ˈme.noː",
   "helper": false
  },
  {
@@ -5148,7 +5148,7 @@
   "index": 735,
   "greek": "ῥύομαι",
   "gloss": "I rescue",
-  "ipa": "ˈry.o.mai̯",
+  "ipa": "ˈru.o.mai̯",
   "helper": false
  },
  {
@@ -5260,14 +5260,14 @@
   "index": 751,
   "greek": "λύπη",
   "gloss": "grief",
-  "ipa": "ˈly.peː",
+  "ipa": "ˈlu.peː",
   "helper": false
  },
  {
   "index": 752,
   "greek": "νυμφίος",
   "gloss": "bridegroom",
-  "ipa": "nym.ˈfi.os",
+  "ipa": "num.ˈfi.os",
   "helper": false
  },
  {
@@ -5309,14 +5309,14 @@
   "index": 758,
   "greek": "συκῆ",
   "gloss": "fig tree",
-  "ipa": "sy.ˈkeː",
+  "ipa": "su.ˈkeː",
   "helper": false
  },
  {
   "index": 759,
   "greek": "συλλαμβάνω",
   "gloss": "I seize/conceive/help",
-  "ipa": "syl.lam.ˈba.noː",
+  "ipa": "sul.lam.ˈba.noː",
   "helper": false
  },
  {
@@ -5372,7 +5372,7 @@
   "index": 767,
   "greek": "ἐπιθυμέω",
   "gloss": "I long for",
-  "ipa": "e.pi.θy.ˈme.oː",
+  "ipa": "e.pi.θu.ˈme.oː",
   "helper": false
  },
  {
@@ -5400,7 +5400,7 @@
   "index": 771,
   "greek": "ὑστερέω",
   "gloss": "I lack",
-  "ipa": "hy.ste.ˈre.oː",
+  "ipa": "hu.ste.ˈre.oː",
   "helper": false
  },
  {
@@ -5442,7 +5442,7 @@
   "index": 777,
   "greek": "γυμνός",
   "gloss": "naked",
-  "ipa": "ɡy.ˈmnos",
+  "ipa": "ɡu.ˈmnos",
   "helper": false
  },
  {
@@ -5463,7 +5463,7 @@
   "index": 780,
   "greek": "διαμαρτύρομαι",
   "gloss": "I testify solemnly",
-  "ipa": "di.a.mar.ˈty.ro.mai̯",
+  "ipa": "di.a.mar.ˈtu.ro.mai̯",
   "helper": false
  },
  {
@@ -5610,14 +5610,14 @@
   "index": 801,
   "greek": "συμφέρω",
   "gloss": "be profitable",
-  "ipa": "sym.ˈfe.roː",
+  "ipa": "sum.ˈfe.roː",
   "helper": false
  },
  {
   "index": 802,
   "greek": "συνίστημι",
   "gloss": "I commend",
-  "ipa": "sy.ˈni.steː.mi",
+  "ipa": "su.ˈni.steː.mi",
   "helper": false
  },
  {
@@ -5638,7 +5638,7 @@
   "index": 805,
   "greek": "τύπος",
   "gloss": "mark/example",
-  "ipa": "ˈty.pos",
+  "ipa": "ˈtu.pos",
   "helper": false
  },
  {

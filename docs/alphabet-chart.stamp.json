@@ -1,0 +1,190 @@
+{
+ "letters": [
+  [
+   "Α α",
+   "alpha",
+   "a as in father",
+   "a"
+  ],
+  [
+   "Β β",
+   "beta",
+   "b",
+   "b"
+  ],
+  [
+   "Γ γ",
+   "gamma",
+   "g as in got",
+   "g"
+  ],
+  [
+   "Δ δ",
+   "delta",
+   "d",
+   "d"
+  ],
+  [
+   "Ε ε",
+   "epsilon",
+   "e as in met",
+   "e"
+  ],
+  [
+   "Ζ ζ",
+   "zeta",
+   "dz as in adze",
+   "z"
+  ],
+  [
+   "Η η",
+   "eta",
+   "e as in obey (long)",
+   "ē"
+  ],
+  [
+   "Θ θ",
+   "theta",
+   "th as in thing",
+   "th"
+  ],
+  [
+   "Ι ι",
+   "iota",
+   "i as in pit / machine",
+   "i"
+  ],
+  [
+   "Κ κ",
+   "kappa",
+   "k",
+   "k"
+  ],
+  [
+   "Λ λ",
+   "lambda",
+   "l",
+   "l"
+  ],
+  [
+   "Μ μ",
+   "mu",
+   "m",
+   "m"
+  ],
+  [
+   "Ν ν",
+   "nu",
+   "n",
+   "n"
+  ],
+  [
+   "Ξ ξ",
+   "xi",
+   "x as in axe",
+   "x"
+  ],
+  [
+   "Ο ο",
+   "omicron",
+   "o as in not",
+   "o"
+  ],
+  [
+   "Π π",
+   "pi",
+   "p",
+   "p"
+  ],
+  [
+   "Ρ ρ",
+   "rho",
+   "r (trilled)",
+   "r"
+  ],
+  [
+   "Σ σ ς",
+   "sigma",
+   "s",
+   "s"
+  ],
+  [
+   "Τ τ",
+   "tau",
+   "t",
+   "t"
+  ],
+  [
+   "Υ υ",
+   "upsilon",
+   "u as in lute / put",
+   "u"
+  ],
+  [
+   "Φ φ",
+   "phi",
+   "ph as in phone",
+   "ph"
+  ],
+  [
+   "Χ χ",
+   "chi",
+   "ch as in loch",
+   "ch"
+  ],
+  [
+   "Ψ ψ",
+   "psi",
+   "ps as in lips",
+   "ps"
+  ],
+  [
+   "Ω ω",
+   "omega",
+   "o as in tone (long)",
+   "ō"
+  ]
+ ],
+ "diphthongs": [
+  [
+   "αι",
+   "alpha + iota",
+   "eye"
+  ],
+  [
+   "ει",
+   "epsilon + iota",
+   "ay"
+  ],
+  [
+   "οι",
+   "omicron + iota",
+   "oy"
+  ],
+  [
+   "υι",
+   "upsilon + iota",
+   "wee"
+  ],
+  [
+   "αυ",
+   "alpha + upsilon",
+   "ow"
+  ],
+  [
+   "ευ",
+   "epsilon + upsilon",
+   "ew"
+  ],
+  [
+   "ηυ",
+   "eta + upsilon",
+   "ew"
+  ],
+  [
+   "ου",
+   "omicron + upsilon",
+   "oo"
+  ]
+ ]
+}

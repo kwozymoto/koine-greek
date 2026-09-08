@@ -25,7 +25,7 @@ const AUDIO_CLIPS=[
 ["Ρ ρ","Rho","r","letter","17_rho.mp3"],
 ["Σ σ ς","Sigma","s","letter","18_sigma.mp3"],
 ["Τ τ","Tau","t","letter","19_tau.mp3"],
-["Υ υ","Upsilon","ew / ü","letter","20_upsilon.mp3"],
+["Υ υ","Upsilon","oo","letter","20_upsilon.mp3"],
 ["Φ φ","Phi","f","letter","21_phi.mp3"],
 ["Χ χ","Chi","kh","letter","22_chi.mp3"],
 ["Ψ ψ","Psi","ps","letter","23_psi.mp3"],

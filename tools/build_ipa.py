@@ -50,15 +50,21 @@ CONS = {
     "λ": "l",  "μ": "m",  "ν": "n",  "ξ": "ks", "π": "p",  "ρ": "r",
     "σ": "s",  "ς": "s",  "τ": "t",  "φ": "f",  "χ": "x",  "ψ": "ps",
 }
-SHORT = {"α": "a", "ε": "e", "ι": "i", "ο": "o", "υ": "y"}
-LONG  = {"α": "aː", "ε": "e", "η": "eː", "ι": "iː", "ο": "o", "υ": "yː",
+# υ is /u/, not /y/. Black's own table: "Upsilon Υ υ u — lute (long), put
+# (short)", and this course is his anglicised Erasmian, not the continental
+# tradition that keeps the French/German ü. It collapses nothing he keeps
+# apart — his keyword for ου is "soup", the same English vowel as "lute".
+# The 818 word clips already say /u/; it was the IPA and the alphabet label
+# that had drifted.
+SHORT = {"α": "a", "ε": "e", "ι": "i", "ο": "o", "υ": "u"}
+LONG  = {"α": "aː", "ε": "e", "η": "eː", "ι": "iː", "ο": "o", "υ": "uː",
          "ω": "oː"}
 ALWAYS_LONG = {"η": "eː", "ω": "oː"}
 # The second element of a diphthong carries the non-syllabic mark (U+032F).
 # Without it a neural voice reads the two vowel letters as two segments —
 # ˈpneu.ma came back as "p-nay-YOU-ma" — because nothing said they were one
 # sound. ου is a plain long monophthong and takes no mark.
-DIPH = {"αι": "ai̯", "ει": "ei̯", "οι": "oi̯", "υι": "yi̯",
+DIPH = {"αι": "ai̯", "ει": "ei̯", "οι": "oi̯", "υι": "ui̯",
         "αυ": "au̯", "ευ": "eu̯", "ηυ": "eːu̯", "ου": "uː"}
 
 # Clusters no voice produces unaided, given a light helper vowel instead.

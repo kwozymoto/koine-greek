@@ -29,7 +29,7 @@ const ALPHABET=[
 ["Ρ ρ","rho","r (trilled)","r"],
 ["Σ σ ς","sigma","s","s"],
 ["Τ τ","tau","t","t"],
-["Υ υ","upsilon","u as in French tu","u/y"],
+["Υ υ","upsilon","u as in lute / put","u"],
 ["Φ φ","phi","ph as in phone","ph"],
 ["Χ χ","chi","ch as in loch","ch"],
 ["Ψ ψ","psi","ps as in lips","ps"],
