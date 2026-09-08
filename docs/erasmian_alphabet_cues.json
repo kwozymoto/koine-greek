@@ -92,28 +92,28 @@
   {
    "id": "07_eta",
    "file_mp3": "07_eta.mp3",
-   "file_wav": "07_eta.wav",
    "greek": "Η η",
    "name": "Eta",
-   "sound": "ay",
+   "sound": "eigh",
    "kind": "letter",
-   "duration_sec": 1.48,
-   "master_start_sec": 18.969,
-   "master_end_sec": 20.449,
-   "sha1": "511ed2218a65"
+   "duration_sec": 1.493,
+   "sha1": "86491520dffc",
+   "source": "composite",
+   "take": "2026-09-09, Atlas parts",
+   "note": "Cued 'ay', which Atlas read as /aI/ — English 'ay' is ambiguous, say against aye — so the clip said 'eye' where Black gives obey. Its name was judged fine, so only the sound is replaced: the /eI/ of a take of 'eigh', cut at 0.385 s, before the g the generator marks at 0.39 and Fraser heard. Judged by ear, Fraser."
   },
   {
    "id": "08_theta",
    "file_mp3": "08_theta.mp3",
-   "file_wav": "08_theta.wav",
    "greek": "Θ θ",
    "name": "Theta",
-   "sound": "th",
+   "sound": "thh",
    "kind": "letter",
-   "duration_sec": 1.824,
-   "master_start_sec": 22.049,
-   "master_end_sec": 23.873,
-   "sha1": "f162917b8efd"
+   "duration_sec": 1.493,
+   "sha1": "36f3c687aed2",
+   "source": "regenerated",
+   "take": "2026-09-09, Atlas",
+   "note": "Cued 'th' and it spoke the word 'thin'. That is Black's own keyword, so it was not wrong — but every other letter clip gives a sound, not a word. Recued 'Theta.  Thh.' in one take. Its sound measured 19.5 dB below its own name, which is the nature of a voiceless dental fricative rather than a bad take, so that half was lifted 10 dB. Judged by ear, Fraser."
   },
   {
    "id": "09_iota",
@@ -287,15 +287,15 @@
   {
    "id": "22_chi",
    "file_mp3": "22_chi.mp3",
-   "file_wav": "22_chi.wav",
    "greek": "Χ χ",
    "name": "Chi",
-   "sound": "kh",
+   "sound": "khh",
    "kind": "letter",
-   "duration_sec": 1.703,
-   "master_start_sec": 68.216,
-   "master_end_sec": 69.919,
-   "sha1": "de40900a0ff2"
+   "duration_sec": 1.57,
+   "sha1": "00bbbf3915cd",
+   "source": "regenerated",
+   "take": "2026-09-09, Atlas",
+   "note": "Both halves were rejected: the name came out with the soft ch of 'church' instead of /kaI/, and the sound came out as the WORD 'Bach'. Recued 'Kai.  Khh.' in one take, sound half lifted 5 dB. This clip settles what chi is: its sound measures 260 ms of sustained energy at zero-crossing 0.22-0.28, which is frication, not the burst-plus-tail of an aspirated stop. So it is the loch sound lesson 1 teaches, and chi stays a declared departure from Black's 'chemist'. Judged by ear, Fraser."
   },
   {
    "id": "23_psi",
@@ -339,15 +339,15 @@
   {
    "id": "d02_ei",
    "file_mp3": "d02_ei.mp3",
-   "file_wav": "d02_ei.wav",
    "greek": "ει",
    "name": "epsilon + iota",
-   "sound": "ay",
+   "sound": "eigh",
    "kind": "diphthong",
-   "duration_sec": 2.537,
-   "master_start_sec": 81.7,
-   "master_end_sec": 84.237,
-   "sha1": "74b67a1dd12b"
+   "duration_sec": 2.341,
+   "sha1": "d62e19a388ef",
+   "source": "composite",
+   "take": "2026-09-09, Atlas parts",
+   "note": "The same fault and the same fix as 07_eta: cued 'ay', said 'eye', where Black gives eight. One cue settled both. Judged by ear, Fraser."
   },
   {
    "id": "d03_oi",
