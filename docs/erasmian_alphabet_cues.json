@@ -183,15 +183,15 @@
   {
    "id": "14_xi",
    "file_mp3": "14_xi.mp3",
-   "file_wav": "14_xi.wav",
    "greek": "Ξ ξ",
    "name": "Xi",
    "sound": "ks",
    "kind": "letter",
-   "duration_sec": 2.096,
-   "master_start_sec": 41.483,
-   "master_end_sec": 43.579,
-   "sha1": "def6d2c2e4ee"
+   "duration_sec": 1.491,
+   "sha1": "7604fe9528cb",
+   "source": "composite",
+   "take": "2026-09-09, Atlas parts",
+   "note": "Neither half could be generated. The shipped clip was heard as 'she' with a /k/ for its sound; every name cue Atlas was given — ksee, ksi, xee, ksigh, Xi — was spelled out as X-I. The Greek name xi, sent as Greek across all 28 voices, is said correctly but as /ksi/, and this course names its letters in English: Pi and Psi both measure as /aI/ diphthongs, so /ksi/ would leave xi the odd letter out. So the clip is assembled: the name is the /ks/ of 'axe' crossfaded onto the /aI/ vowel of 16_pi.mp3, and the sound is that same 'axe' /ks/ again, cut at the x anchor the generator itself reported. Gap and timing follow 16_pi. All Atlas, one voice. Judged by ear, Fraser."
   },
   {
    "id": "15_omicron",
