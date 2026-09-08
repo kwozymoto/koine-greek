@@ -73,12 +73,37 @@ def flat(x):
     return "".join(c for c in unicodedata.normalize("NFD", x)
                    if not unicodedata.combining(c)).lower()
 
+DIAERESIS = "̈"
+
+
 def greek_syllables(w):
-    w = flat(w); n = i = 0
-    while i < len(w):
-        if w[i] in "αειουηω":
-            n += 1; i += 2 if w[i:i+2] in DIPHS else 1
-        else: i += 1
+    """Vowel groups, with the diaeresis honoured.
+
+       flat() strips every mark before counting, and the diaeresis is the one
+       mark whose whole job is to say "these two do NOT make a diphthong" —
+       Ἠσαΐας is Ἠ-σα-ΐ-ας, four groups, not the three you get by reading αϊ
+       as αι. Three headwords carry one: Μωϋσῆς, νοΐ and Ἠσαΐας. The first two
+       were already in the deck and passed only because their IPA happened to
+       agree; adding Ἠσαΐας is what exposed it."""
+    d = unicodedata.normalize("NFD", w).lower()
+    base, split_here = [], []
+    for c in d:
+        if unicodedata.combining(c):
+            if c == DIAERESIS and split_here:
+                split_here[-1] = True
+        else:
+            base.append(c)
+            split_here.append(False)
+    n = i = 0
+    while i < len(base):
+        if base[i] in "αειουηω":
+            n += 1
+            pair = "".join(base[i:i + 2])
+            joins = (pair in DIPHS
+                     and i + 1 < len(base) and not split_here[i + 1])
+            i += 2 if joins else 1
+        else:
+            i += 1
     return n
 
 # ------------------------------------------------------------------ run ---

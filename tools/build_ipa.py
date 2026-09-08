@@ -190,7 +190,14 @@ def to_ipa(word):
     parts = []
     for si, s in enumerate(syls):
         text = "".join(ph[i][0] for i in s)
-        if si == 0 and rough:
+        # A rough breathing sounds an h on a VOWEL. Initial rho carries one
+        # too and it is not pronounced — Black, ch.1: "When used with ρ,
+        # however, the rough breathing is generally not pronounced (cf.
+        # 'rhetoric', 'rhododendron')", and lesson 1 teaches exactly that.
+        # Without the guard this produced ˈhreː.ma for ῥῆμα, so the app's own
+        # ground-truth IPA contradicted the chapter that teaches it. The same
+        # bug was fixed in build_cues.py and never chased here.
+        if si == 0 and rough and ph[s[0]][1]:
             text = "h" + text
         parts.append(("ˈ" if si == st else "") + text)
     cl = helper_for(word)
