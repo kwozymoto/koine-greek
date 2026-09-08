@@ -53,6 +53,11 @@ data/gnt/, and this runs the lot:
                      table and against the Greek, letter by letter. It was
                      written, it passed, and it was never added here — so
                      for two commits it guarded nothing
+    check_sounds     the sound grid in data/audio.js against lesson 1's
+                     alphabet, pinned in pairs so moving one without the
+                     other fails, and both against Black's own keywords.
+                     Nothing tied the grid to anything, which is how
+                     upsilon came to say three different things at once
     check_forms      the 1,431 real inflected forms the parsing drill marks
                      you against: each occurs, carries that parse everywhere
                      it occurs, and belongs to the headword shown
@@ -124,7 +129,7 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_quiz", "check_options", "check_xref",
           "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
-          "check_ipa",
+          "check_ipa", "check_sounds",
           "check_frozen", "check_black", "check_coverage", "check_claims",
           "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
