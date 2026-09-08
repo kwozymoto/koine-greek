@@ -300,15 +300,15 @@
   {
    "id": "23_psi",
    "file_mp3": "23_psi.mp3",
-   "file_wav": "23_psi.wav",
    "greek": "Ψ ψ",
    "name": "Psi",
    "sound": "ps",
    "kind": "letter",
-   "duration_sec": 1.716,
-   "master_start_sec": 71.519,
-   "master_end_sec": 73.235,
-   "sha1": "9509085a4ffb"
+   "duration_sec": 1.27,
+   "sha1": "2b6b936a3e75",
+   "source": "composite",
+   "take": "2026-09-09, Atlas name + splice",
+   "note": "Atlas will say the NAME psi with its p, and will not say the bare cluster: English has no word-initial /ps/, so there is nothing in the voice's experience to produce. The second half is therefore not spoken at all — it is the first 160 ms of this clip's own name, cut at the vowel and faded. Splicing from the deck's psuche was tried first and failed: that clip has NO plosive release, energy climbing smoothly out of silence into frication, so there was never a /p/ in it to lift. Fraser heard that before it was measured. Judged by ear, Fraser."
   },
   {
    "id": "24_omega",
