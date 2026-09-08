@@ -209,15 +209,15 @@
   {
    "id": "16_pi",
    "file_mp3": "16_pi.mp3",
-   "file_wav": "16_pi.wav",
    "greek": "Π π",
    "name": "Pi",
-   "sound": "p",
+   "sound": "puh",
    "kind": "letter",
-   "duration_sec": 1.44,
-   "master_start_sec": 48.515,
-   "master_end_sec": 49.955,
-   "sha1": "fb3b008eef53"
+   "duration_sec": 1.409,
+   "sha1": "1d12ff48f46f",
+   "source": "regenerated",
+   "take": "2026-09-09, Atlas",
+   "note": "The shipped clip said 'hi'. It had no plosive release at all: from 0.186 s a 60 ms aspiration ramp — 22, 41, 57, 79, 96, 114 — climbing into voicing, where a /p/ is silence then a sharp transient. Cued 'Pie.  Puh.' in one take; word-initial /p/ is ordinary in English, so unlike psi and xi this needed no splice. Split at the generator's own character marks and re-spaced to the pack's 0.18 / 0.355 / 0.28. Judged by ear, Fraser."
   },
   {
    "id": "17_rho",
