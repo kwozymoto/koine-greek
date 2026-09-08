@@ -352,6 +352,55 @@ def build(word):
     return spaced, bound, stress
 
 
+def pick(word, spaced, bound):
+    """The one cue to try first, after the transforms that were learned by
+       ear on the 511-817 tail and recorded in that pack's RULES_AND_CUES.md.
+
+       These OVERRIDE the letter table above where they clash, because they
+       were arrived at by listening and the table was arrived at by reading:
+
+         zeta      `z`, not `dz`      — the pack spells dz
+         -εω       `eh hoe`, not `eh oh`
+         pro-/pros- with omicron  `pross`  — `pro` is the omega sound
+         kappa-tau at the start   `kits`   — a helper vowel will not carry it
+         xi at the start          helper `a`, then `ks`
+         theta-iota `thi`, not `thee`
+         alpha-iota after a consonant  `kai`, not `keye`
+         `ass`     `ahs`              — English word, and the wrong vowel
+
+       Length decides spaced against bound: two syllables close up, five or
+       more must bind or the clip becomes a list, and three or four take the
+       spaced pair."""
+    n = len(spaced.split())
+    s = bound if (n <= 2 or n >= 5) else spaced
+
+    s = re.sub(r"\bdz", "z", s)                       # zeta
+    s = re.sub(r"keye", "kai", s)                     # αι after a consonant
+    s = re.sub(r"\bass\b", "ahs", s)                  # English word, wrong vowel
+    s = re.sub(r"thee", "thi", s)                     # θι is short
+    s = re.sub(r"eh oh\b", "eh hoe", s)               # -εω
+    s = re.sub(r"ehoh\b", "eh hoe", s)
+    s = re.sub(r"^pro(?=[ a-z])", "pross ", s).replace("pross  ", "pross ")
+    bare = strip_marks(word)
+    # Word-initial ξ: English has no word beginning ks, so the voice drops the
+    # k or spells the letter. `ax` gives it something to lean on. One syllable
+    # that is not in the Greek, and the least bad option available.
+    if bare[:1] == "ξ":
+        s = re.sub(r"^ks", "ax", s)
+    # κτ- is NOT transformed here, deliberately. The two that were locked by
+    # ear resolve the cluster differently — κτίσις `kitsis` lets the s of the
+    # cluster do double duty as the sigma, κτίζω `kitzo` does not — so any
+    # rule gets one of them wrong. An attempt at it produced `kitsisees`.
+    # Flagged by CLUSTER below instead, for a human to settle.
+    # A stop before a nasal: English will not begin a word that way and drops
+    # the stop, so πνεῦμα came out "nyoo mah". A helper vowel keeps it.
+    for pair, helper in (("pn", "puh n"), ("gn", "guh n"), ("mn", "muh n")):
+        if s.startswith(pair):
+            s = helper + s[len(pair):]
+            break
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def flags(word, spaced, bound):
     """The guide's nine failure modes, run back over what we produced."""
     f = []
@@ -384,7 +433,7 @@ def flags(word, spaced, bound):
     if dbl:
         f.append("DOUBLED(%s)" % (dbl.group(0)))                 # failure 7
     bare = strip_marks(word)
-    if bare[:2] in ("πν", "πτ", "κν", "γν", "βδ", "χθ", "φθ", "μν"):
+    if bare[:2] in ("πν", "πτ", "κν", "γν", "βδ", "χθ", "φθ", "μν", "κτ") or bare[:1] == "ξ":
         f.append("CLUSTER(%s- may need a helper vowel)" % bare[:2])  # failure 8
     return f
 

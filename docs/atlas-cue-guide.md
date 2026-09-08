@@ -7,6 +7,39 @@ Every rule below comes from the 511 clips already in the pack — either from
 what the working cues do, or from a specific clip that failed and had to be
 re-recorded. Counts in brackets are how many of the 511 back the rule.
 
+---
+
+## What the 511–817 round changed
+
+The tail was recorded afterwards, and twenty-eight of its cues were locked by
+ear. **Where they clash with the tables below, these win** — they were
+arrived at by listening, and the tables by reading. Each is in
+`docs/erasmian_vocab_cues_v4_tail.json` with `source: "ear"`.
+
+| | the tables below say | the ear says | why |
+|---|---|---|---|
+| ζ | `dz` word-initial | **`z`** | the pack spells the d |
+| -εω | `eh oh` | **`eh hoe`** | γαμέω `gah meh hoe`, τελέω `teh leh hoe` |
+| προ- / προσ- (omicron) | `pro` | **`pross`** | `pro` is the omega sound, as in *professional* |
+| αι after a consonant | `keye` | **`kai`** | `keye` splits; `kai`/`mai`/`rye` do not |
+| θι | `thee` | **`thi`** | the iota is short |
+| ας | — | **`ahs`**, never `ass` | an English word, and the wrong vowel |
+| ῥ- | (took the rough breathing) | **plain `r`** | the mark on rho is not the vowel rule |
+| ξ- word-initial | `ks` | **`ax`** | English has no word beginning *ks* |
+
+**κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
+differently — κτίσις is `kitsis`, where the s of the cluster doubles as the
+sigma, and κτίζω is `kitzo`, where it does not. Any rule gets one of them
+wrong; an attempt produced `kitsisees`. `tools/build_cues.py` flags κτ- and
+initial ξ- as clusters and leaves them alone.
+
+**One cue is a compromise, not a lock.** ξηραίνω ships as `axay rynoh` with a
+helper vowel that is not in the Greek, because Atlas will not begin a word
+with *ks* at all. It is recorded as `source: "ear-compromise"` and excused by
+name in `check_vocab`'s `CUE_OK`.
+
+---
+
 **This is a procedure, not a formula.** Atlas is not deterministic: the same
 `pahss` that once split into "pa has" was later read correctly. Expect to
 produce two or three candidates and choose by ear. First-pass success is

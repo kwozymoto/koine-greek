@@ -8,9 +8,10 @@
     "pos": "name",
     "tier": 5,
     "freq": 29,
-    "tts": "keye sahr",
-    "source": "worklist-candidate",
-    "duration_s": 1.181
+    "tts": "kai sar",
+    "source": "ear",
+    "duration_s": 1.181,
+    "take": "C"
   },
   {
     "index": 512,
@@ -21,9 +22,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 29,
-    "tts": "gah meh oh",
-    "source": "worklist-candidate",
-    "duration_s": 1.756
+    "tts": "gah meh hoe",
+    "source": "ear",
+    "duration_s": 1.756,
+    "take": "E"
   },
   {
     "index": 513,
@@ -34,9 +36,10 @@
     "pos": "noun",
     "tier": 5,
     "freq": 29,
-    "tts": "mah kheye rah",
-    "source": "worklist-candidate",
-    "duration_s": 1.573
+    "tts": "mah khai rah",
+    "source": "ear",
+    "duration_s": 1.573,
+    "take": "J"
   },
   {
     "index": 514,
@@ -47,9 +50,10 @@
     "pos": "noun",
     "tier": 5,
     "freq": 29,
-    "tts": "mees thoss",
-    "source": "worklist-candidate",
-    "duration_s": 1.337
+    "tts": "meesthoss",
+    "source": "ear",
+    "duration_s": 1.337,
+    "take": "B"
   },
   {
     "index": 515,
@@ -60,9 +64,10 @@
     "pos": "noun",
     "tier": 5,
     "freq": 29,
-    "tts": "pahs khah",
-    "source": "worklist-candidate",
-    "duration_s": 1.024
+    "tts": "paskhah",
+    "source": "ear",
+    "duration_s": 1.024,
+    "take": "B"
   },
   {
     "index": 516,
@@ -73,9 +78,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 29,
-    "tts": "pah rehr kho my",
-    "source": "worklist-candidate",
-    "duration_s": 1.886
+    "tts": "par irk oh mai",
+    "source": "ear",
+    "duration_s": 1.886,
+    "take": "J"
   },
   {
     "index": 517,
@@ -87,8 +93,9 @@
     "tier": 5,
     "freq": 29,
     "tts": "po teh",
-    "source": "worklist-candidate",
-    "duration_s": 1.103
+    "source": "ear",
+    "duration_s": 1.103,
+    "take": "A"
   },
   {
     "index": 518,
@@ -99,9 +106,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 29,
-    "tts": "pros kah leh o my",
-    "source": "worklist-candidate",
-    "duration_s": 2.147
+    "tts": "pross kahle omai",
+    "source": "ear",
+    "duration_s": 2.147,
+    "take": "E"
   },
   {
     "index": 519,
@@ -112,9 +120,10 @@
     "pos": "adv",
     "tier": 5,
     "freq": 29,
-    "tts": "po thehn",
-    "source": "worklist-candidate",
-    "duration_s": 1.181
+    "tts": "pohthenn",
+    "source": "ear",
+    "duration_s": 1.181,
+    "take": "P"
   },
   {
     "index": 520,
@@ -125,9 +134,10 @@
     "pos": "name",
     "tier": 5,
     "freq": 29,
-    "tts": "ay lee ahs",
-    "source": "worklist-candidate",
-    "duration_s": 1.651
+    "tts": "hay lee ahs",
+    "source": "ear",
+    "duration_s": 1.651,
+    "take": "E"
   },
   {
     "index": 521,
@@ -138,9 +148,10 @@
     "pos": "name",
     "tier": 5,
     "freq": 28,
-    "tts": "bahr nah bahs",
-    "source": "worklist-candidate",
-    "duration_s": 1.337
+    "tts": "barnah bahs",
+    "source": "ear",
+    "duration_s": 1.337,
+    "take": "B"
   },
   {
     "index": 522,
@@ -152,8 +163,9 @@
     "tier": 5,
     "freq": 28,
     "tts": "mah ree ah",
-    "source": "worklist-candidate",
-    "duration_s": 1.416
+    "source": "ear",
+    "duration_s": 1.416,
+    "take": "A"
   },
   {
     "index": 523,
@@ -164,9 +176,10 @@
     "pos": "adj",
     "tier": 5,
     "freq": 28,
-    "tts": "ploo see oss",
-    "source": "worklist-candidate",
-    "duration_s": 1.573
+    "tts": "ploosee oss",
+    "source": "ear",
+    "duration_s": 1.573,
+    "take": "B"
   },
   {
     "index": 524,
@@ -177,9 +190,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "pro fay tew oh",
-    "source": "worklist-candidate",
-    "duration_s": 1.886
+    "tts": "pross fay tew hoe",
+    "source": "ear",
+    "duration_s": 1.886,
+    "take": "D"
   },
   {
     "index": 525,
@@ -190,9 +204,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "teh leh oh",
-    "source": "worklist-candidate",
-    "duration_s": 1.285
+    "tts": "teh leh hoe",
+    "source": "ear",
+    "duration_s": 1.285,
+    "take": "B"
   },
   {
     "index": 526,
@@ -204,8 +219,9 @@
     "tier": 5,
     "freq": 28,
     "tts": "khoh rah",
-    "source": "worklist-candidate",
-    "duration_s": 1.285
+    "source": "ear",
+    "duration_s": 1.285,
+    "take": "A"
   },
   {
     "index": 527,
@@ -216,9 +232,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "ah dee keh oh",
-    "source": "worklist-candidate",
-    "duration_s": 2.147
+    "tts": "ah dee keh hoe",
+    "source": "ear",
+    "duration_s": 2.147,
+    "take": "A"
   },
   {
     "index": 528,
@@ -229,9 +246,10 @@
     "pos": "adj",
     "tier": 5,
     "freq": 28,
-    "tts": "ah lay thee noss",
-    "source": "worklist-candidate",
-    "duration_s": 1.834
+    "tts": "ah lay thi noss",
+    "source": "ear",
+    "duration_s": 1.834,
+    "take": "C"
   },
   {
     "index": 529,
@@ -242,9 +260,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "hah ghee ah zoh",
-    "source": "worklist-candidate",
-    "duration_s": 1.756
+    "tts": "haghee ah zoh",
+    "source": "ear",
+    "duration_s": 1.756,
+    "take": "D"
   },
   {
     "index": 530,
@@ -255,9 +274,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "ehn doo oh",
-    "source": "worklist-candidate",
-    "duration_s": 1.573
+    "tts": "ehndoo hoe",
+    "source": "ear",
+    "duration_s": 1.573,
+    "take": "B"
   },
   {
     "index": 531,
@@ -268,9 +288,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "hay gheh o my",
-    "source": "worklist-candidate",
-    "duration_s": 2.069
+    "tts": "heg eh o my",
+    "source": "ear",
+    "duration_s": 2.069,
+    "take": "C"
   },
   {
     "index": 532,
@@ -281,9 +302,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 28,
-    "tts": "ees khoo oh",
-    "source": "worklist-candidate",
-    "duration_s": 1.651
+    "tts": "iss khoo o",
+    "source": "ear",
+    "duration_s": 1.651,
+    "take": "D"
   },
   {
     "index": 533,
@@ -307,7 +329,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 27,
-    "tts": "kah tahr gheh oh",
+    "tts": "kah tahr gheh hoe",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -320,7 +342,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 27,
-    "tts": "kree mah",
+    "tts": "kreemah",
     "source": "worklist-candidate",
     "duration_s": 0.867
   },
@@ -333,7 +355,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 27,
-    "tts": "koh may",
+    "tts": "komay",
     "source": "worklist-candidate",
     "duration_s": 0.867
   },
@@ -346,7 +368,7 @@
     "pos": "pron",
     "tier": 5,
     "freq": 27,
-    "tts": "po soss",
+    "tts": "pososs",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -372,7 +394,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 27,
-    "tts": "ehk kheh oh",
+    "tts": "ek kheh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.573
   },
@@ -385,7 +407,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 27,
-    "tts": "hay koh",
+    "tts": "haykoh",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -424,7 +446,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "doo lew oh",
+    "tts": "doo lew hoe",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -450,7 +472,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "loo peh oh",
+    "tts": "loo peh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.442
   },
@@ -463,7 +485,7 @@
     "pos": "adv",
     "tier": 5,
     "freq": 26,
-    "tts": "oo poh",
+    "tts": "oopoh",
     "source": "worklist-candidate",
     "duration_s": 0.867
   },
@@ -476,7 +498,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 26,
-    "tts": "pnew mah tee koss",
+    "tts": "puh new mah teekoss",
     "source": "worklist-candidate",
     "duration_s": 2.461
   },
@@ -502,7 +524,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "fro neh oh",
+    "tts": "fro neh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.991
   },
@@ -515,7 +537,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 26,
-    "tts": "khay rah",
+    "tts": "khayrah",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -528,7 +550,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "ah po kah loop toh",
+    "tts": "apo kaloop toh",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -541,7 +563,7 @@
     "pos": "conj",
     "tier": 5,
     "freq": 26,
-    "tts": "eh pay",
+    "tts": "epay",
     "source": "worklist-candidate",
     "duration_s": 0.789
   },
@@ -567,7 +589,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "om noo oh",
+    "tts": "om noo hoe",
     "source": "worklist-candidate",
     "duration_s": 1.416
   },
@@ -580,7 +602,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 26,
-    "tts": "ho mo lo gheh oh",
+    "tts": "homo logheh oh",
     "source": "worklist-candidate",
     "duration_s": 1.991
   },
@@ -606,7 +628,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 25,
-    "tts": "deh kah",
+    "tts": "dekah",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -619,7 +641,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 25,
-    "tts": "dehnd ron",
+    "tts": "dendron",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -632,7 +654,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 25,
-    "tts": "keh lew oh",
+    "tts": "keh lew hoe",
     "source": "worklist-candidate",
     "duration_s": 1.677
   },
@@ -645,7 +667,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 25,
-    "tts": "lew koss",
+    "tts": "lewkoss",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -775,7 +797,7 @@
     "pos": "name",
     "tier": 5,
     "freq": 25,
-    "tts": "hehl layn",
+    "tts": "hellayn",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -801,7 +823,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 24,
-    "tts": "gnoh ree zoh",
+    "tts": "guh noh ree zoh",
     "source": "worklist-candidate",
     "duration_s": 2.174
   },
@@ -814,7 +836,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 24,
-    "tts": "kay my",
+    "tts": "kaymy",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -879,7 +901,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 24,
-    "tts": "pro seh khoh",
+    "tts": "pross seh khoh",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -892,7 +914,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 24,
-    "tts": "soh tayr",
+    "tts": "sotayr",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -918,7 +940,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 24,
-    "tts": "ah neye reh oh",
+    "tts": "ah neye reh hoe",
     "source": "worklist-candidate",
     "duration_s": 2.069
   },
@@ -944,7 +966,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 24,
-    "tts": "ahs tayr",
+    "tts": "astayr",
     "source": "worklist-candidate",
     "duration_s": 1.52
   },
@@ -970,7 +992,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 23,
-    "tts": "ay kohn",
+    "tts": "aykon",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -983,7 +1005,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 23,
-    "tts": "dzoh on",
+    "tts": "dzoon",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -996,7 +1018,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 23,
-    "tts": "thoo see ahs tay ree on",
+    "tts": "thoosee astay reeon",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -1048,7 +1070,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 23,
-    "tts": "koh loo oh",
+    "tts": "koh loo hoe",
     "source": "worklist-candidate",
     "duration_s": 1.494
   },
@@ -1074,7 +1096,7 @@
     "pos": "prep",
     "tier": 5,
     "freq": 23,
-    "tts": "peh rahn",
+    "tts": "peran",
     "source": "worklist-candidate",
     "duration_s": 1.285
   },
@@ -1113,7 +1135,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 23,
-    "tts": "skew oss",
+    "tts": "skewoss",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -1204,7 +1226,7 @@
     "pos": "name",
     "tier": 5,
     "freq": 22,
-    "tts": "mah keh do nee ah",
+    "tts": "makeh donee ah",
     "source": "worklist-candidate",
     "duration_s": 2.382
   },
@@ -1217,7 +1239,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 22,
-    "tts": "gray go reh oh",
+    "tts": "gray go reh hoe",
     "source": "worklist-candidate",
     "duration_s": 2.069
   },
@@ -1269,7 +1291,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 22,
-    "tts": "kah tehr gah zo my",
+    "tts": "kater gazo my",
     "source": "worklist-candidate",
     "duration_s": 1.573
   },
@@ -1282,7 +1304,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 22,
-    "tts": "kah tay go reh oh",
+    "tts": "katay goreh oh",
     "source": "worklist-candidate",
     "duration_s": 1.756
   },
@@ -1321,7 +1343,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 22,
-    "tts": "play ghay",
+    "tts": "playghay",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -1334,7 +1356,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 22,
-    "tts": "ploo toss",
+    "tts": "plootoss",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -1347,7 +1369,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 22,
-    "tts": "poh leh oh",
+    "tts": "poh leh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.416
   },
@@ -1373,7 +1395,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 22,
-    "tts": "tehs seh rah kon tah",
+    "tts": "tesseh rakon tah",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1438,7 +1460,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "bah see lew oh",
+    "tts": "bah see lew hoe",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1451,7 +1473,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 21,
-    "tts": "dee dahs kah lee ah",
+    "tts": "deedas kalee ah",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1464,7 +1486,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "ew do keh oh",
+    "tts": "ew do keh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.573
   },
@@ -1490,7 +1512,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "kah thees tay mee",
+    "tts": "kah this tay mee",
     "source": "worklist-candidate",
     "duration_s": 1.651
   },
@@ -1529,7 +1551,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "mnay mo new oh",
+    "tts": "muh nay mo new hoe",
     "source": "worklist-candidate",
     "duration_s": 2.618
   },
@@ -1555,7 +1577,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "streh foh",
+    "tts": "strefoh",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -1581,7 +1603,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "eh nehr gheh oh",
+    "tts": "eh nehr gheh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1607,7 +1629,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 21,
-    "tts": "hoo pah koo oh",
+    "tts": "hoo pah koo hoe",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1646,7 +1668,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 20,
-    "tts": "go news",
+    "tts": "gonews",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -1685,7 +1707,7 @@
     "pos": "adv",
     "tier": 5,
     "freq": 20,
-    "tts": "noo nee",
+    "tts": "noonee",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -1698,7 +1720,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 20,
-    "tts": "ksoo lon",
+    "tts": "ksoolon",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -1711,7 +1733,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 20,
-    "tts": "pro ah goh",
+    "tts": "pross ah goh",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -1724,7 +1746,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 20,
-    "tts": "skay nay",
+    "tts": "skaynay",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -1750,7 +1772,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 20,
-    "tts": "treh khoh",
+    "tts": "trekhoh",
     "source": "worklist-candidate",
     "duration_s": 1.285
   },
@@ -1763,7 +1785,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 20,
-    "tts": "ahk ro boos tee ah",
+    "tts": "akro boostee ah",
     "source": "worklist-candidate",
     "duration_s": 1.651
   },
@@ -1828,7 +1850,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 20,
-    "tts": "eekh thoos",
+    "tts": "eekhthoos",
     "source": "worklist-candidate",
     "duration_s": 1.52
   },
@@ -1880,7 +1902,7 @@
     "pos": "adv",
     "tier": 5,
     "freq": 20,
-    "tts": "hoh say",
+    "tts": "hosay",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -1945,7 +1967,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 19,
-    "tts": "krayt tohn",
+    "tts": "kraytton",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -1958,7 +1980,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 19,
-    "tts": "kree tays",
+    "tts": "kreetays",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -1971,7 +1993,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 19,
-    "tts": "kroop toh",
+    "tts": "krooptoh",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -1984,9 +2006,10 @@
     "pos": "noun",
     "tier": 5,
     "freq": 19,
-    "tts": "ktee sees",
-    "source": "worklist-candidate",
-    "duration_s": 2.722
+    "tts": "kitsis",
+    "source": "ear",
+    "duration_s": 1.086,
+    "take": "E"
   },
   {
     "index": 664,
@@ -2036,7 +2059,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 19,
-    "tts": "pah rah tee thay mee",
+    "tts": "parah teethay mee",
     "source": "worklist-candidate",
     "duration_s": 1.991
   },
@@ -2049,7 +2072,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 19,
-    "tts": "pro fay tay ah",
+    "tts": "pross fay tay ah",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -2114,7 +2137,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 19,
-    "tts": "eh pee lahm bah no my",
+    "tts": "epee lambah nomy",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -2127,7 +2150,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 19,
-    "tts": "eh poo rah nee oss",
+    "tts": "epoo ranee oss",
     "source": "worklist-candidate",
     "duration_s": 2.069
   },
@@ -2166,7 +2189,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 18,
-    "tts": "ays po rew o my",
+    "tts": "ayspo rewo my",
     "source": "worklist-candidate",
     "duration_s": 2.461
   },
@@ -2179,7 +2202,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 18,
-    "tts": "thoo moss",
+    "tts": "thoomoss",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -2205,7 +2228,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 18,
-    "tts": "keh noss",
+    "tts": "kenoss",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -2218,7 +2241,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 18,
-    "tts": "klay ro no meh oh",
+    "tts": "klayro nomeh oh",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -2244,7 +2267,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 18,
-    "tts": "ko poss",
+    "tts": "koposs",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -2257,7 +2280,7 @@
     "pos": "prep",
     "tier": 5,
     "freq": 18,
-    "tts": "mehkh ree(s)",
+    "tts": "mekhrees",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -2296,7 +2319,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 18,
-    "tts": "poy mayn",
+    "tts": "poymayn",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -2335,7 +2358,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 18,
-    "tts": "poo lohn",
+    "tts": "poolon",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -2374,7 +2397,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 18,
-    "tts": "teek toh",
+    "tts": "teektoh",
     "source": "worklist-candidate",
     "duration_s": 1.285
   },
@@ -2439,7 +2462,7 @@
     "pos": "name",
     "tier": 5,
     "freq": 18,
-    "tts": "ahn tee o khay ah",
+    "tts": "antee okhay ah",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -2491,7 +2514,7 @@
     "pos": "name",
     "tier": 5,
     "freq": 17,
-    "tts": "keye sah ray ah",
+    "tts": "kai sah ray ah",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -2504,7 +2527,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 17,
-    "tts": "broh mah",
+    "tts": "bromah",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -2543,7 +2566,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 17,
-    "tts": "kah tah loo oh",
+    "tts": "kah tah loo hoe",
     "source": "worklist-candidate",
     "duration_s": 1.834
   },
@@ -2569,7 +2592,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 17,
-    "tts": "kroop toss",
+    "tts": "krooptoss",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -2582,7 +2605,7 @@
     "pos": "particle",
     "tier": 5,
     "freq": 17,
-    "tts": "may tee",
+    "tts": "maytee",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -2595,7 +2618,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 17,
-    "tts": "neep toh",
+    "tts": "neeptoh",
     "source": "worklist-candidate",
     "duration_s": 1.103
   },
@@ -2699,7 +2722,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 17,
-    "tts": "khroo soos",
+    "tts": "khroosoos",
     "source": "worklist-candidate",
     "duration_s": 1.285
   },
@@ -2725,7 +2748,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 17,
-    "tts": "ah po kah loo psees",
+    "tts": "apo kaloo psees",
     "source": "worklist-candidate",
     "duration_s": 1.991
   },
@@ -2816,7 +2839,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 17,
-    "tts": "heh kah ton tahr khays",
+    "tts": "hekah tontar khays",
     "source": "worklist-candidate",
     "duration_s": 2.147
   },
@@ -2855,7 +2878,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 17,
-    "tts": "heep poss",
+    "tts": "heepposs",
     "source": "worklist-candidate",
     "duration_s": 1.416
   },
@@ -2894,7 +2917,7 @@
     "pos": "particle",
     "tier": 5,
     "freq": 17,
-    "tts": "oh",
+    "tts": "hoe",
     "source": "worklist-candidate",
     "duration_s": 0.684
   },
@@ -2907,9 +2930,10 @@
     "pos": "noun",
     "tier": 5,
     "freq": 17,
-    "tts": "ree zah",
-    "source": "worklist-candidate",
-    "duration_s": 1.337
+    "tts": "reezah",
+    "source": "ear",
+    "duration_s": 0.918,
+    "take": "C"
   },
   {
     "index": 735,
@@ -2921,8 +2945,9 @@
     "tier": 5,
     "freq": 17,
     "tts": "roo o my",
-    "source": "worklist-candidate",
-    "duration_s": 1.834
+    "source": "ear",
+    "duration_s": 1.638,
+    "take": "A"
   },
   {
     "index": 736,
@@ -2946,7 +2971,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "gah moss",
+    "tts": "gamoss",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -2972,7 +2997,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "dayp non",
+    "tts": "daypnon",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -2998,7 +3023,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 16,
-    "tts": "dee ah lo ghee zo my",
+    "tts": "deeah loghee zomy",
     "source": "worklist-candidate",
     "duration_s": 2.539
   },
@@ -3050,7 +3075,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "dzay loss",
+    "tts": "dzayloss",
     "source": "worklist-candidate",
     "duration_s": 3.035
   },
@@ -3063,7 +3088,7 @@
     "pos": "adv",
     "tier": 5,
     "freq": 16,
-    "tts": "kah kohs",
+    "tts": "kakos",
     "source": "worklist-candidate",
     "duration_s": 1.494
   },
@@ -3089,7 +3114,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "klehp tays",
+    "tts": "kleptays",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -3102,7 +3127,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 16,
-    "tts": "klay oh",
+    "tts": "klayoh",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -3128,7 +3153,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "loo pay",
+    "tts": "loopay",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -3193,7 +3218,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 16,
-    "tts": "play rays",
+    "tts": "playrays",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -3219,7 +3244,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "soo kay",
+    "tts": "sookay",
     "source": "worklist-candidate",
     "duration_s": 1.494
   },
@@ -3245,7 +3270,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "sfrah ghees",
+    "tts": "sfraghees",
     "source": "worklist-candidate",
     "duration_s": 3.271
   },
@@ -3258,7 +3283,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "teh rahs",
+    "tts": "teras",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -3284,7 +3309,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 16,
-    "tts": "tro fay",
+    "tts": "trofay",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -3297,7 +3322,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 16,
-    "tts": "ah theh teh oh",
+    "tts": "ah theh teh hoe",
     "source": "worklist-candidate",
     "duration_s": 2.069
   },
@@ -3336,7 +3361,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 16,
-    "tts": "eh pee thoo meh oh",
+    "tts": "epee thoomeh hoe",
     "source": "worklist-candidate",
     "duration_s": 2.722
   },
@@ -3388,7 +3413,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 16,
-    "tts": "hoos teh reh oh",
+    "tts": "hoos teh reh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.651
   },
@@ -3427,7 +3452,7 @@
     "pos": "name",
     "tier": 5,
     "freq": 15,
-    "tts": "sow loss",
+    "tts": "sowloss",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -3453,7 +3478,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 15,
-    "tts": "gnohs toss",
+    "tts": "guh nohs toss",
     "source": "worklist-candidate",
     "duration_s": 1.756
   },
@@ -3466,7 +3491,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 15,
-    "tts": "goom noss",
+    "tts": "goomnoss",
     "source": "worklist-candidate",
     "duration_s": 1.573
   },
@@ -3479,7 +3504,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "deh roh",
+    "tts": "deroh",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -3492,7 +3517,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "dehs moss",
+    "tts": "desmoss",
     "source": "worklist-candidate",
     "duration_s": 1.285
   },
@@ -3505,7 +3530,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "dee ah mahr too ro my",
+    "tts": "deeah martoo romy",
     "source": "worklist-candidate",
     "duration_s": 3.976
   },
@@ -3518,7 +3543,7 @@
     "pos": "adv",
     "tier": 5,
     "freq": 15,
-    "tts": "ay tah",
+    "tts": "aytah",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -3544,7 +3569,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "ew khah rees tee ah",
+    "tts": "ewkhah reestee ah",
     "source": "worklist-candidate",
     "duration_s": 5.178
   },
@@ -3609,9 +3634,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "ktee zoh",
-    "source": "worklist-candidate",
-    "duration_s": 2.644
+    "tts": "kitzo",
+    "source": "ear",
+    "duration_s": 1.014,
+    "take": "F"
   },
   {
     "index": 789,
@@ -3622,7 +3648,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "lays tays",
+    "tts": "laystays",
     "source": "worklist-candidate",
     "duration_s": 1.337
   },
@@ -3648,9 +3674,10 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "ksay reye noh",
-    "source": "worklist-candidate",
-    "duration_s": 3.819
+    "tts": "axay rynoh",
+    "source": "ear-compromise",
+    "duration_s": 1.494,
+    "take": "I"
   },
   {
     "index": 792,
@@ -3674,7 +3701,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "peht rah",
+    "tts": "petrah",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -3700,7 +3727,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "pow oh",
+    "tts": "powoh",
     "source": "worklist-candidate",
     "duration_s": 0.946
   },
@@ -3713,7 +3740,7 @@
     "pos": "adj",
     "tier": 5,
     "freq": 15,
-    "tts": "peh rees so teh ross",
+    "tts": "perees soteh ross",
     "source": "worklist-candidate",
     "duration_s": 2.226
   },
@@ -3739,7 +3766,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "pro leh goh",
+    "tts": "pross leh goh",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -3752,7 +3779,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "sah lew oh",
+    "tts": "sah lew hoe",
     "source": "worklist-candidate",
     "duration_s": 1.756
   },
@@ -3830,7 +3857,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "too poss",
+    "tts": "tooposs",
     "source": "worklist-candidate",
     "duration_s": 1.024
   },
@@ -3856,7 +3883,7 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "khor toss",
+    "tts": "khortoss",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -3908,7 +3935,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "eh pahg ghehl lo my",
+    "tts": "epag ghello my",
     "source": "worklist-candidate",
     "duration_s": 2.461
   },
@@ -3960,7 +3987,7 @@
     "pos": "conj",
     "tier": 5,
     "freq": 15,
-    "tts": "ho thehn",
+    "tts": "hohthenn",
     "source": "worklist-candidate",
     "duration_s": 1.181
   },
@@ -3973,7 +4000,7 @@
     "pos": "verb",
     "tier": 5,
     "freq": 15,
-    "tts": "oh feh leh oh",
+    "tts": "oh feh leh hoe",
     "source": "worklist-candidate",
     "duration_s": 1.886
   },
@@ -3986,8 +4013,9 @@
     "pos": "noun",
     "tier": 5,
     "freq": 15,
-    "tts": "rahb bee",
-    "source": "worklist-candidate",
-    "duration_s": 2.853
+    "tts": "rahbee",
+    "source": "ear",
+    "duration_s": 1.158,
+    "take": "D"
   }
 ]

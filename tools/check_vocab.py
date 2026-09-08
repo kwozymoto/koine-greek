@@ -510,6 +510,14 @@ def syllables(w):
 CUE_OK = {
     77:  "ιου bound to 'yoo'; the spelled form ran to 3.81s",
     354: "ιου bound to 'yoo', as for Ἰουδαῖος",
+    # ξ- at the start of a word is the one initial the voice will not say:
+    # English has no word beginning ks, and every cue that tried dropped the
+    # k or spelled the letter out. A helper vowel in front gives it something
+    # to lean on, so the cluster survives at the cost of a syllable that is
+    # not in the Greek. Heard, and logged in the cue sheet as
+    # source:"ear-compromise" rather than a lock — it is the best available,
+    # not the right answer.
+    791: "ξ- cannot begin an English word, so a helper 'a' carries the ks",
 }
 
 tts_bad = []
@@ -548,7 +556,15 @@ for path in ("docs/erasmian_vocab_cues.json",
                 "g": ("g", "gh"), "r": ("r", "rh"), "n": ("n", "gn"),
                 "m": ("m", "mn"), "l": ("l",), "b": ("b",)}
         if want and not tts.lower().lstrip().startswith(SAME.get(want, (want,))):
-            tts_bad.append(tag + " does not begin with the %s of %s" % (want, gk))
+            line = tag + " does not begin with the %s of %s" % (want, gk)
+            # CUE_OK excuses this rule too. It was only consulted by the
+            # syllable count above, so a cue deliberately given a helper
+            # vowel — the one thing that makes an initial ξ sayable — could
+            # be listed as reviewed and still fail.
+            if r.get("index") in CUE_OK:
+                excused.append(line + "  — " + CUE_OK[r["index"]])
+            else:
+                tts_bad.append(line)
 
 # ------------------------------------------------------- prepositions ----
 # A preposition's gloss names the case it governs — "in, on, among (+dat)" —
