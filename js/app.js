@@ -159,11 +159,38 @@ function addXp(n){ S.xp+=n; save(); }
    skills, and this is the one the rest of the app depends on.
    ============================================================ */
 const ALPHA_SOLID=3;
+/* One point per letter per day, so three points means three days.
+
+   It used to mean three answers, whenever they came: the Alphabet drill in
+   the menu serves twelve at a time out of twenty-four, so three runs of it
+   in one evening could settle the whole alphabet and retire the letters row
+   for good. Nothing about that afternoon showed the letters would still be
+   there in the morning, which is the only thing the score is for.
+
+   Measured, the cap costs nothing — the daily sitting asks eight of
+   twenty-four, so it almost never asks the same letter twice in a day and
+   the median phase is 10 days either way. It is not here for speed. It is
+   here so the number cannot lie.
+
+   The point earned on the day a letter is introduced still counts, and it
+   should: it takes the letter from nought to one, which is what marks it
+   met and stops it being taught again. Reaching three — settled — is what
+   now requires later days.
+
+   Misses are not capped. A miss is the signal you most want to act on, and
+   the cost of acting on it is that the letter gets taught again, which is
+   not a punishment. */
 function alphaSeen(name,ok){
   if(!name) return;
-  S.alpha=S.alpha||{};
+  S.alpha=S.alpha||{}; S.alphaDay=S.alphaDay||{};
   const n=+S.alpha[name]||0;
-  S.alpha[name]=ok?Math.min(ALPHA_SOLID,n+1):Math.max(0,n-1);
+  if(ok){
+    if(S.alphaDay[name]===today()) return;      // already gained one today
+    S.alpha[name]=Math.min(ALPHA_SOLID,n+1);
+  }else{
+    S.alpha[name]=Math.max(0,n-1);
+  }
+  S.alphaDay[name]=today();
   save();
 }
 const alphaScore=a=>+((S.alpha||{})[a[1]])||0;
@@ -181,7 +208,8 @@ const alphaLeft=()=>ALPHABET.filter(a=>alphaScore(a)<ALPHA_SOLID).length;
    the words and its card says why Today is not offering them, and anyone who
    already reads Greek can say so in Progress, which marks the alphabet
    settled along with chapter 1. */
-const lettersReady=()=>alphaLeft()===0;
+const lettersReady=()=>alphaLeft()===0
+  || !!((S.alphaCheck||{}).passed);         // alphaPassed(), defined below
 /* The ones you are least sure of, not n at random. */
 const alphaWeak=(n=8)=>ALPHABET.slice()
   .sort((a,b)=>alphaScore(a)-alphaScore(b)||Math.random()-.5).slice(0,n);
@@ -206,7 +234,11 @@ function checkBadges(){
   // when participles became two chapters, and will again for second-year
   // material. The badge id stays l26 because it is an opaque key in S.badges.
   if(S.lessons.length>=LESSONS.length) grant("l26");
-  if(S.lessons.includes(1)) grant("alpha");
+  /* Its description has always read "Pass the alphabet test", which was a
+     figure of speech for finishing chapter 1 and is now a literal thing you
+     can do. So passing the check earns it too. Both roads, because the
+     Progress select settles the alphabet without either. */
+  if(S.lessons.includes(1) || alphaPassed()) grant("alpha");
 }
 /* A PWA with no server cannot send a notification, so the icon badge is the
    only nudge available. Unsupported everywhere but Chrome on the desktop and
@@ -809,8 +841,36 @@ function letterKnown(name){
 const ALPHA_PASS=22;
 const lettersMet=()=>ALPHABET.filter(a=>alphaScore(a)>0).length;
 
+/* ---- and it comes back ----
+   Every other thing this app teaches decays and returns: words, paradigms
+   and the chapters' own questions all sit on the same scheduler. The
+   alphabet sat on nothing. Three correct answers retired a letter and the
+   row vanished, so the one piece of knowledge every other piece rests on
+   was the only piece never reviewed again — the opposite failure from the
+   one Fraser found, and a quieter one, because nothing about a row that has
+   gone tells you it should have come back.
+
+   One card for the whole alphabet rather than twenty-four, because the check
+   is one sitting and because after graduating, the letters are exercised all
+   day by every word and every verse. What is wanted is a periodic proof, not
+   a schedule per glyph. The same scheduler as everything else: pass and it
+   goes out a week, then a month, then longer; fail and it is due now. */
+function alphaCard(){
+  if(!S.alphaCheck)
+    S.alphaCheck={ease:2.5,ivl:0,due:today(),reps:0,lapses:0,passed:false};
+  return S.alphaCheck;
+}
+const alphaCheckDue=()=>alphaCard().due<=today();
+/* Whether the alphabet has ever been passed. It rides on the check's own
+   card, the way js/grid.js keeps `best` on a round's — and it is a field of
+   its own rather than reps>0 because applyGrade zeroes reps on a lapse, so
+   one failed re-check would have taken the words away from somebody two
+   hundred words in. */
+const alphaPassed=()=>!!((S.alphaCheck||{}).passed);
+
 function alphaCheck(){
   const missed=[];
+  const first=!alphaPassed();
   const q=ALPHABET.slice().sort(()=>Math.random()-.5).map(a=>{
     const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5)
       .slice(0,3).map(x=>x[1]);
@@ -821,25 +881,46 @@ function alphaCheck(){
       opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`,
       null, ok=>{ if(!ok) missed.push(a); });
   });
-  q.push(alphaCheckResult(missed));
+  q.push(alphaCheckResult(missed,first));
   return q;
 }
 
 /* Stands in for finish(), the way lessonDone() does — it has a verdict to
    deliver and finish() would paint over it. */
-function alphaCheckResult(missed){
+function alphaCheckResult(missed,first){
   return ()=>{
     const right=ALPHABET.length-missed.length;
     const pass=right>=ALPHA_PASS;
-    S.alpha=S.alpha||{};
+    S.alpha=S.alpha||{}; S.alphaDay=S.alphaDay||{};
     if(pass){
       ALPHABET.forEach(a=>{ S.alpha[a[1]]=ALPHA_SOLID; });
+      alphaCard().passed=true;
     }else{
       /* Reteach and retest, which is what a failed mastery check is for.
-         The missed letters go back to nought so tomorrow's row teaches them
-         again; the rest keep whatever they had. */
-      missed.forEach(a=>{ S.alpha[a[1]]=0; });
+         First time through, a missed letter goes back to nought and is
+         taught again. On a later check it only loses a point: somebody two
+         hundred words in who fluffs two letters needs those two drilled, not
+         the alphabet re-taught. The day stamps go with them either way, or
+         the one-a-day cap would block the re-teaching from crediting. */
+      missed.forEach(a=>{
+        S.alpha[a[1]]=first?0:Math.max(1,(+S.alpha[a[1]]||0)-1);
+        delete S.alphaDay[a[1]];
+      });
     }
+    /* Out a week and then longer on a pass. On a fail, tomorrow rather than
+       now: a failed check means go and learn these and come back, and
+       retaking it in the same minute measures the same nothing as asking
+       about a letter ten seconds after showing it. */
+    applyGrade(alphaCard(), pass?(right===ALPHABET.length?3:2):0);
+    if(pass && (+alphaCard().ivl||0)<3){
+      /* Floored at three days. baseIvl gives a first pass one day, which is
+         right for a single card and wrong for a twenty-four question run:
+         repeating the whole alphabet the morning after passing it is not
+         where that minute goes — the words that have just unlocked are. */
+      const c=alphaCard(), d=new Date();
+      c.ivl=3; d.setDate(d.getDate()+3); c.due=ymd(d);
+    }
+    if(!pass){ const d=new Date(); d.setDate(d.getDate()+1); alphaCard().due=ymd(d); }
     save();
     if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
     checkBadges();
@@ -859,10 +940,13 @@ function alphaCheckResult(missed){
                      `sring${pass?" clean":""}`) : ""}
         <span class="gk">${pass?"εὖγε":"σχεδόν"}</span>
         <p>${pass
-          ? "You can read the alphabet. It is done — words start now."
-          : `${right} of ${ALPHABET.length}. ${ALPHA_PASS} passes, so this one is not through yet.`}</p>
+          ? (first ? "You can read the alphabet. It is done — words start now."
+                   : "Still there. Back again in " + (alphaCard().ivl||1) + " day"
+                     + (alphaCard().ivl===1?"":"s") + ".")
+          : `${right} of ${ALPHABET.length}. ${ALPHA_PASS} passes, so not through yet — this comes round again tomorrow.`}</p>
         ${missed.length?`<p class="muted" style="font-size:.85rem">${
-          pass?"Worth another look at":"Back to the top of the list"}: ${names}</p>`:""}
+          pass?"Worth another look at"
+             :(first?"Back to the top of the list":"To drill tomorrow")}: ${names}</p>`:""}
       </div>
       ${typeof nextTaskHtml==="function"?nextTaskHtml():""}
       <button class="btn ghost" onclick="go('today')">Back to Today</button>`;
@@ -879,11 +963,25 @@ function todaysPlan(){
   /* Once every letter has been taught, the useful next step is not another
      eight questions — it is proving the lot and moving on. So the check
      takes the row over at that point, and a failed one puts the letters it
-     missed back to nought, which brings the teaching row back tomorrow. */
-  if(left && !lettersUnmet().length){
+     missed back to nought, which brings the teaching row back tomorrow.
+
+     And it returns. Past the first pass the row appears whenever the check
+     is due, which is the only thing that ever brings the alphabet back. */
+  /* Four states, and the order of the tests is the whole logic. The gate
+     needs `left`, or someone who used the Progress select — which marks
+     every letter settled — would be asked to prove an alphabet the app has
+     already accepted. */
+  if(!alphaPassed() && left && !lettersUnmet().length){
     tasks.push({id:"alphacheck", mins:3,
       label:"The alphabet, all through",
       sub:`All ${ALPHABET.length} in one pass — ${ALPHA_PASS} right and the letters are done`,
+      run:()=>startSession(alphaCheck(),"letters")});
+  } else if(alphaPassed() && alphaCheckDue()){
+    const n=+alphaCard().ivl||0;
+    tasks.push({id:"alphacheck", mins:3,
+      label:"The alphabet, a check",
+      sub:n?`All ${ALPHABET.length} again — the last one was ${n} day${n===1?"":"s"} ago`
+           :`All ${ALPHABET.length} again — a minute, to be sure they are still there`,
       run:()=>startSession(alphaCheck(),"letters")});
   } else if(left){
     /* Say what is about to happen. "Start here — everything else needs them"
@@ -3032,6 +3130,27 @@ function saneState(x){
     for(const k of Object.keys(x.alpha))
       if(ALPHABET.some(a=>a[1]===k) && Number.isFinite(+x.alpha[k]))
         out.alpha[k]=Math.max(0,Math.min(ALPHA_SOLID,Math.round(+x.alpha[k])));
+  /* letter -> the day its score last moved, which is how one point a day is
+     enforced. A junk or missing date only means the next answer counts, so
+     this is the one map here whose loss costs nothing. */
+  out.alphaDay={};
+  if(x.alphaDay && typeof x.alphaDay==="object" && !Array.isArray(x.alphaDay))
+    for(const k of Object.keys(x.alphaDay))
+      if(ALPHABET.some(a=>a[1]===k) && /^\d{4}-\d{2}-\d{2}$/.test(x.alphaDay[k]))
+        out.alphaDay[k]=x.alphaDay[k];
+  /* The whole-alphabet check, on the same scheduler as everything else.
+     `passed` is what unlocks the words, so a hand-edited file gets it as a
+     boolean and nothing cleverer. */
+  const ac=x.alphaCheck;
+  out.alphaCheck=(ac && typeof ac==="object" && !Array.isArray(ac)
+    && /^\d{4}-\d{2}-\d{2}$/.test(ac.due))
+    ? {ease:Math.max(1.3,Math.min(2.8,+ac.ease||2.5)),
+       ivl:Math.max(0,Math.min(365,Math.floor(+ac.ivl)||0)),
+       due:ac.due,
+       reps:Math.max(0,Math.min(9999,Math.floor(+ac.reps)||0)),
+       lapses:Math.max(0,Math.min(9999,Math.floor(+ac.lapses)||0)),
+       passed:!!ac.passed}
+    : null;
 
   const lok=k=>typeof k==="string" && k.length<40 && /^[Ͱ-Ͽἀ-῿()]+$/.test(k);
   /* Your own wording for a word, which beats the shipped lexicon. */
@@ -3156,7 +3275,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},grids:{},notes:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
+  S={cards:{},gcards:{},grids:{},notes:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},alphaDay:{},alphaCheck:null,plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
   save(); renderProgress(); toast("Everything reset");
 }
 

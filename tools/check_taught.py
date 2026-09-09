@@ -172,9 +172,11 @@ PLAN_HOW = {
     "passage": ("TEACHES", "the passage itself, which is reading not testing"),
     "review":  ("TEACHES", "cards you have met; each shows its answer"),
     "new":     ("TEACHES", "introduce()"),
-    "alphacheck": ("GATED", "offered only once lettersUnmet() is empty — every "
-                            "letter taught. Failing it puts the missed ones back "
-                            "to nought, so the teaching row returns tomorrow"),
+    "alphacheck": ("GATED", "the first time, offered only once lettersUnmet() is "
+                            "empty — every letter taught; failing it puts the "
+                            "missed ones back to nought so the teaching row "
+                            "returns. After that it is the alphabet's own SRS "
+                            "card coming due, on material long since taught"),
     "grids":   ("GATED", "gridEarned(): rounds whose chapter you have done"),
     "sent":    ("GATED", "chapterReached() >= CLAUSE_CH"),
     "lesson":  ("TEACHES", "it is the teaching"),

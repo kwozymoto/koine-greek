@@ -109,6 +109,28 @@ function mergeStates(local, remote) {
                            ...Object.keys(remote.alpha || {})]))
     out.alpha[k] = Math.max(+(local.alpha || {})[k] || 0, +(remote.alpha || {})[k] || 0);
 
+  /* The day each letter's score last moved, which caps it at one a day. The
+     later of the two, because the cap is a claim about a person and not a
+     device: two points on one day across two phones is still two points on
+     one day. */
+  out.alphaDay = {};
+  for (const k of new Set([...Object.keys(local.alphaDay || {}),
+                           ...Object.keys(remote.alphaDay || {})])) {
+    const a = (local.alphaDay || {})[k] || "", b = (remote.alphaDay || {})[k] || "";
+    out.alphaDay[k] = a > b ? a : b;
+  }
+
+  /* The whole-alphabet check. Passing is a fact about you and never comes
+     undone, so it survives from either side; the schedule takes whichever
+     device is further through, and the earlier due date, so a check is never
+     skipped because the other phone had already been told to wait. */
+  const ka = local.alphaCheck, kb = remote.alphaCheck;
+  out.alphaCheck = (ka && kb)
+    ? { ...(( +ka.reps || 0) >= (+kb.reps || 0) ? ka : kb),
+        passed: !!(ka.passed || kb.passed),
+        due: (ka.due < kb.due ? ka.due : kb.due) }
+    : (ka || kb || null);
+
   /* Where a part-way chapter stopped: whichever device read further. */
   const la = local.lessonPart, lb = remote.lessonPart;
   out.lessonPart = (la && lb)
@@ -166,7 +188,8 @@ async function syncPull() {
        to alpha, plan and lessonPart when they were added. */
     const sig = o => JSON.stringify([o.cards, o.gcards, o.xp, o.streak, o.best, o.last,
                                      o.lessons, o.badges, o.suspended, o.restUsed, o.pin,
-                                     o.alpha, o.plan, o.lessonPart,
+                                     o.alpha, o.alphaDay, o.alphaCheck,
+                                     o.plan, o.lessonPart,
                                      o.lcards, o.myGloss, o.focus, o.focusDone,
                                      o.grids, o.notes]);
     const changedRemote = sig(merged) !== sig(env.data);
