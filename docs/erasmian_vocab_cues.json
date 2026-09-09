@@ -340,10 +340,10 @@
   "tier": 1,
   "freq": 667,
   "tts": "di ah",
-  "source": "rollout",
+  "source": "reroll",
   "duration_s": 0.914,
   "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di', not the machine vowel"
+  "note": "six spellings failed on this word and none of them was the problem: the same cue generated twice gave a rejected take and an accepted one. Rolled again, not respelled."
  },
  {
   "index": 25,
@@ -3031,11 +3031,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 33,
-  "tts": "dee ah thay key",
-  "source": "rollout",
+  "tts": "di ah thay kay",
+  "source": "reroll",
   "duration_s": 1.855,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "the same, and the front of the word carries the fix the two-syllable version needed."
  },
  {
   "index": 222,

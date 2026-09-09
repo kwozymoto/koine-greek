@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v115';
+const VERSION = 'v116';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,28 +33,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  /* v115: thirteen clips, after Fraser heard all 107 the rollout left
-     unheard and passed 83 of them. The rule the rejections found:
-     'ey' works only as its own short token. Bound into a longer word
-     English reads -ey as /i/ -- monkey, money, valley -- which is
-     why σκηνή came back sounding like knee; and 'key' is a word, so
-     kappa+eta wants 'kay'. Three others were English-word traps of
-     mine that a list built to stop them failed to catch: 'gen' for
-     gehn, 'kale' for kahle, 'tas' for tahs. The v114 eighty-nine are
-     gone; that release has filled. */
-  'audio/vocab/643_skene.mp3',                       // σκηνή
-  'audio/vocab/751_lupe.mp3',                        // λύπη
-  'audio/vocab/758_suke.mp3',                        // συκῆ
-  'audio/vocab/763_trophe.mp3',                      // τροφή
-  'audio/vocab/580_akoe.mp3',                        // ἀκοή
-  'audio/vocab/566_adelphe.mp3',                     // ἀδελφή
-  'audio/vocab/417_proseuche.mp3',                   // προσευχή
-  'audio/vocab/338_phulake.mp3',                     // φυλακή
-  'audio/vocab/104_poreuomai.mp3',                   // πορεύομαι
-  'audio/vocab/172_gennao.mp3',                      // γεννάω
-  'audio/vocab/518_proskaleomai.mp3',                // προσκαλέομαι
-  'audio/vocab/742_diatasso.mp3',                    // διατάσσω
-  'audio/vocab/794_parthenos.mp3',                   // παρθένος
+  /* v116: the last two of batch 2. Six spellings of δι- had failed --
+     dee ah, deeah, di ah, dia, dee yah, deeyah -- and three splices
+     cut out of longer cues failed as well. What worked was neither:
+     'di ah' generated a SECOND time. The first roll of that exact cue
+     was rejected and the second accepted, which is the clearest
+     demonstration yet that this generator is not deterministic and
+     that a failed cue is not the same thing as a wrong cue. Fraser
+     proposed the re-roll himself, for πορεύομαι. */
+  'audio/vocab/024_dia.mp3',              // διά
+  'audio/vocab/221_diatheke.mp3',         // διαθήκη
 ];
 
 const SHELL = [
