@@ -1,8 +1,16 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.everydaykoine",
-        "sha256_cert_fingerprints": ["93:2F:B7:AC:41:A8:11:B4:35:12:E2:69:31:6A:14:90:7A:59:1D:6F:EE:3D:42:06:40:57:2D:31:DC:0A:20:0E"]
-      }
-    }]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.everydaykoine",
+      "sha256_cert_fingerprints": [
+        "B9:47:88:1B:1E:71:96:28:DC:BB:D4:56:D4:A9:AD:C3:1F:C4:F8:E3:84:12:60:D4:12:EF:36:C7:F2:F8:88:A8",
+        "D2:E1:2A:32:D7:A2:B3:F3:4C:98:F1:35:11:72:4A:E9:35:E8:09:8A:B4:1D:83:C6:B4:12:5C:D2:07:06:F9:B0",
+        "93:2F:B7:AC:41:A8:11:B4:35:12:E2:69:31:6A:14:90:7A:59:1D:6F:EE:3D:42:06:40:57:2D:31:DC:0A:20:0E"
+      ]
+    }
+  }
+]
