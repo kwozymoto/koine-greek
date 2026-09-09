@@ -281,6 +281,17 @@ button.vid{width:100%;text-align:left;font:inherit}
 .install .t{flex:1;min-width:0}
 .install .t b{display:block;font-size:.88rem;font-weight:600}
 .install .t span{font-size:.74rem;color:var(--muted);line-height:1.35}
+/* The iOS bar carries Safari's own Share glyph inline, because "tap Share"
+   is useless if you cannot see which button that is. currentColor so it
+   inherits the muted body text, and vertical-align so it sits on the line
+   rather than pushing it. */
+.ios-share{width:1.02em;height:1.02em;vertical-align:-.18em;fill:none;
+  stroke:currentColor;stroke-width:1.7;stroke-linecap:round;
+  stroke-linejoin:round;margin:0 .1em}
+/* .install .t b is display:block for the bar's heading, which caught this
+   inline emphasis too and broke the sentence across three lines, orphaning
+   the full stop. Put it back on the line. */
+.install .t span b.ios-lit{display:inline;color:var(--text);font-weight:600}
 
 .netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust-solid);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
 .netpill.on{opacity:1}

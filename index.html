@@ -31,6 +31,21 @@
       <button class="btn small" id="btnInstall">Install</button>
       <button class="x" id="btnInstallNo" aria-label="Not now">&times;</button>
     </div>
+    <!-- iPhone and iPad cannot be prompted: beforeinstallprompt is Chrome's
+         and Safari has no equivalent, so an iOS visitor never saw the bar
+         above and had no way of knowing the app installs at all. Safari can
+         still do it, but only from its own Share menu, so the only thing
+         left is to say where. Shown by js/pwa.js on iOS Safari alone. -->
+    <div class="install" id="iosBar">
+      <div class="t"><b>Add to your home screen</b><span>Tap
+        <svg class="ios-share" viewBox="0 0 24 24" aria-label="the Share button" role="img">
+          <path d="M12 3v11M12 3 8.5 6.5M12 3l3.5 3.5"/>
+          <path d="M6 11H4.5v9h15v-9H18"/>
+        </svg>
+        in Safari's toolbar, then <b class="ios-lit">Add to Home Screen</b>. It then
+        opens full screen and works without a connection.</span></div>
+      <button class="x" id="btnIosNo" aria-label="Not now">&times;</button>
+    </div>
     <div class="hero">
       <div class="ring">
         <svg width="150" height="150" viewBox="0 0 150 150">

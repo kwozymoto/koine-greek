@@ -76,8 +76,50 @@ document.getElementById("btnInstallNo").onclick=()=>{
   toast("Fine \u2014 you can install later from Progress");
 };
 
+/* ---------- iOS ----------
+
+   beforeinstallprompt is Chrome's and Safari has no equivalent, so every
+   iPhone and iPad visitor saw nothing at all above: no prompt, no bar, no
+   hint that this installs. Safari can still add it to the home screen, and
+   the result is the same full-screen offline app Android gets — it is only
+   reachable from Safari's own Share menu, so all the page can do is say so.
+
+   Two things narrow who is told. Chrome, Firefox and Edge on iOS are Safari
+   underneath but their menus carry no Add to Home Screen, so telling their
+   users to look for it sends them hunting for something that is not there.
+   And an app already launched from the home screen must not be invited to
+   install itself again. */
+function iosSafari(){
+  const ua = navigator.userAgent;
+  const ios = /iPad|iPhone|iPod/.test(ua)
+    /* iPadOS 13+ reports itself as a Mac; the touch points give it away. */
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  return ios && !/CriOS|FxiOS|EdgiOS|OPiOS|Mercury/i.test(ua);
+}
+function alreadyInstalled(){
+  try{
+    return navigator.standalone === true
+      || matchMedia("(display-mode: standalone)").matches;
+  }catch(e){ return false; }
+}
+
+const iosBar = document.getElementById("iosBar");
+if(iosBar){
+  if(iosSafari() && !alreadyInstalled() && !installDismissed()) iosBar.classList.add("on");
+  document.getElementById("btnIosNo").onclick = () => {
+    iosBar.classList.remove("on");
+    try{ localStorage.setItem(INSTALL_DISMISS,"1"); }catch(e){}
+    toast("Fine — the steps stay in Progress");
+  };
+}
+
 /* Reachable again from the Progress tab rather than lost for good. */
 function installRowHtml(){
+  if(iosSafari() && !alreadyInstalled()){
+    return `<div class="setrow"><span>Add to your home screen<br>
+      <small class="muted">Tap Share in Safari, then Add to Home Screen —
+      it opens full screen and works offline</small></span></div>`;
+  }
   if(!installEvent) return "";
   return `<div class="setrow"><span>Install as an app<br><small class="muted">Home screen icon, opens offline</small></span>
     <button class="btn ghost small" onclick="doInstall()">Install</button></div>`;
