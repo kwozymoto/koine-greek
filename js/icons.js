@@ -223,6 +223,12 @@ const DRILL_STATE = {
   "Learn 5 new words": () => {
     const left = VOCAB.map((_, i) => i)
       .filter(i => !S.cards[i] && !skipWord(i)).length;
+    /* Today withholds this row until the letters are settled. The menu keeps
+       it — choosing it is a choice — but the card must say why the row is
+       missing, or its absence reads as a bug. */
+    if (typeof lettersReady === "function" && !lettersReady())
+      return { n: alphaLeft(), note: "letters to settle — Today does those first",
+               ready: false };
     return left ? { n: left, note: "not started" }
                 : { note: "every word started", ready: false };
   },

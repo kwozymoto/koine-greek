@@ -168,6 +168,20 @@ function alphaSeen(name,ok){
 }
 const alphaScore=a=>+((S.alpha||{})[a[1]])||0;
 const alphaLeft=()=>ALPHABET.filter(a=>alphaScore(a)<ALPHA_SOLID).length;
+
+/* ---- the alphabet is a prerequisite, not a parallel track ----
+   A word you cannot sound out is not a word you are learning; it is a
+   picture you are memorising, and the memory for pictures is not the one
+   that reads Greek. Chapter 1 says as much in its own first line, and
+   Black's own vocabulary does not start until chapter 3 — so the frequency
+   row on Today was the only thing in the app that ever handed words to
+   somebody who could not yet read them.
+
+   The gate is on the rows the app offers unasked. The Drill menu still has
+   the words and its card says why Today is not offering them, and anyone who
+   already reads Greek can say so in Progress, which marks the alphabet
+   settled along with chapter 1. */
+const lettersReady=()=>alphaLeft()===0;
 /* The ones you are least sure of, not n at random. */
 const alphaWeak=(n=8)=>ALPHABET.slice()
   .sort((a,b)=>alphaScore(a)-alphaScore(b)||Math.random()-.5).slice(0,n);
@@ -667,8 +681,9 @@ function extraTask(){
                                run:()=>startFocusNew(5)};
     }else{
       const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
-      if(fresh) return {label:`Learn ${Math.min(5,fresh)} more word${fresh===1?"":"s"}`,
-                        run:()=>startNew(5)};
+      if(fresh && lettersReady())
+        return {label:`Learn ${Math.min(5,fresh)} more word${fresh===1?"":"s"}`,
+                run:()=>startNew(5)};
     }
     const lp=S.lessonPart;
     const l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
@@ -771,12 +786,17 @@ function todaysPlan(){
        somebody that chi is new on the day they lose it for the fourth time
        is not the message. Both cases want the same thing done and the same
        thing said. */
-    const span=teach.length===1 ? `${teach[0][1]} taught first`
+    /* Built inside the guard, not beside it. Written as a const above the
+       ternary that uses it, this read teach[0] whenever the row was built —
+       and teach is empty for every learner who has met all twenty-four and
+       settled only some, which is the whole middle of the alphabet phase.
+       Today threw and rendered nothing at all. */
+    const span=()=>teach.length===1 ? `${teach[0][1]} taught first`
       : `${teach.length} taught first: ${teach[0][1]} to ${teach[teach.length-1][1]}`;
     tasks.push({id:"letters", mins:teach.length?3:2,
       label:"Letters and sounds",
       sub:teach.length
-        ? span+(revise.length?`, then ${revise.length} to settle`:"")
+        ? span()+(revise.length?`, then ${revise.length} to settle`:"")
         : `${left} of ${ALPHABET.length} still to settle`,
       run:()=>startSession(letterWarmup(),"letters")});
   }
@@ -819,7 +839,7 @@ function todaysPlan(){
          run:()=>startReview()});
 
     const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
-    if(fresh) tasks.push({id:"new", mins:2,
+    if(fresh && lettersReady()) tasks.push({id:"new", mins:2,
       label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
       sub:`${fresh} still to meet in the course`,
       run:()=>startNew(5)});
@@ -892,13 +912,24 @@ function todaysPlan(){
 
 function planHtml(){
   const done=planDone();
-  return todaysPlan().map(t=>{
+  const rows=todaysPlan().map(t=>{
     const ok=done.includes(t.id);
     return `<button class="plan-row${ok?" done":""}" onclick="runPlanTask('${t.id}')">
       <span class="tick">${ok?"✓":""}</span>
       <span class="t"><b>${t.label}</b><span>${t.sub}</span></span>
       <span class="chev">›</span></button>`;
   }).join("");
+  /* A row that is missing explains nothing by being missing. While the words
+     are waiting on the letters, the plan says so — and says where the door
+     is, because a good number of the people this is for did Greek at college
+     twenty years ago and can already read the alphabet. */
+  if(lettersReady()) return rows;
+  const n=alphaLeft();
+  return rows+`<p class="muted" style="font-size:.78rem;margin:10px 2px 0;line-height:1.5">
+    New words start once the letters are settled — ${n} to go.
+    Already read Greek? <a href="#" class="tappable" style="color:var(--gold)"
+      onclick="go('prog');return false">Say so in Progress</a> and the whole
+    alphabet counts as done.</p>`;
 }
 
 /* Offered at the end of a session so finishing one thing leads to the next
@@ -983,10 +1014,12 @@ function render(){
   if(startEl) startEl.innerHTML = fresh ? `<div class="card" style="border-color:var(--gold-dim)">
       <h3 style="margin-top:0">Start here</h3>
       <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above.
-        It is the same shape every day: the letters until they stick, then the
-        words the schedule brings back, then five new ones, then a few minutes
-        of the chapter you are on. How long it will take is at the top, and it
-        is added up from the list rather than promised in advance.</p>
+        The first few days are the alphabet and the chapter about the alphabet,
+        because everything after it is unreadable without them. Words begin once
+        the letters are settled, and from then on the shape is the same every
+        day: the words the schedule brings back, five new ones, then a few
+        minutes of the chapter you are on. How long it will take is at the top,
+        and it is added up from the list rather than promised in advance.</p>
       <button class="btn ghost small" onclick="go('help')">What else is in here</button>
     </div>` : "";
 
