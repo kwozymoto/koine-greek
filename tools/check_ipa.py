@@ -116,6 +116,28 @@ for r in ROWS:
         bad_inv.append("%3d %-14s %-22s stray symbol(s): %s"
                        % (r["index"], r["greek"], r["ipa"], " ".join(stray)))
 
+# 1b — every phoneme has an English keyword to say it with
+#
+# tools/black_say.py respells a word in Black's own keywords, which is what
+# a learner is given to judge a clip against. It walks the IPA symbol by
+# symbol, and a symbol it does not know is silently DROPPED -- the word comes
+# back missing a sound and looks fine. So the inventory and the keyword table
+# have to agree, and this is where that is asserted.
+bad_say = []
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import black_say
+    known = set()
+    for sym, _ in black_say.SAY:
+        known |= set(sym)
+    for ch in sorted(INVENTORY - known - set("ˈ.̃")):
+        if ch in "ː̯":          # length and non-syllabic ride on a vowel
+            continue
+        bad_say.append("%r is in the IPA inventory and black_say.py has no "
+                       "keyword for it, so it would be dropped in silence" % ch)
+except Exception as e:                      # never let a helper hide a fault
+    bad_say.append("black_say.py could not be read: %s" % e)
+
 # 2 — the sound table against lesson 1
 lesson_sound = {}
 for a in ALPHABET:
@@ -191,6 +213,7 @@ section("symbols outside the course's own inventory", bad_inv, 15)
 section("sound values that disagree with lesson 1", bad_table)
 section("strings the rule does not reproduce", bad_trip, 15)
 section("syllable counts that do not match the Greek", bad_syl, 20)
+section("phonemes with no keyword to say them by", bad_say)
 section("words without exactly one primary stress", bad_stress, 15)
 section("rows out of step with vocab.js", bad_align, 10)
 
