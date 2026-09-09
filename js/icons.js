@@ -228,6 +228,12 @@ const DRILL_STATE = {
   },
   "Alphabet": () => {
     const left = alphaLeft();
+    /* This drill asks and never shows. That is right for revision and wrong
+       for a first meeting, so on a cold install it points at the row that
+       teaches the letters instead of quietly testing all twenty-four. */
+    const cold = (typeof lettersUnmet === "function") ? lettersUnmet().length : 0;
+    if (cold === ALPHABET.length)
+      return { note: "Today teaches these first", ready: false };
     return left ? { n: left, note: `of ${ALPHABET.length} unsettled` }
                 : { note: "all settled", ready: true };
   },
@@ -244,17 +250,25 @@ const DRILL_STATE = {
     return done ? { n: done, note: "chapters to draw on" }
                 : { note: "finish a chapter first", ready: false };
   },
-  "Fill the grid": () => {
-    const d = (typeof gridDue === "function") ? gridDue().length : 0;
-    return d ? { n: d, note: "due" } : { note: "none due — free practice" };
-  },
-  "Paradigm sprint": () => {
-    const d = (typeof gridDue === "function") ? gridDue().length : 0;
-    return d ? { n: d, note: "due" } : { note: "none due — free practice" };
-  },
+  "Fill the grid": () => gridReach(),
+  "Paradigm sprint": () => gridReach(),
   "Write a real form": () => metForms(),
   "Produce a real form": () => metForms(),
 };
+
+/* Both grid drills draw one pool, so they report one state. Due first, then
+   paradigms out of chapters you have finished; past those the drill runs
+   ahead of the course, which it does rather than refuse — and says so, which
+   is the whole point of this table. "none due — free practice" was the old
+   answer and it was cheerful about handing a beginner the aorist passive. */
+function gridReach() {
+  if (typeof gridDue !== "function") return null;
+  const d = gridDue().length;
+  if (d) return { n: d, note: "due" };
+  const e = (typeof gridEarned === "function") ? gridUnplayed(gridEarned()).length : 0;
+  return e ? { n: e, note: "from your chapters, not tried" }
+           : { note: "ahead of your chapters", ready: false };
+}
 
 /* Both real-form drills gate on the same thing, computed the same way they
    compute it: lemmas with three or more forms that you have actually met. */

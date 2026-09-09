@@ -203,7 +203,8 @@ def rounds_for(title, html):
 
 
 src = io.open(os.path.join(ROOT, "data", "paradigms.js"), encoding="utf-8").read()
-entries = re.findall(r'\{t:"(.*?)",tags:".*?",\s*html:`(.*?)`\}', src, re.S)
+entries = re.findall(r'\{t:"(.*?)",(?:ch:\d+,)?(?:chCol:\{[^}]*\},)?'
+              r'tags:".*?",\s*html:`(.*?)`\}', src, re.S)
 if not entries:
     print("no entries parsed out of data/paradigms.js")
     sys.exit(1)

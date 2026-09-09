@@ -114,7 +114,7 @@ function gridRounds() {
              rounds of λύω read "Pres and Impf", "Fut and Aor", "Perf" rather
              than three identical lines in the list. */
           part: chunks.length > 1 ? cols.slice(a, b).filter(Boolean).join(" and ") : "",
-          cols, a, b, n: count(a, b),
+          cols, a, b, n: count(a, b), ch: p.ch, chCol: p.chCol,
           rows: rows
             .map(r => ({ label: r.label, cells: r.cells.filter(x => x.c >= a && x.c < b) }))
             .filter(r => r.cells.length)
@@ -146,12 +146,41 @@ function gridGrade(k, g) { applyGrade(gridCard(k), g); save(); }
 const gridStarted = () => gridRounds().filter(g => S.grids && S.grids[g.key]);
 const gridDue = () => gridStarted().filter(g => S.grids[g.key].due <= today());
 
+/* ---- what the course has actually reached -----------------------------
+   A task the app hands you must not be made of material no chapter has
+   taught. Today's plan led with letters it had never shown; this row had the
+   same fault one step on. Its only gate was S.lessons.length >= 2, and
+   gridQueue then drew from all forty-five rounds shuffled — so a learner two
+   chapters in could be handed the aorist passive to fill in.
+
+   The table names the chapter that teaches it. The three whose columns run
+   across several chapters name those too, and a round takes the LATEST of
+   the columns it actually holds: λύω's first round is Pres and Impf, which
+   is chapter 3's paradigm and chapter 7's, so it is chapter 7's round.
+
+   (That is conservative where the split cuts across the chapters — the
+   present active waits for the imperfect it is bound to. Aligning the
+   columns to the chapters would fix it and would also silently repoint every
+   schedule, since a round is keyed by its starting column. Not worth it.) */
+const gridChapter = g => Math.max(g.ch || 0,
+  ...g.cols.slice(g.a, g.b).map(c => (g.chCol && g.chCol[c]) || 0));
+const gridEarned = () => {
+  const at = (typeof chapterReached === "function") ? chapterReached() : 0;
+  return gridRounds().filter(g => gridChapter(g) && gridChapter(g) <= at);
+};
+const gridUnplayed = list => list.filter(g => !S.grids || !S.grids[g.key]);
+
 /* Due first, then rounds never played, then the rest — so the schedule leads
-   and the drill still works on a cold install. */
-function gridQueue(n) {
+   and the drill still works on a cold install.
+
+   `anyChapter` is how a drill chosen from the menu says it accepts material
+   the course has not reached; the daily plan never passes it, and the Drill
+   card says which is about to happen. Nothing filters the due and the rest:
+   a round you have already played is yours whatever chapter it came from. */
+function gridQueue(n, anyChapter) {
   const shuf = a => a.slice().sort(() => Math.random() - .5);
   const due = gridDue();
-  const fresh = gridRounds().filter(g => !S.grids || !S.grids[g.key]);
+  const fresh = gridUnplayed(anyChapter ? gridRounds() : gridEarned());
   const rest = gridStarted().filter(g => S.grids[g.key].due > today());
   return [...shuf(due), ...shuf(fresh), ...shuf(rest)].slice(0, n);
 }
@@ -304,8 +333,8 @@ function gridFill(g) {
   };
 }
 
-function gridDrill(n = 3) {
-  const q = gridQueue(n);
+function gridDrill(n = 3, anyChapter) {
+  const q = gridQueue(n, anyChapter);
   return q.length ? q.map(gridFill) : [];
 }
 
@@ -322,9 +351,16 @@ function gridDrill(n = 3) {
    only difference between them is person and number. It also earns the stem
    hint: where all four share an opening, it is stripped off and shown once,
    so what is asked for is the ending, and endings are what recur. */
-function gridSprint(n = 14) {
+function gridSprint(n = 14, anyChapter) {
   const pool = [];
-  gridRounds().forEach(g => {
+  /* Same rule as the grid: a slot from a chapter you have not read is a
+     question about an ending nobody has shown you. "Keep going · a paradigm
+     sprint" is offered by the app, so it takes the earned set; the menu says
+     anyChapter and gets everything. Falls back rather than refusing to run,
+     which is this file's standing preference. */
+  const rounds = anyChapter ? gridRounds()
+    : (gridEarned().length ? gridEarned() : gridRounds());
+  rounds.forEach(g => {
     const cols = {};
     g.rows.forEach(r => r.cells.forEach(c => {
       if (c.t) (cols[c.c] = cols[c.c] || []).push({ row: r.label, t: c.t, cell: c });

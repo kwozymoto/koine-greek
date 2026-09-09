@@ -129,7 +129,7 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_quiz", "check_options", "check_xref",
           "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
-          "check_ipa", "check_sounds",
+          "check_ipa", "check_sounds", "check_taught",
           "check_frozen", "check_black", "check_coverage", "check_claims",
           "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes

@@ -84,7 +84,8 @@ for b in man["books"]:
                     FORMS[k].add((poss[w[2]], w[3], lemmas[w[1]]))
 
 src = io.open(os.path.join(ROOT, "data", "paradigms.js"), encoding="utf-8").read()
-BLOCKS = dict(re.findall(r'\{t:"(.*?)",tags:".*?",\s*html:`(.*?)`\}', src, re.S))
+BLOCKS = dict(re.findall(r'\{t:"(.*?)",(?:ch:\d+,)?(?:chCol:\{[^}]*\},)?'
+              r'tags:".*?",\s*html:`(.*?)`\}', src, re.S))
 
 def grids(html):
     out = []

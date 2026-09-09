@@ -110,7 +110,8 @@ checked = collections.Counter()
 
 # Only the syntax tables carry data-ref; everything else in the file is a
 # paradigm grid and belongs to check_paradigms.
-for block in re.findall(r'\{t:"(.*?)",tags:".*?",\s*html:`(.*?)`\}', src, re.S):
+for block in re.findall(r'\{t:"(.*?)",(?:ch:\d+,)?(?:chCol:\{[^}]*\},)?'
+              r'tags:".*?",\s*html:`(.*?)`\}', src, re.S):
     title, html = block
     for tbl in re.findall(r"<table>.*?</table>", html, re.S):
         if "data-ref" not in tbl:

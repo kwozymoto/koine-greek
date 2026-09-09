@@ -647,7 +647,7 @@ function extraRounds(){
   if(typeof gridSprint==="function" && gridStarted().length)
     r.push({label:"a paradigm sprint",run:()=>startSession(gridSprint(10),"d")});
   if(typeof caseEarned==="function" && caseEarned().length>=4)
-    r.push({label:"four case questions",run:()=>startSession(caseDrill(4),"d")});
+    r.push({label:"four case questions",run:()=>startSession(caseDrill(4,true),"d")});
   r.push({label:"ninety seconds of look-alikes",
           run:()=>startSession(lookalikeDrill(8),"d")});
   if(typeof dailyMix==="function")
@@ -693,24 +693,93 @@ function runPlanTask(id){
   PLAN_TASK=id;                     // … so claim it afterwards
 }
 
-/* Eight of the letters you are least sure of, then one to trace. */
+/* ---- the letters, taught before they are asked about ----
+
+   This row used to open a brand-new install on "Name this letter: Ζ" with
+   four names to choose from. Every letter is at zero on a fresh install, so
+   alphaWeak() handed back eight the app had never shown: the very first
+   thing the app did was test material it had not taught, and the only way to
+   learn a letter was to guess it wrong and read the feedback.
+
+   The words row had the right shape all along — introduce() puts the five on
+   flashcards and only then asks about those same five — so this gives the
+   letters that shape. Five is its dose too: there is no reason the alphabet
+   should arrive faster than the vocabulary does.
+
+   Alphabet order for the new ones, not weakest-first. Weakest-first is the
+   right rule for revision and the wrong one for an introduction, where alpha
+   to epsilon is a sitting and five letters drawn at random out of
+   twenty-four is a scattering. */
+const LETTER_DOSE=5;
+const LETTER_ASK=8;
+/* Never had it right: either never shown, or missed back down to zero.
+   Both want teaching before they want testing. */
+const lettersUnmet=()=>ALPHABET.filter(a=>alphaScore(a)===0);
+
+/* What a sitting will cover, so the plan row can say so before it is tapped
+   rather than after. The revision half is drawn fresh each call, so the row
+   and the session agree on the counts and need not agree on the picks. */
+function letterSitting(){
+  const teach=lettersUnmet().slice(0,LETTER_DOSE);
+  const revise=ALPHABET.filter(a=>alphaScore(a)>0)
+    .sort((a,b)=>alphaScore(a)-alphaScore(b)||Math.random()-.5)
+    .slice(0,Math.max(0,LETTER_ASK-teach.length));
+  return {teach,revise};
+}
+
 function letterWarmup(){
-  const weak=alphaWeak(8);
-  const heard=weak.filter(a=>AUDIO_BY_GREEK && AUDIO_BY_GREEK[a[0]]);
-  const q=alphaDrill(8,weak);
+  const {teach,revise}=letterSitting();
+  /* Asked about what this sitting covered: the letters just taught, topped
+     up to eight with the ones you are least sure of. Nothing else. */
+  const ask=teach.concat(revise).sort(()=>Math.random()-.5);
+  const heard=ask.filter(a=>AUDIO_BY_GREEK && AUDIO_BY_GREEK[a[0]]);
+  const q=teach.map((a,n)=>letterCard(a,n+1,teach.length))
+               .concat(alphaDrill(ask.length,ask));
   // one written, at the end, on a letter that needs it
-  return q.concat(writeLetterDrill(1,(heard.length?heard:weak).slice(0,1)));
+  return q.concat(writeLetterDrill(1,(heard.length?heard:ask).slice(0,1)));
+}
+
+/* A letter shown rather than asked: the shape, the name, the sound, and the
+   clip. Nothing is graded here — alphaSeen() is not called, so being shown a
+   letter cannot count towards having settled it. */
+function letterCard(a,n,of){
+  return ()=>{
+    const snd=(typeof AUDIO_BY_GREEK!=="undefined") && AUDIO_BY_GREEK[a[0]];
+    document.getElementById("sessBody").innerHTML=`
+      <div class="fc">
+        <p class="muted" style="font-size:.75rem;margin:0 0 4px;letter-spacing:.04em;text-transform:uppercase">New letter ${n} of ${of}</p>
+        <div class="word gk">${a[0]}</div>
+        <div class="rule"></div>
+        <div class="ans">${a[1]}</div>
+        <div class="meta">sounds like ${a[2]}</div>
+        ${snd?`<button class="btn ghost small" style="margin-top:14px" onclick="playGreek('${a[0]}',null)">🔊 Hear it</button>`:""}
+      </div>
+      <button class="btn" onclick="qi++;step()">Got it</button>`;
+  };
 }
 
 function todaysPlan(){
   const tasks=[];
   const left=alphaLeft();
-  if(left) tasks.push({id:"letters", mins:2,
-    label:"Letters and sounds",
-    sub:left===ALPHABET.length
-      ? "Start here — everything else needs them"
-      : `${left} of ${ALPHABET.length} still to settle`,
-    run:()=>startSession(letterWarmup(),"letters")});
+  if(left){
+    /* Say what is about to happen. "Start here — everything else needs them"
+       was true and told you nothing about the sitting; a row that names its
+       five new letters is a row you can decline today and take tomorrow. */
+    const {teach,revise}=letterSitting();
+    /* "taught first" rather than "new", because a letter falls back to zero
+       by being missed as well as by never having been shown, and telling
+       somebody that chi is new on the day they lose it for the fourth time
+       is not the message. Both cases want the same thing done and the same
+       thing said. */
+    const span=teach.length===1 ? `${teach[0][1]} taught first`
+      : `${teach.length} taught first: ${teach[0][1]} to ${teach[teach.length-1][1]}`;
+    tasks.push({id:"letters", mins:teach.length?3:2,
+      label:"Letters and sounds",
+      sub:teach.length
+        ? span+(revise.length?`, then ${revise.length} to settle`:"")
+        : `${left} of ${ALPHABET.length} still to settle`,
+      run:()=>startSession(letterWarmup(),"letters")});
+  }
 
   /* A focus redirects the vocabulary rows at the passage rather than adding a
      row of its own. On "all" it also puts the passage itself in the plan and
@@ -768,11 +837,14 @@ function todaysPlan(){
       label:`Fill in ${k} paradigm${k===1?"":"s"}`,
       sub:gd.length>k?`${gd.length} due · ${gridName(gd[0])} first`:gd.map(gridName).join(" · "),
       run:()=>startSession(gridDrill(3),"grids")});
-  }else if(typeof gridRounds==="function" && S.lessons.length>=2
-           && gridStarted().length<gridRounds().length){
+  }else if(typeof gridEarned==="function" && gridUnplayed(gridEarned()).length){
+    /* Only paradigms from chapters you have finished. The gate used to be
+       "two chapters done", which let the row offer any of the forty-five —
+       the aorist passive to someone who had just met the article. */
+    const n=gridUnplayed(gridEarned()).length;
     tasks.push({id:"grids", mins:1,
       label:"A paradigm to fill in",
-      sub:`${gridRounds().length-gridStarted().length} of ${gridRounds().length} not tried yet`,
+      sub:`${n} from the chapters you have done, not tried yet`,
       run:()=>startSession(gridDrill(1),"grids")});
   }
 
@@ -1995,8 +2067,15 @@ const caseEarned=()=>{
 };
 /* Keyed now, so answering one puts it on the grammar schedule. Twelve rather
    than all twenty: a run you can finish is a run you will start. */
-function caseDrill(n=12){
-  const pool=(caseEarned().length>=6?caseEarned():CASEFN.map((c,i)=>i));
+/* `earned` takes the questions the chapters have earned and nothing else.
+   The fallback to all twenty is right for a drill picked off the menu, whose
+   card says "chapters first" and dims — and wrong everywhere the app is the
+   one offering the round. extraRounds() offers "four case questions" at four
+   earned, which is under the six the fallback triggers at, so it was
+   offering four earned questions and then serving four drawn from twenty. */
+function caseDrill(n=12,earned){
+  const pool=earned ? caseEarned()
+    : (caseEarned().length>=6?caseEarned():CASEFN.map((c,i)=>i));
   return pool.sort(()=>Math.random()-.5).slice(0,n).map(i=>{
     const x=caseQ(CASEFN[i]);
     return mcq(x.q,x.o,x.a,x.w,`C${i}`);
@@ -2015,7 +2094,15 @@ function pairDrill(bank,prompt,n=12){
 function alphaDrill(n=12,from){
   const pool=(from||ALPHABET.slice().sort(()=>Math.random()-.5)).slice(0,n);
   return pool.map(a=>{
-    const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    /* Wrong names from this sitting first, and only then from the rest of
+       the alphabet. Drawn from all twenty-four, the first day's questions
+       were answerable without knowing the answer: of "gamma, kappa, omega,
+       pi" only gamma had been shown, so recognising the word was enough and
+       the shape on screen never had to be read. */
+    const near=pool.filter(x=>x[1]!==a[1]);
+    const far=ALPHABET.filter(x=>x[1]!==a[1] && !near.some(y=>y[1]===x[1]));
+    const wrong=[...near.sort(()=>Math.random()-.5),
+                 ...far.sort(()=>Math.random()-.5)].slice(0,3).map(x=>x[1]);
     const opts=[a[1],...wrong].sort(()=>Math.random()-.5);
     /* The clip says the letter's name, so on the question it is not a hint,
        it is the answer read aloud. It belongs in the feedback, where hearing
@@ -2108,9 +2195,13 @@ function dailyMix(){
     ...take(()=>dueList().slice(0,2).map(flashcard),2),
     ...take(()=>lookalikeDrill(1),1),
     ...take(()=>parseRealDrill(1),1),
-    ...take(()=>typeof caseDrill==="function"?caseDrill(1):[],1),
+    ...take(()=>typeof caseDrill==="function"?caseDrill(1,true):[],1),
     ...take(()=>typeof gridSprint==="function"?gridSprint(2):[],2),
-    ...take(()=>typeof clauseDrill==="function"?clauseDrill(2):[],2),
+    /* clauseDrill falls back to the whole corpus when the deck is cold.
+       Both the plan row and extraRounds wait for CLAUSE_CH before offering
+       a sentence; the mix was the one place that did not. */
+    ...take(()=>(typeof clauseDrill==="function" && chapterReached()>=CLAUSE_CH)
+                ? clauseDrill(2) : [],2),
   ];
   return q.sort(()=>Math.random()-.5);
 }
@@ -2143,8 +2234,8 @@ const DRILLS=[
 ["Write the letters","Trace each one with a finger or the mouse",()=>startSession(writeLetterDrill(),"d")],
 ["Write it from memory","No multiple choice — write the word, then mark yourself",()=>startSession(writeWordDrill(),"d")],
 ["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")],
-["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3),"grids")],
-["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(),"d")],
+["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3,true),"grids")],
+["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(14,true),"d")],
 ["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
 ["Write a real form","Name the slot, type the word — no options to choose from",()=>startSession(typeDrill(),"d")],
 ["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],

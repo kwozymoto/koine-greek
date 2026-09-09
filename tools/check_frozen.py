@@ -132,10 +132,18 @@ def audio_fields(vocab_src, audio_src):
 
 def paradigm_fields(src):
     """Titles and captions only — the two strings js/grid.js builds its
-       schedule keys out of."""
+       schedule keys out of.
+
+       ch: and chCol: sit between them and are named here rather than skipped
+       with a wildcard. The first run after they were added reported all
+       twenty-eight titles GONE, because the pattern required tags: to follow
+       t: immediately — the checker could no longer read the file and said
+       so, which is the right failure. A .*? would have re-opened it to
+       anything; naming the two fields keeps the entry shape asserted."""
     out = {}
-    for n, m in enumerate(re.finditer(r'\{t:"(.*?)",tags:".*?",\s*html:`(.*?)`\}',
-                                      src, re.S)):
+    for n, m in enumerate(re.finditer(
+            r'\{t:"(.*?)",(?:ch:\d+,)?(?:chCol:\{[^}]*\},)?'
+            r'tags:".*?",\s*html:`(.*?)`\}', src, re.S)):
         out["paradigm %d · title" % n] = m.group(1)
         out["paradigm %d · captions" % n] = re.findall(r"<caption>(.*?)</caption>",
                                                        m.group(2), re.S)

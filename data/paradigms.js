@@ -9,7 +9,7 @@ html:`<p class="muted" style="font-size:.83rem;margin-top:0">Tap to hear the nam
 <div id="soundTableHere"></div>`},
 
 
-{t:"The article",tags:"ho he to definite",
+{t:"The article",ch:4,tags:"ho he to definite",
 html:`<table><caption>Singular</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ὁ</td><td class="g">ἡ</td><td class="g">τό</td></tr>
@@ -23,7 +23,7 @@ html:`<table><caption>Singular</caption>
 <tr><th>Dat</th><td class="g">τοῖς</td><td class="g">ταῖς</td><td class="g">τοῖς</td></tr>
 <tr><th>Acc</th><td class="g">τούς</td><td class="g">τάς</td><td class="g">τά</td></tr></table>`},
 
-{t:"Second declension nouns",tags:"logos ergon masculine neuter",
+{t:"Second declension nouns",ch:4,tags:"logos ergon masculine neuter",
 html:`<table><caption>λόγος, -ου, ὁ — word · ἔργον, -ου, τό — work</caption>
 <tr><th></th><th>Masc sg</th><th>Masc pl</th><th>Neut sg</th><th>Neut pl</th></tr>
 <tr><th>Nom</th><td class="g">λόγος</td><td class="g">λόγοι</td><td class="g">ἔργον</td><td class="g">ἔργα</td></tr>
@@ -31,7 +31,7 @@ html:`<table><caption>λόγος, -ου, ὁ — word · ἔργον, -ου, τ�
 <tr><th>Dat</th><td class="g">λόγῳ</td><td class="g">λόγοις</td><td class="g">ἔργῳ</td><td class="g">ἔργοις</td></tr>
 <tr><th>Acc</th><td class="g">λόγον</td><td class="g">λόγους</td><td class="g">ἔργον</td><td class="g">ἔργα</td></tr></table>`},
 
-{t:"First declension nouns",tags:"agape doxa hemera mathetes feminine eta alpha",
+{t:"First declension nouns",ch:5,tags:"agape doxa hemera mathetes feminine eta alpha",
 html:`<table><caption>Three feminine patterns and the masculine</caption>
 <tr><th></th><th>ἀγάπη (η)</th><th>δόξα (α→η)</th><th>ἡμέρα (pure α)</th><th>μαθητής (masc)</th></tr>
 <tr><th>Nom</th><td class="g">ἀγάπη</td><td class="g">δόξα</td><td class="g">ἡμέρα</td><td class="g">μαθητής</td></tr>
@@ -44,7 +44,7 @@ html:`<table><caption>Three feminine patterns and the masculine</caption>
 <tr><th>Acc pl</th><td class="g">ἀγάπας</td><td class="g">δόξας</td><td class="g">ἡμέρας</td><td class="g">μαθητάς</td></tr></table>
 <p class="muted" style="font-size:.83rem">Stems in ε, ι, ρ keep α throughout; other α-stems shift to η in the genitive and dative singular.</p>`},
 
-{t:"Third declension nouns",tags:"sarx pneuma pistis pater basileus consonant stem",
+{t:"Third declension nouns",ch:17,tags:"sarx pneuma pistis pater basileus consonant stem",
 html:`<table><caption>The stem hides in the genitive</caption>
 <tr><th></th><th>σάρξ, σαρκός, ἡ</th><th>πνεῦμα, -ατος, τό</th><th>πίστις, -εως, ἡ</th><th>πατήρ, πατρός, ὁ</th><th>βασιλεύς, -έως, ὁ</th></tr>
 <tr><th>Nom</th><td class="g">σάρξ</td><td class="g">πνεῦμα</td><td class="g">πίστις</td><td class="g">πατήρ</td><td class="g">βασιλεύς</td></tr>
@@ -56,7 +56,7 @@ html:`<table><caption>The stem hides in the genitive</caption>
 <tr><th>Dat pl</th><td class="g">σαρξί(ν)</td><td class="g">πνεύμασι(ν)</td><td class="g">πίστεσι(ν)</td><td class="g">πατράσι(ν)</td><td class="g">βασιλεῦσι(ν)</td></tr>
 <tr><th>Acc pl</th><td class="g">σάρκας</td><td class="g">πνεύματα</td><td class="g">πίστεις</td><td class="g">πατέρας</td><td class="g">βασιλεῖς</td></tr></table>`},
 
-{t:"Adjectives and position",tags:"agathos attributive predicate",
+{t:"Adjectives and position",ch:6,tags:"agathos attributive predicate",
 html:`<table><caption>ἀγαθός, -ή, -όν — good (singular)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ἀγαθός</td><td class="g">ἀγαθή</td><td class="g">ἀγαθόν</td></tr>
@@ -65,7 +65,7 @@ html:`<table><caption>ἀγαθός, -ή, -όν — good (singular)</caption>
 <tr><th>Acc</th><td class="g">ἀγαθόν</td><td class="g">ἀγαθήν</td><td class="g">ἀγαθόν</td></tr></table>
 <p class="muted" style="font-size:.83rem"><b>Attributive</b> (inside the article group): ὁ ἀγαθὸς λόγος / ὁ λόγος ὁ ἀγαθός — "the good word". <b>Predicate</b> (outside it): ἀγαθὸς ὁ λόγος — "the word is good". Plural follows λόγος / ἀγάπη / ἔργον.</p>`},
 
-{t:"πᾶς, πολύς, μέγας",tags:"pas all every polys much many megas great irregular",
+{t:"πᾶς, πολύς, μέγας",ch:18,tags:"pas all every polys much many megas great irregular",
 html:`<table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">πᾶς</td><td class="g">πᾶσα</td><td class="g">πᾶν</td></tr>
@@ -78,7 +78,7 @@ html:`<table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-
 <tr><th>Acc pl</th><td class="g">πάντας</td><td class="g">πάσας</td><td class="g">πάντα</td></tr></table>
 <p class="muted" style="font-size:.83rem">πολύς and μέγας are regular second/first declension except in four slots each — masculine and neuter, nominative and accusative singular — giving three forms apiece: πολύς, πολύν, πολύ and μέγας, μέγαν, μέγα (neuter nominative and accusative are the same). Everything else: πολλοῦ, πολλῷ… μεγάλου, μεγάλῳ…</p>`},
 
-{t:"Personal pronouns",tags:"ego su autos I you he she it",
+{t:"Personal pronouns",ch:9,tags:"ego su autos I you he she it",
 html:`<table><caption>ἐγώ and σύ</caption>
 <tr><th></th><th>I</th><th>we</th><th>you</th><th>you (pl)</th></tr>
 <tr><th>Nom</th><td class="g">ἐγώ</td><td class="g">ἡμεῖς</td><td class="g">σύ</td><td class="g">ὑμεῖς</td></tr>
@@ -92,7 +92,7 @@ html:`<table><caption>ἐγώ and σύ</caption>
 <tr><th>Dat</th><td class="g">αὐτῷ / αὐτοῖς</td><td class="g">αὐτῇ / αὐταῖς</td><td class="g">αὐτῷ / αὐτοῖς</td></tr>
 <tr><th>Acc</th><td class="g">αὐτόν / αὐτούς</td><td class="g">αὐτήν / αὐτάς</td><td class="g">αὐτό / αὐτά</td></tr></table>`},
 
-{t:"Demonstratives",tags:"houtos ekeinos this that",
+{t:"Demonstratives",ch:11,tags:"houtos ekeinos this that",
 html:`<table><caption>οὗτος — this (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">οὗτος / οὗτοι</td><td class="g">αὕτη / αὗται</td><td class="g">τοῦτο / ταῦτα</td></tr>
@@ -101,7 +101,7 @@ html:`<table><caption>οὗτος — this (sg / pl)</caption>
 <tr><th>Acc</th><td class="g">τοῦτον / τούτους</td><td class="g">ταύτην / ταύτας</td><td class="g">τοῦτο / ταῦτα</td></tr></table>
 <p class="muted" style="font-size:.83rem">ἐκεῖνος, ἐκείνη, ἐκεῖνο — "that" — declines exactly like αὐτός.</p>`},
 
-{t:"Relative pronoun",tags:"hos he ho who which relative",
+{t:"Relative pronoun",ch:23,tags:"hos he ho who which relative",
 html:`<table><caption>ὅς, ἥ, ὅ — who, which (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ὅς / οἵ</td><td class="g">ἥ / αἵ</td><td class="g">ὅ / ἅ</td></tr>
@@ -110,7 +110,7 @@ html:`<table><caption>ὅς, ἥ, ὅ — who, which (sg / pl)</caption>
 <tr><th>Acc</th><td class="g">ὅν / οὕς</td><td class="g">ἥν / ἅς</td><td class="g">ὅ / ἅ</td></tr></table>
 <p class="muted" style="font-size:.83rem">Gender and number from the antecedent; case from its own clause. Always rough breathing + accent (ἥ vs the article ἡ; ἤ "or" has smooth breathing).</p>`},
 
-{t:"Interrogative, indefinite, reflexive",tags:"tis ti who what someone emautou seautou heautou allelon",
+{t:"Interrogative, indefinite, reflexive",ch:23,tags:"tis ti who what someone emautou seautou heautou allelon",
 html:`<table><caption>τίς (who? what?) — the accent is the difference from τις (someone)</caption>
 <tr><th></th><th>Masc/Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">τίς / τίνες</td><td class="g">τί / τίνα</td></tr>
@@ -119,7 +119,7 @@ html:`<table><caption>τίς (who? what?) — the accent is the difference from 
 <tr><th>Acc</th><td class="g">τίνα / τίνας</td><td class="g">τί / τίνα</td></tr></table>
 <p class="muted" style="font-size:.83rem">Reflexives (gen/dat/acc only): ἐμαυτοῦ myself · σεαυτοῦ yourself · ἑαυτοῦ himself/herself/itself · plural ἑαυτῶν for all persons. Reciprocal: ἀλλήλων — one another.</p>`},
 
-{t:"εἰμί — to be",tags:"eimi is was will be",
+{t:"εἰμί — to be",ch:3,chCol:{"Imperfect":7,"Future":13},tags:"eimi is was will be",
 html:`<table><caption>Present, imperfect, future</caption>
 <tr><th></th><th>Present</th><th>Imperfect</th><th>Future</th></tr>
 <tr><th>1sg</th><td class="g">εἰμί</td><td class="g">ἤμην</td><td class="g">ἔσομαι</td></tr>
@@ -130,7 +130,7 @@ html:`<table><caption>Present, imperfect, future</caption>
 <tr><th>3pl</th><td class="g">εἰσί(ν)</td><td class="g">ἦσαν</td><td class="g">ἔσονται</td></tr></table>
 <p class="muted" style="font-size:.83rem">Subjunctive: ὦ, ᾖς, ᾖ, ὦμεν, ἦτε, ὦσι(ν). Infinitive: εἶναι. Participle: ὤν, οὖσα, ὄν.</p>`},
 
-{t:"λύω — active indicative",tags:"luo present imperfect future aorist perfect pluperfect",
+{t:"λύω — active indicative",ch:3,chCol:{"Impf":7,"Aor":7,"Perf":10},tags:"luo present imperfect future aorist perfect pluperfect",
 html:`<table><caption>The five common active indicative tenses</caption>
 <tr><th></th><th>Pres</th><th>Impf</th><th>Fut</th><th>Aor</th><th>Perf</th></tr>
 <tr><th>1sg</th><td class="g">λύω</td><td class="g">ἔλυον</td><td class="g">λύσω</td><td class="g">ἔλυσα</td><td class="g">λέλυκα</td></tr>
@@ -141,7 +141,7 @@ html:`<table><caption>The five common active indicative tenses</caption>
 <tr><th>3pl</th><td class="g">λύουσι(ν)</td><td class="g">ἔλυον</td><td class="g">λύσουσι(ν)</td><td class="g">ἔλυσαν</td><td class="g">λελύκασι(ν)</td></tr></table>
 <p class="muted" style="font-size:.83rem">Pluperfect: ἐλελύκειν, ἐλελύκεις, ἐλελύκει, ἐλελύκειμεν, ἐλελύκειτε, ἐλελύκεισαν.</p>`},
 
-{t:"λύω — middle and passive indicative",tags:"luomai middle passive elyomen elythen",
+{t:"λύω — middle and passive indicative",ch:12,chCol:{"Impf m/p":14,"Perf m/p":13,"Fut mid":13,"Aor mid":14,"Aor pass":15,"Fut pass":15},tags:"luomai middle passive elyomen elythen",
 html:`<table><caption>Shared middle/passive forms</caption>
 <tr><th></th><th>Pres m/p</th><th>Impf m/p</th><th>Perf m/p</th></tr>
 <tr><th>1sg</th><td class="g">λύομαι</td><td class="g">ἐλυόμην</td><td class="g">λέλυμαι</td></tr>
@@ -159,7 +159,7 @@ html:`<table><caption>Shared middle/passive forms</caption>
 <tr><th>2pl</th><td class="g">λύσεσθε</td><td class="g">ἐλύσασθε</td><td class="g">ἐλύθητε</td><td class="g">λυθήσεσθε</td></tr>
 <tr><th>3pl</th><td class="g">λύσονται</td><td class="g">ἐλύσαντο</td><td class="g">ἐλύθησαν</td><td class="g">λυθήσονται</td></tr></table>`},
 
-{t:"Subjunctive mood",tags:"hina subjunctive lengthened vowel",
+{t:"Subjunctive mood",ch:24,tags:"hina subjunctive lengthened vowel",
 html:`<table><caption>λύω — subjunctive (long connecting vowel)</caption>
 <tr><th></th><th>Pres act</th><th>Aor act</th><th>Pres m/p</th><th>Aor pass</th></tr>
 <tr><th>1sg</th><td class="g">λύω</td><td class="g">λύσω</td><td class="g">λύωμαι</td><td class="g">λυθῶ</td></tr>
@@ -170,7 +170,7 @@ html:`<table><caption>λύω — subjunctive (long connecting vowel)</caption>
 <tr><th>3pl</th><td class="g">λύωσι(ν)</td><td class="g">λύσωσι(ν)</td><td class="g">λύωνται</td><td class="g">λυθῶσι(ν)</td></tr></table>
 <p class="muted" style="font-size:.83rem">No augment in the aorist subjunctive — aspect only, no past time.</p>`},
 
-{t:"Imperative mood",tags:"command imperative lue luson",
+{t:"Imperative mood",ch:25,tags:"command imperative lue luson",
 html:`<table><caption>λύω — imperative</caption>
 <tr><th></th><th>Pres act</th><th>Aor act</th><th>Pres m/p</th><th>Aor pass</th></tr>
 <tr><th>2sg</th><td class="g">λῦε</td><td class="g">λῦσον</td><td class="g">λύου</td><td class="g">λύθητι</td></tr>
@@ -179,7 +179,7 @@ html:`<table><caption>λύω — imperative</caption>
 <tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυέσθωσαν</td><td class="g">λυθήτωσαν</td></tr></table>
 <p class="muted" style="font-size:.83rem">Prohibitions: μή + present imperative (general practice / stop) · μή + aorist subjunctive (don't do it at all).</p>`},
 
-{t:"Infinitives",tags:"infinitive luein lusai",
+{t:"Infinitives",ch:22,tags:"infinitive luein lusai",
 html:`<table><caption>λύω — the infinitives</caption>
 <tr><th></th><th>Active</th><th>Middle</th><th>Passive</th></tr>
 <tr><th>Present</th><td class="g">λύειν</td><td class="g" colspan="2" style="text-align:center">λύεσθαι</td></tr>
@@ -187,7 +187,7 @@ html:`<table><caption>λύω — the infinitives</caption>
 <tr><th>Perfect</th><td class="g">λελυκέναι</td><td class="g" colspan="2" style="text-align:center">λελύσθαι</td></tr></table>
 <p class="muted" style="font-size:.83rem">εἰμί: εἶναι. Articular infinitive: the neuter article + infinitive (ἐν τῷ σπείρειν — "while sowing").</p>`},
 
-{t:"Participles — the key forms",tags:"participle luon luousa lusas lytheis",
+{t:"Participles — the key forms",ch:20,tags:"participle luon luousa lusas lytheis",
 html:`<table><caption>Nominative singular of each participle of λύω</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th><th>Declines like</th></tr>
 <tr><th>Pres act</th><td class="g">λύων</td><td class="g">λύουσα</td><td class="g">λῦον</td><td>3-1-3 (gen λύοντος)</td></tr>
@@ -199,7 +199,7 @@ html:`<table><caption>Nominative singular of each participle of λύω</caption>
 <tr><th>Perf m/p</th><td class="g">λελυμένος</td><td class="g">λελυμένη</td><td class="g">λελυμένον</td><td>2-1-2</td></tr>
 <tr><th>εἰμί</th><td class="g">ὤν</td><td class="g">οὖσα</td><td class="g">ὄν</td><td>3-1-3 (gen ὄντος)</td></tr></table>`},
 
-{t:"Contract verbs — present",tags:"agapao poieo pleroo contraction",
+{t:"Contract verbs — present",ch:19,tags:"agapao poieo pleroo contraction",
 html:`<table><caption>Present active of the three classes</caption>
 <tr><th></th><th>ἀγαπάω (α)</th><th>ποιέω (ε)</th><th>πληρόω (ο)</th></tr>
 <tr><th>1sg</th><td class="g">ἀγαπῶ</td><td class="g">ποιῶ</td><td class="g">πληρῶ</td></tr>
@@ -210,7 +210,7 @@ html:`<table><caption>Present active of the three classes</caption>
 <tr><th>3pl</th><td class="g">ἀγαπῶσι(ν)</td><td class="g">ποιοῦσι(ν)</td><td class="g">πληροῦσι(ν)</td></tr></table>
 <p class="muted" style="font-size:.83rem">Before a tense sign the vowel lengthens instead: ἀγαπήσω, ἠγάπησα · ποιήσω, ἐποίησα · πληρώσω, ἐπλήρωσα. Liquid stems (λ μ ν ρ) refuse σ: future μενῶ, ἀγγελῶ; aorist ἔμεινα, ἤγγειλα.</p>`},
 
-{t:"μι-verbs",tags:"didomi tithemi histemi aphiemi athematic",
+{t:"μι-verbs",ch:26,tags:"didomi tithemi histemi aphiemi athematic",
 html:`<table><caption>Present active</caption>
 <tr><th></th><th>δίδωμι — give</th><th>τίθημι — place</th><th>ἵστημι — stand</th></tr>
 <tr><th>1sg</th><td class="g">δίδωμι</td><td class="g">τίθημι</td><td class="g">ἵστημι</td></tr>
@@ -299,7 +299,7 @@ html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an a
 <tr><td class="g">ὤν</td><td>being — participle of εἰμί, masculine</td></tr>
 <tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>`},
 
-{t:"Numbers",tags:"one two three heis mia hen numerals",
+{t:"Numbers",ch:18,tags:"one two three heis mia hen numerals",
 html:`<table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">εἷς</td><td class="g">μία</td><td class="g">ἕν</td></tr>
