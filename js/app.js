@@ -1756,7 +1756,7 @@ function openLesson(id){
     <h2>Watch</h2>
     ${l.vids.map(vidRowHtml).join("")}
     ${(l.v||[]).length?`<h2>This chapter's words</h2>
-    <p class="muted" style="font-size:.87rem">The ${(l.v||[]).length} words Black introduces in this chapter${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} of them not yet started`:" — all started"}.</p>
+    <p class="muted" style="font-size:.87rem">The ${(l.v||[]).length} words this chapter introduces${lessonWordsLeft(id)?`, ${lessonWordsLeft(id)} of them not yet started`:" — all started"}.</p>
     <button class="btn ghost" onclick="startLessonWords(${id})"${lessonWordsLeft(id)?"":" disabled"}>${
       lessonWordsLeft(id)>=5?"Learn five of them"
       :lessonWordsLeft(id)?`Learn the remaining ${lessonWordsLeft(id)}`
@@ -2832,7 +2832,7 @@ function renderHelp(){
     <h2>The tabs</h2>
     <table>
       <tr><th>Today</th><td>The day's plan, three or four short things, ticked off as you do them. The ring fills as the plan does. Your streak sits under it, and a passage you pinned shows up here too.</td></tr>
-      <tr><th>Learn</th><td>${LESSONS.length} chapters following Black's progression. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
+      <tr><th>Learn</th><td>${LESSONS.length} chapters, from the letters to reading the text, following the order of David Alan Black's <i>Learn to Read New Testament Greek</i>. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, in ${Object.keys(DRILL_GROUP).length} groups. Where a drill depends on how far you have got, it says what it is worth to you today, and dims when there is nothing in it for you yet.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
