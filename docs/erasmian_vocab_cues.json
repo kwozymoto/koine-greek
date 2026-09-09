@@ -1428,9 +1428,11 @@
   "pos": "verb",
   "tier": 2,
   "freq": 153,
-  "tts": "po rew o my",
-  "source": "g2p",
-  "duration_s": 2.273
+  "tts": "po rue o my",
+  "source": "fix21",
+  "duration_s": 2.273,
+  "take": "2026-09-10, Atlas",
+  "note": "'rew' replaced with 'rue'"
  },
  {
   "index": 105,
@@ -2356,11 +2358,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 97,
-  "tts": "gen nah oh",
-  "source": "rollout",
+  "tts": "gehn nah oh",
+  "source": "fix21",
   "duration_s": 1.698,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "reverted: 'gen' reads as generation"
  },
  {
   "index": 173,
@@ -4612,9 +4614,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 47,
-  "tts": "foo lah kay",
-  "source": "g2p",
-  "duration_s": 1.28
+  "tts": "phoo lah kay",
+  "source": "fix21",
+  "duration_s": 1.28,
+  "take": "2026-09-10, Atlas",
+  "note": "the phi read as p; Black spells it ph. And kay, not key"
  },
  {
   "index": 339,
@@ -5690,11 +5694,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "pro sew khey",
-  "source": "rollout",
+  "tts": "pro sue khey",
+  "source": "fix21",
   "duration_s": 1.489,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "'sew' came back as 'so'"
  },
  {
   "index": 418,

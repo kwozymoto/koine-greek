@@ -106,11 +106,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "pross kale omai",
-  "source": "rollout",
+  "tts": "pross kah leh o my",
+  "source": "fix21",
   "duration_s": 2.147,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "reverted: 'kale' is the vegetable"
  },
  {
   "index": 519,
@@ -755,11 +755,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "ah dehl fey",
-  "source": "rollout",
+  "tts": "ah del fey",
+  "source": "fix21",
   "duration_s": 1.651,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "the ending was right and the h was not -- a clip got one rule, and this needed two"
  },
  {
   "index": 567,
@@ -943,11 +943,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 24,
-  "tts": "ah ko ey",
-  "source": "rollout",
+  "tts": "ahko ay",
+  "source": "fix21",
   "duration_s": 1.756,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "a bare 'ey' token spelled e-y; bound, with ay"
  },
  {
   "index": 581,
@@ -1774,11 +1774,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "skayney",
-  "source": "rollout",
+  "tts": "skay ney",
+  "source": "fix21",
   "duration_s": 1.337,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "'ey' bound reads as /i/ -- English -ey in a polysyllable is monkey, money; split into its own token"
  },
  {
   "index": 644,
@@ -3094,11 +3094,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "dee ah tas soh",
-  "source": "rollout",
+  "tts": "deeah tahs soh",
+  "source": "fix21",
   "duration_s": 2.304,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "reverted: 'tas' spelled"
  },
  {
   "index": 743,
@@ -3217,11 +3217,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "loopey",
-  "source": "rollout",
+  "tts": "loo pey",
+  "source": "fix21",
   "duration_s": 1.024,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "same: 'ey' only works as its own short token"
  },
  {
   "index": 752,
@@ -3310,11 +3310,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "sookey",
-  "source": "rollout",
+  "tts": "soo kay",
+  "source": "fix21",
   "duration_s": 1.494,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "and 'key' is an English word, so kappa+eta wants kay"
  },
  {
   "index": 759,
@@ -3379,11 +3379,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "trofey",
-  "source": "rollout",
+  "tts": "tro fey",
+  "source": "fix21",
   "duration_s": 1.024,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "'ey' as its own token"
  },
  {
   "index": 764,
@@ -3792,11 +3792,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "par theh noss",
-  "source": "rollout",
+  "tts": "pahr th eh noss",
+  "source": "fix21",
   "duration_s": 1.886,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "'theh' came back as 'the'"
  },
  {
   "index": 795,

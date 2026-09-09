@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v114';
+const VERSION = 'v115';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,104 +33,28 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  /* v114: the rollout. Eighty-nine word clips re-cued by four rules,
-     each settled by ear on a sample first: final eta is 'ey'; an h
-     that only pads a vowel is spoken and goes, except before r where
-     English turns 'per' into a schwa; a short omicron is 'aw'; a
-     short iota is 'di'. Nothing Fraser had approved was touched --
-     twelve clips were skipped for that reason, and eight more that
-     the rules would have turned into English words with the wrong
-     vowel: 'tan', 'gram', 'pen', and 'then', which would have voiced
-     a theta. The v113 sixteen are gone; that release has filled. */
-  'audio/vocab/015_me.mp3',                          // μή
-  'audio/vocab/059_ge.mp3',                          // γῆ
-  'audio/vocab/221_diatheke.mp3',                    // διαθήκη
-  'audio/vocab/304_sunagoge.mp3',                    // συναγωγή
-  'audio/vocab/409_orge.mp3',                        // ὀργή
-  'audio/vocab/417_proseuche.mp3',                   // προσευχή
-  'audio/vocab/418_peritome.mp3',                    // περιτομή
-  'audio/vocab/448_upomone.mp3',                     // ὑπομονή
-  'audio/vocab/071_gune.mp3',                        // γυνή
-  'audio/vocab/382_time.mp3',                        // τιμή
-  'audio/vocab/458_phule.mp3',                       // φυλή
-  'audio/vocab/536_kome.mp3',                        // κώμη
-  'audio/vocab/562_nephele.mp3',                     // νεφέλη
-  'audio/vocab/566_adelphe.mp3',                     // ἀδελφή
-  'audio/vocab/569_eorte.mp3',                       // ἑορτή
-  'audio/vocab/580_akoe.mp3',                        // ἀκοή
-  'audio/vocab/612_plege.mp3',                       // πληγή
+  /* v115: thirteen clips, after Fraser heard all 107 the rollout left
+     unheard and passed 83 of them. The rule the rejections found:
+     'ey' works only as its own short token. Bound into a longer word
+     English reads -ey as /i/ -- monkey, money, valley -- which is
+     why σκηνή came back sounding like knee; and 'key' is a word, so
+     kappa+eta wants 'kay'. Three others were English-word traps of
+     mine that a list built to stop them failed to catch: 'gen' for
+     gehn, 'kale' for kahle, 'tas' for tahs. The v114 eighty-nine are
+     gone; that release has filled. */
   'audio/vocab/643_skene.mp3',                       // σκηνή
-  'audio/vocab/685_oikodome.mp3',                    // οἰκοδομή
-  'audio/vocab/719_anagke.mp3',                      // ἀνάγκη
   'audio/vocab/751_lupe.mp3',                        // λύπη
   'audio/vocab/758_suke.mp3',                        // συκῆ
   'audio/vocab/763_trophe.mp3',                      // τροφή
-  'audio/vocab/792_oikoumene.mp3',                   // οἰκουμένη
-  'audio/vocab/099_etros.mp3',                       // Πέτρος
-  'audio/vocab/108_sarx.mp3',                        // σάρξ
-  'audio/vocab/123_apostello.mp3',                   // ἀποστέλλω
-  'audio/vocab/131_ballo.mp3',                       // βάλλω
-  'audio/vocab/148_mello.mp3',                       // μέλλω
+  'audio/vocab/580_akoe.mp3',                        // ἀκοή
+  'audio/vocab/566_adelphe.mp3',                     // ἀδελφή
+  'audio/vocab/417_proseuche.mp3',                   // προσευχή
+  'audio/vocab/338_phulake.mp3',                     // φυλακή
+  'audio/vocab/104_poreuomai.mp3',                   // πορεύομαι
   'audio/vocab/172_gennao.mp3',                      // γεννάω
-  'audio/vocab/187_epta.mp3',                        // ἑπτά
-  'audio/vocab/207_martureo.mp3',                    // μαρτυρέω
-  'audio/vocab/222_epaggelia.mp3',                   // ἐπαγγελία
-  'audio/vocab/225_mesos.mp3',                       // μέσος
-  'audio/vocab/230_presbuteros.mp3',                 // πρεσβύτερος
-  'audio/vocab/246_mallon.mp3',                      // μᾶλλον
-  'audio/vocab/271_sabbaton.mp3',                    // σάββατον
-  'audio/vocab/275_karpos.mp3',                      // καρπός
-  'audio/vocab/294_uparcho.mp3',                     // ὑπάρχω
-  'audio/vocab/325_paralambano.mp3',                 // παραλαμβάνω
-  'audio/vocab/348_apaggello.mp3',                   // ἀπαγγέλλω
-  'audio/vocab/353_oudas.mp3',                       // Ἰούδας
-  'audio/vocab/371_pascho.mp3',                      // πάσχω
-  'audio/vocab/372_amartano.mp3',                    // ἁμαρτάνω
-  'audio/vocab/390_tessares.mp3',                    // τέσσαρες
-  'audio/vocab/395_apto.mp3',                        // ἅπτω
-  'audio/vocab/401_upotasso.mp3',                    // ὑποτάσσω
-  'audio/vocab/402_prasso.mp3',                      // πράσσω
-  'audio/vocab/411_atanas.mp3',                      // Σατανᾶς
-  'audio/vocab/424_martus.mp3',                      // μάρτυς
-  'audio/vocab/443_apas.mp3',                        // ἅπας
-  'audio/vocab/445_paraggello.mp3',                  // παραγγέλλω
-  'audio/vocab/457_phulasso.mp3',                    // φυλάσσω
-  'audio/vocab/463_skandalizo.mp3',                  // σκανδαλίζω
   'audio/vocab/518_proskaleomai.mp3',                // προσκαλέομαι
-  'audio/vocab/521_barnabas.mp3',                    // Βαρναβᾶς
-  'audio/vocab/533_bastazo.mp3',                     // βαστάζω
-  'audio/vocab/534_katargeo.mp3',                    // καταργέω
-  'audio/vocab/568_anablepo.mp3',                    // ἀναβλέπω
-  'audio/vocab/595_periballo.mp3',                   // περιβάλλω
-  'audio/vocab/615_sunedrion.mp3',                   // συνέδριον
-  'audio/vocab/626_latreuo.mp3',                     // λατρεύω
-  'audio/vocab/638_marturion.mp3',                   // μαρτύριον
-  'audio/vocab/649_eneken.mp3',                      // ἕνεκεν
-  'audio/vocab/656_baptisma.mp3',                    // βάπτισμα
-  'audio/vocab/666_paraptoma.mp3',                   // παράπτωμα
-  'audio/vocab/675_blasphemia.mp3',                  // βλασφημία
-  'audio/vocab/686_parachrema.mp3',                  // παραχρῆμα
-  'audio/vocab/700_epiballo.mp3',                    // ἐπιβάλλω
-  'audio/vocab/711_peritemno.mp3',                   // περιτέμνω
-  'audio/vocab/716_tarasso.mp3',                     // ταράσσω
-  'audio/vocab/721_aresko.mp3',                      // ἀρέσκω
-  'audio/vocab/723_elegcho.mp3',                     // ἐλέγχω
-  'audio/vocab/736_kapharnaoum.mp3',                 // Καφαρναούμ
-  'audio/vocab/738_desmios.mp3',                     // δέσμιος
   'audio/vocab/742_diatasso.mp3',                    // διατάσσω
-  'audio/vocab/747_katakrino.mp3',                   // κατακρίνω
-  'audio/vocab/750_kan.mp3',                         // κἄν
-  'audio/vocab/759_sullambano.mp3',                  // συλλαμβάνω
-  'audio/vocab/765_anakrino.mp3',                    // ἀνακρίνω
-  'audio/vocab/772_damaskos.mp3',                    // Δαμασκός
   'audio/vocab/794_parthenos.mp3',                   // παρθένος
-  'audio/vocab/800_skandalon.mp3',                   // σκάνδαλον
-  'audio/vocab/817_rabbi.mp3',                       // ῥαββί
-  'audio/vocab/066_onoma.mp3',                       // ὄνομα
-  'audio/vocab/175_phobeomai.mp3',                   // φοβέομαι
-  'audio/vocab/024_dia.mp3',                         // διά
-  'audio/vocab/042_didomi.mp3',                      // δίδωμι
-  'audio/vocab/134_paradidomi.mp3',                  // παραδίδωμι
 ];
 
 const SHELL = [
