@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v102';
+const VERSION = 'v103';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,16 +33,92 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  // v96: re-recorded after a first listen. The old takes were 2.5-3.8s for
-  // two or three syllables - the voice spelling the cluster out - and the
-  // bulk cache is never swept, so without this anyone already holding them
-  // keeps them for ever.
-  'audio/vocab/663_ktisis.mp3',            // κτίσις   2.72s -> 1.08s
-  'audio/vocab/734_riza.mp3',              // ῥίζα     the h came off an initial rho
-  'audio/vocab/735_ruomai.mp3',            // ῥύομαι   same
-  'audio/vocab/788_ktizo.mp3',             // κτίζω    2.64s -> 1.01s
-  'audio/vocab/791_xeraino.mp3',           // ξηραίνω  3.81s -> 1.49s
-  'audio/vocab/817_rabbi.mp3',             // ῥαββί    2.85s -> 1.15s, and not RAB-eye
+  /* v103: 79 taught words re-cued after Fraser audited batch 1 by ear.
+     Seventy-three are one fault: an -os ending cued bare comes back as the
+     vowel of English "pose", where "oss" gives Black's short o plus s. The
+     thirteen already cued "oss" -- Christos and logos among them -- were the
+     ones he judged right, which is what identified the rule. Six more were
+     judged individually. The v96 entries are gone: that release has long
+     since filled, and the comment above says to empty the list after. */
+  'audio/vocab/002_autos.mp3',                     // αὐτός
+  'audio/vocab/022_pros.mp3',                      // πρός
+  'audio/vocab/031_anthropos.mp3',                 // ἄνθρωπος
+  'audio/vocab/048_adelphos.mp3',                  // ἀδελφός
+  'audio/vocab/055_ouranos.mp3',                   // οὐρανός
+  'audio/vocab/056_ekeinos.mp3',                   // ἐκεῖνος
+  'audio/vocab/064_agios.mp3',                     // ἅγιος
+  'audio/vocab/079_nomos.mp3',                     // νόμος
+  'audio/vocab/082_kosmos.mp3',                    // κόσμος
+  'audio/vocab/087_aggelos.mp3',                   // ἄγγελος
+  'audio/vocab/090_ergon.mp3',                     // ἔργον
+  'audio/vocab/093_ethnos.mp3',                    // ἔθνος
+  'audio/vocab/099_etros.mp3',                     // Πέτρος
+  'audio/vocab/100_allos.mp3',                     // ἄλλος
+  'audio/vocab/101_protos.mp3',                    // πρῶτος
+  'audio/vocab/115_laos.mp3',                      // λαός
+  'audio/vocab/125_nekros.mp3',                    // νεκρός
+  'audio/vocab/127_doulos.mp3',                    // δοῦλος
+  'audio/vocab/132_thanatos.mp3',                  // θάνατος
+  'audio/vocab/141_idios.mp3',                     // ἴδιος
+  'audio/vocab/143_monos.mp3',                     // μόνος
+  'audio/vocab/144_oikos.mp3',                     // οἶκος
+  'audio/vocab/158_agathos.mp3',                   // ἀγαθός
+  'audio/vocab/162_odos.mp3',                      // ὁδός
+  'audio/vocab/164_kalos.mp3',                     // καλός
+  'audio/vocab/165_ophthalmos.mp3',                // ὀφθαλμός
+  'audio/vocab/168_eteros.mp3',                    // ἕτερος
+  'audio/vocab/171_artos.mp3',                     // ἄρτος
+  'audio/vocab/173_didasko.mp3',                   // διδάσκω
+  'audio/vocab/193_kairos.mp3',                    // καιρός
+  'audio/vocab/202_skotos.mp3',                    // σκότος
+  'audio/vocab/213_stauros.mp3',                   // σταυρός
+  'audio/vocab/216_thronos.mp3',                   // θρόνος
+  'audio/vocab/219_ieron.mp3',                     // ἱερόν
+  'audio/vocab/226_aionios.mp3',                   // αἰώνιος
+  'audio/vocab/229_poneros.mp3',                   // πονηρός
+  'audio/vocab/234_eleos.mp3',                     // ἔλεος
+  'audio/vocab/235_outos.mp3',                     // οὗτος
+  'audio/vocab/241_topos.mp3',                     // τόπος
+  'audio/vocab/248_ekastos.mp3',                   // ἕκαστος
+  'audio/vocab/250_pempo.mp3',                     // πέμπω
+  'audio/vocab/252_apostolos.mp3',                 // ἀπόστολος
+  'audio/vocab/254_baptizo.mp3',                   // βαπτίζω
+  'audio/vocab/257_emos.mp3',                      // ἐμός
+  'audio/vocab/275_karpos.mp3',                    // καρπός
+  'audio/vocab/289_agapetos.mp3',                  // ἀγαπητός
+  'audio/vocab/300_lithos.mp3',                    // λίθος
+  'audio/vocab/309_tritos.mp3',                    // τρίτος
+  'audio/vocab/320_makarios.mp3',                  // μακάριος
+  'audio/vocab/321_tuphlos.mp3',                   // τυφλός
+  'audio/vocab/323_kakos.mp3',                     // κακός
+  'audio/vocab/328_etos.mp3',                      // ἔτος
+  'audio/vocab/330_eremos.mp3',                    // ἔρημος
+  'audio/vocab/339_amartolos.mp3',                 // ἁμαρτωλός
+  'audio/vocab/341_phobos.mp3',                    // φόβος
+  'audio/vocab/344_mikros.mp3',                    // μικρός
+  'audio/vocab/357_deuteros.mp3',                  // δεύτερος
+  'audio/vocab/361_therapeuo.mp3',                 // θεραπεύω
+  'audio/vocab/365_meros.mp3',                     // μέρος
+  'audio/vocab/369_kainos.mp3',                    // καινός
+  'audio/vocab/374_axios.mp3',                     // ἄξιος
+  'audio/vocab/389_telos.mp3',                     // τέλος
+  'audio/vocab/412_agros.mp3',                     // ἀγρός
+  'audio/vocab/422_diabolos.mp3',                  // διάβολος
+  'audio/vocab/441_echthros.mp3',                  // ἐχθρός
+  'audio/vocab/442_elios.mp3',                     // ἥλιος
+  'audio/vocab/444_akathartos.mp3',                // ἀκάθαρτος
+  'audio/vocab/447_dunatos.mp3',                   // δυνατός
+  'audio/vocab/470_diakonos.mp3',                  // διάκονος
+  'audio/vocab/478_amnos.mp3',                     // ἀμνός
+  'audio/vocab/479_filos.mp3',                     // φίλος
+  'audio/vocab/481_genos.mp3',                     // γένος
+  'audio/vocab/486_sofos.mp3',                     // σοφός
+  'audio/vocab/487_ischuros.mp3',                  // ἰσχυρός
+  'audio/vocab/488_neos.mp3',                      // νέος
+  'audio/vocab/489_adunatos.mp3',                  // ἀδύνατος
+  'audio/vocab/490_apistos.mp3',                   // ἄπιστος
+  'audio/vocab/491_hemeteros.mp3',                 // ἡμέτερος
+  'audio/vocab/493_humeteros.mp3',                 // ὑμέτερος
 ];
 
 const SHELL = [
