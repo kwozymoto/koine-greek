@@ -56,6 +56,14 @@ p{margin:0 0 12px}
 small{font-size:.8rem}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+/* .card carries margin-BOTTOM only, so a card gets its top gap from whatever
+   card sits above it. These three sit under the Continue button instead,
+   which supplies none, and the first one to be populated butted straight
+   against it — measured at 0px against 12px everywhere else on the screen.
+   :not(:empty) so the gap appears only when there is a card to space: all
+   three are empty most of the time and would otherwise leave a hole. */
+#focusCard:not(:empty),#startHere:not(:empty),#pinned:not(:empty){
+  margin-top:12px}
 .row{display:flex;align-items:center;gap:12px}
 .between{display:flex;align-items:center;justify-content:space-between;gap:12px}
 
