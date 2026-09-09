@@ -8,11 +8,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "dee ah ko noss",
-  "source": "recued",
+  "tts": "dia ko noss",
+  "source": "batch2",
   "duration_s": 2.011,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "five chunks made it spell the letters"
  },
  {
   "index": 471,
@@ -49,9 +49,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 26,
-  "tts": "strah tee oh tays",
-  "source": "black",
-  "duration_s": 2.194
+  "tts": "strati oh teys",
+  "source": "batch2",
+  "duration_s": 2.194,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta as 'ey'"
  },
  {
   "index": 474,

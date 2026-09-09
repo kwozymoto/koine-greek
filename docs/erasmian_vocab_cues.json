@@ -8,9 +8,11 @@
   "pos": "art",
   "tier": 1,
   "freq": 19870,
-  "tts": "ho",
-  "source": "freq",
-  "duration_s": 0.627
+  "tts": "haw",
+  "source": "batch2",
+  "duration_s": 0.627,
+  "take": "2026-09-10, Atlas",
+  "note": "'ho' is the English word ho, whose o is long; Black gives omicron as o as in not, and 'hoh' was rejected beside this"
  },
  {
   "index": 1,
@@ -248,9 +250,11 @@
   "pos": "prep",
   "tier": 1,
   "freq": 914,
-  "tts": "ek",
-  "source": "freq",
-  "duration_s": 0.731
+  "tts": "eck",
+  "source": "batch2",
+  "duration_s": 0.731,
+  "take": "2026-09-10, Atlas",
+  "note": "'ek' came back as 'eek'; Black gives epsilon as e as in met"
  },
  {
   "index": 19,
@@ -772,9 +776,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 261,
-  "tts": "mah thay tays",
-  "source": "g2p",
-  "duration_s": 1.724
+  "tts": "mathay teys",
+  "source": "batch2",
+  "duration_s": 1.724,
+  "take": "2026-09-10, Atlas",
+  "note": "the original's vowels with the first two pieces merged"
  },
  {
   "index": 58,
@@ -1200,9 +1206,11 @@
   "pos": "noun",
   "tier": 2,
   "freq": 173,
-  "tts": "hah mahr tee ah",
-  "source": "g2p",
-  "duration_s": 2.011
+  "tts": "hahmar teeah",
+  "source": "batch2",
+  "duration_s": 2.011,
+  "take": "2026-09-10, Atlas",
+  "note": "four chunks read as four words; its h is a real rough breathing and stays"
  },
  {
   "index": 90,
@@ -1499,9 +1507,11 @@
   "pos": "noun",
   "tier": 2,
   "freq": 144,
-  "tts": "pro fay tays",
-  "source": "g2p",
-  "duration_s": 1.411
+  "tts": "praw fey teys",
+  "source": "batch2",
+  "duration_s": 1.411,
+  "take": "2026-09-10, Atlas",
+  "note": "the omicron is short -- prop, not professional -- and 'aw' is the spelling that holds it"
  },
  {
   "index": 112,
@@ -2115,9 +2125,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 103,
-  "tts": "psoo khay",
-  "source": "g2p",
-  "duration_s": 1.149
+  "tts": "psoo khey",
+  "source": "splice",
+  "duration_s": 1.149,
+  "take": "2026-09-10, Atlas",
+  "note": "the ps of the shipped clip, which Fraser judged better, with the ending of a 'psoo khey' take. Cut at the original's own energy dip at 0.38-0.45 s and at the k the generator's timestamps put at 0.81 s -- not through the sibilant, which is what cost the xi splice its k."
  },
  {
   "index": 158,
@@ -2429,9 +2441,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 92,
-  "tts": "dee keye o soo nay",
-  "source": "g2p",
-  "duration_s": 2.952
+  "tts": "di kye o soo ney",
+  "source": "batch2",
+  "duration_s": 2.952,
+  "take": "2026-09-10, Atlas",
+  "note": "short iota is 'di'; the diphthong αι is settled as 'eye', so 'kye'"
  },
  {
   "index": 181,
@@ -2455,9 +2469,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 91,
-  "tts": "thah lahs sah",
-  "source": "g2p",
-  "duration_s": 1.489
+  "tts": "thalas sa",
+  "source": "batch2",
+  "duration_s": 1.489,
+  "take": "2026-09-10, Atlas",
+  "note": "the th digraph stays; the lengthening h after it went"
  },
  {
   "index": 183,
@@ -2546,9 +2562,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 55,
-  "tts": "ahr khay",
-  "source": "g2p",
-  "duration_s": 1.071
+  "tts": "arkhey",
+  "source": "batch2",
+  "duration_s": 1.071,
+  "take": "2026-09-10, Atlas",
+  "note": "'ar khey' broke at the seam and came out 'ar k he'; bound into one token, as 'dida khey' already was"
  },
  {
   "index": 190,
@@ -2705,9 +2723,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 67,
-  "tts": "ehn to lay",
-  "source": "g2p",
-  "duration_s": 1.202
+  "tts": "en taw ley",
+  "source": "batch2",
+  "duration_s": 1.202,
+  "take": "2026-09-10, Atlas",
+  "note": "'aw' for the short omicron, 'ey' for the eta"
  },
  {
   "index": 202,
@@ -2798,9 +2818,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 37,
-  "tts": "mahr too ree ah",
-  "source": "g2p",
-  "duration_s": 2.325
+  "tts": "martoo reea",
+  "source": "batch2",
+  "duration_s": 2.325,
+  "take": "2026-09-10, Atlas",
+  "note": "the h in 'mahrtoo' was spoken as its own syllable"
  },
  {
   "index": 209,
@@ -4665,9 +4687,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 46,
-  "tts": "soh tay ree ah",
-  "source": "g2p",
-  "duration_s": 1.907
+  "tts": "so tey reea",
+  "source": "batch2",
+  "duration_s": 1.907,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta as 'ey', chunked"
  },
  {
   "index": 348,
@@ -5833,9 +5857,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 34,
-  "tts": "dee ah ko nee ah",
-  "source": "g2p",
-  "duration_s": 2.038
+  "tts": "dia ko nee ah",
+  "source": "batch2",
+  "duration_s": 2.038,
+  "take": "2026-09-10, Atlas",
+  "note": "'dee ah ko nee ah' spelled the letters out"
  },
  {
   "index": 436,
@@ -6219,9 +6245,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 30,
-  "tts": "dee dah khay",
-  "source": "g2p",
-  "duration_s": 1.437
+  "tts": "dida khey",
+  "source": "batch2",
+  "duration_s": 1.437,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta as 'ey'; judged perfect"
  },
  {
   "index": 465,
