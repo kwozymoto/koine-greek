@@ -211,9 +211,11 @@
   "pos": "adv",
   "tier": 1,
   "freq": 1042,
-  "tts": "may",
-  "source": "freq",
-  "duration_s": 0.731
+  "tts": "mey",
+  "source": "rollout",
+  "duration_s": 0.731,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 16,
@@ -337,9 +339,11 @@
   "pos": "prep",
   "tier": 1,
   "freq": 667,
-  "tts": "dee ah",
-  "source": "freq",
-  "duration_s": 0.914
+  "tts": "di ah",
+  "source": "rollout",
+  "duration_s": 0.914,
+  "take": "2026-09-10, Atlas",
+  "note": "short iota is 'di', not the machine vowel"
  },
  {
   "index": 25,
@@ -574,9 +578,11 @@
   "pos": "verb",
   "tier": 1,
   "freq": 415,
-  "tts": "dee doh mee",
-  "source": "freq",
-  "duration_s": 1.358
+  "tts": "di doh mee",
+  "source": "rollout",
+  "duration_s": 1.358,
+  "take": "2026-09-10, Atlas",
+  "note": "short iota is 'di', not the machine vowel"
  },
  {
   "index": 43,
@@ -804,9 +810,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 250,
-  "tts": "gay",
-  "source": "freq",
-  "duration_s": 0.731
+  "tts": "gey",
+  "source": "rollout",
+  "duration_s": 0.731,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 60,
@@ -897,9 +905,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 231,
-  "tts": "o no mah",
-  "source": "g2p",
-  "duration_s": 1.202
+  "tts": "aw no mah",
+  "source": "rollout",
+  "duration_s": 1.202,
+  "take": "2026-09-10, Atlas",
+  "note": "short omicron; 'o' bare reads long"
  },
  {
   "index": 67,
@@ -965,9 +975,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 215,
-  "tts": "goo nay",
-  "source": "g2p",
-  "duration_s": 0.993
+  "tts": "goo ney",
+  "source": "rollout",
+  "duration_s": 0.993,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 72,
@@ -1343,12 +1355,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 156,
-  "tts": "pehtross",
-  "source": "recued",
+  "tts": "petross",
+  "source": "rollout",
   "duration_s": 1.468,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 100,
@@ -1468,9 +1480,11 @@
   "pos": "noun",
   "tier": 2,
   "freq": 147,
-  "tts": "sahrks",
-  "source": "g2p",
-  "duration_s": 1.097
+  "tts": "sarks",
+  "source": "rollout",
+  "duration_s": 1.097,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 109,
@@ -1668,9 +1682,11 @@
   "pos": "verb",
   "tier": 2,
   "freq": 132,
-  "tts": "ah po stehl loh",
-  "source": "g2p",
-  "duration_s": 2.194
+  "tts": "ah po stel loh",
+  "source": "rollout",
+  "duration_s": 2.194,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 124,
@@ -1776,9 +1792,11 @@
   "pos": "verb",
   "tier": 2,
   "freq": 122,
-  "tts": "bahl loh",
-  "source": "g2p",
-  "duration_s": 1.28
+  "tts": "bal loh",
+  "source": "rollout",
+  "duration_s": 1.28,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 132,
@@ -1817,9 +1835,11 @@
   "pos": "verb",
   "tier": 2,
   "freq": 119,
-  "tts": "pah rah dee doh mee",
-  "source": "g2p",
-  "duration_s": 2.769
+  "tts": "pah rah di doh mee",
+  "source": "rollout",
+  "duration_s": 2.769,
+  "take": "2026-09-10, Atlas",
+  "note": "short iota is 'di', not the machine vowel"
  },
  {
   "index": 135,
@@ -2008,9 +2028,11 @@
   "pos": "verb",
   "tier": 2,
   "freq": 109,
-  "tts": "mehl loh",
-  "source": "g2p",
-  "duration_s": 1.097
+  "tts": "mel loh",
+  "source": "rollout",
+  "duration_s": 1.097,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 149,
@@ -2334,9 +2356,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 97,
-  "tts": "gehn nah oh",
-  "source": "g2p",
-  "duration_s": 1.698
+  "tts": "gen nah oh",
+  "source": "rollout",
+  "duration_s": 1.698,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 173,
@@ -2375,9 +2399,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 95,
-  "tts": "fo beh o my",
-  "source": "g2p",
-  "duration_s": 1.489
+  "tts": "fo beh aw my",
+  "source": "rollout",
+  "duration_s": 1.489,
+  "take": "2026-09-10, Atlas",
+  "note": "short omicron; 'o' bare reads long"
  },
  {
   "index": 176,
@@ -2536,9 +2562,11 @@
   "pos": "adj",
   "tier": 3,
   "freq": 88,
-  "tts": "hehp tah",
-  "source": "g2p",
-  "duration_s": 1.071
+  "tts": "hep tah",
+  "source": "rollout",
+  "duration_s": 1.071,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 188,
@@ -2805,9 +2833,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 76,
-  "tts": "mahr too reh oh",
-  "source": "g2p",
-  "duration_s": 1.959
+  "tts": "mar too reh oh",
+  "source": "rollout",
+  "duration_s": 1.959,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 208,
@@ -2999,9 +3029,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 33,
-  "tts": "dee ah thay kay",
-  "source": "g2p",
-  "duration_s": 1.855
+  "tts": "dee ah thay key",
+  "source": "rollout",
+  "duration_s": 1.855,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 222,
@@ -3012,9 +3044,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 52,
-  "tts": "eh pahng geh lee ah",
-  "source": "g2p",
-  "duration_s": 2.247
+  "tts": "eh pang geh lee ah",
+  "source": "rollout",
+  "duration_s": 2.247,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 223,
@@ -3051,10 +3085,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 58,
-  "tts": "mehsos",
-  "source": "locked",
+  "tts": "mesos",
+  "source": "rollout",
   "duration_s": 1.599,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 226,
@@ -3122,9 +3158,11 @@
   "pos": "adj",
   "tier": 3,
   "freq": 66,
-  "tts": "prehs boo teh ros",
-  "source": "g2p",
-  "duration_s": 1.829
+  "tts": "pres boo teh ros",
+  "source": "rollout",
+  "duration_s": 1.829,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 231,
@@ -3337,9 +3375,11 @@
   "pos": "adv",
   "tier": 3,
   "freq": 81,
-  "tts": "mahl lon",
-  "source": "g2p",
-  "duration_s": 1.306
+  "tts": "mal lon",
+  "source": "rollout",
+  "duration_s": 1.306,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 247,
@@ -3675,9 +3715,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 68,
-  "tts": "sahb bah ton",
-  "source": "g2p",
-  "duration_s": 1.75
+  "tts": "sab bah ton",
+  "source": "rollout",
+  "duration_s": 1.75,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 272,
@@ -3727,11 +3769,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 66,
-  "tts": "kahr poss",
-  "source": "recued",
+  "tts": "kar poss",
+  "source": "rollout",
   "duration_s": 1.541,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 276,
@@ -3978,9 +4020,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 60,
-  "tts": "hoo pahr khoh",
-  "source": "g2p",
-  "duration_s": 1.541
+  "tts": "hoo par khoh",
+  "source": "rollout",
+  "duration_s": 1.541,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 295,
@@ -4110,9 +4154,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 56,
-  "tts": "soo nah goh gay",
-  "source": "g2p",
-  "duration_s": 1.776
+  "tts": "soo nah goh gey",
+  "source": "rollout",
+  "duration_s": 1.776,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 305,
@@ -4391,9 +4437,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 49,
-  "tts": "pah rah lahm bah noh",
-  "source": "g2p",
-  "duration_s": 2.743
+  "tts": "pah rah lam bah noh",
+  "source": "rollout",
+  "duration_s": 2.743,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 326,
@@ -4702,9 +4750,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 45,
-  "tts": "ah pahng gehl loh",
-  "source": "g2p",
-  "duration_s": 1.672
+  "tts": "ah pang gel loh",
+  "source": "rollout",
+  "duration_s": 1.672,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 349,
@@ -4768,9 +4818,11 @@
   "pos": "name",
   "tier": 4,
   "freq": 44,
-  "tts": "ee oo dahs",
-  "source": "g2p",
-  "duration_s": 1.62
+  "tts": "ee oo das",
+  "source": "rollout",
+  "duration_s": 1.62,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 354,
@@ -5013,9 +5065,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 42,
-  "tts": "pahs khoh",
-  "source": "g2p",
-  "duration_s": 0.967
+  "tts": "pas khoh",
+  "source": "rollout",
+  "duration_s": 0.967,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 372,
@@ -5026,9 +5080,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 42,
-  "tts": "hah mahr tah noh",
-  "source": "g2p",
-  "duration_s": 2.038
+  "tts": "hah mar tah noh",
+  "source": "rollout",
+  "duration_s": 2.038,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 373,
@@ -5159,9 +5215,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 41,
-  "tts": "tee may",
-  "source": "g2p",
-  "duration_s": 0.993
+  "tts": "tee mey",
+  "source": "rollout",
+  "duration_s": 0.993,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 383,
@@ -5266,9 +5324,11 @@
   "pos": "adj",
   "tier": 4,
   "freq": 40,
-  "tts": "tehs sah rehs",
-  "source": "g2p",
-  "duration_s": 2.011
+  "tts": "tes sah res",
+  "source": "rollout",
+  "duration_s": 2.011,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 391,
@@ -5331,9 +5391,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 39,
-  "tts": "hahp toh",
-  "source": "g2p",
-  "duration_s": 0.862
+  "tts": "hap toh",
+  "source": "rollout",
+  "duration_s": 0.862,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 396,
@@ -5410,9 +5472,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 38,
-  "tts": "hoo po tahs soh",
-  "source": "g2p",
-  "duration_s": 1.567
+  "tts": "hoo po tas soh",
+  "source": "rollout",
+  "duration_s": 1.567,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 402,
@@ -5423,9 +5487,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 38,
-  "tts": "prahs soh",
-  "source": "g2p",
-  "duration_s": 1.149
+  "tts": "pras soh",
+  "source": "rollout",
+  "duration_s": 1.149,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 403,
@@ -5514,9 +5580,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "or gay",
-  "source": "g2p",
-  "duration_s": 0.836
+  "tts": "or gey",
+  "source": "rollout",
+  "duration_s": 0.836,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 410,
@@ -5540,9 +5608,11 @@
   "pos": "name",
   "tier": 4,
   "freq": 36,
-  "tts": "sah tah nahs",
-  "source": "g2p",
-  "duration_s": 1.985
+  "tts": "sah tah nas",
+  "source": "rollout",
+  "duration_s": 1.985,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 412,
@@ -5620,9 +5690,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "pro sew khay",
-  "source": "g2p",
-  "duration_s": 1.489
+  "tts": "pro sew khey",
+  "source": "rollout",
+  "duration_s": 1.489,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 418,
@@ -5633,9 +5705,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "peh ree to may",
-  "source": "g2p",
-  "duration_s": 1.646
+  "tts": "peh ree to mey",
+  "source": "rollout",
+  "duration_s": 1.646,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 419,
@@ -5713,10 +5787,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 35,
-  "tts": "mahrtoos",
-  "source": "locked",
+  "tts": "martoos",
+  "source": "rollout",
   "duration_s": 1.52,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 425,
@@ -5967,9 +6043,11 @@
   "pos": "adj",
   "tier": 4,
   "freq": 32,
-  "tts": "hah pahs",
-  "source": "g2p",
-  "duration_s": 1.149
+  "tts": "hah pas",
+  "source": "rollout",
+  "duration_s": 1.149,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 444,
@@ -5995,9 +6073,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 32,
-  "tts": "pah rahng gehl loh",
-  "source": "g2p",
-  "duration_s": 1.776
+  "tts": "pah rang gel loh",
+  "source": "rollout",
+  "duration_s": 1.776,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 446,
@@ -6036,9 +6116,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 32,
-  "tts": "hoo po mo nay",
-  "source": "g2p",
-  "duration_s": 2.038
+  "tts": "hoo po mo ney",
+  "source": "rollout",
+  "duration_s": 2.038,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 449,
@@ -6154,9 +6236,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 31,
-  "tts": "foo lahs soh",
-  "source": "g2p",
-  "duration_s": 1.306
+  "tts": "foo las soh",
+  "source": "rollout",
+  "duration_s": 1.306,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 458,
@@ -6167,9 +6251,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "foo lay",
-  "source": "g2p",
-  "duration_s": 0.836
+  "tts": "foo ley",
+  "source": "rollout",
+  "duration_s": 0.836,
+  "take": "2026-09-10, Atlas",
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
  },
  {
   "index": 459,
@@ -6232,9 +6318,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 30,
-  "tts": "skahn dah lee dzoh",
-  "source": "g2p",
-  "duration_s": 1.829
+  "tts": "skan dah lee dzoh",
+  "source": "rollout",
+  "duration_s": 1.829,
+  "take": "2026-09-10, Atlas",
+  "note": "an h that only padded a vowel was spoken as its own syllable"
  },
  {
   "index": 464,
