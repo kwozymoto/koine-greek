@@ -133,6 +133,11 @@ DRILL_HOW = {
         ("TEACHES", "restricted to lemmas in S.cards"),
     "Principal parts":
         ("OPEN", "a reference list, and the card says so"),
+    "Alphabet check":
+        ("OPEN", "a test with no teaching, on purpose and by name: it is how "
+                 "somebody who already reads Greek gets past the letters on "
+                 "their first morning. As a plan row it waits until every "
+                 "letter has been taught; from the menu it never does"),
     "Case functions":
         ("GATED", "caseEarned(); the card says 'chapters first' below six"),
     "Look-alikes":
@@ -167,6 +172,9 @@ PLAN_HOW = {
     "passage": ("TEACHES", "the passage itself, which is reading not testing"),
     "review":  ("TEACHES", "cards you have met; each shows its answer"),
     "new":     ("TEACHES", "introduce()"),
+    "alphacheck": ("GATED", "offered only once lettersUnmet() is empty — every "
+                            "letter taught. Failing it puts the missed ones back "
+                            "to nought, so the teaching row returns tomorrow"),
     "grids":   ("GATED", "gridEarned(): rounds whose chapter you have done"),
     "sent":    ("GATED", "chapterReached() >= CLAUSE_CH"),
     "lesson":  ("TEACHES", "it is the teaching"),

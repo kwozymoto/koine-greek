@@ -756,7 +756,15 @@ function letterWarmup(){
 
 /* A letter shown rather than asked: the shape, the name, the sound, and the
    clip. Nothing is graded here — alphaSeen() is not called, so being shown a
-   letter cannot count towards having settled it. */
+   letter cannot count towards having settled it.
+
+   "I know this one" marks it met and nothing more. It stops the teaching and
+   leaves the testing exactly where it was, which is the only honest place to
+   put a self-assessment: you may say what you do not need shown, and the app
+   still decides what you know. Several of the letters are ours already —
+   nobody needs alpha, beta or omicron introduced — and being walked through
+   them is the fastest way to teach somebody that this app wastes their time.
+   Get it wrong afterwards and it drops back to nought and is taught again. */
 function letterCard(a,n,of){
   return ()=>{
     const snd=(typeof AUDIO_BY_GREEK!=="undefined") && AUDIO_BY_GREEK[a[0]];
@@ -769,14 +777,115 @@ function letterCard(a,n,of){
         <div class="meta">sounds like ${a[2]}</div>
         ${snd?`<button class="btn ghost small" style="margin-top:14px" onclick="playGreek('${a[0]}',null)">🔊 Hear it</button>`:""}
       </div>
-      <button class="btn" onclick="qi++;step()">Got it</button>`;
+      <button class="btn" onclick="qi++;step()">Got it</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost small" style="width:100%"
+        onclick="letterKnown('${a[1]}')">I know this one — stop showing it</button>`;
+  };
+}
+function letterKnown(name){
+  S.alpha=S.alpha||{};
+  if(!(+S.alpha[name]>0)) S.alpha[name]=1;      // met, not settled
+  save();
+  qi++; step();
+}
+
+/* ---- the alphabet check ----
+
+   "Three in a row, per letter, all twenty-four" is an AND across twenty-four
+   noisy processes that can each step backwards, so the last straggler
+   decides when the phase ends. Simulated over 600 learners at the accuracies
+   this drill actually sees, that criterion runs a median of 18 days with a
+   tail past 40 — and the first letter settles around day 7, so the last
+   third of the phase is spent waiting on one or two. Testing the whole
+   alphabet in one pass and asking for 22 of 24 — the ordinary mastery bar,
+   and Bloom's — runs a median of 10 with a worst case of 17. The tail is the
+   thing: the tail is the person who gives up.
+
+   It is also the answer to "I already read Greek". Someone who did this at
+   college can take it on their first morning, pass, and never see a letter
+   drill again. The Progress select does that too, but it is filed under
+   backups and phrased as marking chapters done. */
+const ALPHA_PASS=22;
+const lettersMet=()=>ALPHABET.filter(a=>alphaScore(a)>0).length;
+
+function alphaCheck(){
+  const missed=[];
+  const q=ALPHABET.slice().sort(()=>Math.random()-.5).map(a=>{
+    const wrong=ALPHABET.filter(x=>x[1]!==a[1]).sort(()=>Math.random()-.5)
+      .slice(0,3).map(x=>x[1]);
+    const opts=[a[1],...wrong].sort(()=>Math.random()-.5);
+    /* alphaSeen is deliberately not called: the check settles the alphabet
+       itself at the end, and one answer must not be graded twice. */
+    return mcq(`Name this letter: <span class="q-gk lg">${a[0]}</span>`,
+      opts, opts.indexOf(a[1]), `${a[1]} — sounds like ${a[2]}.`,
+      null, ok=>{ if(!ok) missed.push(a); });
+  });
+  q.push(alphaCheckResult(missed));
+  return q;
+}
+
+/* Stands in for finish(), the way lessonDone() does — it has a verdict to
+   deliver and finish() would paint over it. */
+function alphaCheckResult(missed){
+  return ()=>{
+    const right=ALPHABET.length-missed.length;
+    const pass=right>=ALPHA_PASS;
+    S.alpha=S.alpha||{};
+    if(pass){
+      ALPHABET.forEach(a=>{ S.alpha[a[1]]=ALPHA_SOLID; });
+    }else{
+      /* Reteach and retest, which is what a failed mastery check is for.
+         The missed letters go back to nought so tomorrow's row teaches them
+         again; the rest keep whatever they had. */
+      missed.forEach(a=>{ S.alpha[a[1]]=0; });
+    }
+    save();
+    if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
+    checkBadges();
+    COMBO=0; comboPaint();
+    document.getElementById("sessBar").style.width="100%";
+    /* Not class="gk": inside .empty that rule is display:block at 2.4rem, so
+       a list of four missed letters came out as four huge lines with their
+       names orphaned underneath. The font, inline, without the block. */
+    const names=missed.map(a=>
+      `<span style="font-family:var(--gk)">${a[0].split(" ")[0]}</span> ${a[1]}`)
+      .join(" · ");
+    const b=document.getElementById("sessBody");
+    b.innerHTML=`
+      <div class="empty summary">
+        ${typeof ringHtml==="function"
+          ? ringHtml(right/ALPHABET.length,`${right}/${ALPHABET.length}`,"right",
+                     `sring${pass?" clean":""}`) : ""}
+        <span class="gk">${pass?"εὖγε":"σχεδόν"}</span>
+        <p>${pass
+          ? "You can read the alphabet. It is done — words start now."
+          : `${right} of ${ALPHABET.length}. ${ALPHA_PASS} passes, so this one is not through yet.`}</p>
+        ${missed.length?`<p class="muted" style="font-size:.85rem">${
+          pass?"Worth another look at":"Back to the top of the list"}: ${names}</p>`:""}
+      </div>
+      ${typeof nextTaskHtml==="function"?nextTaskHtml():""}
+      <button class="btn ghost" onclick="go('today')">Back to Today</button>`;
+    /* The arc mounts empty and is filled a frame later; finish() does this
+       and this screen stands in for finish(), so without it the ring showed
+       its grey track and no result at all. */
+    if(typeof ringFill==="function") ringFill(b);
   };
 }
 
 function todaysPlan(){
   const tasks=[];
   const left=alphaLeft();
-  if(left){
+  /* Once every letter has been taught, the useful next step is not another
+     eight questions — it is proving the lot and moving on. So the check
+     takes the row over at that point, and a failed one puts the letters it
+     missed back to nought, which brings the teaching row back tomorrow. */
+  if(left && !lettersUnmet().length){
+    tasks.push({id:"alphacheck", mins:3,
+      label:"The alphabet, all through",
+      sub:`All ${ALPHABET.length} in one pass — ${ALPHA_PASS} right and the letters are done`,
+      run:()=>startSession(alphaCheck(),"letters")});
+  } else if(left){
     /* Say what is about to happen. "Start here — everything else needs them"
        was true and told you nothing about the sitting; a row that names its
        five new letters is a row you can decline today and take tomorrow. */
@@ -2257,6 +2366,7 @@ const DRILLS=[
 ["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length),"d")],
 ["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
+["Alphabet check","All 24 in one pass — pass it and the letters are done",()=>startSession(alphaCheck(),"letters")],
 ["Listening — letters","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
 ["Listening — words","Hear a word from the course list and give its meaning",()=>startSession(wordListenDrill(),"d")],
 ["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
@@ -2284,7 +2394,8 @@ const DRILL_GROUP={
   "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Write a real form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
              "Mixed grammar review"],
-  "Letters and sounds":["Alphabet","Listening — letters","Look-alikes","Write the letters"]
+  "Letters and sounds":["Alphabet","Alphabet check","Listening — letters",
+                        "Look-alikes","Write the letters"]
 };
 /* The order the page is drawn in, which is not the order the groups were
    written in. "Everything" is one row — Daily mix, the answer to "just give

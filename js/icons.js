@@ -63,6 +63,7 @@ const DRILL_KIND = {
   "The article": "grid",
   "Verb parsing": "parse",
   "Alphabet": "letters",
+  "Alphabet check": "letters",
   "Listening — letters": "listen",
   "Listening — words": "listen",
   "Parsing builder": "parse",
@@ -242,6 +243,19 @@ const DRILL_STATE = {
       return { note: "Today teaches these first", ready: false };
     return left ? { n: left, note: `of ${ALPHABET.length} unsettled` }
                 : { note: "all settled", ready: true };
+  },
+  "Alphabet check": () => {
+    /* The bar and the distance to it, because this is the one drill whose
+       whole point is a threshold. Ready once every letter has been taught;
+       before that it is still here, as the way somebody who already reads
+       Greek gets past the letters on their first morning. */
+    const met = (typeof lettersMet === "function") ? lettersMet() : 0;
+    if (typeof alphaLeft === "function" && !alphaLeft())
+      return { note: "passed — the letters are done", ready: true };
+    return met >= ALPHABET.length
+      ? { n: ALPHA_PASS, note: `of ${ALPHABET.length} to pass` }
+      : { n: ALPHABET.length - met, note: "not taught yet — or take it now to skip ahead",
+          ready: false };
   },
   "Case functions": () => {
     const e = caseEarned().length;
