@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v118';
+const VERSION = 'v119';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,31 +33,22 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  /* v117: eighteen clips ending -ays. The fix was settled three times
-     over -- μαθητής, προφήτης and στρατιώτης all took 'teys' -- and
-     then never rolled out, because the rollout matched a token ending
-     'ay' and every one of these ends 'ays'. A rule can be right and
-     still not have been applied. Five were bound and are split, since
-     English reads -ey in a polysyllable as /i/; 'lays' is a word, so
-     λῃστής takes 'layss teys'. The v116 two are gone. */
-  'audio/vocab/063_oudeis.mp3',                      // οὐδείς
-  'audio/vocab/231_asthenes.mp3',                    // ἀσθενής
-  'audio/vocab/232_alethes.mp3',                     // ἀληθής
-  'audio/vocab/239_oannes.mp3',                      // Ἰωάννης
-  'audio/vocab/242_medeis.mp3',                      // μηδείς
-  'audio/vocab/251_ouses.mp3',                       // Μωϋσῆς
-  'audio/vocab/274_treis.mp3',                       // τρεῖς
-  'audio/vocab/359_rodes.mp3',                       // Ἡρῴδης
-  'audio/vocab/474_telones.mp3',                     // τελώνης
-  'audio/vocab/475_hupokrites.mp3',                  // ὑποκριτής
-  'audio/vocab/653_uperetes.mp3',                    // ὑπηρέτης
-  'audio/vocab/661_krites.mp3',                      // κριτής
-  'audio/vocab/727_ekatontarches.mp3',               // ἑκατοντάρχης
-  'audio/vocab/748_kleptes.mp3',                     // κλέπτης
-  'audio/vocab/756_pleres.mp3',                      // πλήρης
-  'audio/vocab/768_ergates.mp3',                     // ἐργάτης
-  'audio/vocab/789_lestes.mp3',                      // λῃστής
-  'audio/vocab/813_iordanes.mp3',                    // Ἰορδάνης
+  /* v119: batch 3 closed. Six flags in fifty, against thirty-one in
+     batch 2 -- and three of the six were faults already settled,
+     sitting in cues no rule reached: νέος bound so its -ος never
+     stood alone, καινός with the αι diphthong, ἅγιος with a soft g.
+     πρός needed no new cue at all: the same one rolled again, which
+     is now the second time that has been the answer. And ἀκάθαρτος
+     was not re-cued -- the take was right and only slow, at 2.73 s
+     against a 1.80 median for the pack's 177 other four-syllable
+     clips, so it is the same recording at the median tempo. */
+  'audio/vocab/022_pros.mp3',                        // πρός
+  'audio/vocab/064_agios.mp3',                       // ἅγιος
+  'audio/vocab/369_kainos.mp3',                      // καινός
+  'audio/vocab/487_ischuros.mp3',                    // ἰσχυρός
+  'audio/vocab/488_neos.mp3',                        // νέος
+  'audio/vocab/495_manthano.mp3',                    // μανθάνω
+  'audio/vocab/444_akathartos.mp3',                  // ἀκάθαρτος
 ];
 
 const SHELL = [

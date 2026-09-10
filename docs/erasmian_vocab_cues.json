@@ -309,10 +309,10 @@
   "tier": 1,
   "freq": 700,
   "tts": "pross",
-  "source": "recued",
+  "source": "batch3",
   "duration_s": 0.862,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "the p was being swallowed. The cue did not change -- the same one rolled again, which is what solved δια"
  },
  {
   "index": 23,
@@ -879,11 +879,11 @@
   "pos": "adj",
   "tier": 1,
   "freq": 233,
-  "tts": "hah gee oss",
-  "source": "recued",
+  "tts": "hag e oss",
+  "source": "batch3",
   "duration_s": 1.75,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "'gee' is English /dʒi:/, a soft g where Greek has a hard one. Fraser's cue"
  },
  {
   "index": 65,
@@ -5056,11 +5056,11 @@
   "pos": "adj",
   "tier": 4,
   "freq": 42,
-  "tts": "keye noss",
-  "source": "recued",
+  "tts": "kye noss",
+  "source": "batch3",
   "duration_s": 1.463,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "'keye' came back as key-a; αι is settled as 'eye' and 'kye' is a name, so it is read rather than spelled"
  },
  {
   "index": 370,
@@ -6079,10 +6079,10 @@
   "tier": 4,
   "freq": 32,
   "tts": "ah kah thahr toss",
-  "source": "recued",
+  "source": "batch3",
   "duration_s": 2.064,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "not re-cued: the take was right and only slow. Slower than 99% of the pack's 177 other four-syllable clips, so brought to their median with atempo 1.519. Same recording."
  },
  {
   "index": 445,

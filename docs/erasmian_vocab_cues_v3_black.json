@@ -246,12 +246,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 29,
-  "tts": "iss koo ross",
-  "source": "recued",
+  "tts": "iskoo ross",
+  "source": "batch3",
   "duration_s": 1.724,
   "verdict": "checked by ear: good",
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "'iss' came back with a th on the front"
  },
  {
   "index": 488,
@@ -262,12 +262,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "neoss",
-  "source": "recued",
+  "tts": "neh oss",
+  "source": "batch3",
   "duration_s": 1.338,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'nehos' sounded the h, which is only the English spelling of ε. Chosen by ear from several takes.",
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "take": "2026-09-10, Atlas",
+  "note": "bound, so the -ος never stood as its own token and read long -- the rule has always required that"
  },
  {
   "index": 489,
@@ -365,9 +365,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 25,
-  "tts": "mahn thah noh",
-  "source": "black",
-  "duration_s": 1.881
+  "tts": "mahn thahn oh",
+  "source": "batch3",
+  "duration_s": 1.881,
+  "take": "2026-09-10, Atlas",
+  "note": "Fraser's own division. The IPA opens the last syllable with the nu, but that is a claim about Greek and his is a claim about what the voice does"
  },
  {
   "index": 496,
