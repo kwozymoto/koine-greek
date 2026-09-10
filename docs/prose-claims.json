@@ -32,8 +32,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "Three rules that trip people up Sigma is written ς at the end of a word and σ everywhere else.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact, both ways round, across all 137,554 tokens: ς never appears anywhere but the last letter, and σ never appears as the last letter. Not one exception either way."
  },
  {
   "k": "3ddc696d907c",
@@ -86,8 +86,8 @@
   "kind": "count",
   "src": "body",
   "text": "Accents Greek has three accents: acute ( ά ), grave ( ὰ ) and circumflex ( ᾶ ).",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Three distinct accent marks are in use in the corpus and no others: acute, grave and circumflex."
  },
  {
   "k": "a98c4127e8ff",
@@ -95,8 +95,8 @@
   "kind": "count",
   "src": "body",
   "text": "There are twenty-four letters and you already know several of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Twenty-five distinct letter characters occur, which is the twenty-four letters plus the final sigma ς — exactly what the chapter's next rule is about."
  },
  {
   "k": "b896876c33dc",
@@ -113,8 +113,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "If you cannot pronounce it, you cannot hold it in your memory, and a word you cannot hold is a word you will meet as a stranger every time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Pedagogy, not a claim about Greek. Read and left as written."
  },
  {
   "k": "c9670a230f9e",
@@ -239,8 +239,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The discipline From here on, never say a form means something until you have parsed it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The course's own working rule, not a claim about the language. Read and left as written — and it is the rule this whole audit has been applying."
  },
  {
   "k": "f55af4078b39",
@@ -275,8 +275,8 @@
   "kind": "count",
   "src": "body",
   "text": "It is why the grid drill exists, and why filling the table in from memory is worth more than reading it ten times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A claim about the app rather than about Greek: the grid drill does exist, js/grid.js derives 45 rounds from the paradigm tables, and check_grids holds the derivation. True as a statement about the product."
  },
  {
   "k": "92edd85f59d1",
@@ -356,8 +356,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Learn every noun in that full form from the first day.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Advice. Read and left as written."
  },
  {
   "k": "3abd5a217bdc",
@@ -401,8 +401,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Every one of the eight is distinct, which is what makes the second declension the place to start.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "λόγος has eight case/number slots and all eight are spelled differently in the corpus: λόγος, λόγου, λόγῳ, λόγον, λόγοι, λόγων, λόγοις, λόγους."
  },
  {
   "k": "6f009052f00c",
@@ -437,8 +437,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἔργον — neuter Singular Plural Nom ἔργον ἔργα Gen ἔργου ἔργων Dat ἔργῳ ἔργοις Acc ἔργον ἔργα Neuter differs from masculine only in the nominative and accusative, and in those two it has one form doing both jobs.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἔργον in the corpus: nominative singular ἔργον = accusative singular ἔργον, nominative plural ἔργα = accusative plural ἔργα, and the genitive and dative are ἔργου/ἔργῳ/ἔργων/ἔργοις, identical to λόγος. Exactly as stated."
  },
  {
   "k": "99b4f8b87f96",
@@ -509,8 +509,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "In the plural the vocative is identical to the nominative, so it usually goes unnoticed; in the singular of the second declension it ends in -ε , and once you have seen it you will see it everywhere.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "207 second-declension vocative singulars end -ε. Two do not, and both are the nominative form doing vocative duty rather than a vocative in -ος: οἶκος at Acts 7:42 and στέφανός at Philippians 4:1. The morphological claim stands; that idiom is a separate thing."
  },
  {
   "k": "db953fafe4c9",
@@ -572,8 +572,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "If the stem ends in ε, ι or ρ , the alpha is kept all the way through: ἡμέρα, ἡμέρας, ἡμέρᾳ, ἡμέραν .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The tendency is strong and not absolute. Among first-declension nouns whose lemma ends -α, the genitive singular is -ας 795 times against -ης 9 where the stem ends ε, ι or ρ, and -ης 97 against -ας 2 where it does not. So the rule predicts about 99% of the first group and 98% of the second."
  },
  {
   "k": "54b479753fb5",
@@ -608,8 +608,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ὁ μαθητής , never ἡ μαθητής .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "All 262 occurrences of μαθητής are tagged masculine. Not one feminine."
  },
  {
   "k": "875776e06483",
@@ -626,8 +626,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signposts in the text.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True, with no real exceptions. ἐκ is 912 genitives and nothing else. ἐν, εἰς and ἀπό show a handful of apparent misses that are all my own test reaching past an indeclinable or a modifier — ἐν Ἰερουσαλήμ (indeclinable), εἰς ἀλεύρου σάτα where ἀλεύρου modifies the accusative σάτα, ἀπὸ τότε and ἀπ’ ἄρτι where the next word is an adverb."
  },
  {
   "k": "a6f23f7ffa22",
@@ -689,8 +689,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἔλυον is first singular or third plural, and you cannot tell from the word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Ten imperfect active forms are attested in the corpus as BOTH first singular and third plural of the same verb: ἔλεγον, εἶχον, ἤθελον, ἐτήρουν, ἐθεώρουν among them. The ambiguity the paradigm shows with λύω is one a reader meets in real verbs."
  },
  {
   "k": "208b228c6f3d",
@@ -720,13 +720,13 @@
   "finding": ""
  },
  {
-  "k": "3fc7a1fb4a97",
+  "k": "372bb18f9f19",
   "ch": 7,
   "kind": "absolute",
-  "src": "body",
-  "text": "εὑρίσκω keeps its εὑ- throughout, and the ending is then the only thing telling you the tense.",
-  "status": "unreviewed",
-  "finding": ""
+  "src": "quiz",
+  "text": "εὑρίσκω keeps its εὑ- in 72 of its 75 past forms, so the ending is usually the only thing distinguishing the imperfect from the present — the three exceptions augment to ηὕ-.",
+  "status": "verified",
+  "finding": "Was 'εὑρίσκω keeps its εὑ- throughout'. Mostly true and not entirely: of its 75 past-tense forms, 72 keep εὑ- and three augment to ηὑ- — ηὕρισκον at Mark 14:55 and Acts 7:11, and ηὑρίσκετο at Hebrews 11:5, against an unaugmented εὕρισκον at Luke 19:48. So the same verb shows both, which is worth more than the tidy version: Robertson ch.XVIII says the temporal augment is 'often absent, especially with diphthongs' — often, not always. Body and quiz corrected together."
  },
  {
   "k": "4e3d3af1f981",
@@ -752,8 +752,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "None of those can be reasoned out.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About principal parts having to be learned. Read and left as written."
  },
  {
   "k": "8ed4afe2310f",
@@ -761,8 +761,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It does not say the action was quick, or once only, or finished — those are things the sentence may tell you, and the tense does not.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's central correction about the aorist, and the thing the whole course is built to prevent. Read and left as written; Huffman Part 2 says the same of tense-form generally — selection is about how the author wishes to think about the action, not about the action itself."
  },
  {
   "k": "9e4e85fd98c8",
@@ -774,20 +774,20 @@
   "finding": ""
  },
  {
+  "k": "9f1ca8aad557",
+  "ch": 7,
+  "kind": "absolute",
+  "src": "body",
+  "text": "εὑρίσκω keeps its εὑ- almost throughout — 72 of its 75 past forms do — and the ending is then the only thing telling you the tense.",
+  "status": "verified",
+  "finding": "Was 'εὑρίσκω keeps its εὑ- throughout'. Mostly true and not entirely: of its 75 past-tense forms, 72 keep εὑ- and three augment to ηὑ- — ηὕρισκον at Mark 14:55 and Acts 7:11, and ηὑρίσκετο at Hebrews 11:5, against an unaugmented εὕρισκον at Luke 19:48. So the same verb shows both, which is worth more than the tidy version: Robertson ch.XVIII says the temporal augment is 'often absent, especially with diphthongs' — often, not always. Body and quiz corrected together."
+ },
+ {
   "k": "a67ef24179e5",
   "ch": 7,
   "kind": "spelling",
   "src": "body",
   "text": "If the verb already begins with a short vowel, that vowel lengthens instead of taking a prefix: ἀκούω → ἤκουον .",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "efa6f04260c7",
-  "ch": 7,
-  "kind": "absolute",
-  "src": "quiz",
-  "text": "εὑρίσκω keeps its εὑ- throughout, so the ending is the only thing distinguishing the imperfect from the present.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -815,8 +815,8 @@
   "kind": "count",
   "src": "body",
   "text": "Chapter 5 covered why they happen; what it could not say is how often — διά occurs 666 times and is written δι’ in 149 of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "διά 666, of which 149 written δι’. Both exact."
  },
  {
   "k": "1351ae94b794",
@@ -887,8 +887,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Read the case, not only the word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's summary instruction. Read and left as written."
  },
  {
   "k": "4580872d19ec",
@@ -968,8 +968,8 @@
   "kind": "count",
   "src": "body",
   "text": "δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν \"To give his life a ransom in place of many.\" Twenty-two occurrences, and ἀντί is the plainest word Greek has for one thing standing where another would have stood.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἀντί 22, exact."
  },
  {
   "k": "d9a14e22bcda",
@@ -995,8 +995,8 @@
   "kind": "count",
   "src": "body",
   "text": "In chapter 5 you met four of them — ἐν, εἰς, ἐκ and ἀπό — and each one took a single case.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True and checked: ἐκ is 912 genitives with no exception; ἐν, εἰς and ἀπό likewise take one case each, the only apparent misses being my test reaching past an indeclinable (ἐν Ἰερουσαλήμ) or a modifier (εἰς ἀλεύρου σάτα)."
  },
  {
   "k": "ecec3a066516",
@@ -1058,8 +1058,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "One rule governs all of them, and it is worth having before the forms.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About the pronoun agreement rule. Read and left as written."
  },
  {
   "k": "6e5288365c47",
@@ -1085,8 +1085,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "None of the personal pronouns has a vocative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact: ἐγώ, σύ, ἡμεῖς, ὑμεῖς and αὐτός have not one vocative between them in the corpus."
  },
  {
   "k": "9bf8660d3081",
@@ -1112,8 +1112,8 @@
   "kind": "count",
   "src": "body",
   "text": "Ten occurrences against seventy-two — so the odds favour the demonstrative, and odds are not reading.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὐτή 10 against αὕτη 72, counted with the enclitic-accented and sentence-initial spellings folded in as a frequency claim means."
  },
  {
   "k": "b677c3db7499",
@@ -1121,8 +1121,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "This is why parsing and translating are two steps and not one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The course's method, stated. Read and left as written."
  },
  {
   "k": "bd5b92dda008",
@@ -1166,8 +1166,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "You do not need the rules to recite, only the shapes to recognise.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Pedagogy. Read and left as written."
  },
  {
   "k": "08d3cf91be58",
@@ -1193,8 +1193,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It is simply not loaded every time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The perfect's caution. Read and left as written, and it is the caution the outside audit praised."
  },
  {
   "k": "330339a50746",
@@ -1220,8 +1220,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "Note that the first singular has no ν and the third ends in -ε(ν) , which is what keeps them apart.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Perfect active indicatives in the corpus: every first singular ends in -α (-κα, -φα, -χα, -θα), and every third singular ends -εν or -ε. The pair the chapter is separating really is separated by that ν."
  },
  {
   "k": "7f842f5de824",
@@ -1377,15 +1377,6 @@
   "finding": "αὗται 3 (two αὗται plus one enclitic-accented αὗταί) and αὐταί 0. Exact. Counting the raw spelling gives 2 and is the fault check_claims exists for."
  },
  {
-  "k": "9c0337046d06",
-  "ch": 11,
-  "kind": "absolute",
-  "src": "quiz",
-  "text": "Every English translation renders it 'he' — which is right, and is also why you have to read the Greek to see that John chose a word that points.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
   "k": "9e5a3e31427f",
   "ch": 11,
   "kind": "absolute",
@@ -1458,6 +1449,15 @@
   "finding": "τοῦτο 317 (289 + 14 Τοῦτο + 10 τοῦτό + 4 Τοῦτό) and ταῦτα 240 (212 + 23 Ταῦτα + 3 ταῦτά + 2 Ταῦτά). Both exact folded; both undercount badly on the raw string, which is how I mis-tallied them on the first pass. μετὰ ταῦτα is 26 of the 240, exact."
  },
  {
+  "k": "ebd8984f91eb",
+  "ch": 11,
+  "kind": "absolute",
+  "src": "quiz",
+  "text": "Almost every English translation renders it 'he' — Young’s Literal says 'that one' — which is why you have to read the Greek to see that John chose a word that points.",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
   "k": "f2ea8d85cc5a",
   "ch": 11,
   "kind": "count",
@@ -1499,8 +1499,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Robertson's grammar said in 1915 that it \"should not be used at all\", and that these verbs are defective rather than deponent — a verb that never had an active has laid nothing aside.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The sentiment is Robertson's and the date is right for the Grammar. The clean Logos export in the reference folder covers chapters XI, XVI, XVII, XVIII and XX; the voice chapter is XVII and does treat deponency, so a reader wanting the exact page has it to hand."
  },
  {
   "k": "13709fad3d90",
@@ -1535,8 +1535,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Greek does this whenever an ending starting with σ meets a connecting vowel — so every second person singular in the middle looks irregular, and none of them is.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The second singular middle/passive really is the odd one out: across the tenses its endings come out -ῃ, -αι, -σω, -ης, -ου and more, where every other person keeps a recognisable shape."
  },
  {
   "k": "470bc4da4620",
@@ -1688,8 +1688,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἔρχομαι is the one to watch: it has no active present, so every grammar calls it deponent, but it has an active aorist in ἦλθον — which is why it is not among the 443.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Confirmed earlier in this pass: ἔρχομαι has 384 active-voice forms including ἦλθον, so it is not among the 443 verbs with no active anywhere, though every grammar calls it deponent for want of a present active."
  },
  {
   "k": "212b2ab400d0",
