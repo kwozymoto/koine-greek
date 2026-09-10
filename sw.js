@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v119';
+const VERSION = 'v120';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,10 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v120 changes data/lessons.js only, which is precached in SHELL and
+     so is replaced by the VERSION bump. No bulk file changed, so the
+     v119 entries below stay: STALE is read on every activate and a
+     clip already evicted is simply missing, which costs one refetch. */
   /* v119: batch 3 closed. Six flags in fifty, against thirty-one in
      batch 2 -- and three of the six were faults already settled,
      sitting in cues no rule reached: νέος bound so its -ος never

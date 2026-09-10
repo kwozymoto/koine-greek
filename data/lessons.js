@@ -63,7 +63,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <h3>A note on pronunciation</h3>
 <p>Erasmian is a scholarly convention, not how anyone spoke in the first century. It survives because it keeps distinct sounds distinct — in modern Greek η, ι, υ, ει and οι have all collapsed into <i>ee</i>, which is punishing when you are trying to learn to spell. Stay with Erasmian. Nobody is going to overhear you and object.</p>
 <h3>Accents</h3>
-<p>Greek has three accents: acute (<span class="gk">ά</span>), grave (<span class="gk">ὰ</span>) and circumflex (<span class="gk">ᾶ</span>). In Koine they no longer marked pitch, and for reading purposes they mostly matter for one reason: <b>they distinguish otherwise identical words</b>.</p>
+<p>Greek has three accents: acute (<span class="gk">ά</span>), grave (<span class="gk">ὰ</span>) and circumflex (<span class="gk">ᾶ</span>). By the end of the Koine period they marked stress rather than the pitch of earlier Greek, and for reading purposes they matter mostly for one reason: <b>they distinguish otherwise identical words</b>.</p>
 <table><tr><th>Word</th><th>Meaning</th></tr>
 <tr><td class="g">τίς</td><td>who? what? (interrogative)</td></tr>
 <tr><td class="g">τις</td><td>someone, a certain (indefinite)</td></tr>
@@ -120,7 +120,7 @@ body:`<p>Before learning any paradigm, get the shape of the whole system. It is 
 <p>The <b>indicative</b> affirms. It presents the action as fact: <i>he has mercy</i>. Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it.</p>
 <p>The <b>imperative</b> commands: <i>Lord, have mercy</i>. The <b>subjunctive</b> presents the action as contingent, projected, not yet settled: <i>if he should have mercy</i>. The <b>optative</b> is rarer still, and by the Koine period it is fading: 68 occurrences in the whole New Testament.</p>
 <p>The <b>infinitive</b> and the <b>participle</b> are not moods in the same sense. They are verb forms that decline to specify a person at all — the infinitive a verbal noun, the participle a verbal adjective. Both have tense and voice, and neither has a subject of its own in the ordinary way.</p>
-<p>Two consequences worth carrying. Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when. And the negative follows the mood, not the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. You meet that in the next chapter.</p>
+<p>Two consequences worth carrying. Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when. And the negative mostly follows the mood rather than the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. You meet that, and the exception worth knowing, in the next chapter.</p>
 <h3>Voice: how the subject relates to the action</h3>
 <p>The <b>active</b> voice presents the subject as doing the action. <span class="gk">ἀκούω</span>, I hear.</p>
 <p>The <b>passive</b> presents the subject as being acted upon. I am heard. Where the agent is named, it is usually <span class="gk">ὑπό</span> with the genitive.</p>
@@ -198,6 +198,9 @@ body:`<p>Here is your first paradigm. Learn it properly and the next dozen come 
 <p><span class="gk">μή</span> negates everything else — subjunctive, imperative, infinitive, participle:</p>
 <p class="v" data-ref="Matthew 6:13">καὶ μὴ εἰσενέγκῃς ἡμᾶς εἰς πειρασμόν</p>
 <p>"And lead us not into temptation." That is a subjunctive, so <span class="gk">μή</span>. If you can see which negative a writer used, you already know something about the mood of the verb before you have parsed it.</p>
+<p>That division holds about nine times in ten, and the commonest exception earns its keep. <span class="gk">μή</span> can open a question with an indicative in it, and when it does it tells you the speaker expects the answer no:</p>
+<p class="v" data-ref="John 21:5">μή τι προσφάγιον ἔχετε;</p>
+<p>"Do you have any fish?" <span class="gk">ἔχετε</span> is an indicative, and the negative is <span class="gk">μή</span> because of what the question is doing rather than because of the mood: it tells you Jesus expects the answer no. John supplies it in the next clause — <span class="gk">Οὔ</span>.</p>
 <p><span class="gk">οὐ</span> also changes shape to suit what follows: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one. Three spellings, one word.</p>
 <h3>What to watch for</h3>
 <p>The third person singular <span class="gk">λύει</span> and the second person singular <span class="gk">λύεις</span> differ by one letter, and you will read past that letter more than once. So will the future <span class="gk">λύσει</span>, which differs from the present <span class="gk">λύει</span> by the sigma alone.</p>
@@ -408,7 +411,7 @@ body:`<p>Two past tenses, and the difference between them is not when the action
 <p>This matters more than almost anything else in first-year Greek, because sermons are built on the opposite claim all the time. The aorist is not the once-for-all tense. It is the tense that declines to comment.</p>
 <h3>Second aorists: the same tense, a different shape</h3>
 <p>Everything above describes the <b>first</b> aorist, the one with the sigma. There is a second pattern, and it is not a variant or an exception — it is more than half of what you will actually read.</p>
-<p>A second aorist takes an augment and the <i>present</i> stem endings, with no sigma at all, on a changed stem. <span class="gk">λέγω</span> gives <span class="gk">εἶπον</span>; <span class="gk">ἔρχομαι</span> gives <span class="gk">ἦλθον</span>; <span class="gk">βάλλω</span> gives <span class="gk">ἔβαλον</span>; <span class="gk">ὁράω</span> gives <span class="gk">εἶδον</span>.</p>
+<p>A second aorist takes an augment and the same secondary endings as the imperfect, with no sigma at all, on a changed stem. <span class="gk">λέγω</span> gives <span class="gk">εἶπον</span>; <span class="gk">ἔρχομαι</span> gives <span class="gk">ἦλθον</span>; <span class="gk">βάλλω</span> gives <span class="gk">ἔβαλον</span>; <span class="gk">ὁράω</span> gives <span class="gk">εἶδον</span>.</p>
 <p class="v" data-ref="Matthew 20:32">καὶ στὰς ὁ Ἰησοῦς ἐφώνησεν αὐτοὺς καὶ εἶπεν</p>
 <p>"And Jesus stopped, called them, and said." Both verbs are aorist active indicative, third singular, and they look nothing alike. <span class="gk">ἐφώνησεν</span> has the sigma; <span class="gk">εἶπεν</span> has a stem you would not have predicted from <span class="gk">λέγω</span>.</p>
 <p class="v" data-ref="John 1:11">εἰς τὰ ἴδια ἦλθεν</p>
@@ -780,7 +783,7 @@ body:`<p>Voice describes how the subject of a verb relates to the action. Every 
 <h3>Deponent verbs</h3>
 <p>A great many Greek verbs have middle or passive forms and no active ones. They are called <b>deponent</b>, from the Latin for "laid aside", on the theory that the active forms were dropped somewhere in the language's history. They are middle in form and active in meaning.</p>
 <p>The name is disputed, and worth knowing as disputed. Robertson's grammar said in 1915 that it "should not be used at all", and that these verbs are <i>defective</i> rather than deponent — a verb that never had an active has laid nothing aside. The argument has run further that way since. Black uses the word and so does this course, because you will meet it everywhere; treat it as a name for the pattern rather than an explanation of it.</p>
-<p>Here is the number that ought to change how you read the middle: <b>443 of the 683 present middle indicatives in the New Testament — two in three — belong to verbs that have no active form anywhere.</b> The two commonest are <span class="gk">ἔρχεται</span> (89) and <span class="gk">δύναται</span> (71), and neither means anything reflexive.</p>
+<p>Here is the number that ought to change how you read the middle: <b>443 of the 683 present middle indicatives in the New Testament — two in three — belong to verbs that have no active form anywhere.</b> The two commonest present middle indicatives in the book are <span class="gk">ἔρχεται</span> (89) and <span class="gk">δύναται</span> (71), and neither means anything reflexive. <span class="gk">ἔρχομαι</span> is the one to watch: it has no active present, so every grammar calls it deponent, but it has an active aorist in <span class="gk">ἦλθον</span> — which is why it is not among the 443.</p>
 <p>So when you meet a middle, the first question is not "what is the middle voice doing here?" It is "does this verb have an active at all?" Usually it does not, and the ending is simply how the word is spelled.</p>
 <p>One practical oddity: some of these take an object in a case other than the accusative. <span class="gk">ἀποκρίνομαι</span> takes the dative, and <span class="gk">ἄρχω</span> the genitive.</p>
 <h3>By whom, through whom, by what</h3>
@@ -961,14 +964,14 @@ body:`<p>Chapter 12 gave the primary middle and passive endings, used by the pre
 <h3>What to watch for</h3>
 <p><b>The imperfect middle and the second aorist middle are identical but for the stem.</b> <span class="gk">ἐγίνετο</span> against <span class="gk">ἐγένετο</span> — one vowel, and it is the whole tense.</p>
 <p><b>The second singular contracts, again.</b> <span class="gk">ἐλύου</span> and <span class="gk">ἐλύσω</span> do not look like they belong to their paradigms. They do.</p>
-<p><b>Deponents stay deponent in the past.</b> <span class="gk">ἔρχομαι</span> gives <span class="gk">ἤρχετο</span>, <span class="gk">πορεύομαι</span> gives <span class="gk">ἐπορεύετο</span>. If the present had no active, neither does the imperfect.</p>`,
+<p><b>Deponents stay deponent in the imperfect.</b> <span class="gk">ἔρχομαι</span> gives <span class="gk">ἤρχετο</span>, <span class="gk">πορεύομαι</span> gives <span class="gk">ἐπορεύετο</span>. The imperfect is built on the present stem, so if the present had no active, neither does the imperfect. Do not extend that to the aorist: <span class="gk">ἔρχομαι</span> has <span class="gk">ἦλθον</span>, active in form, and the principal parts have to be learned one verb at a time.</p>`,
 v:[75,124,154,284,290,298,509,380,467,508],
 vids:[{t:"Lecture 14: Imperfect Middle and Passive, Aorist Middle, Pluperfect Middle and Passive",s:"Daily Dose of Greek — Rob Plummer (15:32)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-14/"},
       {t:"Imperfect Middle-Passive Memory Device",s:"Daily Dose of Greek — the secondary middle endings",yt:"4ytjsQSWDkQ"}],
 quiz:[
 {q:"How do the secondary middle/passive endings relate to the primary set?",o:["The plurals -μεθα and -σθε are identical; the singulars differ in their last vowel","They are unrelated","They are the active endings","They are used only in the perfect"],a:0,w:"-μην, -σο, -το against -μαι, -σαι, -ται. Learning the second set is mostly a matter of noticing how little of it is new.",sec:1},
 {q:"Which tenses use the secondary middle/passive endings?",o:["Present and future","Perfect only","All of them","The past tenses — imperfect, aorist middle, pluperfect"],a:3,w:"Primary endings for the present, perfect and future; secondary for the past tenses. The same division you met with the active in chapter 7.",sec:0},
-{q:"The imperfect middle/passive is built from:",o:["The aorist stem plus σα","Reduplication + ending","The future stem","Augment + present stem + connecting vowel + secondary ending"],a:3,w:"ἐ-λυ-ό-μην. Since it uses the present stem, a verb deponent in the present is deponent in the imperfect too — ἔρχομαι gives ἤρχετο.",sec:2},
+{q:"The imperfect middle/passive is built from:",o:["The aorist stem plus σα","Reduplication + ending","The future stem","Augment + present stem + connecting vowel + secondary ending"],a:3,w:"ἐ-λυ-ό-μην. Since it uses the present stem, a verb deponent in the present is deponent in the imperfect too — ἔρχομαι gives ἤρχετο. Its aorist ἦλθον is another matter.",sec:2},
 {q:"In Matthew 3:6, ἐβαπτίζοντο … ὑπ’ αὐτοῦ. What does the imperfect contribute?",o:["It marks a single completed event","It marks the future","Nothing; it is stylistic","It presents the baptising as under way — a queue of people, not one act"],a:3,w:"Imperfective aspect in a past tense. ὑπ’ αὐτοῦ names the agent, which is what tells you this one is passive rather than middle.",sec:2},
 {q:"What separates the first aorist middle from the imperfect middle?",o:["The augment","The endings","The accent","The σα of the aorist stem"],a:3,w:"ἐλυόμην against ἐλυσάμην. Same augment, same endings; the aspect morpheme is the whole difference.",sec:3},
 {q:"ἐξελέξατο (Ephesians 1:4) is a middle. How much can the voice prove?",o:["That God chose for himself","Little — ἐκλέγομαι has no active to choose against","That God was chosen","That the choosing is ongoing"],a:1,w:"Twenty-one middles and one passive, and no active anywhere in the New Testament. Where only one voice is available the voice is not a choice the writer made — which is what chapter 12 told you to ask first.",sec:3},
@@ -1001,9 +1004,9 @@ body:`<p>The aorist passive is the last principal part, and with it the set is c
 <h3>Second aorist passives</h3>
 <p>Some verbs form the aorist passive with no θ at all — the <span class="gk">η</span> attaches straight to the stem. As with second aorists and second perfects, the difference is form only.</p>
 <p class="v" data-ref="Romans 15:4">ὅσα γὰρ προεγράφη, εἰς τὴν ἡμετέραν διδασκαλίαν ἐγράφη</p>
-<p>"For whatever was written beforehand was written for our instruction." <span class="gk">γράφω</span> gives <span class="gk">ἐγράφην</span>, and both verbs here are that form.</p>
+<p>"For whatever was written beforehand was written for our instruction." The principal part is <span class="gk">ἐγράφην</span>, "I was written", and both verbs here are third singular: <span class="gk">ἐγράφη</span>, and the compound <span class="gk">προεγράφη</span> with <span class="gk">προ-</span> on the front and the augment tucked inside.</p>
 <p class="v" data-ref="Luke 1:26">ἀπεστάλη ὁ ἄγγελος Γαβριὴλ ἀπὸ τοῦ θεοῦ</p>
-<p>"The angel Gabriel was sent from God." <span class="gk">ἀποστέλλω</span> gives <span class="gk">ἀπεστάλην</span> — again no θ, and again the augment tucked inside the compound.</p>
+<p>"The angel Gabriel was sent from God." The principal part is <span class="gk">ἀπεστάλην</span> and the form here is its third singular <span class="gk">ἀπεστάλη</span> — again no θ, and again the augment tucked inside the compound.</p>
 <p>A verb with a second aorist passive has a second future passive too, likewise without the θ.</p>
 <h3>The future passive</h3>
 <p>Build the aorist passive stem, drop the augment, add <span class="gk">σ</span> and the <i>primary middle</i> endings from chapter 12: <span class="gk">λυθήσομαι, λυθήσῃ, λυθήσεται…</span></p>
@@ -1014,6 +1017,7 @@ body:`<p>The aorist passive is the last principal part, and with it the set is c
 <p class="v" data-ref="1 Timothy 3:16">ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ</p>
 <p>"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory."</p>
 <p>Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, <span class="gk">θη</span> or its consonant variant, ending. <span class="gk">ἐκηρύχθη</span> shows the κ-group rule and <span class="gk">ἀνελήμφθη</span> the π-group. The rhythm, and the bare <span class="gk">Ὅς</span> that opens it with no antecedent, are why this is usually taken to be an existing hymn being quoted rather than composed.</p>
+<p><b>A note on the text.</b> That observation depends on the reading. This course follows the SBLGNT, which has <span class="gk">Ὄς</span>; other manuscripts have <span class="gk">θεός</span>, which is where the King James got "God was manifest in the flesh". It is the best-known variant in the Pastoral letters, and worth knowing that a Greek observation can turn on which Greek you have open.</p>
 <p>Notice too what the passive is doing across the whole hymn. Christ is the subject of every line and the actor in none of them. That is a deliberate choice, and it is not available in an English translation that turns the verbs active.</p>
 <p class="v" data-ref="Matthew 28:18">Ἐδόθη μοι πᾶσα ἐξουσία ἐν οὐρανῷ καὶ ἐπὶ τῆς γῆς</p>
 <p>"All authority in heaven and on earth was given to me." Most English versions have "has been given", which reads well and quietly turns an aorist into a perfect — the distinction chapter 10 spent its length on. Given by whom is not said, and does not need to be.</p>
@@ -1054,7 +1058,7 @@ body:`<p>Fifteen chapters have added one piece at a time. This one puts them tog
 <table>
 <tr><th>Slot</th><th>What it says</th><th>Example</th></tr>
 <tr><td>preposition</td><td>a compound verb (ch8)</td><td class="g">ἀπ-</td></tr>
-<tr><td>augment or reduplication</td><td>past time, or perfective (ch7, ch10)</td><td class="g">ἐ- / λε-</td></tr>
+<tr><td>augment or reduplication</td><td>augment: past time in the indicative (ch7). reduplication: the perfect (ch10)</td><td class="g">ἐ- / λε-</td></tr>
 <tr><td>stem</td><td>which verb it is</td><td class="g">λυ</td></tr>
 <tr><td>tense or voice marker</td><td>σ future, σα aorist, κα perfect, θη passive</td><td class="g">-σα-</td></tr>
 <tr><td>connecting vowel</td><td>ο before μ or ν, otherwise ε</td><td class="g">-ο-</td></tr>
@@ -1208,7 +1212,7 @@ body:`<p>A group of very common words decline in the third declension for their 
 <p>Literally "and greater of these is love" — and every English translation gives "the greatest of these is love", rightly. The comparative form is doing superlative duty. Note that the genitive is not what tells you so: <span class="gk">τούτων</span> is the same shape as the genitive of comparison in John 13:16 above, and "greater than these" is a possible reading of the words on their own. What settles it is that Paul has just named three things and is ranking them.</p>
 <p>It runs the other way too. A superlative is often merely intensive — "very", rather than "most". So neither form settles the sense on its own; the sentence does.</p>
 <h3>Numbers worth knowing</h3>
-<p>Only the first four Greek numerals decline. Everything from five upward is a fixed form, which makes them among the easiest words in the language.</p>
+<p>Of the numerals you count on, only the first four decline. From five to a hundred they are fixed forms, which makes them among the easiest words in the language. The hundreds and thousands are ordinary adjectives again and decline like any other — <span class="gk">διακοσίων δηναρίων</span>, <span class="gk">χίλια ἔτη</span> — but they are rare enough to meet as they come.</p>
 <p><span class="gk">εἷς, μία, ἕν</span> (one) · <span class="gk">δύο</span> (two) · <span class="gk">τρεῖς, τρία</span> (three) · <span class="gk">τέσσαρες, τέσσαρα</span> (four) — then <span class="gk">πέντε, ἕξ, ἑπτά, ὀκτώ, ἐννέα, δέκα</span>, and on.</p>
 <p>Two are worth knowing for their own sake. <span class="gk">δώδεκα</span>, twelve, occurs 75 times — most often of the disciples, but also of the tribes, the baskets and the thrones. And <span class="gk">ἑπτά</span>, seven, structures a great deal of Revelation.</p>`,
 v:[14,41,47,60,63,120,242,261,274,390,398,443,232],
@@ -1222,7 +1226,7 @@ quiz:[
 {q:"πολύς has the genitive πολλοῦ. What does that tell you?",o:["The odd-looking forms are few; the rest run on the stem πολλ-","It is two different words","It is third declension throughout","It does not decline"],a:0,w:"Same with μέγας: μεγάλου, μεγάλοι, all on μεγαλ-. Learn the four odd forms — πολύς, πολύ, μέγας, μέγα — and read the rest as ordinary adjectives.",sec:4},
 {q:"In οὐκ ἔστιν δοῦλος μείζων τοῦ κυρίου αὐτοῦ, what is τοῦ κυρίου doing?",o:["Possessing the slave","The subject","A genitive of comparison — English must supply 'than'","The object of a preposition"],a:2,w:"Greek says 'than' either by putting the thing compared in the genitive, or with the particle ἤ and both sides in the same case (John 3:19).",sec:5},
 {q:"The New Testament has 264 comparative adjectives and 42 superlatives. What follows?",o:["Superlatives are misspelled","Greek has no superlative","Comparatives frequently do superlative work","The counts are unreliable"],a:2,w:"μείζων δὲ τούτων ἡ ἀγάπη is literally 'greater of these', and every translation rightly gives 'greatest'. The form alone does not settle it; the sentence does, because it is ranking three named things.",sec:6},
-{q:"How many Greek numerals decline?",o:["All of them","Only one","Only the first four","None"],a:2,w:"εἷς, δύο, τρεῖς and τέσσαρες. From πέντε upward they are fixed forms, which makes them among the easiest words in the language.",sec:7}
+{q:"Which of the numerals you count on decline?",o:["All of them","Only one","Only the first four","None"],a:2,w:"εἷς, δύο, τρεῖς and τέσσαρες. From πέντε to a hundred they are fixed forms. The hundreds and thousands decline like ordinary adjectives, but you meet them rarely.",sec:7}
 ]},
 
 {id:19,t:"Contract and liquid verbs",s:"Why ἀγαπάω never looks like ἀγαπάω",
@@ -1356,7 +1360,7 @@ quiz:[
 
 {id:21,t:"Participles: the three uses",s:"The article decides, and the genitive absolute",
 body:`<p>You can now recognise a participle. This chapter is about the harder half: working out what one is doing in the sentence in front of you.</p>
-<p>There are three answers, and <b>one question separates them</b>. Ask it first, every time, before anything else about the form:</p>
+<p>There are three answers, and <b>one question comes first</b>. Ask it every time, before anything else about the form:</p>
 <p><b>Is there an article?</b></p>
 <p>Article present, it is behaving like an adjective or a noun. Article absent, it is describing the circumstances of the main verb. The counting says which matters most: 1,433 participles carry an article, and <b>3,918 are anarthrous nominatives</b> — so the third use is much the commonest, and the one with no signposts.</p>
 <h3>With the article, beside a noun</h3>
@@ -1396,7 +1400,7 @@ body:`<p>You can now recognise a participle. This chapter is about the harder ha
 v:[],
 vids:[{t:"Lecture 20: Participles (Verbal Adjectives)",s:"Daily Dose of Greek — Rob Plummer (42:53)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-20/"}],
 quiz:[
-{q:"What single question separates the three uses of a participle?",o:["Is there an article?","What tense is it?","Is it plural?","What voice is it?"],a:0,w:"Article present: attributive or substantival. Article absent: adverbial. 1,433 participles carry an article; 3,918 are anarthrous nominatives, so the adverbial use is much the commonest.",sec:0},
+{q:"Which question do you ask first of a participle?",o:["Is there an article?","What tense is it?","Is it plural?","What voice is it?"],a:0,w:"Article present: attributive or substantival, and a second question — is there a noun for it to modify? — tells you which. Article absent: adverbial, and 3,918 participles are anarthrous nominatives, so that is much the commonest.",sec:0},
 {q:"Which use is by far the commonest?",o:["Attributive","Substantival","Adverbial — and it is the one with no marker","They are about equal"],a:2,w:"3,918 anarthrous nominatives against 1,433 articular participles altogether. The commonest use is the one Greek gives you no signpost for, which is why the article question comes first.",sec:0},
 {q:"ἡ ὁδὸς ἡ ἀπάγουσα — what is the repeated article doing?",o:["Marking the plural","Marking an attributive participle, as it does an attributive adjective","Making it a noun","Nothing; it is stylistic"],a:1,w:"Article, noun, article, participle. The same construction chapter 6 gave you for adjectives — ὁ ποιμὴν ὁ καλός — and it means the participle is modifying the noun.",sec:1},
 {q:"How should an attributive participle be translated?",o:["As an English participle","With a relative clause","As a command","As a noun"],a:1,w:"Not 'the leading road' but 'the road that leads'. English participles will not carry the weight; a relative clause always will.",sec:1},
@@ -1556,9 +1560,9 @@ body:`<p>Chapters 3 to 16 worked through the indicative, the mood that asserts. 
 <h3>Let us — the hortatory subjunctive</h3>
 <p>In the first person plural, the subjunctive urges the speaker's own group to act. English needs "let us".</p>
 <p class="v" data-ref="1 John 4:7">Ἀγαπητοί, ἀγαπῶμεν ἀλλήλους</p>
-<p>"Beloved, let us love one another." Present, so: keep on loving, make it your habit.</p>
+<p>"Beloved, let us love one another." Present, so the loving is presented as going on rather than as a single act — which is what lets "keep on loving" be a fair translation here. As chapter 3 said of the same aspect: it allows that reading, it does not require it.</p>
 <p class="v" data-ref="Hebrews 12:1">δι’ ὑπομονῆς τρέχωμεν τὸν προκείμενον ἡμῖν ἀγῶνα</p>
-<p>"Let us run with endurance the race set before us." Present again, and the tense is the whole exhortation — not run once, but keep running.</p>
+<p>"Let us run with endurance the race set before us." Present again, and it suits a race, which is a thing you do over time. Notice that the durability is in <span class="gk">ὑπομονῆς</span>, "endurance", as much as in the tense — do not make the ending carry an argument the sentence is already making.</p>
 <p>This is the construction to know for preaching, because it is how the New Testament says "we", including the writer in the command he is giving.</p>
 <h3>Do not start — μή with the aorist subjunctive</h3>
 <p>Greek prohibits in two ways, and they are not interchangeable.</p>
@@ -1597,7 +1601,7 @@ quiz:[
 {q:"οὐ μή with the aorist subjunctive means:",o:["The negatives cancel, so it is positive","Perhaps not","Certainly not — the two negatives intensify","A question"],a:2,w:"One of the few places where the grammar itself is doing the emphasising rather than the context. Render it 'never'; a plain 'not' loses the construction.",sec:6},
 {q:"ἐάν with the subjunctive frames a condition that is:",o:["Contrary to fact","Open rather than settled","Already known to be true","Impossible"],a:1,w:"ἐάν is εἰ + ἄν, 331 occurrences. Contrast John 11:21, where εἰ with a past indicative and ἄν in the main clause makes it contrary to fact: you were not here, and he did die.",sec:7},
 {q:"λύσω can be two things. Which?",o:["Present or perfect","Imperative or infinitive","Aorist subjunctive or future indicative","Only a future"],a:2,w:"And the present subjunctive λύω is spelled exactly like the indicative. Only the construction around them decides, which is why ἵνα and ἐάν are worth watching for.",sec:8},
-{q:"The negative used with the subjunctive is:",o:["οὐ","μή","οὐδέ","οὐχί"],a:1,w:"The negative follows the mood rather than the meaning, as chapter 3 said: οὐ with the indicative, μή with everything else.",sec:8}
+{q:"The negative used with the subjunctive is:",o:["οὐ","μή","οὐδέ","οὐχί"],a:1,w:"The negative mostly follows the mood rather than the meaning, as chapter 3 said: οὐ with the indicative, μή with everything else — the exception being μή opening a question that expects the answer no.",sec:8}
 ]},
 
 {id:25,t:"The imperative and optative moods",s:"Commands, prohibitions, and μὴ γένοιτο",
@@ -1706,7 +1710,7 @@ body:`<p>Greek has two conjugations. Everything so far has been the <span class=
 <p><span class="gk">ἀφίημι</span>, "I forgive, leave, permit" (143), is <span class="gk">ἀπό</span> + <span class="gk">ἵημι</span>, so the augment goes inside the word exactly as chapter 8 said: <span class="gk">ἀφῆκεν</span>.</p>
 <p>It is worth learning for its own sake, because it is the New Testament's ordinary word for forgiveness — <span class="gk">ἀφεθήσεται</span>, "it will be forgiven", occurs 12 times, and <span class="gk">ἄφες</span>, "forgive", is what the Lord's Prayer asks.</p>
 <p>The compounds are where the rest of the conjugation lives, and they are all built on the four stems you now have: <span class="gk">παραδίδωμι</span>, "I hand over" (119) · <span class="gk">ἀνίστημι</span>, "I raise up, rise" (108) · <span class="gk">ἀποδίδωμι</span>, "I give back" (48) · <span class="gk">ἐπιτίθημι</span>, "I lay on" (39).</p>
-<p>So learn four stems — <span class="gk">δο-</span> for <span class="gk">δίδωμι</span>, <span class="gk">θε-</span> for <span class="gk">τίθημι</span>, <span class="gk">στα-</span> for <span class="gk">ἵστημι</span> and <span class="gk">ἑ-</span> for <span class="gk">ἀφίημι</span> — and the ninety verbs come down to four families.</p>
+<p>So learn four stems — <span class="gk">δο-</span> for <span class="gk">δίδωμι</span>, <span class="gk">θε-</span> for <span class="gk">τίθημι</span>, <span class="gk">στα-</span> for <span class="gk">ἵστημι</span> and <span class="gk">ἑ-</span> for <span class="gk">ἀφίημι</span> — and you can read about two thirds of the ninety verbs’ 1,743 occurrences off those four families and their compounds. The rest have to be met one at a time.</p>
 <h3>What to watch for</h3>
 <p><b>Short stem, no connecting vowel</b> is the signal. If a verb looks a syllable too short, it is probably one of these.</p>
 <p><b>The lexical form ends in <span class="gk">-μι</span></b>, so you cannot look it up under <span class="gk">-ω</span>. <span class="gk">ἔδωκεν</span> is listed under <span class="gk">δίδωμι</span>, and there is no <span class="gk">δόω</span> to find.</p>
@@ -1715,7 +1719,7 @@ body:`<p>Greek has two conjugations. Everything so far has been the <span class=
 v:[42,73,102,113,134,151,166,183,185,277,332,396,437],
 vids:[{t:"Lecture 25: The Conjugation of -μι Verbs",s:"Daily Dose of Greek — Rob Plummer (12:28)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-25/"}],
 quiz:[
-{q:"How many -μι verbs are there in the New Testament outside εἰμί?",o:["Three","Over a thousand","90 lemmas, 1,743 occurrences","Only δίδωμι"],a:2,w:"Small but unavoidable, and four families carry most of it: δίδωμι, τίθημι, ἵστημι and ἀφίημι, with their compounds.",sec:0},
+{q:"How many -μι verbs are there in the New Testament outside εἰμί?",o:["Three","Over a thousand","90 lemmas, 1,743 occurrences","Only δίδωμι"],a:2,w:"Small but unavoidable, and four families carry about two thirds of it: δίδωμι, τίθημι, ἵστημι and ἀφίημι, with their compounds.",sec:0},
 {q:"What is the one structural difference between a -μι verb and an -ω verb?",o:["The endings are entirely different","They have no aorist","No connecting vowel in the present, imperfect and second aorist","They never take an augment"],a:2,w:"λυ-ο-μεν against δίδο-μεν. Everywhere else — future, first aorist, perfect, passive — they behave like the verbs you already know.",sec:1},
 {q:"δίδωμι builds its present stem διδο- how?",o:["With an augment","With κα","By reduplicating with an iota","By contraction"],a:2,w:"Present reduplication: δο- gives διδο-, θε- gives τιθε-, στα- gives ἱστα-. And the stem lengthens in the singular, which is where the -ωμι of the lexical form comes from.",sec:2},
 {q:"Why does ἵστημι have a rough breathing?",o:["It is a Semitic word","Because its aorist is irregular","No reason; it is arbitrary","Its present stem was σιστα-, and the initial σ became the rough breathing"],a:3,w:"And τιθε- was θιθε- before losing its first aspirate — the deaspiration from chapter 10. The oddities have reasons, even if you only need to recognise the results.",sec:2},
@@ -1731,7 +1735,7 @@ quiz:[
 body:`<p>You now have the whole of the morphology: six principal parts, four moods, three voices, three declensions, and about 800 words. That is enough to read the New Testament with a lexicon beside you, and not enough to read it fluently. This chapter is about the distance between those two.</p>
 <p>Nothing here is new grammar. It is what to do with the grammar you have, and what not to do with it.</p>
 <h3>Read every day, in the easiest thing you can find</h3>
-<p>The single largest predictor of whether someone keeps their Greek is whether they read it daily, and the second is whether what they read is easy enough to enjoy.</p>
+<p>The people who keep their Greek are, in my experience, the ones who read it most days and read something easy enough to enjoy. Those two habits do more than any amount of revision.</p>
 <p>Start with 1 John — short sentences, small vocabulary, endless repetition. Then Mark, then John, then Acts. Leave Hebrews, Luke's prologue and 2 Peter until much later; they are the hardest Greek in the book and they will convince you that you have learned nothing.</p>
 <p>Ten minutes a day beats an hour on Saturday. The Read tab holds twelve graded passages for exactly this, and the reader will parse any word you tap.</p>
 <h3>Read forward, not sideways</h3>

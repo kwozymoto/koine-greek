@@ -110,7 +110,7 @@ XREF = {
     (21, 6): (4, 'Adjectives of the first and second declension'),
     (23, 9): (2, 'Personal pronouns'),
     (23, 11): (1, 'Demonstrative pronouns'),
-    (24, 3): (2, 'Present and future active indicative'),
+    (24, 3): (3, 'Present and future active indicative'),
     (24, 16): (2, 'Review of the indicative mood'),
     (26, 8): (2, 'Additional prepositions'),
     (26, 10): (3, 'Perfect and pluperfect active indicative'),

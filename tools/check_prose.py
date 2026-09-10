@@ -48,13 +48,30 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 REG = os.path.join("docs", "prose-claims.json")
 
+# The teens were missing from the number list until 2026-09-10, so
+# "Fourteen letters open by naming their writer ... and not one of the
+# fourteen uses an article" -- a claim about the New Testament, precise and
+# checkable -- was never registered and so never checked. Nor was any claim
+# whose absolute was phrased "not one" rather than "none". A pattern list is
+# itself a claim about what it catches; widen it when it is caught short.
+_NUM = (r"\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+        r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|"
+        r"twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|"
+        r"twenty-\w+|thirty-\w+|hundred|thousand")
+_THING = (r"times|forms|letters|words|endings|verbs|nouns|occurrences|"
+          r"of them|chapters|places|examples|of these|of those|"
+          r"perfects|pluperfects|aorists|imperfects|presents|futures|"
+          r"participles|infinitives|subjunctives|imperatives|optatives|"
+          r"indicatives|adjectives|pronouns|prepositions|declensions|"
+          r"conjugations|syllables|vowels|consonants|accents|cases|moods|"
+          r"tenses|voices|middles|passives|actives|articles|clauses|verses")
+
 PATTERNS = [
     ("absolute", re.compile(r"\b(always|never|only|every|no other|nothing else|"
-                            r"all of them|none of|cannot|must always)\b", re.I)),
-    ("count",    re.compile(r"\b(\d+|one|two|three|four|five|six|seven|eight|"
-                            r"nine|ten|eleven|twelve|twenty-\w+|hundred)\b\s+"
-                            r"(?:\w+\s+){0,3}(?:times|forms|letters|words|"
-                            r"endings|verbs|nouns|occurrences|of them)", re.I)),
+                            r"all of them|none of|cannot|must always|not one|"
+                            r"not a single|in every case|without exception)\b", re.I)),
+    ("count",    re.compile(r"\b(" + _NUM + r")\b\s+"
+                            r"(?:\w+\s+){0,3}(?:" + _THING + r")", re.I)),
     ("spelling", re.compile(r"\b(has both|ends in|ends with|begins with|"
                             r"starts with|is written|is spelled|contains)\b", re.I)),
 ]
@@ -114,6 +131,18 @@ if __name__ == "__main__":
                 reg[c["k"]] = {"k": c["k"], "ch": c["ch"], "kind": c["kind"],
                                "text": c["text"], "status": "unreviewed",
                                "finding": ""}
+        # A sentence that has been rewritten or deleted is no longer a claim
+        # in the prose, so it leaves the register. Git keeps the history; the
+        # register is about what the app says now. Without this, a reworded
+        # sentence sits beside its replacement and every later lookup by text
+        # matches two rows.
+        live = {c["k"] for c in claims}
+        dropped = [k for k in reg if k not in live]
+        for k in dropped:
+            del reg[k]
+        if dropped:
+            print("dropped %d orphaned claim(s) whose sentence has changed"
+                  % len(dropped))
         rows = sorted(reg.values(), key=lambda r: (r["ch"], r["k"]))
         io.open(REG, "w", encoding="utf-8", newline="\n").write(
             json.dumps(rows, ensure_ascii=False, indent=1) + "\n")
