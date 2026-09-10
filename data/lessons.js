@@ -1000,7 +1000,7 @@ body:`<p>The aorist passive is the last principal part, and with it the set is c
 <tr><td class="g">κ, γ, χ</td><td>+ θ →</td><td class="g">χθ</td><td><span class="gk">ἄγω → ἤχθη</span></td></tr>
 <tr><td class="g">π, β, φ</td><td>+ θ →</td><td class="g">φθ</td><td><span class="gk">πέμπω → ἐπέμφθη</span></td></tr>
 <tr><td class="g">τ, δ, θ</td><td>+ θ →</td><td class="g">σθ</td><td><span class="gk">βαπτίζω → ἐβαπτίσθη</span></td></tr></table>
-<p>These are the same three groupings that governed the future in chapter 3 and the aorist active in chapter 7. It is one sound rule you have now met three times, and the useful residue is simply this: <b>a θ preceded by χ, φ or σ is very often an aorist passive.</b></p>
+<p>These are the same three groupings that governed the future in chapter 3 and the aorist active in chapter 7. It is one sound rule you have now met three times, and the useful residue is this: <b>a θ preceded by χ or φ is very often an aorist passive</b> — <span class="gk">χθ</span> more than half the time. <span class="gk">σθ</span> is the weak one, because most of the <span class="gk">σθ</span> on the page is the middle and passive ending from chapter 12, <span class="gk">-σθε</span> and <span class="gk">-σθαι</span>. Discount those and the rule is right about two times in five.</p>
 <h3>Second aorist passives</h3>
 <p>Some verbs form the aorist passive with no θ at all — the <span class="gk">η</span> attaches straight to the stem. As with second aorists and second perfects, the difference is form only.</p>
 <p class="v" data-ref="Romans 15:4">ὅσα γὰρ προεγράφη, εἰς τὴν ἡμετέραν διδασκαλίαν ἐγράφη</p>

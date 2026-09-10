@@ -91,7 +91,7 @@ XREF = {
     (15, 3): (2, 'Present and future active indicative'),
     (15, 7): (3, 'Imperfect and aorist active indicative'),
     (15, 10): (2, 'Perfect and pluperfect active indicative'),
-    (15, 12): (2, 'Present middle and passive indicative'),
+    (15, 12): (3, 'Present middle and passive indicative'),
     (16, 7): (1, 'Imperfect and aorist active indicative'),
     (16, 10): (2, 'Perfect and pluperfect active indicative'),
     (16, 13): (1, 'Perfect middle/passive and future middle'),

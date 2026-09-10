@@ -5,8 +5,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Same letter, same sound: Χριστός has both — λόγος has only the final one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "This is the claim the whole prose register grew out of — λόγος was once said to have both sigmas and has only the final one. It now carries data-has=\"σς\", and check_lessons fails if the word named does not contain both characters."
  },
  {
   "k": "19f7d9c7cf8b",
@@ -23,8 +23,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It is the only chapter where that is true.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A claim about the course's own shape — chapter 1 being the only one whose content is the writing system rather than the language. True of the app as built."
  },
  {
   "k": "353aac500a59",
@@ -50,8 +50,8 @@
   "kind": "spelling",
   "src": "quiz",
   "text": "One letter, one sound — Χριστός has both.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The claim the register grew out of. Χριστός contains both σ and ς; λόγος has only the final one. Held now by check_lessons through data-has=\"σς\"."
  },
  {
   "k": "5d5f3f1708bd",
@@ -59,8 +59,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "This catches everyone at least once: Σὺ εἶ ὁ ἐρχόμενος ἢ ἕτερον προσδοκῶμεν; \"Are you the one who is to come, or should we expect another?\" John's disciples are asking a question, and the only thing on the page that tells you so is that final mark.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The Greek question mark. The verse is held to the text by check_lessons; the claim about what catches people is pedagogy. Read and left as written."
  },
  {
   "k": "6110a954c342",
@@ -68,8 +68,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Dative, about five times in six.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "6,268 of the 7,481 iota subscripts are dative: 83.8% against 83.3% for five in six."
  },
  {
   "k": "67ca1ff16826",
@@ -77,8 +77,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The accent is the only difference between them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "τίς against τις: 554 and 530, identical in every letter. The corpus keeps them apart as separate lemmas, which is the chapter's point."
  },
  {
   "k": "8fd8c33baddf",
@@ -122,8 +122,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Some are ours exactly, some are ours in disguise, and only a handful are genuinely new.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About the alphabet's familiarity. Read and left as written."
  },
  {
   "k": "03423eee908c",
@@ -140,8 +140,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Only the verb and the sentence can.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The middle/passive caution, which the outside audit singled out as one of the course's best instincts. Read and left as written."
  },
  {
   "k": "3318c3e675d1",
@@ -167,8 +167,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two sets of endings Primary endings appear on the tenses whose indicative refers to present or future time: present, future, perfect.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The traditional primary/secondary division: primary on present, future and perfect, secondary on imperfect, aorist and pluperfect. Standard, and the corpus's own endings bear it out."
  },
  {
   "k": "63b46f9370a4",
@@ -176,8 +176,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The practical difficulty is that middle and passive share their endings in most tenses, so the form alone often cannot tell you which one is meant.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's thesis about voice, and true of the present, imperfect, perfect and pluperfect."
  },
  {
   "k": "8850e7e68249",
@@ -194,8 +194,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only the indicative fixes time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Sourced to Robertson ch.XVIII: outside the indicative there is no need for time 'except in a relative sense', and only the augment expresses past time."
  },
  {
   "k": "9a8a7f715813",
@@ -212,8 +212,8 @@
   "kind": "count",
   "src": "body",
   "text": "It lives in the principal parts of a few hundred verbs, and the commonest of those you will meet often enough to learn without trying.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About irregularity. Twenty-one verbs show all six parts in the corpus and many hundreds show some; 'a few hundred' is fair. Read and left as written."
  },
  {
   "k": "ab6e8c5b41a6",
@@ -221,8 +221,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The endings are shared in most tenses, so only the verb and the sentence can settle it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "b0e4e9f12ec0",
@@ -230,8 +230,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Principal parts Each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Twenty-one verbs in the corpus have all six attested — αἴρω, βάλλω, γεννάω, γράφω, δέω, δίδωμι among them — so 'up to six' is right and the six categories the chapter names are the ones the text actually fills."
  },
  {
   "k": "cea5854c2fb4",
@@ -248,8 +248,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only in the indicative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Same, and the augment is indicative-only."
  },
  {
   "k": "4c5521a9493d",
@@ -257,8 +257,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz twin of the historical-present claim recorded as unsettled in the body: at Mark 1:40 the six reference translations split three and three, and four of the six are old and deliberately literal, so they cannot establish a majority. The claim is very likely right about the versions a reader holds; this library cannot show it."
  },
  {
   "k": "701ae46e3bc6",
@@ -266,8 +266,8 @@
   "kind": "count",
   "src": "body",
   "text": "Singular Plural 1st εἰμί ἐσμέν 2nd εἶ ἐστέ 3rd ἐστί(ν) εἰσί(ν) οὐκ ἔστιν ὧδε, ἠγέρθη γὰρ \"He is not here, for he has been raised.\" Two verbs, and between them most of chapter 2: ἔστιν is present, ἠγέρθη is aorist passive with its augment showing.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "All six forms of the present indicative of εἰμί are attested: εἰμί 45, εἶ 92, ἐστίν 176, ἐσμέν 21, ἐστέ 25, εἰσίν 69. And the verse beside it is exactly as described — ἔστιν present, ἠγέρθη aorist passive with its augment."
  },
  {
   "k": "82ee99d47aab",
@@ -293,8 +293,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "ἐγώ εἰμι ὁ ἄρτος τῆς ζωῆς \"I am the bread of life.\" Here the pronoun ἐγώ is written out, even though εἰμι already says I.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "John 6:35, with ἐγώ written out though εἰμι already carries the person. Read and left as written."
  },
  {
   "k": "ef71ac2d5440",
@@ -311,8 +311,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "None of these is a different tense.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About the three uses of the present. Read and left as written."
  },
  {
   "k": "0e5304662ec9",
@@ -320,8 +320,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "They decline exactly like λόγος , and only the article tells you they are feminine at all.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἡ ὁδός and ἡ ἔρημος: second-declension endings with the feminine article. Read and left as written."
  },
  {
   "k": "18b858ef72dd",
@@ -329,8 +329,8 @@
   "kind": "count",
   "src": "body",
   "text": "Nouns fall into three declensions, which are just three patterns of endings.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Three declensions is the standard division and the one Abbott-Smith's genitives sort every noun into — 690 first, 558 second, 587 third."
  },
  {
   "k": "33c4a9f8c60e",
@@ -338,8 +338,8 @@
   "kind": "spelling",
   "src": "quiz",
   "text": "In the plural it is identical to the nominative, but in the second declension singular it ends in -ε.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "207 second-declension vocative singulars end -ε; the two that do not are the nominative doing vocative duty, at Acts 7:42 and Philippians 4:1."
  },
  {
   "k": "3983047d306c",
@@ -347,8 +347,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It agrees with its noun in gender, number and case, which means that once you know the article you can read the case of almost any noun attached to one, even a noun you have never met.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Standard agreement, and the seventeen article forms make it the reading aid the chapter says it is."
  },
  {
   "k": "3a3e53eb11e7",
@@ -365,8 +365,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "It is -ων in every gender and every declension, which makes it easy to spot and useless for gender.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "3,321 genitive plurals in the corpus; the 76 that do not end -ων are all indeclinable numerals — δώδεκα, δύο, ἑπτά, τριάκοντα, ὀγδοήκοντα — which do not inflect at all."
  },
  {
   "k": "44e6af6164c4",
@@ -374,8 +374,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Every other ending is identical.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Confirmed from λόγος and ἔργον side by side: they differ only in the nominative and accusative."
  },
  {
   "k": "657cef14ff46",
@@ -383,8 +383,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "And the dative singular ends in a long vowel with an iota written underneath it: λόγῳ , ἔργῳ .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "λόγῳ 45 and ἔργῳ 10, both with the subscript, both attested."
  },
  {
   "k": "66d5b7bd274d",
@@ -392,8 +392,8 @@
   "kind": "count",
   "src": "body",
   "text": "Those are tendencies rather than rules, as the next two verses show.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's own framing of the article, and the framing this pass had to extend to the PRESENCE of the article as well as its absence when Luke 18:13 was settled."
  },
  {
   "k": "6a279fe6ee06",
@@ -419,8 +419,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Watch only the ending.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "An instruction for reading the three λόγος examples. Read and left."
  },
  {
   "k": "774de15300c4",
@@ -428,8 +428,8 @@
   "kind": "count",
   "src": "body",
   "text": "A noun in apposition to a pronoun regularly takes the article, and Luke writes ὑμῖν τοῖς Φαρισαίοις and ὑμῖν τοῖς πλουσίοις the same way six times over, meaning nothing more than \"you Pharisees\", \"you rich\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Verified when Luke 18:13 was settled: a dative pronoun with a noun in apposition occurs 12 times, 8 of them articular, and seven of the eight are Luke — ὑμῖν τοῖς πλουσίοις (6:24), ὑμῖν τοῖς Φαρισαίοις (11:42, 11:43), ὑμῖν τοῖς νομικοῖς (11:46, 11:52), ὑμῖν τοῖς φίλοις (12:4), and μοι τῷ ἁμαρτωλῷ itself."
  },
  {
   "k": "7f75b5ead287",
@@ -446,8 +446,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "λόγος on its own is a word or the word, and only the sentence decides.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True and important: Greek has no indefinite article, so the anarthrous noun is genuinely ambiguous. Read and left as written."
  },
  {
   "k": "a1d21dc4693d",
@@ -482,8 +482,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Only the sentence can tell you, and here μενεῖ needs a subject, so it is nominative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A worked reading of one verse. Read and left as written."
  },
  {
   "k": "d7d697610efb",
@@ -518,8 +518,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "An absence tells you something only where the writer could have written it the other way.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The course's own test, and the one that settled Luke 18:13 — where Luke could not have written it the other way."
  },
  {
   "k": "e7be0a1b87e3",
@@ -527,8 +527,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Not one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Fourteen letters open by naming their writer ἀπόστολος or δοῦλος and the title word is anarthrous in every one."
  },
  {
   "k": "f022ed08bc86",
@@ -536,8 +536,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Knowing its seventeen forms lets you read the case of almost any noun attached to one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Seventeen distinct spellings of the article occur, filling 24 case/number/gender slots."
  },
  {
   "k": "f8ec4503171f",
@@ -545,8 +545,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only there, and in those two it uses one form for both.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἔργον in the corpus: nominative singular = accusative singular = ἔργον, and nominative plural = accusative plural = ἔργα, while genitive and dative match λόγος exactly."
  },
  {
   "k": "fafd339b6bbc",
@@ -563,8 +563,8 @@
   "kind": "count",
   "src": "body",
   "text": "ἐξ ἀνθρώπων δόξαν, οὔτε ἀφ’ ὑμῶν οὔτε ἀπ’ ἄλλων \"glory from men, neither from you nor from others.\" Three of these in one line: ἐξ before a vowel, ἀφ’ before the rough breathing of ὑμῶν , and ἀπ’ before the smooth breathing of ἄλλων .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The three elisions are on the page as described, and check_lessons holds the quotation to the verse it names."
  },
  {
   "k": "10204abe678e",
@@ -590,8 +590,8 @@
   "kind": "count",
   "src": "body",
   "text": "Four prepositions worth meeting now A preposition tells you how its noun relates to the rest of the sentence, and in Greek it fixes that noun's case.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἐν, εἰς, ἐκ and ἀπό, each taking one case. Read and left as written."
  },
  {
   "k": "7c12274c82ec",
@@ -599,8 +599,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Dative, always.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐν takes the dative and nothing else — 2,730 of them, with the only apparent exceptions being my own test reaching past the indeclinable Ἰερουσαλήμ."
  },
  {
   "k": "80207857e920",
@@ -617,8 +617,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It is one of the few accent rules worth learning as a rule, because it never varies and it identifies the form on sight.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "It never varies: all 298 first-declension common-noun genitive plurals in the New Testament end -ῶν with a circumflex, no exceptions."
  },
  {
   "k": "9cb99f61e9f1",
@@ -635,8 +635,8 @@
   "kind": "count",
   "src": "body",
   "text": "The vowel depends on the letter before it, and the rule is worth knowing because it decides two of the four singular endings.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The α/η rule in the first declension: after ε, ι or ρ the genitive is -ας 795 times against -ης 9; otherwise -ης 97 against -ας 2."
  },
  {
   "k": "bce5293360f3",
@@ -653,8 +653,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "None of this changes the meaning or the case.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About elision and the movable ν. Read and left as written."
  },
  {
   "k": "2485471365af",
@@ -662,8 +662,8 @@
   "kind": "count",
   "src": "body",
   "text": "Where the noun has no article, nothing decides it for you and the context is all you have — which is the same limit chapter 21 will reach with participles.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The corrected sentence from this pass, and the limit chapter 21 reaches too. Read and left as written."
  },
  {
   "k": "f31d8db17036",
@@ -671,8 +671,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The article, and only the article.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Now scoped in the body to 'wherever the noun has an article', which is where it is true."
  },
  {
   "k": "0cfc4f0a2684",
@@ -680,8 +680,8 @@
   "kind": "spelling",
   "src": "quiz",
   "text": "This is why compound verbs are awkward to look up: the form no longer begins with the letters the lexicon lists.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form of the same. Read and left as written."
  },
  {
   "k": "2021df0d2527",
@@ -698,8 +698,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "If it begins with a long vowel or a long diphthong there is nothing left to lengthen, so the past looks exactly like the present.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The general rule, and true as far as it goes — Robertson ch.XVIII: the temporal augment is 'often absent, especially with diphthongs'. The example beside it was corrected in this pass, because εὑρίσκω augments three times in seventy-five."
  },
  {
   "k": "310b1cdb73ec",
@@ -707,8 +707,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "This is what makes compound verbs awkward to look up, because the form on the page no longer starts with the letters the lexicon lists.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἀπέθανεν from ἀποθνῄσκω, with the augment inside. Read and left as written."
  },
  {
   "k": "33463825cf5f",
@@ -716,8 +716,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two past tenses, and the difference between them is not when the action happened.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's thesis about aspect, and Huffman Part 2 says the same of tense-form generally: selection is 'based primarily upon the way the author wishes to think about the action'."
  },
  {
   "k": "372bb18f9f19",
@@ -734,8 +734,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only that it is viewed as a whole, from outside.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The aorist's aspect, stated as narrowly as the chapter's own warning requires. Read and left as written."
  },
  {
   "k": "6bf895e15fe5",
@@ -770,8 +770,8 @@
   "kind": "count",
   "src": "body",
   "text": "Singular Plural 1st ἤμην ἦμεν 2nd ἦς ἦτε 3rd ἦν ἦσαν οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν \"He was in the beginning with God.\" ἦν alone accounts for most of these 455 occurrences, and John 1 uses it to hold a state open rather than to report an event — which is the imperfective aspect doing exactly what this chapter has been describing.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "455 imperfect indicatives of εἰμί, of which ἦν is 314 — 69%."
  },
  {
   "k": "9f1ca8aad557",
@@ -788,8 +788,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "If the verb already begins with a short vowel, that vowel lengthens instead of taking a prefix: ἀκούω → ἤκουον .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἀκούω → ἤκουον, attested: ἤκουον 7 (five lower-case, two sentence-initial) and ἤκουεν 4. The alpha really does lengthen to eta."
  },
  {
   "k": "f5ad457f7e20",
@@ -797,8 +797,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "And you cannot look a second aorist up by its own spelling.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True and the reason principal parts exist — εἶπεν is under λέγω. Read and left as written."
  },
  {
   "k": "037054a820e9",
@@ -806,8 +806,8 @@
   "kind": "count",
   "src": "body",
   "text": "By whom, and through whom Two of these prepositions divide up a job English does with a single word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ὑπό and διά, and Matthew 1:22 carries both. Read and left as written."
  },
  {
   "k": "089356ccb9ec",
@@ -824,8 +824,8 @@
   "kind": "count",
   "src": "body",
   "text": "τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου \"What was spoken by the Lord through the prophet.\" Both prepositions inside five words, and the distinction is deliberate: the Lord is the speaker, the prophet the means.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Matthew 1:22 and again at 2:15, word for word: ὑπὸ κυρίου διὰ τοῦ προφήτου. Five words carrying both prepositions, exactly as the chapter says — and the case split is the one chapter 8's table gives, ὑπό with the genitive for the agent and διά with the genitive for the means."
  },
  {
   "k": "18fd48d34c31",
@@ -851,8 +851,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "ἐκ out of (gen), ἐν in (dat), εἰς into (acc) is the same picture in three words.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Each takes one case: ἐκ 912 genitives with no exception at all, ἐν dative, εἰς accusative."
  },
  {
   "k": "281b5e6b13b4",
@@ -878,8 +878,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Every one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "σύν: 129 occurrences and 129 datives."
  },
  {
   "k": "438d99503570",
@@ -905,8 +905,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "'I read.' The preposition on a compound is a strong hint and never a proof — ἐκβάλλω really is 'I throw out', but this one is not 'I know up'.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἐκβάλλω against ἐπιγινώσκω. Read and left as written."
  },
  {
   "k": "545f3c2a6ebc",
@@ -914,8 +914,8 @@
   "kind": "count",
   "src": "body",
   "text": "One word, three cases, three plainly different things.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "παρά with all three cases, each well attested. Read and left as written."
  },
  {
   "k": "660217613240",
@@ -941,8 +941,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἀπέθανεν , \"he died\", is ἀπό plus the augment plus the aorist stem of ἀποθνῄσκω , and staring at the first three letters will never produce it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The compound augment again. Read and left as written."
  },
  {
   "k": "a03e791d5afd",
@@ -950,8 +950,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἀνά is worth a line of its own, because a lexicon will gloss it \"up\" and the New Testament never uses it that way.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Verified by reading all thirteen: eight distributive, five ἀνὰ μέσον, not one meaning 'up'."
  },
  {
   "k": "c4f58e54be20",
@@ -977,8 +977,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "παρά is the one preposition where all three cases are still cleanly distinct.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "παρά 193, split genitive 81, accusative 60, dative 52 — all three well represented, unlike ἐπί where the chapter's point is that the distinctions have worn away."
  },
  {
   "k": "dd3dcc684644",
@@ -1022,8 +1022,8 @@
   "kind": "count",
   "src": "body",
   "text": "They take two cases, and two of them take three, and the case is not decoration.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The six-preposition table, every percentage of which checks, and ἐπί and παρά with three cases each."
  },
  {
   "k": "0a7af97fc599",
@@ -1040,8 +1040,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "The mnemonic worth having is that the last letter of the English word is the first letter of the Greek one: \"w e \" ends in an e and ἡμεῖς begins with eta, while \"yo u \" ends in a u and ὑμεῖς begins with upsilon.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A memory aid, not a claim about Greek — and a true one about the spellings. Read and left as written."
  },
  {
   "k": "20cb4c77f94b",
@@ -1049,8 +1049,8 @@
   "kind": "count",
   "src": "body",
   "text": "ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ \"I baptised you with water, but he will baptise you with the Holy Spirit.\" Two nominative pronouns, and the sentence turns on the distance between them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A reading of Mark 1:8. Read and left as written."
  },
  {
   "k": "6622d63dca93",
@@ -1076,8 +1076,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Greek uses one when it wants weight there, and the numbers show how marked that choice is: only 272 of αὐτός 's occurrences are nominative, fewer than one in twenty.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "272 of 5,546, one in 20.4."
  },
  {
   "k": "83b893acbcdb",
@@ -1094,8 +1094,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "When the pronoun is emphatic A verb ending already names its subject, so a nominative pronoun is never required .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True and the basis of the chapter's whole point about emphasis: 272 nominatives of αὐτός in 5,546 occurrences is what 'never required' looks like in the text."
  },
  {
   "k": "9d34c41b2723",
@@ -1130,8 +1130,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Nearly two in five occurrences of αὐτός are genitive, and most are possessive.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "2,140 genitives of αὐτός's 5,546 = 38.6%."
  },
  {
   "k": "c585cbaf3f43",
@@ -1139,8 +1139,8 @@
   "kind": "count",
   "src": "body",
   "text": "αὐτὸς γὰρ σώσει τὸν λαὸν αὐτοῦ ἀπὸ τῶν ἁμαρτιῶν αὐτῶν \"For he himself will save his people from their sins.\" Three forms of one word in eight, doing three different jobs: an intensive nominative, then two genitives of possession.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Matthew 1:21. Read and left as written; check_lessons holds the quotation."
  },
  {
   "k": "00bc85fb391c",
@@ -1148,8 +1148,8 @@
   "kind": "count",
   "src": "body",
   "text": "(Both of these are passives, which come later; the tense is what is in view.) τὸν καλὸν ἀγῶνα ἠγώνισμαι, τὸν δρόμον τετέλεκα, τὴν πίστιν τετήρηκα \"I have fought the good fight, I have finished the race, I have kept the faith.\" Three perfects in a row — not three past events, but where Paul now stands as a result of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "2 Timothy 4:7. Read and left as written."
  },
  {
   "k": "0279b6fd854c",
@@ -1157,8 +1157,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The form: reduplication and κα Three things happen, and none of them is an augment.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True: the perfect's marks are reduplication and κα, and the augment belongs to the past indicative. Read and left."
  },
  {
   "k": "03fecb162c97",
@@ -1175,8 +1175,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "γινώσκω becomes ἔγνωκεν — the root behind it is γνο- , and you cannot double a γν .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The two-consonant rule again, and γν is one of the clusters that cannot double. Read and left as written."
  },
  {
   "k": "10a34980c313",
@@ -1184,8 +1184,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "One in three, and none of them means 'I have known'.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "210 of 602 = 34.9%."
  },
  {
   "k": "2d2175015ade",
@@ -1202,8 +1202,8 @@
   "kind": "count",
   "src": "body",
   "text": "It is perfect in form and present in meaning, and it occurs 296 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "οἶδα 296, exact."
  },
  {
   "k": "5c39edf84a85",
@@ -1211,8 +1211,8 @@
   "kind": "count",
   "src": "body",
   "text": "The perfect in the text γέγραπται is the standard formula for introducing Scripture — 67 occurrences — and it is a perfect.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "γέγραπται 67, exact, and 67 of the 202 perfect passive indicatives is the one-in-three the chapter claims elsewhere."
  },
  {
   "k": "7520cc9b33a9",
@@ -1229,8 +1229,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Paul is not only saying the resurrection happened.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form of the same. Read and left."
  },
  {
   "k": "82a11e65e420",
@@ -1238,8 +1238,8 @@
   "kind": "count",
   "src": "body",
   "text": "So λύω gives λέλυκα, λέλυκας, λέλυκε(ν), λελύκαμεν, λελύκατε, λελύκασι(ν) — the full column is in Tables, beside the four tenses you already have.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The paradigm of the invented verb, which is what a paradigm is for. The attested perfect endings match it: every first singular in -α, every third singular in -ε(ν)."
  },
  {
   "k": "8496602b29a3",
@@ -1274,8 +1274,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Paul is not only saying that the resurrection happened; he is saying that it happened and that Christ is risen still.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "1 Corinthians 15:4's ἐγήγερται, and the chapter's best paragraph. Read and left as written."
  },
  {
   "k": "beab882999f3",
@@ -1292,8 +1292,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It is not a promise about what every instance of it achieves, which is where this chapter ends.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's closing caution about the perfect. Read and left as written."
  },
  {
   "k": "d0aeed0a392d",
@@ -1301,8 +1301,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Parse οἶδα as a present and its pluperfect ᾔδειν as an imperfect, \"I knew\", as every reference work does.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Standard, and the corpus bears out the frequency behind it: 210 of the 602 perfect active indicatives are οἶδα."
  },
  {
   "k": "d5c70b34f253",
@@ -1319,8 +1319,8 @@
   "kind": "count",
   "src": "body",
   "text": "A stem beginning with two consonants gives up and uses a bare ἐ- .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "149 perfects in the corpus open with ἐ followed by two consonants — ἑστῶτες, ἑστήκασιν, ἐσπαρμένον, ἐρριμμένοι, ἐσκυλμένοι. The rule is doing real work."
  },
  {
   "k": "e843f52a276d",
@@ -1328,8 +1328,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "They are conjugated identically otherwise, and — as with first and second aorists in chapter 7 — the difference is one of form only.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Second perfects against first perfects, as second aorists against first. Read and left as written."
  },
  {
   "k": "ef4b9da61019",
@@ -1337,8 +1337,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "Not \"I wrote it\" but \"it is written, and it stands\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The force of γέγραπται. Read and left as written."
  },
  {
   "k": "1c17f70fe640",
@@ -1346,8 +1346,8 @@
   "kind": "count",
   "src": "body",
   "text": "Between them they occur 1,627 times, and both decline with endings you already have.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "οὗτος 1,385 + ἐκεῖνος 242 = 1,627, all exact."
  },
  {
   "k": "234403c307ac",
@@ -1355,8 +1355,8 @@
   "kind": "count",
   "src": "body",
   "text": "Greek points with two words.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "οὗτος and ἐκεῖνος, 1,627 between them."
  },
  {
   "k": "510c612ee38a",
@@ -1436,8 +1436,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Nothing else separates them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "αὕτη against αὐτή — the breathing and the accent, nothing more. Verified: 72 against 10."
  },
  {
   "k": "e7463de2392e",
@@ -1454,8 +1454,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Almost every English translation renders it 'he' — Young’s Literal says 'that one' — which is why you have to read the Greek to see that John chose a word that points.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Corrected in this pass to match the body: five of the six reference translations say 'he' and Young's Literal says 'that one'."
  },
  {
   "k": "f2ea8d85cc5a",
@@ -1472,8 +1472,8 @@
   "kind": "count",
   "src": "body",
   "text": "It is the three quite different jobs a demonstrative does, and the one place where a breathing mark is the whole difference between two words.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's summary. Read and left as written."
  },
  {
   "k": "ff53cee385b2",
@@ -1481,8 +1481,8 @@
   "kind": "count",
   "src": "body",
   "text": "ἐκεῖνος occurs 242 times against οὗτος 's 1,385, much the rarer of the two.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Both exact."
  },
  {
   "k": "05de8ef1a8d1",
@@ -1490,8 +1490,8 @@
   "kind": "count",
   "src": "body",
   "text": "One set of endings, two voices The primary middle and passive endings are: Primary middle/passive endings Singular Plural 1st -μαι -μεθα 2nd -σαι -σθε 3rd -ται -νται One set, and both voices use it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The primary middle/passive endings as printed. Read and left as written."
  },
  {
   "k": "07c7f89c0d0a",
@@ -1517,8 +1517,8 @@
   "kind": "count",
   "src": "body",
   "text": "The σ dropped out between two vowels, and the ε and α contracted, taking the ι underneath.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The second singular contraction, which the chapter returns to in each of the next three chapters. Read and left as written."
  },
  {
   "k": "2bd2a531a07a",
@@ -1526,8 +1526,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "So when you meet a middle, the first question is not \"what is the middle voice doing here?\" It is \"does this verb have an active at all?\" Usually it does not, and the ending is simply how the word is spelled.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's central instruction, and the one the ἔρχομαι finding in this pass reinforced. Read and left as written."
  },
  {
   "k": "3f9007808fdb",
@@ -1544,8 +1544,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It only says that it is.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About what a middle form does and does not tell you. Read and left as written."
  },
  {
   "k": "5084a65e4bb3",
@@ -1553,8 +1553,8 @@
   "kind": "count",
   "src": "body",
   "text": "The two commonest present middle indicatives in the book are ἔρχεται (89) and δύναται (71), and neither means anything reflexive.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἔρχεται 89 and δύναται 71, counted the way a frequency claim means. And the sentence's own correction stands: ἔρχομαι is not among the 443, because it has an active aorist."
  },
  {
   "k": "53d8024bb096",
@@ -1571,8 +1571,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "One set of endings serves both, in the present, imperfect, perfect and pluperfect.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Those are exactly the four tenses in which the corpus tags both voices on the same endings; the future and aorist passive have their own θη forms, which is chapter 15."
  },
  {
   "k": "b15903f5608a",
@@ -1580,8 +1580,8 @@
   "kind": "count",
   "src": "body",
   "text": "By whom, through whom, by what A passive often names the agent, and Greek has three main ways of doing it — two of them from chapter 8.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ὑπό + genitive, διά + genitive, the bare dative. Read and left as written."
  },
  {
   "k": "b89bee6ec160",
@@ -1589,8 +1589,8 @@
   "kind": "count",
   "src": "body",
   "text": "The clearest evidence that it is doing real work is a verb that means two different things in the two voices.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἄρχω/ἄρχομαι, verified: 86 occurrences, 84 of them middle."
  },
  {
   "k": "ba4fb3ff4f32",
@@ -1598,8 +1598,8 @@
   "kind": "count",
   "src": "body",
   "text": "The exception is the second singular, and it is worth a minute now because the same thing happens in each of the next three chapters.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True, and the corpus shows it: the 2sg middle/passive comes out -ῃ, -αι, -σω, -ης, -ου where every other person keeps its shape."
  },
  {
   "k": "cb02db5e8d69",
@@ -1607,8 +1607,8 @@
   "kind": "count",
   "src": "body",
   "text": "Middle and passive share endings in four tenses.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Present, imperfect, perfect and pluperfect, as the chapter's own list says."
  },
  {
   "k": "cc16b35e67f5",
@@ -1616,8 +1616,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The form cannot tell you which is meant.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's thesis, and the outside audit named it as one of the course's best instincts. Read and left as written."
  },
  {
   "k": "cd6e5c67c573",
@@ -1625,8 +1625,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only the verb and the sentence decide, which is why a parsing that says 'middle' is a judgement rather than a reading.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "cdd73b548640",
@@ -1634,8 +1634,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Every verb you have read so far has been active : the subject does the thing.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True of chapters 3 to 11. Read and left as written."
  },
  {
   "k": "d8fb76683a62",
@@ -1643,8 +1643,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "A verb whose two voices mean two things is the clearest evidence the middle is doing real work.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἄρχω again. Read and left."
  },
  {
   "k": "df0f5329065a",
@@ -1652,8 +1652,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Keeping 'I am being loosed' for the present preserves the imperfective aspect and keeps the two tenses distinct.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "A translation convention the chapter adopts and states. Read and left."
  },
  {
   "k": "e5654aefe163",
@@ -1670,8 +1670,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Three present passives with no agent.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "f18c4794d8e5",
@@ -1706,8 +1706,8 @@
   "kind": "count",
   "src": "body",
   "text": "μέν … δέ These two little words work as a pair, marking a contrast: μέν sets something up, and δέ answers it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "μέν 178. Read and left."
  },
  {
   "k": "646747daf729",
@@ -1724,8 +1724,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "When the stem ends in a consonant These endings begin with μ, σ, τ and ν , and a stem ending in a consonant has to meet them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The consonant collisions the chapter tabulates. Read and left as written."
  },
  {
   "k": "6856b3510eb7",
@@ -1733,8 +1733,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "With the plural article the pair means \"some… others\": οἱ μὲν ἦσαν σὺν τοῖς Ἰουδαίοις οἱ δὲ σὺν τοῖς ἀποστόλοις \"Some were with the Jews, and others with the apostles.\" Both words are postpositive — they never begin their clause, and stand second.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Acts 14:4. Read and left as written."
  },
  {
   "k": "72dbf69bb11c",
@@ -1760,8 +1760,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Form Marker Tense λύεται connecting vowel, nothing else present λέλυται reduplication, no connecting vowel perfect λύσεται σ before the connecting vowel future Three words, one ending, and the whole difference is in the middle of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The identification table. Read and left as written."
  },
  {
   "k": "87563cf35968",
@@ -1769,8 +1769,8 @@
   "kind": "count",
   "src": "body",
   "text": "A doubled first syllable and one of these endings means a perfect middle or passive, whatever has happened to the consonant in between.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Reduplication plus the primary middle/passive endings. Read and left."
  },
  {
   "k": "87bbfec1ac09",
@@ -1778,8 +1778,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two more sets of forms, and no new endings to learn.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left."
  },
  {
   "k": "b7275b80ffd4",
@@ -1805,8 +1805,8 @@
   "kind": "count",
   "src": "body",
   "text": "ἔσομαι αὐτῷ θεὸς καὶ αὐτὸς ἔσται μοι υἱός \"I will be God to him, and he will be a son to me.\" Telling them apart You now have three sets of forms ending in -μαι and -ται , and they are told apart by what sits in front of the ending.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Hebrews 1:5, and all six forms of ἔσομαι are attested. Read and left."
  },
  {
   "k": "f660c982bb54",
@@ -1814,8 +1814,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "ἔσομαι: the future of εἰμί ἔσομαι — I will be Singular Plural 1st ἔσομαι ἐσόμεθα 2nd ἔσῃ ἔσεσθε 3rd ἔσται ἔσονται Built on the stem ἐσ- with the same endings, and with this the paradigm of εἰμί is complete in every tense you need.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "All six forms attested: ἔσομαι 13, ἔσῃ 8, ἔσται 118, ἐσόμεθα 4, ἔσεσθε 12, ἔσονται 31."
  },
  {
   "k": "02ec16855c24",
@@ -1832,8 +1832,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The secondary middle and passive endings Secondary middle/passive endings Singular Plural 1st -μην -μεθα 2nd -σο -σθε 3rd -το -ντο Compare them with the primary set from chapter 12 and the family resemblance is obvious: the plurals -μεθα and -σθε are identical, and the singulars differ only in their final vowel.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "As printed. Read and left."
  },
  {
   "k": "093ae9919487",
@@ -1841,8 +1841,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "In the imperfect and the pluperfect, middle and passive are spelled the same, and only the sentence separates them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True, and the reason those two tenses need the sentence rather than the form. Read and left as written."
  },
  {
   "k": "14c83398504e",
@@ -1850,8 +1850,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Where only one voice is available the voice is not a choice the writer made — which is what chapter 12 told you to ask first.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The ἐκλέγομαι point: 22 occurrences, no active anywhere."
  },
  {
   "k": "210d7597807e",
@@ -1868,8 +1868,8 @@
   "kind": "count",
   "src": "body",
   "text": "How much of this you actually meet Four chapters of middle and passive forms invite the question of where a week is best spent.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The frequency table that follows it is the chapter's best feature. Read and left as written."
  },
  {
   "k": "3ec541d6e562",
@@ -1886,8 +1886,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Which is why ἐγίνετο and ἐγένετο are told apart by one vowel in the stem and by nothing else at all.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Both attested and differing only in that stem vowel."
  },
  {
   "k": "58edc80d45fe",
@@ -1895,8 +1895,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "καὶ ἐβαπτίζοντο ἐν τῷ Ἰορδάνῃ ποταμῷ ὑπ’ αὐτοῦ \"And they were being baptised in the river Jordan by him.\" An imperfect passive with its agent named, and the imperfective aspect is the point — a queue of people, not a single event.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Mark 1:5, an imperfect passive with ὑπ’ αὐτοῦ naming the agent. Read and left as written."
  },
  {
   "k": "5c4011522973",
@@ -1904,8 +1904,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The stem is the only difference — which means the two are told apart by the stem and nothing else.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἐγίνετο against ἐγένετο. Read and left as written."
  },
  {
   "k": "61db85b804f0",
@@ -1913,8 +1913,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Set it beside the imperfect above and the only difference is that σα .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "6ef2970a8ef6",
@@ -1922,8 +1922,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "τεθεμελίωτο in Matthew 7:25 — the house founded on the rock — is one of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "One of the seven pluperfect middle/passive indicatives, and the verse is as described."
  },
  {
   "k": "77521eb570de",
@@ -1931,8 +1931,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Twenty-one middles and one passive, and no active anywhere in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐκλέγομαι: 22 occurrences, 21 middle, 1 passive, no active. Exact."
  },
  {
   "k": "9ff68b947489",
@@ -1940,8 +1940,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Seven, spread across seven different verbs, one each.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Seven pluperfect middle/passive indicatives across seven lemmas — θεμελιόω, οἰκοδομέω, βάλλω, συντίθεμαι, περιδέω, ἐπιγράφω, ἐπικαλέω."
  },
  {
   "k": "a49c91ff5f52",
@@ -1949,8 +1949,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Third time in three chapters.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The second-singular contraction. Read and left."
  },
  {
   "k": "af107b3b9db0",
@@ -1967,8 +1967,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "One sound change explains every odd-looking second person singular in the middle.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "σ dropping between vowels. Read and left as written."
  },
  {
   "k": "4f437041c3d5",
@@ -1976,8 +1976,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Christ is the subject of every line and the actor in none — a choice an English translation with active verbs cannot show.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "5961a44b355e",
@@ -1985,8 +1985,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Christ is the subject of every line and the actor in none of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "1 Timothy 3:16, six aorist passives in a row. Read and left as written."
  },
  {
   "k": "6d58213af9a4",
@@ -2003,17 +2003,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "θη marks the voice; the endings mark only the person.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "8389c878ac3c",
-  "ch": 15,
-  "kind": "count",
-  "src": "body",
-  "text": "It is one sound rule you have now met three times, and the useful residue is simply this: a θ preceded by χ, φ or σ is very often an aorist passive.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left."
  },
  {
   "k": "83b07bfe48ec",
@@ -2021,8 +2012,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Six forms, and from them every form of the verb can be built.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Twenty-one verbs in the corpus have all six principal parts attested."
  },
  {
   "k": "992301a646f8",
@@ -2034,13 +2025,31 @@
   "finding": "Exact."
  },
  {
+  "k": "9a849c3e846a",
+  "ch": 15,
+  "kind": "count",
+  "src": "body",
+  "text": "It is one sound rule you have now met three times, and the useful residue is this: a θ preceded by χ or φ is very often an aorist passive — χθ more than half the time.",
+  "status": "verified",
+  "finding": "Was 'a θ preceded by χ, φ or σ is very often an aorist passive'. Measured: of words containing χθ, 54% are aorist passives; φθ 23%; σθ only 22%. Overall 25%, which is not 'very often'. The reason is that 802 of the 1,877 tokens are the middle/passive endings -σθε and -σθαι, which chapter 12 teaches separately — discount those and the rule is right 44% of the time. The sentence now says which of the three is strong and why the third is not, which makes it a usable heuristic instead of a hopeful one."
+ },
+ {
   "k": "a1a058595ef0",
   "ch": 15,
   "kind": "absolute",
   "src": "body",
   "text": "The passive at work ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ \"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory.\" Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, θη or its consonant variant, ending.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "1 Timothy 3:16, now carrying the textual note this pass added."
+ },
+ {
+  "k": "b2e1925c1be5",
+  "ch": 15,
+  "kind": "count",
+  "src": "body",
+  "text": "Discount those and the rule is right about two times in five.",
+  "status": "verified",
+  "finding": "Measured in this pass: 44% once the middle/passive endings -σθε and -σθαι are set aside, against 25% with them."
  },
  {
   "k": "be64976feca5",
@@ -2048,8 +2057,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "When the stem ends in a consonant A stem ending in a consonant collides with the θ, and the two combine.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The χθ/φθ/σθ combinations, whose usefulness as a recognition rule this pass measured."
  },
  {
   "k": "c44b2a164135",
@@ -2057,8 +2066,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "As with second aorists and second perfects, the difference is form only.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Second aorist passives. Read and left as written."
  },
  {
   "k": "cde8ca4057bd",
@@ -2066,8 +2075,8 @@
   "kind": "count",
   "src": "body",
   "text": "μακάριοι οἱ πενθοῦντες, ὅτι αὐτοὶ παρακληθήσονται \"Blessed are those who mourn, for they shall be comforted.\" A future passive with no agent named — the divine passive of chapter 12, and one of the places where leaving God unnamed is the whole force of the line.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Matthew 5:4, a future passive with no agent. Read and left as written."
  },
  {
   "k": "df813f13260e",
@@ -2075,8 +2084,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Every form of the verb is built from one of those six.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Same."
  },
  {
   "k": "012f52dcd03e",
@@ -2093,8 +2102,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Second singular active, and perfect in form only: it means \"you know\", not \"you have known\" (chapter 10).",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "οἶδας: 17 occurrences, perfect in form, present in meaning — the chapter 10 trap arriving in a worked parsing."
  },
  {
   "k": "0921284f181c",
@@ -2102,8 +2111,8 @@
   "kind": "count",
   "src": "body",
   "text": "Fifteen chapters have added one piece at a time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True of the course as built: chapters 3 to 15 cover the indicative, and 16 is the review."
  },
  {
   "k": "378968b71c1c",
@@ -2111,8 +2120,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "One of the traps chapter 10 exists for: 210 of the 602 perfect active indicatives in the New Testament are οἶδα, and none of them means 'I have known'.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "602 perfect active indicatives, 210 of them οἶδα: 34.9%."
  },
  {
   "k": "492b3d041fb0",
@@ -2120,8 +2129,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "What identifies each tense Tense Marker Active Middle / passive Present nothing at either end λύω λύομαι Imperfect augment, no aspect marker ἔλυον ἐλυόμην Future σ λύσω λύσομαι Aorist augment + σα ἔλυσα ἐλυσάμην Aorist passive augment + θη — ἐλύθην Perfect reduplication (+ κα active) λέλυκα λέλυμαι Pluperfect augment + reduplication ἐλελύκειν ἐλελύμην That is the entire indicative system, and you have met every row of it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The one-page table, whose 'past time, or perfective' row was corrected in this pass."
  },
  {
   "k": "4d4abf5c01f7",
@@ -2129,8 +2138,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "And only the stem separates them — ἔβαλον against ἔβαλλον.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Both attested, one lambda apart, aorist against imperfect."
  },
  {
   "k": "7bd99a491dfd",
@@ -2138,8 +2147,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Ask 'how is this being viewed?' rather than 'when did it happen?' — which is the question every chapter after this one turns on.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "8717b0f7cb52",
@@ -2147,8 +2156,8 @@
   "kind": "count",
   "src": "body",
   "text": "The whole indicative on one page Six tenses and three voices, and the marker that identifies each.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "985dd2f5745f",
@@ -2156,8 +2165,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The present is what is left when nothing else is there — which is why the algorithm asks about the others first.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The identification algorithm, which works because the present has no marker."
  },
  {
   "k": "9b6bf4fdb2fd",
@@ -2165,8 +2174,8 @@
   "kind": "count",
   "src": "body",
   "text": "Five finite verbs in one sentence and five different answers.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "John 13:7 with its surrounding clause. Read and left as written."
  },
  {
   "k": "a5f096471502",
@@ -2192,8 +2201,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "If an augment and nothing in the middle, it is an imperfect or a second aorist, and only the stem will tell you which.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True, and the ἔβαλον/ἔβαλλον pair is the example. Read and left."
  },
  {
   "k": "e529bf30a80e",
@@ -2201,8 +2210,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "In the chapters ahead the question is never \"when?\" but \"how is the writer viewing the action?\" — as a whole, as going on, or as a standing result.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The course's turn towards aspect, which Huffman Part 2 supports: tense-form selection is about how the author wishes to think about the action."
  },
  {
   "k": "f107c2b62a0a",
@@ -2210,8 +2219,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Working one out Ὃ ἐγὼ ποιῶ σὺ οὐκ οἶδας ἄρτι, γνώσῃ δὲ μετὰ ταῦτα \"What I am doing you do not know now, but you will understand afterwards.\" Three verbs, three different answers, and every one of them a thing this course has warned you about.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "John 13:7, worked through form by form. Read and left as written."
  },
  {
   "k": "fbde7983dc91",
@@ -2219,8 +2228,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Only the indicative marks time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Sourced to Robertson ch.XVIII, and the sentence after it was corrected in this pass from 'aspect and nothing more' to allow relative time."
  },
  {
   "k": "ff3c43b2b441",
@@ -2228,8 +2237,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Missing this is the commonest reason a reader cannot find a verb in the lexicon.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The compound augment. Read and left as written."
  },
  {
   "k": "0b72c7a18532",
@@ -2246,8 +2255,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two declensions have carried you this far.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True of chapters 4 and 5. Read and left as written."
  },
  {
   "k": "19a404d6250d",
@@ -2264,8 +2273,8 @@
   "kind": "count",
   "src": "body",
   "text": "The family words Three of the commonest nouns in the New Testament are third declension, and all three change their stem between one case and the next.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "πατήρ 413, ἀνήρ 216, γυνή 212 — all third declension, all stem-changing, and all in the corpus's top twenty-five nouns."
  },
  {
   "k": "2b2a73cdaa7c",
@@ -2273,8 +2282,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Read the article, learn the genitive with every new noun, and let the rest come from meeting the words.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's whole method in one line. Read and left as written."
  },
  {
   "k": "3a1611dd98f0",
@@ -2300,8 +2309,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The endings that are always there The stems vary enormously.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "6f0d1c33018d",
@@ -2318,8 +2327,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Those three are nearly invariable, and none of them belongs to the first or second declension.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Genitive singular -ος, dative singular -ι, dative plural -σι(ν) — and the chapter itself gives the -εως exception two sections later."
  },
  {
   "k": "9ec260249b61",
@@ -2327,8 +2336,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "You almost never have to work a third declension form out cold, because Greek nouns usually come with the article — and the article you learned in chapter 4 has not changed.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True, and the article's seventeen forms are why. Read and left as written."
  },
  {
   "k": "abe3598b890e",
@@ -2345,8 +2354,8 @@
   "kind": "count",
   "src": "body",
   "text": "The endings barely vary at all, and three of them will carry you.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "bfcc87697af8",
@@ -2372,8 +2381,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "The stem ends in a consonant, and the nominative is where it gets damaged.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "σάρξ from σαρκ-, σῶμα from σωματ-. Read and left as written."
  },
  {
   "k": "facdbf1a93d2",
@@ -2381,8 +2390,8 @@
   "kind": "count",
   "src": "body",
   "text": "The second declension is the opposite: 558 words carrying 41% of it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "From the Abbott-Smith classification that settled this chapter: second declension 558 lemmas and 9,646 tokens, 41% of the common-noun text, against the third declension's 587 lemmas and 29%."
  },
  {
   "k": "0d55e5b4f24e",
@@ -2390,8 +2399,8 @@
   "kind": "count",
   "src": "body",
   "text": "So each has two forms that look odd and a full set that does not.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "πολύς and μέγας. Read and left as written."
  },
  {
   "k": "1bbb68a86788",
@@ -2417,8 +2426,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The New Testament has 264 comparative adjectives and only 42 superlatives , and the gap is made up by comparatives doing the work.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "264 comparatives and 42 superlatives, both exact from the corpus's degree tagging. And the chapter's inference is what Darby's 'the greater of these' shows in practice."
  },
  {
   "k": "53066334c999",
@@ -2435,8 +2444,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "From πέντε to a hundred they are fixed forms.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The quiz form of the same, corrected in the same pass as the body."
  },
  {
   "k": "6545b302251b",
@@ -2444,8 +2453,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "πᾶσα γραφὴ θεόπνευστος \"Every scripture is God-breathed.\" No article, singular — so \"every\", and the argument of the verse depends on it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "2 Timothy 3:16, and the anarthrous singular πᾶσα. The reading is the standard one and the chapter states the grammar rather than the theology."
  },
  {
   "k": "6fecff483483",
@@ -2453,8 +2462,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Note δυσί : the dative of δύο , and one of only a handful of forms that word has.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "δύο has exactly two shapes in the corpus, δύο and δυσί(ν) — 'a handful of forms' is if anything generous."
  },
  {
   "k": "776d369c3a9a",
@@ -2462,8 +2471,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Without the article and singular, πᾶς is 'every'; plural, 'all'.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "7d723e7ec568",
@@ -2471,8 +2480,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Learn the four odd forms — πολύς, πολύ, μέγας, μέγα — and read the rest as ordinary adjectives.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "81bfa3965af6",
@@ -2480,8 +2489,8 @@
   "kind": "count",
   "src": "body",
   "text": "From five to a hundred they are fixed forms, which makes them among the easiest words in the language.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True as bounded in this pass: πέντε through ἑκατόν are indeclinable, and the hundreds and thousands decline like ordinary adjectives."
  },
  {
   "k": "822fc166f5f5",
@@ -2489,8 +2498,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "καὶ ἰδοὺ πᾶσα ἡ πόλις ἐξῆλθεν εἰς ὑπάντησιν τῷ Ἰησοῦ \"And behold, the whole city went out to meet Jesus.\" Article present, πᾶσα outside it — so \"the whole\", not \"every\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Matthew 8:34, with the article present and πᾶσα outside it. Read and left."
  },
  {
   "k": "8706fb788818",
@@ -2498,8 +2507,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "With no article , singular: \"every\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The πᾶς rule as the chapter states it. Read and left as written."
  },
  {
   "k": "a43b5f94ddd3",
@@ -2507,8 +2516,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "πᾶς: the forms πᾶς, πᾶσα, πᾶν — \"all\", \"every\" — occurs 1,244 times , which makes it one of the commonest words in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "πᾶς 1,244, exact."
  },
  {
   "k": "adce83ecbff6",
@@ -2516,8 +2525,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two words are built straight onto it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "οὐδείς and μηδείς. Read and left."
  },
  {
   "k": "c4f7e38ef004",
@@ -2525,8 +2534,8 @@
   "kind": "count",
   "src": "body",
   "text": "πολύς and μέγας Two adjectives that look irregular and are not, quite.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "dd3e78987576",
@@ -2534,8 +2543,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "'No one can serve two masters.' δύο has only a handful of forms, and this is one of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Matthew 6:24, with δυσί. Read and left as written."
  },
  {
   "k": "ec4fee1eff29",
@@ -2561,8 +2570,8 @@
   "kind": "count",
   "src": "body",
   "text": "οὐ τὸ εἰσερχόμενον εἰς τὸ στόμα κοινοῖ τὸν ἄνθρωπον \"It is not what goes into the mouth that defiles a person.\" κοινοῖ , six occurrences, is the commonest of the thirty.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "κοινοῖ six occurrences, and it really is the commonest of the thirty ο-contract present active indicatives."
  },
  {
   "k": "4968358a02b4",
@@ -2570,8 +2579,8 @@
   "kind": "count",
   "src": "body",
   "text": "μένω gives ἔμεινεν · ἀποστέλλω gives ἀπέστειλεν (38 occurrences) · ἐγείρω gives ἤγειρεν (21) · αἴρω gives ἦρεν · κρίνω gives ἔκρινεν .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The liquid aorists named: ἔμεινεν 10, ἀπέστειλεν 38, ἤγειρεν 21, ἦρεν 5, ἔκρινεν 2. The two figures the chapter gives, 38 and 21, are exact."
  },
  {
   "k": "52c0d60c10a7",
@@ -2579,8 +2588,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "The citation form shows you the stem vowel, which is the one thing the contracted forms hide.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "And the citation form is one the reader never meets on a page — ἀγαπάω, ποιέω and πληρόω occur zero times as surface forms."
  },
  {
   "k": "5d02ecaa4537",
@@ -2588,8 +2597,8 @@
   "kind": "count",
   "src": "body",
   "text": "Which means the whole of the difficulty is confined to two tenses.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Present and imperfect, because everywhere else the ending opens with a consonant. Read and left as written."
  },
  {
   "k": "77378119f566",
@@ -2597,8 +2606,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Contraction only happens where a vowel meets a vowel.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "84c43d5d9905",
@@ -2606,8 +2615,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "In every tense outside the present and imperfect, the ending begins with a consonant — σ , κ , θ — so nothing contracts.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "σ for the future, σα for the aorist, κα for the perfect, θη for the aorist passive — which is why contraction is confined to two tenses."
  },
  {
   "k": "88073af3af84",
@@ -2615,8 +2624,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The augment is still there, the endings are the ordinary first aorist ones, and only the σ is missing — so if a form looks like a first aorist with a piece knocked out, this is why.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The liquid aorist. Read and left as written."
  },
  {
   "k": "8bde8bb03cd8",
@@ -2624,8 +2633,8 @@
   "kind": "count",
   "src": "body",
   "text": "So ποιέω gives ἐποίησεν (75 occurrences) and ποιήσει ; ἀγαπάω gives ἠγάπησεν and ἀγαπήσει ; πληρόω gives ἐπλήρωσεν .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐποίησεν 75 exact, and the other two named forms are attested: ἠγάπησεν 12, ἐπλήρωσεν 4."
  },
  {
   "k": "96f3848eae8e",
@@ -2651,8 +2660,8 @@
   "kind": "count",
   "src": "body",
   "text": "When the connecting vowel of the present or imperfect is added to it, the two vowels run together into a long vowel or a diphthong.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "a1b9cc6db9bf",
@@ -2678,8 +2687,8 @@
   "kind": "count",
   "src": "body",
   "text": "What happens instead is that an ε slips in, the σ drops out between the two vowels, and the ε contracts with the ending.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The liquid future, now labelled in this pass as a schematic reconstruction rather than an attested sequence."
  },
  {
   "k": "b7998118b865",
@@ -2696,8 +2705,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The useful half: Stem vowel Meets Gives ε ε ει ε ο ου α an e-sound α α an o-sound ω ο a long vowel ω ο a short vowel or ου ου What every one of them has in common is that a long vowel or a diphthong appears where you expected the ordinary ending .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The contraction table. Read and left as written."
  },
  {
   "k": "bfd9de1ec911",
@@ -2705,8 +2714,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Augment and first aorist endings are both present; only the σ is missing.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "db50ba144ea7",
@@ -2723,8 +2732,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "Verbs whose stem ends in λ, μ, ν or ρ — the \"liquid\" consonants — will not take a σ cleanly in the future.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The liquid consonants, and the four verbs the chapter names all behave as described. Read and left as written."
  },
  {
   "k": "f45071deedab",
@@ -2732,8 +2741,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Which is most of why contract verbs are far less trouble than they first look — the difficulty lives in two tenses and nowhere else.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "1e21cbcf81d5",
@@ -2768,8 +2777,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Worth naming on its own because it turns up everywhere and looks like nothing else.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ὤν, οὖσα, ὄν. Read and left as written."
  },
  {
   "k": "8ffe0f3807e6",
@@ -2777,8 +2786,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "So a participle's tense gives you aspect — how the writer is viewing the action — and time only in relation to the main verb.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Sourced in this pass: Robertson ch.XVIII on relative time outside the indicative, and chapter 16 corrected to agree with this sentence rather than the other way round."
  },
  {
   "k": "a57483a99473",
@@ -2795,8 +2804,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "-οντ- , -σαντ- and -θεντ- are strong hints and not guarantees — -οντ- is also in ἄρχοντος , ὀδόντος and every numeral from τριάκοντα up.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exactly right, and the examples are well chosen: ἄρχοντος and ὀδόντος both occur, and nine numerals carry -κοντα — τριάκοντα, τεσσεράκοντα, πεντήκοντα, ἑξήκοντα, ἑβδομήκοντα, ὀγδοήκοντα, ἐνενήκοντα and two more."
  },
  {
   "k": "d3a93913dd0f",
@@ -2813,8 +2822,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "So the tense gives aspect, and time only relative to the main verb.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form of the same. Read and left as written."
  },
  {
   "k": "e7eeffe95cf2",
@@ -2831,8 +2840,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "English has participles too, but only two, and fills the gaps with helping verbs: loving , being loved , having loved .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True of English morphology — the -ing and -ed forms. Read and left."
  },
  {
   "k": "fdcc2ebb672c",
@@ -2840,8 +2849,8 @@
   "kind": "count",
   "src": "body",
   "text": "So they get two chapters.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About the app's own shape, and true: 20 and 21."
  },
  {
   "k": "06aadc04838b",
@@ -2849,8 +2858,8 @@
   "kind": "count",
   "src": "body",
   "text": "ὁ πιστεύων εἰς τὸν υἱὸν ἔχει ζωὴν αἰώνιον· ὁ δὲ ἀπειθῶν τῷ υἱῷ οὐκ ὄψεται ζωήν \"The one who believes in the Son has eternal life; the one who disobeys the Son will not see life.\" Two of them set against each other, with no noun anywhere in either half — the whole verse is carried on them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "John 3:36, two substantival participles carrying the verse. Read and left."
  },
  {
   "k": "0f1df2f268e8",
@@ -2858,8 +2867,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "The same construction chapter 6 gave you for adjectives — ὁ ποιμὴν ὁ καλός — and it means the participle is modifying the noun.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ὁ ποιμὴν ὁ καλός, and chapter 6's own statement of the rule was corrected in this pass to match."
  },
  {
   "k": "10c7ad2863d1",
@@ -2867,8 +2876,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Not \"the leading road\" but \"the road that leads\": English participles will not carry the weight and a relative clause always will.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The translation advice for attributive participles. Read and left."
  },
  {
   "k": "10c9403bc8e7",
@@ -2885,8 +2894,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Participles are the last genuinely hard thing in the morphology, and the only way through is meeting a great many — which, at one verb form in four, you will.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "'One verb form in four' is exact: 6,640 participles of 28,056 verb forms, 23.7%."
  },
  {
   "k": "30a5e636689c",
@@ -2921,8 +2930,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "English participles will not carry the weight; a relative clause always will.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "604c1b53a4b6",
@@ -2930,8 +2939,8 @@
   "kind": "count",
   "src": "body",
   "text": "That repeated article is how Greek usually marks an attributive participle, and it is the construction chapter 6 gave you for adjectives.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The second attributive position, and the chapter 6 link this pass corrected at both ends."
  },
  {
   "k": "85969b45b818",
@@ -2939,8 +2948,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "John 3:36 sets two of them against each other — ὁ πιστεύων and ὁ ἀπειθῶν — and the whole verse rests on them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "950b7ece1c25",
@@ -2957,8 +2966,8 @@
   "kind": "count",
   "src": "body",
   "text": "There are 735 genitive participles in the New Testament, and this is the main reason one turns up in that case without an article.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "735, exact."
  },
  {
   "k": "cc46227a372f",
@@ -2966,8 +2975,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Ask it every time, before anything else about the form: Is there an article?",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Corrected in this pass: the article question comes first and a second question splits the two articular uses."
  },
  {
   "k": "f2dbeb535c53",
@@ -2975,8 +2984,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It is often the only thing telling you which noun a participle goes with, especially in a long sentence where the two are far apart.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Agreement in gender, number and case. Read and left as written."
  },
  {
   "k": "1cc879145066",
@@ -2984,8 +2993,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The augment marks past time and appears only in the indicative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Sourced to Robertson ch.XVIII in this pass."
  },
  {
   "k": "24a192c6ee7b",
@@ -2993,8 +3002,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The only things that have changed are the preposition and the case of the article.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Matthew 13:3-4. Read and left as written."
  },
  {
   "k": "31171c617587",
@@ -3002,8 +3011,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Greek does not always keep purpose and result apart, and neither does English — \"he came to save\" can be read either way.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The chapter's own caution, and the right one — Huffman Part 2 treats purpose and result infinitives as separate categories while noting the overlap."
  },
  {
   "k": "4da1ddb5d1b9",
@@ -3011,8 +3020,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Infinitives never do.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The augment belongs to the indicative, which Robertson ch.XVIII states directly: 'It is only by the augment that past time is clearly expressed.'"
  },
  {
   "k": "55cce209d0eb",
@@ -3020,8 +3029,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "An accusative beside an infinitive can be either subject or object, and only the sense decides.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True and a real reading difficulty. Read and left as written."
  },
  {
   "k": "60cc01af1789",
@@ -3038,8 +3047,8 @@
   "kind": "count",
   "src": "body",
   "text": "The parable of the sower puts two uses of one verb in consecutive verses, which is about as clear a demonstration as the New Testament offers.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Matthew 13:3-4: τοῦ σπείρειν, then ἐν τῷ σπείρειν αὐτόν. Same verb, same form, consecutive verses, and only the preposition and the article's case differ — exactly as claimed."
  },
  {
   "k": "e2a77d45791d",
@@ -3047,8 +3056,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It does not always settle them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About purpose against result. Read and left as written."
  },
  {
   "k": "1c2faa497257",
@@ -3056,8 +3065,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Both have a rough breathing; only the relative is accented.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "All 1,408 relative-pronoun tokens carry both a rough breathing and an accent. τις is unaccented 462 times and accented 68 — those 68 being the clause-opening ones this pass put on the page."
  },
  {
   "k": "3ab6e1bd9252",
@@ -3065,8 +3074,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "The indefinite is enclitic and usually stands second in its clause, so position helps as much as the accent — though τινές does open one seventeen times, and takes an accent when it does.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Corrected in this pass, with the seventeen clause-opening τινές."
  },
  {
   "k": "464754109dc9",
@@ -3110,8 +3119,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Two facts from two places, in one word — so ask a relative two questions, not one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "8c5b02b80747",
@@ -3119,8 +3128,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two facts from two different places, in one word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The relative pronoun's gender from its antecedent and case from its own clause. Read and left as written."
  },
  {
   "k": "926b39f05719",
@@ -3128,8 +3137,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "This chapter finishes the set: five more kinds, all of them common, and none of them with endings you have not already met.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About the course's shape. Read and left as written."
  },
  {
   "k": "9a565cabf086",
@@ -3146,8 +3155,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "It occurs 100 times and only ever in three plural forms — ἀλλήλων , ἀλλήλοις , ἀλλήλους — which makes it the smallest paradigm in the language.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact, and pleasingly so: ἀλλήλων occurs 100 times in exactly three spellings — ἀλλήλους 67, ἀλλήλων 20, ἀλλήλοις 13. 'The smallest paradigm in the language' is well earned."
  },
  {
   "k": "9f34f6db8bac",
@@ -3155,8 +3164,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "A 'one another' command is always about the plural acting on its members, never each person acting on himself.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "a88822b382ee",
@@ -3164,8 +3173,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "τίς and τις: one accent apart Two words, identical in every letter, distinguished only by their accent — and they are almost equally common.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "554 against 530 — almost equally common, as claimed."
  },
  {
   "k": "ac72e8fa0a0e",
@@ -3173,8 +3182,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "English blurs them and Greek does not, so a \"one another\" command in the New Testament is always about the plural acting on its members, never about each person acting on himself.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "ἀλλήλων is plural-only in all 100 occurrences, which is exactly what makes the claim about reflexives hold."
  },
  {
   "k": "be84a2bea6e1",
@@ -3209,8 +3218,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "And a relative pronoun needs both its questions asked, not one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "f8524dd57c78",
@@ -3227,8 +3236,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Only the construction around them decides.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "About ἵνα and ἐάν. Read and left as written."
  },
  {
   "k": "16babd40d8d5",
@@ -3236,8 +3245,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "So ἵνα is not always purpose, and reading purpose into every one of the 662 will produce sermons the text does not support.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Right, and measured: 625 of the 662 take a subjunctive, and the chapter's point is that not every one of those is final."
  },
  {
   "k": "18c9a834bc12",
@@ -3254,8 +3263,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "And ἵνα is not always purpose.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "2307196871b5",
@@ -3263,8 +3272,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Only the construction around them decides, which is why ἵνα and ἐάν are worth watching for.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "27f40e206638",
@@ -3272,8 +3281,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The forms are the easy part Genuinely easy, and there are only two tenses to learn.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Two tenses, present and aorist, as the corpus bears out — plus the ten perfect subjunctives."
  },
  {
   "k": "2dcf86b89315",
@@ -3281,8 +3290,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "One of the few places where the grammar itself is doing the emphasising rather than the context.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "3f70cfa4318f",
@@ -3290,8 +3299,8 @@
   "kind": "count",
   "src": "body",
   "text": "It is worth spotting because it is emphatic by construction rather than by context — one of the few places in Greek where the grammar itself, and not the sentence around it, is doing the emphasising.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "οὐ μή. Read and left as written."
  },
  {
   "k": "44fcb3d5bdf6",
@@ -3308,8 +3317,8 @@
   "kind": "count",
   "src": "body",
   "text": "οὗτος ἦλθεν εἰς μαρτυρίαν, ἵνα μαρτυρήσῃ περὶ τοῦ φωτός \"He came for a witness, in order that he might testify about the light.\" ὅπως does the same work 53 times, and ἵνα μή gives \"lest\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "John 1:7. ἵνα 662 against ὅπως 53, so 'ὅπως does the same work far less often' is right by better than twelve to one."
  },
  {
   "k": "655bf0964dcc",
@@ -3326,8 +3335,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Render it 'never'; a plain 'not' loses the construction.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "6ff5e49f6586",
@@ -3380,8 +3389,8 @@
   "kind": "spelling",
   "src": "quiz",
   "text": "And the present subjunctive λύω is spelled exactly like the indicative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation echoing a body claim settled in this chapter, and restating it faithfully: \"The present active subjunctive first singular λύω is spelled exactly like the indicative, and the aorist subjunctive λύσω exactly like the future indi\". check_quiz separately fails on a quiz number that disagrees with the body's."
  },
  {
   "k": "cb38be7af8fc",
@@ -3398,8 +3407,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "οὐ μὴ εἰσέλθητε εἰς τὴν βασιλείαν τῶν οὐρανῶν \"You will certainly not enter the kingdom of heaven.\" Render it \"never\" or \"certainly not\"; a plain \"not\" loses what the construction is for.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Matthew 5:20. οὐ μή occurs 95 times as a pair, so the construction is common enough to be worth the chapter's warning about flattening it to 'not'."
  },
  {
   "k": "d40b0890a5a1",
@@ -3407,8 +3416,8 @@
   "kind": "count",
   "src": "body",
   "text": "Ten perfect subjunctives exist in the whole New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Ten, exact."
  },
  {
   "k": "e0c815c217ed",
@@ -3425,8 +3434,8 @@
   "kind": "count",
   "src": "body",
   "text": "Greek uses it 1,856 times, so there is no reading around it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "1,856 subjunctives, exact, splitting 1,387 aorist + 459 present + 10 perfect."
  },
  {
   "k": "0819ef15a7df",
@@ -3470,8 +3479,8 @@
   "kind": "count",
   "src": "body",
   "text": "And two aorist imperatives of ὁράω , ἴδε and ἰδού , have hardened into interjections meaning \"look!\" or \"behold!\", which is why ἰδού occurs 200 times without commanding anybody to see anything.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἰδού 200, exact, and all 200 are tagged as a particle. ἴδε is 34, of which four are parsed as real imperatives of ὁράω — the correction this pass made."
  },
  {
   "k": "480180429d51",
@@ -3479,8 +3488,8 @@
   "kind": "count",
   "src": "body",
   "text": "Two warnings about the forms.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "4f4e35aca7a6",
@@ -3497,8 +3506,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Present and aorist only, usually recognisable by an οι, αι or ει after the stem.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "68 optatives: 45 aorist and 23 present, and nothing in any other tense."
  },
  {
   "k": "64cd2d6aff99",
@@ -3506,8 +3515,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "ἴδε is mostly the same, but four times in John it is a real imperative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "John 1:46, 7:52, 11:34 and 20:27, each coordinated with another imperative, and at 20:27 taking an accusative object."
  },
  {
   "k": "6c64b49ac3a1",
@@ -3515,8 +3524,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Neither is more urgent or more spiritual; they are two views of the same asking, visible only in Greek.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The Lord's Prayer pair, and Huffman Part 2 backs the caution: such kind-of-action concerns come from context, not from the tense-form."
  },
  {
   "k": "745574d62959",
@@ -3542,8 +3551,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Present active imperative of λύω Singular Plural 2nd λῦε λύετε 3rd λυέτω λυέτωσαν The third person is the one English cannot do.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The third-person imperative really is a thing English cannot do without a paraphrase. Read and left as written."
  },
  {
   "k": "917b0f7ae7e2",
@@ -3587,8 +3596,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "λύετε is imperative or indicative , and only the sentence decides.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Verified with real verbs: 39 of them have a present indicative 2pl identical to their present imperative 2pl."
  },
  {
   "k": "fab17926d67a",
@@ -3596,8 +3605,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "πάντοτε χαίρετε, ἀδιαλείπτως προσεύχεσθε, ἐν παντὶ εὐχαριστεῖτε \"Rejoice always, pray without ceasing, give thanks in everything.\" Three present imperatives in a row — habitual, and the aspect is the argument.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "1 Thessalonians 5:16-18. Read and left as written."
  },
  {
   "k": "0bbc0575a11d",
@@ -3605,8 +3614,8 @@
   "kind": "count",
   "src": "body",
   "text": "If a verb looks a syllable too short, it is probably one of these.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The recognition rule for -μι verbs. Read and left as written."
  },
  {
   "k": "0ea26b876201",
@@ -3614,8 +3623,8 @@
   "kind": "count",
   "src": "body",
   "text": "So the whole irregularity is confined to three tenses of about ninety verbs, and the rest of the New Testament's -μι forms will look familiar.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "90 -μι lemmas outside εἰμί, worth 1,743 occurrences."
  },
  {
   "k": "153cac596a41",
@@ -3623,8 +3632,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The lexical form ends in -μι , so you cannot look it up under -ω .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "2f22e854f7d2",
@@ -3632,8 +3641,8 @@
   "kind": "count",
   "src": "body",
   "text": "Four of those carry most of the weight.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The four families and their compounds are 1,117 of the 1,743 = 64%."
  },
  {
   "k": "362f28824374",
@@ -3650,8 +3659,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "Everything so far has been the -ω conjugation; this chapter is the other one, named for the fact that its lexical form ends in -μι .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "True of chapters 3 to 25. Read and left as written."
  },
  {
   "k": "48d0cff85809",
@@ -3668,8 +3677,8 @@
   "kind": "count",
   "src": "body",
   "text": "Verb Verb stem Present stem δίδωμι δο- διδο- τίθημι θε- τιθε- ἵστημι στα- ἱστα- Two of those need a word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The stems, and the ι-reduplication that builds the present. Verified when the ἀφίημι objection was rejected: the same short/long alternation runs through all four families."
  },
  {
   "k": "4f7e51368260",
@@ -3677,8 +3686,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "A short stem with no reduplication and no σα is one of these verbs in the aorist.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "619a6ce21fb0",
@@ -3686,8 +3695,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "The oddities have reasons, even if you only need to recognise the results.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "6e7a366c58de",
@@ -3713,8 +3722,8 @@
   "kind": "count",
   "src": "body",
   "text": "Greek has two conjugations.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "9fb0832b651f",
@@ -3722,8 +3731,8 @@
   "kind": "count",
   "src": "body",
   "text": "ἐντολὴν καινὴν δίδωμι ὑμῖν ἵνα ἀγαπᾶτε ἀλλήλους \"A new commandment I give you, that you love one another.\" Three chapters in one line: a -μι verb, an ἵνα clause with the subjunctive, and the reciprocal pronoun.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "John 13:34, carrying a -μι verb, a ἵνα subjunctive and ἀλλήλους at once. Read and left as written."
  },
  {
   "k": "a75d7682101a",
@@ -3749,8 +3758,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "δίδως and δίδομεν never occur.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Neither occurs, at all."
  },
  {
   "k": "b2b3fc698b45",
@@ -3758,8 +3767,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "And before you memorise it: only four of those six spellings occur in the New Testament at all.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Corrected in this pass: δίδωσιν 11, δίδωμι 9, διδόασιν 1, and δίδοτε twice though both of those are imperatives. Four spellings, three indicative slots."
  },
  {
   "k": "d2c74ae8a48a",
@@ -3785,8 +3794,8 @@
   "kind": "count",
   "src": "body",
   "text": "A short stem with no reduplication and no σα is one of these verbs in the aorist, and that is what you will meet.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "ee66b26e3ac9",
@@ -3803,8 +3812,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Once you know the stem θε- , none of those is a surprise.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "076028e6f425",
@@ -3821,8 +3830,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Studying every occurrence of ἀγάπη tells you about the word, not about love in the New Testament, most of which is expressed without using it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The word-study caution, and the best paragraph in the chapter. Read and left as written."
  },
  {
   "k": "0e7fdda5e7fb",
@@ -3830,8 +3839,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The point was never to finish the course; it was to be able to open the New Testament in the language it was written in, and understand a little more than you did before.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The closing sentence. Read and left as written."
  },
  {
   "k": "35039938a0fd",
@@ -3848,8 +3857,8 @@
   "kind": "count",
   "src": "body",
   "text": "Parsing left to right, one word at a time, is how a reader gets stuck on a participle for ten minutes and then discovers that the article two words on had settled it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Reading advice. Read and left as written."
  },
  {
   "k": "60a0a913be1d",
@@ -3857,8 +3866,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Its presence points at particular identity; its absence throws the weight onto character or quality — though, as chapter 4 said, an absence is only evidence where the writer could have written it the other way.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Corrected in this pass so that the principle applies to a presence as well as an absence — which is what Luke 18:13 turned on."
  },
  {
   "k": "834987b9cca6",
@@ -3866,8 +3875,8 @@
   "kind": "count",
   "src": "body",
   "text": "In any given sentence it means one of those, and the sentence chooses which — not the lexicon entry, and not the meaning you would prefer.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The lexical-range caution. Read and left as written."
  },
  {
   "k": "8f2a507017ff",
@@ -3875,8 +3884,8 @@
   "kind": "count",
   "src": "body",
   "text": "Greek puts its clues everywhere, and the word that unlocks a clause is often three words later.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "9df4d285551b",
@@ -3884,8 +3893,8 @@
   "kind": "count",
   "src": "body",
   "text": "You now have the whole of the morphology: six principal parts, four moods, three voices, three declensions, and about 800 words.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "'About 800 words' is right: the deck is 818 entries with one retired. Four moods, three voices and three declensions are what the course has taught, and Abbott-Smith's genitives sort every noun into those three."
  },
  {
   "k": "acc0198ec033",
@@ -3902,8 +3911,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Read every day, in the easiest thing you can find The people who keep their Greek are, in my experience, the ones who read it most days and read something easy enough to enjoy.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Softened in this pass from 'the single largest predictor', which was a research claim with no research behind it."
  },
  {
   "k": "c00df65b87f9",
@@ -3911,8 +3920,8 @@
   "kind": "count",
   "src": "quiz",
   "text": "Greek scatters its clues, and the word that unlocks a clause is often three words later.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The quiz form. Read and left as written."
  },
  {
   "k": "e310dae05da4",
@@ -3920,8 +3929,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "An intermediate grammar, for the questions this course cannot answer.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "And the reference folder holds two: Huffman's Handy Guide and Robertson's Grammar, both of which settled claims in this pass."
  },
  {
   "k": "eace8960f68d",
@@ -3929,8 +3938,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "What the grammar cannot settle Worth saying plainly at the end of a grammar course: most interpretive disputes are not grammatical.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "The honest closing note, and the one the whole audit has been testing against. Read and left as written."
  },
  {
   "k": "eba7753b4f0d",
@@ -3938,8 +3947,8 @@
   "kind": "absolute",
   "src": "quiz",
   "text": "Loading every possible sense into one occurrence is the commonest way a little Greek goes wrong.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "read",
+  "finding": "Read and left as written."
  },
  {
   "k": "f929b4cd52b8",

@@ -183,7 +183,24 @@ if __name__ == "__main__":
             if r.get("status", "UNREGISTERED") in ("unreviewed", "UNREGISTERED"):
                 print("   ch%-2d [%s] %s" % (c["ch"], c["kind"], c["text"][:110]))
 
+    # Every claim now carries a verdict, so "unreviewed" can be a failure
+    # rather than a work list. A sentence that is edited changes its hash and
+    # comes back as UNREGISTERED; a sentence deliberately parked returns here.
+    # Either way somebody has to decide about it before the next deploy, which
+    # is the whole point of the register.
+    pending = [c for c in claims
+               if reg.get(c["k"], {}).get("status") == "unreviewed"]
+
     print()
+    if pending:
+        print("CLAIMS SITTING UNREVIEWED IN THE REGISTER: %d" % len(pending))
+        for c in pending[:12]:
+            print("   ch%-2d %s" % (c["ch"], c["text"][:104]))
+        if len(pending) > 12:
+            print("   ... and %d more" % (len(pending) - 12))
+        print("   Settle them, or say why they cannot be settled here.")
+        sys.exit(1)
+
     if unregistered:
         print("CLAIMS IN THE PROSE THAT NOBODY HAS DECIDED ABOUT: %d"
               % len(unregistered))
