@@ -57,7 +57,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <p>There are twenty-four letters and you already know several of them. Some are ours exactly, some are ours in disguise, and only a handful are genuinely new.</p>
 <div id="alphaHere"></div>
 <h3>Three rules that trip people up</h3>
-<p><b>Sigma</b> is written <span class="gk">ς</span> at the end of a word and <span class="gk">σ</span> everywhere else. Same letter, same sound: <span class="gk">λόγος</span> has both.</p>
+<p><b>Sigma</b> is written <span class="gk">ς</span> at the end of a word and <span class="gk">σ</span> everywhere else. Same letter, same sound: <span class="gk" data-has="σς">Χριστός</span> has both — <span class="gk">λόγος</span> has only the final one.</p>
 <p><b>Breathings.</b> Every word starting with a vowel carries a mark. Rough (<span class="gk">ἁ</span>) adds an <i>h</i>; smooth (<span class="gk">ἀ</span>) adds nothing. So <span class="gk">ἅγιος</span> is <i>hagios</i>, but <span class="gk">ἀγάπη</span> is <i>agapē</i>. Initial <span class="gk">ῥ</span> always takes the rough breathing, though it is generally not sounded as an h: <span class="gk">ῥῆμα</span> is <i>rhēma</i>, near enough <i>rēma</i>.</p>
 <p><b>Gamma nasal.</b> <span class="gk">γ</span> before <span class="gk">γ, κ, χ, ξ</span> is pronounced <i>n</i>. So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not <i>aggelos</i> — which is where our word angel comes from.</p>
 <h3>A note on pronunciation</h3>
@@ -91,7 +91,7 @@ vids:[{t:"Lecture 1: The Letters and Sounds of Greek",s:"Daily Dose of Greek —
 quiz:[
 {q:"How is ἄγγελος pronounced?",o:["ag-ge-los","an-ge-los","ah-ge-los","ang-khe-los"],a:1,w:"Gamma before another guttural becomes an n sound. This is why the English word is angel.",sec:1},
 {q:"What does the rough breathing over ἁ add?",o:["Nothing","A glottal stop","Length to the vowel","An h sound"],a:3,w:"Rough breathing means h. ἅγιος is hagios. Smooth breathing adds nothing at all.",sec:1},
-{q:"Which letter is written two different ways depending on position?",o:["Beta","Theta","Sigma","Omega"],a:2,w:"σ within a word, ς at the end. One letter, one sound — λόγος has both.",sec:1},
+{q:"Which letter is written two different ways depending on position?",o:["Beta","Theta","Sigma","Omega"],a:2,w:"σ within a word, ς at the end. One letter, one sound — Χριστός has both.",sec:1},
 {q:"Why does this course use Erasmian rather than modern Greek pronunciation?",o:["It is how the first century sounded","It keeps distinct sounds distinct, which helps spelling","It is easier to say","Modern Greek has no h"],a:1,w:"Erasmian is a convention, not a reconstruction. It survives because η, ι, υ, ει and οι have all collapsed into ee in modern Greek, which makes spelling much harder to learn.",sec:2},
 {q:"τίς with an acute accent means:",o:["someone","a certain one","who? what?","this"],a:2,w:"Accented τίς is interrogative. Unaccented τις is indefinite: someone, a certain. The accent is the only difference between them.",sec:3},
 {q:"In Greek, the mark ; means:",o:["Semicolon","Question mark","Full stop","Colon"],a:1,w:"It is a question mark. The raised dot · does the work of our semicolon and colon, and often opens speech.",sec:4},

@@ -207,6 +207,31 @@ UNATTESTED = {
     (26, "ἵημι"): "the simplex behind ἀφίημι; it occurs only in compounds",
 }
 
+# ---- a claim about a word's own letters -------------------------------
+#
+# Chapter 1 taught, for months, that "λόγος has both" sigmas. It has one.
+# Fraser found it by reading the screen, and nothing here could have: every
+# Greek form on that line is attested, the prose is grammatical, and the
+# claim is about the SPELLING of a word rather than about its existence.
+#
+# So the claim gets marked, the way the repo already marks a verse quotation
+# with data-ref and a syntax claim with data-claim. <span class="gk"
+# data-has="σς"> says this word contains both of those characters, and this
+# is where that is asserted.
+HAS = re.compile(r'<span class="gk" data-has="([^"]+)">(.*?)</span>')
+bad_has, n_has = [], 0
+for _L in LESSONS:
+    _t = _L.get("body") or ""
+    for _q in (_L.get("quiz") or []):
+        _t += " " + str(_q.get("w", "")) + " " + str(_q.get("q", ""))
+    for _want, _word in HAS.findall(_t):
+        n_has += 1
+        _miss = [c for c in _want if c not in _word]
+        if _miss:
+            bad_has.append("ch%-2d %s is marked data-has=%r and does not "
+                           "contain %s" % (_L["id"], _word, _want,
+                                           " ".join(repr(c) for c in _miss)))
+
 print("Greek forms in the lesson bodies and quizzes: %d" % total)
 print("attested in the SBLGNT: %d (%.0f%%)" % (attested, 100 * attested / total))
 for k, n in skipped.most_common():
@@ -446,6 +471,13 @@ if policy:
     for p in policy:
         print("   " + p)
 
+print()
+print("letter claims checked (data-has): %d" % n_has)
+if bad_has:
+    print("claims about a word's own letters that are FALSE: %d" % len(bad_has))
+    for b in bad_has:
+        print("   " + b)
+
 if (sec_bad or sec_early or verse_bad or no_question or badly_shaped
-        or unlisted or skew or policy):
+        or unlisted or skew or policy or bad_has):
     sys.exit(1)
