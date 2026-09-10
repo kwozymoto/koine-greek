@@ -2020,8 +2020,8 @@
   "ch": 17,
   "kind": "count",
   "text": "The commonest of all is ἔθνεσιν , 31 occurrences, from ἔθνος .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἔθνεσιν 31, exact."
  },
  {
   "k": "505e126762f3",
@@ -2080,12 +2080,12 @@
   "finding": ""
  },
  {
-  "k": "bd18b2e88ec5",
+  "k": "bfcc87697af8",
   "ch": 17,
   "kind": "count",
-  "text": "πίστις, πίστεως , \"faith\" (242 occurrences) · πόλις, πόλεως , \"city\" (163) · δύναμις, δυνάμεως , \"power\" (119).",
-  "status": "unreviewed",
-  "finding": ""
+  "text": "πίστις, πίστεως , \"faith\" (242 occurrences) · πόλις, πόλεως , \"city\" (162) · δύναμις, δυνάμεως , \"power\" (119).",
+  "status": "corrected",
+  "finding": "Was 163. MorphGNT lemmatises Πόλις apart from πόλις: the extra one is Νέαν Πόλιν at Acts 16:11 — Neapolis, a place name. The common noun is 162. check_claims had been merging them because it lowercased lemmas before counting, and seventeen pairs in the corpus differ only in that first letter — στέφανος 18 against Στέφανος 7, σμύρνα against Σμύρνα, γάζα against Γάζα. It now counts the cased lemma first, and all 75 of its claims still verify."
  },
  {
   "k": "f132a48c288b",
@@ -2108,8 +2108,8 @@
   "ch": 18,
   "kind": "count",
   "text": "εἷς, οὐδείς and μηδείς εἷς, μία, ἕν is \"one\" (342 occurrences), and it is 3-1-3 like πᾶς : ἑνός, ἑνί, ἕνα in the masculine.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "342, exact."
  },
  {
   "k": "3304360479ad",
@@ -2236,8 +2236,8 @@
   "ch": 18,
   "kind": "count",
   "text": "δώδεκα , twelve, occurs 75 times — most often of the disciples, but also of the tribes, the baskets and the thrones.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "75, exact."
  },
  {
   "k": "ed12bb9faf89",
@@ -2316,8 +2316,8 @@
   "ch": 19,
   "kind": "count",
   "text": "513 of the 1,853 verb lemmas in the New Testament are contract verbs, and they account for 5,901 of its 28,056 verb forms — one verb in five.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "1,853 verb lemmas and 28,056 verb forms in the SBLGNT, both exact, so 5,901 of 28,056 is the one-in-five claimed."
  },
  {
   "k": "9a0248ffb490",
@@ -2340,8 +2340,8 @@
   "ch": 19,
   "kind": "count",
   "text": "There are thirty ο-contract present active indicatives in the whole New Testament , spread across twenty-two different forms.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Thirty exactly, across twenty-two distinct forms, of which κοινοῖ is the commonest at six. Every part of that sentence checks."
  },
  {
   "k": "a505d3d7333f",
@@ -2364,8 +2364,8 @@
   "ch": 19,
   "kind": "count",
   "text": "ποιέω alone occurs 568 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "568, exact. And the four contract examples: ἐποίησεν 75, ἀπέστειλεν 38, ἤγειρεν 21, κοινοῖ 6 — all exact."
  },
  {
   "k": "bfd42d42f370",
@@ -2420,24 +2420,16 @@
   "ch": 20,
   "kind": "count",
   "text": "The commonest aorist participle in the book is ἀποκριθείς , 94 occurrences: aorist passive in form, from a deponent verb, and it means \"answering\".",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "356bb1dba6b3",
-  "ch": 20,
-  "kind": "count",
-  "text": "The middle and passive is much the commoner: 412 occurrences against 225, and γεγραμμένον , \"written\", is the one you meet most.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "94, exact."
  },
  {
   "k": "63e49c835383",
   "ch": 20,
   "kind": "count",
   "text": "There are 6,640 participles in the New Testament — 24% of its verb forms, one in four.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "6,640 of 28,056 verb forms = 23.7%, so 24% and 'one in four' both hold."
  },
  {
   "k": "654c83175b6c",
@@ -2460,14 +2452,22 @@
   "ch": 20,
   "kind": "count",
   "text": "-μενος is very nearly a guarantee: 444 of the 446 words ending that way are participles, the exceptions being λιμένος and ἀρχιποίμενος .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "446 words end -μενος and 444 are participles. The two exceptions are exactly the two the chapter names: λιμένος and ἀρχιποίμενος."
  },
  {
   "k": "c912ebcdc0ec",
   "ch": 20,
   "kind": "absolute",
   "text": "-οντ- , -σαντ- and -θεντ- are strong hints and not guarantees — -οντ- is also in ἄρχοντος , ὀδόντος and every numeral from τριάκοντα up.",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
+  "k": "d3a93913dd0f",
+  "ch": 20,
+  "kind": "count",
+  "text": "The middle/passive is much the commoner of the two: 448 occurrences against 225.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -2480,12 +2480,12 @@
   "finding": ""
  },
  {
-  "k": "e1d7edb1ecb3",
+  "k": "e7eeffe95cf2",
   "ch": 20,
   "kind": "count",
-  "text": "The middle/passive is much the commoner of the two: 412 occurrences against 225.",
-  "status": "unreviewed",
-  "finding": ""
+  "text": "The middle and passive is much the commoner: 448 occurrences against 225, and γεγραμμένον , \"written\", is the one you meet most.",
+  "status": "corrected",
+  "finding": "Was 412, which is the tally of perfect participles the corpus tags PASSIVE alone. The line directly above prints one set of forms for both voices — λελυμένος, λελυμένη, λελυμένον — so the number the sentence wants is the form's, which is 448: 412 passive plus the 36 the corpus tags middle, wearing the same endings. 225 active is exact, and γεγραμμένον really is the commonest of them at 17. Same shape as chapter 14's ἐγένετο denominator: a right number computed on a narrower slice than the label names. check_quiz caught the quiz explanation still carrying 412."
  },
  {
   "k": "f3996eafe517",
@@ -2564,8 +2564,8 @@
   "ch": 21,
   "kind": "count",
   "text": "735 participles in the New Testament are genitive, and the genitive absolute is the main reason one turns up in that case without an article.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "735, exact."
  },
  {
   "k": "5ab4852d21cf",
@@ -2716,8 +2716,8 @@
   "ch": 23,
   "kind": "count",
   "text": "ἐμός occurs 76 times, σός 25, ἡμέτερος 7 and ὑμέτερος 11, while the plain genitive of the personal pronoun does the job over two thousand times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐμός 76, σός 25, ἡμέτερος 7, ὑμέτερος 11 — all exact."
  },
  {
   "k": "642cee85c40d",
@@ -2772,8 +2772,8 @@
   "ch": 23,
   "kind": "count",
   "text": "τίς , the interrogative, occurs 554 times; τις , the indefinite, 530.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "τίς 554 and τις 530, exact, and the corpus keeps them apart as separate lemmas — which is the chapter's point."
  },
  {
   "k": "9cf7b2589bd6",
@@ -2812,24 +2812,24 @@
   "ch": 23,
   "kind": "count",
   "text": "The one that matters most is the relative pronoun, which occurs 1,408 times and is the main way Greek joins one clause to another.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ὅς 1,408, exact."
  },
  {
   "k": "c41ba4ce65e8",
   "ch": 23,
   "kind": "count",
   "text": "ἑαυτοῦ , \"himself, herself, itself\" (333 occurrences), declines like αὐτός .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "333, exact."
  },
  {
   "k": "d532343a66f7",
   "ch": 23,
   "kind": "count",
   "text": "It occurs 144 times against ὅς 's 1,408 — so ὅς is the rule and this is the exception.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ὅστις 144, ὅς 1,408. Both exact."
  },
  {
   "k": "ddc5a8d68a98",
@@ -2940,8 +2940,8 @@
   "ch": 24,
   "kind": "count",
   "text": "The marker is ἐάν — which is simply εἰ + ἄν — and it occurs 331 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐάν 331, exact."
  },
  {
   "k": "725718d93733",
@@ -2956,8 +2956,8 @@
   "ch": 24,
   "kind": "count",
   "text": "And the split is lopsided: of the 1,856 subjunctives in the New Testament, 1,387 are aorist and 459 present , three to one.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "1,856 subjunctives: 1,387 aorist, 459 present, 10 perfect. Every figure exact, and they sum: 1,387 + 459 + 10 = 1,856, with the ten perfect subjunctives the chapter names separately accounting for the remainder."
  },
  {
   "k": "907c68aaf55e",
@@ -3076,8 +3076,8 @@
   "ch": 25,
   "kind": "count",
   "text": "Let God be true.\" μὴ γένοιτο occurs 15 times, and 14 of those are Paul's — ten of them in Romans.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The phrase μὴ γένοιτο occurs 15 times: Romans 10, Galatians 3, 1 Corinthians 1, Luke 1. So 'fourteen of those are Paul's — ten of them in Romans' is exact, and the one that is not Paul's is Luke 20:16. Note the bare optative γένοιτο occurs 17 times; the two without μή are what makes the difference."
  },
  {
   "k": "55e3d2c1ccec",
@@ -3156,8 +3156,8 @@
   "ch": 25,
   "kind": "count",
   "text": "The imperative is the mood of command, and Greek uses it 1,618 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "1,618 imperatives, exact."
  },
  {
   "k": "c02e3c6e4a7b",
@@ -3240,14 +3240,6 @@
   "finding": ""
  },
  {
-  "k": "4ccd30d0ddd8",
-  "ch": 26,
-  "kind": "count",
-  "text": "The whole present active indicative, all four attested forms of it, comes to 21.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
   "k": "4f7e51368260",
   "ch": 26,
   "kind": "count",
@@ -3276,8 +3268,8 @@
   "ch": 26,
   "kind": "count",
   "text": "δίδωσιν, the present, occurs 11 times against ἔδωκεν's 64.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "δίδωσιν 11 against ἔδωκεν 64. Exact."
  },
  {
   "k": "882d53e9cdc7",
@@ -3308,24 +3300,24 @@
   "ch": 26,
   "kind": "count",
   "text": "τίθημι and ἵστημι τίθημι , \"I put, place\" (100 occurrences).",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "τίθημι 100, exact."
  },
  {
   "k": "d2c74ae8a48a",
   "ch": 26,
   "kind": "count",
   "text": "Of δίδωμι 's 415 occurrences, the commonest single forms are ἔδωκεν (64), δοῦναι (33) and ἐδόθη (31) — an aorist indicative, an aorist infinitive and an aorist passive.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "δίδωμι 415, with ἔδωκεν 64, δοῦναι 33 and ἐδόθη 31 as the three commonest forms. All exact."
  },
  {
   "k": "d5107a1bcdfe",
   "ch": 26,
   "kind": "count",
   "text": "It is worth learning for its own sake, because it is the New Testament's ordinary word for forgiveness — ἀφεθήσεται , \"it will be forgiven\", occurs 12 times, and ἄφες , \"forgive\", is what the Lord's Prayer asks.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "12, exact."
  },
  {
   "k": "e2e065d5fc1e",
@@ -3342,6 +3334,14 @@
   "text": "δίδωσιν is there 11 times, δίδωμι 9, δίδοτε and διδόασιν once each — and δίδως and δίδομεν never.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "ee66b26e3ac9",
+  "ch": 26,
+  "kind": "absolute",
+  "text": "The whole present active indicative comes to 21, and only three of its six slots are attested at all: δίδωμι nine times, δίδωσιν eleven and διδόασιν once.",
+  "status": "corrected",
+  "finding": "Was 'all four attested forms of it, comes to 21'. The 21 is exact, but only THREE person/number slots are attested: δίδωμι 1S nine times, δίδωσιν 3S eleven, διδόασιν 3P once. The fourth spelling is δίδωσίν, the same word carrying an accent thrown back by a following enclitic — which corpus.fold exists to say is not a different form, and which this pass had already mis-tallied twice in the other direction. Counting spellings where the sentence means forms."
  },
  {
   "k": "f62077ca2392",

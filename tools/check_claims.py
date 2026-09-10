@@ -52,10 +52,18 @@ GK = "Ͱ-Ͽἀ-῿"
 # every enclitic-accented and sentence-initial spelling.
 
 
+def norm_cased(x):
+    """norm() without the lowercasing, so a capitalised proper-name lemma
+       stays apart from the common noun that looks like it."""
+    d = unicodedata.normalize("NFD", x).replace("̀", "́")
+    return unicodedata.normalize("NFC", d)
+
+
 # --------------------------------------------------------------- the corpus
 man = manifest()
 LEM, POS = man["lemmas"], man["pos"]
 lemma_count = collections.Counter()
+lemma_cased = collections.Counter()
 form_count = collections.Counter()
 tag = collections.Counter()          # (mood, tense, voice) and coarser slices
 verbs = eimi_imperfect = genitive_participles = 0
@@ -66,6 +74,7 @@ for b in man["books"]:
         for vs in ch:
             for w in vs[1]:
                 lemma_count[norm(LEM[w[1]])] += 1
+                lemma_cased[LEM[w[1]]] += 1
                 form_count[fold(w[0])] += 1
                 if POS[w[2]] == "V-":
                     verbs += 1
@@ -89,7 +98,21 @@ def corpus_counts(word):
        lower-case spelling of it. An earlier version short-circuited on the
        exact count and so accepted 117, which is how seven undercounts got
        into the chapters: they were written from a case-sensitive tally."""
-    return (lemma_count.get(norm(bare(word)), 0), form_count.get(fold(word), 0), 0)
+    # MorphGNT lemmatises a proper name apart from the common noun it is
+    # built on, and seventeen pairs in the corpus differ only in their first
+    # letter: πόλις "city" 162 against Πόλις 1 (Νέαν Πόλιν, Neapolis, at
+    # Acts 16:11), στέφανος "crown" 18 against Στέφανος "Stephen" 7,
+    # σμύρνα "myrrh" 2 against Σμύρνα "Smyrna" 2, λιμήν "harbour" against
+    # Λιμήν in "Fair Havens", γάζα "treasure" against Γάζα "Gaza". norm()
+    # lowercases, so counting through it silently added the place to the
+    # noun -- which is how chapter 17 came to give πόλις as 163.
+    #
+    # So the cased tally is what a claim about a common noun means, and the
+    # merged one is offered too, because a chapter naming a proper name
+    # writes it capitalised and means exactly that lemma.
+    w = bare(word)
+    return (lemma_cased.get(norm_cased(w), 0) or lemma_count.get(norm(w), 0),
+            form_count.get(fold(word), 0), 0)
 
 
 # ------------------------------------------------------------- category claims
