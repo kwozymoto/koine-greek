@@ -444,8 +444,8 @@
   "ch": 4,
   "kind": "absolute",
   "text": "What to watch for λόγων is genitive plural and so is ἔργων — the genitive plural is -ων in every gender and every declension you will meet.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "3,321 genitive plurals in the corpus; 76 do not end -ων, and every one of those is an INDECLINABLE numeral — δώδεκα 23, δύο 13, ἑπτά 14, τριάκοντα, ὀγδοήκοντα — which MorphGNT tags with the case it functions in although the word does not inflect. Not a counterexample to a claim about declensions, and the sentence's 'you will meet' already scopes it."
  },
  {
   "k": "d9c771c04538",
@@ -572,8 +572,8 @@
   "ch": 5,
   "kind": "absolute",
   "text": "The genitive plural always has a circumflex Every first-declension noun ends its genitive plural in -ῶν , with a circumflex, wherever the accent falls in the rest of the word.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "298 first-declension common-noun genitive plurals in the New Testament, and every one of them ends -ῶν with a circumflex. ZERO exceptions, so 'it never varies' in the next sentence is literally true. The only apparent counterexamples are place names — Σοδόμων, Ἱεροσολύμων, Γομόρρων, Θυατείρων — which are neuter plurals or otherwise not first-declension common nouns. Declension assigned from Abbott-Smith's genitives, the same classifier that settled chapter 17."
  },
  {
   "k": "c27a027cf095",
@@ -1524,8 +1524,8 @@
   "ch": 13,
   "kind": "absolute",
   "text": "Others are frozen case forms — σήμερον, 'today', is an accusative — and adverbs never decline.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "274 adverb lemmas in the corpus, and only four appear in more than one spelling: οὕτω/οὕτως, οὐ/οὐκ/οὐχ, οὐδέ/οὐδ’ and σπουδαίως/σπουδαιοτέρως. The first three are sandhi and elision, which the course teaches as such, and the fourth is a comparative. None is declension, so 'adverbs never decline' stands."
  },
  {
   "k": "67e10ee21f0f",
@@ -2884,8 +2884,8 @@
   "ch": 24,
   "kind": "absolute",
   "text": "ο lengthens to ω and ε to η, the stem is the indicative's, and there is never an augment — because the subjunctive marks no time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Nothing in the corpus contradicts it. Of the 1,856 subjunctives, 285 aorist or perfect ones begin with ε, and every one is a stem-initial epsilon rather than an augment — εἰδῆτε and εἰδῶ from οἶδα, εἰσέλθητε from εἰσέρχομαι. The claim is a fact about the grammar rather than one a token count can prove, and the count at least fails to refute it."
  },
  {
   "k": "1fd6879cc471",
@@ -2948,8 +2948,8 @@
   "ch": 24,
   "kind": "absolute",
   "text": "ἵνα, and purpose The commonest subjunctive by far is the one after ἵνα , \"in order that\" — which occurs 662 times and is followed by a subjunctive almost every time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἵνα 662, exact. Taking the first finite verb inside the ἵνα clause, 625 of the 662 are subjunctive = 94.4%, so 'almost every time' holds. The 37 that are not are 35 indicatives — Mark 9:9 and 14:35, Luke 20:10, John 6:39 and 7:3 among them, the ἵνα + future indicative the grammars note — and two clauses with no finite verb at all."
  },
  {
   "k": "6e8211d91e33",
@@ -3164,8 +3164,8 @@
   "ch": 25,
   "kind": "absolute",
   "text": "It has no first person — you cannot command yourself — and its negative is μή .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact, and cleanly so: of the 1,618 imperatives in the New Testament, 1,385 are second person and 233 third. Not one is first person."
  },
  {
   "k": "9d55c0cef3ca",
@@ -3252,8 +3252,8 @@
   "ch": 26,
   "kind": "absolute",
   "text": "Nothing else you are likely to meet is: the second aorist ἔστη , the twenty aorist passives like σταθείς , and the perfect ἕστηκα , which alone accounts for 65 of the 153.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἵστημι occurs 153 times and 65 of them are perfects. Both exact. The commonest are the participles ἑστώς 10, ἑστῶτα 8, ἑστῶτας 6 and the indicative ἕστηκεν 6."
  },
  {
   "k": "48d5889afd93",
