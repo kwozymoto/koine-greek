@@ -102,16 +102,28 @@ def key(s):
 
 
 def extract():
+    """Every settleable claim, with WHERE it was said.
+
+       Body and quiz are kept apart because checking them means different
+       things. A quiz explanation usually restates something the body already
+       says, and check_quiz already holds the two to the same numbers; what a
+       quiz claim needs is a reader confirming it restates the body FAITHFULLY,
+       which is a smaller job than settling a new claim. Recording the source
+       is what lets that distinction be seen at all -- without it the register
+       reports 331 unreviewed claims and cannot say that a third of them are
+       echoes."""
     out = []
     for L in load_lessons():
-        body = L.get("body") or ""
+        chunks = [("body", L.get("body") or "")]
         for q in (L.get("quiz") or []):
-            body += " " + str(q.get("w", ""))
-        for s in sentences(body):
-            for kind, pat in PATTERNS:
-                if pat.search(s):
-                    out.append({"k": key(s), "ch": L["id"], "kind": kind, "text": s})
-                    break
+            chunks.append(("quiz", str(q.get("w", ""))))
+        for src, text in chunks:
+            for s in sentences(text):
+                for kind, pat in PATTERNS:
+                    if pat.search(s):
+                        out.append({"k": key(s), "ch": L["id"], "kind": kind,
+                                    "src": src, "text": s})
+                        break
     return out
 
 
@@ -129,6 +141,7 @@ if __name__ == "__main__":
         for c in claims:
             if c["k"] not in reg:
                 reg[c["k"]] = {"k": c["k"], "ch": c["ch"], "kind": c["kind"],
+                               "src": c.get("src", "body"),
                                "text": c["text"], "status": "unreviewed",
                                "finding": ""}
         # A sentence that has been rewritten or deleted is no longer a claim

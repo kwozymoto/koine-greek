@@ -3,6 +3,7 @@
   "k": "03d595dc7a44",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "Same letter, same sound: Χριστός has both — λόγος has only the final one.",
   "status": "unreviewed",
   "finding": ""
@@ -11,6 +12,7 @@
   "k": "19f7d9c7cf8b",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "Every word starting with a vowel carries a mark.",
   "status": "verified",
   "finding": "63,625 vowel-initial tokens in the SBLGNT, 63,625 with a breathing. The first pass reported eight exceptions and every one was a diphthong -- in αυ, ευ, ου, ει the breathing sits on the SECOND vowel, and the detector read only the first. The claim was true and the check was wrong."
@@ -19,6 +21,7 @@
   "k": "2581dc05eebc",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "It is the only chapter where that is true.",
   "status": "unreviewed",
   "finding": ""
@@ -27,6 +30,7 @@
   "k": "353aac500a59",
   "ch": 1,
   "kind": "spelling",
+  "src": "body",
   "text": "Three rules that trip people up Sigma is written ς at the end of a word and σ everywhere else.",
   "status": "unreviewed",
   "finding": ""
@@ -35,6 +39,7 @@
   "k": "3ddc696d907c",
   "ch": 1,
   "kind": "count",
+  "src": "body",
   "text": "It is not pronounced, but it usually signals the dative case — about five times in six.",
   "status": "verified",
   "finding": "7,481 tokens carry an iota subscript; 6,268 are dative = 83.8%, against 83.3% for five-in-six. And 'the main exception is subjunctive endings' holds: 784 of the 1,213 non-datives are subjunctives, 65% of them, comfortably the largest class. The rest are lexical — Ἡρῴδης, λῃστής, λάθρᾳ."
@@ -43,6 +48,7 @@
   "k": "45100492e72e",
   "ch": 1,
   "kind": "spelling",
+  "src": "quiz",
   "text": "One letter, one sound — Χριστός has both.",
   "status": "unreviewed",
   "finding": ""
@@ -51,6 +57,7 @@
   "k": "5d5f3f1708bd",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "This catches everyone at least once: Σὺ εἶ ὁ ἐρχόμενος ἢ ἕτερον προσδοκῶμεν; \"Are you the one who is to come, or should we expect another?\" John's disciples are asking a question, and the only thing on the page that tells you so is that final mark.",
   "status": "unreviewed",
   "finding": ""
@@ -59,6 +66,7 @@
   "k": "6110a954c342",
   "ch": 1,
   "kind": "count",
+  "src": "quiz",
   "text": "Dative, about five times in six.",
   "status": "unreviewed",
   "finding": ""
@@ -67,6 +75,7 @@
   "k": "67ca1ff16826",
   "ch": 1,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The accent is the only difference between them.",
   "status": "unreviewed",
   "finding": ""
@@ -75,6 +84,7 @@
   "k": "8fd8c33baddf",
   "ch": 1,
   "kind": "count",
+  "src": "body",
   "text": "Accents Greek has three accents: acute ( ά ), grave ( ὰ ) and circumflex ( ᾶ ).",
   "status": "unreviewed",
   "finding": ""
@@ -83,6 +93,7 @@
   "k": "a98c4127e8ff",
   "ch": 1,
   "kind": "count",
+  "src": "body",
   "text": "There are twenty-four letters and you already know several of them.",
   "status": "unreviewed",
   "finding": ""
@@ -91,6 +102,7 @@
   "k": "b896876c33dc",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "Initial ῥ always takes the rough breathing, though it is generally not sounded as an h: ῥῆμα is rhēma , near enough rēma .",
   "status": "overclaim",
   "finding": "231 of 233 rho-initial tokens carry the rough breathing. The two that do not are the same word: Ραββουνι, Mark 10:51 and John 20:16, a transliterated Aramaic address that SBLGNT writes bare. True of Greek words, and 'always' is a word a learner will take literally when they meet Ραββουνι."
@@ -99,6 +111,7 @@
   "k": "c0dbede283c3",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "If you cannot pronounce it, you cannot hold it in your memory, and a word you cannot hold is a word you will meet as a stranger every time.",
   "status": "unreviewed",
   "finding": ""
@@ -107,6 +120,7 @@
   "k": "c9670a230f9e",
   "ch": 1,
   "kind": "absolute",
+  "src": "body",
   "text": "Some are ours exactly, some are ours in disguise, and only a handful are genuinely new.",
   "status": "unreviewed",
   "finding": ""
@@ -115,6 +129,7 @@
   "k": "03423eee908c",
   "ch": 2,
   "kind": "count",
+  "src": "body",
   "text": "The optative is rarer still, and by the Koine period it is fading: 68 occurrences in the whole New Testament.",
   "status": "verified",
   "finding": "68 optatives in the SBLGNT, exact."
@@ -123,6 +138,7 @@
   "k": "214ec4b7eabc",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "Only the verb and the sentence can.",
   "status": "unreviewed",
   "finding": ""
@@ -131,6 +147,7 @@
   "k": "3318c3e675d1",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "Time is only fixed in the indicative Outside the indicative mood, the tense is telling you about aspect and almost nothing about time.",
   "status": "unreviewed",
   "finding": ""
@@ -139,6 +156,7 @@
   "k": "347a4665af80",
   "ch": 2,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every finite Greek verb form encodes person, number, tense, voice and mood in one word.",
   "status": "verified",
   "finding": "True as stated, because it says FINITE. The chapter's body did not: it opened 'Every Greek verb form encodes five things', twenty lines above its own 'The infinitive and the participle ... decline to specify a person at all'. Corpus: participles 6,640 plus infinitives 2,285 are 8,925 of 28,056 verb forms, 32%. The body now scopes it and names the exception; this quiz explanation always had it right. Found by reading."
@@ -147,6 +165,7 @@
   "k": "5ed45a032522",
   "ch": 2,
   "kind": "count",
+  "src": "body",
   "text": "Two sets of endings Primary endings appear on the tenses whose indicative refers to present or future time: present, future, perfect.",
   "status": "unreviewed",
   "finding": ""
@@ -155,6 +174,7 @@
   "k": "63b46f9370a4",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "The practical difficulty is that middle and passive share their endings in most tenses, so the form alone often cannot tell you which one is meant.",
   "status": "unreviewed",
   "finding": ""
@@ -163,6 +183,7 @@
   "k": "8850e7e68249",
   "ch": 2,
   "kind": "count",
+  "src": "body",
   "text": "Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it.",
   "status": "verified",
   "finding": "15,589 indicatives of 19,131 finite forms = 81.5%. The scoping — 'that carry a person and a number' — is exactly right, which is what made the unscoped claim earlier in the chapter stand out."
@@ -171,6 +192,7 @@
   "k": "97dd92fdcdee",
   "ch": 2,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only the indicative fixes time.",
   "status": "unreviewed",
   "finding": ""
@@ -179,6 +201,7 @@
   "k": "9a8a7f715813",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when.",
   "status": "unreviewed",
   "finding": ""
@@ -187,6 +210,7 @@
   "k": "a34268636ff3",
   "ch": 2,
   "kind": "count",
+  "src": "body",
   "text": "It lives in the principal parts of a few hundred verbs, and the commonest of those you will meet often enough to learn without trying.",
   "status": "unreviewed",
   "finding": ""
@@ -195,6 +219,7 @@
   "k": "ab6e8c5b41a6",
   "ch": 2,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The endings are shared in most tenses, so only the verb and the sentence can settle it.",
   "status": "unreviewed",
   "finding": ""
@@ -203,6 +228,7 @@
   "k": "b0e4e9f12ec0",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "Principal parts Each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.",
   "status": "unreviewed",
   "finding": ""
@@ -211,6 +237,7 @@
   "k": "cea5854c2fb4",
   "ch": 2,
   "kind": "absolute",
+  "src": "body",
   "text": "The discipline From here on, never say a form means something until you have parsed it.",
   "status": "unreviewed",
   "finding": ""
@@ -219,6 +246,7 @@
   "k": "f55af4078b39",
   "ch": 2,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only in the indicative.",
   "status": "unreviewed",
   "finding": ""
@@ -227,6 +255,7 @@
   "k": "4c5521a9493d",
   "ch": 3,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",
   "status": "unreviewed",
   "finding": ""
@@ -235,6 +264,7 @@
   "k": "701ae46e3bc6",
   "ch": 3,
   "kind": "count",
+  "src": "body",
   "text": "Singular Plural 1st εἰμί ἐσμέν 2nd εἶ ἐστέ 3rd ἐστί(ν) εἰσί(ν) οὐκ ἔστιν ὧδε, ἠγέρθη γὰρ \"He is not here, for he has been raised.\" Two verbs, and between them most of chapter 2: ἔστιν is present, ἠγέρθη is aorist passive with its augment showing.",
   "status": "unreviewed",
   "finding": ""
@@ -243,6 +273,7 @@
   "k": "82ee99d47aab",
   "ch": 3,
   "kind": "count",
+  "src": "body",
   "text": "It is why the grid drill exists, and why filling the table in from memory is worth more than reading it ten times.",
   "status": "unreviewed",
   "finding": ""
@@ -251,6 +282,7 @@
   "k": "92edd85f59d1",
   "ch": 3,
   "kind": "absolute",
+  "src": "body",
   "text": "He does this constantly, and most English translations quietly convert it to a past tense — so if you have only ever read this in English, you have never seen it.",
   "status": "unreviewed",
   "finding": ""
@@ -259,6 +291,7 @@
   "k": "decd2d13426a",
   "ch": 3,
   "kind": "spelling",
+  "src": "body",
   "text": "ἐγώ εἰμι ὁ ἄρτος τῆς ζωῆς \"I am the bread of life.\" Here the pronoun ἐγώ is written out, even though εἰμι already says I.",
   "status": "unreviewed",
   "finding": ""
@@ -267,6 +300,7 @@
   "k": "ef71ac2d5440",
   "ch": 3,
   "kind": "count",
+  "src": "body",
   "text": "That division holds about nine times in ten, and the commonest exception earns its keep.",
   "status": "verified",
   "finding": "Corpus: οὐ stands before an indicative 1,328 of 1,486 = 89%; μή before a non-indicative 828 of 938 = 88%. So 'μή with everything else' is a strong tendency, not a rule: 73 bare μή + indicative, mostly the interrogative μή expecting the answer no, plus 21 εἰ μή and 16 οὐ μή. John 21:5 added as the example, where the text supplies the expected Οὔ in the next clause."
@@ -275,6 +309,7 @@
   "k": "fccd29aec19a",
   "ch": 3,
   "kind": "absolute",
+  "src": "body",
   "text": "None of these is a different tense.",
   "status": "unreviewed",
   "finding": ""
@@ -283,6 +318,7 @@
   "k": "0e5304662ec9",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "They decline exactly like λόγος , and only the article tells you they are feminine at all.",
   "status": "unreviewed",
   "finding": ""
@@ -291,6 +327,7 @@
   "k": "18b858ef72dd",
   "ch": 4,
   "kind": "count",
+  "src": "body",
   "text": "Nouns fall into three declensions, which are just three patterns of endings.",
   "status": "unreviewed",
   "finding": ""
@@ -299,6 +336,7 @@
   "k": "33c4a9f8c60e",
   "ch": 4,
   "kind": "spelling",
+  "src": "quiz",
   "text": "In the plural it is identical to the nominative, but in the second declension singular it ends in -ε.",
   "status": "unreviewed",
   "finding": ""
@@ -307,6 +345,7 @@
   "k": "3983047d306c",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "It agrees with its noun in gender, number and case, which means that once you know the article you can read the case of almost any noun attached to one, even a noun you have never met.",
   "status": "unreviewed",
   "finding": ""
@@ -315,6 +354,7 @@
   "k": "3a3e53eb11e7",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "Learn every noun in that full form from the first day.",
   "status": "unreviewed",
   "finding": ""
@@ -323,6 +363,7 @@
   "k": "3abd5a217bdc",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "It is -ων in every gender and every declension, which makes it easy to spot and useless for gender.",
   "status": "unreviewed",
   "finding": ""
@@ -331,6 +372,7 @@
   "k": "44e6af6164c4",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every other ending is identical.",
   "status": "unreviewed",
   "finding": ""
@@ -339,6 +381,7 @@
   "k": "657cef14ff46",
   "ch": 4,
   "kind": "spelling",
+  "src": "body",
   "text": "And the dative singular ends in a long vowel with an iota written underneath it: λόγῳ , ἔργῳ .",
   "status": "unreviewed",
   "finding": ""
@@ -347,6 +390,7 @@
   "k": "66d5b7bd274d",
   "ch": 4,
   "kind": "count",
+  "src": "body",
   "text": "Those are tendencies rather than rules, as the next two verses show.",
   "status": "unreviewed",
   "finding": ""
@@ -355,6 +399,7 @@
   "k": "6a279fe6ee06",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every one of the eight is distinct, which is what makes the second declension the place to start.",
   "status": "unreviewed",
   "finding": ""
@@ -363,14 +408,16 @@
   "k": "6f009052f00c",
   "ch": 4,
   "kind": "count",
+  "src": "quiz",
   "text": "668 of them in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"There is a fifth: the vocative , used for addressing someone directly, and it occurs 668 times.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "71b30b6c8913",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "Watch only the ending.",
   "status": "unreviewed",
   "finding": ""
@@ -379,6 +426,7 @@
   "k": "774de15300c4",
   "ch": 4,
   "kind": "count",
+  "src": "body",
   "text": "A noun in apposition to a pronoun regularly takes the article, and Luke writes ὑμῖν τοῖς Φαρισαίοις and ὑμῖν τοῖς πλουσίοις the same way six times over, meaning nothing more than \"you Pharisees\", \"you rich\".",
   "status": "unreviewed",
   "finding": ""
@@ -387,6 +435,7 @@
   "k": "7f75b5ead287",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "ἔργον — neuter Singular Plural Nom ἔργον ἔργα Gen ἔργου ἔργων Dat ἔργῳ ἔργοις Acc ἔργον ἔργα Neuter differs from masculine only in the nominative and accusative, and in those two it has one form doing both jobs.",
   "status": "unreviewed",
   "finding": ""
@@ -395,6 +444,7 @@
   "k": "99b4f8b87f96",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "λόγος on its own is a word or the word, and only the sentence decides.",
   "status": "unreviewed",
   "finding": ""
@@ -403,6 +453,7 @@
   "k": "a1d21dc4693d",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "Fourteen letters open by naming their writer ἀπόστολος or δοῦλος , and not one of the fourteen uses an article .",
   "status": "verified",
   "finding": "Exactly fourteen, from the corpus: Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Timothy, Titus, James, 1-2 Peter, Jude. In every one the title word is anarthrous. 1-2 Thessalonians, Philemon and Hebrews open with no such title; 2-3 John use ὁ πρεσβύτερος, which is neither of the two words. Revelation 1:1 has articular δούλοις/δούλῳ, but there John is named in the third person and it is a title, not a greeting."
@@ -411,6 +462,7 @@
   "k": "a412ac8760fa",
   "ch": 4,
   "kind": "count",
+  "src": "body",
   "text": "Seventeen forms, and they parse a quarter of the sentences you will read.",
   "status": "verified",
   "finding": "Seventeen distinct spellings — ὁ ἡ τό τοῦ τῆς τῷ τῇ τόν τήν οἱ αἱ τά τῶν τοῖς ταῖς τούς τάς — filling 24 case/number/gender slots."
@@ -419,6 +471,7 @@
   "k": "c19dafbcaf45",
   "ch": 4,
   "kind": "count",
+  "src": "body",
   "text": "There is a fifth: the vocative , used for addressing someone directly, and it occurs 668 times.",
   "status": "verified",
   "finding": "668 vocatives in the SBLGNT, exact."
@@ -427,6 +480,7 @@
   "k": "c830aa6b5eff",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "Only the sentence can tell you, and here μενεῖ needs a subject, so it is nominative.",
   "status": "unreviewed",
   "finding": ""
@@ -435,6 +489,7 @@
   "k": "d7d697610efb",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "The definite article The article occurs 19,769 times in the New Testament — one word in every seven.",
   "status": "verified",
   "finding": "19,769 tokens carry lemma ὁ in the SBLGNT, against 137,554 tokens in all: one word in 6.96. A 19,770th token is tagged RA at Ephesians 2:13 but lemmatised ὅς, which is a MorphGNT edge case rather than the article."
@@ -443,6 +498,7 @@
   "k": "d81d1534f9d5",
   "ch": 4,
   "kind": "absolute",
+  "src": "body",
   "text": "What to watch for λόγων is genitive plural and so is ἔργων — the genitive plural is -ων in every gender and every declension you will meet.",
   "status": "verified",
   "finding": "3,321 genitive plurals in the corpus; 76 do not end -ων, and every one of those is an INDECLINABLE numeral — δώδεκα 23, δύο 13, ἑπτά 14, τριάκοντα, ὀγδοήκοντα — which MorphGNT tags with the case it functions in although the word does not inflect. Not a counterexample to a claim about declensions, and the sentence's 'you will meet' already scopes it."
@@ -451,6 +507,7 @@
   "k": "d9c771c04538",
   "ch": 4,
   "kind": "spelling",
+  "src": "body",
   "text": "In the plural the vocative is identical to the nominative, so it usually goes unnoticed; in the singular of the second declension it ends in -ε , and once you have seen it you will see it everywhere.",
   "status": "unreviewed",
   "finding": ""
@@ -459,6 +516,7 @@
   "k": "db953fafe4c9",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "An absence tells you something only where the writer could have written it the other way.",
   "status": "unreviewed",
   "finding": ""
@@ -467,6 +525,7 @@
   "k": "e7be0a1b87e3",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Not one.",
   "status": "unreviewed",
   "finding": ""
@@ -475,6 +534,7 @@
   "k": "f022ed08bc86",
   "ch": 4,
   "kind": "count",
+  "src": "quiz",
   "text": "Knowing its seventeen forms lets you read the case of almost any noun attached to one.",
   "status": "unreviewed",
   "finding": ""
@@ -483,6 +543,7 @@
   "k": "f8ec4503171f",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only there, and in those two it uses one form for both.",
   "status": "unreviewed",
   "finding": ""
@@ -491,14 +552,16 @@
   "k": "fafd339b6bbc",
   "ch": 4,
   "kind": "absolute",
+  "src": "quiz",
   "text": "19769 times, one word in every seven.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The definite article The article occurs 19,769 times in the New Testament — one word in every seven.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "0296e83ef6b7",
   "ch": 5,
   "kind": "count",
+  "src": "body",
   "text": "ἐξ ἀνθρώπων δόξαν, οὔτε ἀφ’ ὑμῶν οὔτε ἀπ’ ἄλλων \"glory from men, neither from you nor from others.\" Three of these in one line: ἐξ before a vowel, ἀφ’ before the rough breathing of ὑμῶν , and ἀπ’ before the smooth breathing of ἄλλων .",
   "status": "unreviewed",
   "finding": ""
@@ -507,6 +570,7 @@
   "k": "10204abe678e",
   "ch": 5,
   "kind": "spelling",
+  "src": "body",
   "text": "If the stem ends in ε, ι or ρ , the alpha is kept all the way through: ἡμέρα, ἡμέρας, ἡμέρᾳ, ἡμέραν .",
   "status": "unreviewed",
   "finding": ""
@@ -515,6 +579,7 @@
   "k": "54b479753fb5",
   "ch": 5,
   "kind": "absolute",
+  "src": "body",
   "text": "ἐκ becomes ἐξ before a vowel: 679 times against 234 in the New Testament, so you will meet both, and the split is clean — every one of the 679 sits before a consonant and every one of the 234 before a vowel.",
   "status": "corrected",
   "finding": "Was '669 times against 227'. Both are CASE-SENSITIVE tallies: ἐκ is 669 lower-case plus 10 sentence-initial Ἐκ = 679, and ἐξ is 227 plus 7 Ἐξ = 234. check_claims' docstring names this exact fault — 'which is how seven undercounts got into the chapters: they were written from a case-sensitive tally' — and this was an eighth. Worse, check_claims had an IGNORE entry for the 227 whose stated reason was false: it called 227 'ἐκ's count', and ἐκ is 679. The corpus also settles the rule itself, which the sentence now says: all 679 ἐκ sit before a consonant and all 234 ἐξ before a vowel, with no exceptions either way. A sweep of every number-beside-a-Greek-word pair in all 27 chapters found no other instance of the fault."
@@ -523,6 +588,7 @@
   "k": "5a331ed6cc6f",
   "ch": 5,
   "kind": "count",
+  "src": "body",
   "text": "Four prepositions worth meeting now A preposition tells you how its noun relates to the rest of the sentence, and in Greek it fixes that noun's case.",
   "status": "unreviewed",
   "finding": ""
@@ -531,6 +597,7 @@
   "k": "7c12274c82ec",
   "ch": 5,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Dative, always.",
   "status": "unreviewed",
   "finding": ""
@@ -539,6 +606,7 @@
   "k": "80207857e920",
   "ch": 5,
   "kind": "absolute",
+  "src": "body",
   "text": "ὁ μαθητής , never ἡ μαθητής .",
   "status": "unreviewed",
   "finding": ""
@@ -547,6 +615,7 @@
   "k": "875776e06483",
   "ch": 5,
   "kind": "absolute",
+  "src": "body",
   "text": "It is one of the few accent rules worth learning as a rule, because it never varies and it identifies the form on sight.",
   "status": "unreviewed",
   "finding": ""
@@ -555,6 +624,7 @@
   "k": "9cb99f61e9f1",
   "ch": 5,
   "kind": "absolute",
+  "src": "quiz",
   "text": "ἐν, εἰς, ἐκ and ἀπό each take one case only, which makes them the most reliable case signposts in the text.",
   "status": "unreviewed",
   "finding": ""
@@ -563,6 +633,7 @@
   "k": "a6f23f7ffa22",
   "ch": 5,
   "kind": "count",
+  "src": "body",
   "text": "The vowel depends on the letter before it, and the rule is worth knowing because it decides two of the four singular endings.",
   "status": "unreviewed",
   "finding": ""
@@ -571,6 +642,7 @@
   "k": "bce5293360f3",
   "ch": 5,
   "kind": "absolute",
+  "src": "body",
   "text": "The genitive plural always has a circumflex Every first-declension noun ends its genitive plural in -ῶν , with a circumflex, wherever the accent falls in the rest of the word.",
   "status": "verified",
   "finding": "298 first-declension common-noun genitive plurals in the New Testament, and every one of them ends -ῶν with a circumflex. ZERO exceptions, so 'it never varies' in the next sentence is literally true. The only apparent counterexamples are place names — Σοδόμων, Ἱεροσολύμων, Γομόρρων, Θυατείρων — which are neuter plurals or otherwise not first-declension common nouns. Declension assigned from Abbott-Smith's genitives, the same classifier that settled chapter 17."
@@ -579,6 +651,7 @@
   "k": "c27a027cf095",
   "ch": 5,
   "kind": "absolute",
+  "src": "body",
   "text": "None of this changes the meaning or the case.",
   "status": "unreviewed",
   "finding": ""
@@ -587,6 +660,7 @@
   "k": "2485471365af",
   "ch": 6,
   "kind": "count",
+  "src": "body",
   "text": "Where the noun has no article, nothing decides it for you and the context is all you have — which is the same limit chapter 21 will reach with participles.",
   "status": "unreviewed",
   "finding": ""
@@ -595,6 +669,7 @@
   "k": "f31d8db17036",
   "ch": 6,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The article, and only the article.",
   "status": "unreviewed",
   "finding": ""
@@ -603,6 +678,7 @@
   "k": "0cfc4f0a2684",
   "ch": 7,
   "kind": "spelling",
+  "src": "quiz",
   "text": "This is why compound verbs are awkward to look up: the form no longer begins with the letters the lexicon lists.",
   "status": "unreviewed",
   "finding": ""
@@ -611,6 +687,7 @@
   "k": "2021df0d2527",
   "ch": 7,
   "kind": "absolute",
+  "src": "body",
   "text": "ἔλυον is first singular or third plural, and you cannot tell from the word.",
   "status": "unreviewed",
   "finding": ""
@@ -619,6 +696,7 @@
   "k": "208b228c6f3d",
   "ch": 7,
   "kind": "spelling",
+  "src": "body",
   "text": "If it begins with a long vowel or a long diphthong there is nothing left to lengthen, so the past looks exactly like the present.",
   "status": "unreviewed",
   "finding": ""
@@ -627,6 +705,7 @@
   "k": "310b1cdb73ec",
   "ch": 7,
   "kind": "spelling",
+  "src": "body",
   "text": "This is what makes compound verbs awkward to look up, because the form on the page no longer starts with the letters the lexicon lists.",
   "status": "unreviewed",
   "finding": ""
@@ -635,6 +714,7 @@
   "k": "33463825cf5f",
   "ch": 7,
   "kind": "count",
+  "src": "body",
   "text": "Two past tenses, and the difference between them is not when the action happened.",
   "status": "unreviewed",
   "finding": ""
@@ -643,6 +723,7 @@
   "k": "3fc7a1fb4a97",
   "ch": 7,
   "kind": "absolute",
+  "src": "body",
   "text": "εὑρίσκω keeps its εὑ- throughout, and the ending is then the only thing telling you the tense.",
   "status": "unreviewed",
   "finding": ""
@@ -651,6 +732,7 @@
   "k": "4e3d3af1f981",
   "ch": 7,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only that it is viewed as a whole, from outside.",
   "status": "unreviewed",
   "finding": ""
@@ -659,6 +741,7 @@
   "k": "6bf895e15fe5",
   "ch": 7,
   "kind": "count",
+  "src": "quiz",
   "text": "Its past is the imperfect: ἤμην, ἦς, ἦν, ἦμεν, ἦτε, ἦσαν — and ἦν alone accounts for most of its 455 occurrences.",
   "status": "verified",
   "finding": "455 imperfect indicatives of εἰμί, exact; ἦν is 314 of them = 69%, so 'most' holds. The rest: ἦσαν 95, ἤμην 15, ἦτε 10, ἦμεν 8, ἦς 6, ἤμεθα 5, ἦσθα 2."
@@ -667,6 +750,7 @@
   "k": "8342c0923453",
   "ch": 7,
   "kind": "absolute",
+  "src": "body",
   "text": "None of those can be reasoned out.",
   "status": "unreviewed",
   "finding": ""
@@ -675,6 +759,7 @@
   "k": "8ed4afe2310f",
   "ch": 7,
   "kind": "absolute",
+  "src": "body",
   "text": "It does not say the action was quick, or once only, or finished — those are things the sentence may tell you, and the tense does not.",
   "status": "unreviewed",
   "finding": ""
@@ -683,6 +768,7 @@
   "k": "9e4e85fd98c8",
   "ch": 7,
   "kind": "count",
+  "src": "body",
   "text": "Singular Plural 1st ἤμην ἦμεν 2nd ἦς ἦτε 3rd ἦν ἦσαν οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν \"He was in the beginning with God.\" ἦν alone accounts for most of these 455 occurrences, and John 1 uses it to hold a state open rather than to report an event — which is the imperfective aspect doing exactly what this chapter has been describing.",
   "status": "unreviewed",
   "finding": ""
@@ -691,6 +777,7 @@
   "k": "a67ef24179e5",
   "ch": 7,
   "kind": "spelling",
+  "src": "body",
   "text": "If the verb already begins with a short vowel, that vowel lengthens instead of taking a prefix: ἀκούω → ἤκουον .",
   "status": "unreviewed",
   "finding": ""
@@ -699,6 +786,7 @@
   "k": "efa6f04260c7",
   "ch": 7,
   "kind": "absolute",
+  "src": "quiz",
   "text": "εὑρίσκω keeps its εὑ- throughout, so the ending is the only thing distinguishing the imperfect from the present.",
   "status": "unreviewed",
   "finding": ""
@@ -707,6 +795,7 @@
   "k": "f5ad457f7e20",
   "ch": 7,
   "kind": "absolute",
+  "src": "body",
   "text": "And you cannot look a second aorist up by its own spelling.",
   "status": "unreviewed",
   "finding": ""
@@ -715,6 +804,7 @@
   "k": "037054a820e9",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "By whom, and through whom Two of these prepositions divide up a job English does with a single word.",
   "status": "unreviewed",
   "finding": ""
@@ -723,6 +813,7 @@
   "k": "089356ccb9ec",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "Chapter 5 covered why they happen; what it could not say is how often — διά occurs 666 times and is written δι’ in 149 of them.",
   "status": "unreviewed",
   "finding": ""
@@ -731,6 +822,7 @@
   "k": "1351ae94b794",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου \"What was spoken by the Lord through the prophet.\" Both prepositions inside five words, and the distinction is deliberate: the Lord is the speaker, the prophet the means.",
   "status": "unreviewed",
   "finding": ""
@@ -739,6 +831,7 @@
   "k": "18fd48d34c31",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "Eight of its thirteen occurrences are distributive — ἀνὰ δύο , \"two by two\" (Luke 10:1); ἀνὰ δηνάριον , \"a denarius each\" — four of the other five are the fixed phrase ἀνὰ μέσον , \"in the midst of\", and the last is ἀνὰ μέρος , \"in turn\" (1 Corinthians 14:27).",
   "status": "verified",
   "finding": "ἀνά occurs 13 times. The distributive ones are ἀνὰ δηνάριον (Matthew 20:9 and 20:10), ἀνὰ πεντήκοντα (Luke 9:14), ἀνὰ δύο (Luke 10:1), ἀνὰ μετρητάς (John 2:6), ἀνὰ μέρος (1 Corinthians 14:27), ἀνὰ πτέρυγας ἕξ (Revelation 4:8) and ἀνὰ εἷς ἕκαστος (Revelation 21:21) — eight. The other five are the fixed phrase ἀνὰ μέσον. Exact."
@@ -747,6 +840,7 @@
   "k": "1fd4888fe61e",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "On its own it occurs 631 times, and it heads a family of seventeen compounds worth 759 more between them: ἐξέρχομαι go out (216), εἰσέρχομαι go in (193), ἀπέρχομαι go away (117), προσέρχομαι come to (86), διέρχομαι go through (41), συνέρχομαι come together (30).",
   "status": "verified",
   "finding": "ἔρχομαι 631 on its own, and exactly seventeen lemmas ending -έρχομαι worth 759 between them: ἐξέρχομαι 216, εἰσέρχομαι 193, ἀπέρχομαι 117, προσέρχομαι 86, διέρχομαι 41, συνέρχομαι 30, παρέρχομαι 29, κατέρχομαι 15, ἐπέρχομαι 9, προέρχομαι 8, and seven more. Both numbers exact."
@@ -755,6 +849,7 @@
   "k": "24dbc3475905",
   "ch": 8,
   "kind": "count",
+  "src": "quiz",
   "text": "ἐκ out of (gen), ἐν in (dat), εἰς into (acc) is the same picture in three words.",
   "status": "unreviewed",
   "finding": ""
@@ -763,6 +858,7 @@
   "k": "281b5e6b13b4",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "Dative: σύν , with — 129 occurrences, 129 datives.",
   "status": "verified",
   "finding": "129 occurrences of σύν and 129 datives after it. Not one exception, so 'Every one' is exact — and it is one of the few genuinely clean absolutes in the chapter."
@@ -771,6 +867,7 @@
   "k": "38b8152521b7",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "ἀράτω τὸν σταυρὸν αὐτοῦ καθ’ ἡμέραν \"Let him take up his cross daily.\" καθ’ ἡμέραν is κατά with the accusative, set hard as an idiom, and you will meet it seventeen times.",
   "status": "verified",
   "finding": "καθ’ ἡμέραν occurs exactly 17 times: Matthew 26:55, Mark 14:49, Luke 9:23, 11:3, 16:19, 19:47, 22:53, Acts 2:46, 2:47, 3:2, 16:5, 17:11, 19:9, 1 Corinthians 15:31, 2 Corinthians 11:28, Hebrews 7:27, 10:11. The first spelled-out number this project has ever machine-checked."
@@ -779,6 +876,7 @@
   "k": "3b27ec514e70",
   "ch": 8,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every one.",
   "status": "unreviewed",
   "finding": ""
@@ -787,6 +885,7 @@
   "k": "438d99503570",
   "ch": 8,
   "kind": "absolute",
+  "src": "body",
   "text": "Read the case, not only the word.",
   "status": "unreviewed",
   "finding": ""
@@ -795,6 +894,7 @@
   "k": "4580872d19ec",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "ἐπί and παρά: three cases each ἐπί is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183.",
   "status": "verified",
   "finding": "Fourth exactly: ἐν 2,733, εἰς 1,754, ἐκ 913, ἐπί 885. And ἐκ's 913 is the 679 plus 234 this pass corrected in chapter 5, so the two chapters agree."
@@ -803,6 +903,7 @@
   "k": "4882aa0ad652",
   "ch": 8,
   "kind": "absolute",
+  "src": "quiz",
   "text": "'I read.' The preposition on a compound is a strong hint and never a proof — ἐκβάλλω really is 'I throw out', but this one is not 'I know up'.",
   "status": "unreviewed",
   "finding": ""
@@ -811,6 +912,7 @@
   "k": "545f3c2a6ebc",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "One word, three cases, three plainly different things.",
   "status": "unreviewed",
   "finding": ""
@@ -819,6 +921,7 @@
   "k": "660217613240",
   "ch": 8,
   "kind": "count",
+  "src": "quiz",
   "text": "διά alone is written δι’ in 149 of its 666 occurrences, so the shortened forms are not a curiosity.",
   "status": "verified",
   "finding": "149 of 666, exact."
@@ -827,6 +930,7 @@
   "k": "851bc360846d",
   "ch": 8,
   "kind": "absolute",
+  "src": "quiz",
   "text": "'A ransom in place of many.' ἀντί occurs only 22 times, and it is the plainest word Greek has for one thing standing where another would have stood.",
   "status": "verified",
   "finding": "22, exact."
@@ -835,6 +939,7 @@
   "k": "8563e3153de1",
   "ch": 8,
   "kind": "absolute",
+  "src": "body",
   "text": "ἀπέθανεν , \"he died\", is ἀπό plus the augment plus the aorist stem of ἀποθνῄσκω , and staring at the first three letters will never produce it.",
   "status": "unreviewed",
   "finding": ""
@@ -843,6 +948,7 @@
   "k": "a03e791d5afd",
   "ch": 8,
   "kind": "absolute",
+  "src": "body",
   "text": "ἀνά is worth a line of its own, because a lexicon will gloss it \"up\" and the New Testament never uses it that way.",
   "status": "unreviewed",
   "finding": ""
@@ -851,6 +957,7 @@
   "k": "c4f58e54be20",
   "ch": 8,
   "kind": "absolute",
+  "src": "body",
   "text": "Only περί and πρό never shorten.",
   "status": "verified",
   "finding": "True, and the evidence is stronger than the claim. Of the vowel-final prepositions, διά, κατά, μετά, ἀπό, ὑπό, ἐπί, παρά and ἀντί all elide. περί stands before a vowel 148 times and never does; πρό 7 times and never does. ἀνά is vowel-final too but never once meets a vowel in the New Testament, so it is untested rather than a counterexample."
@@ -859,6 +966,7 @@
   "k": "d2cc81636526",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν \"To give his life a ransom in place of many.\" Twenty-two occurrences, and ἀντί is the plainest word Greek has for one thing standing where another would have stood.",
   "status": "unreviewed",
   "finding": ""
@@ -867,6 +975,7 @@
   "k": "d9a14e22bcda",
   "ch": 8,
   "kind": "count",
+  "src": "quiz",
   "text": "παρά is the one preposition where all three cases are still cleanly distinct.",
   "status": "unreviewed",
   "finding": ""
@@ -875,6 +984,7 @@
   "k": "dd3dcc684644",
   "ch": 8,
   "kind": "absolute",
+  "src": "body",
   "text": "None of them is \"up\".",
   "status": "verified",
   "finding": "Verified by reading all thirteen: eight distributive, five ἀνὰ μέσον. Not one means 'up', which is what a lexicon leads with."
@@ -883,6 +993,7 @@
   "k": "e76ba7a1a887",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "In chapter 5 you met four of them — ἐν, εἰς, ἐκ and ἀπό — and each one took a single case.",
   "status": "unreviewed",
   "finding": ""
@@ -891,6 +1002,7 @@
   "k": "ecec3a066516",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "It occurs 193 times, and all three of its cases are still clean.",
   "status": "verified",
   "finding": "παρά 193, and the three cases really are all well represented: genitive 81, accusative 60, dative 52 — unlike ἐπί, where the chapter's point is that the distinctions have worn away."
@@ -899,6 +1011,7 @@
   "k": "f2425ead35b8",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "Two cases, two meanings Six prepositions carry most of this weight.",
   "status": "verified",
   "finding": "Every one of the twelve percentages in that table is right, counted as the case of the first case-bearing word after the preposition: διά gen 385 / acc 281 = 58/42 · κατά 74 / 393 = 16/84 · μετά 366 / 104 = 78/22 · περί 294 / 38 = 89/11 · ὑπέρ 130 / 19 = 87/13 · ὑπό 169 / 51 = 77/23. All within rounding."
@@ -907,6 +1020,7 @@
   "k": "f85e1adf6fdc",
   "ch": 8,
   "kind": "count",
+  "src": "body",
   "text": "They take two cases, and two of them take three, and the case is not decoration.",
   "status": "unreviewed",
   "finding": ""
@@ -915,6 +1029,7 @@
   "k": "0a7af97fc599",
   "ch": 9,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only 272 of αὐτός's 5,546 occurrences are nominative — under one in twenty.",
   "status": "verified",
   "finding": "5,546 occurrences and 272 nominative, one in 20.4 — so 'under one in twenty' is exact. And the scoping is the repaired kind: an earlier version gave 261 against the same denominator, counting only the pronoun-tagged nominatives while the total counted every αὐτός. Both halves now count the same thing."
@@ -923,6 +1038,7 @@
   "k": "0d9a868ef5d6",
   "ch": 9,
   "kind": "spelling",
+  "src": "body",
   "text": "The mnemonic worth having is that the last letter of the English word is the first letter of the Greek one: \"w e \" ends in an e and ἡμεῖς begins with eta, while \"yo u \" ends in a u and ὑμεῖς begins with upsilon.",
   "status": "unreviewed",
   "finding": ""
@@ -931,6 +1047,7 @@
   "k": "20cb4c77f94b",
   "ch": 9,
   "kind": "count",
+  "src": "body",
   "text": "ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς ἐν πνεύματι ἁγίῳ \"I baptised you with water, but he will baptise you with the Holy Spirit.\" Two nominative pronouns, and the sentence turns on the distance between them.",
   "status": "unreviewed",
   "finding": ""
@@ -939,6 +1056,7 @@
   "k": "6622d63dca93",
   "ch": 9,
   "kind": "absolute",
+  "src": "body",
   "text": "One rule governs all of them, and it is worth having before the forms.",
   "status": "unreviewed",
   "finding": ""
@@ -947,6 +1065,7 @@
   "k": "6e5288365c47",
   "ch": 9,
   "kind": "count",
+  "src": "body",
   "text": "Of αὐτός 's 5,546 occurrences, 2,140 are genitive — nearly two in five — and most are somebody's something.",
   "status": "verified",
   "finding": "αὐτός 5,546; 2,140 of them genitive = 38.6%, so 'nearly two in five' is right."
@@ -955,6 +1074,7 @@
   "k": "7c0cd11546f0",
   "ch": 9,
   "kind": "absolute",
+  "src": "body",
   "text": "Greek uses one when it wants weight there, and the numbers show how marked that choice is: only 272 of αὐτός 's occurrences are nominative, fewer than one in twenty.",
   "status": "unreviewed",
   "finding": ""
@@ -963,6 +1083,7 @@
   "k": "83b893acbcdb",
   "ch": 9,
   "kind": "absolute",
+  "src": "body",
   "text": "None of the personal pronouns has a vocative.",
   "status": "unreviewed",
   "finding": ""
@@ -971,6 +1092,7 @@
   "k": "9bf8660d3081",
   "ch": 9,
   "kind": "absolute",
+  "src": "body",
   "text": "When the pronoun is emphatic A verb ending already names its subject, so a nominative pronoun is never required .",
   "status": "unreviewed",
   "finding": ""
@@ -979,6 +1101,7 @@
   "k": "9d34c41b2723",
   "ch": 9,
   "kind": "count",
+  "src": "body",
   "text": "αὐτός alone occurs 5,546 times — four times more often than θεός , the commonest noun in the New Testament — and ἐγώ and σύ add 5,466 more between them.",
   "status": "verified",
   "finding": "αὐτός 5,546. θεός is indeed the commonest noun at 1,307 (then Ἰησοῦς 906, κύριος 713), so 'four times more often' is right — 5,546/1,307 = 4.2. ἐγώ 2,894 plus σύ 2,572 = 5,466 exactly."
@@ -987,6 +1110,7 @@
   "k": "af0c1c6d873b",
   "ch": 9,
   "kind": "count",
+  "src": "body",
   "text": "Ten occurrences against seventy-two — so the odds favour the demonstrative, and odds are not reading.",
   "status": "unreviewed",
   "finding": ""
@@ -995,6 +1119,7 @@
   "k": "b677c3db7499",
   "ch": 9,
   "kind": "absolute",
+  "src": "quiz",
   "text": "This is why parsing and translating are two steps and not one.",
   "status": "unreviewed",
   "finding": ""
@@ -1003,6 +1128,7 @@
   "k": "bd5b92dda008",
   "ch": 9,
   "kind": "count",
+  "src": "quiz",
   "text": "Nearly two in five occurrences of αὐτός are genitive, and most are possessive.",
   "status": "unreviewed",
   "finding": ""
@@ -1011,6 +1137,7 @@
   "k": "c585cbaf3f43",
   "ch": 9,
   "kind": "count",
+  "src": "body",
   "text": "αὐτὸς γὰρ σώσει τὸν λαὸν αὐτοῦ ἀπὸ τῶν ἁμαρτιῶν αὐτῶν \"For he himself will save his people from their sins.\" Three forms of one word in eight, doing three different jobs: an intensive nominative, then two genitives of possession.",
   "status": "unreviewed",
   "finding": ""
@@ -1019,6 +1146,7 @@
   "k": "00bc85fb391c",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "(Both of these are passives, which come later; the tense is what is in view.) τὸν καλὸν ἀγῶνα ἠγώνισμαι, τὸν δρόμον τετέλεκα, τὴν πίστιν τετήρηκα \"I have fought the good fight, I have finished the race, I have kept the faith.\" Three perfects in a row — not three past events, but where Paul now stands as a result of them.",
   "status": "unreviewed",
   "finding": ""
@@ -1027,6 +1155,7 @@
   "k": "0279b6fd854c",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "The form: reduplication and κα Three things happen, and none of them is an augment.",
   "status": "unreviewed",
   "finding": ""
@@ -1035,6 +1164,7 @@
   "k": "03fecb162c97",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "You do not need the rules to recite, only the shapes to recognise.",
   "status": "unreviewed",
   "finding": ""
@@ -1043,6 +1173,7 @@
   "k": "08d3cf91be58",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "γινώσκω becomes ἔγνωκεν — the root behind it is γνο- , and you cannot double a γν .",
   "status": "unreviewed",
   "finding": ""
@@ -1051,6 +1182,7 @@
   "k": "10a34980c313",
   "ch": 10,
   "kind": "absolute",
+  "src": "quiz",
   "text": "One in three, and none of them means 'I have known'.",
   "status": "unreviewed",
   "finding": ""
@@ -1059,6 +1191,7 @@
   "k": "2d2175015ade",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "It is simply not loaded every time.",
   "status": "unreviewed",
   "finding": ""
@@ -1067,6 +1200,7 @@
   "k": "330339a50746",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "It is perfect in form and present in meaning, and it occurs 296 times.",
   "status": "unreviewed",
   "finding": ""
@@ -1075,6 +1209,7 @@
   "k": "5c39edf84a85",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "The perfect in the text γέγραπται is the standard formula for introducing Scripture — 67 occurrences — and it is a perfect.",
   "status": "unreviewed",
   "finding": ""
@@ -1083,6 +1218,7 @@
   "k": "7520cc9b33a9",
   "ch": 10,
   "kind": "spelling",
+  "src": "body",
   "text": "Note that the first singular has no ν and the third ends in -ε(ν) , which is what keeps them apart.",
   "status": "unreviewed",
   "finding": ""
@@ -1091,6 +1227,7 @@
   "k": "7f842f5de824",
   "ch": 10,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Paul is not only saying the resurrection happened.",
   "status": "unreviewed",
   "finding": ""
@@ -1099,6 +1236,7 @@
   "k": "82a11e65e420",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "So λύω gives λέλυκα, λέλυκας, λέλυκε(ν), λελύκαμεν, λελύκατε, λελύκασι(ν) — the full column is in Tables, beside the four tenses you already have.",
   "status": "unreviewed",
   "finding": ""
@@ -1107,14 +1245,16 @@
   "k": "8496602b29a3",
   "ch": 10,
   "kind": "count",
+  "src": "quiz",
   "text": "And it is not a curiosity: 210 of the 602 perfect active indicatives in the New Testament are οἶδα.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"210 of those are perfect active indicatives — one in three of every perfect active indicative in the New Testament — and not one means \"I have known\".\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "85726deb9fa5",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "It is rare — 88 pluperfects in the whole New Testament against 1,572 perfects — so recognition is the goal and drilling it is not worth your week.",
   "status": "verified",
   "finding": "88 pluperfects; 1,572 perfects of all moods; of the 88, οἶδα 34 and ἵστημι 14, which is the 48 the quiz names."
@@ -1123,6 +1263,7 @@
   "k": "b155c3c2b9a9",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "Paul is not only saying that the resurrection happened; he is saying that it happened and that Christ is risen still.",
   "status": "unreviewed",
   "finding": ""
@@ -1131,14 +1272,16 @@
   "k": "beab882999f3",
   "ch": 10,
   "kind": "count",
+  "src": "quiz",
   "text": "88, against 1,572 perfects — and 48 of the 88 belong to οἶδα and ἵστημι, which are not translated 'had —' at all.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"It is rare — 88 pluperfects in the whole New Testament against 1,572 perfects — so recognition is the goal and drilling it is not worth your week.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "c0e50b60a80e",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "It is not a promise about what every instance of it achieves, which is where this chapter ends.",
   "status": "unreviewed",
   "finding": ""
@@ -1147,6 +1290,7 @@
   "k": "d0aeed0a392d",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "Parse οἶδα as a present and its pluperfect ᾔδειν as an imperfect, \"I knew\", as every reference work does.",
   "status": "unreviewed",
   "finding": ""
@@ -1155,6 +1299,7 @@
   "k": "d5c70b34f253",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "210 of those are perfect active indicatives — one in three of every perfect active indicative in the New Testament — and not one means \"I have known\".",
   "status": "verified",
   "finding": "602 perfect ACTIVE indicatives, of which 210 are οἶδα = 34.9%, so 'one in three' is right. οἶδα occurs 296 times in all. The denominator matters: perfect indicatives of every voice together are 836."
@@ -1163,6 +1308,7 @@
   "k": "e426b1676426",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "μέσος ὑμῶν ἕστηκεν ὃν ὑμεῖς οὐκ οἴδατε \"Among you stands one whom you do not know.\" Two perfects, neither rendered as a perfect in any English Bible — because in both the resulting state is the point and the past act has receded from view.",
   "status": "unreviewed",
   "finding": ""
@@ -1171,6 +1317,7 @@
   "k": "e47df31ddd18",
   "ch": 10,
   "kind": "count",
+  "src": "body",
   "text": "A stem beginning with two consonants gives up and uses a bare ἐ- .",
   "status": "unreviewed",
   "finding": ""
@@ -1179,6 +1326,7 @@
   "k": "e843f52a276d",
   "ch": 10,
   "kind": "absolute",
+  "src": "body",
   "text": "They are conjugated identically otherwise, and — as with first and second aorists in chapter 7 — the difference is one of form only.",
   "status": "unreviewed",
   "finding": ""
@@ -1187,6 +1335,7 @@
   "k": "ef4b9da61019",
   "ch": 10,
   "kind": "spelling",
+  "src": "body",
   "text": "Not \"I wrote it\" but \"it is written, and it stands\".",
   "status": "unreviewed",
   "finding": ""
@@ -1195,6 +1344,7 @@
   "k": "1c17f70fe640",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "Between them they occur 1,627 times, and both decline with endings you already have.",
   "status": "unreviewed",
   "finding": ""
@@ -1203,6 +1353,7 @@
   "k": "234403c307ac",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "Greek points with two words.",
   "status": "unreviewed",
   "finding": ""
@@ -1211,6 +1362,7 @@
   "k": "510c612ee38a",
   "ch": 11,
   "kind": "absolute",
+  "src": "body",
   "text": "οὐκ ἦν ἐκεῖνος τὸ φῶς \"He was not the light.\" ἐκεῖνος is John the Baptist, named in the verse before, and almost every English translation gives it as \"he\".",
   "status": "corrected",
   "finding": "Was 'every English translation gives it as \"he\"'. The app's own six reference translations refute the every: KJV, ASV, BSB, Darby and NHEB all say 'he', and Young's Literal says 'that one'. Which is the more interesting fact, so it is now on the page — a deliberately literal translation keeps the demonstrative, and that is exactly the chapter's point about what the others are flattening."
@@ -1219,6 +1371,7 @@
   "k": "71f871a79a90",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "In the plural, more so — αὗται three times, and αὐταί not once in the New Testament.",
   "status": "verified",
   "finding": "αὗται 3 (two αὗται plus one enclitic-accented αὗταί) and αὐταί 0. Exact. Counting the raw spelling gives 2 and is the fault check_claims exists for."
@@ -1227,6 +1380,7 @@
   "k": "9c0337046d06",
   "ch": 11,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every English translation renders it 'he' — which is right, and is also why you have to read the Greek to see that John chose a word that points.",
   "status": "unreviewed",
   "finding": ""
@@ -1235,6 +1389,7 @@
   "k": "9e5a3e31427f",
   "ch": 11,
   "kind": "absolute",
+  "src": "quiz",
   "text": "72 occurrences against 10, and in the plural αὗται occurs three times while αὐταί never occurs at all.",
   "status": "verified",
   "finding": "αὕτη 72, αὐτή 10, αὗται 3, αὐταί 0. All four exact, counted the way a frequency claim means — αὗται is two plain plus one enclitic-accented αὗταί, and the raw spelling gives 2."
@@ -1243,6 +1398,7 @@
   "k": "add23604d502",
   "ch": 11,
   "kind": "count",
+  "src": "quiz",
   "text": "1,385 occurrences of οὗτος and 242 of ἐκεῖνος.",
   "status": "verified",
   "finding": "Both exact, and 1,385 + 242 = 1,627, which the chapter also gives."
@@ -1251,6 +1407,7 @@
   "k": "b71cecb6d53c",
   "ch": 11,
   "kind": "absolute",
+  "src": "body",
   "text": "Every form begins with τ except the four nominatives where the article also has none — ὁ, ἡ, οἱ, αἱ against οὗτος, αὕτη, οὗτοι, αὗται .",
   "status": "verified",
   "finding": "Exact on both sides, and pleasingly so. Of the article's 17 distinct forms in the corpus, 4 do not begin with τ: ὁ, ἡ, οἱ, αἱ. Of οὗτος's 18, 4 do not: οὗτος, αὕτη, οὗτοι, αὗται. The same four slots, and no others."
@@ -1259,6 +1416,7 @@
   "k": "ba07ac591dc2",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "The counts are lopsided, and knowing that helps: αὕτη occurs 72 times, αὐτή 10.",
   "status": "verified",
   "finding": "αὕτη 72, αὐτή 10. Exact, counted the way a frequency claim means — folding the sentence-initial capital and the enclitic-thrown accent, not the accent that distinguishes the two words."
@@ -1267,6 +1425,7 @@
   "k": "bf19be12a913",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "ἐκεῖνος in John John uses ἐκεῖνος more than any other writer — 70 of its 242 occurrences, in a Gospel a good deal shorter than Luke's — and often of a person, with weight rather than distance.",
   "status": "verified",
   "finding": "70 of the 242 in John, exact."
@@ -1275,14 +1434,16 @@
   "k": "c744ad62e15d",
   "ch": 11,
   "kind": "count",
+  "src": "quiz",
   "text": "οὗτος, αὕτη, οὗτοι, αὗται match ὁ, ἡ, οἱ, αἱ — the four places the article has no τ.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"Every form begins with τ except the four nominatives where the article also has none — ὁ, ἡ, οἱ, αἱ against οὗτος, αὕτη, οὗτοι, αὗται .\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "e42f8356c7f9",
   "ch": 11,
   "kind": "absolute",
+  "src": "body",
   "text": "Nothing else separates them.",
   "status": "unreviewed",
   "finding": ""
@@ -1291,6 +1452,7 @@
   "k": "e7463de2392e",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "The two commonest forms of οὗτος are both neuter and both usually stand alone — τοῦτο , \"this\", 317 times, and ταῦτα , \"these things\", 240, of which μετὰ ταῦτα accounts for 26.",
   "status": "verified",
   "finding": "τοῦτο 317 (289 + 14 Τοῦτο + 10 τοῦτό + 4 Τοῦτό) and ταῦτα 240 (212 + 23 Ταῦτα + 3 ταῦτά + 2 Ταῦτά). Both exact folded; both undercount badly on the raw string, which is how I mis-tallied them on the first pass. μετὰ ταῦτα is 26 of the 240, exact."
@@ -1299,14 +1461,16 @@
   "k": "f2ea8d85cc5a",
   "ch": 11,
   "kind": "count",
+  "src": "quiz",
   "text": "μετὰ ταῦτα, 'after these things', accounts for 26 of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The two commonest forms of οὗτος are both neuter and both usually stand alone — τοῦτο , \"this\", 317 times, and ταῦτα , \"these things\", 240, of which μ\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "fc9d06dd9a51",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "It is the three quite different jobs a demonstrative does, and the one place where a breathing mark is the whole difference between two words.",
   "status": "unreviewed",
   "finding": ""
@@ -1315,6 +1479,7 @@
   "k": "ff53cee385b2",
   "ch": 11,
   "kind": "count",
+  "src": "body",
   "text": "ἐκεῖνος occurs 242 times against οὗτος 's 1,385, much the rarer of the two.",
   "status": "unreviewed",
   "finding": ""
@@ -1323,6 +1488,7 @@
   "k": "05de8ef1a8d1",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "One set of endings, two voices The primary middle and passive endings are: Primary middle/passive endings Singular Plural 1st -μαι -μεθα 2nd -σαι -σθε 3rd -ται -νται One set, and both voices use it.",
   "status": "unreviewed",
   "finding": ""
@@ -1331,6 +1497,7 @@
   "k": "07c7f89c0d0a",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "Robertson's grammar said in 1915 that it \"should not be used at all\", and that these verbs are defective rather than deponent — a verb that never had an active has laid nothing aside.",
   "status": "unreviewed",
   "finding": ""
@@ -1339,6 +1506,7 @@
   "k": "13709fad3d90",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "ἔρχεται and δύναται alone are 160 of them.",
   "status": "verified",
   "finding": "89 + 71 = 160, exact, and consistent with the two figures given a paragraph earlier."
@@ -1347,6 +1515,7 @@
   "k": "295223499eb9",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "The σ dropped out between two vowels, and the ε and α contracted, taking the ι underneath.",
   "status": "unreviewed",
   "finding": ""
@@ -1355,6 +1524,7 @@
   "k": "2bd2a531a07a",
   "ch": 12,
   "kind": "spelling",
+  "src": "body",
   "text": "So when you meet a middle, the first question is not \"what is the middle voice doing here?\" It is \"does this verb have an active at all?\" Usually it does not, and the ending is simply how the word is spelled.",
   "status": "unreviewed",
   "finding": ""
@@ -1363,6 +1533,7 @@
   "k": "3f9007808fdb",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "Greek does this whenever an ending starting with σ meets a connecting vowel — so every second person singular in the middle looks irregular, and none of them is.",
   "status": "unreviewed",
   "finding": ""
@@ -1371,6 +1542,7 @@
   "k": "470bc4da4620",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "It only says that it is.",
   "status": "unreviewed",
   "finding": ""
@@ -1379,6 +1551,7 @@
   "k": "5084a65e4bb3",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "The two commonest present middle indicatives in the book are ἔρχεται (89) and δύναται (71), and neither means anything reflexive.",
   "status": "unreviewed",
   "finding": ""
@@ -1387,14 +1560,16 @@
   "k": "53d8024bb096",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "A different word in the middle, and 84 of the verb's 86 occurrences are middle.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"ἄρχομαι , middle, means \"I begin\" — and 84 of that verb's 86 occurrences are middle.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "8b8ffa05bde6",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "One set of endings serves both, in the present, imperfect, perfect and pluperfect.",
   "status": "unreviewed",
   "finding": ""
@@ -1403,6 +1578,7 @@
   "k": "b15903f5608a",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "By whom, through whom, by what A passive often names the agent, and Greek has three main ways of doing it — two of them from chapter 8.",
   "status": "unreviewed",
   "finding": ""
@@ -1411,6 +1587,7 @@
   "k": "b89bee6ec160",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "The clearest evidence that it is doing real work is a verb that means two different things in the two voices.",
   "status": "unreviewed",
   "finding": ""
@@ -1419,6 +1596,7 @@
   "k": "ba4fb3ff4f32",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "The exception is the second singular, and it is worth a minute now because the same thing happens in each of the next three chapters.",
   "status": "unreviewed",
   "finding": ""
@@ -1427,6 +1605,7 @@
   "k": "cb02db5e8d69",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "Middle and passive share endings in four tenses.",
   "status": "unreviewed",
   "finding": ""
@@ -1435,6 +1614,7 @@
   "k": "cc16b35e67f5",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "The form cannot tell you which is meant.",
   "status": "unreviewed",
   "finding": ""
@@ -1443,6 +1623,7 @@
   "k": "cd6e5c67c573",
   "ch": 12,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only the verb and the sentence decide, which is why a parsing that says 'middle' is a judgement rather than a reading.",
   "status": "unreviewed",
   "finding": ""
@@ -1451,6 +1632,7 @@
   "k": "cdd73b548640",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "Every verb you have read so far has been active : the subject does the thing.",
   "status": "unreviewed",
   "finding": ""
@@ -1459,6 +1641,7 @@
   "k": "d8fb76683a62",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "A verb whose two voices mean two things is the clearest evidence the middle is doing real work.",
   "status": "unreviewed",
   "finding": ""
@@ -1467,6 +1650,7 @@
   "k": "df0f5329065a",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "Keeping 'I am being loosed' for the present preserves the imperfective aspect and keeps the two tenses distinct.",
   "status": "unreviewed",
   "finding": ""
@@ -1475,6 +1659,7 @@
   "k": "e5654aefe163",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "ἄρχομαι , middle, means \"I begin\" — and 84 of that verb's 86 occurrences are middle.",
   "status": "verified",
   "finding": "ἄρχω 86 occurrences, 84 of them middle. Exact."
@@ -1483,6 +1668,7 @@
   "k": "ef6ebc0675f0",
   "ch": 12,
   "kind": "count",
+  "src": "quiz",
   "text": "Three present passives with no agent.",
   "status": "unreviewed",
   "finding": ""
@@ -1491,6 +1677,7 @@
   "k": "f18c4794d8e5",
   "ch": 12,
   "kind": "count",
+  "src": "body",
   "text": "Here is the number that ought to change how you read the middle: 443 of the 683 present middle indicatives in the New Testament — two in three — belong to verbs that have no active form anywhere.",
   "status": "verified",
   "finding": "683 present middle indicatives; 443 belong to lemmas with no active-voice form anywhere in the corpus = 65%. ἔρχεται 89 and δύναται 71, counting the enclitic-accented spellings ἔρχεταί/δύναταί, which are the same word. But ἔρχομαι is NOT one of the 443: it has 384 active forms, ἦλθον among them. The sentence used to present it as one and now says the opposite."
@@ -1499,6 +1686,7 @@
   "k": "f40a7ecf7db6",
   "ch": 12,
   "kind": "absolute",
+  "src": "body",
   "text": "ἔρχομαι is the one to watch: it has no active present, so every grammar calls it deponent, but it has an active aorist in ἦλθον — which is why it is not among the 443.",
   "status": "unreviewed",
   "finding": ""
@@ -1507,6 +1695,7 @@
   "k": "212b2ab400d0",
   "ch": 13,
   "kind": "count",
+  "src": "quiz",
   "text": "ἔσται alone occurs 118 times.",
   "status": "verified",
   "finding": "118 exact, folding the sentence-initial Ἔσται — 117 on the raw string, and that undercount is the one check_claims' docstring names."
@@ -1515,6 +1704,7 @@
   "k": "4e180a4fc9e0",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "μέν … δέ These two little words work as a pair, marking a contrast: μέν sets something up, and δέ answers it.",
   "status": "unreviewed",
   "finding": ""
@@ -1523,6 +1713,7 @@
   "k": "646747daf729",
   "ch": 13,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Others are frozen case forms — σήμερον, 'today', is an accusative — and adverbs never decline.",
   "status": "verified",
   "finding": "274 adverb lemmas in the corpus, and only four appear in more than one spelling: οὕτω/οὕτως, οὐ/οὐκ/οὐχ, οὐδέ/οὐδ’ and σπουδαίως/σπουδαιοτέρως. The first three are sandhi and elision, which the course teaches as such, and the fourth is a comparative. None is declension, so 'adverbs never decline' stands."
@@ -1531,6 +1722,7 @@
   "k": "67e10ee21f0f",
   "ch": 13,
   "kind": "spelling",
+  "src": "body",
   "text": "When the stem ends in a consonant These endings begin with μ, σ, τ and ν , and a stem ending in a consonant has to meet them.",
   "status": "unreviewed",
   "finding": ""
@@ -1539,6 +1731,7 @@
   "k": "6856b3510eb7",
   "ch": 13,
   "kind": "absolute",
+  "src": "body",
   "text": "With the plural article the pair means \"some… others\": οἱ μὲν ἦσαν σὺν τοῖς Ἰουδαίοις οἱ δὲ σὺν τοῖς ἀποστόλοις \"Some were with the Jews, and others with the apostles.\" Both words are postpositive — they never begin their clause, and stand second.",
   "status": "unreviewed",
   "finding": ""
@@ -1547,6 +1740,7 @@
   "k": "72dbf69bb11c",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "μέν occurs 178 times, so this is a pattern to recognise rather than a curiosity.",
   "status": "verified",
   "finding": "Exact."
@@ -1555,6 +1749,7 @@
   "k": "867a3c688403",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "εὐθύς , \"immediately\", occurs 59 times in the New Testament and 42 of them are in Mark — in the shortest of the Gospels.",
   "status": "verified",
   "finding": "59 in the New Testament and 42 of them in Mark. Both exact."
@@ -1563,6 +1758,7 @@
   "k": "868e14b8fd0b",
   "ch": 13,
   "kind": "absolute",
+  "src": "body",
   "text": "Form Marker Tense λύεται connecting vowel, nothing else present λέλυται reduplication, no connecting vowel perfect λύσεται σ before the connecting vowel future Three words, one ending, and the whole difference is in the middle of them.",
   "status": "unreviewed",
   "finding": ""
@@ -1571,6 +1767,7 @@
   "k": "87563cf35968",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "A doubled first syllable and one of these endings means a perfect middle or passive, whatever has happened to the consonant in between.",
   "status": "unreviewed",
   "finding": ""
@@ -1579,6 +1776,7 @@
   "k": "87bbfec1ac09",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "Two more sets of forms, and no new endings to learn.",
   "status": "unreviewed",
   "finding": ""
@@ -1587,6 +1785,7 @@
   "k": "b7275b80ffd4",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "γέγραπται — \"it stands written\" — accounts for 67 of the 202 perfect passive indicatives in the New Testament, one in three.",
   "status": "verified",
   "finding": "γέγραπται 67; perfect passive indicatives 202; 33%, so 'one in three' is right. All exact."
@@ -1595,6 +1794,7 @@
   "k": "c6cbfb574af0",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "Learn it properly, because it is not a footnote: 186 of the 489 future middle indicatives in the New Testament belong to εἰμί — two in five.",
   "status": "verified",
   "finding": "489 future middle indicatives, 186 of them εἰμί = 38%, 'two in five'. Exact."
@@ -1603,6 +1803,7 @@
   "k": "e1df220a248c",
   "ch": 13,
   "kind": "count",
+  "src": "body",
   "text": "ἔσομαι αὐτῷ θεὸς καὶ αὐτὸς ἔσται μοι υἱός \"I will be God to him, and he will be a son to me.\" Telling them apart You now have three sets of forms ending in -μαι and -ται , and they are told apart by what sits in front of the ending.",
   "status": "unreviewed",
   "finding": ""
@@ -1611,6 +1812,7 @@
   "k": "f660c982bb54",
   "ch": 13,
   "kind": "absolute",
+  "src": "body",
   "text": "ἔσομαι: the future of εἰμί ἔσομαι — I will be Singular Plural 1st ἔσομαι ἐσόμεθα 2nd ἔσῃ ἔσεσθε 3rd ἔσται ἔσονται Built on the stem ἐσ- with the same endings, and with this the paradigm of εἰμί is complete in every tense you need.",
   "status": "unreviewed",
   "finding": ""
@@ -1619,6 +1821,7 @@
   "k": "02ec16855c24",
   "ch": 14,
   "kind": "count",
+  "src": "body",
   "text": "There are seven pluperfect middle or passive indicatives in the whole New Testament — seven different verbs, one occurrence each.",
   "status": "verified",
   "finding": "Seven exactly, and seven different lemmas with one occurrence each: θεμελιόω, οἰκοδομέω, βάλλω, συντίθεμαι, περιδέω, ἐπιγράφω, ἐπικαλέω. The chapter's 'seven different verbs, one occurrence each' is exactly right, and τεθεμελίωτο at Matthew 7:25 is one of them."
@@ -1627,6 +1830,7 @@
   "k": "08ef3dc6e1d2",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "The secondary middle and passive endings Secondary middle/passive endings Singular Plural 1st -μην -μεθα 2nd -σο -σθε 3rd -το -ντο Compare them with the primary set from chapter 12 and the family resemblance is obvious: the plurals -μεθα and -σθε are identical, and the singulars differ only in their final vowel.",
   "status": "unreviewed",
   "finding": ""
@@ -1635,6 +1839,7 @@
   "k": "093ae9919487",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "In the imperfect and the pluperfect, middle and passive are spelled the same, and only the sentence separates them.",
   "status": "unreviewed",
   "finding": ""
@@ -1643,6 +1848,7 @@
   "k": "14c83398504e",
   "ch": 14,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Where only one voice is available the voice is not a choice the writer made — which is what chapter 12 told you to ask first.",
   "status": "unreviewed",
   "finding": ""
@@ -1651,6 +1857,7 @@
   "k": "210d7597807e",
   "ch": 14,
   "kind": "count",
+  "src": "quiz",
   "text": "641 aorist middle indicatives in the New Testament, and one form is 201 of them.",
   "status": "verified",
   "finding": "Exact."
@@ -1659,6 +1866,7 @@
   "k": "2c67c5f93f95",
   "ch": 14,
   "kind": "count",
+  "src": "body",
   "text": "How much of this you actually meet Four chapters of middle and passive forms invite the question of where a week is best spent.",
   "status": "unreviewed",
   "finding": ""
@@ -1667,6 +1875,7 @@
   "k": "3ec541d6e562",
   "ch": 14,
   "kind": "count",
+  "src": "body",
   "text": "Of its twenty-two occurrences, twenty-one are middle and one is passive — there was nothing to choose against.",
   "status": "verified",
   "finding": "ἐκλέγομαι: 22 occurrences, 21 middle, 1 passive, no active anywhere. Exact, including the 'no active' claim."
@@ -1675,6 +1884,7 @@
   "k": "5597481efde6",
   "ch": 14,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Which is why ἐγίνετο and ἐγένετο are told apart by one vowel in the stem and by nothing else at all.",
   "status": "unreviewed",
   "finding": ""
@@ -1683,6 +1893,7 @@
   "k": "58edc80d45fe",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "καὶ ἐβαπτίζοντο ἐν τῷ Ἰορδάνῃ ποταμῷ ὑπ’ αὐτοῦ \"And they were being baptised in the river Jordan by him.\" An imperfect passive with its agent named, and the imperfective aspect is the point — a queue of people, not a single event.",
   "status": "unreviewed",
   "finding": ""
@@ -1691,6 +1902,7 @@
   "k": "5c4011522973",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "The stem is the only difference — which means the two are told apart by the stem and nothing else.",
   "status": "unreviewed",
   "finding": ""
@@ -1699,6 +1911,7 @@
   "k": "61db85b804f0",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "Set it beside the imperfect above and the only difference is that σα .",
   "status": "unreviewed",
   "finding": ""
@@ -1707,6 +1920,7 @@
   "k": "6ef2970a8ef6",
   "ch": 14,
   "kind": "count",
+  "src": "quiz",
   "text": "τεθεμελίωτο in Matthew 7:25 — the house founded on the rock — is one of them.",
   "status": "unreviewed",
   "finding": ""
@@ -1715,6 +1929,7 @@
   "k": "77521eb570de",
   "ch": 14,
   "kind": "count",
+  "src": "quiz",
   "text": "Twenty-one middles and one passive, and no active anywhere in the New Testament.",
   "status": "unreviewed",
   "finding": ""
@@ -1723,6 +1938,7 @@
   "k": "9ff68b947489",
   "ch": 14,
   "kind": "count",
+  "src": "quiz",
   "text": "Seven, spread across seven different verbs, one each.",
   "status": "unreviewed",
   "finding": ""
@@ -1731,6 +1947,7 @@
   "k": "a49c91ff5f52",
   "ch": 14,
   "kind": "count",
+  "src": "quiz",
   "text": "Third time in three chapters.",
   "status": "unreviewed",
   "finding": ""
@@ -1739,6 +1956,7 @@
   "k": "af107b3b9db0",
   "ch": 14,
   "kind": "absolute",
+  "src": "body",
   "text": "γίνομαι gives ἐγενόμην , and ἐγένετο alone occurs 201 times: nearly a third of every aorist middle indicative in the New Testament.",
   "status": "corrected",
   "finding": "Was 'nearly a third of every aorist middle in the New Testament'. ἐγένετο is 201, which is 31% of the 641 aorist middle INDICATIVES — the category the chapter is about — but only 15% of the 1,324 aorist middles of every mood, which is what the sentence said. The number was right and the denominator was unstated. Found by reading a stale IGNORE entry in check_claims."
@@ -1747,6 +1965,7 @@
   "k": "f5fb5e88e024",
   "ch": 14,
   "kind": "absolute",
+  "src": "quiz",
   "text": "One sound change explains every odd-looking second person singular in the middle.",
   "status": "unreviewed",
   "finding": ""
@@ -1755,6 +1974,7 @@
   "k": "4f437041c3d5",
   "ch": 15,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Christ is the subject of every line and the actor in none — a choice an English translation with active verbs cannot show.",
   "status": "unreviewed",
   "finding": ""
@@ -1763,6 +1983,7 @@
   "k": "5961a44b355e",
   "ch": 15,
   "kind": "absolute",
+  "src": "body",
   "text": "Christ is the subject of every line and the actor in none of them.",
   "status": "unreviewed",
   "finding": ""
@@ -1771,6 +1992,7 @@
   "k": "6d58213af9a4",
   "ch": 15,
   "kind": "count",
+  "src": "body",
   "text": "Altogether 251 of the 863 aorist passives — nearly one in three — belong to verbs that have no active form anywhere in the New Testament.",
   "status": "verified",
   "finding": "251 of the 863 belong to lemmas with no active-voice form anywhere in the corpus = 29%, 'nearly one in three'. Exact."
@@ -1779,6 +2001,7 @@
   "k": "76de50f09e5d",
   "ch": 15,
   "kind": "absolute",
+  "src": "quiz",
   "text": "θη marks the voice; the endings mark only the person.",
   "status": "unreviewed",
   "finding": ""
@@ -1787,6 +2010,7 @@
   "k": "8389c878ac3c",
   "ch": 15,
   "kind": "count",
+  "src": "body",
   "text": "It is one sound rule you have now met three times, and the useful residue is simply this: a θ preceded by χ, φ or σ is very often an aorist passive.",
   "status": "unreviewed",
   "finding": ""
@@ -1795,6 +2019,7 @@
   "k": "83b07bfe48ec",
   "ch": 15,
   "kind": "absolute",
+  "src": "body",
   "text": "Six forms, and from them every form of the verb can be built.",
   "status": "unreviewed",
   "finding": ""
@@ -1803,6 +2028,7 @@
   "k": "992301a646f8",
   "ch": 15,
   "kind": "count",
+  "src": "body",
   "text": "There are 863 aorist passive indicatives in the New Testament — more than any other middle or passive form — which makes this the chapter of the four to get right.",
   "status": "verified",
   "finding": "Exact."
@@ -1811,6 +2037,7 @@
   "k": "a1a058595ef0",
   "ch": 15,
   "kind": "absolute",
+  "src": "body",
   "text": "The passive at work ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ \"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory.\" Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, θη or its consonant variant, ending.",
   "status": "unreviewed",
   "finding": ""
@@ -1819,6 +2046,7 @@
   "k": "be64976feca5",
   "ch": 15,
   "kind": "spelling",
+  "src": "body",
   "text": "When the stem ends in a consonant A stem ending in a consonant collides with the θ, and the two combine.",
   "status": "unreviewed",
   "finding": ""
@@ -1827,6 +2055,7 @@
   "k": "c44b2a164135",
   "ch": 15,
   "kind": "absolute",
+  "src": "quiz",
   "text": "As with second aorists and second perfects, the difference is form only.",
   "status": "unreviewed",
   "finding": ""
@@ -1835,6 +2064,7 @@
   "k": "cde8ca4057bd",
   "ch": 15,
   "kind": "count",
+  "src": "body",
   "text": "μακάριοι οἱ πενθοῦντες, ὅτι αὐτοὶ παρακληθήσονται \"Blessed are those who mourn, for they shall be comforted.\" A future passive with no agent named — the divine passive of chapter 12, and one of the places where leaving God unnamed is the whole force of the line.",
   "status": "unreviewed",
   "finding": ""
@@ -1843,6 +2073,7 @@
   "k": "df813f13260e",
   "ch": 15,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Every form of the verb is built from one of those six.",
   "status": "unreviewed",
   "finding": ""
@@ -1851,6 +2082,7 @@
   "k": "012f52dcd03e",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "There are 15,589 indicative verbs in the New Testament — 56% of all its verb forms — and between chapters 3 and 15 you have met every tense and every voice they use.",
   "status": "verified",
   "finding": "15,589 indicatives against 27,979 verb forms = 56%."
@@ -1859,6 +2091,7 @@
   "k": "061f19472e42",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "Second singular active, and perfect in form only: it means \"you know\", not \"you have known\" (chapter 10).",
   "status": "unreviewed",
   "finding": ""
@@ -1867,6 +2100,7 @@
   "k": "0921284f181c",
   "ch": 16,
   "kind": "count",
+  "src": "body",
   "text": "Fifteen chapters have added one piece at a time.",
   "status": "unreviewed",
   "finding": ""
@@ -1875,6 +2109,7 @@
   "k": "378968b71c1c",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "One of the traps chapter 10 exists for: 210 of the 602 perfect active indicatives in the New Testament are οἶδα, and none of them means 'I have known'.",
   "status": "unreviewed",
   "finding": ""
@@ -1883,6 +2118,7 @@
   "k": "492b3d041fb0",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "What identifies each tense Tense Marker Active Middle / passive Present nothing at either end λύω λύομαι Imperfect augment, no aspect marker ἔλυον ἐλυόμην Future σ λύσω λύσομαι Aorist augment + σα ἔλυσα ἐλυσάμην Aorist passive augment + θη — ἐλύθην Perfect reduplication (+ κα active) λέλυκα λέλυμαι Pluperfect augment + reduplication ἐλελύκειν ἐλελύμην That is the entire indicative system, and you have met every row of it.",
   "status": "unreviewed",
   "finding": ""
@@ -1891,6 +2127,7 @@
   "k": "4d4abf5c01f7",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "And only the stem separates them — ἔβαλον against ἔβαλλον.",
   "status": "unreviewed",
   "finding": ""
@@ -1899,6 +2136,7 @@
   "k": "7bd99a491dfd",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Ask 'how is this being viewed?' rather than 'when did it happen?' — which is the question every chapter after this one turns on.",
   "status": "unreviewed",
   "finding": ""
@@ -1907,6 +2145,7 @@
   "k": "8717b0f7cb52",
   "ch": 16,
   "kind": "count",
+  "src": "body",
   "text": "The whole indicative on one page Six tenses and three voices, and the marker that identifies each.",
   "status": "unreviewed",
   "finding": ""
@@ -1915,6 +2154,7 @@
   "k": "985dd2f5745f",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The present is what is left when nothing else is there — which is why the algorithm asks about the others first.",
   "status": "unreviewed",
   "finding": ""
@@ -1923,6 +2163,7 @@
   "k": "9b6bf4fdb2fd",
   "ch": 16,
   "kind": "count",
+  "src": "body",
   "text": "Five finite verbs in one sentence and five different answers.",
   "status": "unreviewed",
   "finding": ""
@@ -1931,6 +2172,7 @@
   "k": "a5f096471502",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "Not every slot is filled in every form, but they always come in this order: Slot What it says Example preposition a compound verb (ch8) ἀπ- augment or reduplication augment: past time in the indicative (ch7).",
   "status": "corrected",
   "finding": "The slot table read 'past time, or perfective (ch7, ch10)'. Chapter 2 declares in as many words that this course uses 'perfective' for the aorist, and warns that Black uses it for the perfect — and then this row used it in Black's sense, cross-referenced to chapter 10, whose aspect the course calls stative. It also gave one meaning to two markers that mean different things. Raised by ChatGPT's audit, by a different route."
@@ -1939,14 +2181,16 @@
   "k": "a621e930c9c6",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Between chapters 3 and 15 you have met every tense and voice they use.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"There are 15,589 indicative verbs in the New Testament — 56% of all its verb forms — and between chapters 3 and 15 you have met every tense and every \". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "af52b4bf0028",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "If an augment and nothing in the middle, it is an imperfect or a second aorist, and only the stem will tell you which.",
   "status": "unreviewed",
   "finding": ""
@@ -1955,6 +2199,7 @@
   "k": "e529bf30a80e",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "In the chapters ahead the question is never \"when?\" but \"how is the writer viewing the action?\" — as a whole, as going on, or as a standing result.",
   "status": "unreviewed",
   "finding": ""
@@ -1963,6 +2208,7 @@
   "k": "f107c2b62a0a",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "Working one out Ὃ ἐγὼ ποιῶ σὺ οὐκ οἶδας ἄρτι, γνώσῃ δὲ μετὰ ταῦτα \"What I am doing you do not know now, but you will understand afterwards.\" Three verbs, three different answers, and every one of them a thing this course has warned you about.",
   "status": "unreviewed",
   "finding": ""
@@ -1971,6 +2217,7 @@
   "k": "fbde7983dc91",
   "ch": 16,
   "kind": "absolute",
+  "src": "body",
   "text": "Only the indicative marks time.",
   "status": "unreviewed",
   "finding": ""
@@ -1979,6 +2226,7 @@
   "k": "ff3c43b2b441",
   "ch": 16,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Missing this is the commonest reason a reader cannot find a verb in the lexicon.",
   "status": "unreviewed",
   "finding": ""
@@ -1987,14 +2235,16 @@
   "k": "0b72c7a18532",
   "ch": 17,
   "kind": "count",
+  "src": "quiz",
   "text": "587 of 1,835 common noun lemmas, against the second declension’s 558 words carrying 41% of the text.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"Classify every common noun in the New Testament by the genitive its lexicon gives it, and third declension nouns are 587 of the 1,835 — about a third \". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "134afd56ac3e",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "Two declensions have carried you this far.",
   "status": "unreviewed",
   "finding": ""
@@ -2003,6 +2253,7 @@
   "k": "19a404d6250d",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "The -σι(ν) is the clue — but only half of one, because a verb's third person plural ends the same way.",
   "status": "verified",
   "finding": "True, and worth having survived: the dative plural -σι(ν) and the third person plural active -σι(ν) really do collide — δίδωσιν is a verb and σάρξιν a noun. An earlier version of this course said nothing else in Greek ends -σι(ν), which was false; this is the corrected form."
@@ -2011,6 +2262,7 @@
   "k": "29c2791fb4a0",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "The family words Three of the commonest nouns in the New Testament are third declension, and all three change their stem between one case and the next.",
   "status": "unreviewed",
   "finding": ""
@@ -2019,6 +2271,7 @@
   "k": "2b2a73cdaa7c",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "Read the article, learn the genitive with every new noun, and let the rest come from meeting the words.",
   "status": "unreviewed",
   "finding": ""
@@ -2027,6 +2280,7 @@
   "k": "3a1611dd98f0",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "The commonest of all is ἔθνεσιν , 31 occurrences, from ἔθνος .",
   "status": "verified",
   "finding": "ἔθνεσιν 31, exact."
@@ -2035,14 +2289,16 @@
   "k": "505e126762f3",
   "ch": 17,
   "kind": "absolute",
+  "src": "quiz",
   "text": "And the same is true of every -μα noun: πνεῦμα/πνεύματος, ὄνομα/ὀνόματος, ῥῆμα/ῥήματος.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The same happens to every -μα noun, and there are a great many: πνεῦμα, πνεύματος (379 occurrences), ὄνομα, ὀνόματος , ῥῆμα, ῥήματος .\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "601020a9ea90",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "The endings that are always there The stems vary enormously.",
   "status": "unreviewed",
   "finding": ""
@@ -2051,6 +2307,7 @@
   "k": "6f0d1c33018d",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "The same happens to every -μα noun, and there are a great many: πνεῦμα, πνεύματος (379 occurrences), ὄνομα, ὀνόματος , ῥῆμα, ῥήματος .",
   "status": "verified",
   "finding": "πνεῦμα 379, exact. And 'Greek will not end a word in τ' is right: a Greek word ends in a vowel, ν, ρ or ς, with οὐκ and ἐκ the standing exceptions."
@@ -2059,6 +2316,7 @@
   "k": "981b562d5469",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "Those three are nearly invariable, and none of them belongs to the first or second declension.",
   "status": "unreviewed",
   "finding": ""
@@ -2067,6 +2325,7 @@
   "k": "9ec260249b61",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "You almost never have to work a third declension form out cold, because Greek nouns usually come with the article — and the article you learned in chapter 4 has not changed.",
   "status": "unreviewed",
   "finding": ""
@@ -2075,6 +2334,7 @@
   "k": "abe3598b890e",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "σαρκός gives σαρκ- , and every other form is built on that: σαρκί (39 occurrences), σάρκα (37), σάρκας (7).",
   "status": "verified",
   "finding": "σαρκί 39, σάρκα 37, σάρκας 7 — all exact."
@@ -2083,6 +2343,7 @@
   "k": "b47c4f2e8ab8",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "The endings barely vary at all, and three of them will carry you.",
   "status": "unreviewed",
   "finding": ""
@@ -2091,6 +2352,7 @@
   "k": "bfcc87697af8",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "πίστις, πίστεως , \"faith\" (242 occurrences) · πόλις, πόλεως , \"city\" (162) · δύναμις, δυνάμεως , \"power\" (119).",
   "status": "corrected",
   "finding": "Was 163. MorphGNT lemmatises Πόλις apart from πόλις: the extra one is Νέαν Πόλιν at Acts 16:11 — Neapolis, a place name. The common noun is 162. check_claims had been merging them because it lowercased lemmas before counting, and seventeen pairs in the corpus differ only in that first letter — στέφανος 18 against Στέφανος 7, σμύρνα against Σμύρνα, γάζα against Γάζα. It now counts the cased lemma first, and all 75 of its claims still verify."
@@ -2099,6 +2361,7 @@
   "k": "eee825bb4f31",
   "ch": 17,
   "kind": "absolute",
+  "src": "body",
   "text": "Classify every common noun in the New Testament by the genitive its lexicon gives it, and third declension nouns are 587 of the 1,835 — about a third of the different words, and a little under a third of the running text.",
   "status": "corrected",
   "finding": "SETTLED with Abbott-Smith, which the corpus alone could not do: a noun that never appears in the genitive singular has nothing in the text to classify it by, and that was 1,120 of them. Abbott-Smith prints the genitive in every headword — σάρξ, σαρκός · πόλις, -εως · λόγος, -ου — so parsing his <form> blocks classifies 1,835 of the 1,841 common noun lemmas; the six left are indeclinable Semitic loanwords (πάσχα, ῥαββί, ἐλωΐ, ἠλί, σίκερα, ραββουνι). The classifier spot-checks 31 of 31 against hand-picked nouns from all three declensions, and gets every one of the 24 commonest right. Result: first 690 lemmas / 7,010 tokens, second 558 / 9,646, third 587 / 6,884. So third declension is 32% of the lemmas and 29% of the tokens — the TOKEN half of the old claim was right (28%), confirmed now by three independent methods, and the lemma half was not: it said 376 of 985, 38%. The denominator 985 corresponds to nothing derivable — not 1,841 common lemmas, not 2,399 with proper names, not 913 (≥3 occurrences), not 1,201 (≥2), not the 4,526 of data/lexicon.js. 'The third is bigger than both' also went: the first declension has 690 to the third's 587. The chapter's real point survives and is now carried by the second declension's 558 words holding 41% of the running text. Two bugs in my own classifier were found before trusting it — a comma inside a parenthesis broke the genitive parse, and the masculine first declension takes -ου, so μαθητής and προφήτης were being called second declension."
@@ -2107,6 +2370,7 @@
   "k": "f132a48c288b",
   "ch": 17,
   "kind": "spelling",
+  "src": "body",
   "text": "The stem ends in a consonant, and the nominative is where it gets damaged.",
   "status": "unreviewed",
   "finding": ""
@@ -2115,6 +2379,7 @@
   "k": "facdbf1a93d2",
   "ch": 17,
   "kind": "count",
+  "src": "body",
   "text": "The second declension is the opposite: 558 words carrying 41% of it.",
   "status": "unreviewed",
   "finding": ""
@@ -2123,6 +2388,7 @@
   "k": "0d55e5b4f24e",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "So each has two forms that look odd and a full set that does not.",
   "status": "unreviewed",
   "finding": ""
@@ -2131,6 +2397,7 @@
   "k": "1bbb68a86788",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "εἷς, οὐδείς and μηδείς εἷς, μία, ἕν is \"one\" (342 occurrences), and it is 3-1-3 like πᾶς : ἑνός, ἑνί, ἕνα in the masculine.",
   "status": "verified",
   "finding": "342, exact."
@@ -2139,6 +2406,7 @@
   "k": "3304360479ad",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "Numbers worth knowing Of the numerals you count on, only the first four decline.",
   "status": "corrected",
   "finding": "Was 'Only the first four Greek numerals decline. Everything from five upward is a fixed form.' False from 200 up: διακόσιοι declines through four cases (Mark 6:37, John 6:7, Acts 23:23, Acts 27:37), and so do τετρακόσιοι, πεντακόσιοι, χίλιοι (Rev 20:2 χίλια ἔτη), μύριοι, τετρακισχίλιοι, πεντακισχίλιοι, plus the nouns χιλιάς and μυριάς. Five to a hundred are indeed indeclinable. Bounded to the numerals a reader counts on."
@@ -2147,6 +2415,7 @@
   "k": "503a014b8bb7",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "The New Testament has 264 comparative adjectives and only 42 superlatives , and the gap is made up by comparatives doing the work.",
   "status": "unreviewed",
   "finding": ""
@@ -2155,6 +2424,7 @@
   "k": "5abd40024c90",
   "ch": 18,
   "kind": "count",
+  "src": "quiz",
   "text": "From πέντε to a hundred they are fixed forms.",
   "status": "unreviewed",
   "finding": ""
@@ -2163,6 +2433,7 @@
   "k": "5bae054f99b8",
   "ch": 18,
   "kind": "absolute",
+  "src": "quiz",
   "text": "μείζων δὲ τούτων ἡ ἀγάπη is literally 'greater of these', and every translation rightly gives 'greatest'.",
   "status": "unreviewed",
   "finding": ""
@@ -2171,6 +2442,7 @@
   "k": "6545b302251b",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "πᾶσα γραφὴ θεόπνευστος \"Every scripture is God-breathed.\" No article, singular — so \"every\", and the argument of the verse depends on it.",
   "status": "unreviewed",
   "finding": ""
@@ -2179,6 +2451,7 @@
   "k": "6fecff483483",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "Note δυσί : the dative of δύο , and one of only a handful of forms that word has.",
   "status": "unreviewed",
   "finding": ""
@@ -2187,6 +2460,7 @@
   "k": "776d369c3a9a",
   "ch": 18,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Without the article and singular, πᾶς is 'every'; plural, 'all'.",
   "status": "unreviewed",
   "finding": ""
@@ -2195,6 +2469,7 @@
   "k": "7d723e7ec568",
   "ch": 18,
   "kind": "count",
+  "src": "quiz",
   "text": "Learn the four odd forms — πολύς, πολύ, μέγας, μέγα — and read the rest as ordinary adjectives.",
   "status": "unreviewed",
   "finding": ""
@@ -2203,6 +2478,7 @@
   "k": "81bfa3965af6",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "From five to a hundred they are fixed forms, which makes them among the easiest words in the language.",
   "status": "unreviewed",
   "finding": ""
@@ -2211,6 +2487,7 @@
   "k": "822fc166f5f5",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "καὶ ἰδοὺ πᾶσα ἡ πόλις ἐξῆλθεν εἰς ὑπάντησιν τῷ Ἰησοῦ \"And behold, the whole city went out to meet Jesus.\" Article present, πᾶσα outside it — so \"the whole\", not \"every\".",
   "status": "unreviewed",
   "finding": ""
@@ -2219,6 +2496,7 @@
   "k": "8706fb788818",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "With no article , singular: \"every\".",
   "status": "unreviewed",
   "finding": ""
@@ -2227,6 +2505,7 @@
   "k": "a43b5f94ddd3",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "πᾶς: the forms πᾶς, πᾶσα, πᾶν — \"all\", \"every\" — occurs 1,244 times , which makes it one of the commonest words in the New Testament.",
   "status": "unreviewed",
   "finding": ""
@@ -2235,6 +2514,7 @@
   "k": "adce83ecbff6",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "Two words are built straight onto it.",
   "status": "unreviewed",
   "finding": ""
@@ -2243,6 +2523,7 @@
   "k": "c4f7e38ef004",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "πολύς and μέγας Two adjectives that look irregular and are not, quite.",
   "status": "unreviewed",
   "finding": ""
@@ -2251,6 +2532,7 @@
   "k": "dd3e78987576",
   "ch": 18,
   "kind": "absolute",
+  "src": "quiz",
   "text": "'No one can serve two masters.' δύο has only a handful of forms, and this is one of them.",
   "status": "unreviewed",
   "finding": ""
@@ -2259,6 +2541,7 @@
   "k": "ec4fee1eff29",
   "ch": 18,
   "kind": "count",
+  "src": "body",
   "text": "δώδεκα , twelve, occurs 75 times — most often of the disciples, but also of the tribes, the baskets and the thrones.",
   "status": "verified",
   "finding": "75, exact."
@@ -2267,6 +2550,7 @@
   "k": "ed12bb9faf89",
   "ch": 18,
   "kind": "absolute",
+  "src": "body",
   "text": "μείζων δὲ τούτων ἡ ἀγάπη Literally \"and greater of these is love\" — and every English translation gives \"the greatest of these is love\", rightly.",
   "status": "unreviewed",
   "finding": ""
@@ -2275,6 +2559,7 @@
   "k": "12b0838a8644",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "οὐ τὸ εἰσερχόμενον εἰς τὸ στόμα κοινοῖ τὸν ἄνθρωπον \"It is not what goes into the mouth that defiles a person.\" κοινοῖ , six occurrences, is the commonest of the thirty.",
   "status": "unreviewed",
   "finding": ""
@@ -2283,6 +2568,7 @@
   "k": "4968358a02b4",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "μένω gives ἔμεινεν · ἀποστέλλω gives ἀπέστειλεν (38 occurrences) · ἐγείρω gives ἤγειρεν (21) · αἴρω gives ἦρεν · κρίνω gives ἔκρινεν .",
   "status": "unreviewed",
   "finding": ""
@@ -2291,6 +2577,7 @@
   "k": "52c0d60c10a7",
   "ch": 19,
   "kind": "count",
+  "src": "quiz",
   "text": "The citation form shows you the stem vowel, which is the one thing the contracted forms hide.",
   "status": "unreviewed",
   "finding": ""
@@ -2299,6 +2586,7 @@
   "k": "5d02ecaa4537",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "Which means the whole of the difficulty is confined to two tenses.",
   "status": "unreviewed",
   "finding": ""
@@ -2307,6 +2595,7 @@
   "k": "77378119f566",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "Contraction only happens where a vowel meets a vowel.",
   "status": "unreviewed",
   "finding": ""
@@ -2315,6 +2604,7 @@
   "k": "84c43d5d9905",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "In every tense outside the present and imperfect, the ending begins with a consonant — σ , κ , θ — so nothing contracts.",
   "status": "unreviewed",
   "finding": ""
@@ -2323,6 +2613,7 @@
   "k": "88073af3af84",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "The augment is still there, the endings are the ordinary first aorist ones, and only the σ is missing — so if a form looks like a first aorist with a piece knocked out, this is why.",
   "status": "unreviewed",
   "finding": ""
@@ -2331,6 +2622,7 @@
   "k": "8bde8bb03cd8",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "So ποιέω gives ἐποίησεν (75 occurrences) and ποιήσει ; ἀγαπάω gives ἠγάπησεν and ἀγαπήσει ; πληρόω gives ἐπλήρωσεν .",
   "status": "unreviewed",
   "finding": ""
@@ -2339,6 +2631,7 @@
   "k": "96f3848eae8e",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "513 of the 1,853 verb lemmas in the New Testament are contract verbs, and they account for 5,901 of its 28,056 verb forms — one verb in five.",
   "status": "verified",
   "finding": "Counting lemmas ending -άω, -έω or -όω: 513 exactly, and 5,901 forms of 28,056 = 21%, so 'one verb in five' holds. The three types are ε 334, α 91, ο 88, which sum to the 513 — and the chapter's 'ε is much the biggest, 334 against 91 for α' is exact."
@@ -2347,6 +2640,7 @@
   "k": "9a0248ffb490",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "The three types in the present Present active indicative, two real verbs ε: ποιέω α: ἀγαπάω 1 sg ποιῶ ἀγαπῶ 2 sg ποιεῖς ἀγαπᾷς 3 sg ποιεῖ ἀγαπᾷ 1 pl ποιοῦμεν ἀγαπῶμεν 2 pl ποιεῖτε ἀγαπᾶτε 3 pl ποιοῦσιν ἀγαπῶσιν Every form in that table occurs in the New Testament.",
   "status": "verified",
   "finding": "All twelve, checked one by one: ποιῶ 23, ποιεῖς 13, ποιεῖ 28, ποιοῦμεν 4, ποιεῖτε 34, ποιοῦσιν 12, ἀγαπῶ 5, ἀγαπᾷς 2, ἀγαπᾷ 12, ἀγαπῶμεν 10, ἀγαπᾶτε 15, ἀγαπῶσιν 4. Worth stating: a printed paradigm usually has cells the New Testament never uses, and this one does not."
@@ -2355,6 +2649,7 @@
   "k": "9d0b40ab71fd",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "When the connecting vowel of the present or imperfect is added to it, the two vowels run together into a long vowel or a diphthong.",
   "status": "unreviewed",
   "finding": ""
@@ -2363,6 +2658,7 @@
   "k": "a1b9cc6db9bf",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "There are thirty ο-contract present active indicatives in the whole New Testament , spread across twenty-two different forms.",
   "status": "verified",
   "finding": "Thirty exactly, across twenty-two distinct forms, of which κοινοῖ is the commonest at six. Every part of that sentence checks."
@@ -2371,6 +2667,7 @@
   "k": "a505d3d7333f",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "And a lexicon lists the uncontracted form — ἀγαπάω , ποιέω — which is a form you will never meet on a page.",
   "status": "verified",
   "finding": "Exact, and worth stating as strongly as the chapter does: ἀγαπάω, ποιέω and πληρόω occur as surface forms ZERO times in the New Testament. The form the lexicon lists is one the reader will never meet on a page."
@@ -2379,6 +2676,7 @@
   "k": "a53e39238293",
   "ch": 19,
   "kind": "count",
+  "src": "body",
   "text": "What happens instead is that an ε slips in, the σ drops out between the two vowels, and the ε contracts with the ending.",
   "status": "unreviewed",
   "finding": ""
@@ -2387,6 +2685,7 @@
   "k": "b7998118b865",
   "ch": 19,
   "kind": "count",
+  "src": "quiz",
   "text": "ποιέω alone occurs 568 times.",
   "status": "verified",
   "finding": "568, exact. And the four contract examples: ἐποίησεν 75, ἀπέστειλεν 38, ἤγειρεν 21, κοινοῖ 6 — all exact."
@@ -2395,6 +2694,7 @@
   "k": "bfd42d42f370",
   "ch": 19,
   "kind": "absolute",
+  "src": "body",
   "text": "The useful half: Stem vowel Meets Gives ε ε ει ε ο ου α an e-sound α α an o-sound ω ο a long vowel ω ο a short vowel or ου ου What every one of them has in common is that a long vowel or a diphthong appears where you expected the ordinary ending .",
   "status": "unreviewed",
   "finding": ""
@@ -2403,6 +2703,7 @@
   "k": "bfd9de1ec911",
   "ch": 19,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Augment and first aorist endings are both present; only the σ is missing.",
   "status": "unreviewed",
   "finding": ""
@@ -2411,6 +2712,7 @@
   "k": "db50ba144ea7",
   "ch": 19,
   "kind": "count",
+  "src": "quiz",
   "text": "Thirty tokens across twenty-two forms, of which κοινοῖ (six) is the commonest.",
   "status": "verified",
   "finding": "Thirty ο-contract present active indicatives across twenty-two distinct forms, κοινοῖ the commonest at six. Every part exact."
@@ -2419,6 +2721,7 @@
   "k": "e4a4b1a7aaec",
   "ch": 19,
   "kind": "spelling",
+  "src": "body",
   "text": "Verbs whose stem ends in λ, μ, ν or ρ — the \"liquid\" consonants — will not take a σ cleanly in the future.",
   "status": "unreviewed",
   "finding": ""
@@ -2427,6 +2730,7 @@
   "k": "f45071deedab",
   "ch": 19,
   "kind": "count",
+  "src": "quiz",
   "text": "Which is most of why contract verbs are far less trouble than they first look — the difficulty lives in two tenses and nowhere else.",
   "status": "unreviewed",
   "finding": ""
@@ -2435,14 +2739,16 @@
   "k": "1e21cbcf81d5",
   "ch": 20,
   "kind": "count",
+  "src": "quiz",
   "text": "444 of the 446 words ending that way are participles.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"-μενος is very nearly a guarantee: 444 of the 446 words ending that way are participles, the exceptions being λιμένος and ἀρχιποίμενος .\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "341418cdec0a",
   "ch": 20,
   "kind": "count",
+  "src": "body",
   "text": "The commonest aorist participle in the book is ἀποκριθείς , 94 occurrences: aorist passive in form, from a deponent verb, and it means \"answering\".",
   "status": "verified",
   "finding": "94, exact."
@@ -2451,6 +2757,7 @@
   "k": "63e49c835383",
   "ch": 20,
   "kind": "count",
+  "src": "body",
   "text": "There are 6,640 participles in the New Testament — 24% of its verb forms, one in four.",
   "status": "verified",
   "finding": "6,640 of 28,056 verb forms = 23.7%, so 24% and 'one in four' both hold."
@@ -2459,6 +2766,7 @@
   "k": "654c83175b6c",
   "ch": 20,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Worth naming on its own because it turns up everywhere and looks like nothing else.",
   "status": "unreviewed",
   "finding": ""
@@ -2467,6 +2775,7 @@
   "k": "8ffe0f3807e6",
   "ch": 20,
   "kind": "absolute",
+  "src": "body",
   "text": "So a participle's tense gives you aspect — how the writer is viewing the action — and time only in relation to the main verb.",
   "status": "unreviewed",
   "finding": ""
@@ -2475,6 +2784,7 @@
   "k": "a57483a99473",
   "ch": 20,
   "kind": "count",
+  "src": "body",
   "text": "-μενος is very nearly a guarantee: 444 of the 446 words ending that way are participles, the exceptions being λιμένος and ἀρχιποίμενος .",
   "status": "verified",
   "finding": "446 words end -μενος and 444 are participles. The two exceptions are exactly the two the chapter names: λιμένος and ἀρχιποίμενος."
@@ -2483,6 +2793,7 @@
   "k": "c912ebcdc0ec",
   "ch": 20,
   "kind": "absolute",
+  "src": "body",
   "text": "-οντ- , -σαντ- and -θεντ- are strong hints and not guarantees — -οντ- is also in ἄρχοντος , ὀδόντος and every numeral from τριάκοντα up.",
   "status": "unreviewed",
   "finding": ""
@@ -2491,14 +2802,16 @@
   "k": "d3a93913dd0f",
   "ch": 20,
   "kind": "count",
+  "src": "quiz",
   "text": "The middle/passive is much the commoner of the two: 448 occurrences against 225.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The middle and passive is much the commoner: 448 occurrences against 225, and γεγραμμένον , \"written\", is the one you meet most.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "dce778460c44",
   "ch": 20,
   "kind": "absolute",
+  "src": "quiz",
   "text": "So the tense gives aspect, and time only relative to the main verb.",
   "status": "unreviewed",
   "finding": ""
@@ -2507,6 +2820,7 @@
   "k": "e7eeffe95cf2",
   "ch": 20,
   "kind": "count",
+  "src": "body",
   "text": "The middle and passive is much the commoner: 448 occurrences against 225, and γεγραμμένον , \"written\", is the one you meet most.",
   "status": "corrected",
   "finding": "Was 412, which is the tally of perfect participles the corpus tags PASSIVE alone. The line directly above prints one set of forms for both voices — λελυμένος, λελυμένη, λελυμένον — so the number the sentence wants is the form's, which is 448: 412 passive plus the 36 the corpus tags middle, wearing the same endings. 225 active is exact, and γεγραμμένον really is the commonest of them at 17. Same shape as chapter 14's ἐγένετο denominator: a right number computed on a narrower slice than the label names. check_quiz caught the quiz explanation still carrying 412."
@@ -2515,6 +2829,7 @@
   "k": "f3996eafe517",
   "ch": 20,
   "kind": "absolute",
+  "src": "body",
   "text": "English has participles too, but only two, and fills the gaps with helping verbs: loving , being loved , having loved .",
   "status": "unreviewed",
   "finding": ""
@@ -2523,6 +2838,7 @@
   "k": "fdcc2ebb672c",
   "ch": 20,
   "kind": "count",
+  "src": "body",
   "text": "So they get two chapters.",
   "status": "unreviewed",
   "finding": ""
@@ -2531,6 +2847,7 @@
   "k": "06aadc04838b",
   "ch": 21,
   "kind": "count",
+  "src": "body",
   "text": "ὁ πιστεύων εἰς τὸν υἱὸν ἔχει ζωὴν αἰώνιον· ὁ δὲ ἀπειθῶν τῷ υἱῷ οὐκ ὄψεται ζωήν \"The one who believes in the Son has eternal life; the one who disobeys the Son will not see life.\" Two of them set against each other, with no noun anywhere in either half — the whole verse is carried on them.",
   "status": "unreviewed",
   "finding": ""
@@ -2539,6 +2856,7 @@
   "k": "0f1df2f268e8",
   "ch": 21,
   "kind": "count",
+  "src": "quiz",
   "text": "The same construction chapter 6 gave you for adjectives — ὁ ποιμὴν ὁ καλός — and it means the participle is modifying the noun.",
   "status": "unreviewed",
   "finding": ""
@@ -2547,6 +2865,7 @@
   "k": "10c7ad2863d1",
   "ch": 21,
   "kind": "absolute",
+  "src": "body",
   "text": "Not \"the leading road\" but \"the road that leads\": English participles will not carry the weight and a relative clause always will.",
   "status": "unreviewed",
   "finding": ""
@@ -2555,14 +2874,16 @@
   "k": "10c9403bc8e7",
   "ch": 21,
   "kind": "count",
+  "src": "quiz",
   "text": "Article absent: adverbial, and 3,918 participles are anarthrous nominatives, so that is much the commonest.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commones\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "1416a09bb34f",
   "ch": 21,
   "kind": "absolute",
+  "src": "body",
   "text": "Participles are the last genuinely hard thing in the morphology, and the only way through is meeting a great many — which, at one verb form in four, you will.",
   "status": "unreviewed",
   "finding": ""
@@ -2571,6 +2892,7 @@
   "k": "30a5e636689c",
   "ch": 21,
   "kind": "count",
+  "src": "body",
   "text": "The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commonest, and the one with no signposts.",
   "status": "verified",
   "finding": "6,640 participles. 3,918 anarthrous nominatives exactly; 1,433 articular on the definition 'article immediately before' (1,430 on a stricter agreement test, 2,330 allowing an intervening modifier). The two figures deliberately do not sum to 6,640: 1,289 participles are anarthrous and not nominative, the genitive absolutes among them."
@@ -2579,6 +2901,7 @@
   "k": "4c53effd80c3",
   "ch": 21,
   "kind": "absolute",
+  "src": "body",
   "text": "Usually, not always — an anarthrous participle can still be attributive, which is why the sentence has the last word.",
   "status": "corrected",
   "finding": "The chapter's opening was corrected in v120 from 'one question separates them' to 'one question comes first', but this summary four sections later still said 'It divides the three uses'. Same fault, missed the first time. The article separates the adverbial use from the other two; a second question — is there a noun to modify? — splits those. And the chapter's own counts never partitioned the set: 1,433 articular and 3,918 anarthrous nominatives leave 1,289 of the 6,640 in neither. Raised by ChatGPT's second audit."
@@ -2587,6 +2910,7 @@
   "k": "5694370683ce",
   "ch": 21,
   "kind": "count",
+  "src": "quiz",
   "text": "735 participles in the New Testament are genitive, and the genitive absolute is the main reason one turns up in that case without an article.",
   "status": "verified",
   "finding": "735, exact."
@@ -2595,6 +2919,7 @@
   "k": "5ab4852d21cf",
   "ch": 21,
   "kind": "absolute",
+  "src": "quiz",
   "text": "English participles will not carry the weight; a relative clause always will.",
   "status": "unreviewed",
   "finding": ""
@@ -2603,6 +2928,7 @@
   "k": "604c1b53a4b6",
   "ch": 21,
   "kind": "count",
+  "src": "body",
   "text": "That repeated article is how Greek usually marks an attributive participle, and it is the construction chapter 6 gave you for adjectives.",
   "status": "unreviewed",
   "finding": ""
@@ -2611,6 +2937,7 @@
   "k": "85969b45b818",
   "ch": 21,
   "kind": "count",
+  "src": "quiz",
   "text": "John 3:36 sets two of them against each other — ὁ πιστεύων and ὁ ἀπειθῶν — and the whole verse rests on them.",
   "status": "unreviewed",
   "finding": ""
@@ -2619,14 +2946,16 @@
   "k": "950b7ece1c25",
   "ch": 21,
   "kind": "count",
+  "src": "quiz",
   "text": "3,918 anarthrous nominatives against 1,433 articular participles altogether.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commones\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "b19d8f200fde",
   "ch": 21,
   "kind": "count",
+  "src": "body",
   "text": "There are 735 genitive participles in the New Testament, and this is the main reason one turns up in that case without an article.",
   "status": "unreviewed",
   "finding": ""
@@ -2635,6 +2964,7 @@
   "k": "cc46227a372f",
   "ch": 21,
   "kind": "absolute",
+  "src": "body",
   "text": "Ask it every time, before anything else about the form: Is there an article?",
   "status": "unreviewed",
   "finding": ""
@@ -2643,6 +2973,7 @@
   "k": "f2dbeb535c53",
   "ch": 21,
   "kind": "absolute",
+  "src": "body",
   "text": "It is often the only thing telling you which noun a participle goes with, especially in a long sentence where the two are far apart.",
   "status": "unreviewed",
   "finding": ""
@@ -2651,6 +2982,7 @@
   "k": "1cc879145066",
   "ch": 22,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The augment marks past time and appears only in the indicative.",
   "status": "unreviewed",
   "finding": ""
@@ -2659,6 +2991,7 @@
   "k": "24a192c6ee7b",
   "ch": 22,
   "kind": "absolute",
+  "src": "body",
   "text": "The only things that have changed are the preposition and the case of the article.",
   "status": "unreviewed",
   "finding": ""
@@ -2667,6 +3000,7 @@
   "k": "31171c617587",
   "ch": 22,
   "kind": "absolute",
+  "src": "body",
   "text": "Greek does not always keep purpose and result apart, and neither does English — \"he came to save\" can be read either way.",
   "status": "unreviewed",
   "finding": ""
@@ -2675,6 +3009,7 @@
   "k": "4da1ddb5d1b9",
   "ch": 22,
   "kind": "absolute",
+  "src": "body",
   "text": "Infinitives never do.",
   "status": "unreviewed",
   "finding": ""
@@ -2683,6 +3018,7 @@
   "k": "55cce209d0eb",
   "ch": 22,
   "kind": "absolute",
+  "src": "quiz",
   "text": "An accusative beside an infinitive can be either subject or object, and only the sense decides.",
   "status": "unreviewed",
   "finding": ""
@@ -2691,6 +3027,7 @@
   "k": "60cc01af1789",
   "ch": 22,
   "kind": "count",
+  "src": "body",
   "text": "Time Three prepositions with the articular infinitive do most of the work: πρὸ τοῦ before, ἐν τῷ while, μετὰ τό after.",
   "status": "verified",
   "finding": "For the temporal uses, yes: ἐν τῷ 41, μετὰ τό 11, πρὸ τοῦ 3. Worth knowing that πρὸ τοῦ is that rare. Across all articular infinitives the commonest governing preposition is actually εἰς at 54, but that is the purpose construction the previous section covers, not a temporal one, so the claim holds as scoped."
@@ -2699,6 +3036,7 @@
   "k": "9c82fbb48008",
   "ch": 22,
   "kind": "count",
+  "src": "body",
   "text": "The parable of the sower puts two uses of one verb in consecutive verses, which is about as clear a demonstration as the New Testament offers.",
   "status": "unreviewed",
   "finding": ""
@@ -2707,6 +3045,7 @@
   "k": "e2a77d45791d",
   "ch": 22,
   "kind": "absolute",
+  "src": "body",
   "text": "It does not always settle them.",
   "status": "unreviewed",
   "finding": ""
@@ -2715,6 +3054,7 @@
   "k": "1c2faa497257",
   "ch": 23,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Both have a rough breathing; only the relative is accented.",
   "status": "unreviewed",
   "finding": ""
@@ -2723,6 +3063,7 @@
   "k": "3ab6e1bd9252",
   "ch": 23,
   "kind": "count",
+  "src": "quiz",
   "text": "The indefinite is enclitic and usually stands second in its clause, so position helps as much as the accent — though τινές does open one seventeen times, and takes an accent when it does.",
   "status": "unreviewed",
   "finding": ""
@@ -2731,6 +3072,7 @@
   "k": "464754109dc9",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "ἐμός occurs 76 times, σός 25, ἡμέτερος 7 and ὑμέτερος 11, while the plain genitive of the personal pronoun does the job over two thousand times.",
   "status": "verified",
   "finding": "ἐμός 76, σός 25, ἡμέτερος 7, ὑμέτερος 11 — all exact."
@@ -2739,6 +3081,7 @@
   "k": "642cee85c40d",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "Its endings are the ordinary ones, and its shape is almost the article without the τ: ὅς, ἥ, ὅ — singular / plural Masc Fem Neut Nom ὅς / οἵ ἥ / αἵ ὅ / ἅ Gen οὗ / ὧν ἧς / ὧν οὗ / ὧν Dat ᾧ / οἷς ᾗ / αἷς ᾧ / οἷς Acc ὅν / οὕς ἥν / ἅς ὅ / ἅ Every form carries a rough breathing and an accent, and that is what separates it from the article: ἥ is \"who\", ἡ is \"the\".",
   "status": "verified",
   "finding": "All 1,407 tokens the corpus tags as the relative pronoun carry both a rough breathing and an accent. Not one exception. (The lemma count is 1,408; the odd one is Ephesians 2:13, where MorphGNT tags οἵ as an article while lemmatising it ὅς.)"
@@ -2747,14 +3090,16 @@
   "k": "79754e88c2a9",
   "ch": 23,
   "kind": "absolute",
+  "src": "quiz",
   "text": "554 occurrences against 530, so they are almost equally common and identical in every letter.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"τίς , the interrogative, occurs 554 times; τις , the indefinite, 530.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "7d2012cb54f0",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "More often it is simply ὅς with no discernible difference, and in the New Testament it appears almost only in the nominative.",
   "status": "verified",
   "finding": "ὅστις: 139 of its 144 occurrences are nominative, 97%. The other five are genitive — the ὅτου forms. 'Almost only' is exact."
@@ -2763,6 +3108,7 @@
   "k": "84dd1e072175",
   "ch": 23,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Two facts from two places, in one word — so ask a relative two questions, not one.",
   "status": "unreviewed",
   "finding": ""
@@ -2771,6 +3117,7 @@
   "k": "8c5b02b80747",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "Two facts from two different places, in one word.",
   "status": "unreviewed",
   "finding": ""
@@ -2779,6 +3126,7 @@
   "k": "926b39f05719",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "This chapter finishes the set: five more kinds, all of them common, and none of them with endings you have not already met.",
   "status": "unreviewed",
   "finding": ""
@@ -2787,6 +3135,7 @@
   "k": "9a565cabf086",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "τίς , the interrogative, occurs 554 times; τις , the indefinite, 530.",
   "status": "verified",
   "finding": "τίς 554 and τις 530, exact, and the corpus keeps them apart as separate lemmas — which is the chapter's point."
@@ -2795,6 +3144,7 @@
   "k": "9cf7b2589bd6",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "It occurs 100 times and only ever in three plural forms — ἀλλήλων , ἀλλήλοις , ἀλλήλους — which makes it the smallest paradigm in the language.",
   "status": "unreviewed",
   "finding": ""
@@ -2803,6 +3153,7 @@
   "k": "9f34f6db8bac",
   "ch": 23,
   "kind": "absolute",
+  "src": "quiz",
   "text": "A 'one another' command is always about the plural acting on its members, never each person acting on himself.",
   "status": "unreviewed",
   "finding": ""
@@ -2811,6 +3162,7 @@
   "k": "a88822b382ee",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "τίς and τις: one accent apart Two words, identical in every letter, distinguished only by their accent — and they are almost equally common.",
   "status": "unreviewed",
   "finding": ""
@@ -2819,6 +3171,7 @@
   "k": "ac72e8fa0a0e",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "English blurs them and Greek does not, so a \"one another\" command in the New Testament is always about the plural acting on its members, never about each person acting on himself.",
   "status": "unreviewed",
   "finding": ""
@@ -2827,6 +3180,7 @@
   "k": "be84a2bea6e1",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "The one that matters most is the relative pronoun, which occurs 1,408 times and is the main way Greek joins one clause to another.",
   "status": "verified",
   "finding": "ὅς 1,408, exact."
@@ -2835,6 +3189,7 @@
   "k": "c41ba4ce65e8",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "ἑαυτοῦ , \"himself, herself, itself\" (333 occurrences), declines like αὐτός .",
   "status": "verified",
   "finding": "333, exact."
@@ -2843,6 +3198,7 @@
   "k": "d532343a66f7",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "It occurs 144 times against ὅς 's 1,408 — so ὅς is the rule and this is the exception.",
   "status": "verified",
   "finding": "ὅστις 144, ὅς 1,408. Both exact."
@@ -2851,6 +3207,7 @@
   "k": "ddc5a8d68a98",
   "ch": 23,
   "kind": "absolute",
+  "src": "body",
   "text": "And a relative pronoun needs both its questions asked, not one.",
   "status": "unreviewed",
   "finding": ""
@@ -2859,6 +3216,7 @@
   "k": "f8524dd57c78",
   "ch": 23,
   "kind": "count",
+  "src": "body",
   "text": "Usually — the plural opens a clause seventeen times, τινὲς δὲ τῶν Φαρισαίων , \"some of the Pharisees\", and there it has to carry an accent of its own.",
   "status": "corrected",
   "finding": "Was 'The indefinite is an enclitic: it never begins a clause.' The corpus refutes the never: of the 530 indefinite τις tokens, 13 are the first word of a verse — τινὲς δὲ τῶν ἐκεῖ ἑστηκότων at Matthew 27:47, τινὲς δὲ τῶν Φαρισαίων at Luke 6:2, and at Luke 11:15, John 7:44, 11:37, 11:46 and more — and 4 more follow a full stop or a colon (1 Corinthians 8:7 and 15:6, Philippians 1:15, 1 Timothy 5:24). All are the plural τινές, and all carry their own accent, which an enclitic must when nothing precedes it. Raised by ChatGPT's first audit as an overstatement; the corpus settles it outright. The chapter's real test survives and is now stated: τίνες accents the first syllable, τινές the second."
@@ -2867,6 +3225,7 @@
   "k": "1192c704f908",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "Only the construction around them decides.",
   "status": "unreviewed",
   "finding": ""
@@ -2875,6 +3234,7 @@
   "k": "16babd40d8d5",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "So ἵνα is not always purpose, and reading purpose into every one of the 662 will produce sermons the text does not support.",
   "status": "unreviewed",
   "finding": ""
@@ -2883,6 +3243,7 @@
   "k": "18c9a834bc12",
   "ch": 24,
   "kind": "absolute",
+  "src": "quiz",
   "text": "ο lengthens to ω and ε to η, the stem is the indicative's, and there is never an augment — because the subjunctive marks no time.",
   "status": "verified",
   "finding": "Nothing in the corpus contradicts it. Of the 1,856 subjunctives, 285 aorist or perfect ones begin with ε, and every one is a stem-initial epsilon rather than an augment — εἰδῆτε and εἰδῶ from οἶδα, εἰσέλθητε from εἰσέρχομαι. The claim is a fact about the grammar rather than one a token count can prove, and the count at least fails to refute it."
@@ -2891,6 +3252,7 @@
   "k": "1fd6879cc471",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "And ἵνα is not always purpose.",
   "status": "unreviewed",
   "finding": ""
@@ -2899,6 +3261,7 @@
   "k": "2307196871b5",
   "ch": 24,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Only the construction around them decides, which is why ἵνα and ἐάν are worth watching for.",
   "status": "unreviewed",
   "finding": ""
@@ -2907,6 +3270,7 @@
   "k": "27f40e206638",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "The forms are the easy part Genuinely easy, and there are only two tenses to learn.",
   "status": "unreviewed",
   "finding": ""
@@ -2915,6 +3279,7 @@
   "k": "2dcf86b89315",
   "ch": 24,
   "kind": "count",
+  "src": "quiz",
   "text": "One of the few places where the grammar itself is doing the emphasising rather than the context.",
   "status": "unreviewed",
   "finding": ""
@@ -2923,6 +3288,7 @@
   "k": "3f70cfa4318f",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "It is worth spotting because it is emphatic by construction rather than by context — one of the few places in Greek where the grammar itself, and not the sentence around it, is doing the emphasising.",
   "status": "unreviewed",
   "finding": ""
@@ -2931,14 +3297,16 @@
   "k": "44fcb3d5bdf6",
   "ch": 24,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Greek uses it 1,856 times, so it cannot be read around.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"And the split is lopsided: of the 1,856 subjunctives in the New Testament, 1,387 are aorist and 459 present , three to one.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "626d2d716249",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "οὗτος ἦλθεν εἰς μαρτυρίαν, ἵνα μαρτυρήσῃ περὶ τοῦ φωτός \"He came for a witness, in order that he might testify about the light.\" ὅπως does the same work 53 times, and ἵνα μή gives \"lest\".",
   "status": "unreviewed",
   "finding": ""
@@ -2947,6 +3315,7 @@
   "k": "655bf0964dcc",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "ἵνα, and purpose The commonest subjunctive by far is the one after ἵνα , \"in order that\" — which occurs 662 times and is followed by a subjunctive almost every time.",
   "status": "verified",
   "finding": "ἵνα 662, exact. Taking the first finite verb inside the ἵνα clause, 625 of the 662 are subjunctive = 94.4%, so 'almost every time' holds. The 37 that are not are 35 indicatives — Mark 9:9 and 14:35, Luke 20:10, John 6:39 and 7:3 among them, the ἵνα + future indicative the grammars note — and two clauses with no finite verb at all."
@@ -2955,6 +3324,7 @@
   "k": "6e8211d91e33",
   "ch": 24,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Render it 'never'; a plain 'not' loses the construction.",
   "status": "unreviewed",
   "finding": ""
@@ -2963,6 +3333,7 @@
   "k": "6ff5e49f6586",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "The marker is ἐάν — which is simply εἰ + ἄν — and it occurs 331 times.",
   "status": "verified",
   "finding": "ἐάν 331, exact."
@@ -2971,14 +3342,16 @@
   "k": "725718d93733",
   "ch": 24,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Reading purpose into every one of the 662 will produce sermons the text does not support.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"ἵνα, and purpose The commonest subjunctive by far is the one after ἵνα , \"in order that\" — which occurs 662 times and is followed by a subjunctive alm\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "84d0da0b711e",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "And the split is lopsided: of the 1,856 subjunctives in the New Testament, 1,387 are aorist and 459 present , three to one.",
   "status": "verified",
   "finding": "1,856 subjunctives: 1,387 aorist, 459 present, 10 perfect. Every figure exact, and they sum: 1,387 + 459 + 10 = 1,856, with the ten perfect subjunctives the chapter names separately accounting for the remainder."
@@ -2987,14 +3360,16 @@
   "k": "907c68aaf55e",
   "ch": 24,
   "kind": "count",
+  "src": "quiz",
   "text": "ἐάν is εἰ + ἄν, 331 occurrences.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The marker is ἐάν — which is simply εἰ + ἄν — and it occurs 331 times.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "a77b017df652",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "There is never an augment , even in the aorist — because the subjunctive does not mark time.",
   "status": "unreviewed",
   "finding": ""
@@ -3003,6 +3378,7 @@
   "k": "ad137c0955b1",
   "ch": 24,
   "kind": "spelling",
+  "src": "quiz",
   "text": "And the present subjunctive λύω is spelled exactly like the indicative.",
   "status": "unreviewed",
   "finding": ""
@@ -3011,6 +3387,7 @@
   "k": "cb38be7af8fc",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "The aorist is the default Because the subjunctive marks no time, its tenses give aspect and nothing else — exactly as chapter 16 said.",
   "status": "unreviewed",
   "finding": ""
@@ -3019,6 +3396,7 @@
   "k": "d2abe044fc78",
   "ch": 24,
   "kind": "absolute",
+  "src": "body",
   "text": "οὐ μὴ εἰσέλθητε εἰς τὴν βασιλείαν τῶν οὐρανῶν \"You will certainly not enter the kingdom of heaven.\" Render it \"never\" or \"certainly not\"; a plain \"not\" loses what the construction is for.",
   "status": "unreviewed",
   "finding": ""
@@ -3027,6 +3405,7 @@
   "k": "d40b0890a5a1",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "Ten perfect subjunctives exist in the whole New Testament.",
   "status": "unreviewed",
   "finding": ""
@@ -3035,6 +3414,7 @@
   "k": "e0c815c217ed",
   "ch": 24,
   "kind": "spelling",
+  "src": "body",
   "text": "The present active subjunctive first singular λύω is spelled exactly like the indicative, and the aorist subjunctive λύσω exactly like the future indicative.",
   "status": "unreviewed",
   "finding": ""
@@ -3043,6 +3423,7 @@
   "k": "f28063c3b71a",
   "ch": 24,
   "kind": "count",
+  "src": "body",
   "text": "Greek uses it 1,856 times, so there is no reading around it.",
   "status": "unreviewed",
   "finding": ""
@@ -3051,6 +3432,7 @@
   "k": "0819ef15a7df",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "Like the subjunctive, it marks aspect only, and that single fact is the whole of this chapter's usefulness.",
   "status": "unreviewed",
   "finding": ""
@@ -3059,6 +3441,7 @@
   "k": "1169deae989d",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "In classical Greek it was everywhere; by the New Testament it occurs 68 times , in the present and aorist only.",
   "status": "unreviewed",
   "finding": ""
@@ -3067,6 +3450,7 @@
   "k": "1d1beb0ea0dc",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "They are two views of the same asking, and the choice of aspect is visible only in Greek.",
   "status": "unreviewed",
   "finding": ""
@@ -3075,14 +3459,16 @@
   "k": "25662de0f3a3",
   "ch": 25,
   "kind": "count",
+  "src": "quiz",
   "text": "The imperative covers second and third person, 1,618 times, with μή as its negative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The imperative is the mood of command, and Greek uses it 1,618 times.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "38961fd0d030",
   "ch": 25,
   "kind": "count",
+  "src": "body",
   "text": "And two aorist imperatives of ὁράω , ἴδε and ἰδού , have hardened into interjections meaning \"look!\" or \"behold!\", which is why ἰδού occurs 200 times without commanding anybody to see anything.",
   "status": "unreviewed",
   "finding": ""
@@ -3091,6 +3477,7 @@
   "k": "480180429d51",
   "ch": 25,
   "kind": "count",
+  "src": "body",
   "text": "Two warnings about the forms.",
   "status": "unreviewed",
   "finding": ""
@@ -3099,6 +3486,7 @@
   "k": "4f4e35aca7a6",
   "ch": 25,
   "kind": "count",
+  "src": "body",
   "text": "Let God be true.\" μὴ γένοιτο occurs 15 times, and 14 of those are Paul's — ten of them in Romans.",
   "status": "verified",
   "finding": "The phrase μὴ γένοιτο occurs 15 times: Romans 10, Galatians 3, 1 Corinthians 1, Luke 1. So 'fourteen of those are Paul's — ten of them in Romans' is exact, and the one that is not Paul's is Luke 20:16. Note the bare optative γένοιτο occurs 17 times; the two without μή are what makes the difference."
@@ -3107,6 +3495,7 @@
   "k": "55e3d2c1ccec",
   "ch": 25,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Present and aorist only, usually recognisable by an οι, αι or ει after the stem.",
   "status": "unreviewed",
   "finding": ""
@@ -3115,6 +3504,7 @@
   "k": "64cd2d6aff99",
   "ch": 25,
   "kind": "count",
+  "src": "quiz",
   "text": "ἴδε is mostly the same, but four times in John it is a real imperative.",
   "status": "unreviewed",
   "finding": ""
@@ -3123,6 +3513,7 @@
   "k": "6c64b49ac3a1",
   "ch": 25,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Neither is more urgent or more spiritual; they are two views of the same asking, visible only in Greek.",
   "status": "unreviewed",
   "finding": ""
@@ -3131,6 +3522,7 @@
   "k": "745574d62959",
   "ch": 25,
   "kind": "count",
+  "src": "body",
   "text": "All 200 of them are the interjection, and none is asking anyone to look at anything.",
   "status": "verified",
   "finding": "Corpus: all 200 ἰδού are lemmatised ἰδού with an empty parse code — MorphGNT treats every one as a particle, never as a verb. So 'not really a command' is right for ἰδού. ἴδε is 34: thirty the same particle, and four parsed ὁράω 2AAD-S--, second aorist active imperative — John 1:46, 7:52, 11:34, 20:27, all coordinated with another imperative (Ἔρχου καὶ ἴδε, ἐραύνησον καὶ ἴδε). The chapter used to say 'Nor is ἴδε. Both are just look', which the corpus refutes. Raised by ChatGPT's second audit."
@@ -3139,6 +3531,7 @@
   "k": "805844a64ffc",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "ἴδε τὰς χεῖράς μου , \"see my hands\", takes an object, which an interjection cannot.",
   "status": "verified",
   "finding": "John 20:27 ἴδε τὰς χεῖράς μου. τὰς χεῖράς is accusative plural, the object of ἴδε, and the corpus parses ἴδε there as ὁράω 2AAD-S--. This is the decisive case: a fossilised interjection does not govern an accusative."
@@ -3147,6 +3540,7 @@
   "k": "8ac827bd3666",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "Present active imperative of λύω Singular Plural 2nd λῦε λύετε 3rd λυέτω λυέτωσαν The third person is the one English cannot do.",
   "status": "unreviewed",
   "finding": ""
@@ -3155,6 +3549,7 @@
   "k": "917b0f7ae7e2",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "The second plural λύετε is spelled exactly like the indicative \"you loose\", and only context separates them.",
   "status": "unreviewed",
   "finding": ""
@@ -3163,6 +3558,7 @@
   "k": "95f58beb4f4f",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "It has no first person — you cannot command yourself — and its negative is μή .",
   "status": "verified",
   "finding": "Exact, and cleanly so: of the 1,618 imperatives in the New Testament, 1,385 are second person and 233 third. Not one is first person."
@@ -3171,14 +3567,16 @@
   "k": "9d55c0cef3ca",
   "ch": 25,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Not one of the 200 is commanding anyone to see anything, which is why English translations render it as an exclamation.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"All 200 of them are the interjection, and none is asking anyone to look at anything.\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "bd5e748fcfde",
   "ch": 25,
   "kind": "count",
+  "src": "body",
   "text": "The imperative is the mood of command, and Greek uses it 1,618 times.",
   "status": "verified",
   "finding": "1,618 imperatives, exact."
@@ -3187,6 +3585,7 @@
   "k": "c02e3c6e4a7b",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "λύετε is imperative or indicative , and only the sentence decides.",
   "status": "unreviewed",
   "finding": ""
@@ -3195,6 +3594,7 @@
   "k": "fab17926d67a",
   "ch": 25,
   "kind": "absolute",
+  "src": "body",
   "text": "πάντοτε χαίρετε, ἀδιαλείπτως προσεύχεσθε, ἐν παντὶ εὐχαριστεῖτε \"Rejoice always, pray without ceasing, give thanks in everything.\" Three present imperatives in a row — habitual, and the aspect is the argument.",
   "status": "unreviewed",
   "finding": ""
@@ -3203,6 +3603,7 @@
   "k": "0bbc0575a11d",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "If a verb looks a syllable too short, it is probably one of these.",
   "status": "unreviewed",
   "finding": ""
@@ -3211,6 +3612,7 @@
   "k": "0ea26b876201",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "So the whole irregularity is confined to three tenses of about ninety verbs, and the rest of the New Testament's -μι forms will look familiar.",
   "status": "unreviewed",
   "finding": ""
@@ -3219,6 +3621,7 @@
   "k": "153cac596a41",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "The lexical form ends in -μι , so you cannot look it up under -ω .",
   "status": "unreviewed",
   "finding": ""
@@ -3227,6 +3630,7 @@
   "k": "2f22e854f7d2",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "Four of those carry most of the weight.",
   "status": "unreviewed",
   "finding": ""
@@ -3235,6 +3639,7 @@
   "k": "362f28824374",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "So learn four stems — δο- for δίδωμι , θε- for τίθημι , στα- for ἵστημι and ἑ- for ἀφίημι — and you can read about two thirds of the ninety verbs’ 1,743 occurrences off those four families and their compounds.",
   "status": "corrected",
   "finding": "Was 'the ninety verbs come down to four families', which contradicts 'Four of those carry most of the weight' earlier in the same chapter. Corpus: the four families and their compounds are 1,117 of the 1,743 occurrences = 64%. Raised by ChatGPT's audit.  || ChatGPT's second audit called ἑ- the wrong stem for ἀφίημι, on the grounds that its principal parts are ἀφήσω, ἀφῆκα, ἀφέωμαι, ἀφέθην and its present is ἀφίησιν. Rejected: every one of those displays the ἑ-/ἡ- grade it was offered as evidence against. Corpus: of 143 ἀφίημι tokens, 71 carry bare ε after the prefix (ἄφες, ἀφέντες, ἀφεθήσεται), 40 carry η (ἀφῆκεν, ἀφήσω), 3 carry ῃ, and 28 are the ι-reduplicated present (ἀφίησιν) — the same reduplication δίδωμι and τίθημι take. The short/long alternation is exactly parallel to δο-/δω- (202/202), θε-/θη- (50/40) and στα-/στη- (48/86)."
@@ -3243,6 +3648,7 @@
   "k": "3c3bcd8b796b",
   "ch": 26,
   "kind": "spelling",
+  "src": "body",
   "text": "Everything so far has been the -ω conjugation; this chapter is the other one, named for the fact that its lexical form ends in -μι .",
   "status": "unreviewed",
   "finding": ""
@@ -3251,6 +3657,7 @@
   "k": "48d0cff85809",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "Nothing else you are likely to meet is: the second aorist ἔστη , the twenty aorist passives like σταθείς , and the perfect ἕστηκα , which alone accounts for 65 of the 153.",
   "status": "verified",
   "finding": "ἵστημι occurs 153 times and 65 of them are perfects. Both exact. The commonest are the participles ἑστώς 10, ἑστῶτα 8, ἑστῶτας 6 and the indicative ἕστηκεν 6."
@@ -3259,6 +3666,7 @@
   "k": "48d5889afd93",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "Verb Verb stem Present stem δίδωμι δο- διδο- τίθημι θε- τιθε- ἵστημι στα- ἱστα- Two of those need a word.",
   "status": "unreviewed",
   "finding": ""
@@ -3267,6 +3675,7 @@
   "k": "4f7e51368260",
   "ch": 26,
   "kind": "count",
+  "src": "quiz",
   "text": "A short stem with no reduplication and no σα is one of these verbs in the aorist.",
   "status": "unreviewed",
   "finding": ""
@@ -3275,6 +3684,7 @@
   "k": "619a6ce21fb0",
   "ch": 26,
   "kind": "absolute",
+  "src": "quiz",
   "text": "The oddities have reasons, even if you only need to recognise the results.",
   "status": "unreviewed",
   "finding": ""
@@ -3283,6 +3693,7 @@
   "k": "6e7a366c58de",
   "ch": 26,
   "kind": "count",
+  "src": "quiz",
   "text": "δίδωσιν, the present, occurs 11 times against ἔδωκεν's 64.",
   "status": "verified",
   "finding": "δίδωσιν 11 against ἔδωκεν 64. Exact."
@@ -3291,6 +3702,7 @@
   "k": "882d53e9cdc7",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "Outside εἰμί — which is itself a -μι verb, and occurs 2,456 times — there are 90 such verbs in the New Testament, worth 1,743 occurrences between them.",
   "status": "verified",
   "finding": "90 -μι lemmas outside εἰμί, 1,743 occurrences between them; εἰμί 2,456. The four families and their compounds account for 1,117 of the 1,743 = 64% — most of them, not all of them, which is why 'come down to four families' was corrected to two thirds."
@@ -3299,6 +3711,7 @@
   "k": "9580a191ac54",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "Greek has two conjugations.",
   "status": "unreviewed",
   "finding": ""
@@ -3307,6 +3720,7 @@
   "k": "9fb0832b651f",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "ἐντολὴν καινὴν δίδωμι ὑμῖν ἵνα ἀγαπᾶτε ἀλλήλους \"A new commandment I give you, that you love one another.\" Three chapters in one line: a -μι verb, an ἵνα clause with the subjunctive, and the reciprocal pronoun.",
   "status": "unreviewed",
   "finding": ""
@@ -3315,6 +3729,7 @@
   "k": "a75d7682101a",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "δίδωσιν is there 11 times, δίδωμι 9 and διδόασιν once; δίδοτε twice, though both of those are imperatives rather than the indicative this table prints.",
   "status": "corrected",
   "finding": "Was 'δίδοτε and διδόασιν once each'. διδόασιν does occur once; δίδοτε occurs TWICE, and both of its occurrences are imperatives rather than the present indicative the table above prints. So the sentence also disagreed with the one three paragraphs later saying the whole present active indicative is 21 across three attested slots — δίδωμι 9, δίδωσιν 11, διδόασιν 1. Both now stand: four of the six SPELLINGS occur, three of the six indicative slots do. No checker could see this, because the number was spelled 'once' and check_claims read only digits; it reads words now."
@@ -3323,6 +3738,7 @@
   "k": "acb6bf95d9ad",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "τίθημι and ἵστημι τίθημι , \"I put, place\" (100 occurrences).",
   "status": "verified",
   "finding": "τίθημι 100, exact."
@@ -3331,6 +3747,7 @@
   "k": "b16693191d3d",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "δίδως and δίδομεν never occur.",
   "status": "unreviewed",
   "finding": ""
@@ -3339,6 +3756,7 @@
   "k": "b2b3fc698b45",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "And before you memorise it: only four of those six spellings occur in the New Testament at all.",
   "status": "unreviewed",
   "finding": ""
@@ -3347,6 +3765,7 @@
   "k": "d2c74ae8a48a",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "Of δίδωμι 's 415 occurrences, the commonest single forms are ἔδωκεν (64), δοῦναι (33) and ἐδόθη (31) — an aorist indicative, an aorist infinitive and an aorist passive.",
   "status": "verified",
   "finding": "δίδωμι 415, with ἔδωκεν 64, δοῦναι 33 and ἐδόθη 31 as the three commonest forms. All exact."
@@ -3355,6 +3774,7 @@
   "k": "d5107a1bcdfe",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "It is worth learning for its own sake, because it is the New Testament's ordinary word for forgiveness — ἀφεθήσεται , \"it will be forgiven\", occurs 12 times, and ἄφες , \"forgive\", is what the Lord's Prayer asks.",
   "status": "verified",
   "finding": "12, exact."
@@ -3363,6 +3783,7 @@
   "k": "e2e065d5fc1e",
   "ch": 26,
   "kind": "count",
+  "src": "body",
   "text": "A short stem with no reduplication and no σα is one of these verbs in the aorist, and that is what you will meet.",
   "status": "unreviewed",
   "finding": ""
@@ -3371,6 +3792,7 @@
   "k": "ee66b26e3ac9",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "The whole present active indicative comes to 21, and only three of its six slots are attested at all: δίδωμι nine times, δίδωσιν eleven and διδόασιν once.",
   "status": "corrected",
   "finding": "Was 'all four attested forms of it, comes to 21'. The 21 is exact, but only THREE person/number slots are attested: δίδωμι 1S nine times, δίδωσιν 3S eleven, διδόασιν 3P once. The fourth spelling is δίδωσίν, the same word carrying an accent thrown back by a following enclitic — which corpus.fold exists to say is not a different form, and which this pass had already mis-tallied twice in the other direction. Counting spellings where the sentence means forms."
@@ -3379,6 +3801,7 @@
   "k": "f62077ca2392",
   "ch": 26,
   "kind": "absolute",
+  "src": "body",
   "text": "Once you know the stem θε- , none of those is a surprise.",
   "status": "unreviewed",
   "finding": ""
@@ -3387,6 +3810,7 @@
   "k": "076028e6f425",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "That is a model, and a useful one; it is not a rule that every aorist is backgrounded.",
   "status": "corrected",
   "finding": "Chapter 27 stated aorist-as-unmarked across every aspect and mood, plus discourse backgrounding, as fact. Chapter 24's version of the same claim is grounded on the spot — 1,387 of 1,856 subjunctives are aorist, three in four, verified against the corpus — so that one stands. Chapter 27's is a model and now says so. Raised by ChatGPT's second audit."
@@ -3395,6 +3819,7 @@
   "k": "0a433c4dc433",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "Studying every occurrence of ἀγάπη tells you about the word, not about love in the New Testament, most of which is expressed without using it.",
   "status": "unreviewed",
   "finding": ""
@@ -3403,6 +3828,7 @@
   "k": "0e7fdda5e7fb",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "The point was never to finish the course; it was to be able to open the New Testament in the language it was written in, and understand a little more than you did before.",
   "status": "unreviewed",
   "finding": ""
@@ -3411,6 +3837,7 @@
   "k": "35039938a0fd",
   "ch": 27,
   "kind": "count",
+  "src": "body",
   "text": "The article is the other place to look, and it is everywhere: 19,769 occurrences, which makes it the commonest word in the New Testament by more than two to one over καί .",
   "status": "verified",
   "finding": "ὁ 19,769 against καί 8,973 = 2.20 to 1."
@@ -3419,6 +3846,7 @@
   "k": "5c6552d8335f",
   "ch": 27,
   "kind": "count",
+  "src": "body",
   "text": "Parsing left to right, one word at a time, is how a reader gets stuck on a participle for ten minutes and then discovers that the article two words on had settled it.",
   "status": "unreviewed",
   "finding": ""
@@ -3427,6 +3855,7 @@
   "k": "60a0a913be1d",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "Its presence points at particular identity; its absence throws the weight onto character or quality — though, as chapter 4 said, an absence is only evidence where the writer could have written it the other way.",
   "status": "unreviewed",
   "finding": ""
@@ -3435,6 +3864,7 @@
   "k": "834987b9cca6",
   "ch": 27,
   "kind": "count",
+  "src": "body",
   "text": "In any given sentence it means one of those, and the sentence chooses which — not the lexicon entry, and not the meaning you would prefer.",
   "status": "unreviewed",
   "finding": ""
@@ -3443,6 +3873,7 @@
   "k": "8f2a507017ff",
   "ch": 27,
   "kind": "count",
+  "src": "body",
   "text": "Greek puts its clues everywhere, and the word that unlocks a clause is often three words later.",
   "status": "unreviewed",
   "finding": ""
@@ -3451,6 +3882,7 @@
   "k": "9df4d285551b",
   "ch": 27,
   "kind": "count",
+  "src": "body",
   "text": "You now have the whole of the morphology: six principal parts, four moods, three voices, three declensions, and about 800 words.",
   "status": "unreviewed",
   "finding": ""
@@ -3459,14 +3891,16 @@
   "k": "acc0198ec033",
   "ch": 27,
   "kind": "count",
+  "src": "quiz",
   "text": "With 19,769 occurrences it is the commonest word in the New Testament, and the easiest to read past.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The article is the other place to look, and it is everywhere: 19,769 occurrences, which makes it the commonest word in the New Testament by more than \". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
   "k": "af9ba3ce606e",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "Read every day, in the easiest thing you can find The people who keep their Greek are, in my experience, the ones who read it most days and read something easy enough to enjoy.",
   "status": "unreviewed",
   "finding": ""
@@ -3475,6 +3909,7 @@
   "k": "c00df65b87f9",
   "ch": 27,
   "kind": "count",
+  "src": "quiz",
   "text": "Greek scatters its clues, and the word that unlocks a clause is often three words later.",
   "status": "unreviewed",
   "finding": ""
@@ -3483,6 +3918,7 @@
   "k": "e310dae05da4",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "An intermediate grammar, for the questions this course cannot answer.",
   "status": "unreviewed",
   "finding": ""
@@ -3491,6 +3927,7 @@
   "k": "eace8960f68d",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "What the grammar cannot settle Worth saying plainly at the end of a grammar course: most interpretive disputes are not grammatical.",
   "status": "unreviewed",
   "finding": ""
@@ -3499,6 +3936,7 @@
   "k": "eba7753b4f0d",
   "ch": 27,
   "kind": "absolute",
+  "src": "quiz",
   "text": "Loading every possible sense into one occurrence is the commonest way a little Greek goes wrong.",
   "status": "unreviewed",
   "finding": ""
@@ -3507,6 +3945,7 @@
   "k": "f929b4cd52b8",
   "ch": 27,
   "kind": "absolute",
+  "src": "body",
   "text": "A presence is only evidence on the same terms as an absence.",
   "status": "corrected",
   "finding": "SETTLED, and by chapter 4's own test. It said 'The test is whether the writer could have written it the other way' — so the question at Luke 18:13 is not what τῷ ἁμαρτωλῷ means but whether Luke had the option of leaving the article out. Corpus: a dative pronoun with a noun or adjective in apposition occurs 12 times, 8 of them articular, and SEVEN OF THE EIGHT ARE LUKE — ὑμῖν τοῖς πλουσίοις (6:24), ὑμῖν τοῖς Φαρισαίοις (11:42, 11:43), ὑμῖν τοῖς νομικοῖς (11:46, 11:52), ὑμῖν τοῖς φίλοις (12:4), and μοι τῷ ἁμαρτωλῷ itself. None of the other six means 'the Pharisees above all others'; they mean 'you Pharisees'. The eighth is Ephesians 3:8 ἐμοὶ τῷ ἐλαχιστοτέρῳ. So the article is the construction, not a choice, and by the chapter's own rule it is not evidence. Chapter 27 was the sharper case: the sentence immediately before the quotation states the could-have-written-it-otherwise test, and the next sentence breaks it on a presence. Both chapters now say so, and the example is kept — it teaches the fallacy better than it taught the reading."
