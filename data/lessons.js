@@ -99,7 +99,7 @@ quiz:[
 {q:"Which of these is most likely to be misread by an English speaker?",o:["β as b","δ as d","ρ as p","κ as k"],a:2,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:5}]},
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
 body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 27 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
-<p>Every Greek verb form encodes five things: <b>person, number, tense, voice and mood</b>. Parsing a verb means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required.</p>
+<p>A Greek verb with a person on it encodes five things: <b>person, number, tense, voice and mood</b>. Parsing it means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required. The participle and the infinitive have no person, and this chapter comes to them; they are a third of the verb forms in the book.</p>
 <h3>Aspect comes first</h3>
 <p>This is the single most important thing in the chapter, and it is the thing most likely to have been taught to you wrongly.</p>
 <p>Greek tenses differ less by <i>when</i> the action happened than by <i>how</i> the writer chose to present it. That choice is called aspect. Most modern grammars count three:</p>
@@ -321,7 +321,7 @@ body:`<p>The second declension gave you <span class="gk">-ος</span> and <span 
 <p>Once you can see a preposition and predict the case that follows it, you are reading ahead of the sentence rather than behind it.</p>
 <h3>Small words change shape before a vowel</h3>
 <p>You met this in chapter 3 with the negative: <span class="gk">οὐ</span> before a consonant, <span class="gk">οὐκ</span> before a smooth breathing, <span class="gk">οὐχ</span> before a rough one. Prepositions do the same thing, and for the same reason — Greek adjusts a small word to whatever follows it.</p>
-<p><span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel: 669 times against 227 in the New Testament, so you will meet both.</p>
+<p><span class="gk">ἐκ</span> becomes <span class="gk">ἐξ</span> before a vowel: 679 times against 234 in the New Testament, so you will meet both, and the split is clean — every one of the 679 sits before a consonant and every one of the 234 before a vowel.</p>
 <p><span class="gk">ἀπό</span> drops its vowel and becomes <span class="gk">ἀπ’</span> before a vowel, and <span class="gk">ἀφ’</span> before a rough breathing — the pi turning into a phi for exactly the reason the kappa of <span class="gk">οὐκ</span> turns into the chi of <span class="gk">οὐχ</span>.</p>
 <p class="v" data-ref="1 Thessalonians 2:6">ἐξ ἀνθρώπων δόξαν, οὔτε ἀφ’ ὑμῶν οὔτε ἀπ’ ἄλλων</p>
 <p>"glory from men, neither from you nor from others." Three of these in one line: <span class="gk">ἐξ</span> before a vowel, <span class="gk">ἀφ’</span> before the rough breathing of <span class="gk">ὑμῶν</span>, and <span class="gk">ἀπ’</span> before the smooth breathing of <span class="gk">ἄλλων</span>.</p>
@@ -932,9 +932,9 @@ body:`<p>Chapter 12 gave the primary middle and passive endings, used by the pre
 <p>"Just as he chose us in him before the foundation of the world." <span class="gk">ἐξελέξατο</span> is unmistakably a middle, and the aorist is where you can see that. What the voice <i>adds</i> is a harder question, and chapter 12 gave you the one to ask first: <span class="gk">ἐκλέγομαι</span> has no active anywhere in the New Testament. Of its twenty-two occurrences, twenty-one are middle and one is passive — there was nothing to choose against. A lexicon glosses the verb "to pick out for oneself", so that sense belongs to the word itself; it is not a decision the writer made in this verse.</p>
 <h3>Second aorist middles</h3>
 <p>A verb with a second aorist forms its middle on that stem, and conjugates it exactly like an imperfect middle. The stem is the only difference — which means the two are told apart by the stem and nothing else.</p>
-<p>One verb dominates the category. <span class="gk">γίνομαι</span> gives <span class="gk">ἐγενόμην</span>, and <span class="gk">ἐγένετο</span> alone occurs 201 times: <b>nearly a third of every aorist middle in the New Testament.</b></p>
+<p>One verb dominates the category. <span class="gk">γίνομαι</span> gives <span class="gk">ἐγενόμην</span>, and <span class="gk">ἐγένετο</span> alone occurs 201 times: <b>nearly a third of every aorist middle indicative in the New Testament.</b></p>
 <p class="v" data-ref="John 1:6">Ἐγένετο ἄνθρωπος ἀπεσταλμένος παρὰ θεοῦ</p>
-<p>"There came a man sent from God." Learn <span class="gk">ἐγένετο</span> as a word in its own right, rather than as a paradigm slot, and a third of the aorist middles in the New Testament come free with it.</p>
+<p>"There came a man sent from God." Learn <span class="gk">ἐγένετο</span> as a word in its own right, rather than as a paradigm slot, and a third of the aorist middle indicatives in the New Testament come free with it.</p>
 <h3>The pluperfect middle and passive</h3>
 <table><caption>ἐλελύμην — pluperfect middle and passive</caption>
 <tr><th></th><th>Singular</th><th>Plural</th></tr>

@@ -229,14 +229,11 @@ REFY = re.compile(r"(chapters?|verse|John|Matthew|Mark|Luke|Acts|Romans|"
 # Totals that sit after a Greek word but belong to a different one, each with
 # the reason. A short list is the point: anything not here is checked.
 IGNORE = {
-    (5, "ἐξ", 227): "ἐκ's count; the sentence names both words either side of it",
     (8, "ἔρχομαι", 759): "the seventeen compounds' total, not ἔρχομαι's own",
     (9, "σύ", 5466): "ἐγώ and σύ added together, as the sentence says",
     (11, "ἐκεῖνος", 1627): "οὗτος and ἐκεῖνος added together, as the sentence says",
     (12, "ἄρχομαι", 86): "ἄρχω's total; ἄρχομαι is not a separate lemma",
-    (13, "εἰμί", 117): "ἔσται's count, named next in the same sentence",
     (14, "ἐγενόμην", 201): "ἐγένετο's count, named next in the same sentence",
-    (25, "εἰμί", 90): "how many -μι verbs there are, not εἰμί's own count",
     (7, "ἦν", 455): "εἰμί's imperfect indicatives, checked as a category below",
     (8, "ἐπί", 480): "ἐπί's accusatives, a slice by case, given in the same sentence",
     (18, "εἷς", 232): "οὐδείς's count — the word being defined, not one of its parts",
@@ -254,6 +251,7 @@ IGNORE_N = {(cid, norm(bare(w)), n): why for (cid, w, n), why in IGNORE.items()}
 assert len(IGNORE_N) == len(IGNORE), "two IGNORE entries normalise the same"
 
 claims, slices, bad = 0, 0, []
+used_ignore = set()
 for l in LESSONS:
     text = re.sub(r"\s+", " ", re.sub("<h3>", " </p><h3>", l["body"]))
     spans = [(m.start(), m.end(), m.group(1).strip()) for m in WORD.finditer(text)]
@@ -282,7 +280,9 @@ for l in LESSONS:
                  if bare(x) and len(bare(x)) > 1 and not x.startswith(("-", "‑"))]
         if not words:
             continue
-        if any((l["id"], norm(bare(w)), n) in IGNORE_N for w in words):
+        keys = [(l["id"], norm(bare(w)), n) for w in words]
+        if any(k in IGNORE_N for k in keys):
+            used_ignore.update(k for k in keys if k in IGNORE_N)
             continue
         claims += 1
         best = None
@@ -299,12 +299,44 @@ for l in LESSONS:
         bad.append((l["id"], raw, n, lem, form,
                     re.sub("<[^>]+>", "", text[max(0, nm.start() - 95):nm.end() + 25])))
 
+# An IGNORE entry is a promise that a number belongs to a different word than
+# the one beside it, and the promise has to stay true. The entry for
+# (5, "ἐξ", 227) said 227 was "ἐκ's count". It was not: ἐκ occurs 679 times.
+# 227 was the count of the lower-case spelling of ἐξ alone, missing the seven
+# sentence-initial Ἐξ -- the very fault this file's docstring says produced
+# seven undercounts. So the allow-list silenced a real error for as long as
+# nobody read the reason. Now an entry that stops firing has to be removed,
+# which is when somebody reads it again.
+_bodies = {l["id"]: re.sub("<[^>]+>", " ", l["body"]) for l in LESSONS}
+
+
+def _still_there(cid, n):
+    """Is that number anywhere in that chapter any more? An entry can stop
+       firing because the sentence was reworded into a slice rather than a
+       total, which is not the same as the claim having gone."""
+    body = _bodies.get(cid, "")
+    return re.search(r"\b%s\b" % format(n, ","), body) or         re.search(r"\b%d\b" % n, body)
+
+
+stale = sorted(k for k in set(IGNORE_N) - used_ignore
+               if not _still_there(k[0], k[2]))
+
 print("total-frequency claims checked: %d" % claims)
 print("slice claims left to reading:   %d" % slices)
 print("claims the corpus does not bear out: %d" % len(bad))
 for cid, w, n, lem, form, ctx in bad:
     print("   ch%-3d %-14s claims %-6d corpus: lemma %-6d form %-6d" % (cid, w, n, lem, form))
     print("        …%s…" % ctx.strip())
+
+print()
+print("numbers excused by IGNORE: %d of %d entries fired"
+      % (len(used_ignore), len(IGNORE_N)))
+if stale:
+    print("IGNORE ENTRIES THAT NO LONGER MATCH ANYTHING: %d" % len(stale))
+    for cid, w, n in stale:
+        print("   ch%-3d %-12s %-7d %s" % (cid, w, n, IGNORE_N[(cid, w, n)]))
+    print("   The prose has moved. Remove the entry, or find out why it "
+          "stopped firing before you assume it is harmless.")
 
 print()
 print("category claims checked: %d" % len(CATEGORY_CLAIMS))

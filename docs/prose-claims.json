@@ -116,8 +116,8 @@
   "ch": 2,
   "kind": "count",
   "text": "The optative is rarer still, and by the Koine period it is fading: 68 occurrences in the whole New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "68 optatives in the SBLGNT, exact."
  },
  {
   "k": "214ec4b7eabc",
@@ -140,16 +140,8 @@
   "ch": 2,
   "kind": "absolute",
   "text": "Every finite Greek verb form encodes person, number, tense, voice and mood in one word.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "5c41e40f9cd9",
-  "ch": 2,
-  "kind": "absolute",
-  "text": "Every Greek verb form encodes five things: person, number, tense, voice and mood .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True as stated, because it says FINITE. The chapter's body did not: it opened 'Every Greek verb form encodes five things', twenty lines above its own 'The infinitive and the participle ... decline to specify a person at all'. Corpus: participles 6,640 plus infinitives 2,285 are 8,925 of 28,056 verb forms, 32%. The body now scopes it and names the exception; this quiz explanation always had it right. Found by reading."
  },
  {
   "k": "5ed45a032522",
@@ -172,8 +164,8 @@
   "ch": 2,
   "kind": "count",
   "text": "Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "15,589 indicatives of 19,131 finite forms = 81.5%. The scoping — 'that carry a person and a number' — is exactly right, which is what made the unscoped claim earlier in the chapter stand out."
  },
  {
   "k": "97dd92fdcdee",
@@ -420,8 +412,8 @@
   "ch": 4,
   "kind": "count",
   "text": "There is a fifth: the vocative , used for addressing someone directly, and it occurs 668 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "668 vocatives in the SBLGNT, exact."
  },
  {
   "k": "c830aa6b5eff",
@@ -512,6 +504,14 @@
   "finding": ""
  },
  {
+  "k": "54b479753fb5",
+  "ch": 5,
+  "kind": "absolute",
+  "text": "ἐκ becomes ἐξ before a vowel: 679 times against 234 in the New Testament, so you will meet both, and the split is clean — every one of the 679 sits before a consonant and every one of the 234 before a vowel.",
+  "status": "corrected",
+  "finding": "Was '669 times against 227'. Both are CASE-SENSITIVE tallies: ἐκ is 669 lower-case plus 10 sentence-initial Ἐκ = 679, and ἐξ is 227 plus 7 Ἐξ = 234. check_claims' docstring names this exact fault — 'which is how seven undercounts got into the chapters: they were written from a case-sensitive tally' — and this was an eighth. Worse, check_claims had an IGNORE entry for the 227 whose stated reason was false: it called 227 'ἐκ's count', and ἐκ is 679. The corpus also settles the rule itself, which the sentence now says: all 679 ἐκ sit before a consonant and all 234 ἐξ before a vowel, with no exceptions either way. A sweep of every number-beside-a-Greek-word pair in all 27 chapters found no other instance of the fault."
+ },
+ {
   "k": "5a331ed6cc6f",
   "ch": 5,
   "kind": "count",
@@ -572,14 +572,6 @@
   "ch": 5,
   "kind": "absolute",
   "text": "None of this changes the meaning or the case.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "e290faa59641",
-  "ch": 5,
-  "kind": "count",
-  "text": "ἐκ becomes ἐξ before a vowel: 669 times against 227 in the New Testament, so you will meet both.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -660,8 +652,8 @@
   "ch": 7,
   "kind": "count",
   "text": "Its past is the imperfect: ἤμην, ἦς, ἦν, ἦμεν, ἦτε, ἦσαν — and ἦν alone accounts for most of its 455 occurrences.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "455 imperfect indicatives of εἰμί, exact; ἦν is 314 of them = 69%, so 'most' holds. The rest: ἦσαν 95, ἤμην 15, ἦτε 10, ἦμεν 8, ἦς 6, ἤμεθα 5, ἦσθα 2."
  },
  {
   "k": "8342c0923453",
@@ -748,8 +740,8 @@
   "ch": 8,
   "kind": "count",
   "text": "On its own it occurs 631 times, and it heads a family of seventeen compounds worth 759 more between them: ἐξέρχομαι go out (216), εἰσέρχομαι go in (193), ἀπέρχομαι go away (117), προσέρχομαι come to (86), διέρχομαι go through (41), συνέρχομαι come together (30).",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἔρχομαι 631 on its own, and exactly seventeen lemmas ending -έρχομαι worth 759 between them: ἐξέρχομαι 216, εἰσέρχομαι 193, ἀπέρχομαι 117, προσέρχομαι 86, διέρχομαι 41, συνέρχομαι 30, παρέρχομαι 29, κατέρχομαι 15, ἐπέρχομαι 9, προέρχομαι 8, and seven more. Both numbers exact."
  },
  {
   "k": "24dbc3475905",
@@ -1672,14 +1664,6 @@
   "finding": ""
  },
  {
-  "k": "3f85ba8c2e5d",
-  "ch": 14,
-  "kind": "absolute",
-  "text": "γίνομαι gives ἐγενόμην , and ἐγένετο alone occurs 201 times: nearly a third of every aorist middle in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
   "k": "5597481efde6",
   "ch": 14,
   "kind": "absolute",
@@ -1742,6 +1726,14 @@
   "text": "Third time in three chapters.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "af107b3b9db0",
+  "ch": 14,
+  "kind": "absolute",
+  "text": "γίνομαι gives ἐγενόμην , and ἐγένετο alone occurs 201 times: nearly a third of every aorist middle indicative in the New Testament.",
+  "status": "corrected",
+  "finding": "Was 'nearly a third of every aorist middle in the New Testament'. ἐγένετο is 201, which is 31% of the 641 aorist middle INDICATIVES — the category the chapter is about — but only 15% of the 1,324 aorist middles of every mood, which is what the sentence said. The number was right and the denominator was unstated. Found by reading a stale IGNORE entry in check_claims."
  },
  {
   "k": "f5fb5e88e024",
