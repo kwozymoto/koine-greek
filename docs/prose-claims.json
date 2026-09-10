@@ -18,6 +18,15 @@
   "finding": "63,625 vowel-initial tokens in the SBLGNT, 63,625 with a breathing. The first pass reported eight exceptions and every one was a diphthong -- in αυ, ευ, ου, ει the breathing sits on the SECOND vowel, and the detector read only the first. The claim was true and the check was wrong."
  },
  {
+  "k": "230e9d23947d",
+  "ch": 1,
+  "kind": "absolute",
+  "src": "body",
+  "text": "Initial ῥ in a Greek word always takes the rough breathing, though it is generally not sounded as an h: ῥῆμα is rhēma , near enough rēma .",
+  "status": "verified",
+  "finding": "NOW EXACT, and no longer an overclaim. Corpus: 231 of the 233 initial-ῥ tokens carry the rough breathing, and the two that do not are the same transliterated Aramaic name — Ραββουνι at Mark 10:51 and John 20:16. Adding 'in a Greek word' excludes exactly those two and leaves the rule true without exception. This sentence had been recorded as an overclaim since the register was created and left to Fraser twice; ChatGPT's audits raised it again in both passes, and the fix is four words."
+ },
+ {
   "k": "2581dc05eebc",
   "ch": 1,
   "kind": "absolute",
@@ -97,15 +106,6 @@
   "text": "There are twenty-four letters and you already know several of them.",
   "status": "verified",
   "finding": "Twenty-five distinct letter characters occur, which is the twenty-four letters plus the final sigma ς — exactly what the chapter's next rule is about."
- },
- {
-  "k": "b896876c33dc",
-  "ch": 1,
-  "kind": "absolute",
-  "src": "body",
-  "text": "Initial ῥ always takes the rough breathing, though it is generally not sounded as an h: ῥῆμα is rhēma , near enough rēma .",
-  "status": "overclaim",
-  "finding": "231 of 233 rho-initial tokens carry the rough breathing. The two that do not are the same word: Ραββουνι, Mark 10:51 and John 20:16, a transliterated Aramaic address that SBLGNT writes bare. True of Greek words, and 'always' is a word a learner will take literally when they meet Ραββουνι."
  },
  {
   "k": "c0dbede283c3",
@@ -252,6 +252,15 @@
   "finding": "Same, and the augment is indicative-only."
  },
  {
+  "k": "167752637556",
+  "ch": 3,
+  "kind": "count",
+  "src": "quiz",
+  "text": "μή is the negative outside the indicative about nine times in ten.",
+  "status": "corrected",
+  "finding": "Was 'μή negates everything outside the indicative'. The body had carried the John 21:5 exception since v127 and this quiz still taught the absolute. Corpus: μή stands before a non-indicative 828 times of 938, 88%. Caught by ChatGPT's audit v1 — the second body/quiz split it found in this pass."
+ },
+ {
   "k": "4c5521a9493d",
   "ch": 3,
   "kind": "absolute",
@@ -376,6 +385,15 @@
   "text": "Every other ending is identical.",
   "status": "verified",
   "finding": "Confirmed from λόγος and ἔργον side by side: they differ only in the nominative and accusative."
+ },
+ {
+  "k": "46153675e6d2",
+  "ch": 4,
+  "kind": "count",
+  "src": "quiz",
+  "text": "Luke writes ὑμῖν τοῖς Φαρισαίοις and ὑμῖν τοῖς πλουσίοις the same way six times over, meaning no more than \"you Pharisees\".",
+  "status": "corrected",
+  "finding": "Was a quiz marking 'Identifies him as the sinner, not a sinner' correct and explaining that most English translations lose the distinction — the exact reading the body was corrected away from in v126. The quiz now asks what the article tells you and answers 'less than it looks'. Caught by ChatGPT's audit v1, and it is the clearest of the five body/quiz misses in this audit."
  },
  {
   "k": "657cef14ff46",
@@ -1296,15 +1314,6 @@
   "finding": "The chapter's closing caution about the perfect. Read and left as written."
  },
  {
-  "k": "d0aeed0a392d",
-  "ch": 10,
-  "kind": "absolute",
-  "src": "body",
-  "text": "Parse οἶδα as a present and its pluperfect ᾔδειν as an imperfect, \"I knew\", as every reference work does.",
-  "status": "read",
-  "finding": "Standard, and the corpus bears out the frequency behind it: 210 of the 602 perfect active indicatives are οἶδα."
- },
- {
   "k": "d5c70b34f253",
   "ch": 10,
   "kind": "absolute",
@@ -1683,15 +1692,6 @@
   "finding": "683 present middle indicatives; 443 belong to lemmas with no active-voice form anywhere in the corpus = 65%. ἔρχεται 89 and δύναται 71, counting the enclitic-accented spellings ἔρχεταί/δύναταί, which are the same word. But ἔρχομαι is NOT one of the 443: it has 384 active forms, ἦλθον among them. The sentence used to present it as one and now says the opposite."
  },
  {
-  "k": "f40a7ecf7db6",
-  "ch": 12,
-  "kind": "absolute",
-  "src": "body",
-  "text": "ἔρχομαι is the one to watch: it has no active present, so every grammar calls it deponent, but it has an active aorist in ἦλθον — which is why it is not among the 443.",
-  "status": "verified",
-  "finding": "Confirmed earlier in this pass: ἔρχομαι has 384 active-voice forms including ἦλθον, so it is not among the 443 verbs with no active anywhere, though every grammar calls it deponent for want of a present active."
- },
- {
   "k": "212b2ab400d0",
   "ch": 13,
   "kind": "count",
@@ -1971,6 +1971,15 @@
   "finding": "σ dropping between vowels. Read and left as written."
  },
  {
+  "k": "3c7d253ace5f",
+  "ch": 15,
+  "kind": "count",
+  "src": "body",
+  "text": "It is one sound rule you have now met three times, and the useful residue is this: a θ preceded by χ is very often an aorist passive — χθ more than half the time.",
+  "status": "corrected",
+  "finding": "My own correction this morning was itself an overclaim. I removed σ from the strong group and left φ in it, when the measurement I had just taken says χθ is 54% and φθ only 23%. So χ is now the clue and φθ and σθ are named as the weak ones at about a quarter each. Caught by ChatGPT's audit v2, which read the register's own numbers against the prose that cited them."
+ },
+ {
   "k": "4f437041c3d5",
   "ch": 15,
   "kind": "absolute",
@@ -2025,15 +2034,6 @@
   "finding": "Exact."
  },
  {
-  "k": "9a849c3e846a",
-  "ch": 15,
-  "kind": "count",
-  "src": "body",
-  "text": "It is one sound rule you have now met three times, and the useful residue is this: a θ preceded by χ or φ is very often an aorist passive — χθ more than half the time.",
-  "status": "verified",
-  "finding": "Was 'a θ preceded by χ, φ or σ is very often an aorist passive'. Measured: of words containing χθ, 54% are aorist passives; φθ 23%; σθ only 22%. Overall 25%, which is not 'very often'. The reason is that 802 of the 1,877 tokens are the middle/passive endings -σθε and -σθαι, which chapter 12 teaches separately — discount those and the rule is right 44% of the time. The sentence now says which of the three is strong and why the third is not, which makes it a usable heuristic instead of a hopeful one."
- },
- {
   "k": "a1a058595ef0",
   "ch": 15,
   "kind": "absolute",
@@ -2041,15 +2041,6 @@
   "text": "The passive at work ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ \"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory.\" Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, θη or its consonant variant, ending.",
   "status": "read",
   "finding": "1 Timothy 3:16, now carrying the textual note this pass added."
- },
- {
-  "k": "b2e1925c1be5",
-  "ch": 15,
-  "kind": "count",
-  "src": "body",
-  "text": "Discount those and the rule is right about two times in five.",
-  "status": "verified",
-  "finding": "Measured in this pass: 44% once the middle/passive endings -σθε and -σθαι are set aside, against 25% with them."
  },
  {
   "k": "be64976feca5",
@@ -2754,15 +2745,6 @@
   "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"-μενος is very nearly a guarantee: 444 of the 446 words ending that way are participles, the exceptions being λιμένος and ἀρχιποίμενος .\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
  },
  {
-  "k": "341418cdec0a",
-  "ch": 20,
-  "kind": "count",
-  "src": "body",
-  "text": "The commonest aorist participle in the book is ἀποκριθείς , 94 occurrences: aorist passive in form, from a deponent verb, and it means \"answering\".",
-  "status": "verified",
-  "finding": "94, exact."
- },
- {
   "k": "63e49c835383",
   "ch": 20,
   "kind": "count",
@@ -2779,6 +2761,15 @@
   "text": "Worth naming on its own because it turns up everywhere and looks like nothing else.",
   "status": "read",
   "finding": "ὤν, οὖσα, ὄν. Read and left as written."
+ },
+ {
+  "k": "8373c01e0bf2",
+  "ch": 20,
+  "kind": "count",
+  "src": "body",
+  "text": "The commonest aorist participle in the book is ἀποκριθείς , 94 occurrences: aorist passive in form, from a verb traditionally called deponent, and it means \"answering\".",
+  "status": "corrected",
+  "finding": "Was 'from a deponent verb', used flat two chapters after chapter 12 quoted Robertson saying the term 'should not be used at all'. Chapter 12's own 'every grammar calls it deponent' went the same way in this batch. The label stays, because a reader will meet it everywhere; the claim that every grammar uses it does not."
  },
  {
   "k": "8ffe0f3807e6",
@@ -2880,15 +2871,6 @@
   "finding": "The translation advice for attributive participles. Read and left."
  },
  {
-  "k": "10c9403bc8e7",
-  "ch": 21,
-  "kind": "count",
-  "src": "quiz",
-  "text": "Article absent: adverbial, and 3,918 participles are anarthrous nominatives, so that is much the commonest.",
-  "status": "verified",
-  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commones\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
- },
- {
   "k": "1416a09bb34f",
   "ch": 21,
   "kind": "absolute",
@@ -2898,13 +2880,13 @@
   "finding": "'One verb form in four' is exact: 6,640 participles of 28,056 verb forms, 23.7%."
  },
  {
-  "k": "30a5e636689c",
+  "k": "481cf2c845cc",
   "ch": 21,
   "kind": "count",
-  "src": "body",
-  "text": "The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commonest, and the one with no signposts.",
+  "src": "quiz",
+  "text": "3,918 participles are anarthrous nominatives, which is the largest group by far.",
   "status": "verified",
-  "finding": "6,640 participles. 3,918 anarthrous nominatives exactly; 1,433 articular on the definition 'article immediately before' (1,430 on a stricter agreement test, 2,330 allowing an intervening modifier). The two figures deliberately do not sum to 6,640: 1,289 participles are anarthrous and not nominative, the genitive absolutes among them."
+  "finding": "3,918 exact, and now described as the largest group rather than as a classification of every one of them."
  },
  {
   "k": "4c53effd80c3",
@@ -2914,6 +2896,15 @@
   "text": "Usually, not always — an anarthrous participle can still be attributive, which is why the sentence has the last word.",
   "status": "corrected",
   "finding": "The chapter's opening was corrected in v120 from 'one question separates them' to 'one question comes first', but this summary four sections later still said 'It divides the three uses'. Same fault, missed the first time. The article separates the adverbial use from the other two; a second question — is there a noun to modify? — splits those. And the chapter's own counts never partitioned the set: 1,433 articular and 3,918 anarthrous nominatives leave 1,289 of the 6,640 in neither. Raised by ChatGPT's second audit."
+ },
+ {
+  "k": "4df8fcc7c155",
+  "ch": 21,
+  "kind": "count",
+  "src": "body",
+  "text": "The counting says which pattern is commonest: 1,433 participles carry an article, and 3,918 are anarthrous nominatives , which makes the third use much the largest group and the one with no signposts.",
+  "status": "corrected",
+  "finding": "The flat binary survived here after the chapter's opening and its What-to-watch-for were both corrected in v121 and v126. It now says 'usually describing the circumstances — usually, because an anarthrous participle can still be attributive', and the counting is described as the commonest pattern rather than a classification. 1,433 and 3,918 are exact; they simply do not sort 3,918 participles by function."
  },
  {
   "k": "5694370683ce",
@@ -2977,6 +2968,15 @@
   "text": "Ask it every time, before anything else about the form: Is there an article?",
   "status": "read",
   "finding": "Corrected in this pass: the article question comes first and a second question splits the two articular uses."
+ },
+ {
+  "k": "f1ebd1ad2bdc",
+  "ch": 21,
+  "kind": "absolute",
+  "src": "quiz",
+  "text": "Article absent: usually adverbial, though not always, so check what the sentence needs.",
+  "status": "corrected",
+  "finding": "The quiz half of the same. Caught by ChatGPT's audit v2, which noted that all adverbial participles are anarthrous but not all anarthrous participles are adverbial — which is right, and is what the body already said."
  },
  {
   "k": "f2dbeb535c53",
@@ -3355,6 +3355,15 @@
   "text": "Reading purpose into every one of the 662 will produce sermons the text does not support.",
   "status": "verified",
   "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"ἵνα, and purpose The commonest subjunctive by far is the one after ἵνα , \"in order that\" — which occurs 662 times and is followed by a subjunctive alm\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
+ },
+ {
+  "k": "7320849a7611",
+  "ch": 24,
+  "kind": "count",
+  "src": "body",
+  "text": "That is most of recognising a subjunctive, and not all of it — as the next section says, λύσω is spelled exactly like the future indicative, and fifteen real verbs in the New Testament have the two forms identical.",
+  "status": "corrected",
+  "finding": "Was 'That is the whole of recognising a subjunctive'. The chapter refutes it two sections later — λύσω is spelled exactly like the future indicative — and this pass had already measured fifteen real verbs whose future active indicative 1sg and aorist active subjunctive 1sg are identical: ποιήσω, θήσω, ἐρωτήσω, ἀπολύσω, κληρονομήσω among them. ChatGPT's audit v1 used that verification against the claim, correctly."
  },
  {
   "k": "84d0da0b711e",

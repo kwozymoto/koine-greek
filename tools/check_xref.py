@@ -78,6 +78,7 @@ XREF = {
     (8, 5): (4, 'Nouns of the first declension'),
     (9, 6): (2, 'Adjectives of the first and second declension'),
     (9, 11): (1, 'Demonstrative pronouns'),
+    (10, 2): (1, 'The Greek verbal system'),
     (10, 7): (3, 'Imperfect and aorist active indicative'),
     (11, 6): (2, 'Adjectives of the first and second declension'),
     (11, 9): (1, 'Personal pronouns'),
