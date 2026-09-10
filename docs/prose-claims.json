@@ -3371,8 +3371,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "There is never an augment , even in the aorist — because the subjunctive does not mark time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "SOURCED. Robertson, Grammar ch.XVIII: \"The Greeks evidently felt that there was no need for time in the other modes except in a relative sense... It is only by the augment (probably an adverb) that past time is clearly expressed\", and \"There is no time element in the present subjunctive.\" Corpus agrees as far as it can: of 1,856 subjunctives, the 285 aorist or perfect ones beginning with ε all have a stem-initial epsilon, not an augment."
  },
  {
   "k": "ad137c0955b1",
@@ -3389,8 +3389,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The aorist is the default Because the subjunctive marks no time, its tenses give aspect and nothing else — exactly as chapter 16 said.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "SOURCED, and the chapter's grounding is its own: 1,387 of the 1,856 subjunctives are aorist, three in four. Robertson ch.XVIII on why the tense carries no time outside the indicative; Huffman Part 2 on what it carries instead — tense-form selection is \"based primarily upon the way the author wishes to think about the action\", aspect plus vantage point, not the historic action."
  },
  {
   "k": "d2abe044fc78",
@@ -3416,8 +3416,8 @@
   "kind": "spelling",
   "src": "body",
   "text": "The present active subjunctive first singular λύω is spelled exactly like the indicative, and the aorist subjunctive λύσω exactly like the future indicative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Both halves confirmed with REAL verbs rather than the paradigm's invented λύω. Fourteen verbs in the corpus have a present active indicative 1sg identical to their present active subjunctive 1sg — λέγω, ἔχω, θέλω, λαλῶ, ποιῶ among them. And fifteen have a future active indicative 1sg identical to their aorist active subjunctive 1sg: ποιήσω, θήσω, ἐρωτήσω, ἀπολύσω, κληρονομήσω. The collision the chapter warns about is real and attested."
  },
  {
   "k": "f28063c3b71a",
@@ -3434,8 +3434,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Like the subjunctive, it marks aspect only, and that single fact is the whole of this chapter's usefulness.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "SOURCED. Huffman Part 2 separates the two things cleanly: mood \"describes the author's portrayal of the verbal action as an actuality (indicative), as a potentiality (subjunctive), as only a possibility (optative), or as an intention (imperative)\", while the tense-form carries aspect and vantage point. So an imperative's tense is doing aspect and its mood is doing the commanding, which is the chapter's claim."
  },
  {
   "k": "1169deae989d",
@@ -3443,8 +3443,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "In classical Greek it was everywhere; by the New Testament it occurs 68 times , in the present and aorist only.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "68 optatives, exact. And 'present and aorist only' holds: the corpus has no optative in any other tense."
  },
  {
   "k": "1d1beb0ea0dc",
@@ -3452,8 +3452,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "They are two views of the same asking, and the choice of aspect is visible only in Greek.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "The Lord's Prayer pair, Matthew's δός against Luke's δίδου. Huffman Part 2 backs the caution the chapter puts beside it, and does so more sharply than the chapter does: \"Some take the negated Present imperative as a command to cease what has already been continuing and the negated Aorist subjunctive to prohibit its beginning, but this does always not hold true (e.g., Matt. 6:19-20). Others describe the negated Present imperative to be for more general prohibitions... but this too is not always the case (e.g., Matt. 8:9). SUCH KIND-OF-ACTION CONCERNS ARE GLEANED FROM THE CONTEXT AND LEXICAL VALUES, NOT THE TENSE-FORM AND MOOD SPELLINGS.\" [his typo] That is the course's position, from a modern guide, with two counter-references the chapter could cite. ChatGPT's audit raised this twice as still too strong; Huffman states it at the same strength."
  },
  {
   "k": "25662de0f3a3",
@@ -3551,8 +3551,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "The second plural λύετε is spelled exactly like the indicative \"you loose\", and only context separates them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Thirty-nine real verbs have a present active indicative 2pl identical to their present active imperative 2pl — ποιεῖτε, ἀγαπᾶτε, ἔχετε, ζητεῖτε, μεριμνᾶτε. So 'only context separates them' is not a hypothetical about a made-up verb; it is a thing a reader meets constantly."
  },
  {
   "k": "95f58beb4f4f",
