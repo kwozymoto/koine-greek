@@ -39,6 +39,27 @@ So, mechanically:
   silently dropped μή and οὐ. **Before concluding a source cannot be parsed,
   check that the parser is not the thing at fault.**
 
+### What is actually in `../Greek App Reference/`
+
+  This list exists because the rule above was not enough. Through an entire
+  claims audit I read "open the book", listed that directory twice, opened
+  neither Huffman nor the good Robertson, marked two dozen claims as needing
+  a grammar, and asked Fraser to export pages he already had on disk. Naming
+  the shelf is what the rule was missing.
+
+  | | what it settles |
+  |---|---|
+  | `Abbott-Smith/abbott-smith.tei.xml` | 5,441 entries, each `<form>` giving the genitive. **Declension of any noun**, and NT occurrence counts. Settled ch17's third-declension split when the corpus alone could not. |
+  | `Huffman/Part 2.docx` | The syntax guide: case usage, article, tense-form and aspect, voice, mood, infinitives, participles, conditionals. **The modern label set.** Part 1 is grammar, Part 3 diagramming. |
+  | `Robertson/chapter_*.docx` | Clean Logos exports with the polytonic Greek intact — XI Cases, XVI Article, XVII Voice, XVIII Tense, XX Verbal Nouns. **Use these.** |
+  | `Robertson/robertson-grammar-1915.txt` | The archive.org OCR. English usable but noisy, Greek unusable. Only for chapters not exported above. |
+  | `Black/*.docx` | The course's own textbook, chapter by chapter, plus its vocabulary. Read by `check_black.py`. |
+  | `Translations/*.json` | ASV, BSB, Darby, KJV, YLT, NHEB. **Any claim about what English translations do** — it refuted "every English translation gives it as 'he'". |
+
+  The division in rule 8 — mechanically verifiable, catchable by reading,
+  needs a source — has a third row because these exist. "Needs a grammar" is
+  not a terminal state and is not a question for Fraser. Open the book.
+
 ## 2. Run the checkers, and read what they say
 
 ```bash

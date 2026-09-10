@@ -149,8 +149,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Time is only fixed in the indicative Outside the indicative mood, the tense is telling you about aspect and almost nothing about time.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "SOURCED. Robertson, Grammar ch.XVIII (Tense): \"The Greeks evidently felt that there was no need for time in the other modes except in a relative sense. As a matter of fact, the real time of subjunctive, optative, and imperative is future in relation to speaker or writer... It is only by the augment (probably an adverb) that past time is clearly expressed\" — and later, \"There is no time element in the present subjunctive.\" So the augment really is the temporal element, and what time a non-indicative carries is relative. Chapter 2's 'almost nothing about time' is the right strength; chapter 16's 'aspect and nothing more' was the overstatement this pass corrected. Read from the clean Logos export in Greek App Reference/Robertson, not the broken OCR."
  },
  {
   "k": "347a4665af80",
@@ -203,8 +203,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "SOURCED. Robertson, Grammar ch.XVIII (Tense): \"The Greeks evidently felt that there was no need for time in the other modes except in a relative sense. As a matter of fact, the real time of subjunctive, optative, and imperative is future in relation to speaker or writer... It is only by the augment (probably an adverb) that past time is clearly expressed\" — and later, \"There is no time element in the present subjunctive.\" So the augment really is the temporal element, and what time a non-indicative carries is relative. Chapter 2's 'almost nothing about time' is the right strength; chapter 16's 'aspect and nothing more' was the overstatement this pass corrected. Read from the clean Logos export in Greek App Reference/Robertson, not the broken OCR."
  },
  {
   "k": "a34268636ff3",
