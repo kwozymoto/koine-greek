@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v132';
+const VERSION = 'v133';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,18 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v133: batch 4 closed, and sixteen clips changed. Ten flags in fifty --
+     but the finding is not the count. Every one of the ten had a cause
+     already written in the cue guide before the clip was made, and four
+     were spellings a previous batch had fixed in ONE word while leaving
+     the other words carrying them: `keye` was replaced for καινός on the
+     10th and shipped again in καιρός on the 11th. tools/check_cues.py is
+     the answer to that and holds all 818 against what an ear rejected.
+     Two other things settled here: bare `gee` is spoken as the letter G,
+     which is why ἀναγινώσκω said it, and `ghee` beat Fraser's own `gehn`
+     -- so the h is the fix and not the syllable division. And speed, a
+     number on the request that this project had never used in four
+     rounds, fixed a clip that was right and too slow. */
   /* v121, like v120, changes data/lessons.js only. It is in SHELL, so
      the VERSION bump replaces it and nothing here needs touching. */
   /* v120 changes data/lessons.js only, which is precached in SHELL and
@@ -55,6 +67,22 @@ const STALE = [
   'audio/vocab/488_neos.mp3',                        // νέος
   'audio/vocab/495_manthano.mp3',                    // μανθάνω
   'audio/vocab/444_akathartos.mp3',                  // ἀκάθαρτος
+  'audio/vocab/165_ophthalmos.mp3',                // ὀφθαλμός
+  'audio/vocab/192_dikaioo.mp3',                   // δικαιόω
+  'audio/vocab/193_kairos.mp3',                    // καιρός
+  'audio/vocab/194_proseuchomai.mp3',              // προσεύχομαι
+  'audio/vocab/273_ploion.mp3',                    // πλοῖον
+  'audio/vocab/312_chronos.mp3',                   // χρόνος
+  'audio/vocab/316_paidion.mp3',                   // παιδίον
+  'audio/vocab/356_epiginosko.mp3',                // ἐπιγινώσκω
+  'audio/vocab/391_logizomai.mp3',                 // λογίζομαι
+  'audio/vocab/392_perisseuo.mp3',                 // περισσεύω
+  'audio/vocab/408_paraginomai.mp3',               // παραγίνομαι
+  'audio/vocab/441_echthros.mp3',                  // ἐχθρός
+  'audio/vocab/442_elios.mp3',                     // ἥλιος
+  'audio/vocab/446_anaginosko.mp3',                // ἀναγινώσκω
+  'audio/vocab/506_ana.mp3',                       // ἀνά
+  'audio/vocab/672_epairo.mp3',                    // ἐπαίρω
 ];
 
 const SHELL = [

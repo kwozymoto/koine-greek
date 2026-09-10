@@ -2164,9 +2164,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 19,
-  "tts": "eh peye roh",
-  "source": "worklist-candidate",
-  "duration_s": 1.651
+  "tts": "eh pye roh",
+  "source": "batch4",
+  "duration_s": 1.619,
+  "take": "2026-09-11, Atlas",
+  "note": "the same 'peye' that gave \"pay\" in paidion."
  },
  {
   "index": 673,

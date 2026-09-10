@@ -59,7 +59,7 @@ own alphabet table, which the learner sees in lesson 1.
 
 | Greek | Cue | Sounds like |
 |---|---|---|
-| αι | `eye` initial, `keye`/`kye`/`ey` inside a word | aisle |
+| αι | `eye` initial; after a consonant **a real English word** — `kai` `kye` `pie` `rye` `mai` `bye` `dye` | aisle |
 | ει | `ay` | say |
 | οι | `oy` | boy |
 | υι | `wee` | — |
@@ -119,7 +119,7 @@ own alphabet table, which the learner sees in lesson 1.
 | -η | `ay` [27] | φωνή → `foh nay` |
 | -α | `ah` [18] | ἡμέρα → `hay meh rah` |
 | -ια | `ee ah` [14/19] | καρδία → `kahr dee ah` |
-| -ιον | `ee on` [10/13] | παιδίον → `peye dee on` |
+| -ιον | `ee on` [10/13] | δαιμόνιον → `dye mo nee on` |
 | -αω | `ah oh` [11/11] | ἀγαπάω → `ah gah pah oh` |
 | -εω | `eh oh` [27/28] | ποιέω → `poy eh oh` |
 | -οω | `o oh` | πληρόω → `play ro oh` |
@@ -157,8 +157,20 @@ eff gee jay kay ell em en oh pee cue ar ess tee you vee ex why zee`.
 
 ἐπί `eh pee` → `eppee` · ἔτι `eh tee` → `etih`
 
-One letter-name token among others is fine — `pee stew oh` works. The fault
-is a cue that is nothing but letter names.
+One letter-name token among others is *usually* fine — `pee stew oh` works,
+and eleven heard clips carry a bare `tee`, `dee`, `oh`, `kay`, `ess`, `bee`
+or `see` and passed.
+
+**`gee` is the exception, and the only one an ear has failed.** ἀναγινώσκω
+`ah nah gee noh skoh` came back as "ah nah **G** noh skoh" — four real
+syllables and one letter, spoken as the letter. The reason it is special:
+for every other letter the letter name and the syllable want different
+sounds, so something pulls the voice toward the syllable. For G the letter
+name and the English soft-g reading are *the same sound*, /dʒiː/, and
+nothing pulls the other way. **`ghee` and only `ghee`** — γίνομαι
+`ghee no my` and γινώσκω `ghee noh skoh` are both heard and clean, with
+the g *not* joined to the nu, which is what settled it against the rival
+theory that the nu had to close the syllable.
 
 ### 4. Spaces are beats
 A space is a pause. Too many and the clip is a list of syllables.
@@ -166,6 +178,21 @@ A space is a pause. Too many and the clip is a list of syllables.
 
 Ἰουδαῖος `ee oo deye os` was 3.81s; bound to `yoodaios` it is 1.46s.
 δόξα `do ksah` was 2.01s; `doksah` is 1.08s.
+
+**And there is a second lever, which this guide went four rounds without
+using.** The request takes a `speed`, 0.7 to 1.5. It is a number, not a
+re-roll, so it changes pace and nothing else — where binding changes the
+pace *and* every sound in the token. ἀναγινώσκω was approved for its sounds
+and rejected for its plod at 2.59s over five syllables, which is 0.52s a
+syllable and dead on the target above; the same cue at **speed 1.2** was
+accepted. So the 0.5s figure is a floor for *legibility*, not a target for
+what sounds unhurried, and a clip can be correct, on-target and still too
+slow.
+
+Reach for speed when the sounds are right and only the pace is wrong; reach
+for binding when a token is being spelled. ἐπιγινώσκω, complained of in the
+same breath as ἀναγινώσκω, went the other way and was fixed by binding —
+so try both.
 
 ### 5. Closing a space can wake a silent h
 `ah`, `eh` and `oh` spell vowels — the h is not a sound. Inside a closed
@@ -241,7 +268,7 @@ name; `tih` is short, which is what the word needs.
 | ἐκκλησία | `ek klay see ah` | η = ay, -ια = ee ah |
 | μνημεῖον | `mnay may on` | η = ay, ει = ay, mu must sound |
 | δίκαιος | `dee kyeoss` | partial join; αι as `kye` |
-| δικαιόω | `dee keye oh oh` | αι as `keye`, -οω = o oh |
+| δικαιόω | `dee kye oh oh` | αι as `kye`, as δίκαιος is locked; -οω = o oh |
 | ἀσθενής | `asthenays` | -ης = ays, bound |
 | πρῶτος | `protos` | closed, and the h dropped |
 | ψυχή | `psoo khay` | ψ = ps, υ = oo, χ = kh, -η = ay |
@@ -269,9 +296,15 @@ Where a shipped cue and these tables disagree, the shipped cue usually wins
 
 Recorded so the guide does not accrete folklore:
 
-- **`keye` is not a spelling risk.** All five cues using it — 180, 192,
-  193, 228, 369 — measure internal gaps of 0–130ms, well inside normal.
-  δίκαιος became `dee kyeoss` for vowel and stress reasons, not spelling.
+- ~~**`keye` is not a spelling risk.**~~ **Struck 2026-09-11, and it is the
+  most expensive line this guide has carried.** It was measured rather than
+  heard: the gaps between the syllables really are 0–130ms, and the syllables
+  are still wrong. Two of the five it names have since failed by ear — 369
+  καινός "sounds like key a nos" and 193 καιρός "sounds like key i ros" —
+  and both had to be re-cued to `kye`. **A section written to keep folklore
+  out of the guide was the folklore**, and the reason is worth keeping: an
+  instrument that can only see silence will report evenly spaced nonsense as
+  healthy. Nothing goes in this section again on a measurement alone.
 - **`ek klay see ah` is not unverified.** It was re-recorded, listened to
   and kept; it measures 1.81s over four syllables with a 100ms gap.
 

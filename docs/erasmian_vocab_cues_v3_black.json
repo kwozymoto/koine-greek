@@ -511,9 +511,11 @@
   "pos": "prep",
   "tier": 5,
   "freq": 13,
-  "tts": "ah nah",
-  "source": "black",
-  "duration_s": 1.306
+  "tts": "anna",
+  "source": "batch4",
+  "duration_s": 0.679,
+  "take": "2026-09-11, Atlas",
+  "note": "'ah nah' read oddly. His own suggestion. 'ana' was not tried -- a given name."
  },
  {
   "index": 507,

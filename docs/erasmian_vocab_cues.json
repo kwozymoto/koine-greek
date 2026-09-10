@@ -2263,11 +2263,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 100,
-  "tts": "of thahl moss",
-  "source": "recued",
-  "duration_s": 1.463,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "off thal moss",
+  "source": "batch4",
+  "duration_s": 1.619,
+  "take": "2026-09-11, Atlas",
+  "note": "'thahl' read as \"the hall\" -- rule 5, the silent h in 'ah' waking. 'off' gives the first syllable a real word."
  },
  {
   "index": 166,
@@ -2635,10 +2635,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 39,
-  "tts": "dee keye oh oh",
-  "source": "locked",
-  "duration_s": 1.75,
-  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation"
+  "tts": "dee kai oh oh",
+  "source": "batch4",
+  "duration_s": 1.776,
+  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
+  "take": "2026-09-11, Atlas",
+  "note": "'keye' splits. The -oo ending is the uncontracted lexical form: the citation form occurs 0 times in the NT, across 25 real surface forms."
  },
  {
   "index": 193,
@@ -2649,11 +2651,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 85,
-  "tts": "keye ross",
-  "source": "recued",
-  "duration_s": 1.411,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "kye ross",
+  "source": "batch4",
+  "duration_s": 1.228,
+  "take": "2026-09-11, Atlas",
+  "note": "'keye' came back as key-i. Chosen by ear over 'kai', which he had asked for from the description -- the sound decided it."
  },
  {
   "index": 194,
@@ -2664,9 +2666,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 85,
-  "tts": "pro sew kho my",
-  "source": "g2p",
-  "duration_s": 1.776
+  "tts": "pross sue kho my",
+  "source": "batch4",
+  "duration_s": 1.959,
+  "take": "2026-09-11, Atlas",
+  "note": "two faults: 'sew' is a homograph and the voice took /sou/; and pros- is 'pross', never 'pro', which reads long."
  },
  {
   "index": 195,
@@ -3758,8 +3762,10 @@
   "tier": 3,
   "freq": 67,
   "tts": "ploy on",
-  "source": "g2p",
-  "duration_s": 0.914
+  "source": "batch4",
+  "duration_s": 0.993,
+  "take": "2026-09-11, Atlas",
+  "note": "the p was swallowed. Same cue rolled again, which is what solved pros and dia."
  },
  {
   "index": 274,
@@ -4279,8 +4285,10 @@
   "tier": 3,
   "freq": 53,
   "tts": "crow noss",
-  "source": "locked",
-  "duration_s": 1.28
+  "source": "batch4",
+  "duration_s": 1.306,
+  "take": "2026-09-11, Atlas",
+  "note": "same -- a locked cue and a bad take. Re-rolled, not re-cued."
  },
  {
   "index": 313,
@@ -4330,9 +4338,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 52,
-  "tts": "peye dee on",
-  "source": "g2p",
-  "duration_s": 1.541
+  "tts": "pie dee on",
+  "source": "batch4",
+  "duration_s": 1.463,
+  "take": "2026-09-11, Atlas",
+  "note": "'peye' read as \"pay\". 'pie' is his; 'dee on' is the -ion ending in 10 of 13 cues."
  },
  {
   "index": 317,
@@ -4878,9 +4888,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 44,
-  "tts": "eh pee gee noh skoh",
-  "source": "g2p",
-  "duration_s": 2.168
+  "tts": "eppee ghee noskoh",
+  "source": "batch4",
+  "duration_s": 1.619,
+  "take": "2026-09-11, Atlas",
+  "note": "bare 'gee' is the letter G. Bound for pace, with epi's own locked 'eppee' front."
  },
  {
   "index": 357,
@@ -5359,9 +5371,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 40,
-  "tts": "lo gee dzo my",
-  "source": "g2p",
-  "duration_s": 2.038
+  "tts": "lo ghee dzo my",
+  "source": "batch4",
+  "duration_s": 1.619,
+  "take": "2026-09-11, Atlas",
+  "note": "bare 'gee' is the letter G; 'ghee' is not."
  },
  {
   "index": 392,
@@ -5372,9 +5386,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 39,
-  "tts": "peh rees sew oh",
-  "source": "g2p",
-  "duration_s": 1.776
+  "tts": "peh rees sue oh",
+  "source": "batch4",
+  "duration_s": 1.881,
+  "take": "2026-09-11, Atlas",
+  "note": "the same 'sew' as proseuchomai. pisteuo does this ending as 'pee stew oh'."
  },
  {
   "index": 393,
@@ -5587,9 +5603,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 36,
-  "tts": "pah rah gee no my",
-  "source": "g2p",
-  "duration_s": 2.273
+  "tts": "pah rah ghee no my",
+  "source": "batch4",
+  "duration_s": 2.273,
+  "take": "2026-09-11, Atlas",
+  "note": "bare 'gee' is the letter G. ginomai's own cue with two syllables in front."
  },
  {
   "index": 409,
@@ -6033,11 +6051,11 @@
   "pos": "adj",
   "tier": 4,
   "freq": 32,
-  "tts": "ehkh thross",
-  "source": "recued",
-  "duration_s": 1.541,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "eck thross",
+  "source": "batch4",
+  "duration_s": 1.228,
+  "take": "2026-09-11, Atlas",
+  "note": "'ehkh' is E-K-H and nothing else -- rule 3."
  },
  {
   "index": 442,
@@ -6048,11 +6066,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 32,
-  "tts": "hay lee oss",
-  "source": "recued",
-  "duration_s": 2.116,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "haylee oss",
+  "source": "batch4",
+  "duration_s": 1.306,
+  "take": "2026-09-11, Atlas",
+  "note": "both 'hayl e oss' and 'hay lee os' spelled the ending. Binding the front leaves 'oss' the only free token, which is the shape neos was fixed to."
  },
  {
   "index": 443,
@@ -6108,9 +6126,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 32,
-  "tts": "ah nah gee noh skoh",
-  "source": "g2p",
-  "duration_s": 2.456
+  "tts": "ah nah ghee noh skoh",
+  "source": "batch4",
+  "duration_s": 1.75,
+  "take": "2026-09-11, Atlas",
+  "note": "bare 'gee' is the letter G; 'ghee' is not -- and it beat his own 'gehn', so the h is the fix and not the division. Ploddy at speed 1.0; speed 1.2 fixed it with the cue unchanged.",
+  "speed": 1.2
  },
  {
   "index": 447,

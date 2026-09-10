@@ -58,6 +58,12 @@ data/gnt/, and this runs the lot:
                      other fails, and both against Black's own keywords.
                      Nothing tied the grid to anything, which is how
                      upsilon came to say three different things at once
+    check_cues       the 818 pronunciation cues against the spellings a
+                     person has listened to and rejected. Every batch so
+                     far fixed the word that was reported and left the
+                     other words carrying the same spelling: `keye` was
+                     replaced for καινός and shipped again the next day in
+                     καιρός
     check_forms      the 1,431 real inflected forms the parsing drill marks
                      you against: each occurs, carries that parse everywhere
                      it occurs, and belongs to the headword shown
@@ -129,7 +135,8 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_quiz", "check_options", "check_xref",
           "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
-          "check_ipa", "check_sounds", "check_taught", "check_prose",
+          "check_ipa", "check_sounds", "check_cues",
+          "check_taught", "check_prose",
           "check_beside", "check_consistency",
           "check_frozen", "check_black", "check_coverage", "check_claims",
           "check_links"]
