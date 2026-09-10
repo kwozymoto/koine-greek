@@ -772,8 +772,8 @@
   "ch": 8,
   "kind": "count",
   "text": "ἀράτω τὸν σταυρὸν αὐτοῦ καθ’ ἡμέραν \"Let him take up his cross daily.\" καθ’ ἡμέραν is κατά with the accusative, set hard as an idiom, and you will meet it seventeen times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "καθ’ ἡμέραν occurs exactly 17 times: Matthew 26:55, Mark 14:49, Luke 9:23, 11:3, 16:19, 19:47, 22:53, Acts 2:46, 2:47, 3:2, 16:5, 17:11, 19:9, 1 Corinthians 15:31, 2 Corinthians 11:28, Hebrews 7:27, 10:11. The first spelled-out number this project has ever machine-checked."
  },
  {
   "k": "3b27ec514e70",
@@ -916,8 +916,8 @@
   "ch": 9,
   "kind": "absolute",
   "text": "Only 272 of αὐτός's 5,546 occurrences are nominative — under one in twenty.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "5,546 occurrences and 272 nominative, one in 20.4 — so 'under one in twenty' is exact. And the scoping is the repaired kind: an earlier version gave 261 against the same denominator, counting only the pronoun-tagged nominatives while the total counted every αὐτός. Both halves now count the same thing."
  },
  {
   "k": "0d9a868ef5d6",
@@ -1208,12 +1208,12 @@
   "finding": ""
  },
  {
-  "k": "53f16640f6c5",
+  "k": "510c612ee38a",
   "ch": 11,
   "kind": "absolute",
-  "text": "οὐκ ἦν ἐκεῖνος τὸ φῶς \"He was not the light.\" ἐκεῖνος is John the Baptist, named in the verse before, and every English translation gives it as \"he\".",
-  "status": "unreviewed",
-  "finding": ""
+  "text": "οὐκ ἦν ἐκεῖνος τὸ φῶς \"He was not the light.\" ἐκεῖνος is John the Baptist, named in the verse before, and almost every English translation gives it as \"he\".",
+  "status": "corrected",
+  "finding": "Was 'every English translation gives it as \"he\"'. The app's own six reference translations refute the every: KJV, ASV, BSB, Darby and NHEB all say 'he', and Young's Literal says 'that one'. Which is the more interesting fact, so it is now on the page — a deliberately literal translation keeps the demonstrative, and that is exactly the chapter's point about what the others are flattening."
  },
  {
   "k": "71f871a79a90",
@@ -1236,8 +1236,8 @@
   "ch": 11,
   "kind": "absolute",
   "text": "72 occurrences against 10, and in the plural αὗται occurs three times while αὐταί never occurs at all.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὕτη 72, αὐτή 10, αὗται 3, αὐταί 0. All four exact, counted the way a frequency claim means — αὗται is two plain plus one enclitic-accented αὗταί, and the raw spelling gives 2."
  },
  {
   "k": "add23604d502",
@@ -1252,8 +1252,8 @@
   "ch": 11,
   "kind": "absolute",
   "text": "Every form begins with τ except the four nominatives where the article also has none — ὁ, ἡ, οἱ, αἱ against οὗτος, αὕτη, οὗτοι, αὗται .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact on both sides, and pleasingly so. Of the article's 17 distinct forms in the corpus, 4 do not begin with τ: ὁ, ἡ, οἱ, αἱ. Of οὗτος's 18, 4 do not: οὗτος, αὕτη, οὗτοι, αὗται. The same four slots, and no others."
  },
  {
   "k": "ba07ac591dc2",
@@ -3280,14 +3280,6 @@
   "finding": ""
  },
  {
-  "k": "65da22481ab5",
-  "ch": 26,
-  "kind": "absolute",
-  "text": "And before you memorise it: only four of those six forms occur in the New Testament at all.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
   "k": "6e7a366c58de",
   "ch": 26,
   "kind": "count",
@@ -3320,12 +3312,36 @@
   "finding": ""
  },
  {
+  "k": "a75d7682101a",
+  "ch": 26,
+  "kind": "count",
+  "text": "δίδωσιν is there 11 times, δίδωμι 9 and διδόασιν once; δίδοτε twice, though both of those are imperatives rather than the indicative this table prints.",
+  "status": "corrected",
+  "finding": "Was 'δίδοτε and διδόασιν once each'. διδόασιν does occur once; δίδοτε occurs TWICE, and both of its occurrences are imperatives rather than the present indicative the table above prints. So the sentence also disagreed with the one three paragraphs later saying the whole present active indicative is 21 across three attested slots — δίδωμι 9, δίδωσιν 11, διδόασιν 1. Both now stand: four of the six SPELLINGS occur, three of the six indicative slots do. No checker could see this, because the number was spelled 'once' and check_claims read only digits; it reads words now."
+ },
+ {
   "k": "acb6bf95d9ad",
   "ch": 26,
   "kind": "count",
   "text": "τίθημι and ἵστημι τίθημι , \"I put, place\" (100 occurrences).",
   "status": "verified",
   "finding": "τίθημι 100, exact."
+ },
+ {
+  "k": "b16693191d3d",
+  "ch": 26,
+  "kind": "absolute",
+  "text": "δίδως and δίδομεν never occur.",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
+  "k": "b2b3fc698b45",
+  "ch": 26,
+  "kind": "absolute",
+  "text": "And before you memorise it: only four of those six spellings occur in the New Testament at all.",
+  "status": "unreviewed",
+  "finding": ""
  },
  {
   "k": "d2c74ae8a48a",
@@ -3348,14 +3364,6 @@
   "ch": 26,
   "kind": "count",
   "text": "A short stem with no reduplication and no σα is one of these verbs in the aorist, and that is what you will meet.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "e9f6b2a88e38",
-  "ch": 26,
-  "kind": "absolute",
-  "text": "δίδωσιν is there 11 times, δίδωμι 9, δίδοτε and διδόασιν once each — and δίδως and δίδομεν never.",
   "status": "unreviewed",
   "finding": ""
  },

@@ -209,7 +209,28 @@ LESSONS = json.loads(r.stdout)
 # because in this prose a frequency is always written after its word.
 NEAR = 120
 WORD = re.compile(r'<span class="gk">([^<]{1,60})</span>')
-NUMBER = re.compile(r"(?<![\d:.])(\d[\d,]{1,7})(?![\d:])")
+# Numbers written as words, which this file could not see until 2026-09-10.
+# Chapter 26 said δίδοτε occurs "once each" with διδόασιν; διδόασιν does occur
+# once and δίδοτε occurs twice, and both of ITS occurrences are imperatives
+# rather than the present indicative the table prints. No checker could reach
+# that, because the number was spelled. The gating below is unchanged: a word
+# number still has to sit in a TOTAL frame -- "occurs twice", "twice in the
+# New Testament" -- to be checked at all, which is what keeps "three spellings,
+# one word" out of it.
+WORDNUM = {
+    "once": 1, "twice": 2, "three times": 3, "four times": 4, "five times": 5,
+    "six times": 6, "seven times": 7, "eight times": 8, "nine times": 9,
+    "ten times": 10, "eleven times": 11, "twelve times": 12,
+    "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+    "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+    "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17,
+    "eighteen": 18, "nineteen": 19, "twenty": 20, "thirty": 30, "forty": 40,
+    "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+    "thirty-four": 34, "twenty-two": 22, "twenty-one": 21, "twenty-four": 24,
+}
+_WORDS = "|".join(sorted(WORDNUM, key=len, reverse=True))
+NUMBER = re.compile(r"(?<![\d:.])(\d[\d,]{1,7})(?![\d:])|\b(" + _WORDS + r")\b",
+                    re.I)
 
 # A TOTAL claim: this word occurs this often, full stop. Only these are
 # decidable from a count, so only these are checked.
@@ -238,6 +259,10 @@ IGNORE = {
     (14, "ἐγενόμην", 201): "ἐγένετο's count, named next in the same sentence",
     (7, "ἦν", 455): "εἰμί's imperfect indicatives, checked as a category below",
     (8, "ἐπί", 480): "ἐπί's accusatives, a slice by case, given in the same sentence",
+    (8, "κατά", 17): "the phrase καθ’ ἡμέραν, not κατά itself — and it really is "
+                        "17, at Matthew 26:55, Mark 14:49, Luke 9:23, 11:3, 16:19, "
+                        "19:47, 22:53, Acts 2:46, 2:47, 3:2, 16:5, 17:11, 19:9, "
+                        "1 Corinthians 15:31, 2 Corinthians 11:28, Hebrews 7:27 and 10:11",
     (18, "εἷς", 232): "οὐδείς's count — the word being defined, not one of its parts",
     (18, "μή", 90): "μηδείς's count — the word being defined, not one of its parts",
     (21, "αὐτῶν", 735): "genitive participles, checked as a category below",
@@ -259,7 +284,10 @@ for l in LESSONS:
     spans = [(m.start(), m.end(), m.group(1).strip()) for m in WORD.finditer(text)]
     masked = re.sub("<[^>]+>", lambda x: " " * len(x.group(0)), text)
     for nm in NUMBER.finditer(masked):
-        n = int(nm.group(1).replace(",", ""))
+        if nm.group(1):
+            n = int(nm.group(1).replace(",", ""))
+        else:
+            n = WORDNUM[nm.group(2).lower()]
         if n < 3:
             continue
         before = re.sub("<[^>]+>", " ", text[max(0, nm.start() - 60):nm.start()])
@@ -272,8 +300,12 @@ for l in LESSONS:
         if SLICE_AFTER.match(after):
             slices += 1
             continue
+        # A number in bare parentheses is this course's count idiom --
+        # "ἔδωκεν (64)". A WORD in bare parentheses is a gloss: "τρεῖς,
+        # τρία (three)" says what the numeral means, not how often it
+        # occurs. So the paren shortcut is for digits only.
         is_total = (TOTAL_BEFORE.search(before) or TOTAL_AFTER.match(after)
-                    or BARE_PAREN.search(before))
+                    or (BARE_PAREN.search(before) and nm.group(1)))
         if not is_total:
             slices += 1
             continue

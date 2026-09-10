@@ -718,7 +718,7 @@ body:`<p>Greek points with two words. <span class="gk">οὗτος</span> is "th
 <h3>Pointing back at what was just said</h3>
 <p>The third use is a demonstrative reaching back to someone named a moment earlier, where English would simply say "he".</p>
 <p class="v" data-ref="John 1:8">οὐκ ἦν ἐκεῖνος τὸ φῶς</p>
-<p>"He was not the light." <span class="gk">ἐκεῖνος</span> is John the Baptist, named in the verse before, and every English translation gives it as "he".</p>
+<p>"He was not the light." <span class="gk">ἐκεῖνος</span> is John the Baptist, named in the verse before, and almost every English translation gives it as "he". Young’s Literal is the exception and says "that one" — which is what the Greek does, and shows you why the others decline to.</p>
 <p>This is worth knowing precisely because the translation flattens it. The writer chose a word that points; the English gives you a pronoun. Nothing is hidden — but to see where a writer is directing attention, you have to read the Greek.</p>
 <h3>Watch the breathing</h3>
 <p><span class="gk">αὕτη</span>, with a rough breathing, is "this" — the demonstrative in this chapter. <span class="gk">αὐτή</span>, with a smooth one, is "she" — the personal pronoun from chapter 9. Nothing else separates them.</p>
@@ -1694,7 +1694,7 @@ body:`<p>Greek has two conjugations. Everything so far has been the <span class=
 <tr><th>2nd</th><td class="g">δίδως</td><td class="g">δίδοτε</td></tr>
 <tr><th>3rd</th><td class="g">δίδωσι(ν)</td><td class="g">διδόασι(ν)</td></tr></table>
 <p>Long vowel in the singular, short in the plural, no connecting vowel anywhere, and the first singular ending <span class="gk">-μι</span> that names the class.</p>
-<p>And before you memorise it: only four of those six forms occur in the New Testament at all. <span class="gk">δίδωσιν</span> is there 11 times, <span class="gk">δίδωμι</span> 9, <span class="gk">δίδοτε</span> and <span class="gk">διδόασιν</span> once each — and <span class="gk">δίδως</span> and <span class="gk">δίδομεν</span> never. Which is a hint about where the effort belongs.</p>
+<p>And before you memorise it: only four of those six spellings occur in the New Testament at all. <span class="gk">δίδωσιν</span> is there 11 times, <span class="gk">δίδωμι</span> 9 and <span class="gk">διδόασιν</span> once; <span class="gk">δίδοτε</span> twice, though both of those are imperatives rather than the indicative this table prints. <span class="gk">δίδως</span> and <span class="gk">δίδομεν</span> never occur. Which is a hint about where the effort belongs.</p>
 <p class="v" data-ref="John 13:34">ἐντολὴν καινὴν δίδωμι ὑμῖν ἵνα ἀγαπᾶτε ἀλλήλους</p>
 <p>"A new commandment I give you, that you love one another." Three chapters in one line: a <span class="gk">-μι</span> verb, an <span class="gk">ἵνα</span> clause with the subjunctive, and the reciprocal pronoun.</p>
 <h3>The aorist is where you actually meet them</h3>
