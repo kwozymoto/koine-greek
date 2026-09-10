@@ -2668,8 +2668,8 @@
   "ch": 22,
   "kind": "count",
   "text": "Time Three prepositions with the articular infinitive do most of the work: πρὸ τοῦ before, ἐν τῷ while, μετὰ τό after.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "For the temporal uses, yes: ἐν τῷ 41, μετὰ τό 11, πρὸ τοῦ 3. Worth knowing that πρὸ τοῦ is that rare. Across all articular infinitives the commonest governing preposition is actually εἰς at 54, but that is the purpose construction the previous section covers, not a temporal one, so the claim holds as scoped."
  },
  {
   "k": "9c82fbb48008",
@@ -2696,18 +2696,10 @@
   "finding": ""
  },
  {
-  "k": "211a283e88f2",
+  "k": "3ab6e1bd9252",
   "ch": 23,
-  "kind": "absolute",
-  "text": "The indefinite is enclitic and never begins a clause, so position helps as much as the accent.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "315b8f9ef6a5",
-  "ch": 23,
-  "kind": "absolute",
-  "text": "The indefinite is an enclitic: it never begins a clause, and it throws its accent back onto the word before.",
+  "kind": "count",
+  "text": "The indefinite is enclitic and usually stands second in its clause, so position helps as much as the accent — though τινές does open one seventeen times, and takes an accent when it does.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -2724,8 +2716,8 @@
   "ch": 23,
   "kind": "absolute",
   "text": "Its endings are the ordinary ones, and its shape is almost the article without the τ: ὅς, ἥ, ὅ — singular / plural Masc Fem Neut Nom ὅς / οἵ ἥ / αἵ ὅ / ἅ Gen οὗ / ὧν ἧς / ὧν οὗ / ὧν Dat ᾧ / οἷς ᾗ / αἷς ᾧ / οἷς Acc ὅν / οὕς ἥν / ἅς ὅ / ἅ Every form carries a rough breathing and an accent, and that is what separates it from the article: ἥ is \"who\", ἡ is \"the\".",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "All 1,407 tokens the corpus tags as the relative pronoun carry both a rough breathing and an accent. Not one exception. (The lemma count is 1,408; the odd one is Ephesians 2:13, where MorphGNT tags οἵ as an article while lemmatising it ὅς.)"
  },
  {
   "k": "79754e88c2a9",
@@ -2740,8 +2732,8 @@
   "ch": 23,
   "kind": "absolute",
   "text": "More often it is simply ὅς with no discernible difference, and in the New Testament it appears almost only in the nominative.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ὅστις: 139 of its 144 occurrences are nominative, 97%. The other five are genitive — the ὅτου forms. 'Almost only' is exact."
  },
  {
   "k": "84dd1e072175",
@@ -2838,6 +2830,14 @@
   "text": "And a relative pronoun needs both its questions asked, not one.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "f8524dd57c78",
+  "ch": 23,
+  "kind": "count",
+  "text": "Usually — the plural opens a clause seventeen times, τινὲς δὲ τῶν Φαρισαίων , \"some of the Pharisees\", and there it has to carry an accent of its own.",
+  "status": "corrected",
+  "finding": "Was 'The indefinite is an enclitic: it never begins a clause.' The corpus refutes the never: of the 530 indefinite τις tokens, 13 are the first word of a verse — τινὲς δὲ τῶν ἐκεῖ ἑστηκότων at Matthew 27:47, τινὲς δὲ τῶν Φαρισαίων at Luke 6:2, and at Luke 11:15, John 7:44, 11:37, 11:46 and more — and 4 more follow a full stop or a colon (1 Corinthians 8:7 and 15:6, Philippians 1:15, 1 Timothy 5:24). All are the plural τινές, and all carry their own accent, which an enclitic must when nothing precedes it. Raised by ChatGPT's first audit as an overstatement; the corpus settles it outright. The chapter's real test survives and is now stated: τίνες accents the first syllable, τινές the second."
  },
  {
   "k": "1192c704f908",
