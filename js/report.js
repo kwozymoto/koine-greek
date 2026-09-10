@@ -23,7 +23,10 @@ const REPORT = {
   errors: [],        // the last few uncaught errors, newest last
   trail: [],         // the last few screens, so a report says where they were
   version: null,     // filled in by the service worker; never hard-coded here
-  DRAFT: "koine.report.draft"
+  DRAFT: "koine.report.draft",
+  /* The one place the destination is written. privacy.html carries the
+     same address; nothing else needs it. */
+  TO: "support@everydaykoine.app"
 };
 
 /* ---------- catch what the tester will not be able to describe ----------
@@ -128,14 +131,17 @@ function reportCardHtml() {
       <button class="btn" style="flex:1" onclick="reportSend()">Send</button>
       <button class="btn ghost" style="flex:1" onclick="reportCopy()">Copy</button>
     </div>
+    <p class="muted" style="font-size:.8rem;margin:8px 0 0;text-align:center">
+      Goes to <a href="mailto:${REPORT.TO}">${REPORT.TO}</a></p>
 
     <details style="margin-top:12px">
       <summary class="muted" style="font-size:.82rem;cursor:pointer">What gets included</summary>
       <pre class="rep-diag" id="repDiag">${reportDiag()
         .replace(/[<&]/g, c => c === "<" ? "&lt;" : "&amp;")}</pre>
       <p class="muted" style="font-size:.8rem;margin:6px 0 0">
-        Nothing is sent from this screen. Send hands the report to your own mail or
-        messages app; Copy puts it on the clipboard. Your sync passphrase is never read.</p>
+        Nothing is sent from this screen. Send opens your own mail app with the report
+        already written and addressed; Copy puts it on the clipboard. Your sync passphrase
+        is never read.</p>
     </details>
   </div>`;
 }
@@ -166,27 +172,57 @@ function reportShotPicked() {
   prev.hidden = false;
 }
 
+/* mailto: with the address and the report already in it. A report that
+   reaches nobody is not a report, and until now Send opened a share sheet
+   with an empty To: field -- the tester had to know the address, which is
+   written down only in privacy.html. Nothing here transmits anything: this
+   still hands the report to the user's own mail app, addressed, for them to
+   look at and send.
+
+   Kept under 1,800 characters because some mail clients truncate a long
+   mailto body, and a truncated report is worse than a short one. The
+   diagnostics are the part that goes; the tester's own words never do. */
+function reportMailto() {
+  const what = (document.getElementById("repWhat") || {}).value || "";
+  let body = reportText();
+  if (body.length > 1800) {
+    body = "Everyday Koine — problem report\n\n" +
+      (what.trim() || "(no description given)") +
+      "\n\n---- what the app knows ----\n" +
+      "app        " + (REPORT.version || "unknown") + "\n" +
+      "(the rest was too long to carry in a mail link — use Copy for all of it)\n";
+  }
+  return "mailto:" + REPORT.TO +
+    "?subject=" + encodeURIComponent("Everyday Koine — problem report") +
+    "&body=" + encodeURIComponent(body);
+}
+
 async function reportSend() {
   const text = reportText();
   const canFile = REPORT_FILE && navigator.canShare &&
                   navigator.canShare({ files: [REPORT_FILE] });
-  try {
-    if (navigator.share) {
-      await navigator.share(canFile
-        ? { title: "Everyday Koine — problem report", text, files: [REPORT_FILE] }
-        : { title: "Everyday Koine — problem report", text });
-      reportDone(REPORT_FILE && !canFile
-        ? "Sent — attach the screenshot yourself, this browser cannot"
-        : "Sent");
+  /* A screenshot can only travel through the share sheet -- mailto cannot
+     carry an attachment -- so that wins when there is one and the browser
+     can take it. Otherwise mail, because it is the only route that knows
+     where the report is going. */
+  if (canFile) {
+    try {
+      await navigator.share({ title: "Everyday Koine — problem report", text,
+                              files: [REPORT_FILE] });
+      reportDone("Sent — send it to " + REPORT.TO);
       return;
+    } catch (e) {
+      if (e && e.name === "AbortError") return;    // they changed their mind
     }
-  } catch (e) {
-    if (e && e.name === "AbortError") return;      // they changed their mind
   }
-  // No share sheet: fall back to the clipboard and say so plainly.
-  await reportCopy(REPORT_FILE
-    ? "Copied — paste it in, and attach your screenshot"
-    : "Copied — paste it wherever you like");
+  try {
+    location.href = reportMailto();
+    reportDone(REPORT_FILE
+      ? "Opening mail — attach the screenshot yourself"
+      : "Opening mail");
+    return;
+  } catch (e) { /* no mail client; fall through */ }
+  await reportCopy("Copied — send it to " + REPORT.TO);
 }
 
 async function reportCopy(msg) {
