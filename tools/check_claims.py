@@ -41,36 +41,15 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
-from corpus import manifest, book, norm, bare                      # noqa: E402
+from corpus import manifest, book, norm, bare, fold                # noqa: E402
 
 GK = "Ͱ-Ͽἀ-῿"
 
 
-def fold(w):
-    """The spelling of a word, with the two differences that are not
-       differences folded away.
-
-       A word can be spelled more than one way in the text without being a
-       different word: capitalised at the start of a sentence, and carrying an
-       extra accent thrown back by a following enclitic (ἔρχεται / ἔρχεταί).
-       Both are the same word and a frequency claim means to include them.
-
-       What is NOT folded is a change of accent placement or type, because
-       that can be the whole difference between two words — μένει is "he
-       remains" and μενεῖ is "he will remain", and chapter 19 exists to say
-       so. Stripping accents wholesale merges those and would let a wrong
-       number through in exactly the place the course warns about.
-
-       Getting this wrong in the other direction is what produced sixteen bad
-       counts: they were tallied on the raw string, so every capitalised or
-       enclitic-accented occurrence was silently dropped.
-    """
-    x = norm(bare(w))
-    d = unicodedata.normalize("NFD", x)
-    marks = [i for i, c in enumerate(d) if c in "̀́͂"]
-    if len(marks) >= 2:                      # drop only the enclitic's addition
-        d = d[:marks[-1]] + d[marks[-1] + 1:]
-    return unicodedata.normalize("NFC", d)
+# fold() now lives in corpus.py beside norm, plain and loose. It was
+# defined here and nowhere else, which is how three separate recounts
+# during the claims pass reached for plain() instead and undercounted
+# every enclitic-accented and sentence-initial spelling.
 
 
 # --------------------------------------------------------------- the corpus

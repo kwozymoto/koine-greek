@@ -940,8 +940,8 @@
   "ch": 9,
   "kind": "count",
   "text": "Of αὐτός 's 5,546 occurrences, 2,140 are genitive — nearly two in five — and most are somebody's something.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὐτός 5,546; 2,140 of them genitive = 38.6%, so 'nearly two in five' is right."
  },
  {
   "k": "7c0cd11546f0",
@@ -972,8 +972,8 @@
   "ch": 9,
   "kind": "count",
   "text": "αὐτός alone occurs 5,546 times — four times more often than θεός , the commonest noun in the New Testament — and ἐγώ and σύ add 5,466 more between them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὐτός 5,546. θεός is indeed the commonest noun at 1,307 (then Ἰησοῦς 906, κύριος 713), so 'four times more often' is right — 5,546/1,307 = 4.2. ἐγώ 2,894 plus σύ 2,572 = 5,466 exactly."
  },
  {
   "k": "af0c1c6d873b",
@@ -1212,8 +1212,8 @@
   "ch": 11,
   "kind": "count",
   "text": "In the plural, more so — αὗται three times, and αὐταί not once in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὗται 3 (two αὗται plus one enclitic-accented αὗταί) and αὐταί 0. Exact. Counting the raw spelling gives 2 and is the fault check_claims exists for."
  },
  {
   "k": "9c0337046d06",
@@ -1236,8 +1236,8 @@
   "ch": 11,
   "kind": "count",
   "text": "1,385 occurrences of οὗτος and 242 of ἐκεῖνος.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Both exact, and 1,385 + 242 = 1,627, which the chapter also gives."
  },
  {
   "k": "b71cecb6d53c",
@@ -1252,16 +1252,16 @@
   "ch": 11,
   "kind": "count",
   "text": "The counts are lopsided, and knowing that helps: αὕτη occurs 72 times, αὐτή 10.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "αὕτη 72, αὐτή 10. Exact, counted the way a frequency claim means — folding the sentence-initial capital and the enclitic-thrown accent, not the accent that distinguishes the two words."
  },
  {
   "k": "bf19be12a913",
   "ch": 11,
   "kind": "count",
   "text": "ἐκεῖνος in John John uses ἐκεῖνος more than any other writer — 70 of its 242 occurrences, in a Gospel a good deal shorter than Luke's — and often of a person, with weight rather than distance.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "70 of the 242 in John, exact."
  },
  {
   "k": "c744ad62e15d",
@@ -1284,8 +1284,8 @@
   "ch": 11,
   "kind": "count",
   "text": "The two commonest forms of οὗτος are both neuter and both usually stand alone — τοῦτο , \"this\", 317 times, and ταῦτα , \"these things\", 240, of which μετὰ ταῦτα accounts for 26.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "τοῦτο 317 (289 + 14 Τοῦτο + 10 τοῦτό + 4 Τοῦτό) and ταῦτα 240 (212 + 23 Ταῦτα + 3 ταῦτά + 2 Ταῦτά). Both exact folded; both undercount badly on the raw string, which is how I mis-tallied them on the first pass. μετὰ ταῦτα is 26 of the 240, exact."
  },
  {
   "k": "f2ea8d85cc5a",
@@ -1332,8 +1332,8 @@
   "ch": 12,
   "kind": "count",
   "text": "ἔρχεται and δύναται alone are 160 of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "89 + 71 = 160, exact, and consistent with the two figures given a paragraph earlier."
  },
  {
   "k": "295223499eb9",
@@ -1468,8 +1468,8 @@
   "ch": 12,
   "kind": "count",
   "text": "ἄρχομαι , middle, means \"I begin\" — and 84 of that verb's 86 occurrences are middle.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἄρχω 86 occurrences, 84 of them middle. Exact."
  },
  {
   "k": "ef6ebc0675f0",
@@ -1500,8 +1500,8 @@
   "ch": 13,
   "kind": "count",
   "text": "ἔσται alone occurs 118 times.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "118 exact, folding the sentence-initial Ἔσται — 117 on the raw string, and that undercount is the one check_claims' docstring names."
  },
  {
   "k": "4e180a4fc9e0",
@@ -1540,16 +1540,16 @@
   "ch": 13,
   "kind": "count",
   "text": "μέν occurs 178 times, so this is a pattern to recognise rather than a curiosity.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact."
  },
  {
   "k": "867a3c688403",
   "ch": 13,
   "kind": "count",
   "text": "εὐθύς , \"immediately\", occurs 59 times in the New Testament and 42 of them are in Mark — in the shortest of the Gospels.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "59 in the New Testament and 42 of them in Mark. Both exact."
  },
  {
   "k": "868e14b8fd0b",
@@ -1580,16 +1580,16 @@
   "ch": 13,
   "kind": "count",
   "text": "γέγραπται — \"it stands written\" — accounts for 67 of the 202 perfect passive indicatives in the New Testament, one in three.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "γέγραπται 67; perfect passive indicatives 202; 33%, so 'one in three' is right. All exact."
  },
  {
   "k": "c6cbfb574af0",
   "ch": 13,
   "kind": "count",
   "text": "Learn it properly, because it is not a footnote: 186 of the 489 future middle indicatives in the New Testament belong to εἰμί — two in five.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "489 future middle indicatives, 186 of them εἰμί = 38%, 'two in five'. Exact."
  },
  {
   "k": "e1df220a248c",
@@ -1612,8 +1612,8 @@
   "ch": 14,
   "kind": "count",
   "text": "There are seven pluperfect middle or passive indicatives in the whole New Testament — seven different verbs, one occurrence each.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Seven exactly, and seven different lemmas with one occurrence each: θεμελιόω, οἰκοδομέω, βάλλω, συντίθεμαι, περιδέω, ἐπιγράφω, ἐπικαλέω. The chapter's 'seven different verbs, one occurrence each' is exactly right, and τεθεμελίωτο at Matthew 7:25 is one of them."
  },
  {
   "k": "08ef3dc6e1d2",
@@ -1644,8 +1644,8 @@
   "ch": 14,
   "kind": "count",
   "text": "641 aorist middle indicatives in the New Testament, and one form is 201 of them.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact."
  },
  {
   "k": "2c67c5f93f95",
@@ -1660,8 +1660,8 @@
   "ch": 14,
   "kind": "count",
   "text": "Of its twenty-two occurrences, twenty-one are middle and one is passive — there was nothing to choose against.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "ἐκλέγομαι: 22 occurrences, 21 middle, 1 passive, no active anywhere. Exact, including the 'no active' claim."
  },
  {
   "k": "5597481efde6",
@@ -1764,8 +1764,8 @@
   "ch": 15,
   "kind": "count",
   "text": "Altogether 251 of the 863 aorist passives — nearly one in three — belong to verbs that have no active form anywhere in the New Testament.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "251 of the 863 belong to lemmas with no active-voice form anywhere in the corpus = 29%, 'nearly one in three'. Exact."
  },
  {
   "k": "76de50f09e5d",
@@ -1796,8 +1796,8 @@
   "ch": 15,
   "kind": "count",
   "text": "There are 863 aorist passive indicatives in the New Testament — more than any other middle or passive form — which makes this the chapter of the four to get right.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "Exact."
  },
  {
   "k": "a1a058595ef0",

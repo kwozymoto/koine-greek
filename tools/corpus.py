@@ -67,6 +67,35 @@ def plain(x):
     return unicodedata.normalize("NFC", d).lower()
 
 
+def fold(x):
+    """The rung a FREQUENCY CLAIM means, and the one to reach for when
+       counting how often a word occurs.
+
+       Two spellings that are not different words are folded together: the
+       sentence-initial capital, and the extra accent a following enclitic
+       throws back (ἔρχεται / ἔρχεταί). A chapter saying "ἔρχεται occurs 89
+       times" means the word, not one of its spellings.
+
+       What is NOT folded is a change of accent placement or type, because
+       that can be the whole difference between two words -- μένει is "he
+       remains" and μενεῖ is "he will remain", and chapter 19 exists to say
+       so. plain() strips accents wholesale and would merge those, so it is
+       the wrong tool for a count however tempting its name.
+
+       Counting on the raw string instead produced sixteen bad numbers in the
+       chapters, every capitalised or enclitic-accented occurrence silently
+       dropped; counting with plain() would let a wrong number through in
+       exactly the place the course warns about. This is the middle rung, and
+       it exists here rather than inside one checker because reaching for the
+       wrong one is a mistake that has been made repeatedly."""
+    x = norm(bare(x))
+    d = unicodedata.normalize("NFD", x)
+    marks = [i for i, c in enumerate(d) if c in _ACCENTS]
+    if len(marks) >= 2:                      # drop only the enclitic's addition
+        d = d[:marks[-1]] + d[marks[-1] + 1:]
+    return unicodedata.normalize("NFC", d)
+
+
 def loose(x):
     """Rung 3. Letters only, every combining mark gone. Right for a search
        box; it cannot tell εἰς from εἷς, so never mark an answer with it."""
