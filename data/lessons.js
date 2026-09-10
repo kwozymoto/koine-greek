@@ -266,7 +266,7 @@ body:`<p>English tells you what a noun is doing by where it sits. The dog bit th
 <p>Greek has no indefinite article, so the choice is not between <i>the</i> and <i>a</i> — it is between the article and nothing, and the nothing is meaningful.</p>
 <p>Broadly: the article points at <b>particular identity</b>, and its absence throws the weight onto <b>quality or character</b>. Those are tendencies rather than rules, as the next two verses show.</p>
 <p class="v" data-ref="Luke 18:13">ἱλάσθητί μοι τῷ ἁμαρτωλῷ</p>
-<p>"Be merciful to me, <i>the</i> sinner." The tax collector does not say a sinner. He uses the article, and identifies himself as the one — a distinction most English translations lose.</p>
+<p>"Be merciful to me, the sinner." It is tempting to make that article say <i>the sinner above all others</i>, and you will hear it preached that way. Do not. A noun in apposition to a pronoun regularly takes the article, and Luke writes <span class="gk">ὑμῖν τοῖς Φαρισαίοις</span> and <span class="gk">ὑμῖν τοῖς πλουσίοις</span> the same way six times over, meaning nothing more than "you Pharisees", "you rich". He could hardly have written it without. Whether the tax collector means the sinner or a sinner is an argument from the parable, and not from the article.</p>
 <p class="v" data-ref="Galatians 1:1">Παῦλος ἀπόστολος, οὐκ ἀπ’ ἀνθρώπων</p>
 <p>"Paul, an apostle — not from men." Here is the caution, and it is worth more than the rule. Fourteen letters open by naming their writer <span class="gk">ἀπόστολος</span> or <span class="gk">δοῦλος</span>, and <b>not one of the fourteen uses an article</b>. The bare noun is the form a greeting takes. The arguing is done by the words after it.</p>
 <p>So do not over-read an absence. Greek uses the article in plenty of places English would not, and its absence after a preposition often means nothing at all. The test is whether the writer could have written it the other way — and in a greeting he could not.</p>
@@ -1111,8 +1111,8 @@ quiz:[
 ]},
 
 {id:17,t:"Nouns of the third declension",s:"Find the stem in the genitive",
-body:`<p>Two declensions have carried you this far. The third is bigger than both, and it works differently: instead of one pattern you learn a habit.</p>
-<p>The numbers are worth having. Third declension nouns are <b>376 of the 985 noun lemmas</b> in the New Testament, 38% of them — but only 28% of the noun tokens. There are more different third declension words, and you meet each of them less often. That is exactly what makes the habit worth more than the paradigms.</p>
+body:`<p>Two declensions have carried you this far. The third is the varied one, and it works differently: instead of one pattern you learn a habit.</p>
+<p>The numbers are worth having. Classify every common noun in the New Testament by the genitive its lexicon gives it, and <b>third declension nouns are 587 of the 1,835</b> — about a third of the different words, and a little under a third of the running text. The second declension is the opposite: 558 words carrying 41% of it. So a second declension noun is one you meet again and again, and a third declension noun is more often one you meet once. That is exactly what makes the habit worth more than the paradigms.</p>
 <h3>The endings that are always there</h3>
 <p>The stems vary enormously. The endings barely vary at all, and three of them will carry you.</p>
 <table><caption>The endings worth knowing</caption>
@@ -1156,7 +1156,7 @@ v:[43,45,61,66,70,71,85,93,94,205,108,116,129,130,133,139,170,196,253,255,203,26
 vids:[{t:"Lecture 17: Nouns of the Third Declension",s:"Daily Dose of Greek — Rob Plummer (20:21)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-17/"},
       {t:"3rd Declension Song",s:"Daily Dose of Greek — the third declension endings, sung",yt:"Wt1HmUStGgw"}],
 quiz:[
-{q:"Third declension nouns are 38% of the noun lemmas but only 28% of the tokens. What follows?",o:["They are rare and can be skipped","They are all neuter","There are more different ones, met less often — so a habit beats memorised paradigms","They only occur in the Gospels"],a:2,w:"376 of 985 lemmas. Learning thirty paradigms would be a poor use of a week; learning to find the stem is not.",sec:0},
+{q:"Third declension nouns are about a third of the noun lemmas and a little under a third of the tokens. What follows?",o:["They are rare and can be skipped","They are all neuter","There are many different ones, each met less often — so a habit beats memorised paradigms","They only occur in the Gospels"],a:2,w:"587 of 1,835 common noun lemmas, against the second declension’s 558 words carrying 41% of the text. Learning thirty paradigms would be a poor use of a week; learning to find the stem is not.",sec:0},
 {q:"Which ending is nearly invariable in the third declension and belongs to no other?",o:["Dative plural -σι(ν)","Genitive singular -ου","Nominative singular -ος","Accusative singular -ον"],a:0,w:"With genitive singular -ος and dative singular -ι. Seeing any of the three tells you which declension you are in.",sec:1},
 {q:"Where does a third declension noun show its stem?",o:["In the nominative","In the dative plural","In the genitive","In the vocative"],a:2,w:"The nominative hides it and the genitive shows it, which is why a lexicon gives you both — σάρξ, σαρκός. Take -ος off and you have σαρκ-.",sec:2},
 {q:"Why is the nominative σάρξ when the stem is σαρκ-?",o:["It is irregular","The stem is really σαρξ-","κ and the nominative ς collided and became ξ","It is a spelling variant"],a:2,w:"The nominative is where the stem gets damaged. Everything else is built cleanly on σαρκ-: σαρκί, σάρκα, σάρκας.",sec:2},
@@ -1751,7 +1751,7 @@ body:`<p>You now have the whole of the morphology: six principal parts, four moo
 <p>The active is unmarked; the middle and passive both throw weight onto the subject. So a passive is often not about hiding the agent but about foregrounding the person affected — which is what makes the divine passive work.</p>
 <p>The article is the other place to look, and it is everywhere: 19,769 occurrences, which makes it the commonest word in the New Testament by more than two to one over <span class="gk">καί</span>. Its presence points at particular identity; its absence throws the weight onto character or quality — though, as chapter 4 said, an absence is only evidence where the writer could have written it the other way.</p>
 <p class="v" data-ref="Luke 18:13">ὁ θεός, ἱλάσθητί μοι τῷ ἁμαρτωλῷ</p>
-<p>"God, be merciful to me, <i>the</i> sinner." Not "a sinner". Almost every English translation loses the distinction, and it turns on one word.</p>
+<p>"God, be merciful to me, the sinner." And here is that principle working against a reading you may like: the article on <span class="gk">τῷ ἁμαρτωλῷ</span> is real, and it is still the wrong place to lean, because apposition to a pronoun takes the article as a matter of course — Luke uses the same construction of the Pharisees, the lawyers and the rich. A presence is only evidence on the same terms as an absence.</p>
 <h3>Observe the order</h3>
 <p>Greek word order is free in the sense that it does not carry grammar, and it is not free at all in the sense that it carries emphasis. A word out of its expected place is usually there for a reason.</p>
 <p>The things to notice: what has been pulled to the front of its clause, what has been held back to the end, and whether a modifier has been separated from what it modifies.</p>

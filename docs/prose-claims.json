@@ -376,6 +376,14 @@
   "finding": ""
  },
  {
+  "k": "774de15300c4",
+  "ch": 4,
+  "kind": "count",
+  "text": "A noun in apposition to a pronoun regularly takes the article, and Luke writes ὑμῖν τοῖς Φαρισαίοις and ὑμῖν τοῖς πλουσίοις the same way six times over, meaning nothing more than \"you Pharisees\", \"you rich\".",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
   "k": "7f75b5ead287",
   "ch": 4,
   "kind": "absolute",
@@ -1976,12 +1984,12 @@
   "finding": ""
  },
  {
-  "k": "12994feb875b",
+  "k": "0b72c7a18532",
   "ch": 17,
-  "kind": "absolute",
-  "text": "Third declension nouns are 376 of the 985 noun lemmas in the New Testament, 38% of them — but only 28% of the noun tokens.",
-  "status": "unsettled",
-  "finding": "NOT SETTLED HERE, and recorded as such rather than assumed. The TOKEN half checks twice: classifying every common noun with an attested genitive singular by its ending puts third declension at 28% of the tokens, and a broader classifier using the dative plural in -σι(ν) gives 26%. The chapter says 28%. The LEMMA half I cannot reproduce. The corpus has 2,399 noun lemmas, 558 of them proper names, so 1,841 common ones, and no filter I tried yields a denominator of 985; my two classifiers put third declension at 30% of 719 and 14% of 1,829, which disagree with each other and with the chapter's 38%, so neither is good enough to refute it. This needs the method that produced 985, or a reader with a grammar. CLAUDE.md's third row."
+  "kind": "count",
+  "text": "587 of 1,835 common noun lemmas, against the second declension’s 558 words carrying 41% of the text.",
+  "status": "unreviewed",
+  "finding": ""
  },
  {
   "k": "134afd56ac3e",
@@ -2088,10 +2096,26 @@
   "finding": "Was 163. MorphGNT lemmatises Πόλις apart from πόλις: the extra one is Νέαν Πόλιν at Acts 16:11 — Neapolis, a place name. The common noun is 162. check_claims had been merging them because it lowercased lemmas before counting, and seventeen pairs in the corpus differ only in that first letter — στέφανος 18 against Στέφανος 7, σμύρνα against Σμύρνα, γάζα against Γάζα. It now counts the cased lemma first, and all 75 of its claims still verify."
  },
  {
+  "k": "eee825bb4f31",
+  "ch": 17,
+  "kind": "absolute",
+  "text": "Classify every common noun in the New Testament by the genitive its lexicon gives it, and third declension nouns are 587 of the 1,835 — about a third of the different words, and a little under a third of the running text.",
+  "status": "corrected",
+  "finding": "SETTLED with Abbott-Smith, which the corpus alone could not do: a noun that never appears in the genitive singular has nothing in the text to classify it by, and that was 1,120 of them. Abbott-Smith prints the genitive in every headword — σάρξ, σαρκός · πόλις, -εως · λόγος, -ου — so parsing his <form> blocks classifies 1,835 of the 1,841 common noun lemmas; the six left are indeclinable Semitic loanwords (πάσχα, ῥαββί, ἐλωΐ, ἠλί, σίκερα, ραββουνι). The classifier spot-checks 31 of 31 against hand-picked nouns from all three declensions, and gets every one of the 24 commonest right. Result: first 690 lemmas / 7,010 tokens, second 558 / 9,646, third 587 / 6,884. So third declension is 32% of the lemmas and 29% of the tokens — the TOKEN half of the old claim was right (28%), confirmed now by three independent methods, and the lemma half was not: it said 376 of 985, 38%. The denominator 985 corresponds to nothing derivable — not 1,841 common lemmas, not 2,399 with proper names, not 913 (≥3 occurrences), not 1,201 (≥2), not the 4,526 of data/lexicon.js. 'The third is bigger than both' also went: the first declension has 690 to the third's 587. The chapter's real point survives and is now carried by the second declension's 558 words holding 41% of the running text. Two bugs in my own classifier were found before trusting it — a comma inside a parenthesis broke the genitive parse, and the masculine first declension takes -ου, so μαθητής and προφήτης were being called second declension."
+ },
+ {
   "k": "f132a48c288b",
   "ch": 17,
   "kind": "spelling",
   "text": "The stem ends in a consonant, and the nominative is where it gets damaged.",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
+  "k": "facdbf1a93d2",
+  "ch": 17,
+  "kind": "count",
+  "text": "The second declension is the opposite: 558 words carrying 41% of it.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -3448,14 +3472,6 @@
   "finding": ""
  },
  {
-  "k": "c4896b6b8ad5",
-  "ch": 27,
-  "kind": "absolute",
-  "text": "Almost every English translation loses the distinction, and it turns on one word.",
-  "status": "ask-fraser",
-  "finding": "Luke 18:13 ἱλάσθητί μοι τῷ ἁμαρτωλῷ. The article is certainly there; what it is doing is contested, and 'the sinner, not a sinner' is a real reading rather than the settled one. Standard versions render 'a sinner' because the force of the article here is argued about, not because they missed it — so 'loses the distinction' assumes the reading it is illustrating. Chapter 4 states it inside an explicit 'tendencies rather than rules' frame and is defensible; chapter 27 states it flat, as a worked example of good reading, in the chapter about not over-reading. Raised by ChatGPT's audit, twice, as its clearest cross-chapter inconsistency. NOT CHANGED: this is a reading, and the prose is Fraser's. The options are to leave it, to add 'on this reading' to the chapter 27 sentence, or to move the example into a 'do not over-read the article' box."
- },
- {
   "k": "e310dae05da4",
   "ch": 27,
   "kind": "absolute",
@@ -3478,5 +3494,13 @@
   "text": "Loading every possible sense into one occurrence is the commonest way a little Greek goes wrong.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "f929b4cd52b8",
+  "ch": 27,
+  "kind": "absolute",
+  "text": "A presence is only evidence on the same terms as an absence.",
+  "status": "corrected",
+  "finding": "SETTLED, and by chapter 4's own test. It said 'The test is whether the writer could have written it the other way' — so the question at Luke 18:13 is not what τῷ ἁμαρτωλῷ means but whether Luke had the option of leaving the article out. Corpus: a dative pronoun with a noun or adjective in apposition occurs 12 times, 8 of them articular, and SEVEN OF THE EIGHT ARE LUKE — ὑμῖν τοῖς πλουσίοις (6:24), ὑμῖν τοῖς Φαρισαίοις (11:42, 11:43), ὑμῖν τοῖς νομικοῖς (11:46, 11:52), ὑμῖν τοῖς φίλοις (12:4), and μοι τῷ ἁμαρτωλῷ itself. None of the other six means 'the Pharisees above all others'; they mean 'you Pharisees'. The eighth is Ephesians 3:8 ἐμοὶ τῷ ἐλαχιστοτέρῳ. So the article is the construction, not a choice, and by the chapter's own rule it is not evidence. Chapter 27 was the sharper case: the sentence immediately before the quotation states the could-have-written-it-otherwise test, and the next sentence breaks it on a presence. Both chapters now say so, and the example is kept — it teaches the fallacy better than it taught the reading."
  }
 ]

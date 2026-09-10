@@ -50,6 +50,12 @@ import corpus
 BESIDE = {
     (3,  "ποιέω"):      "LEMMA of ποιήσω, which is in Matthew 4:19",
     (4,  "κύριος"):     "LEMMA of κύριε, which is in Matthew 8:25",
+    (4,  "ὑμῖν"):       "PARALLEL — Luke 6:24 and 11:42, cited beside Luke 18:13 to "
+                        "show that apposition to a pronoun takes the article as a matter "
+                        "of course",
+    (4,  "τοῖς"):        "PARALLEL — the article of τοῖς Φαρισαίοις and τοῖς πλουσίοις",
+    (4,  "Φαρισαίοις"): "PARALLEL — Luke 11:42, quoted for its construction",
+    (4,  "πλουσίοις"):   "PARALLEL — Luke 6:24, quoted for its construction",
     (4,  "δοῦλος"):     "the other of the two greeting words being counted, "
                         "beside ἀπόστολος which is in Galatians 1:1",
     (7,  "ἐκβάλλω"):    "LEMMA of ἐξέβαλεν, which is in Matthew 8:16",
