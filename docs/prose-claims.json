@@ -284,8 +284,8 @@
   "kind": "absolute",
   "src": "body",
   "text": "He does this constantly, and most English translations quietly convert it to a past tense — so if you have only ever read this in English, you have never seen it.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "unsettled",
+  "finding": "NOT SETTLED by the app's own six, and worth recording why. Mark 1:40 Καὶ ἔρχεται πρὸς αὐτὸν λεπρός: KJV 'there came a leper', BSB 'a leper came' and NHEB 'A leper came' convert to the past; ASV 'there cometh', Darby 'there comes' and YLT 'doth come' keep the present. Three of six. But the six are ASV, BSB, Darby, KJV, YLT and NHEB — four of them old and deliberately literal — so they are a good set for refuting an 'every' or 'no translation' claim and a poor sample for 'most translations'. The modern versions a reader is likely to hold (NIV, ESV, NASB, CSB) do overwhelmingly convert, which is what the sentence means, but this library cannot demonstrate it. Needs a modern translation or a reader who has one."
  },
  {
   "k": "decd2d13426a",
@@ -1260,6 +1260,15 @@
   "finding": "88 pluperfects; 1,572 perfects of all moods; of the 88, οἶδα 34 and ἵστημι 14, which is the 48 the quiz names."
  },
  {
+  "k": "9d2a70a99726",
+  "ch": 10,
+  "kind": "count",
+  "src": "body",
+  "text": "μέσος ὑμῶν ἕστηκεν ὃν ὑμεῖς οὐκ οἴδατε \"Among you stands one whom you do not know.\" Two perfects, and almost no English Bible renders either as one — because in both the resulting state is the point and the past act has receded from view.",
+  "status": "corrected",
+  "finding": "Was 'neither rendered as a perfect in any English Bible'. John 1:26 has ἕστηκεν and οἴδατε. KJV 'standeth ... ye know not', ASV the same, BSB 'stands ... you do not know', Darby and NHEB likewise — but YOUNG'S LITERAL renders both as perfects: 'he hath stood whom ye have not known'. Second time in this pass that YLT has refuted an 'every/any English translation' claim, the first being ch11 on John 1:8. It now illustrates the point rather than overstating it."
+ },
+ {
   "k": "b155c3c2b9a9",
   "ch": 10,
   "kind": "absolute",
@@ -1303,15 +1312,6 @@
   "text": "210 of those are perfect active indicatives — one in three of every perfect active indicative in the New Testament — and not one means \"I have known\".",
   "status": "verified",
   "finding": "602 perfect ACTIVE indicatives, of which 210 are οἶδα = 34.9%, so 'one in three' is right. οἶδα occurs 296 times in all. The denominator matters: perfect indicatives of every voice together are 836."
- },
- {
-  "k": "e426b1676426",
-  "ch": 10,
-  "kind": "count",
-  "src": "body",
-  "text": "μέσος ὑμῶν ἕστηκεν ὃν ὑμεῖς οὐκ οἴδατε \"Among you stands one whom you do not know.\" Two perfects, neither rendered as a perfect in any English Bible — because in both the resulting state is the point and the past act has receded from view.",
-  "status": "unreviewed",
-  "finding": ""
  },
  {
   "k": "e47df31ddd18",
@@ -2421,20 +2421,20 @@
   "finding": ""
  },
  {
+  "k": "53066334c999",
+  "ch": 18,
+  "kind": "absolute",
+  "src": "body",
+  "text": "μείζων δὲ τούτων ἡ ἀγάπη Literally \"and greater of these is love\" — and almost every English translation gives \"the greatest of these is love\", rightly.",
+  "status": "corrected",
+  "finding": "Was 'every English translation gives \"the greatest of these is love\"'. Five of the six do, though KJV says charity. DARBY gives 'the greater of these', keeping μείζων as the comparative it is — a better illustration than the claim it replaces, since the chapter is teaching that a comparative does superlative duty and Darby is the translation declining the switch."
+ },
+ {
   "k": "5abd40024c90",
   "ch": 18,
   "kind": "count",
   "src": "quiz",
   "text": "From πέντε to a hundred they are fixed forms.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
-  "k": "5bae054f99b8",
-  "ch": 18,
-  "kind": "absolute",
-  "src": "quiz",
-  "text": "μείζων δὲ τούτων ἡ ἀγάπη is literally 'greater of these', and every translation rightly gives 'greatest'.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -2547,13 +2547,13 @@
   "finding": "75, exact."
  },
  {
-  "k": "ed12bb9faf89",
+  "k": "ef5e2a22c65b",
   "ch": 18,
   "kind": "absolute",
-  "src": "body",
-  "text": "μείζων δὲ τούτων ἡ ἀγάπη Literally \"and greater of these is love\" — and every English translation gives \"the greatest of these is love\", rightly.",
-  "status": "unreviewed",
-  "finding": ""
+  "src": "quiz",
+  "text": "μείζων δὲ τούτων ἡ ἀγάπη is literally 'greater of these', and almost every translation rightly gives 'greatest' — Darby is the one that keeps the comparative.",
+  "status": "corrected",
+  "finding": "Was 'every English translation gives \"the greatest of these is love\"'. Five of the six do, though KJV says charity. DARBY gives 'the greater of these', keeping μείζων as the comparative it is — a better illustration than the claim it replaces, since the chapter is teaching that a comparative does superlative duty and Darby is the translation declining the switch."
  },
  {
   "k": "12b0838a8644",
