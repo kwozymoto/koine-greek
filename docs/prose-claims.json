@@ -576,10 +576,10 @@
   "finding": ""
  },
  {
-  "k": "23c57779ea4f",
+  "k": "2485471365af",
   "ch": 6,
-  "kind": "absolute",
-  "text": "Only the article decides.",
+  "kind": "count",
+  "text": "Where the noun has no article, nothing decides it for you and the context is all you have — which is the same limit chapter 21 will reach with participles.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -1980,8 +1980,8 @@
   "ch": 17,
   "kind": "absolute",
   "text": "Third declension nouns are 376 of the 985 noun lemmas in the New Testament, 38% of them — but only 28% of the noun tokens.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "unsettled",
+  "finding": "NOT SETTLED HERE, and recorded as such rather than assumed. The TOKEN half checks twice: classifying every common noun with an attested genitive singular by its ending puts third declension at 28% of the tokens, and a broader classifier using the dative plural in -σι(ν) gives 26%. The chapter says 28%. The LEMMA half I cannot reproduce. The corpus has 2,399 noun lemmas, 558 of them proper names, so 1,841 common ones, and no filter I tried yields a denominator of 985; my two classifiers put third declension at 30% of 719 and 14% of 1,829, which disagree with each other and with the chapter's 38%, so neither is good enough to refute it. This needs the method that produced 985, or a reader with a grammar. CLAUDE.md's third row."
  },
  {
   "k": "134afd56ac3e",
@@ -1996,8 +1996,8 @@
   "ch": 17,
   "kind": "absolute",
   "text": "The -σι(ν) is the clue — but only half of one, because a verb's third person plural ends the same way.",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "True, and worth having survived: the dative plural -σι(ν) and the third person plural active -σι(ν) really do collide — δίδωσιν is a verb and σάρξιν a noun. An earlier version of this course said nothing else in Greek ends -σι(ν), which was false; this is the corrected form."
  },
  {
   "k": "29c2791fb4a0",
@@ -2044,8 +2044,8 @@
   "ch": 17,
   "kind": "absolute",
   "text": "The same happens to every -μα noun, and there are a great many: πνεῦμα, πνεύματος (379 occurrences), ὄνομα, ὀνόματος , ῥῆμα, ῥήματος .",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "πνεῦμα 379, exact. And 'Greek will not end a word in τ' is right: a Greek word ends in a vowel, ν, ρ or ς, with οὐκ and ἐκ the standing exceptions."
  },
  {
   "k": "981b562d5469",
@@ -2068,8 +2068,8 @@
   "ch": 17,
   "kind": "absolute",
   "text": "σαρκός gives σαρκ- , and every other form is built on that: σαρκί (39 occurrences), σάρκα (37), σάρκας (7).",
-  "status": "unreviewed",
-  "finding": ""
+  "status": "verified",
+  "finding": "σαρκί 39, σάρκα 37, σάρκας 7 — all exact."
  },
  {
   "k": "b47c4f2e8ab8",

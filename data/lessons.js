@@ -361,7 +361,7 @@ body:`<p>Adjectives use endings you already know. A first-and-second declension 
 <p>Is the adjective immediately preceded by an article?</p>
 <p>Yes: <b>attributive</b>. It describes, and you translate it as an adjective — the good shepherd.</p>
 <p>No, while the noun has one: <b>predicate</b>. It asserts, and you supply is or are — the shepherd is good.</p>
-<p>That is the entire rule, and it is worth more than it looks. A great many arguments about a verse come down to whether an adjective is describing or asserting, and the article settles it before any of the theology starts.</p>
+<p>That is the rule wherever the noun has an article, and it is worth more than it looks. A great many arguments about a verse come down to whether an adjective is describing or asserting, and the article settles it before any of the theology starts. Two things sit outside it, and both are below: an article with no noun after it at all, and a noun with no article.</p>
 <h3>Substantival: the adjective becomes the noun</h3>
 <p>Give an adjective an article and no noun at all, and it becomes a noun itself.</p>
 <p>Look at <span class="gk">οἱ πραεῖς</span> again in that verse from Matthew. There is no word for people in it. The article plus a masculine plural adjective is enough: <i>the meek ones</i>, <i>the meek</i>.</p>
@@ -369,7 +369,7 @@ body:`<p>Adjectives use endings you already know. A first-and-second declension 
 <p>The gender is doing real work there. Masculine plural for people, neuter singular for a quality or a thing. When you meet an article with no noun after it, read the gender first.</p>
 <h3>What to watch for</h3>
 <p>Word order alone will not tell you which position you are looking at. <span class="gk">ὁ ἀγαθὸς ἄνθρωπος</span> and <span class="gk">ὁ ἄνθρωπος ὁ ἀγαθός</span> are both attributive and both mean the good man; the adjective has moved and nothing has changed.</p>
-<p>Only the article decides. Look for it, not for the position on the line — and where the noun has no article at all, the construction is ambiguous and the context is all you have.</p>`,
+<p>Where the noun has an article, the article decides and the word order does not. Look for it, not for the position on the line. Where the noun has no article, nothing decides it for you and the context is all you have — which is the same limit chapter 21 will reach with participles.</p>`,
 v:[64,100,101,125,143,158,164,168,248,228,229,226,227,289,309,317,323,320,344,357,369,374,447,444,487,488,490,486,489],
 vids:[{t:"Lecture 6: Adjectives of the First and Second Declension",s:"Daily Dose of Greek — Rob Plummer (17:09)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-6/"}],
 quiz:[
