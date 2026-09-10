@@ -864,9 +864,11 @@
   "pos": "adj",
   "tier": 1,
   "freq": 234,
-  "tts": "oo days",
-  "source": "g2p",
-  "duration_s": 1.123
+  "tts": "oo deys",
+  "source": "ays",
+  "duration_s": 1.123,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 64,
@@ -3175,10 +3177,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 26,
-  "tts": "asthenays",
-  "source": "locked",
+  "tts": "asthe neys",
+  "source": "ays",
   "duration_s": 1.547,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 232,
@@ -3189,9 +3193,11 @@
   "pos": "adj",
   "tier": 3,
   "freq": 26,
-  "tts": "ah lay thays",
-  "source": "g2p",
-  "duration_s": 1.593
+  "tts": "ah lay theys",
+  "source": "ays",
+  "duration_s": 1.593,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 233,
@@ -3284,9 +3290,11 @@
   "pos": "name",
   "tier": 2,
   "freq": 135,
-  "tts": "ee oh ahn nays",
-  "source": "g2p",
-  "duration_s": 1.907
+  "tts": "ee oh ahn neys",
+  "source": "ays",
+  "duration_s": 1.907,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 240,
@@ -3325,9 +3333,11 @@
   "pos": "adj",
   "tier": 3,
   "freq": 90,
-  "tts": "may days",
-  "source": "g2p",
-  "duration_s": 1.123
+  "tts": "may deys",
+  "source": "ays",
+  "duration_s": 1.123,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 243,
@@ -3448,9 +3458,11 @@
   "pos": "name",
   "tier": 3,
   "freq": 79,
-  "tts": "moh oo says",
-  "source": "g2p",
-  "duration_s": 1.933
+  "tts": "moh oo seys",
+  "source": "ays",
+  "duration_s": 1.933,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 252,
@@ -3758,9 +3770,11 @@
   "pos": "adj",
   "tier": 3,
   "freq": 67,
-  "tts": "trays",
-  "source": "g2p",
-  "duration_s": 0.967
+  "tts": "treys",
+  "source": "ays",
+  "duration_s": 0.967,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 275,
@@ -4905,9 +4919,11 @@
   "pos": "name",
   "tier": 4,
   "freq": 43,
-  "tts": "hay roh days",
-  "source": "g2p",
-  "duration_s": 1.384
+  "tts": "hay roh deys",
+  "source": "ays",
+  "duration_s": 1.384,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 360,

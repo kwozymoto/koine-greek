@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v116';
+const VERSION = 'v117';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,16 +33,31 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
-  /* v116: the last two of batch 2. Six spellings of δι- had failed --
-     dee ah, deeah, di ah, dia, dee yah, deeyah -- and three splices
-     cut out of longer cues failed as well. What worked was neither:
-     'di ah' generated a SECOND time. The first roll of that exact cue
-     was rejected and the second accepted, which is the clearest
-     demonstration yet that this generator is not deterministic and
-     that a failed cue is not the same thing as a wrong cue. Fraser
-     proposed the re-roll himself, for πορεύομαι. */
-  'audio/vocab/024_dia.mp3',              // διά
-  'audio/vocab/221_diatheke.mp3',         // διαθήκη
+  /* v117: eighteen clips ending -ays. The fix was settled three times
+     over -- μαθητής, προφήτης and στρατιώτης all took 'teys' -- and
+     then never rolled out, because the rollout matched a token ending
+     'ay' and every one of these ends 'ays'. A rule can be right and
+     still not have been applied. Five were bound and are split, since
+     English reads -ey in a polysyllable as /i/; 'lays' is a word, so
+     λῃστής takes 'layss teys'. The v116 two are gone. */
+  'audio/vocab/063_oudeis.mp3',                      // οὐδείς
+  'audio/vocab/231_asthenes.mp3',                    // ἀσθενής
+  'audio/vocab/232_alethes.mp3',                     // ἀληθής
+  'audio/vocab/239_oannes.mp3',                      // Ἰωάννης
+  'audio/vocab/242_medeis.mp3',                      // μηδείς
+  'audio/vocab/251_ouses.mp3',                       // Μωϋσῆς
+  'audio/vocab/274_treis.mp3',                       // τρεῖς
+  'audio/vocab/359_rodes.mp3',                       // Ἡρῴδης
+  'audio/vocab/474_telones.mp3',                     // τελώνης
+  'audio/vocab/475_hupokrites.mp3',                  // ὑποκριτής
+  'audio/vocab/653_uperetes.mp3',                    // ὑπηρέτης
+  'audio/vocab/661_krites.mp3',                      // κριτής
+  'audio/vocab/727_ekatontarches.mp3',               // ἑκατοντάρχης
+  'audio/vocab/748_kleptes.mp3',                     // κλέπτης
+  'audio/vocab/756_pleres.mp3',                      // πλήρης
+  'audio/vocab/768_ergates.mp3',                     // ἐργάτης
+  'audio/vocab/789_lestes.mp3',                      // λῃστής
+  'audio/vocab/813_iordanes.mp3',                    // Ἰορδάνης
 ];
 
 const SHELL = [

@@ -1908,9 +1908,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "hoo pay reh tays",
-  "source": "worklist-candidate",
-  "duration_s": 2.147
+  "tts": "hoo pay reh teys",
+  "source": "ays",
+  "duration_s": 2.147,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 654,
@@ -2014,9 +2016,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "kreetays",
-  "source": "worklist-candidate",
-  "duration_s": 1.181
+  "tts": "kree teys",
+  "source": "ays",
+  "duration_s": 1.181,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 662,
@@ -2893,9 +2897,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "hekah tontar khays",
-  "source": "worklist-candidate",
-  "duration_s": 2.147
+  "tts": "hekah tontar kheys",
+  "source": "ays",
+  "duration_s": 2.147,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 728,
@@ -3176,9 +3182,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "kleptays",
-  "source": "worklist-candidate",
-  "duration_s": 1.886
+  "tts": "klep teys",
+  "source": "ays",
+  "duration_s": 1.886,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 749,
@@ -3284,9 +3292,11 @@
   "pos": "adj",
   "tier": 5,
   "freq": 16,
-  "tts": "playrays",
-  "source": "worklist-candidate",
-  "duration_s": 1.181
+  "tts": "play reys",
+  "source": "ays",
+  "duration_s": 1.181,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 757,
@@ -3448,9 +3458,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "ehr gah tays",
-  "source": "worklist-candidate",
-  "duration_s": 2.069
+  "tts": "ehr gah teys",
+  "source": "ays",
+  "duration_s": 2.069,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 769,
@@ -3724,9 +3736,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "laystays",
-  "source": "worklist-candidate",
-  "duration_s": 1.337
+  "tts": "layss teys",
+  "source": "ays",
+  "duration_s": 1.337,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 790,
@@ -4043,9 +4057,11 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "ee or dah nays",
-  "source": "worklist-candidate",
-  "duration_s": 2.226
+  "tts": "ee or dah neys",
+  "source": "ays",
+  "duration_s": 2.226,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 814,

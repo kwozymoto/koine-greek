@@ -64,9 +64,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 21,
-  "tts": "teh loh nays",
-  "source": "black",
-  "duration_s": 1.829
+  "tts": "teh loh neys",
+  "source": "ays",
+  "duration_s": 1.829,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 475,
@@ -77,9 +79,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "hoo po kree tays",
-  "source": "black",
-  "duration_s": 1.802
+  "tts": "hoo po kree teys",
+  "source": "ays",
+  "duration_s": 1.802,
+  "take": "2026-09-10, Atlas",
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
  },
  {
   "index": 476,
