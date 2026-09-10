@@ -71,6 +71,28 @@ GNT = os.path.join(ROOT, "data", "gnt")
 GK = "Ͱ-Ͽἀ-῿"
 bare = lambda s: re.sub("[^" + GK + "]", "", s)
 
+# A short token carrying a breathing or an accent is a WORD, not a marker.
+# The length test below used to wave through everything under three letters,
+# on the reasoning that sigma and -σα and θη are things a chapter names rather
+# than quotes. True -- but it also waved through ὁ, ἡ, ὅς, οὐ, μή and ἦν, and
+# a breathing is the whole difference between ὁ and ὅ. Chapter 15's note on
+# 1 Timothy 3:16 shipped in v120 with Ὄς, smooth breathing, for the relative
+# pronoun Ὅς, and nothing objected: 242 one- and two-letter Greek tokens sit
+# in the lesson bodies and not one of them had ever been checked.
+#
+# Of the 114 of those that occur nowhere in the SBLGNT, exactly one is two
+# letters AND carries a breathing or accent, and it was the error. So a
+# two-letter token with a mark is checked; one without a mark is still a
+# marker (σα, θη, κα, γν, ου), and a SINGLE letter is skipped however it is
+# accented, because naming ά against ὰ against ᾶ is what chapter 1 is for.
+# (The local name 'marked' is taken, hence has_mark.)
+_MARKS = "̀́͂̓̔"   # grave acute circumflex smooth rough
+
+
+def has_mark(x):
+    return any(c in _MARKS for c in unicodedata.normalize("NFD", x))
+
+
 def norm(x):
     d = unicodedata.normalize("NFD", x).replace("̀", "́")
     return unicodedata.normalize("NFC", d).lower()
@@ -143,7 +165,7 @@ for l in LESSONS:
                 total += 1
                 if norm(g) in FORMS:
                     attested += 1
-                elif is_ending or len(g) < 3:
+                elif is_ending or len(g) < 2 or (len(g) == 2 and not has_mark(g)):
                     skipped["endings, stems and single letters"] += 1
                 elif LUO.match(flat(g)):
                     skipped["λύω, an invented verb"] += 1

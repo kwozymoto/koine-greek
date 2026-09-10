@@ -1017,7 +1017,7 @@ body:`<p>The aorist passive is the last principal part, and with it the set is c
 <p class="v" data-ref="1 Timothy 3:16">ἐφανερώθη ἐν σαρκί, ἐδικαιώθη ἐν πνεύματι, ὤφθη ἀγγέλοις, ἐκηρύχθη ἐν ἔθνεσιν, ἐπιστεύθη ἐν κόσμῳ, ἀνελήμφθη ἐν δόξῃ</p>
 <p>"He was revealed in flesh, vindicated in spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory."</p>
 <p>Six aorist passive indicatives in a row, and every one has the same shape: augment, stem, <span class="gk">θη</span> or its consonant variant, ending. <span class="gk">ἐκηρύχθη</span> shows the κ-group rule and <span class="gk">ἀνελήμφθη</span> the π-group. The rhythm, and the bare <span class="gk">Ὅς</span> that opens it with no antecedent, are why this is usually taken to be an existing hymn being quoted rather than composed.</p>
-<p><b>A note on the text.</b> That observation depends on the reading. This course follows the SBLGNT, which has <span class="gk">Ὄς</span>; other manuscripts have <span class="gk">θεός</span>, which is where the King James got "God was manifest in the flesh". It is the best-known variant in the Pastoral letters, and worth knowing that a Greek observation can turn on which Greek you have open.</p>
+<p><b>A note on the text.</b> That observation depends on the reading. This course follows the SBLGNT, which has <span class="gk">Ὅς</span>; other witnesses have <span class="gk">θεός</span> — which is where the King James got "God was manifest in the flesh" — and others the neuter <span class="gk">ὅ</span>. It is the best-known variant in the Pastoral letters, and worth knowing that a Greek observation can turn on which Greek you have open.</p>
 <p>Notice too what the passive is doing across the whole hymn. Christ is the subject of every line and the actor in none of them. That is a deliberate choice, and it is not available in an English translation that turns the verbs active.</p>
 <p class="v" data-ref="Matthew 28:18">Ἐδόθη μοι πᾶσα ἐξουσία ἐν οὐρανῷ καὶ ἐπὶ τῆς γῆς</p>
 <p>"All authority in heaven and on earth was given to me." Most English versions have "has been given", which reads well and quietly turns an aorist into a perfect — the distinction chapter 10 spent its length on. Given by whom is not said, and does not need to be.</p>
@@ -1092,7 +1092,7 @@ body:`<p>Fifteen chapters have added one piece at a time. This one puts them tog
 <p>The verse opens with <span class="gk">ἀπεκρίθη … καὶ εἶπεν</span>: an aorist passive that means "he answered" (chapter 15) beside a second aorist active (chapter 7). Five finite verbs in one sentence and five different answers.</p>
 <h3>Where time actually lives</h3>
 <p>One last thing to carry out of the indicative, because everything after this chapter depends on it.</p>
-<p><b>Only the indicative marks time.</b> The augment is the single genuinely temporal element in the Greek verb, and it appears nowhere else. In the subjunctive, imperative, infinitive and participle, a tense gives you <b>aspect</b> and nothing more.</p>
+<p><b>Only the indicative marks time.</b> The augment is the single genuinely temporal element in the Greek verb, and it appears nowhere else. In the subjunctive, imperative, infinitive and participle, a tense gives you <b>aspect</b> first, and any time it carries is relative to the main verb rather than fixed to when the writer wrote. Chapter 20 works that out for participles.</p>
 <p>So an aorist participle is not a past participle. An aorist infinitive is not a past infinitive. In the chapters ahead the question is never "when?" but "how is the writer viewing the action?" — as a whole, as going on, or as a standing result.</p>
 <p>That distinction is the single most useful thing in the course, and the indicative is the one place where it is partly hidden, because there tense really does carry time as well.</p>`,
 v:[],
@@ -1106,7 +1106,7 @@ quiz:[
 {q:"A verb has an augment but no σα, no κα and no θη. What are the options?",o:["Present or future","Perfect or pluperfect","Imperfect or second aorist","Only imperfect"],a:2,w:"And only the stem separates them — ἔβαλον against ἔβαλλον. This is the one case where the algorithm hands you back to the vocabulary.",sec:3},
 {q:"In John 13:7, οἶδας is perfect in form. What does it mean?",o:["You know","You have known","You will know","You knew"],a:0,w:"One of the traps chapter 10 exists for: 210 of the 602 perfect active indicatives in the New Testament are οἶδα, and none of them means 'I have known'.",sec:4},
 {q:"γνώσῃ has a σ before the ending and no augment. What is it?",o:["Future","Aorist","Perfect","Imperfect"],a:0,w:"Future middle, second singular — 'you will know'. The middle ending does not make it passive; ὁράω and γινώσκω both take middle futures with active meanings.",sec:4},
-{q:"Which element of the Greek verb genuinely marks time?",o:["The ending","The augment, and only in the indicative","The stem","The connecting vowel"],a:1,w:"It appears nowhere outside the indicative. Everywhere else a tense gives aspect and nothing more.",sec:5},
+{q:"Which element of the Greek verb genuinely marks time?",o:["The ending","The augment, and only in the indicative","The stem","The connecting vowel"],a:1,w:"It appears nowhere outside the indicative. Everywhere else a tense gives aspect first, and any time it carries is relative to the main verb rather than fixed.",sec:5},
 {q:"An aorist participle therefore tells you:",o:["How the writer is viewing the action — as a whole","That the action was past","That the action is complete and continuing","Nothing at all"],a:0,w:"Aspect, not time. Ask 'how is this being viewed?' rather than 'when did it happen?' — which is the question every chapter after this one turns on.",sec:5}
 ]},
 
@@ -1268,7 +1268,7 @@ body:`<p>A great many Greek verbs have a stem ending in a short vowel — <span 
 <p>Which means the whole of the difficulty is confined to two tenses.</p>
 <h3>Liquid verbs: a future with no σ</h3>
 <p>A different irregularity, and a smaller one. Verbs whose stem ends in <span class="gk">λ, μ, ν</span> or <span class="gk">ρ</span> — the "liquid" consonants — will not take a σ cleanly in the future.</p>
-<p>What happens instead is that an <span class="gk">ε</span> slips in, the σ drops out between the two vowels, and the ε contracts with the ending. <span class="gk">μενῶ</span>, the future of <span class="gk">μένω</span>, came by that route from <span class="gk">μενσω</span>.</p>
+<p>What happens instead is that an <span class="gk">ε</span> slips in, the σ drops out between the two vowels, and the ε contracts with the ending. Schematically: <span class="gk">μενσω</span> would give <span class="gk">μενῶ</span>, the future of <span class="gk">μένω</span>. The intermediate spellings are a way of seeing the form, not words anyone wrote.</p>
 <p>So <b>a liquid future looks like a contract present</b>, and that is the trap.</p>
 <table>
 <tr><th>Present</th><th>Future</th><th>Attested as</th></tr>
@@ -1316,7 +1316,7 @@ body:`<p>The participle is the workhorse of Greek prose, and it is where most re
 <p>This is the most important thing in the chapter, and it follows from chapter 16: <b>the augment marks time, and a participle has no augment.</b></p>
 <p>So a participle's tense gives you <b>aspect</b> — how the writer is viewing the action — and time only in relation to the main verb.</p>
 <p><b>Present participle:</b> imperfective. Usually the action is going on at the same time as the main verb.<br>
-<b>Aorist participle:</b> aoristic. Usually the action happened before the main verb.<br>
+<b>Aorist participle:</b> perfective. Usually the action happened before the main verb.<br>
 <b>Perfect participle:</b> a standing result.</p>
 <p>"Usually" is doing real work there: the relation is a tendency, not a rule. What is <i>not</i> a tendency is that an aorist participle does not mean "past" — it means the action is viewed as a whole.</p>
 <p>The future participle exists and can be ignored: twelve in the New Testament.</p>
@@ -1392,7 +1392,7 @@ body:`<p>You can now recognise a participle. This chapter is about the harder ha
 <p>"And when they had departed, behold, an angel of the Lord appears." <span class="gk">αὐτῶν</span> is the participle's subject; the angel is the verb's.</p>
 <p>There are 735 genitive participles in the New Testament, and this is the main reason one turns up in that case without an article. Ask who its subject is: the answer will not be the subject of the sentence.</p>
 <h3>What to watch for</h3>
-<p><b>Find the article first.</b> It divides the three uses and it is the fastest question you can ask. Everything else about the participle can wait behind it.</p>
+<p><b>Find the article first.</b> It is the fastest question you can ask: with one, the participle is adjectival or substantival, and you then ask whether there is a noun for it to modify; without one, it is usually adverbial. Usually, not always — an anarthrous participle can still be attributive, which is why the sentence has the last word.</p>
 <p><b>Check the agreement.</b> It is often the only thing telling you which noun a participle goes with, especially in a long sentence where the two are far apart.</p>
 <p><b>Do not force the adverbial sense.</b> <i>When</i>, <i>because</i> and <i>after</i> are your additions, not the writer's.</p>
 <p><b>And aorist still does not mean past.</b> It means the action is viewed as a whole.</p>
@@ -1594,7 +1594,7 @@ quiz:[
 {q:"What does the subjunctive present an action as?",o:["Contingent — wanted, intended, possible, rather than fact","A completed fact","Past","A command"],a:0,w:"English keeps a trace of it in 'if I were you'. Greek uses it 1,856 times, so it cannot be read around.",sec:0},
 {q:"How do you recognise a subjunctive?",o:["By the augment","By reduplication","By the θη","By a long vowel where you expected a short one, and no augment"],a:3,w:"ο lengthens to ω and ε to η, the stem is the indicative's, and there is never an augment — because the subjunctive marks no time.",sec:1},
 {q:"Of the 1,856 subjunctives in the New Testament, how many are aorist?",o:["About half","1,387 — three in four","Fewer than 200","All of them"],a:1,w:"So the aorist is the unmarked default and carries no particular weight. A present subjunctive is the marked choice, and is where a writer has chosen to present the action as going on.",sec:2},
-{q:"An aorist subjunctive has no augment. Why not?",o:["The augment marks time, and only the indicative marks time","It was dropped for brevity","Aorist subjunctives are really presents","It is an irregularity"],a:0,w:"Straight from chapter 16. In every mood but the indicative, tense gives aspect and nothing more.",sec:2},
+{q:"An aorist subjunctive has no augment. Why not?",o:["The augment marks time, and only the indicative marks time","It was dropped for brevity","Aorist subjunctives are really presents","It is an irregularity"],a:0,w:"Straight from chapter 16. Outside the indicative there is no augment, and tense gives aspect rather than a fixed time.",sec:2},
 {q:"ἵνα occurs 662 times. What is the caution?",o:["It always means 'in order that'","It never takes the subjunctive","It is only in John","It had already spread beyond purpose into result and simple content, so it is not always purpose"],a:3,w:"Reading purpose into every one of the 662 will produce sermons the text does not support. This is the easiest place in the chapter to overclaim.",sec:3},
 {q:"ἀγαπῶμεν ἀλλήλους (1 John 4:7) is first person plural subjunctive. How is it translated?",o:["Let us love one another","We love one another","We will love one another","Do we love one another?"],a:0,w:"The hortatory subjunctive, and the construction to know for preaching — it is how the New Testament says 'we', including the writer in his own command.",sec:4},
 {q:"μή with the aorist subjunctive generally forbids:",o:["Beginning an action","Continuing something already happening","Anything in the past","Nothing; it is emphatic only"],a:0,w:"And μή with the present imperative generally means stop. 'Generally' matters: the contrast is a tendency in the aspect, not a rule, and it is regularly overstated.",sec:5},
@@ -1618,7 +1618,7 @@ body:`<p>The imperative is the mood of command, and Greek uses it 1,618 times. I
 <h3>Aspect, not urgency</h3>
 <p>Here is what the tense of an imperative actually tells you.</p>
 <p><b>Present imperative:</b> imperfective. The action viewed as going on — keep doing, make it your habit.<br>
-<b>Aorist imperative:</b> aoristic. The action viewed as a whole — simply, do it.</p>
+<b>Aorist imperative:</b> perfective. The action viewed as a whole — simply, do it.</p>
 <p>The split in the New Testament is almost even: <b>853 present against 761 aorist</b>. Neither is the default, which means a writer's choice between them is a real choice more often than with the subjunctive.</p>
 <p>As a rough tendency, narrative prefers the aorist and teaching prefers the present — which fits, since a general precept is naturally "make a habit of this" and a specific instruction is naturally "do it".</p>
 <h3>The Lord's Prayer, both ways</h3>
@@ -1654,7 +1654,7 @@ body:`<p>The imperative is the mood of command, and Greek uses it 1,618 times. I
 <p><b>The aorist imperative has no augment.</b> Nothing outside the indicative does.</p>
 <p><b><span class="gk">λύετε</span> is imperative or indicative</b>, and only the sentence decides. The same is true of several other second person plurals.</p>
 <p><b>Do not over-preach the prohibition rule.</b> It is the most reliable way to say something about a text that the text does not say.</p>
-<p><b>And <span class="gk">ἰδού</span> is not really a command.</b> Nor is <span class="gk">ἴδε</span>. Both are just "look".</p>`,
+<p><b>And <span class="gk">ἰδού</span> is not really a command.</b> All 200 of them are the interjection, and none is asking anyone to look at anything. <span class="gk">ἴδε</span> is the more interesting one: thirty of its thirty-four are the same interjection, and four — all in John — are the imperative again. <span class="gk">ἴδε τὰς χεῖράς μου</span>, "see my hands", takes an object, which an interjection cannot.</p>`,
 v:[76,345,349,362,366,404,456,451,466,463],
 vids:[{t:"Lecture 24: The Imperative and Optative Moods",s:"Daily Dose of Greek — Rob Plummer (25:06)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-24/"}],
 quiz:[
@@ -1664,7 +1664,7 @@ quiz:[
 {q:"Matthew has δὸς ἡμῖν σήμερον and Luke δίδου ἡμῖν τὸ καθ’ ἡμέραν. What differs?",o:["The meaning of the petition","The person","One is a question","The aspect — aorist 'give us today' against present 'keep giving us daily'"],a:3,w:"And each Evangelist matches his adverb to his aspect. Neither is more urgent or more spiritual; they are two views of the same asking, visible only in Greek.",sec:3},
 {q:"μή with the present imperative generally means:",o:["Do not start","Never do it","It is not a prohibition","Stop doing what you are doing"],a:3,w:"Against μή with the aorist subjunctive, which generally forbids beginning. But this is the single most over-preached point in Greek grammar — a tendency in the aspect, not a rule.",sec:4},
 {q:"Before preaching that a present imperative means 'stop', what has to be true?",o:["The context has to say so","Nothing; the form settles it","The verb must be transitive","It must be in the Gospels"],a:0,w:"Where a present imperative genuinely means 'stop', the sentence around it will show it. Where it does not, do not make it. The form is a tendency and the context carries the weight.",sec:4},
-{q:"ἰδού occurs 200 times. What is it?",o:["An aorist imperative of ὁράω that has hardened into an interjection — 'look', 'behold'","A noun","A conjunction","A subjunctive"],a:0,w:"So is ἴδε. Neither is really commanding anyone to see anything, which is why English translations render them as exclamations.",sec:5},
+{q:"ἰδού occurs 200 times. What is it?",o:["An aorist imperative of ὁράω that has hardened into an interjection — 'look', 'behold'","A noun","A conjunction","A subjunctive"],a:0,w:"Not one of the 200 is commanding anyone to see anything, which is why English translations render it as an exclamation. ἴδε is mostly the same, but four times in John it is a real imperative.",sec:5},
 {q:"How often does the optative occur in the New Testament?",o:["Around 600 times","68 times","Never","About the same as the subjunctive"],a:1,w:"A dying mood — common in classical Greek, nearly gone by the Koine. Present and aorist only, usually recognisable by an οι, αι or ει after the stem.",sec:6},
 {q:"μὴ γένοιτο occurs 15 times. Where?",o:["Spread evenly","Only in the Gospels","14 of them in Paul, ten in Romans","Only in Revelation"],a:2,w:"'By no means!' It is Paul's way of raising a conclusion in order to throw it out, and it is the commonest optative in the New Testament.",sec:6},
 {q:"λύετε is which mood?",o:["Imperative","Indicative","Subjunctive","Either — only the sentence decides"],a:3,w:"The second person plural is identical in both, and several other forms are too. Along with the missing augment, this is what makes imperatives easy to read past.",sec:7}
@@ -1744,7 +1744,7 @@ body:`<p>You now have the whole of the morphology: six principal parts, four moo
 <p>Then go back for what you missed. Two passes at speed teach more than one pass at a crawl.</p>
 <h3>Observe the aspect</h3>
 <p>If you take one habit from this course into your reading, take this one. English asks <i>when did it happen</i>. Greek asks <i>how is it being viewed</i>.</p>
-<p>The aorist is the unmarked aspect — the default, the background. The present and imperfect are marked, and put the process in the foreground. The perfect is the most marked of all, and puts the resulting state in front of everything.</p>
+<p>On the account this course has followed, the aorist is the unmarked aspect — the default, the background — while the present and imperfect are marked and put the process in the foreground, and the perfect is the most marked of all and puts the resulting state in front of everything. That is a model, and a useful one; it is not a rule that every aorist is backgrounded.</p>
 <p class="v" data-ref="1 Corinthians 15:3">Χριστὸς ἀπέθανεν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν κατὰ τὰς γραφάς</p>
 <p>Aorist: he did, in fact, die. Then in the next verse <span class="gk">ἐγήγερται</span>, perfect: raised, and risen still. The whole argument of the chapter is carried on a change of aspect, and it is invisible in most English translations.</p>
 <h3>Observe the voice, and the article</h3>
@@ -1774,7 +1774,7 @@ v:[],
 vids:[{t:"Lecture 26: Reading Your Greek New Testament",s:"Daily Dose of Greek — Rob Plummer (27:24)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-26/"},
       {t:"Daily Dose of Greek — one verse a day",s:"Free two-minute weekday videos; the habit that keeps the language",u:"https://dailydoseofgreek.com/"}],
 quiz:[
-{q:"What is the best predictor of whether someone keeps their Greek?",o:["How much grammar they memorised","Which textbook they used","Whether they read it daily, in something easy enough to enjoy","How fast they finished"],a:2,w:"Ten minutes a day beats an hour on Saturday. Start with 1 John, then Mark, then John — and leave Hebrews and 2 Peter alone for a long while.",sec:0},
+{q:"According to this chapter, what habit is most worth building?",o:["Memorising more grammar","Choosing a better textbook","Reading most days, in something easy enough to enjoy","Finishing the course faster"],a:2,w:"Ten minutes a day beats an hour on Saturday. Start with 1 John, then Mark, then John — and leave Hebrews and 2 Peter alone for a long while.",sec:0},
 {q:"Which books are the wrong place to start?",o:["1 John and Mark","John and Acts","Hebrews, Luke's prologue and 2 Peter","The Gospels"],a:2,w:"They are the hardest Greek in the New Testament and they will convince you that you have learned nothing. 1 John has short sentences, small vocabulary and endless repetition.",sec:1},
 {q:"When a sentence resists, what is usually the better move?",o:["Parse each word before moving on","Read to the end of the sentence first, then go back","Consult a commentary","Switch to English"],a:1,w:"Greek scatters its clues, and the word that unlocks a clause is often three words later. Two passes at speed teach more than one pass at a crawl.",sec:2},
 {q:"English asks 'when did it happen'. What does Greek ask?",o:["Who did it","Where did it happen","How is it being viewed","Why did it happen"],a:2,w:"Aspect is the one habit most worth carrying out of this course. The aorist is unmarked and backgrounds; the present and imperfect foreground the process; the perfect foregrounds the result.",sec:3},

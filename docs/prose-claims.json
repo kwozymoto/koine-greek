@@ -2560,6 +2560,14 @@
   "finding": "6,640 participles. 3,918 anarthrous nominatives exactly; 1,433 articular on the definition 'article immediately before' (1,430 on a stricter agreement test, 2,330 allowing an intervening modifier). The two figures deliberately do not sum to 6,640: 1,289 participles are anarthrous and not nominative, the genitive absolutes among them."
  },
  {
+  "k": "4c53effd80c3",
+  "ch": 21,
+  "kind": "absolute",
+  "text": "Usually, not always — an anarthrous participle can still be attributive, which is why the sentence has the last word.",
+  "status": "corrected",
+  "finding": "The chapter's opening was corrected in v120 from 'one question separates them' to 'one question comes first', but this summary four sections later still said 'It divides the three uses'. Same fault, missed the first time. The article separates the adverbial use from the other two; a second question — is there a noun to modify? — splits those. And the chapter's own counts never partitioned the set: 1,433 articular and 3,918 anarthrous nominatives leave 1,289 of the 6,640 in neither. Raised by ChatGPT's second audit."
+ },
+ {
   "k": "5694370683ce",
   "ch": 21,
   "kind": "count",
@@ -2904,14 +2912,6 @@
   "finding": ""
  },
  {
-  "k": "412c3b82908c",
-  "ch": 24,
-  "kind": "absolute",
-  "text": "In every mood but the indicative, tense gives aspect and nothing more.",
-  "status": "unreviewed",
-  "finding": ""
- },
- {
   "k": "44fcb3d5bdf6",
   "ch": 24,
   "kind": "absolute",
@@ -3096,12 +3096,36 @@
   "finding": ""
  },
  {
+  "k": "64cd2d6aff99",
+  "ch": 25,
+  "kind": "count",
+  "text": "ἴδε is mostly the same, but four times in John it is a real imperative.",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
   "k": "6c64b49ac3a1",
   "ch": 25,
   "kind": "absolute",
   "text": "Neither is more urgent or more spiritual; they are two views of the same asking, visible only in Greek.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "745574d62959",
+  "ch": 25,
+  "kind": "count",
+  "text": "All 200 of them are the interjection, and none is asking anyone to look at anything.",
+  "status": "verified",
+  "finding": "Corpus: all 200 ἰδού are lemmatised ἰδού with an empty parse code — MorphGNT treats every one as a particle, never as a verb. So 'not really a command' is right for ἰδού. ἴδε is 34: thirty the same particle, and four parsed ὁράω 2AAD-S--, second aorist active imperative — John 1:46, 7:52, 11:34, 20:27, all coordinated with another imperative (Ἔρχου καὶ ἴδε, ἐραύνησον καὶ ἴδε). The chapter used to say 'Nor is ἴδε. Both are just look', which the corpus refutes. Raised by ChatGPT's second audit."
+ },
+ {
+  "k": "805844a64ffc",
+  "ch": 25,
+  "kind": "absolute",
+  "text": "ἴδε τὰς χεῖράς μου , \"see my hands\", takes an object, which an interjection cannot.",
+  "status": "verified",
+  "finding": "John 20:27 ἴδε τὰς χεῖράς μου. τὰς χεῖράς is accusative plural, the object of ἴδε, and the corpus parses ἴδε there as ὁράω 2AAD-S--. This is the decisive case: a fossilised interjection does not govern an accusative."
  },
  {
   "k": "8ac827bd3666",
@@ -3124,6 +3148,14 @@
   "ch": 25,
   "kind": "absolute",
   "text": "It has no first person — you cannot command yourself — and its negative is μή .",
+  "status": "unreviewed",
+  "finding": ""
+ },
+ {
+  "k": "9d55c0cef3ca",
+  "ch": 25,
+  "kind": "absolute",
+  "text": "Not one of the 200 is commanding anyone to see anything, which is why English translations render it as an exclamation.",
   "status": "unreviewed",
   "finding": ""
  },
@@ -3189,7 +3221,7 @@
   "kind": "count",
   "text": "So learn four stems — δο- for δίδωμι , θε- for τίθημι , στα- for ἵστημι and ἑ- for ἀφίημι — and you can read about two thirds of the ninety verbs’ 1,743 occurrences off those four families and their compounds.",
   "status": "corrected",
-  "finding": "Was 'the ninety verbs come down to four families', which contradicts 'Four of those carry most of the weight' earlier in the same chapter. Corpus: the four families and their compounds are 1,117 of the 1,743 occurrences = 64%. Raised by ChatGPT's audit."
+  "finding": "Was 'the ninety verbs come down to four families', which contradicts 'Four of those carry most of the weight' earlier in the same chapter. Corpus: the four families and their compounds are 1,117 of the 1,743 occurrences = 64%. Raised by ChatGPT's audit.  || ChatGPT's second audit called ἑ- the wrong stem for ἀφίημι, on the grounds that its principal parts are ἀφήσω, ἀφῆκα, ἀφέωμαι, ἀφέθην and its present is ἀφίησιν. Rejected: every one of those displays the ἑ-/ἡ- grade it was offered as evidence against. Corpus: of 143 ἀφίημι tokens, 71 carry bare ε after the prefix (ἄφες, ἀφέντες, ἀφεθήσεται), 40 carry η (ἀφῆκεν, ἀφήσω), 3 carry ῃ, and 28 are the ι-reduplicated present (ἀφίησιν) — the same reduplication δίδωμι and τίθημι take. The short/long alternation is exactly parallel to δο-/δω- (202/202), θε-/θη- (50/40) and στα-/στη- (48/86)."
  },
  {
   "k": "3c3bcd8b796b",
@@ -3326,6 +3358,14 @@
   "text": "Once you know the stem θε- , none of those is a surprise.",
   "status": "unreviewed",
   "finding": ""
+ },
+ {
+  "k": "076028e6f425",
+  "ch": 27,
+  "kind": "absolute",
+  "text": "That is a model, and a useful one; it is not a rule that every aorist is backgrounded.",
+  "status": "corrected",
+  "finding": "Chapter 27 stated aorist-as-unmarked across every aspect and mood, plus discourse backgrounding, as fact. Chapter 24's version of the same claim is grounded on the spot — 1,387 of 1,856 subjunctives are aorist, three in four, verified against the corpus — so that one stands. Chapter 27's is a model and now says so. Raised by ChatGPT's second audit."
  },
  {
   "k": "0a433c4dc433",
