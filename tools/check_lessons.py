@@ -500,6 +500,50 @@ if bad_has:
     for b in bad_has:
         print("   " + b)
 
+
+# ---------------------------------------------------------------- terminology
+# A word the course has DECLARED it does not use, used anyway.
+#
+# Chapter 2 makes a deliberate choice and tells the reader about it: "Black
+# calls the three aspects imperfective, aoristic and perfective -- so in his
+# usage 'perfective' means the perfect, not the aorist. Most modern grammars
+# use perfective for the aorist, which is what this course does." Having said
+# that, the course then has to keep to it, or the warning is worse than
+# useless: the reader has been told which convention to expect.
+#
+# It did not keep to it, twice. The chapter 16 slot table labelled
+# reduplication "perfective" -- Black's sense -- and was corrected in v120.
+# Chapter 20's aspect table and chapter 25's said "Aorist participle:
+# aoristic" and "Aorist imperative: aoristic", Black's word again, and were
+# corrected in v121. Three places, one fault, found twice by a reader.
+#
+# So: the word may appear only where it is being defined as somebody else's.
+TERMS = {
+    "aoristic": (
+        {2},
+        "Black's name for the aorist's aspect. Chapter 2 declares that this "
+        "course says 'perfective' instead, so the word belongs only where "
+        "chapter 2 explains the difference."),
+}
+
+bad_term = []
+for l in LESSONS:
+    src = (l.get("body") or "") + " " + " ".join(
+        str(q.get("q", "")) + " " + str(q.get("w", "")) + " " +
+        " ".join(q.get("o", []) or []) for q in (l.get("quiz") or []))
+    for word, (where, why) in TERMS.items():
+        if word in src.lower() and l["id"] not in where:
+            bad_term.append("ch%-2d uses %r, which belongs only to %s. %s"
+                            % (l["id"], word,
+                               ", ".join("ch%d" % c for c in sorted(where)), why))
+
+print()
+print("declared terminology, held to across the chapters: %d word(s)" % len(TERMS))
+if bad_term:
+    print("A WORD THE COURSE SAID IT DOES NOT USE: %d" % len(bad_term))
+    for b in bad_term:
+        print("   " + b)
+
 if (sec_bad or sec_early or verse_bad or no_question or badly_shaped
-        or unlisted or skew or policy or bad_has):
+        or unlisted or skew or policy or bad_has or bad_term):
     sys.exit(1)
