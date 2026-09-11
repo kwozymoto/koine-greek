@@ -75,6 +75,53 @@ addEventListener("load", () => setTimeout(() => {
    identifies the person, and the sync passphrase is never read — only whether
    sync is switched on at all, because "it works on one device and not the
    other" is a real bug and the answer is usually there. */
+/* ---------- what device this actually is ----------
+
+   `navigator.userAgent` on Android does not describe the device. Chrome's
+   User-Agent Reduction freezes the version at "Android 10" and the model at
+   the literal "K" for every phone on earth, and Brave reports itself as
+   Chrome on top of that. A report printing it invites the reader to act on
+   a fact that is not one: a signup sent from Brave on a real phone came
+   through as "Android 10; K … Chrome/152".
+
+   The real values moved behind User-Agent Client Hints, which is async — so
+   they are asked for once at load and cached. A browser that declines is
+   working correctly, not failing, and reportDiag says which happened instead
+   of guessing. Every failure is silent: a report that cannot say what the
+   device is beats one that says the wrong thing. */
+REPORT.hints = null;
+/* The reduced string's signature, which is the same on every device. */
+REPORT.frozenUA = /Android 10; K[;)]/.test(navigator.userAgent || "");
+try {
+  if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+    navigator.userAgentData
+      .getHighEntropyValues(["platformVersion", "model", "mobile"])
+      .then(v => { REPORT.hints = v; })
+      .catch(() => { /* declined or restricted; the fallback line says so */ });
+  }
+} catch (e) { /* no such API; same fallback */ }
+
+function reportDevice() {
+  const h = REPORT.hints || {};
+  const model = String(h.model || "").trim();
+  const ver = String(h.platformVersion || "").trim();
+  const os = (navigator.userAgentData && navigator.userAgentData.platform) || "";
+  const plat = (os || "") + (ver ? " " + ver : "");
+  if (model) return model + (plat ? " · " + plat : "");
+  /* A desktop has no model to report, so saying one is withheld would be
+     its own small lie. Only a phone that declined the hint gets that line. */
+  if (plat) {
+    const phone = h.mobile === true ||
+                  (navigator.userAgentData && navigator.userAgentData.mobile);
+    return plat + (phone ? " · model withheld" : "");
+  }
+  if (REPORT.frozenUA) {
+    return "not reported — this browser sends a frozen placeholder " +
+           "(\"Android 10; K\") in place of every device";
+  }
+  return "not reported";
+}
+
 function reportDiag() {
   const d = [];
   d.push("app        " + (REPORT.version || "unknown"));
@@ -86,6 +133,7 @@ function reportDiag() {
       Object.keys(S.cards || {}).length + " words started · " + (S.xp || 0) + " XP");
     d.push("sync       " + (typeof SYNC !== "undefined" && SYNC && SYNC.id ? "on" : "off"));
   } catch (e) { d.push("progress   unreadable (" + e.message + ")"); }
+  d.push("device     " + reportDevice());
   d.push("browser    " + navigator.userAgent);
   d.push("screen px  " + innerWidth + "×" + innerHeight +
     " @" + (devicePixelRatio || 1) + "x" + (navigator.onLine ? "" : " · offline"));
