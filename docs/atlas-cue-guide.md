@@ -60,13 +60,34 @@ a doubled consonant, *hopping* against *hoping*. It has now worked three
 times: πρός `pross`, the four προσ- compounds, and πρόβατον, which went from
 `pro bah ton` to **`probbah ton`** on 2026-09-11.
 
-**What there is no predictor for is which words need it.** The obvious guess —
-that a cue drifts long when it spells an English word carrying the /oʊ/ of
-*gold* — is false, and the pack itself says so. Three heard clips do exactly
-that and were kept: χρόνος `crow noss`, σοφός `so foss`, and πρό `pro`. So do
-not go looking for words to fix. Apply this when a listener reports the vowel,
-and not before; `check_cues` deliberately holds no rule of this kind, for the
-same reason the `keye` and `pro` entries had to be struck.
+**And there is a predictor, which this guide denied for one commit.** This
+paragraph used to say the drift could not be predicted, on the strength of
+three heard clips that spelled English *gold*-vowel words and had been kept:
+χρόνος `crow noss`, σοφός `so foss` and πρό `pro`. Fraser re-heard the first
+two against τόπος and φωνή the same day and **both were faults** — they had
+been passed before the omicron/omega question was being asked at all. χρόνος
+is now `chronoss` and σοφός `sawfoss`.
+
+So the guess looks right: **a cue drifts long when its first token is an
+English word carrying the /oʊ/ of *gold*.** πρό is the one survivor, and only
+because there is no consonant to close its syllable on. It also kills the
+rival account, that stress decides — σοφός is `so.ˈfos`, its first syllable
+is unstressed, and it drifted anyway.
+
+**It is still not in `check_cues`, and two data points is the reason.** What
+it flags is a work list and not a verdict: νόμος `no moss`, σοφία `so fee ah`
+and νομίζω `no mee zoh`, none of which anyone has heard. Play those three
+before this becomes a rule. Four plausible rules wanted gating in one day and
+three had to be struck; the bar is an ear, every time.
+
+**A bare `oss` after a consonant is a rule, and is gated.** It picks up an
+extra letter: ἥλιος "spells o s s at the end" in batch 4, then χρόνος
+`chron oss` — "says chron oss C, with the added x on the end" — and σοφός
+`sof oss`. τόπος shows the remedy and always has: it is `to poss`, not
+`to oss`. The consonant travels with the second token, or the word is bound.
+Watch the vowel-spelling h when you reason about this: `lah`, `nah`, `neh`
+and `theh` all end in a *vowel*, and λαός, ναός and νέος are approved with a
+free `oss` after them.
 
 **κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
 differently — κτίσις is `kitsis`, where the s of the cluster doubles as the

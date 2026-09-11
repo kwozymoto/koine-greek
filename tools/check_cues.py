@@ -84,6 +84,23 @@ REJECTED = [
 # which is what the guide used to claim. `pros` passes: it keeps the sigma.
 PROS_PREFIX = "προσ"
 
+# A SECOND POSITIONAL RULE. A bare `oss`/`os` token misreads when the token
+# before it ends in a real consonant -- it picks up an extra letter. Four
+# sightings: ἥλιος "spells o s s at the end" (batch 4), then χρόνος `chron oss`
+# ("says chron oss C, with the added x on the end") and σοφός `sof oss`
+# ("atlas says oss funny, sounds like oss S") on 2026-09-11.
+#
+# τόπος had been showing the remedy all along: it is `to poss`, not `to oss`.
+# The consonant travels with the second token, or the word is bound.
+#
+# WATCH THE VOWEL-SPELLING h. The first version of this test called `lah`,
+# `nah`, `neh` and `theh` consonant-final and flagged six cues, THREE OF WHICH
+# the ear had already passed -- λαός, ναός and νέος. The guide says it plainly
+# in rule 5: ah, eh and oh spell vowels and the h is not a sound. So the
+# checker was wrong and the pack was right, which is the shape CLAUDE.md warns
+# about: check that the parser is not the thing at fault.
+VOWEL_END = re.compile(r"([aeiou]h|[aeiouy])$", re.I)
+
 
 # NOT IN THE LIST, AND THE REASON IS THE POINT. `pro` was in it for one run.
 # The guide's header says προ-/προσ- takes `pross` because `pro` is the omega
@@ -137,6 +154,16 @@ if __name__ == "__main__":
                      "outright; `pross` or `pros` keeps it",
                      "προσέρχομαι, πρόσωπον, προσκυνέω, προσευχή all moved "
                      "to `pross` by ear 2026-09-11"))
+
+    for r in rows:
+        t = (r.get("tts") or "").split()
+        for j in range(1, len(t)):
+            if t[j] in ("oss", "os") and not VOWEL_END.search(t[j - 1]):
+                hits.append((r["index"], r.get("greek", ""), r["tts"], t[j],
+                             "a bare `%s` after a consonant picks up an extra "
+                             "letter; bind it, or carry the consonant into it "
+                             "as τόπος does with `to poss`" % t[j],
+                             "ἥλιος batch 4, then χρόνος and σοφός 2026-09-11"))
 
     print("cues held:                        %d" % len(rows))
     print("spellings an ear has rejected:    %d" % len(REJECTED))

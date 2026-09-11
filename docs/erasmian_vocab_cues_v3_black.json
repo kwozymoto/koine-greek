@@ -231,11 +231,11 @@
   "pos": "adj",
   "tier": 5,
   "freq": 19,
-  "tts": "so foss",
-  "source": "recued",
-  "duration_s": 1.384,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "sawfoss",
+  "source": "batch4",
+  "duration_s": 1.071,
+  "take": "2026-09-11, Atlas",
+  "note": "the same fault: 'so' is an English word with the gold vowel. 'sof foss' fixed the vowel but the doubled f was audible, and 'sofoss' flowed well and reverted to the omega. Spelling the vowel outright carries both."
  },
  {
   "index": 487,

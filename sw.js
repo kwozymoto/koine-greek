@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v135';
+const VERSION = 'v136';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,20 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v136: χρόνος and σοφός, and the rule that came out of them. Fraser
+     re-heard two clips he had passed and found both wrong -- they had been
+     judged before the omicron/omega question existed, so `crow noss` and
+     `so foss` had never been asked whether that o was the one in omelet.
+     Both are now closed syllables: `chronoss`, `sawfoss`.
+     Those two were also the whole evidence for a line in the guide saying
+     this drift could not be predicted. It could; the note is corrected and
+     names three unheard words it flags, which stay a work list until an ear
+     reaches them. And a fourth sighting of the `oss` fault -- a bare `oss`
+     after a consonant picks up an extra letter -- IS now gated in
+     check_cues, because it needs no prediction: a cue either has one or it
+     does not. Its first version called `lah` and `neh` consonant-final and
+     flagged three approved clips; the guide says in rule 5 that the h in
+     ah/eh/oh is not a sound, so the checker was wrong and the pack right. */
   /* v135: πρόβατον alone. Its stressed omicron was lengthening toward an
      omega, and closing the syllable with a doubled beta forces it short --
      `pro bah ton` -> `probbah ton`, the third time that mechanism has
@@ -106,6 +120,8 @@ const STALE = [
   'audio/vocab/291_proskuneo.mp3',                 // προσκυνέω
   'audio/vocab/417_proseuche.mp3',                 // προσευχή
   'audio/vocab/394_probaton.mp3',                   // πρόβατον
+  'audio/vocab/312_chronos.mp3',                    // χρόνος
+  'audio/vocab/486_sofos.mp3',                      // σοφός
 ];
 
 const SHELL = [
