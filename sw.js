@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v133';
+const VERSION = 'v134';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v134: the four προσ- clips. The rule the guide gave for them was right
+     and its reason was wrong -- it said `pro` is "the omega sound, as in
+     professional", and professional has a schwa in that syllable. Tested
+     over seven words: the four προσ- ones moved to `pross`, because a bare
+     `pro` drops the sigma; πρό, πρόβατον and πρῶτος all kept what they had.
+     So it is the sigma and not the vowel, and check_cues holds that
+     positionally now. The same experiment found a real limit, which the
+     guide records: ο and ω are separated everywhere the pack can manage it
+     and cannot be in `pro` -- πρό and πρῶτος are spelled the same, were
+     heard side by side against φωνή and τόπος, and both were kept. */
   /* v133: batch 4 closed, and sixteen clips changed. Ten flags in fifty --
      but the finding is not the count. Every one of the ten had a cause
      already written in the cue guide before the clip was made, and four
@@ -83,6 +93,10 @@ const STALE = [
   'audio/vocab/446_anaginosko.mp3',                // ἀναγινώσκω
   'audio/vocab/506_ana.mp3',                       // ἀνά
   'audio/vocab/672_epairo.mp3',                    // ἐπαίρω
+  'audio/vocab/191_proserchomai.mp3',              // προσέρχομαι
+  'audio/vocab/256_prosopon.mp3',                  // πρόσωπον
+  'audio/vocab/291_proskuneo.mp3',                 // προσκυνέω
+  'audio/vocab/417_proseuche.mp3',                 // προσευχή
 ];
 
 const SHELL = [

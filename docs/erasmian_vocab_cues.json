@@ -2622,9 +2622,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 86,
-  "tts": "pro sehr kho my",
-  "source": "g2p",
-  "duration_s": 1.829
+  "tts": "pross air kho my",
+  "source": "batch4",
+  "duration_s": 2.116,
+  "take": "2026-09-11, Atlas",
+  "note": "the sigma was being dropped: πρός is 'pross' and this word is προσ- + ἔρχομαι, whose own cue 'air kho my' passed in batch 4. Built from it."
  },
  {
   "index": 192,
@@ -3533,9 +3535,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 76,
-  "tts": "pro soh pon",
-  "source": "g2p",
-  "duration_s": 1.332
+  "tts": "pross oh pon",
+  "source": "batch4",
+  "duration_s": 1.541,
+  "take": "2026-09-11, Atlas",
+  "note": "the sigma bound backward to close the first syllable. The omega in the second syllable keeps its 'oh', which is the pack's mark for it."
  },
  {
   "index": 257,
@@ -4003,9 +4007,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 60,
-  "tts": "pro skoo neh oh",
-  "source": "g2p",
-  "duration_s": 1.802
+  "tts": "pross koo neh hoe",
+  "source": "batch4",
+  "duration_s": 1.881,
+  "take": "2026-09-11, Atlas",
+  "note": "two faults. The prefix, and the -εω ending, which the ear settled as 'eh hoe' in γαμέω and τελέω; this cue had neither."
  },
  {
   "index": 292,
@@ -5728,11 +5734,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "pro sue khey",
-  "source": "fix21",
-  "duration_s": 1.489,
-  "take": "2026-09-10, Atlas",
-  "note": "'sew' came back as 'so'"
+  "tts": "pross sue khey",
+  "source": "batch4",
+  "duration_s": 1.698,
+  "take": "2026-09-11, Atlas",
+  "note": "the prefix only -- the cleanest test of the five, since 'sue' and 'khey' were both already settled. It moved, which is what confirmed the rule is about the sigma."
  },
  {
   "index": 418,

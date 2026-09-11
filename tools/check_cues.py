@@ -39,7 +39,7 @@ ALLOWED is for the case where a banned spelling is right anyway. Each entry
 is keyed on (index, token) so that excusing one word cannot excuse a whole
 sheet -- check_consistency learned that the expensive way.
 """
-import io, json, os, re, sys
+import io, json, os, re, sys, unicodedata
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -76,6 +76,15 @@ REJECTED = [
      "the guide's 511-817 header"),
 ]
 
+# A POSITIONAL RULE, which the token list above cannot express: a προσ- word
+# must not open on a bare `pro`, because that drops the sigma outright. Proved
+# 2026-09-11 across seven words -- προσέρχομαι, πρόσωπον, προσκυνέω and
+# προσευχή all moved to `pross` by ear, while πρό and πρόβατον kept `pro` and
+# πρῶτος kept `protoss`. So the rule is about the sigma and not the vowel,
+# which is what the guide used to claim. `pros` passes: it keeps the sigma.
+PROS_PREFIX = "προσ"
+
+
 # NOT IN THE LIST, AND THE REASON IS THE POINT. `pro` was in it for one run.
 # The guide's header says προ-/προσ- takes `pross` because `pro` is the omega
 # sound, and 22 πρός really was re-cued from one to the other. But 336 πρό is
@@ -88,6 +97,12 @@ REJECTED = [
 
 # (index, the offending token) -> why that one occurrence is right anyway.
 ALLOWED = {}
+
+
+def flat(w):
+    """Strip accents and breathings, so προσ- matches πρόσ- and προσ-."""
+    return "".join(c for c in unicodedata.normalize("NFD", w or "")
+                   if not unicodedata.combining(c)).lower()
 
 
 def load():
@@ -113,8 +128,20 @@ if __name__ == "__main__":
                 hits.append((r["index"], r.get("greek", ""), cue, tok,
                              does, proof))
 
+    pros = [r for r in rows
+            if flat(r.get("greek")).startswith(PROS_PREFIX)
+            and (r.get("tts") or "").split()[:1] == ["pro"]]
+    for r in pros:
+        hits.append((r["index"], r.get("greek", ""), r["tts"], "pro",
+                     "a προσ- word opening on a bare `pro` drops the sigma "
+                     "outright; `pross` or `pros` keeps it",
+                     "προσέρχομαι, πρόσωπον, προσκυνέω, προσευχή all moved "
+                     "to `pross` by ear 2026-09-11"))
+
     print("cues held:                        %d" % len(rows))
     print("spellings an ear has rejected:    %d" % len(REJECTED))
+    print("προσ- words whose sigma is checked: %d"
+          % sum(1 for r in rows if flat(r.get("greek")).startswith(PROS_PREFIX)))
     print("occurrences excused in ALLOWED:   %d" % excused)
 
     if hits:

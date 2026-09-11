@@ -20,12 +20,38 @@ arrived at by listening, and the tables by reading. Each is in
 |---|---|---|---|
 | ζ | `dz` word-initial | **`z`** | the pack spells the d |
 | -εω | `eh oh` | **`eh hoe`** | γαμέω `gah meh hoe`, τελέω `teh leh hoe` |
-| προ- / προσ- (omicron) | `pro` | **`pross`** | `pro` is the omega sound, as in *professional* |
+| **προσ-** only | `pro` | **`pross`** | the sigma, not the vowel — see below |
 | αι after a consonant | `keye` | **`kai`** | `keye` splits; `kai`/`mai`/`rye` do not |
 | θι | `thee` | **`thi`** | the iota is short |
 | ας | — | **`ahs`**, never `ass` | an English word, and the wrong vowel |
 | ῥ- | (took the rough breathing) | **plain `r`** | the mark on rho is not the vowel rule |
 | ξ- word-initial | `ks` | **`ax`** | English has no word beginning *ks* |
+
+**`pross` is about the sigma, and the reason this table used to give was
+wrong.** It said `pro` is "the omega sound, as in *professional*" — and
+*professional* has a schwa in that syllable, so the example did not even
+support the claim. Tested across seven words on 2026-09-11:
+
+| | kept or moved |
+|---|---|
+| προσέρχομαι, πρόσωπον, προσκυνέω, προσευχή | all moved to **`pross`** |
+| **πρό, πρόβατον** | **kept `pro`** |
+
+So: a προσ- word takes `pross`, because a bare `pro` drops the sigma. A προ-
+word with no sigma keeps `pro`. Nine heard clips spell a short omicron as a
+bare open syllable — μόνος `mo noss`, τόπος `to poss`, φόβος `fo boss`,
+σοφός `so foss`, θρόνος `thro noss` — and πρό is one of them.
+
+**And a limit this exposed, which is worth more than the rule.** ο and ω are
+separated everywhere the pack can manage it — φωνή `foh nay` against τόπος
+`to poss`, and πρόσωπον `pross oh pon` carrying both in one word. It cannot
+be managed in `pro`. πρό is an omicron and πρῶτος an omega; both are spelled
+`pro`, both were listened to side by side against those two references, and
+both were kept. English stress lengthens a stressed open vowel, so a stressed
+`pro` drifts towards the omega whatever we write. **Lesson 1 teaches that ο
+and ω are different sounds, and in this one environment the audio does not
+carry the difference.** That is a known gap, not an oversight, and the next
+person to notice it should read this rather than re-run the experiment.
 
 **κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
 differently — κτίσις is `kitsis`, where the s of the cluster doubles as the
