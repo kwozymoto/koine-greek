@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v139';
+const VERSION = 'v140';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,11 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v140 adds the closed-testing prompt and changes only SHELL files --
+     index.html, css/app.css, js/pwa.js, js/app.js, privacy.html -- so the
+     VERSION bump replaces every one of them and nothing is added here. The
+     audio entries below stay: STALE is read on every activate, and a clip
+     already evicted is simply missing, which costs one refetch. */
   /* v139: ἀγνοέω, and it took six rounds because of where I was looking.
      Its ο is an omicron and every cue spelled it `no` -- an English word
      with the /ou/ of gold, which is the exact fault check_cues gates. That

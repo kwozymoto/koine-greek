@@ -147,6 +147,135 @@ addEventListener("appinstalled",()=>{
   toast("Installed — open it from your home screen");
 });
 
+/* ---------- closed testing ----------
+
+   The Play Store's test track is joined by email address and nothing else:
+   the address goes into the Play Console, and an install link comes back.
+   Friends have been passing the web app on to their own friends, so the
+   people most likely to test it are precisely the ones there is no way to
+   write to. This asks them, and it is the only thing in the app that asks
+   the user for anything.
+
+   Four things narrow who sees it, and each is a reason not to nag someone:
+
+     Android only      — there is no iOS build to test.
+     Not in the app    — a TWA launches with android-app:// in the referrer,
+                         so they already installed it from Play and are
+                         already a tester.
+     Not first visit   — a stranger who has seen one screen has no reason to
+                         sign up for anything.
+     Once              — dismissing or sending both set the flag for good.
+
+   NOTHING IS TRANSMITTED HERE. It builds a mailto: and hands it to the
+   device, exactly as js/report.js does, and for the same reason: a reporting
+   endpoint would be a second place user text can go, a second thing to
+   secure, and a different answer on the Play data-safety form. The address
+   the user types never reaches this app's own storage either -- it goes
+   straight into the mail body and the field is not saved. */
+const TEST_DISMISS = "koine.testerAsked";
+const VISITS       = "koine.visits";
+
+function androidWeb(){
+  if(!/Android/i.test(navigator.userAgent || "")) return false;
+  /* Chrome sets this when a Trusted Web Activity opens the page, which is
+     what the Play build is. Wrapped because a sandboxed frame throws. */
+  try{ if(/^android-app:\/\//.test(document.referrer || "")) return false; }
+  catch(e){ /* cannot tell; fall through and ask */ }
+  return true;
+}
+/* Defaults to "already asked" when storage is unavailable. A private window
+   cannot remember a dismissal, and a prompt that cannot be dismissed is
+   worse than one that never appears. */
+function testerAsked(){
+  try{ return localStorage.getItem(TEST_DISMISS) === "1"; }catch(e){ return true; }
+}
+function testerSeal(){
+  try{ localStorage.setItem(TEST_DISMISS,"1"); }catch(e){}
+}
+function bumpVisits(){
+  try{
+    const n=(parseInt(localStorage.getItem(VISITS),10)||0)+1;
+    localStorage.setItem(VISITS,String(n));
+    return n;
+  }catch(e){ return 1; }
+}
+
+function testerMailto(addr){
+  const to=(typeof REPORT==="object" && REPORT.TO) || "support@everydaykoine.app";
+  const body =
+    "I would like to join the closed test of Everyday Koine on Android.\n\n" +
+    "Address for the test group: " + addr + "\n\n" +
+    "app        " + ((typeof REPORT==="object" && REPORT.version) || "unknown") + "\n" +
+    "device     " + (navigator.userAgent || "").slice(0,160) + "\n";
+  return "mailto:" + to +
+    "?subject=" + encodeURIComponent("Everyday Koine — closed test signup") +
+    "&body=" + encodeURIComponent(body);
+}
+
+const testScrim=document.getElementById("testScrim");
+
+function testerShow(){
+  if(!testScrim) return;
+  testScrim.hidden=false;
+  const f=document.getElementById("testMail");
+  if(f) setTimeout(()=>{ try{ f.focus(); }catch(e){} },60);
+}
+function testerClose(){
+  if(!testScrim) return;
+  testScrim.hidden=true;
+  const never=document.getElementById("testNever");
+  if(never && never.checked) testerSeal();
+}
+
+if(testScrim){
+  /* Counted on every load, not only when the prompt might show, so the
+     number means "visits" and still means it if the rule above changes. */
+  const visits=bumpVisits();
+  document.getElementById("btnTestNo").onclick=testerClose;
+  document.getElementById("btnTestX").onclick=testerClose;
+  /* Tapping the dark area is how a sheet closes on a phone. Dismissing this
+     way honours the tick box too. */
+  testScrim.onclick=e=>{ if(e.target===testScrim) testerClose(); };
+
+  document.getElementById("btnTestGo").onclick=()=>{
+    const f=document.getElementById("testMail");
+    const a=((f && f.value) || "").trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(a)){
+      toast(a ? "That does not look like an email address"
+              : "An address is needed to add you to the test group");
+      if(f) try{ f.focus(); }catch(e){}
+      return;
+    }
+    /* Sealed before the handover: they have signed up, so the prompt has
+       done its job whether or not the mail app opens. */
+    testerSeal();
+    testScrim.hidden=true;
+    if(f) f.value="";
+    try{
+      location.href=testerMailto(a);
+      toast("Opening mail — send it and you are on the list");
+    }catch(e){
+      toast("No mail app — write to " +
+            ((typeof REPORT==="object" && REPORT.TO) || "support@everydaykoine.app"));
+    }
+  };
+
+  if(androidWeb() && !testerAsked() && visits>=2){
+    /* After the first paint, so it does not land on a blank screen. */
+    addEventListener("load",()=>setTimeout(testerShow,1400));
+  }
+}
+
+/* Reachable from Progress afterwards, the way the install row is — dismissing
+   a prompt should not be the same as refusing for ever. */
+function testerRowHtml(){
+  if(!androidWeb()) return "";
+  return `<div class="setrow"><span>Test the Android app<br>
+    <small class="muted">Join the Play Store test and get the real app</small></span>
+    <button class="btn ghost small" onclick="testerShow()">Sign up</button></div>`;
+}
+
+
 /* ---------- offline state ---------- */
 const netPill=document.getElementById("netPill");
 function netState(){

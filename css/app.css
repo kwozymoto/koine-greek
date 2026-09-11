@@ -301,6 +301,30 @@ button.vid{width:100%;text-align:left;font:inherit}
    the full stop. Put it back on the line. */
 .install .t span b.ios-lit{display:inline;color:var(--text);font-weight:600}
 
+/* The closed-testing sheet. Above the update bar (61) and the offline pill
+   (70) because it takes focus and nothing should sit over it; below nothing.
+   A scrim rather than a fourth .install bar because it asks for something
+   typed, and a banner is the wrong shape for a field. */
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);
+  display:flex;align-items:center;justify-content:center;padding:20px}
+.scrim[hidden]{display:none}
+.sheet{position:relative;width:100%;max-width:390px;background:var(--surface-2);
+  border:1px solid var(--gold-dim);border-radius:14px;padding:18px 18px 16px}
+.sheet h3{margin:0 0 9px;font-size:1rem}
+.sheet p{font-size:.82rem;color:var(--muted);line-height:1.45;margin:0 0 13px}
+.sheet p.fine{font-size:.72rem;margin:9px 0 13px}
+.sheet .fld{display:block;font-size:.74rem;color:var(--muted);margin-bottom:5px}
+.sheet input[type=email]{width:100%;padding:9px 11px;border-radius:9px;
+  border:1px solid var(--gold-dim);background:var(--surface);color:var(--text);
+  font:inherit;font-size:.9rem}
+.sheet .tick{display:flex;align-items:center;gap:8px;font-size:.78rem;
+  color:var(--muted);margin-bottom:15px;cursor:pointer}
+.sheet .sacts{display:flex;gap:8px;justify-content:flex-end}
+.sheet .x{position:absolute;top:7px;right:7px;width:28px;height:28px;
+  border-radius:50%;border:0;background:transparent;color:var(--muted);
+  font-size:1.15rem;line-height:1;cursor:pointer}
+.sheet .x:active{background:var(--surface)}
+
 .netpill{position:fixed;left:50%;transform:translateX(-50%);top:calc(9px + env(safe-area-inset-top));z-index:70;background:var(--rust-solid);color:#fff;font-size:.72rem;font-weight:650;letter-spacing:.02em;padding:4px 13px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s}
 .netpill.on{opacity:1}
 

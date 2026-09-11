@@ -2994,6 +2994,7 @@ function renderProgress(){
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
         <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
       ${typeof installRowHtml==="function"?installRowHtml():""}
+      ${typeof testerRowHtml==="function"?testerRowHtml():""}
     </div>
     ${(S.suspended||[]).filter(i=>VOCAB[i]).length?`<div class="card">
       <h3 style="margin-top:0">Set aside</h3>

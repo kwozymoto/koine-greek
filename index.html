@@ -154,6 +154,33 @@
 <div class="netpill" id="netPill">Offline</div>
 <div class="update" id="updateBar"><span>New version ready</span><button id="btnReload">Reload</button><button class="x" id="btnUpdateNo" aria-label="Later">&times;</button></div>
 
+<!-- Closed testing. The Play Store's test track is joined by email address
+     and nothing else, so the people passing this app around to friends are
+     exactly the ones there is no way to write to. Shown by js/pwa.js on
+     Android, outside the installed app, from the second visit, once.
+     It asks for something typed, which is why it is a sheet rather than a
+     fourth .install bar. -->
+<div class="scrim" id="testScrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="testHead">
+    <h3 id="testHead">Help test the Android app</h3>
+    <p>Everyday Koine is going on the Play Store, and Google will not release
+      it until a group of people have tested it. Leave an address and you will
+      be added to that group and sent a link to install it.</p>
+    <label class="fld" for="testMail">Your email</label>
+    <input type="email" id="testMail" inputmode="email" autocomplete="email"
+           placeholder="you@example.com" spellcheck="false">
+    <p class="fine">This opens your own mail app with the message written. The
+      app sends nothing by itself and keeps no copy of your address.</p>
+    <label class="tick"><input type="checkbox" id="testNever">
+      Don&rsquo;t show this again</label>
+    <div class="sacts">
+      <button class="btn ghost small" id="btnTestNo">Not now</button>
+      <button class="btn small" id="btnTestGo">Send</button>
+    </div>
+    <button class="x" id="btnTestX" aria-label="Close">&times;</button>
+  </div>
+</div>
+
 <!-- First: installs the error handler before any other script can throw. -->
 <script src="js/report.js"></script>
 <script src="data/vocab.js"></script>
