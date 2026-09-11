@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v138';
+const VERSION = 'v139';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,21 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v139: ἀγνοέω, and it took six rounds because of where I was looking.
+     Its ο is an omicron and every cue spelled it `no` -- an English word
+     with the /ou/ of gold, which is the exact fault check_cues gates. That
+     rule was written and gated an hour before I offered four fresh
+     candidates that all contained the token. Five rounds went on h
+     placement, binding and syllable splits: a vowel fault treated as a
+     structure fault. `agnaw eh hoe` is νομίζω's own `nawmee zoh` shape,
+     the aw bound forward, and the strong h disappears with it.
+     The lesson is the one the batch-4 audit started from -- the cue guide
+     had an answer to all ten of his complaints before those clips were
+     made. A rule nobody applies is prose, whether it sits in a markdown
+     file or in a checker written ninety minutes earlier.
+     STALE also had ἀγνοέω twice, from v137 and v138. Deduplicated here;
+     the list is read on every activate, so a repeat was harmless and
+     untidy. */
   /* v138: σοφία and ἀγνοέω, the two blemishes flagged in passing.
      σοφία `soffee ah` had the vowel and was clunky; `sawfeeah` is σοφός's
      own answer transposed -- one token for the flow, the vowel spelled.
@@ -145,7 +160,6 @@ const STALE = [
   'audio/vocab/291_proskuneo.mp3',                 // προσκυνέω
   'audio/vocab/417_proseuche.mp3',                 // προσευχή
   'audio/vocab/394_probaton.mp3',                   // πρόβατον
-  'audio/vocab/312_chronos.mp3',                    // χρόνος
   'audio/vocab/486_sofos.mp3',                      // σοφός
   'audio/vocab/029_poieo.mp3',                     // ποιέω
   'audio/vocab/035_ei.mp3',                        // εἰ
@@ -156,8 +170,6 @@ const STALE = [
   'audio/vocab/427_metanoeo.mp3',                  // μετανοέω
   'audio/vocab/617_agnoeo.mp3',                    // ἀγνοέω
   'audio/vocab/790_nomizo.mp3',                    // νομίζω
-  'audio/vocab/206_sophia.mp3',                     // σοφία
-  'audio/vocab/617_agnoeo.mp3',                     // ἀγνοέω
 ];
 
 const SHELL = [
