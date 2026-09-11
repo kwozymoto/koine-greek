@@ -200,13 +200,15 @@ function bumpVisits(){
   }catch(e){ return 1; }
 }
 
+/* No version and no device string, deliberately. js/report.js carries both
+   because a bug is unreproducible without them; a signup is answered by
+   pasting one address into the Play Console, and neither line changes what
+   is done with it. They also made a person's note read like a form. */
 function testerMailto(addr){
   const to=(typeof REPORT==="object" && REPORT.TO) || "support@everydaykoine.app";
   const body =
     "I would like to join the closed test of Everyday Koine on Android.\n\n" +
-    "Address for the test group: " + addr + "\n\n" +
-    "app        " + ((typeof REPORT==="object" && REPORT.version) || "unknown") + "\n" +
-    "device     " + (navigator.userAgent || "").slice(0,160) + "\n";
+    "Address for the test group: " + addr + "\n";
   return "mailto:" + to +
     "?subject=" + encodeURIComponent("Everyday Koine — closed test signup") +
     "&body=" + encodeURIComponent(body);
