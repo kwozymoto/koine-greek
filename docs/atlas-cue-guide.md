@@ -53,6 +53,21 @@ and ω are different sounds, and in this one environment the audio does not
 carry the difference.** That is a known gap, not an oversight, and the next
 person to notice it should read this rather than re-run the experiment.
 
+**Closing the syllable is a remedy, not a rule, and the difference matters.**
+When an ear says a stressed omicron has drifted long, putting a consonant in
+front of the next vowel forces it short — English spells a short vowel before
+a doubled consonant, *hopping* against *hoping*. It has now worked three
+times: πρός `pross`, the four προσ- compounds, and πρόβατον, which went from
+`pro bah ton` to **`probbah ton`** on 2026-09-11.
+
+**What there is no predictor for is which words need it.** The obvious guess —
+that a cue drifts long when it spells an English word carrying the /oʊ/ of
+*gold* — is false, and the pack itself says so. Three heard clips do exactly
+that and were kept: χρόνος `crow noss`, σοφός `so foss`, and πρό `pro`. So do
+not go looking for words to fix. Apply this when a listener reports the vowel,
+and not before; `check_cues` deliberately holds no rule of this kind, for the
+same reason the `keye` and `pro` entries had to be struck.
+
 **κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
 differently — κτίσις is `kitsis`, where the s of the cluster doubles as the
 sigma, and κτίζω is `kitzo`, where it does not. Any rule gets one of them

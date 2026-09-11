@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v134';
+const VERSION = 'v135';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v135: πρόβατον alone. Its stressed omicron was lengthening toward an
+     omega, and closing the syllable with a doubled beta forces it short --
+     `pro bah ton` -> `probbah ton`, the third time that mechanism has
+     worked after πρός and the four προσ- compounds. The guide records it
+     as a remedy and explicitly not as a rule: the obvious predictor, that
+     a cue drifts long when it spells an English gold-vowel word, is false,
+     and χρόνος `crow noss`, σοφός `so foss` and πρό `pro` are the three
+     heard clips that disprove it. */
   /* v134: the four προσ- clips. The rule the guide gave for them was right
      and its reason was wrong -- it said `pro` is "the omega sound, as in
      professional", and professional has a schwa in that syllable. Tested
@@ -97,6 +105,7 @@ const STALE = [
   'audio/vocab/256_prosopon.mp3',                  // πρόσωπον
   'audio/vocab/291_proskuneo.mp3',                 // προσκυνέω
   'audio/vocab/417_proseuche.mp3',                 // προσευχή
+  'audio/vocab/394_probaton.mp3',                   // πρόβατον
 ];
 
 const SHELL = [

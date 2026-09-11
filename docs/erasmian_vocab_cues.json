@@ -5420,9 +5420,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 39,
-  "tts": "pro bah ton",
-  "source": "g2p",
-  "duration_s": 1.489
+  "tts": "probbah ton",
+  "source": "batch4",
+  "duration_s": 1.698,
+  "take": "2026-09-11, Atlas",
+  "note": "the stressed omicron was lengthening toward an omega, because `pro` is a word the voice looks up where `to` and `thro` are not. Closing the syllable with a doubled beta forces it short -- the same mechanism as `pross`, hopping against hoping. Fraser: \"the pro sound is correct. The double bb is quite strong, but still works.\""
  },
  {
   "index": 395,
