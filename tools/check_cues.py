@@ -101,6 +101,39 @@ PROS_PREFIX = "προσ"
 # about: check that the parser is not the thing at fault.
 VOWEL_END = re.compile(r"([aeiou]h|[aeiouy])$", re.I)
 
+# A THIRD POSITIONAL RULE, and the one that took longest to earn. A cue whose
+# FIRST token is an English word carrying the /oʊ/ of *gold* makes the voice
+# read a short omicron long, because it looks the word up. Five for five, all
+# judged against τόπος and φωνή as the omicron and omega references:
+#
+#   χρόνος `crow noss` -> `chronoss`      σοφός  `so foss`    -> `sawfoss`
+#   νόμος  `no moss`   -> `nommoss`       σοφία  `so fee ah`  -> `soffee ah`
+#   νομίζω `no mee zoh`-> `nawmee zoh`
+#
+# Three of those five had been PASSED in an earlier batch -- they were judged
+# on whether the clip was good, before anyone was asking whether that o was
+# the one in Black's *omelet*. So a rule can hide behind an approval.
+#
+# The remedy is to stop the token being a word the voice can look up: close
+# the syllable with a doubled consonant (English shortens a vowel before one,
+# hopping against hoping) or spell the vowel outright as `aw`.
+#
+# AND IT ONLY APPLIES WHERE THE GREEK IS SHORT. The first version of this test
+# did not consult the IPA and flagged two words whose vowel is an OMEGA --
+# σωτηρία `so tey reea` and ὦ `hoe` -- where the gold vowel is exactly right.
+# That is the third checker in one day whose first version was wrong rather
+# than the data it was reading.
+GOLD = {"pro", "crow", "so", "go", "no", "low", "row", "show", "flow", "grow",
+        "know", "toe", "doe", "foe", "dough", "blow", "slow", "snow", "throw",
+        "mow", "sow", "bow", "hoe", "woe", "tow", "owe"}
+IPA_PATH = "docs/erasmian_ipa.json"
+SHORT_O = re.compile(r"o(?!ː)")          # an o with no length mark
+
+
+def short_o_first(ipa):
+    """Is the opening syllable of this word a SHORT o?"""
+    return bool(ipa) and bool(SHORT_O.search(ipa.split(".")[0]))
+
 
 # NOT IN THE LIST, AND THE REASON IS THE POINT. `pro` was in it for one run.
 # The guide's header says προ-/προσ- takes `pross` because `pro` is the omega
@@ -113,7 +146,16 @@ VOWEL_END = re.compile(r"([aeiou]h|[aeiouy])$", re.I)
 # the entry comes back with their names on it.
 
 # (index, the offending token) -> why that one occurrence is right anyway.
-ALLOWED = {}
+ALLOWED = {
+    (336, "pro"):
+        "πρό is the one word the gold-vowel rule cannot fix: an open syllable "
+        "ending in a short o, with no consonant to close on, and English has "
+        "almost no such word. It was heard side by side against τόπος and "
+        "φωνή on 2026-09-11 and kept, and πρῶτος -- an omega spelled the same "
+        "way -- was kept in the same sitting. So ο and ω are not separable in "
+        "`pro`, which the guide records as a known gap in what lesson 1 "
+        "teaches rather than as an oversight.",
+}
 
 
 def flat(w):
@@ -164,6 +206,26 @@ if __name__ == "__main__":
                              "letter; bind it, or carry the consonant into it "
                              "as τόπος does with `to poss`" % t[j],
                              "ἥλιος batch 4, then χρόνος and σοφός 2026-09-11"))
+
+    ipa = json.load(io.open(IPA_PATH, encoding="utf-8"))
+    IP = (ipa if isinstance(ipa, dict)
+          else {x["greek"]: x["ipa"] for x in ipa if "greek" in x})
+    for r in rows:
+        t = (r.get("tts") or "").split()
+        if not t or t[0].lower() not in GOLD:
+            continue
+        if not short_o_first(IP.get(r.get("greek"), "")):
+            continue                      # an omega: the gold vowel is right
+        if (r["index"], t[0].lower()) in ALLOWED:
+            excused += 1
+            continue
+        hits.append((r["index"], r.get("greek", ""), r["tts"], t[0],
+                     "an English word carrying the /oʊ/ of *gold*, so the "
+                     "voice looks it up and reads a short omicron long. Close "
+                     "the syllable with a doubled consonant, or spell the "
+                     "vowel `aw`",
+                     "χρόνος, σοφός, νόμος, σοφία, νομίζω — five of five, "
+                     "2026-09-11"))
 
     print("cues held:                        %d" % len(rows))
     print("spellings an ear has rejected:    %d" % len(REJECTED))

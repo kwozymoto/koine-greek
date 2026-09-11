@@ -406,9 +406,11 @@
   "pos": "verb",
   "tier": 1,
   "freq": 568,
-  "tts": "poy eh oh",
-  "source": "freq",
-  "duration_s": 1.019
+  "tts": "poy eh hoe",
+  "source": "batch5",
+  "duration_s": 1.463,
+  "take": "2026-09-11, Atlas",
+  "note": "-εω is 'eh hoe', which γαμέω and τελέω locked by ear and προσκυνέω confirmed. This cue had 'eh oh'."
  },
  {
   "index": 30,
@@ -488,8 +490,10 @@
   "tier": 1,
   "freq": 502,
   "tts": "ay",
-  "source": "freq",
-  "duration_s": 0.627
+  "source": "batch5",
+  "duration_s": 0.496,
+  "take": "2026-09-11, Atlas",
+  "note": "cue unchanged. It was on the sheet because rule 3 predicted a cue that is nothing but a letter name would be read as the letter -- 'ay' is A. It is not: the prediction was wrong and the cue stands. This is the take he actually heard."
  },
  {
   "index": 36,
@@ -675,8 +679,10 @@
   "tier": 1,
   "freq": 343,
   "tts": "ay",
-  "source": "freq",
-  "duration_s": 0.836
+  "source": "batch5",
+  "duration_s": 0.601,
+  "take": "2026-09-11, Atlas",
+  "note": "same as εἰ -- the letter-name prediction was wrong and the cue stands. This is the take he heard."
  },
  {
   "index": 50,
@@ -1084,11 +1090,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 194,
-  "tts": "no moss",
-  "source": "recued",
-  "duration_s": 1.019,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "nommoss",
+  "source": "batch5",
+  "duration_s": 0.993,
+  "take": "2026-09-11, Atlas",
+  "note": "'no' is an English word with the /ou/ of gold, so the stressed omicron read long. Doubling the mu closes the syllable. Passed in batch 1, before that question was being asked."
  },
  {
   "index": 80,
@@ -2830,9 +2836,11 @@
   "pos": "noun",
   "tier": 3,
   "freq": 51,
-  "tts": "so fee ah",
-  "source": "g2p",
-  "duration_s": 1.306
+  "tts": "soffee ah",
+  "source": "batch5",
+  "duration_s": 1.384,
+  "take": "2026-09-11, Atlas",
+  "note": "same fault as σοφός: 'so' is the gold vowel. Doubled phi closes it. Fraser: \"B is best, but it's clunky. A flows much better, but has the wrong o sound.\""
  },
  {
   "index": 207,
@@ -3214,9 +3222,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 29,
-  "tts": "eh leh eh oh",
-  "source": "g2p",
-  "duration_s": 1.829
+  "tts": "eh leh eh hoe",
+  "source": "batch5",
+  "duration_s": 1.619,
+  "take": "2026-09-11, Atlas",
+  "note": "-εω is 'eh hoe'."
  },
  {
   "index": 234,
@@ -5875,9 +5885,11 @@
   "pos": "verb",
   "tier": 4,
   "freq": 34,
-  "tts": "meh tah no eh oh",
-  "source": "g2p",
-  "duration_s": 2.482
+  "tts": "meh tah no eh hoe",
+  "source": "batch5",
+  "duration_s": 2.586,
+  "take": "2026-09-11, Atlas",
+  "note": "-εω is 'eh hoe'."
  },
  {
   "index": 428,

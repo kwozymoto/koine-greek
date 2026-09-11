@@ -74,11 +74,22 @@ because there is no consonant to close its syllable on. It also kills the
 rival account, that stress decides — σοφός is `so.ˈfos`, its first syllable
 is unstressed, and it drifted anyway.
 
-**It is still not in `check_cues`, and two data points is the reason.** What
-it flags is a work list and not a verdict: νόμος `no moss`, σοφία `so fee ah`
-and νομίζω `no mee zoh`, none of which anyone has heard. Play those three
-before this becomes a rule. Four plausible rules wanted gating in one day and
-three had to be struck; the bar is an ear, every time.
+**Those three were played, all three moved, and it is now gated.** νόμος
+`no moss` → `nommoss`, σοφία `so fee ah` → `soffee ah`, νομίζω `no mee zoh` →
+`nawmee zoh` — which with χρόνος and σοφός makes it **five for five**. The
+remedy is to stop the token being a word the voice can look up: close the
+syllable with a doubled consonant, or spell the vowel `aw`. `check_cues`
+holds it, with πρό excused by name.
+
+**Three of those five had already been passed in an earlier batch.** They were
+judged on whether the clip was good, at a time when nobody was asking whether
+that o was the one in *omelet*. So an approval is not proof against a rule
+nobody had thought of yet — which is the argument for re-hearing a word
+against a reference when a new rule lands, and not only for hearing it once.
+
+**And it only applies where the Greek is short.** The gate's first version did
+not consult the IPA and flagged σωτηρία `so tey reea` and ὦ `hoe`, both of
+which are omegas, where the gold vowel is exactly right.
 
 **A bare `oss` after a consonant is a rule, and is gated.** It picks up an
 extra letter: ἥλιος "spells o s s at the end" in batch 4, then χρόνος
@@ -222,6 +233,13 @@ eff gee jay kay ell em en oh pee cue ar ess tee you vee ex why zee`.
 One letter-name token among others is *usually* fine — `pee stew oh` works,
 and eleven heard clips carry a bare `tee`, `dee`, `oh`, `kay`, `ess`, `bee`
 or `see` and passed.
+
+**A cue that is nothing but a letter name can still be fine.** This rule used
+to be read as forbidding it outright, and on 2026-09-11 that reading predicted
+that εἰ and ἤ — both cued `ay`, the letter A's name and the whole cue, and
+neither ever heard — would come back as the letter. **Both were played and
+both were kept.** They are #37 and #51 in the deck, so it was worth asking;
+the answer is that a one-token cue is not by itself the fault.
 
 **`gee` is the exception, and the only one an ear has failed.** ἀναγινώσκω
 `ah nah gee noh skoh` came back as "ah nah **G** noh skoh" — four real

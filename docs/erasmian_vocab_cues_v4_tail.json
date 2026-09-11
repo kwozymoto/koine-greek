@@ -1432,9 +1432,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "ahg no eh oh",
-  "source": "worklist-candidate",
-  "duration_s": 2.226
+  "tts": "ahg no eh hoe",
+  "source": "batch5",
+  "duration_s": 1.776,
+  "take": "2026-09-11, Atlas",
+  "note": "-εω is 'eh hoe'. Fraser: \"the h in ahg is a bit strong. Otherwise it's good.\""
  },
  {
   "index": 618,
@@ -3753,9 +3755,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "no mee zoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.573
+  "tts": "nawmee zoh",
+  "source": "batch5",
+  "duration_s": 1.463,
+  "take": "2026-09-11, Atlas",
+  "note": "the gold-vowel fault again; the vowel spelled outright, as σοφός took."
  },
  {
   "index": 791,

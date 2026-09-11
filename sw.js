@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v136';
+const VERSION = 'v137';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,18 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v137: nine clips, and the end of a rule's argument. Every rule an ear
+     had settled was applied to all 593 clips nobody has heard; it changed
+     FOUR of them, so regenerating the rest was not done -- it would have
+     re-rolled a non-deterministic voice over clips of unknown quality
+     rather than fixing anything. The sweep was still worth it: it found
+     εἰ and ἤ, #37 and #51 in the deck, both cued `ay` and never heard.
+     The prediction that a bare letter name would be read as the letter was
+     WRONG -- both were played and kept -- and the guide now says so.
+     The gold-vowel rule went the other way and is now gated: νόμος, σοφία
+     and νομίζω all moved, making it five for five with χρόνος and σοφός.
+     Three of those five had been PASSED in an earlier batch, before anyone
+     was asking whether that o was the one in omelet. */
   /* v136: χρόνος and σοφός, and the rule that came out of them. Fraser
      re-heard two clips he had passed and found both wrong -- they had been
      judged before the omicron/omega question existed, so `crow noss` and
@@ -122,6 +134,15 @@ const STALE = [
   'audio/vocab/394_probaton.mp3',                   // πρόβατον
   'audio/vocab/312_chronos.mp3',                    // χρόνος
   'audio/vocab/486_sofos.mp3',                      // σοφός
+  'audio/vocab/029_poieo.mp3',                     // ποιέω
+  'audio/vocab/035_ei.mp3',                        // εἰ
+  'audio/vocab/049_e.mp3',                         // ἤ
+  'audio/vocab/079_nomos.mp3',                     // νόμος
+  'audio/vocab/206_sophia.mp3',                    // σοφία
+  'audio/vocab/233_eleeo.mp3',                     // ἐλεέω
+  'audio/vocab/427_metanoeo.mp3',                  // μετανοέω
+  'audio/vocab/617_agnoeo.mp3',                    // ἀγνοέω
+  'audio/vocab/790_nomizo.mp3',                    // νομίζω
 ];
 
 const SHELL = [
