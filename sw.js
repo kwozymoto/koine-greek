@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v137';
+const VERSION = 'v138';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,19 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v138: σοφία and ἀγνοέω, the two blemishes flagged in passing.
+     σοφία `soffee ah` had the vowel and was clunky; `sawfeeah` is σοφός's
+     own answer transposed -- one token for the flow, the vowel spelled.
+     ἀγνοέω is the first cue accepted WITH A KNOWN FAULT. Its ο is an
+     omicron and `no` gives it the gold vowel, but every remedy tried came
+     back at 0.63-0.91s a syllable and spelled: "None win. All the others
+     here spell words/letters." It is a 22-occurrence word and the blemish
+     is recorded in its cue row rather than chased.
+     It also found the gate's limit: the gold-vowel rule reads only a cue's
+     FIRST token, and ἀγνοέω has its `no` second. Widening it is blocked --
+     of the 24 cues a wider test flags, most are false (every `hoe` is the
+     -ω ending, an omega) and two of the genuine ones are already approved,
+     γίνομαι and ἀποκρίνομαι. Work list, not a gate. */
   /* v137: nine clips, and the end of a rule's argument. Every rule an ear
      had settled was applied to all 593 clips nobody has heard; it changed
      FOUR of them, so regenerating the rest was not done -- it would have
@@ -143,6 +156,8 @@ const STALE = [
   'audio/vocab/427_metanoeo.mp3',                  // μετανοέω
   'audio/vocab/617_agnoeo.mp3',                    // ἀγνοέω
   'audio/vocab/790_nomizo.mp3',                    // νομίζω
+  'audio/vocab/206_sophia.mp3',                     // σοφία
+  'audio/vocab/617_agnoeo.mp3',                     // ἀγνοέω
 ];
 
 const SHELL = [

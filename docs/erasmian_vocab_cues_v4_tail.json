@@ -1432,11 +1432,11 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "ahg no eh hoe",
+  "tts": "ahgno eh hoe",
   "source": "batch5",
-  "duration_s": 1.776,
+  "duration_s": 2.038,
   "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe'. Fraser: \"the h in ahg is a bit strong. Otherwise it's good.\""
+  "note": "-εω is 'eh hoe'. The h in 'ahg' read too strong as a free token, so it is bound into the next syllable and there is no seam for it to sound in. KNOWN BLEMISH, accepted rather than fixed: the ο is an omicron and 'no' gives it the gold vowel, but every remedy tried -- 'ahg naw', 'ahgnaw', 'ahgnno' -- came back at 0.63 to 0.91s a syllable against a 0.5 target and spelled. Fraser: \"None win. All the others here spell words/letters.\" 22 occurrences, so it is not worth a fifth roll."
  },
  {
   "index": 618,
