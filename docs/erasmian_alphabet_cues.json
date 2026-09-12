@@ -261,15 +261,15 @@
   {
    "id": "20_upsilon",
    "file_mp3": "20_upsilon.mp3",
-   "file_wav": "20_upsilon.wav",
    "greek": "Υ υ",
    "name": "Upsilon",
-   "sound": "ew / ü",
+   "sound": "oo",
    "kind": "letter",
-   "duration_sec": 1.817,
-   "master_start_sec": 61.72,
-   "master_end_sec": 63.537,
-   "sha1": "5e3dc96707ee"
+   "duration_sec": 1.94,
+   "sha1": "8cba5e0488ff",
+   "source": "composite",
+   "take": "2026-09-12, Atlas part",
+   "note": "Two faults in one clip, and the second was only found by looking. Fraser heard the NAME as \"up silon\" and asked for \"oop silon\": every other letter here opens on its own sound -- EP-silon, OM-icron, AY-ta -- and lesson 1 teaches upsilon as \"u as in lute / put\", cued oo. Standard English really does say UP-silon, so this is a teaching choice and not a correction. And the SOUND half was recorded as \"ew / ue\", a value the cue guide overruled long ago -- the pack is consistent that upsilon is oo -- so the sheet had been describing a sound the course does not teach. His verdict was the name from the shipped clip and the sound from a take of 'Oop silon.  Ooh.' -- Ooh and not oo, because bare oo was read out as letters when d08_ou was fixed. So this is a splice, the method eta, ei and xi were all repaired by: cut in the silence either side with 10-30ms fades, re-spaced to lead 0.19 / gap 0.39 / tail 0.29 against pi's 0.16 / 0.35 / 0.26. One thing improved by accident: the old clip peaked at -9.7 dB, louder than every other letter, and this one is -13.6 where pi and epsilon sit. Judged by ear, Fraser."
   },
   {
    "id": "21_phi",
