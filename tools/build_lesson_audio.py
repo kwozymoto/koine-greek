@@ -174,7 +174,59 @@ BARE_GK = re.compile(r"[Ͱ-Ͽἀ-῿]"
 PAIR = re.compile(r'(<span class="gk">.*?</span>)', re.S)
 
 
-def align(html, cues, missing):
+# A sentence that shows a Greek word AND its transliteration cannot be read
+# aloud as it stands, because the two are the same sounds. "So ἄγγελος is
+# angelos" spoken is one pronunciation twice -- and Fraser heard it come out
+# as two DIFFERENT pronunciations, the cue ending in `loss` and Atlas reading
+# `angelos` as an English word with a long o. Either way the sentence stops
+# teaching: identical, it is empty; different, it contradicts itself.
+#
+# The six transliterations in the course are all in this one block, so this
+# is a table of three sentences rather than a treatment. Each says the point
+# ONCE, in the cue an ear has passed.
+#
+# Keyed on the raw HTML, lifted from data/lessons.js rather than retyped, and
+# each key must occur exactly once in its chapter or the build stops -- so
+# editing the lesson cannot leave a stale rewrite behind saying something the
+# page no longer says.
+SAY = {
+    (1, 'So <span class="gk">ἅγιος</span> is <i>hagios</i>, '
+        'but <span class="gk">ἀγάπη</span> is <i>agapē</i>.'):
+        "So hag e oss begins with an h, and ah gah pay does not.",
+    (1, '<span class="gk">ῥῆμα</span> is <i>rhēma</i>, near enough <i>rēma</i>.'):
+        "rhay mah is near enough ray mah.",
+    # `ahg geh loss` is the wrong pronunciation the sentence exists to rule
+    # out, and it is assembled from spellings already heard: `ah` from ἀγάπη,
+    # a closing hard g from καταγγέλλω's `tahg`, `geh` and `loss` from ἄγγελος
+    # itself. The pair then differs by the one thing being taught, the n.
+    (1, 'So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not '
+        '<i>aggelos</i> — which is where our word angel comes from.'):
+        "So the word behind our angel is ahng geh loss, not ahg geh loss.",
+}
+
+
+def say_split(html, ch):
+    """The chapter's SAY sentences pulled out whole, the rest left alone."""
+    keys = [k for (c, k) in SAY if c == ch]
+    if not keys:
+        return [html]
+    pat = "(" + "|".join(re.escape(k) for k in sorted(keys, key=len,
+                                                      reverse=True)) + ")"
+    return re.split(pat, html)
+
+
+def check_say(lessons):
+    """Every rewrite must still match the page it rewrites."""
+    bodies = {les["id"]: les["body"] for les in lessons}
+    for (ch, key) in SAY:
+        n = bodies.get(ch, "").count(key)
+        if n != 1:
+            sys.exit("SAY: chapter %d holds this sentence %d times, not once "
+                     "-- the lesson has been edited and the rewrite is stale:"
+                     "\n  %s" % (ch, n, key))
+
+
+def align(html, ch, cues, missing):
     """The block, twice over: what the voice says, and which word of it each
        word ON THE PAGE became.
 
@@ -202,23 +254,29 @@ def align(html, cues, missing):
             # every page word at the start of its replacement.
             pairs.append(at + j if len(pw) == len(sw) else at)
 
-    for part in PAIR.split(html):
-        if not part:
+    for chunk in say_split(html, ch):
+        if not chunk:
             continue
-        m = GK.fullmatch(part)
-        if m:
-            raw = TAG.sub("", m.group(1)).strip()
-            add(raw, sub_text(raw, cues, missing))
+        if (ch, chunk) in SAY:
+            add(clean(TAG.sub(" ", chunk)), SAY[(ch, chunk)])
             continue
-        plain = clean(TAG.sub(" ", part))
-        # Bare Greek in running prose -- Χριστός sits outside any span.
-        pieces = BARE_GK.split(plain)
-        greeks = BARE_GK.findall(plain)
-        for k, piece in enumerate(pieces):
-            if piece.strip():
-                add(piece, piece)
-            if k < len(greeks):
-                add(greeks[k], sub_text(greeks[k], cues, missing))
+        for part in PAIR.split(chunk):
+            if not part:
+                continue
+            m = GK.fullmatch(part)
+            if m:
+                raw = TAG.sub("", m.group(1)).strip()
+                add(raw, sub_text(raw, cues, missing))
+                continue
+            plain = clean(TAG.sub(" ", part))
+            # Bare Greek in running prose -- Χριστός sits outside any span.
+            pieces = BARE_GK.split(plain)
+            greeks = BARE_GK.findall(plain)
+            for k, piece in enumerate(pieces):
+                if piece.strip():
+                    add(piece, piece)
+                if k < len(greeks):
+                    add(greeks[k], sub_text(greeks[k], cues, missing))
     return weld(spoken, page_words, pairs)
 
 
@@ -338,7 +396,7 @@ def blocks_for(les, cues, missing):
             # so the whole paragraph seeks to its own beginning.
             out.append(("look", look, page, [0] * len(page)))
             continue
-        t, page_words, pairs = align(inner, cues, missing)
+        t, page_words, pairs = align(inner, les["id"], cues, missing)
         if t:
             out.append(("heading" if kind in ("h2", "h3") else "prose",
                         t, page_words, pairs))
@@ -403,7 +461,9 @@ if __name__ == "__main__":
     want = [int(x) for x in args.chapters.split(",")]
 
     cues, missing, rows, mapping = cue_table(), [], [], []
-    for les in load():
+    lessons = load()
+    check_say(lessons)
+    for les in lessons:
         if les["id"] not in want:
             continue
         bs = blocks_for(les, cues, missing)
