@@ -31,7 +31,12 @@ button{font-family:inherit;font-size:inherit;color:inherit;background:none;borde
 .gk{font-family:var(--gk)}
 
 /* ---------- layout ---------- */
-#app{max-width:640px;margin:0 auto;padding:0 18px}
+/* max(), not calc(): the gutter is 18px unless the device wants more,
+   which is what a notch or a curved edge asks for in landscape. In
+   portrait every side inset is 0 and this is the old rule exactly. */
+#app{max-width:640px;margin:0 auto;
+  padding-left:max(18px, env(safe-area-inset-left));
+  padding-right:max(18px, env(safe-area-inset-right))}
 .screen{display:none;padding-top:calc(14px + env(safe-area-inset-top))}
 .screen.on{display:block;animation:in .18s ease-out}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -83,6 +88,8 @@ nav{
   position:fixed;left:0;right:0;bottom:0;z-index:40;
   height:calc(var(--nav-h) + env(safe-area-inset-bottom));
   padding-bottom:env(safe-area-inset-bottom);
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
   background:rgba(20,27,43,.94);backdrop-filter:blur(12px);
   border-top:1px solid var(--line);display:flex;
 }
@@ -301,6 +308,36 @@ button.vid{width:100%;text-align:left;font:inherit}
    the full stop. Put it back on the line. */
 .install .t span b.ios-lit{display:inline;color:var(--text);font-weight:600}
 
+/* ---------- a short window ----------
+   Orientation is no longer ours to lock: from Android 16 the restriction is
+   ignored on large screens, and the manifest asks for none. So landscape has
+   to work rather than merely render.
+
+   The flashcard reserves 290px so that a two-letter word does not produce a
+   tiny card. In a 375px-tall window that is the whole screen, and the answer
+   buttons sit below the fold — you can reach them, but only by scrolling a
+   card you are meant to be answering. Below 520px the reservation is dropped
+   and the card takes the height its content needs. Everything else on the
+   screen already scrolls honestly. */
+@media (max-height:520px){
+  .fc{min-height:0;padding:18px 20px;margin-bottom:10px}
+  .hero{padding:10px 0 4px}
+  /* Measured at 812x375: the card is 341px of real content, and the control
+     you press on EVERY card — Show meaning, then the four grades — landed
+     174px below the fold. Reachable, but only by scrolling a card you have
+     already read, once per card, for the whole review.
+
+     So the trailing control sticks above the nav and the card scrolls behind
+     it. Same idea as .gloss in the reader, and the same offset, because it is
+     the same problem: the thing you act on must not be the thing you have to
+     go looking for. */
+  #sessBody > .btn, #sessBody > .grades{
+    position:sticky;z-index:5;
+    bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 10px)}
+  #sessBody > .grades{background:var(--bg);padding-top:6px;
+    box-shadow:0 -12px 16px -8px var(--bg)}
+}
+
 /* Look up's scope control, and the plainer rows it admits. A lexicon row is
    not a button: there is no audio to play and no card behind it, and a
    control that looks tappable and does nothing is worse than a line of text. */
@@ -321,7 +358,9 @@ button.vid{width:100%;text-align:left;font:inherit}
    A scrim rather than a fourth .install bar because it asks for something
    typed, and a banner is the wrong shape for a field. */
 .scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);
-  display:flex;align-items:center;justify-content:center;padding:20px}
+  display:flex;align-items:center;justify-content:center;
+  padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
+          max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left))}
 .scrim[hidden]{display:none}
 .sheet{position:relative;width:100%;max-width:390px;background:var(--surface-2);
   border:1px solid var(--gold-dim);border-radius:14px;padding:18px 18px 16px}
