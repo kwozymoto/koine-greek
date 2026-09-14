@@ -100,25 +100,25 @@ Watch the vowel-spelling h when you reason about this: `lah`, `nah`, `neh`
 and `theh` all end in a *vowel*, and λαός, ναός and νέος are approved with a
 free `oss` after them.
 
-**A cue heard alone is not evidence of how it reads in a sentence.** This is
-the newest rule here and the one that reaches furthest, because it undermines
-how every other cue in this project was judged.
+**~~A cue heard alone is not evidence of how it reads in a sentence.~~**
+**Struck 2026-09-15, the day after it was written, and it is worth keeping the
+wreckage.** The claim was that Atlas reads a word differently according to
+what surrounds it: the plain spelling *upsilon* alone came back UP-silon,
+while the same plain spelling inside a lesson paragraph came back OOP-silon.
+That would have qualified how every cue in this project was judged, since all
+818 were auditioned as standalone clips.
 
-Fraser heard the lesson narration say *upsilon* — written plainly, no cue —
-and heard OOP-silon, which is the reading this course wants. So the obvious
-conclusion was that Atlas says the plain word correctly and the contrived
-`Oopsilon` was doing no work. Tested directly: **the plain spelling alone came
-back UP-silon**, while the same plain spelling inside a sentence came back
-OOP-silon. Same word, same voice, same day, two readings.
+**Only one half of it was ever measured.** The standalone was rolled and heard
+here. The in-sentence half was a report — Fraser said the narration sounded
+like OOP-silon, I did not listen to the paragraph myself, and I wrote a
+sweeping rule on a comparison with one measured side. He relistened: the
+paragraph says UP-silon, the same as the standalone and the same as the whole
+vocabulary pack. There is no context effect here and no evidence of one.
 
-So Atlas reads a word according to what surrounds it, and the whole vocabulary
-pack was auditioned as standalone clips. That is fine for the deck, where a
-word IS heard alone. It is not fine for lesson narration, where the same cue
-sits inside prose — a cue that passed as a clip can still be wrong in a
-paragraph, and only listening to the paragraph will show it.
-
-It also kills a rule that was about to be written down here: *try the plain
-spelling first*. The plain spelling is not a stable thing to try.
+The lesson that survives is not about Atlas. **A rule needs both sides of its
+comparison measured**, and the wider a rule reaches the more that matters —
+this one was written as the rule that reached furthest, on half the evidence
+its narrowest neighbour had. It took one relisten to fall.
 
 **κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
 differently — κτίσις is `kitsis`, where the s of the cluster doubles as the

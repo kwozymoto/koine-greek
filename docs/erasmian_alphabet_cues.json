@@ -265,11 +265,11 @@
    "name": "Upsilon",
    "sound": "oo",
    "kind": "letter",
-   "duration_sec": 2.06,
-   "sha1": "6290b526686b",
+   "duration_sec": 1.94,
+   "sha1": "8cba5e0488ff",
    "source": "composite",
-   "take": "2026-09-15, Atlas part",
-   "note": "Two faults were fixed on 2026-09-12 and the NAME was reopened three days later by the lesson narration. Hearing Atlas read the word 'upsilon' inside a sentence, Fraser said that reading -- OOP-silon -- was the right one, and that no contrived spelling was needed because Atlas says the plain word correctly. Tested: it does not, reliably. The plain spelling ALONE came back UP-silon while the same plain spelling INSIDE A SENTENCE came back OOP-silon. So Atlas reads a word differently according to what surrounds it, and a cue auditioned as a standalone clip is not evidence of how it reads in prose -- which matters for every lesson block that carries a cue. 'Oopsilon' is therefore kept, not as a preference but because it is the only spelling that gives the same result in both places. Its NAME half is from a take of 'Oopsilon.  Ooh.'; its SOUND half is the one already approved, unchanged, because only the name was in question. Re-spaced to lead 0.18 / gap 0.42 / tail 0.30 and it peaks at -12.9 dB, where pi sits. Both English names are current, so lesson 1 now says so. Judged by ear, Fraser."
+   "take": "2026-09-12, Atlas part",
+   "note": "Fraser heard the NAME as \"up silon\" and asked for \"oop silon\": every other letter here opens on its own sound -- EP-silon, OM-icron, AY-ta -- and lesson 1 teaches upsilon as \"u as in lute / put\", cued oo. Standard English says UP-silon, so this was a teaching choice and not a correction. He then took the NAME from the shipped clip and only the SOUND from a new take, which is what this is: a splice, the method eta, ei and xi were repaired by. The sound was recorded in the sheet as \"ew / ue\", a value the cue guide had overruled long ago, so the record had been describing a sound the course does not teach. Cut in the silence either side with 10-30ms fades, re-spaced to lead 0.19 / gap 0.39 / tail 0.29 against pi's 0.16 / 0.35 / 0.26. The old clip peaked at -9.7 dB, louder than every other letter; this one is -13.6, where pi and epsilon sit. REOPENED AND RESTORED 2026-09-15. The lesson narration seemed to say OOP-silon, so the name was changed to match and this row said so for one commit. Fraser relistened to that narration block and it says UP-silon, as this clip and the whole vocabulary pack already did. Nothing needed changing. Judged by ear, Fraser."
   },
   {
    "id": "21_phi",
