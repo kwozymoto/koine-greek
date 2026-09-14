@@ -2754,6 +2754,62 @@ function lookupHits(raw){
              ||(latin && LK_LATIN[x.i].includes(ql)))   // typed in Latin letters
     .sort((a,b)=>b.v[2]-a.v[2]).slice(0,40);
 }
+/* ---------- the rest of the New Testament ----------
+
+   VOCAB is 818 words. data/lexicon.js carries a gloss for the other 4,526
+   lemmas in the corpus, and the reader has always used them: tap any word in
+   Read and glossFor falls through to LEX. Look up never did, so the app knew
+   φιλαδελφία means "brotherly love" and could not find it when you searched
+   for love — four hits where there should have been five.
+
+   What a LEX word cannot have is the rest of a deck entry. No audio, no
+   example verse, no frequency (the counts live in the manifest, which is
+   fetched lazily by the reader and may not be loaded at all), and no card.
+   So these rows are deliberately plainer, under their own heading, and the
+   gloss is credited where it comes from. They are a second answer to the
+   question, not more of the first.
+
+   Built on first use rather than at load: 4,526 Latin keys is five times the
+   deck's work, and nobody who leaves this off should pay for it. */
+let LK_LEX = null;
+function lkLexIndex(){
+  if (LK_LEX) return LK_LEX;
+  LK_LEX = [];
+  if (typeof LEX === "undefined" || !LEX) return LK_LEX;
+  for (const w in LEX) {
+    LK_LEX.push({ w, g: LEX[w] || "", n: lkNorm(w),
+                  l: lkFoldLatin(lkLatin(w)) });
+  }
+  LK_LEX.sort((a, b) => a.n < b.n ? -1 : a.n > b.n ? 1 : 0);
+  return LK_LEX;
+}
+const LOOKALL = "koine.lookupAll";
+/* On unless turned off, and off if storage cannot be read — a search that
+   quietly widens on a device that cannot remember the choice is worse than
+   one that stays where the user last saw it. */
+function lookupAll(){
+  try { return localStorage.getItem(LOOKALL) !== "0"; } catch(e){ return false; }
+}
+function setLookupAll(on){
+  try { localStorage.setItem(LOOKALL, on ? "1" : "0"); } catch(e){}
+  renderTables();
+}
+function lookupLex(raw){
+  const q = lkNorm((raw || "").trim());
+  if (!q) return [];
+  const ql = lkFoldLatin(q);
+  const latin = /^[a-z̄āēō\s-]+$/i.test(q);
+  return lkLexIndex().filter(x => x.n.includes(q)
+                                || lkNorm(x.g).includes(q)
+                                || (latin && x.l.includes(ql))).slice(0, 40);
+}
+function lexRowsHtml(hits){
+  return hits.map(x => `
+    <div class="lk lex">
+      <span class="w"><b>${x.w}</b><span>${x.g || "—"}</span></span>
+    </div>`).join("");
+}
+
 function wordRowsHtml(hits){
   return hits.map(({v,i})=>`
     <button class="lk" onpointerdown="prepWord(${i})"
@@ -2796,16 +2852,41 @@ function renderTables(){
     return;
   }
   const words=lookupHits(raw);
+  /* Never twice: a word promoted into the deck is removed from the lexicon
+     by build_vocab_additions, and check_lexicon fails if the two ever hold
+     the same lemma — but the filter costs nothing and does not depend on
+     that staying true. */
+  const taught=new Set(words.map(({v})=>lkNorm(v[0].split(",")[0].trim())));
+  const extra=lookupAll()?lookupLex(raw).filter(x=>!taught.has(x.n)):[];
   const tables=PARADIGMS.map((t,k)=>({t,k}))
     .filter(({t})=>(t.t+" "+t.tags+" "+t.html).toLowerCase().includes(q));
   body.innerHTML =
     (words.length?`<h2 style="margin:4px 0 10px">${words.length===40?"Words (first 40)":words.length===1?"1 word":words.length+" words"}</h2>`+wordRowsHtml(words):"")
-    + (tables.length?`<h2 style="margin:${words.length?"24px":"4px"} 0 10px">${tables.length===1?"1 table":tables.length+" tables"}</h2>`+tableHtml(tables):"")
-    + (!words.length&&!tables.length
-        ?`<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${raw}".</p></div>`:"");
+    + (extra.length?`<h2 style="margin:${words.length?"24px":"4px"} 0 4px">${
+        extra.length===40?"Also in the New Testament (first 40)"
+        :extra.length===1?"1 more in the New Testament"
+        :extra.length+" more in the New Testament"}</h2>`
+      + `<p class="muted lexnote">Not taught by this course, so there is no
+         audio or example verse. Glosses from Tyndale House and Abbott-Smith.</p>`
+      + lexRowsHtml(extra):"")
+    + (tables.length?`<h2 style="margin:${words.length||extra.length?"24px":"4px"} 0 10px">${tables.length===1?"1 table":tables.length+" tables"}</h2>`+tableHtml(tables):"")
+    + (!words.length&&!extra.length&&!tables.length
+        ?`<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${raw}".</p>${
+            lookupAll()?"":`<p class="muted" style="font-size:.8rem">The search
+              is limited to the ${VOCAB.length-RETIRED.size} words this course
+              teaches. Tick the box above to search the whole New
+              Testament.</p>`}</div>`:"");
   fillSoundTable();
 }
 document.getElementById("tablesSearch").oninput=()=>renderTables();
+/* The box reflects storage rather than the markup's own `checked`, so a
+   device that turned it off does not see it tick itself back on. */
+(function(){
+  const el=document.getElementById("lkAll");
+  if(!el) return;
+  el.checked=lookupAll();
+  el.onchange=()=>setLookupAll(el.checked);
+})();
 
 /* The sounds table is interactive, so it is filled in after the markup lands. */
 function fillSoundTable(){

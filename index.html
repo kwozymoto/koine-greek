@@ -121,6 +121,13 @@
     <h1>Look up</h1>
     <p class="sub">Any word in the course, and every paradigm — the tables of endings. One box: type <i>agape</i> or <i>love</i> for a word, <i>aorist</i> or <i>genitive</i> for a table.</p>
     <input id="tablesSearch" type="search" aria-label="Search for a word, a meaning, or a paradigm" placeholder="A word, a meaning, or a paradigm" autocomplete="off">
+    <!-- The deck is 818 words; the app ships a gloss for every one of the
+         5,461 in the New Testament. Without this, Look up could only find the
+         818 — so searching "love" missed φιλαδελφία, which the Read tab will
+         happily gloss "brotherly love" if you tap it. Per device, never
+         synced, on by default. -->
+    <label class="lkall"><input type="checkbox" id="lkAll">
+      <span>Search the whole New Testament<small>Not just the words this course teaches</small></span></label>
     <div id="tablesBody"></div>
   </section>
 

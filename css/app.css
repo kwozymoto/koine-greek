@@ -301,6 +301,21 @@ button.vid{width:100%;text-align:left;font:inherit}
    the full stop. Put it back on the line. */
 .install .t span b.ios-lit{display:inline;color:var(--text);font-weight:600}
 
+/* Look up's scope control, and the plainer rows it admits. A lexicon row is
+   not a button: there is no audio to play and no card behind it, and a
+   control that looks tappable and does nothing is worse than a line of text. */
+.lkall{display:flex;align-items:center;gap:10px;margin:10px 0 4px;
+  padding:9px 12px;border:1px solid var(--gold-dim);border-radius:10px;
+  background:var(--surface-2);cursor:pointer}
+.lkall input{flex:0 0 auto;width:17px;height:17px;accent-color:var(--gold)}
+.lkall span{font-size:.83rem;line-height:1.3}
+.lkall small{display:block;color:var(--muted);font-size:.74rem;margin-top:1px}
+.lexnote{font-size:.76rem;line-height:1.4;margin:0 0 10px;max-width:52ch}
+.lk.lex{display:block;background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:6px;
+  cursor:default;opacity:.92}
+.lk.lex .w b{font-size:1.05rem}
+.lk.lex .w span{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+
 /* The closed-testing sheet. Above the update bar (61) and the offline pill
    (70) because it takes focus and nothing should sit over it; below nothing.
    A scrim rather than a fourth .install bar because it asks for something
