@@ -2942,6 +2942,13 @@ function renderHelp(){
     CC BY 4.0, carrying G. Abbott-Smith's <i>A Manual Greek Lexicon of the New Testament</i> (1922) —
     and from Jeff Dodson's public-domain lexicon. Changes made to either are listed in
     <span class="gk" style="font-family:var(--ui)">docs/lexicon-changes.md</span>.</p>
+    <p class="muted" style="font-size:.84rem">The chapters follow the order of
+    David Alan Black's <i>Learn to Read New Testament Greek</i>, and the syntax
+    tables use the category names in Douglas S. Huffman's <i>The Handy Guide to
+    New Testament Greek</i> — which is also where the five classes of
+    conditional come from, against the four most first-year books teach. Neither
+    book's wording appears here: every explanation is written for this course,
+    and every Greek phrase is taken from the SBL text.</p>
 
     <h2>If you have studied before</h2>
     <p class="muted" style="font-size:.87rem">Progress → <b>Studied Greek before?</b> marks chapters done and seeds the
