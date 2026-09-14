@@ -10,9 +10,10 @@
   "freq": 19870,
   "tts": "haw",
   "source": "batch2",
-  "duration_s": 0.627,
+  "duration_s": 0.693,
   "take": "2026-09-10, Atlas",
-  "note": "'ho' is the English word ho, whose o is long; Black gives omicron as o as in not, and 'hoh' was rejected beside this"
+  "note": "'ho' is the English word ho, whose o is long; Black gives omicron as o as in not, and 'hoh' was rejected beside this",
+  "sha1": "838b93071c74"
  },
  {
   "index": 1,
@@ -25,7 +26,8 @@
   "freq": 9161,
   "tts": "kai",
   "source": "locked",
-  "duration_s": 0.731
+  "duration_s": 0.665,
+  "sha1": "abb6cab883ae"
  },
  {
   "index": 2,
@@ -38,9 +40,10 @@
   "freq": 5597,
   "tts": "ow toss",
   "source": "recued",
-  "duration_s": 1.149,
+  "duration_s": 1.009,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "19db2e92947f"
  },
  {
   "index": 3,
@@ -53,7 +56,8 @@
   "freq": 2905,
   "tts": "soo",
   "source": "freq",
-  "duration_s": 0.679
+  "duration_s": 0.621,
+  "sha1": "34dcaa0cee33"
  },
  {
   "index": 4,
@@ -66,7 +70,8 @@
   "freq": 2792,
   "tts": "deh",
   "source": "freq",
-  "duration_s": 0.705
+  "duration_s": 0.629,
+  "sha1": "e413dc9e63f7"
  },
  {
   "index": 5,
@@ -79,7 +84,8 @@
   "freq": 2752,
   "tts": "en",
   "source": "freq",
-  "duration_s": 0.679
+  "duration_s": 0.619,
+  "sha1": "4ebb8c1e913b"
  },
  {
   "index": 6,
@@ -92,8 +98,9 @@
   "freq": 2584,
   "tts": "e goh",
   "source": "locked",
-  "duration_s": 1.05,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh goh' spelled the English word ego and was read EE-go, stress first. Chosen by ear from several takes."
+  "duration_s": 0.953,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh goh' spelled the English word ego and was read EE-go, stress first. Chosen by ear from several takes.",
+  "sha1": "ea057fd227db"
  },
  {
   "index": 7,
@@ -106,7 +113,8 @@
   "freq": 2462,
   "tts": "ay mee",
   "source": "freq",
-  "duration_s": 0.993
+  "duration_s": 0.936,
+  "sha1": "c7b84d5900d8"
  },
  {
   "index": 8,
@@ -119,8 +127,9 @@
   "freq": 2353,
   "tts": "lehgo",
   "source": "locked",
-  "duration_s": 1.312,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.223,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "a6a0e2c326c1"
  },
  {
   "index": 9,
@@ -133,7 +142,8 @@
   "freq": 1767,
   "tts": "ace",
   "source": "freq",
-  "duration_s": 0.862
+  "duration_s": 0.804,
+  "sha1": "55e1e3b47ae6"
  },
  {
   "index": 10,
@@ -146,7 +156,8 @@
   "freq": 1606,
   "tts": "oo",
   "source": "freq",
-  "duration_s": 0.601
+  "duration_s": 0.53,
+  "sha1": "9abcc5c58a53"
  },
  {
   "index": 11,
@@ -159,7 +170,8 @@
   "freq": 1407,
   "tts": "hoss",
   "source": "freq",
-  "duration_s": 0.731
+  "duration_s": 0.67,
+  "sha1": "9a93e2d44702"
  },
  {
   "index": 12,
@@ -172,8 +184,9 @@
   "freq": 1317,
   "tts": "theh oss",
   "source": "locked",
-  "duration_s": 1.097,
-  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation"
+  "duration_s": 1.032,
+  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
+  "sha1": "1f4c4862a599"
  },
  {
   "index": 13,
@@ -186,7 +199,8 @@
   "freq": 1296,
   "tts": "ho tee",
   "source": "freq",
-  "duration_s": 0.836
+  "duration_s": 0.761,
+  "sha1": "031f5397a59c"
  },
  {
   "index": 14,
@@ -199,8 +213,9 @@
   "freq": 1243,
   "tts": "pahss",
   "source": "locked",
-  "duration_s": 1.181,
-  "verdict": "re-recorded 2026-09-03 (Atlas): the old take split into 'pa has'; a fresh take of the same cue did not. Chosen by ear from several takes."
+  "duration_s": 1.097,
+  "verdict": "re-recorded 2026-09-03 (Atlas): the old take split into 'pa has'; a fresh take of the same cue did not. Chosen by ear from several takes.",
+  "sha1": "d2e34d38c701"
  },
  {
   "index": 15,
@@ -213,9 +228,10 @@
   "freq": 1042,
   "tts": "mey",
   "source": "rollout",
-  "duration_s": 0.731,
+  "duration_s": 0.721,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "f57c8a92802b"
  },
  {
   "index": 16,
@@ -228,7 +244,8 @@
   "freq": 1041,
   "tts": "gar",
   "source": "freq",
-  "duration_s": 0.731
+  "duration_s": 0.655,
+  "sha1": "e1613f9e0a14"
  },
  {
   "index": 17,
@@ -241,7 +258,8 @@
   "freq": 917,
   "tts": "yay soos",
   "source": "freq",
-  "duration_s": 1.202
+  "duration_s": 1.135,
+  "sha1": "20b1e8fd4dc9"
  },
  {
   "index": 18,
@@ -254,9 +272,10 @@
   "freq": 914,
   "tts": "eck",
   "source": "batch2",
-  "duration_s": 0.731,
+  "duration_s": 0.593,
   "take": "2026-09-10, Atlas",
-  "note": "'ek' came back as 'eek'; Black gives epsilon as e as in met"
+  "note": "'ek' came back as 'eek'; Black gives epsilon as e as in met",
+  "sha1": "e14c58199106"
  },
  {
   "index": 19,
@@ -269,8 +288,9 @@
   "freq": 890,
   "tts": "eppee",
   "source": "locked",
-  "duration_s": 0.946,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh pee' was read as the letters E. P. — both tokens are letter names. Chosen by ear from several takes."
+  "duration_s": 0.859,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh pee' was read as the letters E. P. — both tokens are letter names. Chosen by ear from several takes.",
+  "sha1": "01810143c217"
  },
  {
   "index": 20,
@@ -283,8 +303,9 @@
   "freq": 717,
   "tts": "koo rioss",
   "source": "locked",
-  "duration_s": 1.573,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'koo ree os' was three equal beats at 1.85s. Chosen by ear from several takes."
+  "duration_s": 1.486,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'koo ree os' was three equal beats at 1.85s. Chosen by ear from several takes.",
+  "sha1": "baa08268aa2b"
  },
  {
   "index": 21,
@@ -297,7 +318,8 @@
   "freq": 708,
   "tts": "eh kho",
   "source": "freq",
-  "duration_s": 0.862
+  "duration_s": 0.786,
+  "sha1": "182bc90ff7c2"
  },
  {
   "index": 22,
@@ -310,9 +332,10 @@
   "freq": 700,
   "tts": "pross",
   "source": "batch3",
-  "duration_s": 0.862,
+  "duration_s": 0.692,
   "take": "2026-09-10, Atlas",
-  "note": "the p was being swallowed. The cue did not change -- the same one rolled again, which is what solved δια"
+  "note": "the p was being swallowed. The cue did not change -- the same one rolled again, which is what solved δια",
+  "sha1": "ebd7002d9bf3"
  },
  {
   "index": 23,
@@ -325,10 +348,11 @@
   "freq": 669,
   "tts": "ghee no my",
   "source": "fix12",
-  "duration_s": 1.573,
+  "duration_s": 1.476,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ghee no my",
-  "format": "22050 mono 64k, pad_tail=0.22"
+  "format": "22050 mono 64k, pad_tail=0.22",
+  "sha1": "d9d867c95370"
  },
  {
   "index": 24,
@@ -341,9 +365,10 @@
   "freq": 667,
   "tts": "di ah",
   "source": "reroll",
-  "duration_s": 0.914,
+  "duration_s": 1.137,
   "take": "2026-09-10, Atlas",
-  "note": "six spellings failed on this word and none of them was the problem: the same cue generated twice gave a rejected take and an accepted one. Rolled again, not respelled."
+  "note": "six spellings failed on this word and none of them was the problem: the same cue generated twice gave a rejected take and an accepted one. Rolled again, not respelled.",
+  "sha1": "2c18e1c7cabf"
  },
  {
   "index": 25,
@@ -356,7 +381,8 @@
   "freq": 663,
   "tts": "hin ah",
   "source": "freq",
-  "duration_s": 1.045
+  "duration_s": 0.986,
+  "sha1": "a97e75cb2220"
  },
  {
   "index": 26,
@@ -369,7 +395,8 @@
   "freq": 646,
   "tts": "ah po",
   "source": "freq",
-  "duration_s": 1.045
+  "duration_s": 0.969,
+  "sha1": "e22183c4e96f"
  },
  {
   "index": 27,
@@ -382,7 +409,8 @@
   "freq": 638,
   "tts": "ahl lah",
   "source": "freq",
-  "duration_s": 0.888
+  "duration_s": 0.828,
+  "sha1": "17cc8dc4b5a0"
  },
  {
   "index": 28,
@@ -395,7 +423,8 @@
   "freq": 634,
   "tts": "air kho my",
   "source": "freq",
-  "duration_s": 1.306
+  "duration_s": 1.248,
+  "sha1": "3a7fc2276953"
  },
  {
   "index": 29,
@@ -410,7 +439,8 @@
   "source": "batch5",
   "duration_s": 1.463,
   "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe', which γαμέω and τελέω locked by ear and προσκυνέω confirmed. This cue had 'eh oh'."
+  "note": "-εω is 'eh hoe', which γαμέω and τελέω locked by ear and προσκυνέω confirmed. This cue had 'eh oh'.",
+  "sha1": "b0cac852c30d"
  },
  {
   "index": 30,
@@ -423,7 +453,8 @@
   "freq": 555,
   "tts": "tiss",
   "source": "freq",
-  "duration_s": 0.81
+  "duration_s": 0.734,
+  "sha1": "734311a10f6e"
  },
  {
   "index": 31,
@@ -436,9 +467,10 @@
   "freq": 550,
   "tts": "ahn thro poss",
   "source": "recued",
-  "duration_s": 1.646,
+  "duration_s": 2.088,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "9aee9eaf60de"
  },
  {
   "index": 32,
@@ -451,8 +483,9 @@
   "freq": 529,
   "tts": "khree stoss",
   "source": "locked",
-  "duration_s": 0.993,
-  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation"
+  "duration_s": 0.929,
+  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
+  "sha1": "08c84241d008"
  },
  {
   "index": 33,
@@ -465,7 +498,8 @@
   "freq": 525,
   "tts": "tiss",
   "source": "freq",
-  "duration_s": 0.758
+  "duration_s": 0.705,
+  "sha1": "02f67aa30dcb"
  },
  {
   "index": 34,
@@ -478,7 +512,8 @@
   "freq": 504,
   "tts": "hoce",
   "source": "locked",
-  "duration_s": 0.836
+  "duration_s": 0.765,
+  "sha1": "490c3b8afaea"
  },
  {
   "index": 35,
@@ -493,7 +528,8 @@
   "source": "batch5",
   "duration_s": 0.496,
   "take": "2026-09-11, Atlas",
-  "note": "cue unchanged. It was on the sheet because rule 3 predicted a cue that is nothing but a letter name would be read as the letter -- 'ay' is A. It is not: the prediction was wrong and the cue stands. This is the take he actually heard."
+  "note": "cue unchanged. It was on the sheet because rule 3 predicted a cue that is nothing but a letter name would be read as the letter -- 'ay' is A. It is not: the prediction was wrong and the cue stands. This is the take he actually heard.",
+  "sha1": "54fd985c02d0"
  },
  {
   "index": 36,
@@ -506,7 +542,8 @@
   "freq": 498,
   "tts": "oon",
   "source": "freq",
-  "duration_s": 0.679
+  "duration_s": 0.623,
+  "sha1": "52f2de874b01"
  },
  {
   "index": 37,
@@ -519,7 +556,8 @@
   "freq": 473,
   "tts": "kah tah",
   "source": "freq",
-  "duration_s": 1.097
+  "duration_s": 1.037,
+  "sha1": "20244437883c"
  },
  {
   "index": 38,
@@ -532,7 +570,8 @@
   "freq": 469,
   "tts": "meh tah",
   "source": "freq",
-  "duration_s": 0.81
+  "duration_s": 0.736,
+  "sha1": "e90b1d57498b"
  },
  {
   "index": 39,
@@ -545,7 +584,8 @@
   "freq": 454,
   "tts": "ho rah oh",
   "source": "freq",
-  "duration_s": 1.541
+  "duration_s": 1.482,
+  "sha1": "7a1139b4e708"
  },
  {
   "index": 40,
@@ -558,7 +598,8 @@
   "freq": 428,
   "tts": "ah koo oh",
   "source": "freq",
-  "duration_s": 1.463
+  "duration_s": 1.396,
+  "sha1": "242ad048b9a3"
  },
  {
   "index": 41,
@@ -571,7 +612,8 @@
   "freq": 416,
   "tts": "po loos",
   "source": "freq",
-  "duration_s": 0.914
+  "duration_s": 0.84,
+  "sha1": "1aead417739e"
  },
  {
   "index": 42,
@@ -584,9 +626,10 @@
   "freq": 415,
   "tts": "di doh mee",
   "source": "rollout",
-  "duration_s": 1.358,
+  "duration_s": 1.363,
   "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di', not the machine vowel"
+  "note": "short iota is 'di', not the machine vowel",
+  "sha1": "526bd79a7284"
  },
  {
   "index": 43,
@@ -599,7 +642,8 @@
   "freq": 413,
   "tts": "pah tayr",
   "source": "freq",
-  "duration_s": 1.019
+  "duration_s": 0.966,
+  "sha1": "bb81567ade1b"
  },
  {
   "index": 44,
@@ -612,7 +656,8 @@
   "freq": 389,
   "tts": "hay meh rah",
   "source": "freq",
-  "duration_s": 1.228
+  "duration_s": 1.159,
+  "sha1": "d87c3d43571b"
  },
  {
   "index": 45,
@@ -625,8 +670,9 @@
   "freq": 379,
   "tts": "pnew mah",
   "source": "freq",
-  "duration_s": 1.202,
-  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation"
+  "duration_s": 1.139,
+  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
+  "sha1": "26554ff81a98"
  },
  {
   "index": 46,
@@ -639,7 +685,8 @@
   "freq": 377,
   "tts": "hwee oss",
   "source": "freq",
-  "duration_s": 1.228
+  "duration_s": 1.167,
+  "sha1": "cdf63cd50132"
  },
  {
   "index": 47,
@@ -652,7 +699,8 @@
   "freq": 344,
   "tts": "hace",
   "source": "freq",
-  "duration_s": 0.758
+  "duration_s": 0.683,
+  "sha1": "a9d9260155fb"
  },
  {
   "index": 48,
@@ -665,9 +713,10 @@
   "freq": 343,
   "tts": "ah del foss",
   "source": "recued",
-  "duration_s": 1.411,
+  "duration_s": 1.529,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "0d467cef560c"
  },
  {
   "index": 49,
@@ -682,7 +731,8 @@
   "source": "batch5",
   "duration_s": 0.601,
   "take": "2026-09-11, Atlas",
-  "note": "same as εἰ -- the letter-name prediction was wrong and the cue stands. This is the take he heard."
+  "note": "same as εἰ -- the letter-name prediction was wrong and the cue stands. This is the take he heard.",
+  "sha1": "06b7e979c643"
  },
  {
   "index": 50,
@@ -695,7 +745,8 @@
   "freq": 333,
   "tts": "peh ree",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.042,
+  "sha1": "e6f1491703a6"
  },
  {
   "index": 51,
@@ -708,7 +759,8 @@
   "freq": 330,
   "tts": "loh goss",
   "source": "locked",
-  "duration_s": 1.411
+  "duration_s": 1.334,
+  "sha1": "d521c7a77508"
  },
  {
   "index": 52,
@@ -721,7 +773,8 @@
   "freq": 319,
   "tts": "heh ow too",
   "source": "g2p",
-  "duration_s": 1.437
+  "duration_s": 1.379,
+  "sha1": "101d68e426bc"
  },
  {
   "index": 53,
@@ -734,7 +787,8 @@
   "freq": 318,
   "tts": "oy dah",
   "source": "g2p",
-  "duration_s": 0.836
+  "duration_s": 0.761,
+  "sha1": "4eed1df36aaf"
  },
  {
   "index": 54,
@@ -747,7 +801,8 @@
   "freq": 296,
   "tts": "lah leh oh",
   "source": "g2p",
-  "duration_s": 1.776
+  "duration_s": 1.703,
+  "sha1": "033e3a9f45d5"
  },
  {
   "index": 55,
@@ -760,9 +815,10 @@
   "freq": 273,
   "tts": "oo rah noss",
   "source": "recued",
-  "duration_s": 1.28,
+  "duration_s": 1.456,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "5180f3030164"
  },
  {
   "index": 56,
@@ -775,9 +831,10 @@
   "freq": 243,
   "tts": "eh kay noss",
   "source": "recued",
-  "duration_s": 1.646,
+  "duration_s": 1.739,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "dffdfcb8bad2"
  },
  {
   "index": 57,
@@ -790,9 +847,10 @@
   "freq": 261,
   "tts": "mathay teys",
   "source": "batch2",
-  "duration_s": 1.724,
+  "duration_s": 1.487,
   "take": "2026-09-10, Atlas",
-  "note": "the original's vowels with the first two pieces merged"
+  "note": "the original's vowels with the first two pieces merged",
+  "sha1": "8938b90e8223"
  },
  {
   "index": 58,
@@ -805,7 +863,8 @@
   "freq": 258,
   "tts": "lahm bah noh",
   "source": "g2p",
-  "duration_s": 2.064
+  "duration_s": 1.99,
+  "sha1": "ca4f846d4077"
  },
  {
   "index": 59,
@@ -818,9 +877,10 @@
   "freq": 250,
   "tts": "gey",
   "source": "rollout",
-  "duration_s": 0.731,
+  "duration_s": 0.713,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "3b8b5de3142c"
  },
  {
   "index": 60,
@@ -833,7 +893,8 @@
   "freq": 243,
   "tts": "meh gahs",
   "source": "g2p",
-  "duration_s": 1.384
+  "duration_s": 1.309,
+  "sha1": "21d6566580a1"
  },
  {
   "index": 61,
@@ -846,7 +907,8 @@
   "freq": 243,
   "tts": "pee stees",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.122,
+  "sha1": "a4f75ae92107"
  },
  {
   "index": 62,
@@ -859,7 +921,8 @@
   "freq": 241,
   "tts": "pee stew oh",
   "source": "g2p",
-  "duration_s": 1.28
+  "duration_s": 1.225,
+  "sha1": "9332db0d89f4"
  },
  {
   "index": 63,
@@ -872,9 +935,10 @@
   "freq": 234,
   "tts": "oo deys",
   "source": "ays",
-  "duration_s": 1.123,
+  "duration_s": 0.849,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "c8369f472c90"
  },
  {
   "index": 64,
@@ -887,9 +951,10 @@
   "freq": 233,
   "tts": "hag e oss",
   "source": "batch3",
-  "duration_s": 1.75,
+  "duration_s": 1.615,
   "take": "2026-09-10, Atlas",
-  "note": "'gee' is English /dʒi:/, a soft g where Greek has a hard one. Fraser's cue"
+  "note": "'gee' is English /dʒi:/, a soft g where Greek has a hard one. Fraser's cue",
+  "sha1": "a5d6d0c79600"
  },
  {
   "index": 65,
@@ -902,7 +967,8 @@
   "freq": 231,
   "tts": "ah po kree no my",
   "source": "g2p",
-  "duration_s": 2.194
+  "duration_s": 2.139,
+  "sha1": "ce301c422abd"
  },
  {
   "index": 66,
@@ -915,9 +981,10 @@
   "freq": 231,
   "tts": "aw no mah",
   "source": "rollout",
-  "duration_s": 1.202,
+  "duration_s": 1.064,
   "take": "2026-09-10, Atlas",
-  "note": "short omicron; 'o' bare reads long"
+  "note": "short omicron; 'o' bare reads long",
+  "sha1": "6751a6ff00f0"
  },
  {
   "index": 67,
@@ -930,10 +997,11 @@
   "freq": 222,
   "tts": "ghee noh skoh",
   "source": "fix12",
-  "duration_s": 1.677,
+  "duration_s": 1.586,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ghee noh skoh",
-  "format": "22050 mono 64k, pad_tail=0.22"
+  "format": "22050 mono 64k, pad_tail=0.22",
+  "sha1": "e9cf496c09fb"
  },
  {
   "index": 68,
@@ -946,7 +1014,8 @@
   "freq": 220,
   "tts": "hoo po",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.934,
+  "sha1": "61a43d0b9f9e"
  },
  {
   "index": 69,
@@ -959,7 +1028,8 @@
   "freq": 218,
   "tts": "eh ksehr kho my",
   "source": "g2p",
-  "duration_s": 1.829
+  "duration_s": 1.775,
+  "sha1": "53b1c7941f03"
  },
  {
   "index": 70,
@@ -972,7 +1042,8 @@
   "freq": 216,
   "tts": "ah nayr",
   "source": "g2p",
-  "duration_s": 0.967
+  "duration_s": 0.901,
+  "sha1": "60358cb36322"
  },
  {
   "index": 71,
@@ -985,9 +1056,10 @@
   "freq": 215,
   "tts": "goo ney",
   "source": "rollout",
-  "duration_s": 0.993,
+  "duration_s": 1.14,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "063d1441164d"
  },
  {
   "index": 72,
@@ -1000,7 +1072,8 @@
   "freq": 215,
   "tts": "teh",
   "source": "freq",
-  "duration_s": 0.627
+  "duration_s": 0.555,
+  "sha1": "3ad98813fef1"
  },
  {
   "index": 73,
@@ -1013,7 +1086,8 @@
   "freq": 210,
   "tts": "doo nah my",
   "source": "g2p",
-  "duration_s": 1.384
+  "duration_s": 1.314,
+  "sha1": "bc3da9a27176"
  },
  {
   "index": 74,
@@ -1026,7 +1100,8 @@
   "freq": 208,
   "tts": "thel oh",
   "source": "locked",
-  "duration_s": 0.836
+  "duration_s": 0.782,
+  "sha1": "ea951be09085"
  },
  {
   "index": 75,
@@ -1039,7 +1114,8 @@
   "freq": 208,
   "tts": "hoo tohs",
   "source": "g2p",
-  "duration_s": 0.94
+  "duration_s": 0.886,
+  "sha1": "eee6e52f9f47"
  },
  {
   "index": 76,
@@ -1052,7 +1128,8 @@
   "freq": 200,
   "tts": "ee doo",
   "source": "g2p",
-  "duration_s": 0.94
+  "duration_s": 0.864,
+  "sha1": "a71bcd6f3e43"
  },
  {
   "index": 77,
@@ -1065,8 +1142,9 @@
   "freq": 195,
   "tts": "yoodaios",
   "source": "locked",
-  "duration_s": 1.547,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'ee oo deye os' was 3.81s and spelled out; yoo stands in for ιου so it binds. Chosen by ear from several takes."
+  "duration_s": 1.462,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'ee oo deye os' was 3.81s and spelled out; yoo stands in for ιου so it binds. Chosen by ear from several takes.",
+  "sha1": "55a85018c21e"
  },
  {
   "index": 78,
@@ -1079,7 +1157,8 @@
   "freq": 194,
   "tts": "ay sehr kho my",
   "source": "g2p",
-  "duration_s": 1.724
+  "duration_s": 1.648,
+  "sha1": "fc347f64f5ad"
  },
  {
   "index": 79,
@@ -1094,7 +1173,8 @@
   "source": "batch5",
   "duration_s": 0.993,
   "take": "2026-09-11, Atlas",
-  "note": "'no' is an English word with the /ou/ of gold, so the stressed omicron read long. Doubling the mu closes the syllable. Passed in batch 1, before that question was being asked."
+  "note": "'no' is an English word with the /ou/ of gold, so the stressed omicron read long. Doubling the mu closes the syllable. Passed in batch 1, before that question was being asked.",
+  "sha1": "d32372c50c18"
  },
  {
   "index": 80,
@@ -1107,7 +1187,8 @@
   "freq": 194,
   "tts": "pah rah",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.981,
+  "sha1": "7b18881d7114"
  },
  {
   "index": 81,
@@ -1120,7 +1201,8 @@
   "freq": 191,
   "tts": "grah foh",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.115,
+  "sha1": "b78b614c3334"
  },
  {
   "index": 82,
@@ -1133,9 +1215,10 @@
   "freq": 186,
   "tts": "ko smoss",
   "source": "recued",
-  "duration_s": 1.358,
+  "duration_s": 1.429,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "1521c2c22efb"
  },
  {
   "index": 83,
@@ -1148,7 +1231,8 @@
   "freq": 182,
   "tts": "kah thohs",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.335,
+  "sha1": "205210d31791"
  },
  {
   "index": 84,
@@ -1161,7 +1245,8 @@
   "freq": 179,
   "tts": "men",
   "source": "freq",
-  "duration_s": 0.758
+  "duration_s": 0.687,
+  "sha1": "3ca628ac82b6"
  },
  {
   "index": 85,
@@ -1174,7 +1259,8 @@
   "freq": 177,
   "tts": "khayr",
   "source": "g2p",
-  "duration_s": 0.758
+  "duration_s": 0.697,
+  "sha1": "5ee0e7072d6d"
  },
  {
   "index": 86,
@@ -1187,7 +1273,8 @@
   "freq": 176,
   "tts": "hew ree skoh",
   "source": "g2p",
-  "duration_s": 1.384
+  "duration_s": 1.317,
+  "sha1": "336810f521c6"
  },
  {
   "index": 87,
@@ -1200,9 +1287,10 @@
   "freq": 175,
   "tts": "ahng geh loss",
   "source": "recued",
-  "duration_s": 1.358,
+  "duration_s": 1.529,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "69ef0cdbf5a3"
  },
  {
   "index": 88,
@@ -1215,7 +1303,8 @@
   "freq": 175,
   "tts": "oh khloss",
   "source": "locked",
-  "duration_s": 1.411
+  "duration_s": 1.347,
+  "sha1": "dc4cbf29c27c"
  },
  {
   "index": 89,
@@ -1228,9 +1317,10 @@
   "freq": 173,
   "tts": "hahmar teeah",
   "source": "batch2",
-  "duration_s": 2.011,
+  "duration_s": 1.272,
   "take": "2026-09-10, Atlas",
-  "note": "four chunks read as four words; its h is a real rough breathing and stays"
+  "note": "four chunks read as four words; its h is a real rough breathing and stays",
+  "sha1": "30416993f316"
  },
  {
   "index": 90,
@@ -1243,9 +1333,10 @@
   "freq": 169,
   "tts": "er gon",
   "source": "recued",
-  "duration_s": 1.202,
+  "duration_s": 0.965,
   "take": "2026-09-09, Atlas",
-  "note": "was 'air gone'. Black: epsilon is e as in met, so er"
+  "note": "was 'air gone'. Black: epsilon is e as in met, so er",
+  "sha1": "c2b04ed718a7"
  },
  {
   "index": 91,
@@ -1258,8 +1349,9 @@
   "freq": 166,
   "tts": "doksah",
   "source": "locked",
-  "duration_s": 1.181,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.079,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "2fe202cbdf00"
  },
  {
   "index": 92,
@@ -1272,7 +1364,8 @@
   "freq": 162,
   "tts": "bah see lay ah",
   "source": "g2p",
-  "duration_s": 2.508
+  "duration_s": 2.446,
+  "sha1": "de33c3d01f37"
  },
  {
   "index": 93,
@@ -1285,9 +1378,10 @@
   "freq": 162,
   "tts": "ehth noss",
   "source": "recued",
-  "duration_s": 1.28,
+  "duration_s": 1.285,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "87ad368e8b56"
  },
  {
   "index": 94,
@@ -1300,7 +1394,8 @@
   "freq": 162,
   "tts": "po lees",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.971,
+  "sha1": "93a82ed83687"
  },
  {
   "index": 95,
@@ -1313,7 +1408,8 @@
   "freq": 160,
   "tts": "to teh",
   "source": "g2p",
-  "duration_s": 0.81
+  "duration_s": 0.751,
+  "sha1": "d4176e9ca623"
  },
  {
   "index": 96,
@@ -1326,7 +1422,8 @@
   "freq": 158,
   "tts": "es theo",
   "source": "locked",
-  "duration_s": 1.045
+  "duration_s": 0.97,
+  "sha1": "55d5da8330de"
  },
  {
   "index": 97,
@@ -1339,7 +1436,8 @@
   "freq": 158,
   "tts": "pow los",
   "source": "g2p",
-  "duration_s": 1.123
+  "duration_s": 1.067,
+  "sha1": "db31eaf6d76a"
  },
  {
   "index": 98,
@@ -1352,7 +1450,8 @@
   "freq": 156,
   "tts": "kahr dee ah",
   "source": "g2p",
-  "duration_s": 1.28
+  "duration_s": 1.226,
+  "sha1": "6f229d8b2bbd"
  },
  {
   "index": 99,
@@ -1365,10 +1464,11 @@
   "freq": 156,
   "tts": "petross",
   "source": "rollout",
-  "duration_s": 1.468,
+  "duration_s": 0.946,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "b346cf9b3a7c"
  },
  {
   "index": 100,
@@ -1381,9 +1481,10 @@
   "freq": 155,
   "tts": "ahl loss",
   "source": "recued",
-  "duration_s": 1.097,
+  "duration_s": 1.085,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "075411d86cad"
  },
  {
   "index": 101,
@@ -1396,10 +1497,11 @@
   "freq": 155,
   "tts": "protoss",
   "source": "recued",
-  "duration_s": 1.181,
+  "duration_s": 0.845,
   "verdict": "re-recorded 2026-09-03 (Atlas): a closed 'prohtos' came out pro-ho-tos. Chosen by ear from several takes.",
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "a31ab022b039"
  },
  {
   "index": 102,
@@ -1412,7 +1514,8 @@
   "freq": 154,
   "tts": "hee stay mee",
   "source": "g2p",
-  "duration_s": 1.28
+  "duration_s": 1.227,
+  "sha1": "cc805ea48c87"
  },
  {
   "index": 103,
@@ -1425,7 +1528,8 @@
   "freq": 153,
   "tts": "ho stees",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.347,
+  "sha1": "dde05f4256dd"
  },
  {
   "index": 104,
@@ -1438,9 +1542,10 @@
   "freq": 153,
   "tts": "po rue o my",
   "source": "fix21",
-  "duration_s": 2.273,
+  "duration_s": 1.502,
   "take": "2026-09-10, Atlas",
-  "note": "'rew' replaced with 'rue'"
+  "note": "'rew' replaced with 'rue'",
+  "sha1": "92376e7d6e70"
  },
  {
   "index": 105,
@@ -1453,7 +1558,8 @@
   "freq": 150,
   "tts": "hoo pehr",
   "source": "g2p",
-  "duration_s": 1.019
+  "duration_s": 0.96,
+  "sha1": "97e72feb7e85"
  },
  {
   "index": 106,
@@ -1466,7 +1572,8 @@
   "freq": 148,
   "tts": "kah leh oh",
   "source": "g2p",
-  "duration_s": 1.776
+  "duration_s": 1.71,
+  "sha1": "6e9fdfb52a5c"
  },
  {
   "index": 107,
@@ -1479,7 +1586,8 @@
   "freq": 147,
   "tts": "noon",
   "source": "freq",
-  "duration_s": 0.784
+  "duration_s": 0.731,
+  "sha1": "cc57212b3e40"
  },
  {
   "index": 108,
@@ -1492,9 +1600,10 @@
   "freq": 147,
   "tts": "sarks",
   "source": "rollout",
-  "duration_s": 1.097,
+  "duration_s": 0.955,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "5c03c7fb1de7"
  },
  {
   "index": 109,
@@ -1507,7 +1616,8 @@
   "freq": 146,
   "tts": "heh ohs",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.969,
+  "sha1": "1feb01dae0f0"
  },
  {
   "index": 110,
@@ -1520,7 +1630,8 @@
   "freq": 144,
   "tts": "eh gay roh",
   "source": "g2p",
-  "duration_s": 1.776
+  "duration_s": 1.724,
+  "sha1": "0c105e7e7f9e"
  },
  {
   "index": 111,
@@ -1533,9 +1644,10 @@
   "freq": 144,
   "tts": "praw fey teys",
   "source": "batch2",
-  "duration_s": 1.411,
+  "duration_s": 1.455,
   "take": "2026-09-10, Atlas",
-  "note": "the omicron is short -- prop, not professional -- and 'aw' is the spelling that holds it"
+  "note": "the omicron is short -- prop, not professional -- and 'aw' is the spelling that holds it",
+  "sha1": "1a90d6fb3d93"
  },
  {
   "index": 112,
@@ -1548,7 +1660,8 @@
   "freq": 143,
   "tts": "ah gah pah oh",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.749,
+  "sha1": "a20343134b74"
  },
  {
   "index": 113,
@@ -1561,7 +1674,8 @@
   "freq": 143,
   "tts": "ah fee ay mee",
   "source": "g2p",
-  "duration_s": 2.116
+  "duration_s": 2.048,
+  "sha1": "e1cd5bc7c3a5"
  },
  {
   "index": 114,
@@ -1574,7 +1688,8 @@
   "freq": 143,
   "tts": "oo deh",
   "source": "g2p",
-  "duration_s": 0.705
+  "duration_s": 0.646,
+  "sha1": "9ffa726c8904"
  },
  {
   "index": 115,
@@ -1587,9 +1702,10 @@
   "freq": 142,
   "tts": "lah oss",
   "source": "recued",
-  "duration_s": 1.254,
+  "duration_s": 1.315,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "e7fca1b91954"
  },
  {
   "index": 116,
@@ -1602,7 +1718,8 @@
   "freq": 142,
   "tts": "soh mah",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.134,
+  "sha1": "9ee60be932c9"
  },
  {
   "index": 117,
@@ -1615,7 +1732,8 @@
   "freq": 141,
   "tts": "pah leen",
   "source": "g2p",
-  "duration_s": 1.254
+  "duration_s": 1.183,
+  "sha1": "de3a0e4507ce"
  },
  {
   "index": 118,
@@ -1628,7 +1746,8 @@
   "freq": 140,
   "tts": "dzah oh",
   "source": "g2p",
-  "duration_s": 1.306
+  "duration_s": 1.237,
+  "sha1": "10d66c2a9235"
  },
  {
   "index": 119,
@@ -1641,7 +1760,8 @@
   "freq": 139,
   "tts": "foh nay",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.143,
+  "sha1": "88a08fb6fac1"
  },
  {
   "index": 120,
@@ -1654,7 +1774,8 @@
   "freq": 135,
   "tts": "doo o",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.041,
+  "sha1": "914ab6b1f6a8"
  },
  {
   "index": 121,
@@ -1667,8 +1788,9 @@
   "freq": 135,
   "tts": "zoh eh",
   "source": "locked",
-  "duration_s": 1.442,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'zohay' bound but said zoh-high; the initial dz was dropped so Atlas would not spell Z. Chosen by ear from several takes."
+  "duration_s": 1.334,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'zohay' bound but said zoh-high; the initial dz was dropped so Atlas would not spell Z. Chosen by ear from several takes.",
+  "sha1": "eb5a919f29ee"
  },
  {
   "index": 122,
@@ -1681,7 +1803,8 @@
   "freq": 133,
   "tts": "bleh poh",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.129,
+  "sha1": "4447cf358fa5"
  },
  {
   "index": 123,
@@ -1694,9 +1817,10 @@
   "freq": 132,
   "tts": "ah po stel loh",
   "source": "rollout",
-  "duration_s": 2.194,
+  "duration_s": 1.82,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "90b89910bf81"
  },
  {
   "index": 124,
@@ -1709,7 +1833,8 @@
   "freq": 129,
   "tts": "ah mayn",
   "source": "g2p",
-  "duration_s": 1.228
+  "duration_s": 1.172,
+  "sha1": "bb2334563b09"
  },
  {
   "index": 125,
@@ -1722,9 +1847,10 @@
   "freq": 128,
   "tts": "neh kross",
   "source": "recued",
-  "duration_s": 1.228,
+  "duration_s": 1.271,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "4447a071e5e6"
  },
  {
   "index": 126,
@@ -1737,7 +1863,8 @@
   "freq": 128,
   "tts": "soon",
   "source": "locked",
-  "duration_s": 0.653
+  "duration_s": 0.582,
+  "sha1": "fca11a5a62fa"
  },
  {
   "index": 127,
@@ -1750,9 +1877,10 @@
   "freq": 124,
   "tts": "doo loss",
   "source": "recued",
-  "duration_s": 1.228,
+  "duration_s": 1.292,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "0e3374fb9042"
  },
  {
   "index": 128,
@@ -1765,7 +1893,8 @@
   "freq": 123,
   "tts": "ho tahn",
   "source": "g2p",
-  "duration_s": 0.862
+  "duration_s": 0.793,
+  "sha1": "d9b0b0e120d1"
  },
  {
   "index": 129,
@@ -1778,7 +1907,8 @@
   "freq": 122,
   "tts": "eye ohn",
   "source": "g2p",
-  "duration_s": 1.489
+  "duration_s": 1.413,
+  "sha1": "e8a429b85ad6"
  },
  {
   "index": 130,
@@ -1791,7 +1921,8 @@
   "freq": 122,
   "tts": "ahr khee eh rews",
   "source": "g2p",
-  "duration_s": 2.064
+  "duration_s": 1.997,
+  "sha1": "1dd5f84fa7cc"
  },
  {
   "index": 131,
@@ -1804,9 +1935,10 @@
   "freq": 122,
   "tts": "bal loh",
   "source": "rollout",
-  "duration_s": 1.28,
+  "duration_s": 1.02,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "1705ef23ae3a"
  },
  {
   "index": 132,
@@ -1819,9 +1951,10 @@
   "freq": 120,
   "tts": "thah nah toss",
   "source": "recued",
-  "duration_s": 1.384,
+  "duration_s": 1.679,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "ccd41680cbcc"
  },
  {
   "index": 133,
@@ -1834,7 +1967,8 @@
   "freq": 119,
   "tts": "doo nah mees",
   "source": "g2p",
-  "duration_s": 1.541
+  "duration_s": 1.48,
+  "sha1": "c4b8fa6a0162"
  },
  {
   "index": 134,
@@ -1847,9 +1981,10 @@
   "freq": 119,
   "tts": "pah rah di doh mee",
   "source": "rollout",
-  "duration_s": 2.769,
+  "duration_s": 1.95,
   "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di', not the machine vowel"
+  "note": "short iota is 'di', not the machine vowel",
+  "sha1": "e7e5ef584c56"
  },
  {
   "index": 135,
@@ -1862,7 +1997,8 @@
   "freq": 118,
   "tts": "meh noh",
   "source": "g2p",
-  "duration_s": 1.123
+  "duration_s": 1.063,
+  "sha1": "9e1d8e2b45c1"
  },
  {
   "index": 136,
@@ -1875,7 +2011,8 @@
   "freq": 117,
   "tts": "ah pehr kho my",
   "source": "g2p",
-  "duration_s": 1.959
+  "duration_s": 1.892,
+  "sha1": "b531febadaf1"
  },
  {
   "index": 137,
@@ -1888,7 +2025,8 @@
   "freq": 117,
   "tts": "dzay teh oh",
   "source": "g2p",
-  "duration_s": 1.489
+  "duration_s": 1.429,
+  "sha1": "6ae361730f57"
  },
  {
   "index": 138,
@@ -1901,7 +2039,8 @@
   "freq": 116,
   "tts": "ah gah pay",
   "source": "g2p",
-  "duration_s": 1.646
+  "duration_s": 1.587,
+  "sha1": "91b201d79e44"
  },
  {
   "index": 139,
@@ -1914,7 +2053,8 @@
   "freq": 115,
   "tts": "bah see lews",
   "source": "g2p",
-  "duration_s": 1.933
+  "duration_s": 1.863,
+  "sha1": "20d4c7e454e2"
  },
  {
   "index": 140,
@@ -1927,10 +2067,11 @@
   "freq": 114,
   "tts": "ek klay see ah",
   "source": "fix12",
-  "duration_s": 1.808,
+  "duration_s": 1.713,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ekklayseeah",
-  "format": "22050 mono 64k, pad_tail=0.22"
+  "format": "22050 mono 64k, pad_tail=0.22",
+  "sha1": "394588cf3da4"
  },
  {
   "index": 141,
@@ -1943,9 +2084,10 @@
   "freq": 114,
   "tts": "ee dee oss",
   "source": "recued",
-  "duration_s": 1.959,
+  "duration_s": 1.712,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "1898154ac918"
  },
  {
   "index": 142,
@@ -1958,7 +2100,8 @@
   "freq": 114,
   "tts": "kree noh",
   "source": "g2p",
-  "duration_s": 1.254
+  "duration_s": 1.199,
+  "sha1": "1bb873cfd18c"
  },
  {
   "index": 143,
@@ -1971,9 +2114,10 @@
   "freq": 114,
   "tts": "mo noss",
   "source": "recued",
-  "duration_s": 1.149,
+  "duration_s": 1.19,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "33b13d9240c9"
  },
  {
   "index": 144,
@@ -1986,9 +2130,10 @@
   "freq": 114,
   "tts": "oy koss",
   "source": "recued",
-  "duration_s": 1.097,
+  "duration_s": 0.986,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "75a9d06a25fb"
  },
  {
   "index": 145,
@@ -2001,7 +2146,8 @@
   "freq": 111,
   "tts": "ah poth nay skoh",
   "source": "g2p",
-  "duration_s": 1.855
+  "duration_s": 1.778,
+  "sha1": "4db5c2279519"
  },
  {
   "index": 146,
@@ -2014,7 +2160,8 @@
   "freq": 110,
   "tts": "ho sos",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.983,
+  "sha1": "7ac72db39bed"
  },
  {
   "index": 147,
@@ -2027,7 +2174,8 @@
   "freq": 109,
   "tts": "ah lay thay ah",
   "source": "g2p",
-  "duration_s": 2.273
+  "duration_s": 2.2,
+  "sha1": "d606c2ebdf2a"
  },
  {
   "index": 148,
@@ -2040,9 +2188,10 @@
   "freq": 109,
   "tts": "mel loh",
   "source": "rollout",
-  "duration_s": 1.097,
+  "duration_s": 1.268,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "7dc0efb87f5a"
  },
  {
   "index": 149,
@@ -2055,7 +2204,8 @@
   "freq": 109,
   "tts": "ho los",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.109,
+  "sha1": "2ae0a63da6c2"
  },
  {
   "index": 150,
@@ -2068,7 +2218,8 @@
   "freq": 109,
   "tts": "pah rah kah leh oh",
   "source": "g2p",
-  "duration_s": 2.508
+  "duration_s": 2.437,
+  "sha1": "933e3b039817"
  },
  {
   "index": 151,
@@ -2081,7 +2232,8 @@
   "freq": 108,
   "tts": "ah nee stay mee",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.806,
+  "sha1": "b66e4df7184a"
  },
  {
   "index": 152,
@@ -2094,7 +2246,8 @@
   "freq": 106,
   "tts": "sozo",
   "source": "locked",
-  "duration_s": 0.836
+  "duration_s": 0.774,
+  "sha1": "90beb3326938"
  },
  {
   "index": 153,
@@ -2107,7 +2260,8 @@
   "freq": 106,
   "tts": "hoh rah",
   "source": "g2p",
-  "duration_s": 1.019
+  "duration_s": 0.96,
+  "sha1": "e017a452c24e"
  },
  {
   "index": 154,
@@ -2120,7 +2274,8 @@
   "freq": 95,
   "tts": "eh kay",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.115,
+  "sha1": "18d5f71d0819"
  },
  {
   "index": 155,
@@ -2133,7 +2288,8 @@
   "freq": 82,
   "tts": "ho poo",
   "source": "g2p",
-  "duration_s": 0.94
+  "duration_s": 0.885,
+  "sha1": "ff9055e57b0a"
  },
  {
   "index": 156,
@@ -2146,7 +2302,8 @@
   "freq": 103,
   "tts": "pose",
   "source": "locked",
-  "duration_s": 0.836
+  "duration_s": 0.774,
+  "sha1": "d94384e59174"
  },
  {
   "index": 157,
@@ -2159,9 +2316,10 @@
   "freq": 103,
   "tts": "psoo khey",
   "source": "splice",
-  "duration_s": 1.149,
+  "duration_s": 0.986,
   "take": "2026-09-10, Atlas",
-  "note": "the ps of the shipped clip, which Fraser judged better, with the ending of a 'psoo khey' take. Cut at the original's own energy dip at 0.38-0.45 s and at the k the generator's timestamps put at 0.81 s -- not through the sibilant, which is what cost the xi splice its k."
+  "note": "the ps of the shipped clip, which Fraser judged better, with the ending of a 'psoo khey' take. Cut at the original's own energy dip at 0.38-0.45 s and at the k the generator's timestamps put at 0.81 s -- not through the sibilant, which is what cost the xi splice its k.",
+  "sha1": "ee8a7d4f6f22"
  },
  {
   "index": 158,
@@ -2174,9 +2332,10 @@
   "freq": 102,
   "tts": "ah gah thoss",
   "source": "recued",
-  "duration_s": 1.62,
+  "duration_s": 1.732,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "94df3f95bc93"
  },
  {
   "index": 159,
@@ -2189,7 +2348,8 @@
   "freq": 102,
   "tts": "exousia",
   "source": "locked",
-  "duration_s": 1.332
+  "duration_s": 1.271,
+  "sha1": "2778ff624d32"
  },
  {
   "index": 160,
@@ -2202,7 +2362,8 @@
   "freq": 101,
   "tts": "eye roh",
   "source": "g2p",
-  "duration_s": 1.019
+  "duration_s": 0.947,
+  "sha1": "6567174a4c58"
  },
  {
   "index": 161,
@@ -2215,7 +2376,8 @@
   "freq": 101,
   "tts": "day",
   "source": "g2p",
-  "duration_s": 0.601
+  "duration_s": 0.537,
+  "sha1": "8a94b8c90bb9"
  },
  {
   "index": 162,
@@ -2228,9 +2390,10 @@
   "freq": 101,
   "tts": "ho doss",
   "source": "recued",
-  "duration_s": 1.176,
+  "duration_s": 1.046,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "5c6e284acb4c"
  },
  {
   "index": 163,
@@ -2243,7 +2406,8 @@
   "freq": 100,
   "tts": "ahl lay lohn",
   "source": "g2p",
-  "duration_s": 1.463
+  "duration_s": 1.404,
+  "sha1": "226bd3f4df56"
  },
  {
   "index": 164,
@@ -2256,9 +2420,10 @@
   "freq": 100,
   "tts": "kah loss",
   "source": "recued",
-  "duration_s": 1.123,
+  "duration_s": 1.341,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "d2ba96c5f626"
  },
  {
   "index": 165,
@@ -2273,7 +2438,8 @@
   "source": "batch4",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "'thahl' read as \"the hall\" -- rule 5, the silent h in 'ah' waking. 'off' gives the first syllable a real word."
+  "note": "'thahl' read as \"the hall\" -- rule 5, the silent h in 'ah' waking. 'off' gives the first syllable a real word.",
+  "sha1": "5ec8b730fa13"
  },
  {
   "index": 166,
@@ -2286,7 +2452,8 @@
   "freq": 100,
   "tts": "tee thay mee",
   "source": "g2p",
-  "duration_s": 1.855
+  "duration_s": 1.789,
+  "sha1": "d2c3a3d25cba"
  },
  {
   "index": 167,
@@ -2299,7 +2466,8 @@
   "freq": 99,
   "tts": "teh knon",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.099,
+  "sha1": "a9907d57edfb"
  },
  {
   "index": 168,
@@ -2312,9 +2480,10 @@
   "freq": 98,
   "tts": "heh teh ross",
   "source": "recued",
-  "duration_s": 1.62,
+  "duration_s": 1.239,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "55c90f6f736c"
  },
  {
   "index": 169,
@@ -2327,7 +2496,8 @@
   "freq": 98,
   "tts": "fah ree seye os",
   "source": "g2p",
-  "duration_s": 2.429
+  "duration_s": 2.359,
+  "sha1": "0ef3474537eb"
  },
  {
   "index": 170,
@@ -2340,7 +2510,8 @@
   "freq": 97,
   "tts": "heye mah",
   "source": "g2p",
-  "duration_s": 0.94
+  "duration_s": 0.871,
+  "sha1": "c43f4d0b365b"
  },
  {
   "index": 171,
@@ -2353,9 +2524,10 @@
   "freq": 97,
   "tts": "ahr toss",
   "source": "recued",
-  "duration_s": 1.28,
+  "duration_s": 1.145,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "28e217e0fc5c"
  },
  {
   "index": 172,
@@ -2368,9 +2540,10 @@
   "freq": 97,
   "tts": "gehn nah oh",
   "source": "fix21",
-  "duration_s": 1.698,
+  "duration_s": 1.521,
   "take": "2026-09-10, Atlas",
-  "note": "reverted: 'gen' reads as generation"
+  "note": "reverted: 'gen' reads as generation",
+  "sha1": "0bb9962d5bab"
  },
  {
   "index": 173,
@@ -2383,9 +2556,10 @@
   "freq": 97,
   "tts": "didah skoh",
   "source": "recued",
-  "duration_s": 1.437,
+  "duration_s": 0.998,
   "take": "2026-09-09, Atlas",
-  "note": "'dee' was the wrong vowel -- the iota is short -- and 'dih' made the voice spell the word out letter by letter"
+  "note": "'dee' was the wrong vowel -- the iota is short -- and 'dih' made the voice spell the word out letter by letter",
+  "sha1": "d72f6573d43c"
  },
  {
   "index": 174,
@@ -2398,7 +2572,8 @@
   "freq": 95,
   "tts": "peh ree pah teh oh",
   "source": "g2p",
-  "duration_s": 2.011
+  "duration_s": 1.958,
+  "sha1": "184e093c388a"
  },
  {
   "index": 175,
@@ -2411,9 +2586,10 @@
   "freq": 95,
   "tts": "fo beh aw my",
   "source": "rollout",
-  "duration_s": 1.489,
+  "duration_s": 1.505,
   "take": "2026-09-10, Atlas",
-  "note": "short omicron; 'o' bare reads long"
+  "note": "short omicron; 'o' bare reads long",
+  "sha1": "6a4ff315d679"
  },
  {
   "index": 176,
@@ -2426,7 +2602,8 @@
   "freq": 94,
   "tts": "eh noh pee on",
   "source": "g2p",
-  "duration_s": 1.463
+  "duration_s": 1.408,
+  "sha1": "8465058dd66f"
  },
  {
   "index": 177,
@@ -2439,8 +2616,9 @@
   "freq": 93,
   "tts": "etih",
   "source": "locked",
-  "duration_s": 1.024,
-  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh tee' was read as E. T., and put a long TEE on the unstressed syllable. Chosen by ear from several takes."
+  "duration_s": 0.939,
+  "verdict": "re-recorded 2026-09-03 (Atlas): 'eh tee' was read as E. T., and put a long TEE on the unstressed syllable. Chosen by ear from several takes.",
+  "sha1": "49c49b433067"
  },
  {
   "index": 178,
@@ -2453,7 +2631,8 @@
   "freq": 93,
   "tts": "oy kee ah",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.104,
+  "sha1": "5ef4224c4a0b"
  },
  {
   "index": 179,
@@ -2466,7 +2645,8 @@
   "freq": 93,
   "tts": "poos",
   "source": "g2p",
-  "duration_s": 0.836
+  "duration_s": 0.772,
+  "sha1": "35f8785e2cb5"
  },
  {
   "index": 180,
@@ -2479,9 +2659,10 @@
   "freq": 92,
   "tts": "di kye o soo ney",
   "source": "batch2",
-  "duration_s": 2.952,
+  "duration_s": 2.047,
   "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di'; the diphthong αι is settled as 'eye', so 'kye'"
+  "note": "short iota is 'di'; the diphthong αι is settled as 'eye', so 'kye'",
+  "sha1": "b49090b68533"
  },
  {
   "index": 181,
@@ -2494,7 +2675,8 @@
   "freq": 92,
   "tts": "ay ray nay",
   "source": "g2p",
-  "duration_s": 1.463
+  "duration_s": 1.4,
+  "sha1": "66596bb10782"
  },
  {
   "index": 182,
@@ -2507,9 +2689,10 @@
   "freq": 91,
   "tts": "thalas sa",
   "source": "batch2",
-  "duration_s": 1.489,
+  "duration_s": 1.136,
   "take": "2026-09-10, Atlas",
-  "note": "the th digraph stays; the lengthening h after it went"
+  "note": "the th digraph stays; the lengthening h after it went",
+  "sha1": "22a3c465d734"
  },
  {
   "index": 183,
@@ -2522,7 +2705,8 @@
   "freq": 91,
   "tts": "kah thay my",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.293,
+  "sha1": "3fe5bdf39e42"
  },
  {
   "index": 184,
@@ -2535,7 +2719,8 @@
   "freq": 90,
   "tts": "ah ko loo theh oh",
   "source": "g2p",
-  "duration_s": 2.351
+  "duration_s": 2.277,
+  "sha1": "763f73b24fa5"
  },
  {
   "index": 185,
@@ -2548,7 +2733,8 @@
   "freq": 90,
   "tts": "ah pol loo mee",
   "source": "g2p",
-  "duration_s": 1.646
+  "duration_s": 1.579,
+  "sha1": "04aa28768b51"
  },
  {
   "index": 186,
@@ -2561,7 +2747,8 @@
   "freq": 90,
   "tts": "peep toh",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.918,
+  "sha1": "a94b10defbdb"
  },
  {
   "index": 187,
@@ -2574,9 +2761,10 @@
   "freq": 88,
   "tts": "hep tah",
   "source": "rollout",
-  "duration_s": 1.071,
+  "duration_s": 1.025,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "1745fc337f5c"
  },
  {
   "index": 188,
@@ -2589,7 +2777,8 @@
   "freq": 87,
   "tts": "oo teh",
   "source": "g2p",
-  "duration_s": 0.914
+  "duration_s": 0.845,
+  "sha1": "10101bb5fa52"
  },
  {
   "index": 189,
@@ -2602,9 +2791,10 @@
   "freq": 55,
   "tts": "arkhey",
   "source": "batch2",
-  "duration_s": 1.071,
+  "duration_s": 0.735,
   "take": "2026-09-10, Atlas",
-  "note": "'ar khey' broke at the seam and came out 'ar k he'; bound into one token, as 'dida khey' already was"
+  "note": "'ar khey' broke at the seam and came out 'ar k he'; bound into one token, as 'dida khey' already was",
+  "sha1": "90863935c187"
  },
  {
   "index": 190,
@@ -2617,7 +2807,8 @@
   "freq": 86,
   "tts": "play ro oh",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.129,
+  "sha1": "2eebd7922bae"
  },
  {
   "index": 191,
@@ -2632,7 +2823,8 @@
   "source": "batch4",
   "duration_s": 2.116,
   "take": "2026-09-11, Atlas",
-  "note": "the sigma was being dropped: πρός is 'pross' and this word is προσ- + ἔρχομαι, whose own cue 'air kho my' passed in batch 4. Built from it."
+  "note": "the sigma was being dropped: πρός is 'pross' and this word is προσ- + ἔρχομαι, whose own cue 'air kho my' passed in batch 4. Built from it.",
+  "sha1": "3f66cd996f79"
  },
  {
   "index": 192,
@@ -2648,7 +2840,8 @@
   "duration_s": 1.776,
   "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
   "take": "2026-09-11, Atlas",
-  "note": "'keye' splits. The -oo ending is the uncontracted lexical form: the citation form occurs 0 times in the NT, across 25 real surface forms."
+  "note": "'keye' splits. The -oo ending is the uncontracted lexical form: the citation form occurs 0 times in the NT, across 25 real surface forms.",
+  "sha1": "ca6a149030a8"
  },
  {
   "index": 193,
@@ -2663,7 +2856,8 @@
   "source": "batch4",
   "duration_s": 1.228,
   "take": "2026-09-11, Atlas",
-  "note": "'keye' came back as key-i. Chosen by ear over 'kai', which he had asked for from the description -- the sound decided it."
+  "note": "'keye' came back as key-i. Chosen by ear over 'kai', which he had asked for from the description -- the sound decided it.",
+  "sha1": "a1ee52a32995"
  },
  {
   "index": 194,
@@ -2678,7 +2872,8 @@
   "source": "batch4",
   "duration_s": 1.959,
   "take": "2026-09-11, Atlas",
-  "note": "two faults: 'sew' is a homograph and the voice took /sou/; and pros- is 'pross', never 'pro', which reads long."
+  "note": "two faults: 'sew' is a homograph and the voice took /sou/; and pros- is 'pross', never 'pro', which reads long.",
+  "sha1": "80e17a30330b"
  },
  {
   "index": 195,
@@ -2691,7 +2886,8 @@
   "freq": 84,
   "tts": "kah goh",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.025,
+  "sha1": "6879e338f66d"
  },
  {
   "index": 196,
@@ -2704,7 +2900,8 @@
   "freq": 83,
   "tts": "may tayr",
   "source": "g2p",
-  "duration_s": 1.306
+  "duration_s": 1.251,
+  "sha1": "471799e9adc8"
  },
  {
   "index": 197,
@@ -2717,7 +2914,8 @@
   "freq": 36,
   "tts": "hoh spehr",
   "source": "g2p",
-  "duration_s": 1.28
+  "duration_s": 1.205,
+  "sha1": "c03537ac33cd"
  },
  {
   "index": 198,
@@ -2730,7 +2928,8 @@
   "freq": 77,
   "tts": "ah noy goh",
   "source": "g2p",
-  "duration_s": 1.672
+  "duration_s": 1.597,
+  "sha1": "85d5b48f1456"
  },
  {
   "index": 199,
@@ -2743,7 +2942,8 @@
   "freq": 79,
   "tts": "hoo pah goh",
   "source": "g2p",
-  "duration_s": 1.437
+  "duration_s": 1.375,
+  "sha1": "9022205c43e9"
  },
  {
   "index": 200,
@@ -2756,7 +2956,8 @@
   "freq": 77,
   "tts": "say may on",
   "source": "g2p",
-  "duration_s": 1.489
+  "duration_s": 1.413,
+  "sha1": "7a1a2891b45d"
  },
  {
   "index": 201,
@@ -2769,9 +2970,10 @@
   "freq": 67,
   "tts": "en taw ley",
   "source": "batch2",
-  "duration_s": 1.202,
+  "duration_s": 1.292,
   "take": "2026-09-10, Atlas",
-  "note": "'aw' for the short omicron, 'ey' for the eta"
+  "note": "'aw' for the short omicron, 'ey' for the eta",
+  "sha1": "4dc01abc0d79"
  },
  {
   "index": 202,
@@ -2784,9 +2986,10 @@
   "freq": 31,
   "tts": "sko toss",
   "source": "recued",
-  "duration_s": 1.384,
+  "duration_s": 1.321,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "02aac0fac3a4"
  },
  {
   "index": 203,
@@ -2799,7 +3002,8 @@
   "freq": 73,
   "tts": "fohs",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.04,
+  "sha1": "089ec9046d1c"
  },
  {
   "index": 204,
@@ -2812,7 +3016,8 @@
   "freq": 53,
   "tts": "el peace",
   "source": "locked",
-  "duration_s": 1.071
+  "duration_s": 0.995,
+  "sha1": "2781fb7b9f02"
  },
  {
   "index": 205,
@@ -2825,7 +3030,8 @@
   "freq": 155,
   "tts": "khah rees",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.355,
+  "sha1": "85d93044ef7c"
  },
  {
   "index": 206,
@@ -2840,7 +3046,8 @@
   "source": "batch5",
   "duration_s": 1.306,
   "take": "2026-09-11, Atlas",
-  "note": "'so' is an English word with the /ou/ of gold, so the stressed omicron read long. 'soffee ah' fixed the vowel and was clunky; this is the σοφός answer transposed -- one token for the flow, the vowel spelled outright."
+  "note": "'so' is an English word with the /ou/ of gold, so the stressed omicron read long. 'soffee ah' fixed the vowel and was clunky; this is the σοφός answer transposed -- one token for the flow, the vowel spelled outright.",
+  "sha1": "b475f8661b55"
  },
  {
   "index": 207,
@@ -2853,9 +3060,10 @@
   "freq": 76,
   "tts": "mar too reh oh",
   "source": "rollout",
-  "duration_s": 1.959,
+  "duration_s": 2.475,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "f828e4daee98"
  },
  {
   "index": 208,
@@ -2868,9 +3076,10 @@
   "freq": 37,
   "tts": "martoo reea",
   "source": "batch2",
-  "duration_s": 2.325,
+  "duration_s": 1.42,
   "take": "2026-09-10, Atlas",
-  "note": "the h in 'mahrtoo' was spoken as its own syllable"
+  "note": "the h in 'mahrtoo' was spoken as its own syllable",
+  "sha1": "969a6d31a743"
  },
  {
   "index": 209,
@@ -2883,7 +3092,8 @@
   "freq": 61,
   "tts": "kay roos soh",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.29,
+  "sha1": "5f6a85b10869"
  },
  {
   "index": 210,
@@ -2896,7 +3106,8 @@
   "freq": 76,
   "tts": "ew ahng geh lee on",
   "source": "g2p",
-  "duration_s": 2.064
+  "duration_s": 1.987,
+  "sha1": "4077538c43bc"
  },
  {
   "index": 211,
@@ -2909,7 +3120,8 @@
   "freq": 54,
   "tts": "ew ahng geh lee dzoh",
   "source": "g2p",
-  "duration_s": 2.247
+  "duration_s": 2.178,
+  "sha1": "0582613ccff4"
  },
  {
   "index": 212,
@@ -2922,7 +3134,8 @@
   "freq": 61,
   "tts": "doxazo",
   "source": "locked",
-  "duration_s": 1.724
+  "duration_s": 1.66,
+  "sha1": "4930b21da2da"
  },
  {
   "index": 213,
@@ -2935,10 +3148,11 @@
   "freq": 27,
   "tts": "stowross",
   "source": "recued",
-  "duration_s": 1.468,
+  "duration_s": 1.457,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "89de6467a0ce"
  },
  {
   "index": 214,
@@ -2951,7 +3165,8 @@
   "freq": 46,
   "tts": "stow ro oh",
   "source": "g2p",
-  "duration_s": 1.907
+  "duration_s": 1.84,
+  "sha1": "64e0dd0bc076"
  },
  {
   "index": 215,
@@ -2964,7 +3179,8 @@
   "freq": 66,
   "tts": "ah po loo oh",
   "source": "g2p",
-  "duration_s": 1.646
+  "duration_s": 1.588,
+  "sha1": "f33792e2dcf7"
  },
  {
   "index": 216,
@@ -2977,9 +3193,10 @@
   "freq": 62,
   "tts": "thro noss",
   "source": "recued",
-  "duration_s": 1.228,
+  "duration_s": 1.256,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "1abd4f10f91c"
  },
  {
   "index": 217,
@@ -2992,7 +3209,8 @@
   "freq": 30,
   "tts": "ahr nee on",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.306,
+  "sha1": "6a2b9563f07b"
  },
  {
   "index": 218,
@@ -3005,10 +3223,11 @@
   "freq": 45,
   "tts": "nah oss",
   "source": "fix12",
-  "duration_s": 1.338,
+  "duration_s": 1.249,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "nahoss",
-  "format": "22050 mono 64k, pad_tail=0.22"
+  "format": "22050 mono 64k, pad_tail=0.22",
+  "sha1": "982ff061ec35"
  },
  {
   "index": 219,
@@ -3021,9 +3240,10 @@
   "freq": 71,
   "tts": "hier ron",
   "source": "recued",
-  "duration_s": 1.332,
+  "duration_s": 1.229,
   "take": "2026-09-09, Atlas",
-  "note": "was 'hee eh ron'"
+  "note": "was 'hee eh ron'",
+  "sha1": "0e6f7aaa71c6"
  },
  {
   "index": 220,
@@ -3036,7 +3256,8 @@
   "freq": 28,
   "tts": "thoo see ah",
   "source": "g2p",
-  "duration_s": 1.306
+  "duration_s": 1.236,
+  "sha1": "8480d424ed31"
  },
  {
   "index": 221,
@@ -3049,9 +3270,10 @@
   "freq": 33,
   "tts": "di ah thay kay",
   "source": "reroll",
-  "duration_s": 1.855,
+  "duration_s": 1.753,
   "take": "2026-09-10, Atlas",
-  "note": "the same, and the front of the word carries the fix the two-syllable version needed."
+  "note": "the same, and the front of the word carries the fix the two-syllable version needed.",
+  "sha1": "b9abeeac0b35"
  },
  {
   "index": 222,
@@ -3064,9 +3286,10 @@
   "freq": 52,
   "tts": "eh pang geh lee ah",
   "source": "rollout",
-  "duration_s": 2.247,
+  "duration_s": 1.826,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "3c0344a805b3"
  },
  {
   "index": 223,
@@ -3079,7 +3302,8 @@
   "freq": 43,
   "tts": "spehr mah",
   "source": "g2p",
-  "duration_s": 1.228
+  "duration_s": 1.152,
+  "sha1": "1fd7bbd3f876"
  },
  {
   "index": 224,
@@ -3092,7 +3316,8 @@
   "freq": 54,
   "tts": "deh ksee os",
   "source": "g2p",
-  "duration_s": 1.75
+  "duration_s": 1.678,
+  "sha1": "ad6493b1232d"
  },
  {
   "index": 225,
@@ -3105,10 +3330,11 @@
   "freq": 58,
   "tts": "mesos",
   "source": "rollout",
-  "duration_s": 1.599,
+  "duration_s": 0.946,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "b0f185d6ce8b"
  },
  {
   "index": 226,
@@ -3121,9 +3347,10 @@
   "freq": 71,
   "tts": "eye oh nee oss",
   "source": "recued",
-  "duration_s": 2.299,
+  "duration_s": 1.857,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "96e217331d3e"
  },
  {
   "index": 227,
@@ -3136,7 +3363,8 @@
   "freq": 67,
   "tts": "pistoss",
   "source": "locked",
-  "duration_s": 1.28
+  "duration_s": 1.215,
+  "sha1": "ff9d3adeb451"
  },
  {
   "index": 228,
@@ -3149,8 +3377,9 @@
   "freq": 79,
   "tts": "dee kyeoss",
   "source": "locked",
-  "duration_s": 1.703,
-  "verdict": "re-recorded 2026-09-03 (Atlas): needs dee-kye-os, not die-kai-os; kye is αι without the preceding d. Chosen by ear from several takes."
+  "duration_s": 1.615,
+  "verdict": "re-recorded 2026-09-03 (Atlas): needs dee-kye-os, not die-kai-os; kye is αι without the preceding d. Chosen by ear from several takes.",
+  "sha1": "9232d4b005d2"
  },
  {
   "index": 229,
@@ -3163,9 +3392,10 @@
   "freq": 78,
   "tts": "po nay ross",
   "source": "recued",
-  "duration_s": 1.698,
+  "duration_s": 1.586,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "0821992e621d"
  },
  {
   "index": 230,
@@ -3178,9 +3408,10 @@
   "freq": 66,
   "tts": "pres boo teh ros",
   "source": "rollout",
-  "duration_s": 1.829,
+  "duration_s": 1.517,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "396d4444b410"
  },
  {
   "index": 231,
@@ -3193,10 +3424,11 @@
   "freq": 26,
   "tts": "asthe neys",
   "source": "ays",
-  "duration_s": 1.547,
+  "duration_s": 1.335,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "f31100dc4197"
  },
  {
   "index": 232,
@@ -3209,9 +3441,10 @@
   "freq": 26,
   "tts": "ah lay theys",
   "source": "ays",
-  "duration_s": 1.593,
+  "duration_s": 1.671,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "fcb6cd2c83a4"
  },
  {
   "index": 233,
@@ -3226,7 +3459,8 @@
   "source": "batch5",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe'."
+  "note": "-εω is 'eh hoe'.",
+  "sha1": "30a889eacda5"
  },
  {
   "index": 234,
@@ -3239,9 +3473,10 @@
   "freq": 27,
   "tts": "eh leh oss",
   "source": "recued",
-  "duration_s": 1.593,
+  "duration_s": 1.945,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "2fc8a5b9bac0"
  },
  {
   "index": 235,
@@ -3254,9 +3489,10 @@
   "freq": 1385,
   "tts": "hoo toss",
   "source": "recued",
-  "duration_s": 1.202,
+  "duration_s": 0.969,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "7e42d64a2c80"
  },
  {
   "index": 236,
@@ -3269,7 +3505,8 @@
   "freq": 331,
   "tts": "eh ahn",
   "source": "g2p",
-  "duration_s": 1.306
+  "duration_s": 1.23,
+  "sha1": "ee71934cfed7"
  },
  {
   "index": 237,
@@ -3282,7 +3519,8 @@
   "freq": 213,
   "tts": "teh",
   "source": "g2p",
-  "duration_s": 0.627
+  "duration_s": 0.564,
+  "sha1": "733a0926a4eb"
  },
  {
   "index": 238,
@@ -3295,7 +3533,8 @@
   "freq": 171,
   "tts": "ahn",
   "source": "g2p",
-  "duration_s": 0.784
+  "duration_s": 0.725,
+  "sha1": "553a286a97c5"
  },
  {
   "index": 239,
@@ -3308,9 +3547,10 @@
   "freq": 135,
   "tts": "ee oh ahn neys",
   "source": "ays",
-  "duration_s": 1.907,
+  "duration_s": 1.929,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "35f590e8e9f5"
  },
  {
   "index": 240,
@@ -3323,7 +3563,8 @@
   "freq": 102,
   "tts": "ho teh",
   "source": "g2p",
-  "duration_s": 0.888
+  "duration_s": 0.822,
+  "sha1": "52317c837986"
  },
  {
   "index": 241,
@@ -3336,9 +3577,10 @@
   "freq": 94,
   "tts": "to poss",
   "source": "recued",
-  "duration_s": 1.306,
+  "duration_s": 0.999,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "cc5a2b7ee78c"
  },
  {
   "index": 242,
@@ -3351,9 +3593,10 @@
   "freq": 90,
   "tts": "may deys",
   "source": "ays",
-  "duration_s": 1.123,
+  "duration_s": 1.107,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "009a947624ba"
  },
  {
   "index": 243,
@@ -3366,7 +3609,8 @@
   "freq": 86,
   "tts": "ahr khoh",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.926,
+  "sha1": "6c6672986be9"
  },
  {
   "index": 244,
@@ -3379,7 +3623,8 @@
   "freq": 83,
   "tts": "hoh steh",
   "source": "g2p",
-  "duration_s": 1.228
+  "duration_s": 1.152,
+  "sha1": "92e0833f6389"
  },
  {
   "index": 245,
@@ -3392,7 +3637,8 @@
   "freq": 81,
   "tts": "ah nah beye noh",
   "source": "g2p",
-  "duration_s": 1.776
+  "duration_s": 1.715,
+  "sha1": "82d9141a24e6"
  },
  {
   "index": 246,
@@ -3405,9 +3651,10 @@
   "freq": 81,
   "tts": "mal lon",
   "source": "rollout",
-  "duration_s": 1.306,
+  "duration_s": 1.225,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "d23aef489cfe"
  },
  {
   "index": 247,
@@ -3420,7 +3667,8 @@
   "freq": 81,
   "tts": "ek bal lo",
   "source": "locked",
-  "duration_s": 1.045
+  "duration_s": 0.991,
+  "sha1": "ec440b0c1c99"
  },
  {
   "index": 248,
@@ -3433,9 +3681,10 @@
   "freq": 81,
   "tts": "heh kah stoss",
   "source": "recued",
-  "duration_s": 1.75,
+  "duration_s": 1.883,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "50063886608a"
  },
  {
   "index": 249,
@@ -3448,7 +3697,8 @@
   "freq": 80,
   "tts": "kah tah beye noh",
   "source": "g2p",
-  "duration_s": 2.508
+  "duration_s": 2.435,
+  "sha1": "3bb807dabbd2"
  },
  {
   "index": 250,
@@ -3461,9 +3711,10 @@
   "freq": 79,
   "tts": "pem poh",
   "source": "recued",
-  "duration_s": 1.489,
+  "duration_s": 0.983,
   "take": "2026-09-09, Atlas",
-  "note": "was 'pehm poh', heard as peh-hem-poh"
+  "note": "was 'pehm poh', heard as peh-hem-poh",
+  "sha1": "4cf409350284"
  },
  {
   "index": 251,
@@ -3476,9 +3727,10 @@
   "freq": 79,
   "tts": "moh oo seys",
   "source": "ays",
-  "duration_s": 1.933,
+  "duration_s": 2.025,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "95c59f8a5fe7"
  },
  {
   "index": 252,
@@ -3491,9 +3743,10 @@
   "freq": 79,
   "tts": "ah po sto loss",
   "source": "recued",
-  "duration_s": 2.194,
+  "duration_s": 2.298,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "297e866703af"
  },
  {
   "index": 253,
@@ -3506,7 +3759,8 @@
   "freq": 78,
   "tts": "sto mah",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.925,
+  "sha1": "7e419b2d9692"
  },
  {
   "index": 254,
@@ -3519,9 +3773,10 @@
   "freq": 77,
   "tts": "bap tee dzoh",
   "source": "recued",
-  "duration_s": 1.829,
+  "duration_s": 1.404,
   "take": "2026-09-09, Atlas",
-  "note": "was 'bahp tee dzoh', heard as hap"
+  "note": "was 'bahp tee dzoh', heard as hap",
+  "sha1": "e87edb4fbacf"
  },
  {
   "index": 255,
@@ -3534,7 +3789,8 @@
   "freq": 76,
   "tts": "hoo dohr",
   "source": "g2p",
-  "duration_s": 0.81
+  "duration_s": 0.734,
+  "sha1": "3369ad88135c"
  },
  {
   "index": 256,
@@ -3549,7 +3805,8 @@
   "source": "batch4",
   "duration_s": 1.541,
   "take": "2026-09-11, Atlas",
-  "note": "the sigma bound backward to close the first syllable. The omega in the second syllable keeps its 'oh', which is the pack's mark for it."
+  "note": "the sigma bound backward to close the first syllable. The omega in the second syllable keeps its 'oh', which is the pack's mark for it.",
+  "sha1": "6e062159ec63"
  },
  {
   "index": 257,
@@ -3562,9 +3819,10 @@
   "freq": 76,
   "tts": "eh moss",
   "source": "recued",
-  "duration_s": 1.28,
+  "duration_s": 1.045,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "562d3fd689de"
  },
  {
   "index": 258,
@@ -3577,7 +3835,8 @@
   "freq": 76,
   "tts": "ee eh roo sah laym",
   "source": "g2p",
-  "duration_s": 2.456
+  "duration_s": 2.397,
+  "sha1": "de7a23af65fd"
  },
  {
   "index": 259,
@@ -3590,10 +3849,11 @@
   "freq": 75,
   "tts": "see mohn",
   "source": "fix12",
-  "duration_s": 1.338,
+  "duration_s": 1.248,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "see mohn",
-  "format": "22050 mono 64k, pad_tail=0.22"
+  "format": "22050 mono 64k, pad_tail=0.22",
+  "sha1": "a1b86034746b"
  },
  {
   "index": 260,
@@ -3606,7 +3866,8 @@
   "freq": 75,
   "tts": "keffa lay",
   "source": "locked",
-  "duration_s": 1.437
+  "duration_s": 1.368,
+  "sha1": "c1d07ee7a76f"
  },
  {
   "index": 261,
@@ -3619,7 +3880,8 @@
   "freq": 75,
   "tts": "doh deh kah",
   "source": "g2p",
-  "duration_s": 1.384
+  "duration_s": 1.313,
+  "sha1": "f4cec73e3989"
  },
  {
   "index": 262,
@@ -3632,7 +3894,8 @@
   "freq": 74,
   "tts": "kyro",
   "source": "locked",
-  "duration_s": 0.81
+  "duration_s": 0.735,
+  "sha1": "e97886397252"
  },
  {
   "index": 263,
@@ -3645,7 +3908,8 @@
   "freq": 74,
   "tts": "ah pok tay noh",
   "source": "g2p",
-  "duration_s": 1.437
+  "duration_s": 1.381,
+  "sha1": "fb022d6b721d"
  },
  {
   "index": 264,
@@ -3658,7 +3922,8 @@
   "freq": 73,
   "tts": "ah brah ahm",
   "source": "g2p",
-  "duration_s": 1.593
+  "duration_s": 1.537,
+  "sha1": "c8879dc651f8"
  },
  {
   "index": 265,
@@ -3671,7 +3936,8 @@
   "freq": 72,
   "tts": "pee noh",
   "source": "g2p",
-  "duration_s": 0.784
+  "duration_s": 0.725,
+  "sha1": "1ad5f1c00171"
  },
  {
   "index": 266,
@@ -3684,7 +3950,8 @@
   "freq": 71,
   "tts": "poor",
   "source": "g2p",
-  "duration_s": 0.601
+  "duration_s": 0.543,
+  "sha1": "e606b032b8fe"
  },
  {
   "index": 267,
@@ -3697,7 +3964,8 @@
   "freq": 71,
   "tts": "tay reh oh",
   "source": "g2p",
-  "duration_s": 1.228
+  "duration_s": 1.17,
+  "sha1": "f175d7f9c27a"
  },
  {
   "index": 268,
@@ -3710,7 +3978,8 @@
   "freq": 70,
   "tts": "eye teh oh",
   "source": "g2p",
-  "duration_s": 1.907
+  "duration_s": 1.837,
+  "sha1": "13c6cd6a0283"
  },
  {
   "index": 269,
@@ -3723,7 +3992,8 @@
   "freq": 68,
   "tts": "ees rah ayl",
   "source": "g2p",
-  "duration_s": 1.646
+  "duration_s": 1.585,
+  "sha1": "7c79b5286e0c"
  },
  {
   "index": 270,
@@ -3736,7 +4006,8 @@
   "freq": 68,
   "tts": "ah goh",
   "source": "g2p",
-  "duration_s": 1.071
+  "duration_s": 1.008,
+  "sha1": "cfa85eecd0da"
  },
  {
   "index": 271,
@@ -3749,9 +4020,10 @@
   "freq": 68,
   "tts": "sab bah ton",
   "source": "rollout",
-  "duration_s": 1.75,
+  "duration_s": 1.491,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "81817e1a7682"
  },
  {
   "index": 272,
@@ -3764,7 +4036,8 @@
   "freq": 67,
   "tts": "rhay mah",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.972,
+  "sha1": "e162c48ba368"
  },
  {
   "index": 273,
@@ -3779,7 +4052,8 @@
   "source": "batch4",
   "duration_s": 0.993,
   "take": "2026-09-11, Atlas",
-  "note": "the p was swallowed. Same cue rolled again, which is what solved pros and dia."
+  "note": "the p was swallowed. Same cue rolled again, which is what solved pros and dia.",
+  "sha1": "e05ff857c6d9"
  },
  {
   "index": 274,
@@ -3792,9 +4066,10 @@
   "freq": 67,
   "tts": "treys",
   "source": "ays",
-  "duration_s": 0.967,
+  "duration_s": 0.926,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "eb5649c5027f"
  },
  {
   "index": 275,
@@ -3807,9 +4082,10 @@
   "freq": 66,
   "tts": "kar poss",
   "source": "rollout",
-  "duration_s": 1.541,
+  "duration_s": 1.231,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "d69f73031e25"
  },
  {
   "index": 276,
@@ -3822,7 +4098,8 @@
   "freq": 66,
   "tts": "feh roh",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.924,
+  "sha1": "53cf665e8659"
  },
  {
   "index": 277,
@@ -3835,7 +4112,8 @@
   "freq": 65,
   "tts": "fay mee",
   "source": "g2p",
-  "duration_s": 0.731
+  "duration_s": 0.665,
+  "sha1": "0f2b4870ec28"
  },
  {
   "index": 278,
@@ -3848,7 +4126,8 @@
   "freq": 65,
   "tts": "ay teh",
   "source": "g2p",
-  "duration_s": 0.914
+  "duration_s": 0.841,
+  "sha1": "f99221c1ea6b"
  },
  {
   "index": 279,
@@ -3861,7 +4140,8 @@
   "freq": 63,
   "tts": "hee eh ro so loo mah",
   "source": "g2p",
-  "duration_s": 2.586
+  "duration_s": 2.529,
+  "sha1": "96e65d5ac08e"
  },
  {
   "index": 280,
@@ -3874,7 +4154,8 @@
   "freq": 63,
   "tts": "deye mo nee on",
   "source": "g2p",
-  "duration_s": 2.168
+  "duration_s": 2.095,
+  "sha1": "a724c2aa682f"
  },
  {
   "index": 281,
@@ -3887,7 +4168,8 @@
   "freq": 62,
   "tts": "grahm mah tews",
   "source": "g2p",
-  "duration_s": 1.515
+  "duration_s": 1.458,
+  "sha1": "484b458c4fcd"
  },
  {
   "index": 282,
@@ -3900,7 +4182,8 @@
   "freq": 62,
   "tts": "do keh oh",
   "source": "g2p",
-  "duration_s": 1.515
+  "duration_s": 1.451,
+  "sha1": "a92f0249481d"
  },
  {
   "index": 283,
@@ -3913,7 +4196,8 @@
   "freq": 62,
   "tts": "o ros",
   "source": "g2p",
-  "duration_s": 0.967
+  "duration_s": 0.911,
+  "sha1": "e1d0dfd1aa78"
  },
  {
   "index": 284,
@@ -3926,7 +4210,8 @@
   "freq": 62,
   "tts": "eh ksoh",
   "source": "g2p",
-  "duration_s": 1.541
+  "duration_s": 1.483,
+  "sha1": "bebd390d9618"
  },
  {
   "index": 285,
@@ -3939,7 +4224,8 @@
   "freq": 62,
   "tts": "theh lay mah",
   "source": "g2p",
-  "duration_s": 1.593
+  "duration_s": 1.534,
+  "sha1": "c87cf160440c"
  },
  {
   "index": 286,
@@ -3952,7 +4238,8 @@
   "freq": 62,
   "tts": "eh roh tah oh",
   "source": "g2p",
-  "duration_s": 1.75
+  "duration_s": 1.694,
+  "sha1": "e44231eb300f"
  },
  {
   "index": 287,
@@ -3965,7 +4252,8 @@
   "freq": 61,
   "tts": "nooks",
   "source": "g2p",
-  "duration_s": 0.914
+  "duration_s": 0.842,
+  "sha1": "e78b8f13f0bb"
  },
  {
   "index": 288,
@@ -3978,7 +4266,8 @@
   "freq": 61,
   "tts": "gah lee leye ah",
   "source": "g2p",
-  "duration_s": 2.168
+  "duration_s": 2.094,
+  "sha1": "afb3c7bfcfa6"
  },
  {
   "index": 289,
@@ -3991,9 +4280,10 @@
   "freq": 61,
   "tts": "ah gah pay toss",
   "source": "recued",
-  "duration_s": 1.672,
+  "duration_s": 1.927,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "35b936010e97"
  },
  {
   "index": 290,
@@ -4006,7 +4296,8 @@
   "freq": 61,
   "tts": "hoh deh",
   "source": "g2p",
-  "duration_s": 0.94
+  "duration_s": 0.874,
+  "sha1": "5b500ad03421"
  },
  {
   "index": 291,
@@ -4021,7 +4312,8 @@
   "source": "batch4",
   "duration_s": 1.881,
   "take": "2026-09-11, Atlas",
-  "note": "two faults. The prefix, and the -εω ending, which the ear settled as 'eh hoe' in γαμέω and τελέω; this cue had neither."
+  "note": "two faults. The prefix, and the -εω ending, which the ear settled as 'eh hoe' in γαμέω and τελέω; this cue had neither.",
+  "sha1": "27bdb89eaf28"
  },
  {
   "index": 292,
@@ -4034,7 +4326,8 @@
   "freq": 60,
   "tts": "ay day",
   "source": "g2p",
-  "duration_s": 1.149
+  "duration_s": 1.078,
+  "sha1": "1026183a8175"
  },
  {
   "index": 293,
@@ -4047,7 +4340,8 @@
   "freq": 60,
   "tts": "hee mah tee on",
   "source": "g2p",
-  "duration_s": 1.567
+  "duration_s": 1.513,
+  "sha1": "20760216d5d4"
  },
  {
   "index": 294,
@@ -4060,9 +4354,10 @@
   "freq": 60,
   "tts": "hoo par khoh",
   "source": "rollout",
-  "duration_s": 1.541,
+  "duration_s": 1.37,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "4b74ad3a692a"
  },
  {
   "index": 295,
@@ -4075,7 +4370,8 @@
   "freq": 59,
   "tts": "dow eed",
   "source": "g2p",
-  "duration_s": 1.254
+  "duration_s": 1.194,
+  "sha1": "cd3f7cb3f893"
  },
  {
   "index": 296,
@@ -4088,7 +4384,8 @@
   "freq": 59,
   "tts": "soo nah goh",
   "source": "g2p",
-  "duration_s": 1.149
+  "duration_s": 1.085,
+  "sha1": "a2f6f31f8cdd"
  },
  {
   "index": 297,
@@ -4101,7 +4398,8 @@
   "freq": 59,
   "tts": "khah rah",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.149,
+  "sha1": "686e6c93deea"
  },
  {
   "index": 298,
@@ -4114,7 +4412,8 @@
   "freq": 59,
   "tts": "ew thoos",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.116,
+  "sha1": "31eceeb028d3"
  },
  {
   "index": 299,
@@ -4127,7 +4426,8 @@
   "freq": 59,
   "tts": "ah spah dzo my",
   "source": "g2p",
-  "duration_s": 2.534
+  "duration_s": 2.464,
+  "sha1": "64eb0cf36e7b"
  },
  {
   "index": 300,
@@ -4140,9 +4440,10 @@
   "freq": 58,
   "tts": "lee thoss",
   "source": "recued",
-  "duration_s": 1.541,
+  "duration_s": 1.184,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "dde66dabeb56"
  },
  {
   "index": 301,
@@ -4155,7 +4456,8 @@
   "freq": 58,
   "tts": "dee dah skah los",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.824,
+  "sha1": "6a335b899c7c"
  },
  {
   "index": 302,
@@ -4168,7 +4470,8 @@
   "freq": 58,
   "tts": "theh oh reh oh",
   "source": "g2p",
-  "duration_s": 2.09
+  "duration_s": 2.021,
+  "sha1": "4b09de175c8f"
  },
  {
   "index": 303,
@@ -4181,7 +4484,8 @@
   "freq": 57,
   "tts": "may deh",
   "source": "g2p",
-  "duration_s": 0.784
+  "duration_s": 0.712,
+  "sha1": "0a449dcab96d"
  },
  {
   "index": 304,
@@ -4194,9 +4498,10 @@
   "freq": 56,
   "tts": "soo nah goh gey",
   "source": "rollout",
-  "duration_s": 1.776,
+  "duration_s": 1.511,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "471a8b1dd98d"
  },
  {
   "index": 305,
@@ -4209,7 +4514,8 @@
   "freq": 56,
   "tts": "toy oo tos",
   "source": "g2p",
-  "duration_s": 1.567
+  "duration_s": 1.501,
+  "sha1": "afc4a901fc14"
  },
  {
   "index": 306,
@@ -4222,7 +4528,8 @@
   "freq": 56,
   "tts": "deh kho my",
   "source": "g2p",
-  "duration_s": 2.011
+  "duration_s": 1.958,
+  "sha1": "1e698aa9edd5"
  },
  {
   "index": 307,
@@ -4235,7 +4542,8 @@
   "freq": 56,
   "tts": "eh peh roh tah oh",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.821,
+  "sha1": "5978de3adf33"
  },
  {
   "index": 308,
@@ -4248,7 +4556,8 @@
   "freq": 55,
   "tts": "krah dzoh",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.339,
+  "sha1": "e16bca5ff59b"
  },
  {
   "index": 309,
@@ -4261,9 +4570,10 @@
   "freq": 55,
   "tts": "tree toss",
   "source": "recued",
-  "duration_s": 1.123,
+  "duration_s": 1.129,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "386ae8b79bc2"
  },
  {
   "index": 310,
@@ -4276,7 +4586,8 @@
   "freq": 55,
   "tts": "loy pos",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.286,
+  "sha1": "28e553b91209"
  },
  {
   "index": 311,
@@ -4289,7 +4600,8 @@
   "freq": 55,
   "tts": "pee lah tos",
   "source": "g2p",
-  "duration_s": 1.567
+  "duration_s": 1.496,
+  "sha1": "7a39855aadb9"
  },
  {
   "index": 312,
@@ -4304,7 +4616,8 @@
   "source": "batch4",
   "duration_s": 0.914,
   "take": "2026-09-11, Atlas",
-  "note": "'crow' is the English bird and carries the /ou/ of gold, so the stressed omicron read long. 'chron' as in chronic is /kron/. Bound, because 'oss' standing alone after a consonant picked up an extra letter -- Fraser: \"B says chron oss C, with the added x on the end\"."
+  "note": "'crow' is the English bird and carries the /ou/ of gold, so the stressed omicron read long. 'chron' as in chronic is /kron/. Bound, because 'oss' standing alone after a consonant picked up an extra letter -- Fraser: \"B says chron oss C, with the added x on the end\".",
+  "sha1": "680c80910d61"
  },
  {
   "index": 313,
@@ -4317,7 +4630,8 @@
   "freq": 53,
   "tts": "ho pohs",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.03,
+  "sha1": "7639c8f32f9e"
  },
  {
   "index": 314,
@@ -4330,7 +4644,8 @@
   "freq": 53,
   "tts": "oo khee",
   "source": "g2p",
-  "duration_s": 1.019
+  "duration_s": 0.949,
+  "sha1": "1b80ea29d488"
  },
  {
   "index": 315,
@@ -4343,7 +4658,8 @@
   "freq": 53,
   "tts": "dee o",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.039,
+  "sha1": "0fa363d59901"
  },
  {
   "index": 316,
@@ -4358,7 +4674,8 @@
   "source": "batch4",
   "duration_s": 1.463,
   "take": "2026-09-11, Atlas",
-  "note": "'peye' read as \"pay\". 'pie' is his; 'dee on' is the -ion ending in 10 of 13 cues."
+  "note": "'peye' read as \"pay\". 'pie' is his; 'dee on' is the -ion ending in 10 of 13 cues.",
+  "sha1": "72e698e1dc0f"
  },
  {
   "index": 317,
@@ -4371,7 +4688,8 @@
   "freq": 52,
   "tts": "ess kah toss",
   "source": "locked",
-  "duration_s": 2.116
+  "duration_s": 2.063,
+  "sha1": "f1faaf25a3cd"
  },
  {
   "index": 318,
@@ -4384,7 +4702,8 @@
   "freq": 52,
   "tts": "spay roh",
   "source": "locked",
-  "duration_s": 1.228
+  "duration_s": 1.168,
+  "sha1": "6e351d5173ad"
  },
  {
   "index": 319,
@@ -4397,7 +4716,8 @@
   "freq": 52,
   "tts": "pay tho",
   "source": "locked",
-  "duration_s": 0.914
+  "duration_s": 0.86,
+  "sha1": "1f97572a3ec7"
  },
  {
   "index": 320,
@@ -4410,9 +4730,10 @@
   "freq": 50,
   "tts": "mah kah ree oss",
   "source": "recued",
-  "duration_s": 2.064,
+  "duration_s": 2.187,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "64aae2639c57"
  },
  {
   "index": 321,
@@ -4425,9 +4746,10 @@
   "freq": 50,
   "tts": "too floss",
   "source": "recued",
-  "duration_s": 1.254,
+  "duration_s": 1.193,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "9931c6ed2041"
  },
  {
   "index": 322,
@@ -4440,7 +4762,8 @@
   "freq": 50,
   "tts": "pah rah bo lay",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.805,
+  "sha1": "749eadafdadb"
  },
  {
   "index": 323,
@@ -4453,9 +4776,10 @@
   "freq": 50,
   "tts": "kah koss",
   "source": "recued",
-  "duration_s": 1.28,
+  "duration_s": 1.272,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "e60e611306c1"
  },
  {
   "index": 324,
@@ -4468,7 +4792,8 @@
   "freq": 50,
   "tts": "glohs sah",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.345,
+  "sha1": "cd9ae6967198"
  },
  {
   "index": 325,
@@ -4481,9 +4806,10 @@
   "freq": 49,
   "tts": "pah rah lam bah noh",
   "source": "rollout",
-  "duration_s": 2.743,
+  "duration_s": 2.254,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "b607e47c99d8"
  },
  {
   "index": 326,
@@ -4496,7 +4822,8 @@
   "freq": 49,
   "tts": "khray ah",
   "source": "g2p",
-  "duration_s": 1.123
+  "duration_s": 1.048,
+  "sha1": "ed829db39974"
  },
  {
   "index": 327,
@@ -4509,7 +4836,8 @@
   "freq": 49,
   "tts": "ah rah",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.933,
+  "sha1": "9d1496240e4f"
  },
  {
   "index": 328,
@@ -4522,9 +4850,10 @@
   "freq": 49,
   "tts": "eh toss",
   "source": "recued",
-  "duration_s": 1.123,
+  "duration_s": 1.23,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "7b5ea15cedaa"
  },
  {
   "index": 329,
@@ -4537,7 +4866,8 @@
   "freq": 49,
   "tts": "grah fay",
   "source": "g2p",
-  "duration_s": 1.332
+  "duration_s": 1.275,
+  "sha1": "aeb93435e1a3"
  },
  {
   "index": 330,
@@ -4550,9 +4880,10 @@
   "freq": 48,
   "tts": "eh ray moss",
   "source": "recued",
-  "duration_s": 1.567,
+  "duration_s": 1.825,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "b0a2586daff1"
  },
  {
   "index": 331,
@@ -4565,7 +4896,8 @@
   "freq": 48,
   "tts": "ehm pros thehn",
   "source": "g2p",
-  "duration_s": 2.011
+  "duration_s": 1.948,
+  "sha1": "ccd1c7848217"
  },
  {
   "index": 332,
@@ -4578,7 +4910,8 @@
   "freq": 48,
   "tts": "ah po dee doh mee",
   "source": "g2p",
-  "duration_s": 2.168
+  "duration_s": 2.101,
+  "sha1": "f806754dd012"
  },
  {
   "index": 333,
@@ -4591,7 +4924,8 @@
   "freq": 48,
   "tts": "fah neh ro oh",
   "source": "g2p",
-  "duration_s": 1.672
+  "duration_s": 1.606,
+  "sha1": "a4ca4abc1443"
  },
  {
   "index": 334,
@@ -4604,7 +4938,8 @@
   "freq": 47,
   "tts": "poo",
   "source": "g2p",
-  "duration_s": 0.601
+  "duration_s": 0.546,
+  "sha1": "5eed6c47bb3e"
  },
  {
   "index": 335,
@@ -4617,7 +4952,8 @@
   "freq": 47,
   "tts": "pros fair oh",
   "source": "locked",
-  "duration_s": 1.489
+  "duration_s": 1.421,
+  "sha1": "9dc4f96ac7a1"
  },
  {
   "index": 336,
@@ -4630,7 +4966,8 @@
   "freq": 47,
   "tts": "pro",
   "source": "g2p",
-  "duration_s": 0.679
+  "duration_s": 0.62,
+  "sha1": "a349bfd4fc53"
  },
  {
   "index": 337,
@@ -4643,7 +4980,8 @@
   "freq": 47,
   "tts": "kree sees",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.149,
+  "sha1": "1ef47df8bc36"
  },
  {
   "index": 338,
@@ -4656,9 +4994,10 @@
   "freq": 47,
   "tts": "phoo lah kay",
   "source": "fix21",
-  "duration_s": 1.28,
+  "duration_s": 1.153,
   "take": "2026-09-10, Atlas",
-  "note": "the phi read as p; Black spells it ph. And kay, not key"
+  "note": "the phi read as p; Black spells it ph. And kay, not key",
+  "sha1": "cac5a969ae7a"
  },
  {
   "index": 339,
@@ -4671,9 +5010,10 @@
   "freq": 47,
   "tts": "hah mahr toh loss",
   "source": "recued",
-  "duration_s": 1.75,
+  "duration_s": 1.74,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "0290ce74fdb6"
  },
  {
   "index": 340,
@@ -4686,7 +5026,8 @@
   "freq": 47,
   "tts": "krah teh oh",
   "source": "g2p",
-  "duration_s": 1.254
+  "duration_s": 1.192,
+  "sha1": "3c7f8d4e0f9a"
  },
  {
   "index": 341,
@@ -4699,9 +5040,10 @@
   "freq": 47,
   "tts": "fo boss",
   "source": "recued",
-  "duration_s": 1.019,
+  "duration_s": 1.265,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "f47a739ad470"
  },
  {
   "index": 342,
@@ -4714,7 +5056,8 @@
   "freq": 47,
   "tts": "oo keh tee",
   "source": "g2p",
-  "duration_s": 2.064
+  "duration_s": 1.996,
+  "sha1": "fe574abe5798"
  },
  {
   "index": 343,
@@ -4727,7 +5070,8 @@
   "freq": 47,
   "tts": "ah khree",
   "source": "g2p",
-  "duration_s": 1.228
+  "duration_s": 1.152,
+  "sha1": "8c90eec59929"
  },
  {
   "index": 344,
@@ -4740,9 +5084,10 @@
   "freq": 46,
   "tts": "mee kross",
   "source": "recued",
-  "duration_s": 1.228,
+  "duration_s": 1.144,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "a7d468a0e68e"
  },
  {
   "index": 345,
@@ -4755,7 +5100,8 @@
   "freq": 46,
   "tts": "oo eye",
   "source": "g2p",
-  "duration_s": 0.888
+  "duration_s": 0.821,
+  "sha1": "abf8fed5359e"
  },
  {
   "index": 346,
@@ -4768,7 +5114,8 @@
   "freq": 46,
   "tts": "thay ree on",
   "source": "g2p",
-  "duration_s": 1.149
+  "duration_s": 1.09,
+  "sha1": "2903f714f887"
  },
  {
   "index": 347,
@@ -4781,9 +5128,10 @@
   "freq": 46,
   "tts": "so tey reea",
   "source": "batch2",
-  "duration_s": 1.907,
+  "duration_s": 1.49,
   "take": "2026-09-10, Atlas",
-  "note": "final eta as 'ey', chunked"
+  "note": "final eta as 'ey', chunked",
+  "sha1": "c58dcfeaafb7"
  },
  {
   "index": 348,
@@ -4796,9 +5144,10 @@
   "freq": 45,
   "tts": "ah pang gel loh",
   "source": "rollout",
-  "duration_s": 1.672,
+  "duration_s": 1.534,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "987ad67938c7"
  },
  {
   "index": 349,
@@ -4811,7 +5160,8 @@
   "freq": 45,
   "tts": "kah thee dzoh",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.745,
+  "sha1": "41841812c2e0"
  },
  {
   "index": 350,
@@ -4824,7 +5174,8 @@
   "freq": 45,
   "tts": "dee oh koh",
   "source": "g2p",
-  "duration_s": 2.038
+  "duration_s": 1.984,
+  "sha1": "cc18bafecd00"
  },
  {
   "index": 351,
@@ -4837,7 +5188,8 @@
   "freq": 45,
   "tts": "ho moy os",
   "source": "g2p",
-  "duration_s": 1.646
+  "duration_s": 1.588,
+  "sha1": "07e31a345a7f"
  },
  {
   "index": 352,
@@ -4850,8 +5202,9 @@
   "freq": 45,
   "tts": "thlipsis",
   "source": "locked",
-  "duration_s": 1.181,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.091,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "d4631664aa1e"
  },
  {
   "index": 353,
@@ -4864,9 +5217,10 @@
   "freq": 44,
   "tts": "ee oo das",
   "source": "rollout",
-  "duration_s": 1.62,
+  "duration_s": 1.476,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "ffad7ea1a9df"
  },
  {
   "index": 354,
@@ -4879,8 +5233,9 @@
   "freq": 44,
   "tts": "youdeyah",
   "source": "locked",
-  "duration_s": 1.468,
-  "verdict": "re-recorded 2026-09-03 (Atlas): same yoo stand-in as Ἰουδαῖος; was 3.13s. Chosen by ear from several takes."
+  "duration_s": 1.384,
+  "verdict": "re-recorded 2026-09-03 (Atlas): same yoo stand-in as Ἰουδαῖος; was 3.13s. Chosen by ear from several takes.",
+  "sha1": "95d3b05c1c25"
  },
  {
   "index": 355,
@@ -4893,7 +5248,8 @@
   "freq": 44,
   "tts": "kah toy keh oh",
   "source": "g2p",
-  "duration_s": 1.75
+  "duration_s": 1.687,
+  "sha1": "a5b969a5502b"
  },
  {
   "index": 356,
@@ -4908,7 +5264,8 @@
   "source": "batch4",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "bare 'gee' is the letter G. Bound for pace, with epi's own locked 'eppee' front."
+  "note": "bare 'gee' is the letter G. Bound for pace, with epi's own locked 'eppee' front.",
+  "sha1": "ecacfb992e45"
  },
  {
   "index": 357,
@@ -4921,9 +5278,10 @@
   "freq": 44,
   "tts": "dew teh ross",
   "source": "recued",
-  "duration_s": 1.437,
+  "duration_s": 1.546,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "d975dba94a09"
  },
  {
   "index": 358,
@@ -4936,7 +5294,8 @@
   "freq": 43,
   "tts": "geh neh ah",
   "source": "g2p",
-  "duration_s": 1.672
+  "duration_s": 1.607,
+  "sha1": "54e0f63c8fee"
  },
  {
   "index": 359,
@@ -4949,9 +5308,10 @@
   "freq": 43,
   "tts": "hay roh deys",
   "source": "ays",
-  "duration_s": 1.384,
+  "duration_s": 1.382,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "c4001b6be5b9"
  },
  {
   "index": 360,
@@ -4964,7 +5324,8 @@
   "freq": 43,
   "tts": "seh ow too",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.293,
+  "sha1": "0ef6ac544f01"
  },
  {
   "index": 361,
@@ -4977,9 +5338,10 @@
   "freq": 43,
   "tts": "thera pew oh",
   "source": "recued",
-  "duration_s": 2.22,
+  "duration_s": 1.427,
   "take": "2026-09-09, Atlas",
-  "note": "was 'theh rah pew oh', heard as 'the hey rah'; fewer joins for the voice to add an h to"
+  "note": "was 'theh rah pew oh', heard as 'the hey rah'; fewer joins for the voice to add an h to",
+  "sha1": "d13625421fa2"
  },
  {
   "index": 362,
@@ -4992,7 +5354,8 @@
   "freq": 43,
   "tts": "thow mah dzoh",
   "source": "g2p",
-  "duration_s": 1.593
+  "duration_s": 1.519,
+  "sha1": "9e3552e643b4"
  },
  {
   "index": 363,
@@ -5005,7 +5368,8 @@
   "freq": 43,
   "tts": "foh neh oh",
   "source": "g2p",
-  "duration_s": 1.254
+  "duration_s": 1.179,
+  "sha1": "b8f27ae14e04"
  },
  {
   "index": 364,
@@ -5018,7 +5382,8 @@
   "freq": 43,
   "tts": "deh oh",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.918,
+  "sha1": "acff907acee2"
  },
  {
   "index": 365,
@@ -5031,9 +5396,10 @@
   "freq": 42,
   "tts": "meh ross",
   "source": "recued",
-  "duration_s": 1.437,
+  "duration_s": 1.048,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "0eda7d9b15d7"
  },
  {
   "index": 366,
@@ -5046,8 +5412,9 @@
   "freq": 42,
   "tts": "ehnggeedzoh",
   "source": "locked",
-  "duration_s": 1.73,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.635,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "a403311e3a60"
  },
  {
   "index": 367,
@@ -5060,7 +5427,8 @@
   "freq": 42,
   "tts": "ee ah koh bos",
   "source": "g2p",
-  "duration_s": 1.959
+  "duration_s": 1.888,
+  "sha1": "540e51975361"
  },
  {
   "index": 368,
@@ -5073,7 +5441,8 @@
   "freq": 42,
   "tts": "loo oh",
   "source": "g2p",
-  "duration_s": 1.176
+  "duration_s": 1.117,
+  "sha1": "655df97d96a3"
  },
  {
   "index": 369,
@@ -5086,9 +5455,10 @@
   "freq": 42,
   "tts": "kye noss",
   "source": "batch3",
-  "duration_s": 1.463,
+  "duration_s": 1.243,
   "take": "2026-09-10, Atlas",
-  "note": "'keye' came back as key-a; αι is settled as 'eye' and 'kye' is a name, so it is read rather than spelled"
+  "note": "'keye' came back as key-a; αι is settled as 'eye' and 'kye' is a name, so it is read rather than spelled",
+  "sha1": "de2072ef26bd"
  },
  {
   "index": 370,
@@ -5101,8 +5471,9 @@
   "freq": 42,
   "tts": "khohrees",
   "source": "locked",
-  "duration_s": 1.442,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.354,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "639f2b038214"
  },
  {
   "index": 371,
@@ -5115,9 +5486,10 @@
   "freq": 42,
   "tts": "pas khoh",
   "source": "rollout",
-  "duration_s": 0.967,
+  "duration_s": 0.996,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "bccec7859965"
  },
  {
   "index": 372,
@@ -5130,9 +5502,10 @@
   "freq": 42,
   "tts": "hah mar tah noh",
   "source": "rollout",
-  "duration_s": 2.038,
+  "duration_s": 2.22,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "885b5dff86e3"
  },
  {
   "index": 373,
@@ -5145,7 +5518,8 @@
   "freq": 42,
   "tts": "ah nah stah sees",
   "source": "g2p",
-  "duration_s": 2.142
+  "duration_s": 2.068,
+  "sha1": "26a4b9c74a12"
  },
  {
   "index": 374,
@@ -5158,10 +5532,11 @@
   "freq": 41,
   "tts": "aksioss",
   "source": "recued",
-  "duration_s": 1.286,
+  "duration_s": 1.046,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'ah ksee os' was spelled out. Chosen by ear from several takes.",
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "dfd27c517c9c"
  },
  {
   "index": 375,
@@ -5174,7 +5549,8 @@
   "freq": 41,
   "tts": "say meh ron",
   "source": "g2p",
-  "duration_s": 1.149
+  "duration_s": 1.073,
+  "sha1": "e5547588680f"
  },
  {
   "index": 376,
@@ -5187,7 +5563,8 @@
   "freq": 41,
   "tts": "o lee gos",
   "source": "g2p",
-  "duration_s": 1.541
+  "duration_s": 1.475,
+  "sha1": "020e3e89f875"
  },
  {
   "index": 377,
@@ -5200,7 +5577,8 @@
   "freq": 41,
   "tts": "air gah zo my",
   "source": "locked",
-  "duration_s": 2.377
+  "duration_s": 2.306,
+  "sha1": "966d7733b22d"
  },
  {
   "index": 378,
@@ -5213,7 +5591,8 @@
   "freq": 41,
   "tts": "dee ehr kho my",
   "source": "g2p",
-  "duration_s": 2.717
+  "duration_s": 2.661,
+  "sha1": "8ba556bc107d"
  },
  {
   "index": 379,
@@ -5226,7 +5605,8 @@
   "freq": 41,
   "tts": "ew lo geh oh",
   "source": "g2p",
-  "duration_s": 2.09
+  "duration_s": 2.015,
+  "sha1": "2e9e126d53a3"
  },
  {
   "index": 380,
@@ -5239,7 +5619,8 @@
   "freq": 41,
   "tts": "pahn to teh",
   "source": "g2p",
-  "duration_s": 1.306
+  "duration_s": 1.253,
+  "sha1": "0ab400845679"
  },
  {
   "index": 381,
@@ -5252,7 +5633,8 @@
   "freq": 41,
   "tts": "pah ree stay mee",
   "source": "g2p",
-  "duration_s": 1.541
+  "duration_s": 1.48,
+  "sha1": "93582c900c9d"
  },
  {
   "index": 382,
@@ -5265,9 +5647,10 @@
   "freq": 41,
   "tts": "tee mey",
   "source": "rollout",
-  "duration_s": 0.993,
+  "duration_s": 0.836,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "56345d580502"
  },
  {
   "index": 383,
@@ -5280,7 +5663,8 @@
   "freq": 40,
   "tts": "clye oh",
   "source": "locked",
-  "duration_s": 1.123
+  "duration_s": 1.069,
+  "sha1": "8c58689abf18"
  },
  {
   "index": 384,
@@ -5293,7 +5677,8 @@
   "freq": 40,
   "tts": "heh toy mah dzoh",
   "source": "g2p",
-  "duration_s": 1.515
+  "duration_s": 1.454,
+  "sha1": "42960c913295"
  },
  {
   "index": 385,
@@ -5306,7 +5691,8 @@
   "freq": 40,
   "tts": "hee kah nos",
   "source": "g2p",
-  "duration_s": 1.62
+  "duration_s": 1.547,
+  "sha1": "736992ccb7f8"
  },
  {
   "index": 386,
@@ -5319,7 +5705,8 @@
   "freq": 40,
   "tts": "mee seh oh",
   "source": "g2p",
-  "duration_s": 1.541
+  "duration_s": 1.475,
+  "sha1": "87bafdfef32f"
  },
  {
   "index": 387,
@@ -5332,7 +5719,8 @@
   "freq": 40,
   "tts": "oy ko do meh oh",
   "source": "g2p",
-  "duration_s": 1.907
+  "duration_s": 1.831,
+  "sha1": "cf73c0186886"
  },
  {
   "index": 388,
@@ -5345,8 +5733,9 @@
   "freq": 40,
   "tts": "mnay may on",
   "source": "locked",
-  "duration_s": 1.384,
-  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation"
+  "duration_s": 1.321,
+  "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
+  "sha1": "50dd2eb0ab48"
  },
  {
   "index": 389,
@@ -5359,9 +5748,10 @@
   "freq": 40,
   "tts": "teh loss",
   "source": "recued",
-  "duration_s": 1.228,
+  "duration_s": 1.261,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "63b054e80715"
  },
  {
   "index": 390,
@@ -5374,9 +5764,10 @@
   "freq": 40,
   "tts": "tes sah res",
   "source": "rollout",
-  "duration_s": 2.011,
+  "duration_s": 1.797,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "a3488c5c487c"
  },
  {
   "index": 391,
@@ -5391,7 +5782,8 @@
   "source": "batch4",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "bare 'gee' is the letter G; 'ghee' is not."
+  "note": "bare 'gee' is the letter G; 'ghee' is not.",
+  "sha1": "eb92a8afd816"
  },
  {
   "index": 392,
@@ -5406,7 +5798,8 @@
   "source": "batch4",
   "duration_s": 1.881,
   "take": "2026-09-11, Atlas",
-  "note": "the same 'sew' as proseuchomai. pisteuo does this ending as 'pee stew oh'."
+  "note": "the same 'sew' as proseuchomai. pisteuo does this ending as 'pee stew oh'.",
+  "sha1": "516359edde97"
  },
  {
   "index": 393,
@@ -5419,7 +5812,8 @@
   "freq": 39,
   "tts": "thoo rah",
   "source": "g2p",
-  "duration_s": 0.862
+  "duration_s": 0.794,
+  "sha1": "f4c6f1fed302"
  },
  {
   "index": 394,
@@ -5434,7 +5828,8 @@
   "source": "batch4",
   "duration_s": 1.698,
   "take": "2026-09-11, Atlas",
-  "note": "the stressed omicron was lengthening toward an omega, because `pro` is a word the voice looks up where `to` and `thro` are not. Closing the syllable with a doubled beta forces it short -- the same mechanism as `pross`, hopping against hoping. Fraser: \"the pro sound is correct. The double bb is quite strong, but still works.\""
+  "note": "the stressed omicron was lengthening toward an omega, because `pro` is a word the voice looks up where `to` and `thro` are not. Closing the syllable with a doubled beta forces it short -- the same mechanism as `pross`, hopping against hoping. Fraser: \"the pro sound is correct. The double bb is quite strong, but still works.\"",
+  "sha1": "97ef0a7d922e"
  },
  {
   "index": 395,
@@ -5447,9 +5842,10 @@
   "freq": 39,
   "tts": "hap toh",
   "source": "rollout",
-  "duration_s": 0.862,
+  "duration_s": 0.951,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "db93129d08dc"
  },
  {
   "index": 396,
@@ -5462,7 +5858,8 @@
   "freq": 39,
   "tts": "eh pee tee thay mee",
   "source": "g2p",
-  "duration_s": 2.429
+  "duration_s": 2.374,
+  "sha1": "2b2b63dcb972"
  },
  {
   "index": 397,
@@ -5475,7 +5872,8 @@
   "freq": 39,
   "tts": "plah nah oh",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.741,
+  "sha1": "b21585e9b4e3"
  },
  {
   "index": 398,
@@ -5488,7 +5886,8 @@
   "freq": 38,
   "tts": "pehn teh",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.969,
+  "sha1": "b29a7de37169"
  },
  {
   "index": 399,
@@ -5501,7 +5900,8 @@
   "freq": 38,
   "tts": "ew khah ree steh oh",
   "source": "g2p",
-  "duration_s": 2.168
+  "duration_s": 2.092,
+  "sha1": "d8aa893993c6"
  },
  {
   "index": 400,
@@ -5514,8 +5914,9 @@
   "freq": 38,
   "tts": "epithoo meeah",
   "source": "locked",
-  "duration_s": 1.625,
-  "verdict": "re-recorded 2026-09-03 (Atlas): the spaced 'eh pee thoo mee ah' ran 3.29s with a 325ms gap mid-word. Joined to two tokens — the partial join the guide calls for, not a full close-up — it is 1.62s with a largest gap of 130ms."
+  "duration_s": 1.526,
+  "verdict": "re-recorded 2026-09-03 (Atlas): the spaced 'eh pee thoo mee ah' ran 3.29s with a 325ms gap mid-word. Joined to two tokens — the partial join the guide calls for, not a full close-up — it is 1.62s with a largest gap of 130ms.",
+  "sha1": "b397372428a5"
  },
  {
   "index": 401,
@@ -5528,9 +5929,10 @@
   "freq": 38,
   "tts": "hoo po tas soh",
   "source": "rollout",
-  "duration_s": 1.567,
+  "duration_s": 1.785,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8aa807613e9f"
  },
  {
   "index": 402,
@@ -5543,9 +5945,10 @@
   "freq": 38,
   "tts": "pras soh",
   "source": "rollout",
-  "duration_s": 1.149,
+  "duration_s": 1.291,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8cf7159f6fef"
  },
  {
   "index": 403,
@@ -5558,7 +5961,8 @@
   "freq": 37,
   "tts": "boo lo my",
   "source": "g2p",
-  "duration_s": 1.437
+  "duration_s": 1.38,
+  "sha1": "75cae404fb8d"
  },
  {
   "index": 404,
@@ -5571,7 +5975,8 @@
   "freq": 37,
   "tts": "pay rah dzoh",
   "source": "g2p",
-  "duration_s": 1.593
+  "duration_s": 1.528,
+  "sha1": "3e494e6095d5"
  },
  {
   "index": 405,
@@ -5584,7 +5989,8 @@
   "freq": 37,
   "tts": "dee aconay oh",
   "source": "locked",
-  "duration_s": 2.299
+  "duration_s": 2.242,
+  "sha1": "30c13c5b7039"
  },
  {
   "index": 406,
@@ -5597,7 +6003,8 @@
   "freq": 37,
   "tts": "eh mow too",
   "source": "g2p",
-  "duration_s": 1.62
+  "duration_s": 1.546,
+  "sha1": "ca93f2d37e89"
  },
  {
   "index": 407,
@@ -5610,7 +6017,8 @@
   "freq": 37,
   "tts": "ahr khohn",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.133,
+  "sha1": "1c679aa4fa31"
  },
  {
   "index": 408,
@@ -5625,7 +6033,8 @@
   "source": "batch4",
   "duration_s": 2.273,
   "take": "2026-09-11, Atlas",
-  "note": "bare 'gee' is the letter G. ginomai's own cue with two syllables in front."
+  "note": "bare 'gee' is the letter G. ginomai's own cue with two syllables in front.",
+  "sha1": "74a3e23a9ff3"
  },
  {
   "index": 409,
@@ -5638,9 +6047,10 @@
   "freq": 36,
   "tts": "or gey",
   "source": "rollout",
-  "duration_s": 0.836,
+  "duration_s": 1.047,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "5b64127fb0db"
  },
  {
   "index": 410,
@@ -5653,7 +6063,8 @@
   "freq": 36,
   "tts": "ahr tee",
   "source": "g2p",
-  "duration_s": 1.071
+  "duration_s": 1.001,
+  "sha1": "5ef659caa7ac"
  },
  {
   "index": 411,
@@ -5666,9 +6077,10 @@
   "freq": 36,
   "tts": "sah tah nas",
   "source": "rollout",
-  "duration_s": 1.985,
+  "duration_s": 1.527,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "696a12713121"
  },
  {
   "index": 412,
@@ -5681,9 +6093,10 @@
   "freq": 36,
   "tts": "ah gross",
   "source": "recued",
-  "duration_s": 1.202,
+  "duration_s": 1.324,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "fd18742207c8"
  },
  {
   "index": 413,
@@ -5696,7 +6109,8 @@
   "freq": 36,
   "tts": "fee leep pos",
   "source": "g2p",
-  "duration_s": 1.985
+  "duration_s": 1.915,
+  "sha1": "badc1656f61e"
  },
  {
   "index": 414,
@@ -5709,7 +6123,8 @@
   "freq": 36,
   "tts": "eh pee streh foh",
   "source": "g2p",
-  "duration_s": 2.508
+  "duration_s": 2.432,
+  "sha1": "573914caba44"
  },
  {
   "index": 415,
@@ -5722,7 +6137,8 @@
   "freq": 36,
   "tts": "oos",
   "source": "g2p",
-  "duration_s": 0.705
+  "duration_s": 0.642,
+  "sha1": "25bca0703797"
  },
  {
   "index": 416,
@@ -5735,7 +6151,8 @@
   "freq": 36,
   "tts": "kah lohs",
   "source": "g2p",
-  "duration_s": 1.358
+  "duration_s": 1.298,
+  "sha1": "41a533259275"
  },
  {
   "index": 417,
@@ -5750,7 +6167,8 @@
   "source": "batch4",
   "duration_s": 1.698,
   "take": "2026-09-11, Atlas",
-  "note": "the prefix only -- the cleanest test of the five, since 'sue' and 'khey' were both already settled. It moved, which is what confirmed the rule is about the sigma."
+  "note": "the prefix only -- the cleanest test of the five, since 'sue' and 'khey' were both already settled. It moved, which is what confirmed the rule is about the sigma.",
+  "sha1": "048b88090a78"
  },
  {
   "index": 418,
@@ -5763,9 +6181,10 @@
   "freq": 36,
   "tts": "peh ree to mey",
   "source": "rollout",
-  "duration_s": 1.646,
+  "duration_s": 1.589,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "4fc75be97d35"
  },
  {
   "index": 419,
@@ -5778,7 +6197,8 @@
   "freq": 36,
   "tts": "kow khah o my",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.828,
+  "sha1": "335570aace6c"
  },
  {
   "index": 420,
@@ -5791,7 +6211,8 @@
   "freq": 35,
   "tts": "ee oh sayf",
   "source": "g2p",
-  "duration_s": 1.515
+  "duration_s": 1.45,
+  "sha1": "3f9336052af0"
  },
  {
   "index": 421,
@@ -5804,7 +6225,8 @@
   "freq": 35,
   "tts": "oh pee so",
   "source": "locked",
-  "duration_s": 1.332
+  "duration_s": 1.257,
+  "sha1": "fb1ced3fc324"
  },
  {
   "index": 422,
@@ -5817,9 +6239,10 @@
   "freq": 35,
   "tts": "dee ah bo loss",
   "source": "recued",
-  "duration_s": 2.064,
+  "duration_s": 2.3,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "6c452938c4ad"
  },
  {
   "index": 423,
@@ -5832,7 +6255,8 @@
   "freq": 35,
   "tts": "ew theh ohs",
   "source": "g2p",
-  "duration_s": 1.437
+  "duration_s": 1.365,
+  "sha1": "ed86b079c585"
  },
  {
   "index": 424,
@@ -5845,10 +6269,11 @@
   "freq": 35,
   "tts": "martoos",
   "source": "rollout",
-  "duration_s": 1.52,
+  "duration_s": 1.127,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "e0c942e102e9"
  },
  {
   "index": 425,
@@ -5861,7 +6286,8 @@
   "freq": 35,
   "tts": "o fay loh",
   "source": "g2p",
-  "duration_s": 1.202
+  "duration_s": 1.143,
+  "sha1": "2bc6046d1688"
  },
  {
   "index": 426,
@@ -5874,7 +6300,8 @@
   "freq": 35,
   "tts": "hoo po streh foh",
   "source": "g2p",
-  "duration_s": 1.62
+  "duration_s": 1.559,
+  "sha1": "eaf6e5b6f35f"
  },
  {
   "index": 427,
@@ -5889,7 +6316,8 @@
   "source": "batch5",
   "duration_s": 2.586,
   "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe'."
+  "note": "-εω is 'eh hoe'.",
+  "sha1": "7f8c0020b0a7"
  },
  {
   "index": 428,
@@ -5902,7 +6330,8 @@
   "freq": 34,
   "tts": "puh toh koss",
   "source": "locked",
-  "duration_s": 1.463
+  "duration_s": 1.403,
+  "sha1": "c558c99fed5e"
  },
  {
   "index": 429,
@@ -5915,7 +6344,8 @@
   "freq": 34,
   "tts": "meh los",
   "source": "g2p",
-  "duration_s": 1.332
+  "duration_s": 1.267,
+  "sha1": "d2800791f0a6"
  },
  {
   "index": 430,
@@ -5928,7 +6358,8 @@
   "freq": 34,
   "tts": "may teh",
   "source": "g2p",
-  "duration_s": 1.045
+  "duration_s": 0.978,
+  "sha1": "66f81e55d0d6"
  },
  {
   "index": 431,
@@ -5941,7 +6372,8 @@
   "freq": 34,
   "tts": "blah sfay meh oh",
   "source": "g2p",
-  "duration_s": 3.056
+  "duration_s": 3.0,
+  "sha1": "7ed559006635"
  },
  {
   "index": 432,
@@ -5954,7 +6386,8 @@
   "freq": 34,
   "tts": "oy nos",
   "source": "g2p",
-  "duration_s": 0.993
+  "duration_s": 0.94,
+  "sha1": "97479a9ba41b"
  },
  {
   "index": 433,
@@ -5967,7 +6400,8 @@
   "freq": 34,
   "tts": "ahs theh neh oh",
   "source": "g2p",
-  "duration_s": 1.907
+  "duration_s": 1.849,
+  "sha1": "da25c775d50f"
  },
  {
   "index": 434,
@@ -5980,7 +6414,8 @@
   "freq": 34,
   "tts": "bee blee on",
   "source": "g2p",
-  "duration_s": 1.097
+  "duration_s": 1.029,
+  "sha1": "843a31b3640f"
  },
  {
   "index": 435,
@@ -5993,9 +6428,10 @@
   "freq": 34,
   "tts": "dia ko nee ah",
   "source": "batch2",
-  "duration_s": 2.038,
+  "duration_s": 1.438,
   "take": "2026-09-10, Atlas",
-  "note": "'dee ah ko nee ah' spelled the letters out"
+  "note": "'dee ah ko nee ah' spelled the letters out",
+  "sha1": "fde26a797c80"
  },
  {
   "index": 436,
@@ -6008,7 +6444,8 @@
   "freq": 33,
   "tts": "eckporyoo oh my",
   "source": "locked",
-  "duration_s": 2.247
+  "duration_s": 2.179,
+  "sha1": "608fa66d4137"
  },
  {
   "index": 437,
@@ -6021,7 +6458,8 @@
   "freq": 33,
   "tts": "day knoo mee",
   "source": "g2p",
-  "duration_s": 1.411
+  "duration_s": 1.344,
+  "sha1": "e282df98afc3"
  },
  {
   "index": 438,
@@ -6034,7 +6472,8 @@
   "freq": 33,
   "tts": "nigh",
   "source": "locked",
-  "duration_s": 0.836
+  "duration_s": 0.773,
+  "sha1": "609e58b9f5a7"
  },
  {
   "index": 439,
@@ -6047,7 +6486,8 @@
   "freq": 33,
   "tts": "ahr neh o my",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.731,
+  "sha1": "684998b03351"
  },
  {
   "index": 440,
@@ -6060,7 +6500,8 @@
   "freq": 33,
   "tts": "poy os",
   "source": "g2p",
-  "duration_s": 1.384
+  "duration_s": 1.324,
+  "sha1": "b8a454af2c14"
  },
  {
   "index": 441,
@@ -6075,7 +6516,8 @@
   "source": "batch4",
   "duration_s": 1.228,
   "take": "2026-09-11, Atlas",
-  "note": "'ehkh' is E-K-H and nothing else -- rule 3."
+  "note": "'ehkh' is E-K-H and nothing else -- rule 3.",
+  "sha1": "e20ab3ee9399"
  },
  {
   "index": 442,
@@ -6090,7 +6532,8 @@
   "source": "batch4",
   "duration_s": 1.306,
   "take": "2026-09-11, Atlas",
-  "note": "both 'hayl e oss' and 'hay lee os' spelled the ending. Binding the front leaves 'oss' the only free token, which is the shape neos was fixed to."
+  "note": "both 'hayl e oss' and 'hay lee os' spelled the ending. Binding the front leaves 'oss' the only free token, which is the shape neos was fixed to.",
+  "sha1": "037684ccfe3f"
  },
  {
   "index": 443,
@@ -6103,9 +6546,10 @@
   "freq": 32,
   "tts": "hah pas",
   "source": "rollout",
-  "duration_s": 1.149,
+  "duration_s": 1.136,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "5b295fdfb048"
  },
  {
   "index": 444,
@@ -6118,9 +6562,10 @@
   "freq": 32,
   "tts": "ah kah thahr toss",
   "source": "batch3",
-  "duration_s": 2.064,
+  "duration_s": 1.882,
   "take": "2026-09-10, Atlas",
-  "note": "not re-cued: the take was right and only slow. Slower than 99% of the pack's 177 other four-syllable clips, so brought to their median with atempo 1.519. Same recording."
+  "note": "not re-cued: the take was right and only slow. Slower than 99% of the pack's 177 other four-syllable clips, so brought to their median with atempo 1.519. Same recording.",
+  "sha1": "d6e64b47c9be"
  },
  {
   "index": 445,
@@ -6133,9 +6578,10 @@
   "freq": 32,
   "tts": "pah rang gel loh",
   "source": "rollout",
-  "duration_s": 1.776,
+  "duration_s": 1.576,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "442011b203d8"
  },
  {
   "index": 446,
@@ -6151,7 +6597,8 @@
   "duration_s": 1.75,
   "take": "2026-09-11, Atlas",
   "note": "bare 'gee' is the letter G; 'ghee' is not -- and it beat his own 'gehn', so the h is the fix and not the division. Ploddy at speed 1.0; speed 1.2 fixed it with the cue unchanged.",
-  "speed": 1.2
+  "speed": 1.2,
+  "sha1": "ab2c010d4140"
  },
  {
   "index": 447,
@@ -6164,9 +6611,10 @@
   "freq": 32,
   "tts": "doo nah toss",
   "source": "recued",
-  "duration_s": 1.698,
+  "duration_s": 1.432,
   "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
+  "sha1": "35ed5a198b3b"
  },
  {
   "index": 448,
@@ -6179,9 +6627,10 @@
   "freq": 32,
   "tts": "hoo po mo ney",
   "source": "rollout",
-  "duration_s": 2.038,
+  "duration_s": 1.367,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "be3cc5ed20f6"
  },
  {
   "index": 449,
@@ -6194,8 +6643,9 @@
   "freq": 31,
   "tts": "feynoh",
   "source": "locked",
-  "duration_s": 1.103,
-  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes."
+  "duration_s": 1.003,
+  "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
+  "sha1": "6a825679d552"
  },
  {
   "index": 450,
@@ -6208,7 +6658,8 @@
   "freq": 31,
   "tts": "ah neh mos",
   "source": "g2p",
-  "duration_s": 1.75
+  "duration_s": 1.693,
+  "sha1": "8ad15b3e45c5"
  },
  {
   "index": 451,
@@ -6221,7 +6672,8 @@
   "freq": 31,
   "tts": "kah thah ree dzoh",
   "source": "g2p",
-  "duration_s": 1.567
+  "duration_s": 1.493,
+  "sha1": "9154dab67ef4"
  },
  {
   "index": 452,
@@ -6234,7 +6686,8 @@
   "freq": 31,
   "tts": "hee eh rews",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.744,
+  "sha1": "122a8147915a"
  },
  {
   "index": 453,
@@ -6247,7 +6700,8 @@
   "freq": 31,
   "tts": "po tay ree on",
   "source": "g2p",
-  "duration_s": 1.62
+  "duration_s": 1.556,
+  "sha1": "30d664a7e31d"
  },
  {
   "index": 454,
@@ -6260,7 +6714,8 @@
   "freq": 31,
   "tts": "plain",
   "source": "locked",
-  "duration_s": 0.784
+  "duration_s": 0.728,
+  "sha1": "b520b696f726"
  },
  {
   "index": 455,
@@ -6273,7 +6728,8 @@
   "freq": 31,
   "tts": "eh kseh steen",
   "source": "g2p",
-  "duration_s": 1.933
+  "duration_s": 1.865,
+  "sha1": "354833d8656e"
  },
  {
   "index": 456,
@@ -6286,7 +6742,8 @@
   "freq": 31,
   "tts": "el pea zo",
   "source": "locked",
-  "duration_s": 1.672
+  "duration_s": 1.596,
+  "sha1": "ffd9f5c3d307"
  },
  {
   "index": 457,
@@ -6299,9 +6756,10 @@
   "freq": 31,
   "tts": "foo las soh",
   "source": "rollout",
-  "duration_s": 1.306,
+  "duration_s": 1.24,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "237c303170c0"
  },
  {
   "index": 458,
@@ -6314,9 +6772,10 @@
   "freq": 31,
   "tts": "foo ley",
   "source": "rollout",
-  "duration_s": 0.836,
+  "duration_s": 0.914,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "4f7567060935"
  },
  {
   "index": 459,
@@ -6329,7 +6788,8 @@
   "freq": 31,
   "tts": "ho moy ohs",
   "source": "g2p",
-  "duration_s": 1.463
+  "duration_s": 1.41,
+  "sha1": "ccf5e4777320"
  },
  {
   "index": 460,
@@ -6342,7 +6802,8 @@
   "freq": 31,
   "tts": "play thoss",
   "source": "locked",
-  "duration_s": 1.176
+  "duration_s": 1.117,
+  "sha1": "7f4893614731"
  },
  {
   "index": 461,
@@ -6355,7 +6816,8 @@
   "freq": 31,
   "tts": "pahr ray see ah",
   "source": "g2p",
-  "duration_s": 1.802
+  "duration_s": 1.743,
+  "sha1": "8f8a8bedfd28"
  },
  {
   "index": 462,
@@ -6368,7 +6830,8 @@
   "freq": 30,
   "tts": "soo nehr kho my",
   "source": "g2p",
-  "duration_s": 1.881
+  "duration_s": 1.812,
+  "sha1": "1cb1f547d549"
  },
  {
   "index": 463,
@@ -6381,9 +6844,10 @@
   "freq": 30,
   "tts": "skan dah lee dzoh",
   "source": "rollout",
-  "duration_s": 1.829,
+  "duration_s": 1.77,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "94f216074b74"
  },
  {
   "index": 464,
@@ -6396,9 +6860,10 @@
   "freq": 30,
   "tts": "dida khey",
   "source": "batch2",
-  "duration_s": 1.437,
+  "duration_s": 1.086,
   "take": "2026-09-10, Atlas",
-  "note": "final eta as 'ey'; judged perfect"
+  "note": "final eta as 'ey'; judged perfect",
+  "sha1": "cb5d037f569c"
  },
  {
   "index": 465,
@@ -6411,7 +6876,8 @@
   "freq": 30,
   "tts": "eh pee kah leh oh",
   "source": "g2p",
-  "duration_s": 2.586
+  "duration_s": 2.517,
+  "sha1": "7dc356f4313f"
  },
  {
   "index": 466,
@@ -6424,7 +6890,8 @@
   "freq": 30,
   "tts": "ah go rah dzoh",
   "source": "g2p",
-  "duration_s": 2.247
+  "duration_s": 2.17,
+  "sha1": "14c2cbbdc221"
  },
  {
   "index": 467,
@@ -6437,7 +6904,8 @@
   "freq": 30,
   "tts": "ehng goos",
   "source": "g2p",
-  "duration_s": 1.28
+  "duration_s": 1.225,
+  "sha1": "75f48c6ca402"
  },
  {
   "index": 468,
@@ -6450,7 +6918,8 @@
   "freq": 30,
   "tts": "ee deh",
   "source": "g2p",
-  "duration_s": 0.888
+  "duration_s": 0.823,
+  "sha1": "9f74bcbfbe27"
  },
  {
   "index": 469,
@@ -6463,6 +6932,7 @@
   "freq": 30,
   "tts": "soo nay day sees",
   "source": "g2p",
-  "duration_s": 1.985
+  "duration_s": 1.909,
+  "sha1": "b107861aaad3"
  }
 ]

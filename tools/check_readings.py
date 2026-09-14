@@ -32,6 +32,11 @@ What it does not check is the English after the em dash. A gloss is a
 translation choice in context and the corpus cannot arbitrate it.
 """
 import json, io, os, re, sys, unicodedata, collections
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GNT = os.path.join(ROOT, "data", "gnt")

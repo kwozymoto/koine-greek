@@ -43,6 +43,11 @@ Two traps this learned the hard way
     one of them and the checker invents three dozen errors that are not there.
 """
 import json, io, os, re, sys, unicodedata, collections
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GNT = os.path.join(ROOT, "data", "gnt")

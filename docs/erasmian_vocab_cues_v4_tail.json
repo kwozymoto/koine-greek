@@ -10,8 +10,9 @@
   "freq": 29,
   "tts": "kai sar",
   "source": "ear",
-  "duration_s": 1.181,
-  "take": "C"
+  "duration_s": 1.08,
+  "take": "C",
+  "sha1": "deaf60bce3cf"
  },
  {
   "index": 512,
@@ -24,8 +25,9 @@
   "freq": 29,
   "tts": "gah meh hoe",
   "source": "ear",
-  "duration_s": 1.756,
-  "take": "E"
+  "duration_s": 1.656,
+  "take": "E",
+  "sha1": "2a2d5cc368fc"
  },
  {
   "index": 513,
@@ -38,8 +40,9 @@
   "freq": 29,
   "tts": "mah khai rah",
   "source": "ear",
-  "duration_s": 1.573,
-  "take": "J"
+  "duration_s": 1.488,
+  "take": "J",
+  "sha1": "d93946d32600"
  },
  {
   "index": 514,
@@ -52,8 +55,9 @@
   "freq": 29,
   "tts": "meesthoss",
   "source": "ear",
-  "duration_s": 1.337,
-  "take": "B"
+  "duration_s": 1.248,
+  "take": "B",
+  "sha1": "084e3ea9312c"
  },
  {
   "index": 515,
@@ -66,8 +70,9 @@
   "freq": 29,
   "tts": "paskhah",
   "source": "ear",
-  "duration_s": 1.024,
-  "take": "B"
+  "duration_s": 0.936,
+  "take": "B",
+  "sha1": "531c265f656e"
  },
  {
   "index": 516,
@@ -80,8 +85,9 @@
   "freq": 29,
   "tts": "par irk oh mai",
   "source": "ear",
-  "duration_s": 1.886,
-  "take": "J"
+  "duration_s": 1.8,
+  "take": "J",
+  "sha1": "e4a09a0d88e7"
  },
  {
   "index": 517,
@@ -94,8 +100,9 @@
   "freq": 29,
   "tts": "po teh",
   "source": "ear",
-  "duration_s": 1.103,
-  "take": "A"
+  "duration_s": 1.008,
+  "take": "A",
+  "sha1": "01becc64714a"
  },
  {
   "index": 518,
@@ -108,9 +115,10 @@
   "freq": 29,
   "tts": "pross kah leh o my",
   "source": "fix21",
-  "duration_s": 2.147,
+  "duration_s": 2.218,
   "take": "2026-09-10, Atlas",
-  "note": "reverted: 'kale' is the vegetable"
+  "note": "reverted: 'kale' is the vegetable",
+  "sha1": "c6dab4212a24"
  },
  {
   "index": 519,
@@ -123,8 +131,9 @@
   "freq": 29,
   "tts": "pohthenn",
   "source": "ear",
-  "duration_s": 1.181,
-  "take": "P"
+  "duration_s": 1.08,
+  "take": "P",
+  "sha1": "f0c4a7c37ecf"
  },
  {
   "index": 520,
@@ -137,8 +146,9 @@
   "freq": 29,
   "tts": "hay lee ahs",
   "source": "ear",
-  "duration_s": 1.651,
-  "take": "E"
+  "duration_s": 1.56,
+  "take": "E",
+  "sha1": "cd8198bb5c1b"
  },
  {
   "index": 521,
@@ -151,9 +161,10 @@
   "freq": 28,
   "tts": "barnah bas",
   "source": "rollout",
-  "duration_s": 1.337,
+  "duration_s": 1.524,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "d7db5ae96a2f"
  },
  {
   "index": 522,
@@ -166,8 +177,9 @@
   "freq": 28,
   "tts": "mah ree ah",
   "source": "ear",
-  "duration_s": 1.416,
-  "take": "A"
+  "duration_s": 1.32,
+  "take": "A",
+  "sha1": "194fb8ef07db"
  },
  {
   "index": 523,
@@ -180,8 +192,9 @@
   "freq": 28,
   "tts": "ploosee oss",
   "source": "ear",
-  "duration_s": 1.573,
-  "take": "B"
+  "duration_s": 1.488,
+  "take": "B",
+  "sha1": "4966e4c000d4"
  },
  {
   "index": 524,
@@ -194,8 +207,9 @@
   "freq": 28,
   "tts": "pross fay tew hoe",
   "source": "ear",
-  "duration_s": 1.886,
-  "take": "D"
+  "duration_s": 1.8,
+  "take": "D",
+  "sha1": "98766570d952"
  },
  {
   "index": 525,
@@ -208,8 +222,9 @@
   "freq": 28,
   "tts": "teh leh hoe",
   "source": "ear",
-  "duration_s": 1.285,
-  "take": "B"
+  "duration_s": 1.178,
+  "take": "B",
+  "sha1": "b2b45ed94109"
  },
  {
   "index": 526,
@@ -222,8 +237,9 @@
   "freq": 28,
   "tts": "khoh rah",
   "source": "ear",
-  "duration_s": 1.285,
-  "take": "A"
+  "duration_s": 1.178,
+  "take": "A",
+  "sha1": "f57ddf467598"
  },
  {
   "index": 527,
@@ -236,8 +252,9 @@
   "freq": 28,
   "tts": "ah dee keh hoe",
   "source": "ear",
-  "duration_s": 2.147,
-  "take": "A"
+  "duration_s": 2.04,
+  "take": "A",
+  "sha1": "76385075da3b"
  },
  {
   "index": 528,
@@ -250,8 +267,9 @@
   "freq": 28,
   "tts": "ah lay thi noss",
   "source": "ear",
-  "duration_s": 1.834,
-  "take": "C"
+  "duration_s": 1.728,
+  "take": "C",
+  "sha1": "77775719105f"
  },
  {
   "index": 529,
@@ -264,8 +282,9 @@
   "freq": 28,
   "tts": "haghee ah zoh",
   "source": "ear",
-  "duration_s": 1.756,
-  "take": "D"
+  "duration_s": 1.656,
+  "take": "D",
+  "sha1": "a5d3710d879a"
  },
  {
   "index": 530,
@@ -278,8 +297,9 @@
   "freq": 28,
   "tts": "ehndoo hoe",
   "source": "ear",
-  "duration_s": 1.573,
-  "take": "B"
+  "duration_s": 1.488,
+  "take": "B",
+  "sha1": "ca88aba20ebe"
  },
  {
   "index": 531,
@@ -292,8 +312,9 @@
   "freq": 28,
   "tts": "heg eh o my",
   "source": "ear",
-  "duration_s": 2.069,
-  "take": "C"
+  "duration_s": 1.968,
+  "take": "C",
+  "sha1": "39308576d4e0"
  },
  {
   "index": 532,
@@ -306,8 +327,9 @@
   "freq": 28,
   "tts": "iss khoo o",
   "source": "ear",
-  "duration_s": 1.651,
-  "take": "D"
+  "duration_s": 1.56,
+  "take": "D",
+  "sha1": "e823603815f4"
  },
  {
   "index": 533,
@@ -320,9 +342,10 @@
   "freq": 27,
   "tts": "bas tah zoh",
   "source": "rollout",
-  "duration_s": 1.834,
+  "duration_s": 1.337,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "6e6439af4946"
  },
  {
   "index": 534,
@@ -335,9 +358,10 @@
   "freq": 27,
   "tts": "kah tar gheh hoe",
   "source": "rollout",
-  "duration_s": 2.147,
+  "duration_s": 1.609,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "ae18578e95f2"
  },
  {
   "index": 535,
@@ -350,7 +374,8 @@
   "freq": 27,
   "tts": "kreemah",
   "source": "worklist-candidate",
-  "duration_s": 0.867
+  "duration_s": 0.768,
+  "sha1": "0730b3a1fd1c"
  },
  {
   "index": 536,
@@ -363,9 +388,10 @@
   "freq": 27,
   "tts": "komey",
   "source": "rollout",
-  "duration_s": 0.867,
+  "duration_s": 0.697,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "0e6bf43d02d6"
  },
  {
   "index": 537,
@@ -378,7 +404,8 @@
   "freq": 27,
   "tts": "pososs",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "b7c080b4f10a"
  },
  {
   "index": 538,
@@ -391,7 +418,8 @@
   "freq": 27,
   "tts": "eh kay thehn",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "607f6e5cf812"
  },
  {
   "index": 539,
@@ -404,7 +432,8 @@
   "freq": 27,
   "tts": "ek kheh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "a45b3c4ab35a"
  },
  {
   "index": 540,
@@ -417,7 +446,8 @@
   "freq": 27,
   "tts": "haykoh",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "6e85675d6936"
  },
  {
   "index": 541,
@@ -430,7 +460,8 @@
   "freq": 27,
   "tts": "ee ah kohb",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "262b06463ad2"
  },
  {
   "index": 542,
@@ -443,7 +474,8 @@
   "freq": 26,
   "tts": "mah ree ahm",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "913de513fc38"
  },
  {
   "index": 543,
@@ -456,7 +488,8 @@
   "freq": 26,
   "tts": "doo lew hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "5e2a7927f159"
  },
  {
   "index": 544,
@@ -469,7 +502,8 @@
   "freq": 26,
   "tts": "kah thah ross",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "b12748445a5a"
  },
  {
   "index": 545,
@@ -482,7 +516,8 @@
   "freq": 26,
   "tts": "loo peh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.442
+  "duration_s": 1.344,
+  "sha1": "073e5a006aaa"
  },
  {
   "index": 546,
@@ -495,7 +530,8 @@
   "freq": 26,
   "tts": "oopoh",
   "source": "worklist-candidate",
-  "duration_s": 0.867
+  "duration_s": 0.768,
+  "sha1": "4f5cd250a569"
  },
  {
   "index": 547,
@@ -508,7 +544,8 @@
   "freq": 26,
   "tts": "puh new mah teekoss",
   "source": "worklist-candidate",
-  "duration_s": 2.461
+  "duration_s": 2.376,
+  "sha1": "fbe719f00e12"
  },
  {
   "index": 548,
@@ -521,7 +558,8 @@
   "freq": 26,
   "tts": "soo nee ay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "971fb69ebd2a"
  },
  {
   "index": 549,
@@ -534,7 +572,8 @@
   "freq": 26,
   "tts": "fro neh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "ad9702ed0c29"
  },
  {
   "index": 550,
@@ -547,7 +586,8 @@
   "freq": 26,
   "tts": "khayrah",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "21275fa763fe"
  },
  {
   "index": 551,
@@ -560,7 +600,8 @@
   "freq": 26,
   "tts": "apo kaloop toh",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "132479bdbe34"
  },
  {
   "index": 552,
@@ -573,7 +614,8 @@
   "freq": 26,
   "tts": "epay",
   "source": "worklist-candidate",
-  "duration_s": 0.789
+  "duration_s": 0.696,
+  "sha1": "96507d7d5863"
  },
  {
   "index": 553,
@@ -586,7 +628,8 @@
   "freq": 26,
   "tts": "ee ah o my",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "c231a9fca600"
  },
  {
   "index": 554,
@@ -599,7 +642,8 @@
   "freq": 26,
   "tts": "om noo hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "dedfd160d95a"
  },
  {
   "index": 555,
@@ -612,7 +656,8 @@
   "freq": 26,
   "tts": "homo logheh oh",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "219edc84e4b8"
  },
  {
   "index": 556,
@@ -625,7 +670,8 @@
   "freq": 25,
   "tts": "eye goop toss",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "92be3029caac"
  },
  {
   "index": 557,
@@ -638,7 +684,8 @@
   "freq": 25,
   "tts": "dekah",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "e8913e5e6133"
  },
  {
   "index": 558,
@@ -651,7 +698,8 @@
   "freq": 25,
   "tts": "dendron",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "0c5881b0440a"
  },
  {
   "index": 559,
@@ -664,7 +712,8 @@
   "freq": 25,
   "tts": "keh lew hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.677
+  "duration_s": 1.584,
+  "sha1": "2db5ba40b1ad"
  },
  {
   "index": 560,
@@ -677,7 +726,8 @@
   "freq": 25,
   "tts": "lewkoss",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "82e253905143"
  },
  {
   "index": 561,
@@ -690,7 +740,8 @@
   "freq": 25,
   "tts": "may po teh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "392910449183"
  },
  {
   "index": 562,
@@ -703,9 +754,10 @@
   "freq": 25,
   "tts": "neh feh ley",
   "source": "rollout",
-  "duration_s": 1.651,
+  "duration_s": 1.66,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "15e4ed6d3fd9"
  },
  {
   "index": 563,
@@ -718,7 +770,8 @@
   "freq": 25,
   "tts": "hoo",
   "source": "worklist-candidate",
-  "duration_s": 0.789
+  "duration_s": 0.696,
+  "sha1": "3ca558971bba"
  },
  {
   "index": 564,
@@ -731,7 +784,8 @@
   "freq": 25,
   "tts": "pah ray mee",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "8b970e933a06"
  },
  {
   "index": 565,
@@ -744,7 +798,8 @@
   "freq": 25,
   "tts": "por nay ah",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "021ee83ae0da"
  },
  {
   "index": 566,
@@ -757,9 +812,10 @@
   "freq": 25,
   "tts": "ah del fey",
   "source": "fix21",
-  "duration_s": 1.651,
+  "duration_s": 1.404,
   "take": "2026-09-10, Atlas",
-  "note": "the ending was right and the h was not -- a clip got one rule, and this needed two"
+  "note": "the ending was right and the h was not -- a clip got one rule, and this needed two",
+  "sha1": "69cf6ebd2940"
  },
  {
   "index": 567,
@@ -772,7 +828,8 @@
   "freq": 25,
   "tts": "ah dee kee ah",
   "source": "worklist-candidate",
-  "duration_s": 2.774
+  "duration_s": 2.688,
+  "sha1": "be7aef0d5170"
  },
  {
   "index": 568,
@@ -785,9 +842,10 @@
   "freq": 25,
   "tts": "ah nab leh poh",
   "source": "rollout",
-  "duration_s": 2.539,
+  "duration_s": 1.462,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "1133ecb0b414"
  },
  {
   "index": 569,
@@ -800,9 +858,10 @@
   "freq": 25,
   "tts": "heh or tey",
   "source": "rollout",
-  "duration_s": 1.573,
+  "duration_s": 1.33,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "391adc8d74d5"
  },
  {
   "index": 570,
@@ -815,7 +874,8 @@
   "freq": 25,
   "tts": "hellayn",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "66b63011d164"
  },
  {
   "index": 571,
@@ -828,7 +888,8 @@
   "freq": 24,
   "tts": "tee mo theh oss",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "799c6d67d2c6"
  },
  {
   "index": 572,
@@ -841,7 +902,8 @@
   "freq": 24,
   "tts": "guh noh ree zoh",
   "source": "worklist-candidate",
-  "duration_s": 2.174
+  "duration_s": 2.066,
+  "sha1": "da900fe82489"
  },
  {
   "index": 573,
@@ -854,7 +916,8 @@
   "freq": 24,
   "tts": "kaymy",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "0f6e66ff75f1"
  },
  {
   "index": 574,
@@ -867,7 +930,8 @@
   "freq": 24,
   "tts": "noos",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "1b631decb328"
  },
  {
   "index": 575,
@@ -880,7 +944,8 @@
   "freq": 24,
   "tts": "peemp lay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "79ee87ae95d1"
  },
  {
   "index": 576,
@@ -893,7 +958,8 @@
   "freq": 24,
   "tts": "pah roo see ah",
   "source": "worklist-candidate",
-  "duration_s": 2.304
+  "duration_s": 2.208,
+  "sha1": "e0700d0ac4da"
  },
  {
   "index": 577,
@@ -906,7 +972,8 @@
   "freq": 24,
   "tts": "peyes",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "d6728d687a08"
  },
  {
   "index": 578,
@@ -919,7 +986,8 @@
   "freq": 24,
   "tts": "pross seh khoh",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "24eb16f74630"
  },
  {
   "index": 579,
@@ -932,7 +1000,8 @@
   "freq": 24,
   "tts": "sotayr",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "10f4f6c3a840"
  },
  {
   "index": 580,
@@ -945,9 +1014,10 @@
   "freq": 24,
   "tts": "ahko ay",
   "source": "fix21",
-  "duration_s": 1.756,
+  "duration_s": 1.526,
   "take": "2026-09-10, Atlas",
-  "note": "a bare 'ey' token spelled e-y; bound, with ay"
+  "note": "a bare 'ey' token spelled e-y; bound, with ay",
+  "sha1": "3fa3b42c26b3"
  },
  {
   "index": 581,
@@ -960,7 +1030,8 @@
   "freq": 24,
   "tts": "ah neye reh hoe",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "8b7d34649044"
  },
  {
   "index": 582,
@@ -973,7 +1044,8 @@
   "freq": 24,
   "tts": "ahs theh nay ah",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "07b7d7860eb8"
  },
  {
   "index": 583,
@@ -986,7 +1058,8 @@
   "freq": 24,
   "tts": "astayr",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "8e4c9ad40e5a"
  },
  {
   "index": 584,
@@ -999,7 +1072,8 @@
   "freq": 23,
   "tts": "dee o tee",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "320c8c2becf2"
  },
  {
   "index": 585,
@@ -1012,7 +1086,8 @@
   "freq": 23,
   "tts": "aykon",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "b980b09f43cd"
  },
  {
   "index": 586,
@@ -1025,7 +1100,8 @@
   "freq": 23,
   "tts": "dzoon",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "2b4cbf05e347"
  },
  {
   "index": 587,
@@ -1038,7 +1114,8 @@
   "freq": 23,
   "tts": "thoosee astay reeon",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "cece88e6daa0"
  },
  {
   "index": 588,
@@ -1051,7 +1128,8 @@
   "freq": 23,
   "tts": "kah tah lay poh",
   "source": "worklist-candidate",
-  "duration_s": 2.618
+  "duration_s": 2.52,
+  "sha1": "ae21988b4313"
  },
  {
   "index": 589,
@@ -1064,7 +1142,8 @@
   "freq": 23,
   "tts": "koy lee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "9d752d4f2092"
  },
  {
   "index": 590,
@@ -1077,7 +1156,8 @@
   "freq": 23,
   "tts": "ko pee ah oh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "6390825dee25"
  },
  {
   "index": 591,
@@ -1090,7 +1170,8 @@
   "freq": 23,
   "tts": "koh loo hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.494
+  "duration_s": 1.392,
+  "sha1": "f5d5671558c3"
  },
  {
   "index": 592,
@@ -1103,7 +1184,8 @@
   "freq": 23,
   "tts": "meem nays ko my",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "f15f052ac99f"
  },
  {
   "index": 593,
@@ -1116,7 +1198,8 @@
   "freq": 23,
   "tts": "peran",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "cff90efd1f33"
  },
  {
   "index": 594,
@@ -1129,7 +1212,8 @@
   "freq": 23,
   "tts": "pay nah oh",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "b47ca8c1a05a"
  },
  {
   "index": 595,
@@ -1142,9 +1226,10 @@
   "freq": 23,
   "tts": "peh ree bal loh",
   "source": "rollout",
-  "duration_s": 1.991,
+  "duration_s": 1.637,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "f8371debf609"
  },
  {
   "index": 596,
@@ -1157,7 +1242,8 @@
   "freq": 23,
   "tts": "skewoss",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "32580a7a71b7"
  },
  {
   "index": 597,
@@ -1170,7 +1256,8 @@
   "freq": 23,
   "tts": "khah ree zo my",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "5a81b750b619"
  },
  {
   "index": 598,
@@ -1183,7 +1270,8 @@
   "freq": 23,
   "tts": "khee lee ahs",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "0d8f4fc4df0f"
  },
  {
   "index": 599,
@@ -1196,7 +1284,8 @@
   "freq": 23,
   "tts": "ahm peh lohn",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "e9b2407b5b10"
  },
  {
   "index": 600,
@@ -1209,7 +1298,8 @@
   "freq": 23,
   "tts": "ah nah goh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "606a619b9076"
  },
  {
   "index": 601,
@@ -1222,7 +1312,8 @@
   "freq": 23,
   "tts": "ehk lehk toss",
   "source": "worklist-candidate",
-  "duration_s": 2.618
+  "duration_s": 2.52,
+  "sha1": "95776bd3fc1e"
  },
  {
   "index": 602,
@@ -1235,7 +1326,8 @@
   "freq": 23,
   "tts": "eh lew theh ross",
   "source": "worklist-candidate",
-  "duration_s": 2.722
+  "duration_s": 2.616,
+  "sha1": "786a3caee528"
  },
  {
   "index": 603,
@@ -1248,7 +1340,8 @@
   "freq": 22,
   "tts": "makeh donee ah",
   "source": "worklist-candidate",
-  "duration_s": 2.382
+  "duration_s": 2.28,
+  "sha1": "1693480febe9"
  },
  {
   "index": 604,
@@ -1261,7 +1354,8 @@
   "freq": 22,
   "tts": "gray go reh hoe",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "c729c4ba9c5d"
  },
  {
   "index": 605,
@@ -1274,7 +1368,8 @@
   "freq": 22,
   "tts": "do kee mah zoh",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "650e7e79b71b"
  },
  {
   "index": 606,
@@ -1287,7 +1382,8 @@
   "freq": 22,
   "tts": "theh ah o my",
   "source": "worklist-candidate",
-  "duration_s": 2.304
+  "duration_s": 2.208,
+  "sha1": "df2a886ae8bc"
  },
  {
   "index": 607,
@@ -1300,7 +1396,8 @@
   "freq": 22,
   "tts": "kah thew doh",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "4f62ddc6156f"
  },
  {
   "index": 608,
@@ -1313,7 +1410,8 @@
   "freq": 22,
   "tts": "kater gazo my",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "ae8fe6c119fe"
  },
  {
   "index": 609,
@@ -1326,7 +1424,8 @@
   "freq": 22,
   "tts": "katay goreh oh",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "a66630e3eb1d"
  },
  {
   "index": 610,
@@ -1339,7 +1438,8 @@
   "freq": 22,
   "tts": "kah kay noss",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "86e2d5b33ac3"
  },
  {
   "index": 611,
@@ -1352,7 +1452,8 @@
   "freq": 22,
   "tts": "meh tah noy ah",
   "source": "worklist-candidate",
-  "duration_s": 2.174
+  "duration_s": 2.066,
+  "sha1": "76f153b594c2"
  },
  {
   "index": 612,
@@ -1365,9 +1466,10 @@
   "freq": 22,
   "tts": "playghey",
   "source": "rollout",
-  "duration_s": 1.181,
+  "duration_s": 1.308,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "256d6b780d59"
  },
  {
   "index": 613,
@@ -1380,7 +1482,8 @@
   "freq": 22,
   "tts": "plootoss",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "795ff7a929bb"
  },
  {
   "index": 614,
@@ -1393,7 +1496,8 @@
   "freq": 22,
   "tts": "poh leh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "f74206e0f100"
  },
  {
   "index": 615,
@@ -1406,9 +1510,10 @@
   "freq": 22,
   "tts": "soo ned ree on",
   "source": "rollout",
-  "duration_s": 1.912,
+  "duration_s": 2.179,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "02819d78133a"
  },
  {
   "index": 616,
@@ -1421,7 +1526,8 @@
   "freq": 22,
   "tts": "tesseh rakon tah",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "5e933befc9c3"
  },
  {
   "index": 617,
@@ -1436,7 +1542,8 @@
   "source": "batch5",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe'. The ο is an omicron and every earlier cue spelled it `no`, which is an English word with the /ou/ of gold -- the exact fault check_cues gates, sitting in six rounds of candidates because it was being treated as a structure problem. `naw` bound forward is νομίζω's `nawmee zoh` shape, and the h comes out with it so the strong 'ahg' goes too. 1.62s over four syllables."
+  "note": "-εω is 'eh hoe'. The ο is an omicron and every earlier cue spelled it `no`, which is an English word with the /ou/ of gold -- the exact fault check_cues gates, sitting in six rounds of candidates because it was being treated as a structure problem. `naw` bound forward is νομίζω's `nawmee zoh` shape, and the h comes out with it so the strong 'ahg' goes too. 1.62s over four syllables.",
+  "sha1": "cef304bf1537"
  },
  {
   "index": 618,
@@ -1449,7 +1556,8 @@
   "freq": 22,
   "tts": "ehk leh go my",
   "source": "worklist-candidate",
-  "duration_s": 2.461
+  "duration_s": 2.376,
+  "sha1": "97bb1df67d87"
  },
  {
   "index": 619,
@@ -1462,7 +1570,8 @@
   "freq": 22,
   "tts": "ay seye ahs",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "067784b13981"
  },
  {
   "index": 620,
@@ -1475,7 +1584,8 @@
   "freq": 21,
   "tts": "ow ksah noh",
   "source": "worklist-candidate",
-  "duration_s": 2.304
+  "duration_s": 2.208,
+  "sha1": "bde7ba4fd61a"
  },
  {
   "index": 621,
@@ -1488,7 +1598,8 @@
   "freq": 21,
   "tts": "bah see lew hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "b001ebd27c0f"
  },
  {
   "index": 622,
@@ -1501,7 +1612,8 @@
   "freq": 21,
   "tts": "deedas kalee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "f87468499b10"
  },
  {
   "index": 623,
@@ -1514,7 +1626,8 @@
   "freq": 21,
   "tts": "ew do keh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "d2c1c4164b13"
  },
  {
   "index": 624,
@@ -1527,7 +1640,8 @@
   "freq": 21,
   "tts": "theh ree zoh",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "96ede8327342"
  },
  {
   "index": 625,
@@ -1540,7 +1654,8 @@
   "freq": 21,
   "tts": "kah this tay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "9151b51a606d"
  },
  {
   "index": 626,
@@ -1553,9 +1668,10 @@
   "freq": 21,
   "tts": "lat rew oh",
   "source": "rollout",
-  "duration_s": 2.618,
+  "duration_s": 1.628,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "16496815a397"
  },
  {
   "index": 627,
@@ -1568,7 +1684,8 @@
   "freq": 21,
   "tts": "may keh tee",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "48cd2acd0e4a"
  },
  {
   "index": 628,
@@ -1581,7 +1698,8 @@
   "freq": 21,
   "tts": "muh nay mo new hoe",
   "source": "worklist-candidate",
-  "duration_s": 2.618
+  "duration_s": 2.52,
+  "sha1": "25f5ca655de7"
  },
  {
   "index": 629,
@@ -1594,7 +1712,8 @@
   "freq": 21,
   "tts": "pay rahs moss",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "f4dce583ccaf"
  },
  {
   "index": 630,
@@ -1607,7 +1726,8 @@
   "freq": 21,
   "tts": "strefoh",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "96443d719880"
  },
  {
   "index": 631,
@@ -1620,7 +1740,8 @@
   "freq": 21,
   "tts": "khee lee ahr khoss",
   "source": "worklist-candidate",
-  "duration_s": 2.304
+  "duration_s": 2.208,
+  "sha1": "2ae296fe79a3"
  },
  {
   "index": 632,
@@ -1633,7 +1754,8 @@
   "freq": 21,
   "tts": "eh nehr gheh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "c4826be46ba4"
  },
  {
   "index": 633,
@@ -1646,7 +1768,8 @@
   "freq": 21,
   "tts": "eh fees tay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "15b0d3ca33e7"
  },
  {
   "index": 634,
@@ -1659,7 +1782,8 @@
   "freq": 21,
   "tts": "hoo pah koo hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "d29d901e13e0"
  },
  {
   "index": 635,
@@ -1672,7 +1796,8 @@
   "freq": 20,
   "tts": "eye tee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "3bd220e69825"
  },
  {
   "index": 636,
@@ -1685,7 +1810,8 @@
   "freq": 20,
   "tts": "gheh",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "1162c9db87f1"
  },
  {
   "index": 637,
@@ -1698,7 +1824,8 @@
   "freq": 20,
   "tts": "gonews",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "00246d666cda"
  },
  {
   "index": 638,
@@ -1711,9 +1838,10 @@
   "freq": 20,
   "tts": "mar too ree on",
   "source": "rollout",
-  "duration_s": 1.886,
+  "duration_s": 1.757,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "26e7ddc9d301"
  },
  {
   "index": 639,
@@ -1726,7 +1854,8 @@
   "freq": 20,
   "tts": "nays tew oh",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "818bbf78758d"
  },
  {
   "index": 640,
@@ -1739,7 +1868,8 @@
   "freq": 20,
   "tts": "noonee",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "857be6e078a3"
  },
  {
   "index": 641,
@@ -1752,7 +1882,8 @@
   "freq": 20,
   "tts": "ksoolon",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "8d3bc522b91f"
  },
  {
   "index": 642,
@@ -1765,7 +1896,8 @@
   "freq": 20,
   "tts": "pross ah goh",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "be1f5965b0c4"
  },
  {
   "index": 643,
@@ -1778,9 +1910,10 @@
   "freq": 20,
   "tts": "skay ney",
   "source": "fix21",
-  "duration_s": 1.337,
+  "duration_s": 1.115,
   "take": "2026-09-10, Atlas",
-  "note": "'ey' bound reads as /i/ -- English -ey in a polysyllable is monkey, money; split into its own token"
+  "note": "'ey' bound reads as /i/ -- English -ey in a polysyllable is monkey, money; split into its own token",
+  "sha1": "5303927f0179"
  },
  {
   "index": 644,
@@ -1793,7 +1926,8 @@
   "freq": 20,
   "tts": "to soo toss",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "3c87cad5b186"
  },
  {
   "index": 645,
@@ -1806,7 +1940,8 @@
   "freq": 20,
   "tts": "trekhoh",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "16e761827162"
  },
  {
   "index": 646,
@@ -1819,7 +1954,8 @@
   "freq": 20,
   "tts": "akro boostee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "2ffca979851a"
  },
  {
   "index": 647,
@@ -1832,7 +1968,8 @@
   "freq": 20,
   "tts": "ahr goo ree on",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "78d3e09426d4"
  },
  {
   "index": 648,
@@ -1845,7 +1982,8 @@
   "freq": 20,
   "tts": "eh peeg noh sees",
   "source": "worklist-candidate",
-  "duration_s": 2.774
+  "duration_s": 2.688,
+  "sha1": "b0ab545aeb1a"
  },
  {
   "index": 649,
@@ -1858,9 +1996,10 @@
   "freq": 20,
   "tts": "heh neh ken",
   "source": "rollout",
-  "duration_s": 1.834,
+  "duration_s": 1.563,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "51910702864c"
  },
  {
   "index": 650,
@@ -1873,7 +2012,8 @@
   "freq": 20,
   "tts": "hay gheh mohn",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "aa874a1db693"
  },
  {
   "index": 651,
@@ -1886,7 +2026,8 @@
   "freq": 20,
   "tts": "eekhthoos",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "6c860d85d5fc"
  },
  {
   "index": 652,
@@ -1899,7 +2040,8 @@
   "freq": 20,
   "tts": "ee sah ahk",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "3ee10f5d32b8"
  },
  {
   "index": 653,
@@ -1912,9 +2054,10 @@
   "freq": 20,
   "tts": "hoo pay reh teys",
   "source": "ays",
-  "duration_s": 2.147,
+  "duration_s": 1.833,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "b65a8e810695"
  },
  {
   "index": 654,
@@ -1927,7 +2070,8 @@
   "freq": 20,
   "tts": "hoo pso oh",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "79ec324441e8"
  },
  {
   "index": 655,
@@ -1940,7 +2084,8 @@
   "freq": 20,
   "tts": "hosay",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "9cafd500b6d6"
  },
  {
   "index": 656,
@@ -1953,9 +2098,10 @@
   "freq": 19,
   "tts": "bap tees mah",
   "source": "rollout",
-  "duration_s": 1.573,
+  "duration_s": 1.229,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8269a08fd54b"
  },
  {
   "index": 657,
@@ -1968,7 +2114,8 @@
   "freq": 19,
   "tts": "gheh ohr goss",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "cc000a1b3c08"
  },
  {
   "index": 658,
@@ -1981,7 +2128,8 @@
   "freq": 19,
   "tts": "dee ahk ree noh",
   "source": "worklist-candidate",
-  "duration_s": 3.427
+  "duration_s": 3.336,
+  "sha1": "d38e49825636"
  },
  {
   "index": 659,
@@ -1994,7 +2142,8 @@
   "freq": 19,
   "tts": "koy noh nee ah",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "2a43fda6d869"
  },
  {
   "index": 660,
@@ -2007,7 +2156,8 @@
   "freq": 19,
   "tts": "kraytton",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "52f21efd51b4"
  },
  {
   "index": 661,
@@ -2020,9 +2170,10 @@
   "freq": 19,
   "tts": "kree teys",
   "source": "ays",
-  "duration_s": 1.181,
+  "duration_s": 1.366,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "82caf79a58f3"
  },
  {
   "index": 662,
@@ -2035,7 +2186,8 @@
   "freq": 19,
   "tts": "krooptoh",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "1a8a56c96a48"
  },
  {
   "index": 663,
@@ -2048,8 +2200,9 @@
   "freq": 19,
   "tts": "kitsis",
   "source": "ear",
-  "duration_s": 1.086,
-  "take": "E"
+  "duration_s": 1.008,
+  "take": "E",
+  "sha1": "e3dfaa4203cf"
  },
  {
   "index": 664,
@@ -2062,7 +2215,8 @@
   "freq": 19,
   "tts": "mayn",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "c50de13e3f12"
  },
  {
   "index": 665,
@@ -2075,7 +2229,8 @@
   "freq": 19,
   "tts": "pah leye oss",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "87b19fd78861"
  },
  {
   "index": 666,
@@ -2088,9 +2243,10 @@
   "freq": 19,
   "tts": "pah rap toh mah",
   "source": "rollout",
-  "duration_s": 1.834,
+  "duration_s": 1.36,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "13618d238c6a"
  },
  {
   "index": 667,
@@ -2103,7 +2259,8 @@
   "freq": 19,
   "tts": "parah teethay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "111e4fd2552f"
  },
  {
   "index": 668,
@@ -2116,7 +2273,8 @@
   "freq": 19,
   "tts": "pross fay tay ah",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "c957a7a9b3c8"
  },
  {
   "index": 669,
@@ -2129,7 +2287,8 @@
   "freq": 19,
   "tts": "teh lay oss",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "72189b32934b"
  },
  {
   "index": 670,
@@ -2142,7 +2301,8 @@
   "freq": 19,
   "tts": "ah peh khoh",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "e23169ff6dac"
  },
  {
   "index": 671,
@@ -2155,7 +2315,8 @@
   "freq": 19,
   "tts": "eh pah noh",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "83213e840abf"
  },
  {
   "index": 672,
@@ -2170,7 +2331,8 @@
   "source": "batch4",
   "duration_s": 1.619,
   "take": "2026-09-11, Atlas",
-  "note": "the same 'peye' that gave \"pay\" in paidion."
+  "note": "the same 'peye' that gave \"pay\" in paidion.",
+  "sha1": "2f444ed09d56"
  },
  {
   "index": 673,
@@ -2183,7 +2345,8 @@
   "freq": 19,
   "tts": "epee lambah nomy",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "ca32adc87444"
  },
  {
   "index": 674,
@@ -2196,7 +2359,8 @@
   "freq": 19,
   "tts": "epoo ranee oss",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "f63aadb7addb"
  },
  {
   "index": 675,
@@ -2209,9 +2373,10 @@
   "freq": 18,
   "tts": "blas fay mee ah",
   "source": "rollout",
-  "duration_s": 2.147,
+  "duration_s": 1.716,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "954c54b6bda5"
  },
  {
   "index": 676,
@@ -2224,7 +2389,8 @@
   "freq": 18,
   "tts": "deh ay sees",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "b038bcb6d7ec"
  },
  {
   "index": 677,
@@ -2237,7 +2403,8 @@
   "freq": 18,
   "tts": "ayspo rewo my",
   "source": "worklist-candidate",
-  "duration_s": 2.461
+  "duration_s": 2.376,
+  "sha1": "a195f5b6a863"
  },
  {
   "index": 678,
@@ -2250,7 +2417,8 @@
   "freq": 18,
   "tts": "thoomoss",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "8c4f826c972b"
  },
  {
   "index": 679,
@@ -2263,7 +2431,8 @@
   "freq": 18,
   "tts": "kah tahg ghehl loh",
   "source": "worklist-candidate",
-  "duration_s": 2.539
+  "duration_s": 2.448,
+  "sha1": "58ddf7998ea0"
  },
  {
   "index": 680,
@@ -2276,7 +2445,8 @@
   "freq": 18,
   "tts": "kenoss",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "545e8af20181"
  },
  {
   "index": 681,
@@ -2289,7 +2459,8 @@
   "freq": 18,
   "tts": "klayro nomeh oh",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "9d2d38f4518d"
  },
  {
   "index": 682,
@@ -2302,7 +2473,8 @@
   "freq": 18,
   "tts": "koy mah o my",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "c59df3ae45de"
  },
  {
   "index": 683,
@@ -2315,7 +2487,8 @@
   "freq": 18,
   "tts": "koposs",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "d9e702c45d3e"
  },
  {
   "index": 684,
@@ -2328,7 +2501,8 @@
   "freq": 18,
   "tts": "mekhrees",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "7315d5c53f0c"
  },
  {
   "index": 685,
@@ -2341,9 +2515,10 @@
   "freq": 18,
   "tts": "oy ko do mey",
   "source": "rollout",
-  "duration_s": 1.991,
+  "duration_s": 1.475,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "909680ef0065"
  },
  {
   "index": 686,
@@ -2356,9 +2531,10 @@
   "freq": 18,
   "tts": "pah rakh ray mah",
   "source": "rollout",
-  "duration_s": 2.539,
+  "duration_s": 1.696,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "c8a3f122d2a4"
  },
  {
   "index": 687,
@@ -2371,7 +2547,8 @@
   "freq": 18,
   "tts": "poymayn",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "069a3f284537"
  },
  {
   "index": 688,
@@ -2384,7 +2561,8 @@
   "freq": 18,
   "tts": "pol lah kees",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "cf27db741905"
  },
  {
   "index": 689,
@@ -2397,7 +2575,8 @@
   "freq": 18,
   "tts": "pros tee thay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "e18bf47a8e27"
  },
  {
   "index": 690,
@@ -2410,7 +2589,8 @@
   "freq": 18,
   "tts": "poolon",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "0d40307d51a9"
  },
  {
   "index": 691,
@@ -2423,7 +2603,8 @@
   "freq": 18,
   "tts": "po leh moss",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "5d7c0a6c5fc5"
  },
  {
   "index": 692,
@@ -2436,7 +2617,8 @@
   "freq": 18,
   "tts": "steh fah noss",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "242178208186"
  },
  {
   "index": 693,
@@ -2449,7 +2631,8 @@
   "freq": 18,
   "tts": "teektoh",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "083fc4e62174"
  },
  {
   "index": 694,
@@ -2462,7 +2645,8 @@
   "freq": 18,
   "tts": "fah neh ross",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "7fa5f5a2a913"
  },
  {
   "index": 695,
@@ -2475,7 +2659,8 @@
   "freq": 18,
   "tts": "ah lay thohs",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "4a08554dd6fe"
  },
  {
   "index": 696,
@@ -2488,7 +2673,8 @@
   "freq": 18,
   "tts": "ah poh lay ah",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "3c200863fe2a"
  },
  {
   "index": 697,
@@ -2501,7 +2687,8 @@
   "freq": 18,
   "tts": "ah reeth moss",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "501b9cd52bfc"
  },
  {
   "index": 698,
@@ -2514,7 +2701,8 @@
   "freq": 18,
   "tts": "antee okhay ah",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "dfa0928a02d9"
  },
  {
   "index": 699,
@@ -2527,7 +2715,8 @@
   "freq": 18,
   "tts": "ah see ah",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "78b28f67043a"
  },
  {
   "index": 700,
@@ -2540,9 +2729,10 @@
   "freq": 18,
   "tts": "eh pee bal loh",
   "source": "rollout",
-  "duration_s": 2.461,
+  "duration_s": 1.941,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "c3b266312de3"
  },
  {
   "index": 701,
@@ -2555,7 +2745,8 @@
   "freq": 18,
   "tts": "eh peet reh poh",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "d4b4a55965c2"
  },
  {
   "index": 702,
@@ -2568,7 +2759,8 @@
   "freq": 17,
   "tts": "kai sah ray ah",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "8a5b98fc62c9"
  },
  {
   "index": 703,
@@ -2581,7 +2773,8 @@
   "freq": 17,
   "tts": "bromah",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "1ff6c58c5856"
  },
  {
   "index": 704,
@@ -2594,7 +2787,8 @@
   "freq": 17,
   "tts": "thay sow ross",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "05a0c87ca4c1"
  },
  {
   "index": 705,
@@ -2607,7 +2801,8 @@
   "freq": 17,
   "tts": "kah teh khoh",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "20502715b4c8"
  },
  {
   "index": 706,
@@ -2620,7 +2815,8 @@
   "freq": 17,
   "tts": "kah tah loo hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "77063ae7e9bd"
  },
  {
   "index": 707,
@@ -2633,7 +2829,8 @@
   "freq": 17,
   "tts": "kehr deye noh",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "7e35b334a32d"
  },
  {
   "index": 708,
@@ -2646,7 +2843,8 @@
   "freq": 17,
   "tts": "krooptoss",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "9537984b1710"
  },
  {
   "index": 709,
@@ -2659,7 +2857,8 @@
   "freq": 17,
   "tts": "maytee",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "e8a540d9a018"
  },
  {
   "index": 710,
@@ -2672,7 +2871,8 @@
   "freq": 17,
   "tts": "neeptoh",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "3d501abaa679"
  },
  {
   "index": 711,
@@ -2685,9 +2885,10 @@
   "freq": 17,
   "tts": "peh ree tem noh",
   "source": "rollout",
-  "duration_s": 2.069,
+  "duration_s": 1.675,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "6370ecc7e0f4"
  },
  {
   "index": 712,
@@ -2700,7 +2901,8 @@
   "freq": 17,
   "tts": "play roh mah",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "99bc29cadbd0"
  },
  {
   "index": 713,
@@ -2713,7 +2915,8 @@
   "freq": 17,
   "tts": "play see on",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "c33479860dd8"
  },
  {
   "index": 714,
@@ -2726,7 +2929,8 @@
   "freq": 17,
   "tts": "po tah moss",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "7867355fa59c"
  },
  {
   "index": 715,
@@ -2739,7 +2943,8 @@
   "freq": 17,
   "tts": "sko tee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "f46fbaa14d5e"
  },
  {
   "index": 716,
@@ -2752,9 +2957,10 @@
   "freq": 17,
   "tts": "tah ras soh",
   "source": "rollout",
-  "duration_s": 1.834,
+  "duration_s": 1.887,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "176bc641c733"
  },
  {
   "index": 717,
@@ -2767,7 +2973,8 @@
   "freq": 17,
   "tts": "khah rees mah",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "7fccc07d13c1"
  },
  {
   "index": 718,
@@ -2780,7 +2987,8 @@
   "freq": 17,
   "tts": "khroosoos",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "9ba272809c2c"
  },
  {
   "index": 719,
@@ -2793,9 +3001,10 @@
   "freq": 17,
   "tts": "ah nahg key",
   "source": "rollout",
-  "duration_s": 2.226,
+  "duration_s": 1.728,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "89e7538cf9dd"
  },
  {
   "index": 720,
@@ -2808,7 +3017,8 @@
   "freq": 17,
   "tts": "apo kaloo psees",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "7e6c3ef671dd"
  },
  {
   "index": 721,
@@ -2821,9 +3031,10 @@
   "freq": 17,
   "tts": "ah res koh",
   "source": "rollout",
-  "duration_s": 1.651,
+  "duration_s": 1.268,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "95840e9f34d7"
  },
  {
   "index": 722,
@@ -2836,7 +3047,8 @@
   "freq": 17,
   "tts": "ah feh sees",
   "source": "worklist-candidate",
-  "duration_s": 2.461
+  "duration_s": 2.376,
+  "sha1": "f4de4e0faacf"
  },
  {
   "index": 723,
@@ -2849,9 +3061,10 @@
   "freq": 17,
   "tts": "eh leg khoh",
   "source": "rollout",
-  "duration_s": 1.651,
+  "duration_s": 1.574,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "7ad23fb54350"
  },
  {
   "index": 724,
@@ -2864,7 +3077,8 @@
   "freq": 17,
   "tts": "ehm beye noh",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "81ab7d5abef4"
  },
  {
   "index": 725,
@@ -2877,7 +3091,8 @@
   "freq": 17,
   "tts": "eh ksees tay mee",
   "source": "worklist-candidate",
-  "duration_s": 2.147
+  "duration_s": 2.04,
+  "sha1": "c8181ccbdbdf"
  },
  {
   "index": 726,
@@ -2890,7 +3105,8 @@
   "freq": 17,
   "tts": "eh pow ree on",
   "source": "worklist-candidate",
-  "duration_s": 2.539
+  "duration_s": 2.448,
+  "sha1": "146ff2752745"
  },
  {
   "index": 727,
@@ -2903,9 +3119,10 @@
   "freq": 17,
   "tts": "hekah tontar kheys",
   "source": "ays",
-  "duration_s": 2.147,
+  "duration_s": 2.139,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "e3fc74447a99"
  },
  {
   "index": 728,
@@ -2918,7 +3135,8 @@
   "freq": 17,
   "tts": "heh kah ton",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "39d0ad9d0999"
  },
  {
   "index": 729,
@@ -2931,7 +3149,8 @@
   "freq": 17,
   "tts": "heh toy moss",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "5014d8d98abe"
  },
  {
   "index": 730,
@@ -2944,7 +3163,8 @@
   "freq": 17,
   "tts": "heepposs",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "12d751858244"
  },
  {
   "index": 731,
@@ -2957,7 +3177,8 @@
   "freq": 17,
   "tts": "hoo po meh noh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "47e3f589e413"
  },
  {
   "index": 732,
@@ -2970,7 +3191,8 @@
   "freq": 17,
   "tts": "hoh sow tohs",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "61ea6de3bb8a"
  },
  {
   "index": 733,
@@ -2983,7 +3205,8 @@
   "freq": 17,
   "tts": "hoe",
   "source": "worklist-candidate",
-  "duration_s": 0.684
+  "duration_s": 0.6,
+  "sha1": "db80c158672a"
  },
  {
   "index": 734,
@@ -2996,8 +3219,9 @@
   "freq": 17,
   "tts": "reezah",
   "source": "ear",
-  "duration_s": 0.918,
-  "take": "C"
+  "duration_s": 0.84,
+  "take": "C",
+  "sha1": "33a0edc4cd14"
  },
  {
   "index": 735,
@@ -3010,8 +3234,9 @@
   "freq": 17,
   "tts": "roo o my",
   "source": "ear",
-  "duration_s": 1.638,
-  "take": "A"
+  "duration_s": 1.56,
+  "take": "A",
+  "sha1": "090610307fad"
  },
  {
   "index": 736,
@@ -3024,9 +3249,10 @@
   "freq": 16,
   "tts": "kah far nah oom",
   "source": "rollout",
-  "duration_s": 2.226,
+  "duration_s": 1.919,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8e99073348c7"
  },
  {
   "index": 737,
@@ -3039,7 +3265,8 @@
   "freq": 16,
   "tts": "gamoss",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "048feac47fe6"
  },
  {
   "index": 738,
@@ -3052,9 +3279,10 @@
   "freq": 16,
   "tts": "des mee oss",
   "source": "rollout",
-  "duration_s": 1.756,
+  "duration_s": 1.262,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8af2277722b9"
  },
  {
   "index": 739,
@@ -3067,7 +3295,8 @@
   "freq": 16,
   "tts": "daypnon",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "a557211a71b3"
  },
  {
   "index": 740,
@@ -3080,7 +3309,8 @@
   "freq": 16,
   "tts": "day nah ree on",
   "source": "worklist-candidate",
-  "duration_s": 1.964
+  "duration_s": 1.872,
+  "sha1": "5d7337a460e5"
  },
  {
   "index": 741,
@@ -3093,7 +3323,8 @@
   "freq": 16,
   "tts": "deeah loghee zomy",
   "source": "worklist-candidate",
-  "duration_s": 2.539
+  "duration_s": 2.448,
+  "sha1": "3cdea5c143c7"
  },
  {
   "index": 742,
@@ -3106,9 +3337,10 @@
   "freq": 16,
   "tts": "deeah tahs soh",
   "source": "fix21",
-  "duration_s": 2.304,
+  "duration_s": 2.093,
   "take": "2026-09-10, Atlas",
-  "note": "reverted: 'tas' spelled"
+  "note": "reverted: 'tas' spelled",
+  "sha1": "0d947df4eaa2"
  },
  {
   "index": 743,
@@ -3121,7 +3353,8 @@
   "freq": 16,
   "tts": "dee psah oh",
   "source": "worklist-candidate",
-  "duration_s": 3.427
+  "duration_s": 3.336,
+  "sha1": "737fb847f8ee"
  },
  {
   "index": 744,
@@ -3134,7 +3367,8 @@
   "freq": 16,
   "tts": "ew lo ghee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "af0facfecd6b"
  },
  {
   "index": 745,
@@ -3147,7 +3381,8 @@
   "freq": 16,
   "tts": "dzayloss",
   "source": "worklist-candidate",
-  "duration_s": 3.035
+  "duration_s": 2.928,
+  "sha1": "c2b91102d80c"
  },
  {
   "index": 746,
@@ -3160,7 +3395,8 @@
   "freq": 16,
   "tts": "kakos",
   "source": "worklist-candidate",
-  "duration_s": 1.494
+  "duration_s": 1.392,
+  "sha1": "51d3fee88061"
  },
  {
   "index": 747,
@@ -3173,9 +3409,10 @@
   "freq": 16,
   "tts": "kah tak ree noh",
   "source": "rollout",
-  "duration_s": 1.886,
+  "duration_s": 2.256,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "f4f00d3409af"
  },
  {
   "index": 748,
@@ -3188,9 +3425,10 @@
   "freq": 16,
   "tts": "klep teys",
   "source": "ays",
-  "duration_s": 1.886,
+  "duration_s": 1.237,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "48594eefb004"
  },
  {
   "index": 749,
@@ -3203,7 +3441,8 @@
   "freq": 16,
   "tts": "klayoh",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "264771003dc3"
  },
  {
   "index": 750,
@@ -3216,9 +3455,10 @@
   "freq": 16,
   "tts": "kan",
   "source": "rollout",
-  "duration_s": 0.789,
+  "duration_s": 0.755,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "1923b2c2e091"
  },
  {
   "index": 751,
@@ -3231,9 +3471,10 @@
   "freq": 16,
   "tts": "loo pey",
   "source": "fix21",
-  "duration_s": 1.024,
+  "duration_s": 1.004,
   "take": "2026-09-10, Atlas",
-  "note": "same: 'ey' only works as its own short token"
+  "note": "same: 'ey' only works as its own short token",
+  "sha1": "743079c92b12"
  },
  {
   "index": 752,
@@ -3246,7 +3487,8 @@
   "freq": 16,
   "tts": "noom fee oss",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "26881d8926f5"
  },
  {
   "index": 753,
@@ -3259,7 +3501,8 @@
   "freq": 16,
   "tts": "oo deh po teh",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "4a468475a9ad"
  },
  {
   "index": 754,
@@ -3272,7 +3515,8 @@
   "freq": 16,
   "tts": "pah thay mah",
   "source": "worklist-candidate",
-  "duration_s": 1.416
+  "duration_s": 1.32,
+  "sha1": "a987e9192cd8"
  },
  {
   "index": 755,
@@ -3285,7 +3529,8 @@
   "freq": 16,
   "tts": "pah reh khoh",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "03ffc29dba2d"
  },
  {
   "index": 756,
@@ -3298,9 +3543,10 @@
   "freq": 16,
   "tts": "play reys",
   "source": "ays",
-  "duration_s": 1.181,
+  "duration_s": 1.258,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "142637f7e4ad"
  },
  {
   "index": 757,
@@ -3313,7 +3559,8 @@
   "freq": 16,
   "tts": "pros do kah oh",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "d702d8e0ab90"
  },
  {
   "index": 758,
@@ -3326,9 +3573,10 @@
   "freq": 16,
   "tts": "soo kay",
   "source": "fix21",
-  "duration_s": 1.494,
+  "duration_s": 0.937,
   "take": "2026-09-10, Atlas",
-  "note": "and 'key' is an English word, so kappa+eta wants kay"
+  "note": "and 'key' is an English word, so kappa+eta wants kay",
+  "sha1": "72350866f1e4"
  },
  {
   "index": 759,
@@ -3341,9 +3589,10 @@
   "freq": 16,
   "tts": "sool lam bah noh",
   "source": "rollout",
-  "duration_s": 1.991,
+  "duration_s": 2.077,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "8d9b3f0d8059"
  },
  {
   "index": 760,
@@ -3356,7 +3605,8 @@
   "freq": 16,
   "tts": "sfraghees",
   "source": "worklist-candidate",
-  "duration_s": 3.271
+  "duration_s": 3.168,
+  "sha1": "06d8a9bbfc27"
  },
  {
   "index": 761,
@@ -3369,7 +3619,8 @@
   "freq": 16,
   "tts": "teras",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "351233a858d1"
  },
  {
   "index": 762,
@@ -3382,7 +3633,8 @@
   "freq": 16,
   "tts": "tol mah oh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "c1d839d46251"
  },
  {
   "index": 763,
@@ -3395,9 +3647,10 @@
   "freq": 16,
   "tts": "tro fey",
   "source": "fix21",
-  "duration_s": 1.024,
+  "duration_s": 1.274,
   "take": "2026-09-10, Atlas",
-  "note": "'ey' as its own token"
+  "note": "'ey' as its own token",
+  "sha1": "11647c585d10"
  },
  {
   "index": 764,
@@ -3410,7 +3663,8 @@
   "freq": 16,
   "tts": "ah theh teh hoe",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "60252fe3d977"
  },
  {
   "index": 765,
@@ -3423,9 +3677,10 @@
   "freq": 16,
   "tts": "ah nak ree noh",
   "source": "rollout",
-  "duration_s": 2.539,
+  "duration_s": 1.787,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "494411b23fec"
  },
  {
   "index": 766,
@@ -3438,7 +3693,8 @@
   "freq": 16,
   "tts": "ehk tay noh",
   "source": "worklist-candidate",
-  "duration_s": 2.304
+  "duration_s": 2.208,
+  "sha1": "f2b58a6079d4"
  },
  {
   "index": 767,
@@ -3451,7 +3707,8 @@
   "freq": 16,
   "tts": "epee thoomeh hoe",
   "source": "worklist-candidate",
-  "duration_s": 2.722
+  "duration_s": 2.616,
+  "sha1": "705c6038d147"
  },
  {
   "index": 768,
@@ -3464,9 +3721,10 @@
   "freq": 16,
   "tts": "ehr gah teys",
   "source": "ays",
-  "duration_s": 2.069,
+  "duration_s": 1.797,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "673521e7b5fb"
  },
  {
   "index": 769,
@@ -3479,7 +3737,8 @@
   "freq": 16,
   "tts": "eh pay tah",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "90a13a7e57c3"
  },
  {
   "index": 770,
@@ -3492,7 +3751,8 @@
   "freq": 16,
   "tts": "eh feh soss",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "82151a02286f"
  },
  {
   "index": 771,
@@ -3505,7 +3765,8 @@
   "freq": 16,
   "tts": "hoos teh reh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.651
+  "duration_s": 1.56,
+  "sha1": "10f5a2b3c2ae"
  },
  {
   "index": 772,
@@ -3518,9 +3779,10 @@
   "freq": 15,
   "tts": "dah mas koss",
   "source": "rollout",
-  "duration_s": 1.834,
+  "duration_s": 1.471,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "a65316cd4bd0"
  },
  {
   "index": 773,
@@ -3533,7 +3795,8 @@
   "freq": 15,
   "tts": "lah zah ross",
   "source": "worklist-candidate",
-  "duration_s": 2.174
+  "duration_s": 2.066,
+  "sha1": "b1d311de0278"
  },
  {
   "index": 774,
@@ -3546,7 +3809,8 @@
   "freq": 15,
   "tts": "sowloss",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "5b533ae8ff82"
  },
  {
   "index": 775,
@@ -3559,7 +3823,8 @@
   "freq": 15,
   "tts": "ghew o my",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "ffdcdc594fd2"
  },
  {
   "index": 776,
@@ -3572,7 +3837,8 @@
   "freq": 15,
   "tts": "guh nohs toss",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "25c18dd3524b"
  },
  {
   "index": 777,
@@ -3585,7 +3851,8 @@
   "freq": 15,
   "tts": "goomnoss",
   "source": "worklist-candidate",
-  "duration_s": 1.573
+  "duration_s": 1.488,
+  "sha1": "7ebbcb05b6de"
  },
  {
   "index": 778,
@@ -3598,7 +3865,8 @@
   "freq": 15,
   "tts": "deroh",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "e87aa9112084"
  },
  {
   "index": 779,
@@ -3611,7 +3879,8 @@
   "freq": 15,
   "tts": "desmoss",
   "source": "worklist-candidate",
-  "duration_s": 1.285
+  "duration_s": 1.178,
+  "sha1": "dd11d5d5d5de"
  },
  {
   "index": 780,
@@ -3624,7 +3893,8 @@
   "freq": 15,
   "tts": "deeah martoo romy",
   "source": "worklist-candidate",
-  "duration_s": 3.976
+  "duration_s": 3.888,
+  "sha1": "3fbfc63d26bd"
  },
  {
   "index": 781,
@@ -3637,7 +3907,8 @@
   "freq": 15,
   "tts": "aytah",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "56450e7ffd8b"
  },
  {
   "index": 782,
@@ -3650,7 +3921,8 @@
   "freq": 15,
   "tts": "ew seh bay ah",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "a1552079a31a"
  },
  {
   "index": 783,
@@ -3663,7 +3935,8 @@
   "freq": 15,
   "tts": "ewkhah reestee ah",
   "source": "worklist-candidate",
-  "duration_s": 5.178
+  "duration_s": 5.088,
+  "sha1": "cc9b613c0e55"
  },
  {
   "index": 784,
@@ -3676,7 +3949,8 @@
   "freq": 15,
   "tts": "theh meh lee oss",
   "source": "worklist-candidate",
-  "duration_s": 2.539
+  "duration_s": 2.448,
+  "sha1": "a6d9e87134be"
  },
  {
   "index": 785,
@@ -3689,7 +3963,8 @@
   "freq": 15,
   "tts": "threeks",
   "source": "worklist-candidate",
-  "duration_s": 1.103
+  "duration_s": 1.008,
+  "sha1": "4a6a760ba130"
  },
  {
   "index": 786,
@@ -3702,7 +3977,8 @@
   "freq": 15,
   "tts": "kah tehr kho my",
   "source": "worklist-candidate",
-  "duration_s": 2.618
+  "duration_s": 2.52,
+  "sha1": "e71cfe1ba2d7"
  },
  {
   "index": 787,
@@ -3715,7 +3991,8 @@
   "freq": 15,
   "tts": "klay ro no moss",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "f1a4f25acf11"
  },
  {
   "index": 788,
@@ -3728,8 +4005,9 @@
   "freq": 15,
   "tts": "kitzo",
   "source": "ear",
-  "duration_s": 1.014,
-  "take": "F"
+  "duration_s": 0.936,
+  "take": "F",
+  "sha1": "9dfbabd6208f"
  },
  {
   "index": 789,
@@ -3742,9 +4020,10 @@
   "freq": 15,
   "tts": "layss teys",
   "source": "ays",
-  "duration_s": 1.337,
+  "duration_s": 1.42,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "dcb2113047b1"
  },
  {
   "index": 790,
@@ -3759,7 +4038,8 @@
   "source": "batch5",
   "duration_s": 1.463,
   "take": "2026-09-11, Atlas",
-  "note": "the gold-vowel fault again; the vowel spelled outright, as σοφός took."
+  "note": "the gold-vowel fault again; the vowel spelled outright, as σοφός took.",
+  "sha1": "cd3f869acb3a"
  },
  {
   "index": 791,
@@ -3772,8 +4052,9 @@
   "freq": 15,
   "tts": "axay rynoh",
   "source": "ear-compromise",
-  "duration_s": 1.494,
-  "take": "I"
+  "duration_s": 1.416,
+  "take": "I",
+  "sha1": "491999be2995"
  },
  {
   "index": 792,
@@ -3786,9 +4067,10 @@
   "freq": 15,
   "tts": "oy koo meh ney",
   "source": "rollout",
-  "duration_s": 1.52,
+  "duration_s": 1.358,
   "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not"
+  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
+  "sha1": "c518a729ea29"
  },
  {
   "index": 793,
@@ -3801,7 +4083,8 @@
   "freq": 15,
   "tts": "petrah",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "5cd3c7d69ce6"
  },
  {
   "index": 794,
@@ -3814,9 +4097,10 @@
   "freq": 15,
   "tts": "pahr th eh noss",
   "source": "fix21",
-  "duration_s": 1.886,
+  "duration_s": 2.071,
   "take": "2026-09-10, Atlas",
-  "note": "'theh' came back as 'the'"
+  "note": "'theh' came back as 'the'",
+  "sha1": "833e7c26991b"
  },
  {
   "index": 795,
@@ -3829,7 +4113,8 @@
   "freq": 15,
   "tts": "powoh",
   "source": "worklist-candidate",
-  "duration_s": 0.946
+  "duration_s": 0.84,
+  "sha1": "fc95ceef91ed"
  },
  {
   "index": 796,
@@ -3842,7 +4127,8 @@
   "freq": 15,
   "tts": "perees soteh ross",
   "source": "worklist-candidate",
-  "duration_s": 2.226
+  "duration_s": 2.136,
+  "sha1": "03c8ddc9c67f"
  },
  {
   "index": 797,
@@ -3855,7 +4141,8 @@
   "freq": 15,
   "tts": "po tee zoh",
   "source": "worklist-candidate",
-  "duration_s": 1.337
+  "duration_s": 1.248,
+  "sha1": "39c4dac4dd05"
  },
  {
   "index": 798,
@@ -3868,7 +4155,8 @@
   "freq": 15,
   "tts": "pross leh goh",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "bc107b428fdf"
  },
  {
   "index": 799,
@@ -3881,7 +4169,8 @@
   "freq": 15,
   "tts": "sah lew hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "fc86abeee665"
  },
  {
   "index": 800,
@@ -3894,9 +4183,10 @@
   "freq": 15,
   "tts": "skan dah lon",
   "source": "rollout",
-  "duration_s": 1.886,
+  "duration_s": 1.809,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "ef5713654e62"
  },
  {
   "index": 801,
@@ -3909,7 +4199,8 @@
   "freq": 15,
   "tts": "soom feh roh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "a67bf01ab950"
  },
  {
   "index": 802,
@@ -3922,7 +4213,8 @@
   "freq": 15,
   "tts": "soo nees tay mee",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "2dc90da94548"
  },
  {
   "index": 803,
@@ -3935,7 +4227,8 @@
   "freq": 15,
   "tts": "sfrah ghee zoh",
   "source": "worklist-candidate",
-  "duration_s": 3.349
+  "duration_s": 3.241,
+  "sha1": "ea63e2078171"
  },
  {
   "index": 804,
@@ -3948,7 +4241,8 @@
   "freq": 15,
   "tts": "trah peh zah",
   "source": "worklist-candidate",
-  "duration_s": 1.991
+  "duration_s": 1.896,
+  "sha1": "95f78549b35a"
  },
  {
   "index": 805,
@@ -3961,7 +4255,8 @@
   "freq": 15,
   "tts": "tooposs",
   "source": "worklist-candidate",
-  "duration_s": 1.024
+  "duration_s": 0.936,
+  "sha1": "3969c4aea4f1"
  },
  {
   "index": 806,
@@ -3974,7 +4269,8 @@
   "freq": 15,
   "tts": "khor tah zoh",
   "source": "worklist-candidate",
-  "duration_s": 1.756
+  "duration_s": 1.656,
+  "sha1": "97d2ea455ea8"
  },
  {
   "index": 807,
@@ -3987,7 +4283,8 @@
   "freq": 15,
   "tts": "khortoss",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "f393be8f5314"
  },
  {
   "index": 808,
@@ -4000,7 +4297,8 @@
   "freq": 15,
   "tts": "ah neh kho my",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "2e92acb1a4e0"
  },
  {
   "index": 809,
@@ -4013,7 +4311,8 @@
   "freq": 15,
   "tts": "ah no mee ah",
   "source": "worklist-candidate",
-  "duration_s": 1.834
+  "duration_s": 1.728,
+  "sha1": "4e60219623b2"
  },
  {
   "index": 810,
@@ -4026,7 +4325,8 @@
   "freq": 15,
   "tts": "ah pah goh",
   "source": "worklist-candidate",
-  "duration_s": 2.069
+  "duration_s": 1.968,
+  "sha1": "f60dcfe60773"
  },
  {
   "index": 811,
@@ -4039,7 +4339,8 @@
   "freq": 15,
   "tts": "epag ghello my",
   "source": "worklist-candidate",
-  "duration_s": 2.461
+  "duration_s": 2.376,
+  "sha1": "74eb0a395886"
  },
  {
   "index": 812,
@@ -4052,7 +4353,8 @@
   "freq": 15,
   "tts": "eh pee meh noh",
   "source": "worklist-candidate",
-  "duration_s": 2.174
+  "duration_s": 2.066,
+  "sha1": "f4862b98eaa5"
  },
  {
   "index": 813,
@@ -4065,9 +4367,10 @@
   "freq": 15,
   "tts": "ee or dah neys",
   "source": "ays",
-  "duration_s": 2.226,
+  "duration_s": 1.915,
   "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'"
+  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
+  "sha1": "a1b2d956f643"
  },
  {
   "index": 814,
@@ -4080,7 +4383,8 @@
   "freq": 15,
   "tts": "ho moy o oh",
   "source": "worklist-candidate",
-  "duration_s": 1.52
+  "duration_s": 1.416,
+  "sha1": "27c1cf9f4a64"
  },
  {
   "index": 815,
@@ -4093,7 +4397,8 @@
   "freq": 15,
   "tts": "hohthenn",
   "source": "worklist-candidate",
-  "duration_s": 1.181
+  "duration_s": 1.08,
+  "sha1": "3dbc8cb2e56c"
  },
  {
   "index": 816,
@@ -4106,7 +4411,8 @@
   "freq": 15,
   "tts": "oh feh leh hoe",
   "source": "worklist-candidate",
-  "duration_s": 1.886
+  "duration_s": 1.8,
+  "sha1": "7304dcb0cf20"
  },
  {
   "index": 817,
@@ -4119,8 +4425,9 @@
   "freq": 15,
   "tts": "rabee",
   "source": "rollout",
-  "duration_s": 1.158,
+  "duration_s": 0.845,
   "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable"
+  "note": "an h that only padded a vowel was spoken as its own syllable",
+  "sha1": "4ebb7b7ad082"
  }
 ]

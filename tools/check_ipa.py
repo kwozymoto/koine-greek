@@ -31,6 +31,11 @@ import json, io, os, re, sys, unicodedata, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_ipa as B
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 
 IPA_PATH = os.path.join(ROOT, "docs", "erasmian_ipa.json")
 

@@ -48,16 +48,22 @@ Then the audio, which is a chain of four things that have to agree:
 VOCAB[i] -> VOCAB_AUDIO[i] -> the file on disk -> the cue sheet row saying
 what was recorded. The cue sheets duplicate the headword, gloss, part of
 speech, frequency and tier, so all of it can drift; each is compared back to
-vocab.js. Clip length is checked too — the pack is 64 kbps CBR mono, so file
-size gives the duration to about a hundredth of a second, and a clip that no
-longer matches its cue sheet is one that was re-recorded without the sheet
-being brought along.
+vocab.js. And each row carries the sha1 of the clip it describes, so a clip
+re-recorded without the sheet being brought along fails rather than passing
+quietly. That replaced a byte-count estimate of the duration which was out by
+0.064s on average against a 0.05s tolerance — it fired on 173 rows, was a soft
+warning nobody read, and hid the 64 clips that genuinely had been replaced.
 
 What this cannot check is whether an English gloss is the right translation,
 or whether a cue string sounds like the Greek. Both are judgement, and the
 corpus has no opinion.
 """
-import json, io, os, re, sys, unicodedata, collections, subprocess
+import json, io, os, re, sys, unicodedata, collections, subprocess, hashlib
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GNT = os.path.join(ROOT, "data", "gnt")
@@ -648,7 +654,7 @@ for j, g in sorted(own.items(), key=lambda kv: -count[kv[0]]):
 CUES = [("docs/erasmian_vocab_cues.json", "the original 470"),
         ("docs/erasmian_vocab_cues_v3_black.json", "the 41 for Black"),
         ("docs/erasmian_vocab_cues_v4_tail.json", "the 307 tail")]
-audio_bad, cue_bad, cue_soft = [], [], []
+audio_bad, cue_bad = [], []
 
 VDIR = os.path.join(ROOT, "audio", "vocab")
 on_disk = set(os.listdir(VDIR)) if os.path.isdir(VDIR) else set()
@@ -722,13 +728,40 @@ for path, what in CUES:
             if r.get(key) != mine:
                 cue_bad.append("%s cue %s is %r, vocab.js has %r"
                                % (tag, label, r.get(key), mine))
-        # 64 kbps CBR mono: the file size gives the length back
+        # The clip's own fingerprint, which is the only exact way to ask
+        # whether the row still describes the file.
+        #
+        # This replaces a byte-count estimate of the duration, and the reason
+        # is worth keeping. "64 kbps CBR mono, so file size gives the duration
+        # to about a hundredth of a second" was wrong: measured against
+        # ffprobe the estimate is out by 0.064s on average, against a 0.05s
+        # tolerance. So it fired on 173 rows, had fired on them for months,
+        # and was a soft warning nobody read. A check that always fails
+        # teaches you to ignore it, which is its own kind of blindness --
+        # among those 173 were 64 clips that really had been replaced without
+        # the sheet being brought along, and they were invisible inside the
+        # noise. The duration_s values themselves had been computed with that
+        # same formula rather than measured, which is why 612 of 639 were too
+        # long by the same amount in the same direction.
+        #
+        # check_sounds has hashed the 32 letter clips this way since it was
+        # written, and said why: "a clip could be replaced and the record left
+        # describing the clip it replaced, which is the same falsification as
+        # editing `tts` to match a clip after the fact." That was true of the
+        # other 818 the whole time.
         f = os.path.join(VDIR, r.get("filename") or "")
-        if os.path.isfile(f) and isinstance(r.get("duration_s"), (int, float)):
-            secs = os.path.getsize(f) * 8 / 64000.0
-            if abs(secs - r["duration_s"]) > 0.05:
-                cue_soft.append("%s cue says %.2fs, the file is %.2fs — "
-                                "re-recorded since?" % (tag, r["duration_s"], secs))
+        if os.path.isfile(f):
+            got = hashlib.sha1(io.open(f, "rb").read()).hexdigest()[:12]
+            if not r.get("sha1"):
+                cue_bad.append("%s has no sha1 in the cue sheet" % tag)
+            elif r["sha1"] != got:
+                cue_bad.append(
+                    "%s the clip is not the one this row describes — file is "
+                    "%s, the sheet says %s. Either the clip was replaced "
+                    "without the row being brought along, or the row was "
+                    "edited to describe a clip that was never made. Update "
+                    "tts/source/take/duration_s/sha1 together."
+                    % (tag, got, r["sha1"]))
 for i in range(min(len(VOCAB), len(VOCAB_AUDIO))):
     if i not in covered and VOCAB_AUDIO[i]:
         cue_bad.append("%3d %-14s has a clip but no cue sheet row"
@@ -782,7 +815,6 @@ section("deck words the reader cannot gloss", missing_gloss, 30)
 section("audio files and the index", audio_bad, 20)
 section("shared lexical-form clips", form_bad, 20)
 section("cue sheet rows that disagree with vocab.js", cue_bad, 30)
-section("clips whose length no longer matches the cue sheet", cue_soft, 20)
 section("looks wrong, checked, and is not", excused)
 
 hard = (shape + unattested + dupes + posbad + citebad + formbad + prepbad + ex_bad
