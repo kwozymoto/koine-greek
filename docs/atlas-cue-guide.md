@@ -100,6 +100,26 @@ Watch the vowel-spelling h when you reason about this: `lah`, `nah`, `neh`
 and `theh` all end in a *vowel*, and λαός, ναός and νέος are approved with a
 free `oss` after them.
 
+**A cue heard alone is not evidence of how it reads in a sentence.** This is
+the newest rule here and the one that reaches furthest, because it undermines
+how every other cue in this project was judged.
+
+Fraser heard the lesson narration say *upsilon* — written plainly, no cue —
+and heard OOP-silon, which is the reading this course wants. So the obvious
+conclusion was that Atlas says the plain word correctly and the contrived
+`Oopsilon` was doing no work. Tested directly: **the plain spelling alone came
+back UP-silon**, while the same plain spelling inside a sentence came back
+OOP-silon. Same word, same voice, same day, two readings.
+
+So Atlas reads a word according to what surrounds it, and the whole vocabulary
+pack was auditioned as standalone clips. That is fine for the deck, where a
+word IS heard alone. It is not fine for lesson narration, where the same cue
+sits inside prose — a cue that passed as a clip can still be wrong in a
+paragraph, and only listening to the paragraph will show it.
+
+It also kills a rule that was about to be written down here: *try the plain
+spelling first*. The plain spelling is not a stable thing to try.
+
 **κτ- takes an ear, not a rule.** The two locked cues resolve the cluster
 differently — κτίσις is `kitsis`, where the s of the cluster doubles as the
 sigma, and κτίζω is `kitzo`, where it does not. Any rule gets one of them
