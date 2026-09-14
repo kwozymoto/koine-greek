@@ -195,13 +195,19 @@ SAY = {
         "So hag e oss begins with an h, and ah gah pay does not.",
     (1, '<span class="gk">ῥῆμα</span> is <i>rhēma</i>, near enough <i>rēma</i>.'):
         "rhay mah is near enough ray mah.",
+    # The gamma-nasal sentence is the one that does NOT need rewriting, and
+    # rewriting it was a mistake -- "So ἄγγελος is angelos, not aggelos" is
+    # what a person teaching this would say out loud, naming the word and then
+    # contrasting two ways of saying it. The repetition is the teaching. Only
+    # the two transliterations are wrong aloud, so only they are replaced, and
+    # the rest of the sentence still tracks word for word under a tap.
+    #
     # `ahg geh loss` is the wrong pronunciation the sentence exists to rule
     # out, and it is assembled from spellings already heard: `ah` from ἀγάπη,
     # a closing hard g from καταγγέλλω's `tahg`, `geh` and `loss` from ἄγγελος
     # itself. The pair then differs by the one thing being taught, the n.
-    (1, 'So <span class="gk">ἄγγελος</span> is <i>angelos</i>, not '
-        '<i>aggelos</i> — which is where our word angel comes from.'):
-        "So the word behind our angel is ahng geh loss, not ahg geh loss.",
+    (1, "<i>angelos</i>"): "ahng geh loss",
+    (1, "<i>aggelos</i>"): "ahg geh loss",
 }
 
 
@@ -280,6 +286,31 @@ def align(html, ch, cues, missing):
     return weld(spoken, page_words, pairs)
 
 
+def fuse(tokens):
+    """Which of clean()'s tokens each of these tokens ends up inside.
+
+    clean() pulls a stray mark back onto the word before it, so two tokens
+    become one. Rather than re-implement that rule, walk the cleaned text
+    against the tokens that produced it, character for character, and watch
+    where each lands. The rule then lives in clean() alone.
+    """
+    text = clean(" ".join(tokens))
+    new = text.split()
+    if not new:
+        return "", [], []
+    assert "".join(new) == "".join(tokens), (
+        "clean() changed the letters, not just the spacing -- the character "
+        "walk cannot be trusted and the mapping would be a guess")
+    idx, j, pos = [], 0, 0
+    for w in tokens:
+        while j < len(new) and pos >= len(new[j]):
+            j += 1
+            pos = 0
+        idx.append(min(j, len(new) - 1))
+        pos += len(w)
+    return text, new, idx
+
+
 def weld(spoken, page_words, pairs):
     """The last thing clean() does is pull a stray mark back onto the word
        before it -- `loh goss .` becomes `loh goss.` -- and that fuses two
@@ -287,25 +318,24 @@ def weld(spoken, page_words, pairs):
        first stray full stop onwards every tap seeks one word early, which is
        the kind of wrong that looks right.
 
-    So walk the cleaned text against the tokens that produced it, character
-    for character, and see which fused. That way the rule lives in clean()
-    only; this does not re-implement it, it observes it.
+    The page needs the same treatment for the same reason. `<i>angelos</i>,`
+    is pulled out as its own stretch, leaving the comma as a page word of its
+    own -- so the page list said `angelos , not` where clean() says
+    `angelos, not`, and a tap had a comma to land on.
     """
-    text = clean(" ".join(spoken))
-    new = text.split()
-    if not new:
+    text, _new, idx = fuse(spoken)
+    if not text:
         return "", page_words, [0] * len(page_words)
-    assert "".join(new) == "".join(spoken), (
-        "clean() changed the letters, not just the spacing -- the character "
-        "walk below cannot be trusted and the mapping would be a guess")
-    idx, j, pos = [], 0, 0
-    for w in spoken:
-        while j < len(new) and pos >= len(new[j]):
-            j += 1
-            pos = 0
-        idx.append(min(j, len(new) - 1))
-        pos += len(w)
-    return text, page_words, [idx[p] for p in pairs]
+    pairs = [idx[p] for p in pairs]
+    _page, page_words, pidx = fuse(page_words)
+    out = []
+    for p, at in zip(pairs, pidx):
+        # A fused page word keeps the FIRST contributor's second, so
+        # `angelos,` is tapped where angelos is said, not where the comma is.
+        if at < len(out):
+            continue
+        out.append(p)
+    return text, page_words, out
 
 
 def sub_text(raw, cues, missing):
