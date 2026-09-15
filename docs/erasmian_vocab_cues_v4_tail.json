@@ -1257,7 +1257,7 @@
   "tier": 5,
   "freq": 23,
   "tts": "khah ree zo my",
-  "source": "worklist-candidate",
+  "source": "batch6",
   "duration_s": 1.8,
   "sha1": "5a81b750b619"
  },
@@ -1329,7 +1329,7 @@
   "tier": 5,
   "freq": 23,
   "tts": "eh lew theh ross",
-  "source": "worklist-candidate",
+  "source": "batch6",
   "duration_s": 2.616,
   "sha1": "786a3caee528"
  },
@@ -1749,7 +1749,7 @@
   "tier": 5,
   "freq": 21,
   "tts": "khee lee ahr khoss",
-  "source": "worklist-candidate",
+  "source": "batch6",
   "duration_s": 2.208,
   "sha1": "2ae296fe79a3"
  },
@@ -2153,10 +2153,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "koy noh nee ah",
-  "source": "worklist-candidate",
-  "duration_s": 2.04,
-  "sha1": "2a43fda6d869"
+  "tts": "koy noh knee ah",
+  "source": "batch6",
+  "duration_s": 2.038,
+  "sha1": "2050c92bed29",
+  "take": "2026-09-15, Atlas (b6b_659_a)",
+  "note": "`nee` is approved in three other clips, so this was the word and not the spelling; the English word knee fixes it"
  },
  {
   "index": 660,
@@ -3953,7 +3955,7 @@
   "tier": 5,
   "freq": 15,
   "tts": "ew seh bay ah",
-  "source": "worklist-candidate",
+  "source": "batch6",
   "duration_s": 1.8,
   "sha1": "a1552079a31a"
  },

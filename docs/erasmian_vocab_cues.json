@@ -452,7 +452,7 @@
   "tier": 1,
   "freq": 555,
   "tts": "tiss",
-  "source": "freq",
+  "source": "batch6",
   "duration_s": 0.734,
   "sha1": "734311a10f6e"
  },
@@ -905,10 +905,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 243,
-  "tts": "pee stees",
-  "source": "g2p",
-  "duration_s": 1.122,
-  "sha1": "a4f75ae92107"
+  "tts": "piss tiss",
+  "source": "batch6",
+  "duration_s": 1.071,
+  "sha1": "5b9b5dfe77e7",
+  "take": "2026-09-15, Atlas (b6b_61_a)",
+  "note": "both halves were wrong: πίστις is two SHORT iotas, and `tiss` was approved on τίς in the same round"
  },
  {
   "index": 62,
@@ -979,12 +981,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 231,
-  "tts": "aw no mah",
-  "source": "rollout",
-  "duration_s": 1.064,
-  "take": "2026-09-10, Atlas",
+  "tts": "on no mah",
+  "source": "batch6",
+  "duration_s": 1.149,
+  "take": "2026-09-15, Atlas (b6b_66_a)",
   "note": "short omicron; 'o' bare reads long",
-  "sha1": "6751a6ff00f0"
+  "sha1": "8e050cecf717"
  },
  {
   "index": 67,
@@ -1055,7 +1057,7 @@
   "tier": 1,
   "freq": 215,
   "tts": "goo ney",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 1.14,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -1528,10 +1530,12 @@
   "pos": "pron",
   "tier": 2,
   "freq": 153,
-  "tts": "ho stees",
-  "source": "g2p",
-  "duration_s": 1.347,
-  "sha1": "dde05f4256dd"
+  "tts": "hoss tiss",
+  "source": "batch6",
+  "duration_s": 1.228,
+  "sha1": "f128b8350f13",
+  "take": "2026-09-15, Atlas (b6c_103_a)",
+  "note": "follows πίστις, reusing the approved `tiss` whole"
  },
  {
   "index": 104,
@@ -1982,7 +1986,7 @@
   "tier": 2,
   "freq": 119,
   "tts": "pah rah di doh mee",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 1.95,
   "take": "2026-09-10, Atlas",
   "note": "short iota is 'di', not the machine vowel",
@@ -2237,7 +2241,7 @@
   "tier": 2,
   "freq": 108,
   "tts": "ah nee stay mee",
-  "source": "g2p",
+  "source": "batch6",
   "duration_s": 1.806,
   "sha1": "b66e4df7184a"
  },
@@ -2594,12 +2598,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 95,
-  "tts": "fo beh aw my",
-  "source": "rollout",
-  "duration_s": 1.505,
-  "take": "2026-09-10, Atlas",
+  "tts": "fo beh o my",
+  "source": "batch6",
+  "duration_s": 1.881,
+  "take": "2026-09-15, Atlas (b6d_175_b)",
   "note": "short omicron; 'o' bare reads long",
-  "sha1": "6a4ff315d679"
+  "sha1": "586c860e5916"
  },
  {
   "index": 176,
@@ -3071,7 +3075,7 @@
   "tier": 3,
   "freq": 76,
   "tts": "mar too reh oh",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 2.475,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -3269,9 +3273,11 @@
   "tier": 3,
   "freq": 28,
   "tts": "thoo see ah",
-  "source": "g2p",
-  "duration_s": 1.236,
-  "sha1": "8480d424ed31"
+  "source": "batch6",
+  "duration_s": 1.149,
+  "sha1": "25f1446f6658",
+  "take": "2026-09-15, Atlas (b6b_220_b)",
+  "note": "the cue did not change. The clip was rolled again unchanged and came back right, so the fault was the take"
  },
  {
   "index": 221,
@@ -3636,9 +3642,11 @@
   "tier": 3,
   "freq": 83,
   "tts": "hoh steh",
-  "source": "g2p",
-  "duration_s": 1.152,
-  "sha1": "92e0833f6389"
+  "source": "batch6",
+  "duration_s": 1.149,
+  "sha1": "aa6c23cb71d8",
+  "take": "2026-09-15, Atlas (b6b_244_b)",
+  "note": "the cue did not change. The clip was rolled again unchanged and came back right, so the fault was the take"
  },
  {
   "index": 245,
@@ -4528,7 +4536,7 @@
   "tier": 3,
   "freq": 56,
   "tts": "soo nah goh gey",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 1.511,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -4840,7 +4848,7 @@
   "tier": 4,
   "freq": 49,
   "tts": "pah rah lam bah noh",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 2.254,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -5185,7 +5193,7 @@
   "tier": 4,
   "freq": 45,
   "tts": "ah pang gel loh",
-  "source": "rollout",
+  "source": "batch6",
   "duration_s": 1.534,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -6178,7 +6186,7 @@
   "tier": 4,
   "freq": 36,
   "tts": "eh pee streh foh",
-  "source": "g2p",
+  "source": "batch6",
   "duration_s": 2.432,
   "sha1": "573914caba44"
  },
@@ -6309,10 +6317,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 35,
-  "tts": "ew theh ohs",
-  "source": "g2p",
-  "duration_s": 1.365,
-  "sha1": "ed86b079c585"
+  "tts": "ewtheos",
+  "source": "batch6",
+  "duration_s": 1.149,
+  "sha1": "6223f42769a7",
+  "take": "2026-09-15, Atlas (b6d_423_c)",
+  "note": "the fault was the JUNCTION, not the token: `theh oss` is approved in θεός and still read as the word *the* after `ew`, so the space is what the voice was reading across"
  },
  {
   "index": 424,

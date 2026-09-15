@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v151';
+const VERSION = 'v152';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,21 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v152: batch 6. Twenty spellings judged, about seventy clips
+     cleared, and only eight clips actually changed -- fourteen of
+     the twenty were right as they stood. Three of the six failures
+     named a token other than the one on trial, and two more were
+     simply bad takes: the same cue rolled again came back right.
+     That is now three in two rounds, which is why a rejected cue
+     always returns as a control. */
+  'audio/vocab/061_pistis.mp3',
+  'audio/vocab/066_onoma.mp3',
+  'audio/vocab/103_ostis.mp3',
+  'audio/vocab/175_phobeomai.mp3',
+  'audio/vocab/220_thusia.mp3',
+  'audio/vocab/244_oste.mp3',
+  'audio/vocab/423_eutheos.mp3',
+  'audio/vocab/659_koinonia.mp3',
   /* v151: προσδοκάω, the last clip of batch 5. It needed three fixes
      at once -- the προσ- sigma the rule has required since batch 4,
      the English word `do`, and a space closed for pace. The `do`
