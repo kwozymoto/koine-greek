@@ -180,7 +180,7 @@ html:`<table><caption>λύω — imperative</caption>
 <p class="muted" style="font-size:.83rem">Prohibitions: μή + present imperative (general practice / stop) · μή + aorist subjunctive (don't do it at all).</p>`},
 
 {t:"The optative — wishes and prayers",tags:"optative mood wish prayer may it never be genoito eie doie potential fourth class condition rare",
-html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are a single phrase of Paul’s. You will never have to build one. You only have to know one when you see it. The nine below carry every tense, voice, person and number the optative takes anywhere in the New Testament.</p>
+html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are one phrase: μὴ γένοιτο, fourteen times in Paul and once in Luke. You will never have to build one. You only have to know one when you see it. The nine below carry every tense, voice, person and number the optative takes anywhere in the New Testament.</p>
 <table><caption>Every kind you will meet</caption>
 <tr><th>In the text</th><th>What it is</th><th>Meaning</th><th>Where</th></tr>
 <tr><td class="g" data-ref="Romans 6:2" data-claim="opt">μὴ γένοιτο</td><td class="muted">aor mid 3sg</td><td>may it never be!</td><td class="muted" style="white-space:nowrap">Romans 6:2</td></tr>
@@ -192,7 +192,7 @@ html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the firs
 <tr><td class="g" data-ref="Acts 17:27" data-claim="opt">ψηλαφήσειαν αὐτὸν καὶ εὕροιεν</td><td class="muted">aor act 3pl</td><td>might feel for him and find him</td><td class="muted" style="white-space:nowrap">Acts 17:27</td></tr>
 <tr><td class="g" data-ref="Acts 8:31" data-claim="opt">Πῶς γὰρ ἂν δυναίμην</td><td class="muted">pres mid 1sg</td><td>how could I?</td><td class="muted" style="white-space:nowrap">Acts 8:31</td></tr>
 <tr><td class="g" data-ref="1 Peter 3:14" data-claim="opt">εἰ καὶ πάσχοιτε</td><td class="muted">pres act 2pl</td><td>even if you should suffer</td><td class="muted" style="white-space:nowrap">1 Peter 3:14</td></tr></table>
-<p class="muted" style="font-size:.83rem">Three signs give it away: <b>-οι-</b> in the present and the second aorist, <b>-αι-</b> in the first aorist active, <b>-θει-</b> in the aorist passive. εἰμί is its own case, εἴη. Fifty-eight of the 68 are third person singular, so nearly every one you meet is <i>may he</i> or <i>might it</i>. Where ἄν stands beside it — ten times in all — the sense is <i>could</i> rather than <i>may</i>: a question about what is possible, not a prayer for what should be.</p>`},
+<p class="muted" style="font-size:.83rem">Three signs give it away: <b>-οι-</b> in the present and the second aorist, <b>-αι-</b> in the first aorist active, <b>-θει-</b> in the aorist passive. εἰμί is the exception: εἴη. Fifty-eight of the 68 are third person singular, so nearly every one you meet is <i>may he</i> or <i>might it</i>. Where ἄν stands beside it — ten times in all — the sense shifts to <i>could</i> rather than <i>may</i>, and nine of those ten are questions: <i>what could this be?</i></p>`},
 
 {t:"Infinitives",ch:22,tags:"infinitive luein lusai",
 html:`<table><caption>λύω — the infinitives</caption>
