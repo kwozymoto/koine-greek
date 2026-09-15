@@ -357,11 +357,11 @@
   "tier": 5,
   "freq": 27,
   "tts": "kah tar gheh hoe",
-  "source": "rollout",
-  "duration_s": 1.609,
-  "take": "2026-09-10, Atlas",
+  "source": "batch5",
+  "duration_s": 2.429,
+  "take": "2026-09-15, Atlas (b5b_534_a)",
   "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "ae18578e95f2"
+  "sha1": "11ef54f4c5ea"
  },
  {
   "index": 535,
@@ -1028,10 +1028,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 24,
-  "tts": "ah neye reh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.968,
-  "sha1": "8b7d34649044"
+  "tts": "ah nigh reh hoe",
+  "source": "batch5",
+  "duration_s": 2.429,
+  "sha1": "fa532b811a1e",
+  "take": "2026-09-15, Atlas (b5d_581_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 582,
@@ -1310,10 +1312,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "ehk lehk toss",
-  "source": "worklist-candidate",
-  "duration_s": 2.52,
-  "sha1": "95776bd3fc1e"
+  "tts": "ek lek toss",
+  "source": "batch5",
+  "duration_s": 1.776,
+  "sha1": "d65d8cbf538f",
+  "take": "2026-09-15, Atlas (b5g_601_a)",
+  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
  },
  {
   "index": 602,
@@ -1366,10 +1370,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "do kee mah zoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.56,
-  "sha1": "650e7e79b71b"
+  "tts": "dok kee mah zoh",
+  "source": "batch5",
+  "duration_s": 2.116,
+  "sha1": "ca86be4364a9",
+  "take": "2026-09-15, Atlas (b5e_605_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 606,
@@ -1555,9 +1561,10 @@
   "tier": 5,
   "freq": 22,
   "tts": "ehk leh go my",
-  "source": "worklist-candidate",
-  "duration_s": 2.376,
-  "sha1": "97bb1df67d87"
+  "source": "batch5",
+  "duration_s": 2.351,
+  "sha1": "d0d0a3d68aee",
+  "take": "2026-09-15, Atlas (b5e_618_a)"
  },
  {
   "index": 619,
@@ -1568,10 +1575,11 @@
   "pos": "name",
   "tier": 5,
   "freq": 22,
-  "tts": "ay seye ahs",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "067784b13981"
+  "tts": "ay sah ee ahs",
+  "source": "batch5",
+  "duration_s": 2.038,
+  "sha1": "8836ecbcac6b",
+  "take": "2026-09-15, Atlas (b5d_619_a)"
  },
  {
   "index": 620,
@@ -1624,10 +1632,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 21,
-  "tts": "ew do keh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.488,
-  "sha1": "d2c1c4164b13"
+  "tts": "ew dok keh hoe",
+  "source": "batch5",
+  "duration_s": 1.698,
+  "sha1": "f6b5de4d4650",
+  "take": "2026-09-15, Atlas (b5e_623_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 624,
@@ -1808,10 +1818,11 @@
   "pos": "particle",
   "tier": 5,
   "freq": 20,
-  "tts": "gheh",
-  "source": "worklist-candidate",
-  "duration_s": 2.136,
-  "sha1": "1162c9db87f1"
+  "tts": "geh",
+  "source": "batch5",
+  "duration_s": 0.496,
+  "sha1": "5276a0697628",
+  "take": "2026-09-15, Atlas (b5c_636_d)"
  },
  {
   "index": 637,
@@ -1980,10 +1991,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "eh peeg noh sees",
-  "source": "worklist-candidate",
-  "duration_s": 2.688,
-  "sha1": "b0ab545aeb1a"
+  "tts": "eh peeg noh sis",
+  "source": "batch5",
+  "duration_s": 2.194,
+  "sha1": "c53984d6e9a8",
+  "take": "2026-09-15, Atlas (b5d_648_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  },
  {
   "index": 649,
@@ -2227,10 +2240,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 19,
-  "tts": "pah leye oss",
-  "source": "worklist-candidate",
-  "duration_s": 1.488,
-  "sha1": "87b19fd78861"
+  "tts": "pah lie oss",
+  "source": "batch5",
+  "duration_s": 1.698,
+  "sha1": "04cc6dd9d9d8",
+  "take": "2026-09-15, Atlas (b5d_665_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 666,
@@ -2387,10 +2402,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "deh ay sees",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "b038bcb6d7ec"
+  "tts": "deh ay sis",
+  "source": "batch5",
+  "duration_s": 1.698,
+  "sha1": "378032f338f8",
+  "take": "2026-09-15, Atlas (b5d_676_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  },
  {
   "index": 677,
@@ -2513,12 +2530,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "oy ko do mey",
-  "source": "rollout",
-  "duration_s": 1.475,
-  "take": "2026-09-10, Atlas",
+  "tts": "oy ko daw mey",
+  "source": "batch5",
+  "duration_s": 1.463,
+  "take": "2026-09-15, Atlas (b5e_685_a)",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "909680ef0065"
+  "sha1": "d1fdb4172adb"
  },
  {
   "index": 686,
@@ -2785,10 +2802,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "thay sow ross",
-  "source": "worklist-candidate",
-  "duration_s": 1.656,
-  "sha1": "05a0c87ca4c1"
+  "tts": "thaysau ross",
+  "source": "batch5",
+  "duration_s": 1.463,
+  "sha1": "252569dace64",
+  "take": "2026-09-15, Atlas (b5e_704_a)",
+  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
  },
  {
   "index": 705,
@@ -2827,10 +2846,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "kehr deye noh",
-  "source": "worklist-candidate",
-  "duration_s": 1.488,
-  "sha1": "7e35b334a32d"
+  "tts": "kehr dye noh",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "716b90a3ab9b",
+  "take": "2026-09-15, Atlas (b5d_707_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 708,
@@ -3045,10 +3066,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "ah feh sees",
-  "source": "worklist-candidate",
-  "duration_s": 2.376,
-  "sha1": "f4de4e0faacf"
+  "tts": "ah feh sis",
+  "source": "batch5",
+  "duration_s": 1.541,
+  "sha1": "66356792e138",
+  "take": "2026-09-15, Atlas (b5c_722_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  },
  {
   "index": 723,
@@ -3075,10 +3098,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "ehm beye noh",
-  "source": "worklist-candidate",
-  "duration_s": 2.04,
-  "sha1": "81ab7d5abef4"
+  "tts": "em bye noh",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "16c5547a94b7",
+  "take": "2026-09-15, Atlas (b5e_724_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 725,
@@ -3189,10 +3214,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 17,
-  "tts": "hoh sow tohs",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "61ea6de3bb8a"
+  "tts": "hoh sau tohs",
+  "source": "batch5",
+  "duration_s": 1.881,
+  "sha1": "2aaef6a5072f",
+  "take": "2026-09-15, Atlas (b5d_732_a)",
+  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
  },
  {
   "index": 733,
@@ -3691,10 +3718,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "ehk tay noh",
-  "source": "worklist-candidate",
-  "duration_s": 2.208,
-  "sha1": "f2b58a6079d4"
+  "tts": "ek tay noh",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "22e02fab35c7",
+  "take": "2026-09-15, Atlas (b5f_766_a)",
+  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
  },
  {
   "index": 767,
@@ -3807,10 +3836,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "sowloss",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "5b533ae8ff82"
+  "tts": "sau loss",
+  "source": "batch5",
+  "duration_s": 1.149,
+  "sha1": "1a2579101d24",
+  "take": "2026-09-15, Atlas (b5c_774_b)",
+  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
  },
  {
   "index": 775,
@@ -3989,10 +4020,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "klay ro no moss",
-  "source": "worklist-candidate",
-  "duration_s": 2.136,
-  "sha1": "f1a4f25acf11"
+  "tts": "klay ron no moss",
+  "source": "batch5",
+  "duration_s": 2.038,
+  "sha1": "a33c26c8ac63",
+  "take": "2026-09-15, Atlas (b5d_787_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 788,

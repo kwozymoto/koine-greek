@@ -1434,10 +1434,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 158,
-  "tts": "pow los",
-  "source": "g2p",
-  "duration_s": 1.067,
-  "sha1": "db31eaf6d76a"
+  "tts": "pow loss",
+  "source": "batch5",
+  "duration_s": 1.071,
+  "sha1": "7c33f0356a40",
+  "take": "2026-09-15, Atlas (b5_97_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 98,
@@ -2158,10 +2160,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 110,
-  "tts": "ho sos",
-  "source": "g2p",
-  "duration_s": 0.983,
-  "sha1": "7ac72db39bed"
+  "tts": "ho soss",
+  "source": "batch5",
+  "duration_s": 1.149,
+  "sha1": "d068aafc3a5d",
+  "take": "2026-09-15, Atlas (b5_146_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 147,
@@ -2202,10 +2206,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 109,
-  "tts": "ho los",
-  "source": "g2p",
-  "duration_s": 1.109,
-  "sha1": "2ae0a63da6c2"
+  "tts": "ho loss",
+  "source": "batch5",
+  "duration_s": 1.149,
+  "sha1": "daff78b396a3",
+  "take": "2026-09-15, Atlas (b5_149_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 150,
@@ -2494,10 +2500,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 98,
-  "tts": "fah ree seye os",
-  "source": "g2p",
-  "duration_s": 2.359,
-  "sha1": "0ef3474537eb"
+  "tts": "fah ree sigh oss",
+  "source": "batch5",
+  "duration_s": 2.351,
+  "sha1": "a4ea8b8d71fd",
+  "take": "2026-09-15, Atlas (b5b_169_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 170,
@@ -2508,10 +2516,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 97,
-  "tts": "heye mah",
-  "source": "g2p",
-  "duration_s": 0.871,
-  "sha1": "c43f4d0b365b"
+  "tts": "high mah",
+  "source": "batch5",
+  "duration_s": 0.836,
+  "sha1": "82f24324ba84",
+  "take": "2026-09-15, Atlas (b5c_170_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 171,
@@ -2805,10 +2815,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 86,
-  "tts": "play ro oh",
-  "source": "g2p",
-  "duration_s": 1.129,
-  "sha1": "2eebd7922bae"
+  "tts": "play raw oh",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "b1850711c33d",
+  "take": "2026-09-15, Atlas (b5b_190_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 191,
@@ -3146,13 +3158,13 @@
   "pos": "noun",
   "tier": 3,
   "freq": 27,
-  "tts": "stowross",
-  "source": "recued",
-  "duration_s": 1.457,
+  "tts": "stau ross",
+  "source": "batch5",
+  "duration_s": 1.463,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-09, Atlas",
+  "take": "2026-09-15, Atlas (b5c_213_b)",
   "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "89de6467a0ce"
+  "sha1": "0ee09009e832"
  },
  {
   "index": 214,
@@ -3163,10 +3175,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 46,
-  "tts": "stow ro oh",
-  "source": "g2p",
-  "duration_s": 1.84,
-  "sha1": "64e0dd0bc076"
+  "tts": "stau raw oh",
+  "source": "batch5",
+  "duration_s": 1.62,
+  "sha1": "c3fc058b04b3",
+  "take": "2026-09-15, Atlas (b5e_214_a)",
+  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
  },
  {
   "index": 215,
@@ -3328,13 +3342,13 @@
   "pos": "adj",
   "tier": 3,
   "freq": 58,
-  "tts": "mesos",
-  "source": "rollout",
-  "duration_s": 0.946,
+  "tts": "mesoss",
+  "source": "batch5",
+  "duration_s": 1.228,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-10, Atlas",
+  "take": "2026-09-15, Atlas (b5_225_oss)",
   "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "b0f185d6ce8b"
+  "sha1": "d57bb7390dda"
  },
  {
   "index": 226,
@@ -3406,12 +3420,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 66,
-  "tts": "pres boo teh ros",
-  "source": "rollout",
-  "duration_s": 1.517,
-  "take": "2026-09-10, Atlas",
+  "tts": "pres boo teh ross",
+  "source": "batch5",
+  "duration_s": 2.116,
+  "take": "2026-09-15, Atlas (b5_230_oss)",
   "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "396d4444b410"
+  "sha1": "a3ba7e67e885"
  },
  {
   "index": 231,
@@ -3635,10 +3649,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 81,
-  "tts": "ah nah beye noh",
-  "source": "g2p",
-  "duration_s": 1.715,
-  "sha1": "82d9141a24e6"
+  "tts": "ah nah bye noh",
+  "source": "batch5",
+  "duration_s": 1.698,
+  "sha1": "7b8031ad93e4",
+  "take": "2026-09-15, Atlas (b5b_245_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 246,
@@ -3695,10 +3711,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 80,
-  "tts": "kah tah beye noh",
-  "source": "g2p",
-  "duration_s": 2.435,
-  "sha1": "3bb807dabbd2"
+  "tts": "kah tah bye noh",
+  "source": "batch5",
+  "duration_s": 2.508,
+  "sha1": "0497b9769d7d",
+  "take": "2026-09-15, Atlas (b5d_249_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 250,
@@ -3962,10 +3980,11 @@
   "pos": "verb",
   "tier": 3,
   "freq": 71,
-  "tts": "tay reh oh",
-  "source": "g2p",
-  "duration_s": 1.17,
-  "sha1": "f175d7f9c27a"
+  "tts": "tayreh oh",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "cb6e99b98d92",
+  "take": "2026-09-15, Atlas (b5b_267_a)"
  },
  {
   "index": 268,
@@ -4138,10 +4157,12 @@
   "pos": "name",
   "tier": 3,
   "freq": 63,
-  "tts": "hee eh ro so loo mah",
-  "source": "g2p",
-  "duration_s": 2.529,
-  "sha1": "96e65d5ac08e"
+  "tts": "hee eh raw so loo mah",
+  "source": "batch5",
+  "duration_s": 2.429,
+  "sha1": "647eeb4da15b",
+  "take": "2026-09-15, Atlas (b5f_279_b)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 280,
@@ -4152,10 +4173,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 63,
-  "tts": "deye mo nee on",
-  "source": "g2p",
-  "duration_s": 2.095,
-  "sha1": "a724c2aa682f"
+  "tts": "dye mo nee on",
+  "source": "batch5",
+  "duration_s": 1.959,
+  "sha1": "00f7b16953ef",
+  "take": "2026-09-15, Atlas (b5d_280_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 281,
@@ -4180,10 +4203,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 62,
-  "tts": "do keh oh",
-  "source": "g2p",
-  "duration_s": 1.451,
-  "sha1": "a92f0249481d"
+  "tts": "dok keh oh",
+  "source": "batch5",
+  "duration_s": 1.724,
+  "sha1": "561122d2a07f",
+  "take": "2026-09-15, Atlas (b5d_282_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 283,
@@ -4194,10 +4219,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 62,
-  "tts": "o ros",
-  "source": "g2p",
-  "duration_s": 0.911,
-  "sha1": "e1d0dfd1aa78"
+  "tts": "o ross",
+  "source": "batch5",
+  "duration_s": 1.228,
+  "sha1": "3b85d14e611a",
+  "take": "2026-09-15, Atlas (b5_283_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 284,
@@ -4264,10 +4291,12 @@
   "pos": "name",
   "tier": 3,
   "freq": 61,
-  "tts": "gah lee leye ah",
-  "source": "g2p",
-  "duration_s": 2.094,
-  "sha1": "afb3c7bfcfa6"
+  "tts": "gah lee lie ah",
+  "source": "batch5",
+  "duration_s": 2.038,
+  "sha1": "548572cf3416",
+  "take": "2026-09-15, Atlas (b5c_288_a)",
+  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
  },
  {
   "index": 289,
@@ -4454,10 +4483,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 58,
-  "tts": "dee dah skah los",
-  "source": "g2p",
-  "duration_s": 1.824,
-  "sha1": "6a335b899c7c"
+  "tts": "dee dah skah loss",
+  "source": "batch5",
+  "duration_s": 2.273,
+  "sha1": "2f182fff17f1",
+  "take": "2026-09-15, Atlas (b5_301_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 302,
@@ -4512,10 +4543,12 @@
   "pos": "pron",
   "tier": 3,
   "freq": 56,
-  "tts": "toy oo tos",
-  "source": "g2p",
-  "duration_s": 1.501,
-  "sha1": "afc4a901fc14"
+  "tts": "toy oo toss",
+  "source": "batch5",
+  "duration_s": 1.646,
+  "sha1": "55112e82c699",
+  "take": "2026-09-15, Atlas (b5_305_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 306,
@@ -4598,10 +4631,12 @@
   "pos": "name",
   "tier": 3,
   "freq": 55,
-  "tts": "pee lah tos",
-  "source": "g2p",
-  "duration_s": 1.496,
-  "sha1": "7a39855aadb9"
+  "tts": "pee lah toss",
+  "source": "batch5",
+  "duration_s": 1.306,
+  "sha1": "b88767da7a52",
+  "take": "2026-09-15, Atlas (b5_311_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 312,
@@ -4894,10 +4929,12 @@
   "pos": "prep",
   "tier": 4,
   "freq": 48,
-  "tts": "ehm pros thehn",
-  "source": "g2p",
-  "duration_s": 1.948,
-  "sha1": "ccd1c7848217"
+  "tts": "em pros thehn",
+  "source": "batch5",
+  "duration_s": 1.463,
+  "sha1": "dbe0521bc19b",
+  "take": "2026-09-15, Atlas (b5f_331_a)",
+  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
  },
  {
   "index": 332,
@@ -4922,10 +4959,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 48,
-  "tts": "fah neh ro oh",
-  "source": "g2p",
-  "duration_s": 1.606,
-  "sha1": "a4ca4abc1443"
+  "tts": "fah neh raw oh",
+  "source": "batch5",
+  "duration_s": 2.429,
+  "sha1": "d6a35cee3a78",
+  "take": "2026-09-15, Atlas (b5e_333_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 334,
@@ -4978,10 +5017,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 47,
-  "tts": "kree sees",
-  "source": "g2p",
-  "duration_s": 1.149,
-  "sha1": "1ef47df8bc36"
+  "tts": "kree sis",
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "f38047850832",
+  "take": "2026-09-15, Atlas (b5b_337_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  },
  {
   "index": 338,
@@ -5113,9 +5154,10 @@
   "tier": 4,
   "freq": 46,
   "tts": "thay ree on",
-  "source": "g2p",
-  "duration_s": 1.09,
-  "sha1": "2903f714f887"
+  "source": "batch5",
+  "duration_s": 1.385,
+  "sha1": "252446580fed",
+  "take": "2026-09-15, Atlas (b5e_346_c)"
  },
  {
   "index": 347,
@@ -5186,10 +5228,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 45,
-  "tts": "ho moy os",
-  "source": "g2p",
-  "duration_s": 1.588,
-  "sha1": "07e31a345a7f"
+  "tts": "ho moy oss",
+  "source": "batch5",
+  "duration_s": 1.541,
+  "sha1": "cc4716d17a04",
+  "take": "2026-09-15, Atlas (b5_351_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 352,
@@ -5425,10 +5469,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 42,
-  "tts": "ee ah koh bos",
-  "source": "g2p",
-  "duration_s": 1.888,
-  "sha1": "540e51975361"
+  "tts": "ee ah koh boss",
+  "source": "batch5",
+  "duration_s": 2.194,
+  "sha1": "8eb724624cea",
+  "take": "2026-09-15, Atlas (b5_367_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 368,
@@ -5516,10 +5562,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 42,
-  "tts": "ah nah stah sees",
-  "source": "g2p",
-  "duration_s": 2.068,
-  "sha1": "26a4b9c74a12"
+  "tts": "ah nah stah sis",
+  "source": "batch5",
+  "duration_s": 1.959,
+  "sha1": "2591350758c1",
+  "take": "2026-09-15, Atlas (b5d_373_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  },
  {
   "index": 374,
@@ -5561,10 +5609,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 41,
-  "tts": "o lee gos",
-  "source": "g2p",
-  "duration_s": 1.475,
-  "sha1": "020e3e89f875"
+  "tts": "o lee goss",
+  "source": "batch5",
+  "duration_s": 1.541,
+  "sha1": "6de787ee8876",
+  "take": "2026-09-15, Atlas (b5_376_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 377,
@@ -5717,10 +5767,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 40,
-  "tts": "oy ko do meh oh",
-  "source": "g2p",
-  "duration_s": 1.831,
-  "sha1": "cf73c0186886"
+  "tts": "oy ko daw meh oh",
+  "source": "batch5",
+  "duration_s": 1.698,
+  "sha1": "91fc318fc254",
+  "take": "2026-09-15, Atlas (b5e_387_a)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 388,
@@ -6001,10 +6053,12 @@
   "pos": "pron",
   "tier": 4,
   "freq": 37,
-  "tts": "eh mow too",
-  "source": "g2p",
-  "duration_s": 1.546,
-  "sha1": "ca93f2d37e89"
+  "tts": "eh mout too",
+  "source": "batch5",
+  "duration_s": 1.541,
+  "sha1": "783cf63904e1",
+  "take": "2026-09-15, Atlas (b5b_406_a)",
+  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
  },
  {
   "index": 407,
@@ -6107,10 +6161,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 36,
-  "tts": "fee leep pos",
-  "source": "g2p",
-  "duration_s": 1.915,
-  "sha1": "badc1656f61e"
+  "tts": "fee leep poss",
+  "source": "batch5",
+  "duration_s": 1.776,
+  "sha1": "d6beef6c29dd",
+  "take": "2026-09-15, Atlas (b5_413_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 414,
@@ -6342,10 +6398,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 34,
-  "tts": "meh los",
-  "source": "g2p",
-  "duration_s": 1.267,
-  "sha1": "d2800791f0a6"
+  "tts": "meh loss",
+  "source": "batch5",
+  "duration_s": 1.306,
+  "sha1": "d007e7716f4a",
+  "take": "2026-09-15, Atlas (b5_429_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 430,
@@ -6384,10 +6442,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 34,
-  "tts": "oy nos",
-  "source": "g2p",
-  "duration_s": 0.94,
-  "sha1": "97479a9ba41b"
+  "tts": "oy noss",
+  "source": "batch5",
+  "duration_s": 1.228,
+  "sha1": "6f6e8b4b3301",
+  "take": "2026-09-15, Atlas (b5_432_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 433,
@@ -6498,10 +6558,12 @@
   "pos": "pron",
   "tier": 4,
   "freq": 33,
-  "tts": "poy os",
-  "source": "g2p",
-  "duration_s": 1.324,
-  "sha1": "b8a454af2c14"
+  "tts": "poy oss",
+  "source": "batch5",
+  "duration_s": 1.149,
+  "sha1": "8b51b5f03f7e",
+  "take": "2026-09-15, Atlas (b5_440_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 441,
@@ -6656,10 +6718,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "ah neh mos",
-  "source": "g2p",
-  "duration_s": 1.693,
-  "sha1": "8ad15b3e45c5"
+  "tts": "ah neh moss",
+  "source": "batch5",
+  "duration_s": 1.541,
+  "sha1": "edc69379be07",
+  "take": "2026-09-15, Atlas (b5_450_oss)",
+  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
  },
  {
   "index": 451,
@@ -6902,10 +6966,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 30,
-  "tts": "ehng goos",
-  "source": "g2p",
-  "duration_s": 1.225,
-  "sha1": "75f48c6ca402"
+  "tts": "eng goos",
+  "source": "batch5",
+  "duration_s": 1.306,
+  "sha1": "4ecfaa9731a5",
+  "take": "2026-09-15, Atlas (b5f_467_a)",
+  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
  },
  {
   "index": 468,
@@ -6930,9 +6996,11 @@
   "pos": "noun",
   "tier": 4,
   "freq": 30,
-  "tts": "soo nay day sees",
-  "source": "g2p",
-  "duration_s": 1.909,
-  "sha1": "b107861aaad3"
+  "tts": "soo nay day sis",
+  "source": "batch5",
+  "duration_s": 1.881,
+  "sha1": "f0776413eb03",
+  "take": "2026-09-15, Atlas (b5d_469_a)",
+  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
  }
 ]

@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v149';
+const VERSION = 'v150';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,72 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v150: batch 5 of the vocabulary audit -- 59 clips re-cued and
+     re-recorded, every one heard. Six rules came out of it and each
+     is now a gate in check_cues: the bare -os ending (18 clips had
+     missed a fix 58 others carry a note about), `Ceye` for ai,
+     `sees` for -sis, `ro`, and the English /ou/ words against au.
+     These are bulk files, so a VERSION bump does not replace them
+     and each has to be named. */
+  'audio/vocab/097_aulos.mp3',
+  'audio/vocab/146_osos.mp3',
+  'audio/vocab/149_olos.mp3',
+  'audio/vocab/169_arisaios.mp3',
+  'audio/vocab/170_aima.mp3',
+  'audio/vocab/190_pleroo.mp3',
+  'audio/vocab/213_stauros.mp3',
+  'audio/vocab/214_stauroo.mp3',
+  'audio/vocab/225_mesos.mp3',
+  'audio/vocab/230_presbuteros.mp3',
+  'audio/vocab/245_anabaino.mp3',
+  'audio/vocab/249_katabaino.mp3',
+  'audio/vocab/267_tereo.mp3',
+  'audio/vocab/279_erosoluma.mp3',
+  'audio/vocab/280_daimonion.mp3',
+  'audio/vocab/282_dokeo.mp3',
+  'audio/vocab/283_oros.mp3',
+  'audio/vocab/288_alilaia.mp3',
+  'audio/vocab/301_didaskalos.mp3',
+  'audio/vocab/305_toioutos.mp3',
+  'audio/vocab/311_ilatos.mp3',
+  'audio/vocab/331_emprosthen.mp3',
+  'audio/vocab/333_phaneroo.mp3',
+  'audio/vocab/337_krisis.mp3',
+  'audio/vocab/346_therion.mp3',
+  'audio/vocab/351_omoios.mp3',
+  'audio/vocab/367_akobos.mp3',
+  'audio/vocab/373_anastasis.mp3',
+  'audio/vocab/376_oligos.mp3',
+  'audio/vocab/387_oikodomeo.mp3',
+  'audio/vocab/406_emautou.mp3',
+  'audio/vocab/413_ilippos.mp3',
+  'audio/vocab/429_melos.mp3',
+  'audio/vocab/432_oinos.mp3',
+  'audio/vocab/440_poios.mp3',
+  'audio/vocab/450_anemos.mp3',
+  'audio/vocab/467_eggus.mp3',
+  'audio/vocab/469_suneidesis.mp3',
+  'audio/vocab/497_pseudomai.mp3',
+  'audio/vocab/534_katargeo.mp3',
+  'audio/vocab/581_anaireo.mp3',
+  'audio/vocab/601_eklektos.mp3',
+  'audio/vocab/605_dokimazo.mp3',
+  'audio/vocab/618_eklegomai.mp3',
+  'audio/vocab/619_esaias.mp3',
+  'audio/vocab/623_eudokeo.mp3',
+  'audio/vocab/636_ge.mp3',
+  'audio/vocab/648_epignosis.mp3',
+  'audio/vocab/665_palaios.mp3',
+  'audio/vocab/676_deesis.mp3',
+  'audio/vocab/685_oikodome.mp3',
+  'audio/vocab/704_thesauros.mp3',
+  'audio/vocab/707_kerdaino.mp3',
+  'audio/vocab/722_aphesis.mp3',
+  'audio/vocab/724_embaino.mp3',
+  'audio/vocab/732_osautos.mp3',
+  'audio/vocab/766_ekteino.mp3',
+  'audio/vocab/774_saulos.mp3',
+  'audio/vocab/787_kleronomos.mp3',
   /* v140 adds the closed-testing prompt and changes only SHELL files --
      index.html, css/app.css, js/pwa.js, js/app.js, privacy.html -- so the
      VERSION bump replaces every one of them and nothing is added here. The

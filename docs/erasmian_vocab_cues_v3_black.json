@@ -420,11 +420,13 @@
   "pos": "verb",
   "tier": 5,
   "freq": 12,
-  "tts": "psew do my",
-  "source": "black",
-  "duration_s": 1.189,
+  "tts": "psew daw my",
+  "source": "batch5",
+  "duration_s": 1.698,
   "verdict": "checked by ear: psi read as plain s, accepted. Cue corrected to 'psew do my' 2026-09-03; clip not re-recorded, so it still has the accepted reading.",
-  "sha1": "6bf97c619731"
+  "sha1": "c44efa8d8c5d",
+  "take": "2026-09-15, Atlas (b5d_497_c)",
+  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
  },
  {
   "index": 498,

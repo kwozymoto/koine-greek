@@ -54,11 +54,38 @@ SHEETS = ["docs/erasmian_vocab_cues.json",
 
 # token pattern -> (what it does, the clip that proved it)
 REJECTED = [
-    (r"\bkeye\b", "reads as \"key-i\"; αι after a consonant wants a real "
-                  "English word -- kai, kye, pie, rye, mai, bye, dye",
+    # Was two entries, `keye` and `peye`, added one word at a time -- and that
+    # is exactly how Φαρισαῖος shipped on `seye`, the same spelling a third
+    # consonant over, and came back wrong in batch 5. One entry for the family.
+    (r"\b[a-z]+eye\b",
+     "αι after a consonant splits; it wants a real English word the voice "
+     "can look up -- kai, kye, sigh, high, lie, pie, rye, bye, dye, nigh. A "
+     "BARE `eye` is fine and is not matched here: αἰών `eye ohn` and "
+     "αἰώνιος `eye oh nee oss` are both approved.",
      "369 καινός \"key a nos\" 2026-09-10; "
-     "193 καιρός \"key i ros\" 2026-09-11"),
-    (r"\bpeye\b", "reads as \"pay\"", "316 παιδίον \"pay I D on\" 2026-09-11"),
+     "193 καιρός \"key i ros\" 2026-09-11; "
+     "316 παιδίον \"pay I D on\" 2026-09-11; "
+     "169 Φαρισαῖος batch 5, 2026-09-15, where `sigh` fixed it and "
+     "245 ἀναβαίνω confirmed `bye` on a second word"),
+    (r"\bsees\b",
+     "the -σις ending is a SHORT iota -- κρίσις is ˈkri.sis -- so it is "
+     "`sis`. Settled by the IPA, not by ear: six clips said `sees` and four "
+     "`sis`, and the one an ear had passed was already a `sis`.",
+     "663 κτίσις `kitsis` was the standing counter-example; "
+     "337 κρίσις and 722 ἄφεσις heard on it, batch 5, 2026-09-15"),
+    (r"\bro\b",
+     "an English word, and the voice reads it as one -- the /ou/ of *row* "
+     "where the Greek has a short omicron. Close the syllable (κληρονόμος is "
+     "`klay ron no moss`) or spell the vowel (πληρόω is `play raw oh`); "
+     "which of the two is decided per word by ear.",
+     "190 πληρόω batch 5b, 2026-09-15"),
+    (r"\b(sow|mow|stow|low|tow)\b",
+     "αυ wants the /au/ of *cow*, and every one of these is an English word "
+     "whose vowel is the /ou/ of *mow*. `au` is not a word at all, which is "
+     "why σταυρός is `stau ross` and Σαῦλος `sau loss`.",
+     "704 θησαυρός and 406 ἐμαυτοῦ 2026-09-15 -- and 213 σταυρός `stowross`, "
+     "which had been APPROVED in an earlier batch and was overturned while "
+     "sitting on the sheet as a control for another question"),
     (r"\bgee\b", "spoken as the letter G -- the letter name and the English "
                  "soft g are the same sound, so nothing pulls the voice "
                  "toward a syllable. Use ghee",
@@ -99,7 +126,23 @@ PROS_PREFIX = "προσ"
 # in rule 5: ah, eh and oh spell vowels and the h is not a sound. So the
 # checker was wrong and the pack was right, which is the shape CLAUDE.md warns
 # about: check that the parser is not the thing at fault.
-VOWEL_END = re.compile(r"([aeiou]h|[aeiouy])$", re.I)
+#
+# AND IT HAPPENED AGAIN, on the same line, in batch 5. `sigh` ends in a silent
+# gh spelling a diphthong -- so does `high`, so does `nigh` -- and this called
+# all three consonant-final. 169 Φαρισαῖος `fah ree sigh oss` was flagged an
+# hour after an ear approved it. Twice now the first version of this test has
+# been wrong rather than the data it reads.
+VOWEL_END = re.compile(r"(igh|[aeiou]h|[aeiouy])$", re.I)
+
+
+# A FOURTH POSITIONAL RULE. A Greek word ending -ος must not have a cue
+# ending in a bare `os`. 83 of the 102 such words already ended `oss`, 54 of
+# them heard, and 58 rows carry a note recording the day their bare ending
+# was changed because it gave the vowel of English *pose*. EIGHTEEN never got
+# that fix, and seventeen of the eighteen repairs were approved on one
+# listen. This is the plainest case in the pack of the failure the whole file
+# exists for: a fix that reached the word that was reported and no further.
+OS_END = re.compile(r"os$", re.I)
 
 # A THIRD POSITIONAL RULE, and the one that took longest to earn. A cue whose
 # FIRST token is an English word carrying the /oʊ/ of *gold* makes the voice
@@ -155,6 +198,13 @@ ALLOWED = {
         "way -- was kept in the same sitting. So ο and ω are not separable in "
         "`pro`, which the guide records as a known gap in what lesson 1 "
         "teaches rather than as an oversight.",
+    (77, "yoodaios"):
+        "Ἰουδαῖος is the one -ος word whose cue ends in a bare `os` and is "
+        "right anyway, because there is no bare `os` TOKEN in it: the whole "
+        "word is closed up as `yoodaios`, so the s has a consonant's worth of "
+        "word in front of it rather than standing as its own beat. Heard and "
+        "locked before batch 5, and it was the single counter-example the "
+        "-ος rule had to survive.",
 }
 
 
@@ -206,6 +256,22 @@ if __name__ == "__main__":
                              "letter; bind it, or carry the consonant into it "
                              "as τόπος does with `to poss`" % t[j],
                              "ἥλιος batch 4, then χρόνος and σοφός 2026-09-11"))
+
+    for r in rows:
+        if not (r.get("greek") or "").endswith("ος"):
+            continue
+        last = ((r.get("tts") or "").split() or [""])[-1]
+        if not OS_END.search(last) or last.lower().endswith("oss"):
+            continue
+        if (r["index"], last.lower()) in ALLOWED:
+            excused += 1
+            continue
+        hits.append((r["index"], r["greek"], r["tts"], last,
+                     "a -ος word whose cue ends in a bare `os`, which gives "
+                     "the vowel of English *pose*. 83 of the 102 -ος words "
+                     "end `oss` and 54 of those have been heard",
+                     "18 clips missed the fix and 17 of the repairs were "
+                     "approved on one listen, batch 5, 2026-09-15"))
 
     ipa = json.load(io.open(IPA_PATH, encoding="utf-8"))
     IP = (ipa if isinstance(ipa, dict)
