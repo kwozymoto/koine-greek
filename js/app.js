@@ -381,6 +381,7 @@ function showScreen(name){
   // Nothing should still be speaking on a screen you have left.
   if(typeof stopEntry==="function") stopEntry();
   if(typeof stopSequence==="function") stopSequence();
+  if(typeof laLeave==="function") laLeave();
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("on"));
   document.getElementById("s-"+name).classList.add("on");
   document.querySelectorAll("nav button").forEach(b=>
@@ -1752,7 +1753,7 @@ function openLesson(id){
       <button class="btn" onclick="lessonWalk(${id},${at},true)">${at?"Finish the chapter":"Work through it"}</button>
     </div>
     <h2 style="margin-top:26px">The chapter</h2>
-    ${l.body}
+    <div id="chapterBody">${l.body}</div>
     <h2>Watch</h2>
     ${l.vids.map(vidRowHtml).join("")}
     ${(l.v||[]).length?`<h2>This chapter's words</h2>
@@ -1767,6 +1768,11 @@ function openLesson(id){
     <div style="height:34px"></div>`;
   showScreen("lesson"); pushNav({screen:"lesson",id});
   fillAlphaHere();
+  // The narration, where there is one. mountLessonAudio does nothing if the
+  // chapter has no clips, or if the body has been edited since they were
+  // made -- it counts the elements before it touches any of them.
+  if(typeof mountLessonAudio==="function")
+    mountLessonAudio(id, document.getElementById("chapterBody"));
 }
 /* Chapter 1's body carries an empty <div id="alphaHere">. The sound grids are
    generated from AUDIO_CLIPS rather than stored, so they have to be poured in

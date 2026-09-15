@@ -45,6 +45,41 @@ os.chdir(ROOT)
 
 CHAPTERS = [1, 2]
 
+# The comment at the top of data/lesson_audio.js. It lives here because that
+# file is generated: the app's copy is overwritten on every build.
+JS_HEADER = """/* Chapter narration, read by Atlas (xAI). Built by
+   tools/build_lesson_audio.py and held by tools/check_lesson_audio.py.
+
+   The Greek is not spliced from the word clips, it is CUED: where the page
+   says λόγος the narration says `loh goss`, the spelling an ear approved
+   for that word in the vocabulary pack. Marks that are SHOWN rather than
+   said are described, and a block whose whole point is the shape on the
+   page hands the listener to the screen instead.
+
+   Per block: `els` are the body elements it covers, in order, so the app
+   can find them again after a merge; `page` is every word of those
+   elements; `t[i]` is the second at which page word i is spoken. A word
+   with no one-to-one counterpart -- a mark described in four words, a
+   table pointed at -- carries the second its replacement starts. */
+"""
+
+
+def clip_seconds(path):
+    """How long the mp3 actually is, straight from the file.
+
+    The app prints "N minutes" from the sum of these and the checker holds
+    every seek time inside its own clip, so this is not decoration -- and a
+    number typed by hand is the kind of thing this project has shipped wrong
+    before. ffprobe is needed only to BUILD; the shipped file has the answer.
+    """
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=nw=1:nk=1", path],
+        capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit("ffprobe could not read %s\n%s" % (path, r.stderr.strip()))
+    return round(float(r.stdout.strip()), 2)
+
 # Greek these two chapters say that the deck has never needed. Paradigm forms
 # of λύω (an invented teaching verb, so it has no card), the principal parts,
 # and letters named rather than sounded.
@@ -401,21 +436,24 @@ def blocks_for(les, cues, missing):
        the words as they appear ON THE PAGE, and which spoken word each of
        those became. The last two are what a tap needs."""
     out = []
-    for m in BLOCK.finditer(les["body"]):
+    # el is the position of this element among the body's blocks, which is how
+    # the app finds it again: the narration merges elements together, so a
+    # block has to be able to say which ones it swallowed.
+    for el, m in enumerate(BLOCK.finditer(les["body"])):
         kind, attrs, inner = m.group(1), m.group(2), m.group(3)
         page = clean(TAG.sub(" ", inner)).split()
         if kind == "table":
             # Nothing on the page maps into a pointer, so every word of the
             # table seeks to the start of it. Better than no seek at all.
             out.append(("table", "The table for this is on screen.", page,
-                        [0] * len(page)))
+                        [0] * len(page), [el]))
             continue
         # A quoted verse: the Greek is dropped and the English around it kept.
         if 'class="v"' in attrs or "data-ref=" in attrs:
             ref = re.search(r'data-ref="([^"]+)"', attrs)
             out.append(("verse", "The Greek of %s is on screen."
                         % (ref.group(1) if ref else "the verse"),
-                        page, [0] * len(page)))
+                        page, [0] * len(page), [el]))
             continue
         plain = TAG.sub(" ", inner)
         look = next((v for (ch, start), v in LOOK.items()
@@ -424,12 +462,12 @@ def blocks_for(les, cues, missing):
         if look:
             # A rewritten block: the sentences are not the page's sentences,
             # so the whole paragraph seeks to its own beginning.
-            out.append(("look", look, page, [0] * len(page)))
+            out.append(("look", look, page, [0] * len(page), [el]))
             continue
         t, page_words, pairs = align(inner, les["id"], cues, missing)
         if t:
             out.append(("heading" if kind in ("h2", "h3") else "prose",
-                        t, page_words, pairs))
+                        t, page_words, pairs, [el]))
     return merge(out)
 
 
@@ -452,17 +490,18 @@ def merge(blocks):
         return [a[0] if a[0] != "heading" else c[0],
                 a[1].rstrip() + " " + c[1].lstrip(),
                 a[2] + c[2],
-                a[3] + [p + shift for p in c[3]]]
+                a[3] + [p + shift for p in c[3]],
+                a[4] + c[4]]
 
     out = []
-    for kind, text, page, pairs in blocks:
+    for kind, text, page, pairs, els in blocks:
         if kind == "heading":
-            out.append(["heading", text, page, pairs])   # settled next pass
+            out.append(["heading", text, page, pairs, els])  # settled next pass
             continue
         if out and out[-1][0] == "heading":
-            out.append(join(out.pop(), ["prose", text, page, pairs]))
+            out.append(join(out.pop(), ["prose", text, page, pairs, els]))
             continue
-        out.append([kind, text, page, pairs])
+        out.append([kind, text, page, pairs, els])
     changed = True
     while changed:
         changed = False
@@ -484,6 +523,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--tsv", help="write id<TAB>text for probe_xai.py")
     ap.add_argument("--map", help="write the page-word -> second mapping as JSON")
+    ap.add_argument("--js", nargs="?", const="data/lesson_audio.js",
+                    help="write data/lesson_audio.js, the file the app loads")
     ap.add_argument("--timestamps", help="probe_xai's timestamps.json, for --map")
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--chapters", default=",".join(map(str, CHAPTERS)))
@@ -500,11 +541,12 @@ if __name__ == "__main__":
         if not args.quiet:
             print("\n%s chapter %d — %s %s" % ("=" * 8, les["id"],
                                                les.get("t", ""), "=" * 8))
-        for i, (kind, text, page, pairs) in enumerate(bs):
+        for i, (kind, text, page, pairs, els) in enumerate(bs):
             bid = "l%02d_%02d" % (les["id"], i)
             rows.append((bid, text))
             mapping.append({"id": bid, "ch": les["id"], "kind": kind,
-                            "spoken": text, "page": page, "pairs": pairs})
+                            "spoken": text, "page": page, "pairs": pairs,
+                            "els": els})
             if not args.quiet:
                 print("\n  [%02d %-7s] %s" % (i, kind, text))
 
@@ -527,9 +569,9 @@ if __name__ == "__main__":
                 fh.write("%s\t%s\n" % (i, t.replace("\t", " ")))
         print("wrote %s" % args.tsv)
 
-    if args.map:
+    if args.map or args.js:
         if not args.timestamps:
-            sys.exit("--map needs --timestamps, probe_xai's alignment")
+            sys.exit("--map and --js need --timestamps, probe_xai's alignment")
         ts = json.load(io.open(args.timestamps, encoding="utf-8"))
         out, bad = [], []
         for b in mapping:
@@ -574,17 +616,34 @@ if __name__ == "__main__":
             # A page word points at a spoken word; a spoken word has a second.
             secs = [round(starts[p], 2) for p in b["pairs"]]
             out.append({"id": b["id"], "ch": b["ch"], "kind": b["kind"],
-                        "page": b["page"], "t": secs})
+                        "els": b["els"], "page": b["page"], "t": secs})
         if bad:
             print("\nCLIPS THAT DO NOT MATCH THE LESSON (%d) — regenerate these\n"
                   "before the map ships, or a tap seeks into audio that says\n"
                   "something else:" % len(bad))
             for i, why in bad:
                 print("  %s  %s" % (i, why))
-        io.open(args.map, "w", encoding="utf-8", newline="\n").write(
-            json.dumps(out, ensure_ascii=False) + "\n")
         n = sum(len(b["page"]) for b in out)
-        print("wrote %s — %d of %d blocks, %d page words with a seek time"
-              % (args.map, len(out), len(mapping), n))
+        if args.map:
+            io.open(args.map, "w", encoding="utf-8", newline="\n").write(
+                json.dumps(out, ensure_ascii=False) + "\n")
+            print("wrote %s — %d of %d blocks, %d page words with a seek time"
+                  % (args.map, len(out), len(mapping), n))
+        if args.js:
+            # What the app actually loads. `kind` is a build-time label and
+            # is dropped; `d` is measured from the clip on disk, because the
+            # app sums it for "N minutes" and the checker holds every seek
+            # time inside it. Nothing regenerated either before this.
+            rows = []
+            for b in out:
+                r = dict((k, v) for k, v in b.items() if k != "kind")
+                r["d"] = clip_seconds(os.path.join("audio", "lessons",
+                                                   b["id"] + ".mp3"))
+                rows.append(r)
+            io.open(args.js, "w", encoding="utf-8", newline="\n").write(
+                JS_HEADER + "const LESSON_AUDIO = "
+                + json.dumps(rows, ensure_ascii=False) + ";\n")
+            print("wrote %s - %d blocks, %d page words, %.1f minutes of audio"
+                  % (args.js, len(rows), n, sum(r["d"] for r in rows) / 60))
         if bad:
             sys.exit(1)

@@ -24,6 +24,7 @@ const CACHE   = `koine-${VERSION}`;
    onto a new index. */
 const BULK = 'koine-bulk-1';
 const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
+                    || /audio\/lessons\/[^/]+\.mp3$/.test(u)
                     || /data\/gnt\/(?!manifest\.json)[^/]+\.json$/.test(u);
 
 /* Bulk files whose *content* changed in this release. The bulk cache is
@@ -322,6 +323,7 @@ const SHELL = [
   'js/write.js',
   'js/grid.js',
   'js/clause.js',
+  'js/lesson_audio.js',
   'js/sync.js',
   'data/vocab.js',
   'data/lessons.js',
@@ -334,6 +336,7 @@ const SHELL = [
   'data/lexicon.js',
   'data/forms.js',
   'data/clauses.js',
+  'data/lesson_audio.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',
