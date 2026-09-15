@@ -408,6 +408,15 @@ body.off .vid:not(.local) .net{display:block}
 .ptable>button::after{content:"›";color:var(--muted);transform:rotate(90deg);flex:0 0 auto}
 .ptable.open>button::after{transform:rotate(-90deg)}
 .ptable .pt-body{display:none;padding:2px 4px 10px}
+/* A grammar word and what it means. Same card as a vocabulary row (.lk) so
+   the three kinds of answer on this screen read as one list, but it is not a
+   button: there is nothing to play and nothing to open. */
+.term{padding:11px 13px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;margin-bottom:7px}
+.term b{font-weight:600;font-size:.95rem}
+.term .fq{font-size:.68rem;color:var(--muted);float:right;margin-top:3px}
+.term p{margin:5px 0 0;font-size:.85rem;line-height:1.45}
+.term .eg{color:var(--muted);font-size:.82rem;margin-top:4px}
 /* A paradigm table is as wide as the Greek in it, and table{width:100%} cannot
    shrink a cell below one unbreakable word. Measured at 375px, six of these
    tables are wider than the screen — third declension 511px, λύω active 474,

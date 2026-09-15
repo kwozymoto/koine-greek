@@ -2840,6 +2840,30 @@ function tableHtml(list){
       <div class="pt-body">${t.html}</div>
     </div>`).join("");
 }
+
+/* ---- grammar words ----------------------------------------------------
+   "I was actually only looking there because I was thinking we could add a
+   definitions page for grammar words/terms people may not be familiar
+   with." So they answer to the same box as the words and the paradigms:
+   one search, three kinds of answer.
+
+   Searched on the definition as well as the headword, which is what makes
+   "unmarked" findable by someone who typed "marked", and "the one who
+   believes" findable by someone who has met a substantival participle and
+   does not yet have the word for it. */
+const termQ = s => (s||"").toLowerCase();
+function termHits(raw){
+  const q=termQ(raw).trim();
+  if(!q) return [];
+  return TERMS.filter(([t,d,eg])=>termQ(t+" "+d+" "+eg).includes(q));
+}
+function termRowsHtml(list){
+  return list.map(([t,d,eg,ch])=>`
+    <div class="term">
+      <b>${t}</b>${ch?`<span class="fq">ch ${ch}</span>`:""}
+      <p>${d}</p>${eg?`<p class="eg">${eg}</p>`:""}
+    </div>`).join("");
+}
 function renderTables(){
   const raw=(document.getElementById("tablesSearch").value||"").trim();
   const q=raw.toLowerCase();
@@ -2848,7 +2872,17 @@ function renderTables(){
     // Nothing typed: the paradigms are worth browsing, so show them shut.
     body.innerHTML=`<p class="muted" style="font-size:.84rem;margin-bottom:12px">
         Type to search. Greek with or without accents, Latin letters
-        (<i>agape</i>), an English meaning, or the name of a paradigm.</p>`
+        (<i>agape</i>), an English meaning, a grammar word, or the name of a
+        paradigm.</p>`
+      /* Shut, like the paradigms, and first: a reader who does not know what
+         a participle is cannot search for the word they are missing. */
+      + `<div class="ptable" id="ptTerms">
+           <button onclick="document.getElementById('ptTerms').classList.toggle('open')">Grammar words explained</button>
+           <div class="pt-body"><p class="muted" style="font-size:.83rem">The
+             ${TERMS.length} grammar words this course uses, and what each one
+             means. The chapter number is where the course teaches it.</p>
+             ${termRowsHtml(TERMS)}</div>
+         </div>`
       + PARADIGMS.map((t,k)=>`
         <div class="ptable" id="pt${k}">
           <button onclick="document.getElementById('pt${k}').classList.toggle('open')">${t.t}</button>
@@ -2866,6 +2900,11 @@ function renderTables(){
   const extra=lookupAll()?lookupLex(raw).filter(x=>!taught.has(x.n)):[];
   const tables=PARADIGMS.map((t,k)=>({t,k}))
     .filter(({t})=>(t.t+" "+t.tags+" "+t.html).toLowerCase().includes(q));
+  /* Above the tables, because someone typing "anarthrous" wants the sentence
+     that says what it means, not the four paradigms that happen to use the
+     word. An exact headword goes to the top of its own section. */
+  const terms=termHits(raw).sort((a,b)=>
+    (a[0]===q?0:1)-(b[0]===q?0:1) || a[0].localeCompare(b[0]));
   body.innerHTML =
     (words.length?`<h2 style="margin:4px 0 10px">${words.length===40?"Words (first 40)":words.length===1?"1 word":words.length+" words"}</h2>`+wordRowsHtml(words):"")
     + (extra.length?`<h2 style="margin:${words.length?"24px":"4px"} 0 4px">${
@@ -2875,8 +2914,9 @@ function renderTables(){
       + `<p class="muted lexnote">Not taught by this course, so there is no
          audio or example verse. Glosses from Tyndale House and Abbott-Smith.</p>`
       + lexRowsHtml(extra):"")
-    + (tables.length?`<h2 style="margin:${words.length||extra.length?"24px":"4px"} 0 10px">${tables.length===1?"1 table":tables.length+" tables"}</h2>`+tableHtml(tables):"")
-    + (!words.length&&!extra.length&&!tables.length
+    + (terms.length?`<h2 style="margin:${words.length||extra.length?"24px":"4px"} 0 10px">${terms.length===1?"1 grammar word":terms.length+" grammar words"}</h2>`+termRowsHtml(terms):"")
+    + (tables.length?`<h2 style="margin:${words.length||extra.length||terms.length?"24px":"4px"} 0 10px">${tables.length===1?"1 table":tables.length+" tables"}</h2>`+tableHtml(tables):"")
+    + (!words.length&&!extra.length&&!tables.length&&!terms.length
         ?`<div class="empty"><span class="gk">οὐδέν</span><p>Nothing matches "${raw}".</p>${
             lookupAll()?"":`<p class="muted" style="font-size:.8rem">The search
               is limited to the ${VOCAB.length-RETIRED.size} words this course
