@@ -285,6 +285,43 @@ other 39 cues that open the same way. **A rule that can be made to predict
 something unheard should be, before it is applied to anything.** The cost is
 one clip in the next sheet.
 
+### ευ, and a question the pack had been answering both ways
+
+Fraser asked whether ευ should carry the y of *you*. **Black says yes.** His
+pronunciation keyword is ***feud*** — /fjuːd/ — and every keyword in that
+column of his table is a genuine sound key: *aisle, eight, oil, suite, Faust,
+soup*. His cognate for εὐλογητός is *eulogy*, which has the y too.
+
+**And the pack has been right all along.** I first wrote this section as a
+table of the pack contradicting itself — `pew`, `tew` and `yoo` carrying the
+y against `sue`, `rue` and `lew` without it — and put it in front of Fraser
+that way. He corrected it in one line: *"most of those examples you gave DO
+have a y sound in them."*
+
+He is right, and the error is mine for reading the keywords in an American
+accent. In British and New Zealand English the y survives after most
+consonants: *sue* is /sjuː/, *lewd* /ljuːd/, *dew* /djuː/, *news* /njuːz/,
+*tune* /tjuːn/. **Every ευ spelling in the pack gives Black's diphthong
+except `rue`**, and that one only because English has no /rjuː/ at all.
+
+So there was never a mixed practice. Judged side by side on 2026-09-15 both
+of the live spellings stand: `ew` at the front of a word was kept over an
+explicit `yoo`, with Fraser's reason the useful part — *"the `ew` does have
+somewhat of a ya sound"* — and after a consonant `lew` was kept over `lyoo`.
+
+**The lesson is about where the keywords are read, not about ευ.** Every rule
+in this guide is written as an English keyword, and an English keyword means
+what the reader's accent makes it mean. The reader here is a New Zealander;
+so is the audience. Check a keyword against that accent before building a
+table on it.
+
+**A discrepancy left standing, deliberately.** `docs/erasmian_ipa.json` gives
+ευ as `eu̯` — a pure e-to-u glide with no y — which contradicts Black's
+*feud*. The IPA file is what 818 cues are scored against, and moving it would
+re-score forty clips on a point an ear has just called a non-issue. It is
+recorded here rather than changed, and it is a real disagreement between two
+of this project's own sources, not an oversight.
+
 ### And the checker was wrong again, on the same line
 
 `VOWEL_END` decides whether a token ends in a vowel, and the note above it
