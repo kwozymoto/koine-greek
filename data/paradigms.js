@@ -299,14 +299,13 @@ html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an a
 <tr><td class="g">ὤν</td><td>being — participle of εἰμί, masculine</td></tr>
 <tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>`},
 
-{t:"Numbers",ch:18,tags:"one two three heis mia hen numerals",
-html:`<table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
+{t:"Numbers",ch:18,tags:"one two three heis mia hen numerals numbers cardinal ordinal four five six seven eight nine ten eleven twelve hundred thousand okto ennea deka",
+html:`<table><caption>The cardinals</caption><tr><th>1</th><td class="g">εἷς, μία, ἕν</td><td>declines — below</td></tr><tr><th>2</th><td class="g">δύο</td><td>dat δυσίν</td></tr><tr><th>3</th><td class="g">τρεῖς, τρία</td><td>declines</td></tr><tr><th>4</th><td class="g">τέσσαρες, τέσσαρα</td><td>declines</td></tr><tr><th>5</th><td class="g">πέντε</td><td></td></tr><tr><th>6</th><td class="g">ἕξ</td><td></td></tr><tr><th>7</th><td class="g">ἑπτά</td><td></td></tr><tr><th>8</th><td class="g">ὀκτώ</td><td></td></tr><tr><th>9</th><td class="g">ἐννέα</td><td></td></tr><tr><th>10</th><td class="g">δέκα</td><td></td></tr><tr><th>11</th><td class="g">ἕνδεκα</td><td></td></tr><tr><th>12</th><td class="g">δώδεκα</td><td></td></tr><tr><th>14</th><td class="g">δεκατέσσαρες</td><td></td></tr><tr><th>20</th><td class="g">εἴκοσι</td><td></td></tr><tr><th>30</th><td class="g">τριάκοντα</td><td></td></tr><tr><th>40</th><td class="g">τεσσεράκοντα</td><td></td></tr><tr><th>50</th><td class="g">πεντήκοντα</td><td></td></tr><tr><th>100</th><td class="g">ἑκατόν</td><td></td></tr><tr><th>200</th><td class="g">διακόσιοι</td><td>declines</td></tr><tr><th>1,000</th><td class="g">χίλιοι</td><td>declines</td></tr><tr><th>10,000</th><td class="g">μύριοι</td><td>declines</td></tr></table><p class="muted" style="font-size:.83rem">Only the first four decline, and then the hundreds and thousands. Everything between πέντε and ἑκατόν has one form wherever it stands.</p><table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">εἷς</td><td class="g">μία</td><td class="g">ἕν</td></tr>
 <tr><th>Gen</th><td class="g">ἑνός</td><td class="g">μιᾶς</td><td class="g">ἑνός</td></tr>
 <tr><th>Dat</th><td class="g">ἑνί</td><td class="g">μιᾷ</td><td class="g">ἑνί</td></tr>
-<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
-<p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. δύο (two, dat δυσίν) · τρεῖς, τρία (three) · τέσσαρες, τέσσαρα (four) · πέντε five · ἕξ six · ἑπτά seven · δώδεκα twelve — from πέντε up to a hundred they don't decline; the hundreds and thousands (διακόσιοι, χίλιοι, μύριοι) do. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
+<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table><p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
 
 /* ---- syntax ----
    Everything above is forms. These four are what the forms are doing, which

@@ -255,6 +255,41 @@ for cap, rows in grids(BLOCKS["Participles — the key forms"]):
                           and c[1] == t and c[2] in v and c[3] == "P"
                           and c[4] == "N" and c[5] == "S" and c[6] == g)
 
+# ---- holes in a list ----------------------------------------------------
+# Everything above asks whether what is in a table is RIGHT. Nothing asked
+# whether anything was MISSING, and a gap in a list is invisible to a parse
+# check: the Numbers table ran five, six, seven, twelve for months with every
+# form in it correct and checked. Fraser found it by opening the page.
+#
+# Completeness is not definable for most of these tables -- there is no
+# machine answer to which prepositions belong in a reference list, and that
+# is a reading job. But a run of integers has one. So where a table labels
+# its rows with numbers, they must not skip.
+GAPS = []
+NUMBERED = 0
+for _title, _html in BLOCKS.items():
+    for _tb in re.findall(r"<table>.*?</table>", _html, re.S):
+        _nums = [int(l.replace(",", "").strip())
+                 for l in re.findall(r"<th>([^<]*)</th>", _tb)
+                 if l.replace(",", "").strip().isdigit()]
+        if len(_nums) < 3:
+            continue
+        NUMBERED += 1
+        # Only the run a reader expects to be continuous. A table may
+        # legitimately jump 12, 14, 20 once it is past the counting numbers.
+        _run = sorted(n for n in _nums if n <= 12)
+        if _run and _run != list(range(_run[0], _run[-1] + 1)):
+            GAPS.append((_title,
+                         sorted(set(range(_run[0], _run[-1] + 1)) - set(_run))))
+
+print("tables whose rows are numbered: %d" % NUMBERED)
+if GAPS:
+    print("")
+    print("NUMBERED LISTS WITH HOLES IN THEM: %d" % len(GAPS))
+    for _t, _miss in GAPS:
+        print("   %-38s missing %s"
+              % (_t[:38], ", ".join(str(m) for m in _miss)))
+
 print("cells checked by parse: %d" % N[0])
 print("contradicted by the corpus: %d" % len(CLASH))
 for t, f, lab, seen in CLASH:
@@ -263,4 +298,4 @@ print("not attested (expected in a full paradigm): %d" % len(ABSENT))
 by = collections.Counter(t for t, _, _ in ABSENT)
 for t, n in by.most_common():
     print("   %-38s %d" % (t[:38], n))
-sys.exit(1 if CLASH else 0)
+sys.exit(1 if (CLASH or GAPS) else 0)
