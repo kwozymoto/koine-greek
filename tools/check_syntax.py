@@ -25,6 +25,7 @@ quotes the text wrongly is worse than one that reads it debatably:
         cond-2     εἰ + a past indicative (imperfect, aorist or pluperfect)
         cond-3     ἐάν + a subjunctive
         cond-4     εἰ + an optative
+        opt        at least one optative
 
      That is the half of a syntax claim that is mechanical, and it is the
      half that a typo or a half-remembered verse breaks.
@@ -86,6 +87,8 @@ def claim_holds(kind, got):
     if kind == "cond-3":
         return has(lambda p, c: p == "V-" and c[3] == "S")
     if kind == "cond-4":
+        return has(lambda p, c: p == "V-" and c[3] == "O")
+    if kind == "opt":
         return has(lambda p, c: p == "V-" and c[3] == "O")
     return None                     # unknown claim — reported separately
 

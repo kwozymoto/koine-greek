@@ -179,6 +179,21 @@ html:`<table><caption>λύω — imperative</caption>
 <tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυέσθωσαν</td><td class="g">λυθήτωσαν</td></tr></table>
 <p class="muted" style="font-size:.83rem">Prohibitions: μή + present imperative (general practice / stop) · μή + aorist subjunctive (don't do it at all).</p>`},
 
+{t:"The optative — wishes and prayers",tags:"optative mood wish prayer may it never be genoito eie doie potential fourth class condition rare",
+html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are a single phrase of Paul’s. You will never have to build one. You only have to know one when you see it. The nine below carry every tense, voice, person and number the optative takes anywhere in the New Testament.</p>
+<table><caption>Every kind you will meet</caption>
+<tr><th>In the text</th><th>What it is</th><th>Meaning</th><th>Where</th></tr>
+<tr><td class="g" data-ref="Romans 6:2" data-claim="opt">μὴ γένοιτο</td><td class="muted">aor mid 3sg</td><td>may it never be!</td><td class="muted" style="white-space:nowrap">Romans 6:2</td></tr>
+<tr><td class="g" data-ref="Luke 1:38" data-claim="opt">γένοιτό μοι</td><td class="muted">aor mid 3sg</td><td>let it be to me</td><td class="muted" style="white-space:nowrap">Luke 1:38</td></tr>
+<tr><td class="g" data-ref="Luke 15:26" data-claim="opt">τί ἂν εἴη ταῦτα</td><td class="muted">pres act 3sg</td><td>what this might be</td><td class="muted" style="white-space:nowrap">Luke 15:26</td></tr>
+<tr><td class="g" data-ref="Romans 15:5" data-claim="opt">δῴη ὑμῖν</td><td class="muted">aor act 3sg</td><td>may he grant you</td><td class="muted" style="white-space:nowrap">Romans 15:5</td></tr>
+<tr><td class="g" data-ref="1 Thessalonians 5:23" data-claim="opt">ἁγιάσαι ὑμᾶς</td><td class="muted">aor act 3sg</td><td>may he make you holy</td><td class="muted" style="white-space:nowrap">1 Thessalonians 5:23</td></tr>
+<tr><td class="g" data-ref="1 Peter 1:2" data-claim="opt">καὶ εἰρήνη πληθυνθείη</td><td class="muted">aor pass 3sg</td><td>may peace be multiplied</td><td class="muted" style="white-space:nowrap">1 Peter 1:2</td></tr>
+<tr><td class="g" data-ref="Acts 17:27" data-claim="opt">ψηλαφήσειαν αὐτὸν καὶ εὕροιεν</td><td class="muted">aor act 3pl</td><td>might feel for him and find him</td><td class="muted" style="white-space:nowrap">Acts 17:27</td></tr>
+<tr><td class="g" data-ref="Acts 8:31" data-claim="opt">Πῶς γὰρ ἂν δυναίμην</td><td class="muted">pres mid 1sg</td><td>how could I?</td><td class="muted" style="white-space:nowrap">Acts 8:31</td></tr>
+<tr><td class="g" data-ref="1 Peter 3:14" data-claim="opt">εἰ καὶ πάσχοιτε</td><td class="muted">pres act 2pl</td><td>even if you should suffer</td><td class="muted" style="white-space:nowrap">1 Peter 3:14</td></tr></table>
+<p class="muted" style="font-size:.83rem">Three signs give it away: <b>-οι-</b> in the present and the second aorist, <b>-αι-</b> in the first aorist active, <b>-θει-</b> in the aorist passive. εἰμί is its own case, εἴη. Fifty-eight of the 68 are third person singular, so nearly every one you meet is <i>may he</i> or <i>might it</i>. Where ἄν stands beside it — ten times in all — the sense is <i>could</i> rather than <i>may</i>: a question about what is possible, not a prayer for what should be.</p>`},
+
 {t:"Infinitives",ch:22,tags:"infinitive luein lusai",
 html:`<table><caption>λύω — the infinitives</caption>
 <tr><th></th><th>Active</th><th>Middle</th><th>Passive</th></tr>
@@ -223,27 +238,29 @@ html:`<table><caption>Present active</caption>
 
 {t:"Principal parts — key irregular verbs",tags:"principal parts stems irregular",
 html:`<p class="muted" style="font-size:.83rem">Six principal parts. Learn these and the rest of the verb follows. A dash means that part does not occur in the New Testament — checked against the text, not assumed.</p>
-<table><caption>Present · Future · Aorist · Perfect act · Perfect m/p · Aorist pass</caption>
-<tr><th>λέγω say</th><td class="g">ἐρῶ, εἶπον, εἴρηκα, εἴρημαι, ἐρρέθην</td></tr>
-<tr><th>ἔρχομαι come</th><td class="g">ἐλεύσομαι, ἦλθον, ἐλήλυθα, —, —</td></tr>
-<tr><th>γίνομαι become</th><td class="g">γενήσομαι, ἐγενόμην, γέγονα, γεγένημαι, ἐγενήθην</td></tr>
-<tr><th>ὁράω see</th><td class="g">ὄψομαι, εἶδον, ἑώρακα, —, ὤφθην</td></tr>
-<tr><th>λαμβάνω take</th><td class="g">λήμψομαι, ἔλαβον, εἴληφα, —, —</td></tr>
-<tr><th>δίδωμι give</th><td class="g">δώσω, ἔδωκα, δέδωκα, δέδομαι, ἐδόθην</td></tr>
-<tr><th>γινώσκω know</th><td class="g">γνώσομαι, ἔγνων, ἔγνωκα, ἔγνωσμαι, ἐγνώσθην</td></tr>
-<tr><th>εὑρίσκω find</th><td class="g">εὑρήσω, εὗρον, εὕρηκα, —, εὑρέθην</td></tr>
-<tr><th>ἔχω have</th><td class="g">ἕξω, ἔσχον, ἔσχηκα, —, —</td></tr>
-<tr><th>βάλλω throw</th><td class="g">βαλῶ, ἔβαλον, βέβληκα, βέβλημαι, ἐβλήθην</td></tr>
-<tr><th>ἐγείρω raise</th><td class="g">ἐγερῶ, ἤγειρα, —, ἐγήγερμαι, ἠγέρθην</td></tr>
-<tr><th>ἀποστέλλω send</th><td class="g">ἀποστελῶ, ἀπέστειλα, ἀπέσταλκα, ἀπέσταλμαι, ἀπεστάλην</td></tr>
-<tr><th>σῴζω save</th><td class="g">σώσω, ἔσωσα, σέσωκα, σέσῳσμαι, ἐσώθην</td></tr>
-<tr><th>κρίνω judge</th><td class="g">κρινῶ, ἔκρινα, κέκρικα, κέκριμαι, ἐκρίθην</td></tr>
-<tr><th>μένω remain</th><td class="g">μενῶ, ἔμεινα, μεμένηκα, —, —</td></tr>
-<tr><th>πίνω drink</th><td class="g">πίομαι, ἔπιον, πέπωκα, —, —</td></tr>
-<tr><th>πίπτω fall</th><td class="g">πεσοῦμαι, ἔπεσον, πέπτωκα, —, —</td></tr>
-<tr><th>φέρω carry</th><td class="g">οἴσω, ἤνεγκα, —, —, ἠνέχθην</td></tr>
-<tr><th>ἀκούω hear</th><td class="g">ἀκούσω, ἤκουσα, ἀκήκοα, —, ἠκούσθην</td></tr>
-<tr><th>ἐσθίω eat</th><td class="g">φάγομαι, ἔφαγον, —, —, —</td></tr></table>`},
+<table><caption>Twenty common verbs, part by part</caption>
+<tr><td>Present</td><th>Future</th><th>Aorist</th><th>Perf act</th><th>Perf m/p</th><th>Aor pass</th></tr>
+<tr><th>λέγω say</th><td class="g">ἐρῶ</td><td class="g">εἶπον</td><td class="g">εἴρηκα</td><td class="g">εἴρημαι</td><td class="g">ἐρρέθην</td></tr>
+<tr><th>ἔρχομαι come</th><td class="g">ἐλεύσομαι</td><td class="g">ἦλθον</td><td class="g">ἐλήλυθα</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>γίνομαι become</th><td class="g">γενήσομαι</td><td class="g">ἐγενόμην</td><td class="g">γέγονα</td><td class="g">γεγένημαι</td><td class="g">ἐγενήθην</td></tr>
+<tr><th>ὁράω see</th><td class="g">ὄψομαι</td><td class="g">εἶδον</td><td class="g">ἑώρακα</td><td class="g">—</td><td class="g">ὤφθην</td></tr>
+<tr><th>λαμβάνω take</th><td class="g">λήμψομαι</td><td class="g">ἔλαβον</td><td class="g">εἴληφα</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>δίδωμι give</th><td class="g">δώσω</td><td class="g">ἔδωκα</td><td class="g">δέδωκα</td><td class="g">δέδομαι</td><td class="g">ἐδόθην</td></tr>
+<tr><th>γινώσκω know</th><td class="g">γνώσομαι</td><td class="g">ἔγνων</td><td class="g">ἔγνωκα</td><td class="g">ἔγνωσμαι</td><td class="g">ἐγνώσθην</td></tr>
+<tr><th>εὑρίσκω find</th><td class="g">εὑρήσω</td><td class="g">εὗρον</td><td class="g">εὕρηκα</td><td class="g">—</td><td class="g">εὑρέθην</td></tr>
+<tr><th>ἔχω have</th><td class="g">ἕξω</td><td class="g">ἔσχον</td><td class="g">ἔσχηκα</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>βάλλω throw</th><td class="g">βαλῶ</td><td class="g">ἔβαλον</td><td class="g">βέβληκα</td><td class="g">βέβλημαι</td><td class="g">ἐβλήθην</td></tr>
+<tr><th>ἐγείρω raise</th><td class="g">ἐγερῶ</td><td class="g">ἤγειρα</td><td class="g">—</td><td class="g">ἐγήγερμαι</td><td class="g">ἠγέρθην</td></tr>
+<tr><th>ἀποστέλλω send</th><td class="g">ἀποστελῶ</td><td class="g">ἀπέστειλα</td><td class="g">ἀπέσταλκα</td><td class="g">ἀπέσταλμαι</td><td class="g">ἀπεστάλην</td></tr>
+<tr><th>σῴζω save</th><td class="g">σώσω</td><td class="g">ἔσωσα</td><td class="g">σέσωκα</td><td class="g">σέσῳσμαι</td><td class="g">ἐσώθην</td></tr>
+<tr><th>κρίνω judge</th><td class="g">κρινῶ</td><td class="g">ἔκρινα</td><td class="g">κέκρικα</td><td class="g">κέκριμαι</td><td class="g">ἐκρίθην</td></tr>
+<tr><th>μένω remain</th><td class="g">μενῶ</td><td class="g">ἔμεινα</td><td class="g">—</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>πίνω drink</th><td class="g">πίομαι</td><td class="g">ἔπιον</td><td class="g">πέπωκα</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>πίπτω fall</th><td class="g">πεσοῦμαι</td><td class="g">ἔπεσον</td><td class="g">πέπτωκα</td><td class="g">—</td><td class="g">—</td></tr>
+<tr><th>φέρω carry</th><td class="g">οἴσω</td><td class="g">ἤνεγκα</td><td class="g">—</td><td class="g">—</td><td class="g">ἠνέχθην</td></tr>
+<tr><th>ἀκούω hear</th><td class="g">ἀκούσω</td><td class="g">ἤκουσα</td><td class="g">ἀκήκοα</td><td class="g">—</td><td class="g">ἠκούσθην</td></tr>
+<tr><th>ἐσθίω eat</th><td class="g">φάγομαι</td><td class="g">ἔφαγον</td><td class="g">—</td><td class="g">—</td><td class="g">—</td></tr></table>
+<p class="muted" style="font-size:.83rem">All twenty are among the hundred commonest verbs in the New Testament. The perfect of μένω is a dash because the New Testament has none — though the stem surfaces once, in a pluperfect: μεμενήκεισαν, 1 John 2:19.</p>`},
 
 {t:"Prepositions and their cases",tags:"preposition en eis ek apo dia meta peri hyper hypo epi para kata",
 html:`<table><caption>One case</caption>
@@ -300,15 +317,52 @@ html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an a
 <tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>`},
 
 {t:"The vocative — calling someone",tags:"vocative voc address calling kurie adelphoi pater case fifth",
-html:`<p class="muted" style="font-size:.83rem"><b>For most nouns the vocative is simply the nominative.</b> Every plural, every neuter, and the first declension throughout. Only the second-declension masculine singular has an ending of its own, and a few third-declension nouns fall back to the bare stem. That is why it has no row in the paradigms: for nine of the eleven nouns in them it would repeat the line above.</p><table><caption>The ones you actually meet</caption><tr><th class="g">Κύριε</th><td class="g">κύριος</td><td>119×</td><td>2nd decl masc sg — -ος becomes -ε</td></tr><tr><th class="g">Διδάσκαλε</th><td class="g">διδάσκαλος</td><td>30×</td><td></td></tr><tr><th class="g">υἱέ</th><td class="g">υἱός</td><td>11×</td><td></td></tr><tr><th class="g">ἄνθρωπε</th><td class="g">ἄνθρωπος</td><td>9×</td><td></td></tr><tr><th class="g">ἀδελφοί</th><td class="g">ἀδελφός</td><td>111×</td><td>plural — always the same as the nominative</td></tr><tr><th class="g">ἀγαπητοί</th><td class="g">ἀγαπητός</td><td>30×</td><td></td></tr><tr><th class="g">ἄνδρες</th><td class="g">ἀνήρ</td><td>29×</td><td></td></tr><tr><th class="g">Πάτερ</th><td class="g">πατήρ</td><td>28×</td><td>3rd decl — the bare stem</td></tr><tr><th class="g">γύναι</th><td class="g">γυνή</td><td>10×</td><td></td></tr><tr><th class="g">βασιλεῦ</th><td class="g">βασιλεύς</td><td>9×</td><td></td></tr><tr><th class="g">Τέκνον</th><td class="g">τέκνον</td><td>10×</td><td>neuter — always the nominative</td></tr></table><p class="muted" style="font-size:.83rem">660 vocatives in the New Testament across 121 words. Ὠ before one is optional and rarer than in classical Greek.</p>`},
+html:`<p class="muted" style="font-size:.83rem"><b>For most nouns the vocative is simply the nominative.</b> Every plural, every neuter, and the first declension throughout. Only the second-declension masculine singular has an ending of its own, and a few third-declension nouns fall back to the bare stem. That is why it has no row in the paradigms: for nine of the eleven nouns in them it would repeat the line above.</p>
+<table><caption>The ones you actually meet</caption>
+<tr><th class="g">Κύριε</th><td class="g">κύριος</td><td>119×</td><td>2nd decl masc sg — -ος becomes -ε</td></tr>
+<tr><th class="g">Διδάσκαλε</th><td class="g">διδάσκαλος</td><td>30×</td><td></td></tr>
+<tr><th class="g">υἱέ</th><td class="g">υἱός</td><td>11×</td><td></td></tr>
+<tr><th class="g">ἄνθρωπε</th><td class="g">ἄνθρωπος</td><td>9×</td><td></td></tr>
+<tr><th class="g">ἀδελφοί</th><td class="g">ἀδελφός</td><td>111×</td><td>plural — always the same as the nominative</td></tr>
+<tr><th class="g">ἀγαπητοί</th><td class="g">ἀγαπητός</td><td>30×</td><td></td></tr>
+<tr><th class="g">ἄνδρες</th><td class="g">ἀνήρ</td><td>29×</td><td></td></tr>
+<tr><th class="g">Πάτερ</th><td class="g">πατήρ</td><td>28×</td><td>3rd decl — the bare stem</td></tr>
+<tr><th class="g">γύναι</th><td class="g">γυνή</td><td>10×</td><td></td></tr>
+<tr><th class="g">βασιλεῦ</th><td class="g">βασιλεύς</td><td>9×</td><td></td></tr>
+<tr><th class="g">Τέκνον</th><td class="g">τέκνον</td><td>10×</td><td>neuter — always the nominative</td></tr></table>
+<p class="muted" style="font-size:.83rem">660 vocatives in the New Testament across 121 words. Ὠ before one is optional and rarer than in classical Greek.</p>`},
 
 {t:"Numbers",ch:18,tags:"one two three heis mia hen numerals numbers cardinal ordinal four five six seven eight nine ten eleven twelve hundred thousand okto ennea deka",
-html:`<table><caption>The cardinals</caption><tr><th>1</th><td class="g">εἷς, μία, ἕν</td><td>declines — below</td></tr><tr><th>2</th><td class="g">δύο</td><td>dat δυσίν</td></tr><tr><th>3</th><td class="g">τρεῖς, τρία</td><td>declines</td></tr><tr><th>4</th><td class="g">τέσσαρες, τέσσαρα</td><td>declines</td></tr><tr><th>5</th><td class="g">πέντε</td><td></td></tr><tr><th>6</th><td class="g">ἕξ</td><td></td></tr><tr><th>7</th><td class="g">ἑπτά</td><td></td></tr><tr><th>8</th><td class="g">ὀκτώ</td><td></td></tr><tr><th>9</th><td class="g">ἐννέα</td><td></td></tr><tr><th>10</th><td class="g">δέκα</td><td></td></tr><tr><th>11</th><td class="g">ἕνδεκα</td><td></td></tr><tr><th>12</th><td class="g">δώδεκα</td><td></td></tr><tr><th>14</th><td class="g">δεκατέσσαρες</td><td></td></tr><tr><th>20</th><td class="g">εἴκοσι</td><td></td></tr><tr><th>30</th><td class="g">τριάκοντα</td><td></td></tr><tr><th>40</th><td class="g">τεσσεράκοντα</td><td></td></tr><tr><th>50</th><td class="g">πεντήκοντα</td><td></td></tr><tr><th>100</th><td class="g">ἑκατόν</td><td></td></tr><tr><th>200</th><td class="g">διακόσιοι</td><td>declines</td></tr><tr><th>1,000</th><td class="g">χίλιοι</td><td>declines</td></tr><tr><th>10,000</th><td class="g">μύριοι</td><td>declines</td></tr></table><p class="muted" style="font-size:.83rem">Only the first four decline, and then the hundreds and thousands. Everything between πέντε and ἑκατόν has one form wherever it stands.</p><table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
+html:`<table><caption>The cardinals</caption>
+<tr><th>1</th><td class="g">εἷς, μία, ἕν</td><td>declines — below</td></tr>
+<tr><th>2</th><td class="g">δύο</td><td>dat δυσίν</td></tr>
+<tr><th>3</th><td class="g">τρεῖς, τρία</td><td>declines</td></tr>
+<tr><th>4</th><td class="g">τέσσαρες, τέσσαρα</td><td>declines</td></tr>
+<tr><th>5</th><td class="g">πέντε</td><td></td></tr>
+<tr><th>6</th><td class="g">ἕξ</td><td></td></tr>
+<tr><th>7</th><td class="g">ἑπτά</td><td></td></tr>
+<tr><th>8</th><td class="g">ὀκτώ</td><td></td></tr>
+<tr><th>9</th><td class="g">ἐννέα</td><td></td></tr>
+<tr><th>10</th><td class="g">δέκα</td><td></td></tr>
+<tr><th>11</th><td class="g">ἕνδεκα</td><td></td></tr>
+<tr><th>12</th><td class="g">δώδεκα</td><td></td></tr>
+<tr><th>14</th><td class="g">δεκατέσσαρες</td><td></td></tr>
+<tr><th>20</th><td class="g">εἴκοσι</td><td></td></tr>
+<tr><th>30</th><td class="g">τριάκοντα</td><td></td></tr>
+<tr><th>40</th><td class="g">τεσσεράκοντα</td><td></td></tr>
+<tr><th>50</th><td class="g">πεντήκοντα</td><td></td></tr>
+<tr><th>100</th><td class="g">ἑκατόν</td><td></td></tr>
+<tr><th>200</th><td class="g">διακόσιοι</td><td>declines</td></tr>
+<tr><th>1,000</th><td class="g">χίλιοι</td><td>declines</td></tr>
+<tr><th>10,000</th><td class="g">μύριοι</td><td>declines</td></tr></table>
+<p class="muted" style="font-size:.83rem">Only the first four decline, and then the hundreds and thousands. Everything between πέντε and ἑκατόν has one form wherever it stands.</p>
+<table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">εἷς</td><td class="g">μία</td><td class="g">ἕν</td></tr>
 <tr><th>Gen</th><td class="g">ἑνός</td><td class="g">μιᾶς</td><td class="g">ἑνός</td></tr>
 <tr><th>Dat</th><td class="g">ἑνί</td><td class="g">μιᾷ</td><td class="g">ἑνί</td></tr>
-<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table><p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
+<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
+<p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>`},
 
 /* ---- syntax ----
    Everything above is forms. These four are what the forms are doing, which

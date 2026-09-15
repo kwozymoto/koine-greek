@@ -283,6 +283,83 @@ for row in PP:
             homographs.append("PP    %-10s %-9s of %-12s %s"
                               % (f, PP_TENSE[slot], row[0], c))
 
+# --------------------------------- the reference table beside the drill ---
+# PP in js/app.js and the "Principal parts" table in data/paradigms.js are two
+# hand-written copies of one thing, and they had drifted. The table gave μένω a
+# perfect active μεμένηκα; the New Testament has no perfect of μένω at all, in
+# any person — while PP has carried a dash in that slot since check_paradigms
+# reported it, whose docstring still records the find. One copy was corrected
+# and the other was not, and nothing looked at the second: check_paradigms
+# judges cells by case and tense labels this table does not carry, and its
+# not-attested list is a report that cannot fail.
+#
+# The table's own caption promises that "a dash means that part does not occur
+# in the New Testament — checked against the text, not assumed", so that
+# sentence is now the test. Every dash must be a tense and voice the verb
+# genuinely lacks, every form printed must be one it genuinely has, and the two
+# copies must agree wherever they name the same verb.
+#
+# What is NOT required is that the citation form itself occur. A principal part
+# is a tense, not a spelling: ἐδόθην is the first singular, and the New
+# Testament only ever writes ἐδόθη. Thirty-eight of the hundred parts here are
+# first singulars that never appear as such, and every one of them is right.
+DASH = "—"
+TV = collections.defaultdict(set)              # lemma -> {(tense, voice)}
+for _got in PARSES.values():
+    for (_p, _code, _lem) in _got:
+        if _p.startswith("V") and len(_code) > 2:
+            TV[_lem].add((_code[1], _code[2]))
+
+PP_SLOTS = [("Future",   {("F", "A"), ("F", "M"), ("F", "P")}),
+            ("Aorist",   {("A", "A"), ("A", "M")}),
+            ("Perf act", {("X", "A")}),
+            ("Perf m/p", {("X", "M"), ("X", "P")}),
+            ("Aor pass", {("A", "P")})]
+PP_FROM_DRILL = {r[0]: r for r in PP}
+
+pp_bad, pp_checked = [], 0
+_par = io.open(os.path.join(ROOT, "data", "paradigms.js"), encoding="utf-8").read()
+_m = re.search(r'\{t:"Principal parts[^"]*",.*?html:`(.*?)`\}', _par, re.S)
+if not _m:
+    pp_bad.append("the principal parts table is not in data/paradigms.js any more")
+else:
+    _rows = re.findall(r"<tr><th>([^<]*)</th>((?:<td[^>]*>[^<]*</td>)+)</tr>",
+                       _m.group(1))
+    if len(_rows) != 20:
+        pp_bad.append("the principal parts table has %d verb rows, not 20"
+                      % len(_rows))
+    for _head, _cells in _rows:
+        lemma = _head.split(" ")[0]
+        parts = re.findall(r"<td[^>]*>([^<]*)</td>", _cells)
+        if len(parts) != 5:
+            pp_bad.append("%-12s has %d cells, not one for each of the five "
+                          "parts after the present" % (lemma, len(parts)))
+            continue
+        if lemma not in TV:
+            pp_bad.append("%-12s is not a verb lemma in the corpus" % lemma)
+            continue
+        for (label, tvs), form in zip(PP_SLOTS, parts):
+            pp_checked += 1
+            has = bool(TV[lemma] & tvs)
+            if form == DASH and has:
+                pp_bad.append("%-12s %-9s is a dash, but the corpus has %d of "
+                              "them — the caption says a dash means the part "
+                              "does not occur"
+                              % (lemma, label,
+                                 sum(1 for _tv in TV[lemma] if _tv in tvs)))
+            elif form != DASH and not has:
+                pp_bad.append("%-12s %-9s prints %s, and the New Testament has "
+                              "no %s of this verb in any person"
+                              % (lemma, label, form, label.lower()))
+        row = PP_FROM_DRILL.get(lemma)
+        if row:
+            for _i, _label in ((0, "Future"), (1, "Aorist"), (2, "Perf act")):
+                if row[_i + 1] != parts[_i]:
+                    pp_bad.append("%-12s %-9s — the table says %s and the PP "
+                                  "drill in js/app.js says %s. They are the "
+                                  "same fact twice; one of them is stale"
+                                  % (lemma, _label, parts[_i], row[_i + 1]))
+
 # ------------------------------------------------------------- CASEFN ----
 case_bad = []
 for n, row in enumerate(CASEFN):
@@ -392,4 +469,11 @@ print()
 print("look-alike groups that are not what they claim: %d" % len(look_bad))
 for c in look_bad:
     print("   " + c)
-sys.exit(1 if (problems or case_bad or look_bad) else 0)
+print()
+print("principal parts held to the corpus and to the drill: %d cells across "
+      "20 verbs" % pp_checked)
+print("   a dash that should be a form, a form that should be a dash, or the "
+      "two copies disagreeing: %d" % len(pp_bad))
+for c in pp_bad:
+    print("   " + c)
+sys.exit(1 if (problems or case_bad or look_bad or pp_bad) else 0)

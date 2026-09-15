@@ -408,7 +408,13 @@ body.off .vid:not(.local) .net{display:block}
 .ptable>button::after{content:"›";color:var(--muted);transform:rotate(90deg);flex:0 0 auto}
 .ptable.open>button::after{transform:rotate(-90deg)}
 .ptable .pt-body{display:none;padding:2px 4px 10px}
-.ptable.open .pt-body{display:block}
+/* A paradigm table is as wide as the Greek in it, and table{width:100%} cannot
+   shrink a cell below one unbreakable word. Measured at 375px, six of these
+   tables are wider than the screen — third declension 511px, λύω active 474,
+   principal parts 562 — and each one made THE WHOLE PAGE scroll sideways, so
+   the nav and the search box slid off with it. The table scrolls inside its
+   own panel instead, which is what .pgwrap already does for a played grid. */
+.ptable.open .pt-body{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 
 /* ---------- parsing builder chips ---------- */
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:7px 0 13px}
