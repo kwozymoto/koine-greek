@@ -96,7 +96,7 @@ XREF = {
     (16, 10): (2, 'Perfect and pluperfect active indicative'),
     (16, 13): (1, 'Perfect middle/passive and future middle'),
     (16, 15): (1, 'Aorist and future passive indicative'),
-    (16, 19): (1, 'Contract and liquid verbs'),
+    (16, 19): (2, 'Contract and liquid verbs'),
     (17, 4): (1, 'Nouns of the second declension'),
     (18, 17): (2, 'Nouns of the third declension'),
     (18, 20): (1, 'Participles: the forms'),

@@ -2151,6 +2151,15 @@
   "finding": "Both attested, one lambda apart, aorist against imperfect."
  },
  {
+  "k": "537bbc3d072b",
+  "ch": 16,
+  "kind": "count",
+  "src": "body",
+  "text": "That last step is the one with an exception waiting: chapter 19 meets verbs whose stem ends in λ, μ, ν or ρ, and they build a future with no σ at all.",
+  "status": "verified",
+  "finding": "Counted for this sentence: 164 futures in the corpus belong to verbs whose stem ends in λ, μ, ν or ρ, across 49 verbs — λαμβάνω 18, ἐγείρω 16, αἴρω 11, κρίνω 11 — against 1,460 futures of other verbs. So the exception is real and about one future in ten, which is why chapter 16's shortcut had to name it rather than leave chapter 19 to undo it."
+ },
+ {
   "k": "7bd99a491dfd",
   "ch": 16,
   "kind": "absolute",

@@ -1100,7 +1100,7 @@ body:`<p>Fifteen chapters have added one piece at a time. This one puts them tog
 <p><b>2. Is there a σα, or a bare σ?</b> σα with an augment is a first aorist. σ without one is a future.</p>
 <p><b>3. Is there a κα, or a θη?</b> κα is a perfect active. θη is an aorist passive — or, with a σ after it, a future passive.</p>
 <p><b>4. What does the ending say?</b> Person and number, and whether the voice is active or not.</p>
-<p>If nothing at the front and nothing in the middle, it is a present. If an augment and nothing in the middle, it is an imperfect or a second aorist, and only the stem will tell you which.</p>
+<p>If nothing at the front and nothing in the middle, it is a present. That last step is the one with an exception waiting: chapter 19 meets verbs whose stem ends in λ, μ, ν or ρ, and they build a future with no σ at all. Until then, nothing in the middle does mean present. If an augment and nothing in the middle, it is an imperfect or a second aorist, and only the stem will tell you which.</p>
 <h3>Working one out</h3>
 <p class="v" data-ref="John 13:7">Ὃ ἐγὼ ποιῶ σὺ οὐκ οἶδας ἄρτι, γνώσῃ δὲ μετὰ ταῦτα</p>
 <p>"What I am doing you do not know now, but you will understand afterwards." Three verbs, three different answers, and every one of them a thing this course has warned you about.</p>
@@ -1380,7 +1380,7 @@ quiz:[
 body:`<p>You can now recognise a participle. This chapter is about the harder half: working out what one is doing in the sentence in front of you.</p>
 <p>There are three answers, and <b>one question comes first</b>. Ask it every time, before anything else about the form:</p>
 <p><b>Is there an article?</b></p>
-<p>Article present, it is behaving like an adjective or a noun. Article absent, it is usually describing the circumstances of the main verb — usually, because an anarthrous participle can still be attributive. The counting says which pattern is commonest: 1,433 participles carry an article, and <b>3,918 are anarthrous nominatives</b>, which makes the third use much the largest group and the one with no signposts.</p>
+<p>Article present, it is behaving like an adjective or a noun. Article absent, it is usually describing the circumstances of the main verb — usually, because an <b>anarthrous</b> participle — one with no article — can still be attributive. The counting says which pattern is commonest: 1,433 participles carry an article, and <b>3,918 are anarthrous nominatives</b>, which makes the third use much the largest group and the one with no signposts.</p>
 <h3>With the article, beside a noun</h3>
 <p>The <b>attributive</b> use. The participle modifies the noun, exactly as an adjective would, and it agrees with it in gender, number and case.</p>
 <p class="v" data-ref="Matthew 7:13">εὐρύχωρος ἡ ὁδὸς ἡ ἀπάγουσα εἰς τὴν ἀπώλειαν</p>
