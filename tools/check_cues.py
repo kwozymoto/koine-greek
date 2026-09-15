@@ -73,6 +73,13 @@ REJECTED = [
      "`sis`, and the one an ear had passed was already a `sis`.",
      "663 κτίσις `kitsis` was the standing counter-example; "
      "337 κρίσις and 722 ἄφεσις heard on it, batch 5, 2026-09-15"),
+    (r"\bdo\b",
+     "an English word, and the worst of them: its vowel is the /uː/ of *do*, "
+     "nowhere near the short omicron. δοκέω came back *doo-keh-oh*. Close the "
+     "syllable -- `dok keh oh`, the πρόβατον remedy -- or spell the vowel "
+     "`daw`; `dok` won before a k and `daw` before an m, and both halves of "
+     "that were heard.",
+     "282 δοκέω batch 5, 2026-09-15; 497 ψεύδομαι on the same sheet"),
     (r"\bro\b",
      "an English word, and the voice reads it as one -- the /ou/ of *row* "
      "where the Greek has a short omicron. Close the syllable (κληρονόμος is "

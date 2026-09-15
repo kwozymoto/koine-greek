@@ -3584,10 +3584,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "pros do kah oh",
-  "source": "worklist-candidate",
-  "duration_s": 2.136,
-  "sha1": "d702d8e0ab90"
+  "tts": "prossdok kah oh",
+  "source": "batch5",
+  "duration_s": 1.881,
+  "sha1": "2e1365e19e12",
+  "take": "2026-09-15, Atlas (b5f_757_b)",
+  "note": "'pros' dropped the sigma the προσ- rule has required since batch 4, and 'do' is an English word the voice reads as such; closing both, and the first space with them, was what got the pace right"
  },
  {
   "index": 758,

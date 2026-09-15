@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v150';
+const VERSION = 'v151';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,12 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v151: προσδοκάω, the last clip of batch 5. It needed three fixes
+     at once -- the προσ- sigma the rule has required since batch 4,
+     the English word `do`, and a space closed for pace. The `do`
+     gate lands with it, because until now this clip was the only
+     thing in the pack that would have failed it. */
+  'audio/vocab/757_prosdokao.mp3',
   /* v150: batch 5 of the vocabulary audit -- 59 clips re-cued and
      re-recorded, every one heard. Six rules came out of it and each
      is now a gate in check_cues: the bare -os ending (18 clips had

@@ -192,11 +192,17 @@ Of the remedies tried, only one works so far:
 | `stour ross`, `sour loss`, `thay sour oss` | rejected — `-our` is not /aʊər/ here |
 | `stah oo ross`, `sah oo loss` | rejected — spelling it out adds a beat and loses the diphthong |
 
-**Still open: σταυρός, σταυρόω, Σαῦλος, θησαυρός, ὡσαύτως.** The untried
-direction is to break the word so the diphthong stands alone, since a bare
-`ow` and `pow` both work — `stah ow ross`, `sah ow loss` — or the bare
-transliteration `stau`, which is not an English word and so cannot be looked
-up.
+**Settled: `au`.** The answer was to stop handing the voice anything it could
+look up at all. σταυρός is `stau ross` and Σαῦλος `sau loss`; θησαυρός is
+`thaysau ross`, σταυρόω `stau raw oh`, ὡσαύτως `hoh sau tohs`. Breaking the
+word so the diphthong stood on its own beat — `stah ow ross` — was rejected
+for the beat it adds, in Fraser's words because "that ow doesn't align with
+any letters in the word".
+
+So the full picture for αυ: **`ow` is right when the token is not an English
+word** (`ow toss`, `pow`, `kow`, `dow`, `thow`), wrong when it is one whose
+vowel is /oʊ/ (`sow`, `mow`, `stow`), and `au` is right anywhere because it
+is not a word at all.
 
 ### Settled outright
 
@@ -215,10 +221,34 @@ up.
   one of the ten -σις nouns ends in a short i (`ˈkri.sis`). The pack said it
   both ways, six to four, and the one clip an ear had passed — 663 κτίσις
   `kitsis` — was already a `sis`. `kree sis` approved.
-- **`tay` losing its t is positional.** τηρέω came back *hay reh oh*; it is
-  the only one of the nine `tay` clips where the token starts the word, and
-  closing it up to `tayreh oh` fixed it. The other eight sit after a
-  consonant and are untouched.
+- **The short omicron, split by measurement rather than by rule.** `do` is the
+  worst of the English words because its vowel is not even close — δοκέω came
+  back *doo-keh-oh*. Two remedies were already in the pack and both are right,
+  in different words: **`dok keh oh` beat `daw keh oh` before a k**, and
+  **`psew daw my` beat `psew dom my` before an m**. Both halves of each
+  comparison were heard. Where there is no consonant to close on — the -όω
+  verbs, where the o sits against the ω — `raw` wins and that is the same gap
+  πρό has. No rule was extrapolated from either half, and the guide does not
+  offer one: ask the ear per word, and the two candidates are always these.
+- **`aw` is not perfect and seven approved clips use it.** ὁ `haw`, προφήτης
+  `praw fey teys`, ἐντολή `en taw ley`, σοφία, σοφός, ἀγνοέω, νομίζω. Fraser's
+  verdict on it is "closer to the correct sound than the omega, but it doesn't
+  sound quite right", which is why closing the syllable is preferred where
+  there is a consonant to close with. Those seven are not wrong enough to
+  re-record and are recorded here so nobody is surprised by them.
+- **~~`tay` losing its t is positional.~~ Struck the same day, by its own
+  prediction — see below.**
+- **The front of a word can eat an `eh`.** ἐμβαίνω spelled out *a-h-m* before
+  it got going, ἐκτείνω *a-h-k*, ἐγγύς came back *eh-en goose*. Dropping the h
+  fixed all three — `em bye noh`, `ek tay noh`, `eng goos` — and ἐκλεκτός
+  needed both its h's out (`ek lek toss`). But **ἐκλέγομαι `ehk leh go my` and
+  ἔθνος `ehth noss` were heard and passed unchanged**, so this is not a rule
+  about the shape; it is a thing to listen for, and there is no gate.
+- **Ἠσαΐας was wrong in a way nobody was looking for.** It sat in the `Ceye`
+  list, but it is not an αι word: the diaeresis says the vowels are separate,
+  `eː.sa.ˈi.as`, four syllables. The cue had been running them into the
+  diphthong and losing one. It surfaced only because the αι family was listed
+  out to be fixed as a group — **a group fix is also an audit.**
 - **`gheh` is fine, and γέ is not.** I judged `gheh` on γέ because its cue was
   the shortest and therefore the most isolating. That was backwards: **the
   shortest cue is exactly where rule 9 bites**, and γέ came back as the g
@@ -226,11 +256,48 @@ up.
   `gheh` was approved. **When testing a spelling, do not pick the word with
   the least around it — pick a word where it sits the way it usually sits.**
 
-**Still open: γέ.** Neither `gueh` nor `ghe` beat the original, and Fraser's
-note is the honest summary — "the original was better, if you could just keep
-the beginning and cut off the spelling at the end. Though that doesn't give
-you a rule." A single-syllable cue with a digraph has nothing to hide the
-recital behind.
+**Settled: γέ is `geh`.** Neither `gueh` nor `ghe` beat the original, and two
+further rolls of `gheh` did not either; the plain spelling did. The soft-g
+fear that `gh` exists to answer did not materialise on a lone token.
+
+### The rule that was refuted by its own prediction
+
+**τηρέω came back *hay reh oh*, and θησαυρός came back *hay sau ross*.** Two
+clips, the same fault, and a tempting rule: a t-initial cue on `ay` drops its
+consonant. The evidence looked strong — **41 cues open on a consonant + `ay`,
+ten of them heard**, and `may deys`, `spay roh`, `pay tho`, `play thoss`,
+`hay lee ahs` and `skay ney` all keep their consonant. Only the two t-words
+lost it.
+
+So the rule was written down **and made to predict**: θηρίον is the third and
+last `thay`/`tay` opening in the pack and had never been listened to. If the
+rule held, it would lose its th too.
+
+**It did not. θηρίον was passed unchanged.** There is no t rule. Two takes
+needed closing up and a third did not, and the difference is the take rather
+than the spelling — which is what "Atlas is not deterministic" has meant all
+along.
+
+This is the cheapest a rule has ever been killed here. The ζ entry, the
+context-dependence entry and the `keye` measurement all had to be struck
+*after* they had been acted on; this one was stopped before it touched the
+other 39 cues that open the same way. **A rule that can be made to predict
+something unheard should be, before it is applied to anything.** The cost is
+one clip in the next sheet.
+
+### And the checker was wrong again, on the same line
+
+`VOWEL_END` decides whether a token ends in a vowel, and the note above it
+already records the first time it was wrong: it called `lah`, `nah`, `neh`
+and `theh` consonant-final and flagged three clips the ear had passed.
+
+In batch 5 it did it again. **`sigh` ends in a silent gh spelling a
+diphthong** — so do `high` and `nigh` — and the test called all three
+consonant-final, flagging Φαρισαῖος `fah ree sigh oss` an hour after an ear
+approved it. Same line, same class of mistake, second time. The fix is `igh`
+in the pattern, and the standing lesson from CLAUDE.md holds: **before
+concluding the data is wrong, check that the parser is not the thing at
+fault.**
 
 ---
 
