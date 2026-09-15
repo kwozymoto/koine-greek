@@ -169,13 +169,34 @@ use `data-ref` and `data-claim` the same way.
 - Testing locally: the service worker caches hard. Unregister it and clear
   `caches` **before each round**, then reload twice, or you are testing stale
   JavaScript and will believe a fix failed when it did not.
-- **The preview server caches too, and it is the one you will not suspect.**
-  With the service worker gone and every asset re-fetched with
-  `cache:"reload"`, a `fetch()` still came back with the previous build —
-  the file on disk was right and the server was serving an old copy. It
-  cost four rounds of "the fix did not work". Compare the byte count on
-  disk against what the browser fetched; when they differ, stop the preview
-  server and start it again. Nothing short of that clears it.
+- **Something between the file and the browser caches, and it is the one you
+  will not suspect.** With the service worker gone and every asset re-fetched
+  with `cache:"reload"`, a `fetch()` still came back with the previous build
+  while the file on disk was right. It cost four rounds of "the fix did not
+  work".
+
+  There are two layers that can do this and **they need different remedies, so
+  find out which one it is before you act.** `curl` is what tells you, because
+  it goes to the server without the browser in the way. Compare three numbers:
+  `wc -c` on disk, `curl http://localhost:PORT/the/file | wc -c`, and what the
+  page fetched.
+
+  - **curl agrees with the browser, not with disk** — the server. Stop the
+    preview server and start it again.
+  - **curl agrees with disk, the browser does not** — the Browser pane, and
+    restarting the server does nothing at all. This rule used to say a restart
+    was the fix and that nothing short of it would clear the problem, which is
+    what sent a later session restarting a server that had been serving the
+    right bytes all along. On 2026-09-15 disk and curl both said 20,396 bytes
+    for `js/write.js` while the pane fetched 20,173 for the same URL, and the
+    pane held that stale copy through query strings, `cache:"reload"`,
+    `cache:"no-store"`, path variants, a new tab, `location.reload()`, a
+    re-injected `<script>` tag and two full server restarts. The only thing
+    that moved it was **a different origin** — a second
+    `python -m http.server` on another port, added as an entry in
+    `.claude/launch.json`. Take the extra entries out again when you are done;
+    that file is a local tool setting and somebody else may be serving from
+    it.
 - `getComputedStyle(el).stroke` on an SVG element reports the presentation
   attribute, not the rule that is actually painting. It said gold while the
   screenshot showed green. Judge colour from the screenshot.
