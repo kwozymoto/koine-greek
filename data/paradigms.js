@@ -57,13 +57,13 @@ html:`<table><caption>The stem hides in the genitive</caption>
 <tr><th>Acc pl</th><td class="g">σάρκας</td><td class="g">πνεύματα</td><td class="g">πίστεις</td><td class="g">πατέρας</td><td class="g">βασιλεῖς</td></tr></table>`},
 
 {t:"Adjectives and position",ch:6,tags:"agathos attributive predicate",
-html:`<table><caption>ἀγαθός, -ή, -όν — good (singular)</caption>
+html:`<table><caption>ἀγαθός, -ή, -όν — good (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
-<tr><th>Nom</th><td class="g">ἀγαθός</td><td class="g">ἀγαθή</td><td class="g">ἀγαθόν</td></tr>
-<tr><th>Gen</th><td class="g">ἀγαθοῦ</td><td class="g">ἀγαθῆς</td><td class="g">ἀγαθοῦ</td></tr>
-<tr><th>Dat</th><td class="g">ἀγαθῷ</td><td class="g">ἀγαθῇ</td><td class="g">ἀγαθῷ</td></tr>
-<tr><th>Acc</th><td class="g">ἀγαθόν</td><td class="g">ἀγαθήν</td><td class="g">ἀγαθόν</td></tr></table>
-<p class="muted" style="font-size:.83rem"><b>Attributive</b> (inside the article group): ὁ ἀγαθὸς λόγος / ὁ λόγος ὁ ἀγαθός — "the good word". <b>Predicate</b> (outside it): ἀγαθὸς ὁ λόγος — "the word is good". Plural follows λόγος / ἀγάπη / ἔργον.</p>`},
+<tr><th>Nom</th><td class="g">ἀγαθός / ἀγαθοί</td><td class="g">ἀγαθή / ἀγαθαί</td><td class="g">ἀγαθόν / ἀγαθά</td></tr>
+<tr><th>Gen</th><td class="g">ἀγαθοῦ / ἀγαθῶν</td><td class="g">ἀγαθῆς / ἀγαθῶν</td><td class="g">ἀγαθοῦ / ἀγαθῶν</td></tr>
+<tr><th>Dat</th><td class="g">ἀγαθῷ / ἀγαθοῖς</td><td class="g">ἀγαθῇ / ἀγαθαῖς</td><td class="g">ἀγαθῷ / ἀγαθοῖς</td></tr>
+<tr><th>Acc</th><td class="g">ἀγαθόν / ἀγαθούς</td><td class="g">ἀγαθήν / ἀγαθάς</td><td class="g">ἀγαθόν / ἀγαθά</td></tr></table>
+<p class="muted" style="font-size:.83rem"><b>Attributive</b> (inside the article group): ὁ ἀγαθὸς λόγος / ὁ λόγος ὁ ἀγαθός — "the good word". <b>Predicate</b> (outside it): ἀγαθὸς ὁ λόγος — "the word is good".</p>`},
 
 {t:"πᾶς, πολύς, μέγας",ch:18,tags:"pas all every polys much many megas great irregular",
 html:`<table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-)</caption>
@@ -99,7 +99,13 @@ html:`<table><caption>οὗτος — this (sg / pl)</caption>
 <tr><th>Gen</th><td class="g">τούτου / τούτων</td><td class="g">ταύτης / τούτων</td><td class="g">τούτου / τούτων</td></tr>
 <tr><th>Dat</th><td class="g">τούτῳ / τούτοις</td><td class="g">ταύτῃ / ταύταις</td><td class="g">τούτῳ / τούτοις</td></tr>
 <tr><th>Acc</th><td class="g">τοῦτον / τούτους</td><td class="g">ταύτην / ταύτας</td><td class="g">τοῦτο / ταῦτα</td></tr></table>
-<p class="muted" style="font-size:.83rem">ἐκεῖνος, ἐκείνη, ἐκεῖνο — "that" — declines exactly like αὐτός.</p>`},
+<table><caption>ἐκεῖνος — that (sg / pl)</caption>
+<tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
+<tr><th>Nom</th><td class="g">ἐκεῖνος / ἐκεῖνοι</td><td class="g">ἐκείνη / ἐκεῖναι</td><td class="g">ἐκεῖνο / ἐκεῖνα</td></tr>
+<tr><th>Gen</th><td class="g">ἐκείνου / ἐκείνων</td><td class="g">ἐκείνης / ἐκείνων</td><td class="g">ἐκείνου / ἐκείνων</td></tr>
+<tr><th>Dat</th><td class="g">ἐκείνῳ / ἐκείνοις</td><td class="g">ἐκείνῃ / ἐκείναις</td><td class="g">ἐκείνῳ / ἐκείνοις</td></tr>
+<tr><th>Acc</th><td class="g">ἐκεῖνον / ἐκείνους</td><td class="g">ἐκείνην / ἐκείνας</td><td class="g">ἐκεῖνο / ἐκεῖνα</td></tr></table>
+<p class="muted" style="font-size:.83rem">Every ending here is αὐτός’s ending. What differs is where the accent sits: ἐκείνου keeps it on the stem, where αὐτοῦ throws it onto the ending.</p>`},
 
 {t:"Relative pronoun",ch:23,tags:"hos he ho who which relative",
 html:`<table><caption>ὅς, ἥ, ὅ — who, which (sg / pl)</caption>

@@ -72,6 +72,16 @@ BENIGN = {
     ("ἔσομαι", "εἰμί future, tagged middle"), ("ἔσῃ", "εἰμί future, tagged middle"),
     ("ἔσται", "εἰμί future, tagged middle"), ("ἐσόμεθα", "εἰμί future, tagged middle"),
     ("ἔσεσθε", "εἰμί future, tagged middle"), ("ἔσονται", "εἰμί future, tagged middle"),
+    # ἐκεῖνος and ἀγαθός gained full paradigms, and four of their cells are
+    # spellings the New Testament only ever uses in the neighbouring parse.
+    # Each is one spelling doing two jobs, the same case the entries above
+    # cover — not a form anyone reconstructed.
+    ("ἐκεῖνα", "nominative and accusative neuter plural are the same form; "
+               "the NT only uses it as an accusative"),
+    ("ἐκείνῳ", "the dative singular is the same for masculine and neuter"),
+    ("ἐκείνοις", "the dative plural is the same for masculine and neuter"),
+    ("ἀγαθῶν", "the genitive plural is the same for every gender; the NT has "
+               "it as masculine and neuter and never as feminine"),
 }
 BENIGN_FORMS = {f for f, _ in BENIGN}
 
