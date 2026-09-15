@@ -133,6 +133,107 @@ name in `check_vocab`'s `CUE_OK`.
 
 ---
 
+## What batch 5 changed, 2026-09-15
+
+Batch 5 was the first built out of **spellings rather than words**, because
+589 of the 818 clips had never been heard and the previous four rounds had
+each found the same thing: not one bad word, one bad spelling, in every word
+carrying it. Thirty-eight clips, twenty questions, and a rejected cue always
+came back in the follow-up sheet **rolled again as a control** — the voice is
+not deterministic and this guide has twice had to strike a rule written on a
+single take. Every control failed again, so none of what follows rests on one
+roll.
+
+### The one rule that explains four separate faults
+
+**The voice reads an English word as that word. How much that matters depends
+on how far the word's vowel is from the Greek one.** That single sentence now
+covers the gold-vowel rule, the `do` fault, the `ro` fault and the whole αυ
+problem, which had been four unrelated entries.
+
+| the token | English gives | Greek wants | audible? |
+|---|---|---|---|
+| `no`, `so` *mid-word* | /oʊ/ | short o | barely — **four clips passed** |
+| `so`, `crow` *first* | /oʊ/ | short o | yes — five for five |
+| `do` | **/uː/** | short o | yes — δοκέω came back *doo-keh-oh* |
+| `ro` | /oʊ/ | short o | yes |
+| `sow`, `mow`, `stow` | /oʊ/ | **/aʊ/** | yes, badly |
+
+So the mid-word work list this guide has carried since batch 4 is **closed,
+and closed as a negative**: γίνομαι, παραγίνομαι, μετανοέω and ὀπίσω all
+carry a mid-word gold token and all passed by ear. The rule is first-token
+only *for ο*, and position-free for αυ, because the gap is bigger.
+
+The remedy is unchanged and now proven three more times: stop the token being
+a word the voice can look up. Spell the vowel (`daw`, `raw`, following the
+approved `saw` and `naw`) or close the syllable with a doubled consonant.
+
+### αυ, which English cannot spell — and the approval it hid
+
+αυ wants /aʊ/. `ow` gives it **unless the token is a real English word whose
+vowel is /oʊ/** — and `sow`, `mow`, `stow`, `low`, `tow`, `bow` all are.
+`pow`, `kow`, `dow`, `thow` and a bare `ow` are not words at all, so the
+voice falls back on *cow, now, how* and they are right.
+
+**σταυρός was approved in an earlier batch and is wrong.** `stowross` reads
+with the vowel of *mow*; Fraser overturned it on 2026-09-15 while listening
+to it as a *control* for a different question. That is the second time an
+approval has hidden a fault — the first was the gold vowel, where three of
+the five words had been passed before anyone was asking about that o. **An
+approval means the clip was judged good, not that every property of it was
+examined.** Put an old approval in a new sheet whenever a new rule would
+touch it.
+
+Of the remedies tried, only one works so far:
+
+| | |
+|---|---|
+| `eh mout too` for ἐμαυτοῦ | **approved** — `-out` is reliably /aʊt/, as in *pout, rout, tout* |
+| `stour ross`, `sour loss`, `thay sour oss` | rejected — `-our` is not /aʊər/ here |
+| `stah oo ross`, `sah oo loss` | rejected — spelling it out adds a beat and loses the diphthong |
+
+**Still open: σταυρός, σταυρόω, Σαῦλος, θησαυρός, ὡσαύτως.** The untried
+direction is to break the word so the diphthong stands alone, since a bare
+`ow` and `pow` both work — `stah ow ross`, `sah ow loss` — or the bare
+transliteration `stau`, which is not an English word and so cannot be looked
+up.
+
+### Settled outright
+
+- **αι after a consonant takes a real English word, and this now reaches the
+  whole family.** `keye` and `peye` were banned in `check_cues` one word at a
+  time; `seye` was never added and Φαρισαῖος failed on it. `fah ree sigh oss`
+  and `ah nah bye noh` were both approved, so `bye`, `sigh`, `high`, `lie`,
+  `die`, `nigh` replace `beye`, `seye`, `heye`, `leye`, `deye`, `neye` across
+  **sixteen clips**.
+- **A -ος word never ends in a bare `os`.** 83 of the 102 already ended
+  `oss`, 54 of those heard, and 58 rows carry a note recording the day their
+  bare ending was changed. Eighteen were missed; seventeen of the eighteen
+  repairs were approved at once. The exception was Φαρισαῖος, and the ending
+  was not the fault — `seye` was.
+- **-σις is `sis`, not `sees`.** Settled by the IPA rather than by ear: every
+  one of the ten -σις nouns ends in a short i (`ˈkri.sis`). The pack said it
+  both ways, six to four, and the one clip an ear had passed — 663 κτίσις
+  `kitsis` — was already a `sis`. `kree sis` approved.
+- **`tay` losing its t is positional.** τηρέω came back *hay reh oh*; it is
+  the only one of the nine `tay` clips where the token starts the word, and
+  closing it up to `tayreh oh` fixed it. The other eight sit after a
+  consonant and are untouched.
+- **`gheh` is fine, and γέ is not.** I judged `gheh` on γέ because its cue was
+  the shortest and therefore the most isolating. That was backwards: **the
+  shortest cue is exactly where rule 9 bites**, and γέ came back as the g
+  followed by *h-e-h* recited. On καταργέω, where the token is not alone,
+  `gheh` was approved. **When testing a spelling, do not pick the word with
+  the least around it — pick a word where it sits the way it usually sits.**
+
+**Still open: γέ.** Neither `gueh` nor `ghe` beat the original, and Fraser's
+note is the honest summary — "the original was better, if you could just keep
+the beginning and cut off the spelling at the end. Though that doesn't give
+you a rule." A single-syllable cue with a digraph has nothing to hide the
+recital behind.
+
+---
+
 **This is a procedure, not a formula.** Atlas is not deterministic: the same
 `pahss` that once split into "pa has" was later read correctly. Expect to
 produce two or three candidates and choose by ear. First-pass success is
