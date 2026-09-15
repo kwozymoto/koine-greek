@@ -824,8 +824,26 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   background:var(--surface);border:1px solid var(--line);border-left:3px solid
   var(--gold-dim);border-radius:10px;padding:12px 14px;margin:0 0 20px}
 .labar .btn{flex:0 0 auto}
-.lanote{color:var(--muted);font-size:.83rem;line-height:1.45;flex:1 1 15em;
-  min-width:13em}
+.lanote{color:var(--muted);font-size:.83rem;line-height:1.45;flex:1 1 auto}
+/* The ⓘ is drawn rather than typed: a glyph would inherit the serif Greek
+   face on some platforms and sit off-centre. */
+.lainfo{flex:0 0 auto;margin-left:auto}
+.lainfo>summary{list-style:none;cursor:pointer;width:22px;height:22px;
+  border:1px solid var(--line);border-radius:50%;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;font:italic 600 13px
+  var(--ui);position:relative}
+.lainfo>summary::-webkit-details-marker{display:none}
+.lainfo>summary::after{content:"i"}
+.lainfo>summary:hover,.lainfo[open]>summary{color:var(--gold);
+  border-color:var(--gold-dim)}
+.lainfo>summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.lainfo>div{flex-basis:100%;margin-top:10px;color:var(--muted);
+  font-size:.83rem;line-height:1.5}
+.lainfo>div p{margin:0 0 7px}
+.lainfo>div p:last-child{margin-bottom:0}
+.labar{position:relative}
+.lainfo[open]{display:contents}
+.lainfo[open]>div{order:9}
 .lblk{position:relative;padding-left:30px;border-radius:8px;
   transition:background .25s}
 .lblk.on{background:var(--surface)}

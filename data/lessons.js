@@ -98,43 +98,61 @@ quiz:[
 {q:"An iota subscript (ᾳ, ῃ, ῳ) usually signals which case?",o:["Dative","Nominative","Genitive","Accusative"],a:0,w:"Dative, about five times in six. It is a silent letter and a loud grammatical clue.",sec:5},
 {q:"Which of these is most likely to be misread by an English speaker?",o:["β as b","δ as d","ρ as p","κ as k"],a:2,w:"ρ is r. So is η for n, υ for v, χ for x and ω for w. Everyone makes these at least once.",sec:5}]},
 {id:2,t:"The Greek verbal system",s:"The map before the territory",
-body:`<p>Before learning any paradigm, get the shape of the whole system. It is worth an hour now, because everything from here to chapter 27 hangs on it, and because the alternative is memorising a great many endings without knowing what they are for.</p>
-<p>A Greek verb with a person on it encodes five things: <b>person, number, tense, voice and mood</b>. Parsing it means naming all five. <span class="gk">λύομεν</span> is first person plural, present, active, indicative — "we loose". Five facts, one word, no helping verbs required. The participle and the infinitive have no person, and this chapter comes to them; they are a third of the verb forms in the book.</p>
-<h3>Aspect comes first</h3>
-<p>This is the single most important thing in the chapter, and it is the thing most likely to have been taught to you wrongly.</p>
-<p>Greek tenses differ less by <i>when</i> the action happened than by <i>how</i> the writer chose to present it. That choice is called aspect. Most modern grammars count three:</p>
+body:`<p>This chapter has no endings to learn. It is the map, and we will be reading it for a long time yet — so a few minutes on it now saves a great deal of puzzlement later.</p> 
+<p>Here is the whole of it in one sentence: <b>an English verb needs helpers to say what a Greek verb says in one word.</b> We say <i>we are loosing</i> — three words. Greek says <span class="gk">λύομεν</span>. Everything below answers one question: <i>what is packed into that one word?</i></p> 
+<p>Five things are, and these five names will come up constantly.</p> 
+<table>
+<tr><th>What it tells us</th><th>In plain terms</th></tr>
+<tr><td><b>Person</b></td><td>Who is acting — I, you, or he, she, it</td></tr>
+<tr><td><b>Number</b></td><td>How many — one, or more than one</td></tr>
+<tr><td><b>Tense</b></td><td>The shape the verb takes. In Greek this says more about <i>how</i> than about <i>when</i></td></tr>
+<tr><td><b>Voice</b></td><td>Whether the subject is doing the action, or having it done to it</td></tr>
+<tr><td><b>Mood</b></td><td>What kind of claim is being made — a statement of fact (the <b>indicative</b>), a command, a possibility</td></tr>
+</table> 
+<p>Naming all five is called <b>parsing</b>, and it is most of what reading Greek consists of. <span class="gk">λύομεν</span> is first person, plural, present, active, indicative — "we loose". Five facts in one word, and not a helping verb in sight.</p> 
+<h3>What is aspect, and why does it come first?</h3> 
+<p>This is the most important idea in the chapter, and the one most likely to have been taught to you wrongly.</p> 
+<p>We are used to tense meaning time. In Greek it mostly means something else: <b>aspect</b>, which is how the writer chose to <i>present</i> an action rather than when it happened. Most modern grammars count three.</p> 
 <table><tr><th>Aspect</th><th>Presents the action as</th><th>Tenses</th></tr>
 <tr><td>Imperfective</td><td>going on, from inside</td><td>present, imperfect</td></tr>
 <tr><td>Perfective</td><td>a single whole, from outside</td><td>aorist</td></tr>
-<tr><td>Stative</td><td>a state resulting from it</td><td>perfect, pluperfect</td></tr></table>
-<p>An English speaker naturally hears "he loosed" and thinks: past. A Greek reader hears <span class="gk">ἔλυσεν</span> and thinks: presented as one complete act. The two often coincide. They are not the same claim, and where they come apart is where careful reading pays.</p>
-<h3>A warning about the words</h3>
-<p>Black calls the three aspects imperfective, <i>aoristic</i> and <i>perfective</i> — so in his usage "perfective" means the perfect, not the aorist. Most modern grammars use perfective for the aorist, which is what this course does.</p>
-<p>Neither is wrong; they are simply different conventions, and you will meet both. When you read Black, translate.</p>
-<p>And the three-way division is itself a convention rather than a discovery. The stative is the contested one: some grammarians give the perfect and pluperfect an aspect of their own, as the table does, and others fold them into the other two. Nothing in this course turns on which you prefer.</p>
-<h3>Time is only fixed in the indicative</h3>
-<p>Outside the indicative mood, the tense is telling you about aspect and almost nothing about time. An aorist participle is not automatically past. An aorist infinitive carries no time of its own: <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 22 comes back to it. The one exception is reported speech, where an infinitive's tense can carry time relative to the main verb.</p>
-<p>It is why chapter 22 will call the infinitive the easiest place in the verb to see aspect: there is no time there to distract you.</p>
-<h3>Mood: how the speaker relates it to reality</h3>
-<p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p>
-<p>The <b>indicative</b> affirms. It presents the action as fact: <i>he has mercy</i>. Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it.</p>
-<p>The <b>imperative</b> commands: <i>Lord, have mercy</i>. The <b>subjunctive</b> presents the action as contingent, projected, not yet settled: <i>if he should have mercy</i>. The <b>optative</b> is rarer still, and by the Koine period it is fading: 68 occurrences in the whole New Testament.</p>
-<p>The <b>infinitive</b> and the <b>participle</b> are not moods in the same sense. They are verb forms that decline to specify a person at all — the infinitive a verbal noun, the participle a verbal adjective. Both have tense and voice, and neither has a subject of its own in the ordinary way.</p>
-<p>Two consequences worth carrying. Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when. And the negative mostly follows the mood rather than the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. You meet that, and the exception worth knowing, in the next chapter.</p>
-<h3>Voice: how the subject relates to the action</h3>
-<p>The <b>active</b> voice presents the subject as doing the action. <span class="gk">ἀκούω</span>, I hear.</p>
-<p>The <b>passive</b> presents the subject as being acted upon. I am heard. Where the agent is named, it is usually <span class="gk">ὑπό</span> with the genitive.</p>
-<p>The <b>middle</b> is the one English has no equivalent for, and it is worth knowing now that it exists rather than being surprised by it in chapter 12. The subject acts <i>with reference to itself</i> — on itself, for itself, or in its own interest. It is not reflexive exactly, and it is not passive.</p>
-<p>The practical difficulty is that middle and passive share their endings in most tenses, so the form alone often cannot tell you which one is meant. Only the verb and the sentence can. A great many verbs are also <i>deponent</i> — middle in form and active in meaning, like <span class="gk">ἔρχομαι</span>, I come — which looks like an exception and is really the middle doing something English has no way to say.</p>
-<h3>Two sets of endings</h3>
-<p><b>Primary</b> endings appear on the tenses whose indicative refers to present or future time: present, future, perfect. <b>Secondary</b> endings appear on the past-time tenses: imperfect, aorist, pluperfect. Those also take the <b>augment</b>, an <span class="gk">ἐ</span> prefixed to the stem.</p>
-<p>This is worth more than it looks. Spotting an augment and a secondary ending tells you "past" before you have identified the verb, the person, or even the word. You are reading the shape before you read the word, which is what fluency in an inflected language actually consists of.</p>
-<h3>Principal parts</h3>
-<p>Each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.</p>
-<p>For <span class="gk">λύω</span>: <span class="gk">λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην</span>.</p>
-<p>Regular verbs build all six from one stem. The common irregulars have to be learned, and there is a drill here for exactly the forty-one that are worth the trouble. Take heart: the irregularity is concentrated rather than scattered. It lives in the principal parts of a few hundred verbs, and the commonest of those you will meet often enough to learn without trying.</p>
-<h3>The discipline</h3>
-<p>From here on, never say a form means something until you have parsed it. Not because parsing is the goal — it is not, reading is — but because the ending is where the meaning lives, and guessing from the stem is how confident mistranslations are made.</p>
+<tr><td>Stative</td><td>a state resulting from it</td><td>perfect, pluperfect</td></tr></table> 
+<p>An English speaker hears "he loosed" and thinks: past. A Greek reader meets <span class="gk">ἔλυσεν</span> and thinks: presented as one complete act. The two often line up. They are not the same claim, and where they come apart is where careful reading pays.</p> 
+<h3>Two names for the same thing</h3> 
+<p>One warning before you read anything else on Greek, because the labels move about. Black calls the three aspects <i>imperfective</i>,
+<i>aoristic</i> and <i>perfective</i> — so in his usage "perfective" means the perfect. Most modern grammars, and this course, use perfective for the aorist.</p> 
+<p>Neither is wrong. They are two conventions and you will meet both, so when you read Black, translate. Some grammarians also decline to give the perfect an aspect of its own; nothing here turns on it.</p> 
+<h3>When does the tense tell us the time?</h3> 
+<p>Only in the indicative. Everywhere else the tense is telling us about aspect and almost nothing about time.</p> 
+<p>Two forms show this most clearly, and both are worth meeting now. The
+<b>infinitive</b> is the <i>to</i> form — <i>to loose</i>. The
+<b>participle</b> is the <i>-ing</i> form used as a describing word —
+<i>loosing</i>, <i>the one loosing</i>. Neither carries a person, and between them they are about a third of the verb forms in the book.</p> 
+<p>Both have a tense, and in neither does that tense mean time. An aorist participle is not automatically past. <span class="gk">τὸ ἀποθανεῖν</span> in Philippians 1:21 is not "to have died", and chapter 22 comes back to it. The one exception is reported speech, where an infinitive's tense can carry time relative to the main verb.</p> 
+<h3>What does mood tell us?</h3> 
+<p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p> 
+<p>The <b>indicative</b> states it as fact: <i>he has mercy</i>. Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it. The <b>imperative</b> commands: <i>Lord, have mercy</i>. The <b>subjunctive</b> presents the action as contingent, not yet settled:
+<i>if he should have mercy</i>. The <b>optative</b> is rarer still and fading by the Koine period — 68 occurrences in the whole New Testament.</p> 
+<p>Two things to carry away. Only the indicative fixes time. And the negative follows the mood rather than the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. The next chapter takes that up, along with the exception worth knowing.</p> 
+<h3>What does voice tell us?</h3> 
+<p>The <b>active</b> presents the subject as doing the action: <span class="gk">ἀκούω</span>,
+<i>I hear</i>. The <b>passive</b> presents it as having the action done to it: <i>I am heard</i>. Where the doer is named, <span class="gk">ὑπό</span> usually marks who it was.</p> 
+<p>The <b>middle</b> has no English equivalent, and is worth meeting now rather than being ambushed by it in chapter 12. The subject acts with reference to itself — on itself, for itself, or in its own interest. It is not quite reflexive, and it is not passive.</p> 
+<p>Now the hard part, and it does not get easier: in most tenses the middle and the passive share their endings, so the form alone cannot tell us which is meant. Only the verb and the sentence can. Many verbs are also
+<b>deponent</b> — middle in form, active in meaning, like <span class="gk">ἔρχομαι</span>,
+<i>I come</i>.</p> 
+<h3>How can we spot a past tense at a glance?</h3> 
+<p>By two marks that travel together. Greek has two sets of personal endings.
+<b>Primary</b> endings go on the tenses whose indicative refers to present or future time: present, future, perfect. <b>Secondary</b> endings go on the past-time tenses: imperfect, aorist, pluperfect.</p> 
+<p>Those past tenses also take an <b>augment</b> — an <span class="gk">ἐ</span> fixed to the front of the verb.</p> 
+<p>This is worth more than it looks. Spotting an augment and a secondary ending tells us "past" before we have worked out the verb, the person, or even which word it is. Reading the shape before the word is what fluency in a language like this actually consists of.</p> 
+<h3>What are principal parts?</h3> 
+<p>A verb's <b>stem</b> is the part that carries its meaning, before any ending is added. Most verbs build every form they have out of one stem. Not all of them do, and the ones that do not are common.</p> 
+<p>So each verb has up to six <b>principal parts</b> — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive. For <span class="gk">λύω</span> they are
+<span class="gk">λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην</span>.</p> 
+<p>Take heart: the irregularity is concentrated rather than scattered. It lives in the principal parts of a few hundred verbs, and the commonest of those you will meet often enough to learn without trying. There is a drill here for exactly the forty-one that are worth the trouble.</p> 
+<h3>The discipline</h3> 
+<p>From here on, never say a form means something until you have parsed it. Not because parsing is the goal — reading is — but because the ending is where the meaning lives, and guessing from the stem is how confident mistranslations are made.</p> 
 <p>The endings are small. The payoff is the whole language.</p>`,
 v:[],
 vids:[{t:"Lecture 2: The Greek Verbal System",s:"Daily Dose of Greek — Rob Plummer (11:36)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-2/"}],

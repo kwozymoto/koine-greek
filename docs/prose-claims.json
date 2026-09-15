@@ -126,13 +126,13 @@
   "finding": "About the alphabet's familiarity. Read and left as written."
  },
  {
-  "k": "03423eee908c",
+  "k": "0a88de5dfd30",
   "ch": 2,
   "kind": "count",
   "src": "body",
-  "text": "The optative is rarer still, and by the Koine period it is fading: 68 occurrences in the whole New Testament.",
-  "status": "verified",
-  "finding": "68 optatives in the SBLGNT, exact."
+  "text": "Two forms show this most clearly, and both are worth meeting now.",
+  "status": "read",
+  "finding": "A signpost rather than a claim — it asserts nothing that could be false. It is in the register because the extractor matches 'both', and it is recorded rather than excluded so that the count stays honest."
  },
  {
   "k": "214ec4b7eabc",
@@ -144,13 +144,22 @@
   "finding": "The middle/passive caution, which the outside audit singled out as one of the course's best instincts. Read and left as written."
  },
  {
-  "k": "3318c3e675d1",
+  "k": "21e861298f58",
   "ch": 2,
   "kind": "absolute",
   "src": "body",
-  "text": "Time is only fixed in the indicative Outside the indicative mood, the tense is telling you about aspect and almost nothing about time.",
-  "status": "verified",
-  "finding": "SOURCED. Robertson, Grammar ch.XVIII (Tense): \"The Greeks evidently felt that there was no need for time in the other modes except in a relative sense. As a matter of fact, the real time of subjunctive, optative, and imperative is future in relation to speaker or writer... It is only by the augment (probably an adverb) that past time is clearly expressed\" — and later, \"There is no time element in the present subjunctive.\" So the augment really is the temporal element, and what time a non-indicative carries is relative. Chapter 2's 'almost nothing about time' is the right strength; chapter 16's 'aspect and nothing more' was the overstatement this pass corrected. Read from the clean Logos export in Greek App Reference/Robertson, not the broken OCR."
+  "text": "Now the hard part, and it does not get easier: in most tenses the middle and the passive share their endings, so the form alone cannot tell us which is meant.",
+  "status": "read",
+  "finding": "The chapter's thesis about voice, and true of the present, imperfect, perfect and pluperfect. Reworded from 'the practical difficulty is that', and the substance is unchanged: it is a claim about the ending tables, not a count."
+ },
+ {
+  "k": "2430d5a145e2",
+  "ch": 2,
+  "kind": "count",
+  "src": "body",
+  "text": "Greek has two sets of personal endings.",
+  "status": "read",
+  "finding": "The traditional primary/secondary division: primary on present, future and perfect, secondary on imperfect, aorist and pluperfect. Standard, and the corpus's own endings bear it out."
  },
  {
   "k": "347a4665af80",
@@ -162,22 +171,31 @@
   "finding": "True as stated, because it says FINITE. The chapter's body did not: it opened 'Every Greek verb form encodes five things', twenty lines above its own 'The infinitive and the participle ... decline to specify a person at all'. Corpus: participles 6,640 plus infinitives 2,285 are 8,925 of 28,056 verb forms, 32%. The body now scopes it and names the exception; this quiz explanation always had it right. Found by reading."
  },
  {
-  "k": "5ed45a032522",
-  "ch": 2,
-  "kind": "count",
-  "src": "body",
-  "text": "Two sets of endings Primary endings appear on the tenses whose indicative refers to present or future time: present, future, perfect.",
-  "status": "read",
-  "finding": "The traditional primary/secondary division: primary on present, future and perfect, secondary on imperfect, aorist and pluperfect. Standard, and the corpus's own endings bear it out."
- },
- {
-  "k": "63b46f9370a4",
+  "k": "62a5e92d17ff",
   "ch": 2,
   "kind": "absolute",
   "src": "body",
-  "text": "The practical difficulty is that middle and passive share their endings in most tenses, so the form alone often cannot tell you which one is meant.",
+  "text": "Most verbs build every form they have out of one stem.",
   "status": "read",
-  "finding": "The chapter's thesis about voice, and true of the present, imperfect, perfect and pluperfect."
+  "finding": "Standard, and the chapter qualifies it in the next sentence rather than leaving it absolute. 'Most verbs' is not a figure this register can settle mechanically — regularity is a property of a stem's history, not of an attested form — so it is read rather than verified."
+ },
+ {
+  "k": "7b271d2dd19f",
+  "ch": 2,
+  "kind": "absolute",
+  "src": "body",
+  "text": "Not all of them do, and the ones that do not are common.",
+  "status": "read",
+  "finding": "The irregular verbs being the common ones is the standard account and is why the app drills exactly forty-one of them rather than sampling. A claim about which verbs a learner meets, not one the corpus settles on its own."
+ },
+ {
+  "k": "7e42913c994c",
+  "ch": 2,
+  "kind": "absolute",
+  "src": "body",
+  "text": "So each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.",
+  "status": "verified",
+  "finding": "Twenty-one verbs have all six attested — αἴρω, βάλλω, γεννάω, γράφω, δέω, δίδωμι among them — so 'up to six' is right and the six categories the chapter names are the ones the text actually fills. Re-counted for this wording. Note that 'perfect middle/passive' is ONE part covering two parse codes; counting them separately gives nought, which is what the first query did."
  },
  {
   "k": "8850e7e68249",
@@ -198,15 +216,6 @@
   "finding": "Sourced to Robertson ch.XVIII: outside the indicative there is no need for time 'except in a relative sense', and only the augment expresses past time."
  },
  {
-  "k": "9a8a7f715813",
-  "ch": 2,
-  "kind": "absolute",
-  "src": "body",
-  "text": "Only the indicative fixes time, which is why the tense of a participle tells you about aspect and not about when.",
-  "status": "verified",
-  "finding": "SOURCED. Robertson, Grammar ch.XVIII (Tense): \"The Greeks evidently felt that there was no need for time in the other modes except in a relative sense. As a matter of fact, the real time of subjunctive, optative, and imperative is future in relation to speaker or writer... It is only by the augment (probably an adverb) that past time is clearly expressed\" — and later, \"There is no time element in the present subjunctive.\" So the augment really is the temporal element, and what time a non-indicative carries is relative. Chapter 2's 'almost nothing about time' is the right strength; chapter 16's 'aspect and nothing more' was the overstatement this pass corrected. Read from the clean Logos export in Greek App Reference/Robertson, not the broken OCR."
- },
- {
   "k": "a34268636ff3",
   "ch": 2,
   "kind": "count",
@@ -225,13 +234,22 @@
   "finding": "Read and left as written."
  },
  {
-  "k": "b0e4e9f12ec0",
+  "k": "b427a1fad7fc",
   "ch": 2,
-  "kind": "absolute",
+  "kind": "count",
   "src": "body",
-  "text": "Principal parts Each verb has up to six principal parts — the building blocks every other form is made from: present, future, aorist active, perfect active, perfect middle/passive, aorist passive.",
+  "text": "The optative is rarer still and fading by the Koine period — 68 occurrences in the whole New Testament.",
   "status": "verified",
-  "finding": "Twenty-one verbs in the corpus have all six attested — αἴρω, βάλλω, γεννάω, γράφω, δέω, δίδωμι among them — so 'up to six' is right and the six categories the chapter names are the ones the text actually fills."
+  "finding": "68 optatives in the corpus, re-counted for this wording: exact. The 'fading by the Koine period' half is the standard account and is not something the count settles."
+ },
+ {
+  "k": "c6ba82993f87",
+  "ch": 2,
+  "kind": "count",
+  "src": "body",
+  "text": "We say we are loosing — three words.",
+  "status": "read",
+  "finding": "A claim about English, not Greek: 'we are loosing' is three words and λύομεν is one. It is the chapter's opening illustration and it is exactly true."
  },
  {
   "k": "cea5854c2fb4",

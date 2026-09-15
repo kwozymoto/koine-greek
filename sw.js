@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v155';
+const VERSION = 'v156';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,45 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v156: chapter 2 rewritten for a reader who has not met the words
+     yet, and chapter 1 gains the alphabet block its narration never
+     had. Every lesson clip is re-cut, so all of them are evicted --
+     they are bulk files and a VERSION bump does not reach them. */
+  'audio/lessons/l01_01.mp3',
+  'audio/lessons/l01_02.mp3',
+  'audio/lessons/l01_03.mp3',
+  'audio/lessons/l01_04.mp3',
+  'audio/lessons/l01_05.mp3',
+  'audio/lessons/l01_06.mp3',
+  'audio/lessons/l01_07.mp3',
+  'audio/lessons/l01_08.mp3',
+  'audio/lessons/l01_09.mp3',
+  'audio/lessons/l01_10.mp3',
+  'audio/lessons/l01_11.mp3',
+  'audio/lessons/l01_12.mp3',
+  'audio/lessons/l01_13.mp3',
+  'audio/lessons/l02_00.mp3',
+  'audio/lessons/l02_01.mp3',
+  'audio/lessons/l02_02.mp3',
+  'audio/lessons/l02_03.mp3',
+  'audio/lessons/l02_04.mp3',
+  'audio/lessons/l02_05.mp3',
+  'audio/lessons/l02_06.mp3',
+  'audio/lessons/l02_07.mp3',
+  'audio/lessons/l02_08.mp3',
+  'audio/lessons/l02_09.mp3',
+  'audio/lessons/l02_10.mp3',
+  'audio/lessons/l02_11.mp3',
+  'audio/lessons/l02_12.mp3',
+  'audio/lessons/l02_13.mp3',
+  'audio/lessons/l02_14.mp3',
+  'audio/lessons/l02_15.mp3',
+  'audio/lessons/l02_16.mp3',
+  'audio/lessons/l02_17.mp3',
+  'audio/lessons/l02_18.mp3',
+  'audio/lessons/l02_19.mp3',
+  'audio/lessons/l02_20.mp3',
+  'audio/lessons/l02_21.mp3',
   /* v154: batch 8. Forty clips played in risk order; 34 were right
      first time. The ranking itself was the experiment and it FAILED:
      the ten with the most shapes against them had no faults and the

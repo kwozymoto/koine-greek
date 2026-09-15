@@ -143,6 +143,25 @@ LOOK = {
 }
 
 
+# An empty <div> in a lesson body is a placeholder the app fills at render
+# time, and there is exactly one in the whole course. Nothing is in the source
+# for the builder to read, so without this the ENTIRE alphabet section -- the
+# twenty-four letters, the eight diphthongs, and the prose between them --
+# was silent, and a listener went from "only a handful are genuinely new"
+# straight to the sigma rule with no sign that anything had been skipped.
+#
+# It is handed to the screen, like every other block whose point is a shape.
+PLACEHOLDER = {
+    (1, "alphaHere"):
+        "The alphabet is on screen: twenty-four letters, each with a button "
+        "that says its name and then its sound. Tap through them and say every "
+        "one back aloud — reading them silently does not work here. Below "
+        "them are the diphthongs. Two vowels written together make one sound, "
+        "and these eight are worth knowing before you meet them in the middle "
+        "of a word.",
+}
+
+
 def flat(s):
     return "".join(c for c in unicodedata.normalize("NFD", s or "")
                    if not unicodedata.combining(c)).lower()
@@ -197,7 +216,7 @@ def cue_table():
 
 
 TAG = re.compile(r"<[^>]+>")
-BLOCK = re.compile(r"<(h2|h3|p|table|ul|ol)\b([^>]*)>(.*?)</\1>", re.S)
+BLOCK = re.compile(r"<(h2|h3|p|table|ul|ol|div)\b([^>]*)>(.*?)</\1>", re.S)
 GK = re.compile(r'<span class="gk">(.*?)</span>', re.S)
 
 
@@ -442,6 +461,14 @@ def blocks_for(les, cues, missing):
     for el, m in enumerate(BLOCK.finditer(les["body"])):
         kind, attrs, inner = m.group(1), m.group(2), m.group(3)
         page = clean(TAG.sub(" ", inner)).split()
+        if kind == "div":
+            # A placeholder the app fills. Narrated if PLACEHOLDER names it,
+            # and otherwise passed over rather than guessed at.
+            hit = re.search(r'id="([^"]+)"', attrs)
+            say = PLACEHOLDER.get((les["id"], hit.group(1) if hit else ""))
+            if say:
+                out.append(("look", say, page, [0] * len(page), [el]))
+            continue
         if kind == "table":
             # Nothing on the page maps into a pointer, so every word of the
             # table seeks to the start of it. Better than no seek at all.

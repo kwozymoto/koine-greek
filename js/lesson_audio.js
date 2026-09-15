@@ -106,8 +106,12 @@ function laWrap(els, block) {
 function mountLessonAudio(ch, root) {
   var blocks = laFor(ch);
   if (!blocks.length || !root) return;
+  /* The same tags the builder counts, in the same order -- including the
+     div, which is the alphabet placeholder and the one element in the course
+     whose contents the app writes rather than the lesson. */
   var els = [].slice.call(root.querySelectorAll(
-    ":scope > h2, :scope > h3, :scope > p, :scope > table, :scope > ul, :scope > ol"));
+    ":scope > h2, :scope > h3, :scope > p, :scope > table, :scope > ul," +
+    " :scope > ol, :scope > div"));
   /* The builder numbered the body's blocks in source order. If the rendered
      count does not match, something has been inserted or removed since the
      narration was built and every index is suspect — so nothing mounts. */
@@ -133,16 +137,28 @@ function mountLessonAudio(ch, root) {
     if (laWrap(mine, b)) wrap.dataset.taps = "1";
   });
 
+  /* The bar says the two things you need to act — how long, and that words
+     are tappable. Everything else about how the narration was made is real
+     but is not wanted before you have pressed play, so it goes behind the
+     ⓘ. <details> rather than a modal: no overlay, no focus trap, and it
+     works with JavaScript half-loaded. */
   var bar = document.createElement("div");
   bar.className = "labar";
   var mins = blocks.reduce(function (s, b) { return s + b.d; }, 0) / 60;
   bar.innerHTML =
     '<button class="btn ghost" type="button" id="laAll">▶ Listen to the chapter</button>' +
-    '<span class="lanote">' + blocks.length + ' parts · ' +
-    mins.toFixed(0) + ' minutes. Tap any word to start reading from there.' +
-    '<br>Read by a synthetic voice; the Greek is said the way the word cards ' +
-    'say it, and where the point is a shape on the page it tells you to look.' +
-    '</span>';
+    '<span class="lanote">' + mins.toFixed(0) + ' min · tap any word to ' +
+    'start there</span>' +
+    '<details class="lainfo"><summary aria-label="About this recording" ' +
+    'title="About this recording"></summary><div>' +
+    '<p>Read by a synthetic voice, in ' + blocks.length + ' parts. The play ' +
+    'button beside a paragraph reads that paragraph alone.</p>' +
+    '<p><b>The Greek is said the way the word cards say it</b> — the same ' +
+    'pronunciation you are learning in the deck, not a separate reading.</p>' +
+    '<p>Where the point of a passage is a <i>shape on the page</i> — a ' +
+    'breathing mark, an accent, a table of endings — the voice tells you ' +
+    'to look rather than pretending to read it aloud.</p>' +
+    '</div></details>';
   root.insertBefore(bar, root.firstChild);
   bar.querySelector("#laAll").onclick = function () { laAll(ch); };
 

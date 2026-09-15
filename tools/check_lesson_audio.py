@@ -82,6 +82,25 @@ def main():
                    % (len(nod), ", ".join(nod[:3]),
                       " ..." if len(nod) > 3 else ""))
 
+    # 1b. Every clip is listed for the offline fill. The clips are BULK, not
+    #     SHELL, so nothing precaches them: data/offline.json is the only
+    #     thing that tells a phone to fetch them, and a block whose id moved
+    #     leaves its replacement unlisted. Five went missing exactly that way
+    #     when chapter 2 was rewritten and the ids shifted -- the map, the
+    #     audio and the chapters all agreed, and the chapter was silent
+    #     offline.
+    try:
+        bulk = set(json.load(io.open("data/offline.json", encoding="utf-8"))["bulk"])
+    except Exception as e:
+        bad.append("data/offline.json could not be read: %s" % e)
+        bulk = None
+    if bulk is not None:
+        for r in rows:
+            u = "%s/%s.mp3" % (AUDIO, r["id"])
+            if u not in bulk:
+                bad.append("%s is not in data/offline.json, so it will never "
+                           "be fetched for offline use" % u)
+
     # 2. The shape of each row.
     for r in rows:
         if "d" not in r:

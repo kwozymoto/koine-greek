@@ -64,8 +64,7 @@ if not TITLE:
 XREF = {
     (1, 24): (1, 'The subjunctive mood'),
     (2, 12): (2, 'Present middle and passive indicative'),
-    (2, 22): (2, 'Infinitives (verbal nouns)'),
-    (2, 27): (1, 'Reading your Greek New Testament'),
+    (2, 22): (1, 'Infinitives (verbal nouns)'),
     (3, 2): (1, 'The Greek verbal system'),
     (3, 12): (2, 'Present middle and passive indicative'),
     (3, 19): (1, 'Contract and liquid verbs'),
