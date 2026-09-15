@@ -31,24 +31,27 @@
 
 <h1>Trace scoring — calibration</h1>
 <p class="sub">
-  Not shipped: this page exists so the four numbers in <code>WRITE</code> are set from a
+  Not shipped: this page exists so the numbers in <code>WRITE</code> are set from a
   measurement rather than from taste. It reads them out of <code>js/write.js</code> and calls the
   real <code>wScore()</code>, so it calibrates the scorer the app runs, not a copy of it.
   Eight synthetic traces are put over all 24 letters. <b>middle</b>, <b>jitter 5</b> and
   <b>tail</b> should pass; <b>oversize</b>, <b>scribble</b> and <b>line</b> should not;
   the two heavier jitters are the boundary and may go either way.
-  <b>tail</b> is the reported bug — the letter followed properly, then a fifth of the
-  ink run off the bottom. It should still pass, but it must not read in the nineties,
-  which is what it used to do.
+  <b>middle</b> is the row the metric exists for: it traces the letter's own centreline, so
+  it should read at or near 100 for <i>every</i> letter. The area scorer this replaced gave it
+  70 on psi and 88 on alpha — the same flawless trace, marked differently because one glyph
+  is thicker than the other.
+  It is sampled at a different step from the scorer on purpose, so that 100 is measured
+  rather than assumed; see the note above <code>skeleton()</code>.
   The guide is drawn in whatever serif the machine resolves, so absolute numbers shift a
   little between devices; the gap between the groups is what matters.
 </p>
 
 <div class="knobs">
-  <label>grid <input id="kGrid" type="number" min="8" max="120" step="1"></label>
-  <label>probe <input id="kProbe" type="number" min="0.5" max="4" step="0.1"></label>
+  <label>step <input id="kGrid" type="number" min="1" max="12" step="1"></label>
+  <label>tol <input id="kProbe" type="number" min="0.2" max="4" step="0.1"></label>
+  <label>far <input id="kSpill" type="number" min="0.5" max="8" step="0.1"></label>
   <label>pass <input id="kPass" type="number" min="0" max="1" step="0.01"></label>
-  <label>spill <input id="kSpill" type="number" min="0" max="1" step="0.01"></label>
   <button id="run">Run</button>
   <span id="status" style="color:#97a1b5"></span>
 </div>
@@ -63,11 +66,7 @@
 <script>
 /* ---------------------------------------------------------------- traces ---
    A synthetic trace has to come from the glyph itself, or it is only testing
-   the path I happened to draw. So the mask is rasterised and skeletonised by
-   scanning it twice: once by row, taking the centre of each horizontal run,
-   and once by column. Row-scanning alone loses a horizontal bar — every
-   column of pi's crossbar is one long run whose centre is a single point —
-   and column-scanning alone loses a vertical stem. The union follows both.
+   the path I happened to draw. wSkeleton() in js/write.js does that work.
 
    Each skeleton point is emitted as a one-point stroke, which wPath() draws
    as a filled circle of pen width. A line of those IS a pen stroke, and it
@@ -75,42 +74,19 @@
    hand. */
 const STEP = 2;                 // sample every 2px; ~700 points per letter
 
-function maskBits(s) {
-  const w = Math.max(1, Math.round(s.w)), h = Math.max(1, Math.round(s.h));
-  const off = document.createElement("canvas");
-  off.width = w; off.height = h;
-  const c = off.getContext("2d");
-  wGuide(s, c, "#fff");
-  const d = c.getImageData(0, 0, w, h).data;
-  const bits = new Uint8Array(w * h);
-  for (let i = 0; i < w * h; i++) if (d[i * 4 + 3] > 40) bits[i] = 1;
-  return { bits, w, h };
-}
-
-/* Centres of every run along one axis, as fractions of the pad. */
-function runCentres({ bits, w, h }, byRow) {
-  const pts = [];
-  const outer = byRow ? h : w, inner = byRow ? w : h;
-  for (let a = 0; a < outer; a += STEP) {
-    let start = -1;
-    for (let b = 0; b <= inner; b++) {
-      const on = b < inner && bits[byRow ? a * w + b : b * w + a];
-      if (on && start < 0) start = b;
-      if (!on && start >= 0) {
-        const mid = (start + b - 1) / 2;
-        pts.push(byRow ? [mid / w, a / h] : [a / w, mid / h]);
-        start = -1;
-      }
-    }
-  }
-  return pts;
-}
-
 const rnd = (seed => () => (seed = seed * 16807 % 2147483647) / 2147483647)(20260904);
 
+/* wSkeleton() lives in js/write.js, because the scorer needs it too — one
+   implementation, so the page cannot drift from the thing it is calibrating.
+   It answers in pad pixels; strokes are held as fractions.
+
+   DELIBERATELY SAMPLED DIFFERENTLY from the scorer (STEP here, WRITE.step
+   there). If the page built its flawless trace out of the very points the
+   scorer measures against, scoring it 100 would be an identity, not a
+   measurement. At different steps the two point sets genuinely differ and
+   "middle" has to earn its number. */
 function skeleton(s) {
-  const m = maskBits(s);
-  return runCentres(m, true).concat(runCentres(m, false));
+  return wSkeleton(s, STEP).map(([x, y]) => [x / s.w, y / s.h]);
 }
 
 /* Six traces. Each is an array of strokes; a stroke is an array of points. */
@@ -163,9 +139,9 @@ const SHOULD_FAIL = ["oversize", "scribble", "line"];
 // it is a judgement, not a bug.
 
 function run() {
-  ["kGrid", "kProbe", "kPass", "kSpill"].forEach((id, n) => {
+  ["kGrid", "kProbe", "kSpill", "kPass"].forEach((id, n) => {
     const v = +document.getElementById(id).value;
-    if (Number.isFinite(v)) WRITE[["grid", "probe", "pass", "spill"][n]] = v;
+    if (Number.isFinite(v)) WRITE[["step", "tol", "far", "pass"][n]] = v;
   });
   document.getElementById("status").textContent = "measuring…";
 
@@ -188,13 +164,13 @@ function run() {
   }
 
   const pcs = x => Math.round(x * 100);
-  const passed = r => r.coverage >= WRITE.pass && r.spill <= WRITE.spill;
+  const passed = r => r.score >= WRITE.pass;
   document.getElementById("out").innerHTML = `
     <table>
       <thead><tr><th>letter</th>${COLS.map(c => `<th>${c}</th>`).join("")}</tr></thead>
       <tbody>${rows.map(r => `<tr><td>${r.letter} &nbsp;<span style="color:#97a1b5">${r.name}</span></td>${
         COLS.map(c => { const x = r.cells[c];
-          return `<td class="${passed(x) ? "pass" : "fail"}" title="coverage ${pcs(x.coverage)}% · spill ${pcs(x.spill)}%">${pcs(x.score)}</td>`;
+          return `<td class="${passed(x) ? "pass" : "fail"}" title="covered ${pcs(x.covered)}% · on the line ${pcs(x.onLine)}%">${pcs(x.score)}</td>`;
         }).join("")}</tr>`).join("")}</tbody>
       <tfoot><tr><td>worst / best</td>${COLS.map(c => {
         const v = byCol[c];
@@ -215,7 +191,7 @@ function run() {
   const bestBad = Math.max(...wantFail.map(x => x.score));
   document.getElementById("verdict").innerHTML = `
     <div class="verdict">
-      <b>grid ${WRITE.grid} · probe ${WRITE.probe} · pass ${WRITE.pass} · spill ${WRITE.spill}</b><br>
+      <b>step ${WRITE.step} · tol ${WRITE.tol} · far ${WRITE.far} · pass ${WRITE.pass}</b><br>
       good traces wrongly failed: <span class="${missP ? "fail" : "pass"}">${missP} of ${wantPass.length}</span> ·
       bad traces wrongly passed: <span class="${missF ? "fail" : "pass"}">${missF} of ${wantFail.length}</span><br>
       worst good ${pcs(worstGood)} · best bad ${pcs(bestBad)} ·
@@ -225,8 +201,8 @@ function run() {
     rows.length + " letters × " + COLS.length + " traces";
 }
 
-["kGrid", "kProbe", "kPass", "kSpill"].forEach((id, n) => {
-  document.getElementById(id).value = WRITE[["grid", "probe", "pass", "spill"][n]];
+["kGrid", "kProbe", "kSpill", "kPass"].forEach((id, n) => {
+  document.getElementById(id).value = WRITE[["step", "tol", "far", "pass"][n]];
 });
 document.getElementById("run").onclick = run;
 document.fonts.ready.then(run);
