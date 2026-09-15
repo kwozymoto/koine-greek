@@ -69,7 +69,7 @@
   "tier": 1,
   "freq": 2792,
   "tts": "deh",
-  "source": "freq",
+  "source": "batch5",
   "duration_s": 0.629,
   "sha1": "e413dc9e63f7"
  },
@@ -862,7 +862,7 @@
   "tier": 1,
   "freq": 258,
   "tts": "lahm bah noh",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.99,
   "sha1": "ca4f846d4077"
  },
@@ -1202,7 +1202,7 @@
   "tier": 1,
   "freq": 191,
   "tts": "grah foh",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.115,
   "sha1": "b78b614c3334"
  },
@@ -1517,7 +1517,7 @@
   "tier": 2,
   "freq": 154,
   "tts": "hee stay mee",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.227,
   "sha1": "cc805ea48c87"
  },
@@ -2269,7 +2269,7 @@
   "tier": 2,
   "freq": 106,
   "tts": "hoh rah",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 0.96,
   "sha1": "e017a452c24e"
  },
@@ -2385,7 +2385,7 @@
   "tier": 3,
   "freq": 101,
   "tts": "day",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 0.537,
   "sha1": "8a94b8c90bb9"
  },
@@ -3045,7 +3045,7 @@
   "tier": 3,
   "freq": 155,
   "tts": "khah rees",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.355,
   "sha1": "85d93044ef7c"
  },
@@ -4124,7 +4124,7 @@
   "tier": 3,
   "freq": 66,
   "tts": "feh roh",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 0.924,
   "sha1": "53cf665e8659"
  },
@@ -4448,7 +4448,7 @@
   "tier": 3,
   "freq": 59,
   "tts": "ew thoos",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.116,
   "sha1": "31eceeb028d3"
  },
@@ -4834,7 +4834,7 @@
   "tier": 3,
   "freq": 50,
   "tts": "glohs sah",
-  "source": "g2p",
+  "source": "batch5",
   "duration_s": 1.345,
   "sha1": "cd9ae6967198"
  },
