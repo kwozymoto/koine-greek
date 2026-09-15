@@ -1386,10 +1386,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "theh ah o my",
-  "source": "worklist-candidate",
-  "duration_s": 2.208,
-  "sha1": "df2a886ae8bc"
+  "tts": "thay ah o my",
+  "source": "ear-compromise",
+  "duration_s": 2.038,
+  "sha1": "5bb7e3322bce",
+  "take": "2026-09-15, Atlas (b7e_606_c)",
+  "note": "COMPROMISE, the same as θεωρέω: the eta vowel for an epsilon, because no spelling of θε that keeps the vowel escapes the word *the*"
  },
  {
   "index": 607,
@@ -2677,7 +2679,7 @@
   "tier": 5,
   "freq": 18,
   "tts": "ah lay thohs",
-  "source": "worklist-candidate",
+  "source": "batch7",
   "duration_s": 1.488,
   "sha1": "4a08554dd6fe"
  },

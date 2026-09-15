@@ -322,6 +322,66 @@ re-score forty clips on a point an ear has just called a non-issue. It is
 recorded here rather than changed, and it is a real disagreement between two
 of this project's own sources, not an oversight.
 
+## What batch 7 changed, 2026-09-15
+
+Batch 7 was built to test the **method**, because the spelling ranking had
+spent itself: after two rounds the heaviest untested spelling carried three
+clips and 266 of the remaining 293 carried exactly one.
+
+### Composition, and how far it can be trusted
+
+**226 of the 497 unheard clips were built entirely out of spellings an ear
+had passed elsewhere.** Every piece of them judged; only the order not. Ten
+were put up — chosen as the ten places composition was *least* likely to
+hold, not sampled at random — and **seven passed**. One more was a bad take.
+The three genuine failures share one shape. **So 223 of 226 stand, and the
+pile still needing an ear is 271 rather than 497.**
+
+That is the single most useful number this audit has produced, and it came
+from testing the weakest cases rather than a fair sample. A fair sample would
+have passed at a rate nobody could act on.
+
+### A word the voice already knows beats every rule about it
+
+θεωρέω `theh oh reh oh` came back as the English article. The obvious reading
+was "`theh` followed by a bare vowel", and three fixes were built on it — a
+closure, a w glide, a y glide — and all three failed.
+
+**θέλω `thel oh` is heard, approved, and has exactly that shape.** So the rule
+was wrong: it is not what follows, it is the first token *itself*. `thel` does
+not look like the English article; `theh` does, because the h is not a sound
+and what the voice sees is t-h-e. Every working θε- cue — θέλω, θεραπεύω,
+θέλημα, θερίζω, θεμέλιος — has a real consonant straight after the e.
+
+**Look for the clip in the pack that already contradicts the rule you are
+about to write.** It took four rounds here and it was sitting in the same
+eight-row list the whole time.
+
+### Punctuation works, and nothing had tried it
+
+δέω ships as **`deh, oh`**. A comma inside a cue breaks the phrase so the two
+tokens cannot be read as one English word. Eight hundred cues and nobody had
+tried punctuation; `text_normalization` is off, so it reaches the voice.
+
+### Two compromises, recorded by name
+
+θεωρέω and θεάομαι ship as `thay oh reh oh` and `thay ah o my` — **the eta
+vowel where the Greek has epsilon.** Every spelling that keeps the right vowel
+begins with the letters t-h-e. A glide, a closure, a comma and a full stop
+were all auditioned; none beat it, and Fraser's verdict was that the wrong
+vowel is "still a lot better than saying *the* or spelling". They carry
+`source: "ear-compromise"`, like ξηραίνω, so that nobody later reads `thay` as
+this project's opinion about epsilon.
+
+### And a sheet can lose a verdict before it is given
+
+One lot on the 7c sheet held θεωρέω, θεάομαι and δέω with six options and a
+single set of winner buttons — three decisions, one answer. Fraser could not
+express what he heard. **A lot may group clips only when they share one
+answer**; the moment the options are alternatives, each word needs its own.
+The same fault had appeared once before, on Ἱεροσόλυμα in batch 5e, and was
+fixed as an instance rather than as a rule.
+
 ### And the checker was wrong again, on the same line
 
 `VOWEL_END` decides whether a token ends in a vowel, and the note above it

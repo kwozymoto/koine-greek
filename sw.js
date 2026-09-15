@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v152';
+const VERSION = 'v153';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,25 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v153: batch 7, which was built to test the method rather than the
+     clips. Ten of the 226 clips made entirely from approved spellings
+     were picked as the ten places composition was LEAST likely to
+     hold; seven passed, one was a bad take, and the three failures
+     share one narrow shape. 223 of 226 stand, so the pile still
+     needing an ear is 271 and not 497.
+     θεωρέω and θεάομαι ship as ear-compromise: `thay` is the eta
+     vowel where the Greek has epsilon, because every spelling that
+     keeps the vowel begins with the letters t-h-e and Atlas reads
+     those as the article. δέω escaped it with a COMMA, which nothing
+     in this pack had used before. */
+  'audio/vocab/130_archiereus.mp3',
+  'audio/vocab/163_allelon.mp3',
+  'audio/vocab/174_peripateo.mp3',
+  'audio/vocab/302_theoreo.mp3',
+  'audio/vocab/364_deo.mp3',
+  'audio/vocab/477_neanias.mp3',
+  'audio/vocab/485_thugater.mp3',
+  'audio/vocab/606_theaomai.mp3',
   /* v152: batch 6. Twenty spellings judged, about seventy clips
      cleared, and only eight clips actually changed -- fourteen of
      the twenty were right as they stood. Three of the six failures

@@ -55,7 +55,7 @@
   "tier": 1,
   "freq": 2905,
   "tts": "soo",
-  "source": "freq",
+  "source": "batch7",
   "duration_s": 0.621,
   "sha1": "34dcaa0cee33"
  },
@@ -83,7 +83,7 @@
   "tier": 1,
   "freq": 2752,
   "tts": "en",
-  "source": "freq",
+  "source": "batch7",
   "duration_s": 0.619,
   "sha1": "4ebb8c1e913b"
  },
@@ -1563,7 +1563,7 @@
   "tier": 2,
   "freq": 150,
   "tts": "hoo pehr",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 0.96,
   "sha1": "97e72feb7e85"
  },
@@ -1838,7 +1838,7 @@
   "tier": 2,
   "freq": 129,
   "tts": "ah mayn",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 1.172,
   "sha1": "bb2334563b09"
  },
@@ -1925,10 +1925,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 122,
-  "tts": "ahr khee eh rews",
-  "source": "g2p",
-  "duration_s": 1.997,
-  "sha1": "1dd5f84fa7cc"
+  "tts": "ahr khee ehrews",
+  "source": "batch7",
+  "duration_s": 1.881,
+  "sha1": "4e3d356fc504",
+  "take": "2026-09-15, Atlas (b7b_130_b)",
+  "note": "four syllables: ἀρχι + ἱερεύς is /ar.xi.e.'reu̯s/, and ι and ε do not combine. Closing the last junction fixed it without merging a beat"
  },
  {
   "index": 131,
@@ -2227,7 +2229,7 @@
   "tier": 2,
   "freq": 109,
   "tts": "pah rah kah leh oh",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 2.437,
   "sha1": "933e3b039817"
  },
@@ -2297,7 +2299,7 @@
   "tier": 3,
   "freq": 82,
   "tts": "ho poo",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 0.885,
   "sha1": "ff9055e57b0a"
  },
@@ -2414,10 +2416,12 @@
   "pos": "pron",
   "tier": 3,
   "freq": 100,
-  "tts": "ahl lay lohn",
-  "source": "g2p",
-  "duration_s": 1.404,
-  "sha1": "226bd3f4df56"
+  "tts": "al lay lohn",
+  "source": "batch7",
+  "duration_s": 1.776,
+  "sha1": "746a4779904e",
+  "take": "2026-09-15, Atlas (b7b_163_a)",
+  "note": "the h of `ahl` woke at the front of the word. ἄλλος keeps its `ahl` and is approved, so this was the junction, not the spelling"
  },
  {
   "index": 164,
@@ -2585,9 +2589,11 @@
   "tier": 3,
   "freq": 95,
   "tts": "peh ree pah teh oh",
-  "source": "g2p",
-  "duration_s": 1.958,
-  "sha1": "184e093c388a"
+  "source": "batch7",
+  "duration_s": 1.881,
+  "sha1": "36fe45b36437",
+  "take": "2026-09-15, Atlas (b7b_174_a)",
+  "note": "the cue did not change: it came back saying \"hef\" once and was right on both re-rolls, so the fault was the take"
  },
  {
   "index": 175,
@@ -2732,7 +2738,7 @@
   "tier": 3,
   "freq": 90,
   "tts": "ah ko loo theh oh",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 2.277,
   "sha1": "763f73b24fa5"
  },
@@ -2746,7 +2752,7 @@
   "tier": 3,
   "freq": 90,
   "tts": "ah pol loo mee",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 1.579,
   "sha1": "04aa28768b51"
  },
@@ -2929,7 +2935,7 @@
   "tier": 3,
   "freq": 36,
   "tts": "hoh spehr",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 1.205,
   "sha1": "c03537ac33cd"
  },
@@ -4507,10 +4513,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 58,
-  "tts": "theh oh reh oh",
-  "source": "g2p",
-  "duration_s": 2.021,
-  "sha1": "4b09de175c8f"
+  "tts": "thay oh reh oh",
+  "source": "ear-compromise",
+  "duration_s": 2.038,
+  "sha1": "2687224f23e8",
+  "take": "2026-09-15, Atlas (b7e_302_c)",
+  "note": "COMPROMISE. `thay` is the ETA vowel and the Greek has epsilon. Every spelling with the right vowel begins with the letters t-h-e, which Atlas reads as the article -- a glide, a closure, a comma and a full stop were all tried and none beat this. Heard and chosen knowingly, 2026-09-15"
  },
  {
   "index": 303,
@@ -4582,7 +4590,7 @@
   "tier": 3,
   "freq": 56,
   "tts": "eh peh roh tah oh",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 1.821,
   "sha1": "5978de3adf33"
  },
@@ -5432,10 +5440,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 43,
-  "tts": "deh oh",
-  "source": "g2p",
-  "duration_s": 0.918,
-  "sha1": "acff907acee2"
+  "tts": "deh, oh",
+  "source": "batch7",
+  "duration_s": 1.071,
+  "sha1": "2fc18adb08ad",
+  "take": "2026-09-15, Atlas (b7d_364_b)",
+  "note": "A COMMA, which nothing in this pack had ever used. δε before a bare vowel reads as the English article; a comma breaks the phrase so it cannot"
  },
  {
   "index": 365,
@@ -5959,7 +5969,7 @@
   "tier": 4,
   "freq": 38,
   "tts": "ew khah ree steh oh",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 2.092,
   "sha1": "d8aa893993c6"
  },
@@ -6861,7 +6871,7 @@
   "tier": 4,
   "freq": 31,
   "tts": "ho moy ohs",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 1.41,
   "sha1": "ccf5e4777320"
  },
@@ -6949,7 +6959,7 @@
   "tier": 4,
   "freq": 30,
   "tts": "eh pee kah leh oh",
-  "source": "g2p",
+  "source": "batch7",
   "duration_s": 2.517,
   "sha1": "7dc356f4313f"
  },

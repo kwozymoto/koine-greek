@@ -115,9 +115,11 @@
   "tier": 5,
   "freq": 4,
   "tts": "neh ah nee ahs",
-  "source": "black",
-  "duration_s": 2.366,
-  "sha1": "76236eccd0de"
+  "source": "batch7",
+  "duration_s": 1.881,
+  "sha1": "b5b8919b0550",
+  "take": "2026-09-15, Atlas (b7b_477_c)",
+  "note": "unchanged. It was rolled to test whether `neh` + a bare vowel fails the way `theh` does, and it does not"
  },
  {
   "index": 478,
@@ -233,10 +235,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 28,
-  "tts": "thoo gah tayr",
-  "source": "black",
-  "duration_s": 1.926,
-  "sha1": "8ad60879f898"
+  "tts": "thoo gah teyr",
+  "source": "batch7",
+  "duration_s": 1.541,
+  "sha1": "9b8eaeae6ca3",
+  "take": "2026-09-15, Atlas (b7c_485_b)",
+  "note": "final -τηρ is eta, Black's e as in obey -- so `tayr` and `teyr` are the same target, and `tayr` came back as the /aI/ of eye in one take and right in another. `ey` is the remedy sixteen other rows already carry a note about"
  },
  {
   "index": 486,
