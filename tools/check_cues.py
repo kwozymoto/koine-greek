@@ -67,6 +67,13 @@ REJECTED = [
      "316 παιδίον \"pay I D on\" 2026-09-11; "
      "169 Φαρισαῖος batch 5, 2026-09-15, where `sigh` fixed it and "
      "245 ἀναβαίνω confirmed `bye` on a second word"),
+    (r"^dz",
+     "ζ at the FRONT of a word takes `z`, not `dz` -- the pack spells the d "
+     "out. Mid-word `dz` is right and is not matched here: ἐγγίζω "
+     "`ehnggeedzoh` and νομίζω `nawmee zoh` are both approved.",
+     "settled by ear in the 511-817 round and written into the guide's own "
+     "header; ζωή `zoh eh` took the fix and ζητέω, ζάω, ζῷον and ζῆλος never "
+     "did, until batch 8 on 2026-09-15"),
     (r"\bsees\b",
      "the -σις ending is a SHORT iota -- κρίσις is ˈkri.sis -- so it is "
      "`sis`. Settled by the IPA, not by ear: six clips said `sees` and four "

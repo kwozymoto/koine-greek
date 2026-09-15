@@ -112,9 +112,10 @@
   "tier": 1,
   "freq": 2462,
   "tts": "ay mee",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.936,
-  "sha1": "c7b84d5900d8"
+  "sha1": "c7b84d5900d8",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 8,
@@ -141,7 +142,7 @@
   "tier": 1,
   "freq": 1767,
   "tts": "ace",
-  "source": "freq",
+  "source": "batch8",
   "duration_s": 0.804,
   "sha1": "55e1e3b47ae6"
  },
@@ -155,9 +156,10 @@
   "tier": 1,
   "freq": 1606,
   "tts": "oo",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.53,
-  "sha1": "9abcc5c58a53"
+  "sha1": "9abcc5c58a53",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 11,
@@ -169,9 +171,10 @@
   "tier": 1,
   "freq": 1407,
   "tts": "hoss",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.67,
-  "sha1": "9a93e2d44702"
+  "sha1": "9a93e2d44702",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 12,
@@ -198,9 +201,10 @@
   "tier": 1,
   "freq": 1296,
   "tts": "ho tee",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.761,
-  "sha1": "031f5397a59c"
+  "sha1": "031f5397a59c",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 14,
@@ -227,7 +231,7 @@
   "tier": 1,
   "freq": 1042,
   "tts": "mey",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 0.721,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -243,7 +247,7 @@
   "tier": 1,
   "freq": 1041,
   "tts": "gar",
-  "source": "freq",
+  "source": "batch8",
   "duration_s": 0.655,
   "sha1": "e1613f9e0a14"
  },
@@ -317,9 +321,10 @@
   "tier": 1,
   "freq": 708,
   "tts": "eh kho",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.786,
-  "sha1": "182bc90ff7c2"
+  "sha1": "182bc90ff7c2",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 22,
@@ -394,9 +399,10 @@
   "tier": 1,
   "freq": 646,
   "tts": "ah po",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.969,
-  "sha1": "e22183c4e96f"
+  "sha1": "e22183c4e96f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 27,
@@ -408,9 +414,10 @@
   "tier": 1,
   "freq": 638,
   "tts": "ahl lah",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.828,
-  "sha1": "17cc8dc4b5a0"
+  "sha1": "17cc8dc4b5a0",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 28,
@@ -422,9 +429,10 @@
   "tier": 1,
   "freq": 634,
   "tts": "air kho my",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 1.248,
-  "sha1": "3a7fc2276953"
+  "sha1": "3a7fc2276953",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 29,
@@ -497,9 +505,10 @@
   "tier": 1,
   "freq": 525,
   "tts": "tiss",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.705,
-  "sha1": "02f67aa30dcb"
+  "sha1": "02f67aa30dcb",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 34,
@@ -541,7 +550,7 @@
   "tier": 1,
   "freq": 498,
   "tts": "oon",
-  "source": "freq",
+  "source": "batch8",
   "duration_s": 0.623,
   "sha1": "52f2de874b01"
  },
@@ -555,9 +564,10 @@
   "tier": 1,
   "freq": 473,
   "tts": "kah tah",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 1.037,
-  "sha1": "20244437883c"
+  "sha1": "20244437883c",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 38,
@@ -569,9 +579,10 @@
   "tier": 1,
   "freq": 469,
   "tts": "meh tah",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.736,
-  "sha1": "e90b1d57498b"
+  "sha1": "e90b1d57498b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 39,
@@ -583,9 +594,10 @@
   "tier": 1,
   "freq": 454,
   "tts": "ho rah oh",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 1.482,
-  "sha1": "7a1139b4e708"
+  "sha1": "7a1139b4e708",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 40,
@@ -597,9 +609,10 @@
   "tier": 1,
   "freq": 428,
   "tts": "ah koo oh",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 1.396,
-  "sha1": "242ad048b9a3"
+  "sha1": "242ad048b9a3",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 41,
@@ -625,7 +638,7 @@
   "tier": 1,
   "freq": 415,
   "tts": "di doh mee",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.363,
   "take": "2026-09-10, Atlas",
   "note": "short iota is 'di', not the machine vowel",
@@ -655,9 +668,10 @@
   "tier": 1,
   "freq": 389,
   "tts": "hay meh rah",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 1.159,
-  "sha1": "d87c3d43571b"
+  "sha1": "d87c3d43571b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 45,
@@ -697,10 +711,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 344,
-  "tts": "hace",
-  "source": "freq",
-  "duration_s": 0.683,
-  "sha1": "a9d9260155fb"
+  "tts": "heyss",
+  "source": "batch8",
+  "duration_s": 0.836,
+  "sha1": "425659f827ed",
+  "take": "2026-09-15, Atlas (b8b_47_b)",
+  "note": "`hace` is a SPANISH word -- the look-up fault in another language. A final -ays comes back voiced where `eys` does not, and the doubled s holds it"
  },
  {
   "index": 48,
@@ -744,9 +760,10 @@
   "tier": 1,
   "freq": 333,
   "tts": "peh ree",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.042,
-  "sha1": "e6f1491703a6"
+  "sha1": "e6f1491703a6",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 51,
@@ -772,9 +789,10 @@
   "tier": 1,
   "freq": 319,
   "tts": "heh ow too",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.379,
-  "sha1": "101d68e426bc"
+  "sha1": "101d68e426bc",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 53,
@@ -786,9 +804,10 @@
   "tier": 1,
   "freq": 318,
   "tts": "oy dah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.761,
-  "sha1": "4eed1df36aaf"
+  "sha1": "4eed1df36aaf",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 54,
@@ -800,9 +819,10 @@
   "tier": 1,
   "freq": 296,
   "tts": "lah leh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.703,
-  "sha1": "033e3a9f45d5"
+  "sha1": "033e3a9f45d5",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 55,
@@ -876,7 +896,7 @@
   "tier": 1,
   "freq": 250,
   "tts": "gey",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 0.713,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -968,9 +988,10 @@
   "tier": 1,
   "freq": 231,
   "tts": "ah po kree no my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.139,
-  "sha1": "ce301c422abd"
+  "sha1": "ce301c422abd",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 66,
@@ -1015,9 +1036,10 @@
   "tier": 1,
   "freq": 220,
   "tts": "hoo po",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.934,
-  "sha1": "61a43d0b9f9e"
+  "sha1": "61a43d0b9f9e",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 69,
@@ -1073,9 +1095,10 @@
   "tier": 1,
   "freq": 215,
   "tts": "teh",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.555,
-  "sha1": "3ad98813fef1"
+  "sha1": "3ad98813fef1",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 73,
@@ -1087,9 +1110,10 @@
   "tier": 1,
   "freq": 210,
   "tts": "doo nah my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.314,
-  "sha1": "bc3da9a27176"
+  "sha1": "bc3da9a27176",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 74,
@@ -1115,9 +1139,10 @@
   "tier": 1,
   "freq": 208,
   "tts": "hoo tohs",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.886,
-  "sha1": "eee6e52f9f47"
+  "sha1": "eee6e52f9f47",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 76,
@@ -1129,9 +1154,10 @@
   "tier": 1,
   "freq": 200,
   "tts": "ee doo",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.864,
-  "sha1": "a71bcd6f3e43"
+  "sha1": "a71bcd6f3e43",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 77,
@@ -1188,9 +1214,10 @@
   "tier": 1,
   "freq": 194,
   "tts": "pah rah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.981,
-  "sha1": "7b18881d7114"
+  "sha1": "7b18881d7114",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 81,
@@ -1232,9 +1259,10 @@
   "tier": 2,
   "freq": 182,
   "tts": "kah thohs",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.335,
-  "sha1": "205210d31791"
+  "sha1": "205210d31791",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 84,
@@ -1246,7 +1274,7 @@
   "tier": 2,
   "freq": 179,
   "tts": "men",
-  "source": "freq",
+  "source": "batch8",
   "duration_s": 0.687,
   "sha1": "3ca628ac82b6"
  },
@@ -1260,7 +1288,7 @@
   "tier": 2,
   "freq": 177,
   "tts": "khayr",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 0.697,
   "sha1": "5ee0e7072d6d"
  },
@@ -1365,9 +1393,10 @@
   "tier": 2,
   "freq": 162,
   "tts": "bah see lay ah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.446,
-  "sha1": "de33c3d01f37"
+  "sha1": "de33c3d01f37",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 93,
@@ -1409,9 +1438,10 @@
   "tier": 2,
   "freq": 160,
   "tts": "to teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.751,
-  "sha1": "d4176e9ca623"
+  "sha1": "d4176e9ca623",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 96,
@@ -1467,7 +1497,7 @@
   "tier": 2,
   "freq": 156,
   "tts": "petross",
-  "source": "rollout",
+  "source": "batch8",
   "duration_s": 0.946,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
   "take": "2026-09-10, Atlas",
@@ -1577,9 +1607,10 @@
   "tier": 2,
   "freq": 148,
   "tts": "kah leh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.71,
-  "sha1": "6e9fdfb52a5c"
+  "sha1": "6e9fdfb52a5c",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 107,
@@ -1591,7 +1622,7 @@
   "tier": 2,
   "freq": 147,
   "tts": "noon",
-  "source": "freq",
+  "source": "batch8",
   "duration_s": 0.731,
   "sha1": "cc57212b3e40"
  },
@@ -1605,7 +1636,7 @@
   "tier": 2,
   "freq": 147,
   "tts": "sarks",
-  "source": "rollout",
+  "source": "batch8",
   "duration_s": 0.955,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -1621,9 +1652,10 @@
   "tier": 2,
   "freq": 146,
   "tts": "heh ohs",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.969,
-  "sha1": "1feb01dae0f0"
+  "sha1": "1feb01dae0f0",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 110,
@@ -1665,9 +1697,10 @@
   "tier": 2,
   "freq": 143,
   "tts": "ah gah pah oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.749,
-  "sha1": "a20343134b74"
+  "sha1": "a20343134b74",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 113,
@@ -1679,9 +1712,10 @@
   "tier": 2,
   "freq": 143,
   "tts": "ah fee ay mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.048,
-  "sha1": "e1cd5bc7c3a5"
+  "sha1": "e1cd5bc7c3a5",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 114,
@@ -1693,9 +1727,10 @@
   "tier": 2,
   "freq": 143,
   "tts": "oo deh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.646,
-  "sha1": "9ffa726c8904"
+  "sha1": "9ffa726c8904",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 115,
@@ -1723,9 +1758,10 @@
   "tier": 2,
   "freq": 142,
   "tts": "soh mah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.134,
-  "sha1": "9ee60be932c9"
+  "sha1": "9ee60be932c9",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 117,
@@ -1750,10 +1786,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 140,
-  "tts": "dzah oh",
-  "source": "g2p",
-  "duration_s": 1.237,
-  "sha1": "10d66c2a9235"
+  "tts": "zah oh",
+  "source": "batch8",
+  "duration_s": 1.149,
+  "sha1": "ec8cddc69a23",
+  "take": "2026-09-15, Atlas (b8b_118_a)",
+  "note": "the same ζ- fix"
  },
  {
   "index": 119,
@@ -1765,9 +1803,10 @@
   "tier": 2,
   "freq": 139,
   "tts": "foh nay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.143,
-  "sha1": "88a08fb6fac1"
+  "sha1": "88a08fb6fac1",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 120,
@@ -1779,9 +1818,10 @@
   "tier": 2,
   "freq": 135,
   "tts": "doo o",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.041,
-  "sha1": "914ab6b1f6a8"
+  "sha1": "914ab6b1f6a8",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 121,
@@ -1942,7 +1982,7 @@
   "tier": 2,
   "freq": 122,
   "tts": "bal loh",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.02,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -2004,9 +2044,10 @@
   "tier": 2,
   "freq": 118,
   "tts": "meh noh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.063,
-  "sha1": "9e1d8e2b45c1"
+  "sha1": "9e1d8e2b45c1",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 136,
@@ -2018,9 +2059,10 @@
   "tier": 2,
   "freq": 117,
   "tts": "ah pehr kho my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.892,
-  "sha1": "b531febadaf1"
+  "sha1": "b531febadaf1",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 137,
@@ -2031,10 +2073,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 117,
-  "tts": "dzay teh oh",
-  "source": "g2p",
-  "duration_s": 1.429,
-  "sha1": "6ae361730f57"
+  "tts": "zay teh oh",
+  "source": "batch8",
+  "duration_s": 1.62,
+  "sha1": "0065c90828e1",
+  "take": "2026-09-15, Atlas (b8b_137_a)",
+  "note": "ζ word-initial takes `z`, not `dz` -- settled by ear in the 511-817 round and recorded in the guide's header. ζωή got the fix; four other ζ- words never did"
  },
  {
   "index": 138,
@@ -2046,9 +2090,10 @@
   "tier": 2,
   "freq": 116,
   "tts": "ah gah pay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.587,
-  "sha1": "91b201d79e44"
+  "sha1": "91b201d79e44",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 139,
@@ -2107,9 +2152,10 @@
   "tier": 2,
   "freq": 114,
   "tts": "kree noh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.199,
-  "sha1": "1bb873cfd18c"
+  "sha1": "1bb873cfd18c",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 143,
@@ -2183,9 +2229,10 @@
   "tier": 2,
   "freq": 109,
   "tts": "ah lay thay ah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.2,
-  "sha1": "d606c2ebdf2a"
+  "sha1": "d606c2ebdf2a",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 148,
@@ -2285,9 +2332,10 @@
   "tier": 2,
   "freq": 95,
   "tts": "eh kay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.115,
-  "sha1": "18d5f71d0819"
+  "sha1": "18d5f71d0819",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 155,
@@ -2373,9 +2421,10 @@
   "tier": 3,
   "freq": 101,
   "tts": "eye roh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.947,
-  "sha1": "6567174a4c58"
+  "sha1": "6567174a4c58",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 161,
@@ -2465,9 +2514,10 @@
   "tier": 3,
   "freq": 100,
   "tts": "tee thay mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.789,
-  "sha1": "d2c3a3d25cba"
+  "sha1": "d2c3a3d25cba",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 167,
@@ -2621,9 +2671,10 @@
   "tier": 3,
   "freq": 94,
   "tts": "eh noh pee on",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.408,
-  "sha1": "8465058dd66f"
+  "sha1": "8465058dd66f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 177,
@@ -2650,9 +2701,10 @@
   "tier": 3,
   "freq": 93,
   "tts": "oy kee ah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.104,
-  "sha1": "5ef4224c4a0b"
+  "sha1": "5ef4224c4a0b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 179,
@@ -2664,7 +2716,7 @@
   "tier": 3,
   "freq": 93,
   "tts": "poos",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 0.772,
   "sha1": "35f8785e2cb5"
  },
@@ -2694,9 +2746,10 @@
   "tier": 3,
   "freq": 92,
   "tts": "ay ray nay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.4,
-  "sha1": "66596bb10782"
+  "sha1": "66596bb10782",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 182,
@@ -2724,9 +2777,10 @@
   "tier": 3,
   "freq": 91,
   "tts": "kah thay my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.293,
-  "sha1": "3fe5bdf39e42"
+  "sha1": "3fe5bdf39e42",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 184,
@@ -2796,9 +2850,10 @@
   "tier": 3,
   "freq": 87,
   "tts": "oo teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.845,
-  "sha1": "10101bb5fa52"
+  "sha1": "10101bb5fa52",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 189,
@@ -2907,9 +2962,10 @@
   "tier": 3,
   "freq": 84,
   "tts": "kah goh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.025,
-  "sha1": "6879e338f66d"
+  "sha1": "6879e338f66d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 196,
@@ -2921,7 +2977,7 @@
   "tier": 3,
   "freq": 83,
   "tts": "may tayr",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.251,
   "sha1": "471799e9adc8"
  },
@@ -2963,9 +3019,10 @@
   "tier": 3,
   "freq": 79,
   "tts": "hoo pah goh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.375,
-  "sha1": "9022205c43e9"
+  "sha1": "9022205c43e9",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 200,
@@ -2977,7 +3034,7 @@
   "tier": 3,
   "freq": 77,
   "tts": "say may on",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.413,
   "sha1": "7a1a2891b45d"
  },
@@ -3022,10 +3079,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 73,
-  "tts": "fohs",
-  "source": "g2p",
-  "duration_s": 1.04,
-  "sha1": "089ec9046d1c"
+  "tts": "foce",
+  "source": "batch8",
+  "duration_s": 0.758,
+  "sha1": "5771088d2f01",
+  "take": "2026-09-15, Atlas (b8b_203_b)",
+  "note": "one syllable with nothing left over to spell; `fohs` left the s to be recited"
  },
  {
   "index": 204,
@@ -3127,9 +3186,10 @@
   "tier": 3,
   "freq": 76,
   "tts": "ew ahng geh lee on",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.987,
-  "sha1": "4077538c43bc"
+  "sha1": "4077538c43bc",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 211,
@@ -3141,9 +3201,10 @@
   "tier": 3,
   "freq": 54,
   "tts": "ew ahng geh lee dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.178,
-  "sha1": "0582613ccff4"
+  "sha1": "0582613ccff4",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 212,
@@ -3202,9 +3263,10 @@
   "tier": 3,
   "freq": 66,
   "tts": "ah po loo oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.588,
-  "sha1": "f33792e2dcf7"
+  "sha1": "f33792e2dcf7",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 216,
@@ -3232,9 +3294,10 @@
   "tier": 3,
   "freq": 30,
   "tts": "ahr nee on",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.306,
-  "sha1": "6a2b9563f07b"
+  "sha1": "6a2b9563f07b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 218,
@@ -3311,7 +3374,7 @@
   "tier": 3,
   "freq": 52,
   "tts": "eh pang geh lee ah",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.826,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -3327,9 +3390,10 @@
   "tier": 3,
   "freq": 43,
   "tts": "spehr mah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.152,
-  "sha1": "1fd7bbd3f876"
+  "sha1": "1fd7bbd3f876",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 224,
@@ -3530,9 +3594,10 @@
   "tier": 1,
   "freq": 331,
   "tts": "eh ahn",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.23,
-  "sha1": "ee71934cfed7"
+  "sha1": "ee71934cfed7",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 237,
@@ -3544,9 +3609,10 @@
   "tier": 1,
   "freq": 213,
   "tts": "teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.564,
-  "sha1": "733a0926a4eb"
+  "sha1": "733a0926a4eb",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 238,
@@ -3558,9 +3624,10 @@
   "tier": 2,
   "freq": 171,
   "tts": "ahn",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.725,
-  "sha1": "553a286a97c5"
+  "sha1": "553a286a97c5",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 239,
@@ -3588,9 +3655,10 @@
   "tier": 3,
   "freq": 102,
   "tts": "ho teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.822,
-  "sha1": "52317c837986"
+  "sha1": "52317c837986",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 241,
@@ -3634,9 +3702,10 @@
   "tier": 3,
   "freq": 86,
   "tts": "ahr khoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.926,
-  "sha1": "6c6672986be9"
+  "sha1": "6c6672986be9",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 244,
@@ -3790,9 +3859,10 @@
   "tier": 3,
   "freq": 78,
   "tts": "sto mah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.925,
-  "sha1": "7e419b2d9692"
+  "sha1": "7e419b2d9692",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 254,
@@ -3866,7 +3936,7 @@
   "tier": 3,
   "freq": 76,
   "tts": "ee eh roo sah laym",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 2.397,
   "sha1": "de7a23af65fd"
  },
@@ -3911,9 +3981,10 @@
   "tier": 3,
   "freq": 75,
   "tts": "doh deh kah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.313,
-  "sha1": "f4cec73e3989"
+  "sha1": "f4cec73e3989",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 262,
@@ -3953,7 +4024,7 @@
   "tier": 3,
   "freq": 73,
   "tts": "ah brah ahm",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.537,
   "sha1": "c8879dc651f8"
  },
@@ -3967,9 +4038,10 @@
   "tier": 3,
   "freq": 72,
   "tts": "pee noh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.725,
-  "sha1": "1ad5f1c00171"
+  "sha1": "1ad5f1c00171",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 266,
@@ -3981,7 +4053,7 @@
   "tier": 3,
   "freq": 71,
   "tts": "poor",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 0.543,
   "sha1": "e606b032b8fe"
  },
@@ -4010,9 +4082,10 @@
   "tier": 3,
   "freq": 70,
   "tts": "eye teh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.837,
-  "sha1": "13c6cd6a0283"
+  "sha1": "13c6cd6a0283",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 269,
@@ -4024,7 +4097,7 @@
   "tier": 3,
   "freq": 68,
   "tts": "ees rah ayl",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.585,
   "sha1": "7c79b5286e0c"
  },
@@ -4038,9 +4111,10 @@
   "tier": 3,
   "freq": 68,
   "tts": "ah goh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.008,
-  "sha1": "cfa85eecd0da"
+  "sha1": "cfa85eecd0da",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 271,
@@ -4144,9 +4218,10 @@
   "tier": 3,
   "freq": 65,
   "tts": "fay mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.665,
-  "sha1": "0f2b4870ec28"
+  "sha1": "0f2b4870ec28",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 278,
@@ -4158,9 +4233,10 @@
   "tier": 3,
   "freq": 65,
   "tts": "ay teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.841,
-  "sha1": "f99221c1ea6b"
+  "sha1": "f99221c1ea6b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 279,
@@ -4264,9 +4340,10 @@
   "tier": 3,
   "freq": 62,
   "tts": "theh lay mah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.534,
-  "sha1": "c87cf160440c"
+  "sha1": "c87cf160440c",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 286,
@@ -4278,9 +4355,10 @@
   "tier": 3,
   "freq": 62,
   "tts": "eh roh tah oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.694,
-  "sha1": "e44231eb300f"
+  "sha1": "e44231eb300f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 287,
@@ -4292,7 +4370,7 @@
   "tier": 3,
   "freq": 61,
   "tts": "nooks",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 0.842,
   "sha1": "e78b8f13f0bb"
  },
@@ -4338,9 +4416,10 @@
   "tier": 3,
   "freq": 61,
   "tts": "hoh deh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.874,
-  "sha1": "5b500ad03421"
+  "sha1": "5b500ad03421",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 291,
@@ -4368,9 +4447,10 @@
   "tier": 3,
   "freq": 60,
   "tts": "ay day",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.078,
-  "sha1": "1026183a8175"
+  "sha1": "1026183a8175",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 293,
@@ -4382,9 +4462,10 @@
   "tier": 3,
   "freq": 60,
   "tts": "hee mah tee on",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.513,
-  "sha1": "20760216d5d4"
+  "sha1": "20760216d5d4",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 294,
@@ -4396,7 +4477,7 @@
   "tier": 3,
   "freq": 60,
   "tts": "hoo par khoh",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.37,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -4426,9 +4507,10 @@
   "tier": 3,
   "freq": 59,
   "tts": "soo nah goh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.085,
-  "sha1": "a2f6f31f8cdd"
+  "sha1": "a2f6f31f8cdd",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 297,
@@ -4440,9 +4522,10 @@
   "tier": 3,
   "freq": 59,
   "tts": "khah rah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.149,
-  "sha1": "686e6c93deea"
+  "sha1": "686e6c93deea",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 298,
@@ -4530,9 +4613,10 @@
   "tier": 3,
   "freq": 57,
   "tts": "may deh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.712,
-  "sha1": "0a449dcab96d"
+  "sha1": "0a449dcab96d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 304,
@@ -4576,9 +4660,10 @@
   "tier": 3,
   "freq": 56,
   "tts": "deh kho my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.958,
-  "sha1": "1e698aa9edd5"
+  "sha1": "1e698aa9edd5",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 307,
@@ -4694,9 +4779,10 @@
   "tier": 3,
   "freq": 53,
   "tts": "oo khee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.949,
-  "sha1": "1b80ea29d488"
+  "sha1": "1b80ea29d488",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 315,
@@ -4708,9 +4794,10 @@
   "tier": 3,
   "freq": 53,
   "tts": "dee o",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.039,
-  "sha1": "0fa363d59901"
+  "sha1": "0fa363d59901",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 316,
@@ -4812,9 +4899,10 @@
   "tier": 3,
   "freq": 50,
   "tts": "pah rah bo lay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.805,
-  "sha1": "749eadafdadb"
+  "sha1": "749eadafdadb",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 323,
@@ -4886,9 +4974,10 @@
   "tier": 4,
   "freq": 49,
   "tts": "ah rah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.933,
-  "sha1": "9d1496240e4f"
+  "sha1": "9d1496240e4f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 328,
@@ -4916,9 +5005,10 @@
   "tier": 4,
   "freq": 49,
   "tts": "grah fay",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.275,
-  "sha1": "aeb93435e1a3"
+  "sha1": "aeb93435e1a3",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 330,
@@ -4962,9 +5052,10 @@
   "tier": 4,
   "freq": 48,
   "tts": "ah po dee doh mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.101,
-  "sha1": "f806754dd012"
+  "sha1": "f806754dd012",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 333,
@@ -4992,9 +5083,10 @@
   "tier": 4,
   "freq": 47,
   "tts": "poo",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.546,
-  "sha1": "5eed6c47bb3e"
+  "sha1": "5eed6c47bb3e",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 335,
@@ -5020,7 +5112,7 @@
   "tier": 4,
   "freq": 47,
   "tts": "pro",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 0.62,
   "sha1": "a349bfd4fc53"
  },
@@ -5082,7 +5174,7 @@
   "tier": 4,
   "freq": 47,
   "tts": "krah teh oh",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.192,
   "sha1": "3c7f8d4e0f9a"
  },
@@ -5112,9 +5204,10 @@
   "tier": 4,
   "freq": 47,
   "tts": "oo keh tee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.996,
-  "sha1": "fe574abe5798"
+  "sha1": "fe574abe5798",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 343,
@@ -5126,9 +5219,10 @@
   "tier": 4,
   "freq": 47,
   "tts": "ah khree",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.152,
-  "sha1": "8c90eec59929"
+  "sha1": "8c90eec59929",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 344,
@@ -5156,9 +5250,10 @@
   "tier": 4,
   "freq": 46,
   "tts": "oo eye",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.821,
-  "sha1": "abf8fed5359e"
+  "sha1": "abf8fed5359e",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 346,
@@ -5231,9 +5326,10 @@
   "tier": 4,
   "freq": 45,
   "tts": "dee oh koh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.984,
-  "sha1": "cc18bafecd00"
+  "sha1": "cc18bafecd00",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 351,
@@ -5307,9 +5403,10 @@
   "tier": 4,
   "freq": 44,
   "tts": "kah toy keh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.687,
-  "sha1": "a5b969a5502b"
+  "sha1": "a5b969a5502b",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 356,
@@ -5353,9 +5450,10 @@
   "tier": 4,
   "freq": 43,
   "tts": "geh neh ah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.607,
-  "sha1": "54e0f63c8fee"
+  "sha1": "54e0f63c8fee",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 359,
@@ -5383,9 +5481,10 @@
   "tier": 4,
   "freq": 43,
   "tts": "seh ow too",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.293,
-  "sha1": "0ef6ac544f01"
+  "sha1": "0ef6ac544f01",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 361,
@@ -5427,9 +5526,10 @@
   "tier": 4,
   "freq": 43,
   "tts": "foh neh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.179,
-  "sha1": "b8f27ae14e04"
+  "sha1": "b8f27ae14e04",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 364,
@@ -5504,9 +5604,10 @@
   "tier": 4,
   "freq": 42,
   "tts": "loo oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.117,
-  "sha1": "655df97d96a3"
+  "sha1": "655df97d96a3",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 369,
@@ -5549,7 +5650,7 @@
   "tier": 4,
   "freq": 42,
   "tts": "pas khoh",
-  "source": "rollout",
+  "source": "batch8",
   "duration_s": 0.996,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -5565,7 +5666,7 @@
   "tier": 4,
   "freq": 42,
   "tts": "hah mar tah noh",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 2.22,
   "take": "2026-09-10, Atlas",
   "note": "an h that only padded a vowel was spoken as its own syllable",
@@ -5658,9 +5759,10 @@
   "tier": 4,
   "freq": 41,
   "tts": "dee ehr kho my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.661,
-  "sha1": "8ba556bc107d"
+  "sha1": "8ba556bc107d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 379,
@@ -5672,9 +5774,10 @@
   "tier": 4,
   "freq": 41,
   "tts": "ew lo geh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.015,
-  "sha1": "2e9e126d53a3"
+  "sha1": "2e9e126d53a3",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 380,
@@ -5700,9 +5803,10 @@
   "tier": 4,
   "freq": 41,
   "tts": "pah ree stay mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.48,
-  "sha1": "93582c900c9d"
+  "sha1": "93582c900c9d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 382,
@@ -5714,7 +5818,7 @@
   "tier": 4,
   "freq": 41,
   "tts": "tee mey",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 0.836,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -5744,9 +5848,10 @@
   "tier": 4,
   "freq": 40,
   "tts": "heh toy mah dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.454,
-  "sha1": "42960c913295"
+  "sha1": "42960c913295",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 385,
@@ -5772,9 +5877,10 @@
   "tier": 4,
   "freq": 40,
   "tts": "mee seh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.475,
-  "sha1": "87bafdfef32f"
+  "sha1": "87bafdfef32f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 387,
@@ -5881,9 +5987,10 @@
   "tier": 4,
   "freq": 39,
   "tts": "thoo rah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.794,
-  "sha1": "f4c6f1fed302"
+  "sha1": "f4c6f1fed302",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 394,
@@ -5927,9 +6034,10 @@
   "tier": 4,
   "freq": 39,
   "tts": "eh pee tee thay mee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.374,
-  "sha1": "2b2b63dcb972"
+  "sha1": "2b2b63dcb972",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 397,
@@ -5941,7 +6049,7 @@
   "tier": 4,
   "freq": 39,
   "tts": "plah nah oh",
-  "source": "g2p",
+  "source": "batch8",
   "duration_s": 1.741,
   "sha1": "b21585e9b4e3"
  },
@@ -6030,9 +6138,10 @@
   "tier": 4,
   "freq": 37,
   "tts": "boo lo my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.38,
-  "sha1": "75cae404fb8d"
+  "sha1": "75cae404fb8d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 404,
@@ -6044,9 +6153,10 @@
   "tier": 4,
   "freq": 37,
   "tts": "pay rah dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.528,
-  "sha1": "3e494e6095d5"
+  "sha1": "3e494e6095d5",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 405,
@@ -6118,7 +6228,7 @@
   "tier": 4,
   "freq": 36,
   "tts": "or gey",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.047,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -6134,9 +6244,10 @@
   "tier": 4,
   "freq": 36,
   "tts": "ahr tee",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.001,
-  "sha1": "5ef659caa7ac"
+  "sha1": "5ef659caa7ac",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 411,
@@ -6254,7 +6365,7 @@
   "tier": 4,
   "freq": 36,
   "tts": "peh ree to mey",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.589,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -6361,9 +6472,10 @@
   "tier": 4,
   "freq": 35,
   "tts": "o fay loh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.143,
-  "sha1": "2bc6046d1688"
+  "sha1": "2bc6046d1688",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 426,
@@ -6375,9 +6487,10 @@
   "tier": 4,
   "freq": 35,
   "tts": "hoo po streh foh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.559,
-  "sha1": "eaf6e5b6f35f"
+  "sha1": "eaf6e5b6f35f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 427,
@@ -6435,9 +6548,10 @@
   "tier": 4,
   "freq": 34,
   "tts": "may teh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.978,
-  "sha1": "66f81e55d0d6"
+  "sha1": "66f81e55d0d6",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 431,
@@ -6479,9 +6593,10 @@
   "tier": 4,
   "freq": 34,
   "tts": "ahs theh neh oh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.849,
-  "sha1": "da25c775d50f"
+  "sha1": "da25c775d50f",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 434,
@@ -6565,9 +6680,10 @@
   "tier": 4,
   "freq": 33,
   "tts": "ahr neh o my",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.731,
-  "sha1": "684998b03351"
+  "sha1": "684998b03351",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 440,
@@ -6708,7 +6824,7 @@
   "tier": 4,
   "freq": 32,
   "tts": "hoo po mo ney",
-  "source": "rollout",
+  "source": "composed",
   "duration_s": 1.367,
   "take": "2026-09-10, Atlas",
   "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
@@ -6755,9 +6871,10 @@
   "tier": 4,
   "freq": 31,
   "tts": "kah thah ree dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.493,
-  "sha1": "9154dab67ef4"
+  "sha1": "9154dab67ef4",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 452,
@@ -6783,9 +6900,10 @@
   "tier": 4,
   "freq": 31,
   "tts": "po tay ree on",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.556,
-  "sha1": "30d664a7e31d"
+  "sha1": "30d664a7e31d",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 454,
@@ -6899,9 +7017,10 @@
   "tier": 4,
   "freq": 31,
   "tts": "pahr ray see ah",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.743,
-  "sha1": "8f8a8bedfd28"
+  "sha1": "8f8a8bedfd28",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 462,
@@ -6973,9 +7092,10 @@
   "tier": 4,
   "freq": 30,
   "tts": "ah go rah dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 2.17,
-  "sha1": "14c2cbbdc221"
+  "sha1": "14c2cbbdc221",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 467,
@@ -7003,9 +7123,10 @@
   "tier": 4,
   "freq": 30,
   "tts": "ee deh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 0.823,
-  "sha1": "9f74bcbfbe27"
+  "sha1": "9f74bcbfbe27",
+  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
  },
  {
   "index": 469,

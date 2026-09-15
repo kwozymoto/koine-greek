@@ -382,6 +382,61 @@ answer**; the moment the options are alternatives, each word needs its own.
 The same fault had appeared once before, on Ἱεροσόλυμα in batch 5e, and was
 fixed as an instance rather than as a rule.
 
+## What batch 8 changed, 2026-09-15
+
+Batch 8 played forty clips in four lots of ten, **ranked by how many of the
+shapes this guide records each one carried** — a lone token, an h before a
+vowel, an English word the voice can look up, five beats, a long closed-up
+token. Lot 1 had the most against it; lot 4 had nothing at all.
+
+### The ranking does not predict, and it was put up to find that out
+
+| lot | what it carried | faults |
+|---|---|---|
+| 1 | two or more known shapes each | **0** |
+| 2 | one shape each | 3 |
+| 3 | one shape each, milder | 2 |
+| 4 | **nothing known against them** | 1 |
+
+**Six faults in forty, and the lot with the most against it had none.** So
+the shapes describe what has gone wrong; they do not say what *will*. The
+work list is no longer ordered by them — the remaining clips are simply
+played, forty at a time, which is also a cheaper sheet to build.
+
+Lot 4 existed only to make the result falsifiable. Without it the 0/3/2/1
+would have looked like "the hard ones were fine", which is not the same claim
+at all.
+
+### Every one of the six had its remedy already in the pack
+
+This is the finding worth keeping, and it is the third round in a row it has
+appeared:
+
+| fault | the clip that already knew |
+|---|---|
+| ζητέω, ζάω, ζῷον, ζῆλος on `dz` | **ζωή `zoh eh`** — ζ word-initial takes `z`, settled in the 511–817 round and written in this guide's own header. One word got the fix; four did not. |
+| σφραγίς reciting its letters | **πτωχός `puh toh koss`** and πνευματικός — a *helper vowel* for a cluster English will not begin a word with. I treated it as a long token to split, which was not enough. |
+| γυμνός saying *gay um noss* | **γινώσκω** — `gh`, the digraph that rescued it from the letter name. |
+
+**So when a clip fails, search the heard set for the same shape before
+reasoning about it.** Four rounds have now been spent on rules that an
+existing approved clip would have settled in a minute: θέλω on the θε-
+problem, ζωή on ζ-, πτωχός on the cluster, γινώσκω on the g.
+
+### Two smaller things
+
+**The voice looks up words in other languages too.** εἷς shipped as `hace`,
+which is Spanish, and came back sounding Spanish. Every entry in this guide
+about "an English word the voice can look up" is really about *any* word it
+can look up.
+
+**A comma works but costs a pause.** δέω and ζῷον had the same fault — an
+h-final token sounding across the space into a bare vowel — and a comma fixes
+both. But `zo on`, which simply drops the h, was preferred over `zoh, on` for
+pace. So the order is: **remove the h first; reach for punctuation only when
+that fails.** δέω keeps its comma because nothing without one was auditioned
+there.
+
 ### And the checker was wrong again, on the same line
 
 `VOWEL_END` decides whether a token ends in a vowel, and the note above it

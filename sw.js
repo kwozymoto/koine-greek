@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v153';
+const VERSION = 'v154';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -33,6 +33,22 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v154: batch 8. Forty clips played in risk order; 34 were right
+     first time. The ranking itself was the experiment and it FAILED:
+     the ten with the most shapes against them had no faults and the
+     ten with none had one, 0/3/2/1 across the four lots. So the work
+     list stops being ordered and just gets played.
+     All six faults had their remedy already sitting in an approved
+     clip -- ζ- from ζωή, the helper vowel from πτωχός, the hard-g
+     digraph from γινώσκω. */
+  'audio/vocab/047_eis.mp3',
+  'audio/vocab/118_zao.mp3',
+  'audio/vocab/137_zeteo.mp3',
+  'audio/vocab/203_phos.mp3',
+  'audio/vocab/586_zoon.mp3',
+  'audio/vocab/745_zelos.mp3',
+  'audio/vocab/760_sphragis.mp3',
+  'audio/vocab/777_gumnos.mp3',
   /* v153: batch 7, which was built to test the method rather than the
      clips. Ten of the 226 clips made entirely from approved spellings
      were picked as the ten places composition was LEAST likely to
