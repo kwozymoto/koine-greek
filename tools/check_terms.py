@@ -38,11 +38,20 @@ So this asks four things, and the two that matter run in opposite directions.
      text, and a glossary is the wrong place to show a form the reader will
      never meet.
 
-What it cannot do is say whether a definition is CORRECT. That needs a
-reader, as CLAUDE.md's rule 8 says, and it is the reason the file is short
-enough to read in one sitting.
+  5. EVERY DEFINITION HAS BEEN PUT TO A GRAMMAR. This file shipped with the
+     sign-off "sixty-eight definitions need a reader", which was wrong on the
+     repo's own terms: CLAUDE.md says "'Needs a grammar' is not a terminal
+     state and is not a question for Fraser. Open the book." Huffman and Black
+     are on the shelf, and opening them changed twelve of the sixty-eight.
+     docs/term-sources.json holds the verdict, the passage, and a digest of
+     the definition it was reached about, so that rewriting a definition puts
+     it back to unreviewed.
+
+What it still cannot do is judge a definition a grammar does not cover, or
+catch one that quotes its source accurately and explains it badly. The file is
+short enough to read in one sitting for that reason.
 """
-import collections, io, json, os, re, subprocess, sys
+import collections, hashlib, io, json, os, re, subprocess, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -238,7 +247,69 @@ for term, meaning, eg, _ch in (r for r in TERMS if len(r) == 4):
             bad.append("%r shows %s, which occurs nowhere in the New Testament "
                        "and is not a headword in the deck either" % (term, word))
 
+# ---- 5. every definition has been put to a grammar -----------------------
+# The glossary shipped with the sign-off "sixty-eight definitions need a
+# reader", and that was wrong on this repo's own terms. CLAUDE.md: "'Needs a
+# grammar' is not a terminal state and is not a question for Fraser. Open the
+# book." A definition of a grammatical term is not free prose — it is a claim
+# Huffman or Black settles, and both are on the shelf. Opening them changed
+# twelve of the sixty-eight.
+#
+# docs/term-sources.json records what settled each one, and carries a digest
+# of the definition the verdict was reached about. Edit the definition and the
+# digest stops matching, which puts the entry back to unreviewed — check_prose's
+# rule, that a changed claim is an unverified claim, applied here.
+SOURCES = "docs/term-sources.json"
+try:
+    REC = json.load(io.open(SOURCES, encoding="utf-8"))
+except Exception as e:
+    REC = None
+    bad.append("%s could not be read: %s" % (SOURCES, e))
+
+if REC is not None:
+    VERDICTS = ("verified", "corrected", "general")
+    for term, meaning, eg, ch in (r for r in TERMS if len(r) == 4):
+        r = REC.get(term)
+        if not r:
+            bad.append("%r has no entry in %s. Every definition is put to "
+                       "Huffman or Black, or recorded as ordinary grammatical "
+                       "English." % (term, SOURCES))
+            continue
+        if r.get("verdict") not in VERDICTS:
+            bad.append("%r is %r in %s — it has not been settled"
+                       % (term, r.get("verdict"), SOURCES))
+        want = hashlib.sha1(meaning.encode("utf-8")).hexdigest()[:12]
+        if r.get("def") != want:
+            bad.append("%r has been REWRITTEN since it was checked against %s. "
+                       "A changed definition is an unchecked definition: open "
+                       "the book again, then put %s in its record."
+                       % (term, r.get("source") or "a source", want))
+        if r.get("verdict") in ("verified", "corrected") and not r.get("settles"):
+            bad.append("%r is marked %s and does not say what the source "
+                       "settles" % (term, r["verdict"]))
+        # The record cites the grammars; it must never carry them. The first
+        # version of this file held the passages themselves -- 18,338
+        # characters of Huffman and Black, in a public repository. CLAUDE.md
+        # draws that line twice: the books are read-only and "never copied in",
+        # and copyrighted text "cannot ship inside the app, however it left
+        # Logos". A citation and a statement of the fact in our own words are
+        # what a later reader needs to open the same page.
+        if len(r.get("settles", "")) > 400:
+            bad.append("%r summarises its source in %d characters. That is long "
+                       "enough to be the passage rather than a summary of it, "
+                       "and the books do not go in the repo."
+                       % (term, len(r["settles"])))
+    for term in REC:
+        if term not in seen:
+            bad.append("%s still has a record for %r, which is not a term any "
+                       "more" % (SOURCES, term))
+
 # ---- report --------------------------------------------------------------
+if REC:
+    by = collections.Counter(r.get("verdict") for r in REC.values())
+    print("definitions put to a grammar:     %d verified, %d corrected by one, "
+          "%d ordinary grammatical English"
+          % (by["verified"], by["corrected"], by["general"]))
 print("grammar words explained:          %d" % len(TERMS))
 print("jargon on the watch list:         %d, of which %d are used by the app"
       % (len(WATCH), sum(1 for w in WATCH if used_anywhere(w))))

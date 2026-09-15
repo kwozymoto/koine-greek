@@ -1,0 +1,461 @@
+{
+ "accent": {
+  "def": "ecfdc5c79a82",
+  "note": "",
+  "settles": "lists three accents: acute, circumflex and grave.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "accusative": {
+  "def": "e404dc4f2964",
+  "note": "Huffman's accusative is \"the case of extent or limits on the verb's action\"; the definition named only the direct object, and now names extent too.",
+  "settles": "gives the accusative as the case of extent or of limits on the verb's action, the direct object being its first use.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "active": {
+  "def": "a569ee8aedfa",
+  "note": "",
+  "settles": "gives the active as the subject activating the action.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "adjective": {
+  "def": "46c2fd3c11a0",
+  "note": "agreement in case, gender and number is in every grammar; the rest is ordinary English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "anarthrous": {
+  "def": "044ea35a3abb",
+  "note": "θεός is Huffman's own illustration of it.",
+  "settles": "discusses a noun without the article, using θεός as the illustration and distinguishing indefinite, definite and qualitative senses.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "antecedent": {
+  "def": "49747ce761b7",
+  "note": "The app uses it of any pronoun pointing back — ἐκεῖνος agreeing with ὁ παράκλητος in chapter 11 — so \"relative pronoun\" was too narrow. Note Black uses the word in a different sense again, of antecedent ACTION.",
+  "settles": "uses the word in a different sense again — of antecedent ACTION, a participle acting before the main verb — which is worth knowing when reading him.",
+  "source": "Black, Learn to Read NT Greek, lesson 20",
+  "verdict": "corrected"
+ },
+ "aorist": {
+  "def": "7bc40c5379df",
+  "note": "",
+  "settles": "gives the aorist as viewing the action as a whole, with remoteness that is often but not always temporal.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "apodosis": {
+  "def": "7b1373b252de",
+  "note": "",
+  "settles": "names the two halves of a conditional: the protasis is the if, the apodosis the then.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "article": {
+  "def": "5c12c04f6c47",
+  "note": "",
+  "settles": "states that Greek has a definite article and no indefinite one.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "aspect": {
+  "def": "099188fc9ff5",
+  "note": "",
+  "settles": "sets out three aspects an author chooses between, and names the tense-forms that carry each.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "athematic": {
+  "def": "abf3960eb7ac",
+  "note": "Neither Huffman nor Black uses the word — both say \"-μι conjugation\" instead. The substance is theirs: Huffman gives the connecting vowel as a slot the ω-verbs fill, and the μι-verbs are the ones that do not.",
+  "source": "",
+  "verdict": "general"
+ },
+ "attendant circumstance": {
+  "def": "fe6795934ff5",
+  "note": "",
+  "settles": "defines the participle of attendant circumstance as expressing an action accompanying the main verb, translatable with “and” plus a finite verb.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "attributive": {
+  "def": "df8a0f3be451",
+  "note": "",
+  "settles": "defines the attributive adjective as attributing a quality to its noun, standing inside the article group.",
+  "source": "Black, Learn to Read NT Greek, lesson 6",
+  "verdict": "verified"
+ },
+ "augment": {
+  "def": "2d9d1f632497",
+  "note": "Huffman confirms the restriction the definition makes: the augment is indicative mood only.",
+  "settles": "restricts the augment to the imperfect, aorist and pluperfect, and to the indicative mood only, with lengthening where the verb begins with a vowel.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "breathing": {
+  "def": "8262c159912c",
+  "note": "Huffman: \"words beginning with a vowel (or ρ)\". The definition had vowels alone; initial ρ takes a rough breathing too.",
+  "settles": "puts the breathing mark on words beginning with a vowel or with ρ, rough adding an h and smooth adding nothing.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "corrected"
+ },
+ "case": {
+  "def": "864f4bd834b9",
+  "note": "",
+  "settles": "describes the case ending as a flag for the role a noun plays in its sentence.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "clause": {
+  "def": "163387e3b080",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "conjugation": {
+  "def": "cd77a0ef5908",
+  "note": "Black uses the word for the FAMILY of a verb as well as the act of running one through — the -ω and -μι conjugations — which is what the declension entry already said about nouns.",
+  "settles": "divides Greek verbs into two conjugations, the -ω verbs and the -μι verbs.",
+  "source": "Black, Learn to Read NT Greek, lesson 18-19",
+  "verdict": "corrected"
+ },
+ "contract verb": {
+  "def": "47c6fd246631",
+  "note": "Black names the vowels: a SHORT α, ε or ο. The definition said only \"a vowel\".",
+  "settles": "defines a contract verb as one whose stem ends in a short α, ε or ο.",
+  "source": "Black, Learn to Read NT Greek, lesson 18-19",
+  "verdict": "corrected"
+ },
+ "dative": {
+  "def": "68d4d3aee3a5",
+  "note": "",
+  "settles": "gives the dative as the case of personal interest, typically naming to or for whom something is done.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "declension": {
+  "def": "d57d9e74cef8",
+  "note": "",
+  "settles": "describes three groupings of nouns, called declensions, each with its own case spellings.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "deponent": {
+  "def": "1d538883b456",
+  "note": "Huffman's wording is the definition's almost exactly.",
+  "settles": "defines deponent verbs as middle or passive in form with active meaning, arising where a verb lacks active endings.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "distributive": {
+  "def": "32e203207923",
+  "note": "Robertson for the category; the app's own chapter 8 supplies the example, ἀνὰ δύο.",
+  "settles": "treats the distributive use, of the by-the-day and twice-a-week kind.",
+  "source": "Robertson, Grammar, chapter XVI",
+  "verdict": "verified"
+ },
+ "enclitic": {
+  "def": "ea2de95aa259",
+  "note": "",
+  "settles": "defines an enclitic as a word that regularly loses its accent to the word before it, and a proclitic as one that loses it to the word after.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "ending": {
+  "def": "515a147c384b",
+  "note": "ordinary grammatical English; Huffman's \"the case ending is a function flag\" says the same thing about nouns.",
+  "source": "",
+  "verdict": "general"
+ },
+ "feminine": {
+  "def": "914ca3477ba0",
+  "note": "one of the three genders; no claim beyond that.",
+  "source": "",
+  "verdict": "general"
+ },
+ "future": {
+  "def": "bbb83bf1bff1",
+  "note": "The definition gave time alone. Huffman groups the future with the aorist under summary aspect but flags the debate, so the definition now says which half is dependable.",
+  "settles": "groups the future with the aorist under summary aspect, while noting that the future's aspect is disputed among scholars.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "gender": {
+  "def": "d45930c8eea4",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "genitive": {
+  "def": "59065f28ba8b",
+  "note": "",
+  "settles": "gives the genitive as the most flexible of case, generally describing the noun it follows.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "genitive absolute": {
+  "def": "3f1fae2ffe01",
+  "note": "Huffman: \"the subject of the participle's action is also in the genitive\", and his example is a PRONOUN, αὐτοῦ. \"A participle and a noun\" was too narrow.",
+  "settles": "defines it as an anarthrous genitive participle in a phrase with no grammatical tie to the rest of the sentence, the participle's own subject also genitive.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "imperative": {
+  "def": "e8720cfde655",
+  "note": "",
+  "settles": "assigns intention to the imperative.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "imperfect": {
+  "def": "bb578c9b4efc",
+  "note": "",
+  "settles": "gives the imperfect as viewing the action as a process, with remoteness that is usually past.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "imperfective": {
+  "def": "9b4b2e936c3a",
+  "note": "Present and Imperfect, which is what the definition says.",
+  "settles": "assigns the present and the imperfect to the imperfective aspect, which views an action as a process.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "indicative": {
+  "def": "423202806232",
+  "note": "",
+  "settles": "assigns actuality to the indicative — the author's portrayal, he is careful to say, not necessarily the fact.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "infinitive": {
+  "def": "dfaca5117d3e",
+  "note": "Black pairs them: the participle is a verbal adjective, the infinitive a verbal noun. The definition omitted the noun half, which is also what chapter 22's own title says.",
+  "settles": "pairs the two hybrids: the participle is a verbal adjective and the infinitive a verbal noun.",
+  "source": "Black, Learn to Read NT Greek, lesson 21-22",
+  "verdict": "corrected"
+ },
+ "interjection": {
+  "def": "116290bdb10c",
+  "note": "ἰδού is Black's example too.",
+  "settles": "treats ἰδού and ἴδε as interjections, with οὐαί as another.",
+  "source": "Black, Learn to Read NT Greek, lesson 23-24",
+  "verdict": "verified"
+ },
+ "liquid verb": {
+  "def": "be104c097882",
+  "note": "",
+  "settles": "lists the liquid consonants as λ, μ, ν and ρ.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "main clause": {
+  "def": "c811a73f9e21",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "masculine": {
+  "def": "914ca3477ba0",
+  "note": "one of the three genders; no claim beyond that.",
+  "source": "",
+  "verdict": "general"
+ },
+ "middle": {
+  "def": "476869238ba4",
+  "note": "",
+  "settles": "gives the middle as the subject both activating and receiving the action.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "mood": {
+  "def": "ad8447b252a4",
+  "note": "Huffman puts POTENTIALITY under the subjunctive and INTENTION under the imperative. The definition had \"supposing or intending\" together under the subjunctive.",
+  "settles": "distributes the four moods as actuality, potentiality, possibility and intention — intention belonging to the imperative.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "neuter": {
+  "def": "e7fd7f30ac04",
+  "note": "Huffman confirms the claim the definition makes, that nominative and accusative are the same.",
+  "settles": "states that neuter nominative and accusative spellings are the same, in the singular and in the plural.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "nominative": {
+  "def": "d8e15d741aa0",
+  "note": "The same passage lists all five cases and what each does.",
+  "settles": "lists the five cases and what each one does.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "number": {
+  "def": "e023036cd6c9",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "optative": {
+  "def": "ee75f37aa100",
+  "note": "Huffman's \"less than 70\" against the 68 counted in the corpus.",
+  "settles": "puts the optative at fewer than seventy occurrences in the New Testament and names οι or αι as its connecting vowel, ει in the aorist passive.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "paradigm": {
+  "def": "74d070013ac6",
+  "note": "ordinary grammatical English, and the app's own chapter 3 introduces it the same way.",
+  "source": "",
+  "verdict": "general"
+ },
+ "participle": {
+  "def": "fd6785f917e5",
+  "note": "",
+  "settles": "calls the participle a verbal adjective, against the infinitive as verbal noun.",
+  "source": "Black, Learn to Read NT Greek, lesson 21-22",
+  "verdict": "verified"
+ },
+ "particle": {
+  "def": "0e0dbbb52d64",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "passive": {
+  "def": "79b555d7369a",
+  "note": "",
+  "settles": "gives the passive as the subject receiving the action.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "perfect": {
+  "def": "edaf1bebce51",
+  "note": "",
+  "settles": "gives the perfect as viewing the action as a state, with the emphasis on results that continue.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "perfective": {
+  "def": "b5edd6894d68",
+  "note": "Huffman's summary/perfective aspect is carried by the Aorist AND the Future. The definition named the aorist alone.",
+  "settles": "assigns the aorist and the future to the summary or perfective aspect, which views an action as a whole.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "person": {
+  "def": "35afb09af5a3",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "pluperfect": {
+  "def": "8d01adf8c9a1",
+  "note": "",
+  "settles": "assigns the pluperfect to the stative aspect, viewing a state with remoteness.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "predicate": {
+  "def": "e402cfb7c725",
+  "note": "",
+  "settles": "defines the predicate position as the adjective standing outside the article group and asserting something of the noun.",
+  "source": "Black, Learn to Read NT Greek, lesson 6",
+  "verdict": "verified"
+ },
+ "principal parts": {
+  "def": "dab81bf1b0ec",
+  "note": "",
+  "settles": "lists the six principal parts and explains them as a way of holding the key spelling changes.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "pronoun": {
+  "def": "e2f27b162bba",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "protasis": {
+  "def": "39a5837249ea",
+  "note": "",
+  "settles": "names the if half of a conditional the protasis.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "reduplication": {
+  "def": "687c9689f773",
+  "note": "Two faults. Huffman has reduplication building the perfect AND the pluperfect, and the definition named the perfect alone; and it said the ε goes \"in front\", when γέγραπται puts it after the copied consonant.",
+  "settles": "assigns reduplication to the perfect and pluperfect, and sets out what happens to verbs beginning with a vowel or an awkward consonant.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "corrected"
+ },
+ "reflexive": {
+  "def": "8ffd96319621",
+  "note": "ordinary grammatical English.",
+  "source": "",
+  "verdict": "general"
+ },
+ "relative pronoun": {
+  "def": "6376209e61df",
+  "note": "ordinary grammatical English; what is Greek-specific about it lives in the app's own relative-pronoun table.",
+  "source": "",
+  "verdict": "general"
+ },
+ "stative": {
+  "def": "54a5b634dec3",
+  "note": "Huffman's stative aspect is carried by the Perfect AND the Pluperfect. The definition named the perfect alone.",
+  "settles": "assigns the perfect and the pluperfect to the stative aspect, which views the action as a state.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "corrected"
+ },
+ "stem": {
+  "def": "fbae91b12c95",
+  "note": "ordinary grammatical English; Huffman's \"Verb Stem: the foundational core of the verb\" is the same.",
+  "source": "",
+  "verdict": "general"
+ },
+ "subjunctive": {
+  "def": "8de4b91b25d2",
+  "note": "",
+  "settles": "assigns potentiality to the subjunctive.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "substantival": {
+  "def": "c5d9c5c89765",
+  "note": "Huffman's \"turn another part of speech into a noun\", with οἱ πτωχοί as the example.",
+  "settles": "treats the article's power to turn another part of speech into a noun, adjectives and participles included.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "tense": {
+  "def": "1f1fed9c2178",
+  "note": "Huffman writes \"tense-form\" throughout for the reason the definition gives.",
+  "settles": "writes tense-form throughout, and sets the six out by aspect rather than by time.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ },
+ "unmarked": {
+  "def": "be9ce10f8fa9",
+  "note": "a description of emphasis, not a rule of Greek.",
+  "source": "",
+  "verdict": "general"
+ },
+ "vocative": {
+  "def": "ce4acbd51fbf",
+  "note": "Huffman adds what the app's own vocative table found in the corpus: the nominative spelling is often used instead.",
+  "settles": "calls it the case of address and notes that the nominative spelling is often used instead.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 1: Grammar",
+  "verdict": "verified"
+ },
+ "voice": {
+  "def": "b3e8fb9776f1",
+  "note": "",
+  "settles": "describes voice as the subject's relation to the action: doing it, receiving it, or both.",
+  "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
+  "verdict": "verified"
+ }
+}

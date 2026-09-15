@@ -37,7 +37,7 @@ const TERMS = [
 
 ["accent", "The mark over a vowel. Greek has three — acute (ά), circumflex (ᾶ) and grave (ὰ) — and sometimes the accent is the only difference between two words.", "εἰ is “if”; εἶ is “you are”", 1],
 
-["accusative", "The case for the direct object: what the verb acts on.", "λόγον — a word, as the thing being spoken", 4],
+["accusative", "The case for the direct object — what the verb acts on — and for extent: how far, how long.", "λόγον — a word, as the thing being spoken", 4],
 
 ["active", "The voice where the subject does the action.", "", 3],
 
@@ -45,7 +45,7 @@ const TERMS = [
 
 ["anarthrous", "Without the article. Saying a noun is anarthrous is just saying there is no ὁ, ἡ or τό in front of it.", "θεός standing on its own", 21],
 
-["antecedent", "The noun a relative pronoun points back to. In “the word which he spoke”, the antecedent of “which” is “word”.", "", 23],
+["antecedent", "The noun a pronoun points back to. In “the word which he spoke”, the antecedent of “which” is “word”.", "", 23],
 
 ["aorist", "The tense-form that presents an action as a simple whole, without saying whether it went on or was finished. In the indicative it usually refers to the past, but the aspect is the point and the time is secondary. The commonest tense-form in the New Testament: 11,572 of them.", "", 7],
 
@@ -63,15 +63,15 @@ const TERMS = [
 
 ["augment", "The ἐ- put on the front of a verb to mark past time in the indicative. Where the verb already starts with a vowel, the vowel lengthens instead.", "ἀκούω — I hear; ἤκουσα — I heard", 7],
 
-["breathing", "The mark every word beginning with a vowel carries. Rough breathing adds an h sound; smooth breathing adds nothing.", "", 1],
+["breathing", "The mark every word beginning with a vowel carries, and initial ρ with it. Rough breathing adds an h sound; smooth breathing adds nothing.", "", 1],
 
 ["case", "The form a noun takes to show its job in the sentence. Greek has five: nominative, genitive, dative, accusative and vocative.", "", 4],
 
 ["clause", "A group of words with its own verb. One sentence can hold several.", "", 21],
 
-["conjugation", "Running a verb through its persons and numbers. What declension is for nouns, conjugation is for verbs.", "", 26],
+["conjugation", "Running a verb through its persons and numbers — and, like declension, also the family a verb belongs to. Greek has two: the -ω verbs and the -μι verbs.", "", 26],
 
-["contract verb", "A verb whose stem ends in a vowel, so that vowel and the ending run together into one sound.", "ἀγαπάω becomes ἀγαπῶ", 19],
+["contract verb", "A verb whose stem ends in a short vowel — α, ε or ο — so that vowel and the ending run together into one sound.", "ἀγαπάω becomes ἀγαπῶ", 19],
 
 ["dative", "The case for the indirect object, and for the means, manner or place of something. Often “to”, “for”, “with” or “in”.", "", 4],
 
@@ -87,13 +87,13 @@ const TERMS = [
 
 ["feminine", "One of the three genders. Grammatical, not biological.", "", 5],
 
-["future", "The tense-form for what will happen.", "", 3],
+["future", "The tense-form for what will happen. Time is the dependable part of it: scholars still argue about which aspect it carries.", "", 3],
 
 ["gender", "Every Greek noun is masculine, feminine or neuter, and the choice is grammatical rather than biological.", "τέκνον — child — is neuter", 4],
 
 ["genitive", "The case usually translated “of”: possession, source, and a good deal besides.", "", 4],
 
-["genitive absolute", "A participle and a noun, both in the genitive, standing loose from the main sentence and giving the circumstances of it.", "", 21],
+["genitive absolute", "A participle and its subject, both in the genitive, standing loose from the rest of the sentence and giving the circumstances of it.", "", 21],
 
 ["imperative", "The mood of command.", "", 25],
 
@@ -103,7 +103,7 @@ const TERMS = [
 
 ["indicative", "The mood of statement and question — the ordinary one. Four out of five verbs that carry a person and a number are indicative.", "", 2],
 
-["infinitive", "The “to” form of a verb. It has tense and voice, but no person and no number.", "πιστεύειν — to believe", 22],
+["infinitive", "The “to” form of a verb, and a verbal noun as the participle is a verbal adjective. It has tense and voice, but no person and no number.", "πιστεύειν — to believe", 22],
 
 ["interjection", "A word thrown into a sentence without joining its grammar.", "ἰδού — behold", 25],
 
@@ -115,7 +115,7 @@ const TERMS = [
 
 ["middle", "The voice where the subject is bound up in the action — doing it to itself, or for itself, or in its own interest. In most tenses it is spelled like the passive.", "", 12],
 
-["mood", "What the speaker is doing with the verb: stating it (indicative), supposing or intending it (subjunctive), wishing it (optative), or commanding it (imperative).", "", 2],
+["mood", "How the speaker presents the action: as actual (indicative), as possible (subjunctive), as a remoter possibility (optative), or as intended — which in practice means commanded (imperative).", "", 2],
 
 ["neuter", "One of the three genders. A neuter noun has the same form for nominative and accusative, always.", "", 4],
 
@@ -135,7 +135,7 @@ const TERMS = [
 
 ["perfect", "The tense-form for an action whose result still stands. Not simply a past: the point is the present state.", "γέγραπται — it stands written", 10],
 
-["perfective", "The aspect that presents an action as a simple whole. The aorist carries it.", "", 2],
+["perfective", "The aspect that presents an action as a simple whole. The aorist carries it, and the future — though scholars disagree about the future.", "", 2],
 
 ["person", "First person is I and we, second is you, third is he, she, it and they. The Greek verb ending says which, so the pronoun is usually unnecessary.", "", 3],
 
@@ -149,13 +149,13 @@ const TERMS = [
 
 ["protasis", "The “if” half of a conditional sentence. The “then” half is the apodosis.", "", 0],
 
-["reduplication", "Doubling the first consonant with an ε in front, to form the perfect.", "γράφω gives γέγραπται", 10],
+["reduplication", "Repeating a verb’s first consonant with ε after it, to build the perfect and pluperfect stems.", "γράφω gives γέγραπται", 10],
 
 ["reflexive", "A pronoun pointing back at the subject: himself, themselves.", "", 23],
 
 ["relative pronoun", "The word that opens a clause describing a noun already mentioned: who, which, that.", "", 23],
 
-["stative", "The aspect that presents a state now standing. The perfect carries it.", "", 2],
+["stative", "The aspect that presents a state now standing. The perfect and the pluperfect carry it.", "", 2],
 
 ["stem", "What is left of a word when the ending is taken off — the part that carries the meaning.", "", 2],
 
