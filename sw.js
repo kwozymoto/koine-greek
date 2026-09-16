@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v162';
+const VERSION = 'v163';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,32 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v163: batch 9. Seventeen vocabulary clips re-cut, and they are bulk
+     files -- a VERSION bump replaces the shell and never reaches them, so a
+     phone that has already cached one would keep the old sound for ever.
+     Fifteen of the seventeen changed because the cue moved from an English
+     respelling to IPA, which this voice reads better than any spelling:
+     ORAO's English cue had already been approved by ear and the IPA beat it.
+     TOTE had no English spelling that worked at all -- `tot` is a real word
+     with the right vowel and the voice read it as the first syllable of
+     TOTAL. */
+  'audio/vocab/013_oti.mp3',
+  'audio/vocab/017_esous.mp3',
+  'audio/vocab/039_orao.mp3',
+  'audio/vocab/041_polus.mp3',
+  'audio/vocab/045_pneuma.mp3',
+  'audio/vocab/060_megas.mp3',
+  'audio/vocab/062_pisteuo.mp3',
+  'audio/vocab/070_aner.mp3',
+  'audio/vocab/094_polis.mp3',
+  'audio/vocab/095_tote.mp3',
+  'audio/vocab/104_poreuomai.mp3',
+  'audio/vocab/110_egeiro.mp3',
+  'audio/vocab/128_otan.mp3',
+  'audio/vocab/129_aion.mp3',
+  'audio/vocab/143_monos.mp3',
+  'audio/vocab/205_charis.mp3',
+  'audio/vocab/284_exo.mp3',
   /* v156: chapter 2 rewritten for a reader who has not met the words
      yet, and chapter 1 gains the alphabet block its narration never
      had. Every lesson clip is re-cut, so all of them are evicted --

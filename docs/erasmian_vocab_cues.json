@@ -200,11 +200,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 1296,
-  "tts": "ho tee",
-  "source": "composed",
-  "duration_s": 0.761,
-  "sha1": "031f5397a59c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhɒ.ti/",
+  "source": "batch9",
+  "duration_s": 0.679,
+  "sha1": "a5071af36a83",
+  "note": "the commonest word in the whole audit and it had never been played. NOTE the final i: the conversion rule would write it tɪ, and what was heard is ti. The heard string ships",
+  "take": "b9we_13_b"
  },
  {
   "index": 14,
@@ -260,10 +261,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 917,
-  "tts": "yay soos",
-  "source": "freq",
-  "duration_s": 1.135,
-  "sha1": "20b1e8fd4dc9"
+  "tts": "ee yay soos",
+  "source": "batch9",
+  "duration_s": 1.541,
+  "sha1": "db4b319c8ada",
+  "take": "b9wb_17_c",
+  "note": "COMPROMISE. The ee is the letter name, not Black's short iota, and Fraser kept it anyway: \"still has the e sound, but I think some people pronounce it like that anyway\". Recorded so nobody reads it as this project's opinion about iota"
  },
  {
   "index": 18,
@@ -385,9 +388,10 @@
   "tier": 1,
   "freq": 663,
   "tts": "hin ah",
-  "source": "freq",
+  "source": "batch9",
   "duration_s": 0.986,
-  "sha1": "a97e75cb2220"
+  "sha1": "a97e75cb2220",
+  "note": "the iota is short -- Black gives it as machine (long) or pit (short) and this is the short one. Round 9, against hee nah and hin nah"
  },
  {
   "index": 26,
@@ -593,11 +597,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 454,
-  "tts": "ho rah oh",
-  "source": "composed",
-  "duration_s": 1.482,
-  "sha1": "7a1139b4e708",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hɒ.ˈra.oː/",
+  "source": "batch9",
+  "duration_s": 1.149,
+  "sha1": "3677bcbe6dcb",
+  "note": "THE RESULT THAT CHANGED THE METHOD. Its English cue had already been passed by ear in 9C, and the IPA beat it anyway. Note the omega keeps its length: short omicron then long omega in one word",
+  "take": "b9wf_39_a"
  },
  {
   "index": 40,
@@ -623,10 +628,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 416,
-  "tts": "po loos",
-  "source": "freq",
-  "duration_s": 0.84,
-  "sha1": "1aead417739e"
+  "tts": "/pɒ.ˈlus/",
+  "source": "batch9",
+  "duration_s": 1.149,
+  "sha1": "6948b5e30f55",
+  "take": "b9wf_41_a",
+  "note": "the word that found the short-o fault: \"A has the correct loos sound, but the po has the omega o sound\""
  },
  {
   "index": 42,
@@ -682,11 +689,13 @@
   "pos": "noun",
   "tier": 1,
   "freq": 379,
-  "tts": "pnew mah",
-  "source": "freq",
-  "duration_s": 1.139,
+  "tts": "p'new mah",
+  "source": "batch9",
+  "duration_s": 1.228,
   "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
-  "sha1": "26554ff81a98"
+  "sha1": "c2de2aadf413",
+  "take": "b9wc_45_b",
+  "note": "SPEED 0.9, not 1.0 -- the only clip in the pack that is dialled rather than re-rolled. The apostrophe elides the helper vowel the Erasmian IPA writes as a schwa; nothing in eight hundred cues had tried punctuation for this"
  },
  {
   "index": 46,
@@ -698,9 +707,10 @@
   "tier": 1,
   "freq": 377,
   "tts": "hwee oss",
-  "source": "freq",
+  "source": "batch9",
   "duration_s": 1.167,
-  "sha1": "cdf63cd50132"
+  "sha1": "cdf63cd50132",
+  "note": "Black's keyword for the diphthong is suite and his own example for that row is this word. Round 9, against hoo ee oss and a comma"
  },
  {
   "index": 47,
@@ -911,10 +921,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 243,
-  "tts": "meh gahs",
-  "source": "g2p",
-  "duration_s": 1.309,
-  "sha1": "21d6566580a1"
+  "tts": "/ˈme.ɡas/",
+  "source": "batch9",
+  "duration_s": 1.149,
+  "sha1": "a51b0ef0264e",
+  "take": "b9wg_60_a",
+  "note": "IPA won where English had no known fault against it. Note the plain e after a consonant: the letter-name fault is only where the string OPENS on the vowel"
  },
  {
   "index": 61,
@@ -941,10 +953,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 241,
-  "tts": "pee stew oh",
-  "source": "g2p",
-  "duration_s": 1.225,
-  "sha1": "9332db0d89f4"
+  "tts": "/pɪ.ˈstju.oː/",
+  "source": "batch9",
+  "duration_s": 0.993,
+  "sha1": "51294bc7170c",
+  "take": "b9wi_62_a",
+  "note": "the eu rule in a second position -- 9G proved ju between consonants, this is ju before the omega"
  },
  {
   "index": 63,
@@ -1051,9 +1065,10 @@
   "tier": 1,
   "freq": 218,
   "tts": "eh ksehr kho my",
-  "source": "g2p",
+  "source": "batch9",
   "duration_s": 1.775,
-  "sha1": "53b1c7941f03"
+  "sha1": "53b1c7941f03",
+  "note": "round 9. NOT composable to eisercomai: the winner carries ksehr and that word needs sehr standing alone"
  },
  {
   "index": 70,
@@ -1064,10 +1079,11 @@
   "pos": "noun",
   "tier": 1,
   "freq": 216,
-  "tts": "ah nayr",
-  "source": "g2p",
-  "duration_s": 0.901,
-  "sha1": "60358cb36322"
+  "tts": "/a.ˈneːr/",
+  "source": "batch9",
+  "duration_s": 1.306,
+  "sha1": "ed649a461b10",
+  "take": "b9wh_70_a"
  },
  {
   "index": 71,
@@ -1423,10 +1439,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 162,
-  "tts": "po lees",
-  "source": "g2p",
-  "duration_s": 0.971,
-  "sha1": "93a82ed83687"
+  "tts": "/ˈpɒ.lɪs/",
+  "source": "batch9",
+  "duration_s": 0.836,
+  "sha1": "c6b7a5a05bc8",
+  "take": "b9we_94_b",
+  "note": "two faults at once: the short omicron and the short iota Fraser found -- \"shouldn't it end in is like the sound in this?\""
  },
  {
   "index": 95,
@@ -1437,11 +1455,12 @@
   "pos": "adv",
   "tier": 2,
   "freq": 160,
-  "tts": "to teh",
-  "source": "composed",
-  "duration_s": 0.751,
-  "sha1": "d4176e9ca623",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈtɒte/",
+  "source": "batch9",
+  "duration_s": 0.758,
+  "sha1": "07017ef17a7f",
+  "note": "no English spelling passed in two rounds -- tot is an English word for a child and the voice read it as the first syllable of total. Dotless beat the dotted version that had already been approved",
+  "take": "b9wi_95_a"
  },
  {
   "index": 96,
@@ -1576,12 +1595,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 153,
-  "tts": "po rue o my",
-  "source": "fix21",
-  "duration_s": 1.502,
-  "take": "2026-09-10, Atlas",
-  "note": "'rew' replaced with 'rue'",
-  "sha1": "92376e7d6e70"
+  "tts": "/pɒ.ˈrju.ɒ.mai̯/",
+  "source": "batch9",
+  "duration_s": 1.541,
+  "take": "b9wg_104_b",
+  "note": "the eu is written ju, which is Black's feud read back as IPA. Written eu-nonsyllabic it came out as row. Approved in fix21 with an omega where the omicron should be",
+  "sha1": "4646a6b3e798"
  },
  {
   "index": 105,
@@ -1666,10 +1685,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 144,
-  "tts": "eh gay roh",
-  "source": "g2p",
-  "duration_s": 1.724,
-  "sha1": "0c105e7e7f9e"
+  "tts": "/ɛ.ˈɡei̯.roː/",
+  "source": "batch9",
+  "duration_s": 1.855,
+  "sha1": "ed9213307fbe",
+  "take": "b9wh_110_b",
+  "note": "the string opens on epsilon and a bare e was read as the letter: \"A sounds like the letter e spoken\". 93 cues across the pack open that way"
  },
  {
   "index": 111,
@@ -1937,10 +1958,11 @@
   "pos": "conj",
   "tier": 2,
   "freq": 123,
-  "tts": "ho tahn",
-  "source": "g2p",
-  "duration_s": 0.793,
-  "sha1": "d9b0b0e120d1"
+  "tts": "/ˈhɒ.tan/",
+  "source": "batch9",
+  "duration_s": 0.914,
+  "sha1": "a07832b928e9",
+  "take": "b9wf_128_a"
  },
  {
   "index": 129,
@@ -1951,10 +1973,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 122,
-  "tts": "eye ohn",
-  "source": "g2p",
-  "duration_s": 1.413,
-  "sha1": "e8a429b85ad6"
+  "tts": "/ai̯.ˈoʊn/",
+  "source": "batch9",
+  "duration_s": 0.993,
+  "sha1": "d134813355c9",
+  "take": "b9wi_129_b",
+  "note": "the -on ending recited as letters until the omega was written as the English gold vowel. The syllable dot was read aloud once, in 9H, and not in the take that ships -- the voice is not deterministic"
  },
  {
   "index": 130,
@@ -2166,12 +2190,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 114,
-  "tts": "mo noss",
-  "source": "recued",
-  "duration_s": 1.19,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "33b13d9240c9"
+  "tts": "/ˈmɒ.nɒs/",
+  "source": "batch9",
+  "duration_s": 1.071,
+  "take": "b9wf_143_a",
+  "note": "both vowels are omicron and both are short, which the English spelling could only manage for the first. Approved in an earlier round with the fault in it",
+  "sha1": "ac6c52787e7b"
  },
  {
   "index": 144,
@@ -3109,10 +3133,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 155,
-  "tts": "khah rees",
-  "source": "batch5",
-  "duration_s": 1.355,
-  "sha1": "85d93044ef7c"
+  "tts": "khah riss",
+  "source": "batch9",
+  "duration_s": 0.993,
+  "sha1": "764fee51a72e",
+  "take": "b9we_205_c",
+  "note": "the -is is a SHORT iota, Black's pit, and this shipped as rees. Approved in batch 5 with the fault in it -- the fourth approval to hide one. Both IPA takes lost: IPA chi is a sound this voice does not make"
  },
  {
   "index": 206,
@@ -4325,10 +4351,12 @@
   "pos": "adv",
   "tier": 3,
   "freq": 62,
-  "tts": "eh ksoh",
-  "source": "g2p",
-  "duration_s": 1.483,
-  "sha1": "bebd390d9618"
+  "tts": "/ˈɛksoː/",
+  "source": "batch9",
+  "duration_s": 0.836,
+  "sha1": "5b542e7ac391",
+  "take": "b9wi_284_b",
+  "note": "dotless. English could only spell the xi by naming the letter X"
  },
  {
   "index": 285,

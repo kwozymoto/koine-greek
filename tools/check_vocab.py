@@ -526,7 +526,69 @@ CUE_OK = {
     791: "ξ- cannot begin an English word, so a helper 'a' carries the ks",
 }
 
-tts_bad = []
+# ---- A SECOND KIND OF CUE, and the three tests above do not apply to it ---
+# Batch 9 found that this voice reads IPA between slashes, and reads it better
+# than any English respelling: ὁράω's English cue had already been passed by
+# ear, and the IPA beat it. τότε had no English spelling that worked at all in
+# two rounds, because `tot` — a real English word with the right vowel — is
+# read as the first syllable of TOTAL. The voice reads the SPELLING.
+#
+# An IPA cue fails every test above by construction: it begins with a slash,
+# not with the word's first consonant, and it divides syllables with dots
+# rather than spaces. Skipping the tests would leave it unchecked, which is
+# worse, so it gets the test that actually fits: THE CUE MUST BE THE WORD'S
+# OWN IPA, converted by the rule the ear settled one word at a time.
+#
+#   eu̯ -> ju   Black's ευ is *feud*; `eu̯` came out as *row*
+#   o  -> ɒ     short omicron (no length mark) — Black's *not*
+#   i  -> ɪ     short iota — Black's *pit*
+#   ^e -> ɛ     ONLY where the string opens on it: μέγας /ˈme.ɡas/ and τότε
+#               /ˈtɒ.te/ were approved with a plain e, and only ἐγείρω, which
+#               opens on the vowel, was read as the letter name
+#   ː and ̯     never touched: omega, long iota, and every diphthong's second
+#               half. The first version of this conversion turned ὁράω's omega
+#               into a short o.
+#
+# So docs/erasmian_ipa.json — which check_ipa already verifies five ways —
+# becomes the authority for these cues too, and a typo in one cannot hide.
+IPA_LONG, IPA_NONSYL = "\u02d0", "\u032f"
+
+def ipa_cue(ipa):
+    s = ipa.replace("eu" + IPA_NONSYL, "ju")
+    s = re.sub("^(\u02c8?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
+               "\\1\u025b", s)
+    s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "])", "\u0252", s)
+    return re.sub("i(?![" + IPA_LONG + IPA_NONSYL + "])", "\u026a", s)
+
+# Where the string that was HEARD differs from the string the rule proposes.
+# The rule proposes; only a cue that produced a clip somebody approved may
+# ship, so these are the heard ones and the difference is the entry.
+IPA_HEARD = {
+    13: "the rule writes the final short iota ɪ and what was played is a plain "
+        "i, because that is the string sent in round 9E. Nobody has heard them "
+        "side by side; until they have, the heard one ships",
+    95: "dotless. The dotted form was approved in 9E and this beat it in 9I, "
+        "after a syllable dot was read aloud in another word",
+    284: "dotless, as τότε",
+    129: "the omega is written oʊ, Black's *gold* as English spells it, because "
+         "`oːn` at the end of a word was recited letter by letter — \"A spells "
+         "o n e. B spells o n\". NOT promoted into the rule: four cues end "
+         "-oːn and this is the only one an ear has judged, so ἄρχων, εἰκών and "
+         "πυλών go on the work list rather than being rewritten on one result",
+}
+
+try:
+    _ipa = json.load(io.open(os.path.join(ROOT, "docs", "erasmian_ipa.json"),
+                             encoding="utf-8"))
+    IPA = ({x.get("greek"): x.get("ipa") for x in _ipa}
+           if isinstance(_ipa, list) else _ipa)
+except Exception as _e:                      # never silently: an IPA cue would
+    IPA = None                               # then go unchecked and read green
+
+tts_bad, ipa_cues = [], []
+if IPA is None:
+    tts_bad.append("docs/erasmian_ipa.json could not be read, so no IPA cue "
+                   "can be checked")
 for path in ("docs/erasmian_vocab_cues.json",
              "docs/erasmian_vocab_cues_v3_black.json",
              "docs/erasmian_vocab_cues_v4_tail.json"):
@@ -538,6 +600,24 @@ for path in ("docs/erasmian_vocab_cues.json",
         tag = "%3s %-14s %-18s" % (r.get("index"), gk, '"' + tts + '"')
         if not tts:
             tts_bad.append(tag + " has no cue"); continue
+        if tts.startswith("/") or tts.endswith("/"):
+            if not (tts.startswith("/") and tts.endswith("/") and len(tts) > 2):
+                tts_bad.append(tag + " looks like IPA and is not closed by "
+                                     "slashes at both ends")
+                continue
+            ipa = IPA.get(gk)
+            if not ipa:
+                tts_bad.append(tag + " is an IPA cue for a word with no entry "
+                                     "in docs/erasmian_ipa.json")
+            elif tts[1:-1] != ipa_cue(ipa):
+                want = "/%s/" % ipa_cue(ipa)
+                line = tag + " is not this word's IPA converted: expected " + want
+                if r.get("index") in IPA_HEARD:
+                    excused.append(line + "  — " + IPA_HEARD[r["index"]])
+                else:
+                    tts_bad.append(line)
+            ipa_cues.append(r.get("index"))
+            continue
         if any(c.isupper() for c in tts):
             tts_bad.append(tag + " has a capital — a voice reads that as a name")
         # Count vowel groups in the cue, not words: "keffa lay" is two words
