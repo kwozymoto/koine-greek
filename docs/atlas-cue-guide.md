@@ -621,6 +621,94 @@ its entry is gone.
 and what an ear approved.** If it cannot be stated in those terms, the rule or
 the checker is wrong, not the data.
 
+## What batches 12 and 13 changed, 2026-09-17
+
+Two findings, and a checker that should have existed for a year.
+
+### The split glide was the dot
+
+βασιλεύς put `ju` in third position for the first time and it came apart:
+*"A is almost perfect except for the end which sounds like lee oos."* The l
+was coming away from the glide, which read as a glide that would not hold
+that far into a word — a new condition on the ευ rule, and a discouraging
+one, because `ju` is what released sixteen cues in 9G.
+
+It was the syllable dot. The same string with the dots taken out is one
+syllable and was approved unchanged. **So `ju` has now been heard at the
+front of a word, between consonants and at the end of one, and there is no
+positional condition on it at all.** The condition that looked like it
+belonged to the glide belonged to the thing sitting next to the glide.
+
+γραμματεύς is in 13B, dotted against dotless, to see whether that
+generalises.
+
+### A long omega at the end of a word recites
+
+αἰών's `oːn` was read letter by letter in batch 11 and shipped as
+`/ai̯ˈoʊn/` — Black's *gold* written the way English spells it — as a
+one-word exception. ὕδωρ's `oːr` did exactly the same thing in 13 and took
+exactly the same fix.
+
+Two words, nothing against, so it stopped being an allow-list entry and
+became part of the conversion. Σίμων gets it without being asked.
+
+**It covers n and r only, which is all that has been heard.** Nine more cues
+end in `oːs` — ὡς, πῶς, φῶς, καλῶς, οὕτως, καθώς — and not one has been
+through this route. ὡς is in 13B for that reason and no other: one verdict on
+the deck's 34th commonest word either keeps the rule narrow or widens it to
+all nine.
+
+### Iota quantity under stress is per-word, and the source cannot help
+
+καρδία took a LONG stressed iota in batch 10, which is where the rule's
+"leave a stressed iota alone" came from. πίπτω is the same shape and would
+not have it: *"both sound like peep instead of pip."*
+
+Before writing that down as a second exception it was worth asking whether
+the transcription could settle it — and the answer is that it cannot, in a
+way worth knowing. **`erasmian_ipa.json` writes a long iota in one entry out
+of 818.** It does not carry iota quantity at all. So no rule over that file
+can distinguish these two words, and the question is per-word like the dot,
+with the default left long because that is what was approved first.
+
+This is worth contrasting with the dot, which looks like the same kind of
+finding and is not. The dot is a property of the *cue* and the remedy is
+always available: take them out. Iota quantity is a property of the *Greek*,
+and the file the cues are built from does not record it.
+
+### And a rule that writes two characters is as dangerous as one that reads two
+
+The `oʊ` conversion went in above the short-o rule, which then opened the o
+of the `oʊ` it had just written: `/ˈhu.dɒʊr/`. That is the fourth time this
+conversion has been wrong about a digraph and the first time from this
+direction — the three before were diphthongs being *read* as two editable
+vowels, and this was a digraph being *written* into the path of a later rule.
+
+Running it after the short-o rule needs no guard at all, because `oː` carries
+a length mark and that rule already steps over it. **Order is the guard.**
+
+It was also written `"oʊ\1"` in a non-raw Python string, which is an octal
+escape for a control byte and not a backreference, so the consonant was
+eaten. That is the SECOND time that exact escape has gone into this pack; the
+first was check_vocab's epsilon rule in batch 11, where it dropped a stress
+mark and put a false entry in the allow-list. Both times it was caught by
+running the converter over words that were already settled before trusting it
+on new ones, which is now the only reason to keep doing that.
+
+### check_sw, and the failure that leaves no trace
+
+sw.js carries three lists of paths, and a wrong path in any of them throws
+nothing. STALE is the dangerous one: vocabulary clips live in a bulk cache
+that is deliberately never swept, so a phone keeps a clip until something in
+STALE names it. Misspell that name and **the re-recording never reaches the
+one device it was recorded for, and nothing ever says so.**
+
+Two of the four entries in v167's block were typed from memory and were
+wrong — `255_hudor` for `255_udor`, `272_rhema` for `272_rema`. That is
+CLAUDE.md's first rule broken in the one place where breaking it leaves no
+evidence. The checker now asks both directions: every path named exists, and
+every bulk file whose content changed this release is named.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
