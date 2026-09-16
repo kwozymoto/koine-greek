@@ -555,10 +555,30 @@ IPA_LONG, IPA_NONSYL = "\u02d0", "\u032f"
 
 def ipa_cue(ipa):
     s = ipa.replace("eu" + IPA_NONSYL, "ju")
-    s = re.sub("^(\u02c8?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
-               "\\1\u025b", s)
-    s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "])", "\u0252", s)
-    return re.sub("i(?![" + IPA_LONG + IPA_NONSYL + "])", "\u026a", s)
+    s = re.sub("^(ˈ?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
+               "\1ɛ", s)
+    s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "])", "ɒ", s)
+    # A stressed iota stays long; a stressed omicron does not. The ear's
+    # asymmetry, not a theory: five cues were approved with the open o under
+    # the stress, and the first stressed IOTA ever put up went to the version
+    # that left it long.
+    out = []
+    for syl in s.split("."):
+        if "ˈ" not in syl:
+            syl = re.sub("i(?![" + IPA_LONG + IPA_NONSYL + "])", "ɪ", syl)
+        out.append(syl)
+    s = ".".join(out)
+    # THEN the dot immediately before the stress mark comes out, AFTER the
+    # syllable rules and never before them. Batch 10B put four words up dotted
+    # against dotless and three took the version with that one dot gone; the
+    # fourth has its stress word-initial, so it has no such dot. The dot has
+    # been read ALOUD twice, and both times it sat against the stress.
+    #
+    # ORDER MATTERS, AND THE FIRST ATTEMPT HAD IT WRONG. Taking the dot out
+    # first merges the unstressed syllable into the stressed one, so the
+    # opening syllable looks stressed and keeps its long iota: the converter
+    # produced /pi.../ where the string an ear approved is /pɪ.../.
+    return s.replace("." + "ˈ", "ˈ")
 
 # Where the string that was HEARD differs from the string the rule proposes.
 # The rule proposes; only a cue that produced a clip somebody approved may
@@ -575,6 +595,21 @@ IPA_HEARD = {
          "o n e. B spells o n\". NOT promoted into the rule: four cues end "
          "-oːn and this is the only one an ear has judged, so ἄρχων, εἰκών and "
          "πυλών go on the work list rather than being rewritten on one result",
+    98: "fully dotless. The rule takes out the dot before the stress and this "
+        "took out the one after it as well, which is the only word so far that "
+        "has wanted that — its last syllable is a bare vowel",
+    # THE FIVE BELOW SHIP FROM BATCH 9, BEFORE 10B FOUND THE DOT. Each sounds
+    # right and each would sound better without the dot against its stress, on
+    # the evidence of three words. Re-cutting them from the rule would ship
+    # five strings nobody has heard, which is the one thing this audit exists
+    # to stop, so they go up in a round instead and these entries come out
+    # when they do.
+    41:  "shipped before the pre-stress dot rule; queued to be asked",
+    70:  "shipped before the pre-stress dot rule; queued to be asked",
+    104: "shipped before the pre-stress dot rule; queued to be asked",
+    110: "shipped before the pre-stress dot rule; queued to be asked",
+    129: "shipped before the pre-stress dot rule; queued to be asked, and its "
+         "oʊ is a separate exception recorded above",
 }
 
 try:

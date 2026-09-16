@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v163';
+const VERSION = 'v164';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v164: batch 10, the first batch written in IPA. Five new words and two
+     batch-9 clips improved. The two are ὁράω and πιστεύω, re-cut with the
+     syllable dot before the stress taken out -- it had been read aloud twice,
+     and three words in a row chose the version without it. */
+  'audio/vocab/039_orao.mp3',
+  'audio/vocab/062_pisteuo.mp3',
+  'audio/vocab/098_kardia.mp3',
+  'audio/vocab/117_palin.mp3',
+  'audio/vocab/122_blepo.mp3',
+  'audio/vocab/133_dunamis.mp3',
   /* v163: batch 9. Seventeen vocabulary clips re-cut, and they are bulk
      files -- a VERSION bump replaces the shell and never reaches them, so a
      phone that has already cached one would keep the old sound for ever.

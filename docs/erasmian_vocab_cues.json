@@ -597,12 +597,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 454,
-  "tts": "/hɒ.ˈra.oː/",
-  "source": "batch9",
+  "tts": "/hɒˈra.oː/",
+  "source": "batch10",
   "duration_s": 1.149,
-  "sha1": "3677bcbe6dcb",
-  "note": "THE RESULT THAT CHANGED THE METHOD. Its English cue had already been passed by ear in 9C, and the IPA beat it anyway. Note the omega keeps its length: short omicron then long omega in one word",
-  "take": "b9wf_39_a"
+  "sha1": "025c97e318d0",
+  "note": "re-cut from batch 9 with the dot before the stress removed. The fully dotless version lost, so this is not a word losing its syllable marks -- it is one dot, in one place",
+  "take": "b10wb_39_a"
  },
  {
   "index": 40,
@@ -954,12 +954,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 241,
-  "tts": "/pɪ.ˈstju.oː/",
-  "source": "batch9",
+  "tts": "/pɪˈstju.oː/",
+  "source": "batch10",
   "duration_s": 0.993,
-  "sha1": "51294bc7170c",
-  "take": "b9wi_62_a",
-  "note": "the eu rule in a second position -- 9G proved ju between consonants, this is ju before the omega"
+  "sha1": "78ed0e948b17",
+  "take": "b10wb_62_a",
+  "note": "re-cut from batch 9, same one dot removed, and the ju is undisturbed by it"
  },
  {
   "index": 63,
@@ -1319,9 +1319,10 @@
   "tier": 2,
   "freq": 176,
   "tts": "hew ree skoh",
-  "source": "g2p",
+  "source": "batch10",
   "duration_s": 1.317,
-  "sha1": "336810f521c6"
+  "sha1": "336810f521c6",
+  "note": "STAYS ENGLISH. `hju` is right between consonants and recites at the front of a word -- \"C is best, the other two spell the hju part\". Its `ree` is right for the same reason καρδία's is: that iota is stressed"
  },
  {
   "index": 87,
@@ -1502,10 +1503,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 156,
-  "tts": "kahr dee ah",
-  "source": "g2p",
-  "duration_s": 1.226,
-  "sha1": "6f229d8b2bbd"
+  "tts": "/karˈdia/",
+  "source": "batch10",
+  "duration_s": 1.149,
+  "sha1": "087613035c12",
+  "take": "b10wb_98_b",
+  "note": "THE WORD THAT FOUND THE STRESSED-IOTA CONDITION. The rule opened it to ɪ and Fraser took the version that left it long. Every iota the rule had been proved on was unstressed. Dotless: the syllable dot was read aloud in the dotted take"
  },
  {
   "index": 99,
@@ -1794,10 +1797,12 @@
   "pos": "adv",
   "tier": 2,
   "freq": 141,
-  "tts": "pah leen",
-  "source": "g2p",
-  "duration_s": 1.183,
-  "sha1": "de3a0e4507ce"
+  "tts": "/ˈpa.lɪn/",
+  "source": "batch10",
+  "duration_s": 0.679,
+  "sha1": "be9e57f4595b",
+  "take": "b10w_117_a",
+  "note": "an unstressed short iota, which is where the opening rule was already proved; the cue that shipped spelled it machine"
  },
  {
   "index": 118,
@@ -1869,10 +1874,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 133,
-  "tts": "bleh poh",
-  "source": "g2p",
-  "duration_s": 1.129,
-  "sha1": "4447cf358fa5"
+  "tts": "/ˈble.poː/",
+  "source": "batch10",
+  "duration_s": 0.914,
+  "sha1": "310f1afcb62f",
+  "take": "b10w_122_a",
+  "note": "the epsilon rule from the other side: a bare e behind a consonant is right EVEN UNDER THE STRESS, so ɛ is a rule about the first character and not about epsilon"
  },
  {
   "index": 123,
@@ -2038,10 +2045,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 119,
-  "tts": "doo nah mees",
-  "source": "g2p",
-  "duration_s": 1.48,
-  "sha1": "c4b8fa6a0162"
+  "tts": "/ˈdu.na.mɪs/",
+  "source": "batch10",
+  "duration_s": 1.149,
+  "sha1": "a7a02dc514a0",
+  "take": "b10w_133_a",
+  "note": "one of the five cues that spelled a short final -is as machine, the fault Fraser found in πόλις"
  },
  {
   "index": 134,
