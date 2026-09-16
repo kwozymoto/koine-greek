@@ -556,7 +556,7 @@ IPA_LONG, IPA_NONSYL = "\u02d0", "\u032f"
 def ipa_cue(ipa):
     s = ipa.replace("eu" + IPA_NONSYL, "ju")
     s = re.sub("^(ˈ?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
-               "\1ɛ", s)
+               "\\1ɛ", s)
     # An o that is the FIRST half of a diphthong is not a short omicron: οι is
     # Black's *oil*, and the non-syllabic mark sits on the SECOND vowel, so a
     # guard looking only for the mark straight after the o misses it. It
@@ -597,27 +597,17 @@ IPA_HEARD = {
     95: "dotless. The dotted form was approved in 9E and this beat it in 9I, "
         "after a syllable dot was read aloud in another word",
     284: "dotless, as τότε",
-    129: "the omega is written oʊ, Black's *gold* as English spells it, because "
-         "`oːn` at the end of a word was recited letter by letter — \"A spells "
-         "o n e. B spells o n\". NOT promoted into the rule: four cues end "
-         "-oːn and this is the only one an ear has judged, so ἄρχων, εἰκών and "
-         "πυλών go on the work list rather than being rewritten on one result",
-    98: "fully dotless. The rule takes out the dot before the stress and this "
-        "took out the one after it as well, which is the only word so far that "
-        "has wanted that — its last syllable is a bare vowel",
-    # THE FIVE BELOW SHIP FROM BATCH 9, BEFORE 10B FOUND THE DOT. Each sounds
-    # right and each would sound better without the dot against its stress, on
-    # the evidence of three words. Re-cutting them from the rule would ship
-    # five strings nobody has heard, which is the one thing this audit exists
-    # to stop, so they go up in a round instead and these entries come out
-    # when they do.
-    41:  "shipped before the pre-stress dot rule; queued to be asked",
-    70:  "shipped before the pre-stress dot rule; queued to be asked",
-    104: "shipped before the pre-stress dot rule; queued to be asked",
-    110: "shipped before the pre-stress dot rule; queued to be asked",
-    129: "shipped before the pre-stress dot rule; queued to be asked, and its "
-         "oʊ is a separate exception recorded above",
+    98: "fully dotless — the rule takes out the dot before the stress and this "
+        "took the one after it as well. The only word so far that has wanted "
+        "that, and its last syllable is a bare vowel",
+    129: "the omega written oʊ, Black's *gold* as English spells it, because "
+         "`oːn` at the end of a word was recited letter by letter. Four cues "
+         "end that way and this is the only one an ear has judged",
+    70: "KEEPS ITS DOT. Batch 11 put the five queued pre-stress dots up and "
+        "four took the dotless version; this one did not. So the rule is a "
+        "default and not a law, and this is the word that says so",
 }
+
 
 try:
     _ipa = json.load(io.open(os.path.join(ROOT, "docs", "erasmian_ipa.json"),

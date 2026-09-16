@@ -628,12 +628,11 @@
   "pos": "adj",
   "tier": 1,
   "freq": 416,
-  "tts": "/pɒ.ˈlus/",
-  "source": "batch9",
-  "duration_s": 1.149,
-  "sha1": "6948b5e30f55",
-  "take": "b9wf_41_a",
-  "note": "the word that found the short-o fault: \"A has the correct loos sound, but the po has the omega o sound\""
+  "tts": "/pɒˈlus/",
+  "source": "batch11",
+  "duration_s": 0.993,
+  "sha1": "d7bf7c3aa57b",
+  "take": "b11w_41_a"
  },
  {
   "index": 42,
@@ -1081,10 +1080,11 @@
   "tier": 1,
   "freq": 216,
   "tts": "/a.ˈneːr/",
-  "source": "batch9",
+  "source": "batch11",
   "duration_s": 1.306,
   "sha1": "ed649a461b10",
-  "take": "b9wh_70_a"
+  "take": "b9wh_70_a",
+  "note": "KEEPS ITS DOT, alone of the five queued. Four took the dotless version and this did not, so the pre-stress dot rule is a default and not a law"
  },
  {
   "index": 71,
@@ -1599,12 +1599,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 153,
-  "tts": "/pɒ.ˈrju.ɒ.mai̯/",
-  "source": "batch9",
-  "duration_s": 1.541,
-  "take": "b9wg_104_b",
-  "note": "the eu is written ju, which is Black's feud read back as IPA. Written eu-nonsyllabic it came out as row. Approved in fix21 with an omega where the omicron should be",
-  "sha1": "4646a6b3e798"
+  "tts": "/pɒˈrju.ɒ.mai̯/",
+  "source": "batch11",
+  "duration_s": 1.698,
+  "take": "b11w_104_a",
+  "note": "the ju rule, and the dot before the stress gone",
+  "sha1": "6f6a8987c00a"
  },
  {
   "index": 105,
@@ -1689,12 +1689,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 144,
-  "tts": "/ɛ.ˈɡei̯.roː/",
-  "source": "batch9",
-  "duration_s": 1.855,
-  "sha1": "ed9213307fbe",
-  "take": "b9wh_110_b",
-  "note": "the string opens on epsilon and a bare e was read as the letter: \"A sounds like the letter e spoken\". 93 cues across the pack open that way"
+  "tts": "/ɛˈɡei̯.roː/",
+  "source": "batch11",
+  "duration_s": 1.149,
+  "sha1": "ac83b08bf0ec",
+  "take": "b11w_110_a",
+  "note": "ɛ because the string opens on epsilon; the dot before the stress gone"
  },
  {
   "index": 111,
@@ -1981,12 +1981,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 122,
-  "tts": "/ai̯.ˈoʊn/",
-  "source": "batch9",
-  "duration_s": 0.993,
-  "sha1": "d134813355c9",
-  "take": "b9wi_129_b",
-  "note": "the -on ending recited as letters until the omega was written as the English gold vowel. The syllable dot was read aloud once, in 9H, and not in the take that ships -- the voice is not deterministic"
+  "tts": "/ai̯ˈoʊn/",
+  "source": "batch11",
+  "duration_s": 0.914,
+  "sha1": "42309cec8056",
+  "take": "b11w_129_a",
+  "note": "the omega written as the English *gold* vowel, because -oːn at the end of a word was recited letter by letter"
  },
  {
   "index": 130,
@@ -3038,10 +3038,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 77,
-  "tts": "ah noy goh",
-  "source": "g2p",
-  "duration_s": 1.597,
-  "sha1": "85d5b48f1456"
+  "tts": "/aˈnoi̯.ɡoː/",
+  "source": "batch11",
+  "duration_s": 1.306,
+  "sha1": "c99db84080fd",
+  "take": "b11w_198_a",
+  "note": "the first οι through this route. The conversion had been opening the o in οι to ɒ — it is the first half of a diphthong, Black's *oil*, and the non-syllabic mark sits on the second vowel where the guard was not looking. Fixed and then heard, rather than trusted to the fix"
  },
  {
   "index": 199,

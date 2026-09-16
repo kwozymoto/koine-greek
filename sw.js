@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v164';
+const VERSION = 'v165';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v165: batch 11. Five clips re-cut -- four of them only to take out the
+     syllable dot that sat against their stress mark, which the voice had been
+     reading aloud. */
+  'audio/vocab/041_polus.mp3',
+  'audio/vocab/104_poreuomai.mp3',
+  'audio/vocab/110_egeiro.mp3',
+  'audio/vocab/129_aion.mp3',
+  'audio/vocab/198_anoigo.mp3',
   /* v164: batch 10, the first batch written in IPA. Five new words and two
      batch-9 clips improved. The two are ὁράω and πιστεύω, re-cut with the
      syllable dot before the stress taken out -- it had been read aloud twice,
