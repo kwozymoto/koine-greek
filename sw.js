@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v165';
+const VERSION = 'v166';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v166: batch 12 and 12B. Seven clips re-cut, 739 occurrences. τέκνον is
+     worth naming for what IPA is for -- English cannot begin a syllable with
+     κν, so its cue wrote "knon", and an English kn has a silent k. */
+  'audio/vocab/123_apostello.mp3',
+  'audio/vocab/139_basileus.mp3',
+  'audio/vocab/145_apothnesko.mp3',
+  'audio/vocab/148_mello.mp3',
+  'audio/vocab/167_teknon.mp3',
+  'audio/vocab/187_epta.mp3',
+  'audio/vocab/246_mallon.mp3',
   /* v165: batch 11. Five clips re-cut -- four of them only to take out the
      syllable dot that sat against their stress mark, which the voice had been
      reading aloud. */

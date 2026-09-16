@@ -597,6 +597,21 @@ IPA_HEARD = {
     95: "dotless. The dotted form was approved in 9E and this beat it in 9I, "
         "after a syllable dot was read aloud in another word",
     284: "dotless, as τότε",
+    123: "fully dotless, as καρδία. Its pre-stress dot was already out by the "
+         "rule and it still spoke the rest. Five words have now read a dot "
+         "aloud — αἰών, καρδία, ἀποστέλλω, ἀποθνῄσκω, βασιλεύς — and eight "
+         "have been approved carrying one, with no length or shape separating "
+         "the two groups. So it stays a per-word question and the remedy is "
+         "always the same: take them all out",
+    145: "fully dotless. The first IPA take had every sound right, theta "
+         "included, and spoke all three dots; the same string without them "
+         "was approved unchanged",
+    139: "fully dotless, and it is the word that says what the dot actually "
+         "costs. Its `ju` came out as *lee-oos* — the l coming away from the "
+         "glide — which read as a glide that would not hold in third "
+         "position. It was the dot. The same string dotless is one syllable, "
+         "and `ju` is now heard at the front of a word, between consonants "
+         "and at the end of one",
     98: "fully dotless — the rule takes out the dot before the stress and this "
         "took the one after it as well. The only word so far that has wanted "
         "that, and its last syllable is a bare vowel",

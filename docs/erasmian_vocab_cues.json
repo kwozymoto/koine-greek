@@ -1890,12 +1890,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 132,
-  "tts": "ah po stel loh",
-  "source": "rollout",
-  "duration_s": 1.82,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "90b89910bf81"
+  "tts": "/apɒˈstelloː/",
+  "source": "batch12",
+  "duration_s": 0.993,
+  "take": "b12w_123_a",
+  "note": "FULLY DOTLESS. Its pre-stress dot was already out by the rule and it still spoke the rest, as καρδία did. Second word to need every dot removed",
+  "sha1": "f3ca3c17110c"
  },
  {
   "index": 124,
@@ -2138,10 +2138,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 115,
-  "tts": "bah see lews",
-  "source": "g2p",
-  "duration_s": 1.863,
-  "sha1": "20d4c7e454e2"
+  "tts": "/basɪˈljus/",
+  "source": "batch12",
+  "duration_s": 1.228,
+  "sha1": "7fab36e90215",
+  "take": "b12wb_139_a",
+  "note": "THE SPLIT GLIDE WAS THE DOT. `ju` in third position came out as lee-oos while the string had dots in it; the same string dotless is one syllable. Nothing to do with the glide"
  },
  {
   "index": 140,
@@ -2232,10 +2234,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 111,
-  "tts": "ah poth nay skoh",
-  "source": "g2p",
-  "duration_s": 1.778,
-  "sha1": "4db5c2279519"
+  "tts": "/apɒθˈneːskoː/",
+  "source": "batch12",
+  "duration_s": 1.228,
+  "sha1": "03672523727b",
+  "take": "b12wb_145_a",
+  "note": "fully dotless, like καρδία and ἀποστέλλω before it. The sounds were right on the first IPA take -- including the theta -- and only the dots were spoken"
  },
  {
   "index": 146,
@@ -2277,12 +2281,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 109,
-  "tts": "mel loh",
-  "source": "rollout",
-  "duration_s": 1.268,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "7dc0efb87f5a"
+  "tts": "/ˈmel.loː/",
+  "source": "batch12",
+  "duration_s": 0.836,
+  "take": "b12w_148_a",
+  "note": "the epsilon behind a consonant that βλέπω settled, and a doubled lambda. Keeps its dot without trouble",
+  "sha1": "170edadbb516"
  },
  {
   "index": 149,
@@ -2562,10 +2566,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 99,
-  "tts": "teh knon",
-  "source": "g2p",
-  "duration_s": 1.099,
-  "sha1": "a9907d57edfb"
+  "tts": "/ˈtek.nɒn/",
+  "source": "batch12",
+  "duration_s": 0.836,
+  "sha1": "d4f9a4528ef3",
+  "take": "b12w_167_a",
+  "note": "the κν cluster, which English cannot begin a syllable with -- the cue that shipped wrote `knon`, and an English kn has a silent k"
  },
  {
   "index": 168,
@@ -2867,12 +2873,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 88,
-  "tts": "hep tah",
-  "source": "rollout",
-  "duration_s": 1.025,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "1745fc337f5c"
+  "tts": "/hepˈta/",
+  "source": "batch12",
+  "duration_s": 0.914,
+  "take": "b12wb_187_a",
+  "note": "the rule's own output, unedited, rough breathing and final stress both. First word this round to need nothing",
+  "sha1": "f35f869058b4"
  },
  {
   "index": 188,
@@ -3786,12 +3792,12 @@
   "pos": "adv",
   "tier": 3,
   "freq": 81,
-  "tts": "mal lon",
-  "source": "rollout",
-  "duration_s": 1.225,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "d23aef489cfe"
+  "tts": "/ˈmaːl.lɒn/",
+  "source": "batch12",
+  "duration_s": 0.914,
+  "take": "b12wb_246_a",
+  "note": "THE FIRST LONG ALPHA through this route, and the rule's own output. Black's *father* against *bat*, a distinction the pack's English cues have never been able to write",
+  "sha1": "0c48df7795f2"
  },
  {
   "index": 247,
