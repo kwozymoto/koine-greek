@@ -307,8 +307,40 @@ if __name__ == "__main__":
                      "χρόνος, σοφός, νόμος, σοφία, νομίζω — five of five, "
                      "2026-09-11"))
 
+    # ---- the same question, asked of the other kind of cue ---------------
+    # Batch 9 found that this voice reads IPA between slashes, and fifteen
+    # cues are now written that way. Every rule above is an English
+    # word-boundary pattern, so an IPA cue passes all of them by matching
+    # none of them — and that is silence, not approval. Two symbols have been
+    # rejected by ear and they belong here for exactly the reason the
+    # spellings do: the fix must reach every cue carrying them, not only the
+    # word that was reported.
+    IPA_REJECTED = [
+        ("x", "IPA chi. This voice does not make the velar fricative — the "
+              "same chi that decodes as k in 78% of the shipped clips. Write "
+              "the word in English instead; `khah riss` is the shape that "
+              "works",
+         "χάρις, both IPA takes lost to the English cue, 2026-09-17 (9E)"),
+        ("eu̯", "ευ written as a diphthong comes out as *row*, the omega "
+                     "sound. Black's keyword is *feud*, so write it `ju`",
+         "πορεύομαι \"ˈreu̯ comes out as row (omega sound)\", 2026-09-17 (9F)"),
+    ]
+    ipa_hits = []
+    for r in rows:
+        cue = (r.get("tts") or "")
+        if not cue.startswith("/"):
+            continue
+        for sym, does, proof in IPA_REJECTED:
+            if sym in cue:
+                ipa_hits.append((r.get("index"), r.get("greek"), cue, sym,
+                                 does, proof))
+    hits += ipa_hits
+
     print("cues held:                        %d" % len(rows))
+    print("   of them written in IPA:        %d"
+          % sum(1 for r in rows if (r.get("tts") or "").startswith("/")))
     print("spellings an ear has rejected:    %d" % len(REJECTED))
+    print("IPA symbols an ear has rejected:  %d" % len(IPA_REJECTED))
     print("προσ- words whose sigma is checked: %d"
           % sum(1 for r in rows if flat(r.get("greek")).startswith(PROS_PREFIX)))
     print("occurrences excused in ALLOWED:   %d" % excused)
