@@ -557,7 +557,14 @@ def ipa_cue(ipa):
     s = ipa.replace("eu" + IPA_NONSYL, "ju")
     s = re.sub("^(ˈ?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
                "\1ɛ", s)
-    s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "])", "ɒ", s)
+    # An o that is the FIRST half of a diphthong is not a short omicron: οι is
+    # Black's *oil*, and the non-syllabic mark sits on the SECOND vowel, so a
+    # guard looking only for the mark straight after the o misses it. It
+    # proposed /aˈnɒi̯.ɡoː/ for ἀνοίγω. No cue in the pack carries οι yet and
+    # four of the unheard words do, so it was caught before it shipped — the
+    # third time this conversion has been wrong about a diphthong.
+    s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "]|[iu]" + IPA_NONSYL + ")",
+               "ɒ", s)
     # A stressed iota stays long; a stressed omicron does not. The ear's
     # asymmetry, not a theory: five cues were approved with the open o under
     # the stress, and the first stressed IOTA ever put up went to the version
