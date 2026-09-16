@@ -64,6 +64,13 @@ data/gnt/, and this runs the lot:
                      other words carrying the same spelling: `keye` was
                      replaced for καινός and shipped again the next day in
                      καιρός
+    check_sw         the service worker's own file lists: that every path in
+                     SHELL and STALE exists, and that every bulk file whose
+                     content changed this release is evicted. A wrong path
+                     there throws nothing and precaches or evicts one fewer
+                     file — and since the vocabulary cache is never swept, a
+                     misspelt STALE entry means the re-recorded clip never
+                     reaches the phone it was recorded for
     check_forms      the 1,431 real inflected forms the parsing drill marks
                      you against: each occurs, carries that parse everywhere
                      it occurs, and belongs to the headword shown
@@ -136,7 +143,7 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_forms",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
           "check_ipa", "check_sounds", "check_strokes",
-          "check_cues", "check_lesson_audio",
+          "check_cues", "check_lesson_audio", "check_sw",
           "check_taught", "check_prose", "check_terms",
           "check_beside", "check_consistency",
           "check_frozen", "check_black", "check_coverage", "check_claims",

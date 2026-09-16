@@ -565,10 +565,28 @@ def ipa_cue(ipa):
     # third time this conversion has been wrong about a diphthong.
     s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "]|[iu]" + IPA_NONSYL + ")",
                "ɒ", s)
-    # A stressed iota stays long; a stressed omicron does not. The ear's
-    # asymmetry, not a theory: five cues were approved with the open o under
-    # the stress, and the first stressed IOTA ever put up went to the version
-    # that left it long.
+    # A long omega at the END of a word, closed by a sonorant, is recited
+    # letter by letter — αἰών's `oːn` was in batch 11 and ὕδωρ's `oːr` in 13,
+    # and both were fixed by writing Black's *gold* as English spells it. Two
+    # words, nothing against, so it is a rule and not two allow-list entries.
+    #
+    # ONLY n and r, which is all that has been heard. Nine more cues end in
+    # `oːs` — ὡς, πῶς, φῶς, καλῶς — and none has been through this route. ὡς
+    # is in 13B to find out; until it answers, s is left alone.
+    #
+    # It runs AFTER the short-o rule and not before it, because `oʊ` is a
+    # digraph whose first half that rule would otherwise open. Written above,
+    # it proposed /ˈhu.dɒʊr/ — the same fault as the three diphthongs met from
+    # the other side: a rule that WRITES two characters has to be stepped over
+    # as carefully as one that reads them.
+    s = re.sub("o" + IPA_LONG + "([nr])$", "oʊ\\1", s)
+    # A stressed iota is a PER-WORD question, and the source cannot settle it:
+    # erasmian_ipa.json writes a long iota in one entry out of 818, so it does
+    # not carry the quantity at all. καρδία took a long one under the stress
+    # and πίπτω would not have it — "both sound like peep instead of pip" —
+    # and the two are the same shape. The default here leaves it long, because
+    # that is what was approved first; the other is an allow-list entry. A
+    # stressed OMICRON is different and does open, five times over.
     out = []
     for syl in s.split("."):
         if "ˈ" not in syl:
@@ -615,9 +633,12 @@ IPA_HEARD = {
     98: "fully dotless — the rule takes out the dot before the stress and this "
         "took the one after it as well. The only word so far that has wanted "
         "that, and its last syllable is a bare vowel",
-    129: "the omega written oʊ, Black's *gold* as English spells it, because "
-         "`oːn` at the end of a word was recited letter by letter. Four cues "
-         "end that way and this is the only one an ear has judged",
+    186: "A SHORT STRESSED IOTA, and dotless with it. The rule leaves a "
+         "stressed iota long because καρδία wanted that, and this word is the "
+         "same shape and would not have it: both takes "
+         "\"sound like peep instead of pip\". Nothing can arbitrate — the IPA "
+         "file writes a long iota in 1 entry of 818 — so it is per-word, like "
+         "the dot",
     70: "KEEPS ITS DOT. Batch 11 put the five queued pre-stress dots up and "
         "four took the dotless version; this one did not. So the rule is a "
         "default and not a law, and this is the word that says so",

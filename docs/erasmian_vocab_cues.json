@@ -2859,10 +2859,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 90,
-  "tts": "peep toh",
-  "source": "g2p",
-  "duration_s": 0.918,
-  "sha1": "a94b10defbdb"
+  "tts": "/ˈpɪptoː/",
+  "source": "batch13",
+  "duration_s": 0.836,
+  "sha1": "2132f1f153e4",
+  "take": "b13w_186_b",
+  "note": "SHORT STRESSED IOTA, and dotless. καρδία took a long one in the same position and this did not, and the source cannot arbitrate: erasmian_ipa.json writes a long iota in one entry out of 818. So iota quantity under stress is a per-word question, like the dot"
  },
  {
   "index": 187,
@@ -3933,10 +3935,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 76,
-  "tts": "hoo dohr",
-  "source": "g2p",
-  "duration_s": 0.734,
-  "sha1": "3369ad88135c"
+  "tts": "/ˈhu.doʊr/",
+  "source": "batch13",
+  "duration_s": 0.836,
+  "sha1": "310ca209af65",
+  "take": "b13w_255_b",
+  "note": "THE SECOND oʊ. A final long omega before a consonant recites -- αἰών's `oːn` was read letter by letter and so was this `oːr`. Two words, no contradiction, so it is now in the conversion rather than the allow-list"
  },
  {
   "index": 256,
@@ -4169,12 +4173,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 68,
-  "tts": "sab bah ton",
-  "source": "rollout",
-  "duration_s": 1.491,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "81817e1a7682"
+  "tts": "/ˈsab.ba.tɒn/",
+  "source": "batch13",
+  "duration_s": 1.384,
+  "take": "b13w_271_a",
+  "note": "the rule's own output, keeping BOTH dots after the stress -- which is καρδία's exact shape, and καρδία spoke them. Per-word, again",
+  "sha1": "03d31957d47c"
  },
  {
   "index": 272,
@@ -4185,10 +4189,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 67,
-  "tts": "rhay mah",
-  "source": "g2p",
-  "duration_s": 0.972,
-  "sha1": "e162c48ba368"
+  "tts": "/ˈreː.ma/",
+  "source": "batch13",
+  "duration_s": 1.071,
+  "sha1": "bf2e0438e182",
+  "take": "b13w_272_a",
+  "note": "the rule's own output. Initial ῥ written as a plain r, and the rough breathing is not missed"
  },
  {
   "index": 273,

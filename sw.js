@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v166';
+const VERSION = 'v167';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,13 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v167: batch 13. Four clips re-cut, 301 occurrences. ὕδωρ is the second
+     word to show that a long omega at the end of one is recited letter by
+     letter, so that stopped being an exception and became part of the rule. */
+  'audio/vocab/186_pipto.mp3',
+  'audio/vocab/255_udor.mp3',
+  'audio/vocab/271_sabbaton.mp3',
+  'audio/vocab/272_rema.mp3',
   /* v166: batch 12 and 12B. Seven clips re-cut, 739 occurrences. τέκνον is
      worth naming for what IPA is for -- English cannot begin a syllable with
      κν, so its cue wrote "knon", and an English kn has a silent k. */
