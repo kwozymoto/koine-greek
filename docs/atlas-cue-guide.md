@@ -551,6 +551,76 @@ cue would put `/ˈhɒ.ti/` into spoken prose. No batch-9 word appears in the
 chapter 1 and 2 narration, so nothing is broken today. It is a trap set for the
 next chapter that gets narrated.
 
+## What batches 10 and 11 changed, 2026-09-17
+
+Batch 9 found the IPA route. These two rounds asked it the questions it had
+never been asked, and every one of them was about POSITION — which is the
+thing this pack has been caught by more than any other.
+
+### Three conditions the rule did not have
+
+**A stressed iota is left alone; a stressed omicron is not.** The rule opens
+every short vowel, and every iota it had been validated on was UNSTRESSED —
+πόλις `/ˈpɒ.lɪs/`, πιστεύω `/pɪ.ˈstju.oː/`, ὅτι. καρδία was the first stressed
+one ever put up and went to the version with the iota long: *"B would be
+best"*. A stressed omicron is a different matter and does open — ὅτι, πόλις,
+τότε, ὅταν and μόνος were all approved that way. **The asymmetry is the ear's,
+not a theory about vowels**, and it is recorded rather than explained.
+
+**The dot before the stress comes out.** Put up dotted against dotless, ὁράω,
+πιστεύω and καρδία all took the version without it, and ὅτι — whose stress is
+word-initial, so it has no such dot — kept what it had. Then batch 11 asked
+the five cues that were still shipping with one: four took dotless and **ἀνήρ
+did not**. So it is a default and not a law.
+
+**The other dots are a per-word question and stay in the rule.** Three words
+have spoken one aloud — αἰών, καρδία, ἀποστέλλω — and four have been approved
+carrying one. Where a word recites its dots, take them all out and record it;
+καρδία ships as `/karˈdia/` for that reason.
+
+### `ju` is positional, like everything else here
+
+9G settled ευ as `ju`, which is only Black's *feud* written back in IPA. It
+works BETWEEN CONSONANTS. It recites at the FRONT of a word — εὑρίσκω, "the
+other two spell the hju part" — so that word stays in English, and its `ree`
+is right for the same reason καρδία's is: the iota is stressed.
+
+### The conversion has been wrong about a diphthong three times
+
+Each time in the same way: **treating one sound as two vowels that can be
+edited separately.**
+
+| | what it did | caught by |
+|---|---|---|
+| ὁράω | opened the omega in `oː` | the ear, in the round it was written for |
+| αι | opened the second half, `ai̯` → `aɪ̯` | reading the output before sending it |
+| οι | opened the FIRST half, `oi̯` → `ɒi̯` | running it over the next batch before generating |
+
+The third is the instructive one. The mark that says "this is a diphthong"
+sits on the SECOND vowel, so a guard watching for the mark straight after the
+o never saw it. **A diphthong is one sound and every rule must step over the
+whole of it** — which is now what the guard says rather than what it implied.
+Nothing shipped wrong any of the three times, because the conversion is run
+over the candidates and read before anything is generated. That check has now
+caught five faults, three diphthongs and two orderings.
+
+### And an allow-list entry that was covering a fault in the checker
+
+`check_vocab`'s epsilon substitution was written `"\1ɛ"` in a non-raw Python
+string, so `\1` was read as an octal escape for a control character. The rule
+had been inserting an invisible byte and **dropping the stress mark**: the
+string it expected for ἔξω had no stress in it at all.
+
+It threw a false mismatch on ἐγείρω, and ἐγείρω went into the allow-list. So
+an entry there was excusing **a bug in the checker rather than an exception in
+the data** — which is the exact shape CLAUDE.md warns about, arrived at from
+the inside. With the backreference fixed, ἐγείρω matches the rule exactly and
+its entry is gone.
+
+**An allow-list entry should name a difference between what a rule proposes
+and what an ear approved.** If it cannot be stated in those terms, the rule or
+the checker is wrong, not the data.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
