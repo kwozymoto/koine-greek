@@ -559,34 +559,69 @@ function writeLetterDrill(n = 10, from) {
 }
 
 /* ---------- write a word from memory ----------
-   Not scored, by choice. See the note at the top of the file. */
+   Not scored, by choice. See the note at the top of the file.
+
+   TWO WAYS TO WRITE IT, and the choice is the learner's. Tracing with a
+   finger is what the drill was built for and it rehearses the letter shapes,
+   which is the thing a keyboard cannot teach. But the app already carries a
+   polytonic keyboard (js/keys.js) that "Write a real form" uses, and on a
+   phone with no stylus, typing is the thing somebody will actually do twice
+   a day. So both, chosen per question and remembered.
+
+   THE SELF-GRADE STAYS IN BOTH MODES. Typing admits an objective mark and
+   the keyboard mode does show one — right, accent-only, or the letters to
+   look at again — but it still ends with Again/Hard/Good/Easy rather than
+   grading for you. This drill's whole design is that you say how it went;
+   the file says so at the top, and making one mode score itself and the
+   other not would put the two on different schedules for the same word. */
+const WMODE_KEY = "koine.wmode";
+/* Per device, never synced — the same treatment gk and sfx get. A phone and
+   a laptop want different answers to this question, and a preference that
+   travelled would fight whichever device was used second. */
+function wMode() {
+  try { return localStorage.getItem(WMODE_KEY) === "keys" ? "keys" : "finger"; }
+  catch (e) { return "finger"; }
+}
+function wSetMode(m) {
+  try { localStorage.setItem(WMODE_KEY, m); } catch (e) { /* private mode */ }
+  if (typeof step === "function") step();      // redraw this same question
+}
+function wModeHtml() {
+  const m = wMode();
+  const b = (k, label) => `<button class="btn ghost small${m === k ? " on" : ""}"
+      aria-pressed="${m === k}" onclick="wSetMode('${k}')">${label}</button>`;
+  return `<div class="row" style="justify-content:center;gap:6px;margin:0 0 8px">
+      ${b("finger", "Write with finger")}${b("keys", "Use keyboard")}</div>`;
+}
+
 function writeWordDrill(n = 8) {
   const met = VOCAB.map((_, i) => i).filter(i => S.cards[i] && !skipWord(i));
   const pool = (met.length > 5 ? met : LEARN_ORDER.slice(0, 30))
     .sort(() => Math.random() - .5).slice(0, n);
   const q = pool.map(i => () => {
     const v = VOCAB[i];
+    const head = v[0].split(",")[0];
+    const keys = wMode() === "keys" && typeof gkKeyboard === "function";
     document.getElementById("sessBody").innerHTML = `
       <div class="card" style="text-align:center">
         <p style="margin:0;font-size:1.02rem">Write the Greek for <b>${v[1]}</b></p>
         <p class="muted" style="margin:5px 0 0;font-size:.82rem">${v[3]}</p>
       </div>
-      ${wPadHtml(false)}
+      ${wModeHtml()}
+      ${keys ? `<div id="kb"></div>` : wPadHtml(false)}
       <div style="height:9px"></div>
-      <button class="btn" id="wShow">Show the word</button>
+      <button class="btn" id="wShow">${keys ? "Check it" : "Show the word"}</button>
       <div id="fb"></div>`;
-    WPAD = wSetup(document.getElementById("pad"), "");
-    wBind(WPAD);
-    wPaint(WPAD);
-    document.getElementById("wShow").onclick = () => {
+
+    const reveal = said => {
       document.getElementById("wShow").style.display = "none";
       document.getElementById("fb").innerHTML = `
         <div class="card" style="text-align:center">
-          <span class="q-gk">${v[0].split(",")[0]}</span>
+          <span class="q-gk">${head}</span>
           <div class="muted" style="font-size:.79rem;margin-top:6px">${v[0]} · ${v[1]}</div>
         </div>
-        <p class="muted" style="font-size:.82rem;text-align:center;margin:0 0 10px">
-          Compare it with yours, then say how it went.</p>
+        ${said || `<p class="muted" style="font-size:.82rem;text-align:center;margin:0 0 10px">
+          Compare it with yours, then say how it went.</p>`}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
@@ -595,6 +630,39 @@ function writeWordDrill(n = 8) {
         </div>`;
       if (S.speak !== 0) playWord(i, null, true);
     };
+
+    if (keys) {
+      const kb = gkKeyboard({ onEnter: () => check() });
+      document.getElementById("kb").appendChild(kb.el);
+      /* The other words in this round, so a confident wrong answer can be
+         named rather than just marked wrong — "that is λόγος" teaches more
+         than a cross. Same courtesy gkMark already pays typeStep. */
+      const others = pool.filter(j => j !== i).map(j => VOCAB[j][0].split(",")[0]);
+      const gk = s => `<span class="gk">${s}</span>`;
+      const check = () => {
+        const m = gkMark(kb.value, head, others);
+        kb.el.querySelectorAll("button").forEach(x => x.disabled = true);
+        const said =
+          m.verdict === "correct"  ? `<p class="feedback"><b>Correct</b></p>`
+        : m.verdict === "accent"   ? `<p class="feedback"><b>Right</b> — the accent is ${gk(head)}.</p>`
+        : m.verdict === "breathing"? `<p class="feedback">The letters are right. Look at the breathing.</p>`
+        : m.verdict === "other" && m.wrote
+                                   ? `<p class="feedback">That is ${gk(m.wrote)}.</p>`
+        : m.verdict === "close"    ? `<p class="feedback">Close — ${gk([...kb.value].map(
+                                       (c, n2) => m.wrong.includes(n2) ? `<u>${c}</u>` : c).join(""))}</p>`
+        : kb.value                 ? `<p class="feedback">You wrote ${gk(kb.value)}.</p>`
+                                   : "";
+        reveal(said + `<p class="muted" style="font-size:.82rem;text-align:center;margin:0 0 10px">
+          Say how it went.</p>`);
+      };
+      document.getElementById("wShow").onclick = check;
+      return;
+    }
+
+    WPAD = wSetup(document.getElementById("pad"), "");
+    wBind(WPAD);
+    wPaint(WPAD);
+    document.getElementById("wShow").onclick = () => reveal("");
   });
   q.__words = pool;
   return q;
