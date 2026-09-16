@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v167';
+const VERSION = 'v168';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v168: batch 13B. Five clips re-cut, 767 occurrences. ὡς is the deck's 34th
+     commonest word and it was put up to settle one question: a long omega at
+     the end of a word recites before n and r, and this asked whether it does
+     before s. It does not, so the nine cues ending that way convert as they
+     stand. */
+  'audio/vocab/034_os.mp3',
+  'audio/vocab/209_kerusso.mp3',
+  'audio/vocab/263_apokteino.mp3',
+  'audio/vocab/275_karpos.mp3',
+  'audio/vocab/281_grammateus.mp3',
   /* v167: batch 13. Four clips re-cut, 301 occurrences. ὕδωρ is the second
      word to show that a long omega at the end of one is recited letter by
      letter, so that stopped being an exception and became part of the rule. */

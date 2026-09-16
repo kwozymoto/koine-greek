@@ -523,10 +523,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 504,
-  "tts": "hoce",
-  "source": "locked",
-  "duration_s": 0.765,
-  "sha1": "490c3b8afaea"
+  "tts": "/ˈhoːs/",
+  "source": "batch13",
+  "duration_s": 0.758,
+  "sha1": "aa324655a6ed",
+  "take": "b13wb_34_a",
+  "note": "THE RULE STAYS NARROW. A final long omega recites before n and r, and this asks whether it does before s: it does not. \"A and B both work well\", and A is the rule's own output, so the nine cues ending in `oːs` convert as they stand. It also beats `hoce`, an English cue locked long ago -- the ὁράω situation again"
  },
  {
   "index": 35,
@@ -3217,10 +3219,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 61,
-  "tts": "kay roos soh",
-  "source": "g2p",
-  "duration_s": 1.29,
-  "sha1": "5f6a85b10869"
+  "tts": "/keːˈrus.soː/",
+  "source": "batch13",
+  "duration_s": 1.306,
+  "sha1": "10ea59e50053",
+  "take": "b13wb_209_a",
+  "note": "the rule's own output, keeping its dot. A long eta opening the word, a doubled sigma, and the first STRESSED upsilon through this route -- Black's *food*"
  },
  {
   "index": 210,
@@ -4057,10 +4061,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 74,
-  "tts": "ah pok tay noh",
-  "source": "g2p",
-  "duration_s": 1.381,
-  "sha1": "fb022d6b721d"
+  "tts": "/apɒkˈtei̯noː/",
+  "source": "batch13",
+  "duration_s": 1.228,
+  "sha1": "1fdc11406852",
+  "take": "b13wb_263_a",
+  "note": "fully dotless. The sounds were right on the first IPA take, INCLUDING the first ει through this route -- Black's *they* -- and only the dots were spoken"
  },
  {
   "index": 264,
@@ -4237,12 +4243,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 66,
-  "tts": "kar poss",
-  "source": "rollout",
-  "duration_s": 1.231,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "d69f73031e25"
+  "tts": "/karˈpɒs/",
+  "source": "batch13",
+  "duration_s": 0.914,
+  "take": "b13wb_275_a",
+  "note": "the rule's own output. A stressed short omicron at the END of a word, which is the sixth time ɒ has been approved under the stress",
+  "sha1": "ac1ace3ecf8f"
  },
  {
   "index": 276,
@@ -4329,10 +4335,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 62,
-  "tts": "grahm mah tews",
-  "source": "g2p",
-  "duration_s": 1.458,
-  "sha1": "484b458c4fcd"
+  "tts": "/ɡrammaˈtjus/",
+  "source": "batch13",
+  "duration_s": 1.306,
+  "sha1": "8e432e50d27a",
+  "take": "b13wb_281_b",
+  "note": "DOTLESS, and the second -εύς word to want that. βασιλεύς's `ju` came apart in third position and dotless fixed it; this was put up dotted against dotless to see whether that generalises, and it does. Two of two. A third would make it a rule rather than two entries"
  },
  {
   "index": 282,

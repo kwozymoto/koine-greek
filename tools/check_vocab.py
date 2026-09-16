@@ -570,9 +570,11 @@ def ipa_cue(ipa):
     # and both were fixed by writing Black's *gold* as English spells it. Two
     # words, nothing against, so it is a rule and not two allow-list entries.
     #
-    # ONLY n and r, which is all that has been heard. Nine more cues end in
-    # `oːs` — ὡς, πῶς, φῶς, καλῶς — and none has been through this route. ὡς
-    # is in 13B to find out; until it answers, s is left alone.
+    # ONLY n and r, AND THAT WAS TESTED rather than assumed. Nine cues end in
+    # `oːs` instead, so 13B put ὡς up — the deck's 34th commonest word — with
+    # `oːs` against `oʊs`. "A and B both work well", A being the plain one, so
+    # s does NOT recite the way n and r do and those nine convert as they
+    # stand. The narrow rule is the right one and not merely the cautious one.
     #
     # It runs AFTER the short-o rule and not before it, because `oʊ` is a
     # digraph whose first half that rule would otherwise open. Written above,
@@ -633,6 +635,15 @@ IPA_HEARD = {
     98: "fully dotless — the rule takes out the dot before the stress and this "
         "took the one after it as well. The only word so far that has wanted "
         "that, and its last syllable is a bare vowel",
+    263: "fully dotless. The sounds were right on the first IPA take — "
+         "including the first ει through this route, Black's *they* — and "
+         "only the dots were spoken",
+    281: "dotless, and the SECOND -εύς word to want that. βασιλεύς's `ju` "
+         "came apart in third position and dotless fixed it; this went up "
+         "dotted against dotless to ask whether that generalises, and it "
+         "does. Two of two. ἱερεύς is the only other one the IPA route can "
+         "reach — ἀρχιερεύς has a chi — and if it agrees this stops being "
+         "two entries and becomes a rule",
     186: "A SHORT STRESSED IOTA, and dotless with it. The rule leaves a "
          "stressed iota long because καρδία wanted that, and this word is the "
          "same shape and would not have it: both takes "
