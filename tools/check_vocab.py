@@ -605,7 +605,26 @@ def ipa_cue(ipa):
     # first merges the unstressed syllable into the stressed one, so the
     # opening syllable looks stressed and keeps its long iota: the converter
     # produced /pi.../ where the string an ear approved is /pɪ.../.
-    return s.replace("." + "ˈ", "ˈ")
+    s = s.replace("." + "ˈ", "ˈ")
+    # A cue ending in `ju` plus a consonant is written FULLY dotless, and the
+    # three words that say so are the only three the route can reach: βασιλεύς
+    # in 12B, γραμματεύς in 13B, ἱερεύς in 14. Three of three, each put up
+    # dotted against dotless, so this stops being three allow-list entries
+    # saying the same thing and becomes the rule they were describing.
+    #
+    # βασιλεύς is why it is worth having as a rule rather than a habit. Its
+    # `ju` came out as *lee-oos*, with the l coming away from the glide, and
+    # that reads as a glide that will not hold in third position — a
+    # limitation on the ευ rule, which is the thing that released sixteen cues
+    # in 9G. It was the dot. The condition that looked like it belonged to the
+    # glide belonged to what was sitting next to it.
+    #
+    # It reaches no fourth word today. ἀρχιερεύς is the only other -εύς in the
+    # deck and it is held back for IPA chi — so if that block lifts, this is
+    # already written for it.
+    if re.search("ju[^aeiouɒɛɪʊ.ː̯]+$", s):
+        s = s.replace(".", "")
+    return s
 
 # Where the string that was HEARD differs from the string the rule proposes.
 # The rule proposes; only a cue that produced a clip somebody approved may
@@ -626,24 +645,12 @@ IPA_HEARD = {
     145: "fully dotless. The first IPA take had every sound right, theta "
          "included, and spoke all three dots; the same string without them "
          "was approved unchanged",
-    139: "fully dotless, and it is the word that says what the dot actually "
-         "costs. Its `ju` came out as *lee-oos* — the l coming away from the "
-         "glide — which read as a glide that would not hold in third "
-         "position. It was the dot. The same string dotless is one syllable, "
-         "and `ju` is now heard at the front of a word, between consonants "
-         "and at the end of one",
     98: "fully dotless — the rule takes out the dot before the stress and this "
         "took the one after it as well. The only word so far that has wanted "
         "that, and its last syllable is a bare vowel",
     263: "fully dotless. The sounds were right on the first IPA take — "
          "including the first ει through this route, Black's *they* — and "
          "only the dots were spoken",
-    281: "dotless, and the SECOND -εύς word to want that. βασιλεύς's `ju` "
-         "came apart in third position and dotless fixed it; this went up "
-         "dotted against dotless to ask whether that generalises, and it "
-         "does. Two of two. ἱερεύς is the only other one the IPA route can "
-         "reach — ἀρχιερεύς has a chi — and if it agrees this stops being "
-         "two entries and becomes a rule",
     186: "A SHORT STRESSED IOTA, and dotless with it. The rule leaves a "
          "stressed iota long because καρδία wanted that, and this word is the "
          "same shape and would not have it: both takes "
@@ -664,7 +671,7 @@ try:
 except Exception as _e:                      # never silently: an IPA cue would
     IPA = None                               # then go unchecked and read green
 
-tts_bad, ipa_cues = [], []
+tts_bad, ipa_cues, ipa_excused = [], [], set()
 if IPA is None:
     tts_bad.append("docs/erasmian_ipa.json could not be read, so no IPA cue "
                    "can be checked")
@@ -693,6 +700,7 @@ for path in ("docs/erasmian_vocab_cues.json",
                 line = tag + " is not this word's IPA converted: expected " + want
                 if r.get("index") in IPA_HEARD:
                     excused.append(line + "  — " + IPA_HEARD[r["index"]])
+                    ipa_excused.add(r["index"])
                 else:
                     tts_bad.append(line)
             ipa_cues.append(r.get("index"))
@@ -730,6 +738,21 @@ for path in ("docs/erasmian_vocab_cues.json",
                 excused.append(line + "  — " + CUE_OK[r["index"]])
             else:
                 tts_bad.append(line)
+
+# An IPA_HEARD entry that no longer excuses anything is DEAD, and a dead one
+# is worse than none: it is a paragraph of reasoning attached to a difference
+# that has stopped existing, and the next person to read it believes it.
+#
+# This fires whenever a rule grows to cover what an entry used to excuse,
+# which has now happened twice in two days. αἰών's entry described the oʊ
+# ending as a one-word exception, and ὕδωρ made it a rule. βασιλεύς's and
+# γραμματεύς's described -εύς as wanting dotless, and ἱερεύς made that a rule
+# too. Both times the entries went stale in the same commit that earned the
+# rule, and nothing would have said so.
+for _i in sorted(set(IPA_HEARD) - ipa_excused):
+    tts_bad.append("IPA_HEARD excuses index %d and nothing there differs from "
+                   "the rule any more — the rule now covers it, so the entry "
+                   "is stale reasoning and should go" % _i)
 
 # ------------------------------------------------------- prepositions ----
 # A preposition's gloss names the case it governs — "in, on, among (+dat)" —

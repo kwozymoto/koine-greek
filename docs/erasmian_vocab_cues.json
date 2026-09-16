@@ -4552,10 +4552,12 @@
   "pos": "name",
   "tier": 3,
   "freq": 59,
-  "tts": "dow eed",
-  "source": "g2p",
-  "duration_s": 1.194,
-  "sha1": "cd3f7cb3f893"
+  "tts": "/dau̯ˈid/",
+  "source": "batch14",
+  "duration_s": 1.149,
+  "sha1": "74c1a0092683",
+  "take": "b14w_295_a",
+  "note": "the rule's own output. αυ is Black's *cow*, and the stressed iota stays long in a closed syllable -- which is πίπτω's shape, where it did not"
  },
  {
   "index": 296,
@@ -4779,10 +4781,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 55,
-  "tts": "loy pos",
-  "source": "g2p",
-  "duration_s": 1.286,
-  "sha1": "28e553b91209"
+  "tts": "/loi̯ˈpɒs/",
+  "source": "batch14",
+  "duration_s": 1.149,
+  "sha1": "2f64343dd646",
+  "take": "b14w_310_a",
+  "note": "THE FIRST οι AN EAR HAS JUDGED, and the rule's own output. This is the diphthong the conversion was wrong about twice -- once opening its second half, once its first -- and neither fault reached a clip"
  },
  {
   "index": 311,
@@ -4825,10 +4829,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 53,
-  "tts": "ho pohs",
-  "source": "g2p",
-  "duration_s": 1.03,
-  "sha1": "7639c8f32f9e"
+  "tts": "/ˈhɒ.poːs/",
+  "source": "batch14",
+  "duration_s": 1.071,
+  "sha1": "577c4029b962",
+  "take": "b14w_313_a",
+  "note": "the rule's own output, and the confirmation ὡς's verdict predicted -- a final `oːs` does not recite the way `oːn` and `oːr` do"
  },
  {
   "index": 314,
@@ -6947,10 +6953,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "hee eh rews",
-  "source": "g2p",
-  "duration_s": 1.744,
-  "sha1": "122a8147915a"
+  "tts": "/hɪeˈrjus/",
+  "source": "batch14",
+  "duration_s": 1.149,
+  "sha1": "f7372df3dfef",
+  "take": "b14w_452_b",
+  "note": "dotless, and the THIRD -εύς word to want that after βασιλεύς and γραμματεύς. Three of three, so it stops being allow-list entries and becomes a rule: a cue ending in `ju` plus a consonant is written dotless"
  },
  {
   "index": 453,
