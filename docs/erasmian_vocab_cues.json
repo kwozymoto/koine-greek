@@ -661,9 +661,10 @@
   "tier": 1,
   "freq": 413,
   "tts": "pah tayr",
-  "source": "freq",
+  "source": "composed",
   "duration_s": 0.966,
-  "sha1": "bb81567ade1b"
+  "sha1": "bb81567ade1b",
+  "note": "every beat of this cue has been heard IN THIS POSITION in another word (pah from παραδίδωμι; tayr from μήτηρ), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
  },
  {
   "index": 44,
@@ -4717,9 +4718,10 @@
   "tier": 3,
   "freq": 55,
   "tts": "krah dzoh",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.339,
-  "sha1": "e16bca5ff59b"
+  "sha1": "e16bca5ff59b",
+  "note": "every beat of this cue has been heard IN THIS POSITION in another word (krah from κρατέω; dzoh from βαπτίζω), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
  },
  {
   "index": 309,
@@ -5743,9 +5745,10 @@
   "tier": 4,
   "freq": 41,
   "tts": "say meh ron",
-  "source": "g2p",
+  "source": "composed",
   "duration_s": 1.073,
-  "sha1": "e5547588680f"
+  "sha1": "e5547588680f",
+  "note": "every beat of this cue has been heard IN THIS POSITION in another word (say from σημεῖον; meh from οἰκοδομέω; ron from ἱερόν), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
  },
  {
   "index": 376,

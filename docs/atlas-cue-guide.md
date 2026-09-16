@@ -460,6 +460,97 @@ good but not reliable enough to skip listening.
 
 ---
 
+## What batch 9 changed, 2026-09-17
+
+Batch 9 set out to hear the commonest words nobody had listened to — Ἰησοῦς
+at 917 occurrences had never been played — and ended by finding that this
+guide has been solving the wrong problem for eight hundred cues.
+
+**The voice reads IPA between slashes, and always has.** xAI's own
+documentation gives `/ˈɛndʒɪn ˈɛks/` as an example. The pack is written in
+English respellings because that is how it started, not because anything was
+decided, and `docs/erasmian_ipa.json` has held a checked transcription of all
+818 words the whole time.
+
+### The two results that settle it
+
+**τότε had no English spelling that worked, in two rounds.** `tot` is an
+English word for a child with exactly the vowel we want, and the voice read it
+as the first syllable of *total*. So the rule this guide has carried since
+batch 5 — *the voice reads an English word as that word* — is not quite right.
+**It reads the spelling.** An o with one consonant after it is long to it
+whatever the dictionary says, which is why `hot tee` and `tot teh` both failed
+and why `aw` kept winning: `aw` is the only spelling English has that cannot be
+read long. Fraser's standing verdict on `aw` is that it is "closer to the
+correct sound than the omega, but it doesn't sound quite right", so the best
+English spelling was a compromise all along.
+
+**ὁράω's English cue had already been approved.** It passed by ear in 9C, in
+the lot whose result stopped a blanket rewrite of twenty-nine cues. The IPA
+beat it anyway. So this is not a rescue for words English cannot reach. For
+vowels it is simply better.
+
+### The conversion, and where each part of it came from
+
+`docs/erasmian_ipa.json` cannot be handed to the voice unchanged — it lost
+every lot it was entered in, because it writes short omicron `o` and short iota
+`i` and this voice reads both long. Five rules, each from one ear-verdict:
+
+| | | from |
+|---|---|---|
+| `eu̯` → `ju` | Black's ευ is *feud* | 9G: written `eu̯` it came out as *row* |
+| `o` → `ɒ` | short omicron, Black's *not* | 9E, 9F |
+| `i` → `ɪ` | short iota, Black's *pit* | 9E, and Fraser found it: "shouldn't it end in *is* like the sound in *this*?" |
+| `^e` → `ɛ` | **only** where the string opens on it | 9H: "A sounds like the letter e spoken" |
+| `ː` and `̯` | never touched | omega, long iota, and every diphthong's second half |
+
+The epsilon rule is about the first character and not about epsilon: μέγας
+`/ˈme.ɡas/` and τότε `/ˈtɒ.te/` were both approved with a plain `e`, one after a
+consonant and one word-final, and only ἐγείρω — where the string opens on the
+vowel — was heard as the letter. That is this guide's own *the front of a word
+can eat an `eh`*, in IPA.
+
+**It reproduces all twenty approved strings with no per-word exceptions**,
+which is the difference between twenty lucky guesses and a method, and it is
+why the remaining work can be proposed in batches rather than one word at a
+time. `check_vocab` holds every IPA cue to it.
+
+### What IPA cannot do
+
+- **χ.** χάρις went to the English `khah riss` with both IPA takes losing. IPA
+  `x` is the velar fricative, and this is the same chi that decodes as `k` in
+  78% of the shipped clips. Fifteen of the remaining cues are held back on it.
+- **`eu̯`**, until 9G found `ju`. Worth remembering as the shape of the
+  problem: a symbol the transcription is right about and the voice cannot say.
+
+### The rule proposes; only a heard string ships
+
+Three cues in the pack differ from what the conversion would write, and each
+difference is recorded in `check_vocab`'s `IPA_HEARD` with its reason. ὅτι
+ships with a plain final `i` where the rule writes `ɪ`, because the plain `i`
+is the string that produced the clip somebody listened to. αἰών ships with its
+omega written `oʊ`, because `oːn` at the end of a word was recited letter by
+letter — and that is **not** promoted into the rule, because four cues end
+`-oːn` and one ear has judged one of them.
+
+**A cue regenerated from a rule is a cue nobody has heard**, and filling the
+pack with those is what this audit exists to undo.
+
+### And the checkers had to learn the new kind
+
+`check_vocab`'s three cue tests — a capital letter, the syllable count, the
+first consonant — are tests of an English respelling. An IPA cue fails all
+three by construction, and it reported eight faults that were not faults.
+The other direction is worse and is still true of `check_cues`: its twelve
+gated spellings are English word-boundary patterns, so an IPA cue passes them
+by matching none of them. **That is silence, not approval.**
+
+One more waits. `build_lesson_audio.py` feeds the cue into the lesson
+narration — the voice says the cue where the page shows the Greek — so an IPA
+cue would put `/ˈhɒ.ti/` into spoken prose. No batch-9 word appears in the
+chapter 1 and 2 narration, so nothing is broken today. It is a trap set for the
+next chapter that gets narrated.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
