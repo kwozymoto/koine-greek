@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v179';
+const VERSION = 'v180';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,11 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v180: batch 16. Two clips re-cut. ἄρχων is the one worth naming: its chi is
+     medial so it is written k, and it ends in `oːn` so the omega is written oʊ.
+     Two rules found four batches apart, composing in one word, right first time. */
+  'audio/vocab/362_thaumazo.mp3',
+  'audio/vocab/407_archon.mp3',
   /* v178: batch 15B. Five clips re-cut, 363 occurrences, and the chi block gone
      for good -- chi in the MIDDLE of a word is written as a plain k. It gives
      up the breath, and it beat both the IPA that kept it and the English that

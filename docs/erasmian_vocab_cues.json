@@ -5589,10 +5589,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 43,
-  "tts": "thow mah dzoh",
-  "source": "g2p",
-  "duration_s": 1.519,
-  "sha1": "9e3552e643b4"
+  "tts": "/θau̯ˈmaʣoː/",
+  "source": "batch16",
+  "duration_s": 1.228,
+  "sha1": "c1a9eea6fae4",
+  "take": "b16w_362_a",
+  "note": "the rule's own output. ζ as the ligature with no dot in front of it, αυ untouched, and θ opening the word without reciting"
  },
  {
   "index": 363,
@@ -6280,10 +6282,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 37,
-  "tts": "ahr khohn",
-  "source": "g2p",
-  "duration_s": 1.133,
-  "sha1": "1c679aa4fa31"
+  "tts": "/ˈar.koʊn/",
+  "source": "batch16",
+  "duration_s": 1.071,
+  "sha1": "e30f9abad9a4",
+  "take": "b16w_407_a",
+  "note": "THE TWO NEW RULES COMPOSE. Its chi is medial so it is written k (15B) and it ends in `oːn` so the omega is written oʊ (αἰών 11, ὕδωρ 13). First word to use both at once, right first time"
  },
  {
   "index": 408,
