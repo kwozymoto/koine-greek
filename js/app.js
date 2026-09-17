@@ -530,6 +530,7 @@ function lexcard(l,count,verse){
       document.getElementById("ans").style.visibility="visible";
       document.getElementById("meta").style.visibility="visible";
       document.getElementById("show").outerHTML=`
+        ${sayHowHtml()}
         <div class="grades">
           <button class="g1" onclick="lgrade('${l}',0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="lgrade('${l}',1)">Hard<i>${lNextIvl(l,1)}d</i></button>
@@ -654,6 +655,11 @@ function toggleFocusMode(){
    and a set of ticks, not a new kind of session.
    ============================================================ */
 let PLAN_TASK=null;                 // which plan row the running session is
+/* The drill this session came from, so the summary can offer it again. Only
+   the drill list sets it: a session reached from the day's plan already ends
+   with "Next — the next row", and a letter traced from inside chapter 1
+   belongs to the chapter, not to a round of anything. */
+let AGAIN=null;
 
 const planDone=()=>((S.plan&&S.plan.day===today())?S.plan.done:[])||[];
 function planTick(id){
@@ -1274,13 +1280,30 @@ let REQUEUED={};                 // VOCAB index -> times re-queued this session
 function startSession(queue,label){
   Q=queue; qi=0; mode=label; SESSION_XP=0; REQUEUED={};
   COMBO=0; COMBO_BEST=0; RIGHT=0; ASKED=0; REVIEWED=0; comboPaint();
+  /* runPlanTask has always said "startSession clears PLAN_TASK … so claim it
+     afterwards", and it did not. Leave a plan row mid-way by any route that
+     is not finish() — the bottom nav, the back gesture — and the claim
+     survived, so the NEXT session you carried to the end ticked a row you had
+     walked out of. Now the comment is true. AGAIN goes the same way: which
+     drill can be run again is a fact about the session now starting. */
+  PLAN_TASK=null; AGAIN=null;
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
   if(!Q.length){toast("Nothing to practise here yet");return;}
   touchDay(); go("session"); step();
 }
-document.getElementById("btnQuit").onclick=()=>{go("today");};
+/* The button says Finish, and for a long time it abandoned the session and
+   went to Today — so the one control labelled Finish was precisely how you
+   never saw the finish screen. Fraser asked for a summary at the end of a
+   drill; there has been one all along, and this is why nobody met it.
+
+   It now finishes: the summary for the work actually done, and from there the
+   ordinary ways on. Pressed before anything has been answered there is
+   nothing to summarise, so it just leaves, which is what the press meant. */
+document.getElementById("btnQuit").onclick=()=>{
+  if(REVIEWED||ASKED||SESSION_XP) finish(true); else go("today");
+};
 
 function step(){
   const bar=document.getElementById("sessBar");
@@ -1289,16 +1312,22 @@ function step(){
   if(qi>=Q.length){ finish(); return; }
   Q[qi]();
 }
-function finish(){
+/* `early` is Finish pressed part way through. It shows the same summary for
+   the work actually done and TICKS NOTHING — a plan row is ticked by
+   finishing it, and the whole point of the Finish button now reaching this
+   screen would be undone if stopping after two cards marked the day's review
+   complete. planExtra() is held back for the same reason: two cards is not a
+   round past the plan either. */
+function finish(early){
   const b=document.getElementById("sessBody");
   /* Undo lives outside sessBody, so it survives this re-render. Left live it
      would replay the last card and pay the whole session's XP again. */
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
-  document.getElementById("sessBar").style.width="100%";
+  document.getElementById("sessBar").style.width=early?(qi/Q.length*100)+"%":"100%";
   COMBO=0; comboPaint();
-  // A plan row is ticked by finishing it, not by starting it.
-  if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
+  if(early) PLAN_TASK=null;
+  else if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
   checkBadges();
   /* Worth reading, rather than "+42 XP". Accuracy is only shown when
      something was actually marked: a vocabulary review is self-graded, so
@@ -1323,8 +1352,11 @@ function finish(){
     <span class="gk">${clean?"εὖγε":"τέλος"}</span>
     ${line.length?`<p>${line.join(" · ")}</p>`:""}
     <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
+    ${AGAIN?`<button class="btn" onclick="againRound()">Another round — ${AGAIN.name}</button>
+    <div style="height:9px"></div>`:""}
     ${nx}
-    <button class="btn ghost" onclick="go('today')">Back to today</button>`;
+    <button class="btn ghost" onclick="go('${AGAIN?"drill":"today"}')">Back to ${
+      AGAIN?"the drills":"today"}</button>`;
   if(typeof ringFill==="function") ringFill(b);
 }
 
@@ -1379,6 +1411,19 @@ function partsHtml(i){
 }
 
 /* ---- flashcard (self-graded, for SRS) ---- */
+/* The line above the four grades, in one place because it appears on three
+   screens — the ordinary card, a word met in the reader, and writing one from
+   memory — and three copies would drift.
+
+   The four buttons are the only way on from a revealed card and they never
+   said so. Fraser stopped on a finished question looking for a Next, and
+   somebody else testing asked what the buttons were even for. Both are the
+   same miss: the row is the Next, and nothing named it. */
+function sayHowHtml(lead){
+  return `<p class="sayhow">${lead || "Tap "}how well you knew it — that
+    schedules the word and moves you on.</p>`;
+}
+
 function flashcard(i){
   return ()=>{
     const v=VOCAB[i], b=document.getElementById("sessBody");
@@ -1408,6 +1453,7 @@ function flashcard(i){
            You have lost this one ${S.cards[i].lapses} times. Write yourself a note below, or
            <a href="#" onclick="suspendWord(${i});return false" style="color:var(--gold)">set it aside</a>.</p>`:""}
         <div id="noteBox" style="text-align:center;margin:0 0 10px">${noteHtml(i)}</div>
+        ${sayHowHtml()}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
@@ -2560,13 +2606,24 @@ const DRILL_ORDER=["Everything","Vocabulary","Letters and sounds","Grammar",
    cold-start pool rather than on your own work is dimmed and says why, the
    same way the keyboard greys an accent that cannot go on the letter you
    have just typed. */
+/* Every drill on the list is launched through here, so there is one place
+   that knows which one is running. Claimed after the run, not before, for the
+   reason runPlanTask gives: startSession clears it. A drill with nothing in
+   it today never opens a session, and must not offer a second round of
+   nothing — hence the check that a queue was actually served. */
+function runDrill(i){
+  DRILLS[i][2]();
+  if(Q && Q.length) AGAIN={name:DRILLS[i][0], run:()=>runDrill(i)};
+}
+function againRound(){ if(AGAIN) AGAIN.run(); }
+
 function drillCard(i,tone){
   const st=(typeof drillState==="function")?drillState(DRILLS[i][0]):null;
   const badge=st && (st.n!==undefined || st.note)
     ? `<span class="dbadge${st.ready?"":" cold"}">${
         st.n!==undefined?`<b>${st.n}</b> `:""}${st.note}</span>` : "";
   return `<button class="lesson-item drill-item${st&&!st.ready?" not-ready":""}"
-      data-tone="${tone}" onclick="DRILLS[${i}][2]()">
+      data-tone="${tone}" onclick="runDrill(${i})">
       <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
       <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span>${badge}</span>
       <span class="muted">›</span></button>`;

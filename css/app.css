@@ -153,6 +153,12 @@ nav button.on{color:var(--gold)}
 .fc .rule{width:54px;height:2px;background:var(--gold);margin:16px 0;opacity:.75}
 .fc .ans{font-size:1.12rem}
 .fc .meta{color:var(--muted);font-size:.79rem;margin-top:12px}
+/* The line that tells you the grade row is the way on. It was `muted` at
+   .82rem and read as a caption on the answer above it, so a finished question
+   looked like a dead end — see the note in writeWordDrill. Not muted, and a
+   shade larger than the caption it used to be mistaken for. */
+.sayhow{text-align:center;font-size:.88rem;line-height:1.45;margin:0 0 10px;
+  color:var(--text)}
 .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
 .grades button{padding:12px 4px;border-radius:11px;border:1px solid var(--line);font-size:.78rem;font-weight:600;background:var(--surface)}
 .grades button i{display:block;font-style:normal;font-size:.64rem;font-weight:400;color:var(--muted);margin-top:2px}
@@ -335,11 +341,19 @@ button.vid{width:100%;text-align:left;font:inherit}
      So the trailing control sticks above the nav and the card scrolls behind
      it. Same idea as .gloss in the reader, and the same offset, because it is
      the same problem: the thing you act on must not be the thing you have to
-     go looking for. */
-  #sessBody > .btn, #sessBody > .grades{
+     go looking for.
+
+     The grades are matched at any depth, not just as a direct child. Two of
+     the three screens that show them replace the trailing button, so they
+     land directly in #sessBody and this rule caught them; "Write it from
+     memory" renders them inside its feedback box, one level down, so it was
+     the one card in the session that never got the fix. `.btn` stays a
+     direct-child match — there are Hear it buttons inside cards, and pinning
+     one of those to the bottom of the screen would be a mess. */
+  #sessBody > .btn, #sessBody .grades{
     position:sticky;z-index:5;
     bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 10px)}
-  #sessBody > .grades{background:var(--bg);padding-top:6px;
+  #sessBody .grades{background:var(--bg);padding-top:6px;
     box-shadow:0 -12px 16px -8px var(--bg)}
 }
 

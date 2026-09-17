@@ -613,15 +613,19 @@ function writeWordDrill(n = 8) {
       <button class="btn" id="wShow">${keys ? "Check it" : "Show the word"}</button>
       <div id="fb"></div>`;
 
-    const reveal = said => {
+    /* THE GRADE ROW IS THE ONLY WAY ON, and it never said so. "Say how it
+       went" described the answer above it rather than telling you to act, and
+       it was `muted` at .82rem — the quietest text on a screen whose loudest
+       thing is a spent keyboard. sayHowHtml() in js/app.js carries the
+       sentence for all three screens that show the grades. */
+    const reveal = (said, lead) => {
       document.getElementById("wShow").style.display = "none";
       document.getElementById("fb").innerHTML = `
         <div class="card" style="text-align:center">
           <span class="q-gk">${head}</span>
           <div class="muted" style="font-size:.79rem;margin-top:6px">${v[0]} · ${v[1]}</div>
         </div>
-        ${said || `<p class="muted" style="font-size:.82rem;text-align:center;margin:0 0 10px">
-          Compare it with yours, then say how it went.</p>`}
+        ${said}${sayHowHtml(lead)}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
           <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
@@ -652,8 +656,7 @@ function writeWordDrill(n = 8) {
                                        (c, n2) => m.wrong.includes(n2) ? `<u>${c}</u>` : c).join(""))}</p>`
         : kb.value                 ? `<p class="feedback">You wrote ${gk(kb.value)}.</p>`
                                    : "";
-        reveal(said + `<p class="muted" style="font-size:.82rem;text-align:center;margin:0 0 10px">
-          Say how it went.</p>`);
+        reveal(said, "Tap ");
       };
       document.getElementById("wShow").onclick = check;
       return;
@@ -662,7 +665,8 @@ function writeWordDrill(n = 8) {
     WPAD = wSetup(document.getElementById("pad"), "");
     wBind(WPAD);
     wPaint(WPAD);
-    document.getElementById("wShow").onclick = () => reveal("");
+    document.getElementById("wShow").onclick =
+      () => reveal("", "Compare it with yours, then tap ");
   });
   q.__words = pool;
   return q;
