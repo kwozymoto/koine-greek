@@ -709,6 +709,90 @@ CLAUDE.md's first rule broken in the one place where breaking it leaves no
 evidence. The checker now asks both directions: every path named exists, and
 every bulk file whose content changed this release is named.
 
+## What batches 14 and 15 changed, 2026-09-17
+
+### Chi, three times, and what a verdict is actually evidence of
+
+This is the section to read if you only read one.
+
+**9E.** χάρις went up as `/ˈxa.ris/` and `/ˈxa.rɪs/` against the English
+`khah riss`. Both IPA takes lost. Written down as: *this voice cannot make
+the velar fricative.* χ went into the blocked list, and it stayed there for
+five batches, holding back every cue that carried it.
+
+**14B.** By then the dot was understood — six words had had a first IPA take
+sunk by nothing else, with every sound in them already right. And **both of
+those 9E takes carried a syllable dot.** So chi had never actually been heard
+on its own. Put up dotless as `/ˈxarɪs/`, it won first time. The entry came
+out and the blocked list was empty.
+
+**15.** εἰσέρχομαι, 194 occurrences, the biggest word the unblocking freed:
+*"A and B both struggle with x. A spells from x onwards and B pronounces x as
+hock."* Chi at the FRONT of a word is fine. Chi in the MIDDLE is not, and
+χάρις never had anything to say about the middle of a word.
+
+So the same mistake twice, in opposite directions, from the same move: taking
+a verdict about one string and restating it as a fact about a sound.
+
+> **A verdict is evidence about the string that was played.** Everything past
+> that is inference. Here, inference has been wrong about the confound (a dot
+> nobody suspected), wrong about the symbol (chi, when it was the dot), and
+> wrong about the position (chi anywhere, when it was chi medially).
+
+Both rejection lists are regexes now — `IPA_REJECTED` in `check_cues` and
+`CANNOT` in `ipa_cue.py` — because a bare symbol cannot express the one thing
+that has mattered nearly every time, which is **where** it sits. That is the
+same shape as `ju` (which looked like a glide failing in third position and
+was the dot beside it), and as the epsilon rule (which is a rule about the
+first character and not about epsilon).
+
+### The ζ, and separating two changes that arrived together
+
+ἀσπάζομαι's `dzɒ` came out as *doz* — the voice reading `dz` as two
+consonants and putting the vowel between them. 14B offered a tie bar and the
+single ligature `ʣ`; the ligature won.
+
+But that winner changed **two** things at once: the ligature, and the dot in
+front of it. All ten ζ cues carry a dot in that position, so a rule from
+there would have been the chi mistake exactly. κράζω was built to separate
+them — same ligature in both takes, the dot the only difference — and
+dotless won. So the dot is what lets the affricate come apart, and that is
+the rule.
+
+The ligature stays because it is in both winners. **Its own contribution has
+never been tested alone**, and the converter says so rather than implying the
+question was settled.
+
+### -εύς, which went the other way
+
+βασιλεύς, γραμματεύς, ἱερεύς: three words, each put up dotted against
+dotless, three dotless winners. Three allow-list entries saying the same
+thing is the signal that they were describing a rule, so it became one.
+
+`check_vocab` now **fails on a dead allow-list entry** — one that no longer
+excuses anything, because the rule grew to cover it. That has fired three
+times in two days: αἰών when ὕδωρ made `oʊ` a rule, βασιλεύς and γραμματεύς
+when ἱερεύς made `-εύς` one, and ἀσπάζομαι when κράζω settled the ζ dot. Each
+time the entry went stale in the very commit that earned the rule, and
+nothing would otherwise have said so. A stale entry is worse than none: it is
+a paragraph of reasoning attached to a difference that has stopped existing,
+and the next reader believes it.
+
+### And a checker for the thing that fails silently
+
+`sw.js` carries three lists of paths and a wrong one throws nothing. STALE is
+the dangerous one, because the vocabulary cache is deliberately never swept:
+a phone keeps a clip until something in STALE names it, so a misspelt entry
+means **the re-recording never reaches the one device it was recorded for**,
+and nothing ever says so. Two of four entries in one release were typed from
+memory and were wrong.
+
+`check_sw` asks both directions — every path exists, and every bulk file that
+changed this release is named. The mechanism it guards was then confirmed end
+to end: a clip in the live cache was replaced with fifteen bytes of text,
+three releases shipped over the top, and the reload bar pressed. The poison
+was gone and the real audio back, sha1 matching the cue sheet.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
