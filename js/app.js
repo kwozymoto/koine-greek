@@ -1352,6 +1352,13 @@ function finish(early){
   const big=scored?`${RIGHT}/${ASKED}`:(REVIEWED||SESSION_XP?`${REVIEWED}`:"✓");
   const small=scored?"right":(REVIEWED?`card${REVIEWED===1?"":"s"} reviewed`:"done");
   const clean=scored&&RIGHT===ASKED;
+  /* .endbtns is not cosmetic. On a short screen `#sessBody > .btn` is sticky
+     at one fixed offset above the nav — written for a question card, where
+     there is exactly ONE trailing control and it would otherwise sit below
+     the fold. This screen ends in a STACK of choices, and as direct children
+     every one of them pinned to that same offset and drew on top of the
+     others. Two already did so before there were three; wrapping them takes
+     them out of the rule's reach and they lay out normally. */
   b.innerHTML=`<div class="empty summary">
     ${typeof ringHtml==="function"
       ? ringHtml(pct,big,small,`sring${clean?" clean":""}`)
@@ -1359,11 +1366,13 @@ function finish(early){
     <span class="gk">${clean?"εὖγε":"τέλος"}</span>
     ${line.length?`<p>${line.join(" · ")}</p>`:""}
     <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
-    ${AGAIN?`<button class="btn" onclick="againRound()">Another round — ${AGAIN.name}</button>
-    <div style="height:9px"></div>`:""}
-    ${nx}
-    <button class="btn ghost" onclick="go('${AGAIN?"drill":"today"}')">Back to ${
-      AGAIN?"the drills":"today"}</button>`;
+    <div class="endbtns">
+      ${AGAIN?`<button class="btn" onclick="againRound()">Another round — ${AGAIN.name}</button>
+      <div style="height:9px"></div>`:""}
+      ${nx}
+      <button class="btn ghost" onclick="go('${AGAIN?"drill":"today"}')">Back to ${
+        AGAIN?"the drills":"today"}</button>
+    </div>`;
   if(typeof ringFill==="function") ringFill(b);
 }
 

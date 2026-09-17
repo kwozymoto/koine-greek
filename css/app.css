@@ -349,7 +349,15 @@ button.vid{width:100%;text-align:left;font:inherit}
      memory" renders them inside its feedback box, one level down, so it was
      the one card in the session that never got the fix. `.btn` stays a
      direct-child match — there are Hear it buttons inside cards, and pinning
-     one of those to the bottom of the screen would be a mess. */
+     one of those to the bottom of the screen would be a mess.
+
+     IT ASSUMES ONE TRAILING CONTROL, which is true of a question card and not
+     of the screens that end a session. Those offer two or three choices in a
+     row, and as direct children of #sessBody every one of them pinned to this
+     same offset and stacked on top of the others. finish() wraps its buttons
+     in .endbtns for that reason. The other three screens that end with
+     nextTaskHtml() and a way back — the alphabet check, a finished chapter,
+     the end of a reading — still have it, and still want the same wrapper. */
   #sessBody > .btn, #sessBody .grades{
     position:sticky;z-index:5;
     bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 10px)}
