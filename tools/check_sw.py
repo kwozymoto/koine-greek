@@ -23,6 +23,20 @@ would miss: every bulk file whose content changed in this release must be
 named. A re-cut clip left out of the list is the same permanent staleness,
 arrived at by omission instead of by typo, so the check compares the list
 against what git says actually changed since the last release.
+
+AND THE MECHANISM ITSELF IS CONFIRMED, which it had never been. This checker
+guards a list; whether the service worker acts on that list was assumed for
+196 entries. On 2026-09-17 a clip was replaced in the live bulk cache with
+fifteen bytes of text, three releases were shipped over the top, and the
+"New version ready · Reload" bar was pressed — which is the only thing that
+hands over, per rule 6. The poison was gone and the real audio back, sha1
+matching the cue sheet. So a correct STALE entry does reach a phone.
+
+Two things nearly hid that. A reload alone leaves the new worker waiting and
+activate never runs, so the poison survives and reads as a broken eviction.
+And the Browser pane served a stale sw.js for three releases while curl had
+the current one — rule 6's second case, which is why curl is what settles
+whether something published.
 """
 import io
 import os
