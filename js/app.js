@@ -1148,7 +1148,14 @@ function planHtml(){
 
 /* Offered at the end of a session so finishing one thing leads to the next
    rather than to a dead end. Replaces the stub defined near finish(). */
-function nextTaskHtml(){
+/* `demote` renders the plan's next row as a ghost rather than the primary.
+   One screen asks for it: the end of a drill you chose yourself, where
+   "Another round" is already the gold button and two of them side by side
+   give the eye nothing to land on. Everywhere else — a finished chapter, the
+   alphabet check, Today — the plan IS the primary thing, so the parameter is
+   passed rather than read off AGAIN, which outlives the session and would
+   quietly grey the button on screens that never asked. */
+function nextTaskHtml(demote){
   const done=planDone();
   const next=todaysPlan().find(t=>!done.includes(t.id));
   if(!next){
@@ -1159,7 +1166,7 @@ function nextTaskHtml(){
         x.label.replace(/^./,c=>c.toLowerCase())}</button>
       <div style="height:9px"></div>`;
   }
-  return `<button class="btn" onclick="runPlanTask('${next.id}')">Next — ${next.label.replace(/^./,c=>c.toLowerCase())}</button>
+  return `<button class="btn${demote?" ghost":""}" onclick="runPlanTask('${next.id}')">Next — ${next.label.replace(/^./,c=>c.toLowerCase())}</button>
     <div style="height:9px"></div>`;
 }
 
@@ -1336,7 +1343,7 @@ function finish(early){
   if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
   if(REVIEWED) line.push(`<b>${REVIEWED}</b> card${REVIEWED===1?"":"s"} reviewed`);
   if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
-  const nx=nextTaskHtml();
+  const nx=nextTaskHtml(!!AGAIN);
   /* The ring shows what was actually measured. A vocabulary review is
      self-graded, so there is no accuracy to draw and it counts cards
      instead — claiming a score there would be inventing one. */
