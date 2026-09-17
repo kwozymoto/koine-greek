@@ -663,9 +663,11 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    13: "the rule writes the final short iota ɪ and what was played is a plain "
-        "i, because that is the string sent in round 9E. Nobody has heard them "
-        "side by side; until they have, the heard one ships",
+    271: "dotless, and it beat the dotted version it had been approved as in "
+         "batch 13 — two dots and a doubled consonant",
+    198: "dotless, with a diphthong beside the dot",
+    133: "dotless. Three syllables and every vowel short, which made it the "
+         "cleanest test of the dot on its own",
     95: "dotless. The dotted form was approved in 9E and this beat it in 9I, "
         "after a syllable dot was read aloud in another word",
     284: "dotless, as τότε",

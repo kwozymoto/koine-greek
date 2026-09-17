@@ -200,12 +200,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 1296,
-  "tts": "/ˈhɒ.ti/",
-  "source": "batch9",
-  "duration_s": 0.679,
-  "sha1": "a5071af36a83",
-  "note": "the commonest word in the whole audit and it had never been played. NOTE the final i: the conversion rule would write it tɪ, and what was heard is ti. The heard string ships",
-  "take": "b9we_13_b"
+  "tts": "/ˈhɒ.tɪ/",
+  "source": "batch18",
+  "duration_s": 0.836,
+  "sha1": "976bf7c20afa",
+  "note": "THE RULE'S OWN STRING WINS, and an exception goes. It has shipped `/ˈhɒ.ti/` since 9E only because that was the string sent then; its entry has said since batch 9 that nobody had heard the two side by side. They have now, and the rule was right. Confirms ɪ for an unstressed short iota at the END of a word, on the deck's commonest word",
+  "take": "b18w_13_a"
  },
  {
   "index": 14,
@@ -2049,12 +2049,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 119,
-  "tts": "/ˈdu.na.mɪs/",
-  "source": "batch10",
-  "duration_s": 1.149,
-  "sha1": "a7a02dc514a0",
-  "take": "b10w_133_a",
-  "note": "one of the five cues that spelled a short final -is as machine, the fault Fraser found in πόλις"
+  "tts": "/ˈdunamɪs/",
+  "source": "batch18",
+  "duration_s": 1.071,
+  "sha1": "64955894841d",
+  "take": "b18w_133_a",
+  "note": "dotless. Three syllables, every vowel short, the least eventful string in the pack and so the cleanest test of the dot alone"
  },
  {
   "index": 134,
@@ -3050,12 +3050,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 77,
-  "tts": "/aˈnoi̯.ɡoː/",
-  "source": "batch11",
-  "duration_s": 1.306,
-  "sha1": "c99db84080fd",
-  "take": "b11w_198_a",
-  "note": "the first οι through this route. The conversion had been opening the o in οι to ɒ — it is the first half of a diphthong, Black's *oil*, and the non-syllabic mark sits on the second vowel where the guard was not looking. Fixed and then heard, rather than trusted to the fix"
+  "tts": "/aˈnoi̯ɡoː/",
+  "source": "batch18",
+  "duration_s": 1.228,
+  "sha1": "0d138baba12c",
+  "take": "b18w_198_a",
+  "note": "dotless, with a diphthong beside the dot -- and οι is the diphthong this conversion was twice wrong about"
  },
  {
   "index": 199,
@@ -4183,12 +4183,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 68,
-  "tts": "/ˈsab.ba.tɒn/",
-  "source": "batch13",
-  "duration_s": 1.384,
-  "take": "b13w_271_a",
-  "note": "the rule's own output, keeping BOTH dots after the stress -- which is καρδία's exact shape, and καρδία spoke them. Per-word, again",
-  "sha1": "03d31957d47c"
+  "tts": "/ˈsabbatɒn/",
+  "source": "batch18",
+  "duration_s": 0.993,
+  "take": "b18w_271_a",
+  "note": "dotless beat the dotted version it was approved as in 13. Two dots and a doubled consonant",
+  "sha1": "cfb6365aca1f"
  },
  {
   "index": 272,

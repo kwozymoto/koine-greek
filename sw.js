@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v183';
+const VERSION = 'v184';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v184: batch 18, an experiment about dots. ὅτι is the one that matters --
+     the deck's commonest word, 1,296 occurrences, and the converter's own
+     string beat the one it has shipped since batch 9.
+     NO PATHS BELOW THIS COMMENT: all four clips -- 013, 133, 198, 271 --
+     are already named in the v163, v164 and v165 blocks, so the eviction
+     is covered and repeating them would only be noise. check_sw confirms
+     every changed bulk file is listed somewhere in STALE, not that it is
+     listed in the newest block. */
   /* v183: batch 17B. Five clips, and two sounds cleared on first hearing --
      the gamma-nasal ŋ, which γγ is in Greek, and the κν cluster τέκνον could
      not write in English. */
