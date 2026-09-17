@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v181';
+const VERSION = 'v182';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,12 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v182: batch 17, built as an experiment rather than a batch. Four clips,
+     all four the converter's own output and none needing an exception. */
+  'audio/vocab/402_prasso.mp3',
+  'audio/vocab/424_martus.mp3',
+  'audio/vocab/434_biblion.mp3',
+  'audio/vocab/443_apas.mp3',
   /* v181: batch 16B, and the first round a machine screened before a person
      heard it. ὑποτάσσω was caught reading its own syllable dot aloud as the
      WORD "dot" and was sent dotless instead. */

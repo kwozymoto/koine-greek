@@ -6208,12 +6208,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 38,
-  "tts": "pras soh",
-  "source": "rollout",
-  "duration_s": 1.291,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "8cf7159f6fef"
+  "tts": "/ˈpras.soː/",
+  "source": "batch17",
+  "duration_s": 0.836,
+  "take": "b17w_402_a",
+  "note": "the rule's own output, and a CONTROL: stressed short alpha, closed syllable, no rough breathing. Plain `a` held, so the breathing is not what ἅπτω was about on its own",
+  "sha1": "09a273ffc545"
  },
  {
   "index": 403,
@@ -6547,13 +6547,13 @@
   "pos": "noun",
   "tier": 4,
   "freq": 35,
-  "tts": "martoos",
-  "source": "rollout",
-  "duration_s": 1.127,
+  "tts": "/ˈmar.tus/",
+  "source": "batch17",
+  "duration_s": 1.071,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "e0c942e102e9"
+  "take": "b17w_424_a",
+  "note": "the rule's own output. A third alpha position -- stressed, closed by r -- and plain `a` again. Also υ as Black's *food*, which ὕδωρ approved",
+  "sha1": "c28811be3cec"
  },
  {
   "index": 425,
@@ -6700,10 +6700,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 34,
-  "tts": "bee blee on",
-  "source": "g2p",
-  "duration_s": 1.029,
-  "sha1": "843a31b3640f"
+  "tts": "/bɪˈbli.ɒn/",
+  "source": "batch17",
+  "duration_s": 1.071,
+  "sha1": "44d873e49835",
+  "take": "b17w_434_a",
+  "note": "THE DOTTED ONE WON, so καυχάομαι's hiatus finding does NOT generalise. `bli.ɒn` keeps its dot and the short omicron stays short; καυχάομαι's `ka.ɒ` did not. It stays a one-word entry, which is what it was written as"
  },
  {
   "index": 435,
@@ -6835,12 +6837,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 32,
-  "tts": "hah pas",
-  "source": "rollout",
-  "duration_s": 1.136,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "5b295fdfb048"
+  "tts": "/ˈha.pas/",
+  "source": "batch17",
+  "duration_s": 0.993,
+  "take": "b17w_443_a",
+  "note": "the rule's own output, and the other control: rough breathing and stress, but the syllable OPEN. Plain `a` held in both of its alphas, so closure is not what ἅπτω was about on its own",
+  "sha1": "858c6e160712"
  },
  {
   "index": 444,

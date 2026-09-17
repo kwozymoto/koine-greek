@@ -693,8 +693,14 @@ IPA_HEARD = {
          "short α as *bat*, which is /æ/ exactly. It is NOT a general rule "
          "and the same round proves it: Σατανᾶς was approved as "
          "/sa.taˈnaːs/, two plain a's, unstressed and in open syllables. "
-         "This one is stressed, behind an h, and closed by πτ. Positional "
-         "again, and one word is not enough to say which part of that matters",
+         "This one is stressed, behind an h, and closed by πτ.\n"
+         "         BATCH 17 WAS BUILT TO SEPARATE THOSE THREE and each "
+         "control kept its plain a: πράσσω stressed and closed with no "
+         "breathing, ἅπας with breathing and stress but the syllable open, "
+         "μάρτυς stressed and closed by r. So it is not the stress, not the "
+         "breathing, and not closure in general — what is left is the "
+         "conjunction of all three, or the πτ cluster itself, and no word in "
+         "the deck separates those two",
     401: "fully dotless, and the SCREEN is why rather than an ear. The dotted "
          "version decoded as `huːdatpatasdatsoʊ` — `dat` twice, the voice "
          "reading the dot aloud as the WORD \"dot\". Every dot fault before "
