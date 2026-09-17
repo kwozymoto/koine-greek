@@ -165,7 +165,26 @@ use `data-ref` and `data-claim` the same way.
   old shell.
 - New file? Add it to `SHELL` in `sw.js` **and** to `index.html`. Script load
   order is load-bearing; there is no build step.
-- Confirm on `https://kwozymoto.github.io/koine-greek/` afterwards.
+- **The app is at `https://everydaykoine.app/`.** Confirm there afterwards.
+  `CNAME` holds that name, which is how Pages is told about it, and Pages
+  then 301s `kwozymoto.github.io/koine-greek/` to it — so the redirect is the
+  domain working, not a misconfiguration. The old address is worth keeping
+  alive all the same, and `sync-worker/src/index.js` says why: **browser
+  storage is keyed by origin**, so a deck built at github.io lives at
+  github.io and the only way across is a sync. Both origins stay in the
+  worker's allow-list until nobody is left on the old one.
+- **A reload is not enough to confirm a deploy, and this will fool you.**
+  After a push the new worker installs and then *waits*: the old one keeps
+  controlling the page, deliberately, because `js/pwa.js` will not reload the
+  app out from under somebody mid-review. Two full reloads still ran the
+  previous build. What it does instead is raise the **"New version ready ·
+  Reload"** bar, and only that button posts `skip-waiting`. So: press it, and
+  watch the old `koine-vNNN` cache disappear from `caches.keys()`. Refreshing
+  and seeing no change means nothing.
+- `curl` is the honest check of what was published, because it has no service
+  worker and no pane cache in front of it. Compare it against disk with
+  `cmp`, file by file. Follow redirects (`curl -sL`) or you get the 301 body
+  and a confusing empty result.
 - Testing locally: the service worker caches hard. Unregister it and clear
   `caches` **before each round**, then reload twice, or you are testing stale
   JavaScript and will believe a fix failed when it did not.

@@ -7,7 +7,7 @@ A single-user study app for New Testament Greek. Vanilla HTML, CSS and
 JavaScript; no build step, no framework, no server. It runs from
 `index.html` and works offline once installed.
 
-Live at **https://kwozymoto.github.io/koine-greek/**
+Live at **https://everydaykoine.app/**
 
 It follows the progression of David Alan Black, *Learn to Read New Testament
 Greek* (3rd ed.) across 27 chapters of its own — his 26, with participles
