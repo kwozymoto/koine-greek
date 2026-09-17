@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v170';
+const VERSION = 'v171';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,15 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v171: batch 14B, and the chi block lifted. χάρις had held 14 cues and 517
+     occurrences out of the IPA route since 9E on a verdict with a confound in
+     it -- both of its takes carried a syllable dot, before anybody knew a dot
+     could be spoken. Dotless, chi won first time.
+     205_charis.mp3 is re-cut too and is NOT repeated here: it is already
+     in the v163 block, from the batch-9 round that rejected it. */
+  'audio/vocab/299_aspazomai.mp3',
+  'audio/vocab/353_oudas.mp3',
+  'audio/vocab/380_pantote.mp3',
   /* v169: batch 14. Four clips re-cut, 198 occurrences. ἱερεύς is the third
      -εύς word to want its dots taken out, so that stopped being three notes
      in a checker and became a rule. And λοιπός is the first οι anybody has

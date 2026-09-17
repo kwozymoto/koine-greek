@@ -315,12 +315,23 @@ if __name__ == "__main__":
     # rejected by ear and they belong here for exactly the reason the
     # spellings do: the fix must reach every cue carrying them, not only the
     # word that was reported.
+    # χ WAS THE FIRST ENTRY HERE AND IT HAS BEEN WITHDRAWN, which is worth
+    # more than the entry was. It rested on one word and two takes: 9E sent
+    # χάρις as `/ˈxa.ris/` and `/ˈxa.rɪs/` and both lost to `khah riss`, so
+    # chi was written off as a sound this voice cannot make — and that held
+    # back 14 cues and 517 occurrences for five batches.
+    #
+    # BOTH TAKES CARRIED A SYLLABLE DOT. In 9E nobody knew a dot could be read
+    # aloud; six words have since had a first IPA take sunk by dots alone with
+    # every sound in them already right. Put back up dotless as `/ˈxarɪs/` in
+    # 14B, chi won first time.
+    #
+    # So an entry here says "an ear rejected this", and that is a fact about
+    # ONE STRING, not about the symbol — the rest is inference, and inference
+    # from a round with a confound in it is how five batches were spent. When
+    # a fix is found for something in this list, the entry goes and this note
+    # stays, because the next thing written off will look just as settled.
     IPA_REJECTED = [
-        ("x", "IPA chi. This voice does not make the velar fricative — the "
-              "same chi that decodes as k in 78% of the shipped clips. Write "
-              "the word in English instead; `khah riss` is the shape that "
-              "works",
-         "χάρις, both IPA takes lost to the English cue, 2026-09-17 (9E)"),
         ("eu̯", "ευ written as a diphthong comes out as *row*, the omega "
                      "sound. Black's keyword is *feud*, so write it `ju`",
          "πορεύομαι \"ˈreu̯ comes out as row (omega sound)\", 2026-09-17 (9F)"),

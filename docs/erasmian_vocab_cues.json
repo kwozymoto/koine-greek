@@ -3155,12 +3155,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 155,
-  "tts": "khah riss",
-  "source": "batch9",
-  "duration_s": 0.993,
-  "sha1": "764fee51a72e",
-  "take": "b9we_205_c",
-  "note": "the -is is a SHORT iota, Black's pit, and this shipped as rees. Approved in batch 5 with the fault in it -- the fourth approval to hide one. Both IPA takes lost: IPA chi is a sound this voice does not make"
+  "tts": "/ˈxarɪs/",
+  "source": "batch14",
+  "duration_s": 0.758,
+  "sha1": "f8e35b9f94a4",
+  "take": "b14wb_205_a",
+  "note": "THE CHI BLOCK, LIFTED. 9E sent this word's IPA twice and both lost, and chi was blocked on that -- 14 cues, 517 occurrences. Both takes carried a syllable dot, which in 9E nobody knew could be read aloud. Dotless, chi won"
  },
  {
   "index": 206,
@@ -4612,10 +4612,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 59,
-  "tts": "ah spah dzo my",
-  "source": "g2p",
-  "duration_s": 2.464,
-  "sha1": "64eb0cf36e7b"
+  "tts": "/aˈspaʣɒ.mai̯/",
+  "source": "batch14",
+  "duration_s": 1.541,
+  "sha1": "9e22bc36b798",
+  "take": "b14wb_299_b",
+  "note": "ζ AS THE LIGATURE ʣ. `dz` was read as two consonants with a vowel between them -- *doz* -- and the single character fixed it, beating a tie bar in the same lot. Also dotless in front of the affricate, which is where the split was"
  },
  {
   "index": 300,
@@ -5438,12 +5440,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 44,
-  "tts": "ee oo das",
-  "source": "rollout",
-  "duration_s": 1.476,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "ffad7ea1a9df"
+  "tts": "/ɪˈuː.das/",
+  "source": "batch14",
+  "duration_s": 1.149,
+  "take": "b14wb_353_a",
+  "note": "the rule's own output. An unstressed iota opening the word and a long ου behind it",
+  "sha1": "501b204866f6"
  },
  {
   "index": 354,
@@ -5856,10 +5858,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 41,
-  "tts": "pahn to teh",
-  "source": "g2p",
-  "duration_s": 1.253,
-  "sha1": "0ab400845679"
+  "tts": "/ˈpan.tɒ.te/",
+  "source": "batch14",
+  "duration_s": 1.149,
+  "sha1": "c5793d59cde9",
+  "take": "b14wb_380_a",
+  "note": "the rule's own output, keeping both dots after the stress -- σάββατον's shape, and it behaves the same way"
  },
  {
   "index": 381,

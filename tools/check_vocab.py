@@ -555,6 +555,16 @@ IPA_LONG, IPA_NONSYL = "\u02d0", "\u032f"
 
 def ipa_cue(ipa):
     s = ipa.replace("eu" + IPA_NONSYL, "ju")
+    # ζ is ONE sound and needs one character. The pack spells it `dz`, and 14B
+    # found the voice reading that as two consonants with a vowel between
+    # them — ἀσπάζομαι's `dzɒ` came out as *doz*. "The dzo sound better in B",
+    # B being ʣ, the single ligature; a tie bar over d and z was in the same
+    # lot and lost to it.
+    #
+    # This is the consonant version of what the non-syllabic mark does for a
+    # diphthong: both say "these two letters are one sound, do not come apart
+    # between them". Ten cues carry this ζ, 424 occurrences.
+    s = s.replace("dz", "ʣ")
     s = re.sub("^(ˈ?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
                "\\1ɛ", s)
     # An o that is the FIRST half of a diphthong is not a short omicron: οι is
@@ -648,6 +658,19 @@ IPA_HEARD = {
     98: "fully dotless — the rule takes out the dot before the stress and this "
         "took the one after it as well. The only word so far that has wanted "
         "that, and its last syllable is a bare vowel",
+    205: "dotless, and it is the word that lifted the chi block. 9E sent its "
+         "IPA twice, both lost to the English cue, and χ was excluded from "
+         "the route on that — 14 cues and 517 occurrences. Both takes carried "
+         "a syllable dot, which in 9E nobody knew could be read aloud; six "
+         "words have since had a first IPA take sunk by dots alone. Put back "
+         "up dotless, chi won first time",
+    299: "the dot in front of the affricate taken out, and the verdict CANNOT "
+         "separate that from the ligature. B carried both changes at once, so "
+         "`ʣ` beating `dz` and `spaʣɒ` beating `spa.ʣɒ` are one observation "
+         "and not two. Every one of the ten ζ cues has a dot in that position, "
+         "so making it a rule from here would be the chi block's mistake "
+         "exactly — a rule inferred from a confounded round. κράζω separates "
+         "them in the next batch: same ligature, dot against no dot",
     263: "fully dotless. The sounds were right on the first IPA take — "
          "including the first ει through this route, Black's *they* — and "
          "only the dots were spoken",
