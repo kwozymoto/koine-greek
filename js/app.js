@@ -2328,10 +2328,49 @@ function caseDrill(n=12,earned){
   });
 }
 
+/* ---- distractor choice — lifted by tools/check_distractors.py ---- */
+/* A QUESTION YOU CAN ANSWER FROM THE SHAPE OF THE OPTIONS IS NOT A QUESTION.
+   Fraser found it on μετά. The four glosses were "with (+gen); after (+acc)",
+   "but, rather", "I have, hold" and "he, she, it; self; same", and only one
+   of them carries a case in brackets. Every one of the 25 prepositions in
+   the deck carries one and almost nothing else does, so a preposition could
+   be answered without reading the Greek at all — 89% of the time, measured
+   over the deck as it stands.
+
+   The same fault, and bigger: 286 of the 818 glosses open with "I ", so a
+   verb set against three non-verbs is the same free answer, 30% of the time.
+
+   alphaDrill and listenDrill already refuse this — "same kind only", and the
+   note there says why — so this is that rule for the vocabulary drills. A
+   candidate is preferred when it matches the answer's part of speech and
+   agrees about carrying a case note; the weaker pools are still drawn on
+   when the best one cannot fill three, because a question with a smaller
+   giveaway beats a question with too few options. */
+const CASE_NOTE=/\(\+[^)]*\)/;
+function wrongOptions(ans,bank,k){
+  /* Distance, not a filter: 0 agrees on both, 3 on neither. Shuffled first
+     and then sorted by distance — Array.sort is stable, so ties keep their
+     random order and a word does not draw the same three distractors twice.
+
+     THE CASE NOTE OUTWEIGHS THE PART OF SPEECH, and the five words that
+     disagree are the reason. ἐάν, ἄχρι, ὅμοιος, ἅπτω and διακονέω carry a
+     case in brackets without being prepositions, so ranking by part of
+     speech first hands ὅμοιος three unbracketed adjectives and the bracket
+     gives the answer away again — 3.1% of case-note questions, measured.
+     Ranking the bracket first drops that to nil and changes nothing else,
+     because for every other word the best pool agrees on both anyway. */
+  const like=(a,b)=>(CASE_NOTE.test(a[1])===CASE_NOTE.test(b[1])?0:2)+(a[2]===b[2]?0:1);
+  return bank.filter(x=>x[1]!==ans[1])
+             .map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1])
+             .sort((a,b)=>like(ans,a)-like(ans,b))
+             .slice(0,k);
+}
+/* ---- end distractor choice ---- */
+
 function pairDrill(bank,prompt,n=12){
   const pool=bank.slice().sort(()=>Math.random()-.5).slice(0,n);
   return pool.map(p=>{
-    const wrong=bank.filter(x=>x[1]!==p[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    const wrong=wrongOptions(p,bank,3).map(x=>x[1]);
     const opts=[p[1],...wrong].sort(()=>Math.random()-.5);
     return mcq(`${prompt} <span class="q-gk">${p[0]}</span>`,
       opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`);
@@ -2389,9 +2428,12 @@ function wordListenDrill(n=12){
     .sort(()=>Math.random()-.5).slice(0,n);
   const q=pool.map(i=>{
     const v=VOCAB[i];
-    // By value: three glosses appear twice in the deck.
-    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k))
-      .sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    // By value: three glosses appear twice in the deck. Same-kind distractors
+    // for the same reason as pairDrill — hearing a preposition and picking the
+    // only bracketed gloss is not listening either.
+    const bank=VOCAB.map((x,k)=>[x[0].split(",")[0],x[1],x[3],k])
+      .filter(x=>x[3]!==i && x[1]!==v[1] && !RETIRED.has(x[3]));
+    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
     const ask=mcq(`<button class="btn" onclick="playWord(${i},null)">\uD83D\uDD0A Play the word</button>
       <p class="muted" style="font-size:.84rem;margin:10px 0 0">What does it mean?</p>`,
@@ -2408,7 +2450,9 @@ function wordListenDrill(n=12){
 function g2eBank(){
   const idx=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && !skipWord(i));
   const use=idx.length>8?idx:LEARN_ORDER.slice(0,40);
-  return use.map(i=>[VOCAB[i][0].split(",")[0],VOCAB[i][1]]);
+  // The third field is the part of speech, which wrongOptions needs to keep
+  // a preposition from being the only option with a case in brackets.
+  return use.map(i=>[VOCAB[i][0].split(",")[0],VOCAB[i][1],VOCAB[i][3]]);
 }
 
 function reverseVocab(){
