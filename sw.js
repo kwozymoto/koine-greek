@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v182';
+const VERSION = 'v183';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v183: batch 17B. Five clips, and two sounds cleared on first hearing --
+     the gamma-nasal ŋ, which γγ is in Greek, and the κν cluster τέκνον could
+     not write in English. */
+  'audio/vocab/416_kalos.mp3',
+  'audio/vocab/420_oseph.mp3',
+  'audio/vocab/431_blasphemeo.mp3',
+  'audio/vocab/437_deiknumi.mp3',
+  'audio/vocab/445_paraggello.mp3',
   /* v182: batch 17, built as an experiment rather than a batch. Four clips,
      all four the converter's own output and none needing an exception. */
   'audio/vocab/402_prasso.mp3',

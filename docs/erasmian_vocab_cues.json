@@ -6425,10 +6425,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 36,
-  "tts": "kah lohs",
-  "source": "g2p",
-  "duration_s": 1.298,
-  "sha1": "41a533259275"
+  "tts": "/kaˈloːs/",
+  "source": "batch17",
+  "duration_s": 0.993,
+  "sha1": "c974d4efeaf1",
+  "take": "b17wb_416_a",
+  "note": "the converter's own output. The third `oːs` at the end of a word after ὡς and ὅπως, and it still does not recite"
  },
  {
   "index": 417,
@@ -6487,10 +6489,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 35,
-  "tts": "ee oh sayf",
-  "source": "g2p",
-  "duration_s": 1.45,
-  "sha1": "3f9336052af0"
+  "tts": "/ɪoːˈseːf/",
+  "source": "batch17",
+  "duration_s": 1.071,
+  "sha1": "014066199b1f",
+  "take": "b17wb_420_a",
+  "note": "dotless. `/ɪ.oːˈseːf/` was read out as letters -- \"A spells i o s e f\" -- and the string opens on a bare vowel with a dot behind it, which is the position this voice recites from most"
  },
  {
   "index": 421,
@@ -6655,10 +6659,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 34,
-  "tts": "blah sfay meh oh",
-  "source": "g2p",
-  "duration_s": 3.0,
-  "sha1": "7ed559006635"
+  "tts": "/blasfeːˈme.oː/",
+  "source": "batch17",
+  "duration_s": 1.776,
+  "sha1": "b162c5dcbda9",
+  "take": "b17wb_431_a",
+  "note": "its first dot removed. The dotted version decoded as `dɑːt` in the middle TWICE OVER -- the voice reading the dot aloud as the WORD dot, which ὑποτάσσω also did in 16B. Caught by the screen, never heard by a person"
  },
  {
   "index": 432,
@@ -6746,10 +6752,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 33,
-  "tts": "day knoo mee",
-  "source": "g2p",
-  "duration_s": 1.344,
-  "sha1": "e282df98afc3"
+  "tts": "/ˈdei̯k.nu.mɪ/",
+  "source": "batch17",
+  "duration_s": 1.463,
+  "sha1": "199ca43ce0b8",
+  "take": "b17wb_437_a",
+  "note": "the κν cluster that τέκνον could not write in English, because an English kn has a silent k. The converter's own output, and nothing was needed for it"
  },
  {
   "index": 438,
@@ -6869,12 +6877,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 32,
-  "tts": "pah rang gel loh",
-  "source": "rollout",
-  "duration_s": 1.576,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "442011b203d8"
+  "tts": "/pa.raŋˈɡel.loː/",
+  "source": "batch17",
+  "duration_s": 1.698,
+  "take": "b17wb_445_a",
+  "note": "THE GAMMA-NASAL, first time through this route and right first time. γγ is not a double g -- the first gamma is the ng of *sing* -- and the voice reads ŋ correctly. The converter's own output, no exception",
+  "sha1": "556e4b34373d"
  },
  {
   "index": 446,

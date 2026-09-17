@@ -687,6 +687,21 @@ IPA_HEARD = {
          "a syllable dot, which in 9E nobody knew could be read aloud; six "
          "words have since had a first IPA take sunk by dots alone. Put back "
          "up dotless, chi won first time",
+    420: "dotless. `/ɪ.oːˈseːf/` was read out as letters — \"A spells i o s e "
+         "f\" — and the string opens on a bare vowel with a dot behind it, "
+         "which is the position this voice recites from most. Worth knowing "
+         "that prelisten.py PASSED it and was right to: spelling the letters "
+         "gives the same number of vowel runs as saying the word, so counting "
+         "syllables cannot see this fault at all",
+    431: "its first dot removed, and the SCREEN found it rather than an ear. "
+         "The dotted version decoded with `dɑːt` in the middle, twice over — "
+         "the voice reading the syllable dot aloud as the WORD \"dot\", which "
+         "ὑποτάσσω also did in 16B.\n"
+         "         IT IS NOT A PATTERN ABOUT s, though both words have the "
+         "dot after one: κηρύσσω, τέσσαρες and πράσσω are all approved "
+         "carrying `s.`, and ὑποτάσσω spoke two dots, one of them after a "
+         "vowel. So it is the same per-word dot question the pack already "
+         "has, in a louder form — an extra word rather than an extra beat",
     395: "BLACK'S OWN KEYWORD for short alpha, which this pack has never "
          "written. `/ˈhap.toː/` came back as *hup to* — the alpha "
          "centralised to a schwa behind the rough breathing — and Black gives "
