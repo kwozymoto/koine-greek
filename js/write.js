@@ -473,9 +473,18 @@ function wScore(s) {
 }
 
 /* ---------- shared markup ---------- */
+/* `showGuideHint` also decides whether the pad may widen in landscape, and
+   the two really are the same question. A pad WITH a guide has Black's glyph
+   painted onto it and a trace scored against that glyph, so its proportions
+   are load-bearing — stretch it and the letter stretches with it. A pad
+   WITHOUT one is blank paper: the strokes are stored normalised (wPath
+   multiplies by s.w and s.h) and a ResizeObserver repaints on every resize,
+   so it can be any shape at all and nothing downstream notices.
+
+   So only the blank one gets `pad-free`, and only that one goes wide. */
 function wPadHtml(showGuideHint) {
-  return `<div class="pad"><canvas id="pad"></canvas></div>
-    <div class="row" style="margin-top:9px">
+  return `<div class="pad${showGuideHint ? "" : " pad-free"}"><canvas id="pad"></canvas></div>
+    <div class="row wctl" style="margin-top:9px">
       <button class="btn ghost small" onclick="wClear()">Clear</button>
       <button class="btn ghost small" onclick="wUndo()">Undo stroke</button>
       ${showGuideHint ? `<span class="muted" style="font-size:.74rem;margin-left:auto">Begin at the dot, follow the arrow</span>` : ""}
@@ -590,7 +599,7 @@ function wModeHtml() {
   const m = wMode();
   const b = (k, label) => `<button class="btn ghost small${m === k ? " on" : ""}"
       aria-pressed="${m === k}" onclick="wSetMode('${k}')">${label}</button>`;
-  return `<div class="row" style="justify-content:center;gap:6px;margin:0 0 8px">
+  return `<div class="row wmode" style="justify-content:center;gap:6px;margin:0 0 8px">
       ${b("finger", "Write with finger")}${b("keys", "Use keyboard")}</div>`;
 }
 
@@ -603,15 +612,22 @@ function writeWordDrill(n = 8) {
     const head = v[0].split(",")[0];
     const keys = wMode() === "keys" && typeof gkKeyboard === "function";
     document.getElementById("sessBody").innerHTML = `
-      <div class="card" style="text-align:center">
+      <div class="card wprompt" style="text-align:center">
         <p style="margin:0;font-size:1.02rem">Write the Greek for <b>${v[1]}</b></p>
         <p class="muted" style="margin:5px 0 0;font-size:.82rem">${v[3]}</p>
       </div>
       ${wModeHtml()}
       ${keys ? `<div id="kb"></div>` : wPadHtml(false)}
-      <div style="height:9px"></div>
+      <div class="wgap" style="height:9px"></div>
       <button class="btn" id="wShow">${keys ? "Check it" : "Show the word"}</button>
       <div id="fb"></div>`;
+    /* The landscape layout is a class on the session body rather than new
+       wrapper elements, because a wrapper changes source order and portrait
+       reads in source order. The grid in css/app.css places these same
+       children into two columns and portrait never sees it. */
+    const sb = document.getElementById("sessBody");
+    sb.classList.toggle("wlay", !keys);
+    sb.classList.remove("wlay-done");   // reveal adds it; every question starts clean
 
     /* THE GRADE ROW IS THE ONLY WAY ON, and it never said so. "Say how it
        went" described the answer above it rather than telling you to act, and
@@ -620,6 +636,13 @@ function writeWordDrill(n = 8) {
        sentence for all three screens that show the grades. */
     const reveal = (said, lead) => {
       document.getElementById("wShow").style.display = "none";
+      /* The landscape grid STAYS, and changes shape. Taking it off put the
+         answer card and four grade buttons back in a single column on a
+         375px-tall screen, and the grades ended up under the nav.
+         Keeping it is also the better answer: this drill asks you to
+         "compare it with yours", so the answer belongs BESIDE what you
+         wrote rather than above it. Two equal columns from here. */
+      document.getElementById("sessBody").classList.add("wlay-done");
       document.getElementById("fb").innerHTML = `
         <div class="card" style="text-align:center">
           <span class="q-gk">${head}</span>

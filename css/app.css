@@ -549,6 +549,118 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .pad{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .pad canvas{display:block;width:100%;height:250px;touch-action:none;cursor:crosshair}
 @media (min-height:760px){ .pad canvas{height:300px} }
+/* Landscape, and only the blank pad — see the note above wPadHtml for why the
+   traced one must keep its proportions.
+
+   #app is a 640px reading column, which is right for text and wrong for a
+   writing surface: rotating a phone already takes the pad from 337x300 to
+   602x250, and the 86px sitting either side is the difference between writing
+   a long word and cramming it. So this one element steps out of the column to
+   the full width, less the safe areas — in landscape the notch is at the SIDE,
+   which is exactly where this is reaching.
+
+   The height comes down at the same time. At 812x375 the page already scrolls
+   with a 250px pad, and a writing surface you have to scroll to see is worse
+   than a shorter one. */
+/* Landscape on a phone is a SHORT screen before it is a wide one, and the
+   first version of this rule only noticed the width. Measured at 812x375:
+   236px went on the header, the prompt and the mode switch, the nav starts at
+   315, and 121px of a 200px pad was below the fold. A wider writing area you
+   cannot see is worse than the narrow one you can.
+
+   So the drill's own furniture gives its height back. Scoped by class to this
+   drill — .wprompt and .wmode — because `#sessBody .card` would reach every
+   other drill's question card as well. */
+@media (orientation:landscape){
+  /* Equal negative margins with width:auto, rather than a width in vw. Both
+     ways widen the pad; only this one is symmetric. `50%` resolves against
+     #app's content box and `100vw` includes the scrollbar, so setting an
+     explicit vw width left 8px of gutter on one side and 23px on the other —
+     invisible on a phone, where scrollbars are overlays and the two agree,
+     and wrong on anything where they do not. Letting the margins do it keeps
+     both sides equal whatever the scrollbar is doing. */
+  .pad.pad-free{
+    margin-left:calc(50% - 50vw + max(14px, env(safe-area-inset-left)));
+    margin-right:calc(50% - 50vw + max(14px, env(safe-area-inset-right)));
+  }
+  .pad.pad-free canvas{height:200px}
+}
+/* AND THIS BLOCK MUST COME AFTER THAT ONE. Both set .pad.pad-free canvas at
+   the same specificity, so source order decides, and written the other way
+   round the 200px above silently won — the pad compressed its furniture and
+   then stayed exactly as tall as before.
+
+   Landscape on a phone is a SHORT screen before it is a wide one, which the
+   first version of this rule missed entirely: measured at 812x375, 236px went
+   on the header, the prompt and the mode switch, the nav starts at 315, and
+   121px of a 200px pad sat below the fold. A wider writing area you cannot
+   see is worse than the narrow one you can.
+
+   The 252px is measured, not guessed: 192px above the pad once the furniture
+   is compressed, plus the 60px nav. The floor stops it collapsing on anything
+   shorter still. Scoped by class — .wprompt, .wmode — because `#sessBody
+   .card` would reach every other drill's question card too. */
+@media (orientation:landscape) and (max-height:520px){
+  .wprompt{padding:9px 14px}
+  .wprompt p{font-size:.94rem}
+  .wprompt .muted{display:none}          /* the part of speech, not needed here */
+  .wmode{margin:0}
+  .wmode .btn{min-height:32px;padding:5px 13px;font-size:.8rem}
+
+  /* TWO COLUMNS, because a single one cannot work here and the arithmetic
+     says so rather than a preference: prompt, mode switch, Clear/Undo and
+     "Show the word" come to about 230px of furniture, and 375px of screen
+     minus the 60px nav and the 88px header leaves ~40px to write in. The
+     first attempt widened the pad and left the sticky button sitting on top
+     of what had just been written — which only the screenshot showed, after
+     three rounds of measurements had all come back clean.
+
+     Landscape has width to spare, so the furniture goes beside the pad
+     instead of above it. Grid places the existing children by name, so the
+     DOM keeps its portrait order and portrait never sees any of this. */
+  /* The GRID breaks out of the 640px reading column, not the pad inside it.
+     Done the other way round, `50%` in the pad's margin resolved against its
+     grid cell rather than against #app and the page scrolled sideways. */
+  .wlay{
+    display:grid;
+    grid-template-columns:minmax(0,240px) minmax(0,1fr);
+    grid-template-rows:auto auto auto 1fr;
+    grid-template-areas:"prompt pad" "mode pad" "ctl pad" "show pad";
+    column-gap:14px; align-items:start;
+    margin-left:calc(50% - 50vw + max(14px, env(safe-area-inset-left)));
+    margin-right:calc(50% - 50vw + max(14px, env(safe-area-inset-right)));
+  }
+  .wlay .wprompt{grid-area:prompt; margin:0}
+  .wlay .wmode{grid-area:mode}
+  .wlay .pad-free{grid-area:pad}
+  /* Clear and Undo go in the LEFT column, not under the pad. Under it they
+     fell in the row below the pad's bottom edge and the nav covered them —
+     visible in a screenshot, invisible to every measurement of the pad. */
+  .wlay .wctl{grid-area:ctl; margin-top:7px}
+  .wlay #wShow{grid-area:show; align-self:end; position:static; margin-bottom:6px}
+  .wlay .wgap{display:none}
+
+  /* The pad fills its cell; the grid above has already taken the width.
+     175px is measured: the pad's top sits at 95px under the session header,
+     and the nav covers the last 60px. */
+  .wlay .pad.pad-free{margin-left:0; margin-right:0}
+  .wlay .pad.pad-free canvas{height:max(104px, calc(100vh - 175px))}
+
+  /* After "Show the word": the answer and the four grades take the left half,
+     what you wrote stays on the right. The drill's own instruction is
+     "compare it with yours", so side by side is what it was always asking
+     for — portrait just never had the room to offer it. */
+  .wlay.wlay-done{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr);
+    grid-template-areas:"fb pad";
+  }
+  .wlay.wlay-done .wprompt,
+  .wlay.wlay-done .wmode,
+  .wlay.wlay-done .wctl{display:none}
+  .wlay.wlay-done #fb{grid-area:fb; overflow-y:auto; max-height:calc(100vh - 100px)}
+  .wlay.wlay-done #fb .card{margin-top:0}
+}
 
 /* example verse and principal parts on the card back */
 .ex{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);text-align:center}
