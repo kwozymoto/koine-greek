@@ -739,6 +739,30 @@ a verdict about one string and restating it as a fact about a sound.
 > nobody suspected), wrong about the symbol (chi, when it was the dot), and
 > wrong about the position (chi anywhere, when it was chi medially).
 
+**15B, and it is the fourth position on the same letter.** εἰσέρχομαι went up
+three ways: the aspirated `kʰ` that Erasmian chi actually is, a plain `k`, and
+the English cue that had shipped all along. **The plain k won.** So medial chi
+is written `k`, the blocked list is empty for the second time, and the last
+eight held-back cues came free.
+
+That costs something and the converter says so: a plain k is not an aspirated
+one, so the cue gives up the breath on chi inside a word. It beat both the IPA
+that kept the breath and the English that kept it, and chi already decodes as k
+in 78% of the clips this pack has shipped — but it is a loss, not a free win,
+and a note that pretended otherwise would be the same overclaiming this whole
+section is about.
+
+**And the guard for the medial rule was itself wrong about position.** Written
+to protect a word-initial chi, it exempted any chi after a stress mark — but a
+stress mark only means word-initial when the mark is at the START. οὐχί is
+`uː.ˈxi`, *oo-KHEE*: a medial chi that happens to open the stressed syllable,
+and it was left carrying the exact chi that had just failed twice. The
+lookbehind is `^` plus the mark now, with the four cases asserted before the
+rule was written rather than after.
+
+Four positions on one letter in four batches, and the last mistake was made by
+the fix for the one before it.
+
 Both rejection lists are regexes now — `IPA_REJECTED` in `check_cues` and
 `CANNOT` in `ipa_cue.py` — because a bare symbol cannot express the one thing
 that has mattered nearly every time, which is **where** it sits. That is the
