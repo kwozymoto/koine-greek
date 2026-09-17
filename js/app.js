@@ -955,8 +955,10 @@ function alphaCheckResult(missed,first){
           pass?"Worth another look at"
              :(first?"Back to the top of the list":"To drill tomorrow")}: ${names}</p>`:""}
       </div>
-      ${typeof nextTaskHtml==="function"?nextTaskHtml():""}
-      <button class="btn ghost" onclick="go('today')">Back to Today</button>`;
+      <div class="endbtns">
+        ${typeof nextTaskHtml==="function"?nextTaskHtml():""}
+        <button class="btn ghost" onclick="go('today')">Back to Today</button>
+      </div>`;
     /* The arc mounts empty and is filled a frame later; finish() does this
        and this screen stands in for finish(), so without it the ring showed
        its grey track and no result at all. */
@@ -1925,8 +1927,10 @@ function lessonDone(id){
       <div class="empty"><span class="gk">εὖγε</span>
         <p>Chapter ${id} complete.</p>
         ${line.length?`<p>${line.join(" · ")}</p>`:""}</div>
-      ${nextTaskHtml()}
-      <button class="btn ghost" onclick="go('learn')">Back to lessons</button>`;
+      <div class="endbtns">
+        ${nextTaskHtml()}
+        <button class="btn ghost" onclick="go('learn')">Back to lessons</button>
+      </div>`;
     document.getElementById("sessBar").style.width="100%";
     addXp(12);
   };
@@ -1949,10 +1953,12 @@ function lessonPause(id,at,total){
         ${line.length?`<p>${line.join(" · ")}</p>`:""}
         <p class="muted" style="font-size:.86rem">That is the day's reading. It picks up here
           next time, or carry straight on.</p></div>
-      <button class="btn" onclick="lessonWalk(${id},${at})">Keep going — part ${at+1} of ${total}</button>
-      <div style="height:9px"></div>
-      ${nextTaskHtml()}
-      <button class="btn ghost" onclick="go('learn')">Back to lessons</button>`;
+      <div class="endbtns">
+        <button class="btn" onclick="lessonWalk(${id},${at})">Keep going — part ${at+1} of ${total}</button>
+        <div style="height:9px"></div>
+        ${nextTaskHtml(true)}
+        <button class="btn ghost" onclick="go('learn')">Back to lessons</button>
+      </div>`;
     document.getElementById("sessBar").style.width="100%";
     addXp(6);
   };

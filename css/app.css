@@ -354,10 +354,14 @@ button.vid{width:100%;text-align:left;font:inherit}
      IT ASSUMES ONE TRAILING CONTROL, which is true of a question card and not
      of the screens that end a session. Those offer two or three choices in a
      row, and as direct children of #sessBody every one of them pinned to this
-     same offset and stacked on top of the others. finish() wraps its buttons
-     in .endbtns for that reason. The other three screens that end with
-     nextTaskHtml() and a way back — the alphabet check, a finished chapter,
-     the end of a reading — still have it, and still want the same wrapper. */
+     same offset and stacked on top of the others — invisible at desk height,
+     and the whole of the screen on a phone held sideways.
+
+     All four now wrap their choices in .endbtns, which takes them out of
+     reach: the end of a drill, the alphabet check, a finished chapter and the
+     end of a reading. .endbtns needs no rules of its own — .btn is already
+     display:block and full width — so it exists purely to not be a direct
+     child. Anything new that ends a session wants the same wrapper. */
   #sessBody > .btn, #sessBody .grades{
     position:sticky;z-index:5;
     bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 10px)}
