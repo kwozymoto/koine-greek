@@ -1202,10 +1202,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 194,
-  "tts": "ay sehr kho my",
-  "source": "g2p",
-  "duration_s": 1.648,
-  "sha1": "fc347f64f5ad"
+  "tts": "/ei̯ˈser.kɒ.mai̯/",
+  "source": "batch15",
+  "duration_s": 1.62,
+  "sha1": "cb7294d5402c",
+  "take": "b15wb_78_b",
+  "note": "MEDIAL CHI IS A PLAIN k. Put up as `kʰ`, as `k`, and as the English `ay sehr kho my`; the plain k won. It gives up the breath on chi, and it beat both the IPA that kept it and the English that kept it -- chi already decodes as k in 78% of the clips this pack has shipped"
  },
  {
   "index": 79,
@@ -5031,10 +5033,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 49,
-  "tts": "khray ah",
-  "source": "g2p",
-  "duration_s": 1.048,
-  "sha1": "ed829db39974"
+  "tts": "/ˈxrei̯a/",
+  "source": "batch15",
+  "duration_s": 0.758,
+  "sha1": "b250676e8aca",
+  "take": "b15wb_326_a",
+  "note": "dotless. \"A is better but the . (dot) is being spoken\" -- so the word-initial chi was never in question, and χάρις had already settled that"
  },
  {
   "index": 327,
@@ -5383,10 +5387,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 45,
-  "tts": "kah thee dzoh",
-  "source": "g2p",
-  "duration_s": 1.745,
-  "sha1": "41841812c2e0"
+  "tts": "/kaˈθiʣoː/",
+  "source": "batch15",
+  "duration_s": 1.149,
+  "sha1": "8505ee57d8a1",
+  "take": "b15wb_349_a",
+  "note": "THE ζ RULE APPLIED rather than tested: ligature, no dot in front of it, on a word nobody had heard. Right first time"
  },
  {
   "index": 350,
@@ -6015,12 +6021,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 40,
-  "tts": "tes sah res",
-  "source": "rollout",
-  "duration_s": 1.797,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "a3488c5c487c"
+  "tts": "/ˈtes.sa.res/",
+  "source": "batch15",
+  "duration_s": 1.149,
+  "take": "b15wb_390_a",
+  "note": "the rule's own output. Three short vowels after the stress and both dots kept -- πάντοτε's shape, behaving the same way",
+  "sha1": "3de8d041b0ca"
  },
  {
   "index": 391,
@@ -6397,10 +6403,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "oos",
-  "source": "g2p",
-  "duration_s": 0.642,
-  "sha1": "25bca0703797"
+  "tts": "/ˈuːs/",
+  "source": "batch15",
+  "duration_s": 0.679,
+  "sha1": "84194e01143e",
+  "take": "b15wb_415_a",
+  "note": "the rule's own output, and the shortest string this route has been asked for. A final `uːs` does not recite, which is what ὡς predicted for `oːs`"
  },
  {
   "index": 416,

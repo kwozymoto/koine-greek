@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v177';
+const VERSION = 'v178';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,15 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v178: batch 15B. Five clips re-cut, 363 occurrences, and the chi block gone
+     for good -- chi in the MIDDLE of a word is written as a plain k. It gives
+     up the breath, and it beat both the IPA that kept it and the English that
+     kept it. */
+  'audio/vocab/078_eiserchomai.mp3',
+  'audio/vocab/326_chreia.mp3',
+  'audio/vocab/349_kathizo.mp3',
+  'audio/vocab/390_tessares.mp3',
+  'audio/vocab/415_ous.mp3',
   /* v177: batch 15. Three clips re-cut. κράζω is the one that earned a rule:
      14B changed the ζ ligature and removed the dot in front of it at once, and
      this held the ligature fixed and varied only the dot. Dotless won. */

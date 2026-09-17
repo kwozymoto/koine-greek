@@ -338,12 +338,11 @@ if __name__ == "__main__":
     # FRONT of a word, and εἰσέρχομαι failed twice with it in the middle.
     # A bare symbol cannot express that, so it stopped being one.
     IPA_REJECTED = [
-        (r"(?<!/)(?<!ˈ)x",
-         "IPA chi INSIDE a word. It is either spelled out or comes back as "
-         "*hock*. At the FRONT of a word it is fine — χάρις was approved "
-         "first time — so this is about the position and not the sound",
-         "εἰσέρχομαι, both takes: \"A spells from x onwards and B pronounces "
-         "x as hock\", 2026-09-17 (15)"),
+        # χ was here for one round and is gone again: 15B approved a plain `k`
+        # for the middle of a word, so there is a spelling and nothing to
+        # reject. The converter writes it, and check_vocab holds every IPA cue
+        # to the converter, so a medial `x` cannot reach a clip by this list
+        # being empty of it.
         ("eu̯", "ευ written as a diphthong comes out as *row*, the omega "
                      "sound. Black's keyword is *feud*, so write it `ju`",
          "πορεύομαι \"ˈreu̯ comes out as row (omega sound)\", 2026-09-17 (9F)"),

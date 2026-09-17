@@ -565,6 +565,17 @@ def ipa_cue(ipa):
     # diphthong: both say "these two letters are one sound, do not come apart
     # between them". Ten cues carry this ζ, 424 occurrences.
     s = s.replace("dz", "ʣ")
+    # χ in the MIDDLE of a word is written as a plain k. 15B put εἰσέρχομαι up
+    # as `kʰ`, as `k`, and as the English cue that had shipped all along; the
+    # plain k won. It gives up the breath on chi, which is a real loss, and it
+    # beat both the IPA that kept it and the English that kept it — and chi
+    # already decodes as k in 78% of the clips this pack has shipped.
+    #
+    # At the FRONT of a word `x` stays: χάρις and χρεία have both approved it
+    # there. The second lookbehind is the START plus a stress mark, not a
+    # stress mark alone — οὐχί is `uː.ˈxi`, oo-KHEE, a MEDIAL chi that happens
+    # to open the stressed syllable, and the loose form exempted it.
+    s = re.sub("(?<!^)(?<!^ˈ)x", "k", s)
     # AND NO DOT IN FRONT OF IT. 14B's winner changed two things at once —
     # the ligature, and the dot before it — so which did the work was
     # unknown, and all ten ζ cues carry a dot in that position. Inferring a
@@ -676,6 +687,9 @@ IPA_HEARD = {
          "a syllable dot, which in 9E nobody knew could be read aloud; six "
          "words have since had a first IPA take sunk by dots alone. Put back "
          "up dotless, chi won first time",
+    326: "dotless. \"A is better but the . (dot) is being spoken\" — so its "
+         "word-initial chi was never in question, which χάρις had already "
+         "settled, and only the dot was",
     224: "dotless. \"A spells everything\" — the voice reads a string out "
          "letter by letter when the dots leave it nothing to say, and ξ "
          "written `ks` opening a syllable is a cluster English does not begin "
