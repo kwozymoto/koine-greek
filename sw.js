@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v180';
+const VERSION = 'v181';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v181: batch 16B, and the first round a machine screened before a person
+     heard it. ὑποτάσσω was caught reading its own syllable dot aloud as the
+     WORD "dot" and was sent dotless instead. */
+  'audio/vocab/395_apto.mp3',
+  'audio/vocab/398_pente.mp3',
+  'audio/vocab/401_upotasso.mp3',
+  'audio/vocab/411_atanas.mp3',
+  'audio/vocab/419_kauchaomai.mp3',
   /* v180: batch 16. Two clips re-cut. ἄρχων is the one worth naming: its chi is
      medial so it is written k, and it ends in `oːn` so the omega is written oʊ.
      Two rules found four batches apart, composing in one word, right first time. */

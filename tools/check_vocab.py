@@ -687,6 +687,23 @@ IPA_HEARD = {
          "a syllable dot, which in 9E nobody knew could be read aloud; six "
          "words have since had a first IPA take sunk by dots alone. Put back "
          "up dotless, chi won first time",
+    395: "BLACK'S OWN KEYWORD for short alpha, which this pack has never "
+         "written. `/ˈhap.toː/` came back as *hup to* — the alpha "
+         "centralised to a schwa behind the rough breathing — and Black gives "
+         "short α as *bat*, which is /æ/ exactly. It is NOT a general rule "
+         "and the same round proves it: Σατανᾶς was approved as "
+         "/sa.taˈnaːs/, two plain a's, unstressed and in open syllables. "
+         "This one is stressed, behind an h, and closed by πτ. Positional "
+         "again, and one word is not enough to say which part of that matters",
+    401: "fully dotless, and the SCREEN is why rather than an ear. The dotted "
+         "version decoded as `huːdatpatasdatsoʊ` — `dat` twice, the voice "
+         "reading the dot aloud as the WORD \"dot\". Every dot fault before "
+         "it was an extra beat; this was an extra word, and it never reached "
+         "a person",
+    419: "the dot taken out of a vowel HIATUS. With it in, `ka.ɒ` read the "
+         "short omicron long — \"ɒ sounds like omega\" — and eight cues have "
+         "carried ɒ without trouble, not one of them between two vowels. So "
+         "the position is new rather than the symbol",
     326: "dotless. \"A is better but the . (dot) is being spoken\" — so its "
          "word-initial chi was never in question, which χάρις had already "
          "settled, and only the dot was",

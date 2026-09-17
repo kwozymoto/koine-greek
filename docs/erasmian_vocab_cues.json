@@ -6102,12 +6102,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 39,
-  "tts": "hap toh",
-  "source": "rollout",
-  "duration_s": 0.951,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "db93129d08dc"
+  "tts": "/ˈhæp.toː/",
+  "source": "batch16",
+  "duration_s": 0.993,
+  "take": "b16wb_395_a",
+  "note": "BLACK'S OWN KEYWORD for short alpha. `/ˈhap.toː/` came back as *hup to* -- the alpha centralised behind the rough breathing -- and *bat* is /æ/ exactly. Not a general rule: Σατανᾶς was approved in this same round with two plain a's",
+  "sha1": "ca7c6aaf0a29"
  },
  {
   "index": 396,
@@ -6147,10 +6147,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 38,
-  "tts": "pehn teh",
-  "source": "g2p",
-  "duration_s": 0.969,
-  "sha1": "b29a7de37169"
+  "tts": "/ˈpen.te/",
+  "source": "batch16",
+  "duration_s": 1.228,
+  "sha1": "8ac963ac292e",
+  "take": "b16wb_398_a",
+  "note": "the rule's own output. Two plain e's, neither at the start of the string, which is the condition the epsilon rule was narrowed to in 9H"
  },
  {
   "index": 399,
@@ -6190,12 +6192,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 38,
-  "tts": "hoo po tas soh",
-  "source": "rollout",
-  "duration_s": 1.785,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "8aa807613e9f"
+  "tts": "/hupɒˈtassoː/",
+  "source": "batch16",
+  "duration_s": 1.384,
+  "take": "b16wb_401_a",
+  "note": "fully dotless, and the screen is why. The dotted version decoded as `huːdatpatasdatsoʊ` -- `dat` twice, the voice reading the dot aloud as the WORD dot. Every dot fault before this was an extra beat; this was an extra word, and it never reached an ear",
+  "sha1": "907e01893a9e"
  },
  {
   "index": 402,
@@ -6345,12 +6347,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 36,
-  "tts": "sah tah nas",
-  "source": "rollout",
-  "duration_s": 1.527,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "696a12713121"
+  "tts": "/sa.taˈnaːs/",
+  "source": "batch16",
+  "duration_s": 1.776,
+  "take": "b16wb_411_b",
+  "note": "THE RULE'S OWN OUTPUT, and the same string that failed in 16 with a syllable that is not in the word. So that was a bad TAKE, not a bad string: the generator is not deterministic. It needs no exception, and it is the reason the screen runs on what was generated rather than on what was asked for",
+  "sha1": "6c66387a1445"
  },
  {
   "index": 412,
@@ -6469,10 +6471,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 36,
-  "tts": "kow khah o my",
-  "source": "g2p",
-  "duration_s": 1.828,
-  "sha1": "335570aace6c"
+  "tts": "/kau̯ˈkaɒ.mai̯/",
+  "source": "batch16",
+  "duration_s": 1.384,
+  "sha1": "04605c81845c",
+  "take": "b16wb_419_b",
+  "note": "the dot out of the vowel hiatus. With it in, `ka.ɒ` read the short omicron LONG -- \"ɒ sounds like omega\" -- and eight cues have carried ɒ with no trouble, none of them between two vowels"
  },
  {
   "index": 420,
