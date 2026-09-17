@@ -3454,10 +3454,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 54,
-  "tts": "deh ksee os",
-  "source": "g2p",
-  "duration_s": 1.678,
-  "sha1": "ad6493b1232d"
+  "tts": "/deksɪˈɒs/",
+  "source": "batch15",
+  "duration_s": 1.306,
+  "sha1": "3772e36b7a20",
+  "take": "b15w_224_a",
+  "note": "dotless. \"A spells everything\" in 15 -- the voice reads a string out letter by letter when the dots give it nothing to say, and this is the same remedy as always"
  },
  {
   "index": 225,
@@ -4752,11 +4754,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 55,
-  "tts": "krah dzoh",
-  "source": "composed",
-  "duration_s": 1.339,
-  "sha1": "e16bca5ff59b",
-  "note": "every beat of this cue has been heard IN THIS POSITION in another word (krah from κρατέω; dzoh from βαπτίζω), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
+  "tts": "/ˈkraʣoː/",
+  "source": "batch15",
+  "duration_s": 0.914,
+  "sha1": "0b2ca96c35d1",
+  "note": "THE LOT THAT SEPARATED TWO THINGS. 14B's winner changed the ligature and removed the dot in front of it at once; this held the ligature fixed and varied only the dot, and dotless won. So the dot before the affricate is what splits it, and that is now a rule rather than an entry",
+  "take": "b15w_308_b"
  },
  {
   "index": 309,
@@ -5934,10 +5937,12 @@
   "pos": "adj",
   "tier": 4,
   "freq": 40,
-  "tts": "hee kah nos",
-  "source": "g2p",
-  "duration_s": 1.547,
-  "sha1": "736992ccb7f8"
+  "tts": "/hɪ.kaˈnɒs/",
+  "source": "batch15",
+  "duration_s": 1.228,
+  "sha1": "2aa5d6ce0e84",
+  "take": "b15w_385_a",
+  "note": "the rule's own output. Rough breathing, unstressed iota, and a stressed short omicron at the end -- καρπός's shape, unchanged"
  },
  {
   "index": 386,

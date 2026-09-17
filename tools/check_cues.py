@@ -331,7 +331,19 @@ if __name__ == "__main__":
     # from a round with a confound in it is how five batches were spent. When
     # a fix is found for something in this list, the entry goes and this note
     # stays, because the next thing written off will look just as settled.
+    # EACH ENTRY IS A REGEX, not a symbol, because the one thing that has
+    # mattered every time is WHERE the symbol sits. χ was withdrawn from this
+    # list in 14B when χάρις was approved, and 15 showed that withdrawing it
+    # outright was wrong in the other direction: χάρις proved chi at the
+    # FRONT of a word, and εἰσέρχομαι failed twice with it in the middle.
+    # A bare symbol cannot express that, so it stopped being one.
     IPA_REJECTED = [
+        (r"(?<!/)(?<!ˈ)x",
+         "IPA chi INSIDE a word. It is either spelled out or comes back as "
+         "*hock*. At the FRONT of a word it is fine — χάρις was approved "
+         "first time — so this is about the position and not the sound",
+         "εἰσέρχομαι, both takes: \"A spells from x onwards and B pronounces "
+         "x as hock\", 2026-09-17 (15)"),
         ("eu̯", "ευ written as a diphthong comes out as *row*, the omega "
                      "sound. Black's keyword is *feud*, so write it `ju`",
          "πορεύομαι \"ˈreu̯ comes out as row (omega sound)\", 2026-09-17 (9F)"),
@@ -342,7 +354,7 @@ if __name__ == "__main__":
         if not cue.startswith("/"):
             continue
         for sym, does, proof in IPA_REJECTED:
-            if sym in cue:
+            if re.search(sym, cue):
                 ipa_hits.append((r.get("index"), r.get("greek"), cue, sym,
                                  does, proof))
     hits += ipa_hits

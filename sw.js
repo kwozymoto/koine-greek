@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v176';
+const VERSION = 'v177';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,12 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v177: batch 15. Three clips re-cut. κράζω is the one that earned a rule:
+     14B changed the ζ ligature and removed the dot in front of it at once, and
+     this held the ligature fixed and varied only the dot. Dotless won. */
+  'audio/vocab/224_dexios.mp3',
+  'audio/vocab/308_krazo.mp3',
+  'audio/vocab/385_ikanos.mp3',
   /* v171: batch 14B, and the chi block lifted. χάρις had held 14 cues and 517
      occurrences out of the IPA route since 9E on a verdict with a confound in
      it -- both of its takes carried a syllable dot, before anybody knew a dot

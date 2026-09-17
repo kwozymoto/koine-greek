@@ -565,6 +565,18 @@ def ipa_cue(ipa):
     # diphthong: both say "these two letters are one sound, do not come apart
     # between them". Ten cues carry this ζ, 424 occurrences.
     s = s.replace("dz", "ʣ")
+    # AND NO DOT IN FRONT OF IT. 14B's winner changed two things at once —
+    # the ligature, and the dot before it — so which did the work was
+    # unknown, and all ten ζ cues carry a dot in that position. Inferring a
+    # rule from a round like that is how chi got written off for five
+    # batches, so κράζω was built to separate them: same ligature in both
+    # takes, the dot the only difference. Dotless won.
+    #
+    # So the dot is what lets the affricate come apart, and the ligature is
+    # kept because it is in both winners — its own contribution has still
+    # never been tested on its own, which this comment records rather than
+    # rounds off.
+    s = s.replace(".ʣ", "ʣ")
     s = re.sub("^(ˈ?)e(?![" + IPA_LONG + "]|i" + IPA_NONSYL + ")",
                "\\1ɛ", s)
     # An o that is the FIRST half of a diphthong is not a short omicron: οι is
@@ -664,13 +676,10 @@ IPA_HEARD = {
          "a syllable dot, which in 9E nobody knew could be read aloud; six "
          "words have since had a first IPA take sunk by dots alone. Put back "
          "up dotless, chi won first time",
-    299: "the dot in front of the affricate taken out, and the verdict CANNOT "
-         "separate that from the ligature. B carried both changes at once, so "
-         "`ʣ` beating `dz` and `spaʣɒ` beating `spa.ʣɒ` are one observation "
-         "and not two. Every one of the ten ζ cues has a dot in that position, "
-         "so making it a rule from here would be the chi block's mistake "
-         "exactly — a rule inferred from a confounded round. κράζω separates "
-         "them in the next batch: same ligature, dot against no dot",
+    224: "dotless. \"A spells everything\" — the voice reads a string out "
+         "letter by letter when the dots leave it nothing to say, and ξ "
+         "written `ks` opening a syllable is a cluster English does not begin "
+         "one with. Same remedy as always",
     263: "fully dotless. The sounds were right on the first IPA take — "
          "including the first ει through this route, Black's *they* — and "
          "only the dots were spoken",
