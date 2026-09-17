@@ -185,11 +185,13 @@
   "pos": "noun",
   "tier": 1,
   "freq": 1317,
-  "tts": "theh oss",
-  "source": "locked",
-  "duration_s": 1.032,
+  "tts": "/θe.ˈɒs/",
+  "source": "batch19",
+  "duration_s": 0.993,
   "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
-  "sha1": "1f4c4862a599"
+  "sha1": "f863432055ee",
+  "take": "b19wb_12_a",
+  "note": "THE BIGGEST WORD IN THE DECK, 1,317 occurrences, off an English respelling at last. Its dotted form confirms the hiatus rule γενεά found, and the converter now writes this unaided"
  },
  {
   "index": 13,
@@ -371,12 +373,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 667,
-  "tts": "di ah",
-  "source": "reroll",
-  "duration_s": 1.137,
-  "take": "2026-09-10, Atlas",
-  "note": "six spellings failed on this word and none of them was the problem: the same cue generated twice gave a rejected take and an accepted one. Rolled again, not respelled.",
-  "sha1": "2c18e1c7cabf"
+  "tts": "/dɪˈa/",
+  "source": "batch19",
+  "duration_s": 0.836,
+  "take": "b19wb_24_b",
+  "note": "DOTLESS, and it is what kept the rule narrow. Same hiatus shape as θεός but with an i in front of the stress instead of an e, and δεξιός shipped dotless from the same shape in 15. The converter's own output",
+  "sha1": "9a6f740d6ca3"
  },
  {
   "index": 25,
@@ -3345,11 +3347,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 30,
-  "tts": "ahr nee on",
-  "source": "composed",
+  "tts": "/arˈni.ɒn/",
+  "source": "batch19",
   "duration_s": 1.306,
-  "sha1": "6a2b9563f07b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "sha1": "886b628a28f9",
+  "note": "the converter's own output. Clears a stressed rn, which three cues were waiting on",
+  "take": "b19w_217_a"
  },
  {
   "index": 218,
@@ -3441,11 +3444,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 43,
-  "tts": "spehr mah",
-  "source": "composed",
-  "duration_s": 1.152,
-  "sha1": "1fd7bbd3f876",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈsper.ma/",
+  "source": "batch19",
+  "duration_s": 1.071,
+  "sha1": "ae78a7e35245",
+  "note": "the converter's own output. Clears the rm cluster",
+  "take": "b19w_223_a"
  },
  {
   "index": 224,
@@ -3647,11 +3651,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 331,
-  "tts": "eh ahn",
-  "source": "composed",
-  "duration_s": 1.23,
-  "sha1": "ee71934cfed7",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛ.ˈan/",
+  "source": "batch19",
+  "duration_s": 0.914,
+  "sha1": "166d479b8ed2",
+  "note": "the second confirmation of the same rule, and a bare epsilon opening the word as well",
+  "take": "b19wb_236_a"
  },
  {
   "index": 237,
@@ -4292,11 +4297,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 65,
-  "tts": "ay teh",
-  "source": "composed",
-  "duration_s": 0.841,
-  "sha1": "f99221c1ea6b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈei̯te/",
+  "source": "batch19",
+  "duration_s": 0.836,
+  "sha1": "052f68d593da",
+  "note": "dotless. \"A is right but te is spelled out\" -- and τότε ships the same final `te` dotless, which is where the fix came from",
+  "take": "b19wb_278_a"
  },
  {
   "index": 279,
@@ -5325,11 +5331,12 @@
   "pos": "interj",
   "tier": 4,
   "freq": 46,
-  "tts": "oo eye",
-  "source": "composed",
-  "duration_s": 0.821,
-  "sha1": "abf8fed5359e",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/uːˈai̯/",
+  "source": "batch19",
+  "duration_s": 0.993,
+  "sha1": "2c5b0a073825",
+  "note": "the converter's own output. A long ου against a following αι with only the stress mark between them",
+  "take": "b19w_345_a"
  },
  {
   "index": 346,
@@ -5527,11 +5534,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 43,
-  "tts": "geh neh ah",
-  "source": "composed",
-  "duration_s": 1.607,
-  "sha1": "54e0f63c8fee",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɡe.ne.ˈa/",
+  "source": "batch19",
+  "duration_s": 1.463,
+  "sha1": "35eb069c7ed4",
+  "note": "THE DOTTED ONE WON, and it is a rule finding rather than a word one: the stress mark does NOT separate two vowels the way a dot does. Held as an entry rather than a rule because drawing it wider breaks αἰών, Δαυίδ and Ἰούδας, whose hiatus has a diphthong or a long vowel in it. θεός and διά test the narrow version next",
+  "take": "b19w_358_b"
  },
  {
   "index": 359,

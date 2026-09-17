@@ -703,10 +703,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "dendron",
-  "source": "worklist-candidate",
-  "duration_s": 0.84,
-  "sha1": "0c5881b0440a"
+  "tts": "/ˈden.drɒn/",
+  "source": "batch19",
+  "duration_s": 0.993,
+  "sha1": "744eee2ea598",
+  "take": "b19w_558_a",
+  "note": "the converter's own output. Clears the nd and dr clusters, which between them nine unheard cues were waiting on"
  },
  {
   "index": 559,
@@ -3341,12 +3343,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 16,
-  "tts": "kah far nah oom",
-  "source": "rollout",
-  "duration_s": 1.919,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "8e99073348c7"
+  "tts": "/kafarnaˈuːm/",
+  "source": "batch19",
+  "duration_s": 1.228,
+  "take": "b19w_736_a",
+  "note": "dotless, and the screen is why: the dotted version decoded with `dɑːt` TWICE -- the voice reading its syllable dots aloud as the word dot, after ὑποτάσσω and βλασφημέω. Clears the rn cluster",
+  "sha1": "94a5bf80d7f3"
  },
  {
   "index": 737,
@@ -3387,10 +3389,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "daypnon",
-  "source": "worklist-candidate",
-  "duration_s": 1.248,
-  "sha1": "a557211a71b3"
+  "tts": "/ˈdei̯.pnɒn/",
+  "source": "batch19",
+  "duration_s": 1.228,
+  "sha1": "7fa904ef41f7",
+  "take": "b19w_739_a",
+  "note": "the converter's own output, and it clears the πν cluster that forced a helper vowel on πνεῦμα in English -- IPA needs none"
  },
  {
   "index": 740,
@@ -4549,11 +4553,11 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "rabee",
-  "source": "rollout",
-  "duration_s": 0.845,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "4ebb7b7ad082"
+  "tts": "/rabˈbi/",
+  "source": "batch19",
+  "duration_s": 0.993,
+  "take": "b19w_817_a",
+  "note": "the converter's own output. Initial ῥ as a plain r, which ῥῆμα settled, and a doubled beta across the stress",
+  "sha1": "29beaa4b26fc"
  }
 ]

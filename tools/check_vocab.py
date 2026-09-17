@@ -638,7 +638,23 @@ def ipa_cue(ipa):
     # first merges the unstressed syllable into the stressed one, so the
     # opening syllable looks stressed and keeps its long iota: the converter
     # produced /pi.../ where the string an ear approved is /pɪ.../.
-    s = s.replace("." + "ˈ", "ˈ")
+    # THE PRE-STRESS DOT SURVIVES AN e + SHORT-VOWEL HIATUS, and dies
+    # everywhere else. γενεά lost `ɡe.neˈa` to `ɡe.ne.ˈa` in batch 19 — the
+    # stress mark does not separate two vowels the way a dot does — and 19B
+    # confirmed it on the two biggest words left on English respellings, θεός
+    # at 1,317 occurrences and ἐάν at 331.
+    #
+    # RESTRICTED TO e ON PURPOSE. διά went the other way in that same round,
+    # dotless, and δεξιός shipped dotless in 15; both have an i before the
+    # stress where the three that kept the dot have an e. Wider still breaks
+    # αἰών, Δαυίδ and Ἰούδας, whose hiatus holds a diphthong or a long vowel.
+    # Checked against every approved cue: three gained, none lost.
+    #
+    # λαός, ναός and Ἀβραάμ are the untested a-initial cases. The rule leaves
+    # them dotless, which is what they ship today, so being wrong about them
+    # costs nothing until somebody listens.
+    s = re.sub("(?<![eɛ])\\.ˈ", "ˈ", s)
+    s = re.sub("(?<=[eɛ])\\.ˈ(?![aeiouyɒɛɪ](?![ːu̯i̯]))", "ˈ", s)
     # A cue ending in `ju` plus a consonant is written FULLY dotless, and the
     # three words that say so are the only three the route can reach: βασιλεύς
     # in 12B, γραμματεύς in 13B, ἱερεύς in 14. Three of three, each put up
@@ -663,6 +679,14 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    736: "fully dotless, and the SCREEN found it rather than an ear: the "
+         "dotted version decoded with `dɑːt` TWICE — the voice reading its "
+         "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "
+         "βλασφημέω. Three words have now done that and they have no shape in "
+         "common, so it is the per-word dot question in its loudest form",
+    278: "dotless. \"A is right but `te` is spelled out\" — the diphthong was "
+         "fine and the final syllable was not. τότε ships the same final `te` "
+         "dotless and that is where the fix came from",
     271: "dotless, and it beat the dotted version it had been approved as in "
          "batch 13 — two dots and a doubled consonant",
     198: "dotless, with a diphthong beside the dot",

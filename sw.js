@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v184';
+const VERSION = 'v185';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,21 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v185: batches 19 and 19B. Twelve clips, and θεός among them -- 1,317
+     occurrences, the deck's commonest word, off an English respelling at
+     last and onto a string the converter now writes unaided. */
+  'audio/vocab/012_theos.mp3',
+  'audio/vocab/024_dia.mp3',
+  'audio/vocab/217_arnion.mp3',
+  'audio/vocab/223_sperma.mp3',
+  'audio/vocab/236_ean.mp3',
+  'audio/vocab/278_eite.mp3',
+  'audio/vocab/345_ouai.mp3',
+  'audio/vocab/358_genea.mp3',
+  'audio/vocab/558_dendron.mp3',
+  'audio/vocab/736_kapharnaoum.mp3',
+  'audio/vocab/739_deipnon.mp3',
+  'audio/vocab/817_rabbi.mp3',
   /* v184: batch 18, an experiment about dots. ὅτι is the one that matters --
      the deck's commonest word, 1,296 occurrences, and the converter's own
      string beat the one it has shipped since batch 9.
