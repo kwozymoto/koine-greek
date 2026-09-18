@@ -7,8 +7,52 @@
 /* Without a worker the app still runs; it just won't open offline and
    won't offer to install. So every failure here is silent by design. */
 if("serviceWorker" in navigator){
+
+  /* HOW A NEW VERSION IS NOTICED, and why it used to depend on the device.
+
+     register() is the thing that asks the server whether sw.js has changed,
+     and for a long time it ran in exactly one place: the load handler below.
+     One check per page load, and none ever again while the page stayed open.
+
+     That is invisible on a phone and in a browser tab, because on both of
+     them a page load is the normal way back in — Android kills a
+     backgrounded app, so reopening it is a cold start, and visiting the site
+     in a tab IS the load. An installed app on a Windows desktop is neither.
+     It is a window: opened once, left open for weeks, minimised, restored,
+     carried across a logout by session restore. Fraser reported it on
+     2026-09-18 — installed on Windows 11, no update prompt, ever — and that
+     is the whole of it. The app was not refusing to update; nothing had
+     asked since the day it was installed.
+
+     So the check now runs on a schedule as well: hourly while the window is
+     simply sitting there, and again whenever the window comes back to the
+     front, which is what "opening" the app looks like when it never closed.
+     A restore out of the back/forward cache fires pageshow and NOT load, so
+     that one is listened for by name.
+
+     updateViaCache matters here too. Its default lets the browser answer the
+     sw.js request out of the HTTP cache, and Pages sends max-age=600 on it,
+     so a check within ten minutes of the last one is not a check at all.
+     "none" puts every one of them on the network. */
+  const CHECK_EVERY = 60*60*1000;   /* while the window is left open       */
+  const CHECK_GAP   = 15*60*1000;   /* floor under the event-driven checks */
+  let REG=null, lastCheck=0;
+
+  function checkForUpdate(){
+    if(!REG) return;
+    /* update() rejects offline, and an alt-tab is not a reason to ask again
+       thirty seconds after the last answer. */
+    if(!navigator.onLine) return;
+    const now=Date.now();
+    if(now-lastCheck < CHECK_GAP) return;
+    lastCheck=now;
+    try{ REG.update().catch(()=>{}); }catch(e){}
+  }
+
   addEventListener("load",()=>{
-    navigator.serviceWorker.register("sw.js").then(reg=>{
+    navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(reg=>{
+      REG=reg;
+      lastCheck=Date.now();          /* register() has just asked */
 
       /* A worker in "waiting" means a new version is cached and ready.
          Offer the reload rather than forcing it — being thrown out of a
@@ -16,14 +60,24 @@ if("serviceWorker" in navigator){
       const watch=w=>{
         if(!w) return;
         w.addEventListener("statechange",()=>{
-          if(w.state==="installed" && navigator.serviceWorker.controller) offerUpdate(reg);
+          if(w.state==="installed" && navigator.serviceWorker.controller) offerUpdate(reg,w);
         });
       };
-      if(reg.waiting && navigator.serviceWorker.controller) offerUpdate(reg);
+      if(reg.waiting && navigator.serviceWorker.controller) offerUpdate(reg,reg.waiting);
       watch(reg.installing);
       reg.addEventListener("updatefound",()=>watch(reg.installing));
+
+      setInterval(checkForUpdate,CHECK_EVERY);
     }).catch(()=>{});
   });
+
+  /* Coming back to the window, in the three shapes that takes. None of them
+     is a page load, which is the entire bug above. */
+  document.addEventListener("visibilitychange",()=>{
+    if(document.visibilityState==="visible") checkForUpdate();
+  });
+  addEventListener("pageshow",e=>{ if(e.persisted) checkForUpdate(); });
+  addEventListener("online",checkForUpdate);
 
   /* claim() fires controllerchange on the first ever load, where there is
      nothing stale to replace — reloading there just jolts a new user. */
@@ -36,12 +90,18 @@ if("serviceWorker" in navigator){
   });
 }
 
-function offerUpdate(reg){
+/* The worker that was watched is passed in beside the registration, because
+   reg.waiting is read at click time and the two can disagree: a worker that
+   has just reached "installed" is the one being offered whether or not the
+   registration has published it as .waiting yet. A dead Reload button is the
+   same symptom as no button at all. */
+function offerUpdate(reg,w){
   const bar=document.getElementById("updateBar");
   bar.classList.add("on");
   document.getElementById("btnReload").onclick=()=>{
     bar.classList.remove("on");
-    if(reg.waiting) reg.waiting.postMessage("skip-waiting");
+    const target=reg.waiting||w;
+    if(target) target.postMessage("skip-waiting");
   };
 }
 
