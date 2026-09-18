@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v195';
+const VERSION = 'v196';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v196: batch 25D. The twelve-word sample is now 12 for 12, the two
+     stragglers taking one more round. βαστάζω chose the UNTIED dz over
+     the tie-barred affricate the converter makes -- six approved cues
+     carry that affricate and not one had ever been put against its own
+     alternative. χιλιάς took a plain k at the front of a word, because
+     `xi` is the English name of the letter ξ and read as a z. */
+  'audio/vocab/533_bastazo.mp3',
+  'audio/vocab/598_chilias.mp3',
   /* v195: batch 25C. ἀφίημι settled after five rounds, and ten of a
      twelve-word SAMPLE of the 275 cues the coverage model calls safe --
      the first honest test of whether the rules are right without an ear.

@@ -340,12 +340,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 27,
-  "tts": "bas tah zoh",
-  "source": "rollout",
-  "duration_s": 1.337,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "6e6439af4946"
+  "tts": "/baˈstadzoː/",
+  "source": "batch25d",
+  "duration_s": 1.384,
+  "take": "b25d_533_b",
+  "note": "THE UNTIED dz, not the affricate. The converter joins dz into a tie-barred affricate as a rule and six approved cues carry it -- but not one of them had ever been put against its dz alternative, and when this one was, dz won. The tie bar is load-bearing and the six are worth revisiting",
+  "sha1": "41270e576297"
  },
  {
   "index": 534,
@@ -1314,11 +1314,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 23,
-  "tts": "khee lee ahs",
-  "source": "composed",
-  "duration_s": 1.656,
-  "sha1": "0d8f4fc4df0f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kɪlɪˈas/",
+  "source": "batch25d",
+  "duration_s": 1.071,
+  "sha1": "2f303fd172dc",
+  "note": "THE PLAIN k at the front of a word, which the medial-chi rule had never been asked for. x before a front vowel reads as the English name of the letter xi, said zye, which is the z that was heard -- the letter-name fault a third time. Word-initial x is approved twice and only before a and before r. The aspirated k-h was offered beside this and was not needed: A and B are both great",
+  "take": "b25d_598_b"
  },
  {
   "index": 599,

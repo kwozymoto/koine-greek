@@ -709,6 +709,19 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    533: "THE UNTIED `dz`, not the tie-barred affricate the converter makes. "
+         "Six approved cues carry `ʣ` and four of them have the identical "
+         "`aʣoː`, so this looked like a bad roll — but not one of the six "
+         "had ever been put against its `dz` alternative, and when this one "
+         "was, `dz` won. The tie bar is load-bearing. The six are worth "
+         "revisiting, the way the composed cues were",
+    598: "THE PLAIN k at the FRONT of a word, which the medial-chi rule had "
+         "never been asked for. `x` before a front vowel reads as the English "
+         "name of the letter ξ, said /zaɪ/ — which is the z that was heard, and "
+         "the letter-name fault a third time after ἀφίημι and εὐαγγέλιον. "
+         "Word-initial `x` is approved twice and only before `a` (χάρις) and "
+         "before `r` (χρεία). The aspirated `kʰ` was offered beside this and "
+         "was not needed: \"A and B are both great\"",
     112: "the first dot removed, by the screen. It was read aloud as the "
          "WORD \"dot\" through two takes of the converter's own output. The "
          "hiatus dot at the end stays, which is the one this pack has "
