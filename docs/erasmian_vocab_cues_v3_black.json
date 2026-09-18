@@ -163,10 +163,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 26,
-  "tts": "moo stay ree on",
-  "source": "black",
-  "duration_s": 2.068,
-  "sha1": "74fe255e1841"
+  "tts": "/muˈsteː.rɪ.ɒn/",
+  "source": "bulk1",
+  "duration_s": 1.228,
+  "sha1": "01eb5d6b8eef",
+  "take": "smp_480_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 481,

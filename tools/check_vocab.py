@@ -710,6 +710,10 @@ IPA_HEARD = {
          "Sixth word to do that and the FIRST drawn at random rather than "
          "chosen, which is what says the rate in the general population is "
          "not negligible and a bulk run cannot skip the screen",
+    521: "dotless, and the screen drove it: the dotted form read its dot "
+         "aloud as the word \"dot\" through two re-rolls. One of seventeen "
+         "the bulk pass fixed the same way, and the only one of those that "
+         "an ear has since approved",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "

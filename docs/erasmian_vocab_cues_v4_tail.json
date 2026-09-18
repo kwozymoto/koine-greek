@@ -159,12 +159,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 28,
-  "tts": "barnah bas",
-  "source": "rollout",
-  "duration_s": 1.524,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "d7db5ae96a2f"
+  "tts": "/barnaˈbaːs/",
+  "source": "bulk1",
+  "duration_s": 1.228,
+  "take": "smp_521_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned",
+  "sha1": "4ce578516fb2"
  },
  {
   "index": 522,
@@ -622,10 +622,12 @@
   "pos": "conj",
   "tier": 5,
   "freq": 26,
-  "tts": "epay",
-  "source": "worklist-candidate",
-  "duration_s": 0.696,
-  "sha1": "96507d7d5863"
+  "tts": "/ɛˈpei̯/",
+  "source": "bulk1",
+  "duration_s": 0.914,
+  "sha1": "47816da8421f",
+  "take": "smp_552_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 553,
@@ -992,10 +994,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 24,
-  "tts": "peyes",
-  "source": "worklist-candidate",
-  "duration_s": 0.84,
-  "sha1": "d6728d687a08"
+  "tts": "/ˈpai̯s/",
+  "source": "bulk1",
+  "duration_s": 0.758,
+  "sha1": "b18ee435d061",
+  "take": "smp_577_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 578,
@@ -1230,10 +1234,12 @@
   "pos": "prep",
   "tier": 5,
   "freq": 23,
-  "tts": "peran",
-  "source": "worklist-candidate",
-  "duration_s": 1.178,
-  "sha1": "cff90efd1f33"
+  "tts": "/ˈpe.ran/",
+  "source": "bulk1",
+  "duration_s": 0.836,
+  "sha1": "424ee9e8670f",
+  "take": "smp_593_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 594,
@@ -1466,10 +1472,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "katay goreh oh",
-  "source": "worklist-candidate",
-  "duration_s": 1.656,
-  "sha1": "a66630e3eb1d"
+  "tts": "/ka.teː.ɡɒˈre.oː/",
+  "source": "bulk1",
+  "duration_s": 2.116,
+  "sha1": "59aa0ffccf82",
+  "take": "smp_609_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 610,
@@ -1704,10 +1712,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 21,
-  "tts": "kah this tay mee",
-  "source": "worklist-candidate",
-  "duration_s": 1.56,
-  "sha1": "9151b51a606d"
+  "tts": "/kaˈθɪ.steː.mɪ/",
+  "source": "bulk1",
+  "duration_s": 1.541,
+  "sha1": "d84e394c30af",
+  "take": "smp_625_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 626,
@@ -1910,10 +1920,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 20,
-  "tts": "nays tew oh",
-  "source": "worklist-candidate",
-  "duration_s": 1.8,
-  "sha1": "818bbf78758d"
+  "tts": "/neːˈstju.oː/",
+  "source": "bulk1",
+  "duration_s": 1.306,
+  "sha1": "4a847188c610",
+  "take": "smp_639_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 640,
@@ -2103,10 +2115,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 20,
-  "tts": "ee sah ahk",
-  "source": "worklist-candidate",
-  "duration_s": 1.728,
-  "sha1": "3ee10f5d32b8"
+  "tts": "/ɪ.sa.ˈak/",
+  "source": "bulk1",
+  "duration_s": 1.228,
+  "sha1": "bfabededdc36",
+  "take": "smp_652_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 653,
@@ -2622,10 +2636,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "poymayn",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "069a3f284537"
+  "tts": "/poi̯ˈmeːn/",
+  "source": "bulk1",
+  "duration_s": 0.993,
+  "sha1": "6b4c13715d43",
+  "take": "smp_687_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 688,
@@ -2965,10 +2981,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "neeptoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "3d501abaa679"
+  "tts": "/ˈnɪptoː/",
+  "source": "bulk1",
+  "duration_s": 0.993,
+  "sha1": "ed1def723cf9",
+  "take": "smp_710_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 711,
@@ -3376,10 +3394,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "gamoss",
-  "source": "worklist-candidate",
-  "duration_s": 1.248,
-  "sha1": "048feac47fe6"
+  "tts": "/ˈɡa.mɒs/",
+  "source": "bulk1",
+  "duration_s": 1.071,
+  "sha1": "bc03ba03fcbc",
+  "take": "smp_737_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 738,
@@ -3558,10 +3578,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "klayoh",
-  "source": "worklist-candidate",
-  "duration_s": 0.84,
-  "sha1": "264771003dc3"
+  "tts": "/ˈklei̯.oː/",
+  "source": "bulk1",
+  "duration_s": 0.758,
+  "sha1": "46f318cfe073",
+  "take": "smp_749_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 750,
@@ -4000,10 +4022,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "deroh",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "e87aa9112084"
+  "tts": "/ˈde.roː/",
+  "source": "bulk1",
+  "duration_s": 0.836,
+  "sha1": "c13517485bdf",
+  "take": "smp_778_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 779,
@@ -4223,10 +4247,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "petrah",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "5cd3c7d69ce6"
+  "tts": "/ˈpe.tra/",
+  "source": "bulk1",
+  "duration_s": 0.758,
+  "sha1": "a98a185c2a29",
+  "take": "smp_793_a",
+  "note": "written by the rules in the bulk pass and approved in the sample of twenty. Nothing about it was chosen or tuned"
  },
  {
   "index": 794,

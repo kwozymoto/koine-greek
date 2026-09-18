@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v188';
+const VERSION = 'v189';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,24 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v189: fifteen cues from the bulk pass, the ones a sample of twenty
+     approved. Five of that twenty failed, so the other 112 are NOT
+     shipping -- see the commit message. */
+  'audio/vocab/480_musterion.mp3',
+  'audio/vocab/521_barnabas.mp3',
+  'audio/vocab/552_epei.mp3',
+  'audio/vocab/577_pais.mp3',
+  'audio/vocab/593_peran.mp3',
+  'audio/vocab/609_kategoreo.mp3',
+  'audio/vocab/625_kathistemi.mp3',
+  'audio/vocab/639_nesteuo.mp3',
+  'audio/vocab/652_isaak.mp3',
+  'audio/vocab/687_poimen.mp3',
+  'audio/vocab/710_nipto.mp3',
+  'audio/vocab/737_gamos.mp3',
+  'audio/vocab/749_kleio.mp3',
+  'audio/vocab/778_dero.mp3',
+  'audio/vocab/793_petra.mp3',
   /* v188: batch 22, ten of ten first time. The novelty list closes -- no
      unheard cue now holds a sound in a position nothing demonstrates -- and
      six of the ten were drawn at RANDOM from the 336 that hold nothing new,
