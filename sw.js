@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v186';
+const VERSION = 'v187';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,17 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v187: batch 21, all eight settled. τίκτω turned πίπτω's exception into a
+     rule -- a stressed short iota shut in by TWO consonants is written ɪ --
+     which leaves one sound exception in the whole pack. */
+  'audio/vocab/315_dio.mp3',
+  'audio/vocab/541_iakob.mp3',
+  'audio/vocab/560_leukos.mp3',
+  'audio/vocab/589_koilia.mp3',
+  'audio/vocab/629_peirasmos.mp3',
+  'audio/vocab/693_tikto.mp3',
+  'audio/vocab/697_arithmos.mp3',
+  'audio/vocab/703_broma.mp3',
   /* v186: batch 20. Eight clips, and the hiatus rule widened from "after an
      e" to "after any short vowel but i" -- λαός and ναός both kept a dot
      the converter was taking out. γν opening a word works, which English

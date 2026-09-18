@@ -461,10 +461,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 27,
-  "tts": "ee ah kohb",
-  "source": "worklist-candidate",
-  "duration_s": 1.8,
-  "sha1": "262b06463ad2"
+  "tts": "/ɪaˈkoːb/",
+  "source": "batch21",
+  "duration_s": 0.993,
+  "sha1": "4e5f6744d76b",
+  "take": "b21w_541_a",
+  "note": "dotless, which is Ἰωσήφ's remedy applied to Ἰωσήφ's shape -- both open on a bare iota with a dot behind it and both spelled themselves out. Also the first cue to end in a stop"
  },
  {
   "index": 542,
@@ -736,10 +738,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 25,
-  "tts": "lewkoss",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "82e253905143"
+  "tts": "/ljuˈkɒs/",
+  "source": "batch21",
+  "duration_s": 1.071,
+  "sha1": "efdd24cf5bba",
+  "take": "b21w_560_a",
+  "note": "the converter's own output. `ju` opening a word behind one consonant with the stress on the far side of it"
  },
  {
   "index": 561,
@@ -1166,11 +1170,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 23,
-  "tts": "koy lee ah",
-  "source": "composed",
-  "duration_s": 1.32,
-  "sha1": "9d752d4f2092",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/koi̯ˈli.a/",
+  "source": "batch21",
+  "duration_s": 1.071,
+  "sha1": "528b164f4368",
+  "note": "the converter's own output. οι opening a word, and a post-stress hiatus keeping its dot",
+  "take": "b21w_589_a"
  },
  {
   "index": 590,
@@ -1758,10 +1763,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 21,
-  "tts": "pay rahs moss",
-  "source": "worklist-candidate",
-  "duration_s": 1.56,
-  "sha1": "f4dce583ccaf"
+  "tts": "/pei̯.rasˈmɒs/",
+  "source": "batch21",
+  "duration_s": 1.384,
+  "sha1": "0f8ca7d57b4d",
+  "take": "b21w_629_a",
+  "note": "the converter's own output. Clears the σμ cluster under the stress"
  },
  {
   "index": 630,
@@ -2701,10 +2708,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 18,
-  "tts": "teektoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.178,
-  "sha1": "083fc4e62174"
+  "tts": "/ˈtɪktoː/",
+  "source": "batch21",
+  "duration_s": 0.914,
+  "sha1": "037205186840",
+  "take": "b21w_693_b",
+  "note": "πίπτΩ'S EXCEPTION IS A RULE. Same shape -- a stressed short iota shut in by two consonants -- and the same answer. Sorted by what follows that iota every approved cue agrees: a vowel or the word end leaves it long, ONE consonant leaves it long, TWO open it. One of the two remaining sound exceptions, gone"
  },
  {
   "index": 694,
@@ -2759,10 +2768,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "ah reeth moss",
-  "source": "worklist-candidate",
-  "duration_s": 1.8,
-  "sha1": "501b9cd52bfc"
+  "tts": "/arɪθˈmɒs/",
+  "source": "batch21",
+  "duration_s": 1.149,
+  "sha1": "99fb85036a6f",
+  "take": "b21w_697_a",
+  "note": "dotless, and the screen caught it: the dotted version named its letters -- ay-ar-rye-eth-em-oh-es -- identically on two takes. Third word to spell itself out from a bare vowel plus a dot at the front. Clears the θμ cluster"
  },
  {
   "index": 698,
@@ -2847,10 +2858,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "bromah",
-  "source": "worklist-candidate",
-  "duration_s": 1.248,
-  "sha1": "1ff6c58c5856"
+  "tts": "/ˈbroː.ma/",
+  "source": "batch21",
+  "duration_s": 0.758,
+  "sha1": "a4673e888e7b",
+  "take": "b21w_703_a",
+  "note": "the converter's own output. βρ opening a word"
  },
  {
   "index": 704,

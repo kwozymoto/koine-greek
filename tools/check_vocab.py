@@ -622,6 +622,20 @@ def ipa_cue(ipa):
     # and the two are the same shape. The default here leaves it long, because
     # that is what was approved first; the other is an allow-list entry. A
     # stressed OMICRON is different and does open, five times over.
+    # A STRESSED SHORT IOTA SHUT IN BY TWO CONSONANTS is written ɪ, and
+    # the dot between those consonants goes with it. πίπτω would not have
+    # the long one -- "both sound like peep instead of pip" -- and τίκτω
+    # agreed in 21 on the same shape, which turned an exception into this.
+    #
+    # Sorted by what follows the stressed iota, every approved cue agrees:
+    # a vowel or the word end leaves it long (καρδία, ἀρνίον, βιβλίον,
+    # παρρησία, ῥαββί); ONE consonant leaves it long too (Δαυίδ, and
+    # καθίζω whose ʣ is one sound); TWO open it.
+    #
+    # The dot half was tested on its own: batch 13 put `/ˈpɪp.toː/` against
+    # `/ˈpɪptoː/` and the dotless one won. One remedy, two parts.
+    s = re.sub("i(?![ːu̯])(?=\\.?[^aeiouyɒɛɪʊæɑɔ.ˈː̯]\\.?[^aeiouyɒɛɪʊæɑɔ.ˈː̯])", "ɪ", s)
+    s = re.sub("ɪ([^aeiouyɒɛɪʊæɑɔ.ˈː̯])\\.([^aeiouyɒɛɪʊæɑɔ.ˈː̯])", "ɪ" + "\\1" + "\\2", s)
     out = []
     for syl in s.split("."):
         if "ˈ" not in syl:
@@ -773,12 +787,18 @@ IPA_HEARD = {
     263: "fully dotless. The sounds were right on the first IPA take — "
          "including the first ει through this route, Black's *they* — and "
          "only the dots were spoken",
-    186: "A SHORT STRESSED IOTA, and dotless with it. The rule leaves a "
-         "stressed iota long because καρδία wanted that, and this word is the "
-         "same shape and would not have it: both takes "
-         "\"sound like peep instead of pip\". Nothing can arbitrate — the IPA "
-         "file writes a long iota in 1 entry of 818 — so it is per-word, like "
-         "the dot",
+    315: "a PLAIN o, after four strings that were not. ɒ came back as "
+         "*our*, ɔ as *de or*, and both dɪ and di in front of them named "
+         "the letters. This pack opens a short o everywhere else precisely "
+         "because the voice reads a plain one LONG — and long is what this "
+         "word wants to sound like, though the Greek omicron is short",
+    541: "dotless, Ἰωσήφ's remedy applied to Ἰωσήφ's shape: both open on "
+         "a bare iota with a dot behind it and both spelled themselves out. "
+         "Also the first cue in the pack to end in a stop",
+    697: "dotless, and the screen caught it rather than an ear — the dotted "
+         "version named its letters, ay-ar-rye-eth-em-oh-es, identically on "
+         "two takes. Third word to do that from a bare vowel and a dot at "
+         "the front",
     70: "KEEPS ITS DOT. Batch 11 put the five queued pre-stress dots up and "
         "four took the dotless version; this one did not. So the rule is a "
         "default and not a law, and this is the word that says so",

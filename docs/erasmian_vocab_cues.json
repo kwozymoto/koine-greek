@@ -4875,11 +4875,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 53,
-  "tts": "dee o",
-  "source": "composed",
-  "duration_s": 1.039,
-  "sha1": "0fa363d59901",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/diˈo/",
+  "source": "batch21",
+  "duration_s": 0.758,
+  "sha1": "89ee9e7760a7",
+  "note": "FIFTH ATTEMPT, and \"A and B are both correct\". ɒ came back as *our*, ɔ as *de or*, and both dɪ and di in front of them named the letters. A PLAIN o is what this pack opens everywhere else precisely because the voice reads it long -- and long is what this word wants to sound like",
+  "take": "b21w_315_a"
  },
  {
   "index": 316,
