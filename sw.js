@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v189';
+const VERSION = 'v190';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,20 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v190: batch 23, eleven of eleven. εἰμί is the one to name -- the
+     commonest word in the New Testament, 2,462 occurrences, and IPA beat
+     the composed cue it has always shipped. ἀπό and ἀλλά likewise. */
+  'audio/vocab/007_eimi.mp3',
+  'audio/vocab/026_apo.mp3',
+  'audio/vocab/027_alla.mp3',
+  'audio/vocab/292_ede.mp3',
+  'audio/vocab/455_exesti-n.mp3',
+  'audio/vocab/562_nephele.mp3',
+  'audio/vocab/565_porneia.mp3',
+  'audio/vocab/658_diakrino.mp3',
+  'audio/vocab/677_eisporeuomai.mp3',
+  'audio/vocab/690_pulon.mp3',
+  'audio/vocab/767_epithumeo.mp3',
   /* v189: fifteen cues from the bulk pass, the ones a sample of twenty
      approved. Five of that twenty failed, so the other 112 are NOT
      shipping -- see the commit message. */

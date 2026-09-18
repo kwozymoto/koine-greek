@@ -771,12 +771,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "neh feh ley",
-  "source": "composed",
-  "duration_s": 1.66,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "15e4ed6d3fd9"
+  "tts": "/neˈfe.leː/",
+  "source": "batch23",
+  "duration_s": 1.071,
+  "take": "b23w_562_a",
+  "note": "the converter's own output. Clears vc:ef and vc:el",
+  "sha1": "c3b5dd6fe227"
  },
  {
   "index": 563,
@@ -817,10 +817,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "por nay ah",
-  "source": "worklist-candidate",
-  "duration_s": 1.178,
-  "sha1": "021ee83ae0da"
+  "tts": "/pɔrˈnei̯.a/",
+  "source": "batch23",
+  "duration_s": 1.149,
+  "sha1": "a8c1b4105445",
+  "take": "b23w_565_a",
+  "note": "THE OPEN-O, and it found a rule. ɒ before an r came back as *par* rather than *por*. It is the CLOSED syllable: ὁράω and πορεύομαι have a dot after the o and ship ɒ happily. Now a rule, and χορτάζω and Ἰορδάνης get it free"
  },
  {
   "index": 566,
@@ -2205,10 +2207,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 19,
-  "tts": "dee ahk ree noh",
-  "source": "worklist-candidate",
-  "duration_s": 3.336,
-  "sha1": "d38e49825636"
+  "tts": "/dɪaˈkrinoː/",
+  "source": "batch23",
+  "duration_s": 1.228,
+  "sha1": "a63c2f1614de",
+  "take": "b23w_658_a",
+  "note": "dotless, same remedy and same shape"
  },
  {
   "index": 659,
@@ -2491,10 +2495,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 18,
-  "tts": "ayspo rewo my",
-  "source": "worklist-candidate",
-  "duration_s": 2.376,
-  "sha1": "a195f5b6a863"
+  "tts": "/ei̯spɒˈrjuɒmai̯/",
+  "source": "batch23",
+  "duration_s": 1.541,
+  "sha1": "d5ef4596394a",
+  "take": "b23w_677_a",
+  "note": "fully dotless. \"A is right, but it all runs together a bit and loses distinct sounds\" -- five syllables with no dots left is the cost, and it is still better than every dot being spoken"
  },
  {
   "index": 678,
@@ -2681,10 +2687,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "poolon",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "0d40307d51a9"
+  "tts": "/puˈloʊn/",
+  "source": "batch23",
+  "duration_s": 0.993,
+  "sha1": "5b39081e0311",
+  "take": "b23w_690_a",
+  "note": "the converter's own output. Clears vc:ul, which four words were waiting on"
  },
  {
   "index": 691,
@@ -3858,10 +3866,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "epee thoomeh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 2.616,
-  "sha1": "705c6038d147"
+  "tts": "/ɛpɪθuˈme.oː/",
+  "source": "batch23",
+  "duration_s": 1.149,
+  "sha1": "f562031a3e87",
+  "take": "b23w_767_a",
+  "note": "dotless, keeping only the hiatus dot at the end -- the one dot this pack has evidence FOR"
  },
  {
   "index": 768,

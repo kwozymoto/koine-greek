@@ -111,11 +111,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 2462,
-  "tts": "ay mee",
-  "source": "composed",
-  "duration_s": 0.936,
-  "sha1": "c7b84d5900d8",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ei̯ˈmi/",
+  "source": "batch23",
+  "duration_s": 0.836,
+  "sha1": "c770831bd160",
+  "note": "THE COMMONEST WORD IN THE NEW TESTAMENT, 2,462 occurrences, and IPA BEAT THE COMPOSED CUE. ὁράω showed that was possible; this is the biggest case of it",
+  "take": "b23w_7_a"
  },
  {
   "index": 8,
@@ -404,11 +405,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 646,
-  "tts": "ah po",
-  "source": "composed",
-  "duration_s": 0.969,
-  "sha1": "e22183c4e96f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈpɒ/",
+  "source": "batch23",
+  "duration_s": 0.914,
+  "sha1": "a90a74a34125",
+  "note": "IPA beat the composed cue again, at 646 occurrences. Clears vc:po, which ὑπό waits on",
+  "take": "b23w_26_a"
  },
  {
   "index": 27,
@@ -419,11 +421,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 638,
-  "tts": "ahl lah",
-  "source": "composed",
-  "duration_s": 0.828,
-  "sha1": "17cc8dc4b5a0",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/alˈla/",
+  "source": "batch23",
+  "duration_s": 0.836,
+  "sha1": "3678aa9d5b75",
+  "note": "IPA beat the composed cue again, at 638 occurrences",
+  "take": "b23w_27_a"
  },
  {
   "index": 28,
@@ -4518,11 +4521,12 @@
   "pos": "adv",
   "tier": 3,
   "freq": 60,
-  "tts": "ay day",
-  "source": "composed",
-  "duration_s": 1.078,
-  "sha1": "1026183a8175",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈeː.deː/",
+  "source": "batch23",
+  "duration_s": 0.914,
+  "sha1": "b78437020e82",
+  "note": "the converter's own output. Clears vc:ed and vc:de, which seven words were waiting on",
+  "take": "b23w_292_a"
  },
  {
   "index": 293,
@@ -7047,10 +7051,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 31,
-  "tts": "eh kseh steen",
-  "source": "g2p",
-  "duration_s": 1.865,
-  "sha1": "354833d8656e"
+  "tts": "/ˈɛksestɪn/",
+  "source": "batch23",
+  "duration_s": 1.149,
+  "sha1": "2efaf1cb2b64",
+  "take": "b23w_455_a",
+  "note": "dotless. \"Spells everything\" in the bulk sample -- three syllables, two dots, opening on a bare vowel, which is the shape Ἰωσήφ, Ἰακώβ and ἀριθμός all spelled out"
  },
  {
   "index": 456,

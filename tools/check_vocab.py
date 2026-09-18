@@ -596,6 +596,17 @@ def ipa_cue(ipa):
     # proposed /aˈnɒi̯.ɡoː/ for ἀνοίγω. No cue in the pack carries οι yet and
     # four of the unheard words do, so it was caught before it shipped — the
     # third time this conversion has been wrong about a diphthong.
+    # A SHORT OMICRON SHUT IN BY AN r is the open-o, not ɒ. πορνεία came
+    # back as *par* rather than *por* with ɒ, and took ɔ.
+    #
+    # It is the CLOSED syllable that does it, and the pack already says so:
+    # ὁράω `ho.ˈra.oː` and πορεύομαι `po.ˈreu̯.o.mai̯` both have a dot
+    # after the o, so the r starts the next syllable, and both ship ɒ quite
+    # happily. χόρτος `ˈxor.tos` is shut the same way πορνεία is.
+    #
+    # A long omega keeps its own rule: `doːr` has the length mark between
+    # the vowel and the r, so this never sees it.
+    s = re.sub("o(?=r)", "ɔ", s)
     s = re.sub("o(?![" + IPA_LONG + IPA_NONSYL + "]|[iu]" + IPA_NONSYL + ")",
                "ɒ", s)
     # A long omega at the END of a word, closed by a sonorant, is recited
@@ -714,6 +725,20 @@ IPA_HEARD = {
          "aloud as the word \"dot\" through two re-rolls. One of seventeen "
          "the bulk pass fixed the same way, and the only one of those that "
          "an ear has since approved",
+    # SEVEN WORDS HAVE NOW SPELLED THEMSELVES OUT from one shape — a bare
+    # vowel at the front of the cue with a dot behind it — and every one was
+    # fixed by taking the dots out: Ἰωσήφ, Ἰακώβ, ἀριθμός, and these four.
+    # It is NOT a rule, and two approved cues say why: ἐάν ships /ɛ.ˈan/ and
+    # Ἰσαάκ ships /ɪ.sa.ˈak/, both opening on a bare vowel and both keeping
+    # their dots. The seven are all three syllables or more and the two are
+    # two and three, which is a hint and not a division. Per-word until
+    # something separates them.
+    455: "dotless — \"spells everything\" in the bulk sample",
+    658: "dotless — \"spelled\" in the bulk sample",
+    677: "fully dotless — \"all dots spoken\". Five syllables with none left "
+         "runs together a little, which the ear noted and preferred anyway",
+    767: "dotless but for the hiatus dot at the end, which is the one dot "
+         "this pack has evidence FOR",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "
