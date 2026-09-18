@@ -372,10 +372,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 27,
-  "tts": "kreemah",
-  "source": "worklist-candidate",
-  "duration_s": 0.768,
-  "sha1": "0730b3a1fd1c"
+  "tts": "/ˈkri.ma/",
+  "source": "batch25f",
+  "duration_s": 0.758,
+  "sha1": "66f0f26bd14f",
+  "take": "b25f_535_a",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended"
  },
  {
   "index": 536,
@@ -852,11 +854,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "ah dee kee ah",
-  "source": "composed",
-  "duration_s": 2.688,
-  "sha1": "be7aef0d5170",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/adɪˈkia/",
+  "source": "batch25f",
+  "duration_s": 0.914,
+  "sha1": "63746af39d4b",
+  "note": "FULLY DOTLESS. The ear caught a spoken dot the screen had let through: a hiatus tolerance written the same day allowed the extra beat. Both good, B best",
+  "take": "b25f_567_b"
  },
  {
   "index": 568,
@@ -867,12 +870,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 25,
-  "tts": "ah nab leh poh",
-  "source": "rollout",
-  "duration_s": 1.462,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "1133ecb0b414"
+  "tts": "/anaˈble.poː/",
+  "source": "batch25f",
+  "duration_s": 1.463,
+  "take": "b25f_568_a",
+  "note": "the converter output with the pre-stress dot removed, by the screen, after two takes read it aloud",
+  "sha1": "b04e1eef3d5b"
  },
  {
   "index": 569,
@@ -1330,11 +1333,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 23,
-  "tts": "ahm peh lohn",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "e9b2407b5b10",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ampeˈloʊn/",
+  "source": "batch25f",
+  "duration_s": 1.228,
+  "sha1": "297abf11f073",
+  "note": "the converter output with the pre-stress dot removed, by the screen, after two takes read it aloud",
+  "take": "b25f_599_a"
  },
  {
   "index": 600,
@@ -1466,10 +1470,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "kater gazo my",
-  "source": "worklist-candidate",
-  "duration_s": 1.488,
-  "sha1": "ae8fe6c119fe"
+  "tts": "/katɛrˈɡaʣɒmai̯/",
+  "source": "batch25f",
+  "duration_s": 1.463,
+  "sha1": "a1f2cb92674f",
+  "take": "b25f_608_a",
+  "note": "the open epsilon. Found by the new spoken-dot check and NOT by the beat count -- five beats expected, five heard, and the word dot sitting in the decode in place of one of them. Dedotting then cost the er, which collapsed to a schwa, so the epsilon is written open instead. Its dotted alternative screened clean and then spoke its dot on two later rolls, and was withdrawn"
  },
  {
   "index": 609,
@@ -2024,10 +2030,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 20,
-  "tts": "trekhoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.178,
-  "sha1": "16e761827162"
+  "tts": "/ˈtre.koː/",
+  "source": "batch25f",
+  "duration_s": 0.836,
+  "sha1": "eb45854d2600",
+  "take": "b25f_645_a",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended"
  },
  {
   "index": 646,
@@ -2692,11 +2700,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 18,
-  "tts": "pros tee thay mee",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "e18bf47a8e27",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/prɒˈsti.θeː.mɪ/",
+  "source": "batch25f",
+  "duration_s": 1.228,
+  "sha1": "b1d2d0e99169",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended",
+  "take": "b25f_689_a"
  },
  {
   "index": 690,
@@ -3331,11 +3340,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "hoo po meh noh",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "47e3f589e413",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hupɒˈme.noː/",
+  "source": "batch25f",
+  "duration_s": 1.149,
+  "sha1": "fe59feab898f",
+  "note": "the converter output with the pre-stress dot removed, by the screen, after two takes read it aloud",
+  "take": "b25f_731_a"
  },
  {
   "index": 732,
@@ -4071,10 +4081,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "desmoss",
-  "source": "worklist-candidate",
-  "duration_s": 1.178,
-  "sha1": "dd11d5d5d5de"
+  "tts": "/desˈmɒs/",
+  "source": "batch25f",
+  "duration_s": 1.149,
+  "sha1": "66385aa5fede",
+  "take": "b25f_779_a",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended"
  },
  {
   "index": 780,

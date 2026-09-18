@@ -607,11 +607,13 @@
   "pos": "adv",
   "tier": 5,
   "freq": 6,
-  "tts": "axiose",
-  "source": "black",
-  "duration_s": 1.476,
+  "tts": "/aˈksi.oːs/",
+  "source": "batch25f",
+  "duration_s": 1.149,
   "verdict": "re-recorded as 'axiose'; checked by ear. Structure and onset are right and it is 0.4s shorter, but the ending was verified by listening, not by measurement.",
-  "sha1": "608c158bb5bf"
+  "sha1": "a7bb2796a57b",
+  "take": "b25f_508_a",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended"
  },
  {
   "index": 509,

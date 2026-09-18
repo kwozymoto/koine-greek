@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v197';
+const VERSION = 'v198';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,25 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v198: batch 25F. A THIRD frequency-spread sample, the first drawn
+     after the screen was mended -- eleven of twelve, and three samples now
+     stand at 34 of 36. μή is here at 1,042 occurrences. The twelfth,
+     ἀπολύω, is the one that teaches: it was flagged for a spoken dot,
+     CLEARED on a re-roll, and the ear heard the dot anyway. A re-roll that
+     clears is not evidence the string is safe. */
+  'audio/vocab/015_me.mp3',
+  'audio/vocab/116_soma.mp3',
+  'audio/vocab/386_miseo.mp3',
+  'audio/vocab/508_axios.mp3',
+  'audio/vocab/535_krima.mp3',
+  'audio/vocab/567_adikia.mp3',
+  'audio/vocab/568_anablepo.mp3',
+  'audio/vocab/599_ampelon.mp3',
+  'audio/vocab/608_katergazomai.mp3',
+  'audio/vocab/645_trecho.mp3',
+  'audio/vocab/689_prostithemi.mp3',
+  'audio/vocab/731_upomeno.mp3',
+  'audio/vocab/779_desmos.mp3',
   /* v197: batch 25E. A SECOND frequency-spread sample of the population
      the coverage model calls safe -- eleven of twelve, ten of them
      straight from the converter, ὅς at 1,407 occurrences among them. The

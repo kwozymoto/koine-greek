@@ -709,6 +709,25 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    567: "FULLY DOTLESS, and the ear caught what the screen had stopped "
+         "seeing. A hiatus tolerance written the same day \u2014 so that \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2 "
+         "would stop being flagged for a glide the voice bridges \u2014 allowed "
+         "the extra beat that was a dot being read aloud. Counting was always "
+         "the wrong instrument: a spoken dot adds a beat, and so does a "
+         "helper vowel, and so does a glide, so every tolerance added for "
+         "those hides a dot behind it. \"Both good, B best\"",
+    568: "the pre-stress dot removed, by the screen, after two takes read it aloud as the word dot",
+    599: "the pre-stress dot removed, by the screen, after two takes read it aloud as the word dot",
+    608: "the epsilon written OPEN, and the first fault the spoken-dot check "
+         "found that the beat count had passed \u2014 five beats expected, five "
+         "heard, and the word \"dot\" sitting in the decode IN PLACE OF one of "
+         "them rather than added to it, which is precisely what a tally "
+         "cannot see. Dedotting then cost the `er`, which collapsed to a "
+         "schwa as \u1f01\u03bc\u03b1\u03c1\u03c4\u03ac\u03bd\u03c9's `mar` had, so the open \u025b is written instead "
+         "\u2014 \u03c6\u03b1\u03bd\u03b5\u03c1\u03cc\u03c2's remedy. Its dotted alternative screened CLEAN and "
+         "then spoke its dot on two later rolls, and was withdrawn before an "
+         "ear ever saw it",
+    731: "the pre-stress dot removed, by the screen, after two takes read it aloud as the word dot",
     372: "the alpha written LONG, and the lot that found the dedot's limit. "
          "Both dots read aloud as the word \"dot\" through two takes; taking "
          "them ALL out — the standing remedy, which had not failed before — "

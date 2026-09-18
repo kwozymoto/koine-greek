@@ -236,12 +236,12 @@
   "pos": "adv",
   "tier": 1,
   "freq": 1042,
-  "tts": "mey",
-  "source": "composed",
-  "duration_s": 0.721,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "f57c8a92802b"
+  "tts": "/ˈmeː/",
+  "source": "batch25f",
+  "duration_s": 0.836,
+  "take": "b25f_15_a",
+  "note": "the converter own output. 1,042 occurrences, right first time",
+  "sha1": "1ed4c1a202d3"
  },
  {
   "index": 16,
@@ -1800,11 +1800,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 142,
-  "tts": "soh mah",
-  "source": "composed",
-  "duration_s": 1.134,
-  "sha1": "9ee60be932c9",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈsoː.ma/",
+  "source": "batch25f",
+  "duration_s": 1.306,
+  "sha1": "e3b6c067c7bf",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended",
+  "take": "b25f_116_a"
  },
  {
   "index": 117,
@@ -5996,11 +5997,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 40,
-  "tts": "mee seh oh",
-  "source": "composed",
-  "duration_s": 1.475,
-  "sha1": "87bafdfef32f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/mɪˈse.oː/",
+  "source": "batch25f",
+  "duration_s": 1.071,
+  "sha1": "9afbff47b2cb",
+  "note": "the converter own output, from the third frequency-spread sample of the population the coverage model calls safe -- the first sample drawn after the screen was mended",
+  "take": "b25f_386_a"
  },
  {
   "index": 387,
