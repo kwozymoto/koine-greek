@@ -709,6 +709,23 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    215: "the pre-stress dot removed — and this is the word that ended a "
+         "practice this project had used for twenty-five rounds. The screen "
+         "caught the string saying its dot aloud, a re-roll cleared it, as the "
+         "discipline had always said, and the CLEARED take went to an ear that "
+         "heard the dot anyway. Measured afterwards: of 18 strings a re-roll "
+         "had cleared, 8 said their dot within three more rolls, and of 20 "
+         "that had never flagged, 3 said it too. A re-roll tells a transient "
+         "beat-count mismatch from a real one and can never clear a string "
+         "already caught; one detection condemns it",
+    728: "the pre-stress dot removed, and the word that sharpened the "
+         "detector. It said its dot on ALL THREE rolls — `hiːdɑːkʌtɑːn` — "
+         "decoded as `dɑː` without the t, which the literal `dat` test could "
+         "not see. This cue carries no d of its own, so any d in its decode "
+         "can only be the dot, and 202 of the 275 remaining cues are like "
+         "that. The sharper test is not yet proven: 43 of those cues carry an "
+         "intervocalic t that American English can voice toward a d, and that "
+         "false-positive rate is still unmeasured",
     567: "FULLY DOTLESS, and the ear caught what the screen had stopped "
          "seeing. A hiatus tolerance written the same day \u2014 so that \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2 "
          "would stop being flagged for a glide the voice bridges \u2014 allowed "

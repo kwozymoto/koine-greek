@@ -902,10 +902,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 25,
-  "tts": "hellayn",
-  "source": "worklist-candidate",
-  "duration_s": 0.84,
-  "sha1": "66b63011d164"
+  "tts": "/ˈhel.leːn/",
+  "source": "batch25g",
+  "duration_s": 1.071,
+  "sha1": "4c77d3199b3c",
+  "take": "b25g_570_a",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once"
  },
  {
   "index": 571,
@@ -1289,10 +1291,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 23,
-  "tts": "skewoss",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "32580a7a71b7"
+  "tts": "/ˈskju.ɒs/",
+  "source": "batch25g",
+  "duration_s": 1.149,
+  "sha1": "691a1110d74a",
+  "take": "b25g_596_a",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once"
  },
  {
   "index": 597,
@@ -2062,11 +2066,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "ahr goo ree on",
-  "source": "composed",
-  "duration_s": 1.896,
-  "sha1": "78d3e09426d4",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/arˈɡu.rɪ.ɒn/",
+  "source": "batch25g",
+  "duration_s": 1.724,
+  "sha1": "0b321103d358",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_647_a"
  },
  {
   "index": 648,
@@ -2652,12 +2657,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 18,
-  "tts": "pah rakh ray mah",
-  "source": "rollout",
-  "duration_s": 1.696,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "c8a3f122d2a4"
+  "tts": "/pa.raˈkreː.ma/",
+  "source": "batch25g",
+  "duration_s": 1.881,
+  "take": "b25g_686_a",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "sha1": "b73a771b06a0"
  },
  {
   "index": 687,
@@ -3295,11 +3300,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 17,
-  "tts": "heh kah ton",
-  "source": "composed",
-  "duration_s": 1.488,
-  "sha1": "39d0ad9d0999",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hekaˈtɒn/",
+  "source": "batch25g",
+  "duration_s": 0.993,
+  "sha1": "4bfbc78ce7e5",
+  "note": "the pre-stress dot removed, and the word that sharpened the detector. It said its dot on ALL THREE rolls, decoded as da without the t, which the literal dat test missed -- and this cue has no d of its own, so any d in its decode can only be the dot",
+  "take": "b25g_728_a"
  },
  {
   "index": 729,
@@ -4035,10 +4041,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 15,
-  "tts": "guh nohs toss",
-  "source": "worklist-candidate",
-  "duration_s": 1.656,
-  "sha1": "25c18dd3524b"
+  "tts": "/ɡnoːˈstɒs/",
+  "source": "batch25g",
+  "duration_s": 1.306,
+  "sha1": "42f7ed5eaa6d",
+  "take": "b25g_776_a",
+  "note": "the converter own output, and the HELPER VOWEL a second time. gn cannot open an English syllable any more than pn can, so the voice grows one; pneumatikos settled that neither saying it nor dropping it is wrong. This is the first word where the pack transcription does NOT write the helper in, and the screen had to be taught to allow it"
  },
  {
   "index": 777,

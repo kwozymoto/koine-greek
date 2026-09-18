@@ -529,11 +529,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 7,
-  "tts": "day loh oh",
-  "source": "composed",
-  "duration_s": 1.441,
-  "sha1": "e5d24af472f2",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/deːˈlɒ.oː/",
+  "source": "batch25g",
+  "duration_s": 1.149,
+  "sha1": "ba6e08d7aef8",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_503_a"
  },
  {
   "index": 504,

@@ -328,11 +328,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 708,
-  "tts": "eh kho",
-  "source": "composed",
-  "duration_s": 0.786,
-  "sha1": "182bc90ff7c2",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈɛ.koː/",
+  "source": "batch25g",
+  "duration_s": 0.836,
+  "sha1": "74b14cc229c7",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_21_a"
  },
  {
   "index": 22,
@@ -1848,11 +1849,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 139,
-  "tts": "foh nay",
-  "source": "composed",
-  "duration_s": 1.143,
-  "sha1": "88a08fb6fac1",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/foːˈneː/",
+  "source": "batch25g",
+  "duration_s": 0.914,
+  "sha1": "b53321092c4d",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_119_a"
  },
  {
   "index": 120,
@@ -3331,11 +3333,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 66,
-  "tts": "ah po loo oh",
-  "source": "composed",
-  "duration_s": 1.588,
-  "sha1": "f33792e2dcf7",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/apɒˈlu.oː/",
+  "source": "batch25g",
+  "duration_s": 1.071,
+  "sha1": "15f962380eee",
+  "note": "the pre-stress dot removed. The screen had caught this string saying its dot, a re-roll cleared it, and the cleared take went to an ear that heard the dot anyway. That is the word that ended the re-roll-clears-it practice",
+  "take": "b25g_215_a"
  },
  {
   "index": 216,
@@ -4302,11 +4305,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 65,
-  "tts": "fay mee",
-  "source": "composed",
-  "duration_s": 0.665,
-  "sha1": "0f2b4870ec28",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/feːˈmi/",
+  "source": "batch25g",
+  "duration_s": 0.993,
+  "sha1": "60f3015b3365",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_277_a"
  },
  {
   "index": 278,
@@ -6108,11 +6112,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 39,
-  "tts": "thoo rah",
-  "source": "composed",
-  "duration_s": 0.794,
-  "sha1": "f4c6f1fed302",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈθu.ra/",
+  "source": "batch25g",
+  "duration_s": 0.914,
+  "sha1": "09b3fe60979d",
+  "note": "the converter own output, from the fourth frequency-spread sample -- the first round screened THREE times rather than once",
+  "take": "b25g_393_a"
  },
  {
   "index": 394,

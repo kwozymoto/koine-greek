@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v198';
+const VERSION = 'v199';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,24 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v199: batch 25G, the first round screened THREE times rather than
+     once. Twelve of thirteen, and four samples now stand at 45 of 48.
+     γνωστός confirms the helper vowel a second time -- ɡn cannot open
+     an English syllable any more than πν can, and the ear wants it said.
+     ἑκατόν said its dot on all three rolls in a form the literal test
+     could not see, and sharpened the detector. */
+  'audio/vocab/021_echo.mp3',
+  'audio/vocab/119_phone.mp3',
+  'audio/vocab/215_apoluo.mp3',
+  'audio/vocab/277_phemi.mp3',
+  'audio/vocab/393_thura.mp3',
+  'audio/vocab/503_deloo.mp3',
+  'audio/vocab/570_ellen.mp3',
+  'audio/vocab/596_skeuos.mp3',
+  'audio/vocab/647_argurion.mp3',
+  'audio/vocab/686_parachrema.mp3',
+  'audio/vocab/728_ekaton.mp3',
+  'audio/vocab/776_gnostos.mp3',
   /* v198: batch 25F. A THIRD frequency-spread sample, the first drawn
      after the screen was mended -- eleven of twelve, and three samples now
      stand at 34 of 36. μή is here at 1,042 occurrences. The twelfth,
