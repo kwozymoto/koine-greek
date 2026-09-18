@@ -632,9 +632,11 @@
   "pos": "conj",
   "tier": 5,
   "freq": 13,
-  "tts": "preen",
-  "source": "black",
-  "duration_s": 1.019,
-  "sha1": "ca7e57e7b040"
+  "tts": "/ˈprin/",
+  "source": "batch25",
+  "duration_s": 0.758,
+  "sha1": "765f4bcb4ec4",
+  "take": "b25w_510_a",
+  "note": "the converter own output. A stressed short iota with ONE consonant after it at the END of a word -- the long side of the iota rule, now attested word-finally as well as mid-word"
  }
 ]

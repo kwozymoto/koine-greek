@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v192';
+const VERSION = 'v193';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,15 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v193: batch 25, five of eight. πνευματικός settles the helper vowel: πν
+     cannot open an English syllable, the transcription writes a schwa,
+     the voice may say it or not -- and the ear prefers it said. That is
+     the question the screen had to be taught to stop failing. */
+  'audio/vocab/510_prin.mp3',
+  'audio/vocab/536_kome.mp3',
+  'audio/vocab/547_pneumatikos.mp3',
+  'audio/vocab/563_ou.mp3',
+  'audio/vocab/607_katheudo.mp3',
   /* v192: batch 24B, seven of nine. ἰδού took its dot back, which the
      approved cues had predicted: every word-initial ɪ in the pack is
      followed by a vowel or a dot, and a shut one is the English *id*. */

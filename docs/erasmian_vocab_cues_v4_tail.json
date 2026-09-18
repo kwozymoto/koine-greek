@@ -386,12 +386,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 27,
-  "tts": "komey",
-  "source": "rollout",
-  "duration_s": 0.697,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "0e6bf43d02d6"
+  "tts": "/ˈkoː.meː/",
+  "source": "batch25",
+  "duration_s": 1.071,
+  "take": "b25w_536_a",
+  "note": "the converter own output. A long omega in the middle of a word, so no oU",
+  "sha1": "7e12219f43ac"
  },
  {
   "index": 537,
@@ -551,10 +551,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 26,
-  "tts": "puh new mah teekoss",
-  "source": "worklist-candidate",
-  "duration_s": 2.376,
-  "sha1": "fbe719f00e12"
+  "tts": "/pə.nju.ma.tɪˈkɒs/",
+  "source": "batch25",
+  "duration_s": 1.698,
+  "sha1": "94e1453526d6",
+  "take": "b25w_547_a",
+  "note": "THE HELPER VOWEL, SPOKEN. pi-nu cannot open an English syllable so the transcription writes a schwa, and the voice may say it or not -- neither is wrong, which is what the screen had to be taught. The ear prefers it said"
  },
  {
   "index": 548,
@@ -787,11 +789,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 25,
-  "tts": "hoo",
-  "source": "composed",
-  "duration_s": 0.696,
-  "sha1": "3ca558971bba",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhuː/",
+  "source": "batch25",
+  "duration_s": 0.601,
+  "sha1": "4ed615b95833",
+  "note": "the converter own output. Rough breathing on a long ou, one syllable -- the shape pou was approved in with no breathing",
+  "take": "b25w_563_a"
  },
  {
   "index": 564,
@@ -1446,10 +1449,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "kah thew doh",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "4f62ddc6156f"
+  "tts": "/kaˈθju.doː/",
+  "source": "batch25",
+  "duration_s": 1.071,
+  "sha1": "b02ab471713f",
+  "take": "b25w_607_a",
+  "note": "the converter own output. The ju glide behind a theta, which it had not sat behind before"
  },
  {
   "index": 608,
