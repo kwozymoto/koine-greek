@@ -404,10 +404,12 @@
   "pos": "pron",
   "tier": 5,
   "freq": 27,
-  "tts": "pososs",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "b7c080b4f10a"
+  "tts": "/ˈpɒ.sɒs/",
+  "source": "batch25h",
+  "duration_s": 0.993,
+  "sha1": "f735ca744c8f",
+  "take": "b25h_537_a",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all"
  },
  {
   "index": 538,
@@ -807,11 +809,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 25,
-  "tts": "pah ray mee",
-  "source": "composed",
-  "duration_s": 1.248,
-  "sha1": "8b970e933a06",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpa.rei̯.mɪ/",
+  "source": "batch25h",
+  "duration_s": 1.149,
+  "sha1": "0e06f870b4f7",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_564_a"
  },
  {
   "index": 565,
@@ -1353,11 +1356,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 23,
-  "tts": "ah nah goh",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "606a619b9076",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈna.ɡoː/",
+  "source": "batch25h",
+  "duration_s": 1.149,
+  "sha1": "2a4f602d1245",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_600_a"
  },
  {
   "index": 601,
@@ -1972,10 +1976,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "ksoolon",
-  "source": "worklist-candidate",
-  "duration_s": 2.04,
-  "sha1": "8d3bc522b91f"
+  "tts": "/ˈksu.lɒn/",
+  "source": "batch25h",
+  "duration_s": 0.993,
+  "sha1": "f33866aebcd8",
+  "take": "b25h_641_a",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all"
  },
  {
   "index": 642,
@@ -2737,11 +2743,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "po leh moss",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "5d7c0a6c5fc5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpɒ.le.mɒs/",
+  "source": "batch25h",
+  "duration_s": 1.698,
+  "sha1": "f24790c71b3d",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_691_a"
  },
  {
   "index": 692,
@@ -3254,10 +3261,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "eh ksees tay mee",
-  "source": "worklist-candidate",
-  "duration_s": 2.04,
-  "sha1": "c8181ccbdbdf"
+  "tts": "/ɛˈksɪ.steː.mɪ/",
+  "source": "batch25h",
+  "duration_s": 1.228,
+  "sha1": "a0aa298c3bda",
+  "take": "b25h_725_a",
+  "note": "the converter own output, the second -stemi verb in the round and the same approved ending"
  },
  {
   "index": 726,
@@ -4179,10 +4188,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "threeks",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "4a6a760ba130"
+  "tts": "/ˈθrɪks/",
+  "source": "batch25h",
+  "duration_s": 0.914,
+  "sha1": "418b976d9302",
+  "take": "b25h_785_a",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all"
  },
  {
   "index": 786,

@@ -214,11 +214,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 11,
-  "tts": "klay sis",
-  "source": "composed",
-  "duration_s": 1.087,
-  "sha1": "dcf77eb5ed5a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈkleː.sɪs/",
+  "source": "batch25h",
+  "duration_s": 1.228,
+  "sha1": "0edbea5bdfe2",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_483_a"
  },
  {
   "index": 484,
@@ -454,10 +455,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "ehpitee mahoh",
-  "source": "black",
-  "duration_s": 1.668,
-  "sha1": "08e92a5ee69c"
+  "tts": "/ɛpɪtɪˈma.oː/",
+  "source": "batch25h",
+  "duration_s": 1.228,
+  "sha1": "a3cdc6004872",
+  "take": "b25h_498_a",
+  "note": "the two pre-stress dots removed, the hiatus kept. All spelled with them in -- five syllables and three dots, the shape that spelled in deksios, arithmos and euaggelion. The standing remedy, and the fuller dedot was offered beside it and not needed"
  },
  {
   "index": 499,

@@ -709,6 +709,10 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    498: "the two pre-stress dots removed, the hiatus kept. \"All spelled\" "
+         "with them in — five syllables and three dots, which is the shape "
+         "that spelled in δεξιός, ἀριθμός and εὐαγγέλιον. The fuller dedot "
+         "was offered beside this one and was not needed",
     215: "the pre-stress dot removed — and this is the word that ended a "
          "practice this project had used for twenty-five rounds. The screen "
          "caught the string saying its dot aloud, a re-roll cleared it, as the "

@@ -440,11 +440,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 634,
-  "tts": "air kho my",
-  "source": "composed",
-  "duration_s": 1.248,
-  "sha1": "3a7fc2276953",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈɛr.kɒ.mai̯/",
+  "source": "batch25h",
+  "duration_s": 1.149,
+  "sha1": "e030c05c64d8",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_28_a"
  },
  {
   "index": 29,
@@ -1770,11 +1771,12 @@
   "pos": "conj",
   "tier": 2,
   "freq": 143,
-  "tts": "oo deh",
-  "source": "composed",
-  "duration_s": 0.646,
-  "sha1": "9ffa726c8904",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/uːˈde/",
+  "source": "batch25h",
+  "duration_s": 0.836,
+  "sha1": "2756abae1a43",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_114_a"
  },
  {
   "index": 115,
@@ -4433,11 +4435,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 62,
-  "tts": "theh lay mah",
-  "source": "composed",
-  "duration_s": 1.534,
-  "sha1": "c87cf160440c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈθe.leː.ma/",
+  "source": "batch25h",
+  "duration_s": 1.149,
+  "sha1": "019122d8eb33",
+  "note": "the converter own output, from the fifth frequency-spread sample. The whole round came through three screening rolls with nothing flagged at all",
+  "take": "b25h_285_a"
  },
  {
   "index": 286,
@@ -5924,11 +5927,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 41,
-  "tts": "pah ree stay mee",
-  "source": "composed",
-  "duration_s": 1.48,
-  "sha1": "93582c900c9d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/paˈrɪ.steː.mɪ/",
+  "source": "batch25h",
+  "duration_s": 1.384,
+  "sha1": "18971ba7decf",
+  "note": "the converter own output, carrying kathistemi approved ste-mi ending -- the very ending aphiemi could not have, because after a diphthong it spelled itself out",
+  "take": "b25h_381_a"
  },
  {
   "index": 382,

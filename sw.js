@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v199';
+const VERSION = 'v200';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,24 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v200: batch 25H, thirteen of thirteen, and the whole round came
+     through three screening rolls with nothing flagged at all -- no spoken
+     dots, no beat mismatches, no dedotting. Five frequency-spread samples
+     of the population the coverage model calls safe now stand at 57 of 60.
+     ἔρχομαι is here at 634 occurrences. */
+  'audio/vocab/028_erchomai.mp3',
+  'audio/vocab/114_oude.mp3',
+  'audio/vocab/285_thelema.mp3',
+  'audio/vocab/381_paristemi.mp3',
+  'audio/vocab/483_klesis.mp3',
+  'audio/vocab/498_epitimao.mp3',
+  'audio/vocab/537_posos.mp3',
+  'audio/vocab/564_pareimi.mp3',
+  'audio/vocab/600_anago.mp3',
+  'audio/vocab/641_xulon.mp3',
+  'audio/vocab/691_polemos.mp3',
+  'audio/vocab/725_existemi.mp3',
+  'audio/vocab/785_thrix.mp3',
   /* v199: batch 25G, the first round screened THREE times rather than
      once. Twelve of thirteen, and four samples now stand at 45 of 48.
      γνωστός confirms the helper vowel a second time -- ɡn cannot open
