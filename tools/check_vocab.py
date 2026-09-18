@@ -742,8 +742,14 @@ IPA_HEARD = {
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "
-         "βλασφημέω. Three words have now done that and they have no shape in "
-         "common, so it is the per-word dot question in its loudest form",
+         "βλασφημέω. NINE words have now done that, and there is a weak "
+         "shape to it, measured rather than guessed: 38% of the dots in "
+         "those nine sit between two consonants, against 19% of the 97 dots "
+         "in approved cues. Twice the rate — but sixteen dots is a small "
+         "count, and every dot in an offending word was counted a candidate "
+         "when only one of them misbehaved. A tendency, not a rule. I twice "
+         "wrote that they shared no shape at all, which was impression "
+         "rather than arithmetic",
     278: "dotless. \"A is right but `te` is spelled out\" — the diphthong was "
          "fine and the final syllable was not. τότε ships the same final `te` "
          "dotless and that is where the fix came from",
