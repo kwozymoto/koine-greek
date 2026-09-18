@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v191';
+const VERSION = 'v192';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,15 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v192: batch 24B, seven of nine. ἰδού took its dot back, which the
+     approved cues had predicted: every word-initial ɪ in the pack is
+     followed by a vowel or a dot, and a shut one is the English *id*. */
+  'audio/vocab/050_peri.mp3',
+  'audio/vocab/076_idou.mp3',
+  'audio/vocab/231_asthenes.mp3',
+  'audio/vocab/309_tritos.mp3',
+  'audio/vocab/343_achri.mp3',
+  'audio/vocab/502_fileo.mp3',
   /* v191: batch 24. Six composed cues lost to their IPA, 780 occurrences,
      and οὐχί is the one to name: two syllables, one of them the chi, and
      writing that chi as a plain k still won. The medial-chi rule holds in

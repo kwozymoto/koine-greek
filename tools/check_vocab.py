@@ -739,6 +739,18 @@ IPA_HEARD = {
          "runs together a little, which the ear noted and preferred anyway",
     767: "dotless but for the hiatus dot at the end, which is the one dot "
          "this pack has evidence FOR",
+    76: "THE DOT RESTORED, and the approved cues predicted it. Every "
+        "word-initial ɪ in the pack is followed by a VOWEL — Ἰωσήφ, Ἰακώβ, "
+        "Ἰούδας — or by a dot, as Ἰσαάκ is. ἰδού was the first shut by a "
+        "consonant, and a shut ɪ is the English *id*. It was in that round "
+        "BECAUSE the coverage model flagged the pair as new, which is the "
+        "model working rather than a surprise",
+    50: "the open ɛ. A plain e came out as *pay*, and no approved cue "
+        "explains why: νεφέλη, θεός and γενεά all carry the same unstressed "
+        "short e before the stress and were all approved. Per-word until "
+        "something separates them",
+    231: "dotless — the dotted form read its dot aloud as the word \"dot\" "
+         "through a re-roll, and the screen caught it before an ear did",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "

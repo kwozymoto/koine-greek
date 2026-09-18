@@ -510,11 +510,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 25,
-  "tts": "fee leh oh",
-  "source": "composed",
-  "duration_s": 1.235,
-  "sha1": "8be8784edc69",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/fɪˈle.oː/",
+  "source": "batch24",
+  "duration_s": 0.914,
+  "sha1": "198f9b204243",
+  "note": "the converter's own output. A hiatus after the stress keeping its dot",
+  "take": "b24wb_502_a"
  },
  {
   "index": 503,

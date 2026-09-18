@@ -776,11 +776,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 333,
-  "tts": "peh ree",
-  "source": "composed",
-  "duration_s": 1.042,
-  "sha1": "e6f1491703a6",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pɛˈri/",
+  "source": "batch24",
+  "duration_s": 0.836,
+  "sha1": "f392b8a0d964",
+  "note": "the open ɛ. \"pe is coming out as pay\" with a plain e, and no approved cue explains why -- νεφέλη, θεός and γενεά all carry the same unstressed short e before the stress and were all approved. Per-word until something separates them",
+  "take": "b24wb_50_a"
  },
  {
   "index": 51,
@@ -1178,11 +1179,12 @@
   "pos": "particle",
   "tier": 1,
   "freq": 200,
-  "tts": "ee doo",
-  "source": "composed",
-  "duration_s": 0.864,
-  "sha1": "a71bcd6f3e43",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɪ.ˈduː/",
+  "source": "batch24",
+  "duration_s": 0.993,
+  "sha1": "f5efa13c95ac",
+  "note": "THE DOT RESTORED, and the approved cues predicted it. Every word-initial ɪ in the pack is followed by a VOWEL — Ἰωσήφ ɪoː, Ἰακώβ ɪa, Ἰούδας ɪˈuː — or by a dot, as Ἰσαάκ ɪ.sa is. ἰδού was the first shut by a consonant, and a shut ɪ is the English *id*",
+  "take": "b24wb_76_b"
  },
  {
   "index": 77,
@@ -3578,13 +3580,13 @@
   "pos": "adj",
   "tier": 3,
   "freq": 26,
-  "tts": "asthe neys",
-  "source": "ays",
-  "duration_s": 1.335,
+  "tts": "/asθeˈneːs/",
+  "source": "batch24",
+  "duration_s": 1.384,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "f31100dc4197"
+  "take": "b24wb_231_a",
+  "note": "dotless, and the screen found it: the dotted form read its dot aloud as the WORD dot through a re-roll. Clears the σθ cluster",
+  "sha1": "2fc830336c05"
  },
  {
   "index": 232,
@@ -4789,12 +4791,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 55,
-  "tts": "tree toss",
-  "source": "recued",
-  "duration_s": 1.129,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "386ae8b79bc2"
+  "tts": "/ˈtri.tɒs/",
+  "source": "batch24",
+  "duration_s": 1.071,
+  "take": "b24wb_309_a",
+  "note": "the converter's own output, and it confirms the OTHER side of the iota rule: one consonant after a stressed short iota leaves it long, where πίπτω and τίκτω have two and open it",
+  "sha1": "aed5ae462fc7"
  },
  {
   "index": 310,
@@ -5314,11 +5316,12 @@
   "pos": "conj",
   "tier": 4,
   "freq": 47,
-  "tts": "ah khree",
-  "source": "composed",
-  "duration_s": 1.152,
-  "sha1": "8c90eec59929",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈa.krɪ/",
+  "source": "batch24",
+  "duration_s": 0.836,
+  "sha1": "368fe79b0c01",
+  "note": "the converter's own output. A medial chi written k, and vc:ri at the end of a word",
+  "take": "b24wb_343_a"
  },
  {
   "index": 344,
@@ -7238,12 +7241,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 30,
-  "tts": "eng goos",
-  "source": "batch5",
-  "duration_s": 1.306,
-  "sha1": "4ecfaa9731a5",
-  "take": "2026-09-15, Atlas (b5f_467_a)",
-  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
+  "tts": "/ɛŋˈɡus/",
+  "source": "batch24",
+  "duration_s": 1.071,
+  "sha1": "24efa70aa0fc",
+  "take": "b24wb_467_a",
+  "note": "the converter's own output. The gamma-nasal with a bare epsilon opening the word"
  },
  {
   "index": 468,
