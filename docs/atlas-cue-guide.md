@@ -817,6 +817,112 @@ to end: a clip in the live cache was replaced with fifteen bytes of text,
 three releases shipped over the top, and the reload bar pressed. The poison
 was gone and the real audio back, sha1 matching the cue sheet.
 
+## What batches 16 to 24 changed, 2026-09-18
+
+### A machine listens first now
+
+Batch 16 sent Σατανᾶς as `/sa.taˈnaːs/` and it came back with a syllable that
+is not in the word — *"Sa ta tan nahs"*. Fraser found it by ear and asked the
+obvious question: **were the clips being checked before he got them?** They
+were not. The strings were; the recordings were not.
+
+Worse, `score_audio.py` already had a syllable check and it is written to pass
+exactly that fault:
+
+```python
+result["syllables"] = {... "ok": nuclei >= expected}
+# Extra nuclei are reported but not failed
+```
+
+That exemption is right for an ENGLISH cue — `pə.ˈneu̯.ma` is three syllables
+of respelling for two of Greek, because πν cannot open an English syllable and
+the helper vowel is the price. **An IPA cue has no helper vowels**, so for
+those the count must match, and nobody had drawn that line.
+
+`prelisten.py` draws it. It decodes every IPA take and fails a mismatch in
+either direction. Run against the four rounds already judged, it flags every
+clip an ear rejected and nothing an ear approved.
+
+**What it cannot see is vowel colour.** Spelling a word out does not always
+change the beat count — `i o s e f` has the same number of vowel runs as
+Ἰωσήφ — so the gate catches extra beats, not wrong ones. That limit is the
+whole reason the next section happened.
+
+### The thing the voice does that nobody would guess
+
+Six words have read a syllable dot aloud **as the English word "dot"**:
+ὑποτάσσω, βλασφημέω, Καφαρναούμ, διέρχομαι, παρρησία, ἡγεμών. It shows up in
+the decode as `dɑːt` and it is unmistakable once seen.
+
+They share no shape. The dot follows u, s, a, r, r and a vowel in turn, and
+κηρύσσω, τέσσαρες and πράσσω all ship a dot after an s quite happily. So it is
+the same per-word dot question this pack already had, in its loudest form: an
+extra WORD rather than an extra beat. The remedy has never been anything but
+taking that dot out.
+
+### The bulk run, and why it did not ship
+
+By batch 22 the novelty list was empty: of 336 unheard cues, `coverage.py`
+said none contained a sound, in a position, that an approved clip did not
+already demonstrate. A random sample of six came back six of six. So all 128
+never-validated cues were written at once by the rules, screened, and a sample
+of twenty put up.
+
+**Fifteen of twenty.** A quarter wrong, and not shipped.
+
+Two mistakes, and the second is the one to remember.
+
+**A sample of one population is not evidence about another.** The six were
+drawn from all 336, which is mostly short common words. The 128 are the
+never-validated tail — longer, rarer. The failures averaged 2.2 dots and 4.0
+syllables against 1.0 and 2.6 for the passes. The 6/6 was quoted as support
+for a run it said nothing about.
+
+**The feature model was too coarse, and only a real sample could show it.**
+πορνεία failed on vowel colour — *"por sounds more like par than poor"* —
+which is ɒ before an r, a pair no approved clip contains. `coverage.py` had
+called the word covered because it had seen ɒ and it had seen r: it modelled
+vowel-vowel and consonant-consonant pairs and never vowel-against-consonant.
+**A vowel takes its colour from what follows it, so the pair is the unit.**
+
+With that one line added, the count of unheard cues holding something new went
+from ZERO to 53. "Nothing new in 336" had been an artefact of the model, and
+the screen could never have caught it, because the model's blind spot and the
+screen's blind spot are the same blind spot: vowel colour.
+
+> A coverage model is a claim about what is safe to skip. It has to be tested
+> against ears, not against itself, and the test is a sample drawn from the
+> population you actually mean to skip.
+
+### Composed cues can be beaten
+
+203 cues were kept OUT of the bulk run because they are `composed` — built
+from beats an ear approved elsewhere in the same position, a method batch 7
+tested at 223 of 226. Replacing those unheard would be churn on the
+most-played audio in the app, and that judgement still stands.
+
+But batch 23 put three of the biggest up anyway, because their sounds were
+needed for coverage. **IPA beat the composed cue on all three** — εἰμί at
+2,462 occurrences, ἀπό at 646, ἀλλά at 638. ὁράω had shown this was possible
+in batch 9; this is the same result at the top of the deck.
+
+So "it works" and "it cannot be bettered" are different claims. The composed
+set is worth revisiting deliberately, an ear at a time — which is a better use
+of listening than the tail ever was.
+
+### Four rules, and one exception left
+
+| | |
+|---|---|
+| a stressed short iota shut in by TWO consonants is `ɪ`, and loses the dot between them | πίπτω, then τίκτω on the same shape |
+| the pre-stress dot survives a hiatus after any short vowel BUT i | γενεά, then θεός and ἐάν; λαός and ναός widened it from "e" |
+| medial chi is a plain k | εἰσέρχομαι, against `kʰ` and against the English |
+| a short omicron shut in by an r is the open-o | πορνεία — and the CLOSED syllable is what does it, since ὁράω and πορεύομαι have a dot after the o and keep ɒ |
+
+Each was checked against every approved cue before going in, and each gained
+without losing. ἅπτω's `æ` is the only sound exception left in the pack, and
+batch 17 ruled out three explanations for it without finding the fourth.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
