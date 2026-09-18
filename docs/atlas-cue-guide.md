@@ -923,6 +923,136 @@ Each was checked against every approved cue before going in, and each gained
 without losing. ἅπτω's `æ` is the only sound exception left in the pack, and
 batch 17 ruled out three explanations for it without finding the fourth.
 
+## What batch 25 changed, 2026-09-18
+
+Four rounds and 35 clips, and then the thing all of it was for: **the
+generator and the screen run over every remaining cue in the deck.** This is
+the section to read if the question is whether the audio can be expanded
+without listening to each clip.
+
+### The coverage model closed
+
+Batch 25B was the last round that could ask "what is new?". The model — one
+feature per sound, plus the vowel-consonant pairs it was missing when the bulk
+run failed — had 20 cues still holding something unheard. 25 took eight of
+them and 25B the other nine. **Every phonetic feature in the 818-word deck has
+now been approved by an ear in some word**, and the 275 unheard cues that
+remain are combinations of things already approved.
+
+That is a real milestone and it is worth being exact about what it is not. It
+says nothing about any individual cue. It is a claim about the *population*,
+and the last time such a claim was made it was wrong — the bulk run failed 15
+of 20 on a model with no notion of vowel-consonant pairs. So it was tested.
+
+### The whole population, generated and screened
+
+`full_screen.py` ran the loop over all 275: generate the converter's own
+output, screen, re-roll what is flagged, dedot what survives the re-roll,
+screen again. `final_screen.py` then assembled the final cue for each and
+screened the set end to end.
+
+| | |
+|---|---|
+| cues | 275 |
+| flagged on first generation | 54 (20%) |
+| survived a re-roll, so real | 34 (12%) |
+| cleared by dropping the pre-stress dots | 24 |
+| cleared by a fourth pass | 9 |
+| **still flagged at the end** | **1** (πίμπλημι, already known and excluded) |
+
+**Thirty-one of 275 needed their string changed — 11%.** Twenty-four were the
+standing dedot. The other seven each had a reason:
+
+- five had a dot the pre-stress rule does not reach, post-stress or hiatus,
+  and went fully dotless: συνέρχομαι, μεριμνάω, Αἴγυπτος, διψάω, κατέρχομαι.
+- εὐλογία's `ju` glide sounded its j on its own, and **the secondary stress
+  that had just fixed εὐαγγέλιον fixed this too** — the first time a remedy
+  from this project has generalised to a second word before an ear asked for
+  it.
+- φανερός dropped a whole vowel with no dot anywhere in the cue to blame, and
+  the open `ɛ` restored it.
+
+### What the ear said about the same population
+
+Twelve of the 275 were drawn spread by frequency — οὐ at 1,606 occurrences
+down to ἀγγέλλω at 1 — and put up as ordinary lots. **Ten came back right.**
+The two that failed are the important part, because they are both things the
+screen cannot see:
+
+- **βαστάζω** — "the ʣ comes out as a hard d". The affricate has six approvals
+  against this one rejection, four of them carrying the identical `aʣoː`, and
+  one of those six was approved in the same round as the failure. Nothing
+  separates it, so it is being re-rolled before anything is changed.
+- **χιλιάς** — "x sounds like a z sound". `xi` **is** the English name of the
+  Greek letter ξ, said /zaɪ/. Word-initial `x` is approved twice and only
+  before `a` and before `r`, never before a front vowel — and this is the only
+  word in all 275 with that shape.
+
+**So the screen's blind spot is not vowel colour.** That is what this guide
+said an hour before these came back, and it is too narrow: both failures are
+*consonants*, and a consonant swapped for another consonant keeps the beat
+count and passes the screen cleanly. The honest statement is that the screen
+sees how many syllables were said and nothing whatever about which sounds they
+were made of.
+
+### The letter-name reading, which is now three faults and one cause
+
+This is the most useful finding of the batch.
+
+- **ἀφίημι** took five rounds. `eː.mɪ` **is** the English letter names E, M,
+  I, which is why three rearrangements of the dots never touched the spelling
+  — the dots were never the fault. Writing the eta `ei̯` fixed the eta and
+  left the ending spelling; a secondary stress on that ending fixed the rest.
+- **εὐαγγέλιον** took four. Without a dot after `ju` the j sounds alone; with
+  one the word spells. The fix was weight rather than a pause.
+- **χιλιάς** reads its `xi` as the letter ξ.
+
+Three faults, one cause: **a fragment of a cue that spells an English letter
+name gets read as that letter name.** The remedy has twice been to give the
+fragment weight — a secondary stress, which no approved cue carried before
+this batch and which has now won twice.
+
+### Two things the screen was taught, and one rule that was refuted
+
+`prelisten.py` gained two tolerances, both of the same form — *both answers
+are right*:
+
+- **A cluster English cannot open may grow a helper vowel**, whether or not
+  the pack's transcription writes one. It writes `pə` for πν and plain `ɡn`
+  for γν, though English begins a word with neither; γνωστός was flagged three
+  times for a syllable that is not an error, and γνῶσις ships the same onset
+  with an ear's approval. Nine words in the deck open with one of these.
+- **A hiatus may come back as one vowel run or as two.** The counting rule
+  fuses `lɪ.as` into one run and the voice bridged it with a y — `kɪlijas`,
+  three syllables of Greek said correctly, flagged twice. This is the mirror
+  of the χρεία case the docstring already recorded, where the target split and
+  the audio fused.
+
+Neither tolerance blunted it: πίμπλημι is still caught after both.
+
+**And one proposed rule was refuted before it was written.** φανερός and περί
+both failed with a plain `e` before a stressed `r` and both were fixed by the
+open `ɛ`, which looked like a rule. ἱερεύς `/hɪeˈrjus/` is approved with
+exactly that shape. The only thing separating them is a consonant before the
+`e` rather than a vowel, and two against one is the same thin evidence that
+produced the "spoken dots share no shape" claim twice. It stays per-word.
+
+### Where this leaves the goal
+
+The goal is audio that expands without an ear on every clip. Two of the three
+legs are now in place:
+
+1. **Coverage** — every feature approved somewhere. Done.
+2. **The screen** — 274 of 275 clean, and the faults it catches have
+   mechanical remedies. Done, with its limits now stated correctly.
+3. **The ear** — 10 of 12 on a frequency-spread sample. **Not yet enough.**
+
+The third is the one that decides it, and one sample of twelve is not a
+licence to install 261 clips unheard. But the two failures were a symbol with
+six approvals behind it and a shape that occurs once in the population, which
+is a very different picture from the bulk run's 15-of-20. A second sample,
+drawn after 25D settles those two, is what the decision should rest on.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
