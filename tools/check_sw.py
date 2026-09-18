@@ -37,6 +37,17 @@ activate never runs, so the poison survives and reads as a broken eviction.
 And the Browser pane served a stale sw.js for three releases while curl had
 the current one — rule 6's second case, which is why curl is what settles
 whether something published.
+
+AND THE PAGE STILL HAS TO ASK. Everything above is about what a new worker
+does once the browser has noticed it; js/pwa.js is what makes the browser
+look. Until 2026-09-18 it looked exactly once, at page load, which is every
+few minutes in a browser tab, every cold start on Android — and, on a
+Windows desktop where the installed app is a window that is opened once and
+left open, roughly never. Fraser had it installed for weeks and was never
+offered a single update. So the last pass reads js/pwa.js and confirms the
+three things that make the question get asked again: an update() call, a
+timer carrying it, and the same call on the way back to a window that never
+closed. A shipped release nobody is told about is not shipped.
 """
 import io
 import os
@@ -153,9 +164,52 @@ def main():
             notes.append("bulk files changed since the last sw.js commit: %d"
                          % len(changed))
 
+    # 4. The page still asks. sw.js can be perfect and reach nobody: the
+    #    browser only compares its bytes when something calls register() or
+    #    update(), and on an installed desktop app a page load may be weeks
+    #    apart. Read js/pwa.js and confirm each trigger is still wired.
+    pwa_path = os.path.join(ROOT, "js", "pwa.js")
+    pwa = io.open(pwa_path, encoding="utf-8").read()
+
+    if not re.search(r"register\(\s*[\"']sw\.js[\"']\s*,\s*\{[^}]*"
+                     r"updateViaCache\s*:\s*[\"']none[\"']", pwa):
+        bad.append("js/pwa.js does not register sw.js with "
+                   "updateViaCache:\"none\", so an update check inside the "
+                   "HTTP cache's max-age is answered without a request")
+
+    #    The body is matched with "no `function` in between" rather than by
+    #    balancing braces, because the call sits inside a try{} and a brace
+    #    counter written in a hurry stops at it -- which is a checker that
+    #    reports the failure it is meant to catch.
+    m = re.search(r"function\s+(\w+)\s*\([^)]*\)\s*\{"
+                  r"(?:(?!function\s)[\s\S]){0,600}?\.update\(\)", pwa)
+    if not m:
+        bad.append("js/pwa.js never calls registration.update(), so a new "
+                   "version is noticed only on a page load")
+    else:
+        fn = m.group(1)
+        for what, pat in (
+            ("on a timer, for a window left open",
+             r"setInterval\(\s*%s\b" % fn),
+            # Each window stops at the next addEventListener, because
+            # without that the visibilitychange pattern read straight past
+            # its own handler into the pageshow one below and passed with
+            # the visibility check deleted -- CLAUDE.md rule 2's "check that
+            # a checker looks where you think it looks", caught by deleting
+            # each trigger in turn and watching for the failure.
+            ("when the window comes back to the front",
+             r"visibilitychange(?:(?!addEventListener)[\s\S]){0,240}?%s\(" % fn),
+            ("when the page is restored from the back/forward cache",
+             r"pageshow(?:(?!addEventListener)[\s\S]){0,240}?%s\(" % fn),
+        ):
+            if not re.search(pat, pwa):
+                bad.append("js/pwa.js does not check for a new version %s"
+                           % what)
+
     print("check_sw", ver.group(1) if ver else "?",
           "  SHELL: %d" % len(lists.get("SHELL", [])),
-          "  STALE: %d" % len(lists.get("STALE", [])))
+          "  STALE: %d" % len(lists.get("STALE", [])),
+          "  js/pwa.js: %d bytes" % len(pwa))
     for n in notes:
         print("   " + n)
     for b in bad:
