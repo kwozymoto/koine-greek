@@ -2073,11 +2073,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "hay gheh mohn",
-  "source": "composed",
-  "duration_s": 1.488,
-  "sha1": "aa874a1db693",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/heːɡeˈmoʊn/",
+  "source": "batch22",
+  "duration_s": 0.993,
+  "sha1": "77713cf77255",
+  "note": "SAMPLE, and the one the screen caught: its dotted form read the dot aloud as the WORD dot on two takes. Sixth word to do that and the FIRST drawn at random, so the bulk run cannot skip the screen",
+  "take": "b22w_650_a"
  },
  {
   "index": 651,
@@ -3099,12 +3100,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "ah nahg key",
-  "source": "rollout",
-  "duration_s": 1.728,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "89e7538cf9dd"
+  "tts": "/aˈnaŋ.keː/",
+  "source": "batch22",
+  "duration_s": 1.306,
+  "take": "b22w_719_a",
+  "note": "γκ, the gamma-nasal before a k. The converter's own output",
+  "sha1": "276e9b9766fb"
  },
  {
   "index": 720,
@@ -3161,12 +3162,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "eh leg khoh",
-  "source": "rollout",
-  "duration_s": 1.574,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "7ad23fb54350"
+  "tts": "/ɛˈleŋ.koː/",
+  "source": "batch22",
+  "duration_s": 1.228,
+  "take": "b22w_723_a",
+  "note": "γχ -- the gamma-nasal before a chi, and medial chi written k, so ŋk where the Greek has γχ. The converter's own output",
+  "sha1": "fc1c13910678"
  },
  {
   "index": 724,
@@ -3207,11 +3208,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 17,
-  "tts": "eh pow ree on",
-  "source": "composed",
-  "duration_s": 2.448,
-  "sha1": "146ff2752745",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛˈpau̯.rɪ.ɒn/",
+  "source": "batch22",
+  "duration_s": 1.384,
+  "sha1": "7b6564a19de9",
+  "note": "αυ before an r. The converter's own output, and the last new cluster in the deck",
+  "take": "b22w_726_a"
  },
  {
   "index": 727,
@@ -3602,10 +3604,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "noom fee oss",
-  "source": "worklist-candidate",
-  "duration_s": 1.8,
-  "sha1": "26881d8926f5"
+  "tts": "/numˈfi.ɒs/",
+  "source": "batch22",
+  "duration_s": 1.384,
+  "sha1": "f28f490e1b57",
+  "take": "b22w_752_a",
+  "note": "μφ under the stress. The converter's own output. WITH THIS THE NOVELTY LIST IS EMPTY: no unheard cue contains a sound in a position nothing has demonstrated"
  },
  {
   "index": 753,
@@ -4066,10 +4070,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "ewkhah reestee ah",
-  "source": "worklist-candidate",
-  "duration_s": 5.088,
-  "sha1": "cc9b613c0e55"
+  "tts": "/ju.ka.rɪˈsti.a/",
+  "source": "batch22",
+  "duration_s": 1.959,
+  "sha1": "17e9cac14d63",
+  "take": "b22w_783_a",
+  "note": "SAMPLE, and the one that tested the feature model: `ju` opening a word with NOTHING in front of it, where every approved ju had a consonant. Coverage called it covered and it was right"
  },
  {
   "index": 784,

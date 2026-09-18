@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v187';
+const VERSION = 'v188';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,20 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v188: batch 22, ten of ten first time. The novelty list closes -- no
+     unheard cue now holds a sound in a position nothing demonstrates -- and
+     six of the ten were drawn at RANDOM from the 336 that hold nothing new,
+     which is the population a bulk run would ship unheard. Six of six. */
+  'audio/vocab/042_didomi.mp3',
+  'audio/vocab/293_imation.mp3',
+  'audio/vocab/382_time.mp3',
+  'audio/vocab/494_leipo.mp3',
+  'audio/vocab/650_egemon.mp3',
+  'audio/vocab/719_anagke.mp3',
+  'audio/vocab/723_elegcho.mp3',
+  'audio/vocab/726_epaurion.mp3',
+  'audio/vocab/752_numphios.mp3',
+  'audio/vocab/783_eucharistia.mp3',
   /* v187: batch 21, all eight settled. τίκτω turned πίπτω's exception into a
      rule -- a stressed short iota shut in by TWO consonants is written ɪ --
      which leaves one sound exception in the whole pack. */

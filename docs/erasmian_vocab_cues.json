@@ -647,12 +647,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 415,
-  "tts": "di doh mee",
-  "source": "composed",
-  "duration_s": 1.363,
-  "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di', not the machine vowel",
-  "sha1": "526bd79a7284"
+  "tts": "/ˈdi.doː.mɪ/",
+  "source": "batch22",
+  "duration_s": 1.071,
+  "take": "b22w_42_a",
+  "note": "SAMPLE, drawn at random from the 336 cues containing nothing new. 415 occurrences, the converter's own output, right first time",
+  "sha1": "d8239dd5cd82"
  },
  {
   "index": 43,
@@ -4533,11 +4533,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 60,
-  "tts": "hee mah tee on",
-  "source": "composed",
-  "duration_s": 1.513,
-  "sha1": "20760216d5d4",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hɪˈma.tɪ.ɒn/",
+  "source": "batch22",
+  "duration_s": 1.306,
+  "sha1": "27656035fb8d",
+  "note": "SAMPLE. The converter's own output",
+  "take": "b22w_293_a"
  },
  {
   "index": 294,
@@ -5912,12 +5913,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 41,
-  "tts": "tee mey",
-  "source": "composed",
-  "duration_s": 0.836,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "56345d580502"
+  "tts": "/tɪˈmeː/",
+  "source": "batch22",
+  "duration_s": 0.758,
+  "take": "b22w_382_a",
+  "note": "SAMPLE. The converter's own output",
+  "sha1": "8d4272d0621b"
  },
  {
   "index": 383,

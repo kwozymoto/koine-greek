@@ -705,6 +705,11 @@ IPA_HEARD = {
     461: "one dot removed, for the same reason and found the same way — two "
          "takes said \"dot\" where the dot is. The doubled rho and the "
          "post-stress hiatus both survive untouched",
+    650: "dotless, and it is the one sample word the screen caught. Its "
+         "dotted form read the dot aloud as the WORD \"dot\" on two takes. "
+         "Sixth word to do that and the FIRST drawn at random rather than "
+         "chosen, which is what says the rate in the general population is "
+         "not negligible and a bulk run cannot skip the screen",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "

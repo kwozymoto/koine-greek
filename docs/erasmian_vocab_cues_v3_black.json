@@ -385,11 +385,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 6,
-  "tts": "lay poh",
-  "source": "composed",
-  "duration_s": 1.174,
-  "sha1": "67f3ac2ccb2f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈlei̯.poː/",
+  "source": "batch22",
+  "duration_s": 1.149,
+  "sha1": "68121994a06d",
+  "note": "SAMPLE. The converter's own output",
+  "take": "b22w_494_a"
  },
  {
   "index": 495,
