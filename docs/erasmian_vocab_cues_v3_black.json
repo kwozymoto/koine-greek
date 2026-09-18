@@ -101,10 +101,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 2,
-  "tts": "mes see ahs",
-  "source": "black",
-  "duration_s": 2.205,
-  "sha1": "52764af20551"
+  "tts": "/mesˈsi.as/",
+  "source": "batch25e",
+  "duration_s": 1.149,
+  "sha1": "2be46edd6c8d",
+  "take": "b25e_476_a",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe"
  },
  {
   "index": 477,
@@ -480,11 +482,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "nee kah oh",
-  "source": "composed",
-  "duration_s": 1.732,
-  "sha1": "b7055ce508db",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/nɪˈka.oː/",
+  "source": "batch25e",
+  "duration_s": 1.149,
+  "sha1": "4b47b7ef40d8",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "take": "b25e_500_a"
  },
  {
   "index": 501,

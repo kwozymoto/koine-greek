@@ -172,11 +172,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 1407,
-  "tts": "hoss",
-  "source": "composed",
-  "duration_s": 0.67,
-  "sha1": "9a93e2d44702",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhɒs/",
+  "source": "batch25e",
+  "duration_s": 0.836,
+  "sha1": "2f5d36ec56d6",
+  "note": "the converter own output. 1,407 occurrences, and right first time",
+  "take": "b25e_11_a"
  },
  {
   "index": 12,
@@ -1688,11 +1689,12 @@
   "pos": "conj",
   "tier": 2,
   "freq": 146,
-  "tts": "heh ohs",
-  "source": "composed",
-  "duration_s": 0.969,
-  "sha1": "1feb01dae0f0",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhe.oːs/",
+  "source": "batch25e",
+  "duration_s": 0.914,
+  "sha1": "55cbbf0401d8",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "take": "b25e_109_a"
  },
  {
   "index": 110,
@@ -3931,11 +3933,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 78,
-  "tts": "sto mah",
-  "source": "composed",
-  "duration_s": 0.925,
-  "sha1": "7e419b2d9692",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈstɒ.ma/",
+  "source": "batch25e",
+  "duration_s": 1.463,
+  "sha1": "6e7766a712b0",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "take": "b25e_253_a"
  },
  {
   "index": 254,
@@ -5775,12 +5778,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 42,
-  "tts": "hah mar tah noh",
-  "source": "composed",
-  "duration_s": 2.22,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "885b5dff86e3"
+  "tts": "/hamaːrˈtanoː/",
+  "source": "batch25e",
+  "duration_s": 1.228,
+  "take": "b25e_372_a",
+  "note": "the alpha written LONG. Both dots read aloud as the word dot through two takes; taking them all out -- the standing remedy, which had not failed before -- went TOO FAR, and mar collapsed to a schwa, losing a syllable. Writing the alpha long is what anti needed for a short a English would not keep in front of a sonorant. NOT A RULE: nine approved cues carry a consonant, a short vowel and an r and kept the vowel, karpos and kardia among them. A, but either works",
+  "sha1": "a6f63ebd92da"
  },
  {
   "index": 373,

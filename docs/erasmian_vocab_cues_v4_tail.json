@@ -1270,12 +1270,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 23,
-  "tts": "peh ree bal loh",
-  "source": "composed",
-  "duration_s": 1.637,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "f8371debf609"
+  "tts": "/pe.rɪˈbal.loː/",
+  "source": "batch25e",
+  "duration_s": 2.038,
+  "take": "b25e_595_a",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "sha1": "a5e94e55255c"
  },
  {
   "index": 596,
@@ -1976,11 +1976,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 20,
-  "tts": "pross ah goh",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "be1f5965b0c4",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/prɒ.ˈa.ɡoː/",
+  "source": "batch25e",
+  "duration_s": 1.463,
+  "sha1": "a894644c1ce3",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "take": "b25e_642_a"
  },
  {
   "index": 643,
@@ -2597,10 +2598,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "koposs",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "d9e702c45d3e"
+  "tts": "/ˈkɒ.pɒs/",
+  "source": "batch25e",
+  "duration_s": 1.071,
+  "sha1": "66ab707720bd",
+  "take": "b25e_683_a",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe"
  },
  {
   "index": 684,
@@ -3173,12 +3176,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "ah res koh",
-  "source": "rollout",
-  "duration_s": 1.268,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "95840e9f34d7"
+  "tts": "/aˈre.skoː/",
+  "source": "batch25e",
+  "duration_s": 1.228,
+  "take": "b25e_721_a",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "sha1": "4ca3750d88f4"
  },
  {
   "index": 722,
@@ -3960,12 +3963,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "dah mas koss",
-  "source": "rollout",
-  "duration_s": 1.471,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "a65316cd4bd0"
+  "tts": "/da.maˈskɒs/",
+  "source": "batch25e",
+  "duration_s": 1.62,
+  "take": "b25e_772_a",
+  "note": "the converter own output, from the second frequency-spread sample of the population the coverage model calls safe",
+  "sha1": "174122826112"
  },
  {
   "index": 773,

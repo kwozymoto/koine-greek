@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v196';
+const VERSION = 'v197';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,23 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v197: batch 25E. A SECOND frequency-spread sample of the population
+     the coverage model calls safe -- eleven of twelve, ten of them
+     straight from the converter, ὅς at 1,407 occurrences among them. The
+     twelfth failed on a spoken dot the SCREEN had stopped seeing, because
+     a tolerance added hours earlier hid it; the screen now looks for the
+     word "dot" by name instead of inferring it from a beat count. */
+  'audio/vocab/011_os.mp3',
+  'audio/vocab/109_eos.mp3',
+  'audio/vocab/253_stoma.mp3',
+  'audio/vocab/372_amartano.mp3',
+  'audio/vocab/476_messias.mp3',
+  'audio/vocab/500_nikao.mp3',
+  'audio/vocab/595_periballo.mp3',
+  'audio/vocab/642_proago.mp3',
+  'audio/vocab/683_kopos.mp3',
+  'audio/vocab/721_aresko.mp3',
+  'audio/vocab/772_damaskos.mp3',
   /* v196: batch 25D. The twelve-word sample is now 12 for 12, the two
      stragglers taking one more round. βαστάζω chose the UNTIED dz over
      the tie-barred affricate the converter makes -- six approved cues

@@ -709,6 +709,16 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    372: "the alpha written LONG, and the lot that found the dedot's limit. "
+         "Both dots read aloud as the word \"dot\" through two takes; taking "
+         "them ALL out — the standing remedy, which had not failed before — "
+         "went too far, and `mar` collapsed to a schwa so the word lost a "
+         "syllable, the same elision φανερός had. Writing the alpha long is what "
+         "ἀντί needed for a short a English would not keep in front of a "
+         "sonorant. NOT A RULE, and it was checked before it was written: "
+         "nine approved cues carry a consonant, a short vowel and an r and "
+         "kept the vowel — καρπός and καρδία have `kar` in this very "
+         "position. \"A, but either works\"",
     533: "THE UNTIED `dz`, not the tie-barred affricate the converter makes. "
          "Six approved cues carry `ʣ` and four of them have the identical "
          "`aʣoː`, so this looked like a bad roll — but not one of the six "
