@@ -587,11 +587,12 @@
   "pos": "prep",
   "tier": 5,
   "freq": 22,
-  "tts": "ahn tee",
-  "source": "composed",
-  "duration_s": 1.512,
-  "sha1": "e066ee3b7aee",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aːnˈti/",
+  "source": "batch25b",
+  "duration_s": 0.914,
+  "sha1": "0a2caadff60c",
+  "note": "the alpha written LONG. Short a before a nasal is approved eight times, but a WORD-INITIAL one is approved seven times and every one is shut by l, p, r or s, never a nasal -- the one place English has a prefix waiting. anti became aunty by writing the vowel as the open ah the pack already has in mallon, satanas and barnabas. The quantity is wrong for the Greek and the colour is what the ear wanted",
+  "take": "b25b_507_b"
  },
  {
   "index": 508,

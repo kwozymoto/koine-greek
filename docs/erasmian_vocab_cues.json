@@ -3247,11 +3247,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 76,
-  "tts": "ew ahng geh lee on",
-  "source": "composed",
-  "duration_s": 1.987,
-  "sha1": "4077538c43bc",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˌju.aŋˈɡe.lɪ.ɒn/",
+  "source": "batch25b",
+  "duration_s": 1.62,
+  "sha1": "d33a72bf4c7f",
+  "note": "FOUR ROUNDS. The dot after ju is needed or the j sounds on its own, and with it the word spelled. A SECONDARY STRESS on the ju is what fixed it -- weight instead of a pause. No approved cue had used that symbol before this one",
+  "take": "b25b_210_b"
  },
  {
   "index": 211,

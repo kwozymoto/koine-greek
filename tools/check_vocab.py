@@ -709,6 +709,32 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    210: "A SECONDARY STRESS on the ju, and no approved cue had used that "
+         "symbol before this one. Four rounds: without a dot after `ju` the "
+         "j sounds on its own, and with one the word spells. The approved "
+         "cues said where the difference was \u2014 \u03b5\u1f50\u03c7\u03b1\u03c1\u03b9\u03c3\u03c4\u03af\u03b1 `/ju.ka.r\u026a\u02c8sti.a/` is "
+         "word-initial ju, a dot, then a CONSONANT, and this is the pack's "
+         "only one with a VOWEL after that dot. What the hiatus needed was "
+         "WEIGHT rather than a pause, which is what the mark gives it",
+    507: "the alpha written LONG, for its colour and not its quantity. "
+         "\"Coming out as anti, should be more like aunty.\" A short alpha "
+         "before a nasal is approved eight times over, so the nasal is not "
+         "the fault; but a WORD-INITIAL short alpha is approved seven times "
+         "and every one of them is shut by l, p, r or s \u2014 \u1f00\u03bb\u03bb\u03ac, "
+         "\u1f00\u03c0\u03bf\u03c3\u03c4\u03ad\u03bb\u03bb\u03c9, \u1f00\u03c1\u03bd\u03af\u03bf\u03bd, \u1f00\u03c3\u03b8\u03b5\u03bd\u03ae\u03c2 \u2014 never by a nasal, which is "
+         "the one place English has a prefix waiting. `a\u02d0` is the pack's "
+         "one attested open *ah*: \u03bc\u1fb6\u03bb\u03bb\u03bf\u03bd, \u03c3\u03b1\u03c4\u03b1\u03bd\u1fb6\u03c2, \u03b2\u03b1\u03c1\u03bd\u03b1\u03b2\u1fb6\u03c2. The Greek "
+         "vowel is short and the ear wanted the colour",
+    616: "the dot between the double sigma removed, by the screen. It was "
+         "read aloud as the WORD \"dot\" through two takes of the converter's "
+         "own output, so the string was wrong and not the roll. `s.s` is "
+         "the consonant-consonant shape the spoken dots favour",
+    646: "BOTH pre-stress dots removed, by the screen \u2014 \"ah dot krah dot "
+         "boostia\" through two takes. Only the hiatus at the end keeps its "
+         "dot, which is the one this pack has evidence for. This is the "
+         "word that argues the converter's pre-stress rule should reach "
+         "further back than one syllable: \u1f00\u03c0\u03bf\u03b8\u03bd\u1fc4\u03c3\u03ba\u03c9 and \u1f00\u03c0\u03bf\u03ba\u03c4\u03b5\u03af\u03bd\u03c9 are "
+         "both approved with nothing at all before the stress",
     378: "fully dotless, and the screen drove both removals. Its first dot was "
          "read aloud as the word \"dot\" on two takes; taking only that one "
          "out still screened badly, so the second went too and that is the "

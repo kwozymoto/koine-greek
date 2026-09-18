@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v193';
+const VERSION = 'v194';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,20 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v194: batch 25B, eight of nine, and the coverage model is closed but
+     for one word. εὐαγγέλιον took a SECONDARY STRESS on its glide,
+     a symbol no approved cue had carried: after three rounds of moving
+     dots, what the hiatus needed was weight rather than a pause. And
+     ἀντί became *aunty* by writing its short alpha long -- the colour
+     the ear wanted, against the quantity the Greek has. */
+  'audio/vocab/210_euaggelion.mp3',
+  'audio/vocab/507_anti.mp3',
+  'audio/vocab/616_tesserakonta.mp3',
+  'audio/vocab/638_marturion.mp3',
+  'audio/vocab/640_nuni.mp3',
+  'audio/vocab/646_akrobustia.mp3',
+  'audio/vocab/657_georgos.mp3',
+  'audio/vocab/773_lazaros.mp3',
   /* v193: batch 25, five of eight. πνευματικός settles the helper vowel: πν
      cannot open an English syllable, the transcription writes a schwa,
      the voice may say it or not -- and the ear prefers it said. That is

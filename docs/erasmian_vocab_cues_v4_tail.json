@@ -1585,10 +1585,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 22,
-  "tts": "tesseh rakon tah",
-  "source": "worklist-candidate",
-  "duration_s": 1.728,
-  "sha1": "5e933befc9c3"
+  "tts": "/tesseˈra.kɒn.ta/",
+  "source": "batch25b",
+  "duration_s": 1.776,
+  "sha1": "0165a4954006",
+  "take": "b25b_616_a",
+  "note": "the converter output WITH THE GEMINATE DOT REMOVED. The dot between the double sigma read aloud as the word dot through two takes -- the consonant-consonant shape the spoken dots favour"
  },
  {
   "index": 617,
@@ -1911,12 +1913,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "mar too ree on",
-  "source": "composed",
-  "duration_s": 1.757,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "26e7ddc9d301"
+  "tts": "/marˈtu.rɪ.ɒn/",
+  "source": "batch25b",
+  "duration_s": 1.306,
+  "take": "b25b_638_a",
+  "note": "the converter own output. A stressed upsilon in the middle of a word",
+  "sha1": "b0c7447b82cf"
  },
  {
   "index": 639,
@@ -1943,10 +1945,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 20,
-  "tts": "noonee",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "857be6e078a3"
+  "tts": "/nuˈni/",
+  "source": "batch25b",
+  "duration_s": 0.914,
+  "sha1": "aeab390f35be",
+  "take": "b25b_640_a",
+  "note": "the converter own output. A stressed final iota after a nasal -- anti shape without the alpha in front"
  },
  {
   "index": 641,
@@ -2031,10 +2035,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "akro boostee ah",
-  "source": "worklist-candidate",
-  "duration_s": 1.56,
-  "sha1": "2ffca979851a"
+  "tts": "/akrɒbuˈsti.a/",
+  "source": "batch25b",
+  "duration_s": 1.306,
+  "sha1": "bd917ebb93f1",
+  "take": "b25b_646_a",
+  "note": "the converter output WITH BOTH PRE-STRESS DOTS REMOVED. Read aloud as ah dot krah dot boostia through two takes. Only the hiatus at the end keeps its dot. This is the one that argues the converter pre-stress rule should reach further back than one syllable"
  },
  {
   "index": 647,
@@ -2198,10 +2204,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "gheh ohr goss",
-  "source": "worklist-candidate",
-  "duration_s": 1.8,
-  "sha1": "cc000a1b3c08"
+  "tts": "/ɡe.oːrˈɡɒs/",
+  "source": "batch25b",
+  "duration_s": 1.463,
+  "sha1": "184436a916d4",
+  "take": "b25b_657_a",
+  "note": "the converter own output. A stressed omicron after a hard g, and a long omega before r"
  },
  {
   "index": 658,
@@ -3963,10 +3971,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "lah zah ross",
-  "source": "worklist-candidate",
-  "duration_s": 2.066,
-  "sha1": "b1d311de0278"
+  "tts": "/ˈlaʣa.rɒs/",
+  "source": "batch25b",
+  "duration_s": 1.776,
+  "sha1": "defb0a9d7939",
+  "take": "b25b_773_a",
+  "note": "the converter own output. The zeta as the affricate the pack settled on rather than a plain z"
  },
  {
   "index": 774,
