@@ -644,7 +644,12 @@ def ipa_cue(ipa):
     # confirmed it on the two biggest words left on English respellings, θεός
     # at 1,317 occurrences and ἐάν at 331.
     #
-    # RESTRICTED TO e ON PURPOSE. διά went the other way in that same round,
+    # RESTRICTED BY THE i, NOT BY THE e. 19B could only say "an e" because
+    # e was all that had been tested; batch 20 asked λαός at 142
+    # occurrences and ναός, and both kept their dot. The two dotless ones,
+    # διά and δεξιός, are exactly the two with an i before the stress.
+    # So i is the exception and every other short plain vowel keeps it.
+    # ORIGINALLY RESTRICTED TO e ON PURPOSE. διά went the other way in that same round,
     # dotless, and δεξιός shipped dotless in 15; both have an i before the
     # stress where the three that kept the dot have an e. Wider still breaks
     # αἰών, Δαυίδ and Ἰούδας, whose hiatus holds a diphthong or a long vowel.
@@ -653,8 +658,8 @@ def ipa_cue(ipa):
     # λαός, ναός and Ἀβραάμ are the untested a-initial cases. The rule leaves
     # them dotless, which is what they ship today, so being wrong about them
     # costs nothing until somebody listens.
-    s = re.sub("(?<![eɛ])\\.ˈ", "ˈ", s)
-    s = re.sub("(?<=[eɛ])\\.ˈ(?![aeiouyɒɛɪ](?![ːu̯i̯]))", "ˈ", s)
+    s = re.sub("(?<![aeouyɒɛ])\\.ˈ", "ˈ", s)
+    s = re.sub("(?<=[aeouyɒɛ])\\.ˈ(?![aeiouyɒɛɪ](?![ːu̯i̯]))", "ˈ", s)
     # A cue ending in `ju` plus a consonant is written FULLY dotless, and the
     # three words that say so are the only three the route can reach: βασιλεύς
     # in 12B, γραμματεύς in 13B, ἱερεύς in 14. Three of three, each put up
@@ -679,6 +684,13 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    378: "fully dotless, and the screen drove both removals. Its first dot was "
+         "read aloud as the word \"dot\" on two takes; taking only that one "
+         "out still screened badly, so the second went too and that is the "
+         "version an ear chose",
+    461: "one dot removed, for the same reason and found the same way — two "
+         "takes said \"dot\" where the dot is. The doubled rho and the "
+         "post-stress hiatus both survive untouched",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
          "dotted version decoded with `dɑːt` TWICE — the voice reading its "
          "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "

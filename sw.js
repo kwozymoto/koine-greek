@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v185';
+const VERSION = 'v186';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,18 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v186: batch 20. Eight clips, and the hiatus rule widened from "after an
+     e" to "after any short vowel but i" -- λαός and ναός both kept a dot
+     the converter was taking out. γν opening a word works, which English
+     cannot write: *gnosis* has a silent g. */
+  'audio/vocab/115_laos.mp3',
+  'audio/vocab/218_naos.mp3',
+  'audio/vocab/378_dierchomai.mp3',
+  'audio/vocab/425_opheilo.mp3',
+  'audio/vocab/461_parresia.mp3',
+  'audio/vocab/482_gnosis.mp3',
+  'audio/vocab/496_feugo.mp3',
+  'audio/vocab/539_ekcheo.mp3',
   /* v185: batches 19 and 19B. Twelve clips, and θεός among them -- 1,317
      occurrences, the deck's commonest word, off an English respelling at
      last and onto a string the converter now writes unaided. */

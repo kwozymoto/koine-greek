@@ -1772,12 +1772,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 142,
-  "tts": "lah oss",
-  "source": "recued",
-  "duration_s": 1.315,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "e7fca1b91954"
+  "tts": "/la.ˈɒs/",
+  "source": "batch20",
+  "duration_s": 1.071,
+  "take": "b20w_115_a",
+  "note": "DOTTED, and it widened the rule: the pre-stress dot survives after any short plain vowel EXCEPT i. 19B could only say `e` because e was all that had been tested",
+  "sha1": "2fba34c40bce"
  },
  {
   "index": 116,
@@ -3363,13 +3363,15 @@
   "pos": "noun",
   "tier": 3,
   "freq": 45,
-  "tts": "nah oss",
-  "source": "fix12",
-  "duration_s": 1.249,
+  "tts": "/na.ˈɒs/",
+  "source": "batch20",
+  "duration_s": 1.384,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "nahoss",
   "format": "22050 mono 64k, pad_tail=0.22",
-  "sha1": "982ff061ec35"
+  "sha1": "8a4b1bf47ac1",
+  "take": "b20w_218_a",
+  "note": "the second reading of the same question, agreeing. Both now come out of the converter unaided"
  },
  {
   "index": 219,
@@ -5847,11 +5849,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 41,
-  "tts": "dee ehr kho my",
-  "source": "composed",
-  "duration_s": 2.661,
-  "sha1": "8ba556bc107d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/dɪˈerkɒmai̯/",
+  "source": "batch20",
+  "duration_s": 1.228,
+  "sha1": "8253ab71b309",
+  "note": "FULLY DOTLESS. Its first dot was read aloud as the word dot on two takes; taking only that one out still screened badly, so both went and this is the version that won",
+  "take": "b20w_378_b"
  },
  {
   "index": 379,
@@ -6576,11 +6579,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 35,
-  "tts": "o fay loh",
-  "source": "composed",
-  "duration_s": 1.143,
-  "sha1": "2bc6046d1688",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɒˈfei̯.loː/",
+  "source": "batch20",
+  "duration_s": 0.914,
+  "sha1": "09ba292f220c",
+  "note": "the converter's own output, and the first cue to OPEN on a short omicron -- the position the epsilon rule exists because of",
+  "take": "b20w_425_a"
  },
  {
   "index": 426,
@@ -7129,11 +7133,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "pahr ray see ah",
-  "source": "composed",
-  "duration_s": 1.743,
-  "sha1": "8f8a8bedfd28",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/parreːˈsi.a/",
+  "source": "batch20",
+  "duration_s": 1.306,
+  "sha1": "40e756f4e298",
+  "note": "one dot removed, and the screen found it: the voice read that dot aloud as the word dot on two takes. The doubled rho and the post-stress hiatus both survive",
+  "take": "b20w_461_a"
  },
  {
   "index": 462,

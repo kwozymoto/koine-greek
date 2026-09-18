@@ -431,10 +431,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 27,
-  "tts": "ek kheh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.488,
-  "sha1": "a45b3c4ab35a"
+  "tts": "/ɛkˈke.oː/",
+  "source": "batch20",
+  "duration_s": 1.149,
+  "sha1": "3113f87452c4",
+  "take": "b20w_539_a",
+  "note": "κχ COLLAPSING to a doubled k, because medial chi is written k. The breath on the chi is the cost 15B accepted and this is where it shows most; approved anyway"
  },
  {
   "index": 540,

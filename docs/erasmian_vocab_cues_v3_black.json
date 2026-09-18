@@ -193,11 +193,13 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "gnosis",
-  "source": "black",
-  "duration_s": 1.158,
+  "tts": "/ˈɡnoː.sɪs/",
+  "source": "batch20",
+  "duration_s": 1.228,
   "verdict": "checked by ear: gamma is sounded, good",
-  "sha1": "b62de72b536e"
+  "sha1": "9114adf62528",
+  "take": "b20w_482_a",
+  "note": "γν OPENING A WORD, which English cannot do -- *gnosis* has a silent g, so the cue that shipped said nosis. The converter's own output, right first time, and the same trouble τέκνον had with κν"
  },
  {
   "index": 483,
@@ -414,10 +416,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "few goh",
-  "source": "black",
-  "duration_s": 1.308,
-  "sha1": "5a30139b092a"
+  "tts": "/ˈfju.ɡoː/",
+  "source": "batch20",
+  "duration_s": 0.914,
+  "sha1": "41087c3166bd",
+  "take": "b20w_496_a",
+  "note": "the converter's own output. `ju` behind a single consonant at the front of a word, which it had never been asked for"
  },
  {
   "index": 497,
