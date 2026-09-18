@@ -556,11 +556,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 1,
-  "tts": "ahng gel loh",
-  "source": "composed",
-  "duration_s": 1.607,
-  "sha1": "9cf80ac924ef",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aŋˈɡel.loː/",
+  "source": "batch25c",
+  "duration_s": 1.228,
+  "sha1": "7d8f9b175b8b",
+  "note": "the converter own output. One occurrence in the New Testament, drawn as the bottom of the frequency spread",
+  "take": "b25c_505_a"
  },
  {
   "index": 506,

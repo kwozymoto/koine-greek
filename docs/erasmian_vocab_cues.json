@@ -156,11 +156,12 @@
   "pos": "adv",
   "tier": 1,
   "freq": 1606,
-  "tts": "oo",
-  "source": "composed",
-  "duration_s": 0.53,
-  "sha1": "9abcc5c58a53",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈuː/",
+  "source": "batch25c",
+  "duration_s": 0.914,
+  "sha1": "e299692e7587",
+  "note": "the converter own output, and the second commonest word in the New Testament. One long vowel and nothing else",
+  "take": "b25c_10_a"
  },
  {
   "index": 11,
@@ -1734,11 +1735,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 143,
-  "tts": "ah gah pah oh",
-  "source": "composed",
-  "duration_s": 1.749,
-  "sha1": "a20343134b74",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aɡaˈpa.oː/",
+  "source": "batch25c",
+  "duration_s": 1.149,
+  "sha1": "49b75c0cc6e5",
+  "note": "the converter output WITH THE FIRST DOT REMOVED. It was read aloud as the word dot through two takes",
+  "take": "b25c_112_a"
  },
  {
   "index": 113,
@@ -1749,11 +1751,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 143,
-  "tts": "ah fee ay mee",
-  "source": "composed",
-  "duration_s": 2.048,
-  "sha1": "e1cd5bc7c3a5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈfiei̯ˌmi/",
+  "source": "batch25c",
+  "duration_s": 1.306,
+  "sha1": "e26e1c98b64b",
+  "note": "FIVE ROUNDS, and the letter-name reading carried it. eː.mɪ IS the English letters E, M, I, which is why three rearrangements of the dots never touched it; writing the eta ei̯ fixed the eta and left the ending spelling; giving that ending a SECONDARY STRESS -- weight rather than a pause, the same remedy euaggelion needed -- fixed the rest. C is best, A works too",
+  "take": "b25c_113_c"
  },
  {
   "index": 114,
@@ -4185,11 +4188,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 68,
-  "tts": "ah goh",
-  "source": "composed",
-  "duration_s": 1.008,
-  "sha1": "cfa85eecd0da",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈa.ɡoː/",
+  "source": "batch25c",
+  "duration_s": 0.836,
+  "sha1": "7462bfd9fa0c",
+  "note": "the converter own output",
+  "take": "b25c_270_a"
  },
  {
   "index": 271,
@@ -5957,11 +5961,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 40,
-  "tts": "heh toy mah dzoh",
-  "source": "composed",
-  "duration_s": 1.454,
-  "sha1": "42960c913295",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hetoi̯ˈmaʣoː/",
+  "source": "batch25c",
+  "duration_s": 1.306,
+  "sha1": "507d22768da1",
+  "note": "the converter output WITH THE FIRST DOT REMOVED. Read aloud as the word dot through two takes",
+  "take": "b25c_384_a"
  },
  {
   "index": 385,

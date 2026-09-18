@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v194';
+const VERSION = 'v195';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,22 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v195: batch 25C. ἀφίημι settled after five rounds, and ten of a
+     twelve-word SAMPLE of the 275 cues the coverage model calls safe --
+     the first honest test of whether the rules are right without an ear.
+     οὐ is here at 1,606 occurrences, the second commonest word in the
+     New Testament, straight from the converter with nothing changed. */
+  'audio/vocab/010_ou.mp3',
+  'audio/vocab/112_agapao.mp3',
+  'audio/vocab/113_aphiemi.mp3',
+  'audio/vocab/270_ago.mp3',
+  'audio/vocab/384_etoimazo.mp3',
+  'audio/vocab/505_aggello.mp3',
+  'audio/vocab/569_eorte.mp3',
+  'audio/vocab/644_tosoutos.mp3',
+  'audio/vocab/688_pollakis.mp3',
+  'audio/vocab/729_etoimos.mp3',
+  'audio/vocab/784_themelios.mp3',
   /* v194: batch 25B, eight of nine, and the coverage model is closed but
      for one word. εὐαγγέλιον took a SECONDARY STRESS on its glide,
      a symbol no approved cue had carried: after three rounds of moving

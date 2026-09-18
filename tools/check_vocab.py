@@ -709,6 +709,22 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    112: "the first dot removed, by the screen. It was read aloud as the "
+         "WORD \"dot\" through two takes of the converter's own output. The "
+         "hiatus dot at the end stays, which is the one this pack has "
+         "evidence for",
+    113: "FIVE ROUNDS, and what settled it was reading the cue as English "
+         "rather than as sounds. `e\u02d0.m\u026a` IS the English letter names E, M, "
+         "I, which is why three rearrangements of the dots never touched the "
+         "spelling \u2014 the dots were never the fault, the eta was. Writing it "
+         "`ei\u032f`, which 15 approved cues carry, fixed the eta and left the "
+         "ENDING spelling; \u03b5\u1f30\u03bc\u03af `/ei\u032f\u02c8mi/` is the pack's only approved cue "
+         "with `ei\u032f` against an m and it writes a plain `i` with a stress "
+         "mark carrying the syllable. A secondary stress does the same job "
+         "\u2014 weight rather than a pause, which is exactly what \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd's glide "
+         "needed one round earlier. \"C is best, A works too\"",
+    384: "the first dot removed, by the screen, for the same reason and "
+         "found the same way \u2014 two takes said \"dot\" where the dot is",
     210: "A SECONDARY STRESS on the ju, and no approved cue had used that "
          "symbol before this one. Four rounds: without a dot after `ju` the "
          "j sounds on its own, and with one the word spells. The approved "

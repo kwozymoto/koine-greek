@@ -883,12 +883,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "heh or tey",
-  "source": "composed",
-  "duration_s": 1.33,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "391adc8d74d5"
+  "tts": "/he.ɔrˈteː/",
+  "source": "batch25c",
+  "duration_s": 1.228,
+  "take": "b25c_569_a",
+  "note": "the converter own output. The open o before r, which is the position that rule covers",
+  "sha1": "2faaa0fd2632"
  },
  {
   "index": 570,
@@ -2006,11 +2006,12 @@
   "pos": "pron",
   "tier": 5,
   "freq": 20,
-  "tts": "to soo toss",
-  "source": "composed",
-  "duration_s": 1.248,
-  "sha1": "3c87cad5b186",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/tɒˈsuː.tɒs/",
+  "source": "batch25c",
+  "duration_s": 1.463,
+  "sha1": "7712ee497bb2",
+  "note": "the converter own output",
+  "take": "b25c_644_a"
  },
  {
   "index": 645,
@@ -2671,10 +2672,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 18,
-  "tts": "pol lah kees",
-  "source": "worklist-candidate",
-  "duration_s": 1.416,
-  "sha1": "cf27db741905"
+  "tts": "/pɒlˈla.kɪs/",
+  "source": "batch25c",
+  "duration_s": 1.149,
+  "sha1": "5708be52f986",
+  "take": "b25c_688_a",
+  "note": "the converter own output"
  },
  {
   "index": 689,
@@ -3294,11 +3297,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 17,
-  "tts": "heh toy moss",
-  "source": "composed",
-  "duration_s": 1.656,
-  "sha1": "5014d8d98abe",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhe.toi̯.mɒs/",
+  "source": "batch25c",
+  "duration_s": 1.384,
+  "sha1": "63514fed400d",
+  "note": "the converter own output. A flagged first take that cleared on a re-roll -- transient, as about half are",
+  "take": "b25c_729_a"
  },
  {
   "index": 730,
@@ -4135,11 +4139,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "theh meh lee oss",
-  "source": "composed",
-  "duration_s": 2.448,
-  "sha1": "a6d9e87134be",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/θeˈme.lɪ.ɒs/",
+  "source": "batch25c",
+  "duration_s": 1.698,
+  "sha1": "6b48eb8b7300",
+  "note": "the converter own output",
+  "take": "b25c_784_a"
  },
  {
   "index": 785,
