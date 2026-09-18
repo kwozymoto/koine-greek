@@ -820,11 +820,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 318,
-  "tts": "oy dah",
-  "source": "composed",
-  "duration_s": 0.761,
-  "sha1": "4eed1df36aaf",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈoi̯.da/",
+  "source": "batch24",
+  "duration_s": 0.679,
+  "sha1": "cf195791e077",
+  "note": "the converter's own output, and it beat the composed cue. οι opening a word",
+  "take": "b24w_53_a"
  },
  {
   "index": 54,
@@ -1239,11 +1240,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 194,
-  "tts": "pah rah",
-  "source": "composed",
-  "duration_s": 0.981,
-  "sha1": "7b18881d7114",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/paˈra/",
+  "source": "batch24",
+  "duration_s": 0.679,
+  "sha1": "898c1c630a8e",
+  "note": "the converter's own output, beating the composed cue at 194 occurrences",
+  "take": "b24w_80_a"
  },
  {
   "index": 81,
@@ -2749,11 +2751,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 93,
-  "tts": "oy kee ah",
-  "source": "composed",
-  "duration_s": 1.104,
-  "sha1": "5ef4224c4a0b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/oi̯ˈki.a/",
+  "source": "batch24",
+  "duration_s": 0.914,
+  "sha1": "40f665cd52fe",
+  "note": "the converter's own output. οι opening a word and a post-stress hiatus keeping its dot",
+  "take": "b24w_178_a"
  },
  {
   "index": 179,
@@ -4046,11 +4049,12 @@
   "pos": "adj",
   "tier": 3,
   "freq": 75,
-  "tts": "doh deh kah",
-  "source": "composed",
-  "duration_s": 1.313,
-  "sha1": "f4cec73e3989",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈdoː.de.ka/",
+  "source": "batch24",
+  "duration_s": 1.776,
+  "sha1": "76014c30dc13",
+  "note": "the converter's own output, beating the composed cue",
+  "take": "b24w_261_a"
  },
  {
   "index": 262,
@@ -4865,11 +4869,12 @@
   "pos": "particle",
   "tier": 3,
   "freq": 53,
-  "tts": "oo khee",
-  "source": "composed",
-  "duration_s": 0.949,
-  "sha1": "1b80ea29d488",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/uːˈki/",
+  "source": "batch24",
+  "duration_s": 0.914,
+  "sha1": "029148e099ff",
+  "note": "THE MEDIAL-CHI RULE HOLDS ON A SHORT WORD. οὐχί is two syllables and one of them IS the chi, so writing it as a plain k spends the whole sound -- and the ear took it over the English cue that keeps the breath. 15B settled that k on a five-syllable word; this is the hardest case for it",
+  "take": "b24w_314_a"
  },
  {
   "index": 315,
@@ -5172,11 +5177,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 47,
-  "tts": "poo",
-  "source": "composed",
-  "duration_s": 0.546,
-  "sha1": "5eed6c47bb3e",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpuː/",
+  "source": "batch24",
+  "duration_s": 0.758,
+  "sha1": "46c14af96b54",
+  "note": "the converter's own output. One syllable, all vowel, the shape ὡς and οὖς both came through clean",
+  "take": "b24w_334_a"
  },
  {
   "index": 335,

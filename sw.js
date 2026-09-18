@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v190';
+const VERSION = 'v191';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,16 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v191: batch 24. Six composed cues lost to their IPA, 780 occurrences,
+     and οὐχί is the one to name: two syllables, one of them the chi, and
+     writing that chi as a plain k still won. The medial-chi rule holds in
+     the hardest place for it. */
+  'audio/vocab/053_oida.mp3',
+  'audio/vocab/080_para.mp3',
+  'audio/vocab/178_oikia.mp3',
+  'audio/vocab/261_dodeka.mp3',
+  'audio/vocab/314_ouchi.mp3',
+  'audio/vocab/334_pou.mp3',
   /* v190: batch 23, eleven of eleven. εἰμί is the one to name -- the
      commonest word in the New Testament, 2,462 occurrences, and IPA beat
      the composed cue it has always shipped. ἀπό and ἀλλά likewise. */
