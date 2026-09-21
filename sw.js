@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v205';
+const VERSION = 'v206';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,49 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v206: batch 25L, THIRTY-SEVEN OF FORTY and the biggest round yet.
+     These are the forty most frequent cues still unheard, 5,723
+     occurrences installed here -- and the reason forty was the right size
+     is that what remains is top-heavy: 41 cues carried two thirds of the
+     exposure and 146 carry the other third. μετά at 469 occurrences is
+     among the three that failed, so it is not here. */
+  'audio/vocab/040_akouo.mp3',
+  'audio/vocab/043_pater.mp3',
+  'audio/vocab/044_emera.mp3',
+  'audio/vocab/052_eautou.mp3',
+  'audio/vocab/054_laleo.mp3',
+  'audio/vocab/059_ge.mp3',
+  'audio/vocab/065_apokrinomai.mp3',
+  'audio/vocab/068_upo.mp3',
+  'audio/vocab/072_te.mp3',
+  'audio/vocab/073_dunamai.mp3',
+  'audio/vocab/075_outos.mp3',
+  'audio/vocab/083_kathos.mp3',
+  'audio/vocab/092_basileia.mp3',
+  'audio/vocab/106_kaleo.mp3',
+  'audio/vocab/136_aperchomai.mp3',
+  'audio/vocab/138_agape.mp3',
+  'audio/vocab/142_krino.mp3',
+  'audio/vocab/147_aletheia.mp3',
+  'audio/vocab/154_ekei.mp3',
+  'audio/vocab/160_airo.mp3',
+  'audio/vocab/166_tithemi.mp3',
+  'audio/vocab/176_enopion.mp3',
+  'audio/vocab/181_eirene.mp3',
+  'audio/vocab/183_kathemai.mp3',
+  'audio/vocab/188_oute.mp3',
+  'audio/vocab/195_kago.mp3',
+  'audio/vocab/199_upago.mp3',
+  'audio/vocab/211_euaggelizo.mp3',
+  'audio/vocab/222_epaggelia.mp3',
+  'audio/vocab/238_an.mp3',
+  'audio/vocab/240_ote.mp3',
+  'audio/vocab/243_archo.mp3',
+  'audio/vocab/265_pino.mp3',
+  'audio/vocab/268_aiteo.mp3',
+  'audio/vocab/294_uparcho.mp3',
+  'audio/vocab/306_dechomai.mp3',
+  'audio/vocab/322_parabole.mp3',
   /* v205: batch 25K, FIFTEEN OF FIFTEEN -- every lot, no notes, the first
      complete round of the session. διαλογίζομαι is the one to name:
      the spelling detector caught it in its first live round, spelling

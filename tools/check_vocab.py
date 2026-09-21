@@ -709,6 +709,15 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    52: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
+    65: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
+    92: "the pre-stress dot removed, by the screen, after the string said its dot aloud. It also found a hole in the SCREEN "
+        "rather than in itself: the dedotted cue decoded `basilaɪja`, which "
+        "is the word said correctly, and was flagged for a beat the hiatus "
+        "tolerance should have allowed — the hiatus here sits across `ei̯` and "
+        "`a`, and the test looked for two adjacent VOWELS, which a diphthong's "
+        "glide is not",
+    211: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
     379: "the SECONDARY STRESS, and the THIRD word it has fixed. A bare `ju` "
          "sounds its j on its own; \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd needed the mark after four rounds, "
          "then \u03b5\u1f50\u03bb\u03bf\u03b3\u03af\u03b1 took it before an ear was asked, and now this. It "

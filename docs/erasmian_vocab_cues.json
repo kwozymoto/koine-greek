@@ -626,11 +626,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 428,
-  "tts": "ah koo oh",
-  "source": "composed",
-  "duration_s": 1.396,
-  "sha1": "242ad048b9a3",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈkuː.oː/",
+  "source": "batch25l",
+  "duration_s": 0.914,
+  "sha1": "1d8b40b86f3c",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_40_a"
  },
  {
   "index": 41,
@@ -672,11 +673,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 413,
-  "tts": "pah tayr",
-  "source": "composed",
-  "duration_s": 0.966,
-  "sha1": "bb81567ade1b",
-  "note": "every beat of this cue has been heard IN THIS POSITION in another word (pah from παραδίδωμι; tayr from μήτηρ), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
+  "tts": "/paˈteːr/",
+  "source": "batch25l",
+  "duration_s": 0.836,
+  "sha1": "202d2df9b24e",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_43_a"
  },
  {
   "index": 44,
@@ -687,11 +689,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 389,
-  "tts": "hay meh rah",
-  "source": "composed",
-  "duration_s": 1.159,
-  "sha1": "d87c3d43571b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/heːˈme.ra/",
+  "source": "batch25l",
+  "duration_s": 1.384,
+  "sha1": "6e4773ad6175",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_44_a"
  },
  {
   "index": 45,
@@ -812,11 +815,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 319,
-  "tts": "heh ow too",
-  "source": "composed",
-  "duration_s": 1.379,
-  "sha1": "101d68e426bc",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/heau̯ˈtuː/",
+  "source": "batch25l",
+  "duration_s": 1.149,
+  "sha1": "13cc589d2ff2",
+  "note": "the pre-stress dot removed, by the screen",
+  "take": "b25l_52_a"
  },
  {
   "index": 53,
@@ -843,11 +847,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 296,
-  "tts": "lah leh oh",
-  "source": "composed",
-  "duration_s": 1.703,
-  "sha1": "033e3a9f45d5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/laˈle.oː/",
+  "source": "batch25l",
+  "duration_s": 0.993,
+  "sha1": "2a5c241f4a1c",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_54_a"
  },
  {
   "index": 55,
@@ -920,12 +925,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 250,
-  "tts": "gey",
-  "source": "composed",
-  "duration_s": 0.713,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "3b8b5de3142c"
+  "tts": "/ˈɡeː/",
+  "source": "batch25l",
+  "duration_s": 0.758,
+  "take": "b25l_59_a",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "sha1": "7b2f8427e5fe"
  },
  {
   "index": 60,
@@ -1016,11 +1021,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 231,
-  "tts": "ah po kree no my",
-  "source": "composed",
-  "duration_s": 2.139,
-  "sha1": "ce301c422abd",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/apɒˈkri.nɒ.mai̯/",
+  "source": "batch25l",
+  "duration_s": 1.384,
+  "sha1": "64620d247ad9",
+  "note": "the pre-stress dot removed, by the screen",
+  "take": "b25l_65_a"
  },
  {
   "index": 66,
@@ -1064,11 +1070,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 220,
-  "tts": "hoo po",
-  "source": "composed",
-  "duration_s": 0.934,
-  "sha1": "61a43d0b9f9e",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/huˈpɒ/",
+  "source": "batch25l",
+  "duration_s": 0.836,
+  "sha1": "459ef0bbaabc",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_68_a"
  },
  {
   "index": 69,
@@ -1126,11 +1133,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 215,
-  "tts": "teh",
-  "source": "composed",
-  "duration_s": 0.555,
-  "sha1": "3ad98813fef1",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈte/",
+  "source": "batch25l",
+  "duration_s": 0.679,
+  "sha1": "b61ddade80a0",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_72_a"
  },
  {
   "index": 73,
@@ -1141,11 +1149,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 210,
-  "tts": "doo nah my",
-  "source": "composed",
-  "duration_s": 1.314,
-  "sha1": "bc3da9a27176",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈdu.na.mai̯/",
+  "source": "batch25l",
+  "duration_s": 1.071,
+  "sha1": "eecd8e9b6253",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_73_a"
  },
  {
   "index": 74,
@@ -1170,11 +1179,12 @@
   "pos": "adv",
   "tier": 1,
   "freq": 208,
-  "tts": "hoo tohs",
-  "source": "composed",
-  "duration_s": 0.886,
-  "sha1": "eee6e52f9f47",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhuː.toːs/",
+  "source": "batch25l",
+  "duration_s": 1.384,
+  "sha1": "d4118dfb3ea6",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_75_a"
  },
  {
   "index": 76,
@@ -1294,11 +1304,12 @@
   "pos": "conj",
   "tier": 2,
   "freq": 182,
-  "tts": "kah thohs",
-  "source": "composed",
-  "duration_s": 1.335,
-  "sha1": "205210d31791",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈθoːs/",
+  "source": "batch25l",
+  "duration_s": 1.071,
+  "sha1": "eede8aad7e1a",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_83_a"
  },
  {
   "index": 84,
@@ -1429,11 +1440,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 162,
-  "tts": "bah see lay ah",
-  "source": "composed",
-  "duration_s": 2.446,
-  "sha1": "de33c3d01f37",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/basɪˈlei̯.a/",
+  "source": "batch25l",
+  "duration_s": 1.149,
+  "sha1": "3350219958ed",
+  "note": "the converter own output, and the cue that found a hole in the screen rather than in itself: basileia decoded basilaija, the word said correctly, and the hiatus tolerance missed it because the hiatus sits across a diphthong whose glide is not a vowel",
+  "take": "b25l_92_a"
  },
  {
   "index": 93,
@@ -1648,11 +1660,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 148,
-  "tts": "kah leh oh",
-  "source": "composed",
-  "duration_s": 1.71,
-  "sha1": "6e9fdfb52a5c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈle.oː/",
+  "source": "batch25l",
+  "duration_s": 0.993,
+  "sha1": "241065cd7176",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_106_a"
  },
  {
   "index": 107,
@@ -2119,11 +2132,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 117,
-  "tts": "ah pehr kho my",
-  "source": "composed",
-  "duration_s": 1.892,
-  "sha1": "b531febadaf1",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈper.kɒ.mai̯/",
+  "source": "batch25l",
+  "duration_s": 1.881,
+  "sha1": "0b8792685a0e",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_136_a"
  },
  {
   "index": 137,
@@ -2150,11 +2164,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 116,
-  "tts": "ah gah pay",
-  "source": "composed",
-  "duration_s": 1.587,
-  "sha1": "91b201d79e44",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈɡa.peː/",
+  "source": "batch25l",
+  "duration_s": 1.071,
+  "sha1": "be20f16625c5",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_138_a"
  },
  {
   "index": 139,
@@ -2214,11 +2229,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 114,
-  "tts": "kree noh",
-  "source": "composed",
-  "duration_s": 1.199,
-  "sha1": "1bb873cfd18c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈkri.noː/",
+  "source": "batch25l",
+  "duration_s": 1.306,
+  "sha1": "10b6f7afbcc2",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_142_a"
  },
  {
   "index": 143,
@@ -2293,11 +2309,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 109,
-  "tts": "ah lay thay ah",
-  "source": "composed",
-  "duration_s": 2.2,
-  "sha1": "d606c2ebdf2a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈleː.θei̯.a/",
+  "source": "batch25l",
+  "duration_s": 1.698,
+  "sha1": "3a99de00a48d",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_147_a"
  },
  {
   "index": 148,
@@ -2396,11 +2413,12 @@
   "pos": "adv",
   "tier": 2,
   "freq": 95,
-  "tts": "eh kay",
-  "source": "composed",
-  "duration_s": 1.115,
-  "sha1": "18d5f71d0819",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛˈkei̯/",
+  "source": "batch25l",
+  "duration_s": 0.914,
+  "sha1": "ff400ff3ed91",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_154_a"
  },
  {
   "index": 155,
@@ -2485,11 +2503,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 101,
-  "tts": "eye roh",
-  "source": "composed",
-  "duration_s": 0.947,
-  "sha1": "6567174a4c58",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈai̯.roː/",
+  "source": "batch25l",
+  "duration_s": 0.993,
+  "sha1": "5f7aaf36a29a",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_160_a"
  },
  {
   "index": 161,
@@ -2578,11 +2597,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 100,
-  "tts": "tee thay mee",
-  "source": "composed",
-  "duration_s": 1.789,
-  "sha1": "d2c3a3d25cba",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈti.θeː.mɪ/",
+  "source": "batch25l",
+  "duration_s": 1.306,
+  "sha1": "abfeb07716af",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_166_a"
  },
  {
   "index": 167,
@@ -2737,11 +2757,12 @@
   "pos": "prep",
   "tier": 3,
   "freq": 94,
-  "tts": "eh noh pee on",
-  "source": "composed",
-  "duration_s": 1.408,
-  "sha1": "8465058dd66f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛˈnoː.pɪ.ɒn/",
+  "source": "batch25l",
+  "duration_s": 1.384,
+  "sha1": "ee11ddb37d45",
+  "note": "the converter own output, and a FALSE POSITIVE of the new spelling detector: enopion tokenises as N-O-P purely because en, ou and pi are ordinary Greek syllables. The threshold went from three to four, which every confirmed spelling clears and this does not",
+  "take": "b25l_176_a"
  },
  {
   "index": 177,
@@ -2813,11 +2834,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 92,
-  "tts": "ay ray nay",
-  "source": "composed",
-  "duration_s": 1.4,
-  "sha1": "66596bb10782",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ei̯ˈreː.neː/",
+  "source": "batch25l",
+  "duration_s": 1.698,
+  "sha1": "ee14ccac06f1",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_181_a"
  },
  {
   "index": 182,
@@ -2844,11 +2866,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 91,
-  "tts": "kah thay my",
-  "source": "composed",
-  "duration_s": 1.293,
-  "sha1": "3fe5bdf39e42",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈka.θeː.mai̯/",
+  "source": "batch25l",
+  "duration_s": 1.149,
+  "sha1": "5e89aebf09c7",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_183_a"
  },
  {
   "index": 184,
@@ -2919,11 +2942,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 87,
-  "tts": "oo teh",
-  "source": "composed",
-  "duration_s": 0.845,
-  "sha1": "10101bb5fa52",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈuː.te/",
+  "source": "batch25l",
+  "duration_s": 1.541,
+  "sha1": "7d08baaf2a43",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_188_a"
  },
  {
   "index": 189,
@@ -3031,11 +3055,12 @@
   "pos": "pron",
   "tier": 3,
   "freq": 84,
-  "tts": "kah goh",
-  "source": "composed",
-  "duration_s": 1.025,
-  "sha1": "6879e338f66d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈɡoː/",
+  "source": "batch25l",
+  "duration_s": 0.914,
+  "sha1": "b9d65ee1cd5e",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_195_a"
  },
  {
   "index": 196,
@@ -3090,11 +3115,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 79,
-  "tts": "hoo pah goh",
-  "source": "composed",
-  "duration_s": 1.375,
-  "sha1": "9022205c43e9",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/huˈpa.ɡoː/",
+  "source": "batch25l",
+  "duration_s": 0.993,
+  "sha1": "dd59f0e3e920",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_199_a"
  },
  {
   "index": 200,
@@ -3277,11 +3303,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 54,
-  "tts": "ew ahng geh lee dzoh",
-  "source": "composed",
-  "duration_s": 2.178,
-  "sha1": "0582613ccff4",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/juaŋɡeˈliʣoː/",
+  "source": "batch25l",
+  "duration_s": 1.881,
+  "sha1": "e221cef5461c",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot",
+  "take": "b25l_211_a"
  },
  {
   "index": 212,
@@ -3454,12 +3481,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 52,
-  "tts": "eh pang geh lee ah",
-  "source": "composed",
-  "duration_s": 1.826,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "3c0344a805b3"
+  "tts": "/ɛ.paŋ.ɡeˈli.a/",
+  "source": "batch25l",
+  "duration_s": 1.62,
+  "take": "b25l_222_a",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "sha1": "d30ab6ee8390"
  },
  {
   "index": 223,
@@ -3708,11 +3735,12 @@
   "pos": "particle",
   "tier": 2,
   "freq": 171,
-  "tts": "ahn",
-  "source": "composed",
-  "duration_s": 0.725,
-  "sha1": "553a286a97c5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈan/",
+  "source": "batch25l",
+  "duration_s": 0.679,
+  "sha1": "f704b82837f7",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_238_a"
  },
  {
   "index": 239,
@@ -3739,11 +3767,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 102,
-  "tts": "ho teh",
-  "source": "composed",
-  "duration_s": 0.822,
-  "sha1": "52317c837986",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhɒ.te/",
+  "source": "batch25l",
+  "duration_s": 1.071,
+  "sha1": "e2fd33646b3b",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_240_a"
  },
  {
   "index": 241,
@@ -3786,11 +3815,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 86,
-  "tts": "ahr khoh",
-  "source": "composed",
-  "duration_s": 0.926,
-  "sha1": "6c6672986be9",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈar.koː/",
+  "source": "batch25l",
+  "duration_s": 0.836,
+  "sha1": "7808458d88e0",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_243_a"
  },
  {
   "index": 244,
@@ -4128,11 +4158,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 72,
-  "tts": "pee noh",
-  "source": "composed",
-  "duration_s": 0.725,
-  "sha1": "1ad5f1c00171",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpi.noː/",
+  "source": "batch25l",
+  "duration_s": 0.758,
+  "sha1": "bd1f3d274506",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_265_a"
  },
  {
   "index": 266,
@@ -4172,11 +4203,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 70,
-  "tts": "eye teh oh",
-  "source": "composed",
-  "duration_s": 1.837,
-  "sha1": "13c6cd6a0283",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ai̯ˈte.oː/",
+  "source": "batch25l",
+  "duration_s": 1.149,
+  "sha1": "894c87d5d541",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_268_a"
  },
  {
   "index": 269,
@@ -4581,12 +4613,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 60,
-  "tts": "hoo par khoh",
-  "source": "composed",
-  "duration_s": 1.37,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "4b74ad3a692a"
+  "tts": "/huˈpar.koː/",
+  "source": "batch25l",
+  "duration_s": 1.228,
+  "take": "b25l_294_a",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "sha1": "ddcb771530b5"
  },
  {
   "index": 295,
@@ -4769,11 +4801,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 56,
-  "tts": "deh kho my",
-  "source": "composed",
-  "duration_s": 1.958,
-  "sha1": "1e698aa9edd5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈde.kɒ.mai̯/",
+  "source": "batch25l",
+  "duration_s": 1.071,
+  "sha1": "db1a610dfd5e",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_306_a"
  },
  {
   "index": 307,
@@ -5016,11 +5049,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 50,
-  "tts": "pah rah bo lay",
-  "source": "composed",
-  "duration_s": 1.805,
-  "sha1": "749eadafdadb",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pa.ra.bɒˈleː/",
+  "source": "batch25l",
+  "duration_s": 1.959,
+  "sha1": "e4b8187666af",
+  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
+  "take": "b25l_322_a"
  },
  {
   "index": 323,
