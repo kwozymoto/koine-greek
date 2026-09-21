@@ -517,11 +517,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 525,
-  "tts": "tiss",
-  "source": "composed",
-  "duration_s": 0.705,
-  "sha1": "02f67aa30dcb",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈtɪs/",
+  "source": "batch25j",
+  "duration_s": 0.679,
+  "sha1": "b5ecc55d5560",
+  "note": "THE SHUT IOTA, per-word, and the first time this project has hit a limit in the SOURCE rather than in its rules. tis is transcribed tis and prin is transcribed prin -- identical in shape, a stressed bare i with one consonant after -- and prin was approved as PREEN, correctly, its iota being long by nature. tis is short. The transcription does not mark vowel length, so no rule can separate them. 525 occurrences",
+  "take": "b25j_33_a"
  },
  {
   "index": 34,
@@ -1867,11 +1868,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 135,
-  "tts": "doo o",
-  "source": "composed",
-  "duration_s": 1.041,
-  "sha1": "914ab6b1f6a8",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈdu.ɒ/",
+  "source": "batch25j",
+  "duration_s": 0.914,
+  "sha1": "1440adf1aa9d",
+  "note": "the converter own output, from the seventh frequency-spread sample",
+  "take": "b25j_120_a"
  },
  {
   "index": 121,
@@ -4451,11 +4453,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 62,
-  "tts": "eh roh tah oh",
-  "source": "composed",
-  "duration_s": 1.694,
-  "sha1": "e44231eb300f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛ.roːˈta.oː/",
+  "source": "batch25j",
+  "duration_s": 1.306,
+  "sha1": "e592fa3bc7a6",
+  "note": "the converter own output, from the seventh frequency-spread sample",
+  "take": "b25j_286_a"
  },
  {
   "index": 287,

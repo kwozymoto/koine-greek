@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v202';
+const VERSION = 'v203';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,20 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v203: batch 25J, seven of twelve -- the weakest sample yet, and four
+     of the five failures were the dot. τις settled at 525 occurrences,
+     per-word, because the transcription cannot tell it from πρίν: both
+     are written with a stressed bare i and one consonant after, and πρίν
+     is right as PREEN. The pack does not mark vowel length, so no rule
+     separates them -- the first limit this project has hit in its SOURCE
+     rather than in its rules. */
+  'audio/vocab/033_tis.mp3',
+  'audio/vocab/120_duo.mp3',
+  'audio/vocab/286_erotao.mp3',
+  'audio/vocab/484_paraklesis.mp3',
+  'audio/vocab/654_upsoo.mp3',
+  'audio/vocab/692_stephanos.mp3',
+  'audio/vocab/738_desmios.mp3',
   /* v202: batch 25I, ten of twelve; six samples stand at 67 of 72. The
      unheard population is 220 cues and 11,969 occurrences, NOT the 275
      quoted since batch 25B -- ipa_cue's HEARD set had never been told

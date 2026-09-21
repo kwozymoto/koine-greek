@@ -709,6 +709,20 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    33: "THE SHUT ɪ, per-word — and the first limit this project has hit "
+        "in its SOURCE rather than in its rules. \"This sounds like tees "
+        "rather than tis, an i sound as in hiss.\" τις is transcribed `ˈtis` and "
+        "πρίν `ˈprin` — identical in shape, a stressed bare i with one "
+        "consonant after — and πρίν was approved as PREEN, correctly, its "
+        "iota being long by nature where τις's is short. The pack's "
+        "transcription does not mark vowel length, so NO RULE CAN SEPARATE "
+        "THEM and no amount of work on the converter would have found this. "
+        "525 occurrences",
+    654: "the OPEN o. The short-o rule gave this the open-back rounded ɒ, "
+         "and after the `ps` cluster it read as *sah* rather than *soh*. The "
+         "symbol that fixed it is the one the pack already uses for a short o "
+         "shut in by an r — πορνεία — so the inventory had it and only the "
+         "position was new",
     396: "the pre-stress dot removed, by the screen, after the string said its dot on two of three rolls. Approved with a note — \"A is "
          "good, but there is a bit of a delay between θe and mɪ\": the dot "
          "that remains, doing slightly too much work",

@@ -2186,10 +2186,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 20,
-  "tts": "hoo pso oh",
-  "source": "worklist-candidate",
-  "duration_s": 2.136,
-  "sha1": "79ec324441e8"
+  "tts": "/huˈpsɔ.oː/",
+  "source": "batch25j",
+  "duration_s": 1.306,
+  "sha1": "9f0a55043a94",
+  "take": "b25j_654_a",
+  "note": "the OPEN o. The short-o rule gave this an open-back rounded vowel and after the ps cluster it read as sah rather than soh. The symbol that fixed it is the one the pack already uses for a short o shut in by an r"
  },
  {
   "index": 655,
@@ -2763,11 +2765,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "steh fah noss",
-  "source": "composed",
-  "duration_s": 1.488,
-  "sha1": "242178208186",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈste.fa.nɒs/",
+  "source": "batch25j",
+  "duration_s": 1.463,
+  "sha1": "7c062b807771",
+  "note": "the converter own output, from the seventh frequency-spread sample",
+  "take": "b25j_692_a"
  },
  {
   "index": 693,
@@ -3469,12 +3472,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "des mee oss",
-  "source": "rollout",
-  "duration_s": 1.262,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "8af2277722b9"
+  "tts": "/ˈdes.mɪ.ɒs/",
+  "source": "batch25j",
+  "duration_s": 1.228,
+  "take": "b25j_738_a",
+  "note": "the converter own output, from the seventh frequency-spread sample",
+  "sha1": "54d6608b46ba"
  },
  {
   "index": 739,

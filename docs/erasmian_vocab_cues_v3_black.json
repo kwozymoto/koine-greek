@@ -230,11 +230,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "pah rah klay sis",
-  "source": "composed",
-  "duration_s": 2.076,
-  "sha1": "04425019e7f7",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/paˈra.kleː.sɪs/",
+  "source": "batch25j",
+  "duration_s": 1.228,
+  "sha1": "bdc50a45b48a",
+  "note": "the converter own output, from the seventh frequency-spread sample",
+  "take": "b25j_484_a"
  },
  {
   "index": 485,
