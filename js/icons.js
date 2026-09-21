@@ -57,6 +57,7 @@ const ICON_KIND = {
    tools/check_icons.py fails if one is left to that fallback by accident. */
 const DRILL_KIND = {
   "Vocabulary due now": "card",
+  "Flash cards": "card",
   "Learn 5 new words": "card",
   "Greek → English": "choose",
   "English → Greek": "choose",
@@ -310,6 +311,10 @@ const DRILL_STATIC = [
   "Listening — letters", "Listening — words", "Parsing builder",
   "Parse a real form", "Principal parts", "Look-alikes", "Write the letters",
   "Write it from memory", "Read a sentence", "Daily mix",
+  /* The picker itself never changes; what is in a set does, and the focus
+     panel is where that count is shown, beside the Drill all button. A
+     badge here would have to name a set before one is chosen. */
+  "Flash cards",
 ];
 
 function drillState(title) {

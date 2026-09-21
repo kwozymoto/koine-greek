@@ -556,7 +556,11 @@ function focusKnown(f){
   return f.deck.filter(([i])=>S.cards[i] && +S.cards[i].ivl>=6).length
        + f.lex.filter(([l])=>S.lcards&&S.lcards[l] && +S.lcards[l].ivl>=6).length;
 }
-const focusRef=f=>f ? `${f.t} ${f.n}${f.lo?`:${f.lo}${f.hi>f.lo?"–"+f.hi:""}`:""}` : "";
+/* A focus built from a chapter or a query carries its own name; one built
+   from a passage is named by its reference. One line covers every caller —
+   the toast, Today's rows and the focusDone history alike. */
+const focusRef=f=>!f ? "" : f.label
+  || `${f.t} ${f.n}${f.lo?`:${f.lo}${f.hi>f.lo?"–"+f.hi:""}`:""}`;
 
 function focusDueList(f){
   const d=f.deck.map(([i])=>i).filter(isDue);
@@ -585,7 +589,8 @@ function startFocusReview(){
 }
 function startFocusNew(n=5){
   const f=S.focus, fresh=focusFresh(f,n);
-  if(!fresh.length){ toast("Every word in this passage has been started"); return; }
+  if(!fresh.length){ toast(f.label?`Every word in ${f.label} has been started`
+                                  :"Every word in this passage has been started"); return; }
   const q=[]; const words=[];
   fresh.forEach(([kind,x,count,verse])=>{
     if(kind==="d"){ q.push(flashcard(x)); words.push(x); }
@@ -598,7 +603,11 @@ function startFocusNew(n=5){
    whole day: the point of the words is the verses. */
 function openFocusPassage(){
   const f=S.focus;
-  if(f) openGntChapter(f.a,f.ch);
+  /* A set built from a chapter or a query has no passage to open. Today
+     already withholds the row (it needs mode "all", which only setFocus
+     writes), but the function must not be reachable by some later route
+     and call openGntChapter(undefined). */
+  if(f && f.a) openGntChapter(f.a,f.ch);
   if(PLAN_TASK==="passage"){ planTick("passage"); PLAN_TASK=null; }
 }
 
@@ -637,6 +646,139 @@ function clearFocus(done){
   render();
   if(typeof paintGntTools==="function") paintGntTools();
 }
+/* ============================================================
+   DECKS — a focus built from something other than a passage
+   ------------------------------------------------------------
+   THE GAP THIS FILLS, exactly: startLessonWords introduces a chapter's
+   unstarted words and its button disables once they are all started, so a
+   chapter's vocabulary cannot be gathered again afterwards. For an app worked
+   through a chapter a week that is the obvious missing move.
+
+   Nothing here is a new deck model. S.focus already holds {deck, lex} and
+   every consumer — focusDueList, focusFresh, startFocusReview, startFocusNew,
+   Today's rows, focusDone, and the merge in sync.js — reads only those two
+   arrays. So a set is a focus with a label instead of a reference, and it
+   inherits all of that for free. A new top-level state key would have needed
+   mergeStates, sig(), saneState, resetAll and a guarded read site; this needs
+   none of them.
+
+   mode is "vocab" rather than "all" because Today offers "Read <ref>" only on
+   "all", and a set has nothing to read. */
+function setFocusFrom(label, indices, quiet){
+  const seen=new Set(), deck=[];
+  indices.forEach(i=>{
+    if(!VOCAB[i] || RETIRED.has(i) || seen.has(i)) return;
+    seen.add(i); deck.push([i,1,0]);
+  });
+  if(!deck.length){ toast("No words in that set"); return false; }
+  S.focus={ label, kind:"set", mode:"vocab", started:today(),
+            deck, lex:[], bare:[] };
+  save();
+  if(!quiet) toast(`${label} — ${deck.length} word${deck.length===1?"":"s"}`);
+  if(typeof paintGntTools==="function") paintGntTools();
+  return true;
+}
+
+/* Every set worth having is a QUERY over data the app already holds, which is
+   why there is no deck builder here to tick forty boxes in. */
+function deckSets(){
+  const started=i=>!!S.cards[i], live=i=>!skipWord(i);
+  const all=VOCAB.map((_,i)=>i).filter(live);
+  const sets=[];
+  (typeof LESSONS!=="undefined"?LESSONS:[]).forEach(l=>{
+    const v=(l.v||[]).filter(live);
+    if(v.length) sets.push({g:"Chapters", label:`Chapter ${l.id}`,
+                            sub:l.t||"", ids:v});
+  });
+  const pos={};
+  all.forEach(i=>{ const p=VOCAB[i][3]; if(p) (pos[p]=pos[p]||[]).push(i); });
+  Object.keys(pos).sort((a,b)=>pos[b].length-pos[a].length).forEach(p=>{
+    if(pos[p].length>=8) sets.push({g:"Kind of word", label:p,
+                                    sub:`${pos[p].length} words`, ids:pos[p]});
+  });
+  const byFreq=[...all].sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
+  sets.push({g:"How common", label:"The commonest 100",
+             sub:"where reading stalls least", ids:byFreq.slice(0,100)});
+  sets.push({g:"How common", label:"The rarest 100",
+             sub:"the long tail of the deck", ids:byFreq.slice(-100)});
+  const leech=all.filter(isLeech);
+  if(leech.length) sets.push({g:"Where you are", label:"Sticking points",
+    sub:`${leech.length} you have lost ${LEECH_AT}+ times`, ids:leech});
+  const fresh=all.filter(i=>!started(i));
+  if(fresh.length) sets.push({g:"Where you are", label:"Not started yet",
+    sub:`${fresh.length} words`, ids:fresh});
+  const settled=all.filter(i=>S.cards[i] && +S.cards[i].ivl>=6);
+  if(settled.length) sets.push({g:"Where you are", label:"Settled",
+    sub:`${settled.length} at six days or longer`, ids:settled});
+  const noted=all.filter(i=>noteOf(i));
+  if(noted.length) sets.push({g:"Where you are", label:"Words you noted",
+    sub:`${noted.length} with a note`, ids:noted});
+  return sets;
+}
+
+let DECK_SETS=[];
+function openDeckPicker(){
+  DECK_SETS=deckSets();
+  const groups=[];
+  DECK_SETS.forEach((d,i)=>{
+    const g=groups.find(x=>x[0]===d.g) || (groups.push([d.g,[]]), groups[groups.length-1]);
+    g[1].push(i);
+  });
+  document.getElementById("deckList").innerHTML=groups.map(([g,ix])=>
+    `<h4>${g}</h4>`+ix.map(i=>{
+      const d=DECK_SETS[i];
+      return `<button class="deckrow" onclick="pickDeck(${i})">
+        <span class="t"><b>${d.label}</b><span>${d.sub||""}</span></span>
+        <span class="n">${d.ids.length}</span></button>`;
+    }).join("")).join("");
+  const sc=document.getElementById("deckScrim");
+  if(sc) sc.hidden=false;
+}
+function closeDeckPicker(){
+  const sc=document.getElementById("deckScrim"); if(sc) sc.hidden=true;
+}
+function pickDeck(n){
+  const d=DECK_SETS[n]; if(!d) return;
+  /* ONE FOCUS AT A TIME is the existing model, so choosing a set replaces a
+     passage you may be part way through. Say so rather than discarding it
+     silently — and do not write a focusDone row, which would claim the
+     passage was finished. */
+  const f=S.focus;
+  if(f && !f.label && !confirm(
+      `This replaces your focus on ${focusRef(f)}. Its words stay on the `
+      + `schedule. Continue?`)) return;
+  if(setFocusFrom(d.label, d.ids)){ closeDeckPicker(); render(); }
+}
+
+/* DRILL ALL, and this is the button the feature exists for. startFocusReview
+   shows only what is DUE, which for a chapter finished a month ago is often
+   nothing at all — so a set gets a second way to run that ignores the
+   schedule entirely. PRACTICE is the app's existing answer to that: grade()
+   skips schedule() and the review count under it, while still paying XP. If
+   this ever moved an interval it would quietly corrupt the schedule of the
+   very words it is meant to help, so that is the one thing to test rather
+   than assume. */
+function startFocusDrill(){
+  const f=S.focus;
+  if(!f){ toast("Choose a set first"); return; }
+  const words=f.deck.map(([i])=>i).filter(i=>VOCAB[i] && !skipWord(i));
+  if(!words.length){ toast("Nothing in this set to drill"); return; }
+  PRACTICE=true;
+  const q=words.slice().sort(()=>Math.random()-.5).map(flashcard);
+  q.__words=words;
+  startSession(q,"d");
+}
+
+/* From a chapter page: the same set, built and run in one tap, because that
+   is where the want arises. Unlike "Learn five of them" this does not care
+   whether the words have been started. */
+function drillChapterWords(id){
+  const l=LESSONS.find(x=>x.id===id); if(!l) return;
+  const v=(l.v||[]).filter(i=>VOCAB[i] && !skipWord(i));
+  if(!v.length){ toast("No words in this chapter"); return; }
+  if(setFocusFrom(`Chapter ${id}`, v, true)) startFocusDrill();
+}
+
 function toggleFocusMode(){
   if(!S.focus) return;
   S.focus.mode=S.focus.mode==="vocab"?"all":"vocab";
@@ -1030,7 +1172,8 @@ function todaysPlan(){
       run:()=>openFocusPassage()});
     if(due.n) tasks.push({id:"review", mins:Math.max(1,Math.round(due.n*8/60)),
       label:`Review ${due.n} from ${ref}`,
-      sub:"Only this passage's words — the rest of the deck waits",
+      sub:f.label?"Only this set — the rest of the deck waits"
+                 :"Only this passage's words — the rest of the deck waits",
       run:()=>startFocusReview()});
     if(fresh.length) tasks.push({id:"new", mins:2,
       label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
@@ -1257,15 +1400,18 @@ function render(){
     return `<div class="card focus">
       <div class="between" style="align-items:flex-start">
         <div><h3 style="margin:0">${focusRef(f)}</h3>
-          <span class="muted" style="font-size:.78rem">${f.deck.length} from the course · ${f.lex.length} beyond it${
-            f.bare&&f.bare.length?` · ${f.bare.length} with no gloss`:""}</span></div>
+          <span class="muted" style="font-size:.78rem">${f.label
+            ?`${f.deck.length} word${f.deck.length===1?"":"s"} · drilling does not touch the schedule`
+            :`${f.deck.length} from the course · ${f.lex.length} beyond it${
+              f.bare&&f.bare.length?` · ${f.bare.length} with no gloss`:""}`}</span></div>
         <span class="muted" style="font-size:.78rem;white-space:nowrap">${known}/${all}</span>
       </div>
       <div class="prog-bar" style="margin:10px 0 8px"><i style="width:${pc}%"></i></div>
       <span class="muted" style="font-size:.76rem">settled — six days or longer between reviews</span>
       <div class="row" style="margin-top:12px">
-        <button class="btn ghost small" onclick="toggleFocusMode()">${
-          f.mode==="all"?"Whole plan":"Vocabulary only"}</button>
+        ${f.label?`<button class="btn ghost small" onclick="startFocusDrill()">Drill all ${f.deck.length}</button>`
+          :`<button class="btn ghost small" onclick="toggleFocusMode()">${
+          f.mode==="all"?"Whole plan":"Vocabulary only"}</button>`}
         <button class="btn ghost small" onclick="clearFocus(true)">Mark complete</button>
         <button class="mini" style="margin-left:auto" onclick="clearFocus(false)" aria-label="Stop focusing">✕</button>
       </div>
@@ -1825,7 +1971,10 @@ function openLesson(id){
     <button class="btn ghost" onclick="startLessonWords(${id})"${lessonWordsLeft(id)?"":" disabled"}>${
       lessonWordsLeft(id)>=5?"Learn five of them"
       :lessonWordsLeft(id)?`Learn the remaining ${lessonWordsLeft(id)}`
-      :"All of them started"}</button>`:""}
+      :"All of them started"}</button>
+    <button class="btn ghost" style="margin-left:8px" onclick="drillChapterWords(${id})">Drill all ${(l.v||[]).length}</button>
+    <p class="muted" style="font-size:.78rem;margin:9px 0 0">Flash cards for the whole chapter, whether or not
+      you have started them. Practice only — it pays experience and leaves the schedule alone.</p>`:""}
     <h2>Test yourself</h2>
     <p class="muted" style="font-size:.87rem">All ${l.quiz.length} questions in one go, with no reading in between. Retrieval beats rereading — attempt each one before you look.</p>
     <button class="btn ghost" onclick="lessonQuiz(${id})">Start the test</button>
@@ -2598,13 +2747,14 @@ const DRILLS=[
 ["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
 ["Write a real form","Name the slot, type the word — no options to choose from",()=>startSession(typeDrill(),"d")],
 ["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],
-["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")]
+["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")],
+["Flash cards","Pick a set — a chapter, a kind of word, your sticking points — and drill it",()=>openDeckPicker()]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
 const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
-                "Listening — words","Write it from memory"],
+                "Listening — words","Write it from memory","Flash cards"],
   "Reading":["Read a sentence","Case functions"],
   "Everything":["Daily mix"],
   "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Write a real form","Principal parts"],
@@ -3424,18 +3574,29 @@ function saneState(x){
     && (keyIsLemma ? lok(r[0])
                    : Number.isInteger(+r[0]) && +r[0]>=0 && +r[0]<VOCAB.length)
     && Number.isFinite(+r[1]) && Number.isFinite(+r[2]);
+  /* A FOCUS NOW COMES FROM TWO PLACES and this has to admit both. It used to
+     require a, ch and t — all passage fields — so a focus built from a chapter
+     or a query was dropped to null on every import and every restore, losing
+     the deck silently. Caught by testing the round trip rather than by
+     reading: the set survived a save and reload perfectly well, because
+     saneState only runs on the way in. */
   const fx=x.focus;
-  out.focus=(fx && typeof fx==="object" && typeof fx.a==="string"
-    && Number.isInteger(+fx.ch) && +fx.ch>=0 && typeof fx.t==="string"
-    && Array.isArray(fx.deck) && Array.isArray(fx.lex))
-    ? { a:fx.a.slice(0,8), ch:+fx.ch, t:fx.t.slice(0,40), n:+fx.n||(+fx.ch+1),
-        lo:Number.isFinite(+fx.lo)&&+fx.lo>0?+fx.lo:null,
-        hi:Number.isFinite(+fx.hi)&&+fx.hi>0?+fx.hi:null,
-        mode:fx.mode==="vocab"?"vocab":"all",
+  const fxCommon=fx && typeof fx==="object"
+    && Array.isArray(fx.deck) && Array.isArray(fx.lex);
+  const fxRows=fx?{
         started:/^\d{4}-\d{2}-\d{2}$/.test(fx.started)?fx.started:today(),
         deck:fx.deck.filter(r=>focusRow(r,false)).map(r=>[+r[0],+r[1],+r[2]]).slice(0,600),
         lex:fx.lex.filter(r=>focusRow(r,true)).map(r=>[r[0],+r[1],+r[2]]).slice(0,600),
-        bare:(Array.isArray(fx.bare)?fx.bare:[]).filter(lok).slice(0,200) }
+        bare:(Array.isArray(fx.bare)?fx.bare:[]).filter(lok).slice(0,200)}:null;
+  out.focus =
+    (fxCommon && typeof fx.a==="string" && Number.isInteger(+fx.ch)
+       && +fx.ch>=0 && typeof fx.t==="string")
+    ? { a:fx.a.slice(0,8), ch:+fx.ch, t:fx.t.slice(0,40), n:+fx.n||(+fx.ch+1),
+        lo:Number.isFinite(+fx.lo)&&+fx.lo>0?+fx.lo:null,
+        hi:Number.isFinite(+fx.hi)&&+fx.hi>0?+fx.hi:null,
+        mode:fx.mode==="vocab"?"vocab":"all", ...fxRows }
+    : (fxCommon && typeof fx.label==="string" && fx.label.trim())
+    ? { label:fx.label.slice(0,40), kind:"set", mode:"vocab", ...fxRows }
     : null;
   out.focusDone=(Array.isArray(x.focusDone)?x.focusDone:[])
     .filter(r=>r && typeof r.ref==="string")

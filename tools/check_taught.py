@@ -108,6 +108,11 @@ PLAYABLE = set(re.findall(r'"([^"]+)"', m.group(1))) if m else set()
 DRILL_HOW = {
     "Vocabulary due now":
         ("TEACHES", "only cards you have met, and each shows its answer"),
+    "Flash cards":
+        ("TEACHES", "every card shows its own answer, and the sets are "
+         "drawn from the deck itself — a chapter you have reached, your "
+         "own sticking points, words you have noted. Drilling one is "
+         "PRACTICE: it pays experience and moves no interval"),
     "Learn 5 new words":
         ("TEACHES", "introduce(): five flashcards, then those same five asked"),
     "Greek → English":

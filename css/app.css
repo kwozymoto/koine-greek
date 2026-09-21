@@ -1021,3 +1021,22 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
   .lblk{padding-left:26px}
   .lplay{width:20px;height:20px}
 }
+
+/* The deck picker's list. Scrolls inside the sheet rather than growing it,
+   because Chapters alone is 26 rows and the sheet must stay reachable on a
+   phone. Rows follow the drill-card shape so the two read as one family. */
+.decklist{max-height:52vh;overflow-y:auto;margin:0 0 13px;-webkit-overflow-scrolling:touch}
+.decklist h4{margin:11px 0 6px;font-size:.72rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted)}
+.decklist h4:first-child{margin-top:0}
+.deckrow{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  width:100%;text-align:left;padding:9px 11px;margin:0 0 5px;border-radius:9px;
+  background:var(--surface);border:1px solid var(--line);color:inherit;
+  font:inherit;cursor:pointer}
+.deckrow:hover,.deckrow:focus-visible{border-color:var(--gold)}
+.deckrow .t{display:flex;flex-direction:column;gap:1px;min-width:0}
+.deckrow .t b{font-size:.87rem;font-weight:600}
+.deckrow .t span{font-size:.73rem;color:var(--muted);overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.deckrow .n{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;
+  flex:0 0 auto}

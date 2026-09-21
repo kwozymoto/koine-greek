@@ -167,6 +167,24 @@
      Android, outside the installed app, from the second visit, once.
      It asks for something typed, which is why it is a sheet rather than a
      fourth .install bar. -->
+<!-- THE DECK PICKER. A sheet rather than a screen because it is a choice
+     made on the way to something else, and because the scrim/sheet idiom and
+     its CSS already exist for the tester prompt below. The list is built at
+     open time by deckSets(), since every set in it is a query over the deck
+     and the answers change as the deck is learned. -->
+<div class="scrim" id="deckScrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="deckHead">
+    <h3 id="deckHead">Flash cards</h3>
+    <p>Choose a set. You can review only what the schedule says is due, or
+      drill the whole set without touching it.</p>
+    <div id="deckList" class="decklist"></div>
+    <div class="sacts">
+      <button class="btn ghost small" onclick="closeDeckPicker()">Close</button>
+    </div>
+    <button class="x" onclick="closeDeckPicker()" aria-label="Close">&times;</button>
+  </div>
+</div>
+
 <div class="scrim" id="testScrim" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="testHead">
     <h3 id="testHead">Help test the Android app</h3>
