@@ -420,11 +420,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 27,
-  "tts": "eh kay thehn",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "607f6e5cf812",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛˈkei̯.θen/",
+  "source": "batch25i",
+  "duration_s": 1.228,
+  "sha1": "acf4adfb13e7",
+  "note": "the converter own output, from the sixth frequency-spread sample",
+  "take": "b25i_538_a"
  },
  {
   "index": 539,
@@ -921,11 +922,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 24,
-  "tts": "tee mo theh oss",
-  "source": "composed",
-  "duration_s": 2.136,
-  "sha1": "799c6d67d2c6",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/tɪˈmɒ.θe.ɒs/",
+  "source": "batch25i",
+  "duration_s": 1.698,
+  "sha1": "37089365907d",
+  "note": "the converter own output, from the sixth frequency-spread sample",
+  "take": "b25i_571_a"
  },
  {
   "index": 572,
@@ -1402,10 +1404,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 22,
-  "tts": "makeh donee ah",
-  "source": "worklist-candidate",
-  "duration_s": 2.28,
-  "sha1": "1693480febe9"
+  "tts": "/ma.ke.dɒˈni.a/",
+  "source": "batch25i",
+  "duration_s": 2.586,
+  "sha1": "75f8646cd5b4",
+  "take": "b25i_603_a",
+  "note": "the converter own output, from the sixth frequency-spread sample"
  },
  {
   "index": 604,
@@ -2790,11 +2794,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 18,
-  "tts": "fah neh ross",
-  "source": "composed",
-  "duration_s": 1.656,
-  "sha1": "7fa5f5a2a913",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/fanɛˈrɒs/",
+  "source": "batch25i",
+  "duration_s": 1.228,
+  "sha1": "216d8fbc7449",
+  "note": "THE OPEN EPSILON, applied before the ear ever heard the converter output. That output came back twice with the unstressed e between n and r elided away entirely and no dot in the cue to blame. NOT A RULE: hiereus ships a plain e before a stressed r with an ear approval, and the only thing separating them is a consonant before the vowel rather than a vowel",
+  "take": "b25i_694_a"
  },
  {
   "index": 695,
@@ -3496,11 +3501,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "day nah ree on",
-  "source": "composed",
-  "duration_s": 1.872,
-  "sha1": "5d7337a460e5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/deːˈna.rɪ.ɒn/",
+  "source": "batch25i",
+  "duration_s": 1.463,
+  "sha1": "44da721310eb",
+  "note": "the converter own output, from the sixth frequency-spread sample",
+  "take": "b25i_740_a"
  },
  {
   "index": 741,
@@ -4128,10 +4134,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 15,
-  "tts": "aytah",
-  "source": "worklist-candidate",
-  "duration_s": 0.84,
-  "sha1": "56450e7ffd8b"
+  "tts": "/ˈei̯.ta/",
+  "source": "batch25i",
+  "duration_s": 0.993,
+  "sha1": "8a7b4d15b2f4",
+  "take": "b25i_781_a",
+  "note": "the converter own output, from the sixth frequency-spread sample"
  },
  {
   "index": 782,
@@ -4650,11 +4658,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "oh feh leh hoe",
-  "source": "composed",
-  "duration_s": 1.8,
-  "sha1": "7304dcb0cf20",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/oːfeˈle.oː/",
+  "source": "batch25i",
+  "duration_s": 1.698,
+  "sha1": "41c9f498ff0e",
+  "note": "the pre-stress dot removed, by the screen, after it said its dot on two of three rolls",
+  "take": "b25i_816_a"
  },
  {
   "index": 817,

@@ -709,6 +709,17 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    396: "the pre-stress dot removed, by the screen, after the string said its dot on two of three rolls. Approved with a note — \"A is "
+         "good, but there is a bit of a delay between θe and mɪ\": the dot "
+         "that remains, doing slightly too much work",
+    694: "THE OPEN EPSILON, and it went in before an ear heard the converter "
+         "output at all, because that output had already come back twice with "
+         "the unstressed e between n and r elided away entirely — `feɪnɹɑːs` "
+         "— and no dot in the cue to blame. NOT A RULE: ἱερεύς `/hɪeˈrjus/` ships a "
+         "plain e before a stressed r with an ear's approval, and the only "
+         "thing separating them is a consonant before the vowel rather than "
+         "a vowel",
+    816: "the pre-stress dot removed, by the screen, after the string said its dot on two of three rolls",
     498: "the two pre-stress dots removed, the hiatus kept. \"All spelled\" "
          "with them in — five syllables and three dots, which is the shape "
          "that spelled in δεξιός, ἀριθμός and εὐαγγέλιον. The fuller dedot "

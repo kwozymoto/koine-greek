@@ -2036,12 +2036,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 122,
-  "tts": "bal loh",
-  "source": "composed",
-  "duration_s": 1.02,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "1705ef23ae3a"
+  "tts": "/ˈbal.loː/",
+  "source": "batch25i",
+  "duration_s": 0.993,
+  "take": "b25i_131_a",
+  "note": "the converter own output, from the sixth frequency-spread sample",
+  "sha1": "0dc15ee0f056"
  },
  {
   "index": 132,
@@ -4512,11 +4512,12 @@
   "pos": "adv",
   "tier": 3,
   "freq": 61,
-  "tts": "hoh deh",
-  "source": "composed",
-  "duration_s": 0.874,
-  "sha1": "5b500ad03421",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈhoː.de/",
+  "source": "batch25i",
+  "duration_s": 0.836,
+  "sha1": "66764964a3fb",
+  "note": "the converter own output, from the sixth frequency-spread sample",
+  "take": "b25i_290_a"
  },
  {
   "index": 291,
@@ -6164,11 +6165,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 39,
-  "tts": "eh pee tee thay mee",
-  "source": "composed",
-  "duration_s": 2.374,
-  "sha1": "2b2b63dcb972",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛpɪˈti.θeː.mɪ/",
+  "source": "batch25i",
+  "duration_s": 1.698,
+  "sha1": "90cf4e64b651",
+  "note": "the pre-stress dot removed, by the screen, after it said its dot on two of three rolls. Approved with a note: a is good, but there is a slight delay between the eta and the final mi -- the dot that remains",
+  "take": "b25i_396_a"
  },
  {
   "index": 397,

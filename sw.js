@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v201';
+const VERSION = 'v202';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,21 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v202: batch 25I, ten of twelve; six samples stand at 67 of 72. The
+     unheard population is 220 cues and 11,969 occurrences, NOT the 275
+     quoted since batch 25B -- ipa_cue's HEARD set had never been told
+     about batches 25B to 25H, so 55 words already shipped still counted
+     as unheard. The coverage model now reads zero features outstanding. */
+  'audio/vocab/131_ballo.mp3',
+  'audio/vocab/290_ode.mp3',
+  'audio/vocab/396_epitithemi.mp3',
+  'audio/vocab/538_ekeithen.mp3',
+  'audio/vocab/571_timotheos.mp3',
+  'audio/vocab/603_makedonia.mp3',
+  'audio/vocab/694_phaneros.mp3',
+  'audio/vocab/740_denarion.mp3',
+  'audio/vocab/781_eita.mp3',
+  'audio/vocab/816_opheleo.mp3',
   /* v200: batch 25H, thirteen of thirteen, and the whole round came
      through three screening rolls with nothing flagged at all -- no spoken
      dots, no beat mismatches, no dedotting. Five frequency-spread samples
