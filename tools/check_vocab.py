@@ -709,6 +709,30 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    379: "the SECONDARY STRESS, and the THIRD word it has fixed. A bare `ju` "
+         "sounds its j on its own; \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd needed the mark after four rounds, "
+         "then \u03b5\u1f50\u03bb\u03bf\u03b3\u03af\u03b1 took it before an ear was asked, and now this. It "
+         "went in as the one symbol no approved cue carried, and it is now a "
+         "rule with three cases behind it",
+    472: "the pre-stress dots removed, by the screen, after the string said its dot aloud. ALL SPELLED before that \u2014 and it "
+         "SCREENED CLEAN while doing it, four beats expected and four heard, "
+         "because spelling a word preserves the beat count. It is the word "
+         "that made the screen learn to read the decode against the English "
+         "letter names: `e\u026apia\u026aestioeli` is A-P-I-S-T-O-L",
+    604: "the open \u0254, and neither dot count was the answer. The converter's "
+         "own cue spoke its dot; taking every dot out grew a THIRD g, \"reo "
+         "sounding like greo\". What fixed it was giving the syllable its own "
+         "vowel colour",
+    741: "fully dotless: the pre-stress dots were not enough, the dot behind the stress speaking too. CAUGHT BY THE SPELLING DETECTOR IN "
+         "ITS FIRST LIVE ROUND, before an ear heard it: it spelled itself "
+         "DIALOGI. Dedotting stopped the spelling and the hiatus dot then "
+         "spoke, so every dot went",
+    780: "fully dotless: the pre-stress dots were not enough, the dot behind the stress speaking too. It had spelled itself out to twelve "
+         "letters, D-I-A-M-A-R-T-U-R-O-M-A-Y",
+    786: "fully dotless: the pre-stress dots were not enough, the dot behind the stress speaking too",
+    814: "the pre-stress dots removed, by the screen, after the string said its dot aloud. With the dot in, the first syllable shut "
+         "hard enough to sound like *hock* \u2014 \"I'm not sure where the k is "
+         "coming from\"",
     33: "THE SHUT ɪ, per-word — and the first limit this project has hit "
         "in its SOURCE rather than in its rules. \"This sounds like tees "
         "rather than tis, an i sound as in hiss.\" τις is transcribed `ˈtis` and "

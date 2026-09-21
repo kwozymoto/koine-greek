@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v204';
+const VERSION = 'v205';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,27 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v205: batch 25K, FIFTEEN OF FIFTEEN -- every lot, no notes, the first
+     complete round of the session. διαλογίζομαι is the one to name:
+     the spelling detector caught it in its first live round, spelling
+     itself DIALOGI, and it was re-cut before an ear ever heard it. That is
+     what "stop spelling sounds" asked for. εὐλογέω makes the secondary
+     stress a rule with three cases behind it. */
+  'audio/vocab/037_kata.mp3',
+  'audio/vocab/135_meno.mp3',
+  'audio/vocab/296_sunago.mp3',
+  'audio/vocab/379_eulogeo.mp3',
+  'audio/vocab/403_boulomai.mp3',
+  'audio/vocab/472_epistole.mp3',
+  'audio/vocab/540_eko.mp3',
+  'audio/vocab/572_gnorizo.mp3',
+  'audio/vocab/604_gregoreo.mp3',
+  'audio/vocab/655_osei.mp3',
+  'audio/vocab/696_apoleia.mp3',
+  'audio/vocab/741_dialogizomai.mp3',
+  'audio/vocab/780_diamarturomai.mp3',
+  'audio/vocab/786_katerchomai.mp3',
+  'audio/vocab/814_omoioo.mp3',
   /* v203: batch 25J, seven of twelve -- the weakest sample yet, and four
      of the five failures were the dot. τις settled at 525 occurrences,
      per-word, because the transcription cannot tell it from πρίν: both

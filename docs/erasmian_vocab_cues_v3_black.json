@@ -38,11 +38,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 24,
-  "tts": "eh pee sto lay",
-  "source": "composed",
-  "duration_s": 1.876,
-  "sha1": "e6b6777dcd61",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛpɪstɒˈleː/",
+  "source": "batch25k",
+  "duration_s": 1.228,
+  "sha1": "c65ca20be3c7",
+  "note": "the pre-stress dots removed. All spelled before that, and it SCREENED CLEAN while doing it -- four beats expected, four heard -- because spelling preserves the beat count. It is the word that made the screen learn to read the decode against the English letter names",
+  "take": "b25k_472_a"
  },
  {
   "index": 473,

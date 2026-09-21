@@ -579,11 +579,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 473,
-  "tts": "kah tah",
-  "source": "composed",
-  "duration_s": 1.037,
-  "sha1": "20244437883c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈta/",
+  "source": "batch25k",
+  "duration_s": 0.836,
+  "sha1": "c9a1facf5974",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
+  "take": "b25k_37_a"
  },
  {
   "index": 38,
@@ -2102,11 +2103,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 118,
-  "tts": "meh noh",
-  "source": "composed",
-  "duration_s": 1.063,
-  "sha1": "9e1d8e2b45c1",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈme.noː/",
+  "source": "batch25k",
+  "duration_s": 0.914,
+  "sha1": "f32bbb3181ce",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
+  "take": "b25k_135_a"
  },
  {
   "index": 136,
@@ -4611,11 +4613,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 59,
-  "tts": "soo nah goh",
-  "source": "composed",
-  "duration_s": 1.085,
-  "sha1": "a2f6f31f8cdd",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/suˈna.ɡoː/",
+  "source": "batch25k",
+  "duration_s": 1.071,
+  "sha1": "d13ace406724",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
+  "take": "b25k_296_a"
  },
  {
   "index": 297,
@@ -5900,11 +5903,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 41,
-  "tts": "ew lo geh oh",
-  "source": "composed",
-  "duration_s": 2.015,
-  "sha1": "2e9e126d53a3",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˌjulɒˈɡeoː/",
+  "source": "batch25k",
+  "duration_s": 1.228,
+  "sha1": "6306b6d03943",
+  "note": "the SECONDARY STRESS, and the third word it has fixed. The bare ju glide sounds its j on its own; euaggelion needed the mark, then eulogia, and now this. What began as the one untested symbol in the pack is now a rule with three cases behind it",
+  "take": "b25k_379_a"
  },
  {
   "index": 380,
@@ -6275,11 +6279,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 37,
-  "tts": "boo lo my",
-  "source": "composed",
-  "duration_s": 1.38,
-  "sha1": "75cae404fb8d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈbuː.lɒ.mai̯/",
+  "source": "batch25k",
+  "duration_s": 1.071,
+  "sha1": "779e9271014a",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
+  "take": "b25k_403_a"
  },
  {
   "index": 404,

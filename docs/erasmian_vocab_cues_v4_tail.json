@@ -452,10 +452,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 27,
-  "tts": "haykoh",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "6e85675d6936"
+  "tts": "/ˈheː.koː/",
+  "source": "batch25k",
+  "duration_s": 0.914,
+  "sha1": "984330456bde",
+  "take": "b25k_540_a",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete"
  },
  {
   "index": 541,
@@ -938,10 +940,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 24,
-  "tts": "guh noh ree zoh",
-  "source": "worklist-candidate",
-  "duration_s": 2.066,
-  "sha1": "da900fe82489"
+  "tts": "/ɡnoːˈriʣoː/",
+  "source": "batch25k",
+  "duration_s": 1.541,
+  "sha1": "ede3ca2e96d3",
+  "take": "b25k_572_a",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete"
  },
  {
   "index": 573,
@@ -1420,10 +1424,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "gray go reh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.968,
-  "sha1": "c729c4ba9c5d"
+  "tts": "/ɡreːɡɔˈreoː/",
+  "source": "batch25k",
+  "duration_s": 1.306,
+  "sha1": "32d9e4706b5d",
+  "take": "b25k_604_b",
+  "note": "the open o. The dotted cue spoke its dot and the fully dotless one grew a THIRD g -- reo sounding like greo -- so the remedy was neither dot count but vowel colour"
  },
  {
   "index": 605,
@@ -2202,10 +2208,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 20,
-  "tts": "hosay",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "9cafd500b6d6"
+  "tts": "/hoːˈsei̯/",
+  "source": "batch25k",
+  "duration_s": 0.836,
+  "sha1": "4892de1f8ca6",
+  "take": "b25k_655_a",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete"
  },
  {
   "index": 656,
@@ -2827,11 +2835,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "ah poh lay ah",
-  "source": "composed",
-  "duration_s": 1.8,
-  "sha1": "3c200863fe2a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈpoː.lei̯.a/",
+  "source": "batch25k",
+  "duration_s": 1.228,
+  "sha1": "baaac21715f0",
+  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
+  "take": "b25k_696_a"
  },
  {
   "index": 697,
@@ -3520,10 +3529,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "deeah loghee zomy",
-  "source": "worklist-candidate",
-  "duration_s": 2.448,
-  "sha1": "3cdea5c143c7"
+  "tts": "/dɪalɒˈɡiʣɒmai̯/",
+  "source": "batch25k",
+  "duration_s": 1.541,
+  "sha1": "7cae600c4020",
+  "take": "b25k_741_a",
+  "note": "CAUGHT BY THE NEW SPELLING DETECTOR IN ITS FIRST LIVE ROUND, before an ear ever heard it: it spelled itself DIALOGI. Dedotting stopped the spelling, the hiatus dot then spoke, and fully dotless came back clean three times"
  },
  {
   "index": 742,
@@ -4123,10 +4134,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "deeah martoo romy",
-  "source": "worklist-candidate",
-  "duration_s": 3.888,
-  "sha1": "3fbfc63d26bd"
+  "tts": "/dɪamarˈturɒmai̯/",
+  "source": "batch25k",
+  "duration_s": 1.384,
+  "sha1": "4483d05ad34b",
+  "take": "b25k_780_a",
+  "note": "fully dotless. It spelled itself out to twelve letters, D-I-A-M-A-R-T-U-R-O-M-A-Y"
  },
  {
   "index": 781,
@@ -4215,10 +4228,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "kah tehr kho my",
-  "source": "worklist-candidate",
-  "duration_s": 2.52,
-  "sha1": "e71cfe1ba2d7"
+  "tts": "/kaˈterkɒmai̯/",
+  "source": "batch25k",
+  "duration_s": 1.463,
+  "sha1": "6f66d5856113",
+  "take": "b25k_786_a",
+  "note": "fully dotless, applied before an ear saw it: the dotted form said its dot, and the dot behind the stress is out of the standing remedy reach"
  },
  {
   "index": 787,
@@ -4632,11 +4647,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "ho moy o oh",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "27c1cf9f4a64",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hɒmoi̯ˈɒ.oː/",
+  "source": "batch25k",
+  "duration_s": 1.384,
+  "sha1": "6d045a18a3bb",
+  "note": "the pre-stress dot removed. With it in, the first syllable shut hard enough to sound like *hock*",
+  "take": "b25k_814_a"
  },
  {
   "index": 815,
