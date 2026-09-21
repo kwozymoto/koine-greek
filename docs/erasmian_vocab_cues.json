@@ -595,11 +595,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 469,
-  "tts": "meh tah",
-  "source": "composed",
-  "duration_s": 0.736,
-  "sha1": "e90b1d57498b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/mɛˈta/",
+  "source": "batch25m",
+  "duration_s": 0.993,
+  "sha1": "9397690b455f",
+  "note": "THE OPEN EPSILON, and the biggest word this loop has settled at 469 occurrences. It came back sounding like the English word *me* followed by ta; peri drew the identical complaint in 24B and took the same remedy. NOT A RULE: nefele is exactly this shape, an open e in the first syllable immediately before the stress, and is approved, as is Messias with the syllable shut",
+  "take": "b25m_38_a"
  },
  {
   "index": 39,
@@ -4661,11 +4662,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 59,
-  "tts": "khah rah",
-  "source": "composed",
-  "duration_s": 1.149,
-  "sha1": "686e6c93deea",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈra/",
+  "source": "batch25m",
+  "duration_s": 0.758,
+  "sha1": "3585321acfa1",
+  "note": "THE PLAIN K, and the second time it has won for a word-initial chi after chilias. Only two forms of word-initial x have ever been approved -- stressed before a, and stressed before r -- and every other shape asked has failed",
+  "take": "b25m_297_a"
  },
  {
   "index": 298,
@@ -4754,11 +4756,12 @@
   "pos": "conj",
   "tier": 3,
   "freq": 57,
-  "tts": "may deh",
-  "source": "composed",
-  "duration_s": 0.712,
-  "sha1": "0a449dcab96d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/mɛːˈde/",
+  "source": "batch25m",
+  "duration_s": 0.836,
+  "sha1": "af0ff9d17b42",
+  "note": "the open eta. The same fault as meta on a long vowel",
+  "take": "b25m_303_a"
  },
  {
   "index": 304,
@@ -5127,11 +5130,12 @@
   "pos": "conj",
   "tier": 4,
   "freq": 49,
-  "tts": "ah rah",
-  "source": "composed",
-  "duration_s": 0.933,
-  "sha1": "9d1496240e4f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈa.ra/",
+  "source": "batch25m",
+  "duration_s": 0.914,
+  "sha1": "a8cdbce0b8af",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_327_a"
  },
  {
   "index": 328,
@@ -5158,11 +5162,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 49,
-  "tts": "grah fay",
-  "source": "composed",
-  "duration_s": 1.275,
-  "sha1": "aeb93435e1a3",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɡraˈfeː/",
+  "source": "batch25m",
+  "duration_s": 0.914,
+  "sha1": "3b6a21fa2dc2",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_329_a"
  },
  {
   "index": 330,
@@ -5205,11 +5210,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 48,
-  "tts": "ah po dee doh mee",
-  "source": "composed",
-  "duration_s": 2.101,
-  "sha1": "f806754dd012",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/apɒˈdi.doː.mɪ/",
+  "source": "batch25m",
+  "duration_s": 1.306,
+  "sha1": "ec62adde9714",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_332_a"
  },
  {
   "index": 333,
@@ -5358,11 +5364,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 47,
-  "tts": "oo keh tee",
-  "source": "composed",
-  "duration_s": 1.996,
-  "sha1": "fe574abe5798",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/uːˈke.tɪ/",
+  "source": "batch25m",
+  "duration_s": 0.914,
+  "sha1": "6ef8e1567e35",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_342_a"
  },
  {
   "index": 343,
@@ -5484,11 +5491,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 45,
-  "tts": "dee oh koh",
-  "source": "composed",
-  "duration_s": 1.984,
-  "sha1": "cc18bafecd00",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/dɪˈoː.koː/",
+  "source": "batch25m",
+  "duration_s": 1.071,
+  "sha1": "642c783b3525",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_350_a"
  },
  {
   "index": 351,
@@ -5561,11 +5569,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 44,
-  "tts": "kah toy keh oh",
-  "source": "composed",
-  "duration_s": 1.687,
-  "sha1": "a5b969a5502b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/katoi̯ˈke.oː/",
+  "source": "batch25m",
+  "duration_s": 1.306,
+  "sha1": "8c01aa896e64",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_355_a"
  },
  {
   "index": 356,
@@ -5640,11 +5649,12 @@
   "pos": "pron",
   "tier": 4,
   "freq": 43,
-  "tts": "seh ow too",
-  "source": "composed",
-  "duration_s": 1.293,
-  "sha1": "0ef6ac544f01",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/seau̯ˈtuː/",
+  "source": "batch25m",
+  "duration_s": 1.228,
+  "sha1": "37cd48fd68aa",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_360_a"
  },
  {
   "index": 361,
@@ -5687,11 +5697,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 43,
-  "tts": "foh neh oh",
-  "source": "composed",
-  "duration_s": 1.179,
-  "sha1": "b8f27ae14e04",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/foːˈne.oː/",
+  "source": "batch25m",
+  "duration_s": 1.228,
+  "sha1": "e9d804492efa",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_363_a"
  },
  {
   "index": 364,
@@ -5765,11 +5776,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 42,
-  "tts": "loo oh",
-  "source": "composed",
-  "duration_s": 1.117,
-  "sha1": "655df97d96a3",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈlu.oː/",
+  "source": "batch25m",
+  "duration_s": 0.836,
+  "sha1": "209a134f0957",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_368_a"
  },
  {
   "index": 369,
@@ -5876,11 +5888,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 41,
-  "tts": "say meh ron",
-  "source": "composed",
-  "duration_s": 1.073,
-  "sha1": "e5547588680f",
-  "note": "every beat of this cue has been heard IN THIS POSITION in another word (say from σημεῖον; meh from οἰκοδομέω; ron from ἱερόν), so the order is the only thing nobody has listened to. Batch 9 added the position condition: ἅπας was held back because its `pas` is last here and first in πάσχω"
+  "tts": "/ˈseː.me.rɒn/",
+  "source": "batch25m",
+  "duration_s": 1.698,
+  "sha1": "08461c353483",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_375_a"
  },
  {
   "index": 376,
@@ -6329,11 +6342,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 37,
-  "tts": "pay rah dzoh",
-  "source": "composed",
-  "duration_s": 1.528,
-  "sha1": "3e494e6095d5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pei̯ˈraʣoː/",
+  "source": "batch25m",
+  "duration_s": 1.149,
+  "sha1": "9081110cac2d",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_404_a"
  },
  {
   "index": 405,
@@ -6406,12 +6420,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "or gey",
-  "source": "composed",
-  "duration_s": 1.047,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "5b64127fb0db"
+  "tts": "/ɔrˈɡeː/",
+  "source": "batch25m",
+  "duration_s": 0.993,
+  "take": "b25m_409_a",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "sha1": "8167aa0adb5d"
  },
  {
   "index": 410,
@@ -6422,11 +6436,12 @@
   "pos": "adv",
   "tier": 4,
   "freq": 36,
-  "tts": "ahr tee",
-  "source": "composed",
-  "duration_s": 1.001,
-  "sha1": "5ef659caa7ac",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈar.tɪ/",
+  "source": "batch25m",
+  "duration_s": 0.993,
+  "sha1": "7a8d5987405e",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_410_a"
  },
  {
   "index": 411,
@@ -6547,12 +6562,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 36,
-  "tts": "peh ree to mey",
-  "source": "composed",
-  "duration_s": 1.589,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "4fc75be97d35"
+  "tts": "/perɪtɒˈmeː/",
+  "source": "batch25m",
+  "duration_s": 1.149,
+  "take": "b25m_418_a",
+  "note": "the pre-stress dots removed. It was SPELLING itself, and the beat count caught it where the letter-name test did not: the recogniser rendered E and O as bare i and o rather than iː and oʊ, which broke the run below the threshold",
+  "sha1": "6f409f381fc9"
  },
  {
   "index": 419,
@@ -6674,11 +6689,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 35,
-  "tts": "hoo po streh foh",
-  "source": "composed",
-  "duration_s": 1.559,
-  "sha1": "eaf6e5b6f35f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/hupɒsˈtre.foː/",
+  "source": "batch25m",
+  "duration_s": 1.306,
+  "sha1": "5cee700a7bd2",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_426_a"
  },
  {
   "index": 427,
@@ -6735,11 +6751,12 @@
   "pos": "conj",
   "tier": 4,
   "freq": 34,
-  "tts": "may teh",
-  "source": "composed",
-  "duration_s": 0.978,
-  "sha1": "66f81e55d0d6",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈmeː.te/",
+  "source": "batch25m",
+  "duration_s": 1.071,
+  "sha1": "250e68c69f1c",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_430_a"
  },
  {
   "index": 431,
@@ -6782,11 +6799,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 34,
-  "tts": "ahs theh neh oh",
-  "source": "composed",
-  "duration_s": 1.849,
-  "sha1": "da25c775d50f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/asθeˈne.oː/",
+  "source": "batch25m",
+  "duration_s": 1.463,
+  "sha1": "9569b9354675",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_433_a"
  },
  {
   "index": 434,
@@ -6873,11 +6891,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 33,
-  "tts": "ahr neh o my",
-  "source": "composed",
-  "duration_s": 1.731,
-  "sha1": "684998b03351",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/arˈne.ɒ.mai̯/",
+  "source": "batch25m",
+  "duration_s": 1.62,
+  "sha1": "c54f017e7498",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_439_a"
  },
  {
   "index": 440,
@@ -7017,12 +7036,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 32,
-  "tts": "hoo po mo ney",
-  "source": "composed",
-  "duration_s": 1.367,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "be3cc5ed20f6"
+  "tts": "/hupɒmɒˈneː/",
+  "source": "batch25m",
+  "duration_s": 1.228,
+  "take": "b25m_448_a",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "sha1": "c03882cbb121"
  },
  {
   "index": 449,
@@ -7064,11 +7083,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 31,
-  "tts": "kah thah ree dzoh",
-  "source": "composed",
-  "duration_s": 1.493,
-  "sha1": "9154dab67ef4",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaθaˈriʣoː/",
+  "source": "batch25m",
+  "duration_s": 1.149,
+  "sha1": "cf9bd31b5115",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_451_a"
  },
  {
   "index": 452,
@@ -7095,11 +7115,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "po tay ree on",
-  "source": "composed",
-  "duration_s": 1.556,
-  "sha1": "30d664a7e31d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pɒˈteː.rɪ.ɒn/",
+  "source": "batch25m",
+  "duration_s": 1.62,
+  "sha1": "ebe14fb528a5",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_453_a"
  },
  {
   "index": 454,
@@ -7154,12 +7175,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 31,
-  "tts": "foo las soh",
-  "source": "rollout",
-  "duration_s": 1.24,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "237c303170c0"
+  "tts": "/fuˈlas.soː/",
+  "source": "batch25m",
+  "duration_s": 0.993,
+  "take": "b25m_457_a",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "sha1": "9ecd391aff02"
  },
  {
   "index": 458,
@@ -7170,12 +7191,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 31,
-  "tts": "foo ley",
-  "source": "rollout",
-  "duration_s": 0.914,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "4f7567060935"
+  "tts": "/fuˈleː/",
+  "source": "batch25m",
+  "duration_s": 0.836,
+  "take": "b25m_458_a",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "sha1": "5fd9ec47bea2"
  },
  {
   "index": 459,
@@ -7230,10 +7251,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 30,
-  "tts": "soo nehr kho my",
-  "source": "g2p",
-  "duration_s": 1.812,
-  "sha1": "1cb1f547d549"
+  "tts": "/suˈnerkɒmai̯/",
+  "source": "batch25m",
+  "duration_s": 1.463,
+  "sha1": "ebd7e9e9f5d3",
+  "take": "b25m_462_a",
+  "note": "fully dotless. Settled in the deep-dedot pass, and this round asked about it again because the sampler drew the converter raw output -- nothing read the reports back. Fixed by settled.py"
  },
  {
   "index": 463,
@@ -7244,12 +7267,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 30,
-  "tts": "skan dah lee dzoh",
-  "source": "rollout",
-  "duration_s": 1.77,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "94f216074b74"
+  "tts": "/skandaˈliʣoː/",
+  "source": "batch25m",
+  "duration_s": 1.306,
+  "take": "b25m_463_a",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "sha1": "e801f65d280b"
  },
  {
   "index": 464,
@@ -7290,11 +7313,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 30,
-  "tts": "ah go rah dzoh",
-  "source": "composed",
-  "duration_s": 2.17,
-  "sha1": "14c2cbbdc221",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aɡɒˈraʣoː/",
+  "source": "batch25m",
+  "duration_s": 1.306,
+  "sha1": "943679435824",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+  "take": "b25m_466_a"
  },
  {
   "index": 467,

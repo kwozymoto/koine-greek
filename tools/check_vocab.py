@@ -709,6 +709,38 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    38: "THE OPEN EPSILON, and the biggest word this loop has settled \u2014 469 "
+        "occurrences. It came back as the English word *me* followed by *ta*; "
+        "\u03c0\u03b5\u03c1\u03af drew the identical complaint in 24B, \"pe is coming out as pay\", "
+        "and took the same remedy. NOT A RULE, checked before claiming one: "
+        "\u03bd\u03b5\u03c6\u03ad\u03bb\u03b7 `/ne\u02c8fe.le\u02d0/` is exactly this shape and is approved, and "
+        "\u039c\u03b5\u03c3\u03c3\u03af\u03b1\u03c2 `/mes\u02c8si.as/` is fine with the syllable shut",
+    297: "THE PLAIN k, the second word-initial chi to need it after \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2. "
+         "ONLY TWO FORMS OF WORD-INITIAL `x` HAVE EVER BEEN APPROVED: stressed "
+         "before `a` (\u03c7\u03ac\u03c1\u03b9\u03c2) and stressed before `r` (\u03c7\u03c1\u03b5\u03af\u03b1). Every other shape "
+         "asked has failed \u2014 this one and \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2 as a z, \u03c7\u03ae\u03c1\u03b1 as an h. The v206 "
+         "message called that an UNSTRESSED-chi rule and \u03c7\u03ae\u03c1\u03b1 refutes it: it "
+         "is stressed and fails too",
+    303: "the open eta \u2014 \u03bc\u03b5\u03c4\u03ac's fault on a long vowel. \"Sounds like the "
+         "English word me \u2014 should it be meh?\"",
+    418: "the pre-stress dots removed, by the screen, after the string said its dot aloud. It was SPELLING itself, `pi \u0251\u02d0\u0279 a\u026a ti o em`, "
+         "and the beat count caught it where the letter-name test did not: the "
+         "recogniser rendered E and O as bare `i` and `o` rather than `i\u02d0` and "
+         "`o\u028a`, which broke the run below the threshold. The two tests "
+         "covering each other is why that gap was not worth closing \u2014 bare "
+         "`i` and `o` are ordinary Greek syllables and would fire constantly",
+    462: "fully dotless. It was settled that way in the deep-dedot pass and this round asked about it AGAIN, because the sampler drew the converter's raw output and nothing read the reports back — the third time a solved fault has been rediscovered. settled.py now collects every settled cue and the samplers read it",
+    554: "fully dotless. It was settled that way in the deep-dedot pass and this round asked about it AGAIN, because the sampler drew the converter's raw output and nothing read the reports back — the third time a solved fault has been rediscovered. settled.py now collects every settled cue and the samplers read it",
+    332: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    355: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    360: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    426: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    433: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    448: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    451: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    463: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    466: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    551: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     52: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
     65: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
     92: "the pre-stress dot removed, by the screen, after the string said its dot aloud. It also found a hole in the SCREEN "

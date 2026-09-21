@@ -484,11 +484,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 26,
-  "tts": "mah ree ahm",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "913de513fc38",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ma.rɪˈam/",
+  "source": "batch25m",
+  "duration_s": 1.62,
+  "sha1": "ab8c3bf1340a",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_542_a"
  },
  {
   "index": 543,
@@ -499,11 +500,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "doo lew hoe",
-  "source": "composed",
-  "duration_s": 1.248,
-  "sha1": "5e2a7927f159",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/duːˈlju.oː/",
+  "source": "batch25m",
+  "duration_s": 1.776,
+  "sha1": "07403149eb97",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_543_a"
  },
  {
   "index": 544,
@@ -514,11 +516,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 26,
-  "tts": "kah thah ross",
-  "source": "composed",
-  "duration_s": 1.896,
-  "sha1": "b12748445a5a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ka.θaˈrɒs/",
+  "source": "batch25m",
+  "duration_s": 1.959,
+  "sha1": "ee06442e1f53",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_544_a"
  },
  {
   "index": 545,
@@ -529,11 +532,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "loo peh hoe",
-  "source": "composed",
-  "duration_s": 1.344,
-  "sha1": "073e5a006aaa",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/luˈpe.oː/",
+  "source": "batch25m",
+  "duration_s": 1.071,
+  "sha1": "c0ee41b19637",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_545_a"
  },
  {
   "index": 546,
@@ -544,10 +548,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 26,
-  "tts": "oopoh",
-  "source": "worklist-candidate",
-  "duration_s": 0.768,
-  "sha1": "4f5cd250a569"
+  "tts": "/ˈuː.poː/",
+  "source": "batch25m",
+  "duration_s": 1.149,
+  "sha1": "441a432e0467",
+  "take": "b25m_546_a",
+  "note": "the converter own output, from the round that took the next forty by frequency"
  },
  {
   "index": 547,
@@ -574,11 +580,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "soo nee ay mee",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "971fb69ebd2a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/suˈni.eː.mɪ/",
+  "source": "batch25m",
+  "duration_s": 1.62,
+  "sha1": "1da6ae715d71",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_548_a"
  },
  {
   "index": 549,
@@ -589,10 +596,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "fro neh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "ad9702ed0c29"
+  "tts": "/frɒˈne.oː/",
+  "source": "batch25m",
+  "duration_s": 1.228,
+  "sha1": "8c8e04a9acbf",
+  "take": "b25m_549_a",
+  "note": "the converter own output, from the round that took the next forty by frequency"
  },
  {
   "index": 550,
@@ -617,10 +626,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "apo kaloop toh",
-  "source": "worklist-candidate",
-  "duration_s": 1.728,
-  "sha1": "132479bdbe34"
+  "tts": "/apɒkaˈlup.toː/",
+  "source": "batch25m",
+  "duration_s": 1.62,
+  "sha1": "35ded3ed0663",
+  "take": "b25m_551_a",
+  "note": "the pre-stress dots removed, by the screen, after the string said its dot aloud"
  },
  {
   "index": 552,
@@ -647,11 +658,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "ee ah o my",
-  "source": "composed",
-  "duration_s": 1.968,
-  "sha1": "c231a9fca600",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɪˈa.ɒ.mai̯/",
+  "source": "batch25m",
+  "duration_s": 1.541,
+  "sha1": "e08b6d5cdccf",
+  "note": "the converter own output, from the round that took the next forty by frequency",
+  "take": "b25m_553_a"
  },
  {
   "index": 554,
@@ -662,10 +674,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "om noo hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.32,
-  "sha1": "dedfd160d95a"
+  "tts": "/ɒˈmnuoː/",
+  "source": "batch25m",
+  "duration_s": 1.071,
+  "sha1": "654190eeda40",
+  "take": "b25m_554_a",
+  "note": "fully dotless, and the same story as sunerchomai"
  },
  {
   "index": 555,
@@ -676,10 +690,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 26,
-  "tts": "homo logheh oh",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "219edc84e4b8"
+  "tts": "/hɒ.mɒ.lɒˈɡe.oː/",
+  "source": "batch25m",
+  "duration_s": 2.351,
+  "sha1": "6104c486240a",
+  "take": "b25m_555_a",
+  "note": "the converter own output, from the round that took the next forty by frequency"
  },
  {
   "index": 556,

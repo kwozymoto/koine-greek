@@ -361,11 +361,13 @@
   "pos": "adj",
   "tier": 5,
   "freq": 25,
-  "tts": "sauce",
-  "source": "black",
-  "duration_s": 1.112,
+  "tts": "/ˈsɒs/",
+  "source": "batch25m",
+  "duration_s": 0.914,
   "verdict": "re-recorded as 'sauce'; measured: opens with sibilance now, s-vowel-s, half the length. Fixed.",
-  "sha1": "1c206a3974d2"
+  "sha1": "43a1b0d54b17",
+  "take": "b25m_492_a",
+  "note": "the converter own output, from the round that took the next forty by frequency"
  },
  {
   "index": 493,

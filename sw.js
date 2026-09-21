@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v206';
+const VERSION = 'v207';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,52 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v207: batch 25M, forty-one of forty-three. μετά is the one to name:
+     469 occurrences, the biggest word this loop has settled, and it took
+     the open epsilon that περί needed for the identical complaint a
+     dozen rounds ago. 109 cues left, 2,071 occurrences -- 1.7% of what the
+     deck plays. The expensive part is done. */
+  'audio/vocab/038_meta.mp3',
+  'audio/vocab/297_chara.mp3',
+  'audio/vocab/303_mede.mp3',
+  'audio/vocab/327_ara.mp3',
+  'audio/vocab/329_graphe.mp3',
+  'audio/vocab/332_apodidomi.mp3',
+  'audio/vocab/342_ouketi.mp3',
+  'audio/vocab/350_dioko.mp3',
+  'audio/vocab/355_katoikeo.mp3',
+  'audio/vocab/360_seautou.mp3',
+  'audio/vocab/363_phoneo.mp3',
+  'audio/vocab/368_luo.mp3',
+  'audio/vocab/375_semeron.mp3',
+  'audio/vocab/404_peirazo.mp3',
+  'audio/vocab/409_orge.mp3',
+  'audio/vocab/410_arti.mp3',
+  'audio/vocab/418_peritome.mp3',
+  'audio/vocab/426_upostrepho.mp3',
+  'audio/vocab/430_mete.mp3',
+  'audio/vocab/433_astheneo.mp3',
+  'audio/vocab/439_arneomai.mp3',
+  'audio/vocab/448_upomone.mp3',
+  'audio/vocab/451_katharizo.mp3',
+  'audio/vocab/453_poterion.mp3',
+  'audio/vocab/457_phulasso.mp3',
+  'audio/vocab/458_phule.mp3',
+  'audio/vocab/462_sunerchomai.mp3',
+  'audio/vocab/463_skandalizo.mp3',
+  'audio/vocab/466_agorazo.mp3',
+  'audio/vocab/492_sos.mp3',
+  'audio/vocab/542_mariam.mp3',
+  'audio/vocab/543_douleuo.mp3',
+  'audio/vocab/544_katharos.mp3',
+  'audio/vocab/545_lupeo.mp3',
+  'audio/vocab/546_oupo.mp3',
+  'audio/vocab/548_suniemi.mp3',
+  'audio/vocab/549_phroneo.mp3',
+  'audio/vocab/551_apokalupto.mp3',
+  'audio/vocab/553_iaomai.mp3',
+  'audio/vocab/554_omnuo.mp3',
+  'audio/vocab/555_omologeo.mp3',
   /* v206: batch 25L, THIRTY-SEVEN OF FORTY and the biggest round yet.
      These are the forty most frequent cues still unheard, 5,723
      occurrences installed here -- and the reason forty was the right size
