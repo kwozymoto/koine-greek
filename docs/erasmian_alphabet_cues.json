@@ -125,11 +125,11 @@
       "name": "Iota",
       "sound": "ih / ee",
       "kind": "letter",
-      "duration_sec": 2.273,
-      "sha1": "80c536b7c31b",
-      "cue": "/aɪˈjoʊtaː/ … ih, or ee",
+      "duration_sec": 4.336,
+      "sha1": "ff40f52c941c",
+      "cue": "/aɪˈjoʊtaː/ … ih, as in pit, or ee, as in machine",
       "source": "letters-2026-09-23",
-      "note": "chosen by ear over the shipping clip and two other renderings — the sounds in plain English. Iota has two sounds, and the short one merged into the long whenever 'or' was written in IPA; in plain English the two stay apart. The name carries the y-glide the old clip had, 'eye-YO-ta', which the ear preferred."
+      "note": "chosen by ear over the previous clip ('ih, or ee'), an IPA-with-keywords take and a re-roll. Replaces the plain 'ih, or ee' so that both two-sound letters, iota and upsilon, say lesson 1's example words -- one rule for the two letters Black and the lesson give two sounds. The sounds stay in plain English, which is what kept the short one from merging into the long. Fraser: the name in the previous clip sounded better."
     },
     {
       "id": "10_kappa",
