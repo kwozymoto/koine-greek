@@ -1053,6 +1053,172 @@ six approvals behind it and a shape that occurs once in the population, which
 is a very different picture from the bulk run's 15-of-20. A second sample,
 drawn after 25D settles those two, is what the decision should rest on.
 
+## What batch 25 finished, 2026-09-22
+
+Rounds 25F to 25T, and the end of the job: **every cue in the 818-word deck
+has now been heard and passed by a person.** What follows is the part worth
+keeping, which is mostly what went wrong.
+
+### The thing that was actually broken was the inventory
+
+For most of this batch I was fixing the DOT — spoken dots, spelled words,
+syllable counts, six false-positive exclusions, three rolls per string. That
+work was real and that layer is solved: round 25N raised one screen flag
+across 53 cues. But the failures kept coming, and Fraser said so:
+
+> "A lot of those were bad, and they are sounds I thought we already had good
+> cues for. We seem to be going around in circles a bit."
+
+He was right, and the reason is that **every remaining failure was a vowel and
+I had been writing a per-word allow-list entry for each one instead of
+suspecting the symbol.** Seven of round 25N's thirteen failures were a plain
+short `e` read as English *ay* — ἴδε "ee day", δέκα "sounds like day",
+ἐνεργέω "gay oh rather than geh oh", ἕνεκεν "hey ne ken".
+
+118 approved cues carried a plain `e`, which is why it was never suspected.
+But those approvals sit in every position — stressed, unstressed, open,
+closed, before a dot, word-final — **and so do the failures.** No rule
+separates them. 118 approvals were 118 coin flips.
+
+### The inventory test, and why it had controls
+
+Two symbol changes, tested in one round on thirteen words that had failed AND
+**seven an ear had already approved.** The controls are the whole reason it
+counts as a test: a round that can only confirm is not one.
+
+| | result |
+|---|---|
+| **`ɛ` for every short epsilon** | **Confirmed.** Fixed six failures, and all four epsilon-carrying CONTROLS preferred it to the cue they had already passed. ἕνεκεν took three in one word, so it does not saturate. |
+| **`ei̯` for the eta** | **One per word.** Every cue with a single pair was chosen; ἀλήθεια with two was rejected and εἰρήνη with three spelled itself out. A word already carrying a genuine ει has spent its one. |
+
+Round 25P then generated fifty cues under the corrected rules and **not one
+epsilon failure appeared.** That is the difference between a rule and an
+exception: the fault stopped happening rather than being fixed again.
+
+**The `ει` guard is load-bearing.** Without it the epsilon rule eats the `e`
+inside a genuine diphthong and εἰρήνη comes out `ɛi̯ˈrei̯.neː`. The test
+script carried that guard and the converter did not — the same trap twice in
+one session.
+
+### Chi is a plain k wherever it stands
+
+Word-initial `x` was approved exactly twice in the whole project, both
+stressed and both before `a` or `r` — χάρις and χρεία. Every other shape asked
+for failed: χιλιάς and χαρά as a *z*, χήρα as an *h*, twice. A plain `k` won
+both times it was tried, and Fraser called it:
+
+> "If χ can't be consistent perhaps we should just replace it with a k/k
+> sound."
+
+Medial chi has been a plain k since 15B, so this removed the last
+inconsistency rather than adding one. **An earlier commit called this an
+UNSTRESSED-chi rule and χήρα refuted that by being stressed and failing
+anyway** — there was never a sub-rule to find, only an unreliable symbol.
+
+### A rule change cannot reach a frozen cue
+
+`settled.py` was written mid-batch to stop the samplers re-asking about words
+already fixed, after that happened three times. It collected every settled cue
+— and **let a SCREEN fix count as settled alongside an EAR approval.**
+
+Round 25Q went out with forty-eight cues frozen at their pre-25O form. Ten
+came back failing, every one of them for a fault the rules had already fixed:
+
+> "χ still sounds like h... I thought we just put in a k sound rule?"
+
+It was in. The cue had been frozen before it. A whole round of somebody's
+listening, spent on solved problems.
+
+**A screen fix is provisional and an ear approval is not.** The screen says a
+string said its dot; the remedy is mechanical and re-derivable, and the screen
+runs every round anyway. `settled.py` now holds ear approvals only. Round 25R
+re-sent the same ten with the rules applied and eight came back right.
+
+This is the second time in one batch that a file written to stop a class of
+error committed it — the first was merging the reports alphabetically inside
+`settled.py` itself, letting one report undo another. **Both were caught by
+checking known values against the new code, never by reading it.**
+
+### What the screen can and cannot do
+
+It now catches four things, and the last two were added under fire:
+
+- a **beat count** against the transcription, with slack for a helper vowel
+  and for a hiatus the voice may bridge with a glide;
+- a **spoken dot**, by name rather than by count — because counting cannot see
+  a dot that *replaces* a beat instead of adding one, which κατεργάζομαι did;
+- **spelling**, by tokenising the decode against the English letter names —
+  ἐπιστολή screened CLEAN while spelling itself out, because spelling
+  preserves the beat count;
+- a **helper vowel** after a cluster English cannot open, now including `sf`:
+  σφραγίζω spells itself on about one roll in three without one.
+
+**Both dot tests have false positives and the sharp one has six known
+sources** — the cue's own `d`, the affricate `ʣ`, the `j` glide and a soft `ɡ`
+(both rendered `dʒ`), a flapped intervocalic `t`, a chi, and `st` voicing
+after the `s`. Only 151 of 222 dotted cues are free of all of them. Measured,
+not assumed: the way to find a false positive is to strip every dot out of a
+cue and see whether the detector still fires.
+
+**And the threshold matters.** The spelling detector fired on ἐνώπιον —
+`enoʊpiɔn` tokenises to N-O-P out of three ordinary Greek syllables — so it
+went from three letters to four. Every confirmed spelling runs to five or
+more; that false positive ran three.
+
+### One roll proves nothing
+
+ἀπολύω was caught saying its dot, re-rolled as the discipline had said for
+twenty-five rounds, came back clean, and **the clean take went to an ear that
+heard the dot anyway.** Measured afterwards:
+
+- of 18 strings a re-roll had "cleared", **8 said their dot within three more
+  rolls**;
+- of 20 that had never flagged, **3 said it too**.
+
+So the re-roll tells a transient beat-count mismatch from a real one and was
+never able to clear a string already caught. **One detection condemns it**,
+and every round now rolls three times.
+
+### Frequency is what decides how much listening is left
+
+The remaining work was never a countdown. Two things about it:
+
+- **It is top-heavy.** When 187 cues remained, 41 of them carried two thirds
+  of the occurrences. One round of forty covered 65% of what was left, and
+  Fraser cleared it in about three minutes — so forty or fifty lots a round is
+  the right size, not fifteen.
+- **The count can GROW.** Every word approved adds its features to the known
+  set, which moves other words from "contains something new" into "safe to
+  try". 57 became 96 across two rounds.
+
+### Small things that cost a round each
+
+- **A retired index reached a draw.** 237 τέ duplicates 72 τε and the app
+  keeps its slot because `data/vocab.js` is keyed by position. The repo has
+  carried `RETIRED` in four places for a year; this project sits outside the
+  repo and never had it. Eight frequency-spread samples missed 237 and the
+  ninth, taking the top forty outright, did not.
+- **`HEARD` was a hand-kept list and went stale twice** — batches 25B to 25H
+  were never added, so 55 shipped words counted as unheard and a sample came
+  back with words it had already been given. It derives the batch sources now.
+- **ὦ ships "hoe" and has smooth breathing.** The app has been saying a
+  consonant that is not in the word. Found because its IPA cue had no h and
+  Fraser noticed the difference.
+
+### The last cue, and the habit worth keeping
+
+εὐλογία took five rounds, caught between two faults: with a dot after `ju` the
+l doubles, because the dot closes one syllable and opens the next so the
+consonant is said twice; without the dot the j sounds alone. Moving the
+secondary stress off the glide and onto the `lɒ` gave the l a syllable onset
+with no dot to make it ambisyllabic, and stopped both.
+
+Three arrangements were tried and **two were withdrawn before they reached an
+ear** — one lost the l entirely, the other spoke its dot on all three rolls.
+That is what the apparatus was built for, and it is what it could not do at
+the start of this batch, when every fault had to be heard before it could be
+named.
+
 ## 1. The sound system
 
 Anglicised Erasmian, as taught in Western seminaries (Mounce / Logos style).
