@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v217';
+const VERSION = 'v218';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,7 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v218: iota again -- the old clip's name spliced onto the example words. */
   /* v217: iota says lesson 1's example words, as upsilon already did. */
   'audio/clips/09_iota.mp3',
   /* v216: the eight diphthongs, and the alphabet re-cue is finished —

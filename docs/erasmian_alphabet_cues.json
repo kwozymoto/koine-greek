@@ -125,11 +125,11 @@
       "name": "Iota",
       "sound": "ih / ee",
       "kind": "letter",
-      "duration_sec": 4.336,
-      "sha1": "ff40f52c941c",
+      "duration_sec": 4.096,
+      "sha1": "bab9fb5c0128",
       "cue": "/aɪˈjoʊtaː/ … ih, as in pit, or ee, as in machine",
       "source": "letters-2026-09-23",
-      "note": "chosen by ear over the previous clip ('ih, or ee'), an IPA-with-keywords take and a re-roll. Replaces the plain 'ih, or ee' so that both two-sound letters, iota and upsilon, say lesson 1's example words -- one rule for the two letters Black and the lesson give two sounds. The sounds stay in plain English, which is what kept the short one from merging into the long. Fraser: the name in the previous clip sounded better."
+      "note": "A SPLICE, chosen by ear: the name from the previous clip (Fraser preferred how it said 'iota'), 0 to 1.06 s, joined to the sounds of take bI1_0_c from 1.30 s, each cut inside a pause with a 30 ms fade, leaving a 0.30 s gap -- the old clip's own. Loudness within about 1 dB. Chosen over the unspliced bI1_0_c and a 0.40 s-gap splice. Iota and upsilon, the two letters lesson 1 gives two sounds, both say the lesson's example words."
     },
     {
       "id": "10_kappa",
