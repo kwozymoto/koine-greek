@@ -3077,11 +3077,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "kah tah loo hoe",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "77063ae7e9bd",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ka.taˈlu.oː/",
+  "source": "batch25q",
+  "duration_s": 1.62,
+  "sha1": "7ad4220717a2",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_706_a"
  },
  {
   "index": 707,
@@ -3122,10 +3123,12 @@
   "pos": "particle",
   "tier": 5,
   "freq": 17,
-  "tts": "maytee",
-  "source": "worklist-candidate",
-  "duration_s": 1.008,
-  "sha1": "e8a540d9a018"
+  "tts": "/ˈmeː.tɪ/",
+  "source": "batch25q",
+  "duration_s": 0.836,
+  "sha1": "daba940e515c",
+  "take": "b25q_709_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 710,
@@ -3152,12 +3155,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "peh ree tem noh",
-  "source": "rollout",
-  "duration_s": 1.675,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "6370ecc7e0f4"
+  "tts": "/perɪˈte.mnoː/",
+  "source": "batch25q",
+  "duration_s": 1.306,
+  "take": "b25q_711_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "2671c07bf379"
  },
  {
   "index": 712,
@@ -3168,11 +3171,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "play roh mah",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "99bc29cadbd0",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpleː.roː.ma/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "ade706048ce8",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_712_a"
  },
  {
   "index": 713,
@@ -3183,11 +3187,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 17,
-  "tts": "play see on",
-  "source": "composed",
-  "duration_s": 1.32,
-  "sha1": "c33479860dd8",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pleːˈsi.ɒn/",
+  "source": "batch25q",
+  "duration_s": 1.384,
+  "sha1": "9bd3be19663c",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_713_a"
  },
  {
   "index": 714,
@@ -3198,11 +3203,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "po tah moss",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "7867355fa59c",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pɒ.taˈmɒs/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "22e5028cb21e",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_714_a"
  },
  {
   "index": 715,
@@ -3213,11 +3219,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "sko tee ah",
-  "source": "composed",
-  "duration_s": 1.896,
-  "sha1": "f46fbaa14d5e",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/skɒˈti.a/",
+  "source": "batch25q",
+  "duration_s": 0.993,
+  "sha1": "3dbd74300df3",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_715_a"
  },
  {
   "index": 716,
@@ -3228,12 +3235,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "tah ras soh",
-  "source": "rollout",
-  "duration_s": 1.887,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "176bc641c733"
+  "tts": "/taˈras.soː/",
+  "source": "batch25q",
+  "duration_s": 1.384,
+  "take": "b25q_716_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "4934aa280d21"
  },
  {
   "index": 717,
@@ -3289,10 +3296,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "apo kaloo psees",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "7e6c3ef671dd"
+  "tts": "/apɒˈka.lu.psɪs/",
+  "source": "batch25q",
+  "duration_s": 1.776,
+  "sha1": "3fe9dc33b78a",
+  "take": "b25q_720_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 721,
@@ -3650,10 +3659,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "dee psah oh",
-  "source": "worklist-candidate",
-  "duration_s": 3.336,
-  "sha1": "737fb847f8ee"
+  "tts": "/dɪˈpsaoː/",
+  "source": "batch25q",
+  "duration_s": 1.149,
+  "sha1": "3c77f7313b3b",
+  "take": "b25q_743_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 744,
@@ -3695,10 +3706,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 16,
-  "tts": "kakos",
-  "source": "worklist-candidate",
-  "duration_s": 1.392,
-  "sha1": "51d3fee88061"
+  "tts": "/kaˈkoːs/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "d81b735c0ea5",
+  "take": "b25q_746_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 747,
@@ -3709,12 +3722,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "kah tak ree noh",
-  "source": "rollout",
-  "duration_s": 2.256,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "f4f00d3409af"
+  "tts": "/ka.taˈkri.noː/",
+  "source": "batch25q",
+  "duration_s": 1.959,
+  "take": "b25q_747_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "97bbedd660d1"
  },
  {
   "index": 748,
@@ -3757,12 +3770,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 16,
-  "tts": "kan",
-  "source": "rollout",
-  "duration_s": 0.755,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "1923b2c2e091"
+  "tts": "/ˈkan/",
+  "source": "batch25q",
+  "duration_s": 0.679,
+  "take": "b25q_750_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "33338d9fc6da"
  },
  {
   "index": 751,
@@ -3805,11 +3818,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 16,
-  "tts": "oo deh po teh",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "4a468475a9ad",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/uːˈde.pɒ.te/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "8b741ed8ee0a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_753_a"
  },
  {
   "index": 754,
@@ -3820,11 +3834,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "pah thay mah",
-  "source": "composed",
-  "duration_s": 1.32,
-  "sha1": "a987e9192cd8",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈpa.θeː.ma/",
+  "source": "batch25q",
+  "duration_s": 0.914,
+  "sha1": "a8ce68bb37fa",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_754_a"
  },
  {
   "index": 755,
@@ -3835,11 +3850,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "pah reh khoh",
-  "source": "composed",
-  "duration_s": 1.488,
-  "sha1": "03ffc29dba2d",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/paˈre.koː/",
+  "source": "batch25q",
+  "duration_s": 0.993,
+  "sha1": "bd558181a170",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_755_a"
  },
  {
   "index": 756,
@@ -3898,12 +3914,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "sool lam bah noh",
-  "source": "rollout",
-  "duration_s": 2.077,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "8d9b3f0d8059"
+  "tts": "/sullamˈba.noː/",
+  "source": "batch25q",
+  "duration_s": 1.62,
+  "take": "b25q_759_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "b814f7d9c6f2"
  },
  {
   "index": 760,
@@ -3930,10 +3946,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "teras",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "351233a858d1"
+  "tts": "/ˈte.ras/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "93fb90ae4bb5",
+  "take": "b25q_761_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 762,
@@ -3944,10 +3962,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "tol mah oh",
-  "source": "worklist-candidate",
-  "duration_s": 1.416,
-  "sha1": "c1d839d46251"
+  "tts": "/tɒlˈma.oː/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "51995b6cf03d",
+  "take": "b25q_762_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 763,
@@ -3974,11 +3994,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "ah theh teh hoe",
-  "source": "composed",
-  "duration_s": 1.968,
-  "sha1": "60252fe3d977",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aθeˈte.oː/",
+  "source": "batch25q",
+  "duration_s": 1.384,
+  "sha1": "e13340b11303",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_764_a"
  },
  {
   "index": 765,
@@ -3989,12 +4010,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "ah nak ree noh",
-  "source": "rollout",
-  "duration_s": 1.787,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "494411b23fec"
+  "tts": "/anaˈkri.noː/",
+  "source": "batch25q",
+  "duration_s": 1.306,
+  "take": "b25q_765_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "7b78f406e1ea"
  },
  {
   "index": 766,
@@ -4053,11 +4074,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 16,
-  "tts": "eh pay tah",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "90a13a7e57c3",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈɛ.pei̯.ta/",
+  "source": "batch25q",
+  "duration_s": 1.149,
+  "sha1": "2314d0466085",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_769_a"
  },
  {
   "index": 770,
@@ -4068,11 +4090,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 16,
-  "tts": "eh feh soss",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "82151a02286f",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈɛ.fe.sɒs/",
+  "source": "batch25q",
+  "duration_s": 1.306,
+  "sha1": "331d220006e7",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_770_a"
  },
  {
   "index": 771,
@@ -4083,10 +4106,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "hoos teh reh hoe",
-  "source": "worklist-candidate",
-  "duration_s": 1.56,
-  "sha1": "10f5a2b3c2ae"
+  "tts": "/husteˈre.oː/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "367c533df9a0",
+  "take": "b25q_771_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 772,
@@ -4145,10 +4170,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "ghew o my",
-  "source": "worklist-candidate",
-  "duration_s": 1.656,
-  "sha1": "ffdcdc594fd2"
+  "tts": "/ˈɡjuɒmai̯/",
+  "source": "batch25q",
+  "duration_s": 0.993,
+  "sha1": "5663a68fcaff",
+  "take": "b25q_775_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 776,
@@ -4411,12 +4438,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "oy koo meh ney",
-  "source": "composed",
-  "duration_s": 1.358,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "c518a729ea29"
+  "tts": "/oi̯kuːˈme.neː/",
+  "source": "batch25q",
+  "duration_s": 1.384,
+  "take": "b25q_792_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "b942cea46426"
  },
  {
   "index": 793,
@@ -4473,10 +4500,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 15,
-  "tts": "perees soteh ross",
-  "source": "worklist-candidate",
-  "duration_s": 2.136,
-  "sha1": "03c8ddc9c67f"
+  "tts": "/perɪsˈsɒ.te.rɒs/",
+  "source": "batch25q",
+  "duration_s": 1.62,
+  "sha1": "745f6cf236d5",
+  "take": "b25q_796_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 797,
@@ -4487,11 +4516,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "po tee zoh",
-  "source": "composed",
-  "duration_s": 1.248,
-  "sha1": "39c4dac4dd05",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/pɒˈtiʣoː/",
+  "source": "batch25q",
+  "duration_s": 0.993,
+  "sha1": "1611b0fe41dd",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_797_a"
  },
  {
   "index": 798,
@@ -4517,11 +4547,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "sah lew hoe",
-  "source": "composed",
-  "duration_s": 1.656,
-  "sha1": "fc86abeee665",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/saˈlju.oː/",
+  "source": "batch25q",
+  "duration_s": 1.149,
+  "sha1": "c5d408520946",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_799_a"
  },
  {
   "index": 800,
@@ -4532,12 +4563,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "skan dah lon",
-  "source": "rollout",
-  "duration_s": 1.809,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "ef5713654e62"
+  "tts": "/ˈskan.da.lɒn/",
+  "source": "batch25q",
+  "duration_s": 1.541,
+  "take": "b25q_800_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "sha1": "0163330f7c1e"
  },
  {
   "index": 801,
@@ -4548,10 +4579,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "soom feh roh",
-  "source": "worklist-candidate",
-  "duration_s": 1.416,
-  "sha1": "a67bf01ab950"
+  "tts": "/sumˈfe.roː/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "42a4ea998f33",
+  "take": "b25q_801_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 802,
@@ -4562,10 +4595,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "soo nees tay mee",
-  "source": "worklist-candidate",
-  "duration_s": 1.728,
-  "sha1": "2dc90da94548"
+  "tts": "/suˈnɪ.steː.mɪ/",
+  "source": "batch25q",
+  "duration_s": 1.149,
+  "sha1": "0613ec630ca3",
+  "take": "b25q_802_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 803,
@@ -4576,10 +4611,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "sfrah ghee zoh",
-  "source": "worklist-candidate",
-  "duration_s": 3.241,
-  "sha1": "ea63e2078171"
+  "tts": "/səfraˈɡiʣoː/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "5b95b42a77ca",
+  "take": "b25q_803_a",
+  "note": "the HELPER VOWEL for the sfr cluster. Without it the word spelled itself out on about one roll in three -- English has no word-initial /sfr/ and the cluster defeats the voice. The letter-name test missed it, the beat count caught it, and the screen now knows sf is a cluster English cannot open"
  },
  {
   "index": 804,
@@ -4590,10 +4627,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "trah peh zah",
-  "source": "worklist-candidate",
-  "duration_s": 1.896,
-  "sha1": "95f78549b35a"
+  "tts": "/ˈtra.peʣa/",
+  "source": "batch25q",
+  "duration_s": 1.463,
+  "sha1": "c7096a202b47",
+  "take": "b25q_804_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 805,
@@ -4604,10 +4643,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "tooposs",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "3969c4aea4f1"
+  "tts": "/ˈtu.pɒs/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "4e0597c5f889",
+  "take": "b25q_805_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 806,
@@ -4661,11 +4702,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "ah no mee ah",
-  "source": "composed",
-  "duration_s": 1.728,
-  "sha1": "4e60219623b2",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/anɒˈmi.a/",
+  "source": "batch25q",
+  "duration_s": 0.993,
+  "sha1": "1bdc4df0f8f1",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_809_a"
  },
  {
   "index": 810,
@@ -4676,11 +4718,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "ah pah goh",
-  "source": "composed",
-  "duration_s": 1.968,
-  "sha1": "f60dcfe60773",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈpa.ɡoː/",
+  "source": "batch25q",
+  "duration_s": 1.071,
+  "sha1": "48413e12b45c",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time",
+  "take": "b25q_810_a"
  },
  {
   "index": 811,
@@ -4691,10 +4734,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "epag ghello my",
-  "source": "worklist-candidate",
-  "duration_s": 2.376,
-  "sha1": "74eb0a395886"
+  "tts": "/ɛ.paŋˈɡel.lɒ.mai̯/",
+  "source": "batch25q",
+  "duration_s": 2.038,
+  "sha1": "c6beea58a21a",
+  "take": "b25q_811_a",
+  "note": "the last of the unheard cues. Several carry the plain-k chi for the first time"
  },
  {
   "index": 812,
