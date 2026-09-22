@@ -3,238 +3,322 @@
     "n": 1,
     "filename": "f01_he.mp3",
     "greek": "ἡ",
-    "tts": "hay",
+    "tts": "/ˈhei̯/",
     "used_by_entries": 66,
     "examples": [
       "ὁ, ἡ, τό",
       "ἡμέρα, -ας, ἡ",
       "γῆ, γῆς, ἡ"
     ],
-    "duration_s": 0.836
+    "duration_s": 0.758,
+    "take": "bF1_1_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('hay') and one other take — the rules' cue",
+    "sha1": "2c2e3cb68d94"
   },
   {
     "n": 2,
     "filename": "f02_ho.mp3",
     "greek": "ὁ",
-    "tts": "ho",
+    "tts": "/ˈhɒ/",
     "used_by_entries": 63,
     "examples": [
       "θεός, -οῦ, ὁ",
       "Ἰησοῦς, -οῦ, ὁ",
       "κύριος, -ου, ὁ"
     ],
-    "duration_s": 0.836
+    "duration_s": 0.679,
+    "take": "bF1_2_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ho') and one other take — the rules' cue",
+    "sha1": "f1f19cebdf3e"
   },
   {
     "n": 3,
     "filename": "f03_to.mp3",
     "greek": "τό",
-    "tts": "taw",
+    "tts": "/ˈtɒ/",
     "used_by_entries": 39,
     "examples": [
       "ὁ, ἡ, τό",
       "πνεῦμα, -ατος, τό",
       "ὄνομα, -ατος, τό"
     ],
-    "duration_s": 0.94
+    "duration_s": 0.758,
+    "take": "bF1_3_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('taw') and one other take — the rules' cue",
+    "sha1": "f102c3ea055e"
   },
   {
     "n": 4,
     "filename": "f04_ouk.mp3",
     "greek": "οὐκ",
-    "tts": "ook",
+    "tts": "/ˈuːk/",
     "used_by_entries": 1,
     "examples": [
       "οὐ, οὐκ, οὐχ"
     ],
-    "duration_s": 0.784
+    "duration_s": 0.496,
+    "take": "bF1_4_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ook') and one other take — the rules' cue",
+    "sha1": "2ad55bf2a343"
   },
   {
     "n": 5,
     "filename": "f05_ouch.mp3",
     "greek": "οὐχ",
-    "tts": "ooch",
+    "tts": "/ˈuːk/",
     "used_by_entries": 1,
     "examples": [
       "οὐ, οὐκ, οὐχ"
     ],
-    "duration_s": 1.045
+    "duration_s": 0.679,
+    "take": "bF1_5_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ooch') and one other take — the rules' cue",
+    "sha1": "2684bf94bd6a"
   },
   {
     "n": 6,
     "filename": "f06_he_rel.mp3",
     "greek": "ἥ",
-    "tts": "hay",
+    "tts": "/ˈhei̯/",
     "used_by_entries": 1,
     "examples": [
       "ὅς, ἥ, ὅ"
     ],
-    "duration_s": 0.836
+    "duration_s": 0.758,
+    "take": "bF1_6_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('hay') and one other take — the rules' cue",
+    "sha1": "b68fc1849ffa"
   },
   {
     "n": 7,
     "filename": "f07_ho_rel.mp3",
     "greek": "ὅ",
-    "tts": "ho",
+    "tts": "/ˈhɒ/",
     "used_by_entries": 1,
     "examples": [
       "ὅς, ἥ, ὅ"
     ],
-    "duration_s": 0.836
+    "duration_s": 0.601,
+    "take": "bF1_7_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ho') and one other take — the rules' cue",
+    "sha1": "2ab48e4d3c03"
   },
   {
     "n": 8,
     "filename": "f08_pasa.mp3",
     "greek": "πᾶσα",
-    "tts": "pah sah",
+    "tts": "/ˈpaː.sa/",
     "used_by_entries": 1,
     "examples": [
       "πᾶς, πᾶσα, πᾶν"
     ],
-    "duration_s": 1.306
+    "duration_s": 0.758,
+    "take": "bF1_8_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('pah sah') and one other take — the rules' cue",
+    "sha1": "04743d6820b9"
   },
   {
     "n": 9,
     "filename": "f09_pan.mp3",
     "greek": "πᾶν",
-    "tts": "pahn",
+    "tts": "/ˈpaːn/",
     "used_by_entries": 1,
     "examples": [
       "πᾶς, πᾶσα, πᾶν"
     ],
-    "duration_s": 0.993
+    "duration_s": 0.836,
+    "take": "bF1_9_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('pahn') and one other take — the rules' cue",
+    "sha1": "f9a38eca9828"
   },
   {
     "n": 10,
     "filename": "f10_ex.mp3",
     "greek": "ἐξ",
-    "tts": "ex",
+    "tts": "/ˈɛks/",
     "used_by_entries": 1,
     "examples": [
       "ἐκ, ἐξ"
     ],
-    "duration_s": 1.019
+    "duration_s": 0.836,
+    "take": "bF1_10_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ex') and one other take — the rules' cue",
+    "sha1": "f7397ba0859e"
   },
   {
     "n": 11,
     "filename": "f11_ti_int.mp3",
     "greek": "τί",
-    "tts": "tee",
+    "tts": "/ˈtɪ/",
     "used_by_entries": 1,
     "examples": [
       "τίς, τί"
     ],
-    "duration_s": 0.784
+    "duration_s": 0.601,
+    "take": "bF1_11_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('tee') and one other take — short iota, as τις was settled",
+    "sha1": "1a5f730d80b4"
   },
   {
     "n": 12,
     "filename": "f12_ti_ind.mp3",
     "greek": "τι",
-    "tts": "tee",
+    "tts": "/ˈtɪ/",
     "used_by_entries": 1,
     "examples": [
       "τις, τι"
     ],
-    "duration_s": 0.784
+    "duration_s": 0.601,
+    "take": "bF1_12_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('tee') and one other take — short iota, as τις was settled",
+    "sha1": "ddab849c64e9"
   },
   {
     "n": 13,
     "filename": "f13_polle.mp3",
     "greek": "πολλή",
-    "tts": "pol lay",
+    "tts": "/pɒlˈlei̯/",
     "used_by_entries": 1,
     "examples": [
       "πολύς, πολλή, πολύ"
     ],
-    "duration_s": 1.306
+    "duration_s": 0.914,
+    "take": "bF1_13_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('pol lay') and one other take — the same cue, re-rolled",
+    "sha1": "6fc09e0b6ed0"
   },
   {
     "n": 14,
     "filename": "f14_polu.mp3",
     "greek": "πολύ",
-    "tts": "po loo",
+    "tts": "/pɒˈlu/",
     "used_by_entries": 1,
     "examples": [
       "πολύς, πολλή, πολύ"
     ],
-    "duration_s": 1.019
+    "duration_s": 0.836,
+    "take": "bF1_14_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('po loo') and one other take — the same cue, re-rolled",
+    "sha1": "56532a679ea4"
   },
   {
     "n": 15,
     "filename": "f15_patros.mp3",
     "greek": "πατρός",
-    "tts": "pa tross",
+    "tts": "/paˈtrɒs/",
     "used_by_entries": 1,
     "examples": [
       "πατήρ, πατρός, ὁ"
     ],
-    "duration_s": 1.541
+    "duration_s": 1.071,
+    "take": "bF1_15_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('pa tross') and one other take — the same cue, re-rolled",
+    "sha1": "31ba43c11b04"
   },
   {
     "n": 16,
     "filename": "f16_mia.mp3",
     "greek": "μία",
-    "tts": "mee ah",
+    "tts": "/ˈmi.a/",
     "used_by_entries": 1,
     "examples": [
       "εἷς, μία, ἕν"
     ],
-    "duration_s": 1.646
+    "duration_s": 0.836,
+    "take": "bF1_16_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('mee ah') and one other take — the same cue, re-rolled",
+    "sha1": "e28036b77357"
   },
   {
     "n": 17,
     "filename": "f17_hen.mp3",
     "greek": "ἕν",
-    "tts": "hen",
+    "tts": "/ˈhɛn/",
     "used_by_entries": 1,
     "examples": [
       "εἷς, μία, ἕν"
     ],
-    "duration_s": 0.888
+    "duration_s": 0.679,
+    "take": "bF1_17_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('hen') and one other take — the same cue, re-rolled",
+    "sha1": "29d9d24921e3"
   },
   {
     "n": 18,
     "filename": "f18_ges.mp3",
     "greek": "γῆς",
-    "tts": "gace",
+    "tts": "/ˈɡeːs/",
     "used_by_entries": 1,
     "examples": [
       "γῆ, γῆς, ἡ"
     ],
-    "duration_s": 1.071
+    "duration_s": 0.836,
+    "take": "bF1_18_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('gace') and one other take — eta as γῆ itself was settled, /eː/",
+    "sha1": "46a00c2f1fa4"
   },
   {
     "n": 19,
     "filename": "f19_megale.mp3",
     "greek": "μεγάλη",
-    "tts": "meh gah lay",
+    "tts": "/mɛˈɡa.lei̯/",
     "used_by_entries": 1,
     "examples": [
       "μέγας, μεγάλη, μέγα"
     ],
-    "duration_s": 2.038
+    "duration_s": 1.306,
+    "take": "bF1_19_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('meh gah lay') and one other take — the same cue, re-rolled",
+    "sha1": "50437c309b27"
   },
   {
     "n": 20,
     "filename": "f20_mega.mp3",
     "greek": "μέγα",
-    "tts": "meh gah",
+    "tts": "/ˈmɛ.ɡa/",
     "used_by_entries": 1,
     "examples": [
       "μέγας, μεγάλη, μέγα"
     ],
-    "duration_s": 1.541
+    "duration_s": 0.914,
+    "take": "bF1_20_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('meh gah') and one other take — the same cue, re-rolled",
+    "sha1": "e58c3078d00a"
   },
   {
     "n": 21,
     "filename": "f21_oudemia.mp3",
     "greek": "οὐδεμία",
-    "tts": "oo deh mee ah",
+    "tts": "/uː.dɛˈmi.a/",
     "used_by_entries": 1,
     "examples": [
       "οὐδείς, οὐδεμία, οὐδέν"
     ],
-    "duration_s": 2.09
+    "duration_s": 1.306,
+    "take": "bF1_21_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('oo deh mee ah') and one other take — the same cue, re-rolled",
+    "sha1": "a145293f991f"
   },
   {
     "n": 22,

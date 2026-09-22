@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v218';
+const VERSION = 'v219';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,28 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v219: extra forms re-cued in IPA, batch 1 of 2 -- ἡ, ὁ, τό and 18 more. */
+  'audio/forms/f01_he.mp3',
+  'audio/forms/f02_ho.mp3',
+  'audio/forms/f03_to.mp3',
+  'audio/forms/f04_ouk.mp3',
+  'audio/forms/f05_ouch.mp3',
+  'audio/forms/f06_he_rel.mp3',
+  'audio/forms/f07_ho_rel.mp3',
+  'audio/forms/f08_pasa.mp3',
+  'audio/forms/f09_pan.mp3',
+  'audio/forms/f10_ex.mp3',
+  'audio/forms/f11_ti_int.mp3',
+  'audio/forms/f12_ti_ind.mp3',
+  'audio/forms/f13_polle.mp3',
+  'audio/forms/f14_polu.mp3',
+  'audio/forms/f15_patros.mp3',
+  'audio/forms/f16_mia.mp3',
+  'audio/forms/f17_hen.mp3',
+  'audio/forms/f18_ges.mp3',
+  'audio/forms/f19_megale.mp3',
+  'audio/forms/f20_mega.mp3',
+  'audio/forms/f21_oudemia.mp3',
   /* v218: iota again -- the old clip's name spliced onto the example words. */
   /* v217: iota says lesson 1's example words, as upsilon already did. */
   'audio/clips/09_iota.mp3',
