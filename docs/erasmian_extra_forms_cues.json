@@ -505,15 +505,16 @@
     "n": 34,
     "filename": "f34_medemia.mp3",
     "greek": "μηδεμία",
-    "tts": "may deh mee ah",
+    "tts": "/mei̯dɛˈmia/",
     "used_by_entries": 1,
     "examples": [
       "μηδείς, μηδεμία, μηδέν"
     ],
-    "duration_s": 2.203,
+    "duration_s": 1.463,
     "source": "forms-2026-09-23",
-    "note": "heard and kept: the pre-IPA clip. Fraser: b and c speak the dots",
-    "sha1": "a895dcdf190b"
+    "note": "chosen by ear over the pre-IPA clip ('may deh mee ah') and one other take — fully dotless, for the hiatus dot the rule does not reach",
+    "sha1": "5a8bef8228e7",
+    "take": "bF3_34_c"
   },
   {
     "n": 35,
