@@ -723,6 +723,14 @@ def ipa_cue(ipa):
     # already written for it.
     if re.search("ju[^aeiouɒɛɪʊ.ː̯]+$", s):
         s = s.replace(".", "")
+    # WORD-INITIAL CHI IS A PLAIN k TOO, so chi is k wherever it stands.
+    # Approved as `x` exactly twice, both stressed and both before `a` or
+    # `r`; failed every other time it was asked — χιλιάς and χαρά as a
+    # z, χήρα as an h, twice. Medial chi has been a plain k since 15B,
+    # settled on εἰσέρχομαι and confirmed on οὐχί, so this removes the
+    # last inconsistency rather than adding one.
+    s = re.sub(r"^(\u02c8?)x", r"\1k", s)
+
 
     # THE OPEN EPSILON, EVERYWHERE — not just at the front of a string.
     # Measured in batch 25O: a plain short `e` reads as English *ay* often
@@ -747,6 +755,15 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    556: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    587: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    620: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    621: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    634: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    673: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    675: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    700: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
+    701: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     499: "the omega written as a DIPHTHONG, and it may be the answer for every "
          "-\u03b1\u03c9 verb. Dedotted it read as the English word *now*, the two "
          "vowels fusing with nothing left to keep them apart; restoring the "
@@ -762,12 +779,6 @@ IPA_HEARD = {
     635: "dedotted, and the screen confirmed the ear exactly \u2014 it flagged the "
          "cue that was SHIPPING as spelling itself A-T-I-A, which is what "
          "\"sounds like i t i\" had said",
-    297: "THE PLAIN k, the second word-initial chi to need it after \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2. "
-         "ONLY TWO FORMS OF WORD-INITIAL `x` HAVE EVER BEEN APPROVED: stressed "
-         "before `a` (\u03c7\u03ac\u03c1\u03b9\u03c2) and stressed before `r` (\u03c7\u03c1\u03b5\u03af\u03b1). Every other shape "
-         "asked has failed \u2014 this one and \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2 as a z, \u03c7\u03ae\u03c1\u03b1 as an h. The v206 "
-         "message called that an UNSTRESSED-chi rule and \u03c7\u03ae\u03c1\u03b1 refutes it: it "
-         "is stressed and fails too",
     418: "the pre-stress dots removed, by the screen, after the string said its dot aloud. It was SPELLING itself, `pi \u0251\u02d0\u0279 a\u026a ti o em`, "
          "and the beat count caught it where the letter-name test did not: the "
          "recogniser rendered E and O as bare `i` and `o` rather than `i\u02d0` and "
