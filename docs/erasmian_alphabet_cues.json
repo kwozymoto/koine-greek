@@ -121,15 +121,15 @@
     {
       "id": "09_iota",
       "file_mp3": "09_iota.mp3",
-      "file_wav": "09_iota.wav",
       "greek": "Ι ι",
       "name": "Iota",
       "sound": "ih / ee",
       "kind": "letter",
-      "duration_sec": 1.719,
-      "master_start_sec": 25.473,
-      "master_end_sec": 27.192,
-      "sha1": "51c2372de385"
+      "duration_sec": 2.273,
+      "sha1": "80c536b7c31b",
+      "cue": "/aɪˈjoʊtaː/ … ih, or ee",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the shipping clip and two other renderings — the sounds in plain English. Iota has two sounds, and the short one merged into the long whenever 'or' was written in IPA; in plain English the two stay apart. The name carries the y-glide the old clip had, 'eye-YO-ta', which the ear preferred."
     },
     {
       "id": "10_kappa",
@@ -190,12 +190,12 @@
       "name": "Xi",
       "sound": "ks",
       "kind": "letter",
-      "duration_sec": 1.698,
-      "sha1": "b5cc4efb5fc1",
+      "duration_sec": 1.541,
+      "sha1": "3f7adee652e8",
       "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas parts",
-      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name as ksai, sound with a schwa. Chosen with the remark that some of the vocabulary's xi sounds were better, so an alternative goes up for comparison.",
-      "cue": "/ˈksaɪ … ksə/"
+      "note": "chosen by ear over the shipping clip and two other renderings — the sound plain. Replaces the xi installed one round earlier, which was chosen with the remark that the vocabulary's xi sounded better.",
+      "cue": "/ˈksaɪ … ks/"
     },
     {
       "id": "15_omicron",
@@ -270,11 +270,12 @@
       "name": "Upsilon",
       "sound": "oo",
       "kind": "letter",
-      "duration_sec": 1.94,
-      "sha1": "8cba5e0488ff",
-      "source": "composite",
+      "duration_sec": 4.258,
+      "sha1": "d57d0778432e",
+      "source": "letters-2026-09-23",
       "take": "2026-09-12, Atlas part",
-      "note": "Fraser heard the NAME as \"up silon\" and asked for \"oop silon\": every other letter here opens on its own sound -- EP-silon, OM-icron, AY-ta -- and lesson 1 teaches upsilon as \"u as in lute / put\", cued oo. Standard English says UP-silon, so this was a teaching choice and not a correction. He then took the NAME from the shipped clip and only the SOUND from a new take, which is what this is: a splice, the method eta, ei and xi were repaired by. The sound was recorded in the sheet as \"ew / ue\", a value the cue guide had overruled long ago, so the record had been describing a sound the course does not teach. Cut in the silence either side with 10-30ms fades, re-spaced to lead 0.19 / gap 0.39 / tail 0.29 against pi's 0.16 / 0.35 / 0.26. The old clip peaked at -9.7 dB, louder than every other letter; this one is -13.6, where pi and epsilon sit. REOPENED AND RESTORED 2026-09-15. The lesson narration seemed to say OOP-silon, so the name was changed to match and this row said so for one commit. Fraser relistened to that narration block and it says UP-silon, as this clip and the whole vocabulary pack already did. Nothing needed changing. Judged by ear, Fraser."
+      "note": "chosen by ear over the shipping clip and two other renderings — lesson 1's own words carry both sounds. The only letter clip that gives example words, and chosen for it: upsilon's short sound came out as its long one in every other arrangement tried. Lesson 1 gives example words for most letters, so the clip matches the lesson's own way of teaching.",
+      "cue": "/ˈʊpsɪlɒn/ … /uː/, as in lute, or /ʊ/, as in put"
     },
     {
       "id": "21_phi",
@@ -309,24 +310,25 @@
       "name": "Psi",
       "sound": "ps",
       "kind": "letter",
-      "duration_sec": 1.27,
-      "sha1": "2b6b936a3e75",
-      "source": "composite",
+      "duration_sec": 2.194,
+      "sha1": "8c47423dde62",
+      "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas name + splice",
-      "note": "Atlas will say the NAME psi with its p, and will not say the bare cluster: English has no word-initial /ps/, so there is nothing in the voice's experience to produce. The second half is therefore not spoken at all — it is the first 160 ms of this clip's own name, cut at the vowel and faded. Splicing from the deck's psuche was tried first and failed: that clip has NO plosive release, energy climbing smoothly out of silence into frication, so there was never a /p/ in it to lift. Fraser heard that before it was measured. Judged by ear, Fraser."
+      "note": "chosen by ear over the shipping clip and two other renderings — a helper vowel so the p is heard, as psai. A helper vowel before the name, because English cannot open a word with /ps/ and drops the p -- the same cluster as πν in πνευματικός.",
+      "cue": "/pəˈsaɪ … psə/"
     },
     {
       "id": "24_omega",
       "file_mp3": "24_omega.mp3",
-      "file_wav": "24_omega.wav",
       "greek": "Ω ω",
       "name": "Omega",
       "sound": "oh",
       "kind": "letter",
-      "duration_sec": 1.508,
-      "master_start_sec": 74.835,
-      "master_end_sec": 76.343,
-      "sha1": "b2ba1f921d06"
+      "duration_sec": 1.62,
+      "sha1": "ea5e4399d3f8",
+      "cue": "/oʊˈmeɪɡaː … oː/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the shipping clip and two other renderings — name oh-MAY-ga, sound held. Offered a second time after the first round came back with no verdict."
     },
     {
       "id": "d01_ai",

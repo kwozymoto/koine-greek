@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v214';
+const VERSION = 'v215';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,14 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v215: the alphabet's last five letters — every one of the 24 now
+     has a clip chosen by ear. Iota and upsilon each say both their
+     sounds. */
+  'audio/clips/09_iota.mp3',
+  'audio/clips/14_xi.mp3',
+  'audio/clips/20_upsilon.mp3',
+  'audio/clips/23_psi.mp3',
+  'audio/clips/24_omega.mp3',
   /* v214: the alphabet, batch 2 — eight more letters re-cued and
      generated on their own. Rho's clip is an English r: the voice
      cannot trill, and lesson 1 still says trilled. */
