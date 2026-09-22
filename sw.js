@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v211';
+const VERSION = 'v212';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,11 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v212: χήρα, on the χρεία ending undotted -- the same fix Ἀντιόχεια
+     took a lot earlier. It is the 817th of the deck's 818 cues to have been
+     through an ear; εὐλογία is the last one out. */
+  'audio/vocab/550_chera.mp3',
+  'audio/vocab/744_eulogia.mp3',
   /* v211: batch 25R, eight of ten -- the ten that 25Q had sent with
      pre-rule cues, re-cued with the rules actually applied. Every chi came
      back right as a k and every epsilon right as ɛ, which is the rules

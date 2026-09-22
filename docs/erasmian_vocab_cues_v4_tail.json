@@ -612,10 +612,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 26,
-  "tts": "khayrah",
-  "source": "worklist-candidate",
-  "duration_s": 0.936,
-  "sha1": "21275fa763fe"
+  "tts": "/ˈkei̯ra/",
+  "source": "batch25s",
+  "duration_s": 0.836,
+  "sha1": "647555e2a5e8",
+  "take": "b25s_550_a",
+  "note": "the chreia ending undotted, which is the fix Antiocheia took two lots earlier. The dot between kei and the vowel behind it was letting them stand apart as the letters K and A -- this word was spelling K-I-R-A. chreia is approved carrying that same ending with no dot"
  },
  {
   "index": 551,
@@ -3680,11 +3682,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "ew lo ghee ah",
-  "source": "composed",
-  "duration_s": 1.8,
-  "sha1": "af0facfecd6b",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/juˌlɒˈɡi.a/",
+  "source": "batch25t",
+  "duration_s": 1.149,
+  "sha1": "6bdd1b36dc28",
+  "note": "the secondary stress moved off the glide and onto the lo, and THE LAST CUE IN THE DECK to be settled. Caught between two faults for five rounds: with a dot after ju the l doubles, because the dot closes one syllable and opens the next so the consonant is said twice; without the dot the j sounds on its own. Moving the stress gives the l a syllable onset of its own with no dot to make it ambisyllabic",
+  "take": "b25t_744_a"
  },
  {
   "index": 745,

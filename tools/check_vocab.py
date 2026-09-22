@@ -755,6 +755,23 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    550: "the χρεία ending, undotted — the same fix Ἀντιόχεια took a "
+         "lot earlier. The dot between `kei̯` and the vowel behind it let them "
+         "stand apart as letter names and the word spelled itself K-I-R-A; "
+         "χρεία `/ˈkrei̯a/` is approved carrying that ending with no dot. "
+         "It took four rounds because the chi rule was already in the "
+         "converter and could not reach this cue — settled.py was holding it "
+         "at a pre-rule form",
+    744: "the SECONDARY STRESS moved off the glide and onto the `lɒ`, and "
+         "THIS IS THE LAST CUE IN THE DECK to be settled. It was caught "
+         "between two faults for five rounds: with a dot after `ju` the l "
+         "doubles — \"yoo-lo-lo-ghee-ah\" — because the dot closes one "
+         "syllable and opens the next, so the consonant is said twice; without "
+         "the dot the j sounds on its own. Moving the stress gives the l a "
+         "syllable onset of its own with no dot to make it ambisyllabic, and "
+         "stops both at once. Two other arrangements were screened and "
+         "withdrawn rather than sent: `/ˌjul.ɒˈɡi.a/` lost the l altogether "
+         "and `/ju.lɒˈɡi.a/` spoke its dot on all three rolls",
     698: "the chi rule and the χρεία ending together. Its `kei̯.a` "
          "was standing apart as the letters K and A — \"anti ah o k e a\" — "
          "and χρεία `/ˈkrei̯a/` is approved carrying that exact ending "
