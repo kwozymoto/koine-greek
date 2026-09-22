@@ -674,12 +674,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 413,
-  "tts": "/paˈteːr/",
-  "source": "batch25l",
-  "duration_s": 0.836,
-  "sha1": "202d2df9b24e",
-  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
-  "take": "b25l_43_a"
+  "tts": "/paˈtei̯r/",
+  "source": "batch25o",
+  "duration_s": 0.914,
+  "sha1": "699ea0013458",
+  "note": "the eta as a single ei-pair, on a word already approved. A control that chose the new cue",
+  "take": "b25o_43_a"
  },
  {
   "index": 44,
@@ -848,12 +848,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 296,
-  "tts": "/laˈle.oː/",
-  "source": "batch25l",
-  "duration_s": 0.993,
-  "sha1": "2a5c241f4a1c",
-  "note": "the converter own output, from the round that took the forty most frequent cues still unheard -- two thirds of the remaining exposure in one sitting",
-  "take": "b25l_54_a"
+  "tts": "/laˈlɛ.oː/",
+  "source": "batch25o",
+  "duration_s": 1.071,
+  "sha1": "8f68e4a3ca79",
+  "note": "THE OPEN EPSILON, ON A WORD ALREADY APPROVED. It was a control in the inventory test and the ear preferred the new cue to the one it had already passed",
+  "take": "b25o_54_a"
  },
  {
   "index": 55,
@@ -2117,12 +2117,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 118,
-  "tts": "/ˈme.noː/",
-  "source": "batch25k",
-  "duration_s": 0.914,
-  "sha1": "f32bbb3181ce",
-  "note": "the converter own output, from the eighth frequency-spread sample -- the first sample to come back complete",
-  "take": "b25k_135_a"
+  "tts": "/ˈmɛ.noː/",
+  "source": "batch25o",
+  "duration_s": 0.836,
+  "sha1": "1136a9a607fe",
+  "note": "THE OPEN EPSILON, ON A WORD ALREADY APPROVED. It was a control in the inventory test and the ear preferred the new cue to the one it had already passed",
+  "take": "b25o_135_a"
  },
  {
   "index": 136,
@@ -7345,11 +7345,12 @@
   "pos": "particle",
   "tier": 4,
   "freq": 30,
-  "tts": "ee deh",
-  "source": "composed",
-  "duration_s": 0.823,
-  "sha1": "9f74bcbfbe27",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈi.dɛ/",
+  "source": "batch25o",
+  "duration_s": 0.914,
+  "sha1": "5447762bf393",
+  "note": "the OPEN EPSILON, from the inventory test. A plain short e reads as English *ay* often enough to wreck a round, and no position separates the approvals from the failures -- both sit in every one. This is the symbol Black actually gives for epsilon, *met*, and it has never once been complained about",
+  "take": "b25o_468_a"
  },
  {
   "index": 469,

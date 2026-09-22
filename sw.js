@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v207';
+const VERSION = 'v208';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,26 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v208: THE INVENTORY TEST. Thirteen words that had failed and seven an
+     ear had already approved, each re-cued with every short epsilon written
+     ɛ and the first eta written as the ay-pair. The controls are what made
+     it a test and one of them broke, which is the finding: εἰρήνη carried
+     three ay-pairs and spelled itself out. So ɛ everywhere, and the ay-pair
+     ONCE per word. Five of these thirteen are words already approved whose
+     ear preferred the new cue to the one it had passed. */
+  'audio/vocab/043_pater.mp3',
+  'audio/vocab/054_laleo.mp3',
+  'audio/vocab/135_meno.mp3',
+  'audio/vocab/468_ide.mp3',
+  'audio/vocab/499_merimnao.mp3',
+  'audio/vocab/504_teleioo.mp3',
+  'audio/vocab/557_deka.mp3',
+  'audio/vocab/562_nephele.mp3',
+  'audio/vocab/626_latreuo.mp3',
+  'audio/vocab/627_meketi.mp3',
+  'audio/vocab/635_aitia.mp3',
+  'audio/vocab/649_eneken.mp3',
+  'audio/vocab/692_stephanos.mp3',
   /* v207: batch 25M, forty-one of forty-three. μετά is the one to name:
      469 occurrences, the biggest word this loop has settled, and it took
      the open epsilon that περί needed for the identical complaint a

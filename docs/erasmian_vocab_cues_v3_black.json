@@ -475,10 +475,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 19,
-  "tts": "meh reem nah oh",
-  "source": "black",
-  "duration_s": 2.311,
-  "sha1": "b7b6317e6508"
+  "tts": "/mɛrɪˈmnaoʊ/",
+  "source": "batch25o",
+  "duration_s": 1.384,
+  "sha1": "807e7ae7a1c9",
+  "take": "b25o_499_a",
+  "note": "the open epsilon AND the omega written oU. Restoring the hiatus dot brought the omega back and the dot then spoke; writing the omega as a diphthong keeps the two vowels apart with no dot at all. That is likely the answer for every -aw verb"
  },
  {
   "index": 500,
@@ -552,11 +554,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 23,
-  "tts": "teh lay oh oh",
-  "source": "composed",
-  "duration_s": 2.213,
-  "sha1": "5347c18ee2d2",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/tɛlei̯ˈɒ.oː/",
+  "source": "batch25o",
+  "duration_s": 1.071,
+  "sha1": "70041fded7b2",
+  "note": "the OPEN EPSILON, from the inventory test. A plain short e reads as English *ay* often enough to wreck a round, and no position separates the approvals from the failures -- both sit in every one. This is the symbol Black actually gives for epsilon, *met*, and it has never once been complained about. Its eta stays a single ei-pair, which the test showed is the limit",
+  "take": "b25o_504_a"
  },
  {
   "index": 505,

@@ -720,10 +720,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 25,
-  "tts": "dekah",
-  "source": "worklist-candidate",
-  "duration_s": 1.08,
-  "sha1": "e8913e5e6133"
+  "tts": "/ˈdɛ.ka/",
+  "source": "batch25o",
+  "duration_s": 0.679,
+  "sha1": "41f2cd1d294a",
+  "take": "b25o_557_a",
+  "note": "the OPEN EPSILON, from the inventory test. A plain short e reads as English *ay* often enough to wreck a round, and no position separates the approvals from the failures -- both sit in every one. This is the symbol Black actually gives for epsilon, *met*, and it has never once been complained about"
  },
  {
   "index": 558,
@@ -796,12 +798,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "/neˈfe.leː/",
-  "source": "batch23",
-  "duration_s": 1.071,
-  "take": "b23w_562_a",
-  "note": "the converter's own output. Clears vc:ef and vc:el",
-  "sha1": "c3b5dd6fe227"
+  "tts": "/nɛˈfɛ.lei̯/",
+  "source": "batch25o",
+  "duration_s": 1.306,
+  "take": "b25o_562_a",
+  "note": "the open epsilon twice and ONE ei-pair, on a word already approved. A control that chose the new cue",
+  "sha1": "5e4b02f3f26e"
  },
  {
   "index": 563,
@@ -1778,12 +1780,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 21,
-  "tts": "lat rew oh",
-  "source": "rollout",
-  "duration_s": 1.628,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "16496815a397"
+  "tts": "/laˈtrˌju.oː/",
+  "source": "batch25o",
+  "duration_s": 1.306,
+  "take": "b25o_626_a",
+  "note": "the SECONDARY STRESS on the glide, which has now fixed it four times. No epsilon or eta in this word -- the fault was ju splitting after a cluster, tree-ew rather than true",
+  "sha1": "740023b6ee58"
  },
  {
   "index": 627,
@@ -1794,11 +1796,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 21,
-  "tts": "may keh tee",
-  "source": "composed",
-  "duration_s": 1.32,
-  "sha1": "48cd2acd0e4a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/mei̯ˈkɛ.tɪ/",
+  "source": "batch25o",
+  "duration_s": 0.993,
+  "sha1": "7d7d6b4ead4d",
+  "note": "the open epsilon and ONE ei-pair for the eta",
+  "take": "b25o_627_a"
  },
  {
   "index": 628,
@@ -1910,11 +1913,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "eye tee ah",
-  "source": "composed",
-  "duration_s": 1.32,
-  "sha1": "3bd220e69825",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ai̯ˈtia/",
+  "source": "batch25o",
+  "duration_s": 1.071,
+  "sha1": "d7b981e29cf5",
+  "note": "dedotted. The screen confirmed the ear exactly: the cue that ships today spells itself A-T-I-A",
+  "take": "b25o_635_a"
  },
  {
   "index": 636,
@@ -2130,12 +2134,12 @@
   "pos": "prep",
   "tier": 5,
   "freq": 20,
-  "tts": "heh neh ken",
-  "source": "rollout",
-  "duration_s": 1.563,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "51910702864c"
+  "tts": "/ˈhɛ.nɛ.kɛn/",
+  "source": "batch25o",
+  "duration_s": 0.836,
+  "take": "b25o_649_a",
+  "note": "the open epsilon THREE TIMES in one word, which settles that it does not saturate the way the ei-pair does",
+  "sha1": "9cd53d733f57"
  },
  {
   "index": 650,
@@ -2789,12 +2793,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "/ˈste.fa.nɒs/",
-  "source": "batch25j",
-  "duration_s": 1.463,
-  "sha1": "7c062b807771",
-  "note": "the converter own output, from the seventh frequency-spread sample",
-  "take": "b25j_692_a"
+  "tts": "/ˈstɛ.fa.nɒs/",
+  "source": "batch25o",
+  "duration_s": 1.306,
+  "sha1": "0c82d7232fea",
+  "note": "THE OPEN EPSILON, ON A WORD ALREADY APPROVED. It was a control in the inventory test and the ear preferred the new cue to the one it had already passed",
+  "take": "b25o_692_a"
  },
  {
   "index": 693,

@@ -553,6 +553,26 @@ CUE_OK = {
 # becomes the authority for these cues too, and a typo in one cannot hide.
 IPA_LONG, IPA_NONSYL = "\u02d0", "\u032f"
 
+def _pre_inventory(cue, want):
+    """True when `cue` differs from `want` ONLY by the batch-25O inventory.
+
+    25O opened every short epsilon to `\u025b` and wrote the first eta as the
+    ay-pair, on the evidence of thirteen failures fixed and seven already
+    approved controls, five of which preferred the new cue to the one they had
+    already passed. 181 approved cues predate it.
+
+    Both sides are folded back to the OLD inventory and compared. Anything
+    that survives that fold is a real difference and still has to be excused
+    by name.
+    """
+    def fold(t):
+        t = t.replace("ei\u032f", "\x01")      # protect the genuine \u03b5\u03b9
+        t = t.replace("\u025b", "e")            # \u025b back to plain e
+        t = t.replace("\x01", "e\u02d0")       # ay-pair back to a long eta
+        return t
+    return fold(cue) == fold(want)
+
+
 def ipa_cue(ipa):
     s = ipa.replace("eu" + IPA_NONSYL, "ju")
     # ζ is ONE sound and needs one character. The pack spells it `dz`, and 14B
@@ -703,26 +723,51 @@ def ipa_cue(ipa):
     # already written for it.
     if re.search("ju[^aeiouɒɛɪʊ.ː̯]+$", s):
         s = s.replace(".", "")
+
+    # THE OPEN EPSILON, EVERYWHERE — not just at the front of a string.
+    # Measured in batch 25O: a plain short `e` reads as English *ay* often
+    # enough to wreck a round, and no position separates the approvals from
+    # the failures. `\u025b` is the symbol Black gives for epsilon, *met*, and
+    # it has never once been complained about. ἕνεκεν took three in one word.
+    # THE ei-PAIR GUARD IS LOAD-BEARING: without it this eats the `e`
+    # inside a genuine ει and εἰρήνη comes out with its first vowel
+    # opened. The test script carried the guard and the converter did
+    # not — the same trap twice in one session.
+    s = re.sub(r"e(?![\u02d0\u032f])(?!i\u032f)", "\u025b", s)
+    # THE ETA AS THE AY-PAIR, BUT ONCE PER WORD. A single `ei\u032f` was chosen
+    # every time it was offered; two broke ἀλήθεια and three broke
+    # εἰρήνη, which spelled itself out. The FIRST eta takes the pair and
+    # any later one stays long — and a word that already carries an `ei\u032f`
+    # of its own, from an ει, has used its one up.
+    if "ei\u032f" not in s:
+        s = s.replace("e\u02d0", "ei\u032f", 1)
     return s
 
 # Where the string that was HEARD differs from the string the rule proposes.
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    38: "THE OPEN EPSILON, and the biggest word this loop has settled \u2014 469 "
-        "occurrences. It came back as the English word *me* followed by *ta*; "
-        "\u03c0\u03b5\u03c1\u03af drew the identical complaint in 24B, \"pe is coming out as pay\", "
-        "and took the same remedy. NOT A RULE, checked before claiming one: "
-        "\u03bd\u03b5\u03c6\u03ad\u03bb\u03b7 `/ne\u02c8fe.le\u02d0/` is exactly this shape and is approved, and "
-        "\u039c\u03b5\u03c3\u03c3\u03af\u03b1\u03c2 `/mes\u02c8si.as/` is fine with the syllable shut",
+    499: "the omega written as a DIPHTHONG, and it may be the answer for every "
+         "-\u03b1\u03c9 verb. Dedotted it read as the English word *now*, the two "
+         "vowels fusing with nothing left to keep them apart; restoring the "
+         "hiatus dot brought the omega back and the dot then spoke aloud. "
+         "`o\u028a` separates them with no dot at all",
+    504: "the pre-stress dot removed, by the screen. Its eta keeps a single "
+         "ay-pair, which 25O showed is the limit",
+    626: "the SECONDARY STRESS on the glide, which has now fixed it four "
+         "times \u2014 \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd, \u03b5\u1f50\u03bb\u03bf\u03b3\u03af\u03b1, \u03b5\u1f50\u03bb\u03bf\u03b3\u03ad\u03c9 and this. No epsilon or eta in "
+         "the word: the fault was `ju` splitting after a cluster, *tree ew* "
+         "rather than *true*. \u03c0\u03b9\u03c3\u03c4\u03b5\u03cd\u03c9 `/p\u026a\u02c8stju.o\u02d0/` is approved with the same "
+         "shape, so it is per-word",
+    635: "dedotted, and the screen confirmed the ear exactly \u2014 it flagged the "
+         "cue that was SHIPPING as spelling itself A-T-I-A, which is what "
+         "\"sounds like i t i\" had said",
     297: "THE PLAIN k, the second word-initial chi to need it after \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2. "
          "ONLY TWO FORMS OF WORD-INITIAL `x` HAVE EVER BEEN APPROVED: stressed "
          "before `a` (\u03c7\u03ac\u03c1\u03b9\u03c2) and stressed before `r` (\u03c7\u03c1\u03b5\u03af\u03b1). Every other shape "
          "asked has failed \u2014 this one and \u03c7\u03b9\u03bb\u03b9\u03ac\u03c2 as a z, \u03c7\u03ae\u03c1\u03b1 as an h. The v206 "
          "message called that an UNSTRESSED-chi rule and \u03c7\u03ae\u03c1\u03b1 refutes it: it "
          "is stressed and fails too",
-    303: "the open eta \u2014 \u03bc\u03b5\u03c4\u03ac's fault on a long vowel. \"Sounds like the "
-         "English word me \u2014 should it be meh?\"",
     418: "the pre-stress dots removed, by the screen, after the string said its dot aloud. It was SPELLING itself, `pi \u0251\u02d0\u0279 a\u026a ti o em`, "
          "and the beat count caught it where the letter-name test did not: the "
          "recogniser rendered E and O as bare `i` and `o` rather than `i\u02d0` and "
@@ -940,10 +985,6 @@ IPA_HEARD = {
         "consonant, and a shut ɪ is the English *id*. It was in that round "
         "BECAUSE the coverage model flagged the pair as new, which is the "
         "model working rather than a surprise",
-    50: "the open ɛ. A plain e came out as *pay*, and no approved cue "
-        "explains why: νεφέλη, θεός and γενεά all carry the same unstressed "
-        "short e before the stress and were all approved. Per-word until "
-        "something separates them",
     231: "dotless — the dotted form read its dot aloud as the word \"dot\" "
          "through a re-roll, and the screen caught it before an ear did",
     736: "fully dotless, and the SCREEN found it rather than an ear: the "
@@ -1084,7 +1125,8 @@ for path in ("docs/erasmian_vocab_cues.json",
             if not ipa:
                 tts_bad.append(tag + " is an IPA cue for a word with no entry "
                                      "in docs/erasmian_ipa.json")
-            elif tts[1:-1] != ipa_cue(ipa):
+            elif (tts[1:-1] != ipa_cue(ipa)
+                  and not _pre_inventory(tts[1:-1], ipa_cue(ipa))):
                 want = "/%s/" % ipa_cue(ipa)
                 line = tag + " is not this word's IPA converted: expected " + want
                 if r.get("index") in IPA_HEARD:
