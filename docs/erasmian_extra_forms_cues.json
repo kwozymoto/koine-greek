@@ -324,134 +324,182 @@
     "n": 22,
     "filename": "f22_ouden.mp3",
     "greek": "οὐδέν",
-    "tts": "oo den",
+    "tts": "/uːˈdɛn/",
     "used_by_entries": 1,
     "examples": [
       "οὐδείς, οὐδεμία, οὐδέν"
     ],
-    "duration_s": 1.045
+    "duration_s": 0.914,
+    "take": "bF2_22_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('oo den') and one other take — the rules' cue",
+    "sha1": "6dd582c0026b"
   },
   {
     "n": 23,
     "filename": "f23_andros.mp3",
     "greek": "ἀνδρός",
-    "tts": "an dross",
+    "tts": "/anˈdrɒs/",
     "used_by_entries": 1,
     "examples": [
       "ἀνήρ, ἀνδρός, ὁ"
     ],
-    "duration_s": 1.306
+    "duration_s": 1.149,
+    "take": "bF2_23_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('an dross') and one other take — the rules' cue",
+    "sha1": "1201c31bea57"
   },
   {
     "n": 24,
     "filename": "f24_gunaikos.mp3",
     "greek": "γυναικός",
-    "tts": "goo neye koss",
+    "tts": "/ɡu.nai̯ˈkɒs/",
     "used_by_entries": 1,
     "examples": [
       "γυνή, γυναικός, ἡ"
     ],
-    "duration_s": 1.62,
-    "verdict": "cue corrected 2026-09-03 to 'goo neye koss'; clip NOT re-recorded, so it still has the old pronunciation"
+    "duration_s": 1.646,
+    "verdict": "cue corrected 2026-09-03 to 'goo neye koss'; clip NOT re-recorded, so it still has the old pronunciation",
+    "take": "bF2_24_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('goo neye koss') and one other take — the rules' cue",
+    "sha1": "96d9ebb76978"
   },
   {
     "n": 25,
     "filename": "f25_cheiros.mp3",
     "greek": "χειρός",
-    "tts": "chay ross",
+    "tts": "/kei̯ˈrɒs/",
     "used_by_entries": 1,
     "examples": [
       "χείρ, χειρός, ἡ"
     ],
-    "duration_s": 1.149
+    "duration_s": 1.149,
+    "take": "bF2_25_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('chay ross') and one other take — the rules' cue",
+    "sha1": "15fe3f3f66bc"
   },
   {
     "n": 26,
     "filename": "f26_hetis.mp3",
     "greek": "ἥτις",
-    "tts": "hay tis",
+    "tts": "/ˈhei̯.tɪs/",
     "used_by_entries": 1,
     "examples": [
       "ὅστις, ἥτις, ὅ τι"
     ],
-    "duration_s": 1.384
+    "duration_s": 0.914,
+    "take": "bF2_26_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('hay tis') and one other take — the rules' cue",
+    "sha1": "5b132e56e536"
   },
   {
     "n": 27,
     "filename": "f27_ho_ti.mp3",
     "greek": "ὅ τι",
-    "tts": "ho tee",
+    "tts": "/ˈhɒ.tɪ/",
     "used_by_entries": 1,
     "examples": [
       "ὅστις, ἥτις, ὅ τι"
     ],
-    "duration_s": 1.149
+    "duration_s": 0.836,
+    "take": "bF2_27_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('ho tee') and one other take — the rules' cue",
+    "sha1": "b2785c4f31a4"
   },
   {
     "n": 28,
     "filename": "f28_sarkos.mp3",
     "greek": "σαρκός",
-    "tts": "sar koss",
+    "tts": "/sarˈkɒs/",
     "used_by_entries": 1,
     "examples": [
       "σάρξ, σαρκός, ἡ"
     ],
-    "duration_s": 1.672
+    "duration_s": 1.228,
+    "take": "bF2_28_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('sar koss') and one other take — the rules' cue",
+    "sha1": "f12e08dbde4b"
   },
   {
     "n": 29,
     "filename": "f29_podos.mp3",
     "greek": "ποδός",
-    "tts": "po doss",
+    "tts": "/pɒˈdɒs/",
     "used_by_entries": 1,
     "examples": [
       "πούς, ποδός, ὁ"
     ],
-    "duration_s": 1.228
+    "duration_s": 0.993,
+    "take": "bF2_29_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('po doss') and one other take — the same cue, re-rolled",
+    "sha1": "ae57188dac73"
   },
   {
     "n": 30,
     "filename": "f30_metros.mp3",
     "greek": "μητρός",
-    "tts": "may tross",
+    "tts": "/mei̯ˈtrɒs/",
     "used_by_entries": 1,
     "examples": [
       "μήτηρ, μητρός, ἡ"
     ],
-    "duration_s": 1.646
+    "duration_s": 1.149,
+    "take": "bF2_30_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('may tross') and one other take — the rules' cue",
+    "sha1": "13d94347f534"
   },
   {
     "n": 31,
     "filename": "f31_photos.mp3",
     "greek": "φωτός",
-    "tts": "fo toss",
+    "tts": "/foːˈtɒs/",
     "used_by_entries": 1,
     "examples": [
       "φῶς, φωτός, τό"
     ],
-    "duration_s": 1.228
+    "duration_s": 1.228,
+    "take": "bF2_31_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('fo toss') and one other take — the rules' cue",
+    "sha1": "7a4948072019"
   },
   {
     "n": 32,
     "filename": "f32_haute.mp3",
     "greek": "αὕτη",
-    "tts": "how tay",
+    "tts": "/ˈhau̯.tei̯/",
     "used_by_entries": 1,
     "examples": [
       "οὗτος, αὕτη, τοῦτο"
     ],
-    "duration_s": 1.202
+    "duration_s": 0.914,
+    "take": "bF2_32_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('how tay') and one other take — the same cue, re-rolled",
+    "sha1": "f882306ff312"
   },
   {
     "n": 33,
     "filename": "f33_touto.mp3",
     "greek": "τοῦτο",
-    "tts": "too toe",
+    "tts": "/ˈtuː.tɒ/",
     "used_by_entries": 1,
     "examples": [
       "οὗτος, αὕτη, τοῦτο"
     ],
-    "duration_s": 1.045
+    "duration_s": 0.993,
+    "take": "bF2_33_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('too toe') and one other take — the same cue, re-rolled",
+    "sha1": "485878903fc3"
   },
   {
     "n": 34,
@@ -462,94 +510,129 @@
     "examples": [
       "μηδείς, μηδεμία, μηδέν"
     ],
-    "duration_s": 2.273
+    "duration_s": 2.203,
+    "source": "forms-2026-09-23",
+    "note": "heard and kept: the pre-IPA clip. Fraser: b and c speak the dots",
+    "sha1": "a895dcdf190b"
   },
   {
     "n": 35,
     "filename": "f35_meden.mp3",
     "greek": "μηδέν",
-    "tts": "may den",
+    "tts": "/mei̯ˈdɛn/",
     "used_by_entries": 1,
     "examples": [
       "μηδείς, μηδεμία, μηδέν"
     ],
-    "duration_s": 1.202
+    "duration_s": 0.993,
+    "take": "bF2_35_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('may den') and one other take — the rules' cue",
+    "sha1": "86f4aaebfa7b"
   },
   {
     "n": 36,
     "filename": "f36_hudatos.mp3",
     "greek": "ὕδατος",
-    "tts": "hoo dah toss",
+    "tts": "/ˈhu.da.tɒs/",
     "used_by_entries": 1,
     "examples": [
       "ὕδωρ, ὕδατος, τό"
     ],
-    "duration_s": 1.541
+    "duration_s": 1.228,
+    "take": "bF2_36_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('hoo dah toss') and one other take — the same cue, re-rolled",
+    "sha1": "3217c8eee7a6"
   },
   {
     "n": 37,
     "filename": "f37_puros.mp3",
     "greek": "πυρός",
-    "tts": "poo ross",
+    "tts": "/puˈrɒs/",
     "used_by_entries": 1,
     "examples": [
       "πῦρ, πυρός, τό"
     ],
-    "duration_s": 1.254
+    "duration_s": 1.071,
+    "take": "bF2_37_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('poo ross') and one other take — the same cue, re-rolled",
+    "sha1": "4217bd323cb8"
   },
   {
     "n": 38,
     "filename": "f38_tria.mp3",
     "greek": "τρία",
-    "tts": "tree ah",
+    "tts": "/ˈtri.a/",
     "used_by_entries": 1,
     "examples": [
       "τρεῖς, τρία"
     ],
-    "duration_s": 1.176
+    "duration_s": 0.836,
+    "take": "bF2_38_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('tree ah') and one other take — the rules' cue",
+    "sha1": "c986354e96a3"
   },
   {
     "n": 39,
     "filename": "f39_ta.mp3",
     "greek": "τά",
-    "tts": "tah",
+    "tts": "/ˈta/",
     "used_by_entries": 1,
     "examples": [
       "Ἱεροσόλυμα, τά"
     ],
-    "duration_s": 0.94
+    "duration_s": 0.758,
+    "take": "bF2_39_c",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('tah') and one other take — the same cue, re-rolled",
+    "sha1": "7ba12fc0b365"
   },
   {
     "n": 40,
     "filename": "f40_orous.mp3",
     "greek": "ὄρους",
-    "tts": "o rooss",
+    "tts": "/ˈɒ.ruːs/",
     "used_by_entries": 1,
     "examples": [
       "ὄρος, ὄρους, τό"
     ],
-    "duration_s": 1.254
+    "duration_s": 0.993,
+    "take": "bF2_40_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('o rooss') and one other take — the rules' cue",
+    "sha1": "9d3996b70308"
   },
   {
     "n": 41,
     "filename": "f41_nuktos.mp3",
     "greek": "νυκτός",
-    "tts": "nook toss",
+    "tts": "/nukˈtɒs/",
     "used_by_entries": 1,
     "examples": [
       "νύξ, νυκτός, ἡ"
     ],
-    "duration_s": 1.541
+    "duration_s": 1.149,
+    "take": "bF2_41_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('nook toss') and one other take — the rules' cue",
+    "sha1": "0030f499e26c"
   },
   {
     "n": 42,
     "filename": "f42_otos.mp3",
     "greek": "ὠτός",
-    "tts": "oh toss",
+    "tts": "/oːˈtɒs/",
     "used_by_entries": 1,
     "examples": [
       "οὖς, ὠτός, τό"
     ],
-    "duration_s": 1.306
+    "duration_s": 1.306,
+    "take": "bF2_42_b",
+    "source": "forms-2026-09-23",
+    "note": "chosen by ear over the pre-IPA clip ('oh toss') and one other take — the rules' cue",
+    "sha1": "355a584b11dd"
   }
 ]

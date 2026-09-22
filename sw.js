@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v219';
+const VERSION = 'v220';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,27 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v220: extra forms, batch 2 of 2 -- every form now heard by ear. */
+  'audio/forms/f22_ouden.mp3',
+  'audio/forms/f23_andros.mp3',
+  'audio/forms/f24_gunaikos.mp3',
+  'audio/forms/f25_cheiros.mp3',
+  'audio/forms/f26_hetis.mp3',
+  'audio/forms/f27_ho_ti.mp3',
+  'audio/forms/f28_sarkos.mp3',
+  'audio/forms/f29_podos.mp3',
+  'audio/forms/f30_metros.mp3',
+  'audio/forms/f31_photos.mp3',
+  'audio/forms/f32_haute.mp3',
+  'audio/forms/f33_touto.mp3',
+  'audio/forms/f35_meden.mp3',
+  'audio/forms/f36_hudatos.mp3',
+  'audio/forms/f37_puros.mp3',
+  'audio/forms/f38_tria.mp3',
+  'audio/forms/f39_ta.mp3',
+  'audio/forms/f40_orous.mp3',
+  'audio/forms/f41_nuktos.mp3',
+  'audio/forms/f42_otos.mp3',
   /* v219: extra forms re-cued in IPA, batch 1 of 2 -- ἡ, ὁ, τό and 18 more. */
   'audio/forms/f01_he.mp3',
   'audio/forms/f02_ho.mp3',
