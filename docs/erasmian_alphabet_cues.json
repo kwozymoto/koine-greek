@@ -173,15 +173,15 @@
     {
       "id": "13_nu",
       "file_mp3": "13_nu.mp3",
-      "file_wav": "13_nu.wav",
       "greek": "Ν ν",
       "name": "Nu",
       "sound": "n",
       "kind": "letter",
-      "duration_sec": 1.729,
-      "master_start_sec": 38.154,
-      "master_end_sec": 39.883,
-      "sha1": "a8f5c4dcc970"
+      "duration_sec": 1.463,
+      "sha1": "a2091c2a48ca",
+      "cue": "/ˈnjuː … nə/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name, sound with a schwa."
     },
     {
       "id": "14_xi",
@@ -190,24 +190,25 @@
       "name": "Xi",
       "sound": "ks",
       "kind": "letter",
-      "duration_sec": 1.491,
-      "sha1": "7604fe9528cb",
-      "source": "composite",
+      "duration_sec": 1.698,
+      "sha1": "b5cc4efb5fc1",
+      "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas parts",
-      "note": "Neither half could be generated. The shipped clip was heard as 'she' with a /k/ for its sound; every name cue Atlas was given — ksee, ksi, xee, ksigh, Xi — was spelled out as X-I. The Greek name xi, sent as Greek across all 28 voices, is said correctly but as /ksi/, and this course names its letters in English: Pi and Psi both measure as /aI/ diphthongs, so /ksi/ would leave xi the odd letter out. So the clip is assembled: the name is the /ks/ of 'axe' crossfaded onto the /aI/ vowel of 16_pi.mp3, and the sound is that same 'axe' /ks/ again, cut at the x anchor the generator itself reported. Gap and timing follow 16_pi. All Atlas, one voice. Judged by ear, Fraser."
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name as ksai, sound with a schwa. Chosen with the remark that some of the vocabulary's xi sounds were better, so an alternative goes up for comparison.",
+      "cue": "/ˈksaɪ … ksə/"
     },
     {
       "id": "15_omicron",
       "file_mp3": "15_omicron.mp3",
-      "file_wav": "15_omicron.wav",
       "greek": "Ο ο",
       "name": "Omicron",
       "sound": "short o",
       "kind": "letter",
-      "duration_sec": 1.736,
-      "master_start_sec": 45.179,
-      "master_end_sec": 46.915,
-      "sha1": "36fdf070b349"
+      "duration_sec": 1.698,
+      "sha1": "9e0ad990ee04",
+      "cue": "/ˈɒmɪkrɒn … ɒ/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name, sound short."
     },
     {
       "id": "16_pi",
@@ -216,50 +217,51 @@
       "name": "Pi",
       "sound": "puh",
       "kind": "letter",
-      "duration_sec": 1.409,
-      "sha1": "1d12ff48f46f",
-      "source": "regenerated",
+      "duration_sec": 1.149,
+      "sha1": "869e03e3fa98",
+      "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas",
-      "note": "The shipped clip said 'hi'. It had no plosive release at all: from 0.186 s a 60 ms aspiration ramp — 22, 41, 57, 79, 96, 114 — climbing into voicing, where a /p/ is silence then a sharp transient. Cued 'Pie.  Puh.' in one take; word-initial /p/ is ordinary in English, so unlike psi and xi this needed no splice. Split at the generator's own character marks and re-spaced to the pack's 0.18 / 0.355 / 0.28. Judged by ear, Fraser."
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name as pie, sound with a schwa.",
+      "cue": "/ˈpaɪ … pə/"
     },
     {
       "id": "17_rho",
       "file_mp3": "17_rho.mp3",
-      "file_wav": "17_rho.wav",
       "greek": "Ρ ρ",
       "name": "Rho",
       "sound": "r",
       "kind": "letter",
-      "duration_sec": 1.903,
-      "master_start_sec": 51.555,
-      "master_end_sec": 53.458,
-      "sha1": "f0ed672afe66"
+      "duration_sec": 1.384,
+      "sha1": "847eb9f30fe8",
+      "cue": "/ˈroʊ … rə/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — sound with a schwa — the voice cannot trill. NOTE: lesson 1 teaches rho TRILLED and this clip does not trill; the voice cannot, whether r is written once or three times. It is the best r available, and the lesson text and the clip now disagree on this one letter."
     },
     {
       "id": "18_sigma",
       "file_mp3": "18_sigma.mp3",
-      "file_wav": "18_sigma.wav",
       "greek": "Σ σ ς",
       "name": "Sigma",
       "sound": "s",
       "kind": "letter",
-      "duration_sec": 1.752,
-      "master_start_sec": 55.058,
-      "master_end_sec": 56.81,
-      "sha1": "875d8d22c8c9"
+      "duration_sec": 1.62,
+      "sha1": "d4d260329da9",
+      "cue": "/ˈsɪɡmaː … sə/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name, sound with a schwa."
     },
     {
       "id": "19_tau",
       "file_mp3": "19_tau.mp3",
-      "file_wav": "19_tau.wav",
       "greek": "Τ τ",
       "name": "Tau",
       "sound": "t",
       "kind": "letter",
-      "duration_sec": 1.71,
-      "master_start_sec": 58.41,
-      "master_end_sec": 60.12,
-      "sha1": "2ffecb8239b9"
+      "duration_sec": 1.384,
+      "sha1": "983017a79a22",
+      "cue": "/ˈtaʊ … tə/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name, sound with a schwa."
     },
     {
       "id": "20_upsilon",
@@ -277,15 +279,15 @@
     {
       "id": "21_phi",
       "file_mp3": "21_phi.mp3",
-      "file_wav": "21_phi.wav",
       "greek": "Φ φ",
       "name": "Phi",
       "sound": "f",
       "kind": "letter",
-      "duration_sec": 1.479,
-      "master_start_sec": 65.137,
-      "master_end_sec": 66.616,
-      "sha1": "03fc02e1737c"
+      "duration_sec": 1.306,
+      "sha1": "9a52712e9520",
+      "cue": "/ˈfaɪ … fə/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings, generated on its own rather than spliced — name as fie, sound with a schwa."
     },
     {
       "id": "22_chi",

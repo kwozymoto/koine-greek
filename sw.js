@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v213';
+const VERSION = 'v214';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,17 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v214: the alphabet, batch 2 — eight more letters re-cued and
+     generated on their own. Rho's clip is an English r: the voice
+     cannot trill, and lesson 1 still says trilled. */
+  'audio/clips/13_nu.mp3',
+  'audio/clips/14_xi.mp3',
+  'audio/clips/15_omicron.mp3',
+  'audio/clips/16_pi.mp3',
+  'audio/clips/17_rho.mp3',
+  'audio/clips/18_sigma.mp3',
+  'audio/clips/19_tau.mp3',
+  'audio/clips/21_phi.mp3',
   /* v213: the alphabet, batch 1 of 3 — eight letters re-cued in IPA and
      generated on their own rather than cut from one master, which is
      what removed the abrupt cut-off a learner reported. Each was chosen
