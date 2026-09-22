@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v215';
+const VERSION = 'v216';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,17 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v216: the eight diphthongs, and the alphabet re-cue is finished —
+     28 of 32 clips generated one at a time and chosen by ear. The old
+     ηυ said 'ü' where the app teaches 'ew'; that is gone. */
+  'audio/clips/d01_ai.mp3',
+  'audio/clips/d02_ei.mp3',
+  'audio/clips/d03_oi.mp3',
+  'audio/clips/d04_ui.mp3',
+  'audio/clips/d05_au.mp3',
+  'audio/clips/d06_eu.mp3',
+  'audio/clips/d07_hu.mp3',
+  'audio/clips/d08_ou.mp3',
   /* v215: the alphabet's last five letters — every one of the 24 now
      has a clip chosen by ear. Iota and upsilon each say both their
      sounds. */

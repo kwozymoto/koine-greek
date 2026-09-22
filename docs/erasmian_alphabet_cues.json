@@ -333,15 +333,15 @@
     {
       "id": "d01_ai",
       "file_mp3": "d01_ai.mp3",
-      "file_wav": "d01_ai.wav",
       "greek": "αι",
       "name": "alpha + iota",
       "sound": "eye",
       "kind": "diphthong",
-      "duration_sec": 2.157,
-      "master_start_sec": 77.943,
-      "master_end_sec": 80.1,
-      "sha1": "ffd0f27e0ab5"
+      "duration_sec": 2.351,
+      "sha1": "70e8a545cadf",
+      "cue": "/ˈælfaː aɪˈjoʊtaː/ … eye",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — sound in plain English. Both letter names as chosen for the letters themselves, then the sound."
     },
     {
       "id": "d02_ei",
@@ -350,76 +350,77 @@
       "name": "epsilon + iota",
       "sound": "eigh",
       "kind": "diphthong",
-      "duration_sec": 2.341,
-      "sha1": "d62e19a388ef",
-      "source": "composite",
+      "duration_sec": 2.508,
+      "sha1": "b12c615c056b",
+      "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas parts",
-      "note": "The same fault and the same fix as 07_eta: cued 'ay', said 'eye', where Black gives eight. One cue settled both. Judged by ear, Fraser."
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — English diphthong. Both letter names as chosen for the letters themselves, then the sound.",
+      "cue": "/ˈɛpsɪlɒn aɪˈjoʊtaː … eɪ/"
     },
     {
       "id": "d03_oi",
       "file_mp3": "d03_oi.mp3",
-      "file_wav": "d03_oi.wav",
       "greek": "οι",
       "name": "omicron + iota",
       "sound": "oy",
       "kind": "diphthong",
-      "duration_sec": 2.312,
-      "master_start_sec": 85.837,
-      "master_end_sec": 88.149,
-      "sha1": "f730d01efd48"
+      "duration_sec": 2.429,
+      "sha1": "e17d9349b6b0",
+      "cue": "/ˈɒmɪkrɒn aɪˈjoʊtaː/ … oy",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — sound in plain English. Both letter names as chosen for the letters themselves, then the sound."
     },
     {
       "id": "d04_ui",
       "file_mp3": "d04_ui.mp3",
-      "file_wav": "d04_ui.wav",
       "greek": "υι",
       "name": "upsilon + iota",
       "sound": "wee",
       "kind": "diphthong",
-      "duration_sec": 2.31,
-      "master_start_sec": 89.749,
-      "master_end_sec": 92.059,
-      "sha1": "129b37cb3f81"
+      "duration_sec": 2.273,
+      "sha1": "8100f3f5ec55",
+      "cue": "/ˈʊpsɪlɒn aɪˈjoʊtaː … wiː/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — as the vocabulary writes it. Both letter names as chosen for the letters themselves, then the sound."
     },
     {
       "id": "d05_au",
       "file_mp3": "d05_au.mp3",
-      "file_wav": "d05_au.wav",
       "greek": "αυ",
       "name": "alpha + upsilon",
       "sound": "ow",
       "kind": "diphthong",
-      "duration_sec": 2.342,
-      "master_start_sec": 93.659,
-      "master_end_sec": 96.001,
-      "sha1": "fdda0b00d3b0"
+      "duration_sec": 2.273,
+      "sha1": "4cb3148b5562",
+      "cue": "/ˈælfaː ˈʊpsɪlɒn … aʊ/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — English diphthong. Both letter names as chosen for the letters themselves, then the sound."
     },
     {
       "id": "d06_eu",
       "file_mp3": "d06_eu.mp3",
-      "file_wav": "d06_eu.wav",
       "greek": "ευ",
       "name": "epsilon + upsilon",
       "sound": "ew",
       "kind": "diphthong",
-      "duration_sec": 2.594,
-      "master_start_sec": 97.601,
-      "master_end_sec": 100.195,
-      "sha1": "24fcb3ca1d36"
+      "duration_sec": 2.351,
+      "sha1": "e4ea5327ea83",
+      "cue": "/ˈɛpsɪlɒn ˈʊpsɪlɒn … ju/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — as the vocabulary writes it. Both letter names as chosen for the letters themselves, then the sound."
     },
     {
       "id": "d07_hu",
       "file_mp3": "d07_hu.mp3",
-      "file_wav": "d07_hu.wav",
       "greek": "ηυ",
       "name": "eta + upsilon",
       "sound": "ew",
       "kind": "diphthong",
-      "duration_sec": 2.32,
-      "master_start_sec": 101.795,
-      "master_end_sec": 104.115,
-      "sha1": "2dcbf907a4e3"
+      "duration_sec": 2.194,
+      "sha1": "04ea2e965826",
+      "cue": "/ˈeɪtaː ˈʊpsɪlɒn … ju/",
+      "source": "letters-2026-09-23",
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — as the vocabulary writes it. Both letter names as chosen for the letters themselves, then the sound. REPLACES A WRONG CLIP: the old ηυ ended in a front-rounded 'ü' where the app teaches 'ew' -- the upsilon confusion check_sounds describes, surviving in this one file."
     },
     {
       "id": "d08_ou",
@@ -428,11 +429,13 @@
       "name": "omicron + upsilon",
       "sound": "ooh",
       "kind": "diphthong",
-      "duration_sec": 2.397,
-      "source": "regenerated",
+      "duration_sec": 2.664,
+      "source": "letters-2026-09-23",
       "take": "2026-09-09, Atlas",
-      "note": "'oo' was read as letters. 'ooh' gives Black's soup vowel. Judged by ear, Fraser.",
-      "sha1": "374394b44b86"
+      "note": "chosen by ear over the clip cut from the old master and two other renderings — as the vocabulary writes it. Both letter names as chosen for the letters themselves, then the sound.",
+      "sha1": "62f679c6daf1",
+      "cue": "/ˈɒmɪkrɒn ˈʊpsɪlɒn … uː/"
     }
-  ]
+  ],
+  "notes_2026_09_23": "Re-cued 2026-09-23 after a learner reported the letter sounds getting cut off too quickly. The cut-off was the master's splice: every clip had been cut from one file with a fixed pad. 28 of the 32 clips are now generated one at a time in IPA and were chosen by ear over the master clip and two other renderings; each such row records its cue, source and a note, and carries no master_start/master_end. Chi was already a separate take, regenerated 2026-09-09 as the loch sound, and the ear kept it again. The three still cut from the master are the ones the ear preferred as they were: 03_gamma, 04_delta, 05_epsilon. The master_* and clip_pad_* fields above describe only those three."
 }
