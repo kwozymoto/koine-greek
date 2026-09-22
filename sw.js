@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v212';
+const VERSION = 'v213';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,18 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v213: the alphabet, batch 1 of 3 — eight letters re-cued in IPA and
+     generated on their own rather than cut from one master, which is
+     what removed the abrupt cut-off a learner reported. Each was chosen
+     by ear over the old clip and two other renderings. */
+  'audio/clips/01_alpha.mp3',
+  'audio/clips/02_beta.mp3',
+  'audio/clips/06_zeta.mp3',
+  'audio/clips/07_eta.mp3',
+  'audio/clips/08_theta.mp3',
+  'audio/clips/10_kappa.mp3',
+  'audio/clips/11_lambda.mp3',
+  'audio/clips/12_mu.mp3',
   /* v212: χήρα, on the χρεία ending undotted -- the same fix Ἀντιόχεια
      took a lot earlier. It is the 817th of the deck's 818 cues to have been
      through an ear; εὐλογία is the last one out. */

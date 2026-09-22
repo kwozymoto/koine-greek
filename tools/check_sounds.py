@@ -276,8 +276,10 @@ for key in DIPH:
 #
 # `sound` in the sheet is deliberately NOT compared to the grid cue. The sheet
 # records what was spoken; the grid records what the learner is told. Those
-# come apart on purpose — ζ is cued "zuh" and labelled "dz", because /z/ is
-# what the voice can produce and [dz] is what Black teaches.
+# come apart on purpose. ζ was the example: cued "zuh" and labelled "dz",
+# because /z/ was what the old voice could produce and [dz] is what Black
+# teaches. As of 2026-09-23 that is no longer so — the re-cued clip says
+# `/ˈzeɪtaː … ʣə/` and an ear chose it, so zeta now says what it is labelled.
 for c in CLIPS:
     if not os.path.isfile(os.path.join(CLIP_DIR, c[4])):
         bad_file.append("%s names audio/clips/%s, which is not there"
