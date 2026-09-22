@@ -146,7 +146,7 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_cues", "check_lesson_audio", "check_sw",
           "check_taught", "check_prose", "check_terms",
           "check_beside", "check_consistency",
-          "check_frozen", "check_black", "check_coverage", "check_claims",
+          "check_frozen", "check_alphabet", "check_black", "check_coverage", "check_claims",
           "check_links"]
 # check_links is the one that reaches outside the repo. --offline passes
 # straight through to it and leaves the rest untouched.
