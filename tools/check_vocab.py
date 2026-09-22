@@ -755,6 +755,13 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    698: "the chi rule and the χρεία ending together. Its `kei̯.a` "
+         "was standing apart as the letters K and A — \"anti ah o k e a\" — "
+         "and χρεία `/ˈkrei̯a/` is approved carrying that exact ending "
+         "undotted",
+    812: "the pre-stress dot removed by the screen, on a cue that finally "
+         "reached the open epsilon. It had failed a round earlier as *may* "
+         "because settled.py was holding it at a pre-rule form",
     711: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     720: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     743: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",

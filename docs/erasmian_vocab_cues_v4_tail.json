@@ -2952,10 +2952,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 18,
-  "tts": "antee okhay ah",
-  "source": "worklist-candidate",
-  "duration_s": 2.04,
-  "sha1": "dfa0928a02d9"
+  "tts": "/an.tɪˈɒ.kei̯a/",
+  "source": "batch25r",
+  "duration_s": 1.62,
+  "sha1": "73da1b551f81",
+  "take": "b25r_698_b",
+  "note": "the chi rule and the χρεία ending together. Its `kei̯.a` was standing apart as the letters K and A — \"anti ah o k e a\" — and χρεία `/ˈkrei̯a/` is approved carrying that exact ending undotted"
  },
  {
   "index": 699,
@@ -3062,11 +3064,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "kah teh khoh",
-  "source": "composed",
-  "duration_s": 1.56,
-  "sha1": "20502715b4c8",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/kaˈtɛ.koː/",
+  "source": "batch25r",
+  "duration_s": 1.071,
+  "sha1": "ea7c00e6a1aa",
+  "note": "the open epsilon, from the inventory rule -- which had likewise been in for two rounds and was frozen out of this cue by the same fault",
+  "take": "b25r_705_a"
  },
  {
   "index": 706,
@@ -3251,11 +3254,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "khah rees mah",
-  "source": "composed",
-  "duration_s": 1.416,
-  "sha1": "7fccc07d13c1",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈka.rɪsma/",
+  "source": "batch25r",
+  "duration_s": 0.914,
+  "sha1": "5d38548d6b22",
+  "note": "the plain k, from the chi rule -- which had been IN the converter for a round already and could not reach this cue, because settled.py was letting a screen fix outrank it",
+  "take": "b25r_717_a"
  },
  {
   "index": 718,
@@ -3502,11 +3506,12 @@
   "pos": "particle",
   "tier": 5,
   "freq": 17,
-  "tts": "hoe",
-  "source": "composed",
-  "duration_s": 0.6,
-  "sha1": "db80c158672a",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ˈoː/",
+  "source": "batch25r",
+  "duration_s": 0.601,
+  "sha1": "4f0ad7d4c3a3",
+  "note": "THE APP WAS WRONG, not the cue. ὦ carries SMOOTH breathing, so there is no h in it -- and the English cue that has been shipping is \"hoe\". The ear confirmed the h should not be there",
+  "take": "b25r_733_a"
  },
  {
   "index": 734,
@@ -4532,11 +4537,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "pross leh goh",
-  "source": "composed",
-  "duration_s": 1.8,
-  "sha1": "bc107b428fdf",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/prɒˈlɛ.ɡoː/",
+  "source": "batch25r",
+  "duration_s": 1.071,
+  "sha1": "31beda1f6736",
+  "note": "the open epsilon, from the inventory rule -- which had likewise been in for two rounds and was frozen out of this cue by the same fault",
+  "take": "b25r_798_a"
  },
  {
   "index": 799,
@@ -4659,10 +4665,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "khor tah zoh",
-  "source": "worklist-candidate",
-  "duration_s": 1.656,
-  "sha1": "97d2ea455ea8"
+  "tts": "/kɔrˈtaʣoː/",
+  "source": "batch25r",
+  "duration_s": 1.228,
+  "sha1": "d372da70a6cc",
+  "take": "b25r_806_a",
+  "note": "the plain k, from the chi rule -- which had been IN the converter for a round already and could not reach this cue, because settled.py was letting a screen fix outrank it"
  },
  {
   "index": 807,
@@ -4687,11 +4695,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "ah neh kho my",
-  "source": "composed",
-  "duration_s": 1.968,
-  "sha1": "2e92acb1a4e0",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/aˈnɛ.kɒ.mai̯/",
+  "source": "batch25r",
+  "duration_s": 1.149,
+  "sha1": "367da2f6f3b3",
+  "note": "the open epsilon AND the plain k, both rules reaching this cue for the first time",
+  "take": "b25r_808_a"
  },
  {
   "index": 809,
@@ -4750,11 +4759,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "eh pee meh noh",
-  "source": "composed",
-  "duration_s": 2.066,
-  "sha1": "f4862b98eaa5",
-  "note": "every spelling in this cue has been heard and passed in another word; this order of them has not. Batch 7 put the ten riskiest of these to an ear and seven passed, one was a bad take and three shared a shape since fixed"
+  "tts": "/ɛpɪˈmɛ.noː/",
+  "source": "batch25r",
+  "duration_s": 1.149,
+  "sha1": "5dce8b49b8e7",
+  "note": "the open epsilon, from the inventory rule -- which had likewise been in for two rounds and was frozen out of this cue by the same fault",
+  "take": "b25r_812_a"
  },
  {
   "index": 813,
