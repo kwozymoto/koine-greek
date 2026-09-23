@@ -591,5 +591,222 @@
   "chapter": 3,
   "source": "heard: chapter 3 narration",
   "note": "'you are'. Without its own row it matched εἰ 'if' accents-off and took that word's respelling 'ay', read as 'eye' (chapter 3, block 2); /eɪ/ is the ει of εἰμί beside it"
+ },
+ {
+  "greek": "λόγοι",
+  "ipa": "ˈlo.ɡoi̯",
+  "tts": "/ˈlɒ.ɡoi̯/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "λόγου",
+  "ipa": "ˈlo.ɡuː",
+  "tts": "/ˈlɒ.ɡuː/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "λόγοις",
+  "ipa": "ˈlo.ɡoi̯s",
+  "tts": "/ˈlɒ.ɡoi̯s/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "λόγον",
+  "ipa": "ˈlo.ɡon",
+  "tts": "/ˈlɒ.ɡɒn/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "λόγους",
+  "ipa": "ˈlo.ɡuːs",
+  "tts": "/ˈlɒ.ɡuːs/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἀρχῇ",
+  "ipa": "ar.ˈxeː",
+  "tts": "/arˈkeɪ/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦν",
+  "ipa": "ˈeːn",
+  "tts": "/ˈeɪn/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἀκούσας",
+  "ipa": "a.ˈkuː.sas",
+  "tts": "/aˈkuː.sas/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "νεανίσκος",
+  "ipa": "ne.a.ˈni.skos",
+  "tts": "/nɛ.aˈnɪ.skɒs/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἀπῆλθεν",
+  "ipa": "a.ˈpeːl.θen",
+  "tts": "/aˈpeɪl.θɛn/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ὑπηρέται",
+  "ipa": "hu.peː.ˈre.tai̯",
+  "tts": "/hu.peɪˈrɛ.tai̯/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "γενόμενοι",
+  "ipa": "ɡe.ˈno.me.noi̯",
+  "tts": "/ɡɛˈnɒ.mɛ.noi̯/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "τοῦ",
+  "ipa": "ˈtuː",
+  "tts": "/ˈtuː/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔργα",
+  "ipa": "ˈer.ɡa",
+  "tts": "/ˈɛr.ɡa/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔργου",
+  "ipa": "ˈer.ɡuː",
+  "tts": "/ˈɛr.ɡuː/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔργοις",
+  "ipa": "ˈer.ɡoi̯s",
+  "tts": "/ˈɛr.ɡoi̯s/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "τινος",
+  "ipa": "ti.ˈnos",
+  "tts": "/tɪˈnɒs/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "δι",
+  "ipa": "ˈdi",
+  "tts": "/ˈdi/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "αὐτοῦ",
+  "ipa": "au̯.ˈtuː",
+  "tts": "/au̯ˈtuː/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἱλάσθητί",
+  "ipa": "hi.ˈlas.θeː.ti",
+  "tts": "/hɪˈlas.θeɪ.tɪ/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "μοι",
+  "ipa": "ˈmoi̯",
+  "tts": "/ˈmoi̯/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἁμαρτωλῷ",
+  "ipa": "ha.mar.toː.ˈloː",
+  "tts": "/ha.mar.toːˈloː/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἀπ",
+  "ipa": "ˈap",
+  "tts": "/ˈap/",
+  "chapter": 4,
+  "source": "converter"
+ },
+ {
+  "greek": "ἀγάπαι",
+  "ipa": "a.ˈɡa.pai̯",
+  "tts": "/aˈɡa.pai̯/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγάπης",
+  "ipa": "a.ˈɡa.peːs",
+  "tts": "/aˈɡa.peɪs/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγάπαις",
+  "ipa": "a.ˈɡa.pai̯s",
+  "tts": "/aˈɡa.pai̯s/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγάπην",
+  "ipa": "a.ˈɡa.peːn",
+  "tts": "/aˈɡa.peɪn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγάπας",
+  "ipa": "a.ˈɡa.pas",
+  "tts": "/aˈɡa.pas/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "γινέσθω",
+  "ipa": "ɡi.ˈnes.θoː",
+  "tts": "/ɡɪˈnɛs.θoː/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀφ",
+  "ipa": "ˈaf",
+  "tts": "/ˈaf/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "πάντων",
+  "ipa": "ˈpan.toːn",
+  "tts": "/ˈpan.toʊn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
  }
 ]

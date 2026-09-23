@@ -204,7 +204,7 @@ IPA_TWIN = {}
 # respellings their approved clips say; what is recorded after takes the IPA.
 IPA_VERSES_FROM = 3
 IPA_TABLES_FROM = 4
-IPA_PROSE_FROM = 6
+IPA_PROSE_FROM = 5
 
 
 def ipa_twins(cues, ch):
@@ -800,7 +800,7 @@ def said_vowels(cue):
 # Every cell keeps its own words on the page, so the read-along highlights
 # each cell as it is said -- in the order it is SAID, which for a paradigm
 # is down the columns, not along the rows as the page stores it.
-TABLES_READ = {2, 3}
+TABLES_READ = {2, 3, 5}
 
 ROWS = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.S)
 CELL = re.compile(r"<(th|td)\b[^>]*>(.*?)</\1>", re.S)
@@ -821,6 +821,7 @@ TABLE_ROWS = {
     (2, "Aspect"): "{0}. Presents the action as {1}. Tenses: {2}.",
     # "In plain terms:" before every row said the heading five times over.
     (2, "What it tells us"): "{0}: {1}.",
+    (5, "Preposition"): "{0}, with the {1}: {2}.",
 }
 
 
@@ -965,7 +966,7 @@ def narrate_table(inner, ch, cues, missing):
 # Each Greek word keeps its page word, so the read-along lights each word as
 # it is said. Greek punctuation is said as its function, not its shape: the
 # question mark (;) as a question, the raised dot (·) as a pause.
-VERSES_READ = {3}
+VERSES_READ = {3, 5}
 
 ORDINAL = {"1": "First", "2": "Second", "3": "Third"}
 
