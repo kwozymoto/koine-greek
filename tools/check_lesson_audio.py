@@ -153,7 +153,16 @@ def main():
                        "lesson and the cue sheets now"
                        % (ch, len(mine), len(fresh)))
             continue
-        for r, (_kind, _text, page, _pairs, els) in zip(mine, fresh):
+        for r, (_kind, text, page, _pairs, els) in zip(mine, fresh):
+            # What the clip SAYS. Until 2026-09-23 this loop compared only the
+            # page words, so a re-tuned cue changed the narration and nothing
+            # noticed: four chapter-2 clips said old spellings, and one said
+            # οὗ's cue for οὐ. `h` is the builder's hash of the spoken text,
+            # proven against the audio when the map was built.
+            if r.get("h") != m.said_hash(text):
+                bad.append("%s: the clip no longer says what the narration "
+                           "now derives -- a cue has been re-tuned or the "
+                           "prose edited; regenerate it" % r["id"])
             if page != r["page"]:
                 j = next((k for k in range(min(len(page), len(r["page"])))
                           if page[k] != r["page"][k]), 0)

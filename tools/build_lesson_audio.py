@@ -188,13 +188,25 @@ def load():
 
 def cue_table():
     """Every cue this project has already had an ear on, by bare spelling."""
-    t = {}
+    # EXACT FIRST. flat() strips breathings, and five pairs in the deck differ
+    # only by one: οὐ "not" and οὗ "where" flattened to the same key, the later
+    # row won, and chapter 2 said "hoo with the indicative" for οὐ -- shipped,
+    # and invisible, because the checker compared page words and not what was
+    # spoken. So the accented spelling is the key, and a flat key is kept only
+    # where every deck word flattening to it has the same cue.
+    t, flats = {}, {}
     for f in ("erasmian_vocab_cues.json", "erasmian_vocab_cues_v3_black.json",
-              "erasmian_vocab_cues_v4_tail.json"):
+              "erasmian_vocab_cues_v4_tail.json",
+              # The forms said after a headword, each heard by ear 2026-09-23.
+              "erasmian_extra_forms_cues.json"):
         p = os.path.join("docs", f)
         if os.path.isfile(p):
             for r in json.load(io.open(p, encoding="utf-8")):
-                t[flat(r["greek"])] = r["tts"]
+                t.setdefault(exact(r["greek"]), r["tts"])
+                flats.setdefault(flat(r["greek"]), set()).add(r["tts"])
+    for k, v in flats.items():
+        if len(v) == 1:
+            t.setdefault(k, next(iter(v)))
     p = os.path.join("docs", "erasmian_alphabet_cues.json")
     if os.path.isfile(p):
         d = json.load(io.open(p, encoding="utf-8"))
@@ -390,6 +402,19 @@ def weld(spoken, page_words, pairs):
             continue
         out.append(p)
     return text, page_words, out
+
+
+def said_hash(text):
+    """Twelve hex digits standing for what a clip SAYS.
+
+    Shipped beside each block so check_lesson_audio can re-derive the
+    narration and ask whether the clip still says it. The guard in --js
+    proves the text matched the audio at build time; this carries that proof
+    forward to every later run, when a re-tuned cue would otherwise leave the
+    clip saying something the deck no longer teaches -- which is exactly how
+    four chapter-2 blocks went stale unnoticed."""
+    import hashlib
+    return hashlib.sha1(" ".join(text.split()).encode("utf-8")).hexdigest()[:12]
 
 
 def sub_text(raw, cues, missing):
@@ -643,7 +668,8 @@ if __name__ == "__main__":
             # A page word points at a spoken word; a spoken word has a second.
             secs = [round(starts[p], 2) for p in b["pairs"]]
             out.append({"id": b["id"], "ch": b["ch"], "kind": b["kind"],
-                        "els": b["els"], "page": b["page"], "t": secs})
+                        "els": b["els"], "page": b["page"], "t": secs,
+                        "h": said_hash(b["spoken"])})
         if bad:
             print("\nCLIPS THAT DO NOT MATCH THE LESSON (%d) — regenerate these\n"
                   "before the map ships, or a tap seeks into audio that says\n"

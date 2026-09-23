@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v221';
+const VERSION = 'v222';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,12 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v222: four chapter-2 narration blocks re-read with today's cues;
+     block 12 had said οὗ's cue for οὐ. */
+  'audio/lessons/l02_12.mp3',
+  'audio/lessons/l02_13.mp3',
+  'audio/lessons/l02_15.mp3',
+  'audio/lessons/l02_19.mp3',
   /* v221: μηδεμία dotless -- the last form clip heard by ear. */
   'audio/forms/f34_medemia.mp3',
   /* v220: extra forms, batch 2 of 2 -- every form now heard by ear. */
