@@ -189,6 +189,35 @@ LETTER_NAMES = {}
 # find the sheet's cue for the same word.
 SHEET = {}
 
+# Which real spellings stand behind each accent-blind key, so a borrowed cue
+# can be refused when the two words are accented differently.
+SPELT = {}
+
+# IPA for the narration, for every deck word whose cue is an English
+# respelling: {spelling: (the deck's respelling, the IPA)}. Respellings pass
+# on a card and misfire in prose, read as English -- "loh goss" as "low goss",
+# "haw" as "how", "ay" as "eye", and "e goh", "ahr toss" running together
+# through the commas meant to part them. From docs/erasmian_narration_ipa.json.
+IPA_TWIN = {}
+
+# Where the IPA replaces the respelling. Chapters recorded before it keep the
+# respellings their approved clips say; what is recorded after takes the IPA.
+IPA_VERSES_FROM = 3
+IPA_TABLES_FROM = 4
+IPA_PROSE_FROM = 6
+
+
+def ipa_twins(cues, ch):
+    """The table with every respelled deck cue swapped for its IPA."""
+    c = dict(cues)
+    for g, (deck, tts) in IPA_TWIN.items():
+        if ch >= VOWELS_FROM:
+            tts = said_vowels(tts)
+        for key in (exact(g), soft(g), flat(g)):
+            if c.get(key) == deck:
+                c[key] = tts
+    return c
+
 # The three letters whose clips are still cut from the old master carry no
 # IPA cue, so their names are plain English, which reads correctly. Chi's
 # clip is a separate take with no name cue either; `/kaɪ/` is the k the
@@ -253,11 +282,17 @@ def cue_table():
                 t.setdefault(exact(r["greek"]), r["tts"])
                 SHEET.setdefault(exact(r["greek"]), r["tts"])
                 softs.setdefault(soft(r["greek"]), set()).add(r["tts"])
+                SPELT.setdefault(soft(r["greek"]), set()).add(exact(r["greek"]))
+                SPELT.setdefault(flat(r["greek"]), set()).add(exact(r["greek"]))
                 flats.setdefault(flat(r["greek"]), set()).add(r["tts"])
     for table in (softs, flats):
         for k, v in table.items():
             if len(v) == 1:
                 t.setdefault(k, next(iter(v)))
+    p = os.path.join("docs", "erasmian_narration_ipa.json")
+    if os.path.isfile(p):
+        for r in json.load(io.open(p, encoding="utf-8")):
+            IPA_TWIN[exact(r["greek"])] = (r["deck"], r["tts"])
     p = os.path.join("docs", "erasmian_alphabet_cues.json")
     if os.path.isfile(p):
         d = json.load(io.open(p, encoding="utf-8"))
@@ -462,6 +497,19 @@ def align(html, ch, cues, missing):
             # every page word at the start of its replacement.
             pairs.append(at + j if len(pw) == len(sw) else at)
 
+    def greek(raw):
+        """A run of Greek, word by word where it has no cue as a whole.
+
+        Said the same either way -- sub_text's fallback is these words
+        joined -- but a run added whole points every page word at its
+        start, so a verse whose respellings made the counts differ lit only
+        its first word. Word by word, each page word keeps its own."""
+        if lookup(raw.strip(), cues) is not None or len(raw.split()) < 2:
+            add(raw, sub_text(raw, cues, missing))
+            return
+        for w in raw.split():
+            add(w, sub_text(w, cues, missing))
+
     for chunk in say_split(html, ch):
         if not chunk:
             continue
@@ -474,7 +522,7 @@ def align(html, ch, cues, missing):
             m = GK.fullmatch(part)
             if m:
                 raw = TAG.sub("", m.group(1)).strip()
-                add(raw, sub_text(raw, cues, missing))
+                greek(raw)
                 continue
             plain = clean(TAG.sub(" ", part))
             # Bare Greek in running prose -- Χριστός sits outside any span.
@@ -485,7 +533,7 @@ def align(html, ch, cues, missing):
                     add(piece, piece if ch in LEGACY else ENGLISH_RE.sub(
                         lambda m: ENGLISH[m.group(1).lower()], piece))
                 if k < len(greeks):
-                    add(greeks[k], sub_text(greeks[k], cues, missing))
+                    greek(greeks[k])
     return weld(spoken, page_words, pairs)
 
 
@@ -554,9 +602,43 @@ def said_hash(text):
     return hashlib.sha1(" ".join(text.split()).encode("utf-8")).hexdigest()[:12]
 
 
+def accents(w):
+    """(position, is-circumflex) of the first accent, counted from the end
+    of the word, or None for a word with no accent."""
+    d = [c for c in unicodedata.normalize("NFD", w.lower())]
+    base = [i for i, c in enumerate(d) if not unicodedata.combining(c)]
+    for i, c in enumerate(d):
+        if c in "̀́͂":
+            letter = max(j for j in base if j < i)
+            return (len(base) - base.index(letter), c == "͂")
+    return None
+
+
+def same_word(a, b):
+    """Could spelling a borrow spelling b's cue? Yes if they differ only by
+    case, a grave for an acute, an accent one of them lacks (an enclitic's
+    throw-back, an unaccented proclitic), or an extra accent after the first.
+    No if the first accent sits on a different letter or one is a circumflex
+    and the other not: μενῶ is not μένω, nor εἶ εἰ, nor ἐστίν ἔστιν -- each
+    of which, borrowing, said the other word."""
+    x, y = accents(a), accents(b)
+    if x is None or y is None:
+        return not ((x and x[1]) or (y and y[1]))
+    return x == y
+
+
 def lookup(tok, cues):
-    for key in (exact(tok), soft(tok), flat(tok)):
+    e = exact(tok)
+    if e in cues:
+        return cues[e]
+    for key in (soft(tok), flat(tok)):
         if key in cues:
+            src = SPELT.get(key)
+            # An ending or a stem on its own (-ῶν, πατρ-) is said without
+            # stress, so its accent changes nothing about how it sounds.
+            frag = tok.strip().startswith(("-", "‑")) or tok.strip().endswith(("-", "‑"))
+            if src and not frag and not any(same_word(e, s_) for s_ in src):
+                return None
             return cues[key]
     return None
 
@@ -749,6 +831,8 @@ def narrate_table(inner, ch, cues, missing):
     cue and its words keep their place on the page. If the cells' words do
     not add up to the table's words exactly, the table is pointed at as
     before rather than mapped wrongly."""
+    if ch >= IPA_TABLES_FROM:
+        cues = ipa_twins(cues, ch)
     cap = CAPTION.search(inner)
     grid = [[h for _tag, h in CELL.findall(r)] for r in ROWS.findall(inner)]
     if not grid:
@@ -869,6 +953,79 @@ def narrate_table(inner, ch, cues, missing):
     return " ".join(tokens), flatpage, pairs
 
 
+# ---------------------------------------------------------------- verses ---
+#
+# A quoted verse read aloud, in chapters in VERSES_READ, while the way of
+# doing it is being heard. The reference is said the way a reader says it --
+# "Mark 1, verse 40" -- then the Greek, each word its cue, then the lesson's
+# own prose carries on, which in almost every case begins with the English.
+# That is how a teacher reads a text to a class: where it is, what it says,
+# what it means.
+#
+# Each Greek word keeps its page word, so the read-along lights each word as
+# it is said. Greek punctuation is said as its function, not its shape: the
+# question mark (;) as a question, the raised dot (·) as a pause.
+VERSES_READ = {3}
+
+ORDINAL = {"1": "First", "2": "Second", "3": "Third"}
+
+
+def speak_ref(ref):
+    """'1 Thessalonians 5:16-18' -> 'First Thessalonians 5, verses 16 to 18'."""
+    m = re.fullmatch(r"(?:([123]) )?(.+?) (\d+):(\d+)(?:[-–](\d+))?", ref.strip())
+    if not m:
+        return ref
+    n, book, chap, v1, v2 = m.groups()
+    book = (ORDINAL[n] + " " + book) if n else book
+    if v2:
+        return "%s %s, verses %s to %s" % (book, chap, v1, v2)
+    return "%s %s, verse %s" % (book, chap, v1)
+
+
+# Inside a verse only, where a deck respelling reads wrongly among IPA words.
+# The article's "haw" came out "how" in John 6:48; /ˈhɒ/ is the form cue an
+# ear chose for ὁ in the extra-forms round. Prose keeps the deck's cue, which
+# approved blocks were recorded with.
+VERSE_SAY = {"ὁ": "/ˈhɒ/"}
+
+
+def narrate_verse(inner, ref, ch, cues, missing):
+    """(narration, page words, pairs) for a quoted verse, or None."""
+    cues = ipa_twins(cues, ch) if ch >= IPA_VERSES_FROM else dict(cues)
+    for k, v in VERSE_SAY.items():
+        cues[exact(k)] = v
+        cues[soft(k)] = v
+    t, pw, pr = align(inner, ch, cues, missing)
+    if not t or pw != clean(TAG.sub(" ", inner)).split():
+        return None
+    # PACING (Fraser, 2026-09-24, from five pacings of Matthew 28:6): a comma
+    # after every Greek word, so each is heard as a word, and where the verse
+    # has punctuation of its own -- a comma or a raised dot -- an ellipsis,
+    # the longer pause, so its grammar still comes through. Slowing the voice
+    # was tried and not chosen.
+    words = t.split()
+    last = len(words) - 1
+    # The pause goes after each Greek WORD: a deck respelling can be several
+    # tokens ("e goh" for \u1f10\u03b3\u03ce), and a comma inside it split the word in two.
+    starts = sorted(set(pr))
+    ends = {s - 1 for s in starts[1:]} | {last}
+    for i, w in enumerate(words):
+        if i not in ends:
+            continue
+        if w == "\u00b7":
+            words[i] = "\u2026"                  # a pause, one token for one
+        elif w.endswith(";") or w.endswith("\u037e"):
+            words[i] = w[:-1] + "?"
+        elif w.endswith(",") or w.endswith("\u00b7"):
+            words[i] = w[:-1] + ("\u2026" if i < last else ".")
+        elif i < last and w[-1] not in ".!?\u2026":
+            words[i] = w + ","
+    if words and words[-1][-1] not in ".?!":
+        words[-1] = words[-1].rstrip(",") + "."
+    lead = (speak_ref(ref) + ":").split()
+    return (" ".join(lead + words), pw, [p + len(lead) for p in pr])
+
+
 def later(cues, ch=0):
     """The table as a chapter after LEGACY sees it: DESCRIBE's wording for
     marks gives way to the plain letter name."""
@@ -885,6 +1042,8 @@ def later(cues, ch=0):
                 c.pop(exact(k), None)
     for k, v in NARRATE.items():
         c[exact(k)] = v
+        # μὴ with a grave, or a capital in a verse, is still μή.
+        c[soft(k)] = v
     for k in DESCRIBE:
         e = exact(k)
         if e not in LETTER_NAMES and k not in CUES:
@@ -894,6 +1053,8 @@ def later(cues, ch=0):
     c.update(LETTER_NAMES)
     if ch >= VOWELS_FROM:
         c = {k: said_vowels(v) for k, v in c.items()}
+    if ch >= IPA_PROSE_FROM:
+        c = ipa_twins(c, ch)
     for k, (start, v) in NARRATE_FROM.items():
         if ch >= start:
             c[exact(k)] = v
@@ -942,6 +1103,12 @@ def blocks_for(les, cues, missing):
         # A quoted verse: the Greek is dropped and the English around it kept.
         if 'class="v"' in attrs or "data-ref=" in attrs:
             ref = re.search(r'data-ref="([^"]+)"', attrs)
+            if les["id"] in VERSES_READ and ref:
+                read = narrate_verse(inner, ref.group(1), les["id"], cues,
+                                     missing)
+                if read:
+                    out.append(("prose",) + read + ([el],))
+                    continue
             out.append(("verse", "The Greek of %s is on screen."
                         % (ref.group(1) if ref else "the verse"),
                         page, [0] * len(page), [el]))

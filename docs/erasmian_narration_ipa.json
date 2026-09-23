@@ -1,0 +1,3034 @@
+[
+ {
+  "greek": "ὁ",
+  "index": 0,
+  "deck": "haw",
+  "ipa": "ˈho",
+  "tts": "/ˈhɒ/",
+  "source": "converter"
+ },
+ {
+  "greek": "καί",
+  "index": 1,
+  "deck": "kai",
+  "ipa": "ˈkai̯",
+  "tts": "/ˈkai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "αὐτός",
+  "index": 2,
+  "deck": "ow toss",
+  "ipa": "au̯.ˈtos",
+  "tts": "/au̯ˈtɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "σύ",
+  "index": 3,
+  "deck": "soo",
+  "ipa": "ˈsu",
+  "tts": "/ˈsu/",
+  "source": "converter"
+ },
+ {
+  "greek": "δέ",
+  "index": 4,
+  "deck": "deh",
+  "ipa": "ˈde",
+  "tts": "/ˈdɛ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐν",
+  "index": 5,
+  "deck": "en",
+  "ipa": "ˈen",
+  "tts": "/ˈɛn/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐγώ",
+  "index": 6,
+  "deck": "e goh",
+  "ipa": "e.ˈɡoː",
+  "tts": "/ɛˈɡoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "λέγω",
+  "index": 8,
+  "deck": "lehgo",
+  "ipa": "ˈle.ɡoː",
+  "tts": "/ˈlɛ.ɡoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "εἰς",
+  "index": 9,
+  "deck": "ace",
+  "ipa": "ˈei̯s",
+  "tts": "/ˈeɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πᾶς",
+  "index": 14,
+  "deck": "pahss",
+  "ipa": "ˈpaːs",
+  "tts": "/ˈpaːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γάρ",
+  "index": 16,
+  "deck": "gar",
+  "ipa": "ˈɡar",
+  "tts": "/ˈɡar/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰησοῦς",
+  "index": 17,
+  "deck": "ee yay soos",
+  "ipa": "i.eː.ˈsuːs",
+  "tts": "/ɪ.eɪˈsuːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκ",
+  "index": 18,
+  "deck": "eck",
+  "ipa": "ˈek",
+  "tts": "/ˈɛk/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπί",
+  "index": 19,
+  "deck": "eppee",
+  "ipa": "e.ˈpi",
+  "tts": "/ɛˈpi/",
+  "source": "converter"
+ },
+ {
+  "greek": "κύριος",
+  "index": 20,
+  "deck": "koo rioss",
+  "ipa": "ˈku.ri.os",
+  "tts": "/ˈku.rɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρός",
+  "index": 22,
+  "deck": "pross",
+  "ipa": "ˈpros",
+  "tts": "/ˈprɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γίνομαι",
+  "index": 23,
+  "deck": "ghee no my",
+  "ipa": "ˈɡi.no.mai̯",
+  "tts": "/ˈɡi.nɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἵνα",
+  "index": 25,
+  "deck": "hin ah",
+  "ipa": "ˈhi.na",
+  "tts": "/ˈhi.na/",
+  "source": "converter"
+ },
+ {
+  "greek": "ποιέω",
+  "index": 29,
+  "deck": "poy eh hoe",
+  "ipa": "poi̯.ˈe.oː",
+  "tts": "/poi̯ˈɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "τίς",
+  "index": 30,
+  "deck": "tiss",
+  "ipa": "ˈtis",
+  "tts": "/ˈtis/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄνθρωπος",
+  "index": 31,
+  "deck": "ahn thro poss",
+  "ipa": "ˈan.θroː.pos",
+  "tts": "/ˈan.θroː.pɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Χριστός",
+  "index": 32,
+  "deck": "khree stoss",
+  "ipa": "xri.ˈstos",
+  "tts": "/krɪˈstɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "εἰ",
+  "index": 35,
+  "deck": "ay",
+  "ipa": "ˈei̯",
+  "tts": "/ˈeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "οὖν",
+  "index": 36,
+  "deck": "oon",
+  "ipa": "ˈuːn",
+  "tts": "/ˈuːn/",
+  "source": "converter"
+ },
+ {
+  "greek": "πνεῦμα",
+  "index": 45,
+  "deck": "p'new mah",
+  "ipa": "pə.ˈneu̯.ma",
+  "tts": "/pəˈnju.ma/",
+  "source": "converter"
+ },
+ {
+  "greek": "υἱός",
+  "index": 46,
+  "deck": "hwee oss",
+  "ipa": "hui̯.ˈos",
+  "tts": "/hui̯ˈɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "εἷς",
+  "index": 47,
+  "deck": "heyss",
+  "ipa": "ˈhei̯s",
+  "tts": "/ˈheɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀδελφός",
+  "index": 48,
+  "deck": "ah del foss",
+  "ipa": "a.del.ˈfos",
+  "tts": "/a.dɛlˈfɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἤ",
+  "index": 49,
+  "deck": "ay",
+  "ipa": "ˈeː",
+  "tts": "/ˈeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "λόγος",
+  "index": 51,
+  "deck": "loh goss",
+  "ipa": "ˈlo.ɡos",
+  "tts": "/ˈlɒ.ɡɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οὐρανός",
+  "index": 55,
+  "deck": "oo rah noss",
+  "ipa": "uː.ra.ˈnos",
+  "tts": "/uː.raˈnɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκεῖνος",
+  "index": 56,
+  "deck": "eh kay noss",
+  "ipa": "e.ˈkei̯.nos",
+  "tts": "/ɛˈkeɪ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μαθητής",
+  "index": 57,
+  "deck": "mathay teys",
+  "ipa": "ma.θeː.ˈteːs",
+  "tts": "/ma.θeɪˈteːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "λαμβάνω",
+  "index": 58,
+  "deck": "lahm bah noh",
+  "ipa": "lam.ˈba.noː",
+  "tts": "/lamˈba.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πίστις",
+  "index": 61,
+  "deck": "piss tiss",
+  "ipa": "ˈpi.stis",
+  "tts": "/ˈpɪ.stɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οὐδείς",
+  "index": 63,
+  "deck": "oo deys",
+  "ipa": "uː.ˈdei̯s",
+  "tts": "/uːˈdeɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἅγιος",
+  "index": 64,
+  "deck": "hag e oss",
+  "ipa": "ˈha.ɡi.os",
+  "tts": "/ˈha.ɡɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὄνομα",
+  "index": 66,
+  "deck": "on no mah",
+  "ipa": "ˈo.no.ma",
+  "tts": "/ˈɒ.nɒ.ma/",
+  "source": "converter"
+ },
+ {
+  "greek": "γινώσκω",
+  "index": 67,
+  "deck": "ghee noh skoh",
+  "ipa": "ɡi.ˈnoː.skoː",
+  "tts": "/ɡɪˈnoː.skoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐξέρχομαι",
+  "index": 69,
+  "deck": "eh ksehr kho my",
+  "ipa": "e.ˈkser.xo.mai̯",
+  "tts": "/ɛˈksɛr.kɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "γυνή",
+  "index": 71,
+  "deck": "goo ney",
+  "ipa": "ɡu.ˈneː",
+  "tts": "/ɡuˈneɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "θέλω",
+  "index": 74,
+  "deck": "thel oh",
+  "ipa": "ˈθe.loː",
+  "tts": "/ˈθɛ.loː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰουδαῖος",
+  "index": 77,
+  "deck": "yoodaios",
+  "ipa": "i.uː.ˈdai̯.os",
+  "tts": "/ɪ.uːˈdai̯.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "νόμος",
+  "index": 79,
+  "deck": "nommoss",
+  "ipa": "ˈno.mos",
+  "tts": "/ˈnɒ.mɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γράφω",
+  "index": 81,
+  "deck": "grah foh",
+  "ipa": "ˈɡra.foː",
+  "tts": "/ˈɡra.foː/",
+  "source": "converter"
+ },
+ {
+  "greek": "κόσμος",
+  "index": 82,
+  "deck": "ko smoss",
+  "ipa": "ˈkos.mos",
+  "tts": "/ˈkɒs.mɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μέν",
+  "index": 84,
+  "deck": "men",
+  "ipa": "ˈmen",
+  "tts": "/ˈmɛn/",
+  "source": "converter"
+ },
+ {
+  "greek": "χείρ",
+  "index": 85,
+  "deck": "khayr",
+  "ipa": "ˈxei̯r",
+  "tts": "/ˈkeɪr/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὑρίσκω",
+  "index": 86,
+  "deck": "hew ree skoh",
+  "ipa": "heu̯.ˈri.skoː",
+  "tts": "/hjuˈrɪ.skoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄγγελος",
+  "index": 87,
+  "deck": "ahng geh loss",
+  "ipa": "ˈaŋ.ɡe.los",
+  "tts": "/ˈaŋ.ɡɛ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὄχλος",
+  "index": 88,
+  "deck": "oh khloss",
+  "ipa": "ˈo.xlos",
+  "tts": "/ˈɒ.klɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἁμαρτία",
+  "index": 89,
+  "deck": "hahmar teeah",
+  "ipa": "ha.mar.ˈti.a",
+  "tts": "/ha.marˈti.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔργον",
+  "index": 90,
+  "deck": "er gon",
+  "ipa": "ˈer.ɡon",
+  "tts": "/ˈɛr.ɡɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "δόξα",
+  "index": 91,
+  "deck": "doksah",
+  "ipa": "ˈdo.ksa",
+  "tts": "/ˈdɒ.ksa/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔθνος",
+  "index": 93,
+  "deck": "ehth noss",
+  "ipa": "ˈeθ.nos",
+  "tts": "/ˈɛθ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐσθίω",
+  "index": 96,
+  "deck": "es theo",
+  "ipa": "es.ˈθi.oː",
+  "tts": "/ɛsˈθi.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Παῦλος",
+  "index": 97,
+  "deck": "pow loss",
+  "ipa": "ˈpau̯.los",
+  "tts": "/ˈpau̯.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Πέτρος",
+  "index": 99,
+  "deck": "petross",
+  "ipa": "ˈpe.tros",
+  "tts": "/ˈpɛ.trɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄλλος",
+  "index": 100,
+  "deck": "ahl loss",
+  "ipa": "ˈal.los",
+  "tts": "/ˈal.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρῶτος",
+  "index": 101,
+  "deck": "protoss",
+  "ipa": "ˈproː.tos",
+  "tts": "/ˈproː.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἵστημι",
+  "index": 102,
+  "deck": "hee stay mee",
+  "ipa": "ˈhi.steː.mi",
+  "tts": "/ˈhɪ.steɪ.mɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅστις",
+  "index": 103,
+  "deck": "hoss tiss",
+  "ipa": "ˈho.stis",
+  "tts": "/ˈhɒ.stɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὑπέρ",
+  "index": 105,
+  "deck": "hoo pehr",
+  "ipa": "hu.ˈper",
+  "tts": "/huˈpɛr/",
+  "source": "converter"
+ },
+ {
+  "greek": "νῦν",
+  "index": 107,
+  "deck": "noon",
+  "ipa": "ˈnuːn",
+  "tts": "/ˈnuːn/",
+  "source": "converter"
+ },
+ {
+  "greek": "σάρξ",
+  "index": 108,
+  "deck": "sarks",
+  "ipa": "ˈsarks",
+  "tts": "/ˈsarks/",
+  "source": "converter"
+ },
+ {
+  "greek": "προφήτης",
+  "index": 111,
+  "deck": "praw fey teys",
+  "ipa": "pro.ˈfeː.teːs",
+  "tts": "/prɒˈfeɪ.teːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ζάω",
+  "index": 118,
+  "deck": "zah oh",
+  "ipa": "ˈdza.oː",
+  "tts": "/ˈʣa.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ζωή",
+  "index": 121,
+  "deck": "zoh eh",
+  "ipa": "dzoː.ˈeː",
+  "tts": "/ʣoːˈeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀμήν",
+  "index": 124,
+  "deck": "ah mayn",
+  "ipa": "a.ˈmeːn",
+  "tts": "/aˈmeɪn/",
+  "source": "converter"
+ },
+ {
+  "greek": "νεκρός",
+  "index": 125,
+  "deck": "neh kross",
+  "ipa": "ne.ˈkros",
+  "tts": "/nɛˈkrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "σύν",
+  "index": 126,
+  "deck": "soon",
+  "ipa": "ˈsun",
+  "tts": "/ˈsun/",
+  "source": "converter"
+ },
+ {
+  "greek": "δοῦλος",
+  "index": 127,
+  "deck": "doo loss",
+  "ipa": "ˈduː.los",
+  "tts": "/ˈduː.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀρχιερεύς",
+  "index": 130,
+  "deck": "ahr khee ehrews",
+  "ipa": "ar.xi.e.ˈreu̯s",
+  "tts": "/ar.kɪ.ɛˈrjus/",
+  "source": "converter"
+ },
+ {
+  "greek": "θάνατος",
+  "index": 132,
+  "deck": "thah nah toss",
+  "ipa": "ˈθa.na.tos",
+  "tts": "/ˈθa.na.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "παραδίδωμι",
+  "index": 134,
+  "deck": "pah rah di doh mee",
+  "ipa": "pa.ra.ˈdi.doː.mi",
+  "tts": "/pa.raˈdi.doː.mɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ζητέω",
+  "index": 137,
+  "deck": "zay teh oh",
+  "ipa": "dzeː.ˈte.oː",
+  "tts": "/ʣeɪˈtɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκκλησία",
+  "index": 140,
+  "deck": "ek klay see ah",
+  "ipa": "ek.kleː.ˈsi.a",
+  "tts": "/ɛk.kleɪˈsi.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἴδιος",
+  "index": 141,
+  "deck": "ee dee oss",
+  "ipa": "ˈi.di.os",
+  "tts": "/ˈi.dɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οἶκος",
+  "index": 144,
+  "deck": "oy koss",
+  "ipa": "ˈoi̯.kos",
+  "tts": "/ˈoi̯.kɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅσος",
+  "index": 146,
+  "deck": "ho soss",
+  "ipa": "ˈho.sos",
+  "tts": "/ˈhɒ.sɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅλος",
+  "index": 149,
+  "deck": "ho loss",
+  "ipa": "ˈho.los",
+  "tts": "/ˈhɒ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "παρακαλέω",
+  "index": 150,
+  "deck": "pah rah kah leh oh",
+  "ipa": "pa.ra.ka.ˈle.oː",
+  "tts": "/pa.ra.kaˈlɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀνίστημι",
+  "index": 151,
+  "deck": "ah nee stay mee",
+  "ipa": "a.ˈni.steː.mi",
+  "tts": "/aˈnɪ.steɪ.mɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "σῴζω",
+  "index": 152,
+  "deck": "sozo",
+  "ipa": "ˈsoː.dzoː",
+  "tts": "/ˈsoːʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὥρα",
+  "index": 153,
+  "deck": "hoh rah",
+  "ipa": "ˈhoː.ra",
+  "tts": "/ˈhoː.ra/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅπου",
+  "index": 155,
+  "deck": "ho poo",
+  "ipa": "ˈho.puː",
+  "tts": "/ˈhɒ.puː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πῶς",
+  "index": 156,
+  "deck": "pose",
+  "ipa": "ˈpoːs",
+  "tts": "/ˈpoːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ψυχή",
+  "index": 157,
+  "deck": "psoo khey",
+  "ipa": "psu.ˈxeː",
+  "tts": "/psuˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀγαθός",
+  "index": 158,
+  "deck": "ah gah thoss",
+  "ipa": "a.ɡa.ˈθos",
+  "tts": "/a.ɡaˈθɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐξουσία",
+  "index": 159,
+  "deck": "exousia",
+  "ipa": "e.ksuː.ˈsi.a",
+  "tts": "/ɛ.ksuːˈsi.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "δεῖ",
+  "index": 161,
+  "deck": "day",
+  "ipa": "ˈdei̯",
+  "tts": "/ˈdeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὁδός",
+  "index": 162,
+  "deck": "ho doss",
+  "ipa": "ho.ˈdos",
+  "tts": "/hɒˈdɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀλλήλων",
+  "index": 163,
+  "deck": "al lay lohn",
+  "ipa": "al.ˈleː.loːn",
+  "tts": "/alˈleɪ.loʊn/",
+  "source": "converter"
+ },
+ {
+  "greek": "καλός",
+  "index": 164,
+  "deck": "kah loss",
+  "ipa": "ka.ˈlos",
+  "tts": "/kaˈlɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὀφθαλμός",
+  "index": 165,
+  "deck": "off thal moss",
+  "ipa": "of.θal.ˈmos",
+  "tts": "/ɒf.θalˈmɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἕτερος",
+  "index": 168,
+  "deck": "heh teh ross",
+  "ipa": "ˈhe.te.ros",
+  "tts": "/ˈhɛ.tɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Φαρισαῖος",
+  "index": 169,
+  "deck": "fah ree sigh oss",
+  "ipa": "fa.ri.ˈsai̯.os",
+  "tts": "/fa.rɪˈsai̯.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "αἷμα",
+  "index": 170,
+  "deck": "high mah",
+  "ipa": "ˈhai̯.ma",
+  "tts": "/ˈhai̯.ma/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄρτος",
+  "index": 171,
+  "deck": "ahr toss",
+  "ipa": "ˈar.tos",
+  "tts": "/ˈar.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γεννάω",
+  "index": 172,
+  "deck": "gehn nah oh",
+  "ipa": "ɡen.ˈna.oː",
+  "tts": "/ɡɛnˈna.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "διδάσκω",
+  "index": 173,
+  "deck": "didah skoh",
+  "ipa": "di.ˈda.skoː",
+  "tts": "/dɪˈda.skoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "περιπατέω",
+  "index": 174,
+  "deck": "peh ree pah teh oh",
+  "ipa": "pe.ri.pa.ˈte.oː",
+  "tts": "/pɛ.rɪ.paˈtɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "φοβέομαι",
+  "index": 175,
+  "deck": "fo beh o my",
+  "ipa": "fo.ˈbe.o.mai̯",
+  "tts": "/fɒˈbɛ.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔτι",
+  "index": 177,
+  "deck": "etih",
+  "ipa": "ˈe.ti",
+  "tts": "/ˈɛ.tɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "πούς",
+  "index": 179,
+  "deck": "poos",
+  "ipa": "ˈpuːs",
+  "tts": "/ˈpuːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "δικαιοσύνη",
+  "index": 180,
+  "deck": "di kye o soo ney",
+  "ipa": "di.kai̯.o.ˈsu.neː",
+  "tts": "/dɪ.kai̯.ɒˈsu.neɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "θάλασσα",
+  "index": 182,
+  "deck": "thalas sa",
+  "ipa": "ˈθa.las.sa",
+  "tts": "/ˈθa.las.sa/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀκολουθέω",
+  "index": 184,
+  "deck": "ah ko loo theh oh",
+  "ipa": "a.ko.luː.ˈθe.oː",
+  "tts": "/a.kɒ.luːˈθɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀπόλλυμι",
+  "index": 185,
+  "deck": "ah pol loo mee",
+  "ipa": "a.ˈpol.lu.mi",
+  "tts": "/aˈpɒl.lu.mɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀρχή",
+  "index": 189,
+  "deck": "arkhey",
+  "ipa": "ar.ˈxeː",
+  "tts": "/arˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "πληρόω",
+  "index": 190,
+  "deck": "play raw oh",
+  "ipa": "pleː.ˈro.oː",
+  "tts": "/pleɪˈrɒ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσέρχομαι",
+  "index": 191,
+  "deck": "pross air kho my",
+  "ipa": "pro.ˈser.xo.mai̯",
+  "tts": "/prɒˈsɛr.kɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "δικαιόω",
+  "index": 192,
+  "deck": "dee kai oh oh",
+  "ipa": "di.kai̯.ˈo.oː",
+  "tts": "/dɪ.kai̯ˈɒ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "καιρός",
+  "index": 193,
+  "deck": "kye ross",
+  "ipa": "kai̯.ˈros",
+  "tts": "/kai̯ˈrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσεύχομαι",
+  "index": 194,
+  "deck": "pross sue kho my",
+  "ipa": "pro.ˈseu̯.xo.mai̯",
+  "tts": "/prɒˈsju.kɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "μήτηρ",
+  "index": 196,
+  "deck": "may tayr",
+  "ipa": "ˈmeː.teːr",
+  "tts": "/ˈmeɪ.teːr/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὥσπερ",
+  "index": 197,
+  "deck": "hoh spehr",
+  "ipa": "ˈhoː.sper",
+  "tts": "/ˈhoː.spɛr/",
+  "source": "converter"
+ },
+ {
+  "greek": "σημεῖον",
+  "index": 200,
+  "deck": "say may on",
+  "ipa": "seː.ˈmei̯.on",
+  "tts": "/seːˈmeɪ.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐντολή",
+  "index": 201,
+  "deck": "en taw ley",
+  "ipa": "en.to.ˈleː",
+  "tts": "/ɛn.tɒˈleɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "σκότος",
+  "index": 202,
+  "deck": "sko toss",
+  "ipa": "ˈsko.tos",
+  "tts": "/ˈskɒ.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "φῶς",
+  "index": 203,
+  "deck": "foce",
+  "ipa": "ˈfoːs",
+  "tts": "/ˈfoːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλπίς",
+  "index": 204,
+  "deck": "el peace",
+  "ipa": "el.ˈpis",
+  "tts": "/ɛlˈpis/",
+  "source": "converter"
+ },
+ {
+  "greek": "σοφία",
+  "index": 206,
+  "deck": "sawfeeah",
+  "ipa": "so.ˈfi.a",
+  "tts": "/sɒˈfi.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "μαρτυρέω",
+  "index": 207,
+  "deck": "mar too reh oh",
+  "ipa": "mar.tu.ˈre.oː",
+  "tts": "/mar.tuˈrɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μαρτυρία",
+  "index": 208,
+  "deck": "martoo reea",
+  "ipa": "mar.tu.ˈri.a",
+  "tts": "/mar.tuˈri.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "δοξάζω",
+  "index": 212,
+  "deck": "doxazo",
+  "ipa": "do.ˈksa.dzoː",
+  "tts": "/dɒˈksaʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "σταυρός",
+  "index": 213,
+  "deck": "stau ross",
+  "ipa": "stau̯.ˈros",
+  "tts": "/stau̯ˈrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "σταυρόω",
+  "index": 214,
+  "deck": "stau raw oh",
+  "ipa": "stau̯.ˈro.oː",
+  "tts": "/stau̯ˈrɒ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "θρόνος",
+  "index": 216,
+  "deck": "thro noss",
+  "ipa": "ˈθro.nos",
+  "tts": "/ˈθrɒ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἱερόν",
+  "index": 219,
+  "deck": "hier ron",
+  "ipa": "hi.e.ˈron",
+  "tts": "/hɪ.ɛˈrɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "θυσία",
+  "index": 220,
+  "deck": "thoo see ah",
+  "ipa": "θu.ˈsi.a",
+  "tts": "/θuˈsi.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "διαθήκη",
+  "index": 221,
+  "deck": "di ah thay kay",
+  "ipa": "di.a.ˈθeː.keː",
+  "tts": "/dɪ.aˈθeɪ.keː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μέσος",
+  "index": 225,
+  "deck": "mesoss",
+  "ipa": "ˈme.sos",
+  "tts": "/ˈmɛ.sɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "αἰώνιος",
+  "index": 226,
+  "deck": "eye oh nee oss",
+  "ipa": "ai̯.ˈoː.ni.os",
+  "tts": "/ai̯ˈoː.nɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πιστός",
+  "index": 227,
+  "deck": "pistoss",
+  "ipa": "pi.ˈstos",
+  "tts": "/pɪˈstɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "δίκαιος",
+  "index": 228,
+  "deck": "dee kyeoss",
+  "ipa": "ˈdi.kai̯.os",
+  "tts": "/ˈdi.kai̯.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πονηρός",
+  "index": 229,
+  "deck": "po nay ross",
+  "ipa": "po.neː.ˈros",
+  "tts": "/pɒ.neɪˈrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρεσβύτερος",
+  "index": 230,
+  "deck": "pres boo teh ross",
+  "ipa": "pres.ˈbu.te.ros",
+  "tts": "/prɛsˈbu.tɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀληθής",
+  "index": 232,
+  "deck": "ah lay theys",
+  "ipa": "a.leː.ˈθeːs",
+  "tts": "/a.leɪˈθeːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλεέω",
+  "index": 233,
+  "deck": "eh leh eh hoe",
+  "ipa": "e.le.ˈe.oː",
+  "tts": "/ɛ.lɛ.ˈɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλεος",
+  "index": 234,
+  "deck": "eh leh oss",
+  "ipa": "ˈe.le.os",
+  "tts": "/ˈɛ.lɛ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οὗτος",
+  "index": 235,
+  "deck": "hoo toss",
+  "ipa": "ˈhuː.tos",
+  "tts": "/ˈhuː.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰωάννης",
+  "index": 239,
+  "deck": "ee oh ahn neys",
+  "ipa": "i.oː.ˈan.neːs",
+  "tts": "/ɪ.oːˈan.neɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "τόπος",
+  "index": 241,
+  "deck": "to poss",
+  "ipa": "ˈto.pos",
+  "tts": "/ˈtɒ.pɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μηδείς",
+  "index": 242,
+  "deck": "may deys",
+  "ipa": "meː.ˈdei̯s",
+  "tts": "/meːˈdeɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὥστε",
+  "index": 244,
+  "deck": "hoh steh",
+  "ipa": "ˈhoː.ste",
+  "tts": "/ˈhoː.stɛ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀναβαίνω",
+  "index": 245,
+  "deck": "ah nah bye noh",
+  "ipa": "a.na.ˈbai̯.noː",
+  "tts": "/a.naˈbai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκβάλλω",
+  "index": 247,
+  "deck": "ek bal lo",
+  "ipa": "ek.ˈbal.loː",
+  "tts": "/ɛkˈbal.loː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἕκαστος",
+  "index": 248,
+  "deck": "heh kah stoss",
+  "ipa": "ˈhe.ka.stos",
+  "tts": "/ˈhɛ.ka.stɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "καταβαίνω",
+  "index": 249,
+  "deck": "kah tah bye noh",
+  "ipa": "ka.ta.ˈbai̯.noː",
+  "tts": "/ka.taˈbai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πέμπω",
+  "index": 250,
+  "deck": "pem poh",
+  "ipa": "ˈpem.poː",
+  "tts": "/ˈpɛm.poː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Μωϋσῆς",
+  "index": 251,
+  "deck": "moh oo seys",
+  "ipa": "moː.u.ˈseːs",
+  "tts": "/moː.uˈseɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀπόστολος",
+  "index": 252,
+  "deck": "ah po sto loss",
+  "ipa": "a.ˈpo.sto.los",
+  "tts": "/aˈpɒ.stɒ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "βαπτίζω",
+  "index": 254,
+  "deck": "bap tee dzoh",
+  "ipa": "bap.ˈti.dzoː",
+  "tts": "/bapˈtiʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρόσωπον",
+  "index": 256,
+  "deck": "pross oh pon",
+  "ipa": "ˈpro.soː.pon",
+  "tts": "/ˈprɒ.soː.pɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐμός",
+  "index": 257,
+  "deck": "eh moss",
+  "ipa": "e.ˈmos",
+  "tts": "/ɛˈmɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰερουσαλήμ",
+  "index": 258,
+  "deck": "ee eh roo sah laym",
+  "ipa": "i.e.ruː.sa.ˈleːm",
+  "tts": "/ɪ.ɛ.ruː.saˈleɪm/",
+  "source": "converter"
+ },
+ {
+  "greek": "Σίμων",
+  "index": 259,
+  "deck": "see mohn",
+  "ipa": "ˈsi.moːn",
+  "tts": "/ˈsi.moʊn/",
+  "source": "converter"
+ },
+ {
+  "greek": "κεφαλή",
+  "index": 260,
+  "deck": "keffa lay",
+  "ipa": "ke.fa.ˈleː",
+  "tts": "/kɛ.faˈleɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "χαίρω",
+  "index": 262,
+  "deck": "kyro",
+  "ipa": "ˈxai̯.roː",
+  "tts": "/ˈkai̯.roː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἀβραάμ",
+  "index": 264,
+  "deck": "ah brah ahm",
+  "ipa": "a.bra.ˈam",
+  "tts": "/a.bra.ˈam/",
+  "source": "converter"
+ },
+ {
+  "greek": "πῦρ",
+  "index": 266,
+  "deck": "poor",
+  "ipa": "ˈpuːr",
+  "tts": "/ˈpuːr/",
+  "source": "converter"
+ },
+ {
+  "greek": "τηρέω",
+  "index": 267,
+  "deck": "tayreh oh",
+  "ipa": "teː.ˈre.oː",
+  "tts": "/teɪˈrɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰσραήλ",
+  "index": 269,
+  "deck": "ees rah ayl",
+  "ipa": "is.ra.ˈeːl",
+  "tts": "/ɪsraˈeɪl/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλοῖον",
+  "index": 273,
+  "deck": "ploy on",
+  "ipa": "ˈploi̯.on",
+  "tts": "/ˈploi̯.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "τρεῖς",
+  "index": 274,
+  "deck": "treys",
+  "ipa": "ˈtrei̯s",
+  "tts": "/ˈtreɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "φέρω",
+  "index": 276,
+  "deck": "feh roh",
+  "ipa": "ˈfe.roː",
+  "tts": "/ˈfɛ.roː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἱεροσόλυμα",
+  "index": 279,
+  "deck": "hee eh raw so loo mah",
+  "ipa": "hi.e.ro.ˈso.lu.ma",
+  "tts": "/hɪ.ɛ.rɒˈsɒ.lu.ma/",
+  "source": "converter"
+ },
+ {
+  "greek": "δαιμόνιον",
+  "index": 280,
+  "deck": "dye mo nee on",
+  "ipa": "dai̯.ˈmo.ni.on",
+  "tts": "/dai̯ˈmɒ.nɪ.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "δοκέω",
+  "index": 282,
+  "deck": "dok keh oh",
+  "ipa": "do.ˈke.oː",
+  "tts": "/dɒˈkɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὄρος",
+  "index": 283,
+  "deck": "o ross",
+  "ipa": "ˈo.ros",
+  "tts": "/ˈɒ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "νύξ",
+  "index": 287,
+  "deck": "nooks",
+  "ipa": "ˈnuks",
+  "tts": "/ˈnuks/",
+  "source": "converter"
+ },
+ {
+  "greek": "Γαλιλαία",
+  "index": 288,
+  "deck": "gah lee lie ah",
+  "ipa": "ɡa.li.ˈlai̯.a",
+  "tts": "/ɡa.lɪˈlai̯.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀγαπητός",
+  "index": 289,
+  "deck": "ah gah pay toss",
+  "ipa": "a.ɡa.peː.ˈtos",
+  "tts": "/a.ɡa.peɪˈtɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσκυνέω",
+  "index": 291,
+  "deck": "pross koo neh hoe",
+  "ipa": "pro.sku.ˈne.oː",
+  "tts": "/prɒ.skuˈnɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὐθύς",
+  "index": 298,
+  "deck": "ew thoos",
+  "ipa": "eu̯.ˈθus",
+  "tts": "/juˈθus/",
+  "source": "converter"
+ },
+ {
+  "greek": "λίθος",
+  "index": 300,
+  "deck": "lee thoss",
+  "ipa": "ˈli.θos",
+  "tts": "/ˈli.θɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "διδάσκαλος",
+  "index": 301,
+  "deck": "dee dah skah loss",
+  "ipa": "di.ˈda.ska.los",
+  "tts": "/dɪˈda.ska.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θεωρέω",
+  "index": 302,
+  "deck": "thay oh reh oh",
+  "ipa": "θe.oː.ˈre.oː",
+  "tts": "/θɛ.oːˈrɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "συναγωγή",
+  "index": 304,
+  "deck": "soo nah goh gey",
+  "ipa": "su.na.ɡoː.ˈɡeː",
+  "tts": "/su.na.ɡoːˈɡeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "τοιοῦτος",
+  "index": 305,
+  "deck": "toy oo toss",
+  "ipa": "toi̯.ˈuː.tos",
+  "tts": "/toi̯ˈuː.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπερωτάω",
+  "index": 307,
+  "deck": "eh peh roh tah oh",
+  "ipa": "e.pe.roː.ˈta.oː",
+  "tts": "/ɛ.pɛ.roːˈta.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Πιλᾶτος",
+  "index": 311,
+  "deck": "pee lah toss",
+  "ipa": "pi.ˈlaː.tos",
+  "tts": "/pɪˈlaː.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "χρόνος",
+  "index": 312,
+  "deck": "chronoss",
+  "ipa": "ˈxro.nos",
+  "tts": "/ˈkrɒ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "παιδίον",
+  "index": 316,
+  "deck": "pie dee on",
+  "ipa": "pai̯.ˈdi.on",
+  "tts": "/pai̯ˈdi.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔσχατος",
+  "index": 317,
+  "deck": "ess kah toss",
+  "ipa": "ˈes.xa.tos",
+  "tts": "/ˈɛs.ka.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "σπείρω",
+  "index": 318,
+  "deck": "spay roh",
+  "ipa": "ˈspei̯.roː",
+  "tts": "/ˈspeɪ.roː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πείθω",
+  "index": 319,
+  "deck": "pay tho",
+  "ipa": "ˈpei̯.θoː",
+  "tts": "/ˈpeɪ.θoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μακάριος",
+  "index": 320,
+  "deck": "mah kah ree oss",
+  "ipa": "ma.ˈka.ri.os",
+  "tts": "/maˈka.rɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "τυφλός",
+  "index": 321,
+  "deck": "too floss",
+  "ipa": "tu.ˈflos",
+  "tts": "/tuˈflɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κακός",
+  "index": 323,
+  "deck": "kah koss",
+  "ipa": "ka.ˈkos",
+  "tts": "/kaˈkɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γλῶσσα",
+  "index": 324,
+  "deck": "glohs sah",
+  "ipa": "ˈɡloːs.sa",
+  "tts": "/ˈɡloːs.sa/",
+  "source": "converter"
+ },
+ {
+  "greek": "παραλαμβάνω",
+  "index": 325,
+  "deck": "pah rah lam bah noh",
+  "ipa": "pa.ra.lam.ˈba.noː",
+  "tts": "/pa.ra.lamˈba.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔτος",
+  "index": 328,
+  "deck": "eh toss",
+  "ipa": "ˈe.tos",
+  "tts": "/ˈɛ.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔρημος",
+  "index": 330,
+  "deck": "eh ray moss",
+  "ipa": "ˈe.reː.mos",
+  "tts": "/ˈɛ.reɪ.mɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἔμπροσθεν",
+  "index": 331,
+  "deck": "em pros thehn",
+  "ipa": "ˈem.pros.θen",
+  "tts": "/ˈɛm.prɒs.θɛn/",
+  "source": "converter"
+ },
+ {
+  "greek": "φανερόω",
+  "index": 333,
+  "deck": "fah neh raw oh",
+  "ipa": "fa.ne.ˈro.oː",
+  "tts": "/fa.nɛˈrɒ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσφέρω",
+  "index": 335,
+  "deck": "pros fair oh",
+  "ipa": "pros.ˈfe.roː",
+  "tts": "/prɒsˈfɛ.roː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρό",
+  "index": 336,
+  "deck": "pro",
+  "ipa": "ˈpro",
+  "tts": "/ˈprɒ/",
+  "source": "converter"
+ },
+ {
+  "greek": "κρίσις",
+  "index": 337,
+  "deck": "kree sis",
+  "ipa": "ˈkri.sis",
+  "tts": "/ˈkri.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "φυλακή",
+  "index": 338,
+  "deck": "phoo lah kay",
+  "ipa": "fu.la.ˈkeː",
+  "tts": "/fu.laˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἁμαρτωλός",
+  "index": 339,
+  "deck": "hah mahr toh loss",
+  "ipa": "ha.mar.toː.ˈlos",
+  "tts": "/ha.mar.toːˈlɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κρατέω",
+  "index": 340,
+  "deck": "krah teh oh",
+  "ipa": "kra.ˈte.oː",
+  "tts": "/kraˈtɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "φόβος",
+  "index": 341,
+  "deck": "fo boss",
+  "ipa": "ˈfo.bos",
+  "tts": "/ˈfɒ.bɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μικρός",
+  "index": 344,
+  "deck": "mee kross",
+  "ipa": "mi.ˈkros",
+  "tts": "/mɪˈkrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θηρίον",
+  "index": 346,
+  "deck": "thay ree on",
+  "ipa": "θeː.ˈri.on",
+  "tts": "/θeɪˈri.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "σωτηρία",
+  "index": 347,
+  "deck": "so tey reea",
+  "ipa": "soː.teː.ˈri.a",
+  "tts": "/soː.teɪˈri.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀπαγγέλλω",
+  "index": 348,
+  "deck": "ah pang gel loh",
+  "ipa": "a.paŋ.ˈɡel.loː",
+  "tts": "/a.paŋˈɡɛl.loː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅμοιος",
+  "index": 351,
+  "deck": "ho moy oss",
+  "ipa": "ˈho.moi̯.os",
+  "tts": "/ˈhɒ.moi̯.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θλῖψις",
+  "index": 352,
+  "deck": "thlipsis",
+  "ipa": "ˈθliː.psis",
+  "tts": "/ˈθliː.psɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰουδαία",
+  "index": 354,
+  "deck": "youdeyah",
+  "ipa": "i.uː.ˈdai̯.a",
+  "tts": "/ɪ.uːˈdai̯.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπιγινώσκω",
+  "index": 356,
+  "deck": "eppee ghee noskoh",
+  "ipa": "e.pi.ɡi.ˈnoː.skoː",
+  "tts": "/ɛ.pɪ.ɡɪˈnoː.skoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "δεύτερος",
+  "index": 357,
+  "deck": "dew teh ross",
+  "ipa": "ˈdeu̯.te.ros",
+  "tts": "/ˈdju.tɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἡρῴδης",
+  "index": 359,
+  "deck": "hay roh deys",
+  "ipa": "heː.ˈroː.deːs",
+  "tts": "/heɪˈroː.deːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θεραπεύω",
+  "index": 361,
+  "deck": "thera pew oh",
+  "ipa": "θe.ra.ˈpeu̯.oː",
+  "tts": "/θɛ.raˈpju.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "δέω",
+  "index": 364,
+  "deck": "deh, oh",
+  "ipa": "ˈde.oː",
+  "tts": "/ˈdɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μέρος",
+  "index": 365,
+  "deck": "meh ross",
+  "ipa": "ˈme.ros",
+  "tts": "/ˈmɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐγγίζω",
+  "index": 366,
+  "deck": "ehnggeedzoh",
+  "ipa": "eŋ.ˈɡi.dzoː",
+  "tts": "/ɛŋˈɡiʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰάκωβος",
+  "index": 367,
+  "deck": "ee ah koh boss",
+  "ipa": "i.ˈa.koː.bos",
+  "tts": "/ɪˈa.koː.bɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "καινός",
+  "index": 369,
+  "deck": "kye noss",
+  "ipa": "kai̯.ˈnos",
+  "tts": "/kai̯ˈnɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "χωρίς",
+  "index": 370,
+  "deck": "khohrees",
+  "ipa": "xoː.ˈris",
+  "tts": "/koːˈris/",
+  "source": "converter"
+ },
+ {
+  "greek": "πάσχω",
+  "index": 371,
+  "deck": "pas khoh",
+  "ipa": "ˈpas.xoː",
+  "tts": "/ˈpas.koː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀνάστασις",
+  "index": 373,
+  "deck": "ah nah stah sis",
+  "ipa": "a.ˈna.sta.sis",
+  "tts": "/aˈna.sta.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄξιος",
+  "index": 374,
+  "deck": "aksioss",
+  "ipa": "ˈa.ksi.os",
+  "tts": "/ˈa.ksɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὀλίγος",
+  "index": 376,
+  "deck": "o lee goss",
+  "ipa": "o.ˈli.ɡos",
+  "tts": "/ɒˈli.ɡɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐργάζομαι",
+  "index": 377,
+  "deck": "air gah zo my",
+  "ipa": "er.ˈɡa.dzo.mai̯",
+  "tts": "/ɛrˈɡaʣɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "κλαίω",
+  "index": 383,
+  "deck": "clye oh",
+  "ipa": "ˈklai̯.oː",
+  "tts": "/ˈklai̯.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "οἰκοδομέω",
+  "index": 387,
+  "deck": "oy ko daw meh oh",
+  "ipa": "oi̯.ko.do.ˈme.oː",
+  "tts": "/oi̯.kɒ.dɒˈmɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μνημεῖον",
+  "index": 388,
+  "deck": "mnay may on",
+  "ipa": "mneː.ˈmei̯.on",
+  "tts": "/mneːˈmeɪ.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "τέλος",
+  "index": 389,
+  "deck": "teh loss",
+  "ipa": "ˈte.los",
+  "tts": "/ˈtɛ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "λογίζομαι",
+  "index": 391,
+  "deck": "lo ghee dzo my",
+  "ipa": "lo.ˈɡi.dzo.mai̯",
+  "tts": "/lɒˈɡiʣɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "περισσεύω",
+  "index": 392,
+  "deck": "peh rees sue oh",
+  "ipa": "pe.ris.ˈseu̯.oː",
+  "tts": "/pɛ.rɪsˈsju.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πρόβατον",
+  "index": 394,
+  "deck": "probbah ton",
+  "ipa": "ˈpro.ba.ton",
+  "tts": "/ˈprɒ.ba.tɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλανάω",
+  "index": 397,
+  "deck": "plah nah oh",
+  "ipa": "pla.ˈna.oː",
+  "tts": "/plaˈna.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὐχαριστέω",
+  "index": 399,
+  "deck": "ew khah ree steh oh",
+  "ipa": "eu̯.xa.ri.ˈste.oː",
+  "tts": "/ju.ka.rɪˈstɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπιθυμία",
+  "index": 400,
+  "deck": "epithoo meeah",
+  "ipa": "e.pi.θu.ˈmi.a",
+  "tts": "/ɛ.pɪ.θuˈmi.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "διακονέω",
+  "index": 405,
+  "deck": "dee aconay oh",
+  "ipa": "di.a.ko.ˈne.oː",
+  "tts": "/dɪ.a.kɒˈnɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐμαυτοῦ",
+  "index": 406,
+  "deck": "eh mout too",
+  "ipa": "e.mau̯.ˈtuː",
+  "tts": "/ɛ.mau̯ˈtuː/",
+  "source": "converter"
+ },
+ {
+  "greek": "παραγίνομαι",
+  "index": 408,
+  "deck": "pah rah ghee no my",
+  "ipa": "pa.ra.ˈɡi.no.mai̯",
+  "tts": "/pa.raˈɡi.nɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀγρός",
+  "index": 412,
+  "deck": "ah gross",
+  "ipa": "a.ˈɡros",
+  "tts": "/aˈɡrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Φίλιππος",
+  "index": 413,
+  "deck": "fee leep poss",
+  "ipa": "ˈfi.lip.pos",
+  "tts": "/ˈfi.lɪppɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπιστρέφω",
+  "index": 414,
+  "deck": "eh pee streh foh",
+  "ipa": "e.pis.ˈtre.foː",
+  "tts": "/ɛ.pɪsˈtrɛ.foː/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσευχή",
+  "index": 417,
+  "deck": "pross sue khey",
+  "ipa": "pro.seu̯.ˈxeː",
+  "tts": "/prɒ.sjuˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὀπίσω",
+  "index": 421,
+  "deck": "oh pee so",
+  "ipa": "o.ˈpi.soː",
+  "tts": "/ɒˈpi.soː/",
+  "source": "converter"
+ },
+ {
+  "greek": "διάβολος",
+  "index": 422,
+  "deck": "dee ah bo loss",
+  "ipa": "di.ˈa.bo.los",
+  "tts": "/dɪˈa.bɒ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὐθέως",
+  "index": 423,
+  "deck": "ewtheos",
+  "ipa": "eu̯.ˈθe.oːs",
+  "tts": "/juˈθɛ.oːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μετανοέω",
+  "index": 427,
+  "deck": "meh tah no eh hoe",
+  "ipa": "me.ta.no.ˈe.oː",
+  "tts": "/mɛ.ta.nɒ.ˈɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πτωχός",
+  "index": 428,
+  "deck": "puh toh koss",
+  "ipa": "pə.toː.ˈxos",
+  "tts": "/pə.toːˈkɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μέλος",
+  "index": 429,
+  "deck": "meh loss",
+  "ipa": "ˈme.los",
+  "tts": "/ˈmɛ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οἶνος",
+  "index": 432,
+  "deck": "oy noss",
+  "ipa": "ˈoi̯.nos",
+  "tts": "/ˈoi̯.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "διακονία",
+  "index": 435,
+  "deck": "dia ko nee ah",
+  "ipa": "di.a.ko.ˈni.a",
+  "tts": "/dɪ.a.kɒˈni.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκπορεύομαι",
+  "index": 436,
+  "deck": "eckporyoo oh my",
+  "ipa": "ek.po.ˈreu̯.o.mai̯",
+  "tts": "/ɛk.pɒˈrju.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ναί",
+  "index": 438,
+  "deck": "nigh",
+  "ipa": "ˈnai̯",
+  "tts": "/ˈnai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ποῖος",
+  "index": 440,
+  "deck": "poy oss",
+  "ipa": "ˈpoi̯.os",
+  "tts": "/ˈpoi̯.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐχθρός",
+  "index": 441,
+  "deck": "eck thross",
+  "ipa": "ex.ˈθros",
+  "tts": "/ɛkˈθrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἥλιος",
+  "index": 442,
+  "deck": "haylee oss",
+  "ipa": "ˈheː.li.os",
+  "tts": "/ˈheɪ.lɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀκάθαρτος",
+  "index": 444,
+  "deck": "ah kah thahr toss",
+  "ipa": "a.ˈka.θar.tos",
+  "tts": "/aˈka.θar.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀναγινώσκω",
+  "index": 446,
+  "deck": "ah nah ghee noh skoh",
+  "ipa": "a.na.ɡi.ˈnoː.skoː",
+  "tts": "/a.na.ɡɪˈnoː.skoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "δυνατός",
+  "index": 447,
+  "deck": "doo nah toss",
+  "ipa": "du.na.ˈtos",
+  "tts": "/du.naˈtɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "φαίνω",
+  "index": 449,
+  "deck": "feynoh",
+  "ipa": "ˈfai̯.noː",
+  "tts": "/ˈfai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄνεμος",
+  "index": 450,
+  "deck": "ah neh moss",
+  "ipa": "ˈa.ne.mos",
+  "tts": "/ˈa.nɛ.mɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλήν",
+  "index": 454,
+  "deck": "plain",
+  "ipa": "ˈpleːn",
+  "tts": "/ˈpleɪn/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλπίζω",
+  "index": 456,
+  "deck": "el pea zo",
+  "ipa": "el.ˈpi.dzoː",
+  "tts": "/ɛlˈpiʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὁμοίως",
+  "index": 459,
+  "deck": "ho moy ohs",
+  "ipa": "ho.ˈmoi̯.oːs",
+  "tts": "/hɒˈmoi̯.oːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλῆθος",
+  "index": 460,
+  "deck": "play thoss",
+  "ipa": "ˈpleː.θos",
+  "tts": "/ˈpleɪ.θɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "διδαχή",
+  "index": 464,
+  "deck": "dida khey",
+  "ipa": "di.da.ˈxeː",
+  "tts": "/dɪ.daˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπικαλέω",
+  "index": 465,
+  "deck": "eh pee kah leh oh",
+  "ipa": "e.pi.ka.ˈle.oː",
+  "tts": "/ɛ.pɪ.kaˈlɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "συνείδησις",
+  "index": 469,
+  "deck": "soo nay day sis",
+  "ipa": "su.ˈnei̯.deː.sis",
+  "tts": "/suˈneɪ.deː.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "διάκονος",
+  "index": 470,
+  "deck": "dia ko noss",
+  "ipa": "di.ˈa.ko.nos",
+  "tts": "/dɪˈa.kɒ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "δῶρον",
+  "index": 471,
+  "deck": "doh ron",
+  "ipa": "ˈdoː.ron",
+  "tts": "/ˈdoː.rɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "στρατιώτης",
+  "index": 473,
+  "deck": "strati oh teys",
+  "ipa": "stra.ti.ˈoː.teːs",
+  "tts": "/stra.tɪˈoː.teɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "τελώνης",
+  "index": 474,
+  "deck": "teh loh neys",
+  "ipa": "te.ˈloː.neːs",
+  "tts": "/tɛˈloː.neɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὑποκριτής",
+  "index": 475,
+  "deck": "hoo po kree teys",
+  "ipa": "hu.po.kri.ˈteːs",
+  "tts": "/hu.pɒ.krɪˈteɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "νεανίας",
+  "index": 477,
+  "deck": "neh ah nee ahs",
+  "ipa": "ne.a.ˈni.as",
+  "tts": "/nɛ.aˈni.as/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀμνός",
+  "index": 478,
+  "deck": "ahm noss",
+  "ipa": "a.ˈmnos",
+  "tts": "/aˈmnɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "φίλος",
+  "index": 479,
+  "deck": "fee loss",
+  "ipa": "ˈfi.los",
+  "tts": "/ˈfi.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γένος",
+  "index": 481,
+  "deck": "geh noss",
+  "ipa": "ˈɡe.nos",
+  "tts": "/ˈɡɛ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θυγάτηρ",
+  "index": 485,
+  "deck": "thoo gah teyr",
+  "ipa": "θu.ˈɡa.teːr",
+  "tts": "/θuˈɡa.teɪr/",
+  "source": "converter"
+ },
+ {
+  "greek": "σοφός",
+  "index": 486,
+  "deck": "sawfoss",
+  "ipa": "so.ˈfos",
+  "tts": "/sɒˈfɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἰσχυρός",
+  "index": 487,
+  "deck": "iskoo ross",
+  "ipa": "is.xu.ˈros",
+  "tts": "/ɪskuˈrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "νέος",
+  "index": 488,
+  "deck": "neh oss",
+  "ipa": "ˈne.os",
+  "tts": "/ˈnɛ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀδύνατος",
+  "index": 489,
+  "deck": "ah doo nah toss",
+  "ipa": "a.ˈdu.na.tos",
+  "tts": "/aˈdu.na.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄπιστος",
+  "index": 490,
+  "deck": "ah pis toss",
+  "ipa": "ˈa.pi.stos",
+  "tts": "/ˈa.pɪ.stɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἡμέτερος",
+  "index": 491,
+  "deck": "hay meh teh ross",
+  "ipa": "heː.ˈme.te.ros",
+  "tts": "/heɪˈmɛ.tɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὑμέτερος",
+  "index": 493,
+  "deck": "hoo meh teh ross",
+  "ipa": "hu.ˈme.te.ros",
+  "tts": "/huˈmɛ.tɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μανθάνω",
+  "index": 495,
+  "deck": "mahn thahn oh",
+  "ipa": "man.ˈθa.noː",
+  "tts": "/manˈθa.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ψεύδομαι",
+  "index": 497,
+  "deck": "psew daw my",
+  "ipa": "ˈpseu̯.do.mai̯",
+  "tts": "/ˈpsju.dɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀνά",
+  "index": 506,
+  "deck": "anna",
+  "ipa": "a.ˈna",
+  "tts": "/aˈna/",
+  "source": "converter"
+ },
+ {
+  "greek": "Καῖσαρ",
+  "index": 511,
+  "deck": "kai sar",
+  "ipa": "ˈkai̯.sar",
+  "tts": "/ˈkai̯.sar/",
+  "source": "converter"
+ },
+ {
+  "greek": "γαμέω",
+  "index": 512,
+  "deck": "gah meh hoe",
+  "ipa": "ɡa.ˈme.oː",
+  "tts": "/ɡaˈmɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μάχαιρα",
+  "index": 513,
+  "deck": "mah khai rah",
+  "ipa": "ˈma.xai̯.ra",
+  "tts": "/ˈma.kai̯.ra/",
+  "source": "converter"
+ },
+ {
+  "greek": "μισθός",
+  "index": 514,
+  "deck": "meesthoss",
+  "ipa": "mis.ˈθos",
+  "tts": "/mɪsˈθɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "πάσχα",
+  "index": 515,
+  "deck": "paskhah",
+  "ipa": "ˈpas.xa",
+  "tts": "/ˈpas.ka/",
+  "source": "converter"
+ },
+ {
+  "greek": "παρέρχομαι",
+  "index": 516,
+  "deck": "par irk oh mai",
+  "ipa": "pa.ˈrer.xo.mai̯",
+  "tts": "/paˈrɛr.kɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ποτέ",
+  "index": 517,
+  "deck": "po teh",
+  "ipa": "po.ˈte",
+  "tts": "/pɒˈtɛ/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσκαλέομαι",
+  "index": 518,
+  "deck": "pross kah leh o my",
+  "ipa": "pro.ska.ˈle.o.mai̯",
+  "tts": "/prɒ.skaˈlɛ.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "πόθεν",
+  "index": 519,
+  "deck": "pohthenn",
+  "ipa": "ˈpo.θen",
+  "tts": "/ˈpɒ.θɛn/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἠλίας",
+  "index": 520,
+  "deck": "hay lee ahs",
+  "ipa": "eː.ˈli.as",
+  "tts": "/eɪˈli.as/",
+  "source": "converter"
+ },
+ {
+  "greek": "Μαρία",
+  "index": 522,
+  "deck": "mah ree ah",
+  "ipa": "ma.ˈri.a",
+  "tts": "/maˈri.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλούσιος",
+  "index": 523,
+  "deck": "ploosee oss",
+  "ipa": "ˈpluː.si.os",
+  "tts": "/ˈpluː.sɪ.ɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "προφητεύω",
+  "index": 524,
+  "deck": "pross fay tew hoe",
+  "ipa": "pro.feː.ˈteu̯.oː",
+  "tts": "/prɒ.feɪˈtju.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "τελέω",
+  "index": 525,
+  "deck": "teh leh hoe",
+  "ipa": "te.ˈle.oː",
+  "tts": "/tɛˈlɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "χώρα",
+  "index": 526,
+  "deck": "khoh rah",
+  "ipa": "ˈxoː.ra",
+  "tts": "/ˈkoː.ra/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀδικέω",
+  "index": 527,
+  "deck": "ah dee keh hoe",
+  "ipa": "a.di.ˈke.oː",
+  "tts": "/a.dɪˈkɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀληθινός",
+  "index": 528,
+  "deck": "ah lay thi noss",
+  "ipa": "a.leː.θi.ˈnos",
+  "tts": "/a.leɪ.θɪˈnɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἁγιάζω",
+  "index": 529,
+  "deck": "haghee ah zoh",
+  "ipa": "ha.ɡi.ˈa.dzoː",
+  "tts": "/ha.ɡɪˈaʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐνδύω",
+  "index": 530,
+  "deck": "ehndoo hoe",
+  "ipa": "en.ˈdu.oː",
+  "tts": "/ɛnˈdu.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἡγέομαι",
+  "index": 531,
+  "deck": "heg eh o my",
+  "ipa": "heː.ˈɡe.o.mai̯",
+  "tts": "/heɪˈɡɛ.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἰσχύω",
+  "index": 532,
+  "deck": "iss khoo o",
+  "ipa": "is.ˈxu.oː",
+  "tts": "/ɪsˈku.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "καταργέω",
+  "index": 534,
+  "deck": "kah tar gheh hoe",
+  "ipa": "ka.tar.ˈɡe.oː",
+  "tts": "/ka.tarˈɡɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀδελφή",
+  "index": 566,
+  "deck": "ah del fey",
+  "ipa": "a.del.ˈfeː",
+  "tts": "/a.dɛlˈfeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀκοή",
+  "index": 580,
+  "deck": "ahko ay",
+  "ipa": "a.ko.ˈeː",
+  "tts": "/a.kɒˈeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀναιρέω",
+  "index": 581,
+  "deck": "ah nigh reh hoe",
+  "ipa": "a.nai̯.ˈre.oː",
+  "tts": "/a.nai̯ˈrɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ζῷον",
+  "index": 586,
+  "deck": "zo on",
+  "ipa": "ˈdzoː.on",
+  "tts": "/ˈʣoː.ɒn/",
+  "source": "converter"
+ },
+ {
+  "greek": "χαρίζομαι",
+  "index": 597,
+  "deck": "khah ree zo my",
+  "ipa": "xa.ˈri.dzo.mai̯",
+  "tts": "/kaˈriʣɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκλεκτός",
+  "index": 601,
+  "deck": "ek lek toss",
+  "ipa": "e.klek.ˈtos",
+  "tts": "/ɛ.klɛkˈtɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλεύθερος",
+  "index": 602,
+  "deck": "eh lew theh ross",
+  "ipa": "e.ˈleu̯.θe.ros",
+  "tts": "/ɛˈlju.θɛ.rɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "δοκιμάζω",
+  "index": 605,
+  "deck": "dok kee mah zoh",
+  "ipa": "do.ki.ˈma.dzoː",
+  "tts": "/dɒ.kɪˈmaʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "θεάομαι",
+  "index": 606,
+  "deck": "thay ah o my",
+  "ipa": "θe.ˈa.o.mai̯",
+  "tts": "/θɛ.ˈa.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "πληγή",
+  "index": 612,
+  "deck": "playghey",
+  "ipa": "pleː.ˈɡeː",
+  "tts": "/pleɪˈɡeː/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλοῦτος",
+  "index": 613,
+  "deck": "plootoss",
+  "ipa": "ˈpluː.tos",
+  "tts": "/ˈpluː.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀγνοέω",
+  "index": 617,
+  "deck": "agnaw eh hoe",
+  "ipa": "a.ɡno.ˈe.oː",
+  "tts": "/a.ɡnɒ.ˈɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκλέγομαι",
+  "index": 618,
+  "deck": "ehk leh go my",
+  "ipa": "e.ˈkle.ɡo.mai̯",
+  "tts": "/ɛˈklɛ.ɡɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἠσαΐας",
+  "index": 619,
+  "deck": "ay sah ee ahs",
+  "ipa": "eː.sa.ˈi.as",
+  "tts": "/eɪ.sa.ˈi.as/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὐδοκέω",
+  "index": 623,
+  "deck": "ew dok keh hoe",
+  "ipa": "eu̯.do.ˈke.oː",
+  "tts": "/ju.dɒˈkɛ.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "μνημονεύω",
+  "index": 628,
+  "deck": "muh nay mo new hoe",
+  "ipa": "mneː.mo.ˈneu̯.oː",
+  "tts": "/mneɪ.mɒˈnju.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "χιλίαρχος",
+  "index": 631,
+  "deck": "khee lee ahr khoss",
+  "ipa": "xi.ˈli.ar.xos",
+  "tts": "/kɪˈli.ar.kɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γέ",
+  "index": 636,
+  "deck": "geh",
+  "ipa": "ˈɡe",
+  "tts": "/ˈɡɛ/",
+  "source": "converter"
+ },
+ {
+  "greek": "σκηνή",
+  "index": 643,
+  "deck": "skay ney",
+  "ipa": "skeː.ˈneː",
+  "tts": "/skeɪˈneː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπίγνωσις",
+  "index": 648,
+  "deck": "eh peeg noh sis",
+  "ipa": "e.ˈpi.ɡnoː.sis",
+  "tts": "/ɛˈpɪ.ɡnoː.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἰχθύς",
+  "index": 651,
+  "deck": "eekhthoos",
+  "ipa": "ix.ˈθus",
+  "tts": "/ɪkˈθus/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὑπηρέτης",
+  "index": 653,
+  "deck": "hoo pay reh teys",
+  "ipa": "hu.peː.ˈre.teːs",
+  "tts": "/hu.peɪˈrɛ.teːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κοινωνία",
+  "index": 659,
+  "deck": "koy noh knee ah",
+  "ipa": "koi̯.noː.ˈni.a",
+  "tts": "/koi̯.noːˈni.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "κρείττων",
+  "index": 660,
+  "deck": "kraytton",
+  "ipa": "ˈkrei̯t.toːn",
+  "tts": "/ˈkreɪt.toʊn/",
+  "source": "converter"
+ },
+ {
+  "greek": "κριτής",
+  "index": 661,
+  "deck": "kree teys",
+  "ipa": "kri.ˈteːs",
+  "tts": "/krɪˈteɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κρύπτω",
+  "index": 662,
+  "deck": "krooptoh",
+  "ipa": "ˈkrup.toː",
+  "tts": "/ˈkrup.toː/",
+  "source": "converter"
+ },
+ {
+  "greek": "κτίσις",
+  "index": 663,
+  "deck": "kitsis",
+  "ipa": "ˈkti.sis",
+  "tts": "/ˈkti.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "παλαιός",
+  "index": 665,
+  "deck": "pah lie oss",
+  "ipa": "pa.lai̯.ˈos",
+  "tts": "/pa.lai̯ˈɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐπαίρω",
+  "index": 672,
+  "deck": "eh pye roh",
+  "ipa": "e.ˈpai̯.roː",
+  "tts": "/ɛˈpai̯.roː/",
+  "source": "converter"
+ },
+ {
+  "greek": "δέησις",
+  "index": 676,
+  "deck": "deh ay sis",
+  "ipa": "ˈde.eː.sis",
+  "tts": "/ˈdɛ.eɪ.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θυμός",
+  "index": 678,
+  "deck": "thoomoss",
+  "ipa": "θu.ˈmos",
+  "tts": "/θuˈmɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "μέχρι(ς)",
+  "index": 684,
+  "deck": "mekhrees",
+  "ipa": "ˈme.xris",
+  "tts": "/ˈmɛ.krɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "οἰκοδομή",
+  "index": 685,
+  "deck": "oy ko daw mey",
+  "ipa": "oi̯.ko.do.ˈmeː",
+  "tts": "/oi̯.kɒ.dɒˈmeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἀληθῶς",
+  "index": 695,
+  "deck": "ah lay thohs",
+  "ipa": "a.leː.ˈθoːs",
+  "tts": "/a.leɪˈθoːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "θησαυρός",
+  "index": 704,
+  "deck": "thaysau ross",
+  "ipa": "θeː.sau̯.ˈros",
+  "tts": "/θeɪ.sau̯ˈrɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κερδαίνω",
+  "index": 707,
+  "deck": "kehr dye noh",
+  "ipa": "ker.ˈdai̯.noː",
+  "tts": "/kɛrˈdai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "κρυπτός",
+  "index": 708,
+  "deck": "krooptoss",
+  "ipa": "krup.ˈtos",
+  "tts": "/krupˈtɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "χρυσοῦς",
+  "index": 718,
+  "deck": "khroosoos",
+  "ipa": "xru.ˈsuːs",
+  "tts": "/kruˈsuːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἄφεσις",
+  "index": 722,
+  "deck": "ah feh sis",
+  "ipa": "ˈa.fe.sis",
+  "tts": "/ˈa.fɛ.sɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐμβαίνω",
+  "index": 724,
+  "deck": "em bye noh",
+  "ipa": "em.ˈbai̯.noː",
+  "tts": "/ɛmˈbai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἑκατοντάρχης",
+  "index": 727,
+  "deck": "hekah tontar kheys",
+  "ipa": "he.ka.ton.ˈtar.xeːs",
+  "tts": "/hɛ.ka.tɒnˈtar.keɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἵππος",
+  "index": 730,
+  "deck": "heepposs",
+  "ipa": "ˈhip.pos",
+  "tts": "/ˈhɪppɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὡσαύτως",
+  "index": 732,
+  "deck": "hoh sau tohs",
+  "ipa": "hoː.ˈsau̯.toːs",
+  "tts": "/hoːˈsau̯.toːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ῥίζα",
+  "index": 734,
+  "deck": "reezah",
+  "ipa": "ˈri.dza",
+  "tts": "/ˈriʣa/",
+  "source": "converter"
+ },
+ {
+  "greek": "ῥύομαι",
+  "index": 735,
+  "deck": "roo o my",
+  "ipa": "ˈru.o.mai̯",
+  "tts": "/ˈru.ɒ.mai̯/",
+  "source": "converter"
+ },
+ {
+  "greek": "διατάσσω",
+  "index": 742,
+  "deck": "deeah tahs soh",
+  "ipa": "di.a.ˈtas.soː",
+  "tts": "/dɪ.aˈtas.soː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ζῆλος",
+  "index": 745,
+  "deck": "zay loss",
+  "ipa": "ˈdzeː.los",
+  "tts": "/ˈʣeɪ.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κλέπτης",
+  "index": 748,
+  "deck": "klep teys",
+  "ipa": "ˈklep.teːs",
+  "tts": "/ˈklɛp.teɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "λύπη",
+  "index": 751,
+  "deck": "loo pey",
+  "ipa": "ˈlu.peː",
+  "tts": "/ˈlu.peɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "πλήρης",
+  "index": 756,
+  "deck": "play reys",
+  "ipa": "ˈpleː.reːs",
+  "tts": "/ˈpleɪ.reːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "προσδοκάω",
+  "index": 757,
+  "deck": "prossdok kah oh",
+  "ipa": "pros.do.ˈka.oː",
+  "tts": "/prɒs.dɒˈka.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "συκῆ",
+  "index": 758,
+  "deck": "soo kay",
+  "ipa": "su.ˈkeː",
+  "tts": "/suˈkeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "σφραγίς",
+  "index": 760,
+  "deck": "suh frah ghiss",
+  "ipa": "sfra.ˈɡis",
+  "tts": "/sfraˈɡis/",
+  "source": "converter"
+ },
+ {
+  "greek": "τροφή",
+  "index": 763,
+  "deck": "tro fey",
+  "ipa": "tro.ˈfeː",
+  "tts": "/trɒˈfeɪ/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκτείνω",
+  "index": 766,
+  "deck": "ek tay noh",
+  "ipa": "ek.ˈtei̯.noː",
+  "tts": "/ɛkˈteɪ.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ἐργάτης",
+  "index": 768,
+  "deck": "ehr gah teys",
+  "ipa": "er.ˈɡa.teːs",
+  "tts": "/ɛrˈɡa.teɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Σαῦλος",
+  "index": 774,
+  "deck": "sau loss",
+  "ipa": "ˈsau̯.los",
+  "tts": "/ˈsau̯.lɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "γυμνός",
+  "index": 777,
+  "deck": "ghoom noss",
+  "ipa": "ɡu.ˈmnos",
+  "tts": "/ɡuˈmnɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "εὐσέβεια",
+  "index": 782,
+  "deck": "ew seh bay ah",
+  "ipa": "eu̯.ˈse.bei̯.a",
+  "tts": "/juˈsɛ.beɪ.a/",
+  "source": "converter"
+ },
+ {
+  "greek": "κληρονόμος",
+  "index": 787,
+  "deck": "klay ron no moss",
+  "ipa": "kleː.ro.ˈno.mos",
+  "tts": "/kleɪ.rɒˈnɒ.mɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "κτίζω",
+  "index": 788,
+  "deck": "kitzo",
+  "ipa": "ˈkti.dzoː",
+  "tts": "/ˈktiʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "λῃστής",
+  "index": 789,
+  "deck": "layss teys",
+  "ipa": "leː.ˈsteːs",
+  "tts": "/leɪˈsteːs/",
+  "source": "converter"
+ },
+ {
+  "greek": "νομίζω",
+  "index": 790,
+  "deck": "nawmee zoh",
+  "ipa": "no.ˈmi.dzoː",
+  "tts": "/nɒˈmiʣoː/",
+  "source": "converter"
+ },
+ {
+  "greek": "ξηραίνω",
+  "index": 791,
+  "deck": "axay rynoh",
+  "ipa": "kseː.ˈrai̯.noː",
+  "tts": "/kseɪˈrai̯.noː/",
+  "source": "converter"
+ },
+ {
+  "greek": "παρθένος",
+  "index": 794,
+  "deck": "pahr th eh noss",
+  "ipa": "par.ˈθe.nos",
+  "tts": "/parˈθɛ.nɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "παύω",
+  "index": 795,
+  "deck": "powoh",
+  "ipa": "ˈpau̯.oː",
+  "tts": "/ˈpau̯.oː/",
+  "source": "converter"
+ },
+ {
+  "greek": "χόρτος",
+  "index": 807,
+  "deck": "khortoss",
+  "ipa": "ˈxor.tos",
+  "tts": "/ˈkɔr.tɒs/",
+  "source": "converter"
+ },
+ {
+  "greek": "Ἰορδάνης",
+  "index": 813,
+  "deck": "ee or dah neys",
+  "ipa": "i.or.ˈda.neːs",
+  "tts": "/ɪ.ɔrˈda.neɪs/",
+  "source": "converter"
+ },
+ {
+  "greek": "ὅθεν",
+  "index": 815,
+  "deck": "hohthenn",
+  "ipa": "ˈho.θen",
+  "tts": "/ˈhɒ.θɛn/",
+  "source": "converter"
+ }
+]

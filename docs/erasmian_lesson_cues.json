@@ -449,5 +449,147 @@
   "tts": "/ˈlu.suː.sɪn/",
   "chapter": 3,
   "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "τῆς",
+  "ipa": "ˈteːs",
+  "tts": "/ˈteɪs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ζωῆς",
+  "ipa": "dzoː.ˈeːs",
+  "tts": "/ʣoːˈeɪs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "σῶσον",
+  "ipa": "ˈsoː.son",
+  "tts": "/ˈsoː.sɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἀπολλύμεθα",
+  "ipa": "a.pol.ˈlu.me.θa",
+  "tts": "/a.pɒlˈlu.mɛ.θa/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "αὐτὸν",
+  "ipa": "au̯.ˈton",
+  "tts": "/au̯ˈtɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "λεπρὸς",
+  "ipa": "le.ˈpros",
+  "tts": "/lɛˈprɒs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ὑμᾶς",
+  "ipa": "hu.ˈmaːs",
+  "tts": "/huˈmaːs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἁλιεῖς",
+  "ipa": "ha.li.ˈei̯s",
+  "tts": "/ha.lɪˈeɪs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἀνθρώπων",
+  "ipa": "an.ˈθroː.poːn",
+  "tts": "/anˈθroː.poʊn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἐκπειράσεις",
+  "ipa": "ek.pei̯.ˈra.sei̯s",
+  "tts": "/ɛk.peɪˈra.seɪs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "κύριον",
+  "ipa": "ˈku.ri.on",
+  "tts": "/ˈku.rɪ.ɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "τὸν",
+  "ipa": "ˈton",
+  "tts": "/ˈtɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "θεόν",
+  "ipa": "θe.ˈon",
+  "tts": "/θɛ.ˈɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "σου",
+  "ipa": "ˈsuː",
+  "tts": "/ˈsuː/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "εἰσενέγκῃς",
+  "ipa": "ei̯.se.ˈneŋ.keːs",
+  "tts": "/eɪ.sɛˈnɛŋ.keːs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἡμᾶς",
+  "ipa": "heː.ˈmaːs",
+  "tts": "/heɪˈmaːs/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "πειρασμόν",
+  "ipa": "pei̯.ras.ˈmon",
+  "tts": "/peɪ.rasˈmɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "προσφάγιον",
+  "ipa": "pros.ˈfa.ɡi.on",
+  "tts": "/prɒsˈfa.ɡɪ.ɒn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration"
+ },
+ {
+  "greek": "ἐστίν",
+  "ipa": "e.ˈstin",
+  "tts": "/ɛˈstɪn/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration",
+  "note": "ἐστί(ν) with its nu. Without its own row it matched ἔστιν accents-off and took that word's first-syllable stress, heard as an eta (chapter 3, block 2)"
+ },
+ {
+  "greek": "εἶ",
+  "ipa": "ˈei̯",
+  "tts": "/ˈeɪ/",
+  "chapter": 3,
+  "source": "heard: chapter 3 narration",
+  "note": "'you are'. Without its own row it matched εἰ 'if' accents-off and took that word's respelling 'ay', read as 'eye' (chapter 3, block 2); /eɪ/ is the ει of εἰμί beside it"
  }
 ]
