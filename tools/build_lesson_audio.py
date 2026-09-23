@@ -43,7 +43,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-CHAPTERS = [1, 2, 3]
+CHAPTERS = [1, 2, 3, 4]
 
 # The comment at the top of data/lesson_audio.js. It lives here because that
 # file is generated: the app's copy is overwritten on every build.
@@ -342,6 +342,13 @@ SAY = {
         'the present <span class="gk">λύει</span> by the sigma alone.'):
         "So will the future {λύσει}, spelled {spell:λύσει}, which differs "
         "from the present {λύει} by the sigma alone.",
+    (4, 'the genitive plural is <span class="gk">-ων</span> in every gender'):
+        "the genitive plural is {-ων}, spelled {spell:ων}, in every gender",
+    # The subscript is silent, so saying the word says nothing about it.
+    (4, 'ends in a long vowel with an iota written underneath it: '
+        '<span class="gk">λόγῳ</span>, <span class="gk">ἔργῳ</span>.'):
+        "ends in a long vowel with an iota written underneath it: {λόγῳ} "
+        "and {ἔργῳ}, each ending in {spell:ω} with a small {spell:ι} beneath.",
     (1, "<i>aggelos</i>"): "ahg geh loss",
 }
 
@@ -446,7 +453,8 @@ def align(html, ch, cues, missing):
             greeks = BARE_GK.findall(plain)
             for k, piece in enumerate(pieces):
                 if piece.strip():
-                    add(piece, piece)
+                    add(piece, piece if ch in LEGACY else ENGLISH_RE.sub(
+                        lambda m: ENGLISH[m.group(1).lower()], piece))
                 if k < len(greeks):
                     add(greeks[k], sub_text(greeks[k], cues, missing))
     return weld(spoken, page_words, pairs)
@@ -619,7 +627,20 @@ def narrate(html, cues, missing):
 # prose. μή's /ˈmeː/ came out "me" in one take and "may" in another of the
 # same chapter-3 block; eta is the vowel of "obey", and the alphabet settled
 # it as /eɪ/. The deck clip is untouched -- this is what the narration says.
-NARRATE = {"μή": "/ˈmeɪ/"}
+NARRATE = {"μή": "/ˈmeɪ/",
+    # Six deck cues are English respellings that write a short omicron as
+    # "oh", and in prose "loh goss" is read "low goss" -- three times in
+    # chapter 4 alone. Lesson 1 teaches ο as the o of "not". These are the
+    # converter's IPA for the same words.
+    "λόγος": "/ˈlɒ.ɡɒs/", "ὄχλος": "/ˈɒ.klɒs/",
+    "ἐκπορεύομαι": "/ɛk.pɒˈrju.ɒ.mai̯/", "παρέρχομαι": "/paˈrɛr.kɒ.mai̯/",
+    "πόθεν": "/ˈpɒ.θɛn/", "ὅθεν": "/ˈhɒ.θɛn/"}
+
+# English words the voice says wrongly. "vocative" came out VOH-cative, the
+# vowel of "vocal" (chapter 4). One IPA token for one word, so a tap still
+# lands on it.
+ENGLISH = {"vocative": "/ˈvɒkətɪv/"}
+ENGLISH_RE = re.compile(r"\b(%s)\b" % "|".join(ENGLISH), re.I)
 
 
 def later(cues):
