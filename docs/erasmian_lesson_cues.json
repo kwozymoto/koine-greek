@@ -239,5 +239,110 @@
   "tts": "/ˈɛr.ɡoː/",
   "chapter": 4,
   "source": "heard: chapter 4 narration"
+ },
+ {
+  "greek": "-η",
+  "ipa": "ˈeː",
+  "tts": "/eɪ/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "-α",
+  "ipa": "ˈa",
+  "tts": "/a/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἡμέρας",
+  "ipa": "heː.ˈme.ras",
+  "tts": "/heɪˈmɛ.ras/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἡμέραν",
+  "ipa": "heː.ˈme.ran",
+  "tts": "/heɪˈmɛ.ran/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "δόξης",
+  "ipa": "ˈdo.kseːs",
+  "tts": "/ˈdɒ.kseɪs/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "δόξῃ",
+  "ipa": "ˈdo.kseː",
+  "tts": "/ˈdɒ.kseɪ/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "δόξαν",
+  "ipa": "ˈdo.ksan",
+  "tts": "/ˈdɒ.ksan/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγαπῶν",
+  "ipa": "a.ɡa.ˈpoːn",
+  "tts": "/a.ɡaˈpoʊn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἡμερῶν",
+  "ipa": "heː.me.ˈroːn",
+  "tts": "/heɪ.mɛˈroʊn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "τῷ",
+  "ipa": "ˈtoː",
+  "tts": "/ˈtoː/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "οἴκῳ",
+  "ipa": "ˈoi̯.koː",
+  "tts": "/ˈoi̯.koː/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀπ’",
+  "ipa": "ˈap",
+  "tts": "/ˈap/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀφ’",
+  "ipa": "ˈaf",
+  "tts": "/ˈaf/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ὑμῶν",
+  "ipa": "hu.ˈmoːn",
+  "tts": "/huˈmoʊn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἄλλων",
+  "ipa": "ˈal.loːn",
+  "tts": "/ˈal.loʊn/",
+  "chapter": 5,
+  "source": "heard: chapter 5 narration"
  }
 ]

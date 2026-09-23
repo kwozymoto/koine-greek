@@ -43,7 +43,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-CHAPTERS = [1, 2, 3, 4]
+CHAPTERS = [1, 2, 3, 4, 5]
 
 # The comment at the top of data/lesson_audio.js. It lives here because that
 # file is generated: the app's copy is overwritten on every build.
@@ -342,6 +342,19 @@ SAY = {
         'the present <span class="gk">λύει</span> by the sigma alone.'):
         "So will the future {λύσει}, spelled {spell:λύσει}, which differs "
         "from the present {λύει} by the sigma alone.",
+    (5, 'with the negative: <span class="gk">οὐ</span> before a consonant, '
+        '<span class="gk">οὐκ</span> before a smooth breathing, '
+        '<span class="gk">οὐχ</span> before a rough one.'):
+        "with the negative: {οὐ} before a consonant, {οὐκ}, spelled "
+        "{spell:οὐκ}, before a smooth breathing, and {spell:οὐχ} before a "
+        "rough one.",
+    (5, 'the kappa of <span class="gk">οὐκ</span> turns into the chi of '
+        '<span class="gk">οὐχ</span>.'):
+        "the kappa of {οὐκ} turns into the chi of {spell:οὐχ}.",
+    (5, 'And <span class="gk">ἀγάπῃ</span> against <span class="gk">ἀγάπη</span>: '
+        'dative against nominative, one silent letter apart'):
+        "And {ἀγάπῃ}, with a small {spell:ι} beneath its last letter, against "
+        "{ἀγάπη} with none: dative against nominative, one silent letter apart",
     (4, 'the genitive plural is <span class="gk">-ων</span> in every gender'):
         "the genitive plural is {-ων}, spelled {spell:ων}, in every gender",
     # The subscript is silent, so saying the word says nothing about it.
@@ -643,7 +656,28 @@ ENGLISH = {"vocative": "/ˈvɒkətɪv/"}
 ENGLISH_RE = re.compile(r"\b(%s)\b" % "|".join(ENGLISH), re.I)
 
 
-def later(cues):
+# From this chapter on, every IPA cue's eta and ει is said as the letter and
+# diphthong buttons say them, /eɪ/. The deck writes /eː/ and /ei̯/, which held
+# as standalone clips and wavered in prose: μή was "me" in one take and "may"
+# in the next, and chapter 5's own sentence about alpha and eta put ἡμέρα's
+# /heːˈme.ra/ beside its generated forms' /heɪˈmɛ.ras/ -- the same word in two
+# vowels, in the one sentence about which vowel it has. Chapters 3 and 4 were
+# recorded before this and stay as heard.
+VOWELS_FROM = 5
+
+
+def said_vowels(cue):
+    if not cue.startswith("/"):
+        return cue
+    # And chi as k. Two deck cues keep the throaty /x/, which the ear chose
+    # for \u03c7\u03ac\u03c1\u03b9\u03c2 and \u03c7\u03c1\u03b5\u03af\u03b1 as standalone clips; inside prose both takes of
+    # chapter 5's last block said \u03c7\u03ac\u03c1\u03b9\u03c2 with an h. Every generated form
+    # already has chi as k, which is how the course says it.
+    return (cue.replace("e\u02d0", "e\u026a").replace("ei\u032f", "e\u026a")
+               .replace("x", "k"))
+
+
+def later(cues, ch=0):
     """The table as a chapter after LEGACY sees it: DESCRIBE's wording for
     marks gives way to the plain letter name."""
     c = dict(cues)
@@ -656,7 +690,19 @@ def later(cues):
     # Every letter by the name its button says, so a list like κ, γ, χ + σ
     # is said in one voice rather than half plain English and half IPA.
     c.update(LETTER_NAMES)
+    if ch >= VOWELS_FROM:
+        c = {k: said_vowels(v) for k, v in c.items()}
+    for k, (start, v) in NARRATE_FROM.items():
+        if ch >= start:
+            c[exact(k)] = v
     return c
+
+
+# As NARRATE, but only from the chapter named, because the chapter where the
+# fault was heard had already been chosen with it. χάρις with chi as k still
+# had the a of "carry", where lesson 1 teaches the a of "father" (chapter 5,
+# block 10 -- kept, as the better of two takes).
+NARRATE_FROM = {"χάρις": (6, "/ˈkɑrɪs/")}
 
 
 def blocks_for(les, cues, missing):
@@ -664,7 +710,7 @@ def blocks_for(les, cues, missing):
        the words as they appear ON THE PAGE, and which spoken word each of
        those became. The last two are what a tap needs."""
     if les["id"] not in LEGACY:
-        cues = later(cues)
+        cues = later(cues, les["id"])
     out = []
     # el is the position of this element among the body's blocks, which is how
     # the app finds it again: the narration merges elements together, so a
