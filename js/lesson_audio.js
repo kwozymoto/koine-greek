@@ -156,8 +156,10 @@ function mountLessonAudio(ch, root) {
     '<p><b>The Greek is said the way the word cards say it</b> — the same ' +
     'pronunciation you are learning in the deck, not a separate reading.</p>' +
     '<p>Where the point of a passage is a <i>shape on the page</i> — a ' +
-    'breathing mark, an accent, a table of endings — the voice tells you ' +
-    'to look rather than pretending to read it aloud.</p>' +
+    'breathing mark, an accent — the voice tells you to look rather than ' +
+    'pretending to read it aloud. Where the tables of a chapter are read out, ' +
+    'a paradigm is read down each column, the order it is recited in, with ' +
+    'every cell lighting as it is said.</p>' +
     '</div></details>';
   root.insertBefore(bar, root.firstChild);
   bar.querySelector("#laAll").onclick = function () { laAll(ch); };
@@ -238,25 +240,38 @@ function laStop() {
   laPaint();
 }
 
-/* The word being spoken is the last one whose second has passed. The seconds
-   run forward inside a block, so a binary search is enough. */
+/* The word being spoken is the one whose second passed most recently. */
 function laPaint() {
   var playing = LA_AUDIO && !LA_AUDIO.paused && !LA_AUDIO.ended;
   document.querySelectorAll(".lblk").forEach(function (el) {
     el.classList.toggle("on", playing && el.dataset.lb === LA_BLOCK);
   });
-  document.querySelectorAll(".lw.say").forEach(function (s) {
+  document.querySelectorAll(".lw.say, .alpha.snd.say").forEach(function (s) {
     s.classList.remove("say");
   });
   if (!playing || !LA_BLOCK) return;
   var b = (typeof LESSON_AUDIO === "undefined" ? [] : LESSON_AUDIO)
           .find(function (x) { return x.id === LA_BLOCK; });
   var blk = document.querySelector('.lblk[data-lb="' + LA_BLOCK + '"]');
+  /* A block with clips spliced into it -- chapter 1's alphabet -- lights the
+     tile whose clip is sounding, from the clip's own start and end. */
+  if (b && blk && b.tiles) {
+    var now = LA_AUDIO.currentTime;
+    b.tiles.forEach(function (tl) {
+      if (tl[0] <= now && now < tl[1]) {
+        var tile = blk.querySelector('.alpha.snd[data-greek="' + tl[2] + '"]');
+        if (tile) tile.classList.add("say");
+      }
+    });
+  }
   if (!b || !blk || blk.dataset.taps !== "1") return;
-  var t = LA_AUDIO.currentTime, lo = 0, hi = b.t.length - 1, at = -1;
-  while (lo <= hi) {
-    var mid = (lo + hi) >> 1;
-    if (b.t[mid] <= t + 0.001) { at = mid; lo = mid + 1; } else { hi = mid - 1; }
+  /* The latest second already passed, wherever it sits on the page. A table
+     read aloud goes down its columns while the page stores it along its
+     rows, so the seconds do not run forward through the words and a binary
+     search would land on the wrong cell. A block is a few hundred words. */
+  var t = LA_AUDIO.currentTime, at = -1;
+  for (var k = 0; k < b.t.length; k++) {
+    if (b.t[k] <= t + 0.001 && (at < 0 || b.t[k] > b.t[at])) at = k;
   }
   if (at < 0) return;
   /* Words that share a second share a replacement — a table pointed at, a

@@ -506,9 +506,9 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .alpha.snd:active{transform:scale(.96)}
 .alpha.snd .sd{font-size:.62rem;color:var(--gold);opacity:.85;margin-top:2px}
 .alpha.snd::after{content:"\1F50A";position:absolute;top:5px;right:6px;font-size:.6rem;opacity:.3}
-.alpha.snd.playing{background:var(--surface-2);border-color:var(--gold)}
-.alpha.snd.playing::after{opacity:1}
-.alpha.snd.playing .l{color:var(--gold)}
+.alpha.snd.playing,.alpha.snd.say{background:var(--surface-2);border-color:var(--gold)}
+.alpha.snd.playing::after,.alpha.snd.say::after{opacity:1}
+.alpha.snd.playing .l,.alpha.snd.say .l{color:var(--gold)}
 
 /* ---------- word lookup ---------- */
 #lookupSearch{width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);

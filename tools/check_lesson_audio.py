@@ -52,11 +52,25 @@ def builder():
     return m
 
 
+def clip_keys():
+    js = ("const fs=require('fs'),vm=require('vm');const c=vm.createContext({});"
+          "vm.runInContext(fs.readFileSync('data/audio.js','utf8').replace(/\\bconst\\b/g,'var'),c);"
+          "process.stdout.write(JSON.stringify(c.AUDIO_CLIPS.map(function(x){return x[0];})));")
+    import subprocess
+    r = subprocess.run(["node", "-e", js], capture_output=True, text=True,
+                       encoding="utf-8")
+    if r.returncode or not r.stdout:
+        sys.exit("could not read AUDIO_CLIPS from data/audio.js: " + r.stderr)
+    return set(json.loads(r.stdout))
+
+
 def main():
     if not os.path.isfile(DATA):
         print("no %s -- no chapter has narration yet" % DATA)
         return
     rows = load_js()
+    global CLIP_KEYS
+    CLIP_KEYS = clip_keys() if any(r.get("tiles") for r in rows) else set()
     m = builder()
     bad = []
     chapters = sorted({r["ch"] for r in rows})
@@ -108,11 +122,23 @@ def main():
         if len(r["page"]) != len(r["t"]):
             bad.append("%s: %d page words, %d seconds"
                        % (r["id"], len(r["page"]), len(r["t"])))
-        if any(b < a - 0.001 for a, b in zip(r["t"], r["t"][1:])):
-            bad.append("%s: seek times run backwards" % r["id"])
-        if r["t"] and r["t"][-1] > r["d"] + 0.5:
+        # Seconds need not run forward through the page: a table read aloud
+        # goes down its columns while the page stores it along its rows. What
+        # must hold is that every second is inside the clip.
+        if r["t"] and min(r["t"]) < 0:
+            bad.append("%s: a seek time is negative" % r["id"])
+        # Clips spliced into a block (chapter 1's alphabet): each tile's
+        # span inside the clip, and each naming a clip the app has.
+        for tl in r.get("tiles", []):
+            if not (0 <= tl[0] < tl[1] <= r["d"] + 0.05):
+                bad.append("%s: tile %s runs %.2f-%.2fs in a clip %.2fs long"
+                           % (r["id"], tl[2], tl[0], tl[1], r["d"]))
+            if tl[2] not in CLIP_KEYS:
+                bad.append("%s: tile %r is no clip in data/audio.js"
+                           % (r["id"], tl[2]))
+        if r["t"] and max(r["t"]) > r["d"] + 0.5:
             bad.append("%s: a word is spoken at %.1fs in a clip %.1fs long"
-                       % (r["id"], r["t"][-1], r["d"]))
+                       % (r["id"], max(r["t"]), r["d"]))
 
     # 2b. `d` against the audio. The builder measures it with ffprobe, so
     #     confirm it rather than trust it -- every other number in this file

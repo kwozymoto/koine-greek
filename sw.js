@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v225';
+const VERSION = 'v226';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,33 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v226: tables read aloud in chapters 2 and 3, and chapter 1 plays the
+     alphabet clips themselves; chapter 2's later blocks renumbered. */
+  'audio/lessons/l01_01.mp3',
+  'audio/lessons/l02_01.mp3',
+  'audio/lessons/l02_02.mp3',
+  'audio/lessons/l02_03.mp3',
+  'audio/lessons/l02_04.mp3',
+  'audio/lessons/l02_05.mp3',
+  'audio/lessons/l02_06.mp3',
+  'audio/lessons/l02_07.mp3',
+  'audio/lessons/l02_08.mp3',
+  'audio/lessons/l02_09.mp3',
+  'audio/lessons/l02_10.mp3',
+  'audio/lessons/l02_11.mp3',
+  'audio/lessons/l02_12.mp3',
+  'audio/lessons/l02_13.mp3',
+  'audio/lessons/l02_14.mp3',
+  'audio/lessons/l02_15.mp3',
+  'audio/lessons/l02_16.mp3',
+  'audio/lessons/l02_17.mp3',
+  'audio/lessons/l02_18.mp3',
+  'audio/lessons/l02_19.mp3',
+  'audio/lessons/l02_20.mp3',
+  'audio/lessons/l02_21.mp3',
+  'audio/lessons/l03_00.mp3',
+  'audio/lessons/l03_02.mp3',
+  'audio/lessons/l03_06.mp3',
   /* v222: four chapter-2 narration blocks re-read with today's cues;
      block 12 had said οὗ's cue for οὐ. */
   'audio/lessons/l02_12.mp3',

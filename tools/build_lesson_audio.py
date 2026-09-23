@@ -151,14 +151,24 @@ LOOK = {
 # straight to the sigma rule with no sign that anything had been skipped.
 #
 # It is handed to the screen, like every other block whose point is a shape.
+# The alphabet, PLAYED rather than pointed at (Fraser: "those could just
+# automatically play as part of the chapter"). The voice says these two
+# sentences; between and after them the block's clip carries the 24 letter
+# clips and the 8 diphthong clips themselves, each followed by a pause to
+# say it back in. The splice is made outside the repo from the clips in
+# audio/clips/, and its timestamps entry carries `tiles` -- when each clip
+# starts and stops -- so the app can light each letter as it is heard.
+ALPHA_SAY = (
+    "Here is the alphabet aloud: each letter's name, and then its sound. Say "
+    "each one back in the pause after it — reading them silently does not "
+    "work here.",
+    "Now the diphthongs. Two vowels written together make one sound, and "
+    "these eight are worth knowing before you meet them in the middle of a "
+    "word.",
+)
+
 PLACEHOLDER = {
-    (1, "alphaHere"):
-        "The alphabet is on screen: twenty-four letters, each with a button "
-        "that says its name and then its sound. Tap through them and say every "
-        "one back aloud — reading them silently does not work here. Below "
-        "them are the diphthongs. Two vowels written together make one sound, "
-        "and these eight are worth knowing before you meet them in the middle "
-        "of a word.",
+    (1, "alphaHere"): " ".join(ALPHA_SAY),
 }
 
 
@@ -173,6 +183,11 @@ LEGACY = {1, 2}
 # and a later chapter wants the plain name: "a σ between stem and ending"
 # said with DESCRIBE came out "a a sigma between".
 LETTER_NAMES = {}
+
+# Every cue sheet's own answer by exact spelling, before CUES and DESCRIBE
+# write over the table -- so a later chapter that sets CUES aside can still
+# find the sheet's cue for the same word.
+SHEET = {}
 
 # The three letters whose clips are still cut from the old master carry no
 # IPA cue, so their names are plain English, which reads correctly. Chi's
@@ -236,6 +251,7 @@ def cue_table():
         if os.path.isfile(p):
             for r in json.load(io.open(p, encoding="utf-8")):
                 t.setdefault(exact(r["greek"]), r["tts"])
+                SHEET.setdefault(exact(r["greek"]), r["tts"])
                 softs.setdefault(soft(r["greek"]), set()).add(r["tts"])
                 flats.setdefault(flat(r["greek"]), set()).add(r["tts"])
     for table in (softs, flats):
@@ -677,10 +693,196 @@ def said_vowels(cue):
                .replace("x", "k"))
 
 
+# ---------------------------------------------------------------- tables ---
+#
+# A table read aloud, rather than pointed at. Chapters in TABLES_READ only,
+# while the way of doing it is being heard.
+#
+# TWO SHAPES, TWO ORDERS.
+#
+# A PARADIGM -- persons or cases down the side, numbers or genders across the
+# top, a form in every cell -- is read DOWN each column, which is the order
+# a paradigm is recited and learned in: λύω, λύεις, λύει, λύομεν, λύετε,
+# λύουσι. The column heading is said once, when it changes, and the person
+# or case on every form, in full the first time in a column and shortened
+# after ("first person", then "second", "third"). That is how a screen reader
+# keeps a listener oriented without reading every label on every cell: the
+# header is announced when it changes. Then the forms once more, straight
+# through, with nothing between them -- the recitation itself.
+#
+# Anything else is a table of IDEAS and is read ROW by row, each row as a
+# sentence: the row's first cell, then each other cell under its column
+# heading. TABLE_ROWS can give a table its own sentence shape where the
+# heading reads better folded into the words.
+#
+# Every cell keeps its own words on the page, so the read-along highlights
+# each cell as it is said -- in the order it is SAID, which for a paradigm
+# is down the columns, not along the rows as the page stores it.
+TABLES_READ = {2, 3}
+
+ROWS = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.S)
+CELL = re.compile(r"<(th|td)\b[^>]*>(.*?)</\1>", re.S)
+CAPTION = re.compile(r"<caption\b[^>]*>(.*?)</caption>", re.S)
+
+# How a heading is said. Persons shorten after the first in a column.
+LABEL = {"1st": "first person", "2nd": "second person", "3rd": "third person",
+         "Nom": "nominative", "Gen": "genitive", "Dat": "dative",
+         "Acc": "accusative", "Voc": "/ˈvɒkətɪv/",
+         "Masc": "masculine", "Fem": "feminine", "Neut": "neuter",
+         "you (pl)": "you, plural"}
+SHORT = {"1st": "first", "2nd": "second", "3rd": "third"}
+
+# Tables whose rows read better as a sentence of their own, keyed by the
+# chapter and the text of the table's first heading. {n} is column n of the
+# row, said as it would be in prose.
+TABLE_ROWS = {
+    (2, "Aspect"): "{0}. Presents the action as {1}. Tenses: {2}.",
+    # "In plain terms:" before every row said the heading five times over.
+    (2, "What it tells us"): "{0}: {1}.",
+}
+
+
+def narrate_table(inner, ch, cues, missing):
+    """(narration, page words, pairs) for a table, or None to point at it.
+
+    Each cell goes through align() on its own, so its Greek is said as its
+    cue and its words keep their place on the page. If the cells' words do
+    not add up to the table's words exactly, the table is pointed at as
+    before rather than mapped wrongly."""
+    cap = CAPTION.search(inner)
+    grid = [[h for _tag, h in CELL.findall(r)] for r in ROWS.findall(inner)]
+    if not grid:
+        return None
+    heads = [[t == "th" for t, _h in CELL.findall(r)] for r in ROWS.findall(inner)]
+    cells = ([(("cap",), cap.group(1))] if cap else []) + [
+        ((r, c), h) for r, row in enumerate(grid) for c, h in enumerate(row)]
+    per, flatpage = {}, []
+    for key, h in cells:
+        if TAG.sub("", h).strip():
+            t, pw, pr = align(h, ch, cues, missing)
+            words = clean(TAG.sub(" ", h)).split()
+            if pw != words:
+                # λύουσι(ν): align() cuts the bracketed nu off as a word of
+                # its own, where the page holds one word. Said whole instead,
+                # as sub_text says a form with an optional letter.
+                t = sub_text(clean(TAG.sub(" ", h)), cues, missing)
+                pw, pr = words, [0] * len(words)
+        else:
+            t, pw, pr = "", [], []
+        per[key] = (t.split(), pw, pr)
+        flatpage += pw
+    if flatpage != clean(TAG.sub(" ", inner)).split():
+        return None
+
+    tokens, at = [], {}
+
+    def say(text):
+        tokens.extend(text.split())
+
+    def stop(mark):
+        if tokens and tokens[-1][-1] not in ".,;:":
+            tokens[-1] += mark
+
+    def cell(key, again=False):
+        sp, pw, pr = per[key]
+        start = len(tokens)
+        tokens.extend(sp)
+        if not again and key not in at:
+            at[key] = [start + p for p in pr]
+
+    def heard(key):
+        """A heading said as a label: its page words point at the label."""
+        if key not in at:
+            at[key] = [len(tokens)] * len(per[key][1])
+
+    def plain(key):
+        return clean(TAG.sub(" ", grid[key[0]][key[1]]))
+
+    def label(key, short=False):
+        text = plain(key)
+        heard(key)
+        if short and text in SHORT:
+            say(SHORT[text])
+        elif text in LABEL:
+            say(LABEL[text])
+        else:
+            cell(key)
+
+    if cap:
+        cell(("cap",))
+        stop(".")
+
+    body = range(1, len(grid))
+    paradigm = (len(grid) > 1 and all(heads[0])
+                and not plain((0, 0))
+                and all(heads[r][0] for r in body))
+    if paradigm:
+        forms = []
+        for c in range(1, len(grid[0])):
+            label((0, c))
+            stop(":")
+            for i, r in enumerate(body):
+                label((r, 0), short=i > 0)
+                stop(",")
+                cell((r, c))
+                stop(";" if i < len(body) - 1 else ".")
+                forms.append((r, c))
+        # The recitation: every form once more, straight through. Only where
+        # each cell is one form -- "αὐτός / αὐτοί" recited is not a paradigm.
+        if all(len(per[k][1]) == 1 for k in forms) and len(forms) <= 12:
+            say("Straight through:")
+            for n, k in enumerate(forms):
+                cell(k, again=True)
+                stop("," if n < len(forms) - 1 else ".")
+    else:
+        first = plain((0, 0)) if all(heads[0]) else ""
+        shape = TABLE_ROWS.get((ch, first))
+        rows = body if all(heads[0]) else range(len(grid))
+        for r in rows:
+            if shape:
+                for part in re.split(r"(\{\d\})", shape):
+                    m = re.fullmatch(r"\{(\d)\}", part)
+                    if m:
+                        cell((r, int(m.group(1))))
+                    elif part.strip():
+                        if part[0] in ".,;:" and tokens:
+                            tokens[-1] += part[0]
+                            part = part[1:]
+                        say(part)
+                continue
+            cell((r, 0))
+            stop(".")
+            for c in range(1, len(grid[r])):
+                if all(heads[0]) and plain((0, c)):
+                    label((0, c))
+                    stop(":")
+                cell((r, c))
+                stop(".")
+
+    pairs = []
+    for key, _h in cells:
+        n = len(per[key][1])
+        got = at.get(key, [])[:n]
+        # A heading never said -- TABLE_ROWS folds some into the sentence --
+        # points at the start of the table.
+        pairs += got + [0] * (n - len(got))
+    return " ".join(tokens), flatpage, pairs
+
+
 def later(cues, ch=0):
     """The table as a chapter after LEGACY sees it: DESCRIBE's wording for
     marks gives way to the plain letter name."""
     c = dict(cues)
+    # CUES are chapter 1 and 2's hand respellings -- "loo o men" -- and in a
+    # later chapter's paradigm they would sit among generated IPA forms of
+    # the same verb. Later chapters take the generated cue instead.
+    for k in CUES:
+        if k != "·":
+            c.pop(flat(k), None)
+            if exact(k) in SHEET:
+                c[exact(k)] = SHEET[exact(k)]
+            else:
+                c.pop(exact(k), None)
     for k, v in NARRATE.items():
         c[exact(k)] = v
     for k in DESCRIBE:
@@ -727,6 +929,11 @@ def blocks_for(les, cues, missing):
                 out.append(("look", say, page, [0] * len(page), [el]))
             continue
         if kind == "table":
+            read = (narrate_table(inner, les["id"], cues, missing)
+                    if les["id"] in TABLES_READ else None)
+            if read:
+                out.append(("prose",) + read + ([el],))
+                continue
             # Nothing on the page maps into a pointer, so every word of the
             # table seeks to the start of it. Better than no seek at all.
             out.append(("table", "The table for this is on screen.", page,
@@ -908,6 +1115,9 @@ if __name__ == "__main__":
             out.append({"id": b["id"], "ch": b["ch"], "kind": b["kind"],
                         "els": b["els"], "page": b["page"], "t": secs,
                         "h": said_hash(b["spoken"])})
+            if e.get("tiles"):
+                # [start, end, greek] for each clip spliced into the block.
+                out[-1]["tiles"] = e["tiles"]
         if bad:
             print("\nCLIPS THAT DO NOT MATCH THE LESSON (%d) — regenerate these\n"
                   "before the map ships, or a tap seeks into audio that says\n"
