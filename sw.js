@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v230';
+const VERSION = 'v231';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,45 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v231: 38 cards moved from English respellings to IPA, batch 1. */
+  'audio/vocab/000_o.mp3',
+  'audio/vocab/001_kai.mp3',
+  'audio/vocab/002_autos.mp3',
+  'audio/vocab/003_su.mp3',
+  'audio/vocab/004_de.mp3',
+  'audio/vocab/005_en.mp3',
+  'audio/vocab/006_ego.mp3',
+  'audio/vocab/008_lego.mp3',
+  'audio/vocab/009_eis.mp3',
+  'audio/vocab/014_pas.mp3',
+  'audio/vocab/016_gar.mp3',
+  'audio/vocab/018_ek.mp3',
+  'audio/vocab/019_epi.mp3',
+  'audio/vocab/020_kurios.mp3',
+  'audio/vocab/022_pros.mp3',
+  'audio/vocab/023_ginomai.mp3',
+  'audio/vocab/025_ina.mp3',
+  'audio/vocab/029_poieo.mp3',
+  'audio/vocab/030_tis.mp3',
+  'audio/vocab/031_anthropos.mp3',
+  'audio/vocab/032_ristos.mp3',
+  'audio/vocab/035_ei.mp3',
+  'audio/vocab/036_oun.mp3',
+  'audio/vocab/046_uios.mp3',
+  'audio/vocab/047_eis.mp3',
+  'audio/vocab/049_e.mp3',
+  'audio/vocab/051_logos.mp3',
+  'audio/vocab/055_ouranos.mp3',
+  'audio/vocab/056_ekeinos.mp3',
+  'audio/vocab/058_lambano.mp3',
+  'audio/vocab/061_pistis.mp3',
+  'audio/vocab/063_oudeis.mp3',
+  'audio/vocab/064_agios.mp3',
+  'audio/vocab/066_onoma.mp3',
+  'audio/vocab/067_ginosko.mp3',
+  'audio/vocab/069_exerchomai.mp3',
+  'audio/vocab/071_gune.mp3',
+  'audio/vocab/074_thelo.mp3',
   /* v229: chapter 4's tables and verses read aloud, all Greek in IPA. */
   'audio/lessons/l04_01.mp3',
   'audio/lessons/l04_02.mp3',

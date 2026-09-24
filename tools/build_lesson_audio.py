@@ -293,6 +293,17 @@ def cue_table():
     if os.path.isfile(p):
         for r in json.load(io.open(p, encoding="utf-8")):
             IPA_TWIN[exact(r["greek"])] = (r["deck"], r["tts"])
+            # THE NARRATION DOES NOT FOLLOW THE CARD. The cards are moving
+            # from respellings to IPA a batch at a time, and a card's new cue
+            # must not change what an approved chapter derives, or every
+            # batch would make shipped clips stale. So a word with a twin is
+            # read at its OLD respelling -- the snapshot in `deck` -- and
+            # ipa_twins() swaps in the narration IPA wherever the chapter's
+            # rules say to, exactly as before the card moved.
+            new = SHEET.get(exact(r["greek"]))
+            for key in (exact(r["greek"]), soft(r["greek"]), flat(r["greek"])):
+                if key in t and (t[key] == new or key == exact(r["greek"])):
+                    t[key] = r["deck"]
     p = os.path.join("docs", "erasmian_alphabet_cues.json")
     if os.path.isfile(p):
         d = json.load(io.open(p, encoding="utf-8"))

@@ -8,12 +8,12 @@
   "pos": "art",
   "tier": 1,
   "freq": 19870,
-  "tts": "haw",
-  "source": "batch2",
-  "duration_s": 0.693,
-  "take": "2026-09-10, Atlas",
-  "note": "'ho' is the English word ho, whose o is long; Black gives omicron as o as in not, and 'hoh' was rejected beside this",
-  "sha1": "838b93071c74"
+  "tts": "/ˈhɒ/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "take": "bVI1_0_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e19f6b04d58e"
  },
  {
   "index": 1,
@@ -24,10 +24,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 9161,
-  "tts": "kai",
-  "source": "locked",
-  "duration_s": 0.665,
-  "sha1": "abb6cab883ae"
+  "tts": "/ˈkai̯/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "edd0833dea00",
+  "take": "bVI1_1_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 2,
@@ -38,12 +40,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 5597,
-  "tts": "ow toss",
-  "source": "recued",
-  "duration_s": 1.009,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "19db2e92947f"
+  "tts": "/au̯ˈtɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.071,
+  "take": "bVI1_2_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "d61c37540872"
  },
  {
   "index": 3,
@@ -54,10 +56,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 2905,
-  "tts": "soo",
-  "source": "batch7",
-  "duration_s": 0.621,
-  "sha1": "34dcaa0cee33"
+  "tts": "/ˈsu/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "42f44c7aab04",
+  "take": "bVI1_3_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 4,
@@ -68,10 +72,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 2792,
-  "tts": "deh",
-  "source": "batch5",
-  "duration_s": 0.629,
-  "sha1": "e413dc9e63f7"
+  "tts": "/ˈdɛ/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "sha1": "99c1f7855a01",
+  "take": "bVI1_4_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 5,
@@ -82,10 +88,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 2752,
-  "tts": "en",
-  "source": "batch7",
-  "duration_s": 0.619,
-  "sha1": "4ebb8c1e913b"
+  "tts": "/ˈɛn/",
+  "source": "ipa-batch1",
+  "duration_s": 0.601,
+  "sha1": "5ba53ebc3cca",
+  "take": "bVI1_5_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 6,
@@ -96,11 +104,13 @@
   "pos": "pron",
   "tier": 1,
   "freq": 2584,
-  "tts": "e goh",
-  "source": "locked",
-  "duration_s": 0.953,
+  "tts": "/ɛˈɡoː/",
+  "source": "ipa-batch1",
+  "duration_s": 0.914,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'eh goh' spelled the English word ego and was read EE-go, stress first. Chosen by ear from several takes.",
-  "sha1": "ea057fd227db"
+  "sha1": "59c06000f5a6",
+  "take": "bVI1_6_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 7,
@@ -127,11 +137,13 @@
   "pos": "verb",
   "tier": 1,
   "freq": 2353,
-  "tts": "lehgo",
-  "source": "locked",
-  "duration_s": 1.223,
+  "tts": "/ˈlɛ.ɡoː/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "sha1": "a6a0e2c326c1"
+  "sha1": "a5d4399f3547",
+  "take": "bVI1_8_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 9,
@@ -142,10 +154,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 1767,
-  "tts": "ace",
-  "source": "batch8",
-  "duration_s": 0.804,
-  "sha1": "55e1e3b47ae6"
+  "tts": "/ˈei̯s/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "bbc5d4d187cf",
+  "take": "bVI1_9_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 10,
@@ -221,11 +235,13 @@
   "pos": "adj",
   "tier": 1,
   "freq": 1243,
-  "tts": "pahss",
-  "source": "locked",
-  "duration_s": 1.097,
+  "tts": "/ˈpaːs/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
   "verdict": "re-recorded 2026-09-03 (Atlas): the old take split into 'pa has'; a fresh take of the same cue did not. Chosen by ear from several takes.",
-  "sha1": "d2e34d38c701"
+  "sha1": "006ab6aeec63",
+  "take": "bVI1_14_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 15,
@@ -252,10 +268,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 1041,
-  "tts": "gar",
-  "source": "batch8",
-  "duration_s": 0.655,
-  "sha1": "e1613f9e0a14"
+  "tts": "/ˈɡar/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "497e61e0e43c",
+  "take": "bVI1_16_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 17,
@@ -282,12 +300,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 914,
-  "tts": "eck",
-  "source": "batch2",
-  "duration_s": 0.593,
-  "take": "2026-09-10, Atlas",
-  "note": "'ek' came back as 'eek'; Black gives epsilon as e as in met",
-  "sha1": "e14c58199106"
+  "tts": "/ˈɛk/",
+  "source": "ipa-batch1",
+  "duration_s": 0.679,
+  "take": "bVI1_18_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "c3eae76994bf"
  },
  {
   "index": 19,
@@ -298,11 +316,13 @@
   "pos": "prep",
   "tier": 1,
   "freq": 890,
-  "tts": "eppee",
-  "source": "locked",
-  "duration_s": 0.859,
+  "tts": "/ɛˈpi/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'eh pee' was read as the letters E. P. — both tokens are letter names. Chosen by ear from several takes.",
-  "sha1": "01810143c217"
+  "sha1": "b4e60cfa540f",
+  "take": "bVI1_19_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 20,
@@ -313,11 +333,13 @@
   "pos": "noun",
   "tier": 1,
   "freq": 717,
-  "tts": "koo rioss",
-  "source": "locked",
-  "duration_s": 1.486,
+  "tts": "/ˈku.rɪ.ɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.071,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'koo ree os' was three equal beats at 1.85s. Chosen by ear from several takes.",
-  "sha1": "baa08268aa2b"
+  "sha1": "5a1f214bc7bf",
+  "take": "bVI1_20_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 21,
@@ -344,12 +366,12 @@
   "pos": "prep",
   "tier": 1,
   "freq": 700,
-  "tts": "pross",
-  "source": "batch3",
-  "duration_s": 0.692,
-  "take": "2026-09-10, Atlas",
-  "note": "the p was being swallowed. The cue did not change -- the same one rolled again, which is what solved δια",
-  "sha1": "ebd7002d9bf3"
+  "tts": "/ˈprɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "take": "bVI1_22_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "ac9a98f33359"
  },
  {
   "index": 23,
@@ -360,13 +382,15 @@
   "pos": "verb",
   "tier": 1,
   "freq": 669,
-  "tts": "ghee no my",
-  "source": "fix12",
-  "duration_s": 1.476,
+  "tts": "/ˈɡi.nɒ.mai̯/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ghee no my",
   "format": "22050 mono 64k, pad_tail=0.22",
-  "sha1": "d9d867c95370"
+  "sha1": "4b17bd49126b",
+  "take": "bVI1_23_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 24,
@@ -393,11 +417,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 663,
-  "tts": "hin ah",
-  "source": "batch9",
-  "duration_s": 0.986,
-  "sha1": "a97e75cb2220",
-  "note": "the iota is short -- Black gives it as machine (long) or pit (short) and this is the short one. Round 9, against hee nah and hin nah"
+  "tts": "/ˈhi.na/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "sha1": "36874bb2f873",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "take": "bVI1_25_c"
  },
  {
   "index": 26,
@@ -456,12 +481,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 568,
-  "tts": "poy eh hoe",
-  "source": "batch5",
-  "duration_s": 1.463,
-  "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe', which γαμέω and τελέω locked by ear and προσκυνέω confirmed. This cue had 'eh oh'.",
-  "sha1": "b0cac852c30d"
+  "tts": "/poi̯ˈɛ.oː/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
+  "take": "bVI1_29_b",
+  "note": "IPA, chosen by ear over the card's English respelling. Fraser: b is best but the έ sounds like an eta.",
+  "sha1": "c23f60f4deec"
  },
  {
   "index": 30,
@@ -472,10 +497,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 555,
-  "tts": "tiss",
-  "source": "batch6",
-  "duration_s": 0.734,
-  "sha1": "734311a10f6e"
+  "tts": "/ˈtis/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "57d976996f8c",
+  "take": "bVI1_30_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 31,
@@ -486,12 +513,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 550,
-  "tts": "ahn thro poss",
-  "source": "recued",
-  "duration_s": 2.088,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "9aee9eaf60de"
+  "tts": "/ˈan.θroː.pɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.698,
+  "take": "bVI1_31_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "4f8a80360a3b"
  },
  {
   "index": 32,
@@ -502,11 +529,13 @@
   "pos": "noun",
   "tier": 1,
   "freq": 529,
-  "tts": "khree stoss",
-  "source": "locked",
-  "duration_s": 0.929,
+  "tts": "/krɪˈstɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
   "verdict": "cue corrected 2026-09-03, clip NOT re-recorded — the new take was worse and was not kept, so this mp3 still has the old pronunciation",
-  "sha1": "08c84241d008"
+  "sha1": "1c0b2cb83e5a",
+  "take": "bVI1_32_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 33,
@@ -549,12 +578,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 502,
-  "tts": "ay",
-  "source": "batch5",
-  "duration_s": 0.496,
-  "take": "2026-09-11, Atlas",
-  "note": "cue unchanged. It was on the sheet because rule 3 predicted a cue that is nothing but a letter name would be read as the letter -- 'ay' is A. It is not: the prediction was wrong and the cue stands. This is the take he actually heard.",
-  "sha1": "54fd985c02d0"
+  "tts": "/ˈei̯/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "take": "bVI1_35_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "751ed8578c10"
  },
  {
   "index": 36,
@@ -565,10 +594,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 498,
-  "tts": "oon",
-  "source": "batch8",
-  "duration_s": 0.623,
-  "sha1": "52f2de874b01"
+  "tts": "/ˈuːn/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "6125b2690424",
+  "take": "bVI1_36_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 37,
@@ -723,11 +754,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 377,
-  "tts": "hwee oss",
-  "source": "batch9",
-  "duration_s": 1.167,
-  "sha1": "cdf63cd50132",
-  "note": "Black's keyword for the diphthong is suite and his own example for that row is this word. Round 9, against hoo ee oss and a comma"
+  "tts": "/hui̯ˈɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 0.914,
+  "sha1": "4a57cb91bcee",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "take": "bVI1_46_b"
  },
  {
   "index": 47,
@@ -738,12 +770,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 344,
-  "tts": "heyss",
-  "source": "batch8",
-  "duration_s": 0.836,
-  "sha1": "425659f827ed",
-  "take": "2026-09-15, Atlas (b8b_47_b)",
-  "note": "`hace` is a SPANISH word -- the look-up fault in another language. A final -ays comes back voiced where `eys` does not, and the doubled s holds it"
+  "tts": "/ˈhei̯s/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "sha1": "132052cfa98c",
+  "take": "bVI1_47_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 48,
@@ -770,12 +802,12 @@
   "pos": "conj",
   "tier": 1,
   "freq": 343,
-  "tts": "ay",
-  "source": "batch5",
-  "duration_s": 0.601,
-  "take": "2026-09-11, Atlas",
-  "note": "same as εἰ -- the letter-name prediction was wrong and the cue stands. This is the take he heard.",
-  "sha1": "06b7e979c643"
+  "tts": "/ˈei̯/",
+  "source": "ipa-batch1",
+  "duration_s": 0.758,
+  "take": "bVI1_49_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "ed0c6db745d2"
  },
  {
   "index": 50,
@@ -802,10 +834,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 330,
-  "tts": "loh goss",
-  "source": "locked",
-  "duration_s": 1.334,
-  "sha1": "d521c7a77508"
+  "tts": "/ˈlɒ.ɡɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.071,
+  "sha1": "ef140e16a5f7",
+  "take": "bVI1_51_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 52,
@@ -864,12 +898,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 273,
-  "tts": "oo rah noss",
-  "source": "recued",
-  "duration_s": 1.456,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "5180f3030164"
+  "tts": "/uː.raˈnɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.384,
+  "take": "bVI1_55_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e976f09227d3"
  },
  {
   "index": 56,
@@ -880,12 +914,12 @@
   "pos": "pron",
   "tier": 1,
   "freq": 243,
-  "tts": "eh kay noss",
-  "source": "recued",
-  "duration_s": 1.739,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "dffdfcb8bad2"
+  "tts": "/ɛˈkei̯.nɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.071,
+  "take": "bVI1_56_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e3c22faceac8"
  },
  {
   "index": 57,
@@ -912,10 +946,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 258,
-  "tts": "lahm bah noh",
-  "source": "batch5",
-  "duration_s": 1.99,
-  "sha1": "ca4f846d4077"
+  "tts": "/lamˈba.noː/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
+  "sha1": "a13370a39033",
+  "take": "bVI1_58_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 59,
@@ -958,12 +994,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 243,
-  "tts": "piss tiss",
-  "source": "batch6",
-  "duration_s": 1.071,
-  "sha1": "5b9b5dfe77e7",
-  "take": "2026-09-15, Atlas (b6b_61_a)",
-  "note": "both halves were wrong: πίστις is two SHORT iotas, and `tiss` was approved on τίς in the same round"
+  "tts": "/ˈpɪ.stɪs/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "sha1": "1fddac49cb20",
+  "take": "bVI1_61_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 62,
@@ -990,12 +1026,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 234,
-  "tts": "oo deys",
-  "source": "ays",
-  "duration_s": 0.849,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "c8369f472c90"
+  "tts": "/uːˈdei̯s/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
+  "take": "bVI1_63_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e88da628f02f"
  },
  {
   "index": 64,
@@ -1006,12 +1042,12 @@
   "pos": "adj",
   "tier": 1,
   "freq": 233,
-  "tts": "hag e oss",
-  "source": "batch3",
-  "duration_s": 1.615,
-  "take": "2026-09-10, Atlas",
-  "note": "'gee' is English /dʒi:/, a soft g where Greek has a hard one. Fraser's cue",
-  "sha1": "a5d6d0c79600"
+  "tts": "/ˈha.ɡɪ.ɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.149,
+  "take": "bVI1_64_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "90c82538d3f0"
  },
  {
   "index": 65,
@@ -1038,12 +1074,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 231,
-  "tts": "on no mah",
-  "source": "batch6",
-  "duration_s": 1.149,
-  "take": "2026-09-15, Atlas (b6b_66_a)",
-  "note": "short omicron; 'o' bare reads long",
-  "sha1": "8e050cecf717"
+  "tts": "/ˈɒ.nɒ.ma/",
+  "source": "ipa-batch1",
+  "duration_s": 1.306,
+  "take": "bVI1_66_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "ccb51fc23d6e"
  },
  {
   "index": 67,
@@ -1054,13 +1090,15 @@
   "pos": "verb",
   "tier": 1,
   "freq": 222,
-  "tts": "ghee noh skoh",
-  "source": "fix12",
-  "duration_s": 1.586,
+  "tts": "/ɡɪˈnoː.skoː/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ghee noh skoh",
   "format": "22050 mono 64k, pad_tail=0.22",
-  "sha1": "e9cf496c09fb"
+  "sha1": "cbb23c41544b",
+  "take": "bVI1_67_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 68,
@@ -1087,11 +1125,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 218,
-  "tts": "eh ksehr kho my",
-  "source": "batch9",
-  "duration_s": 1.775,
-  "sha1": "53b1c7941f03",
-  "note": "round 9. NOT composable to eisercomai: the winner carries ksehr and that word needs sehr standing alone"
+  "tts": "/ɛˈksɛr.kɒ.mai̯/",
+  "source": "ipa-batch1",
+  "duration_s": 1.541,
+  "sha1": "fc4d204856ea",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "take": "bVI1_69_b"
  },
  {
   "index": 70,
@@ -1118,12 +1157,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 215,
-  "tts": "goo ney",
-  "source": "batch6",
-  "duration_s": 1.14,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "063d1441164d"
+  "tts": "/ɡuˈnei̯/",
+  "source": "ipa-batch1",
+  "duration_s": 0.993,
+  "take": "bVI1_71_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "d191332b797e"
  },
  {
   "index": 72,
@@ -1166,10 +1205,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 208,
-  "tts": "thel oh",
-  "source": "locked",
-  "duration_s": 0.782,
-  "sha1": "ea951be09085"
+  "tts": "/ˈθɛ.loː/",
+  "source": "ipa-batch1",
+  "duration_s": 0.836,
+  "sha1": "479cb3d258f7",
+  "take": "bVI1_74_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 75,
