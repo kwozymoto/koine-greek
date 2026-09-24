@@ -1,0 +1,26 @@
+# Everyday Koine — New Testament Greek
+
+> A study app for learning to read the Greek New Testament: 27 chapters of grammar, an 818-word vocabulary deck with audio on a spaced-repetition schedule, playable paradigm tables, and the whole Greek New Testament with every word parsed. It runs in the browser, needs no account, and works offline once opened.
+
+Everyday Koine takes a learner from the alphabet to reading the text. The chapters follow the order of a standard first-year grammar, David Alan Black's *Learn to Read New Testament Greek*, and are written to teach on their own; none of the book is reproduced, and the app is independent of and not endorsed by its author or publisher. Pronunciation is Erasmian. The Greek text is the SBL Greek New Testament with MorphGNT parsing, and the Greek the app teaches is checked by program against that text.
+
+The app is a single-page web app. The links below open it at a given screen; the app itself is drawn with JavaScript, so its content is not readable as static pages. The About page is the best plain-text description.
+
+## About the app
+
+- [About Everyday Koine](https://everydaykoine.app/about.html): what the app is, what is in it, how a day of study goes, how to install it on a phone, privacy, and sources.
+- [Privacy policy](https://everydaykoine.app/privacy.html): no accounts, no analytics, no advertising; progress stays on the device unless the user turns on sync, and how sync works.
+
+## Open the app
+
+- [Today](https://everydaykoine.app/): the daily plan — words due for review, a few new ones, and the next part of the current chapter, about ten minutes a day.
+- [Learn](https://everydaykoine.app/?go=learn): the 27 chapters, in short parts with questions, from the letters to reading the text. The chapters are being recorded to be read aloud, with each word lit as it is spoken; about a quarter have audio so far.
+- [Drill](https://everydaykoine.app/?go=drill): vocabulary, parsing of real forms from the text, paradigm rounds, look-alike words and sentence questions.
+- [Read](https://everydaykoine.app/?go=read): the Greek New Testament, every word parsed and glossed on a tap, plus 12 graded passages.
+- [Tables](https://everydaykoine.app/?go=tables): 28 reference tables — paradigms of nouns, verbs and pronouns, and syntax tables — 20 of them playable as fill-in-the-grid rounds.
+- [Progress](https://everydaykoine.app/?go=prog): progress, settings, export and import, and optional sync between devices by a generated code.
+
+## Optional
+
+- [Help](https://everydaykoine.app/?go=help): how the app works.
+- [Support](mailto:support@everydaykoine.app): questions and problem reports.
