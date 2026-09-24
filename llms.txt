@@ -9,6 +9,7 @@ The app is a single-page web app. The links below open it at a given screen; the
 ## About the app
 
 - [About Everyday Koine](https://everydaykoine.app/about.html): what the app is, what is in it, how a day of study goes, how to install it on a phone, privacy, and sources.
+- [What the chapters cover](https://everydaykoine.app/chapters.html): each of the 27 chapters with its summary and section headings, and which are read aloud.
 - [Privacy policy](https://everydaykoine.app/privacy.html): no accounts, no analytics, no advertising; progress stays on the device unless the user turns on sync, and how sync works.
 
 ## Open the app

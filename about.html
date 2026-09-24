@@ -56,7 +56,100 @@
   footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
          color:var(--muted); font-size:.86rem}
   footer p{color:var(--muted); margin:.4rem 0}
+  .faq{background:var(--surface); border:1px solid var(--line); border-radius:12px;
+       padding:.7rem 1.05rem; margin:.55rem 0}
+  .faq summary{cursor:pointer; font-weight:600; list-style-position:outside}
+  .faq summary:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:4px}
+  .faq p{margin:.5rem 0 .15rem; font-size:.95rem}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Is it free?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Everyday Koine is free and will stay free, with no advertising."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I need the textbook?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The chapters are written to teach on their own. They follow the order of David Alan Black's Learn to Read New Testament Greek, so they line up if you are using it, but none of the book is needed or reproduced."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How accurate is it?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every piece of Greek the app shows is checked by program against the SBL Greek New Testament: each form in the chapters, each quoted verse at its reference, and each parse the drills mark you against. Explanations are checked by a person. The audio is a synthetic voice and not perfect; where a recording and a lesson disagree, the lesson is right. If you find a mistake, Progress has a problem report that opens an email to us."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why Erasmian pronunciation, not modern Greek?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It is what most New Testament courses teach, and it keeps letters that modern Greek has merged sounding different from one another, which makes a word easier to spell once you can say it. Chapter 1 explains the choice."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work offline, and where is my progress kept?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Once opened, it works without a connection. Your progress is stored on your own device, and you can export a backup from Progress at any time."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use it on my phone and my computer?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Turn on sync in Progress: one device makes a private code, and you type it on the others. Your progress then stays the same on each, with no account."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I already know some Greek. Can I skip ahead?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. In Progress, \"Studied Greek before?\" marks earlier chapters done and brings in the commonest words as familiar, spread over a fortnight."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is there an Android app?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can install the web app on an Android phone today: open it in Chrome and choose Install app. A Google Play version is planned for October 2026."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can a class or a church group use it?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, and please do. Everyone keeps their own progress on their own device, and because the chapters follow a standard first-year grammar, a group can work through them together at the same pace."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is it still being developed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Everyday Koine is updated regularly, and the app tells you when a new version is ready. Ideas and feature requests are welcome at support@everydaykoine.app."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <main>
@@ -78,7 +171,8 @@
       <p>From the letters to reading the text, in short parts with questions
       along the way. Every chapter will have audio: a voice reads it to you,
       tables and verses included, lighting each word as it is spoken. About a
-      quarter of the chapters have it so far.</p></div>
+      quarter of the chapters have it so far.
+      <a href="chapters.html">What each chapter covers</a></p></div>
     <div class="feat"><h3><span class="num">818</span> words, with audio</h3>
       <p>The New Testament&rsquo;s commonest words, down to about fifteen
       occurrences — nine words in ten of the running text — each with a
@@ -135,6 +229,28 @@
   book&rsquo;s text or exercises is reproduced. Everyday Koine is independent,
   and is not affiliated with or endorsed by the author or the publisher.</p>
 
+  <h2>Questions</h2>
+  <details class="faq"><summary>Is it free?</summary>
+    <p>Yes. Everyday Koine is free and will stay free, with no advertising.</p></details>
+  <details class="faq"><summary>Do I need the textbook?</summary>
+    <p>No. The chapters are written to teach on their own. They follow the order of David Alan Black&#x27;s <i>Learn to Read New Testament Greek</i>, so they line up if you are using it, but none of the book is needed or reproduced.</p></details>
+  <details class="faq"><summary>How accurate is it?</summary>
+    <p>Every piece of Greek the app shows is checked by program against the SBL Greek New Testament: each form in the chapters, each quoted verse at its reference, and each parse the drills mark you against. Explanations are checked by a person. The audio is a synthetic voice and not perfect; where a recording and a lesson disagree, the lesson is right. If you find a mistake, Progress has a problem report that opens an email to us.</p></details>
+  <details class="faq"><summary>Why Erasmian pronunciation, not modern Greek?</summary>
+    <p>It is what most New Testament courses teach, and it keeps letters that modern Greek has merged sounding different from one another, which makes a word easier to spell once you can say it. Chapter 1 explains the choice.</p></details>
+  <details class="faq"><summary>Does it work offline, and where is my progress kept?</summary>
+    <p>Once opened, it works without a connection. Your progress is stored on your own device, and you can export a backup from Progress at any time.</p></details>
+  <details class="faq"><summary>Can I use it on my phone and my computer?</summary>
+    <p>Yes. Turn on sync in Progress: one device makes a private code, and you type it on the others. Your progress then stays the same on each, with no account.</p></details>
+  <details class="faq"><summary>I already know some Greek. Can I skip ahead?</summary>
+    <p>Yes. In Progress, &quot;Studied Greek before?&quot; marks earlier chapters done and brings in the commonest words as familiar, spread over a fortnight.</p></details>
+  <details class="faq"><summary>Is there an Android app?</summary>
+    <p>You can install the web app on an Android phone today: open it in Chrome and choose Install app. A Google Play version is planned for October 2026.</p></details>
+  <details class="faq"><summary>Can a class or a church group use it?</summary>
+    <p>Yes, and please do. Everyone keeps their own progress on their own device, and because the chapters follow a standard first-year grammar, a group can work through them together at the same pace.</p></details>
+  <details class="faq"><summary>Is it still being developed?</summary>
+    <p>Yes. Everyday Koine is updated regularly, and the app tells you when a new version is ready. Ideas and feature requests are welcome at <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>.</p></details>
+
   <h2>Sources</h2>
   <ul>
     <li>Greek text: the <a href="https://sblgnt.com">SBL Greek New Testament</a>,
@@ -152,7 +268,8 @@
   </ul>
 
   <footer>
-    <p><a href="/">Open the app</a> · <a href="privacy.html">Privacy policy</a> ·
+    <p><a href="/">Open the app</a> · <a href="chapters.html">The chapters</a> ·
+    <a href="privacy.html">Privacy policy</a> ·
     <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
   </footer>
 </main>

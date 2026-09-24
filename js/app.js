@@ -3272,6 +3272,11 @@ function renderHelp(){
     <h2>If you have studied before</h2>
     <p class="muted" style="font-size:.87rem">Progress → <b>Studied Greek before?</b> marks chapters done and seeds the
     hundred commonest words as familiar, spread over a fortnight rather than landing in one day.</p>
+
+    <h2>About the app</h2>
+    <p class="muted" style="font-size:.87rem"><a href="about.html">About Everyday Koine</a> — what it is, the
+    questions people ask, and <a href="chapters.html">what each chapter covers</a>. Ideas and problems:
+    <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>.</p>
     <div style="height:20px"></div>`;
 }
 
