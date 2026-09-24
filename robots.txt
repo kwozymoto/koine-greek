@@ -1,0 +1,9 @@
+# Everyday Koine — https://everydaykoine.app/
+# The app, the About page and the privacy policy are for everyone. The three
+# pages below are local calibration and audit tools, not part of the app.
+User-agent: *
+Disallow: /audio-audit.html
+Disallow: /sound-picker.html
+Disallow: /trace-audit.html
+
+Sitemap: https://everydaykoine.app/sitemap.xml
