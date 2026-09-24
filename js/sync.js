@@ -1,7 +1,17 @@
-/* Cross-device sync. Opt-in: the user invents a private sync phrase and
-   enters it once per device. The phrase is hashed (SHA-256) client-side;
+/* Cross-device sync. Opt-in. The first device GENERATES a sync code and the
+   user copies it to the others; the code is hashed (SHA-256) client-side and
    only the hash travels, acting as both address and secret on a dumb
    key-value store (see sync-worker/).
+
+   WHY A GENERATED CODE. Sync began with a phrase the user invented, and the
+   phrase alone was the address. Two people who chose the same one shared a
+   deck and silently merged into each other; and a common phrase could be
+   guessed, read, overwritten or deleted by anyone who tried it. A username
+   narrows the first and not the second, and making usernames unique would
+   need accounts, which this app does not have. A code of 20 random base-32
+   characters -- 100 bits -- cannot collide and cannot be guessed, and the
+   server does not change. Phrases already in use keep working, typed into the
+   same box, and a phrase user is offered a switch.
 
    Model: pull-merge-push. Every card carries a ts of its last grading, so
    merging two devices' decks keeps whichever review of each item happened
@@ -25,10 +35,33 @@ function syncSave() {
   try { localStorage.setItem(SYNC_KEY, JSON.stringify(SYNC)); } catch (e) {}
 }
 
-async function syncIdFromPhrase(phrase) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(phrase.trim()));
+async function sha256hex(text) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
 }
+async function syncIdFromPhrase(phrase) { return sha256hex(phrase.trim()); }
+
+/* Crockford's base 32: no I, L, O or U, so nothing is mistaken for 1 or 0,
+   and a code read aloud or copied by hand survives it. */
+const CODE_ABC = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+function newSyncCode() {
+  const r = crypto.getRandomValues(new Uint8Array(20));
+  return [...r].map(b => CODE_ABC[b & 31]).join("");
+}
+/* What was typed, as a bare 20-character code -- or null if it is not one.
+   Case, spaces, dashes and the KOINE prefix are forgiven, and the letters
+   people confuse with digits are read as the digits. */
+function codeFromInput(text) {
+  let t = (text || "").toUpperCase().replace(/^\s*KOINE/, "").replace(/[\s\-_.]/g, "");
+  t = t.replace(/[IL]/g, "1").replace(/O/g, "0").replace(/U/g, "V");
+  return /^[0-9A-HJKMNP-TV-Z]{20}$/.test(t) ? t : null;
+}
+function showCode(code) {
+  return "KOINE-" + code.match(/.{4}/g).join("-");
+}
+/* A domain prefix, so a code can never hash to the same address as a phrase
+   that happened to be the same twenty characters. */
+async function syncIdFromCode(code) { return sha256hex("koine-sync-code:" + code); }
 
 /* ---- merging ---- */
 /* A timestamp from a device with a wrong clock would otherwise win every
@@ -243,10 +276,20 @@ function syncCardHtml() {
   if (!SYNC_URL) return "";
   if (SYNC && SYNC.id) {
     const when = SYNC.last ? new Date(SYNC.last).toLocaleString() : "never";
+    const codePart = SYNC.code
+      ? `<p style="margin:10px 0 4px;font-size:.85rem">Your sync code — enter it on each device you study on:</p>
+         <div class="row" style="align-items:center">
+           <code id="syncCode" style="font-size:1rem;letter-spacing:.04em;padding:8px 10px;border-radius:9px;background:var(--surface-2);user-select:all">${showCode(SYNC.code)}</code>
+           <button class="btn ghost small" onclick="syncCopy()">Copy</button>
+         </div>
+         <p class="muted" style="font-size:.8rem">Keep it private: anyone with the code shares this progress.</p>`
+      : `<p class="muted" style="font-size:.85rem;margin:10px 0 6px">This device syncs with a phrase you chose. A phrase someone else might also choose can share or overwrite this deck, so a generated code is safer. Switching moves your progress to a new code; enter the new code on your other devices afterwards.</p>
+         <button class="btn small" onclick="syncSwitch()">Switch to a generated code</button>`;
     return `<div class="card">
       <h3 style="margin-top:0">Sync</h3>
-      <p class="muted" style="font-size:.85rem">On. Last synced: ${when}. The same phrase on another device shares this progress.</p>
-      <div class="row">
+      <p class="muted" style="font-size:.85rem">On. Last synced: ${when}.</p>
+      ${codePart}
+      <div class="row" style="margin-top:10px">
         <button class="btn small" onclick="syncNowClicked()">Sync now</button>
         <button class="btn ghost small" onclick="syncOff()">Turn off</button>
         <button class="btn ghost small" onclick="syncDelete()">Delete synced copy</button>
@@ -255,27 +298,69 @@ function syncCardHtml() {
   }
   return `<div class="card">
     <h3 style="margin-top:0">Sync across devices</h3>
-    <p class="muted" style="font-size:.85rem">Invent a private phrase and enter the same one on each device. Progress merges automatically — the phrase never leaves this device, only a fingerprint of it. Treat it like a password; anyone who knows it shares this deck.</p>
-    <input id="syncPhrase" type="password" aria-label="Your sync phrase, at least 8 characters"
-      placeholder="Your sync phrase (min 8 characters)"
+    <p class="muted" style="font-size:.85rem">Keep your progress the same on your phone and your computer. No account: this device makes a private code, and you enter it on the others. Only a fingerprint of the code ever leaves the device.</p>
+    <button class="btn small" onclick="syncStart()">Start sync on this device</button>
+    <p style="margin:14px 0 6px;font-size:.85rem">Already syncing on another device? Enter its code:</p>
+    <input id="syncPhrase" autocomplete="off" autocapitalize="characters" spellcheck="false"
+      aria-label="Your sync code from another device"
+      placeholder="KOINE-XXXX-XXXX-XXXX-XXXX-XXXX"
       style="width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font-size:.95rem;margin-bottom:9px">
-    <button class="btn small" onclick="syncOn()">Turn on sync</button></div>`;
+    <button class="btn ghost small" onclick="syncJoin()">Join</button></div>`;
 }
-async function syncOn() {
-  const el = document.getElementById("syncPhrase");
-  const phrase = (el.value || "").trim();
-  if (phrase.length < 8) { toast("Use at least 8 characters"); return; }
-  SYNC = { id: await syncIdFromPhrase(phrase), last: null };
+
+/* Turn sync on at an address, pulling first so a device joining an existing
+   deck merges into it rather than writing its own empty deck over it. */
+async function syncBegin(id, code, done) {
+  SYNC = { id, code: code || null, last: null };
   const pulled = await syncPull();
   if (pulled === "fail") {
     SYNC = null;                       // do not remember an id we never reached
     toast("Could not reach sync — check your connection and try again");
-    return;
+    return false;
   }
   syncSave();
   await syncPushNow();
   renderProgress();
-  toast(pulled === "ok" ? "Synced — progress from your other device merged in" : "Sync is on");
+  toast(done(pulled));
+  return true;
+}
+async function syncStart() {
+  const code = newSyncCode();
+  await syncBegin(await syncIdFromCode(code), code,
+    () => "Sync is on — copy the code to your other devices");
+}
+async function syncJoin() {
+  const typed = (document.getElementById("syncPhrase").value || "").trim();
+  const code = codeFromInput(typed);
+  if (code) {
+    await syncBegin(await syncIdFromCode(code), code, p =>
+      p === "ok" ? "Synced — progress from your other device merged in"
+                 : "Joined — nothing was stored under that code yet; check it matches");
+    return;
+  }
+  /* Not a code: a phrase from before codes existed, which still works. */
+  if (typed.length < 8) { toast("That is not a sync code — check it and try again"); return; }
+  await syncBegin(await syncIdFromPhrase(typed), null, p =>
+    p === "ok" ? "Synced with your phrase — a generated code is safer; see Sync"
+               : "Sync is on with your phrase");
+}
+/* A phrase user moves to a code: this device's progress, already merged with
+   the phrase's copy by the pull, is written under the new code. The phrase's
+   copy is left where it is, so a device still on the phrase is not cut off
+   before the new code is entered there; "Delete synced copy" can remove it. */
+async function syncSwitch() {
+  if (!SYNC || !SYNC.id) return;
+  const pulled = await syncPull();
+  if (pulled === "fail") { toast("Could not reach sync — nothing was changed"); return; }
+  const code = newSyncCode();
+  await syncBegin(await syncIdFromCode(code), code,
+    () => "Moved to a new code — enter it on your other devices");
+}
+function syncCopy() {
+  const text = showCode(SYNC.code);
+  (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+    .then(() => toast("Code copied"))
+    .catch(() => toast("Select the code and copy it"));
 }
 function syncOff() {
   SYNC = null;
@@ -293,7 +378,7 @@ async function syncDelete() {
   if (!SYNC_URL || !SYNC || !SYNC.id) return;
   if (!confirm("Delete the synced copy of your progress?\n\n"
              + "This device keeps everything it has. Other devices using the "
-             + "same phrase will stop finding it, and it cannot be undone."))
+             + "same code will stop finding it, and it cannot be undone."))
     return;
   try {
     const r = await fetch(SYNC_URL + "/sync/" + SYNC.id, { method: "DELETE" });

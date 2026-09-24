@@ -53,7 +53,7 @@
   <a class="back" href="/">&lsaquo; Everyday Koine</a>
 
   <h1>Privacy policy</h1>
-  <p class="date">Everyday Koine · last updated 7 September 2026</p>
+  <p class="date">Everyday Koine · last updated 24 September 2026</p>
 
   <div class="lede">
     <p><b>The app has no accounts and collects nothing about you.</b> There is
@@ -86,8 +86,8 @@
       XP, streak and badges, your settings, and any notes or alternative
       glosses you have typed against a word.</td></tr>
     <tr><th><code>koine.sync</code></th><td>Present only if you turn on sync.
-      Holds a fingerprint of your sync phrase — see below — and the time of
-      the last sync.</td></tr>
+      Holds your sync code, a fingerprint of it — see below — and the time
+      of the last sync.</td></tr>
   </table>
   <p>That is the whole of it. The app does not ask for or store your name,
   email address, phone number, location, contacts, photos, or any device or
@@ -105,9 +105,11 @@
 
   <h3>How it works</h3>
   <ul>
-    <li>You invent a private phrase and type it on each device.</li>
-    <li>Your device computes a SHA-256 hash of that phrase. <b>The phrase
-      itself is never sent anywhere</b> — only the hash leaves the device.</li>
+    <li>The first device makes a random sync code, twenty characters long,
+      and you type it on each of your other devices. (Before codes existed you
+      invented a phrase yourself; a phrase already in use still works.)</li>
+    <li>Your device computes a SHA-256 hash of the code. <b>The code itself is
+      never sent anywhere</b> — only the hash leaves the device.</li>
     <li>The hash is used as the address of a single record in a store run on
       Cloudflare. Your progress is written there and read back.</li>
     <li>What is sent is your progress data, as described above. Because it is
@@ -116,14 +118,16 @@
   </ul>
 
   <div class="lede warn">
-    <p><b>Worth understanding before you use it.</b> The hash of your phrase is
+    <p><b>Worth understanding before you use it.</b> The hash of your code is
     both the address of your record and the only thing protecting it. Anyone
-    who knows or can guess your phrase can read, overwrite or delete that
-    record.</p>
-    <p>Treat the phrase like a password: make it long, and do not reuse one you
-    use elsewhere. There is no account and so there is no password reset — that
-    is the trade for not having to sign up for anything. If you lose the
-    phrase, the record cannot be recovered.</p>
+    who has your code can read, overwrite or delete that record, so keep it
+    private. A generated code has 100 random bits and cannot practically be
+    guessed; a phrase you invented is only as safe as it is unusual, which is
+    why the app offers to switch a phrase to a code.</p>
+    <p>There is no account and so there is no password reset — that is the
+    trade for not having to sign up for anything. Your code is shown in
+    Progress&nbsp;→&nbsp;Sync on any device that uses it; if every such device
+    is lost, the record cannot be recovered.</p>
   </div>
 
   <h3>Deleting the synced copy</h3>
