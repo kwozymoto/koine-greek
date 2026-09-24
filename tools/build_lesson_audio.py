@@ -43,7 +43,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-CHAPTERS = [1, 2, 3, 4, 5, 6]
+CHAPTERS = [1, 2, 3, 4, 5, 6, 7]
 
 # The comment at the top of data/lesson_audio.js. It lives here because that
 # file is generated: the app's copy is overwritten on every build.
