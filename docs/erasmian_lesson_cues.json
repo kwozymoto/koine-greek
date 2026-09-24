@@ -857,5 +857,321 @@
   "tts": "/ˈha.ɡɪ.oi̯/",
   "chapter": 6,
   "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "ἔλυον",
+  "ipa": "ˈe.lu.on",
+  "tts": "/ˈɛ.lu.ɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλύομεν",
+  "ipa": "e.ˈlu.o.men",
+  "tts": "/ɛˈlu.ɒ.mɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυες",
+  "ipa": "ˈe.lu.es",
+  "tts": "/ˈɛ.lu.ɛs/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλύετε",
+  "ipa": "e.ˈlu.e.te",
+  "tts": "/ɛˈlu.ɛ.tɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυε",
+  "ipa": "ˈe.lu.e",
+  "tts": "/ˈɛ.lu.ɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυεν",
+  "ipa": "ˈe.lu.en",
+  "tts": "/ˈɛ.lu.ɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐ-",
+  "ipa": "ˈe",
+  "tts": "/ɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἤκουον",
+  "ipa": "ˈeː.kuː.on",
+  "tts": "/ˈeɪ.kuː.ɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "εὑ-",
+  "ipa": "ˈheu̯",
+  "tts": "/hju/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ηὕρισκον",
+  "ipa": "ˈheːu̯.ri.skon",
+  "tts": "/ˈhju.rɪ.skɒn/",
+  "chapter": 7,
+  "source": "converter",
+  "note": "ηυ said as ευ, as the diphthong grid teaches; the converter's /eɪu̯/ is not a sound the course teaches"
+ },
+ {
+  "greek": "εὕρισκον",
+  "ipa": "ˈheu̯.ri.skon",
+  "tts": "/ˈhju.rɪ.skɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐξέβαλεν",
+  "ipa": "e.ˈkse.ba.len",
+  "tts": "/ɛˈksɛ.ba.lɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "πνεύματα",
+  "ipa": "pə.ˈneu̯.ma.ta",
+  "tts": "/pəˈnju.ma.ta/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐκ-",
+  "ipa": "ˈek",
+  "tts": "/ɛk/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἄγγελοι",
+  "ipa": "ˈaŋ.ɡe.loi̯",
+  "tts": "/ˈaŋ.ɡɛ.loi̯/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "προσῆλθον",
+  "ipa": "pro.ˈseːl.θon",
+  "tts": "/prɒˈseɪl.θɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "διηκόνουν",
+  "ipa": "di.eː.ˈko.nuːn",
+  "tts": "/dɪ.eɪˈkɒ.nuːn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "αὐτῷ",
+  "ipa": "au̯.ˈtoː",
+  "tts": "/au̯ˈtoː/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "σα",
+  "ipa": "ˈsa",
+  "tts": "/ˈsa/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυσα",
+  "ipa": "ˈe.lu.sa",
+  "tts": "/ˈɛ.lu.sa/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλύσαμεν",
+  "ipa": "e.ˈlu.sa.men",
+  "tts": "/ɛˈlu.sa.mɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυσας",
+  "ipa": "ˈe.lu.sas",
+  "tts": "/ˈɛ.lu.sas/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐλύσατε",
+  "ipa": "e.ˈlu.sa.te",
+  "tts": "/ɛˈlu.sa.tɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυσε",
+  "ipa": "ˈe.lu.se",
+  "tts": "/ˈɛ.lu.sɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυσεν",
+  "ipa": "ˈe.lu.sen",
+  "tts": "/ˈɛ.lu.sɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔλυσαν",
+  "ipa": "ˈe.lu.san",
+  "tts": "/ˈɛ.lu.san/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "εἶπον",
+  "ipa": "ˈei̯.pon",
+  "tts": "/ˈeɪ.pɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦλθον",
+  "ipa": "ˈeːl.θon",
+  "tts": "/ˈeɪl.θɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔβαλον",
+  "ipa": "ˈe.ba.lon",
+  "tts": "/ˈɛ.ba.lɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "εἶδον",
+  "ipa": "ˈei̯.don",
+  "tts": "/ˈeɪ.dɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "στὰς",
+  "ipa": "ˈstas",
+  "tts": "/ˈstas/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐφώνησεν",
+  "ipa": "e.ˈfoː.neː.sen",
+  "tts": "/ɛˈfoː.neɪ.sɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "αὐτοὺς",
+  "ipa": "au̯.ˈtuːs",
+  "tts": "/au̯ˈtuːs/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "εἶπεν",
+  "ipa": "ˈei̯.pen",
+  "tts": "/ˈeɪ.pɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἴδια",
+  "ipa": "ˈi.di.a",
+  "tts": "/ˈi.dɪ.a/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦλθεν",
+  "ipa": "ˈeːl.θen",
+  "tts": "/ˈeɪl.θɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἔβαλλον",
+  "ipa": "ˈe.bal.lon",
+  "tts": "/ˈɛ.bal.lɒn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἤμην",
+  "ipa": "ˈeː.meːn",
+  "tts": "/ˈeɪ.meːn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦμεν",
+  "ipa": "ˈeː.men",
+  "tts": "/ˈeɪ.mɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦς",
+  "ipa": "ˈeːs",
+  "tts": "/ˈeɪs/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦτε",
+  "ipa": "ˈeː.te",
+  "tts": "/ˈeɪ.tɛ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἦσαν",
+  "ipa": "ˈeː.san",
+  "tts": "/ˈeɪ.san/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "τρίτη",
+  "ipa": "ˈtri.teː",
+  "tts": "/ˈtri.teɪ/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "ἐδίδασκεν",
+  "ipa": "e.ˈdi.da.sken",
+  "tts": "/ɛˈdi.da.skɛn/",
+  "chapter": 7,
+  "source": "converter"
+ },
+ {
+  "greek": "αὐτούς",
+  "ipa": "au̯.ˈtuːs",
+  "tts": "/au̯ˈtuːs/",
+  "chapter": 7,
+  "source": "converter"
  }
 ]

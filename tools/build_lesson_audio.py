@@ -417,6 +417,23 @@ SAY = {
         'dative against nominative, one silent letter apart'):
         "And {ἀγάπῃ}, with a small {spell:ι} beneath its last letter, against "
         "{ἀγάπη} with none: dative against nominative, one silent letter apart",
+    # Chapter 7. ηυ is taught to sound as ευ, so an augmented ηὕρισκον and an
+    # unaugmented εὕρισκον sound the same: the augment is in the letters.
+    (7, '<span class="gk">ηὕρισκον</span> at Mark 14:55 and Acts 7:11, beside '
+        'an unaugmented <span class="gk">εὕρισκον</span> at Luke 19:48.'):
+        "{ηὕρισκον}, spelled with {spell:η} at the front, at Mark 14:55 and "
+        "Acts 7:11, beside an unaugmented {εὕρισκον}, with {spell:ε}, at "
+        "Luke 19:48.",
+    (7, '<span class="gk">ἔβαλον</span> and <span class="gk">ἔβαλλον</span> '
+        'differ by one lambda'):
+        "{ἔβαλον}, with one lambda, and {ἔβαλλον}, with two, differ by one "
+        "lambda",
+    (7, 'And <span class="gk">ἔβαλον</span> against <span class="gk">ἔβαλλον</span> '
+        'is one lambda'):
+        "And {ἔβαλον}, with one lambda, against {ἔβαλλον}, with two, is one "
+        "lambda",
+    (7, 'a <span class="gk">σα</span> marker'):
+        "a {σα} marker, {spell:σα}",
     (4, 'the genitive plural is <span class="gk">-ων</span> in every gender'):
         "the genitive plural is {-ων}, spelled {spell:ων}, in every gender",
     # The subscript is silent, so saying the word says nothing about it.
@@ -811,7 +828,7 @@ def said_vowels(cue):
 # Every cell keeps its own words on the page, so the read-along highlights
 # each cell as it is said -- in the order it is SAID, which for a paradigm
 # is down the columns, not along the rows as the page stores it.
-TABLES_READ = {2, 3, 4, 5, 6}
+TABLES_READ = {2, 3, 4, 5, 6, 7}
 
 ROWS = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.S)
 CELL = re.compile(r"<(th|td)\b[^>]*>(.*?)</\1>", re.S)
@@ -977,7 +994,7 @@ def narrate_table(inner, ch, cues, missing):
 # Each Greek word keeps its page word, so the read-along lights each word as
 # it is said. Greek punctuation is said as its function, not its shape: the
 # question mark (;) as a question, the raised dot (·) as a pause.
-VERSES_READ = {3, 4, 5, 6}
+VERSES_READ = {3, 4, 5, 6, 7}
 
 ORDINAL = {"1": "First", "2": "Second", "3": "Third"}
 

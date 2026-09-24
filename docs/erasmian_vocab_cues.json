@@ -481,12 +481,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 568,
-  "tts": "/poi̯ˈɛ.oː/",
+  "tts": "/poi̯ˈɛʔoː/",
   "source": "ipa-batch1",
-  "duration_s": 1.228,
-  "take": "bVI1_29_b",
-  "note": "IPA, chosen by ear over the card's English respelling. Fraser: b is best but the έ sounds like an eta.",
-  "sha1": "c23f60f4deec"
+  "duration_s": 0.993,
+  "take": "bVI1s_29_b",
+  "note": "a glottal catch between the vowels, so the έ does not glide into the ο and come out 'ay'. Chosen by ear; Fraser suggests also trying /poi̯ˈɛh.oː/",
+  "sha1": "598f782c8436"
  },
  {
   "index": 30,
@@ -786,12 +786,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 343,
-  "tts": "ah del foss",
-  "source": "recued",
-  "duration_s": 1.529,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "0d467cef560c"
+  "tts": "/aˌdɛlˈfɒs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.228,
+  "take": "bVI1s_48_c",
+  "note": "IPA with a secondary stress on the second syllable: dotted, the dots were spoken; undotted, 'adel' ran together. Chosen by ear",
+  "sha1": "35522aeeb976"
  },
  {
   "index": 49,
@@ -930,12 +930,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 261,
-  "tts": "mathay teys",
-  "source": "batch2",
-  "duration_s": 1.487,
-  "take": "2026-09-10, Atlas",
-  "note": "the original's vowels with the first two pieces merged",
-  "sha1": "8938b90e8223"
+  "tts": "/maθei̯ˈteːs/",
+  "source": "ipa-batch1",
+  "duration_s": 1.959,
+  "take": "bVI1r_57_b",
+  "note": "IPA, chosen by ear over the card's English respelling, with the dot before the stress dropped: both dotted takes spoke it",
+  "sha1": "8c77e618d750"
  },
  {
   "index": 58,
