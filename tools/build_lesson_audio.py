@@ -559,7 +559,7 @@ def align(html, ch, cues, missing):
             for k, piece in enumerate(pieces):
                 if piece.strip():
                     add(piece, piece if ch in LEGACY else ENGLISH_RE.sub(
-                        lambda m: ENGLISH[m.group(1).lower()], piece))
+                        lambda m: english(m.group(1), ch), piece))
                 if k < len(greeks):
                     greek(greeks[k])
     return weld(spoken, page_words, pairs)
@@ -678,6 +678,24 @@ JOIN = {"→": "becomes", "+": "plus", "/": "or"}
 TOKEN = re.compile(r"(→|\+|/|,|\s+)")
 
 
+# From this chapter, a fragment that is one letter -- the augment ἐ- -- is
+# said by the letter's name. Said as a sound, "an /ɛ/ on the front" came out
+# as an eta (chapter 7, block 0), and a lone vowel has nothing around it to
+# steady it; the name is what the page is pointing at anyway.
+FRAGMENT_NAMES_FROM = 8
+
+
+def letter_fragment(word, cues):
+    if not cues.get("__fragment_names__"):
+        return None
+    body = word.strip("-‑")
+    if body == word:
+        return None
+    base = "".join(c for c in unicodedata.normalize("NFD", body)
+                   if not unicodedata.combining(c)).lower()
+    return LETTER_NAMES.get(exact(base)) if len(base) == 1 else None
+
+
 def sub_text(raw, cues, missing):
     """A run of Greek -> the cue or description an ear has already passed.
 
@@ -686,6 +704,9 @@ def sub_text(raw, cues, missing):
     word with no cue is reported by itself -- which is what makes the
     missing list something a generator can fill."""
     raw = raw.strip()
+    hit = letter_fragment(raw, cues)
+    if hit is not None:
+        return hit
     hit = lookup(raw, cues)
     if hit is not None:
         return hit
@@ -778,7 +799,19 @@ NARRATE = {"μή": "/ˈmeɪ/",
 # English words the voice says wrongly. "vocative" came out VOH-cative, the
 # vowel of "vocal" (chapter 4). One IPA token for one word, so a tap still
 # lands on it.
-ENGLISH = {"vocative": "/ˈvɒkətɪv/"}
+ENGLISH = {"vocative": "/ˈvɒkətɪv/",
+           # Said two ways across chapter 7's takes; Fraser chose AIR-ist
+           # (2026-09-24) for consistency. From chapter 8 -- see ENGLISH_FROM.
+           "aorist": "/ˈɛə.rɪst/"}
+# The chapter an entry starts in, where it came after chapters that were
+# recorded with the plain word and approved that way.
+ENGLISH_FROM = {"aorist": 8}
+
+
+def english(word, ch):
+    if ch < ENGLISH_FROM.get(word.lower(), 0):
+        return word
+    return ENGLISH[word.lower()]
 ENGLISH_RE = re.compile(r"\b(%s)\b" % "|".join(ENGLISH), re.I)
 
 
@@ -1084,6 +1117,7 @@ def later(cues, ch=0):
         c = {k: said_vowels(v) for k, v in c.items()}
     if ch >= IPA_PROSE_FROM:
         c = ipa_twins(c, ch)
+    c["__fragment_names__"] = ch >= FRAGMENT_NAMES_FROM
     for k, (start, v) in NARRATE_FROM.items():
         if ch >= start:
             c[exact(k)] = v
@@ -1094,7 +1128,11 @@ def later(cues, ch=0):
 # fault was heard had already been chosen with it. χάρις with chi as k still
 # had the a of "carry", where lesson 1 teaches the a of "father" (chapter 5,
 # block 10 -- kept, as the better of two takes).
-NARRATE_FROM = {"χάρις": (6, "/ˈkɑrɪs/")}
+NARRATE_FROM = {"χάρις": (6, "/ˈkɑrɪs/"),
+    # A test of four spellings in a narration sentence (2026-09-24): the h
+    # closing each syllable kept ἔρχεται's ε from turning into an eta, and is
+    # not itself heard. The other three forms tested were clean as they were.
+    "ἔρχεται": (8, "/ˈɛhr.kɛh.tai̯/")}
 
 
 def blocks_for(les, cues, missing):

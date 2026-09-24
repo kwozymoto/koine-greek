@@ -102,9 +102,14 @@ def changed_bulk():
             cwd=ROOT, capture_output=True, text=True, timeout=30)
         if prev.returncode or not prev.stdout.strip():
             return None
+        # MODIFIED files only. A file added in this release was never cached
+        # by any phone, so there is nothing to evict -- and counting added
+        # files passed at release time only because a new file is untracked
+        # until committed, then failed the next commit after it: chapter 7's
+        # sixteen new clips did exactly that.
         out = subprocess.run(
-            ["git", "diff", "--name-only", prev.stdout.strip(), "--",
-             "audio", "data/gnt"],
+            ["git", "diff", "--name-only", "--diff-filter=M",
+             prev.stdout.strip(), "--", "audio", "data/gnt"],
             cwd=ROOT, capture_output=True, text=True, timeout=30)
         if out.returncode:
             return None
