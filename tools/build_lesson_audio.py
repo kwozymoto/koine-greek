@@ -904,6 +904,8 @@ TABLE_ROWS = {
     # "In plain terms:" before every row said the heading five times over.
     (2, "What it tells us"): "{0}: {1}.",
     (5, "Preposition"): "{0}, with the {1}: {2}.",
+    # "+ Genitive:" read the plus sign aloud before every cell.
+    (8, "Prep"): "{0}. With the genitive: {1}. With the accusative: {2}.",
 }
 
 
@@ -1080,7 +1082,19 @@ def narrate_verse(inner, ref, ch, cues, missing):
         cues[soft(k)] = v
     t, pw, pr = align(inner, ch, cues, missing)
     if not t or pw != clean(TAG.sub(" ", inner)).split():
-        return None
+        # An elided word -- δι’, καθ’ -- is one word on the page and two
+        # pieces to align(), which cuts at the apostrophe. So the verse is
+        # taken a page word at a time instead, each said as its cue.
+        pw = clean(TAG.sub(" ", inner)).split()
+        spoken, pr = [], []
+        for w in pw:
+            pr.append(len(spoken))
+            said = sub_text(w.replace("’", "").replace("'", ""), cues,
+                            missing)
+            spoken.extend(said.split() or [w])
+        t = " ".join(spoken)
+        if not t:
+            return None
     # PACING (Fraser, 2026-09-24, from five pacings of Matthew 28:6): a comma
     # after every Greek word, so each is heard as a word, and where the verse
     # has punctuation of its own -- a comma or a raised dot -- an ellipsis,
