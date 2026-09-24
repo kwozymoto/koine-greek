@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v233';
+const VERSION = 'v234';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,47 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v234: IPA batch 2 (39 cards) and chapter 7's augment said by name. */
+  'audio/lessons/l07_00.mp3',
+  'audio/vocab/077_oudaios.mp3',
+  'audio/vocab/079_nomos.mp3',
+  'audio/vocab/081_grapho.mp3',
+  'audio/vocab/082_kosmos.mp3',
+  'audio/vocab/084_men.mp3',
+  'audio/vocab/085_cheir.mp3',
+  'audio/vocab/087_aggelos.mp3',
+  'audio/vocab/088_ochlos.mp3',
+  'audio/vocab/089_amartia.mp3',
+  'audio/vocab/090_ergon.mp3',
+  'audio/vocab/091_doxa.mp3',
+  'audio/vocab/093_ethnos.mp3',
+  'audio/vocab/096_esthio.mp3',
+  'audio/vocab/097_aulos.mp3',
+  'audio/vocab/099_etros.mp3',
+  'audio/vocab/100_allos.mp3',
+  'audio/vocab/101_protos.mp3',
+  'audio/vocab/102_istemi.mp3',
+  'audio/vocab/103_ostis.mp3',
+  'audio/vocab/105_uper.mp3',
+  'audio/vocab/107_nun.mp3',
+  'audio/vocab/108_sarx.mp3',
+  'audio/vocab/111_prophetes.mp3',
+  'audio/vocab/118_zao.mp3',
+  'audio/vocab/121_zoe.mp3',
+  'audio/vocab/124_amen.mp3',
+  'audio/vocab/125_nekros.mp3',
+  'audio/vocab/126_sun.mp3',
+  'audio/vocab/127_doulos.mp3',
+  'audio/vocab/130_archiereus.mp3',
+  'audio/vocab/132_thanatos.mp3',
+  'audio/vocab/134_paradidomi.mp3',
+  'audio/vocab/137_zeteo.mp3',
+  'audio/vocab/140_ekklesia.mp3',
+  'audio/vocab/141_idios.mp3',
+  'audio/vocab/144_oikos.mp3',
+  'audio/vocab/146_osos.mp3',
+  'audio/vocab/149_olos.mp3',
+  'audio/vocab/150_parakaleo.mp3',
   /* v232: the last three cards of IPA batch 1. */
   'audio/vocab/029_poieo.mp3',
   'audio/vocab/048_adelphos.mp3',

@@ -1253,11 +1253,13 @@
   "pos": "adj",
   "tier": 1,
   "freq": 195,
-  "tts": "yoodaios",
-  "source": "locked",
-  "duration_s": 1.462,
+  "tts": "/ɪuːˈdai̯.ɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.463,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'ee oo deye os' was 3.81s and spelled out; yoo stands in for ιου so it binds. Chosen by ear from several takes.",
-  "sha1": "55a85018c21e"
+  "sha1": "e9ebb22ae071",
+  "take": "bVI2_77_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 78,
@@ -1284,12 +1286,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 194,
-  "tts": "nommoss",
-  "source": "batch5",
-  "duration_s": 0.993,
-  "take": "2026-09-11, Atlas",
-  "note": "'no' is an English word with the /ou/ of gold, so the stressed omicron read long. Doubling the mu closes the syllable. Passed in batch 1, before that question was being asked.",
-  "sha1": "d32372c50c18"
+  "tts": "/ˈnɒ.mɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "take": "bVI2_79_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "bc2fc5a30b4c"
  },
  {
   "index": 80,
@@ -1316,10 +1318,12 @@
   "pos": "verb",
   "tier": 1,
   "freq": 191,
-  "tts": "grah foh",
-  "source": "batch5",
-  "duration_s": 1.115,
-  "sha1": "b78b614c3334"
+  "tts": "/ˈɡra.foː/",
+  "source": "ipa-batch2",
+  "duration_s": 0.914,
+  "sha1": "ddb89a7612d7",
+  "take": "bVI2_81_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 82,
@@ -1330,12 +1334,12 @@
   "pos": "noun",
   "tier": 1,
   "freq": 186,
-  "tts": "ko smoss",
-  "source": "recued",
-  "duration_s": 1.429,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "1521c2c22efb"
+  "tts": "/ˈkɒs.mɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "take": "bVI2_82_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "1c2f46235184"
  },
  {
   "index": 83,
@@ -1362,10 +1366,12 @@
   "pos": "particle",
   "tier": 2,
   "freq": 179,
-  "tts": "men",
-  "source": "batch8",
-  "duration_s": 0.687,
-  "sha1": "3ca628ac82b6"
+  "tts": "/ˈmɛn/",
+  "source": "ipa-batch2",
+  "duration_s": 0.758,
+  "sha1": "7945fd350e7a",
+  "take": "bVI2_84_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 85,
@@ -1376,10 +1382,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 177,
-  "tts": "khayr",
-  "source": "batch8",
-  "duration_s": 0.697,
-  "sha1": "5ee0e7072d6d"
+  "tts": "/ˈkei̯r/",
+  "source": "ipa-batch2",
+  "duration_s": 0.679,
+  "sha1": "8fdbe03307fb",
+  "take": "bVI2_85_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 86,
@@ -1405,12 +1413,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 175,
-  "tts": "ahng geh loss",
-  "source": "recued",
-  "duration_s": 1.529,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "69ef0cdbf5a3"
+  "tts": "/ˈaŋ.ɡɛ.lɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.384,
+  "take": "bVI2_87_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "4005cadb4217"
  },
  {
   "index": 88,
@@ -1421,10 +1429,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 175,
-  "tts": "oh khloss",
-  "source": "locked",
-  "duration_s": 1.347,
-  "sha1": "dc4cbf29c27c"
+  "tts": "/ˈɒ.klɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "sha1": "3de92b6f7bd3",
+  "take": "bVI2_88_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 89,
@@ -1435,12 +1445,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 173,
-  "tts": "hahmar teeah",
-  "source": "batch2",
-  "duration_s": 1.272,
-  "take": "2026-09-10, Atlas",
-  "note": "four chunks read as four words; its h is a real rough breathing and stays",
-  "sha1": "30416993f316"
+  "tts": "/hamarˈti.a/",
+  "source": "ipa-batch2",
+  "duration_s": 1.228,
+  "take": "bVI2_89_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "da77e9c6a75d"
  },
  {
   "index": 90,
@@ -1451,12 +1461,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 169,
-  "tts": "er gon",
-  "source": "recued",
-  "duration_s": 0.965,
-  "take": "2026-09-09, Atlas",
-  "note": "was 'air gone'. Black: epsilon is e as in met, so er",
-  "sha1": "c2b04ed718a7"
+  "tts": "/ˈɛr.ɡɒn/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "take": "bVI2_90_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "30e388eb7402"
  },
  {
   "index": 91,
@@ -1467,11 +1477,13 @@
   "pos": "noun",
   "tier": 2,
   "freq": 166,
-  "tts": "doksah",
-  "source": "locked",
-  "duration_s": 1.079,
+  "tts": "/ˈdɒ.ksa/",
+  "source": "ipa-batch2",
+  "duration_s": 0.914,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "sha1": "2fe202cbdf00"
+  "sha1": "a0a78ac676fa",
+  "take": "bVI2_91_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 92,
@@ -1498,12 +1510,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 162,
-  "tts": "ehth noss",
-  "source": "recued",
-  "duration_s": 1.285,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "87ad368e8b56"
+  "tts": "/ˈɛθ.nɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "take": "bVI2_93_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e83d331ad54a"
  },
  {
   "index": 94,
@@ -1546,10 +1558,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 158,
-  "tts": "es theo",
-  "source": "locked",
-  "duration_s": 0.97,
-  "sha1": "55d5da8330de"
+  "tts": "/ɛsˈθi.oː/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "sha1": "dae04e025c27",
+  "take": "bVI2_96_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 97,
@@ -1560,12 +1574,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 158,
-  "tts": "pow loss",
-  "source": "batch5",
-  "duration_s": 1.071,
-  "sha1": "7c33f0356a40",
-  "take": "2026-09-15, Atlas (b5_97_oss)",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "/ˈpau̯.lɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
+  "sha1": "b613bbf76f76",
+  "take": "bVI2_97_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 98,
@@ -1592,13 +1606,13 @@
   "pos": "noun",
   "tier": 2,
   "freq": 156,
-  "tts": "petross",
-  "source": "batch8",
-  "duration_s": 0.946,
+  "tts": "/ˈpɛ.trɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.836,
   "verdict": "re-recorded 2026-09-03 (Atlas): bound into one word — the spaced form was read as separate beats. Chosen by ear from several takes.",
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "b346cf9b3a7c"
+  "take": "bVI2_99_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "2343ea1c327a"
  },
  {
   "index": 100,
@@ -1609,12 +1623,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 155,
-  "tts": "ahl loss",
-  "source": "recued",
-  "duration_s": 1.085,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "075411d86cad"
+  "tts": "/ˈal.lɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
+  "take": "bVI2_100_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "bb5290cb44be"
  },
  {
   "index": 101,
@@ -1625,13 +1639,13 @@
   "pos": "adj",
   "tier": 2,
   "freq": 155,
-  "tts": "protoss",
-  "source": "recued",
-  "duration_s": 0.845,
+  "tts": "/ˈproː.tɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
   "verdict": "re-recorded 2026-09-03 (Atlas): a closed 'prohtos' came out pro-ho-tos. Chosen by ear from several takes.",
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "a31ab022b039"
+  "take": "bVI2_101_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "bfac58ccc1eb"
  },
  {
   "index": 102,
@@ -1642,10 +1656,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 154,
-  "tts": "hee stay mee",
-  "source": "batch5",
-  "duration_s": 1.227,
-  "sha1": "cc805ea48c87"
+  "tts": "/ˈhɪ.stei̯.mɪ/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "sha1": "4d62ed2daf12",
+  "take": "bVI2_102_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 103,
@@ -1656,12 +1672,12 @@
   "pos": "pron",
   "tier": 2,
   "freq": 153,
-  "tts": "hoss tiss",
-  "source": "batch6",
-  "duration_s": 1.228,
-  "sha1": "f128b8350f13",
-  "take": "2026-09-15, Atlas (b6c_103_a)",
-  "note": "follows πίστις, reusing the approved `tiss` whole"
+  "tts": "/ˈhɒ.stɪs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
+  "sha1": "9402f0b26a12",
+  "take": "bVI2_103_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 104,
@@ -1688,10 +1704,12 @@
   "pos": "prep",
   "tier": 2,
   "freq": 150,
-  "tts": "hoo pehr",
-  "source": "batch7",
-  "duration_s": 0.96,
-  "sha1": "97e72feb7e85"
+  "tts": "/huˈpɛr/",
+  "source": "ipa-batch2",
+  "duration_s": 0.758,
+  "sha1": "ce28da0aa0da",
+  "take": "bVI2_105_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 106,
@@ -1718,10 +1736,12 @@
   "pos": "adv",
   "tier": 2,
   "freq": 147,
-  "tts": "noon",
-  "source": "batch8",
-  "duration_s": 0.731,
-  "sha1": "cc57212b3e40"
+  "tts": "/ˈnuːn/",
+  "source": "ipa-batch2",
+  "duration_s": 0.758,
+  "sha1": "16534f273343",
+  "take": "bVI2_107_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 108,
@@ -1732,12 +1752,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 147,
-  "tts": "sarks",
-  "source": "batch8",
-  "duration_s": 0.955,
-  "take": "2026-09-10, Atlas",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "5c03c7fb1de7"
+  "tts": "/ˈsarks/",
+  "source": "ipa-batch2",
+  "duration_s": 0.914,
+  "take": "bVI2_108_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "fc9870080871"
  },
  {
   "index": 109,
@@ -1780,12 +1800,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 144,
-  "tts": "praw fey teys",
-  "source": "batch2",
-  "duration_s": 1.455,
-  "take": "2026-09-10, Atlas",
-  "note": "the omicron is short -- prop, not professional -- and 'aw' is the spelling that holds it",
-  "sha1": "1a90d6fb3d93"
+  "tts": "/prɒˈfei̯.teːs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.384,
+  "take": "bVI2_111_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "83ccf092937c"
  },
  {
   "index": 112,
@@ -1892,12 +1912,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 140,
-  "tts": "zah oh",
-  "source": "batch8",
-  "duration_s": 1.149,
-  "sha1": "ec8cddc69a23",
-  "take": "2026-09-15, Atlas (b8b_118_a)",
-  "note": "the same ζ- fix"
+  "tts": "/ˈʣa.oː/",
+  "source": "ipa-batch2",
+  "duration_s": 1.306,
+  "sha1": "268400eac358",
+  "take": "bVI2_118_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 119,
@@ -1940,11 +1960,13 @@
   "pos": "noun",
   "tier": 2,
   "freq": 135,
-  "tts": "zoh eh",
-  "source": "locked",
-  "duration_s": 1.334,
+  "tts": "/ʣoːˈei̯/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'zohay' bound but said zoh-high; the initial dz was dropped so Atlas would not spell Z. Chosen by ear from several takes.",
-  "sha1": "eb5a919f29ee"
+  "sha1": "8386f3915ac9",
+  "take": "bVI2_121_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 122,
@@ -1987,10 +2009,12 @@
   "pos": "particle",
   "tier": 2,
   "freq": 129,
-  "tts": "ah mayn",
-  "source": "batch7",
-  "duration_s": 1.172,
-  "sha1": "bb2334563b09"
+  "tts": "/aˈmei̯n/",
+  "source": "ipa-batch2",
+  "duration_s": 0.993,
+  "sha1": "7a5f9827b32d",
+  "take": "bVI2_124_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 125,
@@ -2001,12 +2025,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 128,
-  "tts": "neh kross",
-  "source": "recued",
-  "duration_s": 1.271,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "4447a071e5e6"
+  "tts": "/nɛˈkrɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.149,
+  "take": "bVI2_125_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "39660640c8e0"
  },
  {
   "index": 126,
@@ -2017,10 +2041,12 @@
   "pos": "prep",
   "tier": 2,
   "freq": 128,
-  "tts": "soon",
-  "source": "locked",
-  "duration_s": 0.582,
-  "sha1": "fca11a5a62fa"
+  "tts": "/ˈsun/",
+  "source": "ipa-batch2",
+  "duration_s": 0.758,
+  "sha1": "77e05eb87710",
+  "take": "bVI2_126_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 127,
@@ -2031,12 +2057,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 124,
-  "tts": "doo loss",
-  "source": "recued",
-  "duration_s": 1.292,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "0e3374fb9042"
+  "tts": "/ˈduː.lɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.149,
+  "take": "bVI2_127_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "9bf1676fd43e"
  },
  {
   "index": 128,
@@ -2078,12 +2104,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 122,
-  "tts": "ahr khee ehrews",
-  "source": "batch7",
-  "duration_s": 1.881,
-  "sha1": "4e3d356fc504",
-  "take": "2026-09-15, Atlas (b7b_130_b)",
-  "note": "four syllables: ἀρχι + ἱερεύς is /ar.xi.e.'reu̯s/, and ι and ε do not combine. Closing the last junction fixed it without merging a beat"
+  "tts": "/arkɪɛˈrjus/",
+  "source": "ipa-batch2",
+  "duration_s": 1.149,
+  "sha1": "351e057d7b86",
+  "take": "bVI2_130_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 131,
@@ -2110,12 +2136,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 120,
-  "tts": "thah nah toss",
-  "source": "recued",
-  "duration_s": 1.679,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "ccd41680cbcc"
+  "tts": "/ˈθa.na.tɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.384,
+  "take": "bVI2_132_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "de1c0549aef9"
  },
  {
   "index": 133,
@@ -2142,12 +2168,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 119,
-  "tts": "pah rah di doh mee",
-  "source": "batch6",
-  "duration_s": 1.95,
-  "take": "2026-09-10, Atlas",
-  "note": "short iota is 'di', not the machine vowel",
-  "sha1": "e7e5ef584c56"
+  "tts": "/paraˈdi.doː.mɪ/",
+  "source": "ipa-batch2",
+  "duration_s": 1.541,
+  "take": "bVI2_134_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "f94ba6200172"
  },
  {
   "index": 135,
@@ -2190,12 +2216,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 117,
-  "tts": "zay teh oh",
-  "source": "batch8",
-  "duration_s": 1.62,
-  "sha1": "0065c90828e1",
-  "take": "2026-09-15, Atlas (b8b_137_a)",
-  "note": "ζ word-initial takes `z`, not `dz` -- settled by ear in the 511-817 round and recorded in the guide's header. ζωή got the fix; four other ζ- words never did"
+  "tts": "/ʣei̯ˈtɛ.oː/",
+  "source": "ipa-batch2",
+  "duration_s": 1.463,
+  "sha1": "5e168221faac",
+  "take": "bVI2_137_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 138,
@@ -2238,13 +2264,15 @@
   "pos": "noun",
   "tier": 2,
   "freq": 114,
-  "tts": "ek klay see ah",
-  "source": "fix12",
-  "duration_s": 1.713,
+  "tts": "/ɛkklei̯ˈsi.a/",
+  "source": "ipa-batch2",
+  "duration_s": 1.149,
   "verdict": "re-recorded 2026-09-03 from the corrected cue; kept by ear",
   "engine_tts": "ekklayseeah",
   "format": "22050 mono 64k, pad_tail=0.22",
-  "sha1": "394588cf3da4"
+  "sha1": "1cc7c9f5f208",
+  "take": "bVI2_140_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 141,
@@ -2255,12 +2283,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 114,
-  "tts": "ee dee oss",
-  "source": "recued",
-  "duration_s": 1.712,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "1898154ac918"
+  "tts": "/ˈi.dɪ.ɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.463,
+  "take": "bVI2_141_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "903b915e115e"
  },
  {
   "index": 142,
@@ -2303,12 +2331,12 @@
   "pos": "noun",
   "tier": 2,
   "freq": 114,
-  "tts": "oy koss",
-  "source": "recued",
-  "duration_s": 0.986,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "75a9d06a25fb"
+  "tts": "/ˈoi̯.kɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.228,
+  "take": "bVI2_144_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "7caad5a7704d"
  },
  {
   "index": 145,
@@ -2335,12 +2363,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 110,
-  "tts": "ho soss",
-  "source": "batch5",
-  "duration_s": 1.149,
-  "sha1": "d068aafc3a5d",
-  "take": "2026-09-15, Atlas (b5_146_oss)",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "/ˈhɒ.sɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 0.914,
+  "sha1": "37ab429f6f8f",
+  "take": "bVI2_146_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 147,
@@ -2383,12 +2411,12 @@
   "pos": "adj",
   "tier": 2,
   "freq": 109,
-  "tts": "ho loss",
-  "source": "batch5",
-  "duration_s": 1.149,
-  "sha1": "daff78b396a3",
-  "take": "2026-09-15, Atlas (b5_149_oss)",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued"
+  "tts": "/ˈhɒ.lɒs/",
+  "source": "ipa-batch2",
+  "duration_s": 1.071,
+  "sha1": "3e897d732a05",
+  "take": "bVI2_149_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 150,
@@ -2399,10 +2427,12 @@
   "pos": "verb",
   "tier": 2,
   "freq": 109,
-  "tts": "pah rah kah leh oh",
-  "source": "batch7",
-  "duration_s": 2.437,
-  "sha1": "933e3b039817"
+  "tts": "/parakaˈlɛ.oː/",
+  "source": "ipa-batch2",
+  "duration_s": 1.776,
+  "sha1": "f6c64968d052",
+  "take": "bVI2_150_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 151,

@@ -682,18 +682,30 @@ TOKEN = re.compile(r"(→|\+|/|,|\s+)")
 # said by the letter's name. Said as a sound, "an /ɛ/ on the front" came out
 # as an eta (chapter 7, block 0), and a lone vowel has nothing around it to
 # steady it; the name is what the page is pointing at anyway.
-FRAGMENT_NAMES_FROM = 8
+# Moved back from 8 to 3 at Fraser's word (2026-09-24): every augment said
+# the same way, earlier chapters re-recorded where it changes them -- which
+# among the shipped chapters is only chapter 7.
+FRAGMENT_NAMES_FROM = 3
 
 
 def letter_fragment(word, cues):
     if not cues.get("__fragment_names__"):
         return None
-    body = word.strip("-‑")
-    if body == word:
+    # A PREFIX only -- ἐ-, the augment, which sits at the front. A one-letter
+    # ending (-ε, -η) is a sound the sentence is about: "ends in /ɛ/".
+    if not word.endswith(("-", "‑")) or word.startswith(("-", "‑")):
         return None
+    body = word.strip("-‑")
     base = "".join(c for c in unicodedata.normalize("NFD", body)
                    if not unicodedata.combining(c)).lower()
-    return LETTER_NAMES.get(exact(base)) if len(base) == 1 else None
+    if len(base) != 1 or exact(base) not in LETTER_NAMES:
+        return None
+    name = LETTER_NAMES[exact(base)]
+    # ἑ- is an augment with a ROUGH breathing, and its name alone would drop
+    # the h the page shows.
+    if "̔" in unicodedata.normalize("NFD", body):
+        name += " with a rough breathing"
+    return name
 
 
 def sub_text(raw, cues, missing):
@@ -704,6 +716,10 @@ def sub_text(raw, cues, missing):
     word with no cue is reported by itself -- which is what makes the
     missing list something a generator can fill."""
     raw = raw.strip()
+    if raw in JOIN:
+        return JOIN[raw]                # an arrow or a plus, said
+    if not re.search(r"[Ͱ-Ͽἀ-῿]", raw):
+        return raw                      # a mark, not a word: nothing to cue
     hit = letter_fragment(raw, cues)
     if hit is not None:
         return hit
@@ -723,6 +739,11 @@ def sub_text(raw, cues, missing):
         # -σι(ν): the bracketed nu is optional, and read as a word it is
         # nothing; the ending is said with it.
         word = piece.replace("(", "").replace(")", "")
+        # A mark inside a run of Greek -- a verse's own "…" -- is not a word
+        # and has no cue to find; it is said as the pause it is.
+        if not re.search(r"[Ͱ-Ͽἀ-῿]", word):
+            out.append(word)
+            continue
         hit = lookup(word, cues)
         if hit is None:
             gap.append(word)
@@ -861,7 +882,7 @@ def said_vowels(cue):
 # Every cell keeps its own words on the page, so the read-along highlights
 # each cell as it is said -- in the order it is SAID, which for a paradigm
 # is down the columns, not along the rows as the page stores it.
-TABLES_READ = {2, 3, 4, 5, 6, 7}
+TABLES_READ = {2, 3, 4, 5, 6, 7, 8}
 
 ROWS = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.S)
 CELL = re.compile(r"<(th|td)\b[^>]*>(.*?)</\1>", re.S)
@@ -1027,7 +1048,7 @@ def narrate_table(inner, ch, cues, missing):
 # Each Greek word keeps its page word, so the read-along lights each word as
 # it is said. Greek punctuation is said as its function, not its shape: the
 # question mark (;) as a question, the raised dot (·) as a pause.
-VERSES_READ = {3, 4, 5, 6, 7}
+VERSES_READ = {3, 4, 5, 6, 7, 8}
 
 ORDINAL = {"1": "First", "2": "Second", "3": "Third"}
 
