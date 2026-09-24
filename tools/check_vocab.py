@@ -776,37 +776,24 @@ IPA_HEARD = {
          "was standing apart as the letters K and A — \"anti ah o k e a\" — "
          "and χρεία `/ˈkrei̯a/` is approved carrying that exact ending "
          "undotted",
-    812: "the pre-stress dot removed by the screen, on a cue that finally "
-         "reached the open epsilon. It had failed a round earlier as *may* "
-         "because settled.py was holding it at a pre-rule form",
     711: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
-    720: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     743: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
-    759: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     764: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
-    765: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     771: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     775: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     792: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     796: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     803: "the HELPER VOWEL for the `sfr` cluster. Without it the word spelled itself out on about one roll in three — English has no word-initial /sfr/ and the cluster simply defeats the voice. The letter-name test missed it because the run breaks at two letters; the beat count caught it, which is the third time this session the two tests have covered each other. `sf` has joined the clusters the screen knows English cannot open",
-    809: "the dots the screen took out, carried into this round by settled.py rather than regenerated. NOTE that settled.py now holds EAR approvals only — letting screen fixes count as settled froze forty-eight cues against the 25O inventory and the v209 chi rule, and ten of them came back failing for faults those rules had already fixed",
     556: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     587: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     620: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
-    621: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
-    634: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
-    673: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     675: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
-    700: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     701: "the dots removed by the screen in an earlier round, and carried into this one by settled.py rather than regenerated — which is the whole point of that file: the sampler used to draw the rule's raw output and re-ask about faults already fixed",
     499: "the omega written as a DIPHTHONG, and it may be the answer for every "
          "-\u03b1\u03c9 verb. Dedotted it read as the English word *now*, the two "
          "vowels fusing with nothing left to keep them apart; restoring the "
          "hiatus dot brought the omega back and the dot then spoke aloud. "
          "`o\u028a` separates them with no dot at all",
-    504: "the pre-stress dot removed, by the screen. Its eta keeps a single "
-         "ay-pair, which 25O showed is the limit",
     626: "the SECONDARY STRESS on the glide, which has now fixed it four "
          "times \u2014 \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd, \u03b5\u1f50\u03bb\u03bf\u03b3\u03af\u03b1, \u03b5\u1f50\u03bb\u03bf\u03b3\u03ad\u03c9 and this. No epsilon or eta in "
          "the word: the fault was `ju` splitting after a cluster, *tree ew* "
@@ -823,24 +810,19 @@ IPA_HEARD = {
          "`i` and `o` are ordinary Greek syllables and would fire constantly",
     462: "fully dotless. It was settled that way in the deep-dedot pass and this round asked about it AGAIN, because the sampler drew the converter's raw output and nothing read the reports back — the third time a solved fault has been rediscovered. settled.py now collects every settled cue and the samplers read it",
     554: "fully dotless. It was settled that way in the deep-dedot pass and this round asked about it AGAIN, because the sampler drew the converter's raw output and nothing read the reports back — the third time a solved fault has been rediscovered. settled.py now collects every settled cue and the samplers read it",
-    332: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     355: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
+    29: "a GLOTTAL CATCH between ε and ο. With the hiatus dot, and with "
+        "two other spellings, the έ glided into the ο and came out *ay*; "
+        "the catch keeps them apart. Chosen by ear in IPA batch 1, 2026-09-24",
+    48: "a SECONDARY STRESS on the second syllable. Dotted, both takes spoke "
+        "the dots; dedotted, *adel* ran together. The mark that fixed "
+        "εὐαγγέλιον gives the syllable its own beat without a dot. "
+        "Chosen by ear in IPA batch 1, 2026-09-24",
     360: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     426: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     433: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     448: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
-    451: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
-    463: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
-    466: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
-    551: "the pre-stress dots removed, by the screen, after the string said its dot aloud",
     52: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
-    65: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
-    92: "the pre-stress dot removed, by the screen, after the string said its dot aloud. It also found a hole in the SCREEN "
-        "rather than in itself: the dedotted cue decoded `basilaɪja`, which "
-        "is the word said correctly, and was flagged for a beat the hiatus "
-        "tolerance should have allowed — the hiatus here sits across `ei̯` and "
-        "`a`, and the test looked for two adjacent VOWELS, which a diphthong's "
-        "glide is not",
     211: "the pre-stress dot removed, by the screen, after the string said its dot aloud",
     379: "the SECONDARY STRESS, and the THIRD word it has fixed. A bare `ju` "
          "sounds its j on its own; \u03b5\u1f50\u03b1\u03b3\u03b3\u03ad\u03bb\u03b9\u03bf\u03bd needed the mark after four rounds, "
@@ -863,9 +845,6 @@ IPA_HEARD = {
     780: "fully dotless: the pre-stress dots were not enough, the dot behind the stress speaking too. It had spelled itself out to twelve "
          "letters, D-I-A-M-A-R-T-U-R-O-M-A-Y",
     786: "fully dotless: the pre-stress dots were not enough, the dot behind the stress speaking too",
-    814: "the pre-stress dots removed, by the screen, after the string said its dot aloud. With the dot in, the first syllable shut "
-         "hard enough to sound like *hock* \u2014 \"I'm not sure where the k is "
-         "coming from\"",
     33: "THE SHUT ɪ, per-word — and the first limit this project has hit "
         "in its SOURCE rather than in its rules. \"This sounds like tees "
         "rather than tis, an i sound as in hiss.\" τις is transcribed `ˈtis` and "
@@ -883,27 +862,7 @@ IPA_HEARD = {
     396: "the pre-stress dot removed, by the screen, after the string said its dot on two of three rolls. Approved with a note — \"A is "
          "good, but there is a bit of a delay between θe and mɪ\": the dot "
          "that remains, doing slightly too much work",
-    694: "THE OPEN EPSILON, and it went in before an ear heard the converter "
-         "output at all, because that output had already come back twice with "
-         "the unstressed e between n and r elided away entirely — `feɪnɹɑːs` "
-         "— and no dot in the cue to blame. NOT A RULE: ἱερεύς `/hɪeˈrjus/` ships a "
-         "plain e before a stressed r with an ear's approval, and the only "
-         "thing separating them is a consonant before the vowel rather than "
-         "a vowel",
     816: "the pre-stress dot removed, by the screen, after the string said its dot on two of three rolls",
-    498: "the two pre-stress dots removed, the hiatus kept. \"All spelled\" "
-         "with them in — five syllables and three dots, which is the shape "
-         "that spelled in δεξιός, ἀριθμός and εὐαγγέλιον. The fuller dedot "
-         "was offered beside this one and was not needed",
-    215: "the pre-stress dot removed — and this is the word that ended a "
-         "practice this project had used for twenty-five rounds. The screen "
-         "caught the string saying its dot aloud, a re-roll cleared it, as the "
-         "discipline had always said, and the CLEARED take went to an ear that "
-         "heard the dot anyway. Measured afterwards: of 18 strings a re-roll "
-         "had cleared, 8 said their dot within three more rolls, and of 20 "
-         "that had never flagged, 3 said it too. A re-roll tells a transient "
-         "beat-count mismatch from a real one and can never clear a string "
-         "already caught; one detection condemns it",
     728: "the pre-stress dot removed, and the word that sharpened the "
          "detector. It said its dot on ALL THREE rolls — `hiːdɑːkʌtɑːn` — "
          "decoded as `dɑː` without the t, which the literal `dat` test could "
@@ -947,17 +906,6 @@ IPA_HEARD = {
          "had ever been put against its `dz` alternative, and when this one "
          "was, `dz` won. The tie bar is load-bearing. The six are worth "
          "revisiting, the way the composed cues were",
-    598: "THE PLAIN k at the FRONT of a word, which the medial-chi rule had "
-         "never been asked for. `x` before a front vowel reads as the English "
-         "name of the letter ξ, said /zaɪ/ — which is the z that was heard, and "
-         "the letter-name fault a third time after ἀφίημι and εὐαγγέλιον. "
-         "Word-initial `x` is approved twice and only before `a` (χάρις) and "
-         "before `r` (χρεία). The aspirated `kʰ` was offered beside this and "
-         "was not needed: \"A and B are both great\"",
-    112: "the first dot removed, by the screen. It was read aloud as the "
-         "WORD \"dot\" through two takes of the converter's own output. The "
-         "hiatus dot at the end stays, which is the one this pack has "
-         "evidence for",
     113: "FIVE ROUNDS, and what settled it was reading the cue as English "
          "rather than as sounds. `e\u02d0.m\u026a` IS the English letter names E, M, "
          "I, which is why three rearrangements of the dots never touched the "
@@ -990,12 +938,6 @@ IPA_HEARD = {
          "read aloud as the WORD \"dot\" through two takes of the converter's "
          "own output, so the string was wrong and not the roll. `s.s` is "
          "the consonant-consonant shape the spoken dots favour",
-    646: "BOTH pre-stress dots removed, by the screen \u2014 \"ah dot krah dot "
-         "boostia\" through two takes. Only the hiatus at the end keeps its "
-         "dot, which is the one this pack has evidence for. This is the "
-         "word that argues the converter's pre-stress rule should reach "
-         "further back than one syllable: \u1f00\u03c0\u03bf\u03b8\u03bd\u1fc4\u03c3\u03ba\u03c9 and \u1f00\u03c0\u03bf\u03ba\u03c4\u03b5\u03af\u03bd\u03c9 are "
-         "both approved with nothing at all before the stress",
     378: "fully dotless, and the screen drove both removals. Its first dot was "
          "read aloud as the word \"dot\" on two takes; taking only that one "
          "out still screened badly, so the second went too and that is the "
@@ -1008,10 +950,6 @@ IPA_HEARD = {
          "Sixth word to do that and the FIRST drawn at random rather than "
          "chosen, which is what says the rate in the general population is "
          "not negligible and a bulk run cannot skip the screen",
-    521: "dotless, and the screen drove it: the dotted form read its dot "
-         "aloud as the word \"dot\" through two re-rolls. One of seventeen "
-         "the bulk pass fixed the same way, and the only one of those that "
-         "an ear has since approved",
     # SEVEN WORDS HAVE NOW SPELLED THEMSELVES OUT from one shape — a bare
     # vowel at the front of the cue with a dot behind it — and every one was
     # fixed by taking the dots out: Ἰωσήφ, Ἰακώβ, ἀριθμός, and these four.
@@ -1034,17 +972,6 @@ IPA_HEARD = {
         "model working rather than a surprise",
     231: "dotless — the dotted form read its dot aloud as the word \"dot\" "
          "through a re-roll, and the screen caught it before an ear did",
-    736: "fully dotless, and the SCREEN found it rather than an ear: the "
-         "dotted version decoded with `dɑːt` TWICE — the voice reading its "
-         "syllable dots aloud as the word \"dot\", after ὑποτάσσω and "
-         "βλασφημέω. NINE words have now done that, and there is a weak "
-         "shape to it, measured rather than guessed: 38% of the dots in "
-         "those nine sit between two consonants, against 19% of the 97 dots "
-         "in approved cues. Twice the rate — but sixteen dots is a small "
-         "count, and every dot in an offending word was counted a candidate "
-         "when only one of them misbehaved. A tendency, not a rule. I twice "
-         "wrote that they shared no shape at all, which was impression "
-         "rather than arithmetic",
     278: "dotless. \"A is right but `te` is spelled out\" — the diphthong was "
          "fine and the final syllable was not. τότε ships the same final `te` "
          "dotless and that is where the fix came from",
@@ -1127,13 +1054,6 @@ IPA_HEARD = {
          "the letters. This pack opens a short o everywhere else precisely "
          "because the voice reads a plain one LONG — and long is what this "
          "word wants to sound like, though the Greek omicron is short",
-    541: "dotless, Ἰωσήφ's remedy applied to Ἰωσήφ's shape: both open on "
-         "a bare iota with a dot behind it and both spelled themselves out. "
-         "Also the first cue in the pack to end in a stop",
-    697: "dotless, and the screen caught it rather than an ear — the dotted "
-         "version named its letters, ay-ar-rye-eth-em-oh-es, identically on "
-         "two takes. Third word to do that from a bare vowel and a dot at "
-         "the front",
     70: "KEEPS ITS DOT. Batch 11 put the five queued pre-stress dots up and "
         "four took the dotless version; this one did not. So the rule is a "
         "default and not a law, and this is the word that says so",
@@ -1152,6 +1072,17 @@ tts_bad, ipa_cues, ipa_excused = [], [], set()
 if IPA is None:
     tts_bad.append("docs/erasmian_ipa.json could not be read, so no IPA cue "
                    "can be checked")
+def _dedot(c):
+    """The standing dedot: every dot BEFORE the stress removed. The guide's
+    275-cue run cleared 24 spoken dots this way, and the IPA batches that move
+    respelled cards to IPA apply it by default (2026-09-24), so a cue in that
+    form is the rule's output, not an exception needing a reason."""
+    if "ˈ" not in c:
+        return c
+    head, tail = c.split("ˈ", 1)
+    return head.replace(".", "") + "ˈ" + tail
+
+
 for path in ("docs/erasmian_vocab_cues.json",
              "docs/erasmian_vocab_cues_v3_black.json",
              "docs/erasmian_vocab_cues_v4_tail.json"):
@@ -1173,6 +1104,7 @@ for path in ("docs/erasmian_vocab_cues.json",
                 tts_bad.append(tag + " is an IPA cue for a word with no entry "
                                      "in docs/erasmian_ipa.json")
             elif (tts[1:-1] != ipa_cue(ipa)
+                  and tts[1:-1] != _dedot(ipa_cue(ipa))
                   and not _pre_inventory(tts[1:-1], ipa_cue(ipa))):
                 want = "/%s/" % ipa_cue(ipa)
                 line = tag + " is not this word's IPA converted: expected " + want
