@@ -43,7 +43,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-CHAPTERS = [1, 2, 3, 4, 5]
+CHAPTERS = [1, 2, 3, 4, 5, 6]
 
 # The comment at the top of data/lesson_audio.js. It lives here because that
 # file is generated: the app's copy is overwritten on every build.
@@ -800,7 +800,7 @@ def said_vowels(cue):
 # Every cell keeps its own words on the page, so the read-along highlights
 # each cell as it is said -- in the order it is SAID, which for a paradigm
 # is down the columns, not along the rows as the page stores it.
-TABLES_READ = {2, 3, 4, 5}
+TABLES_READ = {2, 3, 4, 5, 6}
 
 ROWS = re.compile(r"<tr\b[^>]*>(.*?)</tr>", re.S)
 CELL = re.compile(r"<(th|td)\b[^>]*>(.*?)</\1>", re.S)
@@ -966,7 +966,7 @@ def narrate_table(inner, ch, cues, missing):
 # Each Greek word keeps its page word, so the read-along lights each word as
 # it is said. Greek punctuation is said as its function, not its shape: the
 # question mark (;) as a question, the raised dot (·) as a pause.
-VERSES_READ = {3, 4, 5}
+VERSES_READ = {3, 4, 5, 6}
 
 ORDINAL = {"1": "First", "2": "Second", "3": "Third"}
 

@@ -808,5 +808,54 @@
   "tts": "/ˈpan.toʊn/",
   "chapter": 5,
   "source": "heard: chapter 5 narration"
+ },
+ {
+  "greek": "ἀγαθή",
+  "ipa": "a.ɡa.ˈθeː",
+  "tts": "/a.ɡaˈθeɪ/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "ἀγαθόν",
+  "ipa": "a.ɡa.ˈθon",
+  "tts": "/a.ɡaˈθɒn/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "ἀκάθαρτον",
+  "ipa": "a.ˈka.θar.ton",
+  "tts": "/aˈka.θar.tɒn/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "μακάριοι",
+  "ipa": "ma.ˈka.ri.oi̯",
+  "tts": "/maˈka.rɪ.oi̯/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "οἱ",
+  "ipa": "ˈhoi̯",
+  "tts": "/ˈhoi̯/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "πραεῖς",
+  "ipa": "pra.ˈei̯s",
+  "tts": "/pra.ˈeɪs/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
+ },
+ {
+  "greek": "ἅγιοι",
+  "ipa": "ˈha.ɡi.oi̯",
+  "tts": "/ˈha.ɡɪ.oi̯/",
+  "chapter": 6,
+  "source": "heard: chapter 6 narration"
  }
 ]
