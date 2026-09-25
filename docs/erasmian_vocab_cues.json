@@ -3781,12 +3781,12 @@
   "pos": "noun",
   "tier": 3,
   "freq": 27,
-  "tts": "eh leh oss",
-  "source": "recued",
-  "duration_s": 1.945,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "2fc8a5b9bac0"
+  "tts": "/ˈɛlɛɒs/",
+  "source": "ipa-batch4-recue",
+  "duration_s": 0.914,
+  "take": "bVI4r_234_b",
+  "note": "IPA, chosen by ear over the card's English respelling. FULLY DOTLESS: the dotted /ˈɛ.lɛ.ɒs/ spelled itself out in both batch-4 takes",
+  "sha1": "dc98af8597c5"
  },
  {
   "index": 235,
@@ -3860,12 +3860,12 @@
   "pos": "name",
   "tier": 2,
   "freq": 135,
-  "tts": "ee oh ahn neys",
-  "source": "ays",
-  "duration_s": 1.929,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "35f590e8e9f5"
+  "tts": "/ˌɪoːˈannei̯s/",
+  "source": "ipa-batch4-recue",
+  "duration_s": 1.463,
+  "take": "bVI4r_239_d",
+  "note": "IPA, chosen by ear over the card's English respelling. SECONDARY STRESS on the opening and FULLY DOTLESS: /ɪoːˈan.nei̯s/ spelled itself out in both batch-4 takes",
+  "sha1": "303e3d114cbc"
  },
  {
   "index": 240,
