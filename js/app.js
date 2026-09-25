@@ -2490,8 +2490,8 @@ function realFormPool(){
 
 /* ---------------------------------------------------- where you struggle -----
    Every parse answered in the parsing drills and the paradigm rounds -- Parse
-   a real form, Parsing builder, Produce and Write a real form, Fill the grid
-   and the sprint -- is scored one category at a time: shown an
+   a real form, Parsing builder, Verb parsing, The article, Produce and Write
+   a real form, Fill the grid and the sprint -- is scored one category at a time: shown an
    aorist, did you get the tense? shown a genitive, the case? S.parsing holds
    [asked, missed, ts] per category, "tense.A" for the aorist, in the letters
    of the eight-character parse code so the drill can pull matching forms
@@ -2532,6 +2532,40 @@ function formCats(r){
   Object.keys(opts).forEach(d=>{ const v=r[3][REAL_AT[d]]; if(v && v!=="-") out[d]=v; });
   return out;
 }
+/* The two drills written as English labels -- The article and Verb parsing
+   -- carry their parse in words: "masculine/neuter genitive singular", "1st
+   singular or 3rd plural imperfect active indicative". labelSets reads each
+   category as the SET of values the label allows; noteLabel scores only the
+   categories a label settles to one value, so ἔλυον's person and number, τοῦ's
+   gender and λύῃ's voice go unscored rather than guessed. */
+const LABEL_WORDS={
+  person:{"1st":"1","2nd":"2","3rd":"3"}, number:{singular:"S",plural:"P"},
+  tense:{present:"P",imperfect:"I",future:"F",aorist:"A",perfect:"X",pluperfect:"Y"},
+  voice:{active:"A",middle:"M",passive:"P"},
+  mood:{indicative:"I",subjunctive:"S",imperative:"D",optative:"O"},
+  "case":{nominative:"N",genitive:"G",dative:"D",accusative:"A",vocative:"V"},
+  gender:{masculine:"M",feminine:"F",neuter:"N"}
+};
+function labelSets(s){
+  const out={};
+  String(s).toLowerCase().split(/[\s\/,()]+/).forEach(w=>{
+    for(const [d,m] of Object.entries(LABEL_WORDS))
+      if(m[w]) (out[d]=out[d]||new Set()).add(m[w]);
+  });
+  if(/all genders/i.test(s)) out.gender=new Set(["M","F","N"]);
+  // εἰμί has no voice to get wrong; the label's "active" is convention
+  if(/of εἰμί/.test(s)) delete out.voice;
+  return out;
+}
+function noteLabel(want,got,good){
+  const W=labelSets(want), G=labelSets(got||want), w={}, g={};
+  Object.entries(W).forEach(([d,set])=>{
+    if(set.size!==1) return;
+    const v=[...set][0];
+    w[d]=v; g[d]=G[d]&&G[d].has(v)?v:null;
+  });
+  if(Object.keys(w).length) noteCats(w,[g],good);
+}
 /* The categories worth naming: asked often enough to mean something, missed
    at least a fifth of the time, worst first. */
 function weakSpots(){
@@ -2561,8 +2595,8 @@ function weakHtml(){
         miss more than a fifth of the time will show here.</small>`;
   return `<div class="card">
       <div class="between"><span>Where you struggle</span></div>
-      <small class="muted" style="display:block;margin:2px 0 8px">From Parse a real
-        form, the parsing builder and the paradigm rounds, one category at a time.</small>
+      <small class="muted" style="display:block;margin:2px 0 8px">From the parsing
+        drills and the paradigm rounds, one category at a time.</small>
       ${body}
     </div>`;
 }
@@ -2883,13 +2917,16 @@ function wrongOptions(ans,bank,k){
 }
 /* ---- end distractor choice ---- */
 
-function pairDrill(bank,prompt,n=12){
+/* `parsed` says the answers are parse labels (ART, PARSE), so each one is
+   scored for Where you struggle against the label chosen. */
+function pairDrill(bank,prompt,n=12,parsed){
   const pool=bank.slice().sort(()=>Math.random()-.5).slice(0,n);
   return pool.map(p=>{
     const wrong=wrongOptions(p,bank,3).map(x=>x[1]);
     const opts=[p[1],...wrong].sort(()=>Math.random()-.5);
     return mcq(`${prompt} <span class="q-gk">${p[0]}</span>`,
-      opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`);
+      opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`,
+      null, parsed ? (good,k)=>noteLabel(p[1],opts[k],good) : undefined);
   });
 }
 function alphaDrill(n=12,from){
@@ -3027,8 +3064,8 @@ const DRILLS=[
 ["Learn 5 new words","Next five by New Testament frequency",()=>startNew(5)],
 ["Greek → English","Recognition, mixed multiple choice",()=>startSession(pairDrill(g2eBank(),"What does this mean?"),"d")],
 ["English → Greek","Harder: production rather than recognition",()=>startSession(reverseVocab(),"d")],
-["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length),"d")],
-["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:"),"d")],
+["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length,true),"d")],
+["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:",12,true),"d")],
 ["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
 ["Alphabet check","All 24 in one pass — pass it and the letters are done",()=>startSession(alphaCheck(),"letters")],
 ["Listening — letters","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
