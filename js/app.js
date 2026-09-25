@@ -770,7 +770,9 @@ function openQuickTest(){
 document.addEventListener("keydown",e=>{
   if(e.key!=="Escape") return;
   const q=document.getElementById("qtScrim"), d=document.getElementById("deckScrim");
-  if(q && !q.hidden) closeQuickTest();
+  const ar=document.getElementById("arrScrim");
+  if(ar && !ar.hidden) closeArrange();
+  else if(q && !q.hidden) closeQuickTest();
   else if(d && !d.hidden) closeDeckPicker();
 });
 function closeQuickTest(){
@@ -1121,9 +1123,10 @@ function letterCard(a,n,of){
         ${snd?`<button class="btn ghost small" style="margin-top:14px" onclick="playGreek('${a[0]}',null)">🔊 Hear it</button>`:""}
       </div>
       <button class="btn" onclick="qi++;step()">Got it</button>
-      <div style="height:8px"></div>
+      <p class="muted" style="font-size:.8rem;text-align:center;margin:8px 0 10px">Not sure yet?
+        Carry on anyway — every letter comes back until you know it.</p>
       <button class="btn ghost small" style="width:100%"
-        onclick="letterKnown('${a[1]}')">I know this one — stop showing it</button>`;
+        onclick="letterKnown('${a[1]}')">I already know this one</button>`;
   };
 }
 function letterKnown(name){
@@ -1449,7 +1452,7 @@ function planHtml(){
   return rows+`<p class="muted" style="font-size:.78rem;margin:10px 2px 0;line-height:1.5">
     New words start once the letters are settled — ${n} to go.
     Already read Greek? <a href="#" class="tappable" style="color:var(--gold)"
-      onclick="go('prog');return false">Say so in Progress</a> and the whole
+      onclick="go('prog');return false">Say so in Settings</a> and the whole
     alphabet counts as done.</p>`;
 }
 
@@ -1539,15 +1542,19 @@ function render(){
      for anyone returning after a gap. */
   const fresh=Object.keys(S.cards).length===0 && !Object.keys(S.gcards||{}).length;
   const startEl=document.getElementById("startHere");
-  if(startEl) startEl.innerHTML = fresh ? `<div class="card" style="border-color:var(--gold-dim)">
-      <h3 style="margin-top:0">Start here</h3>
-      <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above.
-        The first few days are the alphabet and the chapter about the alphabet,
-        because everything after it is unreadable without them. Words begin once
-        the letters are settled, and from then on the shape is the same every
-        day: the words the schedule brings back, five new ones, then a few
-        minutes of the chapter you are on. How long it will take is at the top,
-        and it is added up from the list rather than promised in advance.</p>
+  /* The reassurance leads. An older learner was afraid to press on through
+     the letters in case what they had not yet mastered never came back --
+     which is the opposite of how the app works, and nothing said so. */
+  if(startEl) startEl.innerHTML = fresh ? `<h2 class="dgroup" data-tone="gold">Start here</h2>
+    <div class="card" style="border-color:var(--gold-dim)">
+      <p style="font-size:.92rem;margin:0 0 10px"><b>You cannot fall behind or miss anything.</b>
+        The app notices what you do not know yet and keeps bringing it back until
+        you do — so moving on is always safe.</p>
+      <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above,
+        a little each day. The first few days are the letters, because everything
+        after them is unreadable without them. Words begin once the letters are
+        settled; from then on each day is the words the schedule brings back, a
+        few new ones, and a few minutes of a chapter.</p>
       <button class="btn ghost small" onclick="go('help')">What else is in here</button>
     </div>` : "";
 
@@ -1559,7 +1566,7 @@ function render(){
     if(!f) return "";
     const known=focusKnown(f), all=focusTotal(f);
     const pc=all?Math.round(100*known/all):0;
-    return `<div class="card focus">
+    return `<h2 class="dgroup" data-tone="gold">Working on</h2><div class="card focus">
       <div class="between" style="align-items:flex-start">
         <div><h3 style="margin:0">${focusRef(f)}</h3>
           <span class="muted" style="font-size:.78rem">${f.label
@@ -1581,15 +1588,121 @@ function render(){
   })();
 
   const pin=S.pin, pinEl=document.getElementById("pinned");
-  if(pinEl) pinEl.innerHTML = (pin&&pin.a) ? `<h2>This week's passage</h2>
-    <button class="lesson-item" onclick="openGntChapter('${pin.a}',${pin.ch})" style="border-color:var(--gold-dim)">
-      <span class="t"><b>${pin.t} ${pin.n}</b><span>Pinned for sermon preparation</span></span>
-      <span class="muted">›</span></button>` : "";
+  if(pinEl) pinEl.innerHTML = (pin&&pin.a) ? `<h2 class="dgroup" data-tone="gold">This week's passage</h2>
+    <div class="pinrow">
+      <button class="lesson-item" onclick="openGntChapter('${pin.a}',${pin.ch})" style="border-color:var(--gold-dim)">
+        <span class="t"><b>${pin.t} ${pin.n}</b><span>Pinned for sermon preparation</span></span>
+        <span class="muted">›</span></button>
+      <button class="mini" onclick="unpinToday()" aria-label="Unpin ${pin.t} ${pin.n}">✕</button>
+    </div>` : "";
 
   const wEl=document.getElementById("wotd");
   if(wEl) wEl.innerHTML=wordOfDayHtml();
+  arrangeToday();
 
   checkBadges();
+}
+
+/* ---------------------------------------------------- arrange Today -----
+   The plan stays first: it is how the schedule does its job, and a review
+   row someone could remove is words quietly forgotten. Everything below it
+   can be reordered, and all but the passage being worked can be hidden --
+   that one carries its own controls (Mark complete, ✕) and only appears
+   because the learner asked for it. Hiding only takes a section off Today;
+   nothing is switched off. Per device, like text size and Appearance. */
+const TODAY_KEY="koine.today";
+const TODAY_SECTS=[
+  {id:"focus", el:"focusCard", name:"Working on", fixed:true,
+   sub:"The passage or set you are focusing on, while you have one"},
+  {id:"start", el:"startHere", name:"Start here",
+   sub:"How the first days work — shown until your first words"},
+  {id:"pinned", el:"pinned", name:"This week's passage",
+   sub:"A chapter you pinned in Read"},
+  {id:"wotd", el:"wotd", name:"Word of the day",
+   sub:"One word a day, the same for everyone"}
+];
+function todayPrefs(){
+  let p={};
+  try{ p=JSON.parse(localStorage.getItem(TODAY_KEY)||"{}")||{}; }catch(e){ p={}; }
+  const ids=TODAY_SECTS.map(s=>s.id);
+  const order=(Array.isArray(p.order)?p.order:[]).filter(x=>ids.includes(x));
+  ids.forEach(x=>{ if(!order.includes(x)) order.push(x); });   // new sections join at the end
+  const hide=(Array.isArray(p.hide)?p.hide:[])
+    .filter(x=>ids.includes(x) && !TODAY_SECTS.find(s=>s.id===x).fixed);
+  return {order,hide};
+}
+function saveTodayPrefs(p){
+  try{ localStorage.setItem(TODAY_KEY,JSON.stringify(p)); }catch(e){}
+}
+function arrangeToday(){
+  const box=document.getElementById("todayMore");
+  if(!box) return;
+  const p=todayPrefs();
+  p.order.forEach(id=>{
+    const s=TODAY_SECTS.find(x=>x.id===id), el=document.getElementById(s.el);
+    if(!el) return;
+    box.appendChild(el);
+    el.hidden=p.hide.includes(id);
+  });
+}
+function openArrange(){
+  paintArrange();
+  const sc=document.getElementById("arrScrim"); if(sc) sc.hidden=false;
+  const f=document.querySelector("#arrList button:not([disabled]), #arrList input");
+  if(f) f.focus();
+}
+function closeArrange(){
+  const sc=document.getElementById("arrScrim"); if(sc) sc.hidden=true;
+}
+function paintArrange(){
+  const p=todayPrefs(), n=p.order.length;
+  document.getElementById("arrList").innerHTML=p.order.map((id,k)=>{
+    const s=TODAY_SECTS.find(x=>x.id===id);
+    return `<div class="arrrow">
+      <span class="t"><b>${s.name}</b><small>${s.sub}</small></span>
+      <button class="mv" onclick="moveSect('${id}',-1)" ${k===0?"disabled":""}
+        aria-label="Move ${s.name} up">↑</button>
+      <button class="mv" onclick="moveSect('${id}',1)" ${k===n-1?"disabled":""}
+        aria-label="Move ${s.name} down">↓</button>
+      ${s.fixed?`<span class="fixed">always</span>`
+        :`<label><input type="checkbox" ${p.hide.includes(id)?"":"checked"}
+            onchange="showSect('${id}',this.checked)" aria-label="Show ${s.name}">Show</label>`}
+    </div>`;
+  }).join("");
+}
+function moveSect(id,d){
+  const p=todayPrefs(), k=p.order.indexOf(id), j=k+d;
+  if(k<0 || j<0 || j>=p.order.length) return;
+  [p.order[k],p.order[j]]=[p.order[j],p.order[k]];
+  saveTodayPrefs(p); paintArrange(); arrangeToday();
+  const b=document.querySelector(`#arrList button[aria-label="Move ${TODAY_SECTS.find(s=>s.id===id).name} ${d<0?"up":"down"}"]:not([disabled])`);
+  if(b) b.focus();
+}
+function showSect(id,on){
+  const p=todayPrefs();
+  p.hide=p.hide.filter(x=>x!==id);
+  if(!on) p.hide.push(id);
+  saveTodayPrefs(p); arrangeToday();
+}
+function resetArrange(){
+  try{ localStorage.removeItem(TODAY_KEY); }catch(e){}
+  paintArrange(); arrangeToday(); toast("Today is back to its usual order");
+}
+/* Unpinning from Today itself, rather than only from the chapter in Read.
+   A dated "nothing pinned" rather than null, so that on a synced second
+   device the unpinning is the newer fact and wins the merge -- with null,
+   the other device's pin came straight back. */
+function unpinToday(){
+  S.pin={ts:Date.now()};
+  save(); render(); toast("Unpinned");
+}
+/* The progress half of the Settings tab, from Today's link. */
+function goProgress(){
+  go("prog");
+  setTimeout(()=>{
+    const h=document.getElementById("progSection");
+    if(h) h.scrollIntoView({block:"start"});
+  },30);
 }
 
 /* ---------------------------------------------------- word of the day -----
@@ -1619,7 +1732,7 @@ function wordOfDayHtml(){
   const status=c ? (c.ivl>=6 ? "One you know" : "In your deck") : "Not in your deck yet";
   const hear=VOCAB_AUDIO[i]
     ? `<button class="mini" onclick="playWord(${i},this)" aria-label="Hear it">\uD83D\uDD0A</button>` : "";
-  return `<h2>Word of the day</h2>
+  return `<h2 class="dgroup" data-tone="gold">Word of the day</h2>
     <div class="card">
       <div class="between" style="align-items:baseline">
         <span><span class="gk" style="font-size:1.35rem">${v[0]}</span> ${hear}</span>
@@ -1702,6 +1815,9 @@ function finish(early){
   if(REVIEWED) line.push(`<b>${REVIEWED}</b> card${REVIEWED===1?"":"s"} reviewed`);
   if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
   const nx=nextTaskHtml(!!AGAIN);
+  /* After a letters sitting, say what happens to what was missed. */
+  const reassure=(mode==="letters" && !early)
+    ? `<p class="muted" style="font-size:.86rem">Every letter comes back — tomorrow and after — until you know it.</p>` : "";
   /* The ring shows what was actually measured. A vocabulary review is
      self-graded, so there is no accuracy to draw and it counts cards
      instead — claiming a score there would be inventing one. */
@@ -1723,6 +1839,7 @@ function finish(early){
       : ""}
     <span class="gk">${clean?"εὖγε":"τέλος"}</span>
     ${line.length?`<p>${line.join(" · ")}</p>`:""}
+    ${reassure}
     <p><b>+${SESSION_XP} XP</b> · streak ${S.streak} day${S.streak===1?"":"s"}</p></div>
     <div class="endbtns">
       ${AGAIN?`<button class="btn" onclick="againRound()">Another round — ${AGAIN.name}</button>
@@ -3600,24 +3717,24 @@ function renderHelp(){
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, in ${Object.keys(DRILL_GROUP).length} groups. Where a drill depends on how far you have got, it says what it is worth to you today, and dims when there is nothing in it for you yet.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
-      <tr><th>Progress</th><td>Your numbers and badges first, then settings, sync, and your data.</td></tr>
+      <tr><th>Settings</th><td>Settings, sync and any words you have set aside first, then your progress — the numbers, where you struggle, badges — and your data. Today's <b>Your progress</b> link goes straight there.</td></tr>
     </table>
 
     <h2>Things worth knowing</h2>
     <table>
-      <tr><th>The spoken words</th><td>The audio is <b>machine-generated</b> — a synthetic voice reading a pronunciation cue written by hand for each word. Most have been listened to and tuned, and a good number re-recorded until they were right, but some will still be off: a stressed syllable in the wrong place, a letter swallowed, a word read as though it were English. Trust the alphabet chart and the written accent over the voice where they disagree, and please <a href="#" onclick="go('prog');return false" class="muted tappable">report anything that sounds wrong</a> — the form is at the bottom of Progress. The pronunciation is Erasmian throughout — the convention chapter 1 explains, not a reconstruction of how anyone actually spoke.</td></tr>
+      <tr><th>The spoken words</th><td>The audio is <b>machine-generated</b> — a synthetic voice reading a pronunciation cue written by hand for each word. Most have been listened to and tuned, and a good number re-recorded until they were right, but some will still be off: a stressed syllable in the wrong place, a letter swallowed, a word read as though it were English. Trust the alphabet chart and the written accent over the voice where they disagree, and please <a href="#" onclick="go('prog');return false" class="muted tappable">report anything that sounds wrong</a> — the form is near the bottom of Settings. The pronunciation is Erasmian throughout — the convention chapter 1 explains, not a reconstruction of how anyone actually spoke.</td></tr>
       <tr><th>Sermon prep</th><td>Open a chapter in Read and tap <b>Pin for this week</b> — it appears on Today. <b>Words I don't know</b> lists the course vocabulary in that chapter you have not started, and adds it to your deck in one tap.</td></tr>
       <tr><th>How much you can read</th><td>Every chapter counts how many of its <i>different</i> words you have started, and how many more the course can still teach you. Counting every occurrence instead would flatter you — twenty words is half the page, because the commonest ones repeat.</td></tr>
       <tr><th>Grading honestly</th><td>Again, Hard, Good and Easy set when a word comes back. Guessing right is not the same as knowing it — press Hard and the schedule will believe you.</td></tr>
       <tr><th>A missed day</th><td>One rest day a week is allowed; the streak survives it and says so.</td></tr>
-      <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Progress.</td></tr>
-      <tr><th>The letters</th><td>Today leads with them, and teaches before it asks: five new letters a sitting, each shown with its name, its sound and its clip, and only then the questions — on those same five. A letter settles after ${ALPHA_SOLID} correct namings on ${ALPHA_SOLID} different days, so it cannot be settled in one evening. Once all ${ALPHABET.length} have been taught, the row becomes a single run through the whole alphabet; ${ALPHA_PASS} right and the letters are done. That check comes back every so often, further apart each time, because the alphabet is the one thing everything else rests on. <b>New words wait until it is passed</b> — a word you cannot sound out is a picture, not a word. If you already read Greek, take the check on your first morning, or say so in Progress.</td></tr>
+      <tr><th>Set aside</th><td>A word you keep losing can be set aside from the answer screen, and restored from Settings.</td></tr>
+      <tr><th>The letters</th><td>Today leads with them, and teaches before it asks: five new letters a sitting, each shown with its name, its sound and its clip, and only then the questions — on those same five. A letter settles after ${ALPHA_SOLID} correct namings on ${ALPHA_SOLID} different days, so it cannot be settled in one evening. Once all ${ALPHABET.length} have been taught, the row becomes a single run through the whole alphabet; ${ALPHA_PASS} right and the letters are done. That check comes back every so often, further apart each time, because the alphabet is the one thing everything else rests on. <b>New words wait until it is passed</b> — a word you cannot sound out is a picture, not a word. If you already read Greek, take the check on your first morning, or say so in Settings.</td></tr>
       <tr><th>Word meanings</th><td>The ${LEARN_ORDER.length} words this course teaches carry glosses written and checked here. Tap anything else in Read and you still get a meaning — from Tyndale House's brief lexicon, which carries Abbott-Smith's <i>Manual Greek Lexicon</i>, and Dodson's where that has nothing. Those are marked with a <span style="color:var(--gold)">†</span>: they are terser and older, and are not this course's own wording.</td></tr>
       <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the videos need the internet; the songs play inside the app, the lectures open in a browser.</td></tr>
-      <tr><th>Two devices</th><td>Progress → Sync across devices. One device makes a private code; type it on the other. Your progress merges, there is no account, and only a fingerprint of the code ever leaves the device.</td></tr>
+      <tr><th>Two devices</th><td>Settings → Sync across devices. One device makes a private code; type it on the other. Your progress merges, there is no account, and only a fingerprint of the code ever leaves the device.</td></tr>
       <tr><th>Test yourself</th><td>Drill → <b>Quick test</b>: 10, 25 or 50 words from a chapter, the commonest words or the whole deck, each asked once and marked at the end, with the ones you missed listed. It leaves your review schedule alone.</td></tr>
-      <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Progress names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
-      <tr><th>Light or dark</th><td>Progress → Settings → Appearance. It follows your device unless you choose Light or Dark.</td></tr>
+      <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Your progress, in Settings, names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
+      <tr><th>Light or dark</th><td>Settings → Appearance. It follows your device unless you choose Light or Dark.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
     </table>
 
@@ -3637,7 +3754,7 @@ function renderHelp(){
     and every Greek phrase is taken from the SBL text.</p>
 
     <h2>If you have studied before</h2>
-    <p class="muted" style="font-size:.87rem">Progress → <b>Studied Greek before?</b> marks chapters done and seeds the
+    <p class="muted" style="font-size:.87rem">Settings → <b>Studied Greek before?</b> marks chapters done and seeds the
     hundred commonest words as familiar, spread over a fortnight rather than landing in one day.</p>
 
     <h2>About the app</h2>
@@ -3705,6 +3822,37 @@ function renderProgress(){
   const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
   document.getElementById("progBody").innerHTML=`
     ${backupNudgeHtml()}
+    <div class="card">
+      <div class="setrow"><span>Daily review goal</span>
+        <select id="setGoal" aria-label="Daily review goal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+      <div class="setrow"><span>Answer sounds</span>
+        <select id="setSfx" aria-label="Answer sounds">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Word audio</span>
+        <select id="setSpeak" aria-label="Word audio">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Playback speed</span>
+        <select id="setRate" aria-label="Playback speed">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
+        <select id="setLit" aria-label="Words you know">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Appearance</span>
+        <select id="setTheme" aria-label="Appearance">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Greek text size</span>
+        <select id="setGk" aria-label="Greek text size">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
+        <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
+      ${typeof installRowHtml==="function"?installRowHtml():""}
+      ${typeof testerRowHtml==="function"?testerRowHtml():""}
+    </div>
+    ${(S.suspended||[]).filter(i=>VOCAB[i]).length?`<div class="card">
+      <h3 style="margin-top:0">Set aside</h3>
+      <p class="muted" style="font-size:.85rem;margin-bottom:4px">These have stopped coming up. Restoring one puts it back in today's queue.</p>
+      ${(S.suspended||[]).filter(i=>VOCAB[i]).map(i=>`<div class="setrow">
+        <span><b class="gk" style="font-weight:500;font-size:1.05rem">${VOCAB[i][0].split(",")[0]}</b><br><small class="muted">${VOCAB[i][1]}</small></span>
+        <button class="btn ghost small" onclick="unsuspendWord(${i})">Restore</button></div>`).join("")}
+      ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
+    </div>`:""}
+    ${typeof syncCardHtml==="function"?syncCardHtml():""}
+    <!-- Today's "Your progress" link lands here. -->
+    <h2 id="progSection" class="dgroup" data-tone="gold">Your progress</h2>
     <!-- These three came off Today when it became the day's plan. Streak and
          best streak fold into the line beneath: Today already shows the
          streak, and two tiles for it was one too many. -->
@@ -3757,36 +3905,6 @@ function renderProgress(){
     <div class="badges">${BADGES.map(b=>`
       <div class="badge ${S.badges.includes(b.id)?"got":""}">
         <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
-    <h2>Settings</h2>
-    <div class="card">
-      <div class="setrow"><span>Daily review goal</span>
-        <select id="setGoal" aria-label="Daily review goal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
-      <div class="setrow"><span>Answer sounds</span>
-        <select id="setSfx" aria-label="Answer sounds">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Word audio</span>
-        <select id="setSpeak" aria-label="Word audio">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Playback speed</span>
-        <select id="setRate" aria-label="Playback speed">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
-        <select id="setLit" aria-label="Words you know">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Appearance</span>
-        <select id="setTheme" aria-label="Appearance">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Greek text size</span>
-        <select id="setGk" aria-label="Greek text size">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
-        <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
-      ${typeof installRowHtml==="function"?installRowHtml():""}
-      ${typeof testerRowHtml==="function"?testerRowHtml():""}
-    </div>
-    ${(S.suspended||[]).filter(i=>VOCAB[i]).length?`<div class="card">
-      <h3 style="margin-top:0">Set aside</h3>
-      <p class="muted" style="font-size:.85rem;margin-bottom:4px">These have stopped coming up. Restoring one puts it back in today's queue.</p>
-      ${(S.suspended||[]).filter(i=>VOCAB[i]).map(i=>`<div class="setrow">
-        <span><b class="gk" style="font-weight:500;font-size:1.05rem">${VOCAB[i][0].split(",")[0]}</b><br><small class="muted">${VOCAB[i][1]}</small></span>
-        <button class="btn ghost small" onclick="unsuspendWord(${i})">Restore</button></div>`).join("")}
-      ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
-    </div>`:""}
-    ${typeof syncCardHtml==="function"?syncCardHtml():""}
     ${typeof reportCardHtml==="function"?reportCardHtml():""}
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
@@ -3890,7 +4008,10 @@ function saneState(x){
     && Number.isInteger(+r.ch) && +r.ch>=0 && typeof r.t==="string")
     ? {a:r.a.slice(0,8), ch:+r.ch, t:r.t.slice(0,40), n:+r.n||(+r.ch+1)} : null;
   out.where=chapterRef(x.where);
-  out.pin=chapterRef(x.pin);
+  // a dated "nothing pinned" (see unpinToday) is kept, so an import cannot
+  // bring back a pin that was taken off after the backup was made
+  out.pin=chapterRef(x.pin)
+    || ((x.pin && typeof x.pin==="object" && Number.isFinite(+x.pin.ts) && +x.pin.ts>0) ? {ts:+x.pin.ts} : null);
   /* Where a part-way chapter stopped, so Today can offer to pick it up.
      Shape-checked because the part number indexes into an array and the id
      is rendered straight into a button. */

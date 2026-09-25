@@ -350,7 +350,8 @@ function focusRange() {
 }
 function togglePin() {
   if (!gntCur) return;
-  if (gntPinned()) { S.pin = null; toast("Unpinned"); }
+  // dated, not null, so the unpinning wins a sync merge (see unpinToday)
+  if (gntPinned()) { S.pin = { ts: Date.now() }; toast("Unpinned"); }
   else {
     const m = gntCur.meta;
     S.pin = { a: gntCur.abbr, ch: gntCur.ch, t: m.t,

@@ -19,7 +19,7 @@ The app is a single-page web app. The links below open it at a given screen; the
 - [Drill](https://everydaykoine.app/?go=drill): vocabulary, parsing of real forms from the text, paradigm rounds, look-alike words and sentence questions.
 - [Read](https://everydaykoine.app/?go=read): the Greek New Testament, every word parsed and glossed on a tap, plus 12 graded passages.
 - [Tables](https://everydaykoine.app/?go=tables): 30 reference tables — paradigms of nouns, verbs and pronouns, and syntax tables — 20 of them playable as fill-in-the-grid rounds.
-- [Progress](https://everydaykoine.app/?go=prog): progress, settings, export and import, and optional sync between devices by a generated code.
+- [Settings](https://everydaykoine.app/?go=prog): settings, optional sync between devices by a generated code, your progress, and export and import.
 
 ## Optional
 

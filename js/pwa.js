@@ -133,7 +133,7 @@ addEventListener("beforeinstallprompt",e=>{
 document.getElementById("btnInstallNo").onclick=()=>{
   installBar.classList.remove("on");
   try{ localStorage.setItem(INSTALL_DISMISS,"1"); }catch(e){}
-  toast("Fine \u2014 you can install later from Progress");
+  toast("Fine \u2014 you can install later from Settings");
 };
 
 /* ---------- iOS ----------
@@ -169,7 +169,7 @@ if(iosBar){
   document.getElementById("btnIosNo").onclick = () => {
     iosBar.classList.remove("on");
     try{ localStorage.setItem(INSTALL_DISMISS,"1"); }catch(e){}
-    toast("Fine — the steps stay in Progress");
+    toast("Fine — the steps stay in Settings");
   };
 }
 

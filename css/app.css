@@ -123,8 +123,28 @@ small{font-size:.8rem}
    against it — measured at 0px against 12px everywhere else on the screen.
    :not(:empty) so the gap appears only when there is a card to space: all
    three are empty most of the time and would otherwise leave a hole. */
-#focusCard:not(:empty),#startHere:not(:empty),#pinned:not(:empty){
-  margin-top:12px}
+/* Today's sections below the plan each open with a heading in the Drill
+   page's style (.dgroup), a little more space above each, so they read as
+   separate things rather than one run of cards. */
+#todayMore .dgroup{margin:30px 0 10px}
+#todayMore .card.focus{margin-top:0}
+#todayMore > [hidden]{display:none}
+.progl{margin:10px 0 0;font-size:.84rem}
+.pinrow{display:flex;gap:8px;align-items:stretch}
+.pinrow .lesson-item{flex:1;margin-bottom:0}
+.pinrow .mini{align-self:center}
+/* Arrange Today */
+.arrrow{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}
+.arrrow:last-child{border-bottom:none}
+.arrrow .t{flex:1;min-width:0;display:flex;flex-direction:column}
+.arrrow .t b{font-size:.88rem;font-weight:600}
+.arrrow .t small{color:var(--muted);font-size:.72rem;line-height:1.35}
+.arrrow .mv{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);
+  background:var(--surface);color:var(--text);font-size:.95rem}
+.arrrow .mv[disabled]{opacity:.3}
+.arrrow label{display:flex;align-items:center;gap:5px;font-size:.78rem;color:var(--muted);cursor:pointer}
+.arrrow label input{width:18px;height:18px;accent-color:var(--gold)}
+.arrrow .fixed{font-size:.72rem;color:var(--muted);width:52px;text-align:center}
 .row{display:flex;align-items:center;gap:12px}
 .between{display:flex;align-items:center;justify-content:space-between;gap:12px}
 

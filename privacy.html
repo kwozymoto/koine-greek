@@ -110,7 +110,8 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
       synced: <code>koine.theme</code> (Light or Dark, if you chose one),
       <code>koine.wmode</code> (finger or keyboard in the writing drill),
       <code>koine.lookupAll</code> (whether Look up searches the whole New
-      Testament), <code>koine.report.draft</code> (a problem report you have
+      Testament), <code>koine.today</code> (the order of Today's sections and
+      any you have hidden), <code>koine.report.draft</code> (a problem report you have
       started and not yet sent, cleared once it is), <code>koine.installDismissed</code> and
       <code>koine.testerAsked</code> (that you closed the install bar or the
       Android-test invitation), and <code>koine.visits</code> (how many times
@@ -132,7 +133,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <h2>Sync, if you choose to turn it on</h2>
   <p>Sync exists so the same progress can be used on a phone and a laptop. It
   is <b>off by default</b> and does nothing until you switch it on in
-  Progress&nbsp;→&nbsp;Sync.</p>
+  Settings&nbsp;→&nbsp;Sync.</p>
 
   <h3>How it works</h3>
   <ul>
@@ -157,12 +158,12 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
     why the app offers to switch a phrase to a code.</p>
     <p>There is no account and so there is no password reset — that is the
     trade for not having to sign up for anything. Your code is shown in
-    Progress&nbsp;→&nbsp;Sync on any device that uses it; if every such device
+    Settings&nbsp;→&nbsp;Sync on any device that uses it; if every such device
     is lost, the record cannot be recovered.</p>
   </div>
 
   <h3>Deleting the synced copy</h3>
-  <p>Progress&nbsp;→&nbsp;Sync&nbsp;→&nbsp;<b>Delete synced copy</b> removes the
+  <p>Settings&nbsp;→&nbsp;Sync&nbsp;→&nbsp;<b>Delete synced copy</b> removes the
   record from the store for good. Your device keeps its own progress. Turning
   sync <i>off</i> is different and deliberately so: it leaves the stored copy
   in place, so another device can still find it.</p>
@@ -198,11 +199,11 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <h2>Keeping it, and getting rid of it</h2>
   <ul>
     <li><b>On your device</b> — progress stays until you remove it.
-      Progress&nbsp;→&nbsp;<b>Reset everything</b> clears it, and so does
+      Settings&nbsp;→&nbsp;<b>Reset everything</b> clears it, and so does
       clearing the site's data in your browser or uninstalling the app.</li>
     <li><b>The synced copy</b> — kept until you delete it, using the button
       described above. There is no separate backup of it.</li>
-    <li><b>Export</b> — Progress&nbsp;→&nbsp;<b>Export progress</b> writes
+    <li><b>Export</b> — Settings&nbsp;→&nbsp;<b>Export progress</b> writes
       everything the app holds to a file, so you can see exactly what that
       is.</li>
   </ul>

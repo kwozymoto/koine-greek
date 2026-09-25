@@ -120,6 +120,8 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
         </div>
       </div>
       <span class="streak">🔥 <b id="streakN">0</b>&nbsp;day streak<i id="streakRest"></i></span>
+      <!-- The numbers live on the Settings tab now; this is the way to them. -->
+      <p class="progl"><a href="#" onclick="goProgress();return false" class="tappable">Your progress ›</a></p>
     </div>
 
     <!-- A few short things, with how long they add up to shown above them
@@ -129,13 +131,19 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
     <div id="planList"></div>
     <button class="btn" id="btnContinue">Continue</button>
 
-    <div id="focusCard"></div>
-    <div id="startHere"></div>
-    <div id="pinned"></div>
-    <div id="wotd"></div>
+    <!-- Everything below the plan, in the order and with the sections the
+         learner chose under "Arrange Today" (arrangeToday in js/app.js). -->
+    <div id="todayMore">
+      <div id="focusCard"></div>
+      <div id="startHere"></div>
+      <div id="pinned"></div>
+      <div id="wotd"></div>
+    </div>
 
-    <p style="margin:26px 0 0;text-align:center">
-      <a href="#" onclick="go('help');return false" class="muted tappable" style="font-size:.82rem">How this app works</a></p>
+    <p style="margin:26px 0 0;text-align:center;font-size:.82rem">
+      <a href="#" onclick="openArrange();return false" class="muted tappable">Arrange Today</a>
+      <span class="muted"> · </span>
+      <a href="#" onclick="go('help');return false" class="muted tappable">How this app works</a></p>
   </section>
 
   <!-- LEARN -->
@@ -206,8 +214,8 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 
   <!-- PROGRESS -->
   <section class="screen" id="s-prog">
-    <h2 class="title">Progress</h2>
-    <p class="sub">Your progress, and how to back it up.</p>
+    <h2 class="title">Settings</h2>
+    <p class="sub">Settings and sync, then your progress, and how to back it up.</p>
     <div id="progBody"></div>
   </section>
 
@@ -219,7 +227,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <button data-go="drill"><span class="ic">γ</span>Drill</button>
   <button data-go="read"><span class="ic">δ</span>Read</button>
   <button data-go="tables"><span class="ic">ε</span>Look up</button>
-  <button data-go="prog"><span class="ic">ζ</span>Progress</button>
+  <button data-go="prog"><span class="ic">ζ</span>Settings</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -237,6 +245,22 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
      its CSS already exist for the tester prompt below. The list is built at
      open time by deckSets(), since every set in it is a query over the deck
      and the answers change as the deck is learned. -->
+<!-- Arrange Today: the order of the sections below the plan, and which are
+     shown. Filled by paintArrange(). -->
+<div class="scrim" id="arrScrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="arrHead">
+    <h3 id="arrHead">Arrange Today</h3>
+    <p>The day's plan always comes first. Order the rest as you like, and hide
+      what you do not use — hiding only takes it off Today.</p>
+    <div id="arrList"></div>
+    <div class="sacts">
+      <button class="btn ghost small" onclick="resetArrange()">Reset</button>
+      <button class="btn small" onclick="closeArrange()">Done</button>
+    </div>
+    <button class="x" onclick="closeArrange()" aria-label="Close">&times;</button>
+  </div>
+</div>
+
 <!-- The quick test's chooser: a set and a length. Filled at open time by
      openQuickTest(), from the same queries as the flash-card sets. -->
 <div class="scrim" id="qtScrim" hidden>
