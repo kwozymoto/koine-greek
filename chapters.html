@@ -58,7 +58,7 @@
   <a class="back" href="about.html">&lsaquo; About Everyday Koine</a>
   <h1>What the chapters cover</h1>
   <p class="lede">27 chapters take you from the alphabet to reading the Greek New Testament. Each comes in short parts with questions along the way, and 8 are read aloud so far. Tap any chapter to read it in full; the topics under each are its own section headings.</p>
-  <a class="open" href="/?go=learn">Open the chapters in the app</a>
+  <a class="open" href="/?go=learn" target="_blank" rel="noopener" data-app>Open the chapters in the app</a>
 <section class="ch" id="chapter-1">
   <h2><span class="n">Chapter 1</span> <a href="chapters/1.html">The letters and sounds of Greek</a> <span class="badge">Read aloud</span></h2>
   <p class="s">The alphabet, breathings, accents and punctuation</p>
@@ -222,8 +222,11 @@
   <p class="more" aria-hidden="true">Read the full chapter &rsaquo;</p>
 </section>
   <footer>
-    <p><a href="/">Open the app</a> · <a href="about.html">About</a> · <a href="chapters.html">All chapters</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
+    <p><a href="/" target="_blank" rel="noopener" data-app>Open the app</a> · <a href="about.html">About</a> · <a href="chapters.html">All chapters</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
   </footer>
 </main>
+<script>/* Opening the app in a new tab keeps this page open on the website. Inside the installed app a new tab would open the browser instead, so there the link opens in place. */
+if (matchMedia('(display-mode: standalone)').matches)
+  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });</script>
 </body>
 </html>

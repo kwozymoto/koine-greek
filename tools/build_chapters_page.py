@@ -160,13 +160,17 @@ def head(title, desc, canonical, extra_css, up=""):
                canonical, CSS, extra_css))
 
 
+APP_TAB_SCRIPT = "<script>/* Opening the app in a new tab keeps this page open on the website. Inside the installed app a new tab would open the browser instead, so there the link opens in place. */\nif (matchMedia('(display-mode: standalone)').matches)\n  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });</script>\n"
+
+
 def foot(up=""):
-    return ("  <footer>\n    <p><a href=\"%s\">Open the app</a> · "
+    return ("  <footer>\n    <p><a href=\"%s\" target=\"_blank\" rel=\"noopener\" data-app>Open the app</a> · "
             "<a href=\"%sabout.html\">About</a> · "
             "<a href=\"%schapters.html\">All chapters</a> · "
             "<a href=\"%sprivacy.html\">Privacy policy</a> · "
             "<a href=\"mailto:support@everydaykoine.app\">support@everydaykoine.app</a></p>\n"
-            "  </footer>\n</main>\n</body>\n</html>\n" % ((up or "/"), up, up, up))
+            "  </footer>\n</main>\n" % ((up or "/"), up, up, up)
+            + APP_TAB_SCRIPT + "</body>\n</html>\n")
 
 
 def index_page(ls, aloud):
@@ -197,13 +201,13 @@ def index_page(ls, aloud):
             'the Greek New Testament. Each comes in short parts with questions '
             'along the way, and %d are read aloud so far. Tap any chapter to read '
             'it in full; the topics under each are its own section headings.</p>\n'
-            '  <a class="open" href="/?go=learn">Open the chapters in the app</a>\n'
+            '  <a class="open" href="/?go=learn" target="_blank" rel="noopener" data-app>Open the chapters in the app</a>\n'
             % (len(ls), len(aloud))
             + "\n".join(items) + "\n" + foot())
 
 
 ALPHA_NOTE = ('<div class="inapp">The alphabet, with a recording of every letter '
-              'and diphthong, is in the app: <a href="/?go=learn">open chapter 1 '
+              'and diphthong, is in the app: <a href="/?go=learn" target="_blank" rel="noopener" data-app>open chapter 1 '
               'there</a> to hear each one and say it back.</div>')
 
 
@@ -240,7 +244,7 @@ def chapter_page(l, ls, aloud):
             '  <h1>%s</h1>\n'
             '  <p class="lede">%s</p>\n'
             '  <article>\n%s\n  </article>\n'
-            '  <p class="study"><a class="open" href="/?go=learn">Study this chapter '
+            '  <p class="study"><a class="open" href="/?go=learn" target="_blank" rel="noopener" data-app>Study this chapter '
             'in the app</a></p>\n'
             '  <p class="inapp">In the app this chapter comes in short parts with '
             'questions along the way, and its words go onto your review schedule.</p>\n'

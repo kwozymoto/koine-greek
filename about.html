@@ -161,7 +161,7 @@
     time. Chapters that teach the grammar, recorded to be read aloud,
     vocabulary with audio on a schedule that brings each word back just as you
     are about to forget it, and the whole Greek text with every word parsed.</p>
-    <a class="open" href="/">Open the app</a>
+    <a class="open" href="/" target="_blank" rel="noopener" data-app>Open the app</a>
     <p class="sub">It runs in your browser: no account, no ads, and it works
     offline once opened.</p>
   </header>
@@ -205,7 +205,7 @@
   <h2>Put it on your phone</h2>
   <div class="steps">
     <div class="step"><b>iPhone or iPad</b>
-      <p>Open <a href="/">everydaykoine.app</a> in Safari, tap the Share button,
+      <p>Open <a href="/" target="_blank" rel="noopener" data-app>everydaykoine.app</a> in Safari, tap the Share button,
       then <i>Add to Home Screen</i>.</p></div>
     <div class="step"><b>Android</b>
       <p>Open it in Chrome, tap the menu, then <i>Install app</i> or <i>Add to
@@ -269,10 +269,13 @@
   </ul>
 
   <footer>
-    <p><a href="/">Open the app</a> · <a href="chapters.html">The chapters</a> ·
+    <p><a href="/" target="_blank" rel="noopener" data-app>Open the app</a> · <a href="chapters.html">The chapters</a> ·
     <a href="privacy.html">Privacy policy</a> ·
     <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
   </footer>
 </main>
+<script>/* Opening the app in a new tab keeps this page open on the website. Inside the installed app a new tab would open the browser instead, so there the link opens in place. */
+if (matchMedia('(display-mode: standalone)').matches)
+  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });</script>
 </body>
 </html>

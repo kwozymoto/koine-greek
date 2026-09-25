@@ -189,8 +189,11 @@
 
   <footer>
     Everyday Koine · <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>
-    · <a href="/">everydaykoine.app</a>
+    · <a href="/" target="_blank" rel="noopener" data-app>everydaykoine.app</a>
   </footer>
 </main>
+<script>/* Opening the app in a new tab keeps this page open on the website. Inside the installed app a new tab would open the browser instead, so there the link opens in place. */
+if (matchMedia('(display-mode: standalone)').matches)
+  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });</script>
 </body>
 </html>
