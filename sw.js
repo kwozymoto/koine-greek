@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v242';
+const VERSION = 'v243';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -1500,8 +1500,20 @@ self.addEventListener('fetch', e => {
     // Every navigation resolves to the one cached shell — but only real page
     // navigations. A target="_blank" link to a file (the alphabet PDF) also
     // arrives as mode:'navigate', and was being handed index.html instead.
-    const leaf = new URL(req.url).pathname.split('/').pop();
+    const url = new URL(req.url);
+    const leaf = url.pathname.split('/').pop();
     if (req.mode === 'navigate' && !/\.[a-z0-9]+$/i.test(leaf)) {
+      /* Only the app's own root is the app. Any other page address with no
+         extension -- /about, /privacy, /chapters/7 -- is a page of the site,
+         which the host serves from its .html file. Every such address used
+         to get the app shell, so /about opened the app for anyone who had
+         ever used it, while a first visit got the About page. */
+      const scope = new URL(self.registration.scope).pathname;
+      if (url.pathname !== scope && url.pathname + '/' !== scope) {
+        try { const r = await fetch(req); if (r.ok) return r; } catch (err) {}
+        const page = await cache.match(url.pathname.replace(/\/$/, '') + '.html');
+        if (page) return page;
+      }
       const shell = await cache.match('index.html');
       if (shell) return shell;
       try { return await fetch(req); } catch (err) { return Response.error(); }

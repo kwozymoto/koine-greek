@@ -12,182 +12,184 @@
      Do not edit by hand: check_chapters_page fails when this goes stale. -->
 <style>
   :root{
-    --bg:#141b2b; --surface:#1e2739; --line:#38445d;
+    --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
     --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-ink:#1b1406;
     --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --gk:"Gentium Plus","GFS Didot","Palatino Linotype",Palatino,Georgia,serif;
   }
   *{box-sizing:border-box}
   body{margin:0; padding:2.25rem 1rem 5rem; background:var(--bg); color:var(--text);
-       font:16px/1.6 var(--ui)}
+       font:16px/1.65 var(--ui)}
   main{max-width:44rem; margin:0 auto}
   a{color:var(--gold)}
   .back{display:inline-block; margin-bottom:1.5rem; color:var(--muted); font-size:.9rem}
-  h1{font-size:1.9rem; line-height:1.2; margin:0 0 .6rem; text-wrap:balance}
-  .lede{margin:0 0 1rem}
+  h1{font-size:1.9rem; line-height:1.2; margin:0 0 .5rem; text-wrap:balance}
+  .kicker{color:var(--gold); font-size:.9rem; font-weight:600; margin:0; letter-spacing:.02em}
+  .lede{margin:0 0 1rem; color:var(--muted); font-size:1.05rem}
   .open{display:inline-block; background:var(--gold); color:var(--gold-ink); font-weight:700;
         text-decoration:none; padding:.7rem 1.2rem; border-radius:12px}
-  .ch{background:var(--surface); border:1px solid var(--line); border-radius:12px;
-      padding:.95rem 1.1rem; margin:.8rem 0}
-  .ch h2{font-size:1.05rem; margin:0; line-height:1.35; text-wrap:balance}
-  .n{color:var(--gold); font-variant-numeric:tabular-nums; margin-right:.25rem}
-  .s{margin:.25rem 0 .2rem; color:var(--muted)}
-  .ch ul{margin:.45rem 0 0; padding-left:1.1rem; font-size:.93rem}
-  .ch li{margin:.15rem 0}
+  .open:focus-visible{outline:3px solid var(--text); outline-offset:3px}
   .badge{display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.03em;
          color:var(--gold); border:1px solid var(--gold); border-radius:999px;
          padding:.05rem .5rem; margin-left:.3rem; vertical-align:.15em}
   footer{margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--line);
          color:var(--muted); font-size:.86rem}
+  footer p{margin:.35rem 0}
+
+  .ch{background:var(--surface); border:1px solid var(--line); border-radius:12px;
+      padding:.95rem 1.1rem; margin:.8rem 0}
+  .ch h2{font-size:1.05rem; margin:0; line-height:1.35; text-wrap:balance}
+  .ch h2 a{color:var(--text); text-decoration:none}
+  .ch h2 a:hover, .ch h2 a:focus-visible{color:var(--gold); text-decoration:underline}
+  .n{color:var(--gold); font-variant-numeric:tabular-nums; margin-right:.25rem}
+  .s{margin:.25rem 0 .2rem; color:var(--muted)}
+  .ch ul{margin:.45rem 0 0; padding-left:1.1rem; font-size:.93rem}
+  .ch li{margin:.15rem 0}
 </style>
 </head>
 <body>
 <main>
   <a class="back" href="about.html">&lsaquo; About Everyday Koine</a>
   <h1>What the chapters cover</h1>
-  <p class="lede">27 chapters take you from the alphabet to reading the
-  Greek New Testament. Each comes in short parts with questions along the way,
-  and 8 are read aloud so far. The topics under each chapter are its
-  own section headings.</p>
+  <p class="lede">27 chapters take you from the alphabet to reading the Greek New Testament. Each comes in short parts with questions along the way, and 8 are read aloud so far. Open any chapter to read it in full; the topics under each are its own section headings.</p>
   <a class="open" href="/?go=learn">Open the chapters in the app</a>
 <section class="ch" id="chapter-1">
-  <h2><span class="n">Chapter 1</span> The letters and sounds of Greek <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 1</span> <a href="chapters/1.html">The letters and sounds of Greek</a> <span class="badge">Read aloud</span></h2>
   <p class="s">The alphabet, breathings, accents and punctuation</p>
   <ul><li>Three rules that trip people up</li><li>A note on pronunciation</li><li>Accents</li><li>Punctuation</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-2">
-  <h2><span class="n">Chapter 2</span> The Greek verbal system <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 2</span> <a href="chapters/2.html">The Greek verbal system</a> <span class="badge">Read aloud</span></h2>
   <p class="s">The map before the territory</p>
   <ul><li>What is aspect, and why does it come first?</li><li>Two names for the same thing</li><li>When does the tense tell us the time?</li><li>What does mood tell us?</li><li>What does voice tell us?</li><li>How can we spot a past tense at a glance?</li><li>What are principal parts?</li><li>The discipline</li></ul>
 </section>
 <section class="ch" id="chapter-3">
-  <h2><span class="n">Chapter 3</span> Present and future active indicative <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 3</span> <a href="chapters/3.html">Present and future active indicative</a> <span class="badge">Read aloud</span></h2>
   <p class="s">λύω and λύσω — your first two paradigms</p>
   <ul><li>εἰμί — the verb to be</li><li>The present is not simply &quot;now&quot;</li><li>The future: add σ</li><li>Saying no</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-4">
-  <h2><span class="n">Chapter 4</span> Nouns of the second declension <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 4</span> <a href="chapters/4.html">Nouns of the second declension</a> <span class="badge">Read aloud</span></h2>
   <p class="s">λόγος, ἔργον — and the article that parses them for you</p>
   <ul><li>λόγος — masculine</li><li>The same word, three jobs</li><li>ἔργον — neuter</li><li>A neuter plural takes a singular verb</li><li>Why lexicons list three things</li><li>The definite article</li><li>What the article&#x27;s absence tells you</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-5">
-  <h2><span class="n">Chapter 5</span> Nouns of the first declension <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 5</span> <a href="chapters/5.html">Nouns of the first declension</a> <span class="badge">Read aloud</span></h2>
   <p class="s">Mostly feminine, with a few masculines</p>
   <ul><li>ἀγάπη — the basic pattern</li><li>Alpha or eta?</li><li>The masculines</li><li>The genitive plural always has a circumflex</li><li>Four prepositions worth meeting now</li><li>Small words change shape before a vowel</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-6">
-  <h2><span class="n">Chapter 6</span> Adjectives of the first and second declension <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 6</span> <a href="chapters/6.html">Adjectives of the first and second declension</a> <span class="badge">Read aloud</span></h2>
   <p class="s">Attributive versus predicate</p>
   <ul><li>Attributive: inside the article-noun unit</li><li>Predicate: outside it</li><li>The test</li><li>Substantival: the adjective becomes the noun</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-7">
-  <h2><span class="n">Chapter 7</span> Imperfect and aorist active indicative <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 7</span> <a href="chapters/7.html">Imperfect and aorist active indicative</a> <span class="badge">Read aloud</span></h2>
   <p class="s">Past time, and the aspect distinction that matters more</p>
   <ul><li>The imperfect: inside the action</li><li>The augment</li><li>What the imperfect is for</li><li>The aorist: the whole thing at once</li><li>Second aorists: the same tense, a different shape</li><li>εἰμί in the past</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-8">
-  <h2><span class="n">Chapter 8</span> Additional prepositions <span class="badge">Read aloud</span></h2>
+  <h2><span class="n">Chapter 8</span> <a href="chapters/8.html">Additional prepositions</a> <span class="badge">Read aloud</span></h2>
   <p class="s">Case changes the meaning</p>
   <ul><li>Two cases, two meanings</li><li>ἐπί and παρά: three cases each</li><li>The picture behind the case</li><li>The ones that take a single case</li><li>By whom, and through whom</li><li>Compound verbs</li><li>Where the augment goes</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-9">
-  <h2><span class="n">Chapter 9</span> Personal pronouns </h2>
+  <h2><span class="n">Chapter 9</span> <a href="chapters/9.html">Personal pronouns</a> </h2>
   <p class="s">ἐγώ, σύ, αὐτός — and the three uses of αὐτός</p>
   <ul><li>First and second person</li><li>αὐτός: the third person</li><li>Where each part of a pronoun comes from</li><li>His, her, their</li><li>When the pronoun is emphatic</li><li>αὐτός as &quot;self&quot; and as &quot;same&quot;</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-10">
-  <h2><span class="n">Chapter 10</span> Perfect and pluperfect active indicative </h2>
+  <h2><span class="n">Chapter 10</span> <a href="chapters/10.html">Perfect and pluperfect active indicative</a> </h2>
   <p class="s">Completed action, continuing results</p>
   <ul><li>Completed action, continuing state</li><li>The form: reduplication and κα</li><li>When the reduplication is not a plain doubling</li><li>Second perfects</li><li>The perfect in the text</li><li>The pluperfect</li><li>οἶδα, and ᾔδειν</li><li>Don&#x27;t over-preach it</li></ul>
 </section>
 <section class="ch" id="chapter-11">
-  <h2><span class="n">Chapter 11</span> Demonstrative pronouns </h2>
+  <h2><span class="n">Chapter 11</span> <a href="chapters/11.html">Demonstrative pronouns</a> </h2>
   <p class="s">οὗτος and ἐκεῖνος — this and that</p>
   <ul><li>οὗτος: the forms</li><li>ἐκεῖνος: the forms</li><li>With a noun: outside the article, still &quot;this&quot;</li><li>Standing on its own</li><li>Pointing back at what was just said</li><li>Watch the breathing</li><li>ἐκεῖνος in John</li></ul>
 </section>
 <section class="ch" id="chapter-12">
-  <h2><span class="n">Chapter 12</span> Present middle and passive indicative </h2>
+  <h2><span class="n">Chapter 12</span> <a href="chapters/12.html">Present middle and passive indicative</a> </h2>
   <p class="s">Where English has no equivalent</p>
   <ul><li>One set of endings, two voices</li><li>The paradigm, and the odd second singular</li><li>What the passive says</li><li>What the middle says</li><li>Deponent verbs</li><li>By whom, through whom, by what</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-13">
-  <h2><span class="n">Chapter 13</span> Perfect middle/passive and future middle </h2>
+  <h2><span class="n">Chapter 13</span> <a href="chapters/13.html">Perfect middle/passive and future middle</a> </h2>
   <p class="s">Endings straight onto the stem</p>
   <ul><li>The perfect middle and passive</li><li>When the stem ends in a consonant</li><li>The future middle</li><li>ἔσομαι: the future of εἰμί</li><li>Telling them apart</li><li>Adverbs</li><li>μέν … δέ</li></ul>
 </section>
 <section class="ch" id="chapter-14">
-  <h2><span class="n">Chapter 14</span> Imperfect middle/passive, aorist middle, pluperfect middle/passive </h2>
+  <h2><span class="n">Chapter 14</span> <a href="chapters/14.html">Imperfect middle/passive, aorist middle, pluperfect middle/passive</a> </h2>
   <p class="s">The secondary middle endings</p>
   <ul><li>The secondary middle and passive endings</li><li>The imperfect middle and passive</li><li>The aorist middle</li><li>Second aorist middles</li><li>The pluperfect middle and passive</li><li>How much of this you actually meet</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-15">
-  <h2><span class="n">Chapter 15</span> Aorist and future passive indicative </h2>
+  <h2><span class="n">Chapter 15</span> <a href="chapters/15.html">Aorist and future passive indicative</a> </h2>
   <p class="s">The θη that changes who does what</p>
   <ul><li>The first aorist passive</li><li>When the stem ends in a consonant</li><li>Second aorist passives</li><li>The future passive</li><li>The passive at work</li><li>Passive in form, active in sense</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-16">
-  <h2><span class="n">Chapter 16</span> Review of the indicative mood </h2>
+  <h2><span class="n">Chapter 16</span> <a href="chapters/16.html">Review of the indicative mood</a> </h2>
   <p class="s">One verb, one chart, whole system</p>
   <ul><li>The slots a Greek verb fills</li><li>The whole indicative on one page</li><li>How to take a verb apart</li><li>Working one out</li><li>Where time actually lives</li></ul>
 </section>
 <section class="ch" id="chapter-17">
-  <h2><span class="n">Chapter 17</span> Nouns of the third declension </h2>
+  <h2><span class="n">Chapter 17</span> <a href="chapters/17.html">Nouns of the third declension</a> </h2>
   <p class="s">Find the stem in the genitive</p>
   <ul><li>The endings that are always there</li><li>Find the stem in the genitive</li><li>Consonant stems: σῶμα and σάρξ</li><li>Vowel stems: πίστις and πόλις</li><li>The family words</li><li>The dative plural, where the stem gets crushed</li><li>The article carries you</li></ul>
 </section>
 <section class="ch" id="chapter-18">
-  <h2><span class="n">Chapter 18</span> Adjectives, pronouns, and numerals of the first and third declensions </h2>
+  <h2><span class="n">Chapter 18</span> <a href="chapters/18.html">Adjectives, pronouns, and numerals of the first and third declensions</a> </h2>
   <p class="s">πᾶς, εἷς, οὐδείς — small words, large claims</p>
   <ul><li>πᾶς: the forms</li><li>How πᾶς reads</li><li>εἷς, οὐδείς and μηδείς</li><li>πολύς and μέγας</li><li>Comparison</li><li>When the comparative is doing superlative work</li><li>Numbers worth knowing</li></ul>
 </section>
 <section class="ch" id="chapter-19">
-  <h2><span class="n">Chapter 19</span> Contract and liquid verbs </h2>
+  <h2><span class="n">Chapter 19</span> <a href="chapters/19.html">Contract and liquid verbs</a> </h2>
   <p class="s">Why ἀγαπάω never looks like ἀγαπάω</p>
   <ul><li>What contraction does</li><li>The three types in the present</li><li>The ο type is rarer than it looks</li><li>Outside the present, contraction disappears</li><li>Liquid verbs: a future with no σ</li><li>Liquid aorists: the σ goes, the stem stretches</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-20">
-  <h2><span class="n">Chapter 20</span> Participles: the forms </h2>
+  <h2><span class="n">Chapter 20</span> <a href="chapters/20.html">Participles: the forms</a> </h2>
   <p class="s">One verb form in four, and how to spot them</p>
   <ul><li>A verbal adjective</li><li>Tense is aspect, not time</li><li>The present participle</li><li>The aorist participle</li><li>The perfect participle, and the shapes to know on sight</li></ul>
 </section>
 <section class="ch" id="chapter-21">
-  <h2><span class="n">Chapter 21</span> Participles: the three uses </h2>
+  <h2><span class="n">Chapter 21</span> <a href="chapters/21.html">Participles: the three uses</a> </h2>
   <p class="s">The article decides, and the genitive absolute</p>
   <ul><li>With the article, beside a noun</li><li>With the article and no noun</li><li>Without the article</li><li>The genitive absolute</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-22">
-  <h2><span class="n">Chapter 22</span> Infinitives (verbal nouns) </h2>
+  <h2><span class="n">Chapter 22</span> <a href="chapters/22.html">Infinitives (verbal nouns)</a> </h2>
   <p class="s">Verbal nouns and their many uses</p>
   <ul><li>The forms</li><li>The article makes it a noun you can use</li><li>Purpose and result</li><li>Time</li><li>Cause</li><li>The subject goes in the accusative</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-23">
-  <h2><span class="n">Chapter 23</span> Additional pronouns </h2>
+  <h2><span class="n">Chapter 23</span> <a href="chapters/23.html">Additional pronouns</a> </h2>
   <p class="s">Relative, reflexive, reciprocal, interrogative</p>
   <ul><li>The relative pronoun</li><li>Where a relative gets its gender and its case</li><li>ὅστις, the indefinite relative</li><li>τίς and τις: one accent apart</li><li>Reflexive pronouns</li><li>ἀλλήλων: one another</li><li>Possessives, and what to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-24">
-  <h2><span class="n">Chapter 24</span> The subjunctive mood </h2>
+  <h2><span class="n">Chapter 24</span> <a href="chapters/24.html">The subjunctive mood</a> </h2>
   <p class="s">Purpose, probability and exhortation</p>
   <ul><li>The forms are the easy part</li><li>The aorist is the default</li><li>ἵνα, and purpose</li><li>Let us — the hortatory subjunctive</li><li>Do not start — μή with the aorist subjunctive</li><li>οὐ μή — the strongest negative in Greek</li><li>Conditions</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-25">
-  <h2><span class="n">Chapter 25</span> The imperative and optative moods </h2>
+  <h2><span class="n">Chapter 25</span> <a href="chapters/25.html">The imperative and optative moods</a> </h2>
   <p class="s">Commands, prohibitions, and μὴ γένοιτο</p>
   <ul><li>The forms</li><li>Aspect, not urgency</li><li>The Lord&#x27;s Prayer, both ways</li><li>Prohibition: two ways, and the one that is overstated</li><li>Command, entreaty, and permission</li><li>The optative</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-26">
-  <h2><span class="n">Chapter 26</span> The conjugation of -μι verbs </h2>
+  <h2><span class="n">Chapter 26</span> <a href="chapters/26.html">The conjugation of -μι verbs</a> </h2>
   <p class="s">δίδωμι, τίθημι, ἵστημι, ἀφίημι</p>
   <ul><li>What makes them different</li><li>Present reduplication</li><li>δίδωμι in the present</li><li>The aorist is where you actually meet them</li><li>τίθημι and ἵστημι</li><li>ἀφίημι, and the compounds</li><li>What to watch for</li></ul>
 </section>
 <section class="ch" id="chapter-27">
-  <h2><span class="n">Chapter 27</span> Reading your Greek New Testament </h2>
+  <h2><span class="n">Chapter 27</span> <a href="chapters/27.html">Reading your Greek New Testament</a> </h2>
   <p class="s">Tools, habits, and the fallacies to avoid</p>
   <ul><li>Read every day, in the easiest thing you can find</li><li>Read forward, not sideways</li><li>Observe the aspect</li><li>Observe the voice, and the article</li><li>Observe the order</li><li>The word-study fallacy</li><li>What the grammar cannot settle</li><li>Where to go from here</li></ul>
 </section>
   <footer>
-    <p><a href="/">Open the app</a> · <a href="about.html">About</a> ·
-    <a href="privacy.html">Privacy policy</a> ·
-    <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
+    <p><a href="/">Open the app</a> · <a href="about.html">About</a> · <a href="chapters.html">All chapters</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
   </footer>
 </main>
 </body>
