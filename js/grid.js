@@ -439,7 +439,22 @@ function formDrill(n = 10) {
     }
     if (wrong.length < 3) return null;
     const show = r => `<span class="gk">${r[0]}</span>`;
-    const opts = [want, ...wrong].sort(() => Math.random() - .5).map(show);
+    const rows4 = [want, ...wrong].sort(() => Math.random() - .5);
+    const opts = rows4.map(show);
+    /* Where you struggle: each category the slot names, scored against the
+       form chosen -- pick the imperfect when the aorist was asked and it is
+       the tense that was missed, not the person or the number. */
+    const cats = want[2] === "V-" ? ["person", "tense", "voice", "mood", "number"]
+                                  : ["case", "number", "gender"];
+    const note = (good, pick) => {
+      if (typeof noteParse !== "function") return;
+      const got = rows4[pick] || want;
+      cats.forEach(d => {
+        const at = REAL_AT[d], v = want[3][at];
+        if (v && v !== "-") noteParse(d, v, good || got[3][at] === v);
+      });
+      save();
+    };
     const v = VOCAB[+k];
     const head = v ? v[0].split(",")[0] : "";
     return mcq(
@@ -448,6 +463,6 @@ function formDrill(n = 10) {
          <b>${gntParse(want[2], want[3])}</b>?</p>`,
       opts, opts.indexOf(show(want)),
       `<span class="gk">${want[0]}</span> — ${gntParse(want[2], want[3])} of
-       <span class="gk">${head}</span> · ${want[4]}`);
+       <span class="gk">${head}</span> · ${want[4]}`, null, note);
   }).filter(Boolean);
 }

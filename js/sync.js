@@ -99,6 +99,13 @@ function mergeStates(local, remote) {
      it, and a silent overwrite from elsewhere is the worse surprise. Same
      rule as myGloss, for the same reason. */
   out.notes = Object.assign({}, remote.notes || {}, local.notes || {});
+  /* Parsing by category, [asked, missed, when]: the newer of the two for
+     each, like a card. Adding the counts would double them on every sync. */
+  out.parsing = Object.assign({}, remote.parsing || {});
+  for (const [k, e] of Object.entries(local.parsing || {})) {
+    const r = out.parsing[k];
+    if (!r || (+e[2] || 0) >= (+r[2] || 0)) out.parsing[k] = e;
+  }
   out.grids = mergeCards(local.grids, remote.grids);
   for (const k of Object.keys(out.grids)) {
     const bs = [(local.grids || {})[k], (remote.grids || {})[k]]
@@ -224,7 +231,7 @@ async function syncPull() {
                                      o.alpha, o.alphaDay, o.alphaCheck,
                                      o.plan, o.lessonPart,
                                      o.lcards, o.myGloss, o.focus, o.focusDone,
-                                     o.grids, o.notes]);
+                                     o.grids, o.notes, o.parsing]);
     const changedRemote = sig(merged) !== sig(env.data);
     if (changedLocal) {
       S = merged; save();

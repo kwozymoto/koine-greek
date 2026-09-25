@@ -1924,7 +1924,7 @@ function mcq(q,opts,ans,why,gkey,after){
            "+0 XP". Harmless while the summary was one line; not now. */
         if(good){ addXp(2); SESSION_XP+=2; }
         if(gkey) gradeGrammar(gkey,good);
-        if(after) after(good);
+        if(after) after(good,k);
       };
       box.appendChild(btn);
     });
@@ -2388,6 +2388,15 @@ function buildDrill(n=8){
     document.getElementById("buildGo").onclick=()=>{
       const want={tense,voice,person,number};
       const ok=Object.keys(want).every(k=>sel[k]===want[k]);
+      /* In the code's letters. "m/p" has no single letter -- the builder
+         teaches it as its own answer -- so its voice is not scored. */
+      const LET={tense:{pres:"P",impf:"I",fut:"F",aor:"A",pf:"X"},
+                 voice:{act:"A",mid:"M",pass:"P"},
+                 person:{"1":"1","2":"2","3":"3"}, number:{sg:"S",pl:"P"}};
+      Object.keys(want).forEach(k=>{
+        const v=LET[k][want[k]]; if(v) noteParse(k,v,sel[k]===want[k]);
+      });
+      save();
       document.querySelectorAll("#sessBody .chips button").forEach(c=>c.onclick=null);
       document.getElementById("buildGo").style.display="none";
       document.getElementById("fb").innerHTML=
@@ -2451,8 +2460,79 @@ function realFormPool(){
   return met.length>=8 ? met : FORMS.slice(0,300);
 }
 
-function parseRealDrill(n=10){
-  const pool=realFormPool().slice().sort(()=>Math.random()-.5).slice(0,n);
+/* ---------------------------------------------------- where you struggle -----
+   Every parse answered in three drills -- Parse a real form, Parsing builder
+   and Produce a real form -- is scored one category at a time: shown an
+   aorist, did you get the tense? shown a genitive, the case? S.parsing holds
+   [asked, missed, ts] per category, "tense.A" for the aorist, in the letters
+   of the eight-character parse code so the drill can pull matching forms
+   straight out of data/forms.js. Halved at thirty, so what it reports is how
+   you parse now rather than how you parsed in March. */
+const PARSE_NAMES={
+  tense:{P:"present",I:"imperfect",F:"future",A:"aorist",X:"perfect",Y:"pluperfect"},
+  voice:{A:"active",M:"middle",P:"passive"},
+  mood:{I:"indicative",D:"imperative",S:"subjunctive",O:"optative"},
+  person:{"1":"first person","2":"second person","3":"third person"},
+  "case":{N:"nominative",G:"genitive",D:"dative",A:"accusative",V:"vocative"},
+  number:{S:"singular",P:"plural"},
+  gender:{M:"masculine",F:"feminine",N:"neuter"}
+};
+function noteParse(dim,val,ok){
+  if(!PARSE_NAMES[dim] || !PARSE_NAMES[dim][val]) return;
+  if(!S.parsing) S.parsing={};
+  const k=dim+"."+val, e=S.parsing[k]||[0,0,0];
+  let a=e[0]+1, m=e[1]+(ok?0:1);
+  if(a>=30){ a=Math.round(a/2); m=Math.round(m/2); }
+  S.parsing[k]=[a,m,Date.now()];
+}
+/* The categories worth naming: asked often enough to mean something, missed
+   at least a fifth of the time, worst first. */
+function weakSpots(){
+  return Object.entries(S.parsing||{})
+    .map(([k,[a,m]])=>({k,a,m,r:a?m/a:0}))
+    .filter(x=>x.a>=6 && x.m>=2 && x.r>=.2)
+    .sort((x,y)=>y.r-x.r || y.m-x.m);
+}
+function weakName(k){
+  const [dim,val]=k.split(".");
+  return PARSE_NAMES[dim][val];
+}
+function weakHtml(){
+  const rec=Object.values(S.parsing||{});
+  if(!rec.length) return "";
+  const w=weakSpots().slice(0,3);
+  const body=w.length
+    ? w.map(x=>{const [dim]=x.k.split("."); const n=weakName(x.k);
+        return `<div class="weakrow">
+          <span><b>${n[0].toUpperCase()+n.slice(1)}</b>
+            <small>the ${dim} missed ${x.m} of ${x.a}</small></span>
+          <button class="btn ghost small" onclick="drillWeak('${x.k}')">Drill</button></div>`;}).join("")
+    : `<small class="muted">Nothing stands out yet. Keep parsing and any category you
+        miss more than a fifth of the time will show here.</small>`;
+  return `<div class="card">
+      <div class="between"><span>Where you struggle</span></div>
+      <small class="muted" style="display:block;margin:2px 0 8px">From the parsing
+        drills, one category at a time.</small>
+      ${body}
+    </div>`;
+}
+/* Real forms that carry the category, from the words you have met if there
+   are enough of them. Case and gender belong to nouns and adjectives, the
+   verbal categories to finite verbs, number to both. */
+function drillWeak(k){
+  if(typeof FORMS==="undefined") return;
+  const [dim,val]=k.split(".");
+  const at=REAL_AT[dim];
+  const fits=r=>REAL_OPTS[r[2]] && REAL_OPTS[r[2]][dim] && r[3][at]===val;
+  const all=FORMS.filter(fits);
+  const met=all.filter(r=>S.cards[r[1]] && !skipWord(r[1]));
+  const pool=met.length>=8?met:all;
+  if(!pool.length){ toast("No forms to drill for that yet"); return; }
+  startSession(parseRealDrill(10,pool),"d");
+}
+
+function parseRealDrill(n=10,from){
+  const pool=(from||realFormPool()).slice().sort(()=>Math.random()-.5).slice(0,n);
   return pool.map(r=>()=>{
     const [form,vi,pos,code,ref]=r;
     const opts=REAL_OPTS[pos];
@@ -2479,6 +2559,8 @@ function parseRealDrill(n=10){
     });
     document.getElementById("realGo").onclick=()=>{
       const ok=Object.keys(opts).every(k=>sel[k]===code[REAL_AT[k]]);
+      Object.keys(opts).forEach(k=>noteParse(k,code[REAL_AT[k]],sel[k]===code[REAL_AT[k]]));
+      save();
       document.querySelectorAll("#sessBody .chips button").forEach(c=>c.onclick=null);
       document.getElementById("realGo").style.display="none";
       /* The headword and the reference, so a miss teaches something: this is
@@ -3541,6 +3623,7 @@ function renderProgress(){
       <small class="muted">${st.length} round${st.length===1?"":"s"} started · ${
         gridDue().length} due${fast?` · fastest ${gridName(fast)} in ${mmss(S.grids[fast.key].best)}`:""}</small>
     </div>`;})():""}
+    ${weakHtml()}
     ${(S.focusDone||[]).length?`<div class="card">
       <div class="between"><span>Passages worked</span><b>${S.focusDone.length}</b></div>
       <small class="muted">${S.focusDone.slice(0,6).map(r=>
@@ -3816,6 +3899,17 @@ function saneState(x){
   /* Your own notes, by VOCAB index. Length-capped because they are rendered
      into the card, and index-checked because a note on a word that does not
      exist is a note nobody will ever see. */
+  /* Parsing by category: [asked, missed, when]. Only the keys noteParse
+     writes, and the counts held to sense, since they are shown as numbers. */
+  out.parsing={};
+  const ps=(x.parsing&&typeof x.parsing==="object"&&!Array.isArray(x.parsing))?x.parsing:{};
+  for(const k of Object.keys(ps)){
+    const [d,v]=k.split("."), e=ps[k];
+    if(!PARSE_NAMES[d] || !PARSE_NAMES[d][v] || !Array.isArray(e)) continue;
+    const a=Math.floor(+e[0]), m=Math.floor(+e[1]), t=+e[2]||0;
+    if(Number.isInteger(a) && a>0 && a<=1000 && Number.isInteger(m) && m>=0 && m<=a)
+      out.parsing[k]=[a,m,t];
+  }
   out.notes={};
   const nt=(x.notes&&typeof x.notes==="object"&&!Array.isArray(x.notes))?x.notes:{};
   for(const k of Object.keys(nt)){
@@ -3868,7 +3962,7 @@ function resetAll(){
     ? "Delete all progress on this device?\n\nSync will be turned off too — otherwise your other device would send it all back. That device keeps its own copy."
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
-  S={cards:{},gcards:{},grids:{},notes:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},alphaDay:{},alphaCheck:null,plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
+  S={cards:{},gcards:{},grids:{},notes:{},parsing:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},alphaDay:{},alphaCheck:null,plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
   save(); renderProgress(); toast("Everything reset");
 }
 
