@@ -12,8 +12,8 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-26", v:"v263", items:[
-  {k:"audio", t:"40 more words re-recorded with the clearer pronunciation, each chosen by ear."}
+{d:"2026-09-26", v:"v264", items:[
+  {k:"audio", t:"79 more words re-recorded with the clearer pronunciation, each chosen by ear."}
 ]},
 {d:"2026-09-25", v:"v261", items:[
   {k:"new", t:"A light theme. Settings → Appearance: same as your device, light, or dark."},

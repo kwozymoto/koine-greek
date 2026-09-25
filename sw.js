@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v263';
+const VERSION = 'v264';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,41 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v264: IPA batch 5 (39 cards). */
+  'audio/vocab/257_emos.mp3',                      // ἐμός
+  'audio/vocab/258_erousalem.mp3',                 // Ἰερουσαλήμ
+  'audio/vocab/260_kephale.mp3',                   // κεφαλή
+  'audio/vocab/262_chairo.mp3',                    // χαίρω
+  'audio/vocab/264_braam.mp3',                     // Ἀβραάμ
+  'audio/vocab/266_pur.mp3',                       // πῦρ
+  'audio/vocab/267_tereo.mp3',                     // τηρέω
+  'audio/vocab/269_srael.mp3',                     // Ἰσραήλ
+  'audio/vocab/274_treis.mp3',                     // τρεῖς
+  'audio/vocab/276_phero.mp3',                     // φέρω
+  'audio/vocab/279_erosoluma.mp3',                 // Ἱεροσόλυμα
+  'audio/vocab/280_daimonion.mp3',                 // δαιμόνιον
+  'audio/vocab/282_dokeo.mp3',                     // δοκέω
+  'audio/vocab/283_oros.mp3',                      // ὄρος
+  'audio/vocab/288_alilaia.mp3',                   // Γαλιλαία
+  'audio/vocab/289_agapetos.mp3',                  // ἀγαπητός
+  'audio/vocab/298_euthus.mp3',                    // εὐθύς
+  'audio/vocab/300_lithos.mp3',                    // λίθος
+  'audio/vocab/301_didaskalos.mp3',                // διδάσκαλος
+  'audio/vocab/304_sunagoge.mp3',                  // συναγωγή
+  'audio/vocab/305_toioutos.mp3',                  // τοιοῦτος
+  'audio/vocab/307_eperotao.mp3',                  // ἐπερωτάω
+  'audio/vocab/311_ilatos.mp3',                    // Πιλᾶτος
+  'audio/vocab/317_eschatos.mp3',                  // ἔσχατος
+  'audio/vocab/318_speiro.mp3',                    // σπείρω
+  'audio/vocab/319_peitho.mp3',                    // πείθω
+  'audio/vocab/320_makarios.mp3',                  // μακάριος
+  'audio/vocab/321_tuphlos.mp3',                   // τυφλός
+  'audio/vocab/323_kakos.mp3',                     // κακός
+  'audio/vocab/324_glossa.mp3',                    // γλῶσσα
+  'audio/vocab/325_paralambano.mp3',               // παραλαμβάνω
+  'audio/vocab/328_etos.mp3',                      // ἔτος
+  'audio/vocab/331_emprosthen.mp3',                // ἔμπροσθεν
+  'audio/vocab/333_phaneroo.mp3',                  // φανερόω
   /* v263: ἔλεος and Ἰωάννης, the last of IPA batch 4. */
   'audio/vocab/234_eleos.mp3',                     // ἔλεος
   'audio/vocab/239_oannes.mp3',                    // Ἰωάννης
