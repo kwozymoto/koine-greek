@@ -1044,5 +1044,9 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .deckrow .t b{font-size:.87rem;font-weight:600}
 .deckrow .t span{font-size:.73rem;color:var(--muted);overflow:hidden;
   text-overflow:ellipsis;white-space:nowrap}
+/* The quick test's list of misses. */
+.qtmiss{display:flex;flex-direction:column;gap:9px}
+.qtrow{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:10px;align-items:baseline}
+.qtrow small{display:block;color:var(--muted);font-size:.74rem}
 .deckrow .n{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;
   flex:0 0 auto}

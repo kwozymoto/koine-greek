@@ -233,6 +233,22 @@
      its CSS already exist for the tester prompt below. The list is built at
      open time by deckSets(), since every set in it is a query over the deck
      and the answers change as the deck is learned. -->
+<!-- The quick test's chooser: a set and a length. Filled at open time by
+     openQuickTest(), from the same queries as the flash-card sets. -->
+<div class="scrim" id="testScrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="testHead">
+    <h3 id="testHead">Quick test</h3>
+    <p>Each word asked once, marked at the end. Nothing here changes your
+      review schedule.</p>
+    <div id="testLen" class="chips"></div>
+    <div id="testList" class="decklist"></div>
+    <div class="sacts">
+      <button class="btn ghost small" onclick="closeQuickTest()">Close</button>
+    </div>
+    <button class="x" onclick="closeQuickTest()" aria-label="Close">&times;</button>
+  </div>
+</div>
+
 <div class="scrim" id="deckScrim" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="deckHead">
     <h3 id="deckHead">Flash cards</h3>

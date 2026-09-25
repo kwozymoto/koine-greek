@@ -113,6 +113,12 @@ DRILL_HOW = {
          "drawn from the deck itself — a chapter you have reached, your "
          "own sticking points, words you have noted. Drilling one is "
          "PRACTICE: it pays experience and moves no interval"),
+    "Quick test":
+        ("OPEN", "a test the learner chooses, of a set they name — a "
+         "chapter, a frequency band, the whole deck. Asking words not yet "
+         "met is the point: it measures what is known, and the misses are "
+         "listed with their meanings at the end. It writes nothing to the "
+         "schedule"),
     "Learn 5 new words":
         ("TEACHES", "introduce(): five flashcards, then those same five asked"),
     "Greek → English":

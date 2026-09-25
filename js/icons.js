@@ -59,6 +59,7 @@ const DRILL_KIND = {
   "Vocabulary due now": "card",
   "Flash cards": "card",
   "Learn 5 new words": "card",
+  "Quick test": "choose",
   "Greek → English": "choose",
   "English → Greek": "choose",
   "The article": "grid",
@@ -315,6 +316,8 @@ const DRILL_STATIC = [
      panel is where that count is shown, beside the Drill all button. A
      badge here would have to name a set before one is chosen. */
   "Flash cards",
+  /* Likewise: a chooser, and the set is named inside it. */
+  "Quick test",
 ];
 
 function drillState(title) {

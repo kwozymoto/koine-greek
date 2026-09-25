@@ -717,6 +717,129 @@ function deckSets(){
 }
 
 let DECK_SETS=[];
+
+/* ---------------------------------------------------------- quick test -----
+   "How many of chapter 6's words do I actually know?", asked straight: each
+   word once, no verdict until the end, and then the ones missed listed with
+   their meanings. It is a measurement, not practice, so it writes nothing to
+   the schedule -- no grade(), no gkey -- and it does not go through mcq(),
+   whose verdict after every answer would turn the test back into a drill.
+   The sets are the flash-card sets, which are already every question worth
+   asking of the deck, with the frequency bands a reader actually wants. */
+let QT=null, QT_LEN=25, QT_SETS=[];
+function openQuickTest(){
+  const all=VOCAB.map((_,i)=>i).filter(i=>!skipWord(i));
+  const byFreq=[...all].sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
+  const band=n=>({g:"How common", label:`The commonest ${n}`,
+    sub:`each ${VOCAB[byFreq[n-1]][2]}\u00d7 or more in the New Testament`,
+    ids:byFreq.slice(0,n)});
+  QT_SETS=[band(100),band(250),band(500),
+           {g:"How common", label:"The whole deck", sub:`${all.length} words`, ids:all}]
+    .concat(deckSets().filter(d=>d.g!=="How common" || d.label!=="The commonest 100"))
+    .filter(d=>d.ids.length>=4);
+  paintQuickTest();
+  const sc=document.getElementById("testScrim");
+  if(sc) sc.hidden=false;
+}
+function closeQuickTest(){
+  const sc=document.getElementById("testScrim"); if(sc) sc.hidden=true;
+}
+function paintQuickTest(){
+  document.getElementById("testLen").innerHTML=[10,25,50].map(n=>
+    `<button class="${n===QT_LEN?"sel":""}" onclick="QT_LEN=${n};paintQuickTest()">${n} words</button>`).join("");
+  const groups=[];
+  QT_SETS.forEach((d,i)=>{
+    const g=groups.find(x=>x[0]===d.g) || (groups.push([d.g,[]]), groups[groups.length-1]);
+    g[1].push(i);
+  });
+  document.getElementById("testList").innerHTML=groups.map(([g,ix])=>
+    `<h4>${g}</h4>`+ix.map(i=>{
+      const d=QT_SETS[i];
+      return `<button class="deckrow" onclick="startQuickTest(${i})">
+        <span class="t"><b>${d.label}</b><span>${d.sub||""}</span></span>
+        <span class="n">${Math.min(QT_LEN,d.ids.length)}</span></button>`;
+    }).join("")).join("");
+}
+function startQuickTest(k){
+  const d=QT_SETS[k]; if(!d) return;
+  const pick=d.ids.slice().sort(()=>Math.random()-.5).slice(0,QT_LEN);
+  // Wrong answers from the whole deck, so a small set does not hand the
+  // answer over by elimination; the third field is what wrongOptions needs.
+  const bank=VOCAB.map((v,i)=>[v[0].split(",")[0],v[1],v[3],i]).filter(x=>!skipWord(x[3]));
+  closeQuickTest();
+  startSession(pick.map(i=>qtQuestion(i,bank)),"test");
+  QT={k, label:d.label, missed:[]};
+}
+function qtQuestion(i,bank){
+  const v=VOCAB[i], head=v[0].split(",")[0];
+  const opts=[v[1],...wrongOptions([head,v[1],v[3]],bank,3).map(x=>x[1])]
+    .sort(()=>Math.random()-.5);
+  return ()=>{
+    const b=document.getElementById("sessBody");
+    b.innerHTML=`<div class="card"><p style="margin:0;font-size:1.02rem">What does this mean?
+      <span class="q-gk">${head}</span></p></div><div id="opts"></div>
+      <button class="btn ghost" id="qtDunno">I don't know</button>`;
+    const box=document.getElementById("opts");
+    const answer=(said,el)=>{
+      [...box.children].forEach(c=>c.onclick=null);
+      document.getElementById("qtDunno").onclick=null;
+      if(el) el.classList.add("pick");
+      const ok=said===v[1];
+      ASKED++; if(ok) RIGHT++; else if(QT) QT.missed.push([i,said]);
+      setTimeout(()=>{ qi++; step(); },el?160:0);
+    };
+    opts.forEach(o=>{
+      const btn=document.createElement("button");
+      btn.className="opt"; btn.innerHTML=o;
+      btn.onclick=()=>answer(o,btn);
+      box.appendChild(btn);
+    });
+    document.getElementById("qtDunno").onclick=()=>answer(null,null);
+  };
+}
+/* The end of a test, in place of finish()'s summary. A point of XP for each
+   word known -- work was done -- but no plan tick and no streak credit beyond
+   what startSession's touchDay already gave. */
+function quickTestResult(early){
+  const t=QT; QT=null;
+  const b=document.getElementById("sessBody");
+  document.getElementById("sessBar").style.width=early?(qi/Q.length*100)+"%":"100%";
+  if(RIGHT){ addXp(RIGHT); SESSION_XP=RIGHT; }
+  checkBadges();
+  const pct=ASKED?RIGHT/ASKED:0, clean=ASKED>0&&RIGHT===ASKED;
+  const miss=t.missed.map(([i,said])=>`<div class="qtrow">
+      <span class="gk">${VOCAB[i][0]}</span>
+      <span>${VOCAB[i][1]}${said?`<small>you chose: ${said}</small>`
+        :`<small>you didn't know</small>`}</span></div>`).join("");
+  b.innerHTML=`<div class="empty summary">
+    ${typeof ringHtml==="function"
+      ? ringHtml(pct,`${RIGHT}/${ASKED}`,"known",`sring${clean?" clean":""}`) : ""}
+    <span class="gk">${clean?"\u03b5\u1f56\u03b3\u03b5":"\u03c4\u03ad\u03bb\u03bf\u03c2"}</span>
+    <p><b>${t.label}</b> · ${Math.round(pct*100)}%${early?` · stopped after ${ASKED}`:""}</p>
+    <p class="muted" style="font-size:.8rem">Your review schedule is unchanged.</p></div>
+    ${miss?`<h2>The ones you missed</h2><div class="card qtmiss">${miss}</div>`:""}
+    <div class="endbtns">
+      ${t.missed.length?`<button class="btn" onclick="qtDrillMissed()">Drill these ${t.missed.length} now</button>
+      <div style="height:9px"></div>`:""}
+      <button class="btn ghost" onclick="startQuickTest(${t.k})">Another test — ${t.label}</button>
+      <div style="height:9px"></div>
+      <button class="btn ghost" onclick="go('drill')">Back to the drills</button>
+    </div>`;
+  QT_MISSED=t.missed.map(([i])=>i);
+  if(typeof ringFill==="function") ringFill(b);
+}
+let QT_MISSED=[];
+/* Flash cards over the missed words, as free practice -- PRACTICE is what
+   startFocusDrill uses to leave the schedule alone -- and without replacing
+   whatever set the learner has in focus. */
+function qtDrillMissed(){
+  const words=QT_MISSED.filter(i=>VOCAB[i] && !skipWord(i));
+  if(!words.length) return;
+  PRACTICE=true;
+  const q=words.slice().sort(()=>Math.random()-.5).map(flashcard);
+  q.__words=words;
+  startSession(q,"d");
+}
 function openDeckPicker(){
   DECK_SETS=deckSets();
   const groups=[];
@@ -1483,7 +1606,7 @@ function startSession(queue,label){
      survived, so the NEXT session you carried to the end ticked a row you had
      walked out of. Now the comment is true. AGAIN goes the same way: which
      drill can be run again is a fact about the session now starting. */
-  PLAN_TASK=null; AGAIN=null;
+  PLAN_TASK=null; AGAIN=null; QT=null;
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
@@ -1516,6 +1639,7 @@ function step(){
    complete. planExtra() is held back for the same reason: two cards is not a
    round past the plan either. */
 function finish(early){
+  if(QT){ quickTestResult(early); return; }
   const b=document.getElementById("sessBody");
   /* Undo lives outside sessBody, so it survives this re-render. Left live it
      would replay the last card and pay the whole session's XP again. */
@@ -2791,13 +2915,14 @@ const DRILLS=[
 ["Write a real form","Name the slot, type the word — no options to choose from",()=>startSession(typeDrill(),"d")],
 ["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],
 ["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")],
-["Flash cards","Pick a set — a chapter, a kind of word, your sticking points — and drill it",()=>openDeckPicker()]
+["Flash cards","Pick a set — a chapter, a kind of word, your sticking points — and drill it",()=>openDeckPicker()],
+["Quick test","10, 25 or 50 words from a chapter or the commonest — marked at the end, schedule untouched",()=>openQuickTest()]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
 const DRILL_GROUP={
   "Vocabulary":["Vocabulary due now","Learn 5 new words","Greek → English","English → Greek",
-                "Listening — words","Write it from memory","Flash cards"],
+                "Listening — words","Write it from memory","Flash cards","Quick test"],
   "Reading":["Read a sentence","Case functions"],
   "Everything":["Daily mix"],
   "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Write a real form","Principal parts"],
