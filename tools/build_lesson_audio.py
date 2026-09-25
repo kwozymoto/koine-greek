@@ -43,7 +43,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-CHAPTERS = [1, 2, 3, 4, 5, 6, 7]
+CHAPTERS = [1, 2, 3, 4, 5, 6, 7, 8]
 
 # The comment at the top of data/lesson_audio.js. It lives here because that
 # file is generated: the app's copy is overwritten on every build.
@@ -899,6 +899,15 @@ SHORT = {"1st": "first", "2nd": "second", "3rd": "third"}
 # Tables whose rows read better as a sentence of their own, keyed by the
 # chapter and the text of the table's first heading. {n} is column n of the
 # row, said as it would be in prose.
+# A sentence said before a table, where the rows alone do not say what is
+# coming. Keyed like TABLE_ROWS. Chapter 8's percentages were read with no
+# word of what they measured (Fraser: say what the table works through).
+TABLE_INTRO = {
+    (8, "Prep"): "For each of the six: its meaning with the genitive and "
+                 "with the accusative, and how often it takes each case in "
+                 "the New Testament.",
+}
+
 TABLE_ROWS = {
     (2, "Aspect"): "{0}. Presents the action as {1}. Tenses: {2}.",
     # "In plain terms:" before every row said the heading five times over.
@@ -977,6 +986,10 @@ def narrate_table(inner, ch, cues, missing):
         else:
             cell(key)
 
+    first_head = plain((0, 0)) if grid and all(heads[0]) else ""
+    intro = TABLE_INTRO.get((ch, first_head))
+    if intro:
+        say(intro)
     if cap:
         cell(("cap",))
         stop(".")
@@ -1209,7 +1222,13 @@ def blocks_for(les, cues, missing):
                 read = narrate_verse(inner, ref.group(1), les["id"], cues,
                                      missing)
                 if read:
-                    out.append(("prose",) + read + ([el],))
+                    # A verse opens the block that carries its translation,
+                    # as a heading opens its section. Left as prose, it was
+                    # folded into the block BEFORE it, and the English meaning
+                    # began the next block (chapter 8, blocks 4 and 6).
+                    kind_v = ("lead" if les["id"] >= VERSE_JOINS_FROM
+                              else "prose")
+                    out.append((kind_v,) + read + ([el],))
                     continue
             out.append(("verse", "The Greek of %s is on screen."
                         % (ref.group(1) if ref else "the verse"),
@@ -1238,6 +1257,11 @@ def blocks_for(les, cues, missing):
 MIN_WORDS = 30
 
 
+# The chapter from which a read verse leads into the block after it.
+# Chapters 3 to 7 were recorded with the older grouping and approved so.
+VERSE_JOINS_FROM = 8
+
+
 def merge(blocks, stop=False):
     """Headings join the block after them; anything still short joins the
        block before. Repeated until nothing moves, because folding two short
@@ -1253,7 +1277,7 @@ def merge(blocks, stop=False):
         # LEGACY, whose clips were recorded without it.
         if stop and head and head[-1] not in ".!?:;—":
             head += "."
-        return [a[0] if a[0] != "heading" else c[0],
+        return [a[0] if a[0] not in ("heading", "lead") else c[0],
                 head + " " + c[1].lstrip(),
                 a[2] + c[2],
                 a[3] + [p + shift for p in c[3]],
@@ -1261,10 +1285,17 @@ def merge(blocks, stop=False):
 
     out = []
     for kind, text, page, pairs, els in blocks:
-        if kind == "heading":
-            out.append(["heading", text, page, pairs, els])  # settled next pass
+        # A "lead" -- a read verse -- attaches forward like a heading, and a
+        # lead after a heading or another lead joins them, so two verses in a
+        # row and the heading above them all open the translation's block.
+        if kind == "lead" and out and out[-1][0] in ("heading", "lead"):
+            out.append(join(out.pop(), ["lead", text, page, pairs, els]))
+            out[-1][0] = "lead"
             continue
-        if out and out[-1][0] == "heading":
+        if kind in ("heading", "lead"):
+            out.append([kind, text, page, pairs, els])  # settled next pass
+            continue
+        if out and out[-1][0] in ("heading", "lead"):
             out.append(join(out.pop(), ["prose", text, page, pairs, els]))
             continue
         out.append([kind, text, page, pairs, els])

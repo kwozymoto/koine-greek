@@ -488,7 +488,7 @@ body:`<p>Prepositions are small words carrying a great deal of a sentence's logi
 <p><span class="gk">ἐπί</span> is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183. The honest thing to say is that the distinctions have largely worn away, and all three can mean simply <i>on</i>.</p>
 <p class="v" data-ref="Matthew 6:19">Μὴ θησαυρίζετε ὑμῖν θησαυροὺς ἐπὶ τῆς γῆς</p>
 <p class="v" data-ref="Matthew 10:29">οὐ πεσεῖται ἐπὶ τὴν γῆν</p>
-<p>"Do not store up treasures on earth"; "will not fall to the ground." Genitive in the first, accusative in the second, and the case is not what separates them. With <span class="gk">ἐπί</span>, read the sentence.</p>
+<p>"Do not store up treasures on earth"; "will not fall to the ground." Genitive in the first, accusative in the second, and the case is not what separates them. With <span class="gk">ἐπί</span>, the case will not tell you the meaning; the sentence has to.</p>
 <p><span class="gk">παρά</span> is the opposite. It occurs 193 times, and all three of its cases are still clean.</p>
 <p class="v" data-ref="John 6:45">πᾶς ὁ ἀκούσας παρὰ τοῦ πατρὸς</p>
 <p class="v" data-ref="Luke 1:30">εὗρες γὰρ χάριν παρὰ τῷ θεῷ</p>

@@ -15,7 +15,7 @@ The app is a single-page web app. The links below open it at a given screen; the
 ## Open the app
 
 - [Today](https://everydaykoine.app/): the daily plan — words due for review, a few new ones, and the next part of the current chapter, about ten minutes a day.
-- [Learn](https://everydaykoine.app/?go=learn): the 27 chapters, in short parts with questions, from the letters to reading the text. The chapters are being recorded to be read aloud, with each word lit as it is spoken; about a quarter have audio so far.
+- [Learn](https://everydaykoine.app/?go=learn): the 27 chapters, in short parts with questions, from the letters to reading the text. The chapters are being recorded to be read aloud, with each word lit as it is spoken; about a third have audio so far.
 - [Drill](https://everydaykoine.app/?go=drill): vocabulary, parsing of real forms from the text, paradigm rounds, look-alike words and sentence questions.
 - [Read](https://everydaykoine.app/?go=read): the Greek New Testament, every word parsed and glossed on a tap, plus 12 graded passages.
 - [Tables](https://everydaykoine.app/?go=tables): 28 reference tables — paradigms of nouns, verbs and pronouns, and syntax tables — 20 of them playable as fill-in-the-grid rounds.
