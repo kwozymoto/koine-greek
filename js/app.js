@@ -740,13 +740,22 @@ function openQuickTest(){
   paintQuickTest();
   const sc=document.getElementById("qtScrim");
   if(sc) sc.hidden=false;
+  const f=document.querySelector("#qtLen .sel"); if(f) f.focus();
 }
+/* Escape closes either chooser, as it does any sheet on a computer. */
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Escape") return;
+  const q=document.getElementById("qtScrim"), d=document.getElementById("deckScrim");
+  if(q && !q.hidden) closeQuickTest();
+  else if(d && !d.hidden) closeDeckPicker();
+});
 function closeQuickTest(){
   const sc=document.getElementById("qtScrim"); if(sc) sc.hidden=true;
 }
 function paintQuickTest(){
   document.getElementById("qtLen").innerHTML=[10,25,50].map(n=>
-    `<button class="${n===QT_LEN?"sel":""}" onclick="QT_LEN=${n};paintQuickTest()">${n} words</button>`).join("");
+    `<button class="${n===QT_LEN?"sel":""}" aria-pressed="${n===QT_LEN}"
+       onclick="QT_LEN=${n};paintQuickTest();document.querySelector('#qtLen .sel').focus()">${n} words</button>`).join("");
   const groups=[];
   QT_SETS.forEach((d,i)=>{
     const g=groups.find(x=>x[0]===d.g) || (groups.push([d.g,[]]), groups[groups.length-1]);
@@ -786,7 +795,10 @@ function qtQuestion(i,bank){
       if(el) el.classList.add("pick");
       const ok=said===v[1];
       ASKED++; if(ok) RIGHT++; else if(QT) QT.missed.push([i,said]);
-      setTimeout(()=>{ qi++; step(); },el?160:0);
+      /* Finish pressed inside the pause has already drawn the results; the
+         timer must not draw the next question over them. */
+      const t=QT;
+      setTimeout(()=>{ if(QT!==t || !t || t.done) return; qi++; step(); },el?160:0);
     };
     opts.forEach(o=>{
       const btn=document.createElement("button");
@@ -801,8 +813,12 @@ function qtQuestion(i,bank){
    word known -- work was done -- but no plan tick and no streak credit beyond
    what startSession's touchDay already gave. */
 function quickTestResult(early){
-  const t=QT; QT=null;
+  const t=QT;
   const b=document.getElementById("sessBody");
+  /* Finish pressed on the results themselves: keep them, and pay nothing
+     twice. QT stays set until the next session starts, so this is known. */
+  if(t.done){ b.innerHTML=t.html; if(typeof ringFill==="function") ringFill(b); return; }
+  t.done=true;
   document.getElementById("sessBar").style.width=early?(qi/Q.length*100)+"%":"100%";
   if(RIGHT){ addXp(RIGHT); SESSION_XP=RIGHT; }
   checkBadges();
@@ -825,6 +841,7 @@ function quickTestResult(early){
       <div style="height:9px"></div>
       <button class="btn ghost" onclick="go('drill')">Back to the drills</button>
     </div>`;
+  t.html=b.innerHTML;
   QT_MISSED=t.missed.map(([i])=>i);
   if(typeof ringFill==="function") ringFill(b);
 }
@@ -835,9 +852,8 @@ let QT_MISSED=[];
 function qtDrillMissed(){
   const words=QT_MISSED.filter(i=>VOCAB[i] && !skipWord(i));
   if(!words.length) return;
-  PRACTICE=true;
   const q=words.slice().sort(()=>Math.random()-.5).map(flashcard);
-  q.__words=words;
+  q.__words=words; q.__practice=true;
   startSession(q,"d");
 }
 function openDeckPicker(){
@@ -886,9 +902,8 @@ function startFocusDrill(){
   if(!f){ toast("Choose a set first"); return; }
   const words=f.deck.map(([i])=>i).filter(i=>VOCAB[i] && !skipWord(i));
   if(!words.length){ toast("Nothing in this set to drill"); return; }
-  PRACTICE=true;
   const q=words.slice().sort(()=>Math.random()-.5).map(flashcard);
-  q.__words=words;
+  q.__words=words; q.__practice=true;
   startSession(q,"d");
 }
 
@@ -1599,6 +1614,11 @@ let Q=[], qi=0, mode="";
 let REQUEUED={};                 // VOCAB index -> times re-queued this session
 function startSession(queue,label){
   Q=queue; qi=0; mode=label; SESSION_XP=0; REQUEUED={};
+  /* Practice is a property of the session, carried on its queue. Set by hand
+     before the call and never cleared, it outlived the session that wanted
+     it: drill a quick test's misses and the next "Learn 5 new words" graded
+     into thin air. */
+  PRACTICE=!!queue.__practice;
   COMBO=0; COMBO_BEST=0; RIGHT=0; ASKED=0; REVIEWED=0; comboPaint();
   /* runPlanTask has always said "startSession clears PLAN_TASK … so claim it
      afterwards", and it did not. Leave a plan row mid-way by any route that
@@ -1796,9 +1816,17 @@ function flashcard(i){
 /* The same arithmetic the scheduler uses, so the button cannot lie. (It
    once had no g===1 branch, so Hard fell through to the Easy path.) The
    fuzz applied on top moves the real date by at most a few percent. */
-function nextIvl(i,g){ return baseIvl(card(i),g); }
+/* The forecast on the grade buttons. card(i) CREATES a card, so in free
+   practice -- a quick test's misses, a set drilled whole -- a word you had
+   never met came out of the session started and due today. Practice
+   forecasts from a blank card instead and leaves S.cards alone. */
+function nextIvl(i,g){
+  return baseIvl(S.cards[i] || (PRACTICE ? {ease:2.5,ivl:0,due:today(),reps:0,lapses:0}
+                                         : card(i)), g);
+}
 function grade(i,g){
-  UNDO={i, qi, prev:JSON.parse(JSON.stringify(S.cards[i])), requeued:g===0,
+  // null when there is no card: practice on an unmet word never makes one
+  UNDO={i, qi, prev:S.cards[i]?JSON.parse(JSON.stringify(S.cards[i])):null, requeued:g===0,
         reviews:S.reviewsToday||0, practice:PRACTICE};
   if(!PRACTICE){
     schedule(i,g);
@@ -1829,7 +1857,7 @@ function grade(i,g){
 }
 document.getElementById("btnUndo").onclick=()=>{
   if(!UNDO) return;
-  S.cards[UNDO.i]=UNDO.prev;
+  if(UNDO.prev) S.cards[UNDO.i]=UNDO.prev; else delete S.cards[UNDO.i];
   // Give the re-queue back as well, or an undo silently costs the card one
   // of its two second looks.
   if(UNDO.requeued){ Q.splice(UNDO.at,1); REQUEUED[UNDO.i]=Math.max(0,(REQUEUED[UNDO.i]||1)-1); }
@@ -1949,7 +1977,7 @@ function startReview(){
     PRACTICE=true;
   }
   const words=d.slice(0, Math.max(5, S.goal||20));
-  const q=words.map(flashcard); q.__words=words;
+  const q=words.map(flashcard); q.__words=words; q.__practice=PRACTICE;
   /* A few grammar questions at the end of the review, and one syntax
      question the chapters have earned but the schedule has not met yet —
      which is how CASEFN gets onto the schedule at all. Not in free practice:
@@ -2116,7 +2144,7 @@ function openLesson(id){
   const parts=lessonParts(l).length;
   const at=(S.lessonPart&&S.lessonPart.id===id)?S.lessonPart.part:0;
   document.getElementById("lessonBody").innerHTML=`
-    <h1 style="margin-top:14px">${l.t}</h1>
+    <h2 class="title" style="margin-top:14px">${l.t}</h2>
     <p class="sub">${l.s}${l.v&&l.v.length?` · <a href="print/vocabulary-${l.id}.html"
       target="_blank" rel="noopener" class="tappable">printable vocabulary</a>`:""}</p>
     <div class="card" style="border-color:var(--gold-dim)">
@@ -2522,16 +2550,19 @@ function weakHtml(){
   const w=weakSpots().slice(0,3);
   const body=w.length
     ? w.map(x=>{const [dim]=x.k.split("."); const n=weakName(x.k);
+        /* A share, not "7 of 12": the counts are halved at thirty to keep
+           them recent, so they stop being counts of anything you did. */
         return `<div class="weakrow">
           <span><b>${n[0].toUpperCase()+n.slice(1)}</b>
-            <small>the ${dim} missed ${x.m} of ${x.a}</small></span>
-          <button class="btn ghost small" onclick="drillWeak('${x.k}')">Drill</button></div>`;}).join("")
+            <small>the ${dim} wrong ${Math.round(x.r*100)}% of the time lately</small></span>
+          <button class="btn ghost small" onclick="drillWeak('${x.k}')"
+            aria-label="Drill ${n} forms">Drill</button></div>`;}).join("")
     : `<small class="muted">Nothing stands out yet. Keep parsing and any category you
         miss more than a fifth of the time will show here.</small>`;
   return `<div class="card">
       <div class="between"><span>Where you struggle</span></div>
-      <small class="muted" style="display:block;margin:2px 0 8px">From the parsing
-        drills and paradigm rounds, one category at a time.</small>
+      <small class="muted" style="display:block;margin:2px 0 8px">From Parse a real
+        form, the parsing builder and the paradigm rounds, one category at a time.</small>
       ${body}
     </div>`;
 }

@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v252';
+const VERSION = 'v253';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -1239,6 +1239,19 @@ const SHELL = [
   'privacy.html',
   /* The About page, linked beside it, for the same reason. */
   'about.html',
+  /* And the pages the app links to: the chapter list from Help, and the
+     printables from Look up and each chapter. tools/build_chapters_page.py
+     --check fails if a page it generates for the app is missing here. */
+  'chapters.html',
+  'print/paradigms.html',
+  'print/vocabulary.html',
+  'print/vocabulary-3.html', 'print/vocabulary-4.html', 'print/vocabulary-5.html',
+  'print/vocabulary-6.html', 'print/vocabulary-7.html', 'print/vocabulary-8.html',
+  'print/vocabulary-9.html', 'print/vocabulary-10.html', 'print/vocabulary-11.html',
+  'print/vocabulary-12.html', 'print/vocabulary-13.html', 'print/vocabulary-14.html',
+  'print/vocabulary-17.html', 'print/vocabulary-18.html', 'print/vocabulary-19.html',
+  'print/vocabulary-22.html', 'print/vocabulary-23.html', 'print/vocabulary-24.html',
+  'print/vocabulary-25.html', 'print/vocabulary-26.html',
   'css/app.css',
   'js/app.js',
   'js/report.js',

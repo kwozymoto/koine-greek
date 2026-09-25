@@ -256,10 +256,10 @@ function askShare() {
       reader here, with the verses marked \u2014 for a class, a group, or this week's
       sermon text. Anyone can open it; nothing about you goes with it.</p>
     <div class="setrow"><span>Verses</span><span>
-      <input id="sLo" type="number" min="${first}" max="${last}" value="${first}"
+      <input id="sLo" type="number" aria-label="First verse" min="${first}" max="${last}" value="${first}"
              inputmode="numeric" style="width:62px">
       <span class="muted">to</span>
-      <input id="sHi" type="number" min="${first}" max="${last}" value="${last}"
+      <input id="sHi" type="number" aria-label="Last verse" min="${first}" max="${last}" value="${last}"
              inputmode="numeric" style="width:62px"></span></div>
     <button class="btn" style="margin-top:12px" onclick="shareRange()">Copy the link</button>
   </div>`;

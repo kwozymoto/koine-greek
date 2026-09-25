@@ -101,10 +101,11 @@ function mergeStates(local, remote) {
   out.notes = Object.assign({}, remote.notes || {}, local.notes || {});
   /* Parsing by category, [asked, missed, when]: the newer of the two for
      each, like a card. Adding the counts would double them on every sync. */
+  const pts = e => { const t = +(e && e[2]) || 0; return t > CLAMP() ? 0 : t; };
   out.parsing = Object.assign({}, remote.parsing || {});
   for (const [k, e] of Object.entries(local.parsing || {})) {
     const r = out.parsing[k];
-    if (!r || (+e[2] || 0) >= (+r[2] || 0)) out.parsing[k] = e;
+    if (!r || pts(e) >= pts(r)) out.parsing[k] = e;
   }
   out.grids = mergeCards(local.grids, remote.grids);
   for (const k of Object.keys(out.grids)) {

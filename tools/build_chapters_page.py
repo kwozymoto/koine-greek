@@ -79,12 +79,16 @@ RETIRED = {237}
 
 def narrated():
     """Chapters with narration, from the file the app loads."""
+    # An error, not an empty set: empty would write "0 are read aloud" and
+    # --check, comparing the output with itself, would pass it (CLAUDE.md §2).
     p = os.path.join(ROOT, "data", "lesson_audio.js")
     if not os.path.isfile(p):
-        return set()
+        sys.exit("data/lesson_audio.js is missing")
     s = io.open(p, encoding="utf-8").read()
     m = re.search(r"const LESSON_AUDIO = (\[.*\]);\s*$", s, re.S)
-    return {r["ch"] for r in json.loads(m.group(1))} if m else set()
+    if not m:
+        sys.exit("data/lesson_audio.js: LESSON_AUDIO not found where expected")
+    return {r["ch"] for r in json.loads(m.group(1))}
 
 
 def text(fragment):
@@ -417,6 +421,18 @@ if __name__ == "__main__":
             if os.path.isdir(os.path.join(ROOT, d)):
                 extra += sorted(d + "/" + f for f in os.listdir(os.path.join(ROOT, d))
                                 if f.endswith(".html") and d + "/" + f not in want)
+        # The app links to chapters.html and every printable, so they must
+        # work offline: each has to be precached in sw.js's SHELL.
+        sw = io.open(os.path.join(ROOT, "sw.js"), encoding="utf-8").read()
+        shell = re.search(r"const SHELL = \[(.*?)\];", sw, re.S)
+        cached = set(re.findall(r"'([^']+)'", shell.group(1))) if shell else set()
+        uncached = sorted(r for r in want if (r == "chapters.html" or r.startswith("print/"))
+                          and r not in cached)
+        if uncached:
+            print("pages the app links to that sw.js does not precache (add to SHELL):")
+            for r in uncached:
+                print("   " + r)
+            sys.exit(1)
         if stale or extra:
             print("chapter pages are stale -- run python tools/build_chapters_page.py")
             for s in stale:

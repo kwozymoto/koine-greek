@@ -61,6 +61,10 @@ p{margin:0 0 12px}
    box to 44px and the negative margin gives the space back to the layout, so
    nothing moves on screen and the link simply becomes possible to hit. Used
    on the two standalone links: "How this app works" and "Privacy policy". */
+/* Plain links take the theme's gold. There was no rule, so the few bare
+   links -- the printables on Look up and on a chapter -- were browser blue on
+   the dark ground. Anything with a class of its own still sets its own. */
+a{color:var(--gold)}
 .tappable{display:inline-block;padding:13px 6px;margin:-13px -6px}
 small{font-size:.8rem}
 
