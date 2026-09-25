@@ -21,6 +21,8 @@
               background:#f4f4f4; cursor:pointer}
   .bar a{color:#555}
   table{border-collapse:collapse; width:100%; margin:.4rem 0 1rem}
+  /* A table wider than a phone scrolls in its own box, not the page. */
+  .tw{overflow-x:auto; -webkit-overflow-scrolling:touch}
   caption{text-align:left; font-weight:600; padding:.3rem 0}
   th,td{border-bottom:1px solid #ccc; padding:.3rem .5rem; text-align:left; vertical-align:top}
   th{color:#444; font-weight:600}
@@ -29,7 +31,7 @@
   section h2{font-size:1.05rem; margin:1rem 0 .3rem; break-after:avoid}
   .foot{color:#777; font-size:.8rem; margin-top:1.5rem}
   @media print{
-    body{padding:0} .bar{display:none}
+    body{padding:0} .bar{display:none} .tw{overflow:visible}
     a{color:inherit; text-decoration:none}
     @page{margin:14mm}
   }
@@ -40,7 +42,7 @@
   <div class="bar"><button type="button" onclick="print()">Print</button><a href="../about.html">&lsaquo; Back</a></div>
   <h1>The vocabulary, commonest first</h1>
   <p class="sub">All 817 words in the deck, by how often each occurs in the New Testament</p>
-<table>
+<div class="tw"><table>
 <tr><th>Word</th><th>Meaning</th><th>Part of speech</th><th>In the NT</th></tr>
 <tr><td class="gk">ὁ, ἡ, τό</td><td>the</td><td>art</td><td class="n">19870</td></tr>
 <tr><td class="gk">καί</td><td>and, also, even</td><td>conj</td><td class="n">9161</td></tr>
@@ -859,7 +861,7 @@
 <tr><td class="gk">ἀμνός, -οῦ, ὁ</td><td>lamb</td><td>noun</td><td class="n">4</td></tr>
 <tr><td class="gk">Μεσσίας, -ου, ὁ</td><td>Messiah</td><td>noun</td><td class="n">2</td></tr>
 <tr><td class="gk">ἀγγέλλω</td><td>I announce</td><td>verb</td><td class="n">1</td></tr>
-</table>
+</table></div>
   <p class="foot">Everyday Koine · everydaykoine.app — free to copy for a class or group.</p>
 </main>
 </body>

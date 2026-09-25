@@ -738,21 +738,21 @@ function openQuickTest(){
     .concat(deckSets().filter(d=>d.g!=="How common" || d.label!=="The commonest 100"))
     .filter(d=>d.ids.length>=4);
   paintQuickTest();
-  const sc=document.getElementById("testScrim");
+  const sc=document.getElementById("qtScrim");
   if(sc) sc.hidden=false;
 }
 function closeQuickTest(){
-  const sc=document.getElementById("testScrim"); if(sc) sc.hidden=true;
+  const sc=document.getElementById("qtScrim"); if(sc) sc.hidden=true;
 }
 function paintQuickTest(){
-  document.getElementById("testLen").innerHTML=[10,25,50].map(n=>
+  document.getElementById("qtLen").innerHTML=[10,25,50].map(n=>
     `<button class="${n===QT_LEN?"sel":""}" onclick="QT_LEN=${n};paintQuickTest()">${n} words</button>`).join("");
   const groups=[];
   QT_SETS.forEach((d,i)=>{
     const g=groups.find(x=>x[0]===d.g) || (groups.push([d.g,[]]), groups[groups.length-1]);
     g[1].push(i);
   });
-  document.getElementById("testList").innerHTML=groups.map(([g,ix])=>
+  document.getElementById("qtList").innerHTML=groups.map(([g,ix])=>
     `<h4>${g}</h4>`+ix.map(i=>{
       const d=QT_SETS[i];
       return `<button class="deckrow" onclick="startQuickTest(${i})">
@@ -4041,6 +4041,10 @@ render();
    The query is then removed with replaceState: without it, a reload would
    keep sending you back to wherever the shortcut pointed, long after you had
    navigated somewhere else. */
+/* Set when the visit came through a link someone sent -- a passage or a
+   chapter -- so js/pwa.js holds back its Android tester invitation rather
+   than cover the very thing the link was sent to show. */
+let ARRIVED_BY_LINK=false;
 (function openFromQuery(){
   try{
     const q=new URLSearchParams(location.search);
@@ -4051,6 +4055,7 @@ render();
        list. A number that is no chapter is ignored like an unknown screen. */
     const ch=parseInt(q.get("ch"),10);
     const isCh=LESSONS.some(l=>l.id===ch);
+    if(q.has("read") || isCh) ARRIVED_BY_LINK=true;
     if(q.has("read")){
       history.replaceState(history.state, "", location.pathname);
       openSharedPassage(q.get("read"));

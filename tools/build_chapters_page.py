@@ -297,6 +297,8 @@ PRINT_CSS = """
               background:#f4f4f4; cursor:pointer}
   .bar a{color:#555}
   table{border-collapse:collapse; width:100%; margin:.4rem 0 1rem}
+  /* A table wider than a phone scrolls in its own box, not the page. */
+  .tw{overflow-x:auto; -webkit-overflow-scrolling:touch}
   caption{text-align:left; font-weight:600; padding:.3rem 0}
   th,td{border-bottom:1px solid #ccc; padding:.3rem .5rem; text-align:left; vertical-align:top}
   th{color:#444; font-weight:600}
@@ -305,7 +307,7 @@ PRINT_CSS = """
   section h2{font-size:1.05rem; margin:1rem 0 .3rem; break-after:avoid}
   .foot{color:#777; font-size:.8rem; margin-top:1.5rem}
   @media print{
-    body{padding:0} .bar{display:none}
+    body{padding:0} .bar{display:none} .tw{overflow:visible}
     a{color:inherit; text-decoration:none}
     @page{margin:14mm}
   }
@@ -337,7 +339,7 @@ def vocab_rows(V, idx):
            V[i][2]) for i in idx if i not in RETIRED)
 
 
-VOCAB_HEAD = ('<table>\n<tr><th>Word</th><th>Meaning</th><th>Part of speech</th>'
+VOCAB_HEAD = ('<div class="tw"><table>\n<tr><th>Word</th><th>Meaning</th><th>Part of speech</th>'
               '<th>In the NT</th></tr>\n')
 
 
@@ -347,7 +349,7 @@ def print_chapter_vocab(l, V):
             + '  <h1>Chapter %d vocabulary</h1>\n  <p class="sub">%s · %d words, '
               'with how often each occurs in the New Testament</p>\n'
             % (l["id"], html.escape(l["t"]), len([i for i in l["v"] if i not in RETIRED]))
-            + VOCAB_HEAD + vocab_rows(V, l["v"]) + "</table>\n" + PRINT_FOOT)
+            + VOCAB_HEAD + vocab_rows(V, l["v"]) + "</table></div>\n" + PRINT_FOOT)
 
 
 def print_all_vocab(V):
@@ -356,7 +358,7 @@ def print_all_vocab(V):
     return (print_head("The whole vocabulary — Everyday Koine", "../about.html")
             + '  <h1>The vocabulary, commonest first</h1>\n  <p class="sub">All %d words '
               'in the deck, by how often each occurs in the New Testament</p>\n' % len(idx)
-            + VOCAB_HEAD + vocab_rows(V, idx) + "</table>\n" + PRINT_FOOT)
+            + VOCAB_HEAD + vocab_rows(V, idx) + "</table></div>\n" + PRINT_FOOT)
 
 
 def print_paradigms(P):
@@ -367,7 +369,9 @@ def print_paradigms(P):
         if p["t"].startswith("Sounds"):
             continue
         secs.append('<section>\n  <h2>%s</h2>\n%s\n</section>'
-                    % (html.escape(p["t"]), p["html"]))
+                    % (html.escape(p["t"]),
+                       p["html"].replace("<table", '<div class="tw"><table')
+                                .replace("</table>", "</table></div>")))
     return (print_head("Paradigm sheets — Everyday Koine", "../about.html")
             + '  <h1>Paradigm sheets</h1>\n  <p class="sub">The reference tables of '
               'Everyday Koine, every form checked against the SBL Greek New '

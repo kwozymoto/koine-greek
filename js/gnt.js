@@ -510,7 +510,9 @@ async function openGntChapter(abbr, ch, verse) {
       ${ch > 0 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch - 1})">← ${meta.n?meta.n[ch-1]:ch}</button>` : ""}
       ${ch < meta.ch.length - 1 ? `<button class="btn ghost small" onclick="openGntChapter('${abbr}',${ch + 1})">${meta.n?meta.n[ch+1]:ch+2} →</button>` : ""}
     </div>
-    <div class="row" style="margin-top:9px">
+    <!-- A grid, not the flex .row: four buttons in one unwrapping row squeezed
+         each to a quarter of a phone, "Pin for this week" over four lines. -->
+    <div class="gtools" style="margin-top:9px">
       <button class="btn ghost small" id="btnPin" onclick="togglePin()"></button>
       <button class="btn ghost small" id="btnFocus" onclick="askFocus()"></button>
       <button class="btn ghost small" onclick="showGntUnknown()">Words I don't know</button>

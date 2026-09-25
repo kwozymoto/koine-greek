@@ -21,6 +21,8 @@
               background:#f4f4f4; cursor:pointer}
   .bar a{color:#555}
   table{border-collapse:collapse; width:100%; margin:.4rem 0 1rem}
+  /* A table wider than a phone scrolls in its own box, not the page. */
+  .tw{overflow-x:auto; -webkit-overflow-scrolling:touch}
   caption{text-align:left; font-weight:600; padding:.3rem 0}
   th,td{border-bottom:1px solid #ccc; padding:.3rem .5rem; text-align:left; vertical-align:top}
   th{color:#444; font-weight:600}
@@ -29,7 +31,7 @@
   section h2{font-size:1.05rem; margin:1rem 0 .3rem; break-after:avoid}
   .foot{color:#777; font-size:.8rem; margin-top:1.5rem}
   @media print{
-    body{padding:0} .bar{display:none}
+    body{padding:0} .bar{display:none} .tw{overflow:visible}
     a{color:inherit; text-decoration:none}
     @page{margin:14mm}
   }
@@ -42,31 +44,31 @@
   <p class="sub">The reference tables of Everyday Koine, every form checked against the SBL Greek New Testament</p>
 <section>
   <h2>The article</h2>
-<table><caption>Singular</caption>
+<div class="tw"><table><caption>Singular</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ὁ</td><td class="g">ἡ</td><td class="g">τό</td></tr>
 <tr><th>Gen</th><td class="g">τοῦ</td><td class="g">τῆς</td><td class="g">τοῦ</td></tr>
 <tr><th>Dat</th><td class="g">τῷ</td><td class="g">τῇ</td><td class="g">τῷ</td></tr>
-<tr><th>Acc</th><td class="g">τόν</td><td class="g">τήν</td><td class="g">τό</td></tr></table>
-<table><caption>Plural</caption>
+<tr><th>Acc</th><td class="g">τόν</td><td class="g">τήν</td><td class="g">τό</td></tr></table></div>
+<div class="tw"><table><caption>Plural</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">οἱ</td><td class="g">αἱ</td><td class="g">τά</td></tr>
 <tr><th>Gen</th><td class="g">τῶν</td><td class="g">τῶν</td><td class="g">τῶν</td></tr>
 <tr><th>Dat</th><td class="g">τοῖς</td><td class="g">ταῖς</td><td class="g">τοῖς</td></tr>
-<tr><th>Acc</th><td class="g">τούς</td><td class="g">τάς</td><td class="g">τά</td></tr></table>
+<tr><th>Acc</th><td class="g">τούς</td><td class="g">τάς</td><td class="g">τά</td></tr></table></div>
 </section>
 <section>
   <h2>Second declension nouns</h2>
-<table><caption>λόγος, -ου, ὁ — word · ἔργον, -ου, τό — work</caption>
+<div class="tw"><table><caption>λόγος, -ου, ὁ — word · ἔργον, -ου, τό — work</caption>
 <tr><th></th><th>Masc sg</th><th>Masc pl</th><th>Neut sg</th><th>Neut pl</th></tr>
 <tr><th>Nom</th><td class="g">λόγος</td><td class="g">λόγοι</td><td class="g">ἔργον</td><td class="g">ἔργα</td></tr>
 <tr><th>Gen</th><td class="g">λόγου</td><td class="g">λόγων</td><td class="g">ἔργου</td><td class="g">ἔργων</td></tr>
 <tr><th>Dat</th><td class="g">λόγῳ</td><td class="g">λόγοις</td><td class="g">ἔργῳ</td><td class="g">ἔργοις</td></tr>
-<tr><th>Acc</th><td class="g">λόγον</td><td class="g">λόγους</td><td class="g">ἔργον</td><td class="g">ἔργα</td></tr></table>
+<tr><th>Acc</th><td class="g">λόγον</td><td class="g">λόγους</td><td class="g">ἔργον</td><td class="g">ἔργα</td></tr></table></div>
 </section>
 <section>
   <h2>First declension nouns</h2>
-<table><caption>Three feminine patterns and the masculine</caption>
+<div class="tw"><table><caption>Three feminine patterns and the masculine</caption>
 <tr><th></th><th>ἀγάπη (η)</th><th>δόξα (α→η)</th><th>ἡμέρα (pure α)</th><th>μαθητής (masc)</th></tr>
 <tr><th>Nom</th><td class="g">ἀγάπη</td><td class="g">δόξα</td><td class="g">ἡμέρα</td><td class="g">μαθητής</td></tr>
 <tr><th>Gen</th><td class="g">ἀγάπης</td><td class="g">δόξης</td><td class="g">ἡμέρας</td><td class="g">μαθητοῦ</td></tr>
@@ -75,12 +77,12 @@
 <tr><th>Nom pl</th><td class="g">ἀγάπαι</td><td class="g">δόξαι</td><td class="g">ἡμέραι</td><td class="g">μαθηταί</td></tr>
 <tr><th>Gen pl</th><td class="g">ἀγαπῶν</td><td class="g">δοξῶν</td><td class="g">ἡμερῶν</td><td class="g">μαθητῶν</td></tr>
 <tr><th>Dat pl</th><td class="g">ἀγάπαις</td><td class="g">δόξαις</td><td class="g">ἡμέραις</td><td class="g">μαθηταῖς</td></tr>
-<tr><th>Acc pl</th><td class="g">ἀγάπας</td><td class="g">δόξας</td><td class="g">ἡμέρας</td><td class="g">μαθητάς</td></tr></table>
+<tr><th>Acc pl</th><td class="g">ἀγάπας</td><td class="g">δόξας</td><td class="g">ἡμέρας</td><td class="g">μαθητάς</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Stems in ε, ι, ρ keep α throughout; other α-stems shift to η in the genitive and dative singular.</p>
 </section>
 <section>
   <h2>Third declension nouns</h2>
-<table><caption>The stem hides in the genitive</caption>
+<div class="tw"><table><caption>The stem hides in the genitive</caption>
 <tr><th></th><th>σάρξ, σαρκός, ἡ</th><th>πνεῦμα, -ατος, τό</th><th>πίστις, -εως, ἡ</th><th>πατήρ, πατρός, ὁ</th><th>βασιλεύς, -έως, ὁ</th></tr>
 <tr><th>Nom</th><td class="g">σάρξ</td><td class="g">πνεῦμα</td><td class="g">πίστις</td><td class="g">πατήρ</td><td class="g">βασιλεύς</td></tr>
 <tr><th>Gen</th><td class="g">σαρκός</td><td class="g">πνεύματος</td><td class="g">πίστεως</td><td class="g">πατρός</td><td class="g">βασιλέως</td></tr>
@@ -89,21 +91,21 @@
 <tr><th>Nom pl</th><td class="g">σάρκες</td><td class="g">πνεύματα</td><td class="g">πίστεις</td><td class="g">πατέρες</td><td class="g">βασιλεῖς</td></tr>
 <tr><th>Gen pl</th><td class="g">σαρκῶν</td><td class="g">πνευμάτων</td><td class="g">πίστεων</td><td class="g">πατέρων</td><td class="g">βασιλέων</td></tr>
 <tr><th>Dat pl</th><td class="g">σαρξί(ν)</td><td class="g">πνεύμασι(ν)</td><td class="g">πίστεσι(ν)</td><td class="g">πατράσι(ν)</td><td class="g">βασιλεῦσι(ν)</td></tr>
-<tr><th>Acc pl</th><td class="g">σάρκας</td><td class="g">πνεύματα</td><td class="g">πίστεις</td><td class="g">πατέρας</td><td class="g">βασιλεῖς</td></tr></table>
+<tr><th>Acc pl</th><td class="g">σάρκας</td><td class="g">πνεύματα</td><td class="g">πίστεις</td><td class="g">πατέρας</td><td class="g">βασιλεῖς</td></tr></table></div>
 </section>
 <section>
   <h2>Adjectives and position</h2>
-<table><caption>ἀγαθός, -ή, -όν — good (sg / pl)</caption>
+<div class="tw"><table><caption>ἀγαθός, -ή, -όν — good (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ἀγαθός / ἀγαθοί</td><td class="g">ἀγαθή / ἀγαθαί</td><td class="g">ἀγαθόν / ἀγαθά</td></tr>
 <tr><th>Gen</th><td class="g">ἀγαθοῦ / ἀγαθῶν</td><td class="g">ἀγαθῆς / ἀγαθῶν</td><td class="g">ἀγαθοῦ / ἀγαθῶν</td></tr>
 <tr><th>Dat</th><td class="g">ἀγαθῷ / ἀγαθοῖς</td><td class="g">ἀγαθῇ / ἀγαθαῖς</td><td class="g">ἀγαθῷ / ἀγαθοῖς</td></tr>
-<tr><th>Acc</th><td class="g">ἀγαθόν / ἀγαθούς</td><td class="g">ἀγαθήν / ἀγαθάς</td><td class="g">ἀγαθόν / ἀγαθά</td></tr></table>
+<tr><th>Acc</th><td class="g">ἀγαθόν / ἀγαθούς</td><td class="g">ἀγαθήν / ἀγαθάς</td><td class="g">ἀγαθόν / ἀγαθά</td></tr></table></div>
 <p class="muted" style="font-size:.83rem"><b>Attributive</b> (inside the article group): ὁ ἀγαθὸς λόγος / ὁ λόγος ὁ ἀγαθός — "the good word". <b>Predicate</b> (outside it): ἀγαθὸς ὁ λόγος — "the word is good".</p>
 </section>
 <section>
   <h2>πᾶς, πολύς, μέγας</h2>
-<table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-)</caption>
+<div class="tw"><table><caption>πᾶς, πᾶσα, πᾶν — all, every (stem παντ-)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">πᾶς</td><td class="g">πᾶσα</td><td class="g">πᾶν</td></tr>
 <tr><th>Gen</th><td class="g">παντός</td><td class="g">πάσης</td><td class="g">παντός</td></tr>
@@ -112,129 +114,129 @@
 <tr><th>Nom pl</th><td class="g">πάντες</td><td class="g">πᾶσαι</td><td class="g">πάντα</td></tr>
 <tr><th>Gen pl</th><td class="g">πάντων</td><td class="g">πασῶν</td><td class="g">πάντων</td></tr>
 <tr><th>Dat pl</th><td class="g">πᾶσι(ν)</td><td class="g">πάσαις</td><td class="g">πᾶσι(ν)</td></tr>
-<tr><th>Acc pl</th><td class="g">πάντας</td><td class="g">πάσας</td><td class="g">πάντα</td></tr></table>
+<tr><th>Acc pl</th><td class="g">πάντας</td><td class="g">πάσας</td><td class="g">πάντα</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">πολύς and μέγας are regular second/first declension except in four slots each — masculine and neuter, nominative and accusative singular — giving three forms apiece: πολύς, πολύν, πολύ and μέγας, μέγαν, μέγα (neuter nominative and accusative are the same). Everything else: πολλοῦ, πολλῷ… μεγάλου, μεγάλῳ…</p>
 </section>
 <section>
   <h2>Personal pronouns</h2>
-<table><caption>ἐγώ and σύ</caption>
+<div class="tw"><table><caption>ἐγώ and σύ</caption>
 <tr><th></th><th>I</th><th>we</th><th>you</th><th>you (pl)</th></tr>
 <tr><th>Nom</th><td class="g">ἐγώ</td><td class="g">ἡμεῖς</td><td class="g">σύ</td><td class="g">ὑμεῖς</td></tr>
 <tr><th>Gen</th><td class="g">ἐμοῦ (μου)</td><td class="g">ἡμῶν</td><td class="g">σοῦ (σου)</td><td class="g">ὑμῶν</td></tr>
 <tr><th>Dat</th><td class="g">ἐμοί (μοι)</td><td class="g">ἡμῖν</td><td class="g">σοί (σοι)</td><td class="g">ὑμῖν</td></tr>
-<tr><th>Acc</th><td class="g">ἐμέ (με)</td><td class="g">ἡμᾶς</td><td class="g">σέ (σε)</td><td class="g">ὑμᾶς</td></tr></table>
-<table><caption>αὐτός — he, she, it (declines like ἀγαθός, but the neuter singular is αὐτό, without -ν)</caption>
+<tr><th>Acc</th><td class="g">ἐμέ (με)</td><td class="g">ἡμᾶς</td><td class="g">σέ (σε)</td><td class="g">ὑμᾶς</td></tr></table></div>
+<div class="tw"><table><caption>αὐτός — he, she, it (declines like ἀγαθός, but the neuter singular is αὐτό, without -ν)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">αὐτός / αὐτοί</td><td class="g">αὐτή / αὐταί</td><td class="g">αὐτό / αὐτά</td></tr>
 <tr><th>Gen</th><td class="g">αὐτοῦ / αὐτῶν</td><td class="g">αὐτῆς / αὐτῶν</td><td class="g">αὐτοῦ / αὐτῶν</td></tr>
 <tr><th>Dat</th><td class="g">αὐτῷ / αὐτοῖς</td><td class="g">αὐτῇ / αὐταῖς</td><td class="g">αὐτῷ / αὐτοῖς</td></tr>
-<tr><th>Acc</th><td class="g">αὐτόν / αὐτούς</td><td class="g">αὐτήν / αὐτάς</td><td class="g">αὐτό / αὐτά</td></tr></table>
+<tr><th>Acc</th><td class="g">αὐτόν / αὐτούς</td><td class="g">αὐτήν / αὐτάς</td><td class="g">αὐτό / αὐτά</td></tr></table></div>
 </section>
 <section>
   <h2>Demonstratives</h2>
-<table><caption>οὗτος — this (sg / pl)</caption>
+<div class="tw"><table><caption>οὗτος — this (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">οὗτος / οὗτοι</td><td class="g">αὕτη / αὗται</td><td class="g">τοῦτο / ταῦτα</td></tr>
 <tr><th>Gen</th><td class="g">τούτου / τούτων</td><td class="g">ταύτης / τούτων</td><td class="g">τούτου / τούτων</td></tr>
 <tr><th>Dat</th><td class="g">τούτῳ / τούτοις</td><td class="g">ταύτῃ / ταύταις</td><td class="g">τούτῳ / τούτοις</td></tr>
-<tr><th>Acc</th><td class="g">τοῦτον / τούτους</td><td class="g">ταύτην / ταύτας</td><td class="g">τοῦτο / ταῦτα</td></tr></table>
-<table><caption>ἐκεῖνος — that (sg / pl)</caption>
+<tr><th>Acc</th><td class="g">τοῦτον / τούτους</td><td class="g">ταύτην / ταύτας</td><td class="g">τοῦτο / ταῦτα</td></tr></table></div>
+<div class="tw"><table><caption>ἐκεῖνος — that (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ἐκεῖνος / ἐκεῖνοι</td><td class="g">ἐκείνη / ἐκεῖναι</td><td class="g">ἐκεῖνο / ἐκεῖνα</td></tr>
 <tr><th>Gen</th><td class="g">ἐκείνου / ἐκείνων</td><td class="g">ἐκείνης / ἐκείνων</td><td class="g">ἐκείνου / ἐκείνων</td></tr>
 <tr><th>Dat</th><td class="g">ἐκείνῳ / ἐκείνοις</td><td class="g">ἐκείνῃ / ἐκείναις</td><td class="g">ἐκείνῳ / ἐκείνοις</td></tr>
-<tr><th>Acc</th><td class="g">ἐκεῖνον / ἐκείνους</td><td class="g">ἐκείνην / ἐκείνας</td><td class="g">ἐκεῖνο / ἐκεῖνα</td></tr></table>
+<tr><th>Acc</th><td class="g">ἐκεῖνον / ἐκείνους</td><td class="g">ἐκείνην / ἐκείνας</td><td class="g">ἐκεῖνο / ἐκεῖνα</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Every ending here is αὐτός’s ending. What differs is where the accent sits: ἐκείνου keeps it on the stem, where αὐτοῦ throws it onto the ending.</p>
 </section>
 <section>
   <h2>Relative pronoun</h2>
-<table><caption>ὅς, ἥ, ὅ — who, which (sg / pl)</caption>
+<div class="tw"><table><caption>ὅς, ἥ, ὅ — who, which (sg / pl)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">ὅς / οἵ</td><td class="g">ἥ / αἵ</td><td class="g">ὅ / ἅ</td></tr>
 <tr><th>Gen</th><td class="g">οὗ / ὧν</td><td class="g">ἧς / ὧν</td><td class="g">οὗ / ὧν</td></tr>
 <tr><th>Dat</th><td class="g">ᾧ / οἷς</td><td class="g">ᾗ / αἷς</td><td class="g">ᾧ / οἷς</td></tr>
-<tr><th>Acc</th><td class="g">ὅν / οὕς</td><td class="g">ἥν / ἅς</td><td class="g">ὅ / ἅ</td></tr></table>
+<tr><th>Acc</th><td class="g">ὅν / οὕς</td><td class="g">ἥν / ἅς</td><td class="g">ὅ / ἅ</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Gender and number from the antecedent; case from its own clause. Always rough breathing + accent (ἥ vs the article ἡ; ἤ "or" has smooth breathing).</p>
 </section>
 <section>
   <h2>Interrogative, indefinite, reflexive</h2>
-<table><caption>τίς (who? what?) — the accent is the difference from τις (someone)</caption>
+<div class="tw"><table><caption>τίς (who? what?) — the accent is the difference from τις (someone)</caption>
 <tr><th></th><th>Masc/Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">τίς / τίνες</td><td class="g">τί / τίνα</td></tr>
 <tr><th>Gen</th><td class="g">τίνος / τίνων</td><td class="g">τίνος / τίνων</td></tr>
 <tr><th>Dat</th><td class="g">τίνι / τίσι(ν)</td><td class="g">τίνι / τίσι(ν)</td></tr>
-<tr><th>Acc</th><td class="g">τίνα / τίνας</td><td class="g">τί / τίνα</td></tr></table>
+<tr><th>Acc</th><td class="g">τίνα / τίνας</td><td class="g">τί / τίνα</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Reflexives (gen/dat/acc only): ἐμαυτοῦ myself · σεαυτοῦ yourself · ἑαυτοῦ himself/herself/itself · plural ἑαυτῶν for all persons. Reciprocal: ἀλλήλων — one another.</p>
 </section>
 <section>
   <h2>εἰμί — to be</h2>
-<table><caption>Present, imperfect, future</caption>
+<div class="tw"><table><caption>Present, imperfect, future</caption>
 <tr><th></th><th>Present</th><th>Imperfect</th><th>Future</th></tr>
 <tr><th>1sg</th><td class="g">εἰμί</td><td class="g">ἤμην</td><td class="g">ἔσομαι</td></tr>
 <tr><th>2sg</th><td class="g">εἶ</td><td class="g">ἦς</td><td class="g">ἔσῃ</td></tr>
 <tr><th>3sg</th><td class="g">ἐστί(ν)</td><td class="g">ἦν</td><td class="g">ἔσται</td></tr>
 <tr><th>1pl</th><td class="g">ἐσμέν</td><td class="g">ἦμεν</td><td class="g">ἐσόμεθα</td></tr>
 <tr><th>2pl</th><td class="g">ἐστέ</td><td class="g">ἦτε</td><td class="g">ἔσεσθε</td></tr>
-<tr><th>3pl</th><td class="g">εἰσί(ν)</td><td class="g">ἦσαν</td><td class="g">ἔσονται</td></tr></table>
+<tr><th>3pl</th><td class="g">εἰσί(ν)</td><td class="g">ἦσαν</td><td class="g">ἔσονται</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Subjunctive: ὦ, ᾖς, ᾖ, ὦμεν, ἦτε, ὦσι(ν). Infinitive: εἶναι. Participle: ὤν, οὖσα, ὄν.</p>
 </section>
 <section>
   <h2>λύω — active indicative</h2>
-<table><caption>The five common active indicative tenses</caption>
+<div class="tw"><table><caption>The five common active indicative tenses</caption>
 <tr><th></th><th>Pres</th><th>Impf</th><th>Fut</th><th>Aor</th><th>Perf</th></tr>
 <tr><th>1sg</th><td class="g">λύω</td><td class="g">ἔλυον</td><td class="g">λύσω</td><td class="g">ἔλυσα</td><td class="g">λέλυκα</td></tr>
 <tr><th>2sg</th><td class="g">λύεις</td><td class="g">ἔλυες</td><td class="g">λύσεις</td><td class="g">ἔλυσας</td><td class="g">λέλυκας</td></tr>
 <tr><th>3sg</th><td class="g">λύει</td><td class="g">ἔλυε(ν)</td><td class="g">λύσει</td><td class="g">ἔλυσε(ν)</td><td class="g">λέλυκε(ν)</td></tr>
 <tr><th>1pl</th><td class="g">λύομεν</td><td class="g">ἐλύομεν</td><td class="g">λύσομεν</td><td class="g">ἐλύσαμεν</td><td class="g">λελύκαμεν</td></tr>
 <tr><th>2pl</th><td class="g">λύετε</td><td class="g">ἐλύετε</td><td class="g">λύσετε</td><td class="g">ἐλύσατε</td><td class="g">λελύκατε</td></tr>
-<tr><th>3pl</th><td class="g">λύουσι(ν)</td><td class="g">ἔλυον</td><td class="g">λύσουσι(ν)</td><td class="g">ἔλυσαν</td><td class="g">λελύκασι(ν)</td></tr></table>
+<tr><th>3pl</th><td class="g">λύουσι(ν)</td><td class="g">ἔλυον</td><td class="g">λύσουσι(ν)</td><td class="g">ἔλυσαν</td><td class="g">λελύκασι(ν)</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Pluperfect: ἐλελύκειν, ἐλελύκεις, ἐλελύκει, ἐλελύκειμεν, ἐλελύκειτε, ἐλελύκεισαν.</p>
 </section>
 <section>
   <h2>λύω — middle and passive indicative</h2>
-<table><caption>Shared middle/passive forms</caption>
+<div class="tw"><table><caption>Shared middle/passive forms</caption>
 <tr><th></th><th>Pres m/p</th><th>Impf m/p</th><th>Perf m/p</th></tr>
 <tr><th>1sg</th><td class="g">λύομαι</td><td class="g">ἐλυόμην</td><td class="g">λέλυμαι</td></tr>
 <tr><th>2sg</th><td class="g">λύῃ</td><td class="g">ἐλύου</td><td class="g">λέλυσαι</td></tr>
 <tr><th>3sg</th><td class="g">λύεται</td><td class="g">ἐλύετο</td><td class="g">λέλυται</td></tr>
 <tr><th>1pl</th><td class="g">λυόμεθα</td><td class="g">ἐλυόμεθα</td><td class="g">λελύμεθα</td></tr>
 <tr><th>2pl</th><td class="g">λύεσθε</td><td class="g">ἐλύεσθε</td><td class="g">λέλυσθε</td></tr>
-<tr><th>3pl</th><td class="g">λύονται</td><td class="g">ἐλύοντο</td><td class="g">λέλυνται</td></tr></table>
-<table><caption>Distinct middle and passive: future and aorist</caption>
+<tr><th>3pl</th><td class="g">λύονται</td><td class="g">ἐλύοντο</td><td class="g">λέλυνται</td></tr></table></div>
+<div class="tw"><table><caption>Distinct middle and passive: future and aorist</caption>
 <tr><th></th><th>Fut mid</th><th>Aor mid</th><th>Aor pass</th><th>Fut pass</th></tr>
 <tr><th>1sg</th><td class="g">λύσομαι</td><td class="g">ἐλυσάμην</td><td class="g">ἐλύθην</td><td class="g">λυθήσομαι</td></tr>
 <tr><th>2sg</th><td class="g">λύσῃ</td><td class="g">ἐλύσω</td><td class="g">ἐλύθης</td><td class="g">λυθήσῃ</td></tr>
 <tr><th>3sg</th><td class="g">λύσεται</td><td class="g">ἐλύσατο</td><td class="g">ἐλύθη</td><td class="g">λυθήσεται</td></tr>
 <tr><th>1pl</th><td class="g">λυσόμεθα</td><td class="g">ἐλυσάμεθα</td><td class="g">ἐλύθημεν</td><td class="g">λυθησόμεθα</td></tr>
 <tr><th>2pl</th><td class="g">λύσεσθε</td><td class="g">ἐλύσασθε</td><td class="g">ἐλύθητε</td><td class="g">λυθήσεσθε</td></tr>
-<tr><th>3pl</th><td class="g">λύσονται</td><td class="g">ἐλύσαντο</td><td class="g">ἐλύθησαν</td><td class="g">λυθήσονται</td></tr></table>
+<tr><th>3pl</th><td class="g">λύσονται</td><td class="g">ἐλύσαντο</td><td class="g">ἐλύθησαν</td><td class="g">λυθήσονται</td></tr></table></div>
 </section>
 <section>
   <h2>Subjunctive mood</h2>
-<table><caption>λύω — the four common subjunctives (long connecting vowel)</caption>
+<div class="tw"><table><caption>λύω — the four common subjunctives (long connecting vowel)</caption>
 <tr><th></th><th>Pres act</th><th>Aor act</th><th>Pres m/p</th><th>Aor pass</th></tr>
 <tr><th>1sg</th><td class="g">λύω</td><td class="g">λύσω</td><td class="g">λύωμαι</td><td class="g">λυθῶ</td></tr>
 <tr><th>2sg</th><td class="g">λύῃς</td><td class="g">λύσῃς</td><td class="g">λύῃ</td><td class="g">λυθῇς</td></tr>
 <tr><th>3sg</th><td class="g">λύῃ</td><td class="g">λύσῃ</td><td class="g">λύηται</td><td class="g">λυθῇ</td></tr>
 <tr><th>1pl</th><td class="g">λύωμεν</td><td class="g">λύσωμεν</td><td class="g">λυώμεθα</td><td class="g">λυθῶμεν</td></tr>
 <tr><th>2pl</th><td class="g">λύητε</td><td class="g">λύσητε</td><td class="g">λύησθε</td><td class="g">λυθῆτε</td></tr>
-<tr><th>3pl</th><td class="g">λύωσι(ν)</td><td class="g">λύσωσι(ν)</td><td class="g">λύωνται</td><td class="g">λυθῶσι(ν)</td></tr></table>
+<tr><th>3pl</th><td class="g">λύωσι(ν)</td><td class="g">λύσωσι(ν)</td><td class="g">λύωνται</td><td class="g">λυθῶσι(ν)</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">No augment in the aorist subjunctive — aspect only, no past time.</p>
 </section>
 <section>
   <h2>Imperative mood</h2>
-<table><caption>λύω — imperative</caption>
+<div class="tw"><table><caption>λύω — imperative</caption>
 <tr><th></th><th>Pres act</th><th>Aor act</th><th>Pres m/p</th><th>Aor pass</th></tr>
 <tr><th>2sg</th><td class="g">λῦε</td><td class="g">λῦσον</td><td class="g">λύου</td><td class="g">λύθητι</td></tr>
 <tr><th>3sg</th><td class="g">λυέτω</td><td class="g">λυσάτω</td><td class="g">λυέσθω</td><td class="g">λυθήτω</td></tr>
 <tr><th>2pl</th><td class="g">λύετε</td><td class="g">λύσατε</td><td class="g">λύεσθε</td><td class="g">λύθητε</td></tr>
-<tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυέσθωσαν</td><td class="g">λυθήτωσαν</td></tr></table>
+<tr><th>3pl</th><td class="g">λυέτωσαν</td><td class="g">λυσάτωσαν</td><td class="g">λυέσθωσαν</td><td class="g">λυθήτωσαν</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Prohibitions: μή + present imperative (general practice / stop) · μή + aorist subjunctive (don't do it at all).</p>
 </section>
 <section>
   <h2>The optative — wishes and prayers</h2>
 <p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are one phrase: μὴ γένοιτο, fourteen times in Paul and once in Luke. You will never have to build one. You only have to know one when you see it. The nine below carry every tense, voice, person and number the optative takes anywhere in the New Testament.</p>
-<table><caption>Every kind you will meet</caption>
+<div class="tw"><table><caption>Every kind you will meet</caption>
 <tr><th>In the text</th><th>What it is</th><th>Meaning</th><th>Where</th></tr>
 <tr><td class="g" data-ref="Romans 6:2" data-claim="opt">μὴ γένοιτο</td><td class="muted">aor mid 3sg</td><td>may it never be!</td><td class="muted" style="white-space:nowrap">Romans 6:2</td></tr>
 <tr><td class="g" data-ref="Luke 1:38" data-claim="opt">γένοιτό μοι</td><td class="muted">aor mid 3sg</td><td>let it be to me</td><td class="muted" style="white-space:nowrap">Luke 1:38</td></tr>
@@ -244,21 +246,21 @@
 <tr><td class="g" data-ref="1 Peter 1:2" data-claim="opt">καὶ εἰρήνη πληθυνθείη</td><td class="muted">aor pass 3sg</td><td>may peace be multiplied</td><td class="muted" style="white-space:nowrap">1 Peter 1:2</td></tr>
 <tr><td class="g" data-ref="Acts 17:27" data-claim="opt">ψηλαφήσειαν αὐτὸν καὶ εὕροιεν</td><td class="muted">aor act 3pl</td><td>might feel for him and find him</td><td class="muted" style="white-space:nowrap">Acts 17:27</td></tr>
 <tr><td class="g" data-ref="Acts 8:31" data-claim="opt">Πῶς γὰρ ἂν δυναίμην</td><td class="muted">pres mid 1sg</td><td>how could I?</td><td class="muted" style="white-space:nowrap">Acts 8:31</td></tr>
-<tr><td class="g" data-ref="1 Peter 3:14" data-claim="opt">εἰ καὶ πάσχοιτε</td><td class="muted">pres act 2pl</td><td>even if you should suffer</td><td class="muted" style="white-space:nowrap">1 Peter 3:14</td></tr></table>
+<tr><td class="g" data-ref="1 Peter 3:14" data-claim="opt">εἰ καὶ πάσχοιτε</td><td class="muted">pres act 2pl</td><td>even if you should suffer</td><td class="muted" style="white-space:nowrap">1 Peter 3:14</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Three signs give it away: <b>-οι-</b> in the present and the second aorist, <b>-αι-</b> in the first aorist active, <b>-θει-</b> in the aorist passive. εἰμί is the exception: εἴη. Fifty-eight of the 68 are third person singular, so nearly every one you meet is <i>may he</i> or <i>might it</i>. Where ἄν stands beside it — ten times in all — the sense shifts to <i>could</i> rather than <i>may</i>, and nine of those ten are questions: <i>what could this be?</i></p>
 </section>
 <section>
   <h2>Infinitives</h2>
-<table><caption>λύω — the infinitives</caption>
+<div class="tw"><table><caption>λύω — the infinitives</caption>
 <tr><th></th><th>Active</th><th>Middle</th><th>Passive</th></tr>
 <tr><th>Present</th><td class="g">λύειν</td><td class="g" colspan="2" style="text-align:center">λύεσθαι</td></tr>
 <tr><th>Aorist</th><td class="g">λῦσαι</td><td class="g">λύσασθαι</td><td class="g">λυθῆναι</td></tr>
-<tr><th>Perfect</th><td class="g">λελυκέναι</td><td class="g" colspan="2" style="text-align:center">λελύσθαι</td></tr></table>
+<tr><th>Perfect</th><td class="g">λελυκέναι</td><td class="g" colspan="2" style="text-align:center">λελύσθαι</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">εἰμί: εἶναι. Articular infinitive: the neuter article + infinitive (ἐν τῷ σπείρειν — "while sowing").</p>
 </section>
 <section>
   <h2>Participles — the key forms</h2>
-<table><caption>Nominative singular of each participle of λύω</caption>
+<div class="tw"><table><caption>Nominative singular of each participle of λύω</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th><th>Declines like</th></tr>
 <tr><th>Pres act</th><td class="g">λύων</td><td class="g">λύουσα</td><td class="g">λῦον</td><td>3-1-3 (gen λύοντος)</td></tr>
 <tr><th>Pres m/p</th><td class="g">λυόμενος</td><td class="g">λυομένη</td><td class="g">λυόμενον</td><td>2-1-2</td></tr>
@@ -267,36 +269,36 @@
 <tr><th>Aor pass</th><td class="g">λυθείς</td><td class="g">λυθεῖσα</td><td class="g">λυθέν</td><td>3-1-3 (gen λυθέντος)</td></tr>
 <tr><th>Perf act</th><td class="g">λελυκώς</td><td class="g">λελυκυῖα</td><td class="g">λελυκός</td><td>3-1-3 (gen λελυκότος)</td></tr>
 <tr><th>Perf m/p</th><td class="g">λελυμένος</td><td class="g">λελυμένη</td><td class="g">λελυμένον</td><td>2-1-2</td></tr>
-<tr><th>εἰμί</th><td class="g">ὤν</td><td class="g">οὖσα</td><td class="g">ὄν</td><td>3-1-3 (gen ὄντος)</td></tr></table>
+<tr><th>εἰμί</th><td class="g">ὤν</td><td class="g">οὖσα</td><td class="g">ὄν</td><td>3-1-3 (gen ὄντος)</td></tr></table></div>
 </section>
 <section>
   <h2>Contract verbs — present</h2>
-<table><caption>Present active of the three classes</caption>
+<div class="tw"><table><caption>Present active of the three classes</caption>
 <tr><th></th><th>ἀγαπάω (α)</th><th>ποιέω (ε)</th><th>πληρόω (ο)</th></tr>
 <tr><th>1sg</th><td class="g">ἀγαπῶ</td><td class="g">ποιῶ</td><td class="g">πληρῶ</td></tr>
 <tr><th>2sg</th><td class="g">ἀγαπᾷς</td><td class="g">ποιεῖς</td><td class="g">πληροῖς</td></tr>
 <tr><th>3sg</th><td class="g">ἀγαπᾷ</td><td class="g">ποιεῖ</td><td class="g">πληροῖ</td></tr>
 <tr><th>1pl</th><td class="g">ἀγαπῶμεν</td><td class="g">ποιοῦμεν</td><td class="g">πληροῦμεν</td></tr>
 <tr><th>2pl</th><td class="g">ἀγαπᾶτε</td><td class="g">ποιεῖτε</td><td class="g">πληροῦτε</td></tr>
-<tr><th>3pl</th><td class="g">ἀγαπῶσι(ν)</td><td class="g">ποιοῦσι(ν)</td><td class="g">πληροῦσι(ν)</td></tr></table>
+<tr><th>3pl</th><td class="g">ἀγαπῶσι(ν)</td><td class="g">ποιοῦσι(ν)</td><td class="g">πληροῦσι(ν)</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Before a tense sign the vowel lengthens instead: ἀγαπήσω, ἠγάπησα · ποιήσω, ἐποίησα · πληρώσω, ἐπλήρωσα. Liquid stems (λ μ ν ρ) refuse σ: future μενῶ, ἀγγελῶ; aorist ἔμεινα, ἤγγειλα.</p>
 </section>
 <section>
   <h2>μι-verbs</h2>
-<table><caption>Present active</caption>
+<div class="tw"><table><caption>Present active</caption>
 <tr><th></th><th>δίδωμι — give</th><th>τίθημι — place</th><th>ἵστημι — stand</th></tr>
 <tr><th>1sg</th><td class="g">δίδωμι</td><td class="g">τίθημι</td><td class="g">ἵστημι</td></tr>
 <tr><th>2sg</th><td class="g">δίδως</td><td class="g">τίθης</td><td class="g">ἵστης</td></tr>
 <tr><th>3sg</th><td class="g">δίδωσι(ν)</td><td class="g">τίθησι(ν)</td><td class="g">ἵστησι(ν)</td></tr>
 <tr><th>1pl</th><td class="g">δίδομεν</td><td class="g">τίθεμεν</td><td class="g">ἵσταμεν</td></tr>
 <tr><th>2pl</th><td class="g">δίδοτε</td><td class="g">τίθετε</td><td class="g">ἵστατε</td></tr>
-<tr><th>3pl</th><td class="g">διδόασι(ν)</td><td class="g">τιθέασι(ν)</td><td class="g">ἱστᾶσι(ν)</td></tr></table>
+<tr><th>3pl</th><td class="g">διδόασι(ν)</td><td class="g">τιθέασι(ν)</td><td class="g">ἱστᾶσι(ν)</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Aorists: ἔδωκα (impv δός, δότε · ptc δούς) · ἔθηκα (ptc θείς) · ἔστησα trans. / ἔστην intrans. "stood" (ἀνέστη — he rose). ἀφίημι forgives: ἀφῆκεν, ἄφες, ἀφέωνται.</p>
 </section>
 <section>
   <h2>Principal parts — key irregular verbs</h2>
 <p class="muted" style="font-size:.83rem">Six principal parts. Learn these and the rest of the verb follows. A dash means that part does not occur in the New Testament — checked against the text, not assumed.</p>
-<table><caption>Twenty common verbs, part by part</caption>
+<div class="tw"><table><caption>Twenty common verbs, part by part</caption>
 <tr><td>Present</td><th>Future</th><th>Aorist</th><th>Perf act</th><th>Perf m/p</th><th>Aor pass</th></tr>
 <tr><th>λέγω say</th><td class="g">ἐρῶ</td><td class="g">εἶπον</td><td class="g">εἴρηκα</td><td class="g">εἴρημαι</td><td class="g">ἐρρέθην</td></tr>
 <tr><th>ἔρχομαι come</th><td class="g">ἐλεύσομαι</td><td class="g">ἦλθον</td><td class="g">ἐλήλυθα</td><td class="g">—</td><td class="g">—</td></tr>
@@ -317,12 +319,12 @@
 <tr><th>πίπτω fall</th><td class="g">πεσοῦμαι</td><td class="g">ἔπεσον</td><td class="g">πέπτωκα</td><td class="g">—</td><td class="g">—</td></tr>
 <tr><th>φέρω carry</th><td class="g">οἴσω</td><td class="g">ἤνεγκα</td><td class="g">—</td><td class="g">—</td><td class="g">ἠνέχθην</td></tr>
 <tr><th>ἀκούω hear</th><td class="g">ἀκούσω</td><td class="g">ἤκουσα</td><td class="g">ἀκήκοα</td><td class="g">—</td><td class="g">ἠκούσθην</td></tr>
-<tr><th>ἐσθίω eat</th><td class="g">φάγομαι</td><td class="g">ἔφαγον</td><td class="g">—</td><td class="g">—</td><td class="g">—</td></tr></table>
+<tr><th>ἐσθίω eat</th><td class="g">φάγομαι</td><td class="g">ἔφαγον</td><td class="g">—</td><td class="g">—</td><td class="g">—</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">All twenty are among the hundred commonest verbs in the New Testament. The perfect of μένω is a dash because the New Testament has none — though the stem surfaces once, in a pluperfect: μεμενήκεισαν, 1 John 2:19.</p>
 </section>
 <section>
   <h2>Prepositions and their cases</h2>
-<table><caption>One case</caption>
+<div class="tw"><table><caption>One case</caption>
 <tr><th>ἐν</th><td>+ dat</td><td>in, among, by</td></tr>
 <tr><th>εἰς</th><td>+ acc</td><td>into, to, for</td></tr>
 <tr><th>ἐκ / ἐξ</th><td>+ gen</td><td>out of, from</td></tr>
@@ -331,22 +333,22 @@
 <tr><th>σύν</th><td>+ dat</td><td>with</td></tr>
 <tr><th>πρό</th><td>+ gen</td><td>before</td></tr>
 <tr><th>ἀντί</th><td>+ gen</td><td>instead of, for</td></tr>
-<tr><th>ἀνά</th><td>+ acc</td><td>up, among; distributive — ἀνὰ δύο, two by two</td></tr></table>
-<table><caption>Two cases</caption>
+<tr><th>ἀνά</th><td>+ acc</td><td>up, among; distributive — ἀνὰ δύο, two by two</td></tr></table></div>
+<div class="tw"><table><caption>Two cases</caption>
 <tr><th>διά</th><td>gen: through · acc: because of</td></tr>
 <tr><th>μετά</th><td>gen: with · acc: after</td></tr>
 <tr><th>περί</th><td>gen: about, concerning · acc: around</td></tr>
 <tr><th>ὑπέρ</th><td>gen: for, on behalf of · acc: above</td></tr>
 <tr><th>ὑπό</th><td>gen: by (agent) · acc: under</td></tr>
-<tr><th>κατά</th><td>gen: against, down from · acc: according to</td></tr></table>
-<table><caption>Three cases</caption>
+<tr><th>κατά</th><td>gen: against, down from · acc: according to</td></tr></table></div>
+<div class="tw"><table><caption>Three cases</caption>
 <tr><th>ἐπί</th><td>gen: on, over · dat: on, at, on the basis of · acc: on, against</td></tr>
-<tr><th>παρά</th><td>gen: from (a person) · dat: with, beside · acc: alongside, contrary to</td></tr></table>
+<tr><th>παρά</th><td>gen: from (a person) · dat: with, beside · acc: alongside, contrary to</td></tr></table></div>
 </section>
 <section>
   <h2>Look-alikes — one accent apart</h2>
 <p class="muted" style="font-size:.83rem">Nothing separates these but an accent or a breathing, and each pair is a live reading trap. Adjacent rows are the ones to keep apart.</p>
-<table>
+<div class="tw"><table>
 <tr><th>Form</th><th>What it is</th></tr>
 <tr><td class="g">ἀλλά</td><td>but</td></tr>
 <tr><td class="g">ἄλλα</td><td>other things — neuter plural of ἄλλος</td></tr>
@@ -374,12 +376,12 @@
 <tr><td class="g">τίς, τί</td><td>who? what? — interrogative, always accented</td></tr>
 <tr><td class="g">τις, τι</td><td>someone, something — indefinite</td></tr>
 <tr><td class="g">ὤν</td><td>being — participle of εἰμί, masculine</td></tr>
-<tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>
+<tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table></div>
 </section>
 <section>
   <h2>The vocative — calling someone</h2>
 <p class="muted" style="font-size:.83rem"><b>For most nouns the vocative is simply the nominative.</b> Every plural, every neuter, and the first declension throughout. Only the second-declension masculine singular has an ending of its own, and a few third-declension nouns fall back to the bare stem. That is why it has no row in the paradigms: for nine of the eleven nouns in them it would repeat the line above.</p>
-<table><caption>The ones you actually meet</caption>
+<div class="tw"><table><caption>The ones you actually meet</caption>
 <tr><th class="g">Κύριε</th><td class="g">κύριος</td><td>119×</td><td>2nd decl masc sg — -ος becomes -ε</td></tr>
 <tr><th class="g">Διδάσκαλε</th><td class="g">διδάσκαλος</td><td>30×</td><td></td></tr>
 <tr><th class="g">υἱέ</th><td class="g">υἱός</td><td>11×</td><td></td></tr>
@@ -390,12 +392,12 @@
 <tr><th class="g">Πάτερ</th><td class="g">πατήρ</td><td>28×</td><td>3rd decl — the bare stem</td></tr>
 <tr><th class="g">γύναι</th><td class="g">γυνή</td><td>10×</td><td></td></tr>
 <tr><th class="g">βασιλεῦ</th><td class="g">βασιλεύς</td><td>9×</td><td></td></tr>
-<tr><th class="g">Τέκνον</th><td class="g">τέκνον</td><td>10×</td><td>neuter — always the nominative</td></tr></table>
+<tr><th class="g">Τέκνον</th><td class="g">τέκνον</td><td>10×</td><td>neuter — always the nominative</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">660 vocatives in the New Testament across 121 words. Ὠ before one is optional and rarer than in classical Greek.</p>
 </section>
 <section>
   <h2>Numbers</h2>
-<table><caption>The cardinals</caption>
+<div class="tw"><table><caption>The cardinals</caption>
 <tr><th>1</th><td class="g">εἷς, μία, ἕν</td><td>declines — below</td></tr>
 <tr><th>2</th><td class="g">δύο</td><td>dat δυσίν</td></tr>
 <tr><th>3</th><td class="g">τρεῖς, τρία</td><td>declines</td></tr>
@@ -416,20 +418,20 @@
 <tr><th>100</th><td class="g">ἑκατόν</td><td></td></tr>
 <tr><th>200</th><td class="g">διακόσιοι</td><td>declines</td></tr>
 <tr><th>1,000</th><td class="g">χίλιοι</td><td>declines</td></tr>
-<tr><th>10,000</th><td class="g">μύριοι</td><td>declines</td></tr></table>
+<tr><th>10,000</th><td class="g">μύριοι</td><td>declines</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">Only the first four decline, and then the hundreds and thousands. Everything between πέντε and ἑκατόν has one form wherever it stands.</p>
-<table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
+<div class="tw"><table><caption>εἷς, μία, ἕν — one (and its negatives)</caption>
 <tr><th></th><th>Masc</th><th>Fem</th><th>Neut</th></tr>
 <tr><th>Nom</th><td class="g">εἷς</td><td class="g">μία</td><td class="g">ἕν</td></tr>
 <tr><th>Gen</th><td class="g">ἑνός</td><td class="g">μιᾶς</td><td class="g">ἑνός</td></tr>
 <tr><th>Dat</th><td class="g">ἑνί</td><td class="g">μιᾷ</td><td class="g">ἑνί</td></tr>
-<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table>
+<tr><th>Acc</th><td class="g">ἕνα</td><td class="g">μίαν</td><td class="g">ἕν</td></tr></table></div>
 <p class="muted" style="font-size:.83rem">οὐδείς / μηδείς — no one — decline the same way. Ordinals: πρῶτος first · δεύτερος second · τρίτος third.</p>
 </section>
 <section>
   <h2>Genitive — what the “of” is doing</h2>
 <p class="muted" style="font-size:.83rem;margin-top:0">The genitive is the flexible case, and “of” is rarely the whole answer. These are the readings worth having in mind when a phrase carries weight.</p>
-<table><caption>The common ones</caption>
+<div class="tw"><table><caption>The common ones</caption>
 <tr><th>Reading</th><th>Example</th><th>Sense</th></tr>
 <tr><td>Possessive</td><td class="g" data-ref="Matthew 8:20" data-claim="gen">υἱὸς τοῦ ἀνθρώπου</td><td>belonging to — the Son <i>of</i> Man</td></tr>
 <tr><td>Subjective</td><td class="g" data-ref="Romans 8:35" data-claim="gen">ἀγάπης τοῦ Χριστοῦ</td><td>the genitive does the loving — Christ’s love</td></tr>
@@ -438,39 +440,39 @@
 <tr><td>Content</td><td class="g" data-ref="John 21:8" data-claim="gen">τῶν ἰχθύων</td><td>what a thing is full of</td></tr>
 <tr><td>Material</td><td class="g" data-ref="Mark 2:21" data-claim="gen">ῥάκους</td><td>what it is made of</td></tr>
 <tr><td>Comparison</td><td class="g" data-ref="Matthew 6:25" data-claim="gen">τῆς τροφῆς</td><td>after a comparative — more <i>than</i> food</td></tr>
-<tr><td>Time</td><td class="g" data-ref="Luke 18:12" data-claim="gen">τοῦ σαββάτου</td><td><i>within</i> which — not the point, and not the duration</td></tr></table>
+<tr><td>Time</td><td class="g" data-ref="Luke 18:12" data-claim="gen">τοῦ σαββάτου</td><td><i>within</i> which — not the point, and not the duration</td></tr></table></div>
 <p><b>The fork worth knowing.</b> Subjective and objective look identical. <span class="gk">ἡ ἀγάπη τοῦ θεοῦ</span> is either God’s love for us or ours for him, and only the argument around it decides. Say which you are taking, and why.</p>
 <p class="muted" style="font-size:.83rem">Genitive of time gives the period <i>within which</i>; the dative, the point <i>when</i>; the accusative, <i>how long</i>. Three cases, three questions — and, like most tidy rules, it leaks: an accusative can mark a point of time too (John 4:52).</p>
 </section>
 <section>
   <h2>Participles — what they are doing</h2>
 <p class="muted" style="font-size:.83rem;margin-top:0">A participle’s tense gives aspect, and time only relative to the main verb. An aorist participle usually happened first, a present one usually alongside — usually, and context outranks the rule.</p>
-<table><caption>What the participle is doing in the sentence</caption>
+<div class="tw"><table><caption>What the participle is doing in the sentence</caption>
 <tr><th>Use</th><th>Example</th><th>Sense</th></tr>
 <tr><td>Temporal</td><td class="g" data-ref="Matthew 8:10" data-claim="ptc">ἀκούσας δὲ ὁ Ἰησοῦς</td><td>aorist, so prior — <i>when</i> he heard</td></tr>
 <tr><td>Substantival</td><td class="g" data-ref="John 6:35" data-claim="ptc">ὁ πιστεύων εἰς ἐμὲ</td><td>article + participle is a noun — the one who believes</td></tr>
 <tr><td>Attendant circumstance</td><td class="g" data-ref="Matthew 28:19" data-claim="ptc">πορευθέντες οὖν μαθητεύσατε</td><td>takes the main verb’s mood — <i>go and</i> make disciples</td></tr>
-<tr><td>Genitive absolute</td><td class="g" data-ref="Luke 13:17" data-claim="gen-abs">ταῦτα λέγοντος αὐτοῦ</td><td>participle and its subject both genitive, the main clause’s subject someone else</td></tr></table>
+<tr><td>Genitive absolute</td><td class="g" data-ref="Luke 13:17" data-claim="gen-abs">ταῦτα λέγοντος αὐτοῦ</td><td>participle and its subject both genitive, the main clause’s subject someone else</td></tr></table></div>
 <p><b>Spotting a genitive absolute.</b> A genitive participle with a genitive noun or pronoun beside it and no grammatical tie to the rest of the sentence. In Luke 13:17 the one speaking is <span class="gk">αὐτοῦ</span>; the ones put to shame are <span class="gk">πάντες οἱ ἀντικείμενοι</span>. Different subjects — and that difference is what <i>absolute</i> means.</p>
 <p class="muted" style="font-size:.83rem">The commonest error is reading an aorist participle as “after” where the writer meant it as one action with the main verb. Matthew 28:19 is the standing example: not “after you have gone”, but “go and”.</p>
 </section>
 <section>
   <h2>Conditional sentences</h2>
 <p class="muted" style="font-size:.83rem;margin-top:0">An <i>if</i> clause (protasis) and a <i>then</i> clause (apodosis). Which class it is comes from the particle and the mood, and it changes what the writer is claiming.</p>
-<table><caption>The five classes</caption>
+<div class="tw"><table><caption>The five classes</caption>
 <tr><th>Class</th><th>Example</th><th>Claim</th></tr>
 <tr><td>First<br><span class="muted gk" style="font-size:.86em">εἰ + indicative</span></td><td class="g" data-ref="1 Peter 4:11" data-claim="cond-1">εἴ τις λαλεῖ</td><td>assumed true for the argument — <i>if, as is so</i></td></tr>
 <tr><td>Second<br><span class="muted gk" style="font-size:.86em">εἰ + past ind., then ἄν</span></td><td class="g" data-ref="John 5:46" data-claim="cond-2">εἰ γὰρ ἐπιστεύετε Μωϋσεῖ</td><td>assumed untrue — <i>if you did, which you do not</i></td></tr>
 <tr><td>Third<br><span class="muted gk" style="font-size:.86em">ἐάν + subjunctive</span></td><td class="g" data-ref="Mark 5:28" data-claim="cond-3">ἐὰν ἅψωμαι</td><td>a real future possibility</td></tr>
 <tr><td>Fourth<br><span class="muted gk" style="font-size:.86em">εἰ + optative</span></td><td class="g" data-ref="1 Peter 3:14" data-claim="cond-4">εἰ καὶ πάσχοιτε</td><td>remote — <i>if you should</i></td></tr>
-<tr><td>Fifth<br><span class="muted gk" style="font-size:.86em">ἐάν + subj., present then</span></td><td class="g" data-ref="Mark 3:24" data-claim="cond-3">ἐὰν βασιλεία ἐφ’ ἑαυτὴν μερισθῇ</td><td>a general truth rather than a prediction</td></tr></table>
+<tr><td>Fifth<br><span class="muted gk" style="font-size:.86em">ἐάν + subj., present then</span></td><td class="g" data-ref="Mark 3:24" data-claim="cond-3">ἐὰν βασιλεία ἐφ’ ἑαυτὴν μερισθῇ</td><td>a general truth rather than a prediction</td></tr></table></div>
 <p><b>The first class does not mean “true”.</b> It means the speaker is arguing <i>from</i> the condition, whether or not it holds. Satan’s <span class="gk">εἰ υἱὸς εἶ τοῦ θεοῦ</span> in Matthew 4:3 is first class and is plainly not a concession.</p>
 <p class="muted" style="font-size:.83rem">No complete fourth-class conditional survives in the New Testament: every instance is missing one half or mixes classes. Recognise it; do not expect to parse a whole one.</p>
 </section>
 <section>
   <h2>Discourse markers</h2>
 <p class="muted" style="font-size:.83rem;margin-top:0">These are the joints of an argument. They are small, they are usually dropped in translation, and they are how a paragraph is held together.</p>
-<table><caption>Counts are occurrences in the SBLGNT</caption>
+<div class="tw"><table><caption>Counts are occurrences in the SBLGNT</caption>
 <tr><th>Word</th><th></th><th>What it is doing</th></tr>
 <tr><td class="g">καί</td><td class="muted">8973</td><td>joins, and in narrative simply moves on. Weight it lightly.</td></tr>
 <tr><td class="g">δέ</td><td class="muted">2766</td><td>a new step, often a mild contrast. Frequently untranslatable.</td></tr>
@@ -479,7 +481,7 @@
 <tr><td class="g">οὖν</td><td class="muted">494</td><td>draws the inference — <i>therefore</i>. In John, often just resumes.</td></tr>
 <tr><td class="g">μέν</td><td class="muted">178</td><td>sets up a δέ still to come. Look ahead for the other half.</td></tr>
 <tr><td class="g">τότε</td><td class="muted">159</td><td><i>then</i>, sequentially. Matthew’s favourite hinge.</td></tr>
-<tr><td class="g">διό</td><td class="muted">53</td><td><i>for which reason</i> — an inference with more force than οὖν.</td></tr></table>
+<tr><td class="g">διό</td><td class="muted">53</td><td><i>for which reason</i> — an inference with more force than οὖν.</td></tr></table></div>
 <p><b>Why bother.</b> A <span class="gk">γάρ</span> tells you the next sentence is support, not a new point — so it belongs under the previous heading rather than beside it. An <span class="gk">οὖν</span> says the argument has turned a corner. Tracking these is how you find a passage’s spine before deciding what to preach from it.</p>
 <p class="muted" style="font-size:.83rem">Do not lean on them too hard in narrative, where καί and δέ often carry no more than a full stop would.</p>
 </section>

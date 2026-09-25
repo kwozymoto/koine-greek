@@ -13,7 +13,7 @@ It follows the progression of David Alan Black, *Learn to Read New Testament
 Greek* (3rd ed.) across 27 chapters of its own — his 26, with participles
 split in two because they are a quarter of every verb form in the book — and
 carries an
-818-word deck on a spaced-repetition schedule, 28 reference tables — 20 of
+817-word deck on a spaced-repetition schedule, 30 reference tables — 20 of
 which are also playable as fill-in-the-blank paradigm rounds — 12 graded
 passages, 630 sentence questions generated from the text, and the whole Greek
 New Testament with every word parsed and lit by what you know.
@@ -28,7 +28,7 @@ a language, and a confident wrong answer is worse than no answer:
 |---|---|
 | `check_vocab` | the 818 entries, their example verses and the parse under each, the reader's gloss table, the audio chain, principal parts, accents |
 | `check_drills` | the hand-written drill arrays in `js/app.js` — form against label — and every syntax question's Greek against the verse it quotes |
-| `check_paradigms` | the 28 reference tables, cell by cell, by parse code |
+| `check_paradigms` | the 30 reference tables, cell by cell, by parse code |
 | `check_grids` | the 45 paradigm rounds derived from those tables: every table meant to be playable still is, no round is more than a minute's work, no empty cell reaches the tray |
 | `check_readings` | the 12 passages word for word, every parse claim in their glosses, and the lemma, parse and deck index poured into each of their 810 words |
 | `check_lessons` | the spelling of every Greek form in the chapters, and that each question is asked after the section teaching it |
@@ -101,8 +101,8 @@ data/       vocabulary, chapters, readings, paradigms, examples, lexicon
 js/         app, reader, audio, handwriting, sync, service-worker glue
 tools/      the builders and the twenty-four checkers
 docs/       the pronunciation cue guide and the lexicon changelog
-audio/      511 word clips, letters, and lexical forms
-            (the deck is 818; the newest words have no recording yet)
+audio/      a clip for every word in the deck, the letters, lexical
+            forms, and the chapters read aloud
 ```
 
 `data/vocab.js` is **append-only**: cards, audio filenames and example verses

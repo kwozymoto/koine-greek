@@ -322,7 +322,10 @@ if(testScrim){
     }
   };
 
-  if(androidWeb() && !testerAsked() && visits>=2){
+  /* Not over a shared passage or chapter: the visit still counts, and the
+     invitation waits for an ordinary one. */
+  const byLink=typeof ARRIVED_BY_LINK!=="undefined" && ARRIVED_BY_LINK;
+  if(androidWeb() && !testerAsked() && visits>=2 && !byLink){
     /* After the first paint, so it does not land on a blank screen. */
     addEventListener("load",()=>setTimeout(testerShow,1400));
   }
