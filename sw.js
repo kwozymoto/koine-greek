@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v261';
+const VERSION = 'v262';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,41 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v262: IPA batch 4 (38 cards). */
+  'audio/vocab/196_meter.mp3',                     // μήτηρ
+  'audio/vocab/197_osper.mp3',                     // ὥσπερ
+  'audio/vocab/200_semeion.mp3',                   // σημεῖον
+  'audio/vocab/202_skotos.mp3',                    // σκότος
+  'audio/vocab/203_phos.mp3',                      // φῶς
+  'audio/vocab/204_elpis.mp3',                     // ἐλπίς
+  'audio/vocab/207_martureo.mp3',                  // μαρτυρέω
+  'audio/vocab/208_marturia.mp3',                  // μαρτυρία
+  'audio/vocab/212_doxazo.mp3',                    // δοξάζω
+  'audio/vocab/213_stauros.mp3',                   // σταυρός
+  'audio/vocab/214_stauroo.mp3',                   // σταυρόω
+  'audio/vocab/216_thronos.mp3',                   // θρόνος
+  'audio/vocab/219_ieron.mp3',                     // ἱερόν
+  'audio/vocab/220_thusia.mp3',                    // θυσία
+  'audio/vocab/221_diatheke.mp3',                  // διαθήκη
+  'audio/vocab/225_mesos.mp3',                     // μέσος
+  'audio/vocab/226_aionios.mp3',                   // αἰώνιος
+  'audio/vocab/227_pistos.mp3',                    // πιστός
+  'audio/vocab/228_dikaios.mp3',                   // δίκαιος
+  'audio/vocab/229_poneros.mp3',                   // πονηρός
+  'audio/vocab/230_presbuteros.mp3',               // πρεσβύτερος
+  'audio/vocab/232_alethes.mp3',                   // ἀληθής
+  'audio/vocab/235_outos.mp3',                     // οὗτος
+  'audio/vocab/241_topos.mp3',                     // τόπος
+  'audio/vocab/242_medeis.mp3',                    // μηδείς
+  'audio/vocab/244_oste.mp3',                      // ὥστε
+  'audio/vocab/245_anabaino.mp3',                  // ἀναβαίνω
+  'audio/vocab/247_ekballo.mp3',                   // ἐκβάλλω
+  'audio/vocab/248_ekastos.mp3',                   // ἕκαστος
+  'audio/vocab/249_katabaino.mp3',                 // καταβαίνω
+  'audio/vocab/250_pempo.mp3',                     // πέμπω
+  'audio/vocab/251_ouses.mp3',                     // Μωϋσῆς
+  'audio/vocab/252_apostolos.mp3',                 // ἀπόστολος
+  'audio/vocab/254_baptizo.mp3',                   // βαπτίζω
   /* v260: IPA batch 3 (39 cards), the coming words of the day first. */
   'audio/vocab/086_eurisko.mp3',                   // εὑρίσκω
   'audio/vocab/151_anistemi.mp3',                  // ἀνίστημι
