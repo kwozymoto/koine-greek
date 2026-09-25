@@ -3762,11 +3762,22 @@ render();
    navigated somewhere else. */
 (function openFromQuery(){
   try{
-    const want=new URLSearchParams(location.search).get("go");
-    if(!want) return;
+    const q=new URLSearchParams(location.search);
+    const want=q.get("go");
+    /* ?ch=<n> opens one chapter, for the website's "Study this chapter in
+       the app" buttons -- which went to the chapter list and left the
+       reader to find the chapter again. Learn first, so Back returns to the
+       list. A number that is no chapter is ignored like an unknown screen. */
+    const ch=parseInt(q.get("ch"),10);
+    const isCh=LESSONS.some(l=>l.id===ch);
+    if(!q.has("go") && !q.has("ch")) return;
     const screens=new Set([...document.querySelectorAll("nav [data-go]")]
       .map(b=>b.dataset.go).concat("help"));
-    if(screens.has(want)) go(want);
+    /* Cleared BEFORE navigating: the screens pushed below copy the address
+       they are pushed from, and a list left holding ?ch= reopened the
+       chapter on reload. */
     history.replaceState(history.state, "", location.pathname);
+    if(isCh){ go("learn"); openLesson(ch); }
+    else if(screens.has(want)) go(want);
   }catch(e){}
 })();

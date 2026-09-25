@@ -207,7 +207,7 @@ def index_page(ls, aloud):
 
 
 ALPHA_NOTE = ('<div class="inapp">The alphabet, with a recording of every letter '
-              'and diphthong, is in the app: <a href="/?go=learn" target="_blank" rel="noopener" data-app>open chapter 1 '
+              'and diphthong, is in the app: <a href="/?ch=1" target="_blank" rel="noopener" data-app>open chapter 1 '
               'there</a> to hear each one and say it back.</div>')
 
 
@@ -244,12 +244,12 @@ def chapter_page(l, ls, aloud):
             '  <h1>%s</h1>\n'
             '  <p class="lede">%s</p>\n'
             '  <article>\n%s\n  </article>\n'
-            '  <p class="study"><a class="open" href="/?go=learn" target="_blank" rel="noopener" data-app>Study this chapter '
+            '  <p class="study"><a class="open" href="/?ch=%d" target="_blank" rel="noopener" data-app>Study this chapter '
             'in the app</a></p>\n'
             '  <p class="inapp">In the app this chapter comes in short parts with '
             'questions along the way, and its words go onto your review schedule.</p>\n'
             % (n, badge, html.escape(l["t"]), html.escape(l["s"] or ""),
-               chapter_body(l["body"]))
+               chapter_body(l["body"]), n)
             + pager + foot(up="../"))
 
 
