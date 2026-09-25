@@ -236,6 +236,79 @@ function paintGntTools() {
   if (f) f.textContent = gntFocused() ? "\u25C9 Focused" : "\u25CE Focus on this";
 }
 
+/* ---------- a passage to share ----------
+   A group's week in one link: everydaykoine.app/?read=Jn.1.1-18 opens the
+   reader at John 1 with verses 1 to 18 marked. The book is the reader's own
+   abbreviation and the chapter its printed number, so a link reads the way
+   the reference does. No account and nothing stored anywhere but the link. */
+function sharedLink(abbr, chNum, lo, hi) {
+  return location.origin + location.pathname + "?read=" + abbr + "." + chNum
+    + (lo ? "." + lo + (hi && hi !== lo ? "-" + hi : "") : "");
+}
+function askShare() {
+  if (!gntCur) return;
+  const first = gntCur.verses[0][0];
+  const last = gntCur.verses[gntCur.verses.length - 1][0];
+  const box = document.getElementById("gntTools");
+  box.innerHTML = `<div class="card" style="border-color:var(--gold-dim)">
+    <h3 style="margin-top:0">Share this passage</h3>
+    <p class="muted" style="font-size:.84rem;margin-bottom:12px">A link that opens the
+      reader here, with the verses marked \u2014 for a class, a group, or this week's
+      sermon text. Anyone can open it; nothing about you goes with it.</p>
+    <div class="setrow"><span>Verses</span><span>
+      <input id="sLo" type="number" min="${first}" max="${last}" value="${first}"
+             inputmode="numeric" style="width:62px">
+      <span class="muted">to</span>
+      <input id="sHi" type="number" min="${first}" max="${last}" value="${last}"
+             inputmode="numeric" style="width:62px"></span></div>
+    <button class="btn" style="margin-top:12px" onclick="shareRange()">Copy the link</button>
+  </div>`;
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+function shareRange() {
+  const lo = +document.getElementById("sLo").value;
+  const hi = +document.getElementById("sHi").value;
+  if (!lo || !hi || hi < lo) { toast("Check the verse numbers"); return; }
+  const m = gntCur.meta;
+  const chNum = m.n ? m.n[gntCur.ch] : gntCur.ch + 1;
+  const first = gntCur.verses[0][0];
+  const last = gntCur.verses[gntCur.verses.length - 1][0];
+  const whole = lo === first && hi === last;
+  const url = sharedLink(gntCur.abbr, chNum, whole ? 0 : lo, whole ? 0 : hi);
+  const title = m.t + " " + chNum + (whole ? "" : ":" + lo + (hi !== lo ? "\u2013" + hi : ""));
+  /* The phone's own share sheet where there is one -- a message to the group
+     is where this link is going -- and the clipboard where there is not. */
+  if (navigator.share) {
+    navigator.share({ title: title + " \u2014 Everyday Koine", url }).catch(() => {});
+    return;
+  }
+  (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+    .then(() => toast("Link to " + title + " copied"))
+    .catch(() => prompt("Copy this link", url));
+}
+/* Opened from a shared link. Whatever it names is checked against the text
+   before anything is opened: a book or chapter that does not exist says so
+   rather than opening somewhere else. */
+async function openSharedPassage(ref) {
+  const m = /^([1-3]?[A-Za-z]+)\.(\d+)(?:\.(\d+)(?:-(\d+))?)?$/.exec(ref || "");
+  if (!m) { toast("That passage link could not be read"); return; }
+  try { await gntLoad(); } catch (e) { toast("The text could not be loaded"); return; }
+  const meta = GNT.books.find(b => b.a.toLowerCase() === m[1].toLowerCase());
+  const num = +m[2];
+  const idx = meta ? (meta.n ? meta.n.indexOf(num) : num - 1) : -1;
+  if (!meta || idx < 0 || idx >= meta.ch.length) {
+    toast("That passage is not in the text"); return;
+  }
+  const lo = m[3] ? +m[3] : 0, hi = m[4] ? +m[4] : lo;
+  go("read");
+  await openGntChapter(meta.a, idx, lo || undefined);
+  if (!lo || !gntCur) return;
+  document.querySelectorAll("#psg w").forEach(w => {
+    const n = gntCur.verses[+w.dataset.v][0];
+    if (n >= lo && n <= hi) w.classList.add("shr");
+  });
+}
+
 /* Pinning says "this is the week's passage"; focusing says "point the whole
    deck at it". Whole chapter or a verse range, because a sermon text is
    Philippians 2:5-11 far more often than it is all of Philippians 2 \u2014 seven
@@ -441,6 +514,7 @@ async function openGntChapter(abbr, ch, verse) {
       <button class="btn ghost small" id="btnPin" onclick="togglePin()"></button>
       <button class="btn ghost small" id="btnFocus" onclick="askFocus()"></button>
       <button class="btn ghost small" onclick="showGntUnknown()">Words I don't know</button>
+      <button class="btn ghost small" onclick="askShare()">Share this passage</button>
     </div>
     <div id="gntTools" style="margin-top:12px"></div>
     <div style="height:20px"></div>`;

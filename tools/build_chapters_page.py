@@ -13,6 +13,9 @@ an index of all of them:
   chapters.html          every chapter: title, summary, its own headings
   chapters/<n>.html      one chapter, in full
   sitemap.xml            the site's pages, these included
+  print/vocabulary-<n>.html   a chapter's vocabulary, laid out to print
+  print/vocabulary.html       the whole deck, commonest first, to print
+  print/paradigms.html        the reference tables, to print
 
 GENERATED, NEVER EDITED BY HAND. Everything comes from data/lessons.js and
 data/lesson_audio.js (which chapters are read aloud), so no page can say
@@ -49,12 +52,29 @@ def lessons():
     js = ("const fs=require('fs'),vm=require('vm');const c=vm.createContext({});"
           "vm.runInContext(fs.readFileSync('data/lessons.js','utf8'),c);"
           "process.stdout.write(vm.runInContext('JSON.stringify(LESSONS.map("
-          "l=>({id:l.id,t:l.t,s:l.s,body:l.body})))',c));")
+          "l=>({id:l.id,t:l.t,s:l.s,body:l.body,v:l.v})))',c));")
     r = subprocess.run(["node", "-e", js], cwd=ROOT, capture_output=True,
                        text=True, encoding="utf-8")
     if r.returncode or not r.stdout:
         sys.exit("could not read data/lessons.js:\n" + (r.stderr or ""))
     return json.loads(r.stdout)
+
+
+def node_json(files, expr):
+    js = ("const fs=require('fs'),vm=require('vm');const c=vm.createContext({});"
+          + "".join("vm.runInContext(fs.readFileSync('%s','utf8')"
+                    ".replace(/\\bconst\\b/g,'var'),c);" % f for f in files)
+          + "process.stdout.write(JSON.stringify(vm.runInContext('%s',c)));" % expr)
+    r = subprocess.run(["node", "-e", js], cwd=ROOT, capture_output=True,
+                       text=True, encoding="utf-8")
+    if r.returncode or not r.stdout:
+        sys.exit("could not read %s:\n%s" % (", ".join(files), r.stderr or ""))
+    return json.loads(r.stdout)
+
+
+# The deck index retired rather than deleted (CLAUDE.md, rule 3): its row
+# stays so later indices keep their meaning, and it is never shown.
+RETIRED = {237}
 
 
 def narrated():
@@ -247,10 +267,111 @@ def chapter_page(l, ls, aloud):
             '  <p class="study"><a class="open" href="/?ch=%d" target="_blank" rel="noopener" data-app>Study this chapter '
             'in the app</a></p>\n'
             '  <p class="inapp">In the app this chapter comes in short parts with '
-            'questions along the way, and its words go onto your review schedule.</p>\n'
+            'questions along the way, and its words go onto your review schedule.%s</p>\n'
             % (n, badge, html.escape(l["t"]), html.escape(l["s"] or ""),
-               chapter_body(l["body"]), n)
+               chapter_body(l["body"]), n,
+               (' <a href="../print/vocabulary-%d.html">Printable list of this '
+                'chapter\'s vocabulary</a>.' % n) if l["v"] else "")
             + pager + foot(up="../"))
+
+
+# ------------------------------------------------------------- printables ---
+#
+# For a class or a group: a chapter's words, the whole deck, the paradigm
+# tables, each laid out for paper. White, black, compact, no navigation in
+# print; the browser's Print (or Save as PDF) makes the handout. Everything is
+# read from data/vocab.js and data/paradigms.js, the same rows check_vocab and
+# check_paradigms hold to the corpus.
+
+PRINT_CSS = """
+  *{box-sizing:border-box}
+  body{margin:0; padding:1.5rem 1rem 3rem; background:#fff; color:#111;
+       font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  main{max-width:46rem; margin:0 auto}
+  .gk,.g,td.gk{font-family:"Gentium Plus","GFS Didot","Palatino Linotype",Palatino,Georgia,serif;
+       font-size:1.12em}
+  h1{font-size:1.35rem; margin:0 0 .2rem}
+  .sub{color:#555; margin:0 0 .9rem}
+  .bar{display:flex; gap:.6rem; align-items:center; margin:0 0 1rem; flex-wrap:wrap}
+  .bar button{font:inherit; padding:.45rem .9rem; border-radius:8px; border:1px solid #999;
+              background:#f4f4f4; cursor:pointer}
+  .bar a{color:#555}
+  table{border-collapse:collapse; width:100%; margin:.4rem 0 1rem}
+  caption{text-align:left; font-weight:600; padding:.3rem 0}
+  th,td{border-bottom:1px solid #ccc; padding:.3rem .5rem; text-align:left; vertical-align:top}
+  th{color:#444; font-weight:600}
+  td.n{color:#666; font-variant-numeric:tabular-nums; white-space:nowrap}
+  section{break-inside:avoid; margin:0 0 1.2rem}
+  section h2{font-size:1.05rem; margin:1rem 0 .3rem; break-after:avoid}
+  .foot{color:#777; font-size:.8rem; margin-top:1.5rem}
+  @media print{
+    body{padding:0} .bar{display:none}
+    a{color:inherit; text-decoration:none}
+    @page{margin:14mm}
+  }
+"""
+
+
+def print_head(title, back):
+    return ("<!doctype html>\n<html lang=\"en\">\n<head>\n"
+            "<meta charset=\"utf-8\">\n"
+            "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
+            "<meta name=\"robots\" content=\"noindex\">\n"
+            "<title>%s</title>\n"
+            "<link rel=\"icon\" href=\"../icons/icon-192.png\">\n"
+            "<!-- GENERATED by tools/build_chapters_page.py. Do not edit by hand. -->\n"
+            "<style>%s</style>\n</head>\n<body>\n<main>\n"
+            "  <div class=\"bar\"><button type=\"button\" onclick=\"print()\">Print</button>"
+            "<a href=\"%s\">&lsaquo; Back</a></div>\n"
+            % (html.escape(title), PRINT_CSS, back))
+
+
+PRINT_FOOT = ('  <p class="foot">Everyday Koine · everydaykoine.app — free to copy '
+              'for a class or group.</p>\n</main>\n</body>\n</html>\n')
+
+
+def vocab_rows(V, idx):
+    return "".join(
+        '<tr><td class="gk">%s</td><td>%s</td><td>%s</td><td class="n">%s</td></tr>\n'
+        % (html.escape(V[i][0]), html.escape(V[i][1]), html.escape(V[i][3]),
+           V[i][2]) for i in idx if i not in RETIRED)
+
+
+VOCAB_HEAD = ('<table>\n<tr><th>Word</th><th>Meaning</th><th>Part of speech</th>'
+              '<th>In the NT</th></tr>\n')
+
+
+def print_chapter_vocab(l, V):
+    return (print_head("Chapter %d vocabulary — Everyday Koine" % l["id"],
+                       "../chapters/%d.html" % l["id"])
+            + '  <h1>Chapter %d vocabulary</h1>\n  <p class="sub">%s · %d words, '
+              'with how often each occurs in the New Testament</p>\n'
+            % (l["id"], html.escape(l["t"]), len([i for i in l["v"] if i not in RETIRED]))
+            + VOCAB_HEAD + vocab_rows(V, l["v"]) + "</table>\n" + PRINT_FOOT)
+
+
+def print_all_vocab(V):
+    idx = sorted((i for i in range(len(V)) if i not in RETIRED),
+                 key=lambda i: (-V[i][2], i))
+    return (print_head("The whole vocabulary — Everyday Koine", "../about.html")
+            + '  <h1>The vocabulary, commonest first</h1>\n  <p class="sub">All %d words '
+              'in the deck, by how often each occurs in the New Testament</p>\n' % len(idx)
+            + VOCAB_HEAD + vocab_rows(V, idx) + "</table>\n" + PRINT_FOOT)
+
+
+def print_paradigms(P):
+    secs = []
+    for p in P:
+        # The alphabet grid is filled by the app with its sound buttons;
+        # there is nothing on paper to print for it.
+        if p["t"].startswith("Sounds"):
+            continue
+        secs.append('<section>\n  <h2>%s</h2>\n%s\n</section>'
+                    % (html.escape(p["t"]), p["html"]))
+    return (print_head("Paradigm sheets — Everyday Koine", "../about.html")
+            + '  <h1>Paradigm sheets</h1>\n  <p class="sub">The reference tables of '
+              'Everyday Koine, every form checked against the SBL Greek New '
+              'Testament</p>\n' + "\n".join(secs) + "\n" + PRINT_FOOT)
 
 
 def sitemap(ls):
@@ -268,6 +389,13 @@ def pages():
     out = {"chapters.html": index_page(ls, aloud), "sitemap.xml": sitemap(ls)}
     for l in ls:
         out["chapters/%d.html" % l["id"]] = chapter_page(l, ls, aloud)
+    V = node_json(["data/vocab.js"], "VOCAB")
+    P = node_json(["data/paradigms.js"], "PARADIGMS.map(p=>({t:p.t,html:p.html}))")
+    for l in ls:
+        if l["v"]:
+            out["print/vocabulary-%d.html" % l["id"]] = print_chapter_vocab(l, V)
+    out["print/vocabulary.html"] = print_all_vocab(V)
+    out["print/paradigms.html"] = print_paradigms(P)
     return out
 
 
@@ -280,21 +408,25 @@ if __name__ == "__main__":
             have = io.open(p, encoding="utf-8").read() if os.path.isfile(p) else ""
             if have != content:
                 stale.append(rel)
-        extra = sorted(f for f in os.listdir(os.path.join(ROOT, "chapters"))
-                       if f.endswith(".html") and "chapters/" + f not in want) \
-            if os.path.isdir(os.path.join(ROOT, "chapters")) else []
+        extra = []
+        for d in ("chapters", "print"):
+            if os.path.isdir(os.path.join(ROOT, d)):
+                extra += sorted(d + "/" + f for f in os.listdir(os.path.join(ROOT, d))
+                                if f.endswith(".html") and d + "/" + f not in want)
         if stale or extra:
             print("chapter pages are stale -- run python tools/build_chapters_page.py")
             for s in stale:
                 print("   stale:  " + s)
             for s in extra:
-                print("   orphan: chapters/" + s + " (no such chapter)")
+                print("   orphan: " + s + " (nothing generates it)")
             sys.exit(1)
-        print("chapters.html, %d chapter pages and sitemap.xml match the lessons"
-              % (len(want) - 2))
+        print("chapters.html, the chapter pages, the printables and sitemap.xml "
+              "match the data (%d files)" % len(want))
         sys.exit(0)
     os.makedirs(os.path.join(ROOT, "chapters"), exist_ok=True)
+    os.makedirs(os.path.join(ROOT, "print"), exist_ok=True)
     for rel, content in want.items():
         io.open(os.path.join(ROOT, rel), "w", encoding="utf-8",
                 newline="\n").write(content)
-    print("wrote chapters.html, %d chapter pages and sitemap.xml" % (len(want) - 2))
+    print("wrote %d files: chapters.html, chapter pages, printables, sitemap.xml"
+          % len(want))

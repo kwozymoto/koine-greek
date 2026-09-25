@@ -1424,7 +1424,49 @@ function render(){
       <span class="t"><b>${pin.t} ${pin.n}</b><span>Pinned for sermon preparation</span></span>
       <span class="muted">›</span></button>` : "";
 
+  const wEl=document.getElementById("wotd");
+  if(wEl) wEl.innerHTML=wordOfDayHtml();
+
   checkBadges();
+}
+
+/* ---------------------------------------------------- word of the day -----
+   One word a day, the same for everyone on that date -- so a group can talk
+   about it -- walking the whole deck in a fixed shuffled order, so every word
+   comes round once before any comes round twice (818 days). The order is a
+   seeded shuffle rather than the deck's own, which runs commonest first and
+   would spend the first months on the article and καί. */
+function wordOfDayIndex(date){
+  const d=date||new Date();
+  const day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);
+  if(!wordOfDayIndex.order){
+    let seed=0x6b6f696e;                       // "koin"
+    const rnd=()=>{seed=(seed+0x6D2B79F5)|0; let t=Math.imul(seed^seed>>>15,1|seed);
+      t=(t+Math.imul(t^t>>>7,61|t))^t; return ((t^t>>>14)>>>0)/4294967296;};
+    const o=VOCAB.map((_,i)=>i).filter(i=>!RETIRED.has(i));
+    for(let i=o.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1)); [o[i],o[j]]=[o[j],o[i]];}
+    wordOfDayIndex.order=o;
+  }
+  const o=wordOfDayIndex.order;
+  return o[((day%o.length)+o.length)%o.length];
+}
+function wordOfDayHtml(){
+  const i=wordOfDayIndex(), v=VOCAB[i];
+  if(!v) return "";
+  const c=S.cards&&S.cards[i];
+  const status=c ? (c.ivl>=6 ? "One you know" : "In your deck") : "Not in your deck yet";
+  const hear=VOCAB_AUDIO[i]
+    ? `<button class="mini" onclick="playWord(${i},this)" aria-label="Hear it">\uD83D\uDD0A</button>` : "";
+  return `<h2>Word of the day</h2>
+    <div class="card">
+      <div class="between" style="align-items:baseline">
+        <span><span class="gk" style="font-size:1.35rem">${v[0]}</span> ${hear}</span>
+        <span class="muted" style="font-size:.78rem">${status}</span>
+      </div>
+      <p style="margin:4px 0 0">${v[1]}</p>
+      <p class="muted" style="font-size:.8rem;margin:2px 0 0">${v[3]} · ${v[2]}× in the New Testament</p>
+      <div style="margin-top:8px">${exampleHtml(i)}</div>
+    </div>`;
 }
 
 /* ============================================================
@@ -1951,7 +1993,8 @@ function openLesson(id){
   const at=(S.lessonPart&&S.lessonPart.id===id)?S.lessonPart.part:0;
   document.getElementById("lessonBody").innerHTML=`
     <h1 style="margin-top:14px">${l.t}</h1>
-    <p class="sub">${l.s}</p>
+    <p class="sub">${l.s}${l.v&&l.v.length?` · <a href="print/vocabulary-${l.id}.html"
+      target="_blank" rel="noopener" class="tappable">printable vocabulary</a>`:""}</p>
     <div class="card" style="border-color:var(--gold-dim)">
       <p style="margin:0 0 10px;font-size:.9rem">${
         at?`You stopped at part <b>${at+1}</b> of ${parts}. This button takes the rest in one
@@ -3770,6 +3813,11 @@ render();
        list. A number that is no chapter is ignored like an unknown screen. */
     const ch=parseInt(q.get("ch"),10);
     const isCh=LESSONS.some(l=>l.id===ch);
+    if(q.has("read")){
+      history.replaceState(history.state, "", location.pathname);
+      openSharedPassage(q.get("read"));
+      return;
+    }
     if(!q.has("go") && !q.has("ch")) return;
     const screens=new Set([...document.querySelectorAll("nav [data-go]")]
       .map(b=>b.dataset.go).concat("help"));
