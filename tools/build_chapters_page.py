@@ -105,8 +105,14 @@ CSS = """
 """
 
 INDEX_CSS = """
-  .ch{background:var(--surface); border:1px solid var(--line); border-radius:12px;
-      padding:.95rem 1.1rem; margin:.8rem 0}
+  .ch{position:relative; background:var(--surface); border:1px solid var(--line);
+      border-radius:12px; padding:.95rem 1.1rem; margin:.8rem 0}
+  .ch:hover{border-color:var(--gold)}
+  /* The whole box opens the chapter: the title's link is stretched over it,
+     and "Read the full chapter" says so where a title alone did not. */
+  .ch h2 a::after{content:""; position:absolute; inset:0; border-radius:12px}
+  .ch h2 a:focus-visible::after{outline:2px solid var(--gold); outline-offset:2px}
+  .more{margin:.55rem 0 0; color:var(--gold); font-weight:600; font-size:.92rem}
   .ch h2{font-size:1.05rem; margin:0; line-height:1.35; text-wrap:balance}
   .ch h2 a{color:var(--text); text-decoration:none}
   .ch h2 a:hover, .ch h2 a:focus-visible{color:var(--gold); text-decoration:underline}
@@ -174,7 +180,9 @@ def index_page(ls, aloud):
         items.append(
             '<section class="ch" id="chapter-%d">\n'
             '  <h2><span class="n">Chapter %d</span> <a href="chapters/%d.html">%s</a> %s</h2>\n'
-            '  <p class="s">%s</p>\n  %s\n</section>'
+            '  <p class="s">%s</p>\n  %s\n'
+            '  <p class="more" aria-hidden="true">Read the full chapter &rsaquo;</p>\n'
+            '</section>'
             % (l["id"], l["id"], l["id"], html.escape(l["t"]), badge,
                html.escape(l["s"] or ""), topics))
     return (head("What the chapters cover — Everyday Koine",
@@ -187,7 +195,7 @@ def index_page(ls, aloud):
             '  <h1>What the chapters cover</h1>\n'
             '  <p class="lede">%d chapters take you from the alphabet to reading '
             'the Greek New Testament. Each comes in short parts with questions '
-            'along the way, and %d are read aloud so far. Open any chapter to read '
+            'along the way, and %d are read aloud so far. Tap any chapter to read '
             'it in full; the topics under each are its own section headings.</p>\n'
             '  <a class="open" href="/?go=learn">Open the chapters in the app</a>\n'
             % (len(ls), len(aloud))
