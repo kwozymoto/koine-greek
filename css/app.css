@@ -18,6 +18,10 @@
   --on-gold:#1a1408; --on-green:#12191a; --on-rust:#1c0f0d;
   --say-bg:#6f5719; --ring-track:#29344a;
   --nav-bg:rgba(20,27,43,.94); --veil:rgba(20,27,43,.72); --scrim-bg:rgba(0,0,0,.55);
+  /* Opacities that dim text, per theme: the same fade reads fainter on a light
+     ground, so light takes less of it. --k0..--k2 are how far Read dims a word
+     you do not know yet; --dim-gold is a verse number or a lexicon dagger. */
+  --k0:.44; --k1:.6; --k2:.82; --dim-gold:.75;
   --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   --nav-h:60px;
@@ -45,6 +49,7 @@
     --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
     --say-bg:#e5cf8f; --ring-track:#d9dfe9;
     --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
+    --k0:.56; --k1:.7; --k2:.88; --dim-gold:1;
   }
 }
 :root[data-theme="light"]{
@@ -56,6 +61,7 @@
   --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
   --say-bg:#e5cf8f; --ring-track:#d9dfe9;
   --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
+  --k0:.56; --k1:.7; --k2:.88; --dim-gold:1;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{height:100%}
@@ -318,9 +324,9 @@ button.vid{width:100%;text-align:left;font:inherit}
    Never below .42: this is a reading surface, and a word you cannot read is
    worse than a word you do not know. */
 .passage w.k3{opacity:1}
-.passage w.k2{opacity:.82}
-.passage w.k1{opacity:.6}
-.passage w.k0{opacity:.44}
+.passage w.k2{opacity:var(--k2)}
+.passage w.k1{opacity:var(--k1)}
+.passage w.k0{opacity:var(--k0)}
 /* .tapped outranks all four: looking a word up is how you stop it being k0 */
 .passage w.tapped{opacity:1}
 /* the verses a focus is aimed at */
@@ -333,8 +339,9 @@ button.vid{width:100%;text-align:left;font:inherit}
 .passage w.inf.tapped{background:rgba(212,165,55,.2)}
 /* the dagger on a gloss that came from a shipped lexicon rather than from
    the course's own 509. Quiet, but there — a terser, older wording is worth
-   having and worth knowing about. */
-.gloss .src{color:var(--gold);opacity:.75;margin-left:5px;font-size:.8em;cursor:help}
+   having and worth knowing about. Full gold: it sits on the gloss panel's
+   lighter surface, where the old 75% opacity left it at 3.8:1. */
+.gloss .src{color:var(--gold);margin-left:5px;font-size:.8em;cursor:help}
 
 .gloss{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 12px);background:var(--surface-2);border:1px solid var(--gold-dim);border-radius:12px;padding:13px 15px;min-height:74px}
 .gloss .w{font-family:var(--gk)}
@@ -593,7 +600,7 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .ch:active{background:var(--surface-2)}
 .passage.gnt{font-size:calc(1.25rem * var(--gk-scale));line-height:1.95}
 .passage .vn{font-family:var(--ui);font-size:.62rem;color:var(--gold);
-  vertical-align:super;margin-right:3px;opacity:.75}
+  vertical-align:super;margin-right:3px;opacity:var(--dim-gold)}
 
 /* dismiss control on the install banner and the update bar */
 .install .x, .update .x{flex:0 0 auto;width:28px;height:28px;border-radius:50%;color:var(--muted);
@@ -732,6 +739,10 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .lk .ex{margin-top:5px;padding-top:0;border-top:none;text-align:left}
 .lk .ex .gk{font-size:calc(.92rem * var(--gk-scale));line-height:1.4;color:var(--muted)}
 .lk .ex .ref{display:inline;margin-left:6px;font-size:.68rem}
+/* The word picked out of the verse is a <b>, and `.lk .w b` -- the headword's
+   rule, display:block at headword size -- caught it too, so the verse broke
+   around it onto three lines. Back inline, at the verse's own size. */
+.lk .ex .gk b{display:inline;font-size:inherit;font-weight:500}
 /* not in the lookup list: forty results each gaining a second line turns a
    scannable list into a scroll. The card is where the parse is wanted. */
 .lk .ex .form{display:none}

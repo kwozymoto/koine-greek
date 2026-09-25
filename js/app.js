@@ -2614,7 +2614,7 @@ function weakHtml(){
   return `<div class="card">
       <div class="between"><span>Where you struggle</span></div>
       <small class="muted" style="display:block;margin:2px 0 8px">From the parsing
-        drills and the paradigm rounds, one category at a time.</small>
+        drills, the paradigm grids and the real-form drills, one category at a time.</small>
       ${body}
     </div>`;
 }
@@ -3605,7 +3605,10 @@ function renderHelp(){
       <tr><th>The letters</th><td>Today leads with them, and teaches before it asks: five new letters a sitting, each shown with its name, its sound and its clip, and only then the questions — on those same five. A letter settles after ${ALPHA_SOLID} correct namings on ${ALPHA_SOLID} different days, so it cannot be settled in one evening. Once all ${ALPHABET.length} have been taught, the row becomes a single run through the whole alphabet; ${ALPHA_PASS} right and the letters are done. That check comes back every so often, further apart each time, because the alphabet is the one thing everything else rests on. <b>New words wait until it is passed</b> — a word you cannot sound out is a picture, not a word. If you already read Greek, take the check on your first morning, or say so in Progress.</td></tr>
       <tr><th>Word meanings</th><td>The ${LEARN_ORDER.length} words this course teaches carry glosses written and checked here. Tap anything else in Read and you still get a meaning — from Tyndale House's brief lexicon, which carries Abbott-Smith's <i>Manual Greek Lexicon</i>, and Dodson's where that has nothing. Those are marked with a <span style="color:var(--gold)">†</span>: they are terser and older, and are not this course's own wording.</td></tr>
       <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the videos need the internet; the songs play inside the app, the lectures open in a browser.</td></tr>
-      <tr><th>Two devices</th><td>Progress → Sync. Invent a phrase, enter it on both. Progress merges; the phrase never leaves your device.</td></tr>
+      <tr><th>Two devices</th><td>Progress → Sync across devices. One device makes a private code; type it on the other. Your progress merges, there is no account, and only a fingerprint of the code ever leaves the device.</td></tr>
+      <tr><th>Test yourself</th><td>Drill → <b>Quick test</b>: 10, 25 or 50 words from a chapter, the commonest words or the whole deck, each asked once and marked at the end, with the ones you missed listed. It leaves your review schedule alone.</td></tr>
+      <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Progress names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
+      <tr><th>Light or dark</th><td>Progress → Settings → Appearance. It follows your device unless you choose Light or Dark.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
     </table>
 
@@ -3748,19 +3751,19 @@ function renderProgress(){
     <h2>Settings</h2>
     <div class="card">
       <div class="setrow"><span>Daily review goal</span>
-        <select id="setGoal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+        <select id="setGoal" aria-label="Daily review goal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
       <div class="setrow"><span>Answer sounds</span>
-        <select id="setSfx">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setSfx" aria-label="Answer sounds">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Word audio</span>
-        <select id="setSpeak">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setSpeak" aria-label="Word audio">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Playback speed</span>
-        <select id="setRate">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setRate" aria-label="Playback speed">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
-        <select id="setLit">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setLit" aria-label="Words you know">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Appearance</span>
-        <select id="setTheme">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setTheme" aria-label="Appearance">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
-        <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
+        <select id="setGk" aria-label="Greek text size">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
         <button class="btn ghost small" onclick="askOffline('ensure-offline');askOffline('offline-status');toast('Checking…')">Check</button></div>
       ${typeof installRowHtml==="function"?installRowHtml():""}

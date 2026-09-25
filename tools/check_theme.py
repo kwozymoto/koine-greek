@@ -75,6 +75,15 @@ def lum(hexv):
     return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
 
 
+def blend(fg, bg, alpha):
+    """The colour fg at the given opacity composites to over bg."""
+    def rgb(h):
+        h = h.lstrip("#")
+        return [int(h[i:i + 2], 16) for i in (0, 2, 4)]
+    return "#" + "".join("%02x" % round(alpha * f + (1 - alpha) * g)
+                         for f, g in zip(rgb(fg), rgb(bg)))
+
+
 def contrast(a, b):
     la, lb = sorted((lum(a), lum(b)), reverse=True)
     return (la + 0.05) / (lb + 0.05)
@@ -133,6 +142,22 @@ for name, theme in (("dark", DARK), ("light", LIGHT)):
         c = contrast(a, b)
         if c < need:
             bad.append("%s theme: %s on %s is %.2f:1, needs %.1f" % (name, fg, bg, c, need))
+    # Text drawn at reduced opacity, measured as the colour it blends to.
+    # Read dims words you do not know yet on purpose, so --k0 has a lower
+    # floor than text: dimmed, but never unreadable (the rule in app.css).
+    for fg, op, bg, need in (("--text", "--k0", "--bg", 3.0), ("--text", "--k1", "--bg", TEXT),
+                             ("--text", "--k2", "--bg", TEXT), ("--gold", "--dim-gold", "--bg", TEXT)):
+        # (--dim-gold is the verse numbers, which sit on the page itself)
+        a, alpha, b = theme.get(fg), theme.get(op), theme.get(bg)
+        try:
+            alpha = float(alpha)
+        except (TypeError, ValueError):
+            bad.append("%s theme: %s is not an opacity (%s)" % (name, op, alpha))
+            continue
+        c = contrast(blend(a, b, alpha), b)
+        if c < need:
+            bad.append("%s theme: %s at %s (%.2f) on %s is %.2f:1, needs %.1f"
+                       % (name, fg, op, alpha, bg, c, need))
     # white text on the solid red: the offline pill and the leech flag
     if "--rust-solid" in theme and contrast("#ffffff", theme["--rust-solid"]) < TEXT:
         bad.append("%s theme: white on --rust-solid is %.2f:1" % (name, contrast("#ffffff", theme["--rust-solid"])))
