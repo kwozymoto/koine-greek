@@ -755,7 +755,13 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    86: "the SECONDARY STRESS on the opening glide. In IPA batch 2 the "
+    191: "FULLY DOTLESS, the epsilon written open. The dotted cue was "
+         "passable in IPA batch 3 but rose at the end like a question, and "
+         "two re-rolls spoke both dots aloud. Undotted it was offered two "
+         "ways — the open ɛ that kept κατεργάζομαι's `er` from collapsing, "
+         "and συνέρχομαι's settled /suˈnerkɒmai̯/ shape with a closed e — "
+         "and the open ɛ was chosen by ear",
+    86:"the SECONDARY STRESS on the opening glide. In IPA batch 2 the "
         "plain `/hjuˈrɪ.skoː/` was read out as letter names in both takes; "
         "in batch 3 it was offered again beside `/ˌhjuˈrɪ.skoː/` and the "
         "secondary stress was chosen by ear — the remedy λατρεύω, εὐλογία "

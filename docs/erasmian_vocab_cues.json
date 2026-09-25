@@ -3085,12 +3085,12 @@
   "pos": "verb",
   "tier": 3,
   "freq": 86,
-  "tts": "pross air kho my",
-  "source": "batch4",
-  "duration_s": 2.116,
-  "take": "2026-09-11, Atlas",
-  "note": "the sigma was being dropped: πρός is 'pross' and this word is προσ- + ἔρχομαι, whose own cue 'air kho my' passed in batch 4. Built from it.",
-  "sha1": "3f66cd996f79"
+  "tts": "/prɒˈsɛrkɒmai̯/",
+  "source": "ipa-batch3-reroll",
+  "duration_s": 1.149,
+  "take": "bVI3s_191_c",
+  "note": "IPA, chosen by ear over the card's English respelling. FULLY DOTLESS with the e written open: the dotted /prɒˈsɛr.kɒ.mai̯/ was passable but rose like a question in one take and spoke its dots in two re-rolls",
+  "sha1": "f00697476a65"
  },
  {
   "index": 192,
