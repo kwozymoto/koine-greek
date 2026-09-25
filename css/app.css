@@ -48,6 +48,10 @@ button{font-family:inherit;font-size:inherit;color:inherit;background:none;borde
 
 h1{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
 h2{font-size:1.1rem;font-weight:600;margin:26px 0 10px}
+/* A screen's title: an h2, so the page keeps one h1, looking as the h1s did. */
+h2.title{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
+/* Read by search engines and screen readers, not shown. */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 h3{font-size:.95rem;font-weight:600;margin:18px 0 6px;color:var(--gold)}
 p{margin:0 0 12px}
 .sub{color:var(--muted);font-size:.87rem;margin:0 0 20px}

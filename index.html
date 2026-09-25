@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#141b2b">
-<meta name="description" content="Learn New Testament Greek from the alphabet up: 818 words on a spaced-repetition schedule, 27 chapters written to teach on their own, the core paradigms, and the whole Greek New Testament with every word parsed. Works offline.">
+<meta name="description" content="Learn to read New Testament Greek: 27 chapters, 818 words with audio on a spaced-repetition schedule, paradigm drills, and the Greek text parsed. Works offline.">
 <meta name="mobile-web-app-capable" content="yes">
 <!-- Safari has honoured the standard name only since iOS 17.4; without the
      old one an iPhone a couple of releases behind opens the home-screen icon
@@ -13,17 +13,73 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Koine">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Everyday Koine — New Testament Greek</title>
+<title>Everyday Koine — Learn to Read New Testament Greek</title>
+<link rel="canonical" href="https://everydaykoine.app/">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <!-- 180 is the size iOS actually wants; anything else it rescales itself. -->
 <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="css/app.css">
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://everydaykoine.app/#website",
+  "url": "https://everydaykoine.app/",
+  "name": "Everyday Koine",
+  "inLanguage": "en",
+  "description": "A study app for learning to read the Greek New Testament."
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://everydaykoine.app/#app",
+  "url": "https://everydaykoine.app/",
+  "name": "Everyday Koine",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any, in a modern web browser; installable on Android, iOS and desktop",
+  "browserRequirements": "A modern browser; works offline once opened",
+  "isAccessibleForFree": true,
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "USD"
+  },
+  "inLanguage": "en",
+  "description": "Learn to read the Greek New Testament from the alphabet up: 27 chapters of grammar, an 818-word vocabulary deck with audio on a spaced-repetition schedule, playable paradigm tables, and the whole Greek New Testament with every word parsed. No account, no ads, works offline.",
+  "featureList": [
+   "27 chapters from the alphabet to reading the text, with questions along the way",
+   "Chapters read aloud, each word lit as it is spoken",
+   "818 vocabulary words with audio on a spaced-repetition schedule",
+   "Paradigm tables playable as fill-in-the-grid rounds",
+   "Parsing drill against 1,477 real forms from the text",
+   "The Greek New Testament with every word parsed and glossed",
+   "12 graded reading passages",
+   "Look up any word, form or grammar term",
+   "Optional video lectures",
+   "Works offline; progress stays on the device",
+   "Optional sync between devices without an account"
+  ],
+  "teaches": [
+   "New Testament Greek",
+   "Koine Greek",
+   "Greek grammar",
+   "Greek vocabulary",
+   "Reading the Greek New Testament"
+  ],
+  "educationalLevel": "Beginner"
+ }
+]
+</script>
 </head>
 <body>
 
 <div id="app">
+  <!-- The page's one h1, for search engines and screen readers: each
+       screen's title is an h2 styled as a heading of its own. -->
+  <h1 class="vh">Everyday Koine — learn to read New Testament Greek</h1>
 
   <!-- TODAY -->
   <section class="screen on" id="s-today">
@@ -79,7 +135,7 @@
 
   <!-- LEARN -->
   <section class="screen" id="s-learn">
-    <h1>Lessons</h1>
+    <h2 class="title">Lessons</h2>
     <p class="sub">Twenty-seven chapters, from the letters to reading the text, written to teach on their own. Each comes in short parts with questions along the way, and a video lecture if you want one. They follow the order of a standard first-year grammar, David Alan Black's <i>Learn to Read New Testament Greek</i>, so they line up if you are using it.</p>
     <div id="lessonList"></div>
   </section>
@@ -92,7 +148,7 @@
 
   <!-- DRILL -->
   <section class="screen" id="s-drill">
-    <h1>Drill</h1>
+    <h2 class="title">Drill</h2>
     <p class="sub">Pick what to practise.</p>
     <div id="drillMenu"></div>
   </section>
@@ -111,7 +167,7 @@
 
   <!-- READ -->
   <section class="screen" id="s-read">
-    <h1>Read</h1>
+    <h2 class="title">Read</h2>
     <p class="sub">Tap any word for its meaning, and for its parsing — what form the word is in.</p>
     <div id="readList"></div>
     <div id="readBody"></div>
@@ -119,7 +175,7 @@
 
   <!-- LOOK UP — words and paradigms, one search -->
   <section class="screen" id="s-tables">
-    <h1>Look up</h1>
+    <h2 class="title">Look up</h2>
     <p class="sub">Any word in the course, every paradigm — the tables of endings — and the grammar words themselves. One box: type <i>agape</i> or <i>love</i> for a word, <i>aorist</i> or <i>genitive</i> for a table, <i>participle</i> or <i>anarthrous</i> for what it means.</p>
     <input id="tablesSearch" type="search" aria-label="Search for a word, a meaning, or a paradigm" placeholder="A word, a meaning, or a paradigm" autocomplete="off">
     <!-- The deck is 818 words; the app ships a gloss for every one of the
@@ -135,14 +191,14 @@
   <!-- HOW THIS WORKS -->
   <section class="screen" id="s-help">
     <button class="btn ghost small" onclick="go('today')">← Today</button>
-    <h1 style="margin-top:14px">How this works</h1>
+    <h2 class="title" style="margin-top:14px">How this works</h2>
     <p class="sub">What is on each tab, and where the less obvious things live.</p>
     <div id="helpBody"></div>
   </section>
 
   <!-- PROGRESS -->
   <section class="screen" id="s-prog">
-    <h1>Progress</h1>
+    <h2 class="title">Progress</h2>
     <p class="sub">Your progress, and how to back it up.</p>
     <div id="progBody"></div>
   </section>
