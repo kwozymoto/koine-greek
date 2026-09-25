@@ -660,6 +660,16 @@ function setFocus(lo,hi){
 function clearFocus(done){
   const f=S.focus;
   if(!f) return;
+  /* Both buttons take the card off Today, so both ask first: a one-tap ✕
+     that silently ended a passage someone had been working was the complaint. */
+  if(!confirm(done
+      ? `Mark ${focusRef(f)} complete?
+
+It comes off Today and is listed under Passages worked in Settings. The words you have started stay on your review schedule.`
+      : `Stop working on ${focusRef(f)}?
+
+It comes off Today and is not recorded as finished. The words you have started stay on your review schedule.`))
+    return;
   if(done){
     S.focusDone=(S.focusDone||[]);
     S.focusDone.unshift({ref:focusRef(f), n:focusTotal(f), on:today()});
@@ -1693,6 +1703,10 @@ function resetArrange(){
    device the unpinning is the newer fact and wins the merge -- with null,
    the other device's pin came straight back. */
 function unpinToday(){
+  const p=S.pin;
+  if(p && p.a && !confirm(`Unpin ${p.t} ${p.n}?
+
+It comes off Today. You can pin it again from the chapter in Read.`)) return;
   S.pin={ts:Date.now()};
   save(); render(); toast("Unpinned");
 }

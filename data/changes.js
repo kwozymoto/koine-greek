@@ -12,7 +12,7 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-25", v:"v258", items:[
+{d:"2026-09-25", v:"v259", items:[
   {k:"new", t:"A light theme. Settings → Appearance: same as your device, light, or dark."},
   {k:"new", t:"Arrange Today: reorder the sections below the plan, or hide the ones you do not use."},
   {k:"new", t:"Quick test: 10, 25 or 50 words from a chapter or the commonest, marked at the end, without touching your review schedule."},
@@ -24,6 +24,7 @@ const CHANGES=[
   {k:"audio", t:"Chapter 8 read aloud."},
   {k:"better", t:"Progress is now Settings, with settings first. Today has a “Your progress” link that goes straight to your numbers."},
   {k:"better", t:"Today's sections have their own headings, and a pinned passage can be unpinned from Today."},
+  {k:"better", t:"Ending the passage you are working on, marking it complete, or unpinning a passage now asks first."},
   {k:"better", t:"Learning the letters says plainly that every letter comes back until you know it — moving on is always safe."},
   {k:"fix", t:"Drilling the words you missed in a test no longer added words you had never met to your review schedule."},
   {k:"fix", t:"An unpinned passage no longer came back after syncing with another device."},
