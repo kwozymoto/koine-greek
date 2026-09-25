@@ -853,7 +853,8 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .gkb-last{grid-template-columns:repeat(4,1fr)}
 .gkb-wide{grid-column:span 1}
 .gkb-go{background:var(--gold);color:var(--on-gold);font-weight:650}
-.gkb-go:active{background:var(--gold-dim)}
+/* Darkened, not swapped: --gold-dim behind --on-gold was 1.8:1 in light. */
+.gkb-go:active{filter:brightness(.85)}
 @media (max-width:340px){ .gkb-k{padding:9px 0;font-size:1.05rem} }
 
 /* ---------- drill icons ----------

@@ -60,10 +60,29 @@ def themes(css):
     dark = {}
     for body in re.findall(r"(?<![\w\]\)])\s*:root\s*\{([^}]*)\}", css):
         dark.update(decls(body))
-    m = re.search(r'@media\s*\(prefers-color-scheme:\s*light\)\s*\{\s*'
-                  r':root:not\(\[data-theme="dark"\]\)\s*\{([^}]*)\}\s*\}', css)
-    a = re.search(r':root\[data-theme="light"\]\s*\{([^}]*)\}', css)
-    return dark, decls(m.group(1)) if m else None, decls(a.group(1)) if a else None
+    # Every block of each kind, merged in order -- a second block appended
+    # later wins in the browser, so it has to win here too.
+    ms = re.findall(r'@media\s*\(prefers-color-scheme:\s*light\)\s*\{\s*'
+                    r':root:not\(\[data-theme="dark"\]\)\s*\{([^}]*)\}\s*\}', css)
+    As = re.findall(r':root\[data-theme="light"\]\s*\{([^}]*)\}', css)
+    lm, la = ({}, {}) if ms or As else (None, None)
+    for b in ms:
+        lm.update(decls(b))
+    for b in As:
+        la.update(decls(b))
+    return dark, (lm if ms else None), (la if As else None)
+
+
+def strays(path, css):
+    """Theme selectors anywhere but the two blessed places. A rule such as
+    [data-theme=light] .x{} is a colour change nobody compares."""
+    css = nocomments(css)
+    known = len(re.findall(r'@media\s*\(prefers-color-scheme:\s*light\)\s*\{\s*'
+                           r':root:not\(\[data-theme="dark"\]\)', css))
+    if len(re.findall(r"prefers-color-scheme", css)) != known:
+        bad.append("%s: prefers-color-scheme used outside the light token block" % path)
+    if len(re.findall(r"data-theme", css)) != known + len(re.findall(r':root\[data-theme="light"\]\s*\{', css)):
+        bad.append("%s: data-theme used outside the token blocks -- theme only through tokens" % path)
 
 
 def lum(hexv):
@@ -171,21 +190,45 @@ ALLOWED = {
     "#000": "the letterbox behind an embedded video",
     "#fff": "white on the solid red (offline pill, leech flag) and the red play dot -- the red is dark enough in both themes",
 }
-body = nocomments(app_css)
-body = re.sub(r":root(?::not\(\[data-theme=\"dark\"\]\)|\[data-theme=\"light\"\])?\s*\{[^}]*\}", "", body)
-for lit in re.findall(r"#[0-9a-fA-F]{3,8}\b|rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+", body):
-    key = lit.replace(" ", "")
-    if not any(key.startswith(k) for k in ALLOWED):
-        bad.append("css/app.css: colour literal %s outside the tokens -- make it a token" % lit)
+LIT = re.compile(r"#[0-9a-fA-F]{3,8}\b|\b(?:rgb|hsl)a?\([^)]*\)")
+NAMED = re.compile(r"(?<![\w-])(white|black|red|green|blue|gray|grey|silver|yellow|orange|purple|navy|maroon)(?![\w-])")
+
+
+def allowed(lit):
+    key = lit.replace(" ", "").lower()
+    if key.startswith("#"):
+        return key in ALLOWED                      # exact: #000814 is not #000
+    return any(key.startswith(k) for k in ALLOWED if k.startswith("rgba("))
+
+
+def css_literals(path, css):
+    body = nocomments(css)
+    body = re.sub(r"@media\s*\(prefers-color-scheme:\s*light\)\s*\{\s*:root[^{]*\{[^}]*\}\s*\}", "", body)
+    body = re.sub(r":root(?::not\(\[data-theme=\"dark\"\]\)|\[data-theme=\"light\"\])?\s*\{[^}]*\}", "", body)
+    for lit in LIT.findall(body):
+        if not allowed(lit):
+            bad.append("%s: colour literal %s outside the tokens -- make it a token" % (path, lit))
+    # named colours, looked for only inside declarations so that a selector
+    # like [data-tone="green"] or a property like white-space is not one
+    for decl in re.findall(r"\{([^{}]*)\}", body):
+        for n in NAMED.findall(re.sub(r'"[^"]*"', "", decl)):
+            bad.append("%s: named colour %r outside the tokens" % (path, n))
+
+
+css_literals("css/app.css", app_css)
+strays("css/app.css", app_css)
 
 # JavaScript and the app page carry no colours of their own.
 JS_ALLOWED = {("js/write.js", "#fff"): "an offscreen mask the scorer reads by alpha, never shown",
               ("js/app.js", "#141b2b"): "THEME_BG, checked against --bg below",
               ("js/app.js", "#f3f5f9"): "THEME_BG, checked against --bg below"}
+JS_LIT = re.compile(r"(?<=[\s\"'`:(,])#[0-9a-fA-F]{3,8}\b|\b(?:rgb|hsl)a?\(")
+JS_NAMED = re.compile(r"(?:color|background|border|fill|stroke|shadow|outline)[\w-]*\s*:\s*[^;\"'`\n]*?"
+                      r"(?<![\w-])(white|black)(?![\w-])")
 for f in sorted(x.replace(chr(92), "/") for x in glob.glob("js/*.js")):
-    src = read(f)
-    for lit in re.findall(r"""["'](#[0-9a-fA-F]{3,8})["']|(?:color|background|stroke|fill)\s*:\s*(#[0-9a-fA-F]{3,8})""", src):
-        lit = lit[0] or lit[1]
+    src = re.sub(r"/\*.*?\*/", "", read(f), flags=re.S)
+    src = re.sub(r"(?m)^\s*//.*$", "", src)
+    for lit in JS_LIT.findall(src) + JS_NAMED.findall(src):
         if (f, lit) not in JS_ALLOWED:
             bad.append("%s: colour literal %s -- read it from the theme" % (f, lit))
 m = re.search(r'THEME_BG=\{dark:"(#[0-9a-fA-F]+)",light:"(#[0-9a-fA-F]+)"\}', read("js/app.js"))
@@ -207,14 +250,25 @@ def head_ok(path, txt):
         cols = re.findall(r'"(#[0-9a-fA-F]+)"', sc.group(0))
         if cols != [LIGHT.get("--bg"), DARK.get("--bg")]:
             bad.append("%s: the head script's bar colours %s are not light/dark --bg" % (path, cols))
-        if txt.index(sc.group(0)) < txt.index('name="theme-color"'):
+        # rindex: the script must follow BOTH metas, or the second is left
+        # at its default when a theme is chosen
+        if txt.index(sc.group(0)) < txt.rindex('<meta name="theme-color"'):
             bad.append("%s: the head script runs before the metas it sets" % path)
+        if '<meta name="apple-mobile-web-app-status-bar-style"' in txt:
+            if txt.index(sc.group(0)) < txt.index('<meta name="apple-mobile-web-app-status-bar-style"'):
+                bad.append("%s: the head script runs before the status-bar meta it sets" % path)
+            if 'apple-mobile-web-app-status-bar-style' not in sc.group(0) or '"default"' not in sc.group(0):
+                bad.append("%s: the head script does not switch the iPhone status bar to dark "
+                           "icons in light -- black-translucent draws white ones" % path)
 
 
 idx = read("index.html")
 head_ok("index.html", idx)
-for lit in re.findall(r'(?<=[\s"\':(])#[0-9a-fA-F]{3,6}\b', re.sub(r"<meta name=\"theme-color\"[^>]*>|<script>[^<]*koine\.theme.*?</script>", "", idx, flags=re.S)):
+rest = re.sub(r"<meta name=\"theme-color\"[^>]*>|<script>[^<]*koine\.theme.*?</script>", "", idx, flags=re.S)
+for lit in JS_LIT.findall(rest):
     bad.append("index.html: colour literal %s -- use a token" % lit)
+if "js/app.js" not in [f for f, _ in JS_ALLOWED] or 'bar.content=light?"default":"black-translucent"' not in read("js/app.js"):
+    bad.append("js/app.js: applyTheme does not set the iPhone status bar for the theme chosen")
 
 # --------------------------------------------------------- the site pages ---
 ALIAS = {"--gold-ink": "--on-gold"}
@@ -229,6 +283,8 @@ for p in pages:
         continue
     if lm != la:
         bad.append("%s: its two light blocks differ" % p)
+    css_literals(p, style)
+    strays(p, style)
     for name, mine, app in (("dark", d, DARK), ("light", la, LIGHT)):
         for k, v in mine.items():
             if not COLOUR.match(v) and k != "color-scheme":

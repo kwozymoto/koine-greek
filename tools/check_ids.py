@@ -44,17 +44,24 @@ for f in sorted(glob.glob("js/*.js")):
         bad.append("%s renders id=%r, which index.html already has" % (f, k))
 
 id_bad = len(bad)
+# Every top-level name, of any kind, in every script the page loads --
+# data/ as well as js/, since both share the one global scope. A `var X` in
+# one file and a `function X` in another replace each other just as two
+# functions do. (A duplicated let/const/class throws at load instead, which
+# is louder, but it is the same mistake and is cheaper caught here.)
 where = collections.defaultdict(list)
-for f in sorted(x.replace(chr(92), "/") for x in glob.glob("js/*.js")):
-    for name in re.findall(r"^(?:async\s+)?function\s+([A-Za-z_$][\w$]*)",
-                           io.open(f, encoding="utf-8").read(), re.M):
+files = sorted(x.replace(chr(92), "/") for x in glob.glob("js/*.js") + glob.glob("data/*.js"))
+for f in files:
+    src = re.sub(r"/\*.*?\*/", "", io.open(f, encoding="utf-8").read(), flags=re.S)
+    for name in re.findall(r"^(?:async\s+function|function|var|let|const|class)\s+([A-Za-z_$][\w$]*)",
+                           src, re.M):
         where[name].append(f)
 for name, fs in sorted(where.items()):
     if len(fs) > 1:
-        bad.append("function %s is declared %d times (%s) -- the last one wins silently"
+        bad.append("%s is declared %d times at top level (%s) -- one replaces the other"
                    % (name, len(fs), ", ".join(fs)))
 
-print("top-level functions across js/: %d, each declared once%s"
+print("top-level names across js/ and data/: %d, each declared once%s"
       % (len(where), "" if not any(len(v) > 1 for v in where.values()) else " — NOT"))
 print("ids in index.html: %d, all distinct%s" % (len(static), "" if not id_bad else " — NOT"))
 for b in bad:

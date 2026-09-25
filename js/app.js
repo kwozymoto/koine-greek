@@ -318,6 +318,12 @@ function applyTheme(t){
   document.querySelectorAll('meta[name="theme-color"]').forEach(m=>{
     m.content=THEME_BG[t || (/light/.test(m.media||"")?"light":"dark")];
   });
+  /* The iPhone status bar: white icons on dark, dark icons on light. iOS
+     reads it when the home-screen app launches, so a change shows on the
+     next launch; the head script sets it every launch. */
+  const bar=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+  const light=t==="light" || (!t && matchMedia("(prefers-color-scheme: light)").matches);
+  if(bar) bar.content=light?"default":"black-translucent";
 }
 
 /* Placement: give the N commonest un-started words a 6-day head start
@@ -2571,12 +2577,15 @@ function labelSets(s){
       if(m[w]) (out[d]=out[d]||new Set()).add(m[w]);
   });
   if(/all genders/i.test(s)) out.gender=new Set(["M","F","N"]);
-  // εἰμί has no voice to get wrong; the label's "active" is convention
-  if(/of εἰμί/.test(s)) delete out.voice;
   return out;
 }
 function noteLabel(want,got,good){
   const W=labelSets(want), G=labelSets(got||want), w={}, g={};
+  /* εἰμί has no voice to get wrong -- the label's "active" is convention --
+     so a question ABOUT εἰμί scores no voice. Only the question: chosen as a
+     wrong answer, the εἰμί label still says "active", and deleting that too
+     scored λύω's voice as missed when both labels agreed on it. */
+  if(/of εἰμί/.test(want)) delete W.voice;
   Object.entries(W).forEach(([d,set])=>{
     if(set.size!==1) return;
     const v=[...set][0];

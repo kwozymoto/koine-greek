@@ -7,8 +7,8 @@
 <meta name="description" content="Privacy policy for Everyday Koine. No accounts, no analytics, no ads. Progress stays on your device unless you turn on sync.">
 <meta name="theme-color" content="#141b2b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">
-<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. */
-try{var t=localStorage.getItem("koine.theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c})}}catch(e){}</script>
+<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. On an iPhone home-screen app the status bar's icons are white (black-translucent), so in light they switch to dark (default). */
+var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c})}var s=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');if(s&&(t==="light"||(t!=="dark"&&matchMedia("(prefers-color-scheme: light)").matches)))s.content="default"}catch(e){}</script>
 <link rel="icon" href="icons/icon-192.png">
 <style>
   :root{
@@ -71,7 +71,7 @@ try{var t=localStorage.getItem("koine.theme");if(t==="light"||t==="dark"){docume
   <a class="back" href="/">&lsaquo; Everyday Koine</a>
 
   <h1>Privacy policy</h1>
-  <p class="date">Everyday Koine · last updated 24 September 2026</p>
+  <p class="date">Everyday Koine · last updated 25 September 2026</p>
 
   <div class="lede">
     <p><b>The app has no accounts and collects nothing about you.</b> There is
@@ -97,7 +97,7 @@ try{var t=localStorage.getItem("koine.theme");if(t==="light"||t==="dark"){docume
 
   <h2>What is stored on your device</h2>
   <p>The app keeps your progress in your browser's local storage, under two
-  keys:</p>
+  main keys, with a few one-word preferences beside them:</p>
   <table>
     <tr><th><code>koine.v1</code></th><td>Your progress: which words you have
       studied and when each is next due, which chapters you have read, your
@@ -106,7 +106,20 @@ try{var t=localStorage.getItem("koine.theme");if(t==="light"||t==="dark"){docume
     <tr><th><code>koine.sync</code></th><td>Present only if you turn on sync.
       Holds your sync code, a fingerprint of it — see below — and the time
       of the last sync.</td></tr>
+    <tr><th>Preferences</th><td>Small settings for this device alone, never
+      synced: <code>koine.theme</code> (Light or Dark, if you chose one),
+      <code>koine.wmode</code> (finger or keyboard in the writing drill),
+      <code>koine.lookupAll</code> (whether Look up searches the whole New
+      Testament), <code>koine.report.draft</code> (a problem report you have
+      started and not yet sent, cleared once it is), <code>koine.installDismissed</code> and
+      <code>koine.testerAsked</code> (that you closed the install bar or the
+      Android-test invitation), and <code>koine.visits</code> (how many times
+      the app has been opened here, so that invitation never appears on a
+      first visit).</td></tr>
   </table>
+  <p>So that it works offline, the app also keeps a copy of its own files,
+  its recordings and the Greek text in the browser's cache. That is the app
+  itself, not anything about you.</p>
   <p>That is the whole of it. The app does not ask for or store your name,
   email address, phone number, location, contacts, photos, or any device or
   advertising identifier.</p>
