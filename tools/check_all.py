@@ -74,6 +74,8 @@ data/gnt/, and this runs the lot:
                      blocks identical, every text colour at 4.5:1 or better
                      on the grounds it sits on, no colour literals outside
                      the tokens, and the site pages on the app's palette
+    check_changes    the update log in Settings: every entry dated by its
+                     release in git, so no date comes from memory
     check_sw         the service worker's own file lists: that every path in
                      SHELL and STALE exists, and that every bulk file whose
                      content changed this release is evicted. A wrong path
@@ -154,7 +156,7 @@ CHECKS = ["check_greek_norm", "check_mark", "check_keys", "check_icons",
           "check_lexicon", "check_syntax", "check_clauses", "check_deck",
           "check_ipa", "check_sounds", "check_strokes",
           "check_cues", "check_lesson_audio", "check_chapters_page",
-          "check_site_numbers", "check_ids", "check_theme",
+          "check_site_numbers", "check_ids", "check_theme", "check_changes",
           "check_sw",
           "check_taught", "check_prose", "check_terms",
           "check_beside", "check_consistency",

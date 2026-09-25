@@ -133,6 +133,14 @@ small{font-size:.8rem}
 .pinrow{display:flex;gap:8px;align-items:stretch}
 .pinrow .lesson-item{flex:1;margin-bottom:0}
 .pinrow .mini{align-self:center}
+/* What's new */
+.logday{margin:14px 0 4px;font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.loglist{list-style:none;padding:0;margin:0}
+.loglist li{display:flex;gap:10px;align-items:baseline;padding:4px 0;font-size:.86rem;line-height:1.45}
+.logk{flex:0 0 64px;font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tone)}
+.lognew{font-size:.7rem;font-weight:650;padding:2px 8px;border-radius:999px;background:var(--gold);color:var(--on-gold)}
+.logmore{margin-top:12px}
+.logmore summary{cursor:pointer;color:var(--gold);font-size:.86rem;font-weight:600;padding:6px 0}
 /* Arrange Today */
 .arrrow{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}
 .arrrow:last-child{border-bottom:none}

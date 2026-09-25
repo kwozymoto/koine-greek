@@ -1696,6 +1696,39 @@ function unpinToday(){
   S.pin={ts:Date.now()};
   save(); render(); toast("Unpinned");
 }
+/* ---------------------------------------------------------- what's new -----
+   data/changes.js, newest first: the latest day open, the rest behind
+   "Earlier updates". "New" marks a day this device has not shown before,
+   and stays for the rest of the visit rather than vanishing the moment a
+   setting is changed and the page redrawn. */
+const LOG_SEEN="koine.seenLog";
+const LOG_KIND={new:["New","--gold"], better:["Improved","--blue"], fix:["Fixed","--green"],
+                audio:["Audio","--violet"], words:["Words","--rust"]};
+let LOG_FRESH=null;
+const escHtml=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function logDayHtml(e){
+  const day=new Date(e.d+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+  return `<p class="logday">${day}</p><ul class="loglist">${e.items.map(it=>{
+    const [lbl,tone]=LOG_KIND[it.k]||["",""];
+    return `<li><span class="logk" style="--tone:var(${tone})">${lbl}</span><span>${escHtml(it.t)}</span></li>`;
+  }).join("")}</ul>`;
+}
+function whatsNewHtml(){
+  if(typeof CHANGES==="undefined" || !CHANGES.length) return "";
+  if(LOG_FRESH===null){
+    let seen=""; try{ seen=localStorage.getItem(LOG_SEEN)||""; }catch(e){}
+    LOG_FRESH=CHANGES[0].d>seen;
+    try{ localStorage.setItem(LOG_SEEN,CHANGES[0].d); }catch(e){}
+  }
+  return `<div class="card">
+      <div class="between"><h3 style="margin:0">What's new</h3>${
+        LOG_FRESH?`<span class="lognew">New</span>`:""}</div>
+      ${logDayHtml(CHANGES[0])}
+      ${CHANGES.length>1?`<details class="logmore"><summary>Earlier updates</summary>
+        ${CHANGES.slice(1).map(logDayHtml).join("")}</details>`:""}
+    </div>`;
+}
+
 /* The progress half of the Settings tab, from Today's link. */
 function goProgress(){
   go("prog");
@@ -3734,6 +3767,7 @@ function renderHelp(){
       <tr><th>Two devices</th><td>Settings → Sync across devices. One device makes a private code; type it on the other. Your progress merges, there is no account, and only a fingerprint of the code ever leaves the device.</td></tr>
       <tr><th>Test yourself</th><td>Drill → <b>Quick test</b>: 10, 25 or 50 words from a chapter, the commonest words or the whole deck, each asked once and marked at the end, with the ones you missed listed. It leaves your review schedule alone.</td></tr>
       <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Your progress, in Settings, names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
+      <tr><th>What's new</th><td>Settings → What's new lists the significant updates, newest first: features, fixes, audio and words.</td></tr>
       <tr><th>Light or dark</th><td>Settings → Appearance. It follows your device unless you choose Light or Dark.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
     </table>
@@ -3851,6 +3885,7 @@ function renderProgress(){
       ${(S.suspended||[]).filter(i=>VOCAB[i]).length>1?`<button class="btn ghost small" style="margin-top:12px;width:100%" onclick="unsuspendAll()">Restore all</button>`:""}
     </div>`:""}
     ${typeof syncCardHtml==="function"?syncCardHtml():""}
+    ${whatsNewHtml()}
     <!-- Today's "Your progress" link lands here. -->
     <h2 id="progSection" class="dgroup" data-tone="gold">Your progress</h2>
     <!-- These three came off Today when it became the day's plan. Streak and
