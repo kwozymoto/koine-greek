@@ -11,6 +11,12 @@ could never be reached. Nothing failed and nothing logged.
 
 Two checks: an id written twice in index.html, and an id="…" a script writes
 into a template that index.html already has (the page would then hold two).
+
+And the same fault one level up: every js/*.js is a classic script sharing
+one global scope, so two top-level functions of the same name do not clash
+-- the later silently replaces the earlier, in whichever file loads last.
+The light theme's colour helper was first called wInk, which js/write.js
+already had further down; the writing drills crashed on open.
 """
 import collections
 import glob
@@ -37,7 +43,20 @@ for f in sorted(glob.glob("js/*.js")):
     for k in sorted(set(re.findall(r'\bid="([A-Za-z][\w-]*)"', src)) & static):
         bad.append("%s renders id=%r, which index.html already has" % (f, k))
 
-print("ids in index.html: %d, all distinct%s" % (len(static), "" if not bad else " — NOT"))
+id_bad = len(bad)
+where = collections.defaultdict(list)
+for f in sorted(x.replace(chr(92), "/") for x in glob.glob("js/*.js")):
+    for name in re.findall(r"^(?:async\s+)?function\s+([A-Za-z_$][\w$]*)",
+                           io.open(f, encoding="utf-8").read(), re.M):
+        where[name].append(f)
+for name, fs in sorted(where.items()):
+    if len(fs) > 1:
+        bad.append("function %s is declared %d times (%s) -- the last one wins silently"
+                   % (name, len(fs), ", ".join(fs)))
+
+print("top-level functions across js/: %d, each declared once%s"
+      % (len(where), "" if not any(len(v) > 1 for v in where.values()) else " — NOT"))
+print("ids in index.html: %d, all distinct%s" % (len(static), "" if not id_bad else " — NOT"))
 for b in bad:
     print("   " + b)
 sys.exit(1 if bad else 0)

@@ -234,13 +234,18 @@ function wStartMark(s) {
    Drawn in the muted tone, not the ink gold: it is an instruction, not
    something to trace over. It is never part of the scorer's mask — that is
    rasterised from wGuide() alone — so the hint cannot flatter the score. */
+/* The pad's colours, read from the theme at the moment of drawing, so the
+   guide and your ink follow Settings > Appearance like everything else. */
+function wTheme(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
 function wDrawStart(s, c) {
   if (!s.mark) return;
   const p = s.pen, m = s.mark;
   const bx = m.at[0] + m.out[0] * p * 0.8, by = m.at[1] + m.out[1] * p * 0.8;
   const L = p * 2.4, hx = bx + m.dir[0] * L, hy = by + m.dir[1] * L;
   c.save();
-  c.strokeStyle = c.fillStyle = "#97a1b5";
+  c.strokeStyle = c.fillStyle = wTheme("--muted");
   c.lineCap = c.lineJoin = "round";
   c.beginPath();
   c.arc(bx, by, Math.max(2.5, p * 0.28), 0, Math.PI * 2);
@@ -301,12 +306,12 @@ function wPaint(s) {
   if (s.guide) {
     c.save();
     c.globalAlpha = 0.2;
-    wGuide(s, c, "#e9e5da");
+    wGuide(s, c, wTheme("--text"));
     c.restore();
     wDrawStart(s, c);
   }
   c.save();
-  c.strokeStyle = c.fillStyle = "#d4a537";
+  c.strokeStyle = c.fillStyle = wTheme("--gold");
   c.lineCap = c.lineJoin = "round";
   s.strokes.forEach(st => wPath(s, c, st));
   c.restore();

@@ -301,6 +301,24 @@ async function requestPersistence(){
 
 /* Greek text size preference */
 function applyGk(){ document.body.dataset.gk = S.gk || ""; }
+/* Appearance. Per device, like text size -- a phone at night and a desk by a
+   window want different things -- and kept in its own key rather than in S,
+   because every page's <head> reads it before first paint and must not parse
+   the whole study record to do so. "" follows the device. THEME_BG is each
+   theme's --bg, for the browser's own bar; check_theme holds the two equal. */
+const THEME_KEY="koine.theme", THEME_BG={dark:"#141b2b",light:"#f3f5f9"};
+function themePref(){
+  try{ const t=localStorage.getItem(THEME_KEY); return t==="light"||t==="dark"?t:""; }
+  catch(e){ return ""; }
+}
+function applyTheme(t){
+  try{ if(t) localStorage.setItem(THEME_KEY,t); else localStorage.removeItem(THEME_KEY); }catch(e){}
+  const root=document.documentElement;
+  if(t) root.setAttribute("data-theme",t); else root.removeAttribute("data-theme");
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m=>{
+    m.content=THEME_BG[t || (/light/.test(m.media||"")?"light":"dark")];
+  });
+}
 
 /* Placement: give the N commonest un-started words a 6-day head start
    instead of walking them through the new-word flow one by one. */
@@ -3739,6 +3757,8 @@ function renderProgress(){
         <select id="setRate">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
         <select id="setLit">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div class="setrow"><span>Appearance</span>
+        <select id="setTheme">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Greek text size</span>
         <select id="setGk">${[["","Normal"],["lg","Large"],["xl","Extra large"]].map(([v,l])=>`<option value="${v}" ${(S.gk||"")===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Offline<br><small class="muted" id="offlineState">checking…</small></span>
@@ -3785,6 +3805,7 @@ function renderProgress(){
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
   document.getElementById("setGk").onchange=e=>{S.gk=e.target.value;save();applyGk();};
+  document.getElementById("setTheme").onchange=e=>applyTheme(e.target.value);
   document.getElementById("setLit").onchange=e=>{
     S.lit=+e.target.value; save();
     // repaints a chapter already rendered; a no-op if Read was never opened

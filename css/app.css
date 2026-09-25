@@ -1,4 +1,5 @@
 :root{
+  color-scheme:dark;
   --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
   --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-dim:#8a6d24;
   /* --rust is TEXT ("Reset everything", a wrong option, a grade-1 pip) and
@@ -8,12 +9,53 @@
      the same. #cd6152 was doing both jobs and failed both — 4.44 as text,
      3.87 behind the offline pill. Measured, not guessed. */
   --green:#58a88c; --rust:#df6a59; --rust-solid:#bb584b; --blue:#6f8fd0;
+  /* Colours that were written into rules as literals, named so the light
+     theme can change them. --on-* is text on a fill of that colour: dark on
+     the bright dark-theme fills, white on the deeper light-theme ones. --say-bg
+     is the word lit while a chapter is read aloud, darker than --gold-dim,
+     which put the text at 3.9:1. */
+  --amber:#d6a05e; --rust-text:#e8907f;
+  --on-gold:#1a1408; --on-green:#12191a; --on-rust:#1c0f0d;
+  --say-bg:#6f5719; --ring-track:#29344a;
+  --nav-bg:rgba(20,27,43,.94); --veil:rgba(20,27,43,.72); --scrim-bg:rgba(0,0,0,.55);
   --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   --nav-h:60px;
   /* "Greek text size" used to reach exactly two places. Everything Greek is
      sized through this, so the setting means what it says. */
   --gk-scale:1;
+}
+/* ---------- the light theme ----------
+   Settings > Appearance: Same as device (no attribute; the media query
+   decides), Light or Dark (data-theme on <html>, stamped before first paint
+   by the script in each page's <head>). The two blocks below must stay
+   identical -- tools/check_theme.py holds them to each other, and every
+   token's contrast to the WCAG 4.5:1 floor, in both themes.
+
+   Gold, green and red are deeper here than in the dark theme, because the
+   dark theme's bright gold is 2.2:1 on white: fine behind dark text, unusable
+   as text. So a fill carries white text instead, through the --on-* tokens. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
+    --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-dim:#dcc07a;
+    --green:#2a7459; --rust:#b3412f; --rust-solid:#b3412f; --blue:#3a5fae;
+    --violet:#6a52b0; --amber:#9a5b12; --rust-text:#9c3525;
+    --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
+    --say-bg:#e5cf8f; --ring-track:#d9dfe9;
+    --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
+  --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-dim:#dcc07a;
+  --green:#2a7459; --rust:#b3412f; --rust-solid:#b3412f; --blue:#3a5fae;
+  --violet:#6a52b0; --amber:#9a5b12; --rust-text:#9c3525;
+  --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
+  --say-bg:#e5cf8f; --ring-track:#d9dfe9;
+  --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{height:100%}
@@ -83,7 +125,7 @@ small{font-size:.8rem}
 /* ---------- buttons ---------- */
 .btn{
   display:block;width:100%;padding:14px 18px;border-radius:12px;
-  background:var(--gold);color:#1a1408;font-weight:650;text-align:center;
+  background:var(--gold);color:var(--on-gold);font-weight:650;text-align:center;
   border:none;transition:transform .08s;
 }
 .btn:active{transform:scale(.985)}
@@ -94,7 +136,7 @@ small{font-size:.8rem}
    finger/keyboard switch in "Write it from memory". Same gold-on-dark the
    keyboard's own mark keys use when a mark is on, so a chosen thing looks
    the same everywhere in the app. */
-.btn.ghost.on{background:var(--gold);border-color:var(--gold);color:#1a1408;font-weight:600}
+.btn.ghost.on{background:var(--gold);border-color:var(--gold);color:var(--on-gold);font-weight:600}
 
 /* ---------- bottom nav ---------- */
 nav{
@@ -103,7 +145,7 @@ nav{
   padding-bottom:env(safe-area-inset-bottom);
   padding-left:env(safe-area-inset-left);
   padding-right:env(safe-area-inset-right);
-  background:rgba(20,27,43,.94);backdrop-filter:blur(12px);
+  background:var(--nav-bg);backdrop-filter:blur(12px);
   border-top:1px solid var(--line);display:flex;
 }
 nav button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:.66rem;letter-spacing:.02em}
@@ -128,7 +170,7 @@ nav button.on{color:var(--gold)}
   border:1px solid var(--line);border-radius:12px;transition:opacity .2s}
 .plan-row .tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;
   border:1.5px solid var(--line);display:flex;align-items:center;
-  justify-content:center;font-size:.76rem;font-weight:700;color:#12191a}
+  justify-content:center;font-size:.76rem;font-weight:700;color:var(--on-green)}
 .plan-row .t{flex:1;min-width:0;display:flex;flex-direction:column}
 .plan-row .t b{font-weight:600;font-size:.95rem}
 .plan-row .t span{font-size:.76rem;color:var(--muted);
@@ -170,7 +212,7 @@ nav button.on{color:var(--gold)}
 .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
 .grades button{padding:12px 4px;border-radius:11px;border:1px solid var(--line);font-size:.78rem;font-weight:600;background:var(--surface)}
 .grades button i{display:block;font-style:normal;font-size:.64rem;font-weight:400;color:var(--muted);margin-top:2px}
-.g1{color:var(--rust)}.g2{color:#d6a05e}.g3{color:var(--green)}.g4{color:var(--blue)}
+.g1{color:var(--rust)}.g2{color:var(--amber)}.g3{color:var(--green)}.g4{color:var(--blue)}
 .prog-bar{height:4px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-bottom:14px}
 .prog-bar i{display:block;height:100%;background:var(--gold);transition:width .25s}
 
@@ -192,9 +234,9 @@ nav button.on{color:var(--gold)}
 .opt.right::after,.opt.wrong::after{
   position:absolute;right:15px;top:50%;margin-top:-11px;
   width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;
-  font-size:.8rem;font-weight:700;color:#12191a}
+  font-size:.8rem;font-weight:700;color:var(--on-green)}
 .opt.right::after{content:"✓";background:var(--green);animation:mark .26s cubic-bezier(.2,1.5,.4,1) both}
-.opt.wrong::after{content:"✕";background:var(--rust);color:#1c0f0d}
+.opt.wrong::after{content:"✕";background:var(--rust);color:var(--on-rust)}
 .opt.right{animation:pop .2s ease-out}
 .opt.wrong{animation:nudge .22s ease-in-out}
 @keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.035)}100%{transform:scale(1)}}
@@ -232,7 +274,7 @@ nav button.on{color:var(--gold)}
 /* ---------- lessons ---------- */
 .lesson-item{display:flex;align-items:center;gap:13px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;width:100%;text-align:left}
 .lesson-item .n{width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted)}
-.lesson-item.done .n{background:var(--green);border-color:var(--green);color:#0e1a16;font-weight:700}
+.lesson-item.done .n{background:var(--green);border-color:var(--green);color:var(--on-green);font-weight:700}
 .lesson-item .t{flex:1;min-width:0}
 .lesson-item .t b{display:block;font-weight:600;font-size:.94rem}
 .lesson-item .t span{font-size:.76rem;color:var(--muted)}
@@ -401,7 +443,7 @@ button.vid{width:100%;text-align:left;font:inherit}
    (70) because it takes focus and nothing should sit over it; below nothing.
    A scrim rather than a fourth .install bar because it asks for something
    typed, and a banner is the wrong shape for a field. */
-.scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);
+.scrim{position:fixed;inset:0;z-index:90;background:var(--scrim-bg);
   display:flex;align-items:center;justify-content:center;
   padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
           max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left))}
@@ -435,7 +477,7 @@ button.vid{width:100%;text-align:left;font:inherit}
    title and the bullet: fading the whole element composited the warning
    twice and left it at 1.7:1, effectively unreadable. .local marks the
    things in this list that are precached, such as the alphabet chart. */
-.vid .net{display:none;font-size:.72rem;color:#e8907f;margin-top:1px}
+.vid .net{display:none;font-size:.72rem;color:var(--rust-text);margin-top:1px}
 body.off .vid:not(.local){pointer-events:none}
 body.off .vid:not(.local) .p{opacity:.4}
 body.off .vid:not(.local) b{color:var(--muted)}
@@ -473,7 +515,7 @@ body.off .vid:not(.local) .net{display:block}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:7px 0 13px}
 .chips button{padding:8px 13px;border-radius:999px;border:1px solid var(--line);
   background:var(--surface);font-size:.85rem;color:var(--muted)}
-.chips button.sel{background:var(--gold);border-color:var(--gold);color:#1a1408;font-weight:650}
+.chips button.sel{background:var(--gold);border-color:var(--gold);color:var(--on-gold);font-weight:650}
 .chip-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:10px}
 
 /* ---------- settings ---------- */
@@ -538,11 +580,11 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap;margin-top:5px}
 .lk .pl{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:1px}
-.lk .pl.on{background:var(--gold);border-color:var(--gold);color:#1a1408}
+.lk .pl.on{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
 
 /* leech flag */
 .leech{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;
-  background:var(--rust);color:#fff;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+  background:var(--rust-solid);color:#fff;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:middle}
 
 /* ---------- Greek New Testament reader ---------- */
 .ch-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
@@ -795,11 +837,11 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
    a circumflex greyed out over ε is the keyboard teaching that ε is short,
    which a missing key could not say. */
 .gkb-marks .gkb-k{font-size:1.3rem;color:var(--gold);background:var(--surface)}
-.gkb-marks .gkb-k.on{background:var(--gold);color:#1a1408}
+.gkb-marks .gkb-k.on{background:var(--gold);color:var(--on-gold)}
 .gkb-marks .gkb-k.off{opacity:.28;color:var(--muted)}
 .gkb-last{grid-template-columns:repeat(4,1fr)}
 .gkb-wide{grid-column:span 1}
-.gkb-go{background:var(--gold);color:#1a1408;font-weight:650}
+.gkb-go{background:var(--gold);color:var(--on-gold);font-weight:650}
 .gkb-go:active{background:var(--gold-dim)}
 @media (max-width:340px){ .gkb-k{padding:9px 0;font-size:1.05rem} }
 
@@ -846,7 +888,7 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .fanfare{
   position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:16px;
-  background:rgba(20,27,43,.72);backdrop-filter:blur(2px);
+  background:var(--veil);backdrop-filter:blur(2px);
   animation:fan-in .22s ease both;
 }
 .fanfare.out{animation:fan-out .3s ease both}
@@ -1029,7 +1071,7 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .lplay:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .lblk[data-taps="1"] .lw{cursor:pointer;border-radius:3px}
 .lblk[data-taps="1"] .lw:hover{background:var(--surface-2)}
-.lw.say{background:var(--gold-dim);color:var(--text)}
+.lw.say{background:var(--say-bg);color:var(--text)}
 @media (max-width:420px){
   .lblk{padding-left:26px}
   .lplay{width:20px;height:20px}

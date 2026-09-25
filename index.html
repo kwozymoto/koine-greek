@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#141b2b">
+<meta name="theme-color" content="#141b2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">
+<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. */
+try{var t=localStorage.getItem("koine.theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c})}}catch(e){}</script>
 <meta name="description" content="Learn to read New Testament Greek: 27 chapters, 817 words with audio on a spaced-repetition schedule, paradigm drills, and the Greek text parsed. Works offline.">
 <meta name="mobile-web-app-capable" content="yes">
 <!-- Safari has honoured the standard name only since iOS 17.4; without the
@@ -106,8 +109,8 @@
     <div class="hero">
       <div class="ring">
         <svg width="150" height="150" viewBox="0 0 150 150">
-          <circle cx="75" cy="75" r="66" fill="none" stroke="#29344a" stroke-width="10"/>
-          <circle id="ringArc" cx="75" cy="75" r="66" fill="none" stroke="#d4a537" stroke-width="10"
+          <circle cx="75" cy="75" r="66" fill="none" stroke="var(--ring-track)" stroke-width="10"/>
+          <circle id="ringArc" cx="75" cy="75" r="66" fill="none" stroke="var(--gold)" stroke-width="10"
                   stroke-linecap="round" stroke-dasharray="415" stroke-dashoffset="415"/>
         </svg>
         <div class="mid">
