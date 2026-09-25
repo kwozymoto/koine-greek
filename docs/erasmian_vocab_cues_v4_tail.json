@@ -295,11 +295,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "ehndoo hoe",
-  "source": "ear",
-  "duration_s": 1.488,
-  "take": "B",
-  "sha1": "ca88aba20ebe"
+  "tts": "/ɛnˈdu.oː/",
+  "source": "ipa-batch3",
+  "duration_s": 1.149,
+  "take": "bVI3_530_c",
+  "sha1": "e05471b2a38b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 531,

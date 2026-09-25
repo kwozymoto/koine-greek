@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v259';
+const VERSION = 'v260';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,43 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v260: IPA batch 3 (39 cards), the coming words of the day first. */
+  'audio/vocab/086_eurisko.mp3',                   // εὑρίσκω
+  'audio/vocab/151_anistemi.mp3',                  // ἀνίστημι
+  'audio/vocab/152_sozo.mp3',                      // σῴζω
+  'audio/vocab/153_ora.mp3',                       // ὥρα
+  'audio/vocab/155_opou.mp3',                      // ὅπου
+  'audio/vocab/156_pos.mp3',                       // πῶς
+  'audio/vocab/157_psuche.mp3',                    // ψυχή
+  'audio/vocab/158_agathos.mp3',                   // ἀγαθός
+  'audio/vocab/159_exousia.mp3',                   // ἐξουσία
+  'audio/vocab/161_dei.mp3',                       // δεῖ
+  'audio/vocab/162_odos.mp3',                      // ὁδός
+  'audio/vocab/163_allelon.mp3',                   // ἀλλήλων
+  'audio/vocab/164_kalos.mp3',                     // καλός
+  'audio/vocab/168_eteros.mp3',                    // ἕτερος
+  'audio/vocab/169_arisaios.mp3',                  // Φαρισαῖος
+  'audio/vocab/170_aima.mp3',                      // αἷμα
+  'audio/vocab/171_artos.mp3',                     // ἄρτος
+  'audio/vocab/172_gennao.mp3',                    // γεννάω
+  'audio/vocab/173_didasko.mp3',                   // διδάσκω
+  'audio/vocab/174_peripateo.mp3',                 // περιπατέω
+  'audio/vocab/175_phobeomai.mp3',                 // φοβέομαι
+  'audio/vocab/177_eti.mp3',                       // ἔτι
+  'audio/vocab/179_pous.mp3',                      // πούς
+  'audio/vocab/180_dikaiosune.mp3',                // δικαιοσύνη
+  'audio/vocab/182_thalassa.mp3',                  // θάλασσα
+  'audio/vocab/184_akoloutheo.mp3',                // ἀκολουθέω
+  'audio/vocab/185_apollumi.mp3',                  // ἀπόλλυμι
+  'audio/vocab/189_arche.mp3',                     // ἀρχή
+  'audio/vocab/190_pleroo.mp3',                    // πληρόω
+  'audio/vocab/201_entole.mp3',                    // ἐντολή
+  'audio/vocab/259_imon.mp3',                      // Σίμων
+  'audio/vocab/287_nux.mp3',                       // νύξ
+  'audio/vocab/456_elpizo.mp3',                    // ἐλπίζω
+  'audio/vocab/460_plethos.mp3',                   // πλῆθος
+  'audio/vocab/481_genos.mp3',                     // γένος
+  'audio/vocab/530_enduo.mp3',                     // ἐνδύω
   /* v235: three verses with elided words, read at last (chapters 4, 5). */
   'audio/lessons/l04_07.mp3',
   'audio/lessons/l04_13.mp3',

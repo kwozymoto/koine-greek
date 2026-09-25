@@ -755,7 +755,12 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    550: "the χρεία ending, undotted — the same fix Ἀντιόχεια took a "
+    86: "the SECONDARY STRESS on the opening glide. In IPA batch 2 the "
+        "plain `/hjuˈrɪ.skoː/` was read out as letter names in both takes; "
+        "in batch 3 it was offered again beside `/ˌhjuˈrɪ.skoː/` and the "
+        "secondary stress was chosen by ear — the remedy λατρεύω, εὐλογία "
+        "and εὐαγγέλιον took for the same glide",
+    550:"the χρεία ending, undotted — the same fix Ἀντιόχεια took a "
          "lot earlier. The dot between `kei̯` and the vowel behind it let them "
          "stand apart as letter names and the word spelled itself K-I-R-A; "
          "χρεία `/ˈkrei̯a/` is approved carrying that ending with no dot. "

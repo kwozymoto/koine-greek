@@ -12,7 +12,7 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-25", v:"v259", items:[
+{d:"2026-09-25", v:"v260", items:[
   {k:"new", t:"A light theme. Settings → Appearance: same as your device, light, or dark."},
   {k:"new", t:"Arrange Today: reorder the sections below the plan, or hide the ones you do not use."},
   {k:"new", t:"Quick test: 10, 25 or 50 words from a chapter or the commonest, marked at the end, without touching your review schedule."},
@@ -22,6 +22,7 @@ const CHANGES=[
   {k:"new", t:"Printable sheets: each chapter's vocabulary, the whole vocabulary, and the paradigm tables."},
   {k:"new", t:"This update log."},
   {k:"audio", t:"Chapter 8 read aloud."},
+  {k:"audio", t:"39 more words re-recorded with the clearer pronunciation, each chosen by ear — the coming words of the day first, starting with ἐνδύω."},
   {k:"better", t:"Progress is now Settings, with settings first. Today has a “Your progress” link that goes straight to your numbers."},
   {k:"better", t:"Today's sections have their own headings, and a pinned passage can be unpinned from Today."},
   {k:"better", t:"Ending the passage you are working on, marking it complete, or unpinning a passage now asks first."},

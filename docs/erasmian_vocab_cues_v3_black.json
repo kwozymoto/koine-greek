@@ -182,12 +182,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "geh noss",
-  "source": "recued",
-  "duration_s": 1.264,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "420317a40a99"
+  "tts": "/ˈɡɛ.nɒs/",
+  "source": "ipa-batch3",
+  "duration_s": 0.914,
+  "take": "bVI3_481_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "7f8e57974176"
  },
  {
   "index": 482,
