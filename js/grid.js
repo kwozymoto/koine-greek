@@ -126,6 +126,66 @@ function gridRounds() {
 }
 
 const gridName = g => g.title + (g.part ? ` · ${g.part}` : "");
+
+/* ---- what a cell asks --------------------------------------------------
+   For Where you struggle: the categories a cell stands for, in the letters
+   of the parse code, read off its row label, its column heading and the
+   table's title -- the same reading tools/check_paradigms.py makes when it
+   holds each cell to the corpus, so the two agree on what a cell is.
+
+     1sg … 3pl rows             person and number; mood from the title
+     Pres / Aor pass columns    tense, and voice where one is named
+     Nom … Acc (pl) rows        case, and number from the row, the caption
+                                or the column
+     Masc / a citation column   gender, by the article the citation carries
+     Pres act rows (participles), Present rows (infinitives)  tense, voice
+
+   What a heading does not settle is left out rather than guessed: "m/p" is
+   no one voice, "Masc/Fem" no one gender, a cell holding "sg / pl" no one
+   number, and εἰμί has no voice at all. */
+const G_CASE = { Nom: "N", Gen: "G", Dat: "D", Acc: "A", Voc: "V" };
+const G_TENSE = { Pres: "P", Impf: "I", Fut: "F", Aor: "A", Perf: "X", Plup: "Y",
+  Present: "P", Imperfect: "I", Future: "F", Aorist: "A", Perfect: "X" };
+const G_GEND = { Masc: "M", Fem: "F", Neut: "N" };
+const gVoice = s => /m\/p/.test(s) ? null : /\bpass/i.test(s) ? "P"
+  : /\bmid/i.test(s) ? "M" : /\bact/i.test(s) ? "A" : null;
+function gridCats(g, row, cell, form) {
+  const col = gridCol(g, cell), first = col.split(/\s+/)[0], out = {};
+  const vm = /^([123])(sg|pl)$/.exec(row);
+  if (vm) {
+    out.person = vm[1]; out.number = vm[2] === "sg" ? "S" : "P";
+    out.mood = /Subjunctive/.test(g.title) ? "S" : /Imperative/.test(g.title) ? "D" : "I";
+    const t = G_TENSE[first] || (/^Present/.test(g.caption) ? "P" : null);
+    if (t) out.tense = t;
+    if (cell.span === 1 && !/εἰμί/.test(g.title)) {
+      const v = gVoice(col) || (/\bactive\b/i.test(g.title + " " + g.caption) ? "A" : null);
+      if (v) out.voice = v;
+    }
+    return out;
+  }
+  const rfirst = row.split(/\s+/)[0];
+  if (G_TENSE[rfirst] || rfirst === "εἰμί") {
+    // participles: the row is the participle, the column its gender;
+    // infinitives: the row is the tense, the column the voice
+    out.tense = G_TENSE[rfirst] || "P";
+    const v = rfirst === "εἰμί" ? null : (gVoice(row) || (cell.span === 1 ? gVoice(col) : null));
+    if (v) out.voice = v;
+    if (G_GEND[first]) { out.gender = G_GEND[first]; out["case"] = "N"; out.number = "S"; }
+    return out;
+  }
+  const cs = G_CASE[rfirst];
+  if (!cs) return out;
+  out["case"] = cs;
+  if (!/\//.test(form || "")) {
+    out.number = /\bpl\b/.test(row) || /plural/i.test(g.caption) || / pl$/.test(col)
+      || col === "we" || col === "you (pl)" ? "P" : "S";
+  }
+  if (G_GEND[first]) out.gender = G_GEND[first];
+  else if (col !== "Masc/Fem" && !/^(I|we|you)\b/.test(col))
+    out.gender = /\(masc\)/.test(col) || /(^|[,\s])ὁ($|[,\s])/.test(col) ? "M"
+      : /(^|[,\s])τό($|[,\s])/.test(col) ? "N" : "F";
+  return out;
+}
 /* The heading a cell sits under. A colspan covers two, and saying so beats
    naming the first and hoping — λύεσθαι really is both middle and passive. */
 const gridCol = (g, cell) =>
@@ -210,6 +270,17 @@ function gridFill(g) {
     const tray = slots.map(s => s.want).sort(() => Math.random() - .5);
     let live = 0, errs = 0;
     const missed = new Set();          // the cells, not just how many
+    /* Where you struggle. The FIRST answer given for each cell, against what
+       the tile tapped would have filled -- after a miss the right tile is a
+       matter of elimination, and scoring that would flatter. */
+    const cats = slots.map(s => gridCats(g, g.rows[s.r].label, g.rows[s.r].cells[s.c], s.want));
+    const tried = new Set();
+    const noteSlot = (i, said) => {
+      if (tried.has(i) || typeof noteCats !== "function") return;
+      tried.add(i);
+      noteCats(cats[i], slots.map((s, k) => s.want === said ? cats[k] : null)
+                             .filter(Boolean), said === slots[i].want);
+    };
     const t0 = Date.now();
     const best = gridCard(g.key).best;
 
@@ -273,6 +344,7 @@ function gridFill(g) {
       if (!btn || btn.disabled) return;
       const s = slots[live];
       if (!s || s.got) return;
+      noteSlot(live, tray[+btn.dataset.k]);
       if (tray[+btn.dataset.k] !== s.want) {
         errs++;
         missed.add(s.want);
@@ -390,7 +462,13 @@ function gridSprint(n = 14, anyChapter) {
     // the four happen to share.
     const cut = pre.length >= 2 ? pre.length : 0;
     const show = f => `<span class="gk">${cut ? "-" + f.slice(cut) : f}</span>`;
-    const opts = forms.slice().sort(() => Math.random() - .5).map(show);
+    const order = forms.slice().sort(() => Math.random() - .5);
+    const opts = order.map(show);
+    // Where you struggle: the slot asked, against every slot the chosen
+    // spelling fills in this column.
+    const want = gridCats(q.g, q.row, q.cell, q.t);
+    const catsOf = f => q.list.filter(x => x.t === f)
+      .map(x => gridCats(q.g, x.row, x.cell, x.t));
     const col = gridCol(q.g, q.cell);
     return mcq(
       `${cut ? `<span class="q-gk lg">${pre}—</span><br>` : ""}
@@ -401,7 +479,10 @@ function gridSprint(n = 14, anyChapter) {
       null,
       // A miss puts the whole table back in tomorrow's queue: you did not get
       // one cell wrong, you have not got the paradigm.
-      ok => { if (!ok) gridGrade(q.g.key, 0); });
+      (ok, k) => {
+        if (!ok) gridGrade(q.g.key, 0);
+        if (typeof noteCats === "function") noteCats(want, catsOf(order[k]), ok);
+      });
   });
 }
 
@@ -441,19 +522,10 @@ function formDrill(n = 10) {
     const show = r => `<span class="gk">${r[0]}</span>`;
     const rows4 = [want, ...wrong].sort(() => Math.random() - .5);
     const opts = rows4.map(show);
-    /* Where you struggle: each category the slot names, scored against the
-       form chosen -- pick the imperfect when the aorist was asked and it is
-       the tense that was missed, not the person or the number. */
-    const cats = want[2] === "V-" ? ["person", "tense", "voice", "mood", "number"]
-                                  : ["case", "number", "gender"];
+    // Where you struggle, scored against the form chosen (noteCats).
     const note = (good, pick) => {
-      if (typeof noteParse !== "function") return;
-      const got = rows4[pick] || want;
-      cats.forEach(d => {
-        const at = REAL_AT[d], v = want[3][at];
-        if (v && v !== "-") noteParse(d, v, good || got[3][at] === v);
-      });
-      save();
+      if (typeof noteCats === "function")
+        noteCats(formCats(want), [formCats(rows4[pick] || want)], good);
     };
     const v = VOCAB[+k];
     const head = v ? v[0].split(",")[0] : "";

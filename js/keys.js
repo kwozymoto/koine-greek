@@ -217,8 +217,24 @@ function typeStep(want, others) {
       if (good) { addXp(3); SESSION_XP += 3; }
     };
 
+    /* Where you struggle, from the first answer only, and only when it says
+       which category went wrong: right, or another real form of the same
+       word ("that is the perfect"). A misspelling says nothing about tense. */
+    let noted = false;
+    const note = (good, wrote) => {
+      if (noted || typeof noteCats !== "function") return;
+      noted = true;
+      const got = wrote ? FORMS.find(f => +f[1] === +want[1] && f[0] === wrote) : null;
+      if (good || got) noteCats(formCats(want), got ? [formCats(got)] : [], good);
+    };
+
     function judge() {
       const m = gkMark(kb.value, want[0], others);
+      if (stage === 0) {
+        if (m.verdict === "correct" || m.verdict === "accent") note(true);
+        else if (m.verdict === "other") note(false, m.wrote);
+        else noted = true;
+      }
       if (m.verdict === "correct") return done(stage === 0);
       if (m.verdict === "accent") {
         fb.innerHTML = `<div class="feedback"><b>Right</b> — the accent is

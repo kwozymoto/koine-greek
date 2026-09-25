@@ -2461,8 +2461,9 @@ function realFormPool(){
 }
 
 /* ---------------------------------------------------- where you struggle -----
-   Every parse answered in three drills -- Parse a real form, Parsing builder
-   and Produce a real form -- is scored one category at a time: shown an
+   Every parse answered in the parsing drills and the paradigm rounds -- Parse
+   a real form, Parsing builder, Produce and Write a real form, Fill the grid
+   and the sprint -- is scored one category at a time: shown an
    aorist, did you get the tense? shown a genitive, the case? S.parsing holds
    [asked, missed, ts] per category, "tense.A" for the aorist, in the letters
    of the eight-character parse code so the drill can pull matching forms
@@ -2484,6 +2485,24 @@ function noteParse(dim,val,ok){
   let a=e[0]+1, m=e[1]+(ok?0:1);
   if(a>=30){ a=Math.round(a/2); m=Math.round(m/2); }
   S.parsing[k]=[a,m,Date.now()];
+}
+/* Score one question: `want` is the categories asked, {tense:"A", ...}, and
+   `got` the categories of whatever was answered -- a list, because one
+   spelling can fill several slots (ἔλυον is first singular and third plural).
+   A category counts as missed only if nothing answered agrees with it, so
+   choosing the imperfect for the aorist costs the tense and nothing else. */
+function noteCats(want,got,good){
+  Object.entries(want).forEach(([d,v])=>
+    noteParse(d,v,good || got.some(c=>c && c[d]===v)));
+  save();
+}
+/* The categories a data/forms.js row carries, read from its parse code: the
+   ones its part of speech is asked about, where the code says anything. */
+function formCats(r){
+  const out={}, opts=REAL_OPTS[r[2]];
+  if(!opts) return out;
+  Object.keys(opts).forEach(d=>{ const v=r[3][REAL_AT[d]]; if(v && v!=="-") out[d]=v; });
+  return out;
 }
 /* The categories worth naming: asked often enough to mean something, missed
    at least a fifth of the time, worst first. */
@@ -2512,7 +2531,7 @@ function weakHtml(){
   return `<div class="card">
       <div class="between"><span>Where you struggle</span></div>
       <small class="muted" style="display:block;margin:2px 0 8px">From the parsing
-        drills, one category at a time.</small>
+        drills and paradigm rounds, one category at a time.</small>
       ${body}
     </div>`;
 }
