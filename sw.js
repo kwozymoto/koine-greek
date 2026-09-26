@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v265';
+const VERSION = 'v266';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,38 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v266: IPA batch 6 (35 cards). */
+  'audio/vocab/335_prosphero.mp3',                 // προσφέρω
+  'audio/vocab/336_pro.mp3',                       // πρό
+  'audio/vocab/337_krisis.mp3',                    // κρίσις
+  'audio/vocab/338_phulake.mp3',                   // φυλακή
+  'audio/vocab/339_amartolos.mp3',                 // ἁμαρτωλός
+  'audio/vocab/340_krateo.mp3',                    // κρατέω
+  'audio/vocab/341_phobos.mp3',                    // φόβος
+  'audio/vocab/344_mikros.mp3',                    // μικρός
+  'audio/vocab/347_soteria.mp3',                   // σωτηρία
+  'audio/vocab/348_apaggello.mp3',                 // ἀπαγγέλλω
+  'audio/vocab/351_omoios.mp3',                    // ὅμοιος
+  'audio/vocab/352_thlipsis.mp3',                  // θλῖψις
+  'audio/vocab/354_oudaia.mp3',                    // Ἰουδαία
+  'audio/vocab/357_deuteros.mp3',                  // δεύτερος
+  'audio/vocab/361_therapeuo.mp3',                 // θεραπεύω
+  'audio/vocab/364_deo.mp3',                       // δέω
+  'audio/vocab/365_meros.mp3',                     // μέρος
+  'audio/vocab/366_eggizo.mp3',                    // ἐγγίζω
+  'audio/vocab/367_akobos.mp3',                    // Ἰάκωβος
+  'audio/vocab/370_choris.mp3',                    // χωρίς
+  'audio/vocab/371_pascho.mp3',                    // πάσχω
+  'audio/vocab/373_anastasis.mp3',                 // ἀνάστασις
+  'audio/vocab/374_axios.mp3',                     // ἄξιος
+  'audio/vocab/376_oligos.mp3',                    // ὀλίγος
+  'audio/vocab/377_ergazomai.mp3',                 // ἐργάζομαι
+  'audio/vocab/383_klaio.mp3',                     // κλαίω
+  'audio/vocab/387_oikodomeo.mp3',                 // οἰκοδομέω
+  'audio/vocab/388_mnemeion.mp3',                  // μνημεῖον
+  'audio/vocab/389_telos.mp3',                     // τέλος
+  'audio/vocab/397_planao.mp3',                    // πλανάω
+  'audio/vocab/400_epithumia.mp3',                 // ἐπιθυμία
   /* v265: ἔρημος, the last of IPA batch 5. */
   'audio/vocab/330_eremos.mp3',                    // ἔρημος
   /* v264: IPA batch 5 (39 cards). */
