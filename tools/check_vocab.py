@@ -755,7 +755,13 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    391: "FULLY DOTLESS. The dot after the ʣ was spoken in IPA batch 6; two "
+    399: "a SECONDARY STRESS on the glide and ποιέω's CATCH after the "
+         "stressed epsilon. Undotted, /ju/ was read as English \"jew\"; the "
+         "stress fixed the opening, as it did for εὑρίσκω and εὐλογία. Then "
+         "every take of ˈstɛ.oː ended ay-oh, so the ending took ποιέω's "
+         "/ˈɛh.oː/ over εὐλογέω's closed dotless e. Fraser: \"not quite as "
+         "smooth at the end, but the superior pronunciation\"",
+    391:"FULLY DOTLESS. The dot after the ʣ was spoken in IPA batch 6; two "
          "dotless takes and one writing the zeta `dz` were offered, and a "
          "dotless ʣ take was chosen. The stressed iota stays long like every "
          "approved -ίζω verb, διαλογίζομαι /dɪalɒˈɡiʣɒmai̯/ among them",

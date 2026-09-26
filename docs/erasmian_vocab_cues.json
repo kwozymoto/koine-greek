@@ -6429,10 +6429,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 38,
-  "tts": "ew khah ree steh oh",
-  "source": "batch7",
-  "duration_s": 2.092,
-  "sha1": "d8aa893993c6"
+  "tts": "/ˌjukarɪˈstɛh.oː/",
+  "source": "ipa-batch6-eucharisteo",
+  "duration_s": 1.959,
+  "sha1": "ae440a826f3b",
+  "take": "bVI6u_399_b",
+  "note": "IPA, chosen by ear over the card's English respelling. A SECONDARY STRESS on the glide, which stopped /ju/ being read as jew, and ποιέω's catch after the stressed epsilon, which stopped every take ending ay-oh. Fraser: not quite as smooth at the end, but the superior pronunciation"
  },
  {
   "index": 400,

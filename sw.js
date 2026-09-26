@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v267';
+const VERSION = 'v268';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,8 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v268: εὐχαριστέω, the last of IPA batch 6. */
+  'audio/vocab/399_eucharisteo.mp3',               // εὐχαριστέω
   /* v267: four re-cued from IPA batch 6. */
   'audio/vocab/346_therion.mp3',                   // θηρίον
   'audio/vocab/359_rodes.mp3',                     // Ἡρῴδης
