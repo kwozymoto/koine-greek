@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v268';
+const VERSION = 'v269';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,37 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v269: IPA batch 7 (39 cards). */
+  'audio/vocab/406_emautou.mp3',                   // ἐμαυτοῦ
+  'audio/vocab/412_agros.mp3',                     // ἀγρός
+  'audio/vocab/413_ilippos.mp3',                   // Φίλιππος
+  'audio/vocab/414_epistrepho.mp3',                // ἐπιστρέφω
+  'audio/vocab/421_opiso.mp3',                     // ὀπίσω
+  'audio/vocab/422_diabolos.mp3',                  // διάβολος
+  'audio/vocab/423_eutheos.mp3',                   // εὐθέως
+  'audio/vocab/428_ptochos.mp3',                   // πτωχός
+  'audio/vocab/429_melos.mp3',                     // μέλος
+  'audio/vocab/432_oinos.mp3',                     // οἶνος
+  'audio/vocab/435_diakonia.mp3',                  // διακονία
+  'audio/vocab/436_ekporeuomai.mp3',               // ἐκπορεύομαι
+  'audio/vocab/438_nai.mp3',                       // ναί
+  'audio/vocab/440_poios.mp3',                     // ποῖος
+  'audio/vocab/447_dunatos.mp3',                   // δυνατός
+  'audio/vocab/449_phaino.mp3',                    // φαίνω
+  'audio/vocab/450_anemos.mp3',                    // ἄνεμος
+  'audio/vocab/454_plen.mp3',                      // πλήν
+  'audio/vocab/464_didache.mp3',                   // διδαχή
+  'audio/vocab/465_epikaleo.mp3',                  // ἐπικαλέω
+  'audio/vocab/469_suneidesis.mp3',                // συνείδησις
+  'audio/vocab/470_diakonos.mp3',                  // διάκονος
+  'audio/vocab/471_doron.mp3',                     // δῶρον
+  'audio/vocab/473_stratiotes.mp3',                // στρατιώτης
+  'audio/vocab/474_telones.mp3',                   // τελώνης
+  'audio/vocab/475_hupokrites.mp3',                // ὑποκριτής
+  'audio/vocab/477_neanias.mp3',                   // νεανίας
+  'audio/vocab/478_amnos.mp3',                     // ἀμνός
+  'audio/vocab/479_filos.mp3',                     // φίλος
+  'audio/vocab/485_thugater.mp3',                  // θυγάτηρ
   /* v268: εὐχαριστέω, the last of IPA batch 6. */
   'audio/vocab/399_eucharisteo.mp3',               // εὐχαριστέω
   /* v267: four re-cued from IPA batch 6. */

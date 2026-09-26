@@ -8,12 +8,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "dia ko noss",
-  "source": "batch2",
-  "duration_s": 1.357,
-  "take": "2026-09-10, Atlas",
-  "note": "five chunks made it spell the letters",
-  "sha1": "354d28b1d053"
+  "tts": "/dɪˈa.kɒ.nɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 1.541,
+  "take": "bVI7_470_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "21e1efb9aec0"
  },
  {
   "index": 471,
@@ -24,10 +24,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "doh ron",
-  "source": "batch5",
-  "duration_s": 1.089,
-  "sha1": "f465857a9593"
+  "tts": "/ˈdoː.rɒn/",
+  "source": "ipa-batch7",
+  "duration_s": 0.914,
+  "sha1": "4943cb72845b",
+  "take": "bVI7_471_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 472,
@@ -54,12 +56,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 26,
-  "tts": "strati oh teys",
-  "source": "batch2",
-  "duration_s": 1.81,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta as 'ey'",
-  "sha1": "8eaaf2c920b9"
+  "tts": "/stratɪˈoː.tei̯s/",
+  "source": "ipa-batch7",
+  "duration_s": 1.881,
+  "take": "bVI7_473_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "126546cc5a88"
  },
  {
   "index": 474,
@@ -70,12 +72,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 21,
-  "tts": "teh loh neys",
-  "source": "ays",
-  "duration_s": 1.394,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "eb2d510f881d"
+  "tts": "/tɛˈloː.nei̯s/",
+  "source": "ipa-batch7",
+  "duration_s": 1.228,
+  "take": "bVI7_474_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "9d94b68603eb"
  },
  {
   "index": 475,
@@ -86,12 +88,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "hoo po kree teys",
-  "source": "ays",
-  "duration_s": 1.767,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "09b9735e44f4"
+  "tts": "/hupɒkrɪˈtei̯s/",
+  "source": "ipa-batch7",
+  "duration_s": 1.384,
+  "take": "bVI7_475_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "3dca6d94529d"
  },
  {
   "index": 476,
@@ -118,12 +120,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 4,
-  "tts": "neh ah nee ahs",
-  "source": "batch7",
-  "duration_s": 1.881,
-  "sha1": "b5b8919b0550",
-  "take": "2026-09-15, Atlas (b7b_477_c)",
-  "note": "unchanged. It was rolled to test whether `neh` + a bare vowel fails the way `theh` does, and it does not"
+  "tts": "/nɛaˈni.as/",
+  "source": "ipa-batch7",
+  "duration_s": 1.384,
+  "sha1": "072a8a602a4a",
+  "take": "bVI7_477_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 478,
@@ -134,12 +136,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 4,
-  "tts": "ahm noss",
-  "source": "recued",
-  "duration_s": 1.236,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "e07721a8d695"
+  "tts": "/aˈmnɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 1.149,
+  "take": "bVI7_478_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "1e47fe48f4bd"
  },
  {
   "index": 479,
@@ -150,12 +152,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "fee loss",
-  "source": "recued",
-  "duration_s": 0.952,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "e77ed189d6b4"
+  "tts": "/ˈfi.lɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 0.914,
+  "take": "bVI7_479_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "3c1ae44bed4b"
  },
  {
   "index": 480,
@@ -247,12 +249,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 28,
-  "tts": "thoo gah teyr",
-  "source": "batch7",
-  "duration_s": 1.541,
-  "sha1": "9b8eaeae6ca3",
-  "take": "2026-09-15, Atlas (b7c_485_b)",
-  "note": "final -τηρ is eta, Black's e as in obey -- so `tayr` and `teyr` are the same target, and `tayr` came back as the /aI/ of eye in one take and right in another. `ey` is the remedy sixteen other rows already carry a note about"
+  "tts": "/θuˈɡa.tei̯r/",
+  "source": "ipa-batch7",
+  "duration_s": 1.071,
+  "sha1": "6491b02ada70",
+  "take": "bVI7_485_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 486,
@@ -263,12 +265,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 19,
-  "tts": "sawfoss",
-  "source": "batch4",
-  "duration_s": 1.071,
-  "take": "2026-09-11, Atlas",
-  "note": "the same fault: 'so' is an English word with the gold vowel. 'sof foss' fixed the vowel but the doubled f was audible, and 'sofoss' flowed well and reverted to the omega. Spelling the vowel outright carries both.",
-  "sha1": "dc86286afb87"
+  "tts": "/sɒˈfɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 1.228,
+  "take": "bVI7_486_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "a8150d252fce"
  },
  {
   "index": 487,
@@ -279,13 +281,13 @@
   "pos": "adj",
   "tier": 5,
   "freq": 29,
-  "tts": "iskoo ross",
-  "source": "batch3",
-  "duration_s": 1.297,
+  "tts": "/ɪskuˈrɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 1.228,
   "verdict": "checked by ear: good",
-  "take": "2026-09-10, Atlas",
-  "note": "'iss' came back with a th on the front",
-  "sha1": "028783261ec0"
+  "take": "bVI7_487_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "a4e411f412d6"
  },
  {
   "index": 488,
@@ -296,13 +298,13 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "neh oss",
-  "source": "batch3",
-  "duration_s": 1.247,
+  "tts": "/ˈnɛ.ɒs/",
+  "source": "ipa-batch7",
+  "duration_s": 1.071,
   "verdict": "re-recorded 2026-09-03 (Atlas): 'nehos' sounded the h, which is only the English spelling of ε. Chosen by ear from several takes.",
-  "take": "2026-09-10, Atlas",
-  "note": "bound, so the -ος never stood as its own token and read long -- the rule has always required that",
-  "sha1": "590f187a46b9"
+  "take": "bVI7_488_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "a7767fbc6eb7"
  },
  {
   "index": 489,
