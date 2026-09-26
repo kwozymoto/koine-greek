@@ -755,7 +755,11 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    399: "a SECONDARY STRESS on the glide and ποιέω's CATCH after the "
+    459: "FULLY DOTLESS. With the dot after the oi̯ one batch-7 take said "
+         "ho-moy-yo-os — the glide re-read as a y before the dot — and the "
+         "other lost the omega. Offered no dot, the long o as oʊ, and both, "
+         "the ear chose the plain dotless /hɒˈmoi̯oːs/",
+    399:"a SECONDARY STRESS on the glide and ποιέω's CATCH after the "
          "stressed epsilon. Undotted, /ju/ was read as English \"jew\"; the "
          "stress fixed the opening, as it did for εὑρίσκω and εὐλογία. Then "
          "every take of ˈstɛ.oː ended ay-oh, so the ending took ποιέω's "
