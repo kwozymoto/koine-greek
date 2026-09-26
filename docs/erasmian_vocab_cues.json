@@ -5575,11 +5575,12 @@
   "pos": "noun",
   "tier": 4,
   "freq": 46,
-  "tts": "thay ree on",
-  "source": "batch5",
-  "duration_s": 1.385,
-  "sha1": "252446580fed",
-  "take": "2026-09-15, Atlas (b5e_346_c)"
+  "tts": "/θei̯ˈri.ɒn/",
+  "source": "ipa-batch6-recue",
+  "duration_s": 1.149,
+  "sha1": "0642baebc895",
+  "take": "bVI6r_346_b",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-rolled: the batch-6 takes did not carry the opening eta"
  },
  {
   "index": 347,
@@ -5784,12 +5785,12 @@
   "pos": "name",
   "tier": 4,
   "freq": 43,
-  "tts": "hay roh deys",
-  "source": "ays",
-  "duration_s": 1.382,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "c4001b6be5b9"
+  "tts": "/hei̯ˈroː.dei̯s/",
+  "source": "ipa-batch6-recue",
+  "duration_s": 1.384,
+  "take": "bVI6r_359_b",
+  "note": "IPA, chosen by ear over the card's English respelling. The ay pair on BOTH etas: with the second left long it was heard as a short e",
+  "sha1": "dbe3c6f0b84a"
  },
  {
   "index": 360,
@@ -6300,12 +6301,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 40,
-  "tts": "lo ghee dzo my",
-  "source": "batch4",
-  "duration_s": 1.619,
-  "take": "2026-09-11, Atlas",
-  "note": "bare 'gee' is the letter G; 'ghee' is not.",
-  "sha1": "eb92a8afd816"
+  "tts": "/lɒˈɡiʣɒmai̯/",
+  "source": "ipa-batch6-recue",
+  "duration_s": 1.411,
+  "take": "bVI6r_391_b",
+  "note": "IPA, chosen by ear over the card's English respelling. FULLY DOTLESS: the dot after the zeta was spoken in batch 6",
+  "sha1": "748bf85fa57b"
  },
  {
   "index": 392,
@@ -6523,10 +6524,12 @@
   "pos": "verb",
   "tier": 4,
   "freq": 37,
-  "tts": "dee aconay oh",
-  "source": "locked",
-  "duration_s": 2.242,
-  "sha1": "30c13c5b7039"
+  "tts": "/dɪakɒˈnɛ.oː/",
+  "source": "ipa-batch6-recue",
+  "duration_s": 1.698,
+  "sha1": "13aa69165193",
+  "take": "bVI6r_405_c",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-rolled at Fraser's asking; batch 6's b was passable"
  },
  {
   "index": 406,

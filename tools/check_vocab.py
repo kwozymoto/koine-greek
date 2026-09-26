@@ -755,7 +755,11 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
-    234: "FULLY DOTLESS. The dotted /ˈɛ.lɛ.ɒs/ spelled itself out in both "
+    391: "FULLY DOTLESS. The dot after the ʣ was spoken in IPA batch 6; two "
+         "dotless takes and one writing the zeta `dz` were offered, and a "
+         "dotless ʣ take was chosen. The stressed iota stays long like every "
+         "approved -ίζω verb, διαλογίζομαι /dɪalɒˈɡiʣɒmai̯/ among them",
+    234:"FULLY DOTLESS. The dotted /ˈɛ.lɛ.ɒs/ spelled itself out in both "
          "IPA batch-4 takes; re-cued, two dotless takes were set against one "
          "keeping only the hiatus dot, and a dotless take was chosen by ear",
     239: "a SECONDARY STRESS on the opening and FULLY DOTLESS. /ɪoːˈan.nei̯s/ "
