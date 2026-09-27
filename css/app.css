@@ -612,6 +612,18 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .lk .w{flex:1;min-width:0}
 .lk .w b{display:block;font-family:var(--gk);font-weight:500}
 .lk .w span{font-size:.8rem;color:var(--muted)}
+/* With Mounce chosen, where a word sits in each book: "Mounce 11 · Black 13". */
+.lk .w .lkch{display:block;font-size:.72rem;margin-top:2px;letter-spacing:.01em}
+
+/* Settings, with Mounce chosen: words started in each of his chapters. */
+.mchips{display:flex;flex-wrap:wrap;gap:6px}
+.mchip{display:flex;flex-direction:column;align-items:center;min-width:46px;
+  padding:5px 7px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2)}
+.mchip b{font-size:.86rem;line-height:1.1}
+.mchip small{font-size:.66rem;color:var(--muted)}
+.mchip.full{border-color:var(--gold-dim)}
+.mchip.full b{color:var(--gold)}
+.mchip.opt{border-style:dashed}
 .lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap;margin-top:5px}
 .lk .pl{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:1px}

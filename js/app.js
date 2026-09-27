@@ -326,11 +326,11 @@ function applyTheme(t){
   if(bar) bar.content=light?"default":"black-translucent";
 }
 
-/* Placement: give the N commonest un-started words a 6-day head start
-   instead of walking them through the new-word flow one by one. */
-function seedVocab(n=100){
+/* The head start itself, shared by seedVocab and seedMounce so the one
+   sync-sensitive rule below lives in one place. */
+function seedCards(order, n){
   let done=0;
-  for(const i of LEARN_ORDER){
+  for(const i of order){
     if(done>=n) break;
     if(S.cards[i]) continue;
     const c=card(i);
@@ -343,6 +343,12 @@ function seedVocab(n=100){
     c.due=ymd(d);
     done++;
   }
+  return done;
+}
+/* Placement: give the N commonest un-started words a 6-day head start
+   instead of walking them through the new-word flow one by one. */
+function seedVocab(n=100){
+  const done=seedCards(LEARN_ORDER, n);
   save(); render();
   toast(done ? done+" words seeded — spread over the next fortnight" : "Those words are already in the schedule");
 }
@@ -724,6 +730,23 @@ function deckSets(){
     if(v.length) sets.push({g:"Chapters", label:`Chapter ${l.id}`,
                             sub:l.t||"", ids:v});
   });
+  /* His chapters, and every word up to each one — the set a class revises
+     before a test. Book order is kept, so learning from one of these as a
+     Focus follows the book. Only with Mounce chosen. */
+  if(onMounce()){
+    TB.chapters.forEach(c=>{
+      const ids=c.v.filter(live);
+      if(ids.length) sets.push({g:"Mounce chapters", label:`Mounce ${c.ch}`,
+                                sub:(c.optional?"optional · ":"")+c.t, ids});
+    });
+    const core=TB.chapters.filter(c=>!c.optional);
+    let acc=[];
+    core.forEach((c,k)=>{
+      acc=acc.concat(c.v.filter(live));
+      if(k) sets.push({g:"Mounce, up to a chapter", label:`Mounce ${core[0].ch}–${c.ch}`,
+                       sub:`every word through chapter ${c.ch}`, ids:acc.slice()});
+    });
+  }
   const pos={};
   all.forEach(i=>{ const p=VOCAB[i][3]; if(p) (pos[p]=pos[p]||[]).push(i); });
   Object.keys(pos).sort((a,b)=>pos[b].length-pos[a].length).forEach(p=>{
@@ -2199,9 +2222,143 @@ const skipWord=i=>RETIRED.has(i)||(S.suspended||[]).includes(i);
 const LEARN_ORDER=VOCAB.map((_,i)=>i).filter(i=>!RETIRED.has(i))
   .sort((a,b)=>VOCAB[b][2]-VOCAB[a][2]);
 
+/* ============================================================
+   A CLASS'S OWN TEXTBOOK — vocabulary only
+   ------------------------------------------------------------
+   A class using Mounce's Basics of Biblical Greek wants each chapter's words
+   in the order of its own book. data/textbooks.js holds his chapters,
+   read out of the book by tools/build_mounce.py and held to it by
+   tools/check_mounce.py.
+
+   VOCABULARY ONLY, and deliberately so. Lessons, paradigms and the chapter
+   gating of the drills stay on Black: the app's progression is built on his
+   chapters in several places, and re-gating it would be a large change that
+   could disturb everyone. So choosing Mounce changes three things — the order
+   of new words, a set of chapters to work on, and where a word sits in his
+   book — and nothing else. With Black chosen, every path below returns
+   exactly what it did before.
+
+   A chapter becomes the Focus when you work on it, so Today's "Learn 5 more
+   from …", its review and its Drill all come from machinery that already
+   exists. setFocusFrom keeps the order it is given and focusFresh sorts
+   stably, so the words arrive in the order the chapter prints them.
+
+   The choice is per device, like the goal and the text size: sync.js starts
+   from the local state and merges named fields, so S.textbook is simply not
+   one of them. Set it once on each device. */
+const TB=(typeof TEXTBOOKS!=="undefined" && TEXTBOOKS.mounce) || null;
+const onMounce=()=>S.textbook==="mounce" && !!TB;
+// His chapters in book order, the optional chapter 35 left out of the flow.
+const MOUNCE_ORDER=TB ? TB.chapters.filter(c=>!c.optional).flatMap(c=>c.v) : [];
+const MOUNCE_CH={}, BLACK_CH={};
+if(TB) TB.chapters.forEach(c=>c.v.forEach(i=>{ if(MOUNCE_CH[i]===undefined) MOUNCE_CH[i]=c.ch; }));
+// Black's own chapter number, which from the participle split on is not the
+// app's: BLACK_OF_APP comes from tools/blackmap.py by way of textbooks.js.
+const blackOf=id=>(typeof BLACK_OF_APP!=="undefined" && BLACK_OF_APP[id]) || id;
+LESSONS.forEach(l=>(l.v||[]).forEach(i=>{ if(BLACK_CH[i]===undefined) BLACK_CH[i]=blackOf(l.id); }));
+
+/* The order new words come in. Black: frequency, the same array as ever.
+   Mounce: his chapters in order, then the rest of the deck by frequency — the
+   deck is 818 words and his course is about 320, so a class that finishes
+   the book carries on with the commonest words it has not met. */
+function newWordOrder(){
+  if(!onMounce()) return LEARN_ORDER;
+  const seen=new Set(MOUNCE_ORDER);
+  return MOUNCE_ORDER.concat(LEARN_ORDER.filter(i=>!seen.has(i)));
+}
+function setTextbook(v){
+  S.textbook=v==="mounce"?"mounce":undefined;
+  save(); render(); renderLessons(); renderProgress();
+  toast(onMounce()?"New words now follow Mounce's chapters":"New words follow New Testament frequency");
+}
+const mounceLive=c=>c.v.filter(i=>VOCAB[i] && !skipWord(i));
+function mounceStats(c){
+  const ids=mounceLive(c);
+  return {ids, total:ids.length, started:ids.filter(i=>S.cards[i]).length};
+}
+/* Words his chapter teaches that the deck files under another card —
+   ἡμεῖς under ἐγώ, εἶπεν under λέγω. Mapping them there would teach "we" as
+   "I", so they are named as words to learn from the book, with the card
+   that holds them. */
+function mounceOnlyHtml(c){
+  if(!c.only || !c.only.length) return "";
+  return `<span class="lmeta">Also from your book: ${c.only.map(([w,m,host,rel])=>
+    host===null ? `<span class="gk">${escHtml(w)}</span> (not in this app)`
+    : `<span class="gk">${escHtml(w)}</span> “${escHtml(m)}”, ${escHtml(rel)} <span class="gk">${escHtml(VOCAB[host][0].split(",")[0])}</span>`
+  ).join(" · ")}</span>`;
+}
+function workOnMounce(ch){
+  const c=TB && TB.chapters.find(x=>x.ch===ch); if(!c) return;
+  const ids=mounceLive(c);
+  if(!ids.length){ toast("No cards in this chapter"); return; }
+  /* Choosing a set replaces a passage you may be part way through — the same
+     question pickDeck asks, and for the same reason. */
+  const f=S.focus;
+  if(f && !f.label && !confirm(
+      `This replaces your focus on ${focusRef(f)}. Its words stay on the `
+      + `schedule. Continue?`)) return;
+  if(setFocusFrom(`Mounce ${ch}`, ids)) go("today");
+}
+/* The Lessons page, with Mounce chosen: his chapters first, then Black's
+   lessons exactly as before. With Black chosen this is the empty string. */
+function mounceLearnHtml(){
+  if(!onMounce()) return "";
+  const core=TB.chapters.filter(c=>!c.optional);
+  const st=core.map(mounceStats);
+  const total=st.reduce((a,x)=>a+x.total,0), started=st.reduce((a,x)=>a+x.started,0);
+  const k=st.findIndex(x=>x.started<x.total);
+  const next=k>=0 ? core[k] : null;
+  const row=(c,x)=>`<button class="lesson-item ${x.total&&x.started===x.total?"done":""}" onclick="workOnMounce(${c.ch})">
+      <span class="n">${x.total&&x.started===x.total?"✓":c.ch}</span>
+      <span class="t"><b>${escHtml(c.t)}${c.optional?" (optional)":""}</b>
+        <span>${x.started} of ${x.total} word${x.total===1?"":"s"} started</span>
+        ${mounceOnlyHtml(c)}</span>
+    </button>`;
+  return `<h2 class="dgroup" data-tone="gold">Mounce vocabulary<small>${started} of ${total}</small></h2>
+    ${next?`<button class="lesson-item resume" onclick="workOnMounce(${next.ch})">
+      <span class="dwell">${typeof drillIcon==="function"?drillIcon("Flash cards"):""}</span>
+      <span class="t"><b>Next — Mounce ${next.ch}: ${escHtml(next.t)}</b>
+        <span>${st[k].total-st[k].started} word${st[k].total-st[k].started===1?"":"s"} not started · work on them in the book’s order</span></span>
+      <span class="muted">›</span></button>`
+      :`<p class="muted" style="font-size:.86rem">Every word in Mounce’s chapters is started.</p>`}
+    <details class="logmore"><summary>All Mounce chapters</summary>
+      ${TB.chapters.map(c=>row(c,mounceStats(c))).join("")}
+    </details>
+    <p class="muted" style="font-size:.8rem;margin:6px 0 14px">The meanings and New Testament counts are this app’s own, from the SBL Greek New Testament, so they will differ from your book in places. The lessons below follow Black.</p>
+    <h2 class="dgroup" data-tone="muted">Lessons</h2>`;
+}
+/* Settings: where you stand against his chapters, one chip each. */
+function mounceCoverageHtml(){
+  if(!onMounce()) return "";
+  const chips=TB.chapters.map(c=>{ const x=mounceStats(c);
+    return `<span class="mchip${x.total&&x.started===x.total?" full":""}${c.optional?" opt":""}"
+      title="Mounce ${c.ch}: ${escHtml(c.t)}"><b>${c.ch}</b><small>${x.started}/${x.total}</small></span>`; }).join("");
+  return `<div class="card"><h3 style="margin-top:0">Mounce chapters</h3>
+    <p class="muted" style="font-size:.85rem;margin-bottom:10px">Words started in each chapter of your textbook. Chapter 35 is his optional list.</p>
+    <div class="mchips">${chips}</div></div>`;
+}
+/* Placement for a class joining part-way through: his chapters up to N put
+   straight into review, the same head start seedVocab gives the commonest. */
+function mouncePlaceHtml(){
+  if(!onMounce()) return "";
+  const core=TB.chapters.filter(c=>!c.optional);
+  return `<div class="setrow" style="margin-top:12px"><span>Using Mounce? Seed his chapters up to</span>
+    <select aria-label="Seed Mounce chapters up to" onchange="seedMounce(+this.value);this.value='0'">
+      <option value="0">—</option>${core.map(c=>`<option value="${c.ch}">${c.ch}</option>`).join("")}</select></div>`;
+}
+function seedMounce(upto){
+  if(!onMounce() || !upto) return;
+  const ids=TB.chapters.filter(c=>!c.optional && c.ch<=upto).flatMap(mounceLive).filter(i=>!S.cards[i]);
+  if(!ids.length){ toast("Those words are already in the schedule"); return; }
+  if(!confirm(`Put ${ids.length} word${ids.length===1?"":"s"} from Mounce's chapters up to ${upto} straight into review? They will come back over the next fortnight.`)) return;
+  const done=seedCards(ids, ids.length);
+  save(); render(); renderProgress();
+  toast(done+" words seeded — spread over the next fortnight");
+}
+
 function startNew(n=5){
   const fresh=[];
-  for(const i of LEARN_ORDER){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
+  for(const i of newWordOrder()){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
   introduce(fresh,"You've started every word in the deck");
 }
 /* Words are introduced by New Testament frequency, which is right for the
@@ -2299,7 +2456,7 @@ function renderLessons(){
         <span class="lmeta">${here?`part ${at.part+1} of ${n} · carry on`
           :(fin?"finished":lessonMeta(l))}</span></span>
     </button>`;}).join("");
-  document.getElementById("lessonList").innerHTML=
+  document.getElementById("lessonList").innerHTML=mounceLearnHtml()+
     `<p class="lcount">${done} of ${LESSONS.length} finished</p>${head}${
       head?'<h2 class="dgroup" data-tone="muted">All chapters<small>'+LESSONS.length+'</small></h2>':""}${list}`;
 }
@@ -3357,7 +3514,7 @@ function drillCard(i,tone){
   return `<button class="lesson-item drill-item${st&&!st.ready?" not-ready":""}"
       data-tone="${tone}" onclick="runDrill(${i})">
       <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
-      <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][1]}</span>${badge}</span>
+      <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][0]==="Learn 5 new words"&&onMounce()?"Next five in the order of Mounce’s chapters":DRILLS[i][1]}</span>${badge}</span>
       <span class="muted">›</span></button>`;
 }
 function renderDrill(){
@@ -3654,7 +3811,7 @@ function wordRowsHtml(hits){
     <button class="lk" onpointerdown="prepWord(${i})"
             onclick="${VOCAB_AUDIO[i]&&extraForms(i).length?`playEntry(${i})`:`playWord(${i},this)`}">
       <span class="pl ${VOCAB_AUDIO[i]?"on":""}">\uD83D\uDD0A</span>
-      <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${exampleHtml(i,true)}</span>
+      <span class="w"><b>${v[0]}</b><span>${v[1]}</span>${onMounce()?`<span class="lkch">Mounce ${MOUNCE_CH[i]||"—"} · Black ${BLACK_CH[i]||"—"}</span>`:""}${exampleHtml(i,true)}</span>
       <span class="fq">${v[2]}\u00d7</span>
     </button>`).join("");
 }
@@ -3905,6 +4062,10 @@ function renderProgress(){
     <div class="card">
       <div class="setrow"><span>Daily review goal</span>
         <select id="setGoal" aria-label="Daily review goal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+      ${TB?`<div class="setrow"><span>Your textbook<br><small class="muted">the order new words come in</small></span>
+        <select id="setTextbook" aria-label="Your textbook" onchange="setTextbook(this.value)">
+          <option value="" ${onMounce()?"":"selected"}>Black (the course)</option>
+          <option value="mounce" ${onMounce()?"selected":""}>Mounce, Basics of Biblical Greek</option></select></div>`:""}
       <div class="setrow"><span>Answer sounds</span>
         <select id="setSfx" aria-label="Answer sounds">${[[2,"Correct and wrong"],[1,"Correct only"],[0,"Off"]].map(([v,l])=>`<option value="${v}" ${(S.sfx===undefined?2:S.sfx)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Word audio</span>
@@ -3987,12 +4148,14 @@ function renderProgress(){
       <div class="badge ${S.badges.includes(b.id)?"got":""}">
         <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
     ${typeof reportCardHtml==="function"?reportCardHtml():""}
+    ${mounceCoverageHtml()}
     <div class="card">
       <h3 style="margin-top:0">Studied Greek before?</h3>
       <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
       <div class="setrow"><span>Mark chapters done up to</span>
         <select id="setPlace"><option value="0">—</option>${LESSONS.map(l=>`<option value="${l.id}">${l.id}</option>`).join("")}</select></div>
       <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
+      ${mouncePlaceHtml()}
     </div>
     <h2>Your data</h2>
     <p class="muted" style="font-size:.86rem">

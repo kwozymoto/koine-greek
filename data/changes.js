@@ -12,6 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
+{d:"2026-09-28", v:"v273", items:[
+  {k:"new", t:"Using Mounce's Basics of Biblical Greek? Settings → Your textbook. New words then come in the order of his chapters, which also appear on the Learn page, in the deck picker and quick test, and in Settings. Lessons and paradigms stay on Black."},
+  {k:"new", t:"Joining a Mounce class part-way through? Settings can put his chapters up to the one you have reached straight into review."}
+]},
 {d:"2026-09-27", v:"v272", items:[
   {k:"fix", t:"Learning new words: the question after each card no longer gives the answer away by its shape — a verb set among nouns, or the only meaning with a case in brackets. The wrong answers are now words of the same kind."},
   {k:"fix", t:"English → Greek: the wrong answers are now words of the same kind too, so a verb is no longer the only word ending like a verb, nor a name the only one with a capital."},
