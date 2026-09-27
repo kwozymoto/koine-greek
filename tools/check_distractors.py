@@ -29,16 +29,22 @@ that has it?
 introduce() is held to it too, and differently: it builds its own bank and
 its own mcq, so the whole function is lifted -- from its declaration to the
 closing brace in column 0 -- and run with the session stubbed out, and the
-options it actually hands to mcq() are the ones measured. It was the one
-vocabulary question still drawing uniformly from the deck after wrongOptions
-existed, which put a verb's gloss among three non-verbs on the very first
+options it actually hands to mcq() are the ones measured. It drew uniformly
+from the deck long after wrongOptions existed, which put a verb's gloss among three non-verbs on the very first
 question a learner meets on a word.
 
-WHAT IT CANNOT DO. It knows the two tells named below and no others. A gloss
-written in some new shape -- a bracketed note that is not a case, a lone
-capital, a semicolon nobody else uses -- would be just as free and this would
+reverseVocab() is lifted and run the same way. Its options are Greek, so its
+tells are the Greek's -- a verb's ending, a name's capital -- and as it was
+written, asked for a name, the one capitalised headword was the answer 84% of
+the time. Measuring it turned up the capital in the English too: "Paul" set
+against three lowercase nouns. So a capital is now a tell in both directions.
+
+WHAT IT CANNOT DO. It knows the tells named below and no others. A gloss
+written in some new shape -- a bracketed note that is not a case, a
+semicolon nobody else uses -- would be just as free and this would
 not see it. That is the standing limitation of a checker that has to be told
-what to look for, and it is why TELLS is a list somebody must add to.
+what to look for, and it is why TELLS and GREEK_TELLS are lists somebody
+must add to.
 """
 import io, json, os, re, subprocess, sys
 
@@ -60,6 +66,20 @@ TELLS = {
         (r"\(\+[^)]*\)", 0.02),
     "a gloss opening “I ”, as a verb's does":
         (r"^I ", 0.02),
+    "a gloss opening with a capital, as a name's does":
+        (r"^(?!I )\p{Lu}", 0.02),
+}
+# reverseVocab asks for the Greek, so its tells are on the Greek headword, read
+# with the accents and breathings taken off. The third field, when there is
+# one, limits the answers measured to one part of speech. A verb's ending is a
+# tell on a verb: asked for "I loose", the one headword in -ω is the answer.
+# ἐγώ, ἔξω and ὀπίσω end the same way and it tells nothing -- asked for
+# "outside", nobody reaches for the option shaped like a verb.
+GREEK_TELLS = {
+    "a headword with a capital, as a name has":
+        (r"^\p{Lu}", 0.02, None),
+    "a verb's headword in -ω, -μι or -μαι":
+        (r"(ω|μι|μαι)$", 0.02, "verb"),
 }
 RUNS = 4000
 
@@ -79,19 +99,20 @@ def lift():
 
 
 INTRO = "function introduce(fresh,emptyMsg){"
+REVERSE = "function reverseVocab(){"
 
 
-def lift_introduce():
-    """introduce() as it ships, from its declaration to its closing brace."""
+def lift_function(sig):
+    """A function as it ships, from its declaration to its closing brace."""
     src = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
-    if src.count(INTRO) != 1:
+    if src.count(sig) != 1:
         sys.exit("could not find exactly one `%s` in js/app.js.\n"
-                 "If its signature changed, change INTRO here rather than\n"
-                 "letting the new-word questions go unchecked." % INTRO)
-    tail = src.split(INTRO, 1)[1]
+                 "If its signature changed, change it here rather than\n"
+                 "letting its questions go unchecked." % sig)
+    tail = src.split(sig, 1)[1]
     if "\n}\n" not in tail:
-        sys.exit("introduce() has no closing brace in column 0")
-    return INTRO + tail.split("\n}\n", 1)[0] + "\n}\n"
+        sys.exit("`%s` has no closing brace in column 0" % sig)
+    return sig + tail.split("\n}\n", 1)[0] + "\n}\n"
 
 
 def lift_retired():
@@ -107,7 +128,8 @@ def lift_retired():
 
 def main():
     body = lift()
-    intro = lift_introduce()
+    intro = lift_function(INTRO)
+    reverse = lift_function(REVERSE)
     js = """
       const fs = require('fs'), vm = require('vm');
       const c = vm.createContext({});
@@ -123,7 +145,7 @@ def main():
       for (const [bname, idx] of Object.entries(banks)) {
         const bank = idx.map(i => [V[i][0].split(',')[0], V[i][1], V[i][3]]);
         for (const [tname, pat] of Object.entries(TELLS)) {
-          const re = new RegExp(pat);
+          const re = new RegExp(pat, 'u');
           const marked = bank.filter(r => re.test(r[1]));
           if (!marked.length) { out.push({bank: bname, tell: tname, n: 0, rate: 0}); continue; }
           let alone = 0;
@@ -146,10 +168,10 @@ def main():
       const asked = [];
       const VOCAB = V, toast = () => {}, flashcard = () => null,
             save = () => {}, startSession = () => {},
-            mcq = (q, opts, a) => { asked.push({opts, a}); return null; };
+            mcq = (q, opts, a) => { asked.push({q, opts, a}); return null; };
       %s
       for (const [tname, pat] of Object.entries(TELLS)) {
-        const re = new RegExp(pat);
+        const re = new RegExp(pat, 'u');
         const marked = LEARN.filter(i => re.test(V[i][1]));
         let alone = 0;
         for (let t = 0; t < RUNS; t++) {
@@ -167,10 +189,73 @@ def main():
         out.push({bank: 'introduce(), new words', tell: tname,
                   n: marked.length, rate: alone / RUNS});
       }
+
+      /* reverseVocab() the same way. It asks about the words S.cards has
+         started, so each run starts twelve words that carry the tell and
+         measures all twelve questions. The options are Greek in a span, and
+         each is looked up by its headword: it must be a word of the deck,
+         and no wrong one may mean what was asked for. */
+      const S = {cards: {}};
+      %s
+      const GREEK_TELLS = %s;
+      const strip = h => h.normalize('NFD').replace(/\p{M}/gu, '');
+      const untag = o => o.replace(/<[^>]*>/g, '');
+      const HEAD = new Map(LEARN.map(i => [V[i][0].split(',')[0], i]));
+      for (const [tname, [pat, pos]] of Object.entries(GREEK_TELLS)) {
+        const re = new RegExp(pat, 'u');
+        const marked = LEARN.filter(i => re.test(strip(V[i][0].split(',')[0]))
+                                         && (!pos || V[i][3] === pos));
+        let alone = 0, n = 0;
+        for (let t = 0; t < RUNS / 12; t++) {
+          S.cards = {};
+          while (Object.keys(S.cards).length < 12)
+            S.cards[marked[Math.floor(Math.random() * marked.length)]] = 1;
+          asked.length = 0;
+          reverseVocab();
+          for (const m of asked) {
+            const opts = m.opts.map(untag);
+            const gloss = (m.q.match(/<b>(.*)<\/b>/) || [])[1];
+            const right = HEAD.get(opts[m.a]);
+            const wrong = opts.filter((_, k) => k !== m.a);
+            if (opts.length !== 4 || new Set(opts).size !== 4
+                || right === undefined || V[right][1] !== gloss
+                || wrong.some(h => !HEAD.has(h) || V[HEAD.get(h)][1] === gloss)) {
+              if (broken.length < 5) broken.push(gloss + ': ' + JSON.stringify(opts));
+              continue;
+            }
+            n++;
+            if (!wrong.some(h => re.test(strip(h)))) alone++;
+          }
+        }
+        out.push({bank: 'reverseVocab(), English → Greek', tell: tname,
+                  n: marked.length, rate: n ? alone / n : 1});
+      }
+      /* The words that share a gloss, asked about alone. Among every verb
+         the twin of "I kill" comes up too seldom for the pass above to meet
+         it; here each question has a twin in the bank to wrongly offer. */
+      const byGloss = {};
+      LEARN.forEach(i => (byGloss[V[i][1]] = byGloss[V[i][1]] || []).push(i));
+      const twins = Object.values(byGloss).filter(l => l.length > 1).flat();
+      for (let t = 0; t < RUNS / 12; t++) {
+        S.cards = {};
+        while (Object.keys(S.cards).length < Math.min(12, twins.length))
+          S.cards[twins[Math.floor(Math.random() * twins.length)]] = 1;
+        asked.length = 0;
+        reverseVocab();
+        for (const m of asked) {
+          const opts = m.opts.map(untag);
+          const gloss = (m.q.match(/<b>(.*)<\/b>/) || [])[1];
+          const same = opts.filter((h, k) => k !== m.a && HEAD.has(h)
+                                              && V[HEAD.get(h)][1] === gloss);
+          if (same.length && broken.length < 5)
+            broken.push(gloss + ': ' + opts[m.a] + ' asked, ' + same[0] + ' offered as wrong');
+        }
+      }
       process.stdout.write(JSON.stringify({rows: out, broken}));
     """ % (json.dumps(lift_retired()), body,
            json.dumps({k: v[0] for k, v in TELLS.items()}),
-           RUNS, intro)
+           RUNS, intro, reverse,
+           json.dumps({k: [v[0], v[2]] for k, v in GREEK_TELLS.items()}))
     r = subprocess.run(["node", "-e", js], capture_output=True, text=True,
                        encoding="utf-8", cwd=ROOT)
     if r.returncode != 0:
@@ -180,14 +265,15 @@ def main():
 
     bad = []
     if res["broken"]:
-        bad.append("a question without four different options, the answer "
-                   "among them, e.g. "
+        bad.append("a question whose options are not four different words, "
+                   "one right and three wrong, e.g. "
                    + "; ".join(res["broken"]))
     print("options drawn per question:       3 of %d runs each" % RUNS)
+    limits = dict(TELLS, **GREEK_TELLS)
     for row in rows:
-        limit = TELLS[row["tell"]][1]
+        limit = limits[row["tell"]][1]
         flag = "" if row["rate"] <= limit else "   <-- OVER"
-        print("  %-22s %-46s %4d words  %5.1f%%%s"
+        print("  %-31s %-48s %4d words  %5.1f%%%s"
               % (row["bank"], row["tell"], row["n"], 100 * row["rate"], flag))
         if row["rate"] > limit:
             bad.append("%s: with %s as the bank, the answer is the only option "

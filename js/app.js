@@ -3093,8 +3093,13 @@ function caseDrill(n=12,earned){
    when the best one cannot fill three, because a question with a smaller
    giveaway beats a question with too few options. */
 const CASE_NOTE=/\(\+[^)]*\)/;
+/* A capital that is not a verb's "I ": the names, and the nouns that are
+   names in all but tag — Jesus, Paul, Peter, Pharisee. Drawn from the other
+   nouns, a capitalised gloss was the only capital among the four 21% of the
+   time; in English → Greek, a capitalised headword was 84%. */
+const CAPITAL=/^(?!I )\p{Lu}/u;
 function wrongOptions(ans,bank,k){
-  /* Distance, not a filter: 0 agrees on both, 3 on neither. Shuffled first
+  /* Distance, not a filter: 0 agrees on all three, 7 on none. Shuffled first
      and then sorted by distance — Array.sort is stable, so ties keep their
      random order and a word does not draw the same three distractors twice.
 
@@ -3106,11 +3111,21 @@ function wrongOptions(ans,bank,k){
      Ranking the bracket first drops that to nil and changes nothing else,
      because for every other word the best pool agrees on both anyway.
 
+     A CAPITAL COMES NEXT, above the part of speech. It decides only where
+     too few words agree on both: Ἰουδαῖος, the one capitalised adjective,
+     would otherwise stand among three lowercase ones in English → Greek,
+     and ἐγώ's "I", among three lowercase pronouns the other way.
+
+     The second field is whatever the options show: a gloss everywhere but
+     reverseVocab, where it is the Greek headword, and the capital is then
+     the Greek's own.
+
      ONE OF EACH GLOSS. Eighteen glosses belong to two words each — "I kill"
      is ἀποκτείνω and ἀναιρέω — and both sit in the same pool, so a verb
      could be shown "I kill" twice among its four options. Kept to the first
      of each after the sort, which is the nearer and otherwise random one. */
-  const like=(a,b)=>(CASE_NOTE.test(a[1])===CASE_NOTE.test(b[1])?0:2)+(a[2]===b[2]?0:1);
+  const like=(a,b)=>(CASE_NOTE.test(a[1])===CASE_NOTE.test(b[1])?0:4)
+                  +(CAPITAL.test(a[1])===CAPITAL.test(b[1])?0:2)+(a[2]===b[2]?0:1);
   const seen=new Set([ans[1]]);
   return bank.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1])
              .sort((a,b)=>like(ans,a)-like(ans,b))
@@ -3214,11 +3229,17 @@ function reverseVocab(){
   const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i]);
   const pool=(started.length>8?started:VOCAB.map((_,i)=>i).slice(0,40))
     .sort(()=>Math.random()-.5).slice(0,12);
+  /* The options here are Greek, so the Greek goes in the second field, the
+     one wrongOptions compares. Drawn uniformly from the deck, a verb was the
+     only headword ending in -ω, -μι or -μαι 28% of the time, and a name the
+     only one with a capital 84%. Any word sharing the gloss asked for is
+     left out first: asked for "I kill", ἀναιρέω is not wrong. */
+  const bank=VOCAB.map((x,k)=>[x[1],x[0].split(",")[0],x[3],k]).filter(x=>!RETIRED.has(x[3]));
   return pool.map(i=>{
-    const v=VOCAB[i];
-    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k)).sort(()=>Math.random()-.5).slice(0,3)
-      .map(x=>`<span class="gk">${x[0].split(",")[0]}</span>`);
-    const right=`<span class="gk">${v[0].split(",")[0]}</span>`;
+    const v=VOCAB[i], head=v[0].split(",")[0];
+    const wrong=wrongOptions([v[1],head,v[3]],bank.filter(x=>x[0]!==v[1]),3)
+      .map(x=>`<span class="gk">${x[1]}</span>`);
+    const right=`<span class="gk">${head}</span>`;
     const opts=[right,...wrong].sort(()=>Math.random()-.5);
     return mcq(`Which word means <b>${v[1]}</b>?`, opts, opts.indexOf(right),
       `${v[0]} — ${v[1]}.`);

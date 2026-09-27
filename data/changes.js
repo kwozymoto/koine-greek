@@ -12,8 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-27", v:"v271", items:[
+{d:"2026-09-27", v:"v272", items:[
   {k:"fix", t:"Learning new words: the question after each card no longer gives the answer away by its shape — a verb set among nouns, or the only meaning with a case in brackets. The wrong answers are now words of the same kind."},
+  {k:"fix", t:"English → Greek: the wrong answers are now words of the same kind too, so a verb is no longer the only word ending like a verb, nor a name the only one with a capital."},
+  {k:"fix", t:"A name such as “Paul” is no longer the only capitalised meaning among the four answers."},
   {k:"fix", t:"The word drills no longer show the same meaning twice among the four answers."}
 ]},
 {d:"2026-09-26", v:"v270", items:[
