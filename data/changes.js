@@ -12,9 +12,16 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-28", v:"v273", items:[
+{d:"2026-09-28", v:"v274", items:[
   {k:"new", t:"Using Mounce's Basics of Biblical Greek? Settings → Your textbook. New words then come in the order of his chapters, which also appear on the Learn page, in the deck picker and quick test, and in Settings. Lessons and paradigms stay on Black."},
-  {k:"new", t:"Joining a Mounce class part-way through? Settings can put his chapters up to the one you have reached straight into review."}
+  {k:"new", t:"Joining a Mounce class part-way through? Settings can put his chapters up to the one you have reached straight into review."},
+  {k:"fix", t:"Verb parsing no longer offers two right answers: a form of εἰμί could be shown beside λύω's identical parse, and choosing that one was marked wrong."},
+  {k:"fix", t:"Looking at a later chapter no longer loses your place in the one you are working through."},
+  {k:"fix", t:"Today's plan keeps what you have done: a finished row stays as it was, and picking a flash-card set during the day adds its rows rather than ticking them."},
+  {k:"fix", t:"Reviews bring back the lesson questions you got wrong first, as the help page says."},
+  {k:"fix", t:"Fill the grid and Paradigm sprint start with tables from the chapters you have done before going ahead of the course."},
+  {k:"fix", t:"Vocabulary due now no longer hands out new words when nothing is due, and Today says when a review is lesson questions."},
+  {k:"fix", t:"Mounce: restoring a backup keeps your textbook, and chapter 35 in Settings is the same size as the other chapters."}
 ]},
 {d:"2026-09-27", v:"v272", items:[
   {k:"fix", t:"Learning new words: the question after each card no longer gives the answer away by its shape — a verb set among nouns, or the only meaning with a case in brackets. The wrong answers are now words of the same kind."},

@@ -1001,11 +1001,45 @@ let PLAN_TASK=null;                 // which plan row the running session is
 let AGAIN=null;
 
 const planDone=()=>((S.plan&&S.plan.day===today())?S.plan.done:[])||[];
+/* What each ticked row said when it was started, and for which focus. The
+   plan is rebuilt from the live state every time Today paints, so without
+   this a finished row changed under the tick: "Review 5 due cards" became
+   the next batch, the lesson row named the parts after the ones just read,
+   a focus review with nothing left vanished and took the count down with it,
+   and choosing a flash-card set mid-day turned the ticked "Learn 5 new
+   words" into a ticked "Learn 5 more from Chapter 11" nobody had done. */
+let PLAN_ROW=null;                  // the row the running session was started from
+const planSnaps=()=>((S.plan&&S.plan.day===today()&&S.plan.snaps)||[]);
 function planTick(id){
   const d=today();
   if(!S.plan||S.plan.day!==d) S.plan={day:d,done:[]};
   if(!S.plan.done.includes(id)) S.plan.done.push(id);
+  const r=PLAN_ROW; PLAN_ROW=null;
+  if(r && r.id===id){
+    const snaps=S.plan.snaps=S.plan.snaps||[];
+    if(!snaps.some(s=>s.id===id && s.ctx===r.ctx) && snaps.length<12)
+      snaps.push({id, ctx:r.ctx, label:r.label, sub:r.sub, at:r.at});
+  }
   save();
+}
+/* The day's plan as Today shows it: the live rows, each ticked only if a row
+   with the same id and focus was finished (or, for a tick recorded before
+   the snapshots existed, by id alone) and then shown as it was when done;
+   and, in its place, any finished row the live plan no longer has. */
+function planRows(){
+  const live=todaysPlan(), done=planDone(), snaps=planSnaps();
+  const rows=live.map(t=>{
+    const ctx=t.ctx||"", mine=snaps.filter(s=>s.id===t.id);
+    const hit=mine.find(s=>s.ctx===ctx);
+    if(hit) return {...t, label:escHtml(hit.label), sub:escHtml(hit.sub), done:true};
+    return {...t, done:!mine.length && done.includes(t.id)};
+  });
+  snaps.forEach(s=>{
+    if(rows.some(r=>r.done && r.id===s.id && (r.ctx||"")===s.ctx)) return;
+    rows.splice(Math.min(+s.at||0,rows.length),0,
+      {id:s.id, ctx:s.ctx, label:escHtml(s.label), sub:escHtml(s.sub), done:true, record:true});
+  });
+  return rows;
 }
 /* Work done past the plan. The ring fills at the last tick and stops, so
    anything beyond it left no mark on Today at all — which quietly says the
@@ -1080,10 +1114,11 @@ function runExtra(){ const x=extraTask(); if(x) x.run(); }
 /* The tick is set when a session ends, so quitting halfway does not count —
    and for a chapter, only lessonDone() finishes it. */
 function runPlanTask(id){
-  const t=todaysPlan().find(x=>x.id===id);
+  const live=todaysPlan(), t=live.find(x=>x.id===id);
   if(!t) return;
   t.run();                          // startSession clears PLAN_TASK …
   PLAN_TASK=id;                     // … so claim it afterwards
+  PLAN_ROW={id, ctx:t.ctx||"", label:t.label, sub:t.sub, at:live.indexOf(t)};
 }
 
 /* ---- the letters, taught before they are asked about ----
@@ -1364,20 +1399,20 @@ function todaysPlan(){
   const f=S.focus;
   if(f){
     const ref=focusRef(f), due=focusDueList(f), fresh=focusFresh(f);
-    if(f.mode==="all") tasks.push({id:"passage", mins:3,
+    if(f.mode==="all") tasks.push({id:"passage", ctx:ref, mins:3,
       label:`Read ${ref}`,
       sub:`${focusKnown(f)} of ${focusTotal(f)} of its words are settled`,
       run:()=>openFocusPassage()});
-    if(due.n) tasks.push({id:"review", mins:Math.max(1,Math.round(due.n*8/60)),
+    if(due.n) tasks.push({id:"review", ctx:ref, mins:Math.max(1,Math.round(due.n*8/60)),
       label:`Review ${due.n} from ${ref}`,
       sub:f.label?"Only this set — the rest of the deck waits"
                  :"Only this passage's words — the rest of the deck waits",
       run:()=>startFocusReview()});
-    if(fresh.length) tasks.push({id:"new", mins:2,
+    if(fresh.length) tasks.push({id:"new", ctx:ref, mins:2,
       label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
       sub:`${fresh.length} of its words not started yet`,
       run:()=>startFocusNew(5)});
-    if(!due.n && !fresh.length) tasks.push({id:"review", mins:2,
+    if(!due.n && !fresh.length) tasks.push({id:"review", ctx:ref, mins:2,
       label:`${ref} — nothing due`,
       sub:"Every word started and none due back today",
       run:()=>startFocusReview()});
@@ -1389,7 +1424,11 @@ function todaysPlan(){
     if(due || Object.keys(S.cards).length) tasks.push(due
       ? {id:"review", mins:Math.max(1,Math.round(Math.min(due,Math.max(5,S.goal||20))*8/60)),
          label:`Review ${due} due card${due===1?"":"s"}`,
-         sub:"The words the schedule says you are about to forget",
+         /* Say what is due. A review serves lesson questions too, and before
+            the first word they are all it has. */
+         sub:!dueList().length ? "Lesson questions the schedule has brought back"
+           : gdueList().length ? "Words you are about to forget, and lesson questions"
+           : "The words the schedule says you are about to forget",
          run:()=>startReview()}
       : {id:"review", mins:2, label:"Practise what you know",
          sub:"Nothing is due — this will not touch the schedule",
@@ -1468,9 +1507,13 @@ function todaysPlan(){
 }
 
 function planHtml(){
-  const done=planDone();
-  const rows=todaysPlan().map(t=>{
-    const ok=done.includes(t.id);
+  const rows=planRows().map(t=>{
+    const ok=t.done;
+    /* A finished row the live plan no longer has is a record, not a door:
+       tapping it would start whatever that id means now. */
+    if(t.record) return `<div class="plan-row done">
+      <span class="tick">✓</span>
+      <span class="t"><b>${t.label}</b><span>${t.sub}</span></span></div>`;
     return `<button class="plan-row${ok?" done":""}" onclick="runPlanTask('${t.id}')">
       <span class="tick">${ok?"✓":""}</span>
       <span class="t"><b>${t.label}</b><span>${t.sub}</span></span>
@@ -1499,8 +1542,7 @@ function planHtml(){
    passed rather than read off AGAIN, which outlives the session and would
    quietly grey the button on screens that never asked. */
 function nextTaskHtml(demote){
-  const done=planDone();
-  const next=todaysPlan().find(t=>!done.includes(t.id));
+  const next=planRows().find(t=>!t.done);
   if(!next){
     const x=extraTask(), more=extraDone();
     return `<p class="muted" style="text-align:center;font-size:.86rem;margin:0 0 12px">
@@ -1521,8 +1563,8 @@ function render(){
      setting still governs how many cards a review serves; what it no longer
      does is decide whether the day looks finished, which it did badly — a
      day 292 cards behind could paint a completed circle. */
-  const plan=todaysPlan(), pdone=planDone();
-  const ticked=plan.filter(t=>pdone.includes(t.id)).length;
+  const plan=planRows();
+  const ticked=plan.filter(t=>t.done).length;
   const pct=plan.length?ticked/plan.length:0;
   const arc=document.getElementById("ringArc");
   /* Full a moment ago and full now is not a moment; becoming full is. The
@@ -1552,7 +1594,7 @@ function render(){
      as many as six, and the review row alone is unbounded — a learner two
      hundred cards behind has a long day whatever else is trimmed. A promise
      the app can keep every day beats a number that was true once. */
-  const mins=plan.filter(t=>!pdone.includes(t.id)).reduce((a,t)=>a+(t.mins||2),0);
+  const mins=plan.filter(t=>!t.done).reduce((a,t)=>a+(t.mins||2),0);
   const el=document.getElementById("planMins");
   if(el) el.textContent = ticked>=plan.length ? ""
     : `${plan.length-ticked} left · about ${mins} minute${mins===1?"":"s"}`;
@@ -1563,7 +1605,7 @@ function render(){
   // The home-screen icon badge stays a count of work, not of plan steps.
   paintBadge(due);
   document.getElementById("planList").innerHTML=planHtml();
-  const nextT=plan.find(t=>!pdone.includes(t.id));
+  const nextT=plan.find(t=>!t.done);
   const cont=document.getElementById("btnContinue");
   const xt=nextT?null:extraTask();
   cont.textContent = nextT ? `Continue — ${nextT.label.replace(/^./,c=>c.toLowerCase())}`
@@ -1833,7 +1875,7 @@ function startSession(queue,label){
      survived, so the NEXT session you carried to the end ticked a row you had
      walked out of. Now the comment is true. AGAIN goes the same way: which
      drill can be run again is a fact about the session now starting. */
-  PLAN_TASK=null; AGAIN=null; QT=null;
+  PLAN_TASK=null; PLAN_ROW=null; AGAIN=null; QT=null;
   if(typeof prepAhead==="function" && Array.isArray(queue.__words)) prepAhead(queue.__words);
   UNDO=null;
   const bu=document.getElementById("btnUndo"); if(bu) bu.style.display="none";
@@ -2177,13 +2219,26 @@ function mcq(q,opts,ans,why,gkey,after){
 let PRACTICE=false;
 let SESSION_XP=0;
 
+/* The five lesson questions a review serves: the ones you missed first, then
+   the longest overdue, and chance only among equals. Drawn at random, a
+   question missed yesterday could sit behind ones answered right while the
+   help page promised that a wrong answer brings it back sooner. */
+function gdueFirst(n){
+  const g=S.gcards, missed=k=>+g[k].ivl===0 && +g[k].lapses>0 ? 0 : 1;
+  return gdueList().map(k=>[Math.random(),k]).sort((a,b)=>a[0]-b[0]).map(p=>p[1])
+    .sort((a,b)=>missed(a)-missed(b) || (g[a].due<g[b].due?-1:g[a].due>g[b].due?1:0))
+    .slice(0,n);
+}
 function startReview(){
   let d=dueList();
-  const gd=gdueList().sort(()=>Math.random()-.5).slice(0,5);
+  const gd=gdueFirst(5);
   PRACTICE=false;
   if(!d.length && !gd.length){
     const started=VOCAB.map((_,i)=>i).filter(i=>S.cards[i] && !skipWord(i));
-    if(!started.length){ startNew(5); return; }        // fresh install: introduce instead
+    /* Nothing due and no words started: say so. This used to hand out five
+       new words under the name of a review — past the letters gate, since
+       the Drill menu and "Another round" both come here. */
+    if(!started.length){ toast("Nothing is due yet — new words are in Learn 5 new words"); return; }
     d=started.sort(()=>Math.random()-.5).slice(0,15);  // nothing due: free practice
     PRACTICE=true;
   }
@@ -2331,7 +2386,7 @@ function mounceLearnHtml(){
 function mounceCoverageHtml(){
   if(!onMounce()) return "";
   const chips=TB.chapters.map(c=>{ const x=mounceStats(c);
-    return `<span class="mchip${x.total&&x.started===x.total?" full":""}${c.optional?" opt":""}"
+    return `<span class="mchip${x.total&&x.started===x.total?" full":""}${c.optional?" mopt":""}"
       title="Mounce ${c.ch}: ${escHtml(c.t)}"><b>${c.ch}</b><small>${x.started}/${x.total}</small></span>`; }).join("");
   return `<div class="card"><h3 style="margin-top:0">Mounce chapters</h3>
     <p class="muted" style="font-size:.85rem;margin-bottom:10px">Words started in each chapter of your textbook. Chapter 35 is his optional list.</p>
@@ -2594,10 +2649,26 @@ function lessonParts(l){
     return {html, title:m?m[1].replace(/<[^>]+>/g,""):null};
   });
 }
+/* Where you are in the course, which Today resumes. It is one place, so a
+   look at another chapter must not move it: opening chapter 8 to read part
+   of it used to drop the learner's place in chapter 3, which Today then
+   forgot. A finished chapter re-read is not where you are either. So it
+   moves only when you are part-way through nothing, and then only to the
+   course's next unfinished chapter — the one Today would offer anyway. */
+function bookmarkLesson(id,part){
+  if(S.lessons.includes(id)) return;
+  const lp=S.lessonPart;
+  if(lp && lp.id!==id && !S.lessons.includes(lp.id)) return;
+  if(!(lp && lp.id===id)){
+    const next=LESSONS.find(x=>!S.lessons.includes(x.id));
+    if(!next || next.id!==id) return;
+  }
+  S.lessonPart={id,part}; save();
+}
 function lessonStep(l,parts,k){
   return ()=>{
     // Written down every step, so Today can say where you stopped.
-    S.lessonPart={id:l.id,part:k}; save();
+    bookmarkLesson(l.id,k);
     document.getElementById("sessBody").innerHTML=`
       <p class="muted" style="font-size:.78rem;margin:0 0 8px">
         Chapter ${l.id} · part ${k+1} of ${parts.length}${parts[k].title?` · ${parts[k].title}`:""}</p>
@@ -2634,7 +2705,7 @@ function lessonDone(id){
    so the dose is a resting place and never a stop sign. */
 function lessonPause(id,at,total){
   return ()=>{
-    S.lessonPart={id,part:at}; save();
+    bookmarkLesson(id,at);
     if(PLAN_TASK){ planTick(PLAN_TASK); PLAN_TASK=null; } else planExtra();
     COMBO=0; comboPaint();
     checkBadges();
@@ -3295,8 +3366,18 @@ function wrongOptions(ans,bank,k){
    scored for Where you struggle against the label chosen. */
 function pairDrill(bank,prompt,n=12,parsed){
   const pool=bank.slice().sort(()=>Math.random()-.5).slice(0,n);
+  /* A parse label names its verb only when it is not λύω: "1st singular
+     present active indicative of εἰμί". So "1st singular present active
+     indicative", drawn from λύω, is a second right answer for εἰμί — and
+     was offered, and marked wrong. A wrong option may not be the answer's
+     parse under another name, and one naming a verb is set among others
+     naming the same verb, or the name alone picks it out. */
+  const core=s=>parsed?s.replace(/ of \S+$/,""):s;
+  const verb=s=>parsed?(s.match(/ of \S+$/)||[""])[0]:"";
   return pool.map(p=>{
-    const wrong=wrongOptions(p,bank,3).map(x=>x[1]);
+    const others=bank.filter(x=>x===p || core(x[1])!==core(p[1]));
+    const kin=others.filter(x=>verb(x[1])===verb(p[1]));
+    const wrong=wrongOptions(p,kin.length>=4?kin:others,3).map(x=>x[1]);
     const opts=[p[1],...wrong].sort(()=>Math.random()-.5);
     return mcq(`${prompt} <span class="q-gk">${p[0]}</span>`,
       opts, opts.indexOf(p[1]), `<span class="gk">${p[0]}</span> — ${p[1]}.`,
@@ -3440,7 +3521,7 @@ function mixedQuiz(){
   return all.sort(()=>Math.random()-.5).slice(0,12);
 }
 const DRILLS=[
-["Vocabulary due now","Spaced repetition — the words the schedule says you're about to forget",()=>startReview()],
+["Vocabulary due now","Spaced repetition — the words and lesson questions the schedule has due",()=>startReview()],
 ["Learn 5 new words","Next five by New Testament frequency",()=>startNew(5)],
 ["Greek → English","Recognition, mixed multiple choice",()=>startSession(pairDrill(g2eBank(),"What does this mean?"),"d")],
 ["English → Greek","Harder: production rather than recognition",()=>startSession(reverseVocab(),"d")],
@@ -4245,6 +4326,8 @@ function saneState(x){
     // whether the reader dims words you have not met; per-device like the rest
     lit: [0,1].includes(+x.lit)?+x.lit:1,
     restUsed: /^\d{4}-\d{2}-\d{2}$/.test(x.restUsed)?x.restUsed:null,
+    // the order new words come in; per-device, and lost on restore without this
+    textbook: x.textbook==="mounce"?"mounce":undefined,
   };
   /* Where the reader was. Shape-checked because it is rendered straight into
      the Read tab as a button label. */
@@ -4271,7 +4354,12 @@ function saneState(x){
   out.plan=(x.plan && typeof x.plan==="object"
     && /^\d{4}-\d{2}-\d{2}$/.test(x.plan.day) && Array.isArray(x.plan.done))
     ? {day:x.plan.day, done:x.plan.done.filter(s=>typeof s==="string").slice(0,8),
-       extra:Math.max(0,Math.min(99,Math.floor(+x.plan.extra)||0))}
+       extra:Math.max(0,Math.min(99,Math.floor(+x.plan.extra)||0)),
+       // what each ticked row said; strings only, and escaped where shown
+       snaps:(Array.isArray(x.plan.snaps)?x.plan.snaps:[]).filter(s=>s && typeof s==="object"
+         && ["id","ctx","label","sub"].every(k=>typeof s[k]==="string")).slice(0,12)
+         .map(s=>({id:s.id.slice(0,20), ctx:s.ctx.slice(0,80), label:s.label.slice(0,120),
+                   sub:s.sub.slice(0,200), at:Math.max(0,Math.min(12,Math.floor(+s.at)||0))}))}
     : null;
   /* letter -> how many times running it has been named correctly. Capped, so
      a hand-edited file cannot claim the alphabet is finished with one entry. */

@@ -623,7 +623,7 @@ td.g{font-size:calc(1.02rem * var(--gk-scale))}
 .mchip small{font-size:.66rem;color:var(--muted)}
 .mchip.full{border-color:var(--gold-dim)}
 .mchip.full b{color:var(--gold)}
-.mchip.opt{border-style:dashed}
+.mchip.mopt{border-style:dashed}   /* not .opt: that is the quiz option */
 .lk .fq{font-size:.68rem;color:var(--muted);white-space:nowrap;margin-top:5px}
 .lk .pl{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:1px}

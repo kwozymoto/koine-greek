@@ -230,19 +230,24 @@ const gridEarned = () => {
 };
 const gridUnplayed = list => list.filter(g => !S.grids || !S.grids[g.key]);
 
-/* Due first, then rounds never played, then the rest — so the schedule leads
-   and the drill still works on a cold install.
+/* Due first, then untried paradigms from chapters you have finished, then —
+   only from the menu, which passes anyChapter — untried ones the course has
+   not reached, and the tables you already know last; so the schedule leads
+   and the drill still works on a cold install. The daily plan never passes
+   anyChapter, and the Drill card says which is about to happen. Nothing
+   filters the due and the rest: a round you have already played is yours
+   whatever chapter it came from.
 
-   `anyChapter` is how a drill chosen from the menu says it accepts material
-   the course has not reached; the daily plan never passes it, and the Drill
-   card says which is about to happen. Nothing filters the due and the rest:
-   a round you have already played is yours whatever chapter it came from. */
+   The menu used to shuffle every untried paradigm together, so a learner at
+   chapter 12, whose Drill card said "17 from your chapters, not tried", was
+   handed the participles first. */
 function gridQueue(n, anyChapter) {
   const shuf = a => a.slice().sort(() => Math.random() - .5);
   const due = gridDue();
-  const fresh = gridUnplayed(anyChapter ? gridRounds() : gridEarned());
+  const mine = gridUnplayed(gridEarned());
+  const ahead = anyChapter ? gridUnplayed(gridRounds()).filter(g => !mine.includes(g)) : [];
   const rest = gridStarted().filter(g => S.grids[g.key].due > today());
-  return [...shuf(due), ...shuf(fresh), ...shuf(rest)].slice(0, n);
+  return [...shuf(due), ...shuf(mine), ...shuf(ahead), ...shuf(rest)].slice(0, n);
 }
 
 /* ============================================================
@@ -426,12 +431,13 @@ function gridDrill(n = 3, anyChapter) {
 function gridSprint(n = 14, anyChapter) {
   const pool = [];
   /* Same rule as the grid: a slot from a chapter you have not read is a
-     question about an ending nobody has shown you. "Keep going · a paradigm
-     sprint" is offered by the app, so it takes the earned set; the menu says
-     anyChapter and gets everything. Falls back rather than refusing to run,
-     which is this file's standing preference. */
-  const rounds = anyChapter ? gridRounds()
-    : (gridEarned().length ? gridEarned() : gridRounds());
+     question about an ending nobody has shown you. So the sprint draws on the
+     tables of your own chapters whenever there are any — from the menu too,
+     whose card promises exactly that; it used to take every table there is,
+     and gave a chapter-12 learner τίθημι. Falls back to all of them rather
+     than refusing to run, which is this file's standing preference.
+     (anyChapter is still accepted, and no longer changes the pool.) */
+  const rounds = gridEarned().length ? gridEarned() : gridRounds();
   rounds.forEach(g => {
     const cols = {};
     g.rows.forEach(r => r.cells.forEach(c => {

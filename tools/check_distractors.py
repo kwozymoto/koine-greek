@@ -115,6 +115,18 @@ def lift_function(sig):
     return sig + tail.split("\n}\n", 1)[0] + "\n}\n"
 
 
+PAIR = "function pairDrill(bank,prompt,n=12,parsed){"
+
+
+def lift_parse():
+    """The verb-parsing bank as it ships: `const PARSE=[` to its `];`."""
+    src = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+    m = re.findall(r"^const PARSE=\[.*?^\];", src, re.M | re.S)
+    if len(m) != 1:
+        sys.exit("could not read exactly one `const PARSE=[ ... ];` in js/app.js")
+    return m[0]
+
+
 def lift_retired():
     """RETIRED lives in js/app.js, not data/vocab.js. This used to fall back
     to a literal [237] whenever vocab.js did not define it -- which was
@@ -251,11 +263,42 @@ def main():
             broken.push(gloss + ': ' + opts[m.a] + ' asked, ' + same[0] + ' offered as wrong');
         }
       }
+      /* pairDrill() over PARSE, the Verb parsing drill. A parse label names
+         its verb only when it is not λύω, so "1st singular present active
+         indicative" is a right answer for εἰμί too — and was offered as a
+         wrong one. Each question must have no wrong option that is the
+         answer's parse under another name; and where the answer names its
+         verb, it must not be the only option that does. */
+      const noteLabel = () => {};
+      %s
+      %s
+      const core = s => s.replace(/ of \\S+$/, ''), named = s => (s.match(/ of \\S+$/) || [''])[0];
+      let parseN = 0, parseAlone = 0;
+      for (let t = 0; t < RUNS / 12; t++) {
+        asked.length = 0;
+        pairDrill(PARSE, 'Parse this form:', PARSE.length, true);
+        for (const m of asked) {
+          const ans = m.opts[m.a];
+          const twin = m.opts.filter((o, k) => k !== m.a && core(o) === core(ans));
+          if (m.opts.length !== 4 || new Set(m.opts).size !== 4 || twin.length) {
+            if (broken.length < 5) broken.push(m.q.replace(/<[^>]*>/g, '') + ' — ' + ans
+                                               + (twin.length ? ', and also offered: ' + twin[0] : ''));
+            continue;
+          }
+          if (named(ans)) {
+            parseN++;
+            if (!m.opts.some((o, k) => k !== m.a && named(o) === named(ans))) parseAlone++;
+          }
+        }
+      }
+      out.push({bank: 'pairDrill(PARSE), verb parsing', tell: 'a verb named in the label',
+                n: PARSE.filter(p => named(p[1])).length, rate: parseN ? parseAlone / parseN : 1, limit: 0});
       process.stdout.write(JSON.stringify({rows: out, broken}));
     """ % (json.dumps(lift_retired()), body,
            json.dumps({k: v[0] for k, v in TELLS.items()}),
            RUNS, intro, reverse,
-           json.dumps({k: [v[0], v[2]] for k, v in GREEK_TELLS.items()}))
+           json.dumps({k: [v[0], v[2]] for k, v in GREEK_TELLS.items()}),
+           lift_parse(), lift_function(PAIR))
     r = subprocess.run(["node", "-e", js], capture_output=True, text=True,
                        encoding="utf-8", cwd=ROOT)
     if r.returncode != 0:
@@ -271,7 +314,7 @@ def main():
     print("options drawn per question:       3 of %d runs each" % RUNS)
     limits = dict(TELLS, **GREEK_TELLS)
     for row in rows:
-        limit = limits[row["tell"]][1]
+        limit = row["limit"] if "limit" in row else limits[row["tell"]][1]
         flag = "" if row["rate"] <= limit else "   <-- OVER"
         print("  %-31s %-48s %4d words  %5.1f%%%s"
               % (row["bank"], row["tell"], row["n"], 100 * row["rate"], flag))

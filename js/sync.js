@@ -184,7 +184,11 @@ function mergeStates(local, remote) {
   out.plan = (pl && pr && pl.day === pr.day)
     ? { day: pl.day, done: [...new Set([...(pl.done || []), ...(pr.done || [])])],
         // work past the plan, counted on whichever device did more of it
-        extra: Math.max(pl.extra || 0, pr.extra || 0) }
+        extra: Math.max(pl.extra || 0, pr.extra || 0),
+        // what each ticked row said, one per row and focus, this device's first
+        snaps: [...(pl.snaps || []), ...(pr.snaps || [])]
+          .filter((s, i, a) => s && a.findIndex(t => t && t.id === s.id && t.ctx === s.ctx) === i)
+          .slice(0, 12) }
     : ([pl, pr].filter(Boolean).sort((x, y) => (x.day > y.day ? -1 : 1))[0] || null);
 
   /* A gloss you wrote yourself. Union, and where both devices have written
