@@ -44,17 +44,17 @@ So, mechanically:
   This list exists because the rule above was not enough. Through an entire
   claims audit I read "open the book", listed that directory twice, opened
   neither Huffman nor the good Robertson, marked two dozen claims as needing
-  a grammar, and asked Fraser to export pages he already had on disk. Naming
+  a grammar, and asked Fraser for pages that were already on the shelf. Naming
   the shelf is what the rule was missing.
 
   | | what it settles |
   |---|---|
   | `Abbott-Smith/abbott-smith.tei.xml` | 5,441 entries, each `<form>` giving the genitive. **Declension of any noun**, and NT occurrence counts. Settled ch17's third-declension split when the corpus alone could not. |
   | `Huffman/Part 2.docx` | The syntax guide: case usage, article, tense-form and aspect, voice, mood, infinitives, participles, conditionals. **The modern label set.** Part 1 is grammar, Part 3 diagramming. |
-  | `Robertson/chapter_*.docx` | Clean Logos exports with the polytonic Greek intact — XI Cases, XVI Article, XVII Voice, XVIII Tense, XX Verbal Nouns. **Use these.** |
-  | `Robertson/robertson-grammar-1915.txt` | The archive.org OCR. English usable but noisy, Greek unusable. Only for chapters not exported above. |
+  | `Robertson/chapter_*.docx` | Clean chapters with the polytonic Greek intact — XI Cases, XVI Article, XVII Voice, XVIII Tense, XX Verbal Nouns. **Use these.** |
+  | `Robertson/robertson-grammar-1915.txt` | The archive.org OCR. English usable but noisy, Greek unusable. Only for chapters not listed above. |
   | `Black/*.docx` | The course's own textbook, chapter by chapter, plus its vocabulary. Read by `check_black.py`. |
-  | `Mounce/md/*.md` | Mounce, *Basics of Biblical Greek Grammar* 4th ed., a file per chapter plus the appendix (charts, principal parts, a lexicon giving each word's chapter), every page marked `[p. N]`. **A second modern grammar** for what an explanation says. Its `README.md` says how it was made and what it cannot be trusted for. Never a source of Greek. The PDF beside it hides whole pages behind clipping, so extracting it any other way reads text nobody can see. `build_mounce.py` reads the PDF itself. |
+  | `Mounce/md/*.md` | Mounce, *Basics of Biblical Greek Grammar* 4th ed., a file per chapter plus the appendix (charts, principal parts, a lexicon giving each word's chapter), every page marked `[p. N]`. **A second modern grammar** for what an explanation says. Its `README.md` says how it was made and what it cannot be trusted for. Never a source of Greek. Use these files rather than extracting the book afresh: its source holds text that is not on the printed page, and a plain extraction reads it. `build_mounce.py` reads the source itself. |
   | `Translations/*.json` | ASV, BSB, Darby, KJV, YLT, NHEB. **Any claim about what English translations do** — it refuted "every English translation gives it as 'he'". |
 
   The division in rule 8 — mechanically verifiable, catchable by reading,
@@ -155,7 +155,7 @@ use `data-ref` and `data-claim` the same way.
 - **Never `git add -A` or `git add .`** — stage by name and read
   `git status --short` before committing. `git add -A` twice swept in files
   that must not be published.
-- Copyrighted books, phone screenshots and reference PDFs live in
+- Copyrighted books, phone screenshots and other reference material live in
   `../Greek App Reference/`, outside this repo, so no command run in here can
   reach them.
 - Deleting a file does not remove it from a public history.
