@@ -17,13 +17,13 @@ TWO HALVES.
      the SBL Greek New Testament, which is the whole claim "ἡμεῖς is the
      plural of ἐγώ" makes. None of this needs the book.
   2. THE BOOK, when it is on this machine. The chapters are derived afresh
-     from the PDF by build_mounce's own code — the lexicon's "chpt N" and
+     from the book by build_mounce's own code — the lexicon's "chpt N" and
      each chapter's printed list, which must agree word for word — and the
      shipped file must equal what they give.
 
 The book lives outside the repository and never enters it, so the second half
 is optional by design, like check_black. But it is never skipped QUIETLY: the
-first line says whether the PDF was read. A checker that falls back without
+first line says whether the book was read. A checker that falls back without
 saying so reports green for something it never looked at.
 
 WHAT IT CANNOT DO. The six meanings in BOOK_ONLY are English written by hand,
@@ -160,7 +160,7 @@ def main():
             for c in sorted(set(A) | set(S)):
                 if c not in S or c not in A or norm([A[c]]) != norm([S[c]]):
                     bad.append("chapter %s: data/textbooks.js differs from what the book gives" % c)
-        book = "held to the PDF (lexicon and printed lists agree)"
+        book = "read, and the file matches it (lexicon and printed lists agree)"
     else:
         book = "NOT READ — " + why
 

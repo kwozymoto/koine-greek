@@ -25,7 +25,7 @@ both:
 A lexicon word is accepted only when its chapter's printed list contains it.
 A word on a printed list that the lexicon gives no chapter must be named in
 ON_LIST below, with the reason, or the build stops. An earlier all_chapters.csv
-in that folder was made by another agent from the same PDF; it is not read.
+in that folder was made by another agent from the same copy; it is not read.
 
 THE EXTRACTION IS HOSTILE, and each trap below cost a wrong answer once:
 
@@ -58,7 +58,7 @@ except Exception:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BOOK = os.path.join(os.path.dirname(ROOT), "Greek App Reference", "Mounce",
-                    "Basics Of Biblical Greek Grammar - Fourth Edition.pdf")
+                    "book.pdf")
 OUT = os.path.join(ROOT, "data", "textbooks.js")
 CORE_TOTAL = 319                 # "These 319 words", chapter 4
 OPTIONAL = {35}                  # "words you can learn if you wish"
@@ -123,7 +123,7 @@ def pdftotext():
 def book_available():
     """(ok, reason). The book and the extractor are both outside the repo."""
     if not os.path.isfile(BOOK):
-        return False, "the Mounce PDF is not on this machine (%s)" % BOOK
+        return False, "the Mounce book is not on this machine (%s)" % BOOK
     if not pdftotext():
         return False, "pdftotext is not installed (it comes with Git for Windows' mingw64)"
     return True, ""
@@ -134,7 +134,7 @@ def extract():
     exe = pdftotext()
     r = subprocess.run([exe, "-enc", "UTF-8", "-raw", BOOK, "-"], capture_output=True)
     if r.returncode != 0 or not r.stdout:
-        sys.exit("pdftotext failed on the Mounce PDF:\n" + r.stderr.decode("utf-8", "replace"))
+        sys.exit("pdftotext failed on the Mounce book:\n" + r.stderr.decode("utf-8", "replace"))
     return r.stdout.decode("utf-8").replace("\x0c", "\n").split("\n")
 
 
