@@ -12,7 +12,16 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-28", v:"v274", items:[
+{d:"2026-09-28", v:"v275", items:[
+  {k:"better", t:"Flash cards: picking a set now drills it straight away, leaving the schedule alone. Or choose “Make it today’s focus”, and Today teaches its new words while your usual review carries on."},
+  {k:"better", t:"Studied Greek before? Settings can now put the words of the chapters you have done straight into review, and placing yourself past chapter 1 keeps the letters counted as done even if you slip on one later."},
+  {k:"better", t:"The letters: Today shows how many you have met and settled, names the five it will teach, and a letter being taught again says so."},
+  {k:"better", t:"Lesson questions come in a fresh order each time, so a question met again cannot be answered by remembering where the answer was."},
+  {k:"fix", t:"Wide lesson tables scroll inside their own box on a phone instead of pushing the page sideways at the larger text sizes."},
+  {k:"fix", t:"Practice flash cards no longer say they schedule the word or show intervals they are not setting."},
+  {k:"fix", t:"Look-alikes and Produce a real form no longer give the answer away: notes moved to the feedback, and forms shown without a sentence’s capital or an extra accent."},
+  {k:"fix", t:"A chapter finished with most of its questions wrong says it has been read, rather than “well done”. Its questions come back in your reviews either way."},
+  {k:"fix", t:"Wording in chapters 1, 2 and 21: the letters easily misread, the middle voice, and how often the participle is adverbial."},
   {k:"new", t:"Using Mounce's Basics of Biblical Greek? Settings → Your textbook. New words then come in the order of his chapters, which also appear on the Learn page, in the deck picker and quick test, and in Settings. Lessons and paradigms stay on Black."},
   {k:"new", t:"Joining a Mounce class part-way through? Settings can put his chapters up to the one you have reached straight into review."},
   {k:"fix", t:"Verb parsing no longer offers two right answers: a form of εἰμί could be shown beside λύω's identical parse, and choosing that one was marked wrong."},

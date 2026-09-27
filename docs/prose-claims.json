@@ -2907,13 +2907,13 @@
   "finding": "'One verb form in four' is exact: 6,640 participles of 28,056 verb forms, 23.7%."
  },
  {
-  "k": "481cf2c845cc",
+  "k": "41e6f66f34af",
   "ch": 21,
-  "kind": "count",
-  "src": "quiz",
-  "text": "3,918 participles are anarthrous nominatives, which is the largest group by far.",
+  "kind": "absolute",
+  "src": "body",
+  "text": "Participles without an article far outnumber those with one: the nominatives alone come to 3,918 , most of them adverbial, against 1,433 articular participles in every case — so the third use is much the largest group, and the one with no signposts.",
   "status": "verified",
-  "finding": "3,918 exact, and now described as the largest group rather than as a classification of every one of them."
+  "finding": "Both counts as verified before (3,918 exact; 1,433 the articular participles, every case). Reworded 2026-09-28 because the old sentence set nominatives only against articular participles of every case and read anarthrous as adverbial; it now says the nominatives alone outnumber all the articular ones, and that most of them — not all — are adverbial, which the same paragraph already qualifies."
  },
  {
   "k": "4c53effd80c3",
@@ -2923,15 +2923,6 @@
   "text": "Usually, not always — an anarthrous participle can still be attributive, which is why the sentence has the last word.",
   "status": "corrected",
   "finding": "The chapter's opening was corrected in v120 from 'one question separates them' to 'one question comes first', but this summary four sections later still said 'It divides the three uses'. Same fault, missed the first time. The article separates the adverbial use from the other two; a second question — is there a noun to modify? — splits those. And the chapter's own counts never partitioned the set: 1,433 articular and 3,918 anarthrous nominatives leave 1,289 of the 6,640 in neither. Raised by ChatGPT's second audit."
- },
- {
-  "k": "4df8fcc7c155",
-  "ch": 21,
-  "kind": "count",
-  "src": "body",
-  "text": "The counting says which pattern is commonest: 1,433 participles carry an article, and 3,918 are anarthrous nominatives , which makes the third use much the largest group and the one with no signposts.",
-  "status": "corrected",
-  "finding": "The flat binary survived here after the chapter's opening and its What-to-watch-for were both corrected in v121 and v126. It now says 'usually describing the circumstances — usually, because an anarthrous participle can still be attributive', and the counting is described as the commonest pattern rather than a classification. 1,433 and 3,918 are exact; they simply do not sort 3,918 participles by function."
  },
  {
   "k": "5694370683ce",
@@ -2970,13 +2961,13 @@
   "finding": "Read and left as written."
  },
  {
-  "k": "950b7ece1c25",
+  "k": "ad31e4134332",
   "ch": 21,
-  "kind": "count",
+  "kind": "absolute",
   "src": "quiz",
-  "text": "3,918 anarthrous nominatives against 1,433 articular participles altogether.",
+  "text": "The anarthrous nominatives alone come to 3,918, against 1,433 articular participles in every case.",
   "status": "verified",
-  "finding": "Quiz explanation restating a body claim already settled in this chapter, and it restates it faithfully: \"The counting says which matters most: 1,433 participles carry an article, and 3,918 are anarthrous nominatives — so the third use is much the commones\". Two things hold it there — the body claim is verified against the corpus, and check_quiz fails on a quiz number that disagrees with the body's, which is the fault that put δίδωσιν at 11 in one section and 10 in the next."
+  "finding": "Quiz explanation restating the body claim above in the same terms: the anarthrous nominatives alone (3,918) against the articular participles of every case (1,433). Both counts as previously verified."
  },
  {
   "k": "b19d8f200fde",

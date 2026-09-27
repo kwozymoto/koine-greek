@@ -254,3 +254,19 @@ function gkDropLast(s) {
   if (!last) return "";
   return s.normalize("NFD").slice(0, last.at).normalize("NFC");
 }
+
+/* A form as an option shows it, not as its verse happened to print it
+   (formDrill in js/grid.js). Taken straight from the text, one option could
+   open a sentence (Ἔρχου among
+   lowercase words), carry a grave for its place in the line, or wear the
+   second accent an enclitic lends (μεῖζόν, χεῖράς) — and each of those told
+   the answer apart without reading it. Lowercase unless the word is a name,
+   grave to acute, and a second accent dropped. */
+function gkShown(f, name) {
+  let d = f.normalize("NFD").replace(/\u0300/g, "\u0301");
+  if (!name) d = d.toLowerCase();
+  const marks = [...d.matchAll(/[\u0301\u0342]/g)];
+  if (marks.length > 1 && d[marks[marks.length - 1].index] === "\u0301")
+    d = d.slice(0, marks[marks.length - 1].index) + d.slice(marks[marks.length - 1].index + 1);
+  return d.normalize("NFC");
+}

@@ -349,7 +349,7 @@ function seedCards(order, n){
    instead of walking them through the new-word flow one by one. */
 function seedVocab(n=100){
   const done=seedCards(LEARN_ORDER, n);
-  save(); render();
+  save(); render(); renderProgress();
   toast(done ? done+" words seeded — spread over the next fortnight" : "Those words are already in the schedule");
 }
 
@@ -915,8 +915,20 @@ function qtDrillMissed(){
   q.__words=words; q.__practice=true;
   startSession(q,"d");
 }
+/* What tapping a set does. It used to make the set a focus and nothing else:
+   the sheet closed, the Drill page looked unchanged, and the set appeared on
+   Today — while the sheet had promised a drill. Drilling now is the default;
+   a focus is the other choice, one tap away. */
+let DECK_MODE="drill";
+function paintDeckMode(){
+  const el=document.getElementById("deckMode"); if(!el) return;
+  el.innerHTML=[["drill","Drill it now"],["focus","Make it today's focus"]].map(([m,t])=>
+    `<button class="${m===DECK_MODE?"sel":""}" aria-pressed="${m===DECK_MODE}"
+       onclick="DECK_MODE='${m}';paintDeckMode()">${t}</button>`).join("");
+}
 function openDeckPicker(){
   DECK_SETS=deckSets();
+  paintDeckMode();
   const groups=[];
   DECK_SETS.forEach((d,i)=>{
     const g=groups.find(x=>x[0]===d.g) || (groups.push([d.g,[]]), groups[groups.length-1]);
@@ -937,6 +949,18 @@ function closeDeckPicker(){
 }
 function pickDeck(n){
   const d=DECK_SETS[n]; if(!d) return;
+  if(DECK_MODE==="drill"){
+    /* The whole set, shuffled, as practice: grade() skips schedule() when
+       PRACTICE is on, so nothing's interval moves — the same guarantee
+       startFocusDrill makes — and no focus is set or replaced. */
+    const words=d.ids.filter(i=>VOCAB[i] && !skipWord(i));
+    if(!words.length){ toast("Nothing in this set to drill"); return; }
+    closeDeckPicker();
+    const q=words.slice().sort(()=>Math.random()-.5).map(flashcard);
+    q.__words=words; q.__practice=true;
+    startSession(q,"d");
+    return;
+  }
   /* ONE FOCUS AT A TIME is the existing model, so choosing a set replaces a
      passage you may be part way through. Say so rather than discarding it
      silently — and do not write a focusDone row, which would claim the
@@ -1181,9 +1205,13 @@ function letterWarmup(){
 function letterCard(a,n,of){
   return ()=>{
     const snd=(typeof AUDIO_BY_GREEK!=="undefined") && AUDIO_BY_GREEK[a[0]];
+    /* A letter answered before and missed back to nought is taught again,
+       and says so: calling gamma new on the day after it was taught read as
+       though yesterday had not happened. */
+    const again=a[1] in (S.alpha||{});
     document.getElementById("sessBody").innerHTML=`
       <div class="fc">
-        <p class="muted" style="font-size:.75rem;margin:0 0 4px;letter-spacing:.04em;text-transform:uppercase">New letter ${n} of ${of}</p>
+        <p class="muted" style="font-size:.75rem;margin:0 0 4px;letter-spacing:.04em;text-transform:uppercase">${again?"Again":"New letter"} ${n} of ${of}</p>
         <div class="word gk">${a[0]}</div>
         <div class="rule"></div>
         <div class="ans">${a[1]}</div>
@@ -1382,8 +1410,10 @@ function todaysPlan(){
        and teach is empty for every learner who has met all twenty-four and
        settled only some, which is the whole middle of the alphabet phase.
        Today threw and rendered nothing at all. */
+    /* The letters by name. "gamma to iota" read as a run of seven when the
+       five were gamma, zeta, eta, theta and iota. */
     const span=()=>teach.length===1 ? `${teach[0][1]} taught first`
-      : `${teach.length} taught first: ${teach[0][1]} to ${teach[teach.length-1][1]}`;
+      : `${teach.length} taught first: ${teach.map(a=>a[1]).join(", ")}`;
     tasks.push({id:"letters", mins:teach.length?3:2,
       label:"Letters and sounds",
       sub:teach.length
@@ -1397,29 +1427,10 @@ function todaysPlan(){
      steps the chapter walkthrough aside — the point of the words is the
      verses. On "vocab" only these two rows change and Black carries on. */
   const f=S.focus;
-  if(f){
-    const ref=focusRef(f), due=focusDueList(f), fresh=focusFresh(f);
-    if(f.mode==="all") tasks.push({id:"passage", ctx:ref, mins:3,
-      label:`Read ${ref}`,
-      sub:`${focusKnown(f)} of ${focusTotal(f)} of its words are settled`,
-      run:()=>openFocusPassage()});
-    if(due.n) tasks.push({id:"review", ctx:ref, mins:Math.max(1,Math.round(due.n*8/60)),
-      label:`Review ${due.n} from ${ref}`,
-      sub:f.label?"Only this set — the rest of the deck waits"
-                 :"Only this passage's words — the rest of the deck waits",
-      run:()=>startFocusReview()});
-    if(fresh.length) tasks.push({id:"new", ctx:ref, mins:2,
-      label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
-      sub:`${fresh.length} of its words not started yet`,
-      run:()=>startFocusNew(5)});
-    if(!due.n && !fresh.length) tasks.push({id:"review", ctx:ref, mins:2,
-      label:`${ref} — nothing due`,
-      sub:"Every word started and none due back today",
-      run:()=>startFocusReview()});
-  } else {
-    /* On a fresh install there is nothing to review, and startReview() would
-       quietly fall through to introducing words — which is the next row's job.
-       So the row only appears once the deck has been started. */
+  /* The whole deck's review. On a fresh install there is nothing to review,
+     and startReview() would have nothing to serve — so the row only appears
+     once the deck has been started. */
+  const deckReview=()=>{
     const due=dueList().length+Math.min(5,gdueList().length);
     if(due || Object.keys(S.cards).length) tasks.push(due
       ? {id:"review", mins:Math.max(1,Math.round(Math.min(due,Math.max(5,S.goal||20))*8/60)),
@@ -1433,7 +1444,39 @@ function todaysPlan(){
       : {id:"review", mins:2, label:"Practise what you know",
          sub:"Nothing is due — this will not touch the schedule",
          run:()=>startReview()});
-
+  };
+  if(f && f.label){
+    /* A set chosen to work on — a chapter, a kind of word — aims the new
+       words at itself and leaves the review alone. It used to take the
+       review over too, "only this set — the rest of the deck waits", which
+       is right for a passage you are about to read and wrong for flash
+       cards: picking Chapter 11 stopped every other word coming back. */
+    deckReview();
+    const ref=focusRef(f), fresh=focusFresh(f);
+    if(fresh.length) tasks.push({id:"new", ctx:ref, mins:2,
+      label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
+      sub:`${fresh.length} of its words not started yet`,
+      run:()=>startFocusNew(5)});
+  } else if(f){
+    const ref=focusRef(f), due=focusDueList(f), fresh=focusFresh(f);
+    if(f.mode==="all") tasks.push({id:"passage", ctx:ref, mins:3,
+      label:`Read ${ref}`,
+      sub:`${focusKnown(f)} of ${focusTotal(f)} of its words are settled`,
+      run:()=>openFocusPassage()});
+    if(due.n) tasks.push({id:"review", ctx:ref, mins:Math.max(1,Math.round(due.n*8/60)),
+      label:`Review ${due.n} from ${ref}`,
+      sub:"Only this passage's words — the rest of the deck waits",
+      run:()=>startFocusReview()});
+    if(fresh.length) tasks.push({id:"new", ctx:ref, mins:2,
+      label:`Learn ${Math.min(5,fresh.length)} more from ${ref}`,
+      sub:`${fresh.length} of its words not started yet`,
+      run:()=>startFocusNew(5)});
+    if(!due.n && !fresh.length) tasks.push({id:"review", ctx:ref, mins:2,
+      label:`${ref} — nothing due`,
+      sub:"Every word started and none due back today",
+      run:()=>startFocusReview()});
+  } else {
+    deckReview();
     const fresh=LEARN_ORDER.filter(i=>!S.cards[i]&&!skipWord(i)).length;
     if(fresh && lettersReady()) tasks.push({id:"new", mins:2,
       label:`Learn ${Math.min(5,fresh)} new word${fresh===1?"":"s"}`,
@@ -1524,12 +1567,17 @@ function planHtml(){
      is, because a good number of the people this is for did Greek at college
      twenty years ago and can already read the alphabet. */
   if(lettersReady()) return rows;
-  const n=alphaLeft();
+  /* Progress in two numbers. "24 to go" stood still for the first three
+     days, because a letter settles only after right answers on three
+     separate days, while fourteen letters had been met and answered. */
+  const settled=ALPHABET.length-alphaLeft();
+  const met=ALPHABET.filter(a=>alphaScore(a)>0).length;
   return rows+`<p class="muted" style="font-size:.78rem;margin:10px 2px 0;line-height:1.5">
-    New words start once the letters are settled — ${n} to go.
-    Already read Greek? <a href="#" class="tappable" style="color:var(--gold)"
-      onclick="go('prog');return false">Say so in Settings</a> and the whole
-    alphabet counts as done.</p>`;
+    New words start once the letters are settled: ${met} of ${ALPHABET.length} met,
+    ${settled} settled so far — each settles after right answers on three separate days.
+    Studied Greek before? <a href="#" class="tappable" style="color:var(--gold)"
+      onclick="go('prog');return false">Mark chapter 1 done in Settings</a> and the
+    whole alphabet counts as done.</p>`;
 }
 
 /* Offered at the end of a session so finishing one thing leads to the next
@@ -2023,7 +2071,13 @@ function partsHtml(i){
    somebody else testing asked what the buttons were even for. Both are the
    same miss: the row is the Next, and nothing named it. */
 function sayHowHtml(lead){
-  return `<p class="sayhow">${lead || "Tap "}how well you knew it — that
+  /* In practice nothing is scheduled, and the card must not say it is: a
+     drilled set promised "drilling does not touch the schedule" while every
+     card said the opposite and showed the intervals it was not setting. */
+  return PRACTICE
+    ? `<p class="sayhow">${lead || "Tap "}how well you knew it — this is practice,
+    so the schedule is left alone.</p>`
+    : `<p class="sayhow">${lead || "Tap "}how well you knew it — that
     schedules the word and moves you on.</p>`;
 }
 
@@ -2059,9 +2113,9 @@ function flashcard(i){
         ${sayHowHtml()}
         <div class="grades">
           <button class="g1" onclick="grade(${i},0)">Again<i>&lt;1m</i></button>
-          <button class="g2" onclick="grade(${i},1)">Hard<i>${nextIvl(i,1)}d</i></button>
-          <button class="g3" onclick="grade(${i},2)">Good<i>${nextIvl(i,2)}d</i></button>
-          <button class="g4" onclick="grade(${i},3)">Easy<i>${nextIvl(i,3)}d</i></button>
+          <button class="g2" onclick="grade(${i},1)">Hard${PRACTICE?"":`<i>${nextIvl(i,1)}d</i>`}</button>
+          <button class="g3" onclick="grade(${i},2)">Good${PRACTICE?"":`<i>${nextIvl(i,2)}d</i>`}</button>
+          <button class="g4" onclick="grade(${i},3)">Easy${PRACTICE?"":`<i>${nextIvl(i,3)}d</i>`}</button>
         </div>`;
     };
   };
@@ -2181,6 +2235,18 @@ function answerFelt(ok,el,silent){
    `after` is an optional callback given the verdict — the letter drills use
    it to keep their own tally. Sixth and last, so every existing call site
    is untouched. */
+/* A lesson or syntax question with its options in a fresh order each time.
+   Written down in one order and always shown in it, a question met again in
+   review could be answered by remembering where the answer sat. No option
+   in the lessons refers to another by position, so the order is free. */
+function mcqShuffled(x,key){
+  /* A true shuffle. sort(()=>Math.random()-.5) favours some orders, and
+     measured over a four-option question it put the answer last half as
+     often as first — a lean somebody could learn. */
+  const order=x.o.map((_,k)=>k);
+  for(let k=order.length-1;k>0;k--){ const j=Math.floor(Math.random()*(k+1)); [order[k],order[j]]=[order[j],order[k]]; }
+  return mcq(x.q, order.map(k=>x.o[k]), order.indexOf(x.a), x.w, key);
+}
 function mcq(q,opts,ans,why,gkey,after){
   return ()=>{
     const b=document.getElementById("sessBody");
@@ -2253,10 +2319,10 @@ function startReview(){
       /* A typed question is not multiple choice, so it brings its own
          renderer rather than being squeezed into mcq's shape. */
       if(/^W\d{1,4}:/.test(k)){ const t=typeStepFor(k); if(t) q.push(t); return; }
-      const x=gquestion(k); q.push(mcq(x.q,x.o,x.a,x.w,k));
+      const x=gquestion(k); q.push(mcqShuffled(x,k));
     });
     caseNew().sort(()=>Math.random()-.5).slice(0,1).forEach(i=>{
-      const x=caseQ(CASEFN[i]); q.push(mcq(x.q,x.o,x.a,x.w,`C${i}`));
+      const x=caseQ(CASEFN[i]); q.push(mcqShuffled(x,`C${i}`));
     });
   }
   startSession(q,"review");
@@ -2406,6 +2472,21 @@ function seedMounce(upto){
   const ids=TB.chapters.filter(c=>!c.optional && c.ch<=upto).flatMap(mounceLive).filter(i=>!S.cards[i]);
   if(!ids.length){ toast("Those words are already in the schedule"); return; }
   if(!confirm(`Put ${ids.length} word${ids.length===1?"":"s"} from Mounce's chapters up to ${upto} straight into review? They will come back over the next fortnight.`)) return;
+  const done=seedCards(ids, ids.length);
+  save(); render(); renderProgress();
+  toast(done+" words seeded — spread over the next fortnight");
+}
+
+/* The same head start for the course's own chapters. Marking chapters done
+   never touched their vocabulary, so someone placed at chapter twelve still
+   had 717 words "to meet"; Mounce's chapters could be seeded and Black's
+   could not. */
+function seedChapters(upto){
+  if(!upto) return;
+  const ids=[...new Set(LESSONS.filter(l=>l.id<=upto).flatMap(l=>l.v||[]))]
+    .filter(i=>VOCAB[i] && !skipWord(i) && !S.cards[i]);
+  if(!ids.length){ toast("Those words are already in the schedule"); return; }
+  if(!confirm(`Put ${ids.length} word${ids.length===1?"":"s"} from chapters up to ${upto} straight into review? They will come back over the next fortnight.`)) return;
   const done=seedCards(ids, ids.length);
   save(); render(); renderProgress();
   toast(done+" words seeded — spread over the next fortnight");
@@ -2563,7 +2644,7 @@ function openLesson(id){
       <button class="btn" onclick="lessonWalk(${id},${at},true)">${at?"Finish the chapter":"Work through it"}</button>
     </div>
     <h2 style="margin-top:26px">The chapter</h2>
-    <div id="chapterBody">${l.body}</div>
+    <div id="chapterBody">${tableScroll(l.body)}</div>
     <h2>Watch</h2>
     ${l.vids.map(vidRowHtml).join("")}
     ${(l.v||[]).length?`<h2>This chapter's words</h2>
@@ -2611,7 +2692,7 @@ function lessonQuiz(id){
   const l=LESSONS.find(x=>x.id===id);
   // Answering here both creates the card and gives it its first grade, so a
   // lesson you pass starts on the schedule rather than falling off it.
-  const q=l.quiz.map((x,n)=>mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
+  const q=l.quiz.map((x,n)=>mcqShuffled(x,`L${id}q${n}`));
   q.push(lessonDone(id));
   startSession(q,"lesson");
 }
@@ -2639,6 +2720,11 @@ function lessonQuiz(id){
    120 words, the whole course would be 210 days of grammar in slivers, and
    several parts are a single paradigm that has to be read in one piece. */
 const LESSON_DOSE=3;
+/* A lesson table scrolls inside its own box, as a paradigm table does.
+   Without one, a table wider than a phone pushed the whole page sideways:
+   at the Extra large Greek size the chapter 16 and 19 tables did. */
+const tableScroll=html=>html.replace(/<table\b/g,'<div class="tscroll"><table')
+                            .replace(/<\/table>/g,'</table></div>');
 
 function lessonParts(l){
   // Lookahead, so each <h3> stays attached to the section it opens. Part 0
@@ -2672,11 +2758,16 @@ function lessonStep(l,parts,k){
     document.getElementById("sessBody").innerHTML=`
       <p class="muted" style="font-size:.78rem;margin:0 0 8px">
         Chapter ${l.id} · part ${k+1} of ${parts.length}${parts[k].title?` · ${parts[k].title}`:""}</p>
-      <div class="card read">${parts[k].html}</div>
+      <div class="card read">${tableScroll(parts[k].html)}</div>
       <button class="btn" onclick="qi++;step()">Continue</button>`;
     fillAlphaHere();
   };
 }
+/* "Well done" only for a sitting that earned it. Finishing chapter 21 with
+   none of its eleven questions right said εὖγε and "complete": the chapter
+   still counts as read, and its questions still come back in review, but the
+   praise waits for at least half of them. */
+const praised=()=>!ASKED || RIGHT*2>=ASKED;
 function lessonDone(id){
   return ()=>{
     if(!S.lessons.includes(id)){S.lessons.push(id);save();}
@@ -2689,9 +2780,10 @@ function lessonDone(id){
     if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
     if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
     document.getElementById("sessBody").innerHTML=`
-      <div class="empty"><span class="gk">εὖγε</span>
-        <p>Chapter ${id} complete.</p>
-        ${line.length?`<p>${line.join(" · ")}</p>`:""}</div>
+      <div class="empty">${praised()?`<span class="gk">εὖγε</span>`:""}
+        <p>Chapter ${id} ${praised()?"complete":"read"}.</p>
+        ${line.length?`<p>${line.join(" · ")}</p>`:""}
+        ${praised()?"":`<p class="muted" style="font-size:.86rem">Its questions will come back in your reviews.</p>`}</div>
       <div class="endbtns">
         ${nextTaskHtml()}
         <button class="btn ghost" onclick="go('learn')">Back to lessons</button>
@@ -2713,7 +2805,7 @@ function lessonPause(id,at,total){
     if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
     if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
     document.getElementById("sessBody").innerHTML=`
-      <div class="empty"><span class="gk">καλῶς</span>
+      <div class="empty">${praised()?`<span class="gk">καλῶς</span>`:""}
         <p>Chapter ${id} · part ${at} of ${total} done.</p>
         ${line.length?`<p>${line.join(" · ")}</p>`:""}
         <p class="muted" style="font-size:.86rem">That is the day's reading. It picks up here
@@ -2742,7 +2834,7 @@ function lessonWalk(id,from,all){
   const q=[];
   for(let k=start;k<stop;k++){
     q.push(lessonStep(l,parts,k));
-    l.quiz.forEach((x,n)=>{ if(x.sec===k) q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`)); });
+    l.quiz.forEach((x,n)=>{ if(x.sec===k) q.push(mcqShuffled(x,`L${id}q${n}`)); });
   }
   /* Everything not filed against a part still gets asked, at the end — which
      is also what happens for a chapter whose questions carry no sec at all,
@@ -2758,7 +2850,7 @@ function lessonWalk(id,from,all){
       const filed=Number.isInteger(x.sec) && x.sec>=0 && x.sec<parts.length;
       if(filed && x.sec>=start) return;                 // asked inline above
       if(filed && x.sec<start && g[`L${id}q${n}`]) return;   // answered already
-      q.push(mcq(x.q,x.o,x.a,x.w,`L${id}q${n}`));
+      q.push(mcqShuffled(x,`L${id}q${n}`));
     });
   }
   q.push(last?lessonDone(id):lessonPause(id,stop,parts.length));
@@ -3153,13 +3245,16 @@ function ppDrill(n=10){
    distractors are drawn from the same group first, because those are the
    ones actually confusable — a question answerable without looking closely
    would teach nothing. */
+/* [form, meaning, note?]. The note is for the feedback, never the option:
+   written into the meaning it made one option unlike the rest, which gave it
+   away, and a note shown on the wrong question confused. */
 const LOOKALIKE=[
  [["ἀλλά","but"],["ἄλλα","other things — neuter plural of ἄλλος"]],
  [["αὐτή","she — αὐτός, feminine nominative"],["αὕτη","this woman — οὗτος, feminine nominative"]],
- [["αὐταί","they, feminine — αὐτός. A real form the NT never happens to use; αὗται is what you will meet"],["αὗται","these women — οὗτος"]],
+ [["αὐταί","they, feminine — αὐτός","A real form the New Testament never happens to use; the one you will meet is αὗται, “these women”."],["αὗται","these women — οὗτος"]],
  [["εἰ","if"],["εἶ","you are"]],
  [["εἰς","into, to (+acc)"],["εἷς","one"]],
- [["ἔξω","outside"],["ἕξω","I will have — future of ἔχω. This exact form is not in the NT, but ἕξει and ἕξεις are, thirteen times"]],
+ [["ἔξω","outside"],["ἕξω","I will have — future of ἔχω","This exact form is not in the NT, but ἕξει and ἕξεις are, thirteen times."]],
  [["ἡ","the — feminine article"],["ἥ","who, which — relative, feminine"],["ἤ","or"]],
  [["ἦν","he was"],["ἥν","whom — relative, feminine accusative"]],
  [["ὁ","the — masculine article"],["ὅ","which — relative, neuter"]],
@@ -3182,7 +3277,7 @@ function lookalikeDrill(n=12){
       // The whole group with its meanings: knowing what the other one is,
       // is the entire point of the exercise.
       `One accent or breathing apart:<br>${LOOKALIKE[x.gi]
-        .map(m=>`<span class="gk">${m[0]}</span> — ${m[1]}`).join("<br>")}`);
+        .map(m=>`<span class="gk">${m[0]}</span> — ${m[1]}${m[2]?`. ${m[2]}`:""}`).join("<br>")}`);
   });
 }
 
@@ -3298,7 +3393,7 @@ function caseDrill(n=12,earned){
     : (caseEarned().length>=6?caseEarned():CASEFN.map((c,i)=>i));
   return pool.sort(()=>Math.random()-.5).slice(0,n).map(i=>{
     const x=caseQ(CASEFN[i]);
-    return mcq(x.q,x.o,x.a,x.w,`C${i}`);
+    return mcqShuffled(x,`C${i}`);
   });
 }
 
@@ -3512,12 +3607,12 @@ function dailyMix(){
 
 function mixedQuiz(){
   const all=[];
-  const add=l=>l.quiz.forEach((x,n)=>all.push(mcq(x.q,x.o,x.a,x.w,`L${l.id}q${n}`)));
+  const add=l=>l.quiz.forEach((x,n)=>all.push(mcqShuffled(x,`L${l.id}q${n}`)));
   LESSONS.filter(l=>S.lessons.includes(l.id)).forEach(add);
   if(all.length<5) LESSONS.slice(0,4).forEach(add);
   // and the syntax questions the chapters have earned — they belong in a
   // mixed grammar review more than anything else here does
-  caseEarned().forEach(i=>{ const x=caseQ(CASEFN[i]); all.push(mcq(x.q,x.o,x.a,x.w,`C${i}`)); });
+  caseEarned().forEach(i=>{ const x=caseQ(CASEFN[i]); all.push(mcqShuffled(x,`C${i}`)); });
   return all.sort(()=>Math.random()-.5).slice(0,12);
 }
 const DRILLS=[
@@ -4236,6 +4331,9 @@ function renderProgress(){
       <div class="setrow"><span>Mark chapters done up to</span>
         <select id="setPlace"><option value="0">—</option>${LESSONS.map(l=>`<option value="${l.id}">${l.id}</option>`).join("")}</select></div>
       <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
+      ${onMounce()?"":`<div class="setrow" style="margin-top:12px"><span>Seed the words of chapters up to</span>
+        <select aria-label="Seed the words of chapters up to" onchange="seedChapters(+this.value);this.value='0'">
+          <option value="0">—</option>${LESSONS.filter(l=>(l.v||[]).length).map(l=>`<option value="${l.id}">${l.id}</option>`).join("")}</select></div>`}
       ${mouncePlaceHtml()}
     </div>
     <h2>Your data</h2>
@@ -4287,7 +4385,15 @@ function renderProgress(){
        Greek for years with eight letter-naming questions a day until they had
        ground through all 24 three times over. It is not permanent — miss them
        in a drill and the row comes back. */
-    if(n>=1) ALPHABET.forEach(a=>{ S.alpha=S.alpha||{}; S.alpha[a[1]]=ALPHA_SOLID; });
+    if(n>=1){
+      ALPHABET.forEach(a=>{ S.alpha=S.alpha||{}; S.alpha[a[1]]=ALPHA_SOLID; });
+      /* And the check counts as passed, as a real pass would record it, or
+         three slips in the Alphabet drill unsettled three letters and stopped
+         new words altogether for someone placed at chapter twelve. Slips
+         still lower those letters; the check itself comes back in a week. */
+      const c=alphaCard();
+      if(!c.passed){ c.passed=true; const d=new Date(); d.setDate(d.getDate()+7); c.due=ymd(d); c.ivl=7; }
+    }
     save(); checkBadges(); renderProgress();
     toast("Chapters 1–"+n+" marked done");
   };

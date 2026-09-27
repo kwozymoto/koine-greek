@@ -427,15 +427,21 @@ for gi, group in enumerate(LOOKALIKE):
     if len(group) < 2:
         look_bad.append("%s has only one member, so nothing looks like it" % tag)
         continue
-    shapes = {skel(f) for f, _ in group}
+    shapes = {skel(m[0]) for m in group}
     if len(shapes) != 1:
         look_bad.append("%s is not one accent apart: %s"
                         % (tag, " vs ".join(sorted(shapes))))
-    forms = [f for f, _ in group]
+    forms = [m[0] for m in group]
     if len(set(forms)) != len(forms):
         look_bad.append("%s lists the same form twice" % tag)
-    for f, desc in group:
+    for m in group:
+        f, desc = m[0], m[1]
         look_forms += 1
+        if len(m) > 3 or (len(m) == 3 and not m[2].strip()):
+            look_bad.append("%s — %s has an empty note or a fourth field" % (tag, f))
+        if ". " in desc:
+            look_bad.append("%s — %s: a note written into the option; put it in "
+                            "the third field, which only the feedback shows" % (tag, f))
         if not desc.strip():
             look_bad.append("%s — %s has no description" % (tag, f))
         if not PARSES.get(norm(bare(f))):

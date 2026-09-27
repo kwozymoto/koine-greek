@@ -515,17 +515,20 @@ function formDrill(n = 10) {
   return use.sort(() => Math.random() - .5).slice(0, n).map(k => {
     const rows = by[k].slice().sort(() => Math.random() - .5);
     const want = rows[0];
+    const lemma = VOCAB[+k] ? VOCAB[+k][0].split(",")[0].trim() : "";
+    const name = /^\p{Lu}/u.test(lemma);
+    const plain = r => gkShown(r[0], name);
     /* A different parse and a different spelling — and distinct from each
        other. Two options reading the same word make one of them wrong for
        being second in the list, which is not a thing the learner can see. */
-    const wrong = [], spelt = new Set([want[0]]);
+    const wrong = [], spelt = new Set([plain(want)]);
     for (const r of rows) {
       if (wrong.length === 3) break;
-      if (r[3] === want[3] || spelt.has(r[0])) continue;
-      spelt.add(r[0]); wrong.push(r);
+      if (r[3] === want[3] || spelt.has(plain(r))) continue;
+      spelt.add(plain(r)); wrong.push(r);
     }
     if (wrong.length < 3) return null;
-    const show = r => `<span class="gk">${r[0]}</span>`;
+    const show = r => `<span class="gk">${plain(r)}</span>`;
     const rows4 = [want, ...wrong].sort(() => Math.random() - .5);
     const opts = rows4.map(show);
     // Where you struggle, scored against the form chosen (noteCats).

@@ -280,8 +280,9 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 <div class="scrim" id="deckScrim" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="deckHead">
     <h3 id="deckHead">Flash cards</h3>
-    <p>Choose a set. You can review only what the schedule says is due, or
-      drill the whole set without touching it.</p>
+    <p>Choose a set. Drill it now, which leaves the schedule alone, or make it
+      today's focus, so Today teaches its new words.</p>
+    <div id="deckMode" class="chips"></div>
     <div id="deckList" class="decklist"></div>
     <div class="sacts">
       <button class="btn ghost small" onclick="closeDeckPicker()">Close</button>
