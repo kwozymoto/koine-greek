@@ -54,6 +54,7 @@ So, mechanically:
   | `Robertson/chapter_*.docx` | Clean Logos exports with the polytonic Greek intact — XI Cases, XVI Article, XVII Voice, XVIII Tense, XX Verbal Nouns. **Use these.** |
   | `Robertson/robertson-grammar-1915.txt` | The archive.org OCR. English usable but noisy, Greek unusable. Only for chapters not exported above. |
   | `Black/*.docx` | The course's own textbook, chapter by chapter, plus its vocabulary. Read by `check_black.py`. |
+  | `Mounce/md/*.md` | Mounce, *Basics of Biblical Greek Grammar* 4th ed., a file per chapter plus the appendix (charts, principal parts, a lexicon giving each word's chapter), every page marked `[p. N]`. **A second modern grammar** for what an explanation says. Its `README.md` says how it was made and what it cannot be trusted for. Never a source of Greek. The PDF beside it hides whole pages behind clipping, so extracting it any other way reads text nobody can see. `build_mounce.py` reads the PDF itself. |
   | `Translations/*.json` | ASV, BSB, Darby, KJV, YLT, NHEB. **Any claim about what English translations do** — it refuted "every English translation gives it as 'he'". |
 
   The division in rule 8 — mechanically verifiable, catchable by reading,
