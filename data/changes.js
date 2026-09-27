@@ -12,6 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
+{d:"2026-09-27", v:"v271", items:[
+  {k:"fix", t:"Learning new words: the question after each card no longer gives the answer away by its shape — a verb set among nouns, or the only meaning with a case in brackets. The wrong answers are now words of the same kind."},
+  {k:"fix", t:"The word drills no longer show the same meaning twice among the four answers."}
+]},
 {d:"2026-09-26", v:"v270", items:[
   {k:"audio", t:"160 more words re-recorded with the clearer pronunciation, each chosen by ear."}
 ]},

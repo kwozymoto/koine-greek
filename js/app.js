@@ -2231,11 +2231,16 @@ function introduce(fresh,emptyMsg){
   // rest counted as started but never introduced. Every downstream path
   // creates the card lazily.
   fresh.forEach(i=>{ q.push(flashcard(i)); });
+  /* Same-kind distractors, as pairDrill has them. Drawn uniformly from the
+     deck, a new preposition was the only option with a case in brackets and
+     a new verb the only one opening "I " — the first question anybody meets
+     on a word, answerable without it. wrongOptions drops any gloss equal to
+     the answer's, and any repeat among the three, by value, not index:
+     eighteen glosses belong to two words each. */
+  const bank=VOCAB.map((x,k)=>[x[0].split(",")[0],x[1],x[3],k]).filter(x=>!RETIRED.has(x[3]));
   fresh.forEach(i=>{
     const v=VOCAB[i];
-    // By value, not index: three glosses appear twice in the deck, so an
-    // identical option could be rendered and scored wrong.
-    const wrong=VOCAB.filter((x,k)=>k!==i && x[1]!==v[1] && !RETIRED.has(k)).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[1]);
+    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
     q.push(mcq(`What does <span class="q-gk">${v[0].split(",")[0]}</span> mean?`,
       opts, opts.indexOf(v[1]), `${v[1]} — ${v[3]}, appears about ${v[2]} times in the NT.`));
@@ -3099,11 +3104,17 @@ function wrongOptions(ans,bank,k){
      speech first hands ὅμοιος three unbracketed adjectives and the bracket
      gives the answer away again — 3.1% of case-note questions, measured.
      Ranking the bracket first drops that to nil and changes nothing else,
-     because for every other word the best pool agrees on both anyway. */
+     because for every other word the best pool agrees on both anyway.
+
+     ONE OF EACH GLOSS. Eighteen glosses belong to two words each — "I kill"
+     is ἀποκτείνω and ἀναιρέω — and both sit in the same pool, so a verb
+     could be shown "I kill" twice among its four options. Kept to the first
+     of each after the sort, which is the nearer and otherwise random one. */
   const like=(a,b)=>(CASE_NOTE.test(a[1])===CASE_NOTE.test(b[1])?0:2)+(a[2]===b[2]?0:1);
-  return bank.filter(x=>x[1]!==ans[1])
-             .map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1])
+  const seen=new Set([ans[1]]);
+  return bank.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1])
              .sort((a,b)=>like(ans,a)-like(ans,b))
+             .filter(x=>!seen.has(x[1]) && seen.add(x[1]))
              .slice(0,k);
 }
 /* ---- end distractor choice ---- */

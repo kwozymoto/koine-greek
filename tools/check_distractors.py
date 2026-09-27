@@ -26,6 +26,14 @@ would drift from the one that ships -- and runs it against the real deck a few
 thousand times. For each tell it asks: how often is the answer the ONLY option
 that has it?
 
+introduce() is held to it too, and differently: it builds its own bank and
+its own mcq, so the whole function is lifted -- from its declaration to the
+closing brace in column 0 -- and run with the session stubbed out, and the
+options it actually hands to mcq() are the ones measured. It was the one
+vocabulary question still drawing uniformly from the deck after wrongOptions
+existed, which put a verb's gloss among three non-verbs on the very first
+question a learner meets on a word.
+
 WHAT IT CANNOT DO. It knows the two tells named below and no others. A gloss
 written in some new shape -- a bracketed note that is not a case, a lone
 capital, a semicolon nobody else uses -- would be just as free and this would
@@ -70,21 +78,48 @@ def lift():
     return body
 
 
+INTRO = "function introduce(fresh,emptyMsg){"
+
+
+def lift_introduce():
+    """introduce() as it ships, from its declaration to its closing brace."""
+    src = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+    if src.count(INTRO) != 1:
+        sys.exit("could not find exactly one `%s` in js/app.js.\n"
+                 "If its signature changed, change INTRO here rather than\n"
+                 "letting the new-word questions go unchecked." % INTRO)
+    tail = src.split(INTRO, 1)[1]
+    if "\n}\n" not in tail:
+        sys.exit("introduce() has no closing brace in column 0")
+    return INTRO + tail.split("\n}\n", 1)[0] + "\n}\n"
+
+
+def lift_retired():
+    """RETIRED lives in js/app.js, not data/vocab.js. This used to fall back
+    to a literal [237] whenever vocab.js did not define it -- which was
+    always -- so read the real one, and stop if it cannot be read."""
+    src = io.open(os.path.join(ROOT, "js", "app.js"), encoding="utf-8").read()
+    m = re.findall(r"^const RETIRED=new Set\(\[([\d,\s]*)\]\);", src, re.M)
+    if len(m) != 1:
+        sys.exit("could not read `const RETIRED=new Set([...]);` in js/app.js")
+    return [int(x) for x in m[0].split(",") if x.strip()]
+
+
 def main():
     body = lift()
+    intro = lift_introduce()
     js = """
       const fs = require('fs'), vm = require('vm');
       const c = vm.createContext({});
       vm.runInContext(fs.readFileSync('data/vocab.js', 'utf8'), c);
       const V = vm.runInContext('VOCAB', c);
-      const RETIRED = new Set(vm.runInContext(
-        'typeof RETIRED !== "undefined" ? [...RETIRED] : [237]', c));
+      const RETIRED = new Set(%s);
       %s
       const LEARN = V.map((_, i) => i).filter(i => !RETIRED.has(i))
                      .sort((a, b) => V[b][2] - V[a][2]);
       const TELLS = %s, RUNS = %d;
       const banks = { 'every word met': LEARN, 'the first forty': LEARN.slice(0, 40) };
-      const out = [];
+      const out = [], broken = [];
       for (const [bname, idx] of Object.entries(banks)) {
         const bank = idx.map(i => [V[i][0].split(',')[0], V[i][1], V[i][3]]);
         for (const [tname, pat] of Object.entries(TELLS)) {
@@ -94,22 +129,60 @@ def main():
           let alone = 0;
           for (let t = 0; t < RUNS; t++) {
             const p = marked[Math.floor(Math.random() * marked.length)];
-            if (!wrongOptions(p, bank, 3).some(x => re.test(x[1]))) alone++;
+            const w = wrongOptions(p, bank, 3);
+            if (w.length !== 3 || new Set([p[1], ...w.map(x => x[1])]).size !== 4) {
+              if (broken.length < 5) broken.push(p[0] + ': ' + JSON.stringify(w.map(x => x[1])));
+              continue;
+            }
+            if (!w.some(x => re.test(x[1]))) alone++;
           }
           out.push({bank: bname, tell: tname, n: marked.length, rate: alone / RUNS});
         }
       }
-      process.stdout.write(JSON.stringify(out));
-    """ % (body,
+
+      /* introduce() itself, run for real. Only what it calls is stubbed, and
+         mcq() records the options it was handed. VOCAB and RETIRED are the
+         shipping ones, so the bank it builds is the bank it ships with. */
+      const asked = [];
+      const VOCAB = V, toast = () => {}, flashcard = () => null,
+            save = () => {}, startSession = () => {},
+            mcq = (q, opts, a) => { asked.push({opts, a}); return null; };
+      %s
+      for (const [tname, pat] of Object.entries(TELLS)) {
+        const re = new RegExp(pat);
+        const marked = LEARN.filter(i => re.test(V[i][1]));
+        let alone = 0;
+        for (let t = 0; t < RUNS; t++) {
+          const i = marked[Math.floor(Math.random() * marked.length)];
+          asked.length = 0;
+          introduce([i], '');
+          const m = asked[0];
+          if (asked.length !== 1 || !m || m.opts.length !== 4
+              || m.opts[m.a] !== V[i][1] || new Set(m.opts).size !== 4) {
+            if (broken.length < 5) broken.push(V[i][0] + ': ' + JSON.stringify(m));
+            continue;
+          }
+          if (!m.opts.filter((_, k) => k !== m.a).some(x => re.test(x))) alone++;
+        }
+        out.push({bank: 'introduce(), new words', tell: tname,
+                  n: marked.length, rate: alone / RUNS});
+      }
+      process.stdout.write(JSON.stringify({rows: out, broken}));
+    """ % (json.dumps(lift_retired()), body,
            json.dumps({k: v[0] for k, v in TELLS.items()}),
-           RUNS)
+           RUNS, intro)
     r = subprocess.run(["node", "-e", js], capture_output=True, text=True,
                        encoding="utf-8", cwd=ROOT)
     if r.returncode != 0:
         sys.exit("node could not run the lifted chooser:\n" + (r.stderr or "").strip())
-    rows = json.loads(r.stdout)
+    res = json.loads(r.stdout)
+    rows = res["rows"]
 
     bad = []
+    if res["broken"]:
+        bad.append("a question without four different options, the answer "
+                   "among them, e.g. "
+                   + "; ".join(res["broken"]))
     print("options drawn per question:       3 of %d runs each" % RUNS)
     for row in rows:
         limit = TELLS[row["tell"]][1]
@@ -127,7 +200,8 @@ def main():
             print("   " + b)
         print("\n   wrongOptions() in js/app.js prefers distractors that agree\n"
               "   with the answer about this. Either the deck has grown a kind\n"
-              "   of gloss it cannot pair up, or the preference was changed.")
+              "   of gloss it cannot pair up, or the preference was changed --\n"
+              "   or, for introduce(), it has stopped calling wrongOptions().")
         sys.exit(1)
     print("\nno drill hands the answer to a reader who knows no Greek")
 
