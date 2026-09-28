@@ -1,0 +1,4 @@
+# The repo stores Unix line endings, and its tools write them. Without this,
+# core.autocrlf=true checks files out as CRLF, so a builder that rewrites a
+# file with identical content shows it as modified while git diff is empty.
+* text=auto eol=lf
