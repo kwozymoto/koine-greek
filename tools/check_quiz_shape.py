@@ -41,23 +41,9 @@ LIMIT = 0.40        # share of a chapter's questions whose answer is the one lon
 
 # Chapter -> questions whose answer is the single longest option, as it stood.
 LONGEST_ALLOW = {
-    "CASEFN": 18,     # of 20
 }
 # Questions whose answer alone carries a dash gloss, as they stood.
 DASH_ALLOW = set([
-    "L3q9",
-    "L8q2",
-    "C1",
-    "C3",
-    "C5",
-    "C6",
-    "C7",
-    "C8",
-    "C9",
-    "C15",
-    "C16",
-    "C18",
-    "C19",
 ])
 
 

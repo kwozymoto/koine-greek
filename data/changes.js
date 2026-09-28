@@ -12,8 +12,8 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-28", v:"v282", items:[
-  {k:"fix", t:"Chapters 2, 5, 6, 17, 22, 24 and 25: the right answer to a lesson question is no longer the one that stands out by being longest or by carrying a note. More chapters to follow."},
+{d:"2026-09-28", v:"v283", items:[
+  {k:"fix", t:"Lesson and syntax questions: the right answer no longer stands out by being the longest option or the only one carrying a note. Every chapter is done, and so are the twenty syntax questions."},
   {k:"better", t:"Flash cards: picking a set now drills it straight away, leaving the schedule alone. Or choose “Make it today’s focus”, and Today teaches its new words while your usual review carries on."},
   {k:"better", t:"Studied Greek before? Settings can now put the words of the chapters you have done straight into review, and placing yourself past chapter 1 keeps the letters counted as done even if you slip on one later."},
   {k:"better", t:"The letters: Today shows how many you have met and settled, names the five it will teach, and a letter being taught again says so."},
