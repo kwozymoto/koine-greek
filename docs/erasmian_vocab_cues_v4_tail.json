@@ -8,11 +8,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 29,
-  "tts": "kai sar",
-  "source": "ear",
-  "duration_s": 1.08,
-  "take": "C",
-  "sha1": "deaf60bce3cf"
+  "tts": "/ˈkai̯.sar/",
+  "source": "ipa-batch8",
+  "duration_s": 0.993,
+  "take": "bVI8_511_b",
+  "sha1": "03d91e8d4cd4",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 512,
@@ -38,11 +39,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "mah khai rah",
-  "source": "ear",
-  "duration_s": 1.488,
-  "take": "J",
-  "sha1": "d93946d32600"
+  "tts": "/ˈma.kai̯.ra/",
+  "source": "ipa-batch8",
+  "duration_s": 1.149,
+  "take": "bVI8_513_b",
+  "sha1": "b94a4a857ae2",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 514,
@@ -53,11 +55,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "meesthoss",
-  "source": "ear",
-  "duration_s": 1.248,
-  "take": "B",
-  "sha1": "084e3ea9312c"
+  "tts": "/mɪsˈθɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_514_c",
+  "sha1": "6a994a5eeb22",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 515,
@@ -68,11 +71,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 29,
-  "tts": "paskhah",
-  "source": "ear",
-  "duration_s": 0.936,
-  "take": "B",
-  "sha1": "531c265f656e"
+  "tts": "/ˈpas.ka/",
+  "source": "ipa-batch8",
+  "duration_s": 0.993,
+  "take": "bVI8_515_b",
+  "sha1": "fc9e4f0ce7b5",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 516,
@@ -83,11 +87,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "par irk oh mai",
-  "source": "ear",
-  "duration_s": 1.8,
-  "take": "J",
-  "sha1": "e4a09a0d88e7"
+  "tts": "/paˈrɛr.kɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.384,
+  "take": "bVI8_516_b",
+  "sha1": "587726b4f2bb",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 517,
@@ -98,11 +103,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 29,
-  "tts": "po teh",
-  "source": "ear",
-  "duration_s": 1.008,
-  "take": "A",
-  "sha1": "01becc64714a"
+  "tts": "/pɒˈtɛ/",
+  "source": "ipa-batch8",
+  "duration_s": 0.836,
+  "take": "bVI8_517_c",
+  "sha1": "1d880cc2bd59",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 518,
@@ -113,12 +119,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "pross kah leh o my",
-  "source": "fix21",
-  "duration_s": 2.218,
-  "take": "2026-09-10, Atlas",
-  "note": "reverted: 'kale' is the vegetable",
-  "sha1": "c6dab4212a24"
+  "tts": "/prɒskaˈlɛ.ɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.62,
+  "take": "bVI8_518_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "6deec6084c9e"
  },
  {
   "index": 519,
@@ -129,11 +135,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 29,
-  "tts": "pohthenn",
-  "source": "ear",
-  "duration_s": 1.08,
-  "take": "P",
-  "sha1": "f0c4a7c37ecf"
+  "tts": "/ˈpɒ.θɛn/",
+  "source": "ipa-batch8",
+  "duration_s": 1.149,
+  "take": "bVI8_519_c",
+  "sha1": "d8770e45f506",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 520,
@@ -175,11 +182,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 28,
-  "tts": "mah ree ah",
-  "source": "ear",
-  "duration_s": 1.32,
-  "take": "A",
-  "sha1": "194fb8ef07db"
+  "tts": "/maˈri.a/",
+  "source": "ipa-batch8",
+  "duration_s": 0.993,
+  "take": "bVI8_522_b",
+  "sha1": "27e17f8298ba",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 523,
@@ -190,11 +198,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 28,
-  "tts": "ploosee oss",
-  "source": "ear",
-  "duration_s": 1.488,
-  "take": "B",
-  "sha1": "4966e4c000d4"
+  "tts": "/ˈpluː.sɪ.ɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_523_b",
+  "sha1": "1d72cf030b9d",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 524,
@@ -205,11 +214,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "pross fay tew hoe",
-  "source": "ear",
-  "duration_s": 1.8,
-  "take": "D",
-  "sha1": "98766570d952"
+  "tts": "/prɒfei̯ˈtju.oː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.881,
+  "take": "bVI8_524_c",
+  "sha1": "3646e25a9858",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 525,
@@ -220,11 +230,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "teh leh hoe",
-  "source": "ear",
-  "duration_s": 1.178,
-  "take": "B",
-  "sha1": "b2b45ed94109"
+  "tts": "/tɛˈlɛ.oː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_525_b",
+  "sha1": "3d7304673444",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 526,
@@ -235,11 +246,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 28,
-  "tts": "khoh rah",
-  "source": "ear",
-  "duration_s": 1.178,
-  "take": "A",
-  "sha1": "f57ddf467598"
+  "tts": "/ˈkoː.ra/",
+  "source": "ipa-batch8",
+  "duration_s": 0.758,
+  "take": "bVI8_526_b",
+  "sha1": "8d4c2241c7d7",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 527,
@@ -265,11 +277,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 28,
-  "tts": "ah lay thi noss",
-  "source": "ear",
-  "duration_s": 1.728,
-  "take": "C",
-  "sha1": "77775719105f"
+  "tts": "/alei̯θɪˈnɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.463,
+  "take": "bVI8_528_c",
+  "sha1": "ffac2858bcbb",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 529,
@@ -280,11 +293,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "haghee ah zoh",
-  "source": "ear",
-  "duration_s": 1.656,
-  "take": "D",
-  "sha1": "a5d3710d879a"
+  "tts": "/haɡɪˈaʣoː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_529_b",
+  "sha1": "7b83468dc570",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 530,
@@ -311,11 +325,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "heg eh o my",
-  "source": "ear",
-  "duration_s": 1.968,
-  "take": "C",
-  "sha1": "39308576d4e0"
+  "tts": "/hei̯ˈɡɛ.ɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.384,
+  "take": "bVI8_531_b",
+  "sha1": "c4a066c9190c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 532,
@@ -326,11 +341,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "iss khoo o",
-  "source": "ear",
-  "duration_s": 1.56,
-  "take": "D",
-  "sha1": "e823603815f4"
+  "tts": "/ɪsˈku.oː/",
+  "source": "ipa-batch8",
+  "duration_s": 0.914,
+  "take": "bVI8_532_c",
+  "sha1": "d627e2335dfc",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 533,
@@ -357,12 +373,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 27,
-  "tts": "kah tar gheh hoe",
-  "source": "batch5",
-  "duration_s": 2.429,
-  "take": "2026-09-15, Atlas (b5b_534_a)",
-  "note": "an h that only padded a vowel was spoken as its own syllable",
-  "sha1": "11ef54f4c5ea"
+  "tts": "/katarˈɡɛ.oː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.306,
+  "take": "bVI8_534_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "0e36b9becce8"
  },
  {
   "index": 535,
@@ -869,12 +885,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 25,
-  "tts": "ah del fey",
-  "source": "fix21",
-  "duration_s": 1.404,
-  "take": "2026-09-10, Atlas",
-  "note": "the ending was right and the h was not -- a clip got one rule, and this needed two",
-  "sha1": "69cf6ebd2940"
+  "tts": "/adɛlˈfei̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.071,
+  "take": "bVI8_566_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "e31ccd21f76e"
  },
  {
   "index": 567,
@@ -1093,12 +1109,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 24,
-  "tts": "ahko ay",
-  "source": "fix21",
-  "duration_s": 1.526,
-  "take": "2026-09-10, Atlas",
-  "note": "a bare 'ey' token spelled e-y; bound, with ay",
-  "sha1": "3fa3b42c26b3"
+  "tts": "/akɒˈei̯/",
+  "source": "ipa-batch8",
+  "duration_s": 0.993,
+  "take": "bVI8_580_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "4fbba9322f0c"
  },
  {
   "index": 581,
@@ -1109,12 +1125,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 24,
-  "tts": "ah nigh reh hoe",
-  "source": "batch5",
-  "duration_s": 2.429,
-  "sha1": "fa532b811a1e",
-  "take": "2026-09-15, Atlas (b5d_581_a)",
-  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
+  "tts": "/anai̯ˈrɛ.oː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.149,
+  "sha1": "897051261b03",
+  "take": "bVI8_581_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 582,
@@ -1189,12 +1205,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 23,
-  "tts": "zo on",
-  "source": "batch8",
-  "duration_s": 1.149,
-  "sha1": "c7c2975d8154",
-  "take": "2026-09-15, Atlas (b8d_586_b)",
-  "note": "ζῷ-ον is TWO syllables, /'dzo:.on/. And the h of `zoh` sounded across the space, so it comes out: a comma fixes it too but costs a pause"
+  "tts": "/ˈʣoː.ɒn/",
+  "source": "ipa-batch8",
+  "duration_s": 1.384,
+  "sha1": "29000fa4591b",
+  "take": "bVI8_586_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 587,
@@ -1365,10 +1381,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 23,
-  "tts": "khah ree zo my",
-  "source": "batch6",
-  "duration_s": 1.8,
-  "sha1": "5a81b750b619"
+  "tts": "/kaˈriʣɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.306,
+  "sha1": "8b86fcade5b2",
+  "take": "bVI8_597_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 598,
@@ -1427,12 +1445,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "ek lek toss",
-  "source": "batch5",
-  "duration_s": 1.776,
-  "sha1": "d65d8cbf538f",
-  "take": "2026-09-15, Atlas (b5g_601_a)",
-  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
+  "tts": "/ɛklɛkˈtɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.306,
+  "sha1": "ec99c74c7170",
+  "take": "bVI8_601_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 602,
@@ -1489,12 +1507,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "dok kee mah zoh",
-  "source": "batch5",
-  "duration_s": 2.116,
-  "sha1": "ca86be4364a9",
-  "take": "2026-09-15, Atlas (b5e_605_a)",
-  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
+  "tts": "/dɒkɪˈmaʣoː/",
+  "source": "ipa-batch8",
+  "duration_s": 1.306,
+  "sha1": "db5dff42541c",
+  "take": "bVI8_605_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 606,
@@ -1601,12 +1619,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 22,
-  "tts": "playghey",
-  "source": "batch8",
-  "duration_s": 1.308,
-  "take": "2026-09-10, Atlas",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "256d6b780d59"
+  "tts": "/plei̯ˈɡeː/",
+  "source": "ipa-batch8",
+  "duration_s": 0.914,
+  "take": "bVI8_612_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "378b66136c26"
  },
  {
   "index": 613,
@@ -1617,10 +1635,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 22,
-  "tts": "plootoss",
-  "source": "batch8",
-  "duration_s": 1.08,
-  "sha1": "795ff7a929bb"
+  "tts": "/ˈpluː.tɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.071,
+  "sha1": "11290d70a397",
+  "take": "bVI8_613_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 614,
@@ -1695,11 +1715,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "ehk leh go my",
-  "source": "batch5",
-  "duration_s": 2.351,
-  "sha1": "d0d0a3d68aee",
-  "take": "2026-09-15, Atlas (b5e_618_a)"
+  "tts": "/ɛˈklɛ.ɡɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.463,
+  "sha1": "a574fb515e14",
+  "take": "bVI8_618_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 619,
@@ -4291,10 +4312,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "ew seh bay ah",
-  "source": "batch6",
-  "duration_s": 1.8,
-  "sha1": "a1552079a31a"
+  "tts": "/juˈsɛ.bei̯.a/",
+  "source": "ipa-batch8",
+  "duration_s": 1.855,
+  "sha1": "50ed30acd908",
+  "take": "bVI8_782_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 783,

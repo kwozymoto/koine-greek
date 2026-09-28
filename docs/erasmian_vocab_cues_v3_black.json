@@ -315,12 +315,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 10,
-  "tts": "ah doo nah toss",
-  "source": "recued",
-  "duration_s": 1.996,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "9acd60fd9c5b"
+  "tts": "/aˈdu.na.tɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 2.116,
+  "take": "bVI8_489_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "6b831e6e38e1"
  },
  {
   "index": 490,
@@ -331,12 +331,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "ah pis toss",
-  "source": "recued",
-  "duration_s": 1.696,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "bb4e5f7720d6"
+  "tts": "/ˈa.pɪ.stɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_490_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "6448484e8b1c"
  },
  {
   "index": 491,
@@ -347,12 +347,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 7,
-  "tts": "hay meh teh ross",
-  "source": "recued",
-  "duration_s": 1.501,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "6ab592c70963"
+  "tts": "/hei̯ˈmɛ.tɛ.rɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.698,
+  "take": "bVI8_491_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "9379b95b67e0"
  },
  {
   "index": 492,
@@ -380,12 +380,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 11,
-  "tts": "hoo meh teh ross",
-  "source": "recued",
-  "duration_s": 1.781,
-  "take": "2026-09-09, Atlas",
-  "note": "the -os ending was cued bare, which gives the vowel of English 'pose'; 'oss' gives Black's short o plus s, as Christos and logos were already cued",
-  "sha1": "ee3192874f4a"
+  "tts": "/huˈmɛ.tɛ.rɒs/",
+  "source": "ipa-batch8",
+  "duration_s": 1.228,
+  "take": "bVI8_493_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "b93f2fbb1c24"
  },
  {
   "index": 494,
@@ -444,13 +444,13 @@
   "pos": "verb",
   "tier": 5,
   "freq": 12,
-  "tts": "psew daw my",
-  "source": "batch5",
-  "duration_s": 1.698,
+  "tts": "/ˈpsju.dɒ.mai̯/",
+  "source": "ipa-batch8",
+  "duration_s": 1.776,
   "verdict": "checked by ear: psi read as plain s, accepted. Cue corrected to 'psew do my' 2026-09-03; clip not re-recorded, so it still has the accepted reading.",
-  "sha1": "c44efa8d8c5d",
-  "take": "2026-09-15, Atlas (b5d_497_c)",
-  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
+  "sha1": "cd86e23b4de0",
+  "take": "bVI8_497_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 498,
@@ -589,12 +589,12 @@
   "pos": "prep",
   "tier": 5,
   "freq": 13,
-  "tts": "anna",
-  "source": "batch4",
-  "duration_s": 0.679,
-  "take": "2026-09-11, Atlas",
-  "note": "'ah nah' read oddly. His own suggestion. 'ana' was not tried -- a given name.",
-  "sha1": "c932496fcb47"
+  "tts": "/aˈna/",
+  "source": "ipa-batch8",
+  "duration_s": 0.758,
+  "take": "bVI8_506_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "3186fa71bebf"
  },
  {
   "index": 507,

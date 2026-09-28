@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v284';
+const VERSION = 'v285';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,41 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v285: IPA batch 8 (35 cards). */
+  'audio/vocab/489_adunatos.mp3',                  // ἀδύνατος
+  'audio/vocab/490_apistos.mp3',                   // ἄπιστος
+  'audio/vocab/491_hemeteros.mp3',                 // ἡμέτερος
+  'audio/vocab/493_humeteros.mp3',                 // ὑμέτερος
+  'audio/vocab/497_pseudomai.mp3',                 // ψεύδομαι
+  'audio/vocab/511_kaisar.mp3',                    // Καῖσαρ
+  'audio/vocab/513_machaira.mp3',                  // μάχαιρα
+  'audio/vocab/514_misthos.mp3',                   // μισθός
+  'audio/vocab/515_pascha.mp3',                    // πάσχα
+  'audio/vocab/516_parerchomai.mp3',               // παρέρχομαι
+  'audio/vocab/517_pote.mp3',                      // ποτέ
+  'audio/vocab/518_proskaleomai.mp3',              // προσκαλέομαι
+  'audio/vocab/519_pothen.mp3',                    // πόθεν
+  'audio/vocab/522_maria.mp3',                     // Μαρία
+  'audio/vocab/523_plousios.mp3',                  // πλούσιος
+  'audio/vocab/524_propheteuo.mp3',                // προφητεύω
+  'audio/vocab/525_teleo.mp3',                     // τελέω
+  'audio/vocab/526_chora.mp3',                     // χώρα
+  'audio/vocab/528_alethinos.mp3',                 // ἀληθινός
+  'audio/vocab/529_agiazo.mp3',                    // ἁγιάζω
+  'audio/vocab/531_egeomai.mp3',                   // ἡγέομαι
+  'audio/vocab/532_ischuo.mp3',                    // ἰσχύω
+  'audio/vocab/534_katargeo.mp3',                  // καταργέω
+  'audio/vocab/566_adelphe.mp3',                   // ἀδελφή
+  'audio/vocab/580_akoe.mp3',                      // ἀκοή
+  'audio/vocab/581_anaireo.mp3',                   // ἀναιρέω
+  'audio/vocab/586_zoon.mp3',                      // ζῷον
+  'audio/vocab/597_charizomai.mp3',                // χαρίζομαι
+  'audio/vocab/601_eklektos.mp3',                  // ἐκλεκτός
+  'audio/vocab/605_dokimazo.mp3',                  // δοκιμάζω
+  'audio/vocab/612_plege.mp3',                     // πληγή
+  'audio/vocab/613_ploutos.mp3',                   // πλοῦτος
+  'audio/vocab/618_eklegomai.mp3',                 // ἐκλέγομαι
+  'audio/vocab/782_eusebeia.mp3',                  // εὐσέβεια
   /* v284: three narration clips re-recorded after the quiz rewrite. */
   'audio/lessons/l08_05.mp3',
   /* v270: ὁμοίως, the last of IPA batch 7. */

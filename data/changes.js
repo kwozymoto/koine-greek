@@ -12,6 +12,9 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
+{d:"2026-09-29", v:"v285", items:[
+  {k:"audio", t:"35 more words re-recorded with the clearer pronunciation, each chosen by ear."}
+]},
 {d:"2026-09-28", v:"v284", items:[
   {k:"audio", t:"Chapters 1, 2 and 8: four wording fixes held back until the narration could say them are in, with the passages re-recorded — the optative, deponent verbs, and ἐπὶ τρίς, three times, among the uses of ἐπί."},
   {k:"fix", t:"Lesson and syntax questions: the right answer no longer stands out by being the longest option or the only one carrying a note. Every chapter is done, and so are the twenty syntax questions."},
