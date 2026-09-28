@@ -42,12 +42,8 @@ LIMIT = 0.40        # share of a chapter's questions whose answer is the one lon
 # Chapter -> questions whose answer is the single longest option, as it stood.
 LONGEST_ALLOW = {
     "ch2": 6,     # of 10
-    "ch4": 8,     # of 12
     "ch5": 5,     # of 9
     "ch6": 5,     # of 7
-    "ch8": 7,     # of 12
-    "ch9": 7,     # of 11
-    "ch16": 7,     # of 10
     "ch17": 5,     # of 9
     "ch22": 4,     # of 8
     "ch24": 7,     # of 11
@@ -57,20 +53,11 @@ LONGEST_ALLOW = {
 # Questions whose answer alone carries a dash gloss, as they stood.
 DASH_ALLOW = set([
     "L3q9",
-    "L4q1",
-    "L4q3",
-    "L4q8",
     "L5q3",
     "L5q6",
     "L5q8",
     "L6q5",
     "L8q2",
-    "L8q6",
-    "L8q10",
-    "L9q1",
-    "L9q3",
-    "L16q0",
-    "L16q9",
     "L17q0",
     "L17q6",
     "L22q4",
