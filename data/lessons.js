@@ -70,7 +70,7 @@ body:`<p>Everything downstream depends on being able to sound a word out. If you
 <tr><td class="g">εἰ</td><td>if</td></tr>
 <tr><td class="g">εἶ</td><td>you are</td></tr>
 <tr><td class="g">αὐτή</td><td>she — smooth breathing</td></tr>
-<tr><td class="g">αὕτη</td><td>this (feminine) — rough breathing, not a different accent</td></tr></table>
+<tr><td class="g">αὕτη</td><td>this (feminine) — rough breathing, and the accent on the first syllable</td></tr></table>
 <p>Do not memorise accent rules now. Learn the accent as part of each word's spelling, the way you learned that receive has an e before the i, and move on. The Look-alikes drill exists for exactly this list and will keep bringing it back.</p>
 <h3>Punctuation</h3>
 <p>Comma and full stop look like ours. A raised dot <span class="gk">·</span> does the work of our colon and semicolon, and it very often introduces speech:</p>
@@ -132,14 +132,14 @@ body:`<p>This chapter has no endings to learn. It is the map, and we will be rea
 <h3>What does mood tell us?</h3> 
 <p>Mood is the manner in which a speaker presents the action — not what happened, but what kind of claim is being made about it.</p> 
 <p>The <b>indicative</b> states it as fact: <i>he has mercy</i>. Four out of five verbs that carry a person and a number are indicative, and the whole of chapters 3 to 16 stays inside it. The <b>imperative</b> commands: <i>Lord, have mercy</i>. The <b>subjunctive</b> presents the action as contingent, not yet settled:
-<i>if he should have mercy</i>. The <b>optative</b> is rarer still and fading by the Koine period — 68 occurrences in the whole New Testament.</p> 
+<i>if he should have mercy</i>. The <b>optative</b>, which wishes or wonders (<i>may it never be!</i>), is rare and fading by the Koine period — 68 occurrences in the whole New Testament.</p> 
 <p>Two things to carry away. Only the indicative fixes time. And the negative follows the mood rather than the meaning: <span class="gk">οὐ</span> with the indicative, <span class="gk">μή</span> with everything else. The next chapter takes that up, along with the exception worth knowing.</p> 
 <h3>What does voice tell us?</h3> 
 <p>The <b>active</b> presents the subject as doing the action: <span class="gk">ἀκούω</span>,
 <i>I hear</i>. The <b>passive</b> presents it as having the action done to it: <i>I am heard</i>. Where the doer is named, <span class="gk">ὑπό</span> usually marks who it was.</p> 
 <p>The <b>middle</b> has no English equivalent, and is worth meeting now rather than being ambushed by it in chapter 12. The subject acts with reference to itself — on itself, for itself, or in its own interest. It is not quite reflexive, and it is not passive.</p> 
-<p>Now the hard part, and it does not get easier: in most tenses the middle and the passive share their endings, so the form alone cannot tell us which is meant. Only the verb and the sentence can. Many verbs are also
-<b>deponent</b> — middle in form, active in meaning, like <span class="gk">ἔρχομαι</span>,
+<p>Now the hard part, and it does not get easier: in most tenses the middle and the passive share their endings, so the form alone cannot tell us which is meant. Only the verb and the sentence can. Many verbs have middle forms and no active — traditionally called
+<b>deponent</b>, a label chapter 12 questions — like <span class="gk">ἔρχομαι</span>,
 <i>I come</i>.</p> 
 <h3>How can we spot a past tense at a glance?</h3> 
 <p>By two marks that travel together. Greek has two sets of personal endings.
@@ -485,7 +485,7 @@ body:`<p>Prepositions are small words carrying a great deal of a sentence's logi
 <p class="v" data-ref="1 Corinthians 15:3">Χριστὸς ἀπέθανεν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν κατὰ τὰς γραφάς</p>
 <p>"Christ died for our sins according to the Scriptures." Both prepositions here are doing exactly what their case says. <span class="gk">ὑπέρ</span> has the genitive, so it is <i>on behalf of</i>; <span class="gk">κατά</span> has the accusative, so it is <i>according to</i>. Put <span class="gk">κατά</span> with a genitive instead and the same sentence says Christ died <i>against</i> the Scriptures.</p>
 <h3>ἐπί and παρά: three cases each</h3>
-<p><span class="gk">ἐπί</span> is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183. The honest thing to say is that the distinctions have largely worn away, and all three can mean simply <i>on</i>.</p>
+<p><span class="gk">ἐπί</span> is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183, and twice before an adverb: <span class="gk">ἐπὶ τρίς</span>, <i>three times</i> (Acts 10:16; 11:10). The honest thing to say is that the distinctions have largely worn away, and all three can mean simply <i>on</i>.</p>
 <p class="v" data-ref="Matthew 6:19">Μὴ θησαυρίζετε ὑμῖν θησαυροὺς ἐπὶ τῆς γῆς</p>
 <p class="v" data-ref="Matthew 10:29">οὐ πεσεῖται ἐπὶ τὴν γῆν</p>
 <p>"Do not store up treasures on earth"; "will not fall to the ground." Genitive in the first, accusative in the second, and the case is not what separates them. With <span class="gk">ἐπί</span>, the case will not tell you the meaning; the sentence has to.</p>

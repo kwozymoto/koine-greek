@@ -207,6 +207,15 @@
   "finding": "15,589 indicatives of 19,131 finite forms = 81.5%. The scoping — 'that carry a person and a number' — is exactly right, which is what made the unscoped claim earlier in the chapter stand out."
  },
  {
+  "k": "96c367d7e2e3",
+  "ch": 2,
+  "kind": "count",
+  "src": "body",
+  "text": "), is rare and fading by the Koine period — 68 occurrences in the whole New Testament.",
+  "status": "verified",
+  "finding": "68 verbs with optative mood (code[3] O) in the SBLGNT, counted 2026-09-28."
+ },
+ {
   "k": "97dd92fdcdee",
   "ch": 2,
   "kind": "absolute",
@@ -234,15 +243,6 @@
   "finding": "Read and left as written."
  },
  {
-  "k": "b427a1fad7fc",
-  "ch": 2,
-  "kind": "count",
-  "src": "body",
-  "text": "The optative is rarer still and fading by the Koine period — 68 occurrences in the whole New Testament.",
-  "status": "verified",
-  "finding": "68 optatives in the corpus, re-counted for this wording: exact. The 'fading by the Koine period' half is the standard account and is not something the count settles."
- },
- {
   "k": "c6ba82993f87",
   "ch": 2,
   "kind": "count",
@@ -259,6 +259,15 @@
   "text": "The discipline From here on, never say a form means something until you have parsed it.",
   "status": "read",
   "finding": "The course's own working rule, not a claim about the language. Read and left as written — and it is the rule this whole audit has been applying."
+ },
+ {
+  "k": "d53c8db54d16",
+  "ch": 2,
+  "kind": "absolute",
+  "src": "body",
+  "text": "The optative , which wishes or wonders ( may it never be!",
+  "status": "read",
+  "finding": "Not an absolute: 'never' is inside the gloss of μὴ γένοιτο, 'may it never be!', given as an example of what the optative does. Nothing to settle."
  },
  {
   "k": "f55af4078b39",
@@ -864,6 +873,15 @@
   "finding": "Matthew 1:22 and again at 2:15, word for word: ὑπὸ κυρίου διὰ τοῦ προφήτου. Five words carrying both prepositions, exactly as the chapter says — and the case split is the one chapter 8's table gives, ὑπό with the genitive for the agent and διά with the genitive for the means."
  },
  {
+  "k": "1644e72e4311",
+  "ch": 8,
+  "kind": "count",
+  "src": "body",
+  "text": "ἐπί and παρά: three cases each ἐπί is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183, and twice before an adverb: ἐπὶ τρίς , three times (Acts 10:16; 11:10).",
+  "status": "verified",
+  "finding": "Counted 2026-09-28 in the SBLGNT: 885 ἐπί; by the case of the first cased word after it, accusative 480, genitive 220, dative 183 (Rom 10:19 ἐπ’ οὐκ ἔθνει is dative behind the negative), and two before an adverb, ἐπὶ τρίς at Acts 10:16 and 11:10 — 885 in all. Fourth commonest preposition after ἐν 2733, εἰς 1754, ἐκ 913."
+ },
+ {
   "k": "18fd48d34c31",
   "ch": 8,
   "kind": "count",
@@ -925,15 +943,6 @@
   "text": "Read the case, not only the word.",
   "status": "read",
   "finding": "The chapter's summary instruction. Read and left as written."
- },
- {
-  "k": "4580872d19ec",
-  "ch": 8,
-  "kind": "count",
-  "src": "body",
-  "text": "ἐπί and παρά: three cases each ἐπί is the fourth commonest preposition in the New Testament — 885 occurrences — and it takes all three cases: accusative 480 times, genitive 220, dative 183.",
-  "status": "verified",
-  "finding": "Fourth exactly: ἐν 2,733, εἰς 1,754, ἐκ 913, ἐπί 885. And ἐκ's 913 is the 679 plus 234 this pass corrected in chapter 5, so the two chapters agree."
  },
  {
   "k": "4882aa0ad652",

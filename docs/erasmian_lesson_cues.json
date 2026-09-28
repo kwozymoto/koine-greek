@@ -1453,5 +1453,12 @@
   "tts": "/ˈkaθ/",
   "chapter": 8,
   "source": "heard: chapter 8 narration"
+ },
+ {
+  "greek": "τρίς",
+  "ipa": "ˈtris",
+  "tts": "/ˈtris/",
+  "chapter": 8,
+  "source": "converter"
  }
 ]

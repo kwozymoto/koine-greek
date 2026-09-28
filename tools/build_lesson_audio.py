@@ -1182,6 +1182,14 @@ NARRATE_FROM = {"χάρις": (6, "/ˈkɑrɪs/"),
     # not itself heard. The other three forms tested were clean as they were.
     "ἔρχεται": (8, "/ˈɛhr.kɛh.tai̯/")}
 
+# As NARRATE_FROM, but for the chapters named and no others -- for a fault
+# heard in one re-recorded block, where the same word elsewhere is already in
+# a clip somebody passed and must not move. ἔρχομαι in chapter 2's deponent
+# sentence (block 17, re-recorded 2026-09-28): /ˈɛr.kɒ.mai̯/ gave "ear" in
+# five takes out of five, so it takes ἔρχεται's remedy -- the h closing the
+# stressed syllable. Chapters 7 and 8 say ἔρχομαι too and keep their clips.
+NARRATE_IN = {"ἔρχομαι": ({2}, "/ˈɛhr.kɒ.mai̯/")}
+
 
 def blocks_for(les, cues, missing):
     """Each block carries four things now: what it is, what the voice says,
@@ -1189,6 +1197,11 @@ def blocks_for(les, cues, missing):
        those became. The last two are what a tap needs."""
     if les["id"] not in LEGACY:
         cues = later(cues, les["id"])
+    # Here rather than in later(), because LEGACY chapters never pass through
+    # it and chapter 2 is exactly where NARRATE_IN's first entry is needed.
+    only_here = {exact(k): v for k, (only, v) in NARRATE_IN.items() if les["id"] in only}
+    if only_here:
+        cues = dict(cues, **only_here)
     out = []
     # el is the position of this element among the body's blocks, which is how
     # the app finds it again: the narration merges elements together, so a
