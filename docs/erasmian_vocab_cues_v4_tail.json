@@ -24,11 +24,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 29,
-  "tts": "gah meh hoe",
-  "source": "ear",
-  "duration_s": 1.656,
-  "take": "E",
-  "sha1": "2a2d5cc368fc"
+  "tts": "/ɡaˈmɛ.oː/",
+  "source": "ipa-batch8-recue",
+  "duration_s": 1.541,
+  "take": "bVI8r_512_b",
+  "sha1": "012f2f803494",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-cued: batch 8's plain take was kept over two with the stressed e closed by h"
  },
  {
   "index": 513,
@@ -151,11 +152,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 29,
-  "tts": "hay lee ahs",
-  "source": "ear",
-  "duration_s": 1.56,
-  "take": "E",
-  "sha1": "cd8198bb5c1b"
+  "tts": "/ˌei̯ˈlias/",
+  "source": "ipa-batch8-recue",
+  "duration_s": 1.149,
+  "take": "bVI8r_520_c",
+  "sha1": "b1f5045cb113",
+  "note": "IPA, chosen by ear over the card's English respelling. FULLY DOTLESS with a SECONDARY STRESS on the opening, as Ἰωάννης: both dotted takes spelled part of the word"
  },
  {
   "index": 521,
@@ -262,11 +264,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 28,
-  "tts": "ah dee keh hoe",
-  "source": "ear",
-  "duration_s": 2.04,
-  "take": "A",
-  "sha1": "76385075da3b"
+  "tts": "/adɪˈkɛ.oː/",
+  "source": "ipa-batch8-recue",
+  "duration_s": 1.228,
+  "take": "bVI8r_527_b",
+  "sha1": "bfa830d34277",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-cued: batch 8's plain take was kept over two with the stressed e closed by h. Fraser: still a hint of eta, but fine"
  },
  {
   "index": 528,
@@ -1461,10 +1464,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 23,
-  "tts": "eh lew theh ross",
-  "source": "batch6",
-  "duration_s": 2.616,
-  "sha1": "786a3caee528"
+  "tts": "/ɛˈljuθɛrɒs/",
+  "source": "ipa-batch8-recue",
+  "duration_s": 1.228,
+  "sha1": "04c951a575f9",
+  "take": "bVI8r_602_b",
+  "note": "IPA, chosen by ear over the card's English respelling. FULLY DOTLESS: both dotted takes spoke their dots"
  },
  {
   "index": 603,
@@ -1699,12 +1704,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 22,
-  "tts": "agnaw eh hoe",
-  "source": "batch5",
-  "duration_s": 1.619,
-  "take": "2026-09-11, Atlas",
-  "note": "-εω is 'eh hoe'. The ο is an omicron and every earlier cue spelled it `no`, which is an English word with the /ou/ of gold -- the exact fault check_cues gates, sitting in six rounds of candidates because it was being treated as a structure problem. `naw` bound forward is νομίζω's `nawmee zoh` shape, and the h comes out with it so the strong 'ahg' goes too. 1.62s over four syllables.",
-  "sha1": "cef304bf1537"
+  "tts": "/aɡnɒˈɛh.oː/",
+  "source": "ipa-batch8-recue",
+  "duration_s": 1.698,
+  "take": "bVI8r_617_d",
+  "note": "IPA, chosen by ear over the card's English respelling. The stressed e CLOSED WITH h, as εὐχαριστέω: both plain batch-8 takes drifted to eta. Fraser: D is closest",
+  "sha1": "9c92cf12a726"
  },
  {
   "index": 618,

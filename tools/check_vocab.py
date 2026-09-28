@@ -755,6 +755,17 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    617: "the stressed e CLOSED WITH h, εὐχαριστέω's remedy. Both plain "
+         "batch-8 takes of /aɡnɒˈɛ.oː/ drifted to eta; re-cued, one plain "
+         "take was set against two of /aɡnɒˈɛh.oː/ and Fraser chose one: "
+         "\"D is closest\". The same test on γαμέω and ἀδικέω kept the plain "
+         "take, so this is a per-word remedy, not a rule",
+    520: "FULLY DOTLESS with a SECONDARY STRESS on the opening, as Ἰωάννης. "
+         "Both batch-8 takes of /ei̯ˈli.as/ spelled at least part of the "
+         "word; offered dotless, dotless with ˌ, and ˌ with the dot kept, "
+         "the ear chose dotless with ˌ",
+    602: "FULLY DOTLESS. Both batch-8 takes of /ɛˈlju.θɛ.rɒs/ spoke their "
+         "dots; two dotless takes were offered and one chosen by ear",
     459: "FULLY DOTLESS. With the dot after the oi̯ one batch-7 take said "
          "ho-moy-yo-os — the glide re-read as a y before the dot — and the "
          "other lost the omega. Offered no dot, the long o as oʊ, and both, "
