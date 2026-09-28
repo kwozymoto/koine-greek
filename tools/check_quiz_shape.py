@@ -49,21 +49,17 @@ LONGEST_ALLOW = {
     "ch8": 7,     # of 12
     "ch9": 7,     # of 11
     "ch10": 8,     # of 12
-    "ch11": 10,     # of 11
     "ch12": 8,     # of 12
     "ch13": 8,     # of 11
     "ch14": 9,     # of 11
-    "ch15": 10,     # of 12
     "ch16": 7,     # of 10
     "ch17": 5,     # of 9
     "ch18": 8,     # of 9
     "ch19": 9,     # of 10
     "ch20": 8,     # of 11
-    "ch21": 10,     # of 11
     "ch22": 4,     # of 8
     "ch24": 7,     # of 11
     "ch25": 7,     # of 10
-    "ch27": 10,     # of 11
     "CASEFN": 18,     # of 20
 }
 # Questions whose answer alone carries a dash gloss, as they stood.
@@ -86,12 +82,6 @@ DASH_ALLOW = set([
     "L9q1",
     "L9q3",
     "L10q10",
-    "L11q2",
-    "L11q3",
-    "L11q4",
-    "L11q5",
-    "L11q6",
-    "L11q9",
     "L12q1",
     "L12q5",
     "L13q1",
@@ -103,11 +93,6 @@ DASH_ALLOW = set([
     "L14q3",
     "L14q5",
     "L14q10",
-    "L15q0",
-    "L15q4",
-    "L15q6",
-    "L15q9",
-    "L15q10",
     "L16q0",
     "L16q9",
     "L17q0",
@@ -121,12 +106,6 @@ DASH_ALLOW = set([
     "L20q6",
     "L20q8",
     "L20q10",
-    "L21q1",
-    "L21q4",
-    "L21q5",
-    "L21q6",
-    "L21q7",
-    "L21q9",
     "L22q4",
     "L24q0",
     "L24q2",
@@ -135,9 +114,6 @@ DASH_ALLOW = set([
     "L25q3",
     "L25q6",
     "L25q9",
-    "L27q4",
-    "L27q7",
-    "L27q9",
     "C1",
     "C3",
     "C5",
