@@ -67,8 +67,9 @@ So, mechanically:
 python tools/check_all.py
 ```
 
-Twenty-eight checkers, ten of them putting the app's content to the corpus.
-Green before every commit, no exceptions. `--offline` skips only
+Every checker named in `CHECKS` in `tools/check_all.py` — no count here,
+because a count in this file goes stale (it said twenty-eight when there
+were forty-four). Green before every commit, no exceptions. `--offline` skips only
 `check_links`, the one that needs the network.
 
 **A checker not in `CHECKS` is not a checker.** `check_ipa` was written,
