@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v286';
+const VERSION = 'v287';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,43 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v287: IPA batch 9 (37 cards). */
+  'audio/vocab/619_esaias.mp3',                    // Ἠσαΐας
+  'audio/vocab/628_mnemoneuo.mp3',                 // μνημονεύω
+  'audio/vocab/631_chiliarchos.mp3',               // χιλίαρχος
+  'audio/vocab/636_ge.mp3',                        // γέ
+  'audio/vocab/643_skene.mp3',                     // σκηνή
+  'audio/vocab/648_epignosis.mp3',                 // ἐπίγνωσις
+  'audio/vocab/651_ichthus.mp3',                   // ἰχθύς
+  'audio/vocab/653_uperetes.mp3',                  // ὑπηρέτης
+  'audio/vocab/659_koinonia.mp3',                  // κοινωνία
+  'audio/vocab/660_kreitton.mp3',                  // κρείττων
+  'audio/vocab/661_krites.mp3',                    // κριτής
+  'audio/vocab/662_krupto.mp3',                    // κρύπτω
+  'audio/vocab/663_ktisis.mp3',                    // κτίσις
+  'audio/vocab/665_palaios.mp3',                   // παλαιός
+  'audio/vocab/678_thumos.mp3',                    // θυμός
+  'audio/vocab/684_mechris.mp3',                   // μέχρι(ς)
+  'audio/vocab/685_oikodome.mp3',                  // οἰκοδομή
+  'audio/vocab/695_alethos.mp3',                   // ἀληθῶς
+  'audio/vocab/704_thesauros.mp3',                 // θησαυρός
+  'audio/vocab/707_kerdaino.mp3',                  // κερδαίνω
+  'audio/vocab/708_kruptos.mp3',                   // κρυπτός
+  'audio/vocab/718_chrusous.mp3',                  // χρυσοῦς
+  'audio/vocab/722_aphesis.mp3',                   // ἄφεσις
+  'audio/vocab/724_embaino.mp3',                   // ἐμβαίνω
+  'audio/vocab/727_ekatontarches.mp3',             // ἑκατοντάρχης
+  'audio/vocab/730_ippos.mp3',                     // ἵππος
+  'audio/vocab/732_osautos.mp3',                   // ὡσαύτως
+  'audio/vocab/734_riza.mp3',                      // ῥίζα
+  'audio/vocab/735_ruomai.mp3',                    // ῥύομαι
+  'audio/vocab/742_diatasso.mp3',                  // διατάσσω
+  'audio/vocab/745_zelos.mp3',                     // ζῆλος
+  'audio/vocab/748_kleptes.mp3',                   // κλέπτης
+  'audio/vocab/751_lupe.mp3',                      // λύπη
+  'audio/vocab/756_pleres.mp3',                    // πλήρης
+  'audio/vocab/758_suke.mp3',                      // συκῆ
+  'audio/vocab/760_sphragis.mp3',                  // σφραγίς
   /* v286: the five re-cued words of IPA batch 8. */
   'audio/vocab/512_gameo.mp3',                     // γαμέω
   'audio/vocab/520_elias.mp3',                     // Ἠλίας

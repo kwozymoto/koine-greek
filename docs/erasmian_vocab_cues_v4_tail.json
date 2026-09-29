@@ -1736,11 +1736,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 22,
-  "tts": "ay sah ee ahs",
-  "source": "batch5",
-  "duration_s": 2.038,
-  "sha1": "8836ecbcac6b",
-  "take": "2026-09-15, Atlas (b5d_619_a)"
+  "tts": "/ei̯saˈi.as/",
+  "source": "ipa-batch9",
+  "duration_s": 1.541,
+  "sha1": "c2fe380fec33",
+  "take": "bVI9_619_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 620,
@@ -1879,10 +1880,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 21,
-  "tts": "muh nay mo new hoe",
-  "source": "batch8",
-  "duration_s": 2.52,
-  "sha1": "25f5ca655de7"
+  "tts": "/mnei̯mɒˈnju.oː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.959,
+  "sha1": "64b5367e06b0",
+  "take": "bVI9_628_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 629,
@@ -1925,10 +1928,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 21,
-  "tts": "khee lee ahr khoss",
-  "source": "batch6",
-  "duration_s": 2.208,
-  "sha1": "2ae296fe79a3"
+  "tts": "/kɪˈli.ar.kɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.463,
+  "sha1": "affdcb7e454f",
+  "take": "bVI9_631_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 632,
@@ -2003,11 +2008,12 @@
   "pos": "particle",
   "tier": 5,
   "freq": 20,
-  "tts": "geh",
-  "source": "batch5",
-  "duration_s": 0.496,
-  "sha1": "5276a0697628",
-  "take": "2026-09-15, Atlas (b5c_636_d)"
+  "tts": "/ˈɡɛ/",
+  "source": "ipa-batch9",
+  "duration_s": 0.601,
+  "sha1": "92a186caf2c9",
+  "take": "bVI9_636_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 637,
@@ -2114,12 +2120,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "skay ney",
-  "source": "fix21",
-  "duration_s": 1.115,
-  "take": "2026-09-10, Atlas",
-  "note": "'ey' bound reads as /i/ -- English -ey in a polysyllable is monkey, money; split into its own token",
-  "sha1": "5303927f0179"
+  "tts": "/skei̯ˈneː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "take": "bVI9_643_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "5beb45a7d3b2"
  },
  {
   "index": 644,
@@ -2194,12 +2200,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "eh peeg noh sis",
-  "source": "batch5",
-  "duration_s": 2.194,
-  "sha1": "c53984d6e9a8",
-  "take": "2026-09-15, Atlas (b5d_648_a)",
-  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
+  "tts": "/ɛˈpɪ.ɡnoː.sɪs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.463,
+  "sha1": "390deb4a5955",
+  "take": "bVI9_648_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 649,
@@ -2242,10 +2248,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "eekhthoos",
-  "source": "batch8",
-  "duration_s": 1.416,
-  "sha1": "6c860d85d5fc"
+  "tts": "/ɪkˈθus/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "sha1": "472f673a75ca",
+  "take": "bVI9_651_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 652,
@@ -2272,12 +2280,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 20,
-  "tts": "hoo pay reh teys",
-  "source": "ays",
-  "duration_s": 1.833,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "b65a8e810695"
+  "tts": "/hupei̯ˈrɛ.teːs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.384,
+  "take": "bVI9_653_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "45853e2c550a"
  },
  {
   "index": 654,
@@ -2368,12 +2376,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "koy noh knee ah",
-  "source": "batch6",
-  "duration_s": 2.038,
-  "sha1": "2050c92bed29",
-  "take": "2026-09-15, Atlas (b6b_659_a)",
-  "note": "`nee` is approved in three other clips, so this was the word and not the spelling; the English word knee fixes it"
+  "tts": "/koi̯noːˈni.a/",
+  "source": "ipa-batch9",
+  "duration_s": 1.228,
+  "sha1": "d3608f5e6924",
+  "take": "bVI9_659_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 660,
@@ -2384,10 +2392,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 19,
-  "tts": "kraytton",
-  "source": "batch8",
-  "duration_s": 1.248,
-  "sha1": "52f21efd51b4"
+  "tts": "/ˈkrei̯t.toʊn/",
+  "source": "ipa-batch9",
+  "duration_s": 1.149,
+  "sha1": "664949d7afaf",
+  "take": "bVI9_660_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 661,
@@ -2398,12 +2408,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "kree teys",
-  "source": "ays",
-  "duration_s": 1.366,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "82caf79a58f3"
+  "tts": "/krɪˈtei̯s/",
+  "source": "ipa-batch9",
+  "duration_s": 0.993,
+  "take": "bVI9_661_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "bb27e9756de9"
  },
  {
   "index": 662,
@@ -2414,10 +2424,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 19,
-  "tts": "krooptoh",
-  "source": "batch8",
-  "duration_s": 1.008,
-  "sha1": "1a8a56c96a48"
+  "tts": "/ˈkrup.toː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "sha1": "0fc551cfc5dc",
+  "take": "bVI9_662_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 663,
@@ -2428,11 +2440,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 19,
-  "tts": "kitsis",
-  "source": "ear",
-  "duration_s": 1.008,
-  "take": "E",
-  "sha1": "e3dfaa4203cf"
+  "tts": "/ˈkti.sɪs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "take": "bVI9_663_c",
+  "sha1": "09f7aedaeda7",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 664,
@@ -2459,12 +2472,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 19,
-  "tts": "pah lie oss",
-  "source": "batch5",
-  "duration_s": 1.698,
-  "sha1": "04cc6dd9d9d8",
-  "take": "2026-09-15, Atlas (b5d_665_a)",
-  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
+  "tts": "/palai̯ˈɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.149,
+  "sha1": "5cca14343d41",
+  "take": "bVI9_665_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 666,
@@ -2571,12 +2584,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 19,
-  "tts": "eh pye roh",
-  "source": "batch4",
-  "duration_s": 1.619,
-  "take": "2026-09-11, Atlas",
-  "note": "the same 'peye' that gave \"pay\" in paidion.",
-  "sha1": "2f444ed09d56"
+  "tts": "/ɛˈpai̯.roː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.228,
+  "take": "bVI9_672_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "9377702dd572"
  },
  {
   "index": 673,
@@ -2667,10 +2680,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "thoomoss",
-  "source": "batch8",
-  "duration_s": 1.08,
-  "sha1": "8c4f826c972b"
+  "tts": "/θuˈmɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "sha1": "7521241b2324",
+  "take": "bVI9_678_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 679,
@@ -2761,10 +2776,12 @@
   "pos": "prep",
   "tier": 5,
   "freq": 18,
-  "tts": "mekhrees",
-  "source": "batch8",
-  "duration_s": 1.8,
-  "sha1": "7315d5c53f0c"
+  "tts": "/ˈmɛ.krɪs/",
+  "source": "ipa-batch9",
+  "duration_s": 0.993,
+  "sha1": "d5d612d472a0",
+  "take": "bVI9_684_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 685,
@@ -2775,12 +2792,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "oy ko daw mey",
-  "source": "batch5",
-  "duration_s": 1.463,
-  "take": "2026-09-15, Atlas (b5e_685_a)",
-  "note": "final eta: 'ay' comes back as /aI/, 'ey' does not",
-  "sha1": "d1fdb4172adb"
+  "tts": "/oi̯kɒdɒˈmei̯/",
+  "source": "ipa-batch9",
+  "duration_s": 1.228,
+  "take": "bVI9_685_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "adc5b94386a5"
  },
  {
   "index": 686,
@@ -2935,10 +2952,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 18,
-  "tts": "ah lay thohs",
-  "source": "batch7",
-  "duration_s": 1.488,
-  "sha1": "4a08554dd6fe"
+  "tts": "/alei̯ˈθoːs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.306,
+  "sha1": "45adbb1739d6",
+  "take": "bVI9_695_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 696,
@@ -3077,12 +3096,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "thaysau ross",
-  "source": "batch5",
-  "duration_s": 1.463,
-  "sha1": "252569dace64",
-  "take": "2026-09-15, Atlas (b5e_704_a)",
-  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
+  "tts": "/θei̯sau̯ˈrɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.384,
+  "sha1": "56a122642d7a",
+  "take": "bVI9_704_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 705,
@@ -3125,12 +3144,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "kehr dye noh",
-  "source": "batch5",
-  "duration_s": 1.385,
-  "sha1": "716b90a3ab9b",
-  "take": "2026-09-15, Atlas (b5d_707_a)",
-  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
+  "tts": "/kɛrˈdai̯.noː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.071,
+  "sha1": "57809b49cf84",
+  "take": "bVI9_707_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 708,
@@ -3141,10 +3160,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 17,
-  "tts": "krooptoss",
-  "source": "batch8",
-  "duration_s": 1.248,
-  "sha1": "9537984b1710"
+  "tts": "/krupˈtɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.149,
+  "sha1": "2c3706c78d66",
+  "take": "bVI9_708_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 709,
@@ -3299,10 +3320,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 17,
-  "tts": "khroosoos",
-  "source": "batch8",
-  "duration_s": 1.178,
-  "sha1": "9ba272809c2c"
+  "tts": "/kruˈsuːs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.149,
+  "sha1": "08c4dc416ba5",
+  "take": "bVI9_718_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 719,
@@ -3361,12 +3384,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "ah feh sis",
-  "source": "batch5",
-  "duration_s": 1.541,
-  "sha1": "66356792e138",
-  "take": "2026-09-15, Atlas (b5c_722_a)",
-  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
+  "tts": "/ˈa.fɛ.sɪs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.306,
+  "sha1": "d46f26ed0c7c",
+  "take": "bVI9_722_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 723,
@@ -3393,12 +3416,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "em bye noh",
-  "source": "batch5",
-  "duration_s": 1.385,
-  "sha1": "16c5547a94b7",
-  "take": "2026-09-15, Atlas (b5e_724_a)",
-  "note": "'Ceye' splits the way 'keye' and 'peye' did; ai after a consonant wants a real English word -- bye, sigh, high, lie, dye, nigh"
+  "tts": "/ɛmˈbai̯.noː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.306,
+  "sha1": "f3a36d28fc86",
+  "take": "bVI9_724_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 725,
@@ -3441,12 +3464,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "hekah tontar kheys",
-  "source": "ays",
-  "duration_s": 2.139,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "e3fc74447a99"
+  "tts": "/hɛkatɒnˈtar.kei̯s/",
+  "source": "ipa-batch9",
+  "duration_s": 1.62,
+  "take": "bVI9_727_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "457f1a229c75"
  },
  {
   "index": 728,
@@ -3489,10 +3512,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "heepposs",
-  "source": "batch8",
-  "duration_s": 1.32,
-  "sha1": "12d751858244"
+  "tts": "/ˈhɪppɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 0.914,
+  "sha1": "55781eba2122",
+  "take": "bVI9_730_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 731,
@@ -3519,12 +3544,12 @@
   "pos": "adv",
   "tier": 5,
   "freq": 17,
-  "tts": "hoh sau tohs",
-  "source": "batch5",
-  "duration_s": 1.881,
-  "sha1": "2aaef6a5072f",
-  "take": "2026-09-15, Atlas (b5d_732_a)",
-  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
+  "tts": "/hoːˈsau̯.toːs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.62,
+  "sha1": "4cd047bbbdda",
+  "take": "bVI9_732_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 733,
@@ -3551,11 +3576,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 17,
-  "tts": "reezah",
-  "source": "ear",
-  "duration_s": 0.84,
-  "take": "C",
-  "sha1": "33a0edc4cd14"
+  "tts": "/ˈriʣa/",
+  "source": "ipa-batch9",
+  "duration_s": 0.914,
+  "take": "bVI9_734_b",
+  "sha1": "6a94cc68876f",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 735,
@@ -3566,11 +3592,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 17,
-  "tts": "roo o my",
-  "source": "ear",
-  "duration_s": 1.56,
-  "take": "A",
-  "sha1": "090610307fad"
+  "tts": "/ˈru.ɒ.mai̯/",
+  "source": "ipa-batch9",
+  "duration_s": 1.228,
+  "take": "bVI9_735_c",
+  "sha1": "9f3ed6012c33",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 736,
@@ -3677,12 +3704,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "deeah tahs soh",
-  "source": "fix21",
-  "duration_s": 2.093,
-  "take": "2026-09-10, Atlas",
-  "note": "reverted: 'tas' spelled",
-  "sha1": "0d947df4eaa2"
+  "tts": "/dɪaˈtas.soː/",
+  "source": "ipa-batch9",
+  "duration_s": 1.698,
+  "take": "bVI9_742_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "3e111d3ffb00"
  },
  {
   "index": 743,
@@ -3725,12 +3752,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "zay loss",
-  "source": "batch8",
-  "duration_s": 1.306,
-  "sha1": "147006cad318",
-  "take": "2026-09-15, Atlas (b8b_745_a)",
-  "note": "the same ζ- fix, and split because `dzayloss` was being spelled out"
+  "tts": "/ˈʣei̯.lɒs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.149,
+  "sha1": "09b2cead374c",
+  "take": "bVI9_745_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 746,
@@ -3773,12 +3800,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "klep teys",
-  "source": "ays",
-  "duration_s": 1.237,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "48594eefb004"
+  "tts": "/ˈklɛp.tei̯s/",
+  "source": "ipa-batch9",
+  "duration_s": 0.914,
+  "take": "bVI9_748_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "b17b38979043"
  },
  {
   "index": 749,
@@ -3821,12 +3848,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "loo pey",
-  "source": "fix21",
-  "duration_s": 1.004,
-  "take": "2026-09-10, Atlas",
-  "note": "same: 'ey' only works as its own short token",
-  "sha1": "743079c92b12"
+  "tts": "/ˈlu.pei̯/",
+  "source": "ipa-batch9",
+  "duration_s": 0.836,
+  "take": "bVI9_751_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "908fb9368895"
  },
  {
   "index": 752,
@@ -3901,12 +3928,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 16,
-  "tts": "play reys",
-  "source": "ays",
-  "duration_s": 1.258,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "142637f7e4ad"
+  "tts": "/ˈplei̯.reːs/",
+  "source": "ipa-batch9",
+  "duration_s": 1.228,
+  "take": "bVI9_756_b",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "8717dc83b68b"
  },
  {
   "index": 757,
@@ -3933,12 +3960,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "soo kay",
-  "source": "fix21",
-  "duration_s": 0.937,
-  "take": "2026-09-10, Atlas",
-  "note": "and 'key' is an English word, so kappa+eta wants kay",
-  "sha1": "72350866f1e4"
+  "tts": "/suˈkei̯/",
+  "source": "ipa-batch9",
+  "duration_s": 0.993,
+  "take": "bVI9_758_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "c6b4f0cf1ad3"
  },
  {
   "index": 759,
@@ -3965,12 +3992,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "suh frah ghiss",
-  "source": "batch8",
-  "duration_s": 2.116,
-  "sha1": "4327aa60c55c",
-  "take": "2026-09-15, Atlas (b8c_760_a)",
-  "note": "a helper vowel for a cluster English will not begin a word with -- the remedy πτωχός `puh toh koss` and πνευματικός have been shipping all along. Splitting the token was not enough"
+  "tts": "/sfraˈɡis/",
+  "source": "ipa-batch9",
+  "duration_s": 1.384,
+  "sha1": "e0f02637abf1",
+  "take": "bVI9_760_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 761,
