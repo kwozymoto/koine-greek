@@ -119,15 +119,18 @@ TITLE = dict((int(a), b) for a, b in re.findall(
 #
 # So each gate is written down here against the TITLE it was chosen for. The
 # number may move; the chapter it means must not.
+# 0 and 14 moved from 4 on 2026-09-29 (audit a-09): their options name the
+# genitive absolute (chapter 21) and partitive genitive, which chapter 4 does
+# not teach; 14 now sits beside 15, the other part-and-whole question.
 GATE_TITLE = {
-    0: "Nouns of the second declension", 1: "Aorist and future passive indicative",
+    0: "Participles: the three uses", 1: "Aorist and future passive indicative",
     2: "Additional prepositions", 3: "Imperfect and aorist active indicative",
     4: "Nouns of the second declension", 5: "Infinitives (verbal nouns)",
     6: "Additional prepositions", 7: "Additional prepositions",
     8: "Participles: the three uses", 9: "Additional prepositions",
     10: "Review of the indicative mood", 11: "Review of the indicative mood",
     12: "The subjunctive mood", 13: "The imperative and optative moods",
-    14: "Nouns of the second declension", 15: "Nouns of the third declension",
+    14: "Nouns of the third declension", 15: "Nouns of the third declension",
     16: "The imperative and optative moods", 17: "Participles: the three uses",
     18: "Adjectives of the first and second declension",
     19: "Adjectives of the first and second declension",

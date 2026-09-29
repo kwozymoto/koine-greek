@@ -286,6 +286,19 @@ CORRECTED = {
     "Ναζωραῖος": ("Nazarene",
                   "Abbott-Smith: 'a Nazarene'. The source gave the town, "
                   "'Nazareth' (audit c-34, 2026-09-29)."),
+    # c-35, options put to Fraser and (a) chosen for all three, 2026-09-29.
+    "ἀνάθεμα": ("a curse; accursed",
+                "Abbott-Smith: 'devoted' is the LXX sense; in the NT, 'a curse' "
+                "(Ac 23:14) and 'accursed' (Ro 9:3, I Co 12:3, Ga 1:8, 9). The "
+                "source gave only 'devoted' (audit c-35)."),
+    "ἱλαστήριον": ("propitiation; the mercy seat",
+                   "Abbott-Smith s.v. ἱλαστήριος: 'propitiatory', of Christ at Ro "
+                   "3:25; as a noun the mercy-seat, He 9:5. 'A sin offering' is not "
+                   "in the entry (audit c-35)."),
+    "ἐλεημοσύνη": ("alms, almsgiving",
+                   "Abbott-Smith: 'mercy, pity; almsgiving, alms', and every NT "
+                   "use is alms (Mt 6:2-4, Ac 3:2-3, 10:4). The source gave "
+                   "'charity' (audit c-35)."),
 }
 for lemma, (g, why) in CORRECTED.items():
     if lemma not in LEX:

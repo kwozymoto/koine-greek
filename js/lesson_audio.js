@@ -184,10 +184,25 @@ function mountLessonAudio(ch, root) {
    that was in the middle of reloading — so the fix for the bug behaved
    exactly like the bug. The element is only asked how ready it is when we
    have not just changed what it is playing. */
+/* The rate chosen in Settings, which only word clips used to honour (audit
+   e-02). Re-applied on every play, because assigning .src resets it. */
+function laRate() {
+  return typeof sndRate === "function" ? sndRate() : 1;
+}
+/* One voice at a time: a word or letter clip left running talks over the
+   narration (audit e-04). */
+function laHushWords() {
+  if (typeof stopSequence === "function") stopSequence();
+  if (typeof sndEl !== "undefined" && sndEl) { try { sndEl.pause(); } catch (e) {} }
+  if (typeof sndClear === "function") sndClear();
+}
+
 function laPlay(b, at) {
   var a = laEl();
+  laHushWords();
   var seek = function () {
     try { a.currentTime = at || 0; } catch (e) {}
+    a.playbackRate = laRate();
     a.play().catch(function () {});
     laPaint();
   };
@@ -215,6 +230,15 @@ function laToggle(id) {
   LA_QUEUE = null;
   laBar();
   if (LA_BLOCK === id && LA_AUDIO && !LA_AUDIO.paused) { LA_AUDIO.pause(); laPaint(); return; }
+  /* Paused part-way: carry on from there. It restarted from 0:00 (audit
+     e-03), so pausing to think cost the whole block. */
+  if (LA_BLOCK === id && LA_AUDIO && LA_AUDIO.currentTime > 0 && !LA_AUDIO.ended) {
+    laHushWords();
+    LA_AUDIO.playbackRate = laRate();
+    LA_AUDIO.play().catch(function () {});
+    laPaint();
+    return;
+  }
   laPlay(b, 0);
 }
 

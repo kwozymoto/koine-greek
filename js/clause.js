@@ -82,7 +82,7 @@ function clauseQ(r) {
        <p style="margin:10px 0 0;font-size:.95rem">Nothing here is in the nominative.
          Who is doing <span class="gk">${words[at]}</span>?</p>`,
       shown, shown.indexOf(CLAUSE_WHO[want]),
-      `<span class="gk">${words[at]}</span> — ${gntParse(pos, code)}.
+      `<span class="gk">${clauseBare(words[at])}</span> — ${gntParse(pos, code)}.
        The subject is in the ending; Greek only writes one out when it wants to.`);
   }
 
@@ -108,7 +108,7 @@ function clauseQ(r) {
       if (ok) { addXp(3); SESSION_XP += 3; }
       document.getElementById("fb").innerHTML =
         `<div class="feedback"><b>${ok ? "Correct" : "Not quite"}</b>
-          <span class="gk">${words[at]}</span> — ${gntParse(pos, code)}.<br>
+          ${ok ? "" : `You tapped <span class="gk">${clauseBare(words[i])}</span>; the answer is `}<span class="gk">${clauseBare(words[at])}</span> — ${gntParse(pos, code)}.<br>
           <span class="muted">${clauseWhy(r)}</span></div>
          <button class="btn" onclick="qi++;step()">Continue</button>`;
     };
@@ -117,6 +117,10 @@ function clauseQ(r) {
 
 /* The line under the answer. Every claim here is read off the corpus's own
    codes for this verse — nothing is asserted that the row has not carried. */
+/* A word as the feedback names it: "ἀπέθανεν. —" carried the verse's full
+   stop into the sentence about it (audit b-11). */
+const clauseBare = w => String(w || "").replace(/[.,;·:!?;]+$/u, "");   // not ’: δι’ keeps its elision
+
 function clauseWhy(r) {
   const [, , , , text, kind, at, pos, code] = r;
   const w = text.split(" ")[at];

@@ -357,14 +357,21 @@ netState();
    The worker fills the cache on its own; the page nudges it on each load so
    an interrupted fill resumes, and reports where it has got to. */
 
-let OFFLINE = { have: 0, total: 0, complete: false };
+let OFFLINE = { have: 0, total: 0, complete: false }, OFFLINE_DONE_AT = 0;
 
 navigator.serviceWorker && navigator.serviceWorker.addEventListener("message", e => {
   const d = e.data || {};
   if (d.type === "offline-progress") {
     OFFLINE = { have: d.done, total: d.total, complete: !!d.complete, failed: d.failed || 0 };
+    if (OFFLINE.complete) OFFLINE_DONE_AT = Date.now();
     paintOffline();
   }
+  /* Check asks for a fill and a count at once, and the count can be taken
+     part-way through the fill yet arrive after it finished -- which left
+     Settings on "Saving for offline… 937 of 977" over a full cache (audit
+     d-08). A lower count arriving just after a completed fill is that one. */
+  if (d.type === "offline-status" && !d.error && OFFLINE.complete
+      && d.have < d.total && Date.now() - OFFLINE_DONE_AT < 10000) return;
   if (d.type === "offline-status" && !d.error) {
     OFFLINE = { have: d.have, total: d.total, complete: d.have >= d.total };
     paintOffline();

@@ -670,6 +670,16 @@ function writeWordDrill(n = 8) {
          named rather than just marked wrong — "that is λόγος" teaches more
          than a cross. Same courtesy gkMark already pays typeStep. */
       const others = pool.filter(j => j !== i).map(j => VOCAB[j][0].split(",")[0]);
+      /* And every deck word that differs from this one only by its accent --
+         τίς/τις, πότε/ποτέ -- whether or not it is in the round, or typing
+         the other word exactly was "Right — the accent is…" (audit b-09).
+         gkMark names an exact match with another word before it forgives an
+         accent. */
+      VOCAB.forEach((v, j) => {
+        const h = v[0].split(",")[0];
+        if (j !== i && !RETIRED.has(j) && gkPlain(h) === gkPlain(head) && gkKey(h) !== gkKey(head)
+            && !others.includes(h)) others.push(h);
+      });
       const gk = s => `<span class="gk">${s}</span>`;
       const check = () => {
         const m = gkMark(kb.value, head, others);

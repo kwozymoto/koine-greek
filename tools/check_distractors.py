@@ -66,8 +66,10 @@ TELLS = {
         (r"\(\+[^)]*\)", 0.02),
     "a gloss opening “I ”, as a verb's does":
         (r"^I ", 0.02),
+    # A bare "I" is ἐγώ, a pronoun set among pronouns, not a name: counting
+    # it as a capital had the drill hand ἐγώ three proper names (audit b-01).
     "a gloss opening with a capital, as a name's does":
-        (r"^(?!I )\p{Lu}", 0.02),
+        (r"^(?!I(?: |$))\p{Lu}", 0.02),
 }
 # reverseVocab asks for the Greek, so its tells are on the Greek headword, read
 # with the accents and breathings taken off. The third field, when there is

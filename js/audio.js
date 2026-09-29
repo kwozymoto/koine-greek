@@ -66,6 +66,16 @@ function prepAhead(indices) {
   });
 }
 
+/* A word or letter clip pauses the chapter narration rather than talking
+   over it (audit e-04). A single block is paused, so its play button resumes
+   it; a whole-chapter run is stopped, since its queue cannot wait. */
+function sndHushNarration() {
+  if (typeof LA_AUDIO === "undefined" || !LA_AUDIO || LA_AUDIO.paused) return;
+  if (typeof LA_QUEUE !== "undefined" && LA_QUEUE && typeof laStop === "function") { laStop(); return; }
+  LA_AUDIO.pause();
+  if (typeof laPaint === "function") laPaint();
+}
+
 function sndClear() {
   if (sndTile) { sndTile.classList.remove("playing"); sndTile = null; }
 }
@@ -73,6 +83,7 @@ function sndClear() {
 /* Play the clip for a Greek letter or diphthong ("Α α", "αι").
    `tile` is the element to highlight while it sounds. */
 function playGreek(greek, tile) {
+  sndHushNarration();
   const file = AUDIO_BY_GREEK[greek];
   if (!file) return false;
   const a = sndInit();
@@ -150,6 +161,7 @@ function warmClip(url) {
    toast: the automatic play on a card reveal uses it, or an offline review
    of thirty words would fire thirty toasts. */
 function playWord(i, tile, quiet) {
+  sndHushNarration();
   const file = VOCAB_AUDIO[i];
   if (!file) return false;
   const url = VOCAB_AUDIO_DIR + file;
@@ -219,6 +231,7 @@ function sfx(kind) {
 const FORM_AUDIO_DIR = "audio/forms/";
 
 function playForm(form, tile) {
+  sndHushNarration();
   const file = FORM_AUDIO[form];
   if (!file) return false;
   warmClip(FORM_AUDIO_DIR + file);
@@ -238,6 +251,7 @@ function playForm(form, tile) {
 /* Headword, then each extra form in turn — "θεός … ὁ". */
 let formRun = 0;
 function playEntry(i) {
+  sndHushNarration();
   const extras = extraForms(i);
   const a = sndInit();
   playWord(i, null);

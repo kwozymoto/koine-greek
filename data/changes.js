@@ -12,7 +12,12 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-29", v:"v295", items:[
+{d:"2026-09-29", v:"v296", items:[
+  {k:"better", t:"Read-aloud chapters: the Playback speed setting now slows the narration too, a paused passage resumes where it stopped, and a word or letter you tap pauses the reading instead of talking over it."},
+  {k:"fix", t:"A chapter’s Drill all practises its words without replacing the passage you are working on; choosing a new passage or set asks before it replaces one."},
+  {k:"fix", t:"Settings asks before marking chapters done or seeding the commonest words, and Reset everything also clears the theme and the Today layout."},
+  {k:"fix", t:"Drills: Undo steps back one answer and takes back its points, ambiguous forms accept either right parse, and a few answers no longer stand out by their wording."},
+  {k:"fix", t:"Smaller fixes: the offline status no longer sticks, the textbook menu fits narrow phones, Continue scrolls into view, and three reader glosses follow Abbott-Smith (ἀνάθεμα, ἱλαστήριον, ἐλεημοσύνη)."},
   {k:"better", t:"Chapters 15, 18 and 27 are more careful where scholars differ: 2 Timothy 3:16 is “likely” every scripture, 1 Corinthians 15’s change of tense is a key part of the argument, and the divine passive is described as Black describes it."},
   {k:"audio", t:"Chapters 3 and 8: three read-aloud passages re-recorded with corrected wording — which prepositions shorten before a vowel (ἀνά never does), and how many translations smooth over Mark’s historical present."},
   {k:"fix", t:"Nine word cards say better what the word means, from Abbott-Smith’s lexicon — μήν is “month”, not “certainly”; ἡγέομαι is “I lead; I consider”; ἐμβαίνω is “I step in, embark”."},

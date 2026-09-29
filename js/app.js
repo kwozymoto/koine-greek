@@ -348,6 +348,10 @@ function seedCards(order, n){
 /* Placement: give the N commonest un-started words a 6-day head start
    instead of walking them through the new-word flow one by one. */
 function seedVocab(n=100){
+  /* Asks, as its two siblings do: one tap put 100 words into review with no
+     undo (audit d-04). */
+  if(!confirm(`Put the ${n} commonest words straight into review as familiar? `
+      + `They come back over the next fortnight, and only Reset everything takes them out again.`)) return;
   const done=seedCards(LEARN_ORDER, n);
   save(); render(); renderProgress();
   toast(done ? done+" words seeded — spread over the next fortnight" : "Those words are already in the schedule");
@@ -646,6 +650,12 @@ function setFocus(lo,hi){
   const m=gntCur.meta;
   const vs=gntCur.verses.filter(v=>!lo || (v[0]>=lo && v[0]<=hi));
   if(!vs.length){ toast("No verses in that range"); return; }
+  /* One focus at a time, so replacing it asks first, as the deck picker does
+     (audit d-01). Re-focusing the same range is not a replacement. */
+  const f=S.focus, same=f && f.a===gntCur.abbr && f.ch===gntCur.ch
+    && (f.lo||null)===(lo||null) && (f.hi||null)===(hi||null);
+  if(f && !same && !confirm(`This replaces your focus on ${focusRef(f)}. `
+      + `Its words stay on the schedule. Continue?`)) return;
   const deck=new Map(), lex=new Map(), bare=new Set();
   vs.forEach(v=>v[1].forEach(w=>{
     const lemma=GNT.lemmas[w[1]];
@@ -966,7 +976,7 @@ function pickDeck(n){
      silently — and do not write a focusDone row, which would claim the
      passage was finished. */
   const f=S.focus;
-  if(f && !f.label && !confirm(
+  if(f && f.label!==d.label && !confirm(
       `This replaces your focus on ${focusRef(f)}. Its words stay on the `
       + `schedule. Continue?`)) return;
   if(setFocusFrom(d.label, d.ids)){ closeDeckPicker(); render(); }
@@ -997,7 +1007,12 @@ function drillChapterWords(id){
   const l=LESSONS.find(x=>x.id===id); if(!l) return;
   const v=(l.v||[]).filter(i=>VOCAB[i] && !skipWord(i));
   if(!v.length){ toast("No words in this chapter"); return; }
-  if(setFocusFrom(`Chapter ${id}`, v, true)) startFocusDrill();
+  /* Practice only, and no focus set or replaced. It used to make the chapter
+     the focus first, which silently threw away a passage somebody was working
+     on (audit d-02) -- the flash-card picker stopped doing that in v275. */
+  const q=v.slice().sort(()=>Math.random()-.5).map(flashcard);
+  q.__words=v; q.__practice=true;
+  startSession(q,"d");
 }
 
 function toggleFocusMode(){
@@ -1292,6 +1307,7 @@ function alphaCheck(){
       null, ok=>{ if(!ok) missed.push(a); });
   });
   q.push(alphaCheckResult(missed,first));
+  q.__tail=1;   // the result is a step, not a question: 24 letters count to 24 (audit b-11)
   return q;
 }
 
@@ -1589,15 +1605,19 @@ function planHtml(){
    alphabet check, Today — the plan IS the primary thing, so the parameter is
    passed rather than read off AGAIN, which outlives the session and would
    quietly grey the button on screens that never asked. */
-function nextTaskHtml(demote){
+function nextTaskHtml(demote,chapter){
   const next=planRows().find(t=>!t.done);
   if(!next){
     const x=extraTask(), more=extraDone();
+    /* After a part, the screen already offers the next part; an extra that
+       is "more of" the same chapter was a second button to the same place
+       (audit a-02). */
+    const same=chapter && x.label===`More of chapter ${chapter}`;
     return `<p class="muted" style="text-align:center;font-size:.86rem;margin:0 0 12px">
       That is today's plan finished${more?`, and ${more} more past it`:""}.</p>
-      <button class="btn ghost" onclick="runExtra()">Keep going — ${
+      ${same?"":`<button class="btn ghost" onclick="runExtra()">Keep going — ${
         x.label.replace(/^./,c=>c.toLowerCase())}</button>
-      <div style="height:9px"></div>`;
+      <div style="height:9px"></div>`}`;
   }
   return `<button class="btn${demote?" ghost":""}" onclick="runPlanTask('${next.id}')">Next — ${next.label.replace(/^./,c=>c.toLowerCase())}</button>
     <div style="height:9px"></div>`;
@@ -1945,7 +1965,8 @@ document.getElementById("btnQuit").onclick=()=>{
 function step(){
   const bar=document.getElementById("sessBar");
   bar.style.width=(qi/Q.length*100)+"%";
-  document.getElementById("sessCount").textContent=`${Math.min(qi+1,Q.length)} / ${Q.length}`;
+  const qn=Q.length-(Q.__tail||0);
+  document.getElementById("sessCount").textContent=`${Math.min(qi+1,qn)} / ${qn}`;
   if(qi>=Q.length){ finish(); return; }
   Q[qi]();
 }
@@ -2169,6 +2190,9 @@ document.getElementById("btnUndo").onclick=()=>{
   // of its two second looks.
   if(UNDO.requeued){ Q.splice(UNDO.at,1); REQUEUED[UNDO.i]=Math.max(0,(REQUEUED[UNDO.i]||1)-1); }
   S.reviewsToday=UNDO.reviews;
+  /* And what the grade paid: the XP and the "reviewed" count, or an undone
+     card still showed in the summary (audit b-02). */
+  S.xp=Math.max(0,(S.xp||0)-3); SESSION_XP=Math.max(0,SESSION_XP-3); REVIEWED=Math.max(0,REVIEWED-1);
   save();
   qi=UNDO.qi; UNDO=null;
   document.getElementById("btnUndo").style.display="none";
@@ -2210,6 +2234,18 @@ function floatXp(el,n){
    `silent` is for the trace: a trace that falls short says "have another
    go", and giving it a wrong-answer buzzer would undo that. */
 function answerFelt(ok,el,silent){
+  /* Undo takes back the last card graded, and only while it IS the last
+     thing done: after two questions it rewound the session past both of
+     them (audit a-08). Any other answer ends the chance to undo. */
+  if(UNDO){ UNDO=null; const u=document.getElementById("btnUndo"); if(u) u.style.display="none"; }
+  /* The Continue that appears under the feedback could sit below the fold,
+     behind the bottom nav, on a 667px phone (audit a-11). Bring the last
+     button of the answer into view once it has been drawn. */
+  setTimeout(()=>{
+    const b=[...document.querySelectorAll("#sessBody .btn")].pop();
+    if(b && b.getBoundingClientRect().bottom>innerHeight-(parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-h"))||64)-16)
+      b.scrollIntoView({block:"end",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  },60);
   ASKED++; if(ok) RIGHT++;
   if(ok){ COMBO++; COMBO_BEST=Math.max(COMBO_BEST,COMBO); } else COMBO=0;
   comboPaint();
@@ -2493,6 +2529,13 @@ function seedChapters(upto){
 }
 
 function startNew(n=5){
+  /* The gate Today keeps, kept here too: the Drill card was dimmed "letters
+     first" and started new words anyway (audit a-03), against what Today and
+     the help page both promise. */
+  if(typeof lettersReady==="function" && !lettersReady()){
+    toast("New words start once the letters are settled — Today leads with them. Already read Greek? Settings, Studied Greek before?");
+    return;
+  }
   const fresh=[];
   for(const i of newWordOrder()){ if(fresh.length>=n) break; if(!S.cards[i] && !skipWord(i)) fresh.push(i); }
   introduce(fresh,"You've started every word in the deck");
@@ -2813,7 +2856,7 @@ function lessonPause(id,at,total){
       <div class="endbtns">
         <button class="btn" onclick="lessonWalk(${id},${at})">Keep going — part ${at+1} of ${total}</button>
         <div style="height:9px"></div>
-        ${nextTaskHtml(true)}
+        ${nextTaskHtml(true,id)}
         <button class="btn ghost" onclick="go('learn')">Back to lessons</button>
       </div>`;
     document.getElementById("sessBar").style.width="100%";
@@ -2866,7 +2909,7 @@ const ART=[
 ["ἡ","feminine nominative singular"],["τῆς","feminine genitive singular"],
 ["τῇ","feminine dative singular"],["τήν","feminine accusative singular"],
 ["τό","neuter nominative/accusative singular"],["οἱ","masculine nominative plural"],
-["τῶν","genitive plural (all genders)"],["τοῖς","masculine/neuter dative plural"],
+["τῶν","masculine/feminine/neuter genitive plural"],["τοῖς","masculine/neuter dative plural"],
 ["τούς","masculine accusative plural"],["αἱ","feminine nominative plural"],
 ["ταῖς","feminine dative plural"],["τάς","feminine accusative plural"],
 ["τά","neuter nominative/accusative plural"]
@@ -2985,6 +3028,17 @@ const REAL_OPTS={
 REAL_OPTS["A-"]=REAL_OPTS["N-"];
 // where each question sits in the eight-character parse code
 const REAL_AT={person:0,tense:1,voice:2,mood:3,"case":4,number:5,gender:6};
+/* The readings a form genuinely allows, beyond the one this verse takes.
+   Middle and passive share every form in the present, imperfect, perfect and
+   pluperfect, and a neuter's nominative, accusative and vocative are one
+   form. Keyed on the verse alone, ἔρχεται as "pass" was marked wrong (audit
+   b-03) -- a right parse of the form, marked as a mistake. */
+function realAlso(pos,code,k){
+  if(k==="voice" && pos==="V-" && "PIXY".includes(code[1]) && "MP".includes(code[2]))
+    return ["M","P"];
+  if(k==="case" && code[6]==="N" && "NAV".includes(code[4])) return ["N","A","V"];
+  return [code[REAL_AT[k]]];
+}
 
 /* Words you are working on, not words at random: the passage if one is in
    focus, else the deck you have started, else the commonest forms in the New
@@ -3158,8 +3212,14 @@ function parseRealDrill(n=10,from){
       };
     });
     document.getElementById("realGo").onclick=()=>{
-      const ok=Object.keys(opts).every(k=>sel[k]===code[REAL_AT[k]]);
-      Object.keys(opts).forEach(k=>noteParse(k,code[REAL_AT[k]],sel[k]===code[REAL_AT[k]]));
+      const fits=k=>realAlso(pos,code,k).includes(sel[k]);
+      const ok=Object.keys(opts).every(fits);
+      Object.keys(opts).forEach(k=>noteParse(k,code[REAL_AT[k]],fits(k)));
+      /* Right, but not the verse's own reading: say that both are right. */
+      const also=Object.keys(opts).filter(k=>fits(k) && sel[k]!==code[REAL_AT[k]]);
+      const alsoNote=!also.length?"":also.includes("voice")
+        ? " Middle and passive look the same in this tense, so both are right; the verse takes the one given."
+        : " Neuter nominative and accusative look the same, so both are right; the verse takes the one given.";
       save();
       document.querySelectorAll("#sessBody .chips button").forEach(c=>c.onclick=null);
       document.getElementById("realGo").style.display="none";
@@ -3169,7 +3229,7 @@ function parseRealDrill(n=10,from){
       const gloss=VOCAB[vi]?VOCAB[vi][1]:"";
       document.getElementById("fb").innerHTML=
         `<div class="feedback"><b>${ok?"Correct":"Not quite"}</b>
-          <span class="gk">${form}</span> — ${gntParse(pos,code)}.<br>
+          <span class="gk">${form}</span> — ${gntParse(pos,code)}.${alsoNote}<br>
           From <span class="gk">${head}</span>${gloss?`, ${gloss}`:""} · ${ref}</div>
          <button class="btn" onclick="qi++;step()">Continue</button>`;
       answerFelt(ok);
@@ -3234,7 +3294,9 @@ function ppDrill(n=10){
     const opts=[v[slot],...wrong].sort(()=>Math.random()-.5);
     qs.push(mcq(`The ${PP_LBL[slot-1]} of <span class="q-gk">${v[0]}</span> is:`,
       opts.map(o=>`<span class="gk">${o}</span>`), opts.indexOf(v[slot]),
-      `<span class="gk">${v[0]}, ${v[1]}, ${v[2]}, ${v[3]}</span> — say the whole line aloud; the parts stick as a chant.`));
+      /* A dash marks a part the New Testament never uses; printed as it
+         stood, the line ended "— —" before the advice (audit b-11). */
+      `<span class="gk">${v.slice(0,4).map(x=>x==="—"?"</span><i>(not in the NT)</i><span class=\"gk\">":x).join(", ")}</span> — say the whole line aloud; the parts stick as a chant.`));
   });
   return qs;
 }
@@ -3300,7 +3362,7 @@ function lookalikeDrill(n=12){
 const CASEFN=[
 ["ἡ ἀγάπη τοῦ θεοῦ|τοῦ θεοῦ could be:",
  ["Subjective or objective genitive", "Only objective — our love for God", "Genitive absolute, with the participle left out", "Partitive — a share of God"],0,
- "God's love for us (subjective) or our love for God (objective). Grammar allows both and context decides — the classic exegetical fork. With this noun the usage is lopsided, though: Abbott could find only a couple of objective genitives with it in the New Testament, Luke 11:42 among them.", 4,"Romans 5:5"],
+ "God's love for us (subjective) or our love for God (objective). Grammar allows both and context decides — the classic exegetical fork. Abbott-Smith gives the noun both ways: God's love for people (Romans 5:8), and people's love for God at 1 John 2:5, where the same phrase, ἡ ἀγάπη τοῦ θεοῦ, stands.", 21,"Romans 5:5"],
 ["βαπτισθῆναι ὑπ’ αὐτοῦ|ὑπό + genitive with a passive verb expresses:",
  ["Location — under him", "Personal agent — by him", "Time — during his ministry", "Cause — because of him"],1,
  "With a passive verb ὑπό + genitive names the agent: Jesus came to be baptised by John. Under something would be ὑπό + accusative.", 15,"Matthew 3:13"],
@@ -3327,7 +3389,7 @@ const CASEFN=[
  "Genitive absolute: a participial clause whose subject is not part of the main sentence. Narrative Greek loves it — this one opens the Sermon on the Mount.", 21,"Matthew 5:1"],
 ["τῷ σαββάτῳ|A bare dative of time in narrative most likely gives:",
  ["Indirect object — given to the sabbath", "Time when — on the sabbath", "Means — by keeping the sabbath", "Extent of time — all sabbath long"],1,
- "The bare dative of time answers when. The genitive gives the period within which, the accusative how long — though an accusative can mark a point of time too (John 4:52).", 8,"Luke 6:7"],
+ "The bare dative of time answers when. The genitive gives the period within which, the accusative how long — though an accusative can mark a point of time too (John 4:52).", 8,"Luke 13:14"],
 ["εἴ τις λαλεῖ|εἰ + indicative (1 Peter 4:11) is which class of condition?",
  ["First — assumed true for the argument", "Second — contrary to fact, known not to be so", "Third — a real possibility in the future", "Fourth — remote, a mere possibility"],0,
  "First class: εἰ with the indicative. It does not mean the condition is true, only that the writer is arguing from it.", 16,"1 Peter 4:11"],
@@ -3342,7 +3404,7 @@ const CASEFN=[
  "Fourth class, remote possibility (1 Peter 3:14). No complete example survives in the New Testament; every one is missing a half or mixes classes.", 25,"1 Peter 3:14"],
 ["ἀγάπης τοῦ Χριστοῦ|In Romans 8:35 the genitive is best taken as:",
  ["Objective — our love for Christ", "Subjective — Christ's own love", "Partitive", "Of material"],1,
- "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides.", 4,"Romans 8:35"],
+ "Subjective: Christ is the one loving. The same shape in Luke 11:42 (ἀγάπην τοῦ θεοῦ) is objective — love for God. Only the argument decides.", 17,"Romans 8:35"],
 ["τινες τῶν γραμματέων|τῶν γραμματέων here is a genitive of:",
  ["Possession — the scribes' own followers", "The part and the whole — some of the scribes", "Source — sent from the scribes", "Comparison — some more learned than the scribes"],1,
  "Partitive: the genitive names the whole from which the head noun takes a part (Matthew 9:3).", 17,"Matthew 9:3"],
@@ -3420,7 +3482,7 @@ const CASE_NOTE=/\(\+[^)]*\)/;
    names in all but tag — Jesus, Paul, Peter, Pharisee. Drawn from the other
    nouns, a capitalised gloss was the only capital among the four 21% of the
    time; in English → Greek, a capitalised headword was 84%. */
-const CAPITAL=/^(?!I )\p{Lu}/u;
+const CAPITAL=/^(?!I(?: |$))\p{Lu}/u;   // ἐγώ's bare "I" is a pronoun, not a name (audit b-01)
 /* The senses of a deck gloss, for telling near-synonyms apart: "until, as
    far as (+gen)" is ["until", "as far as"]. Case notes and brackets go, and
    a verb's leading "I " (the deck's convention), so "I kill" meets "kill". */
@@ -4368,8 +4430,7 @@ function renderProgress(){
     <p class="muted" style="font-size:.82rem;margin:18px 0 0">
       <a href="about.html" class="tappable" style="color:var(--muted)">About Everyday Koine</a> ·
       <a href="privacy.html" class="tappable" style="color:var(--muted)">Privacy policy</a> — what is
-      stored, what sync sends, and how to delete it. Google Play requires this
-      link to be in the app as well as on the listing.</p>
+      stored, what sync sends, and how to delete it.</p>
     <div style="height:26px"></div>`;
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
@@ -4392,9 +4453,15 @@ function renderProgress(){
   };
   document.getElementById("setPlace").onchange=e=>{
     const n=+e.target.value; if(!n)return;
+    e.target.value="0";
     /* Add, never replace: this is a native select on a scrolling screen, and
        replacing wiped chapters finished beyond n with no confirm or undo. */
     const add=Array.from({length:n},(_,k)=>k+1);
+    const fresh=add.filter(k=>!(S.lessons||[]).includes(k));
+    if(!fresh.length){ toast("Chapters 1–"+n+" were already done"); return; }
+    /* And it asks: nothing on any screen un-finishes a chapter (audit d-03). */
+    if(!confirm(`Mark chapters 1–${n} as done? The letters will count as known too. `
+        + `Only Reset everything undoes this.`)) return;
     S.lessons=[...new Set([...(S.lessons||[]),...add])].sort((a,b)=>a-b);
     /* Chapter 1 is the alphabet, so saying you have done it says you can read
        the letters. Without this, Today would lead someone who has studied
@@ -4535,7 +4602,7 @@ function saneState(x){
   const fx=x.focus;
   const fxCommon=fx && typeof fx==="object"
     && Array.isArray(fx.deck) && Array.isArray(fx.lex);
-  const fxRows=fx?{
+  const fxRows=fxCommon?{
         started:/^\d{4}-\d{2}-\d{2}$/.test(fx.started)?fx.started:today(),
         deck:fx.deck.filter(r=>focusRow(r,false)).map(r=>[+r[0],+r[1],+r[2]]).slice(0,600),
         lex:fx.lex.filter(r=>focusRow(r,true)).map(r=>[r[0],+r[1],+r[2]]).slice(0,600),
@@ -4658,6 +4725,11 @@ function resetAll(){
     : "Delete all progress on this device? This cannot be undone."))return;
   if(synced && typeof syncOff==="function") syncOff();
   S={cards:{},gcards:{},grids:{},notes:{},parsing:{},xp:0,streak:0,best:0,last:null,seen:0,lessons:[],badges:[],reviewsToday:0,dayOfReviews:null,goal:20,suspended:[],exported:null,restUsed:null,where:null,pin:null,alpha:{},alphaDay:{},alphaCheck:null,plan:null,lessonPart:null,lcards:{},myGloss:{},focus:null,focusDone:[]};
+  /* "Everything" includes the per-device choices kept outside S, which the
+     privacy page says a reset clears (audit d-07): the Today layout and the
+     theme, and the Greek text size already painted onto the page. */
+  try{ localStorage.removeItem(TODAY_KEY); }catch(e){}
+  applyTheme(""); applyGk();
   save(); renderProgress(); toast("Everything reset");
 }
 

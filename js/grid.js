@@ -247,7 +247,10 @@ function gridQueue(n, anyChapter) {
   const mine = gridUnplayed(gridEarned());
   const ahead = anyChapter ? gridUnplayed(gridRounds()).filter(g => !mine.includes(g)) : [];
   const rest = gridStarted().filter(g => S.grids[g.key].due > today());
-  return [...shuf(due), ...shuf(mine), ...shuf(ahead), ...shuf(rest)].slice(0, n);
+  /* Due tables in gridDue's own order, not shuffled: Today's row names the
+     first of them ("The article first") and a shuffle opened it one time in
+     four (audit b-08). */
+  return [...due, ...shuf(mine), ...shuf(ahead), ...shuf(rest)].slice(0, n);
 }
 
 /* ============================================================
