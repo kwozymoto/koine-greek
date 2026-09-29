@@ -4040,12 +4040,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "tro fey",
-  "source": "fix21",
-  "duration_s": 1.274,
-  "take": "2026-09-10, Atlas",
-  "note": "'ey' as its own token",
-  "sha1": "11647c585d10"
+  "tts": "/trɒˈfei̯/",
+  "source": "ipa-batch10",
+  "duration_s": 1.149,
+  "take": "bVI10_763_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "6fe6f933b2d7"
  },
  {
   "index": 764,
@@ -4088,12 +4088,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "ek tay noh",
-  "source": "batch5",
-  "duration_s": 1.385,
-  "sha1": "22e02fab35c7",
-  "take": "2026-09-15, Atlas (b5f_766_a)",
-  "note": "the h of 'eh' woke at the front of a word and was spelled out; ἐκλέγομαι keeps its 'ehk' because it was heard and passed"
+  "tts": "/ɛkˈtei̯.noː/",
+  "source": "ipa-batch10",
+  "duration_s": 1.228,
+  "sha1": "aa82b29cdb4d",
+  "take": "bVI10_766_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 767,
@@ -4120,12 +4120,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 16,
-  "tts": "ehr gah teys",
-  "source": "ays",
-  "duration_s": 1.797,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "673521e7b5fb"
+  "tts": "/ɛrˈɡa.tei̯s/",
+  "source": "ipa-batch10",
+  "duration_s": 1.306,
+  "take": "bVI10_768_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "4bdc3f6430e8"
  },
  {
   "index": 769,
@@ -4216,12 +4216,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "sau loss",
-  "source": "batch5",
+  "tts": "/ˈsau̯.lɒs/",
+  "source": "ipa-batch10",
   "duration_s": 1.149,
-  "sha1": "1a2579101d24",
-  "take": "2026-09-15, Atlas (b5c_774_b)",
-  "note": "'sow', 'mow' and 'stow' are English words whose vowel is the /ou/ of mow; αυ wants the /au/ of cow, and 'au' is not a word the voice can look up at all"
+  "sha1": "e97bbca23e79",
+  "take": "bVI10_774_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 775,
@@ -4264,12 +4264,12 @@
   "pos": "adj",
   "tier": 5,
   "freq": 15,
-  "tts": "ghoom noss",
-  "source": "batch8",
+  "tts": "/ɡuˈmnɒs/",
+  "source": "ipa-batch10",
   "duration_s": 1.149,
-  "sha1": "5a372750bf78",
-  "take": "2026-09-15, Atlas (b8c_777_b)",
-  "note": "`gh` for the hard g, the digraph that rescued γινώσκω from the letter name; and split, because closed up the g was being recited"
+  "sha1": "7b22a69712dd",
+  "take": "bVI10_777_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 778,
@@ -4424,12 +4424,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "klay ron no moss",
-  "source": "batch5",
-  "duration_s": 2.038,
-  "sha1": "a33c26c8ac63",
-  "take": "2026-09-15, Atlas (b5d_787_a)",
-  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
+  "tts": "/klei̯rɒˈnɒ.mɒs/",
+  "source": "ipa-batch10",
+  "duration_s": 1.855,
+  "sha1": "0a448016e6d7",
+  "take": "bVI10_787_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 788,
@@ -4440,11 +4440,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "kitzo",
-  "source": "ear",
-  "duration_s": 0.936,
-  "take": "F",
-  "sha1": "9dfbabd6208f"
+  "tts": "/ˈktiʣoː/",
+  "source": "ipa-batch10",
+  "duration_s": 0.993,
+  "take": "bVI10_788_b",
+  "sha1": "0f4b1578be65",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 789,
@@ -4471,12 +4472,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "nawmee zoh",
-  "source": "batch5",
-  "duration_s": 1.463,
-  "take": "2026-09-11, Atlas",
-  "note": "the gold-vowel fault again; the vowel spelled outright, as σοφός took.",
-  "sha1": "cd3f869acb3a"
+  "tts": "/nɒˈmiʣoː/",
+  "source": "ipa-batch10",
+  "duration_s": 1.149,
+  "take": "bVI10_790_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "0b7061ac38ca"
  },
  {
   "index": 791,
@@ -4534,12 +4535,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "pahr th eh noss",
-  "source": "fix21",
-  "duration_s": 2.071,
-  "take": "2026-09-10, Atlas",
-  "note": "'theh' came back as 'the'",
-  "sha1": "833e7c26991b"
+  "tts": "/parˈθɛ.nɒs/",
+  "source": "ipa-batch10",
+  "duration_s": 1.228,
+  "take": "bVI10_794_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "358012688e53"
  },
  {
   "index": 795,
@@ -4550,10 +4551,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 15,
-  "tts": "powoh",
-  "source": "batch5",
-  "duration_s": 0.84,
-  "sha1": "fc95ceef91ed"
+  "tts": "/ˈpau̯.oː/",
+  "source": "ipa-batch10",
+  "duration_s": 0.993,
+  "sha1": "f82e8e3b36af",
+  "take": "bVI10_795_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 796,
@@ -4740,10 +4743,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "khortoss",
-  "source": "batch8",
-  "duration_s": 1.08,
-  "sha1": "f393be8f5314"
+  "tts": "/ˈkɔr.tɒs/",
+  "source": "ipa-batch10",
+  "duration_s": 0.914,
+  "sha1": "1138e1f643d8",
+  "take": "bVI10_807_b",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 808,
@@ -4834,12 +4839,12 @@
   "pos": "name",
   "tier": 5,
   "freq": 15,
-  "tts": "ee or dah neys",
-  "source": "ays",
-  "duration_s": 1.915,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "a1b2d956f643"
+  "tts": "/ɪɔrˈda.nei̯s/",
+  "source": "ipa-batch10",
+  "duration_s": 1.541,
+  "take": "bVI10_813_c",
+  "note": "IPA, chosen by ear over the card's English respelling",
+  "sha1": "fbfacfcd6b61"
  },
  {
   "index": 814,
@@ -4866,10 +4871,12 @@
   "pos": "conj",
   "tier": 5,
   "freq": 15,
-  "tts": "hohthenn",
-  "source": "batch8",
-  "duration_s": 1.08,
-  "sha1": "3dbc8cb2e56c"
+  "tts": "/ˈhɒ.θɛn/",
+  "source": "ipa-batch10",
+  "duration_s": 1.071,
+  "sha1": "cccdee3b9773",
+  "take": "bVI10_815_c",
+  "note": "IPA, chosen by ear over the card's English respelling"
  },
  {
   "index": 816,

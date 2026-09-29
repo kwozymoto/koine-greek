@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v288';
+const VERSION = 'v289';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,19 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v289: IPA batch 10 (13 cards). */
+  'audio/vocab/763_trophe.mp3',                    // τροφή
+  'audio/vocab/766_ekteino.mp3',                   // ἐκτείνω
+  'audio/vocab/768_ergates.mp3',                   // ἐργάτης
+  'audio/vocab/774_saulos.mp3',                    // Σαῦλος
+  'audio/vocab/777_gumnos.mp3',                    // γυμνός
+  'audio/vocab/787_kleronomos.mp3',                // κληρονόμος
+  'audio/vocab/788_ktizo.mp3',                     // κτίζω
+  'audio/vocab/794_parthenos.mp3',                 // παρθένος
+  'audio/vocab/795_pauo.mp3',                      // παύω
+  'audio/vocab/807_chortos.mp3',                   // χόρτος
+  'audio/vocab/813_iordanes.mp3',                  // Ἰορδάνης
+  'audio/vocab/815_othen.mp3',                     // ὅθεν
   /* v288: the three re-cued words of IPA batch 9. */
   'audio/vocab/623_eudokeo.mp3',                   // εὐδοκέω
   'audio/vocab/676_deesis.mp3',                    // δέησις
