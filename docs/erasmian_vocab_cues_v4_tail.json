@@ -1800,12 +1800,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 21,
-  "tts": "ew dok keh hoe",
-  "source": "batch5",
-  "duration_s": 1.698,
-  "sha1": "f6b5de4d4650",
-  "take": "2026-09-15, Atlas (b5e_623_a)",
-  "note": "'do' and 'ro' are English words and the voice reads them as such. Closing the syllable is the πρόβατον remedy ('probbah ton'); where there is no consonant to close on, the vowel is spelled 'aw'. Which of the two was decided per word by ear, not by rule"
+  "tts": "/judɒˈkɛ.oː/",
+  "source": "ipa-batch9-recue",
+  "duration_s": 1.463,
+  "sha1": "041dcd63cfdd",
+  "take": "bVI9r_623_b",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-cued: batch 9's plain take was kept over two with the stressed e closed by h"
  },
  {
   "index": 624,
@@ -2648,12 +2648,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 18,
-  "tts": "deh ay sis",
-  "source": "batch5",
+  "tts": "/ˈdɛh.ei̯.sɪs/",
+  "source": "ipa-batch9-recue",
   "duration_s": 1.698,
-  "sha1": "378032f338f8",
-  "take": "2026-09-15, Atlas (b5d_676_a)",
-  "note": "-sis, not -sees: every -σις noun ends in a short iota, and κτίσις 'kitsis' was already cued that way"
+  "sha1": "b067391b8d99",
+  "take": "bVI9r_676_c",
+  "note": "IPA, chosen by ear over the card's English respelling. The stressed e CLOSED WITH h: the plain batch-9 take said day-ay-sis. Fraser asked whether δέ should be de, not day; it should"
  },
  {
   "index": 677,
@@ -3944,12 +3944,12 @@
   "pos": "verb",
   "tier": 5,
   "freq": 16,
-  "tts": "prossdok kah oh",
-  "source": "batch5",
-  "duration_s": 1.881,
-  "sha1": "2e1365e19e12",
-  "take": "2026-09-15, Atlas (b5f_757_b)",
-  "note": "'pros' dropped the sigma the προσ- rule has required since batch 4, and 'do' is an English word the voice reads as such; closing both, and the first space with them, was what got the pace right"
+  "tts": "/ˌprɒsdɒˈka.oː/",
+  "source": "ipa-batch9-recue",
+  "duration_s": 1.384,
+  "sha1": "ef15face33da",
+  "take": "bVI9r_757_c",
+  "note": "IPA, chosen by ear over the card's English respelling. A SECONDARY STRESS on the opening: the plain take lost the k (pros do do oh); offered beside dotless and a doubled k, the ear chose the stress"
  },
  {
   "index": 758,

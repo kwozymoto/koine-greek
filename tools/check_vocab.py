@@ -755,6 +755,13 @@ def ipa_cue(ipa):
 # The rule proposes; only a cue that produced a clip somebody approved may
 # ship, so these are the heard ones and the difference is the entry.
 IPA_HEARD = {
+    676: "the stressed e CLOSED WITH h. The plain batch-9 take said "
+         "day-ay-sis, the epsilon drifting to eta before the eta; set "
+         "against two takes of /ˈdɛh.ei̯.sɪs/, the closed syllable won",
+    757: "a SECONDARY STRESS on the opening. The plain batch-9 take lost "
+         "the k (\"pros do do oh\": the voice reads dɒ as English do, which "
+         "the old respelling's note already said); offered dotless, the "
+         "stress, and a doubled k, the ear chose the stress",
     617: "the stressed e CLOSED WITH h, εὐχαριστέω's remedy. Both plain "
          "batch-8 takes of /aɡnɒˈɛ.oː/ drifted to eta; re-cued, one plain "
          "take was set against two of /aɡnɒˈɛh.oː/ and Fraser chose one: "
