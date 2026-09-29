@@ -4456,12 +4456,12 @@
   "pos": "noun",
   "tier": 5,
   "freq": 15,
-  "tts": "layss teys",
-  "source": "ays",
-  "duration_s": 1.42,
-  "take": "2026-09-10, Atlas",
-  "note": "final -ays rhymes with 'days' and comes back voiced; 'eys' does not. Settled on μαθητής, προφήτης and στρατιώτης, and missed here because the rollout regex matched a token ending 'ay' and not one ending 'ays'",
-  "sha1": "dcb2113047b1"
+  "tts": "/lei̯ˈsteːs/",
+  "source": "ipa-batch10-recue",
+  "duration_s": 1.228,
+  "take": "bVI10r_789_d",
+  "note": "IPA, chosen by ear over the card's English respelling. Re-cued: the batch-10 pick said lie for the first eta; a re-roll of the same cue won over a long-e cue",
+  "sha1": "fa0623675440"
  },
  {
   "index": 790,
