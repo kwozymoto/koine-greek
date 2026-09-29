@@ -288,13 +288,13 @@
   "finding": "Was 'μή negates everything outside the indicative'. The body had carried the John 21:5 exception since v127 and this quiz still taught the absolute. Corpus: μή stands before a non-indicative 828 times of 938, 88%. Caught by ChatGPT's audit v1 — the second body/quiz split it found in this pass."
  },
  {
-  "k": "4c5521a9493d",
+  "k": "6e1eb784afd0",
   "ch": 3,
   "kind": "absolute",
   "src": "quiz",
-  "text": "Mark does it constantly, and most English translations quietly convert it — so if you have only read this in English you have never seen it.",
-  "status": "read",
-  "finding": "The quiz twin of the historical-present claim recorded as unsettled in the body: at Mark 1:40 the six reference translations split three and three, and four of the six are old and deliberately literal, so they cannot establish a majority. The claim is very likely right about the versions a reader holds; this library cannot show it."
+  "text": "Mark does it constantly, and many English translations quietly convert it — so if you have only read this in English you have never seen it.",
+  "status": "verified",
+  "finding": "As the body claim: three of the six translations on the shelf convert Mark 1:40's ἔρχεται to a past (audit a-06)."
  },
  {
   "k": "701ae46e3bc6",
@@ -315,15 +315,6 @@
   "finding": "A claim about the app rather than about Greek: the grid drill does exist, js/grid.js derives 45 rounds from the paradigm tables, and check_grids holds the derivation. True as a statement about the product."
  },
  {
-  "k": "92edd85f59d1",
-  "ch": 3,
-  "kind": "absolute",
-  "src": "body",
-  "text": "He does this constantly, and most English translations quietly convert it to a past tense — so if you have only ever read this in English, you have never seen it.",
-  "status": "unsettled",
-  "finding": "NOT SETTLED by the app's own six, and worth recording why. Mark 1:40 Καὶ ἔρχεται πρὸς αὐτὸν λεπρός: KJV 'there came a leper', BSB 'a leper came' and NHEB 'A leper came' convert to the past; ASV 'there cometh', Darby 'there comes' and YLT 'doth come' keep the present. Three of six. But the six are ASV, BSB, Darby, KJV, YLT and NHEB — four of them old and deliberately literal — so they are a good set for refuting an 'every' or 'no translation' claim and a poor sample for 'most translations'. The modern versions a reader is likely to hold (NIV, ESV, NASB, CSB) do overwhelmingly convert, which is what the sentence means, but this library cannot demonstrate it. Needs a modern translation or a reader who has one."
- },
- {
   "k": "decd2d13426a",
   "ch": 3,
   "kind": "spelling",
@@ -340,6 +331,15 @@
   "text": "That division holds about nine times in ten, and the commonest exception earns its keep.",
   "status": "verified",
   "finding": "Corpus: οὐ stands before an indicative 1,328 of 1,486 = 89%; μή before a non-indicative 828 of 938 = 88%. So 'μή with everything else' is a strong tendency, not a rule: 73 bare μή + indicative, mostly the interrogative μή expecting the answer no, plus 21 εἰ μή and 16 οὐ μή. John 21:5 added as the example, where the text supplies the expected Οὔ in the next clause."
+ },
+ {
+  "k": "f51d5a744e0a",
+  "ch": 3,
+  "kind": "absolute",
+  "src": "body",
+  "text": "He does this constantly, and many English translations quietly convert it to a past tense — so if you have only ever read this in English, you have never seen it.",
+  "status": "verified",
+  "finding": "Translations on the shelf at Mark 1:40: BSB, KJV and NHEB give a past tense; ASV, Darby and YLT keep the present ('cometh', 'doth come'). Three of six, so 'many', not 'most' (audit a-06)."
  },
  {
   "k": "fccd29aec19a",
@@ -972,6 +972,15 @@
   "finding": "149 of 666, exact."
  },
  {
+  "k": "6a57c5e00f9b",
+  "ch": 8,
+  "kind": "absolute",
+  "src": "body",
+  "text": "Only περί , πρό and ἀνά never shorten.",
+  "status": "verified",
+  "finding": "Corpus: περί 332, πρό 47 and ἀνά 13 are never written elided (ἀνά stands unshortened before a vowel, Rev 21:21 ἀνὰ εἷς). ἀπό, διά, ἐπί, κατά, μετά, παρά, ὑπό and ἀντί (ἀνθ’ ×5) all elide (audit c-01)."
+ },
+ {
   "k": "851bc360846d",
   "ch": 8,
   "kind": "absolute",
@@ -999,13 +1008,13 @@
   "finding": "Verified by reading all thirteen: eight distributive, five ἀνὰ μέσον, not one meaning 'up'."
  },
  {
-  "k": "c4f58e54be20",
+  "k": "a590c22d588f",
   "ch": 8,
   "kind": "absolute",
-  "src": "body",
-  "text": "Only περί and πρό never shorten.",
+  "src": "quiz",
+  "text": "ἀνά, like περί and πρό, never does.",
   "status": "verified",
-  "finding": "True, and the evidence is stronger than the claim. Of the vowel-final prepositions, διά, κατά, μετά, ἀπό, ὑπό, ἐπί, παρά and ἀντί all elide. περί stands before a vowel 148 times and never does; πρό 7 times and never does. ἀνά is vowel-final too but never once meets a vowel in the New Testament, so it is untested rather than a counterexample."
+  "finding": "As the body claim: ἀνά 13, never elided (audit c-01)."
  },
  {
   "k": "d2cc81636526",

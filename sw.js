@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v293';
+const VERSION = 'v294';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -34,6 +34,10 @@ const isBulkUrl = u => /audio\/vocab\/[^/]+\.mp3$/.test(u)
    what bumping BULK would cost. Empty this list in the release after the
    one that fills it. */
 const STALE = [
+  /* v294: three narration clips re-recorded for audit fixes in chapters 3 and 8. */
+  'audio/lessons/l03_05.mp3',
+  'audio/lessons/l08_09.mp3',
+  'audio/lessons/l08_20.mp3',
   /* v293: the reader's gloss map, rebuilt after nine deck glosses changed. */
   'data/gnt/manifest.json',
   /* v290: λῃστής, the last of IPA batch 10. */
