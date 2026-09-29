@@ -186,7 +186,7 @@ html:`<table><caption>λύω — imperative</caption>
 <p class="muted" style="font-size:.83rem">Prohibitions: μή + present imperative (general practice / stop) · μή + aorist subjunctive (don't do it at all).</p>`},
 
 {t:"The optative — wishes and prayers",tags:"optative mood wish prayer may it never be genoito eie doie potential fourth class condition rare",
-html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are one phrase: μὴ γένοιτο, fourteen times in Paul and once in Luke. You will never have to build one. You only have to know one when you see it. The nine below carry every tense, voice, person and number the optative takes anywhere in the New Testament.</p>
+html:`<p class="muted" style="font-size:.83rem">The fourth mood, and by the first century a fading one. The New Testament has <b>68 optatives</b> against 1,856 subjunctives — twenty-seven to one — and fifteen of the 68 are one phrase: μὴ γένοιτο, fourteen times in Paul and once in Luke. You will never have to build one. You only have to know one when you see it. The nine below are the kinds you will meet most often.</p>
 <table><caption>Every kind you will meet</caption>
 <tr><th>In the text</th><th>What it is</th><th>Meaning</th><th>Where</th></tr>
 <tr><td class="g" data-ref="Romans 6:2" data-claim="opt">μὴ γένοιτο</td><td class="muted">aor mid 3sg</td><td>may it never be!</td><td class="muted" style="white-space:nowrap">Romans 6:2</td></tr>
@@ -229,7 +229,7 @@ html:`<table><caption>Present active of the three classes</caption>
 <tr><th>1pl</th><td class="g">ἀγαπῶμεν</td><td class="g">ποιοῦμεν</td><td class="g">πληροῦμεν</td></tr>
 <tr><th>2pl</th><td class="g">ἀγαπᾶτε</td><td class="g">ποιεῖτε</td><td class="g">πληροῦτε</td></tr>
 <tr><th>3pl</th><td class="g">ἀγαπῶσι(ν)</td><td class="g">ποιοῦσι(ν)</td><td class="g">πληροῦσι(ν)</td></tr></table>
-<p class="muted" style="font-size:.83rem">Before a tense sign the vowel lengthens instead: ἀγαπήσω, ἠγάπησα · ποιήσω, ἐποίησα · πληρώσω, ἐπλήρωσα. Liquid stems (λ μ ν ρ) refuse σ: future μενῶ, ἀγγελῶ; aorist ἔμεινα, ἤγγειλα.</p>`},
+<p class="muted" style="font-size:.83rem">Before a tense sign the vowel usually lengthens instead (καλέω, keeping its ε, gives ἐκάλεσεν): ἀγαπήσω, ἠγάπησα · ποιήσω, ἐποίησα · πληρώσω, ἐπλήρωσα. Liquid stems (λ μ ν ρ) refuse σ: future μενῶ, ἀγγελῶ; aorist ἔμεινα, ἤγγειλα.</p>`},
 
 {t:"μι-verbs",ch:26,tags:"didomi tithemi histemi aphiemi athematic",
 html:`<table><caption>Present active</caption>
@@ -278,7 +278,7 @@ html:`<table><caption>One case</caption>
 <tr><th>σύν</th><td>+ dat</td><td>with</td></tr>
 <tr><th>πρό</th><td>+ gen</td><td>before</td></tr>
 <tr><th>ἀντί</th><td>+ gen</td><td>instead of, for</td></tr>
-<tr><th>ἀνά</th><td>+ acc</td><td>up, among; distributive — ἀνὰ δύο, two by two</td></tr></table>
+<tr><th>ἀνά</th><td>+ acc</td><td>distributive — ἀνὰ δύο, two by two; ἀνὰ μέσον, among</td></tr></table>
 <table><caption>Two cases</caption>
 <tr><th>διά</th><td>gen: through · acc: because of</td></tr>
 <tr><th>μετά</th><td>gen: with · acc: after</td></tr>
@@ -291,14 +291,14 @@ html:`<table><caption>One case</caption>
 <tr><th>παρά</th><td>gen: from (a person) · dat: with, beside · acc: alongside, contrary to</td></tr></table>`},
 
 {t:"Look-alikes — one accent apart",tags:"accent breathing confusable eis heis ho he e ou ou on wn tis look alike",
-html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an accent or a breathing, and each pair is a live reading trap. Adjacent rows are the ones to keep apart.</p>
+html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an accent or a breathing, and nearly every pair is a live reading trap. Adjacent rows are the ones to keep apart.</p>
 <table>
 <tr><th>Form</th><th>What it is</th></tr>
 <tr><td class="g">ἀλλά</td><td>but</td></tr>
 <tr><td class="g">ἄλλα</td><td>other things — neuter plural of ἄλλος</td></tr>
 <tr><td class="g">αὐτή</td><td>she — αὐτός, feminine nominative</td></tr>
 <tr><td class="g">αὕτη</td><td>this woman — οὗτος, feminine nominative</td></tr>
-<tr><td class="g">αὐταί</td><td>they, feminine — αὐτός</td></tr>
+<tr><td class="g">αὐταί</td><td>they, feminine — αὐτός (the paradigm form; the New Testament never uses it)</td></tr>
 <tr><td class="g">αὗται</td><td>these women — οὗτος</td></tr>
 <tr><td class="g">εἰ</td><td>if</td></tr>
 <tr><td class="g">εἶ</td><td>you are</td></tr>
@@ -323,7 +323,7 @@ html:`<p class="muted" style="font-size:.83rem">Nothing separates these but an a
 <tr><td class="g">ὧν</td><td>of whom — relative, genitive plural</td></tr></table>`},
 
 {t:"The vocative — calling someone",tags:"vocative voc address calling kurie adelphoi pater case fifth",
-html:`<p class="muted" style="font-size:.83rem"><b>For most nouns the vocative is simply the nominative.</b> Every plural, every neuter, and the first declension throughout. Only the second-declension masculine singular has an ending of its own, and a few third-declension nouns fall back to the bare stem. That is why it has no row in the paradigms: for nine of the eleven nouns in them it would repeat the line above.</p>
+html:`<p class="muted" style="font-size:.83rem"><b>For most nouns the vocative is simply the nominative.</b> Every plural, every neuter, and the first-declension feminines. The second-declension masculine singular has an ending of its own, first-declension masculines take -α (ἐπιστάτα, ὑποκριτά), and a few third-declension nouns fall back to the bare stem. That is why it has no row in the paradigms: for most of the nouns in them it would repeat the line above.</p>
 <table><caption>The ones you actually meet</caption>
 <tr><th class="g">Κύριε</th><td class="g">κύριος</td><td>119×</td><td>2nd decl masc sg — -ος becomes -ε</td></tr>
 <tr><th class="g">Διδάσκαλε</th><td class="g">διδάσκαλος</td><td>30×</td><td></td></tr>

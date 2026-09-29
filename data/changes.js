@@ -12,7 +12,9 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-29", v:"v291", items:[
+{d:"2026-09-29", v:"v292", items:[
+  {k:"fix", t:"Chapters 9 to 27: about twenty corrections from an audit, each checked against the Greek text or a grammar — among them contract verbs that keep a short vowel (ἐκάλεσεν), and ἑαυτοῖς used for “one another”."},
+  {k:"fix", t:"Reference tables, glossary and reading notes: the vocative of nouns like μαθητής, what an absent article can mean, the optative table, and the notes on John 15 and Mark 1."},
   {k:"fix", t:"Narrated chapters: tapping a word now starts the reading at that word, on phones that have the audio saved for offline use as well as online."},
   {k:"fix", t:"Write a real form: typing a different form of the verb that differs only by its accent is now named as that form, instead of being marked right."},
   {k:"fix", t:"Word questions no longer offer a second right answer among the wrong ones — ἄχρι beside ἕως for “until”, for instance."},

@@ -55,11 +55,11 @@
   "verdict": "verified"
  },
  "article": {
-  "def": "5c12c04f6c47",
+  "def": "2c43eabd22e5",
   "note": "",
-  "settles": "states that Greek has a definite article and no indefinite one.",
+  "settles": "states that Greek has a definite article and no indefinite one, and that a noun without the article can be indefinite, definite or qualitative (the θεός illustration). Corrected 2026-09-29: the definition had called every anarthrous noun indefinite, against chapters 4 and 27 (audit c-32).",
   "source": "Huffman, The Handy Guide to NT Greek, Part 2: Syntax",
-  "verdict": "verified"
+  "verdict": "corrected"
  },
  "aspect": {
   "def": "099188fc9ff5",

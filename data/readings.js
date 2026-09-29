@@ -317,7 +317,7 @@ w:[
 ["τοῦ","gen sg neut article","ὁ","RA","----GSN-",0],
 ["πονηροῦ.","gen sg neut of πονηρός — evil","πονηρός","A-","----GSN-",229]
 ]},
-{id:"mk19",ref:"Mark 1:9-11",note:"The baptism of Jesus. One aorist passive carries the event — ἐβαπτίσθη, he was baptised — and the rest is participles: he saw the heavens σχιζομένους, being torn open, present passive and accusative after εἶδεν.",
+{id:"mk19",ref:"Mark 1:9-11",note:"The baptism of Jesus. Aorist indicatives carry the event — ἦλθεν, ἐβαπτίσθη, εἶδεν — and participles fill in around them: he saw the heavens σχιζομένους, being torn open, present passive and accusative after εἶδεν.",
 w:[
 ["Καὶ","conj — and","καί","C-","--------",1],
 ["ἐγένετο","aor mid ind 3sg of γίνομαι — I become","γίνομαι","V-","3AMI-S--",23],
@@ -518,7 +518,7 @@ w:[
 ["ἁμαρτιῶν","gen pl fem of ἁμαρτία — sin","ἁμαρτία","N-","----GPF-",89],
 ["ἡμῶν.","gen pl pronoun — we, us, our","ἐγώ","RP","----GP--",6]
 ]},
-{id:"jn15",ref:"John 15:1-5",note:"The true vine. μένω appears again and again — present tense, ongoing aspect: remain, keep remaining.",
+{id:"jn15",ref:"John 15:1-5",note:"The true vine. μένω appears again and again: first the command μείνατε, 'remain', an aorist imperative, then present forms — μένῃ, μένων, μένητε — for remaining that goes on.",
 w:[
 ["Ἐγώ","nom sg pronoun — I, me, my","ἐγώ","RP","----NS--",6],
 ["εἰμι","pres act ind 1sg of εἰμί — I am","εἰμί","V-","1PAI-S--",7],

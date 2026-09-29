@@ -51,7 +51,7 @@ const TERMS = [
 
 ["apodosis", "The “then” half of a conditional sentence. The “if” half is the protasis.", "", 0],
 
-["article", "Greek's word for “the” — ὁ, ἡ, τό. There is no word for “a”: a noun without the article is simply indefinite.", "", 4],
+["article", "Greek's word for “the” — ὁ, ἡ, τό. There is no word for “a”, but a noun without the article is not simply indefinite: it can be indefinite, definite or qualitative, and the sentence decides which. Chapter 4 explains.", "", 4],
 
 ["aspect", "How the writer chooses to present an action: as ongoing, as a simple whole, or as a state that now stands. This is what a Greek tense-form tells you first. Time comes second, and outside the indicative it often does not come at all.", "", 2],
 
