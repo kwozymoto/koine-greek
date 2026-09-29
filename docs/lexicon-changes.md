@@ -1804,3 +1804,13 @@ guessing, and any of them can be written in and kept.
 | ῥέδη | 1 | N- |
 | ῥυπαρεύω | 1 | V- |
 | ῥώννυμαι | 1 | V- |
+
+## 6. Corrected by hand, with a source (2)
+
+A source gloss that is wrong, replaced, with what settles it. Kept in
+`CORRECTED` in tools/build_lexicon.py.
+
+| lemma | gloss | why |
+|---|---|---|
+| Γάζα | Gaza; also γάζα, treasury | Abbott-Smith: Γάζα, Gaza, Ac 8:26. The corpus files γάζα, 'treasury' (Ac 8:27), under the same lemma, and the source glossed only that one, so Gaza read as 'treasury' (audit c-33, 2026-09-29). |
+| Ναζωραῖος | Nazarene | Abbott-Smith: 'a Nazarene'. The source gave the town, 'Nazareth' (audit c-34, 2026-09-29). |

@@ -12,7 +12,9 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-29", v:"v292", items:[
+{d:"2026-09-29", v:"v293", items:[
+  {k:"fix", t:"Nine word cards say better what the word means, from Abbott-Smith’s lexicon — μήν is “month”, not “certainly”; ἡγέομαι is “I lead; I consider”; ἐμβαίνω is “I step in, embark”."},
+  {k:"fix", t:"Tapping a word in the Greek New Testament: Γάζα now reads Gaza, and Ναζωραῖος “Nazarene”."},
   {k:"fix", t:"Chapters 9 to 27: about twenty corrections from an audit, each checked against the Greek text or a grammar — among them contract verbs that keep a short vowel (ἐκάλεσεν), and ἑαυτοῖς used for “one another”."},
   {k:"fix", t:"Reference tables, glossary and reading notes: the vocative of nouns like μαθητής, what an absent article can mean, the optative table, and the notes on John 15 and Mark 1."},
   {k:"fix", t:"Narrated chapters: tapping a word now starts the reading at that word, on phones that have the audio saved for offline use as well as online."},

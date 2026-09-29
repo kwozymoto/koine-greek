@@ -78,14 +78,8 @@ ALLOWED = {
     ("ζηλόω", "I am jealous; zealous"):
         "the deck says eager. 1 Corinthians 13:4 needs the unfavourable "
         "sense, and the passage gives both",
-    ("ἡγέομαι", "I consider, regard"):
-        "the deck says govern, which is this verb's other sense entirely. "
-        "Philippians 2:6 needs this one",
 
     # --- the deck's wording is thin, and this is the record of it ------
-    ("καταργέω", "I abolish, bring to an end"):
-        "the deck says abate, which is weaker than the verb and weaker than "
-        "1 Corinthians 13:8 needs. Worth revisiting in the deck",
     ("καταχθόνιος", "under the earth"):
         "the deck says subterranean, which is the etymology rather than the "
         "English anyone would use. Worth revisiting in the deck",

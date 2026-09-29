@@ -274,6 +274,28 @@ for i, lemma in enumerate(LEMMAS):
     if via:
         matched.append((lemma, via, name, g))
 
+# Where a source gloss is wrong, the correction is written here with the book
+# that settles it, and applied last. Each must still find the entry it
+# corrects and must change it, or the build stops: a correction that no longer
+# applies is a paragraph of reasoning about a line that has gone.
+CORRECTED = {
+    "Γάζα": ("Gaza; also γάζα, treasury",
+             "Abbott-Smith: Γάζα, Gaza, Ac 8:26. The corpus files γάζα, "
+             "'treasury' (Ac 8:27), under the same lemma, and the source glossed "
+             "only that one, so Gaza read as 'treasury' (audit c-33, 2026-09-29)."),
+    "Ναζωραῖος": ("Nazarene",
+                  "Abbott-Smith: 'a Nazarene'. The source gave the town, "
+                  "'Nazareth' (audit c-34, 2026-09-29)."),
+}
+for lemma, (g, why) in CORRECTED.items():
+    if lemma not in LEX:
+        sys.exit("CORRECTED names %r, which is no longer in the lexicon" % lemma)
+    if LEX[lemma] == g:
+        sys.exit("CORRECTED for %r changes nothing: the source now agrees. "
+                 "Take the entry out." % lemma)
+    LEX[lemma] = g
+    src["corrected by hand, with a source"] += 1
+
 total = len(LEMMAS)
 print("lemmas in the corpus                %5d" % total)
 print("  glossed by the deck already       %5d   (left untouched)" % sum(1 for g in DECK_GLOSS if g))
@@ -372,6 +394,12 @@ lines += ["", "## 4. Proper nouns glossed by their own name (%d)" % src["the nam
           "| lemma | occurrences | part of speech |", "|---|---|---|"]
 for i in sorted(bare, key=lambda x: (-freq[x], LEMMAS[x])):
     lines.append("| %s | %d | %s |" % (LEMMAS[i], freq[i], best_pos.get(i, "?")))
+lines += ["", "## 6. Corrected by hand, with a source (%d)" % len(CORRECTED), "",
+          "A source gloss that is wrong, replaced, with what settles it. Kept in",
+          "`CORRECTED` in tools/build_lexicon.py.", "",
+          "| lemma | gloss | why |", "|---|---|---|"]
+for lemma, (g, why) in sorted(CORRECTED.items()):
+    lines.append("| %s | %s | %s |" % (lemma, g, why))
 
 d = os.path.join(ROOT, "docs", "lexicon-changes.md")
 io.open(d, "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
