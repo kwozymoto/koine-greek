@@ -293,6 +293,31 @@ def main():
       }
       out.push({bank: 'pairDrill(PARSE), verb parsing', tell: 'a verb named in the label',
                 n: PARSE.filter(p => named(p[1])).length, rate: parseN ? parseAlone / parseN : 1, limit: 0});
+      /* NO SECOND RIGHT ANSWER (audit b-10, 2026-09-29). Every deck word as
+         the answer, its index passed as the drills pass it: no option may
+         share a sense of the answer's gloss. Also run without the index, so
+         the report shows what the rule is holding back. */
+      const idxBank = LEARN.map(i => [V[i][0].split(',')[0], V[i][1], V[i][3], i]);
+      const shares = (i, j) => { const a = glossSenses(V[i][1]);
+        return glossSenses(V[j][1]).some(s => a.includes(s)); };
+      let syn = 0, synOff = 0, synQs = 0; const synEx = [];
+      for (const i of LEARN) {
+        const p = [V[i][0].split(',')[0], V[i][1], V[i][3]];
+        for (let t = 0; t < 3; t++) {
+          synQs++;
+          const w = wrongOptions(p, idxBank.filter(x => x[3] !== i), 3, i);
+          const hit = w.find(x => shares(i, x[3]));
+          if (hit) { syn++; if (synEx.length < 5) synEx.push(p[0] + ' / ' + hit[0]); }
+          if (wrongOptions(p, idxBank.filter(x => x[3] !== i), 3).some(x => shares(i, x[3]))) synOff++;
+          if (w.length !== 3 && broken.length < 5) broken.push(p[0] + ': fewer than three options once near-synonyms are left out');
+        }
+      }
+      out.push({bank: 'every word, index passed', tell: 'an option sharing a sense of the answer', n: LEARN.length,
+                rate: syn / synQs, limit: 0});
+      out.push({bank: 'every word, no index', tell: '(what the rule prevents: not held)', n: LEARN.length,
+                rate: synOff / synQs, limit: 1});
+      if (syn) broken.push('near-synonyms still offered, e.g. ' + synEx.join('; '));
+
       process.stdout.write(JSON.stringify({rows: out, broken}));
     """ % (json.dumps(lift_retired()), body,
            json.dumps({k: v[0] for k, v in TELLS.items()}),

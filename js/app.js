@@ -840,7 +840,7 @@ function startQuickTest(k){
 }
 function qtQuestion(i,bank){
   const v=VOCAB[i], head=v[0].split(",")[0];
-  const opts=[v[1],...wrongOptions([head,v[1],v[3]],bank,3).map(x=>x[1])]
+  const opts=[v[1],...wrongOptions([head,v[1],v[3]],bank,3,i).map(x=>x[1])]
     .sort(()=>Math.random()-.5);
   return ()=>{
     const b=document.getElementById("sessBody");
@@ -2533,7 +2533,7 @@ function introduce(fresh,emptyMsg){
   const bank=VOCAB.map((x,k)=>[x[0].split(",")[0],x[1],x[3],k]).filter(x=>!RETIRED.has(x[3]));
   fresh.forEach(i=>{
     const v=VOCAB[i];
-    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3).map(x=>x[1]);
+    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3,i).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
     q.push(mcq(`What does <span class="q-gk">${v[0].split(",")[0]}</span> mean?`,
       opts, opts.indexOf(v[1]), `${v[1]} — ${v[3]}, appears about ${v[2]} times in the NT.`));
@@ -3421,7 +3421,14 @@ const CASE_NOTE=/\(\+[^)]*\)/;
    nouns, a capitalised gloss was the only capital among the four 21% of the
    time; in English → Greek, a capitalised headword was 84%. */
 const CAPITAL=/^(?!I )\p{Lu}/u;
-function wrongOptions(ans,bank,k){
+/* The senses of a deck gloss, for telling near-synonyms apart: "until, as
+   far as (+gen)" is ["until", "as far as"]. Case notes and brackets go, and
+   a verb's leading "I " (the deck's convention), so "I kill" meets "kill". */
+function glossSenses(g){
+  return String(g||"").toLowerCase().replace(/\([^)]*\)/g,"")
+    .split(/[,;\/]/).map(s=>s.replace(/^\s*i\s+(?=\S)/,"").trim()).filter(Boolean);
+}
+function wrongOptions(ans,bank,k,ai){
   /* Distance, not a filter: 0 agrees on all three, 7 on none. Shuffled first
      and then sorted by distance — Array.sort is stable, so ties keep their
      random order and a word does not draw the same three distractors twice.
@@ -3450,6 +3457,15 @@ function wrongOptions(ans,bank,k){
   const like=(a,b)=>(CASE_NOTE.test(a[1])===CASE_NOTE.test(b[1])?0:4)
                   +(CAPITAL.test(a[1])===CAPITAL.test(b[1])?0:2)+(a[2]===b[2]?0:1);
   const seen=new Set([ans[1]]);
+  /* NO SECOND RIGHT ANSWER. An identical gloss was already left out, but a
+     near-synonym was not: asked for ἕως "until, as far as", ἄχρι "until, as
+     far as (+gen)" could stand beside it, and whichever the learner chose
+     was a right answer marked wrong (audit b-10, a-10: καί beside τε's "and,
+     and so"). So when the caller names the answer's deck index `ai`, any
+     word sharing one sense of its gloss is left out too. */
+  const near=Number.isInteger(ai)&&VOCAB[ai]?glossSenses(VOCAB[ai][1]):null;
+  if(near) bank=bank.filter(x=>!(Number.isInteger(x[3])&&VOCAB[x[3]]&&x[3]!==ai
+    && glossSenses(VOCAB[x[3]][1]).some(s=>near.includes(s))));
   return bank.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1])
              .sort((a,b)=>like(ans,a)-like(ans,b))
              .filter(x=>!seen.has(x[1]) && seen.add(x[1]))
@@ -3536,7 +3552,7 @@ function wordListenDrill(n=12){
     // only bracketed gloss is not listening either.
     const bank=VOCAB.map((x,k)=>[x[0].split(",")[0],x[1],x[3],k])
       .filter(x=>x[3]!==i && x[1]!==v[1] && !RETIRED.has(x[3]));
-    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3).map(x=>x[1]);
+    const wrong=wrongOptions([v[0],v[1],v[3]],bank,3,i).map(x=>x[1]);
     const opts=[v[1],...wrong].sort(()=>Math.random()-.5);
     const ask=mcq(`<button class="btn" onclick="playWord(${i},null)">\uD83D\uDD0A Play the word</button>
       <p class="muted" style="font-size:.84rem;margin:10px 0 0">What does it mean?</p>`,
@@ -3570,7 +3586,7 @@ function reverseVocab(){
   const bank=VOCAB.map((x,k)=>[x[1],x[0].split(",")[0],x[3],k]).filter(x=>!RETIRED.has(x[3]));
   return pool.map(i=>{
     const v=VOCAB[i], head=v[0].split(",")[0];
-    const wrong=wrongOptions([v[1],head,v[3]],bank.filter(x=>x[0]!==v[1]),3)
+    const wrong=wrongOptions([v[1],head,v[3]],bank.filter(x=>x[0]!==v[1]),3,i)
       .map(x=>`<span class="gk">${x[1]}</span>`);
     const right=`<span class="gk">${head}</span>`;
     const opts=[right,...wrong].sort(()=>Math.random()-.5);

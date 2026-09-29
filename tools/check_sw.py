@@ -211,6 +211,23 @@ def main():
                 bad.append("js/pwa.js does not check for a new version %s"
                            % what)
 
+    # 5. A cached clip must be seekable. The fetch handler answers from two
+    #    caches; a hit returned whole to a Range request plays but cannot
+    #    seek, so "tap any word to start there" restarted the block (audit
+    #    e-01, 2026-09-29). Every cache hit goes through ranged().
+    fh = src[src.find("addEventListener('fetch'"):]
+    if "async function ranged(" not in src:
+        bad.append("sw.js has no ranged(): cached audio cannot seek")
+    for hit in re.findall(r"if \((\w+)\) return ([^;]+);", fh):
+        var, ret = hit
+        if var in ("cached", "hit") and ret.strip() != "ranged(req, %s)" % var:
+            bad.append("sw.js returns the cache hit `%s` without ranged(), so a "
+                       "Range request gets the whole file and the clip cannot seek"
+                       % var)
+    if len(re.findall(r"ranged\(req, (?:cached|hit)\)", fh)) < 2:
+        bad.append("sw.js: expected both cache hits in the fetch handler to go "
+                   "through ranged()")
+
     print("check_sw", ver.group(1) if ver else "?",
           "  SHELL: %d" % len(lists.get("SHELL", [])),
           "  STALE: %d" % len(lists.get("STALE", [])),

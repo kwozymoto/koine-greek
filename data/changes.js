@@ -12,7 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-29", v:"v290", items:[
+{d:"2026-09-29", v:"v291", items:[
+  {k:"fix", t:"Narrated chapters: tapping a word now starts the reading at that word, on phones that have the audio saved for offline use as well as online."},
+  {k:"fix", t:"Write a real form: typing a different form of the verb that differs only by its accent is now named as that form, instead of being marked right."},
+  {k:"fix", t:"Word questions no longer offer a second right answer among the wrong ones — ἄχρι beside ἕως for “until”, for instance."},
   {k:"audio", t:"94 more words re-recorded with the clearer pronunciation, each chosen by ear. That finishes the deck: every word now has the new pronunciation, bar six whose older recording was judged the better one."}
 ]},
 {d:"2026-09-28", v:"v284", items:[

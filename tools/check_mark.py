@@ -75,6 +75,14 @@ FIXTURES = [
      "first plural for third singular. 'Close' would be a lie; the useful "
      "thing to say is which form they wrote"),
     ("λαβών", "ἔλαβεν", ["ἐλάβομεν", "λαβών"], "other", "the participle, offered in the same round"),
+    ("φοβήθητε", "φοβηθῆτε", ["φοβήθητε"], "other",
+     "the imperative for the subjunctive. The two differ ONLY by accent, and "
+     "the accent rung used to come first, so this was 'Right — the accent is "
+     "φοβηθῆτε' with full credit (audit b-05, 2026-09-29). An exact match "
+     "with another real form on offer is a different word, not a slip"),
+    ("φοβηθήτε", "φοβηθῆτε", ["φοβήθητε"], "accent",
+     "and a real accent slip in the same round is still forgiven: matching "
+     "no form exactly, it stays on the accent rung"),
     ("ἐλάβομεν", "ἔλαβεν", [], "wrong",
      "the same typing with nothing else on offer: two edits on a six-letter "
      "target is over budget, which is why the budget is one down there"),

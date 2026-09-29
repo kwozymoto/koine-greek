@@ -189,6 +189,13 @@ function gkMark(typed, target, others) {
   const r = { typed: t, target, edits: gkEdits(t, target), wrong: [] };
   if (!t) return Object.assign(r, { verdict: "wrong" });
   if (gkKey(t) === gkKey(target))     return Object.assign(r, { verdict: "correct" });
+  /* A different real form spelled exactly is not an accent slip. φοβήθητε
+     (imperative) and φοβηθῆτε (subjunctive) differ only by accent, and the
+     accent rung below used to credit one for the other (audit b-05). So an
+     exact match with another form on offer is named before accents are
+     forgiven. */
+  const exact = (others || []).find(o => gkKey(o) === gkKey(t));
+  if (exact) return Object.assign(r, { verdict: "other", wrote: exact });
   if (gkPlain(t) === gkPlain(target)) return Object.assign(r, { verdict: "accent" });
   if (gkLoose(t) === gkLoose(target)) return Object.assign(r, { verdict: "breathing" });
   const hit = (others || []).find(o => gkLoose(o) === gkLoose(t));

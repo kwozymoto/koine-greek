@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v290';
+const VERSION = 'v291';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -1785,6 +1785,36 @@ async function reportStatus() {
   }
 }
 
+/* A media element asks for its clip in byte ranges, and it can only seek
+   when the answer is a 206 for the range it asked for. The cache holds whole
+   files, so a cached clip used to come back as the full 200 -- which plays,
+   but leaves `seekable` empty: tapping a word in a narrated chapter started
+   the block from the top, on every device that had the clips offline
+   (audit e-01, 2026-09-29). So a cache hit for a Range request is cut to the
+   range here. */
+async function ranged(req, res) {
+  const h = req.headers.get('range');
+  const m = h && /^bytes=(\d*)-(\d*)$/.exec(h.trim());
+  if (!m || (m[1] === '' && m[2] === '')) return res;
+  const buf = await res.clone().arrayBuffer();
+  const size = buf.byteLength;
+  let start, end;
+  if (m[1] === '') { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  if (start >= size || start > end) {
+    return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${size}` } });
+  }
+  return new Response(buf.slice(start, end + 1), {
+    status: 206, statusText: 'Partial Content',
+    headers: {
+      'Content-Type': res.headers.get('Content-Type') || 'application/octet-stream',
+      'Content-Range': `bytes ${start}-${end}/${size}`,
+      'Content-Length': String(end - start + 1),
+      'Accept-Ranges': 'bytes',
+    },
+  });
+}
+
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
@@ -1816,7 +1846,7 @@ self.addEventListener('fetch', e => {
     }
 
     const cached = await cache.match(req, { ignoreSearch: true });
-    if (cached) return cached;
+    if (cached) return ranged(req, cached);
 
     // Word clips and New Testament books are held separately, so that a
     // version bump does not cost 9.5MB. A runtime miss is stored in
@@ -1824,7 +1854,7 @@ self.addEventListener('fetch', e => {
     const bulkCache = isBulkUrl(req.url) ? await caches.open(BULK) : null;
     if (bulkCache) {
       const hit = await bulkCache.match(req, { ignoreSearch: true });
-      if (hit) return hit;
+      if (hit) return ranged(req, hit);
     }
 
     const res = await fetch(req);
