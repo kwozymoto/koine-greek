@@ -12,7 +12,8 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-09-29", v:"v294", items:[
+{d:"2026-09-29", v:"v295", items:[
+  {k:"better", t:"Chapters 15, 18 and 27 are more careful where scholars differ: 2 Timothy 3:16 is “likely” every scripture, 1 Corinthians 15’s change of tense is a key part of the argument, and the divine passive is described as Black describes it."},
   {k:"audio", t:"Chapters 3 and 8: three read-aloud passages re-recorded with corrected wording — which prepositions shorten before a vowel (ἀνά never does), and how many translations smooth over Mark’s historical present."},
   {k:"fix", t:"Nine word cards say better what the word means, from Abbott-Smith’s lexicon — μήν is “month”, not “certainly”; ἡγέομαι is “I lead; I consider”; ἐμβαίνω is “I step in, embark”."},
   {k:"fix", t:"Tapping a word in the Greek New Testament: Γάζα now reads Gaza, and Ναζωραῖος “Nazarene”."},

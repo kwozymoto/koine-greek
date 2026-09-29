@@ -1050,7 +1050,7 @@ body:`<p>The aorist passive is the last principal part, and with it the set is c
 <p><b>Look for θη, not for an ending.</b> The endings are the secondary active ones, and they will mislead you if you read them first.</p>
 <p><b>Check whether the verb has an active.</b> One aorist passive in three does not, and translating those as passives produces nonsense.</p>
 <p><b>Both marks together mean future passive.</b> <span class="gk">θη</span> plus <span class="gk">σ</span>, as in <span class="gk">σωθήσεται</span>.</p>
-<p><b>And when no agent is named, that may be the point.</b> Ask whether the writer is avoiding saying "God" — in the Gospels, very often he is.</p>`,
+<p><b>And when no agent is named, that may be the point.</b> Ask whether the writer is avoiding saying "God" — in the sayings of Jesus, Black notes, he often is.</p>`,
 v:[],
 vids:[{t:"Lecture 15: Aorist and Future Passive Indicative",s:"Daily Dose of Greek — Rob Plummer (9:49)",u:"https://dailydoseofgreek.com/learn-biblical-greek/learn-15/"}],
 quiz:[
@@ -1194,12 +1194,12 @@ body:`<p>A group of very common words decline in the third declension for their 
 <p>The dative plural is worth a look, because it is the collision from chapter 17 happening again: <span class="gk">παντ- + σι</span> gives <span class="gk">πᾶσι(ν)</span>, with the ντ vanishing and the α compensating by lengthening.</p>
 <h3>How πᾶς reads</h3>
 <p>Position changes it, and the difference matters in argument.</p>
-<p><b>With no article</b>, singular: "every".<br>
+<p><b>With no article</b>, singular: usually "every".<br>
 <b>With no article</b>, plural: "all" — <span class="gk">πάντας ἀνθρώπους</span>, "all people".<br>
 <b>With the article, in predicate position</b>: "the whole".<br>
 <b>With the article, in attributive position</b>: "the entire", and it is rare.</p>
 <p class="v" data-ref="2 Timothy 3:16">πᾶσα γραφὴ θεόπνευστος</p>
-<p>"Every scripture is God-breathed." No article, singular — so "every", and the argument of the verse depends on it.</p>
+<p>"Every scripture is God-breathed." No article, singular — so "every" is the likely reading, though "all scripture", as the KJV has it, is also defended.</p>
 <p class="v" data-ref="Matthew 8:34">καὶ ἰδοὺ πᾶσα ἡ πόλις ἐξῆλθεν εἰς ὑπάντησιν τῷ Ἰησοῦ</p>
 <p>"And behold, the whole city went out to meet Jesus." Article present, <span class="gk">πᾶσα</span> outside it — so "the whole", not "every".</p>
 <p class="v" data-ref="John 3:16">ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται</p>
@@ -1764,9 +1764,9 @@ body:`<p>You now have the whole of the morphology: six principal parts, four moo
 <p>If you take one habit from this course into your reading, take this one. English asks <i>when did it happen</i>. Greek asks <i>how is it being viewed</i>.</p>
 <p>On the account this course has followed, the aorist is the unmarked aspect — the default, the background — while the present and imperfect are marked and put the process in the foreground, and the perfect is the most marked of all and puts the resulting state in front of everything. That is a model, and a useful one; it is not a rule that every aorist is backgrounded.</p>
 <p class="v" data-ref="1 Corinthians 15:3">Χριστὸς ἀπέθανεν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν κατὰ τὰς γραφάς</p>
-<p>Aorist: he did, in fact, die. Then in the next verse <span class="gk">ἐγήγερται</span>, perfect: raised, and risen still. The whole argument of the chapter is carried on a change of aspect, and it is invisible in most English translations.</p>
+<p>Aorist: he did, in fact, die. Then in the next verse <span class="gk">ἐγήγερται</span>, perfect: raised, and risen still. That change of aspect is a key part of the argument — Black and Robertson both read the perfect as raised, and still risen — and it is invisible in most English translations.</p>
 <h3>Observe the voice, and the article</h3>
-<p>The active is unmarked; the middle and passive both throw weight onto the subject. So a passive is often not about hiding the agent but about foregrounding the person affected — which is what makes the divine passive work.</p>
+<p>The active is unmarked; the middle and passive both throw weight onto the subject. So a passive can do more than hide the agent: it puts the person affected in front — which, alongside the reverence chapter 15 described, is part of what gives the divine passive its force.</p>
 <p>The article is the other place to look, and it is everywhere: 19,769 occurrences, which makes it the commonest word in the New Testament by more than two to one over <span class="gk">καί</span>. Its presence points at particular identity; its absence throws the weight onto character or quality — though, as chapter 4 said, an absence is only evidence where the writer could have written it the other way.</p>
 <p class="v" data-ref="Luke 18:13">ὁ θεός, ἱλάσθητί μοι τῷ ἁμαρτωλῷ</p>
 <p>"God, be merciful to me, the sinner." And here is that principle working against a reading you may like: the article on <span class="gk">τῷ ἁμαρτωλῷ</span> is real, and it is still the wrong place to lean, because apposition to a pronoun takes the article as a matter of course — Luke uses the same construction of the Pharisees, the lawyers and the rich. A presence is only evidence on the same terms as an absence.</p>
@@ -1796,7 +1796,7 @@ quiz:[
 {q:"Which books are the wrong place to start?",o:["1 John and Mark, because their Greek is easiest","John and Acts","Hebrews, Luke's prologue and 2 Peter","The Gospels"],a:2,w:"They are the hardest Greek in the New Testament and they will convince you that you have learned nothing. 1 John has short sentences, small vocabulary and endless repetition.",sec:1},
 {q:"When a sentence resists, what is usually the better move?",o:["Parse each word fully before moving on to the next one","Read to the end of the sentence first, then go back","Consult a commentary","Switch to English"],a:1,w:"Greek scatters its clues, and the word that unlocks a clause is often three words later. Two passes at speed teach more than one pass at a crawl.",sec:2},
 {q:"English asks 'when did it happen'. What does Greek ask?",o:["Who did it","Where did it happen, and to whom","How is it being viewed","Why did it happen"],a:2,w:"Aspect is the one habit most worth carrying out of this course. The aorist is unmarked and backgrounds; the present and imperfect foreground the process; the perfect foregrounds the result.",sec:3},
-{q:"In 1 Corinthians 15:3-4, Paul writes ἀπέθανεν and then ἐγήγερται. What carries the argument?",o:["The vocabulary — the two verbs are near synonyms","The word order — the verbs come first in each clause","The change of aspect — aorist to perfect","The article"],a:2,w:"He died, as a fact; he has been raised, and is risen still. It is invisible in most English translations, and it is the whole point of the passage.",sec:4},
+{q:"In 1 Corinthians 15:3-4, Paul writes ἀπέθανεν and then ἐγήγερται. What carries the argument?",o:["The vocabulary — the two verbs are near synonyms","The word order — the verbs come first in each clause","The change of aspect — aorist to perfect","The article"],a:2,w:"He died, as a fact; he has been raised, and is risen still. Black and Robertson both read the perfect that way, and it is invisible in most English translations.",sec:4},
 {q:"ἱλάσθητί μοι τῷ ἁμαρτωλῷ — what does the article do?",o:["Makes him 'the sinner', the worst of all sinners","Little: apposition to μοι takes it anyway","Marks the dative","Marks the vocative"],a:1,w:"The article is real, and still the wrong place to lean: after a pronoun, apposition takes the article as a matter of course, and Luke writes the Pharisees, the lawyers and the rich the same way. A presence is only evidence where the writer could have written it the other way.",sec:4},
 {q:"Greek word order is free in what sense?",o:["Completely — it never matters","Only in poetry","It is not free at all","It does not carry grammar, but it does carry emphasis"],a:3,w:"A word pulled to the front or held to the end is usually there for a reason. But this is the observation most likely to be over-read, because style and emphasis are hard to separate — look for confirmation before building on it.",sec:5},
 {q:"ἐκκλησία is built from ἐκ and a root meaning 'call'. What does it mean?",o:["The called-out ones — which is what the parts add up to","Those who are chosen — from ἐκ, 'out of'","An assembly — which is what it meant to everyone who read it","A building set apart for worship"],a:2,w:"A word's history is not its meaning. English 'goodbye' came from 'God be with you' and means neither God nor with nor you.",sec:6},

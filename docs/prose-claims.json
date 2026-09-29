@@ -2448,6 +2448,15 @@
   "finding": "342, exact."
  },
  {
+  "k": "23a8e96297e4",
+  "ch": 18,
+  "kind": "absolute",
+  "src": "body",
+  "text": "With no article , singular: usually \"every\".",
+  "status": "read",
+  "finding": "Softened from 'every' to 'usually every' (Fraser, 2026-09-29: prefer the softer claim). Anarthrous singular πᾶς is usually distributive; the passage below it shows the reading is argued, not automatic."
+ },
+ {
   "k": "29b871e58ead",
   "ch": 18,
   "kind": "count",
@@ -2493,15 +2502,6 @@
   "finding": "The quiz form of the same, corrected in the same pass as the body."
  },
  {
-  "k": "6545b302251b",
-  "ch": 18,
-  "kind": "absolute",
-  "src": "body",
-  "text": "πᾶσα γραφὴ θεόπνευστος \"Every scripture is God-breathed.\" No article, singular — so \"every\", and the argument of the verse depends on it.",
-  "status": "read",
-  "finding": "2 Timothy 3:16, and the anarthrous singular πᾶσα. The reading is the standard one and the chapter states the grammar rather than the theology."
- },
- {
   "k": "6fecff483483",
   "ch": 18,
   "kind": "absolute",
@@ -2538,15 +2538,6 @@
   "finding": "Matthew 8:34, with the article present and πᾶσα outside it. Read and left."
  },
  {
-  "k": "8706fb788818",
-  "ch": 18,
-  "kind": "absolute",
-  "src": "body",
-  "text": "With no article , singular: \"every\".",
-  "status": "read",
-  "finding": "The πᾶς rule as the chapter states it. Read and left as written."
- },
- {
   "k": "a43b5f94ddd3",
   "ch": 18,
   "kind": "absolute",
@@ -2563,6 +2554,15 @@
   "text": "Two words are built straight onto it.",
   "status": "read",
   "finding": "οὐδείς and μηδείς. Read and left."
+ },
+ {
+  "k": "ba83e204dac2",
+  "ch": 18,
+  "kind": "absolute",
+  "src": "body",
+  "text": "πᾶσα γραφὴ θεόπνευστος \"Every scripture is God-breathed.\" No article, singular — so \"every\" is the likely reading, though \"all scripture\", as the KJV has it, is also defended.",
+  "status": "read",
+  "finding": "Translations on the shelf: ASV and Darby 'Every scripture', KJV 'All scripture'. Presented as the likely reading, not a settled one (audit c-17; Fraser's rule, 2026-09-29)."
  },
  {
   "k": "c4f7e38ef004",
