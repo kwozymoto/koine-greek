@@ -238,10 +238,10 @@ const VISITS       = "koine.visits";
 /* The other way in. Play's closed test can take a Google Group as its tester
    list, and then a person joins the group and opts in by themselves -- no
    email to send and nobody waiting on Fraser to paste an address into the
-   Play Console. Empty until that group exists and is added to the test
-   track; while it is empty the sheet offers the email route, as before.
-   Set it to the group's page, e.g. https://groups.google.com/g/<name>. */
-const TEST_GROUP = "";
+   Play Console. Empty means the sheet falls back to the email route. The
+   group is everydaykoine-testers@googlegroups.com, made 2026-10-13; it only
+   works while it is also on the Play test track's list of testers. */
+const TEST_GROUP = "https://groups.google.com/g/everydaykoine-testers";
 const TEST_OPTIN = "https://play.google.com/apps/testing/app.everydaykoine";
 
 function androidWeb(){
