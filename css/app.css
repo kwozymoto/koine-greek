@@ -501,6 +501,9 @@ button.vid{width:100%;text-align:left;font:inherit}
 .sheet .tick{display:flex;align-items:center;gap:8px;font-size:.78rem;
   color:var(--muted);margin-bottom:15px;cursor:pointer}
 .sheet .sacts{display:flex;gap:8px;justify-content:flex-end}
+.sheet .steps{margin:0 0 4px;padding-left:20px;font-size:.82rem;color:var(--muted);line-height:1.45}
+.sheet .steps li{margin-bottom:11px}
+.sheet .steps .btn{display:inline-block;margin-right:4px;text-decoration:none}
 .sheet .x{position:absolute;top:7px;right:7px;width:28px;height:28px;
   border-radius:50%;border:0;background:transparent;color:var(--muted);
   font-size:1.15rem;line-height:1;cursor:pointer}

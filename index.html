@@ -19,6 +19,17 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 <meta name="apple-mobile-web-app-title" content="Koine">
 <title>Everyday Koine — Learn to Read New Testament Greek</title>
 <link rel="canonical" href="https://everydaykoine.app/">
+<!-- What a shared link shows: icons/share.png, built by tools/build_share_image.py. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Everyday Koine">
+<meta property="og:title" content="Everyday Koine — learn to read the Greek New Testament">
+<meta property="og:description" content="Chapters read aloud, 817 words with audio on a spaced-repetition schedule, paradigm drills, and the whole Greek New Testament parsed. Free, no account, works offline.">
+<meta property="og:url" content="https://everydaykoine.app/">
+<meta property="og:image" content="https://everydaykoine.app/icons/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Everyday Koine: learn to read the Greek New Testament">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <!-- 180 is the size iOS actually wants; anything else it rescales itself. -->
@@ -295,13 +306,30 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="testHead">
     <h3 id="testHead">Help test the Android app</h3>
     <p>Everyday Koine is going on the Play Store, and Google will not release
-      it until a group of people have tested it. Leave an address and you will
-      be added to that group and sent a link to install it.</p>
-    <label class="fld" for="testMail">Your email</label>
-    <input type="email" id="testMail" inputmode="email" autocomplete="email"
-           placeholder="you@example.com" spellcheck="false">
-    <p class="fine">This opens your own mail app with the message written. The
-      app sends nothing by itself and keeps no copy of your address.</p>
+      it until a group of people have used it for two weeks. Testing needs an
+      Android phone and a Google account.</p>
+    <!-- Shown instead of the email form once js/pwa.js has TEST_GROUP set. -->
+    <div id="testByGroup" hidden>
+      <ol class="steps">
+        <li><a class="btn small" id="testJoin" target="_blank" rel="noopener">Join the testers group</a>
+          with the Google account your phone uses.</li>
+        <li><a class="btn small" id="testOptIn" target="_blank" rel="noopener">Become a tester</a>
+          on the Play Store page that opens.</li>
+        <li>Install Everyday Koine from Google Play, and use it now and then
+          for the two weeks.</li>
+      </ol>
+      <p class="fine">Stuck? Write to <a id="testHelp"></a> and we will add you
+        by hand.</p>
+    </div>
+    <div id="testByMail">
+      <p>Leave an address and you will be added to that group and sent a link
+        to install it.</p>
+      <label class="fld" for="testMail">Your email</label>
+      <input type="email" id="testMail" inputmode="email" autocomplete="email"
+             placeholder="you@example.com" spellcheck="false">
+      <p class="fine">This opens your own mail app with the message written. The
+        app sends nothing by itself and keeps no copy of your address.</p>
+    </div>
     <label class="tick"><input type="checkbox" id="testNever">
       Don&rsquo;t show this again</label>
     <div class="sacts">

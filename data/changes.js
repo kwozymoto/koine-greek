@@ -12,6 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
+{d:"2026-10-13", v:"v297", items:[
+  {k:"better", t:"Testing the Android app: the sign-up is now in Settings on computers and Android phones alike, since plenty of people find the site on a computer. It needs an Android phone and a Google account."},
+  {k:"better", t:"A link to the site shared in a message or post now shows a proper preview card, with the name and what the app does."}
+]},
 {d:"2026-09-29", v:"v296", items:[
   {k:"better", t:"Read-aloud chapters: the Playback speed setting now slows the narration too, a paused passage resumes where it stopped, and a word or letter you tap pauses the reading instead of talking over it."},
   {k:"fix", t:"A chapter’s Drill all practises its words without replacing the passage you are working on; choosing a new passage or set asks before it replaces one."},

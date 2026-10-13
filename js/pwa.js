@@ -235,6 +235,15 @@ addEventListener("appinstalled",()=>{
 const TEST_DISMISS = "koine.testerAsked";
 const VISITS       = "koine.visits";
 
+/* The other way in. Play's closed test can take a Google Group as its tester
+   list, and then a person joins the group and opts in by themselves -- no
+   email to send and nobody waiting on Fraser to paste an address into the
+   Play Console. Empty until that group exists and is added to the test
+   track; while it is empty the sheet offers the email route, as before.
+   Set it to the group's page, e.g. https://groups.google.com/g/<name>. */
+const TEST_GROUP = "";
+const TEST_OPTIN = "https://play.google.com/apps/testing/app.everydaykoine";
+
 function androidWeb(){
   if(!/Android/i.test(navigator.userAgent || "")) return false;
   /* Chrome sets this when a Trusted Web Activity opens the page, which is
@@ -278,9 +287,20 @@ const testScrim=document.getElementById("testScrim");
 
 function testerShow(){
   if(!testScrim) return;
+  const group=!!TEST_GROUP, to=(typeof REPORT==="object" && REPORT.TO) || "support@everydaykoine.app";
+  document.getElementById("testByGroup").hidden=!group;
+  document.getElementById("testByMail").hidden=group;
+  /* style, not hidden: .btn sets its own display, which beats the attribute. */
+  document.getElementById("btnTestGo").style.display=group?"none":"";
+  if(group){
+    document.getElementById("testJoin").href=TEST_GROUP;
+    document.getElementById("testOptIn").href=TEST_OPTIN;
+    const h=document.getElementById("testHelp");
+    h.href="mailto:"+to; h.textContent=to;
+  }
   testScrim.hidden=false;
   const f=document.getElementById("testMail");
-  if(f) setTimeout(()=>{ try{ f.focus(); }catch(e){} },60);
+  if(f && !group) setTimeout(()=>{ try{ f.focus(); }catch(e){} },60);
 }
 function testerClose(){
   if(!testScrim) return;
@@ -294,6 +314,8 @@ if(testScrim){
      number means "visits" and still means it if the rule above changes. */
   const visits=bumpVisits();
   document.getElementById("btnTestNo").onclick=testerClose;
+  /* Joining is signing up, so it retires the prompt the way Send does. */
+  document.getElementById("testJoin").addEventListener("click",testerSeal);
   document.getElementById("btnTestX").onclick=testerClose;
   /* Tapping the dark area is how a sheet closes on a phone. Dismissing this
      way honours the tick box too. */
@@ -332,11 +354,24 @@ if(testScrim){
 }
 
 /* Reachable from Progress afterwards, the way the install row is — dismissing
-   a prompt should not be the same as refusing for ever. */
+   a prompt should not be the same as refusing for ever.
+
+   Wider than the prompt: the prompt waits for an Android browser, but plenty
+   of people find the site on a computer and own an Android phone, and a row
+   in Settings asks nothing of anyone who does not go looking. Left out on an
+   iPhone or iPad, where there is nothing to test, and in the Play app itself,
+   whose user is already a tester. */
+function testerRowEligible(){
+  const ua=navigator.userAgent || "";
+  if(/iPhone|iPad|iPod/i.test(ua)) return false;
+  if(/Macintosh/i.test(ua) && navigator.maxTouchPoints>1) return false; /* iPadOS */
+  try{ if(/^android-app:\/\//.test(document.referrer || "")) return false; }catch(e){}
+  return true;
+}
 function testerRowHtml(){
-  if(!androidWeb()) return "";
+  if(!testerRowEligible()) return "";
   return `<div class="setrow"><span>Test the Android app<br>
-    <small class="muted">Join the Play Store test and get the real app</small></span>
+    <small class="muted">Join the Play Store test — needs an Android phone</small></span>
     <button class="btn ghost small" onclick="testerShow()">Sign up</button></div>`;
 }
 
