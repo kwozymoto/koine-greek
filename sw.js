@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v298';
+const VERSION = 'v299';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -1526,6 +1526,8 @@ const SHELL = [
   'privacy.html',
   /* The About page, linked beside it, for the same reason. */
   'about.html',
+  /* The tester guide, linked from the test sign-up and from the welcome in the Play app. */
+  'testing.html',
   /* And the pages the app links to: the chapter list from Help, and the
      printables from Look up and each chapter. tools/build_chapters_page.py
      --check fails if a page it generates for the app is missing here. */

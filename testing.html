@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testing the Android app — Everyday Koine</title>
+<meta name="description" content="How to join the Android test of Everyday Koine, what testing involves over the two weeks, what to look out for, and how to send feedback.">
+<meta name="theme-color" content="#141b2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">
+<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. On an iPhone home-screen app the status bar's icons are white (black-translucent), so in light they switch to dark (default). */
+var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c})}var s=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');if(s&&(t==="light"||(t!=="dark"&&matchMedia("(prefers-color-scheme: light)").matches)))s.content="default"}catch(e){}</script>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="canonical" href="https://everydaykoine.app/testing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Everyday Koine">
+<meta property="og:title" content="Help test Everyday Koine on Android">
+<meta property="og:description" content="Google will not put the app on the Play Store until a group of testers have used it for two weeks. Here is how to join, and what to do.">
+<meta property="og:url" content="https://everydaykoine.app/testing.html">
+<meta property="og:image" content="https://everydaykoine.app/icons/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Everyday Koine: learn to read the Greek New Testament">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
+    --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-ink:#1a1408;
+    --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --gk:"Gentium Plus","GFS Didot","Palatino Linotype",Palatino,Georgia,serif;
+    color-scheme:dark;
+  }
+  /* Light, following the app's Settings > Appearance or the device; the
+     same values as css/app.css, held there by tools/check_theme.py. */
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      color-scheme:light;
+      --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
+      --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-ink:#ffffff;
+    }
+  }
+  :root[data-theme="light"]{
+    color-scheme:light;
+    --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
+    --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-ink:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; padding:2.25rem 1rem 5rem; background:var(--bg); color:var(--text);
+       font:16px/1.65 var(--ui)}
+  main{max-width:44rem; margin:0 auto}
+  a{color:var(--gold)}
+  .gk{font-family:var(--gk)}
+
+  header{padding:1rem 0 2rem; border-bottom:1px solid var(--line)}
+  .mark{font-family:var(--gk); font-size:1.05rem; color:var(--gold); letter-spacing:.02em; margin:0}
+  h1{font-size:2.1rem; line-height:1.15; margin:.35rem 0 .7rem; text-wrap:balance}
+  .lede{font-size:1.08rem; color:var(--text); margin:0 0 1.4rem; max-width:36rem}
+  .open{display:inline-block; background:var(--gold); color:var(--gold-ink); font-weight:700;
+        text-decoration:none; padding:.8rem 1.35rem; border-radius:12px; font-size:1.02rem}
+  .open:focus-visible{outline:3px solid var(--text); outline-offset:3px}
+  .sub{color:var(--muted); font-size:.88rem; margin:.7rem 0 0}
+
+  h2{font-size:1.12rem; margin:2.4rem 0 .7rem; text-wrap:balance}
+  p,li{color:var(--text)}
+  ul{padding-left:1.15rem; margin:.4rem 0}
+  li{margin:.35rem 0}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:.8rem; margin:.8rem 0 0}
+  .feat{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:.95rem 1.05rem}
+  .feat h3{margin:0 0 .3rem; font-size:.98rem; color:var(--gold)}
+  .feat p{margin:0; font-size:.93rem; color:var(--text)}
+  .num{font-variant-numeric:tabular-nums}
+
+  .steps{display:grid; gap:.7rem; margin:.6rem 0}
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:.85rem 1.05rem}
+  .step b{color:var(--gold)}
+  .step p{margin:.25rem 0 0; font-size:.93rem}
+
+  .note{color:var(--muted); font-size:.88rem}
+  footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
+         color:var(--muted); font-size:.86rem}
+  footer p{color:var(--muted); margin:.4rem 0}
+  .faq{background:var(--surface); border:1px solid var(--line); border-radius:12px;
+       padding:.7rem 1.05rem; margin:.55rem 0}
+  .faq summary{cursor:pointer; font-weight:600; list-style-position:outside}
+  .faq summary:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:4px}
+  .faq p{margin:.5rem 0 .15rem; font-size:.95rem}
+  ol.steps li, ul.look li{margin-bottom:.45rem}
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:.9rem 1.1rem; margin:1.2rem 0}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="mark">Κοινή — the everyday tongue</p>
+    <h1>Testing the Android app</h1>
+    <p class="lede">Thank you for helping. Google will only put Everyday Koine
+    on the Play Store once a group of testers have had it installed for two
+    weeks in a row and have actually used it. This page says how to join,
+    what we are asking of you, and how to tell us what you find.</p>
+    <p class="sub">You need an Android phone and a Google account. It costs
+    nothing, and you can leave the test whenever you like.</p>
+  </header>
+
+  <h2>How to join</h2>
+  <ol class="steps">
+    <li><a href="https://groups.google.com/g/everydaykoine-testers" target="_blank" rel="noopener">Join the testers group</a>,
+      signed in with the same Google account your phone uses.</li>
+    <li><a href="https://play.google.com/apps/testing/app.everydaykoine" target="_blank" rel="noopener">Become a tester</a>
+      on the Play Store page that opens.</li>
+    <li>Install Everyday Koine from Google Play on your phone. It can take a
+      few minutes after step 2 before the Play Store offers it.</li>
+  </ol>
+  <p>Stuck at any step? Write to
+    <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>
+    and we will add you by hand.</p>
+
+  <h2>What we are asking</h2>
+  <ul class="look">
+    <li><b>Stay in for the two weeks.</b> Keep the app installed and stay in
+      the group. Google counts the days.</li>
+    <li><b>Open it most days.</b> Five minutes on Today&rsquo;s plan is plenty.
+      Google looks at whether testers really use the app, not just whether
+      they installed it.</li>
+    <li><b>Tell us something, at least once.</b> A problem, a question, or what
+      you liked. Feedback, and the updates that come from it, are part of what
+      Google wants to see.</li>
+  </ul>
+
+  <h2>Something to try each week</h2>
+  <p><b>Week one.</b> Do Today&rsquo;s plan each day. In Learn, start
+    chapter 1 and listen to it read aloud. Work through some flash cards.</p>
+  <p><b>Week two.</b> In Drill, practise a paradigm. In Read, open a passage
+    and tap the words. Use Look up to find a word. Try the app once with no
+    signal at all.</p>
+  <p>You do not need to know any Greek. Some of the most useful reports come
+    from someone meeting it for the first time.</p>
+
+  <h2>What to look out for</h2>
+  <ul class="look">
+    <li>The app closing by itself, freezing, or showing a blank screen.</li>
+    <li>A button or link that does nothing, or does the wrong thing.</li>
+    <li>Audio that will not play, or a word that sounds wrong.</li>
+    <li>Greek that looks wrong, or an answer marked wrong when you think it was
+      right.</li>
+    <li>Text cut off, overlapping, or too small to read on your phone.</li>
+    <li>Anything confusing: an instruction you had to read twice, or a screen
+      where you did not know what to do next.</li>
+    <li>Anything you wished it did.</li>
+  </ul>
+
+  <h2>How to tell us</h2>
+  <p>In the app, go to <b>Settings</b> and use <b>Report a problem</b>. It
+    writes the email for you, with your phone&rsquo;s details included, and
+    you can add a screenshot. Or write to
+    <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a>
+    directly.</p>
+  <div class="note">Say what you were doing, what happened, and what you
+    expected to happen. A screenshot helps more than anything.</div>
+  <p>Changes made because of what testers tell us are listed in the app,
+    under Settings, in What&rsquo;s new.</p>
+
+  <footer>
+    <p><a href="about.html">About Everyday Koine</a> ·
+    <a href="privacy.html">Privacy policy</a> ·
+    <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
+  </footer>
+</main>
+</body>
+</html>

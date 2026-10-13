@@ -45,7 +45,7 @@ HEAD = re.compile(r"<(h2|h3)\b[^>]*>(.*?)</\1>", re.S)
 
 # The pages of the site that are not the app, in the order the sitemap lists
 # them. The chapter pages are added after.
-STATIC = ["", "about.html", "chapters.html", "privacy.html"]
+STATIC = ["", "about.html", "chapters.html", "privacy.html", "testing.html"]
 
 
 def lessons():

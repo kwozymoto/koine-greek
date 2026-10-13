@@ -272,7 +272,7 @@ if "js/app.js" not in [f for f, _ in JS_ALLOWED] or 'bar.content=light?"default"
 
 # --------------------------------------------------------- the site pages ---
 ALIAS = {"--gold-ink": "--on-gold"}
-pages = ["about.html", "privacy.html", "chapters.html"] + sorted(
+pages = ["about.html", "privacy.html", "chapters.html", "testing.html"] + sorted(
     x.replace(chr(92), "/") for x in glob.glob("chapters/*.html"))
 for p in pages:
     txt = read(p)

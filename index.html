@@ -307,7 +307,8 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
     <h3 id="testHead">Help test the Android app</h3>
     <p>Everyday Koine is going on the Play Store, and Google will not release
       it until a group of people have used it for two weeks. Testing needs an
-      Android phone and a Google account.</p>
+      Android phone and a Google account.
+      <a href="testing.html" target="_blank" rel="noopener">What testing involves</a></p>
     <!-- Shown instead of the email form once js/pwa.js has TEST_GROUP set. -->
     <div id="testByGroup" hidden>
       <ol class="steps">
@@ -337,6 +338,20 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
       <button class="btn small" id="btnTestGo">Send</button>
     </div>
     <button class="x" id="btnTestX" aria-label="Close">&times;</button>
+  </div>
+</div>
+
+<!-- For testers, inside the Play app only: a welcome on first launch and a
+     check-in a week later. Filled by playShow() in js/pwa.js. -->
+<div class="scrim" id="playScrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="playHead">
+    <h3 id="playHead"></h3>
+    <div id="playBody"></div>
+    <div class="sacts">
+      <button class="btn ghost small" id="btnPlayNo"></button>
+      <button class="btn small" id="btnPlayGo"></button>
+    </div>
+    <button class="x" id="btnPlayX" aria-label="Close">&times;</button>
   </div>
 </div>
 

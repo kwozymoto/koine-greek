@@ -250,6 +250,9 @@ function androidWeb(){
      what the Play build is. Wrapped because a sandboxed frame throws. */
   try{ if(/^android-app:\/\//.test(document.referrer || "")) return false; }
   catch(e){ /* cannot tell; fall through and ask */ }
+  /* The referrer is there on launch only, so a reload inside the Play app
+     loses it; the first sighting is remembered under koine.playApp below. */
+  try{ if(localStorage.getItem("koine.playApp") === "1") return false; }catch(e){}
   return true;
 }
 /* Defaults to "already asked" when storage is unavailable. A private window
@@ -366,6 +369,7 @@ function testerRowEligible(){
   if(/iPhone|iPad|iPod/i.test(ua)) return false;
   if(/Macintosh/i.test(ua) && navigator.maxTouchPoints>1) return false; /* iPadOS */
   try{ if(/^android-app:\/\//.test(document.referrer || "")) return false; }catch(e){}
+  try{ if(localStorage.getItem("koine.playApp") === "1") return false; }catch(e){}
   return true;
 }
 function testerRowHtml(){
@@ -373,6 +377,75 @@ function testerRowHtml(){
   return `<div class="setrow"><span>Test the Android app<br>
     <small class="muted">Join the Play Store test — needs an Android phone</small></span>
     <button class="btn ghost small" onclick="testerShow()">Sign up</button></div>`;
+}
+
+/* ---------- inside the Play app: the tester's welcome and check-in ----------
+
+   Google grants production access on whether testers USED the app for the
+   fourteen days and whether their feedback was acted on, so the two things
+   worth saying to a tester are "keep using it" and "tell us". Said twice:
+   once on first launch, and once a week later, when there is something to
+   tell. Each is shown once and never again.
+
+   The Play app is known by the android-app:// referrer, which Chrome sets
+   only on the launch itself -- a reload inside the app loses it -- so the
+   first sighting is remembered. Nothing here leaves the device. */
+const PLAY_APP = "koine.playApp", PLAY_HELLO = "koine.playHello", PLAY_WEEK = "koine.playWeek";
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function inPlayApp(){
+  try{ if(/^android-app:\/\//.test(document.referrer || "")) lsSet(PLAY_APP,"1"); }catch(e){}
+  return lsGet(PLAY_APP) === "1";
+}
+
+const playScrim=document.getElementById("playScrim");
+function playClose(){ if(playScrim) playScrim.hidden=true; }
+function playShow(kind){
+  if(!playScrim) return;
+  const head=document.getElementById("playHead"), body=document.getElementById("playBody"),
+        ok=document.getElementById("btnPlayGo"), no=document.getElementById("btnPlayNo");
+  if(kind==="hello"){
+    head.textContent="Thank you for testing";
+    body.innerHTML=`<p>Google puts the app on the Play Store once its testers have
+      kept it for two weeks and used it. So, two things:</p>
+      <ol class="steps">
+        <li>Open it most days. Five minutes on Today&rsquo;s plan is plenty.</li>
+        <li>Tell us what goes wrong, what confuses you, or what you like:
+          Settings, then Report a problem.</li>
+      </ol>`;
+    ok.textContent="What to try"; no.textContent="Got it";
+    ok.onclick=()=>{ playClose(); open("testing.html","_blank"); };
+  }else{
+    head.textContent="A week in — how is it going?";
+    body.innerHTML=`<p>Anything broken, confusing, or missing? A line or two helps,
+      and so does hearing what works. What testers tell us is what the next
+      update fixes.</p>`;
+    ok.textContent="Send feedback"; no.textContent="Later";
+    ok.onclick=()=>{
+      playClose();
+      if(typeof go==="function") go("prog");
+      setTimeout(()=>{
+        const c=document.getElementById("reportCard"), t=document.getElementById("repWhat");
+        if(c) c.scrollIntoView({block:"start"});
+        if(t) try{ t.focus({preventScroll:true}); }catch(e){}
+      },60);
+    };
+  }
+  no.onclick=playClose;
+  document.getElementById("btnPlayX").onclick=playClose;
+  playScrim.onclick=e=>{ if(e.target===playScrim) playClose(); };
+  playScrim.hidden=false;
+}
+
+if(playScrim && inPlayApp()){
+  const today=new Date().toISOString().slice(0,10);
+  const hello=lsGet(PLAY_HELLO);
+  let kind=null;
+  if(!hello){ kind="hello"; lsSet(PLAY_HELLO,today); }
+  else if(!lsGet(PLAY_WEEK) && (Date.parse(today)-Date.parse(hello))/864e5 >= 7){
+    kind="week"; lsSet(PLAY_WEEK,today);
+  }
+  if(kind) addEventListener("load",()=>setTimeout(()=>playShow(kind),1400));
 }
 
 
