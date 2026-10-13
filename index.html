@@ -154,7 +154,13 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
     <p style="margin:26px 0 0;text-align:center;font-size:.82rem">
       <a href="#" onclick="openArrange();return false" class="muted tappable">Arrange Today</a>
       <span class="muted"> · </span>
-      <a href="#" onclick="go('help');return false" class="muted tappable">How this app works</a></p>
+      <a href="#" onclick="go('help');return false" class="muted tappable">How this app works</a><br>
+      <!-- Plain links in the HTML itself, not drawn by app.js: the home page
+           is the page search engines trust first, and these are how they
+           reach About and the chapter list, which links all 27 chapters. -->
+      <a href="about.html" class="muted tappable">About Everyday Koine</a>
+      <span class="muted"> · </span>
+      <a href="chapters.html" class="muted tappable">What the chapters cover</a></p>
   </section>
 
   <!-- LEARN -->
