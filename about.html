@@ -77,6 +77,11 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   .step b{color:var(--gold)}
   .step p{margin:.25rem 0 0; font-size:.93rem}
 
+  .join{list-style:none; padding:0; counter-reset:j}
+  .join .step{counter-increment:j}
+  .join .step b::before{content:counter(j) ". "}
+  .open.small{font-size:.92rem; padding:.55rem 1rem; margin-top:.6rem}
+  .open.ghost{background:transparent; color:var(--gold); box-shadow:inset 0 0 0 1.5px var(--gold)}
   .note{color:var(--muted); font-size:.88rem}
   footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
          color:var(--muted); font-size:.86rem}
@@ -238,7 +243,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
       then <i>Add to Home Screen</i>.</p></div>
     <div class="step"><b>Android</b>
       <p>Open it in Chrome, tap the menu, then <i>Install app</i> or <i>Add to
-      Home screen</i>.</p></div>
+      Home screen</i>. Or <a href="#test">test the Google Play version</a>.</p></div>
     <div class="step"><b>Computer</b>
       <p>It runs in any modern browser. In Chrome or Edge, the install icon in
       the address bar puts it in a window of its own.</p></div>
@@ -246,6 +251,27 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <p class="note">Studying on two devices? Turn on sync in Settings: one device
   makes a private code and you type it on the other. There is still no
   account.</p>
+
+  <h2 id="test">Test the Android app</h2>
+  <p>Everyday Koine is in closed testing on Google Play, before it is released
+  to everyone. Google will only release it once enough testers have had it
+  installed for two weeks and used it. Join to get it now, free, and help us
+  make it ready.</p>
+  <ol class="steps join">
+    <li class="step"><b>Join the testers group</b>
+      <p>Signed in with the Google account your Android phone uses. Anyone can
+      join, and you will get only the occasional update.</p>
+      <a class="open small" href="https://groups.google.com/g/everydaykoine-testers" target="_blank" rel="noopener">Join the group</a></li>
+    <li class="step"><b>Become a tester</b>
+      <p>Accept the invitation on Google Play, signed in with the same account.</p>
+      <a class="open small ghost" href="https://play.google.com/apps/testing/app.everydaykoine" target="_blank" rel="noopener">Become a tester</a></li>
+    <li class="step"><b>Install it from Google Play</b>
+      <p>It can take a few minutes after you join before the Play Store offers it.</p></li>
+  </ol>
+  <p class="note">What testing involves, and how to send feedback:
+  <a href="testing.html">the tester guide</a>. Stuck at any step? Write to
+  <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a> and
+  we will add you by hand.</p>
 
   <h2>Your privacy</h2>
   <p>No sign-up, no analytics, no advertising, no tracking. Your progress lives
