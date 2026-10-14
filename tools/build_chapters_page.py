@@ -225,12 +225,16 @@ APP_TAB_SCRIPT = "<script>/* Opening the app in a new tab keeps this page open o
 
 
 def foot(up=""):
-    return ("  <footer>\n    <p><a href=\"%s\" target=\"_blank\" rel=\"noopener\" data-app>Open the app</a> · "
+    return ("  <footer>\n    <p>Everyday Koine, from <a href=\"https://www.redeemerchurch.co.nz/\" "
+            "target=\"_blank\" rel=\"noopener\"><strong>Redeemer Church New Plymouth</strong></a>, "
+            "Aotearoa New Zealand.</p>\n"
+            "    <p><a href=\"%s\" target=\"_blank\" rel=\"noopener\" data-app>Open the app</a> · "
             "<a href=\"%sabout.html\">About</a> · "
             "<a href=\"%schapters.html\">All chapters</a> · "
             "<a href=\"%sprivacy.html\">Privacy policy</a> · "
+            "<a href=\"%sabout.html#more\">Other apps</a> · "
             "<a href=\"mailto:support@everydaykoine.app\">support@everydaykoine.app</a></p>\n"
-            "  </footer>\n</main>\n" % ((up or "/"), up, up, up)
+            "  </footer>\n</main>\n" % ((up or "/"), up, up, up, up)
             + APP_TAB_SCRIPT + "</body>\n</html>\n")
 
 

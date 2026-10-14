@@ -81,6 +81,10 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
          color:var(--muted); font-size:.86rem}
   footer p{color:var(--muted); margin:.4rem 0}
+  .appcard{display:block; text-decoration:none; max-width:34rem; transition:border-color .15s}
+  .appcard:hover,.appcard:focus-visible{border-color:var(--gold)}
+  .appcard:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .appcard p.more{margin-top:.5rem; color:var(--gold); font-weight:600}
   .faq{background:var(--surface); border:1px solid var(--line); border-radius:12px;
        padding:.7rem 1.05rem; margin:.55rem 0}
   .faq summary{cursor:pointer; font-weight:600; list-style-position:outside}
@@ -292,9 +296,17 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
       is always the authority where a recording falls short.</li>
   </ul>
 
+  <h2 id="more">Other apps from Redeemer Church</h2>
+  <a class="feat appcard" href="https://turnaside.app/" target="_blank" rel="noopener">
+    <h3>Turn Aside</h3>
+    <p>A free Android app that pauses your social media apps once your minutes are up, until you&rsquo;ve spent a few minutes in your Bible.</p>
+    <p class="more">turnaside.app &rarr;</p>
+  </a>
+
   <footer>
+    <p>Everyday Koine, from <a href="https://www.redeemerchurch.co.nz/" target="_blank" rel="noopener"><strong>Redeemer Church New Plymouth</strong></a>, Aotearoa New Zealand.</p>
     <p><a href="/" target="_blank" rel="noopener" data-app>Open the app</a> · <a href="chapters.html">The chapters</a> ·
-    <a href="privacy.html">Privacy policy</a> ·
+    <a href="privacy.html">Privacy policy</a> · <a href="#more">Other apps</a> ·
     <a href="mailto:support@everydaykoine.app">support@everydaykoine.app</a></p>
   </footer>
 </main>

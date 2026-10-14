@@ -2,7 +2,7 @@
 
 > A study app for learning to read the Greek New Testament: 27 chapters of grammar, an 817-word vocabulary deck with audio on a spaced-repetition schedule, playable paradigm tables, and the whole Greek New Testament with every word parsed. It runs in the browser, needs no account, and works offline once opened.
 
-Everyday Koine takes a learner from the alphabet to reading the text. The chapters follow the order of a standard first-year grammar, David Alan Black's *Learn to Read New Testament Greek*, and are written to teach on their own; none of the book is reproduced, and the app is independent of and not endorsed by its author or publisher. Pronunciation is Erasmian. The Greek text is the SBL Greek New Testament with MorphGNT parsing, and the Greek the app teaches is checked by program against that text.
+Everyday Koine takes a learner from the alphabet to reading the text. The chapters follow the order of a standard first-year grammar, David Alan Black's *Learn to Read New Testament Greek*, and are written to teach on their own; none of the book is reproduced, and the app is independent of and not endorsed by its author or publisher. It is made by Redeemer Church New Plymouth, Aotearoa New Zealand (https://www.redeemerchurch.co.nz/), which also makes Turn Aside (https://turnaside.app/). Pronunciation is Erasmian. The Greek text is the SBL Greek New Testament with MorphGNT parsing, and the Greek the app teaches is checked by program against that text.
 
 The app is a single-page web app. The links below open it at a given screen; the app itself is drawn with JavaScript, so its content is not readable as static pages. The About page is the best plain-text description.
 
