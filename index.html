@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. On an iPhone home-screen app the status bar's icons are white (black-translucent), so in light they switch to dark (default). */
 var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c})}var s=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');if(s&&(t==="light"||(t!=="dark"&&matchMedia("(prefers-color-scheme: light)").matches)))s.content="default"}catch(e){}</script>
-<meta name="description" content="Learn to read New Testament Greek: 27 chapters, 817 words with audio on a spaced-repetition schedule, paradigm drills, and the Greek text parsed. Works offline.">
+<meta name="description" content="Learn Biblical Greek and read the New Testament, free: 27 chapters, 817 words with audio on a spaced-repetition schedule, paradigm drills, and the Greek text parsed. Works offline.">
 <meta name="mobile-web-app-capable" content="yes">
 <!-- Safari has honoured the standard name only since iOS 17.4; without the
      old one an iPhone a couple of releases behind opens the home-screen icon
@@ -17,12 +17,12 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
      who installed it asked for. -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Koine">
-<title>Everyday Koine — Learn to Read New Testament Greek</title>
+<title>Everyday Koine — Learn Biblical Greek and Read the New Testament</title>
 <link rel="canonical" href="https://everydaykoine.app/">
 <!-- What a shared link shows: icons/share.png, built by tools/build_share_image.py. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Everyday Koine">
-<meta property="og:title" content="Everyday Koine — learn to read the Greek New Testament">
+<meta property="og:title" content="Everyday Koine — learn Biblical Greek and read the New Testament">
 <meta property="og:description" content="Chapters read aloud, 817 words with audio on a spaced-repetition schedule, paradigm drills, and the whole Greek New Testament parsed. Free, no account, works offline.">
 <meta property="og:url" content="https://everydaykoine.app/">
 <meta property="og:image" content="https://everydaykoine.app/icons/share.png">
@@ -45,7 +45,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   "url": "https://everydaykoine.app/",
   "name": "Everyday Koine",
   "inLanguage": "en",
-  "description": "A study app for learning to read the Greek New Testament.",
+  "description": "A free study app for learning Biblical Greek, the Koine Greek of the New Testament.",
   "publisher": {"@type": "Organization", "name": "Redeemer Church New Plymouth", "url": "https://www.redeemerchurch.co.nz/"}
  },
  {
@@ -64,7 +64,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
    "priceCurrency": "USD"
   },
   "inLanguage": "en",
-  "description": "Learn to read the Greek New Testament from the alphabet up: 27 chapters of grammar, an 817-word vocabulary deck with audio on a spaced-repetition schedule, playable paradigm tables, and the whole Greek New Testament with every word parsed. No account, no ads, works offline.",
+  "description": "Learn Biblical Greek and read the Greek New Testament, from the alphabet up: 27 chapters of grammar, an 817-word vocabulary deck with audio on a spaced-repetition schedule, playable paradigm tables, and the whole Greek New Testament with every word parsed. No account, no ads, works offline.",
   "featureList": [
    "27 chapters from the alphabet to reading the text, with questions along the way",
    "Chapters read aloud, each word lit as it is spoken",
@@ -95,7 +95,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 <div id="app">
   <!-- The page's one h1, for search engines and screen readers: each
        screen's title is an h2 styled as a heading of its own. -->
-  <h1 class="vh">Everyday Koine — learn to read New Testament Greek</h1>
+  <h1 class="vh">Everyday Koine — learn Biblical Greek and read the New Testament</h1>
 
   <!-- TODAY -->
   <section class="screen on" id="s-today">
@@ -240,12 +240,12 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 </div>
 
 <nav>
-  <button data-go="today" class="on"><span class="ic">α</span>Today</button>
-  <button data-go="learn"><span class="ic">β</span>Learn</button>
-  <button data-go="drill"><span class="ic">γ</span>Drill</button>
-  <button data-go="read"><span class="ic">δ</span>Read</button>
-  <button data-go="tables"><span class="ic">ε</span>Look up</button>
-  <button data-go="prog"><span class="ic">ζ</span>Settings</button>
+  <button data-go="today" class="on"><span class="ic" aria-hidden="true">α</span>Today</button>
+  <button data-go="learn"><span class="ic" aria-hidden="true">β</span>Learn</button>
+  <button data-go="drill"><span class="ic" aria-hidden="true">γ</span>Drill</button>
+  <button data-go="read"><span class="ic" aria-hidden="true">δ</span>Read</button>
+  <button data-go="tables"><span class="ic" aria-hidden="true">ε</span>Look up</button>
+  <button data-go="prog"><span class="ic" aria-hidden="true">ζ</span>Settings</button>
 </nav>
 
 <div class="toast" id="toast"></div>
