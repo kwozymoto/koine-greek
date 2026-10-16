@@ -222,6 +222,44 @@ use `data-ref` and `data-claim` the same way.
   attribute, not the rule that is actually painting. It said gold while the
   screenshot showed green. Judge colour from the screenshot.
 
+### The website around the app
+
+`/` is the app, and stays the app: installs, the Play wrapper and every
+"Open the app" link land there, and progress is stored per origin. The pages
+that explain it are `about.html` (the landing page in all but name),
+`chapters.html` with `chapters/<n>.html`, `testing.html` and `privacy.html`.
+Everyday Koine is presented as an app **from Redeemer Church New Plymouth**,
+like Turn Aside (turnaside.app): every page's footer credits and links the
+church, and About's "Other apps from Redeemer Church" links Turn Aside, which
+links back.
+
+- **Rebuild after touching any of these pages**, not only after a lesson
+  change: `python -P tools/build_chapters_page.py`. The sitemap carries each
+  page's `<lastmod>`, taken from git, so `check_chapters_page` fails until the
+  sitemap is rebuilt.
+- **After the release is live**, `python -P tools/indexnow.py` tells Bing which
+  pages changed (and so ChatGPT search, Copilot and DuckDuckGo, which draw on
+  its index). The `<32 hex>.txt` file at the root is its key, public by design.
+- **The home page's static HTML must link to About and the chapter list.** On
+  2026-10-14 it did not — both links were drawn by `app.js` — and Google had
+  indexed the home page and nothing else.
+- **Greek on a website page is marked `lang="grc"`**, or a screen reader spells
+  it out as English. The generated pages do this themselves (`mark_greek` in
+  `build_chapters_page.py`); in a hand-written page, mark it by hand.
+- **"Biblical Greek" is the phrase people search for.** It was on no page until
+  v306. Keep it in the titles and descriptions.
+- **The giving note on About is website-only.** Google Play does not allow an
+  app to ask for money outside its own billing, and About also opens inside
+  the Play app, so a script removes `.give` when the page runs as the installed
+  app. Never put a request for money in the app itself, on the Play listing,
+  in tester messages, or in the FAQ's structured data.
+- `robots.txt` says yes to search, AI input and AI training (Content-Signal),
+  as Fraser decided. `llms.txt` is the plain description for AI tools; keep its
+  figures true (`check_site_numbers` reads it).
+- An accessibility pass (axe-core, every page, both themes) was clean at v306.
+  Run it again after changing page structure; the Browser pane can inject
+  axe-core from cdnjs into each page through an iframe.
+
 ## 7. Lessons
 
 `docs/lesson-style.md` holds the voice and the chapter shape, drawn from
