@@ -288,7 +288,21 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 
   <h2>Questions</h2>
   <details class="faq"><summary>Is it free?</summary>
-    <p>Yes. Everyday Koine is free and will stay free, with no advertising.</p></details>
+    <p>Yes. Everyday Koine is free and will stay free, with no advertising.</p>
+    <!-- Website only. Google Play does not allow an app to ask for money
+         outside its own billing, and this page also opens inside the Play
+         app, so the script at the foot removes this when the page is running
+         as the installed app. Not in the FAQ data above either: search
+         results show the plain answer. -->
+    <div class="give">
+    <p>A volunteer at Redeemer Church New Plymouth makes and looks after it.
+    If it has helped you and you would like to support the church&rsquo;s
+    ministry, you are welcome to give, but there is no obligation or
+    expectation to do so.</p>
+    <p>Account name: Redeemer Church<br>Account number: 15-3953-0698528-000 (TSB)<br>Reference: Koine</p>
+    <p>Redeemer is a registered charity (CC47989). For a receipt for tax
+    purposes, email <a href="mailto:office@redeemerchurch.co.nz">office@redeemerchurch.co.nz</a>.</p>
+    </div></details>
   <details class="faq"><summary>Do I need the textbook?</summary>
     <p>No. The chapters are written to teach on their own. They follow the order of David Alan Black&#x27;s <i>Learn to Read New Testament Greek</i>, so they line up if you are using it, but none of the book is needed or reproduced.</p></details>
   <details class="faq"><summary>How accurate is it?</summary>
@@ -341,6 +355,9 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
 </main>
 <script>/* Opening the app in a new tab keeps this page open on the website. Inside the installed app a new tab would open the browser instead, so there the link opens in place. */
 if (matchMedia('(display-mode: standalone)').matches)
-  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });</script>
+  document.querySelectorAll('a[data-app]').forEach(function (a) { a.removeAttribute('target'); });
+/* The giving note is for the website, not the installed app (see the note beside it). */
+if (matchMedia('(display-mode: standalone)').matches || document.referrer.indexOf('android-app://') === 0)
+  document.querySelectorAll('.give').forEach(function (e) { e.remove(); });</script>
 </body>
 </html>
