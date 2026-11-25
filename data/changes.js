@@ -12,6 +12,12 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
+{d:"2026-11-26", v:"v309", items:[
+  {k:"better", t:"Less text to read: most screens lose their explaining lines, and the drills show just their names."},
+  {k:"better", t:"Write the letters is now practice, not a test: trace the letter, press Done, and your line is shown over it. No more percentages."},
+  {k:"better", t:"Today shows the 24 letters as a row that fills in as you learn them, and a short welcome back after a few days away."},
+  {k:"better", t:"Two drills renamed: Pick the form and Type the form. The Alphabet check is now the Alphabet test."},
+]},
 {d:"2026-10-13", v:"v299", items:[
   {k:"new", t:"Testers of the Android app get a short welcome saying what helps, and a check-in a week later with a quick way to send feedback. The guide is at everydaykoine.app/testing.html."},
   {k:"better", t:"Joining the Android test no longer waits on an email: join the testers group, opt in on the Play Store, and install."},

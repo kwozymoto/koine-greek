@@ -303,14 +303,17 @@ function wPaint(s) {
   if (!s.w || !s.h) return;
   const c = s.ctx;
   c.clearRect(0, 0, s.w, s.h);
+  /* `compare` is the trace after Done: the letter drawn firm and your line
+     over it, so you can see for yourself where they part. */
   if (s.guide) {
     c.save();
-    c.globalAlpha = 0.2;
+    c.globalAlpha = s.compare ? 0.5 : 0.2;
     wGuide(s, c, wTheme("--text"));
     c.restore();
-    wDrawStart(s, c);
+    if (!s.compare) wDrawStart(s, c);
   }
   c.save();
+  if (s.compare) c.globalAlpha = 0.85;
   c.strokeStyle = c.fillStyle = wTheme("--gold");
   c.lineCap = c.lineJoin = "round";
   s.strokes.forEach(st => wPath(s, c, st));
@@ -492,7 +495,6 @@ function wPadHtml(showGuideHint) {
     <div class="row wctl" style="margin-top:9px">
       <button class="btn ghost small" onclick="wClear()">Clear</button>
       <button class="btn ghost small" onclick="wUndo()">Undo stroke</button>
-      ${showGuideHint ? `<span class="muted" style="font-size:.74rem;margin-left:auto">Begin at the dot, follow the arrow</span>` : ""}
     </div>`;
 }
 
@@ -520,7 +522,7 @@ function writeLetterDrill(n = 10, from) {
       </div>
       ${wPadHtml(true)}
       <div style="height:9px"></div>
-      <button class="btn" id="wCheck">Check</button>
+      <button class="btn" id="wCheck">Done</button>
       <div id="fb"></div>`;
     WPAD = wSetup(document.getElementById("pad"), lower);
     wBind(WPAD);
@@ -529,45 +531,28 @@ function writeLetterDrill(n = 10, from) {
        letter could be counted several times over — and a retry that then
        succeeded would have already broken the run. First verdict only, and
        the XP is paid once. */
-    let judged = false, paid = false;
-    /* Never punitive. The numbers in WRITE are set from the table
-       trace-audit.html prints: a path down the middle of the glyph, that path
-       jittered, the same path oversized, a scribble and a single line, over
-       all 24 letters. What it still cannot model is a real hand, so a low
-       score reads as "have another go", not as a mark against you, and there
-       is no wrong-answer tone. Both halves of the score are shown; you can
-       see for yourself whether it is fair — and unlike the score this
-       replaced, both halves can actually reach 100. */
+    /* PRACTICE, NOT A TEST (Fraser, 2026-11-26). The centreline scorer below
+       was the second attempt at a fair mark and people still found its
+       numbers generic or wrong: it measures how closely a line follows a
+       serif glyph, not whether the letter was formed well — direction,
+       start and proportion are invisible to it, and a careful hand that does
+       not trace the serifs loses marks for them. Measuring shape properly
+       would need hand-made stroke templates for every letter, checked
+       against real hands. So the trace is not marked at all: Done shows your
+       line over the letter, in the letter's own colour, and you judge it —
+       the same footing as writing a word from memory. wScore() stays for
+       trace-audit.html. Paid once per letter, never counted right or wrong. */
+    let paid = false;
     document.getElementById("wCheck").onclick = () => {
-      const r = wScore(WPAD);
-      if (!r.drew) { toast("Trace the letter first"); return; }
-      const good = r.score >= WRITE.pass;
-      const pc = x => Math.round(x * 100);
-      /* Which half fell short is the only thing that tells you what to
-         change: missing the letter means go back over it, wandering off the
-         line means slow down. Each half is judged against a standard and not
-         against the other one — 99 and 100 are both good, and comparing them
-         told a flawless trace it had skipped something. */
-      const note = r.covered >= 0.85 && r.onLine >= 0.85
-        ? ""
-        : r.onLine <= r.covered
-          ? "A good deal of your line went outside the letter — slow down and follow it."
-          : "Some of the letter was missed — go back over the parts you skipped.";
+      if (!WPAD.strokes.length) { toast("Trace the letter first"); return; }
       document.getElementById("wCheck").style.display = "none";
+      WPAD.compare = true; wPaint(WPAD);
       document.getElementById("fb").innerHTML = `
-        <div class="feedback"><b>${good ? "That follows it well" : "Have another go at this one"} — ${pc(r.score)}%</b>
-          You went over ${pc(r.covered)}% of the letter, and ${pc(r.onLine)}% of your
-          line stayed on it.${note ? " " + note : ""}</div>
-        <div class="row">
-          <button class="btn ghost small" onclick="wClear();document.getElementById('fb').innerHTML='';document.getElementById('wCheck').style.display=''">Try again</button>
-          <button class="btn small" onclick="qi++;step()">Continue</button>
+        <div class="row" style="margin-top:2px">
+          <button class="btn ghost small" onclick="WPAD.compare=false;wClear();document.getElementById('fb').innerHTML='';document.getElementById('wCheck').style.display=''">Again</button>
+          <button class="btn small" onclick="qi++;step()">Next</button>
         </div>`;
-      /* Counted either way so the run and the session summary are honest,
-         but silent when it falls short — see the note above. A trace that
-         misses says "have another go", not "wrong". */
-      if (!judged) { judged = true; answerFelt(good, null, !good); }
-      else if (good) sfx("correct");
-      if (good && !paid) { paid = true; addXp(2); SESSION_XP += 2; }
+      if (!paid) { paid = true; TRACED++; addXp(2); SESSION_XP += 2; }
     };
   });
 }
@@ -578,7 +563,7 @@ function writeLetterDrill(n = 10, from) {
    TWO WAYS TO WRITE IT, and the choice is the learner's. Tracing with a
    finger is what the drill was built for and it rehearses the letter shapes,
    which is the thing a keyboard cannot teach. But the app already carries a
-   polytonic keyboard (js/keys.js) that "Write a real form" uses, and on a
+   polytonic keyboard (js/keys.js) that "Type the form" uses, and on a
    phone with no stylus, typing is the thing somebody will actually do twice
    a day. So both, chosen per question and remembered.
 

@@ -144,7 +144,7 @@ DRILL_HOW = {
         ("TEACHES", "restricted to lemmas in S.cards"),
     "Principal parts":
         ("OPEN", "a reference list, and the card says so"),
-    "Alphabet check":
+    "Alphabet test":
         ("OPEN", "a test with no teaching, on purpose and by name: it is how "
                  "somebody who already reads Greek gets past the letters on "
                  "their first morning. As a plan row it waits until every "
@@ -165,9 +165,9 @@ DRILL_HOW = {
                  "chapters' when that is what it would be"),
     "Paradigm sprint":
         ("OPEN", "gridSprint(14,true), same card, same warning"),
-    "Produce a real form":
+    "Pick the form":
         ("TEACHES", "metForms(): lemmas you have met"),
-    "Write a real form":
+    "Type the form":
         ("TEACHES", "metForms()"),
     "Read a sentence":
         ("GATED", "clauseDrill waits for CLAUSE_CH"),

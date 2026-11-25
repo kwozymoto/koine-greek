@@ -159,16 +159,12 @@ function reportCardHtml() {
                          catch (e) { return ""; } })();
   return `<div class="card" id="reportCard">
     <h3 style="margin-top:0">Report a problem</h3>
-    <p class="muted" style="font-size:.85rem;margin-bottom:10px">
-      Something wrong, confusing, or just not what you expected — a wrong answer marked
-      correct, a word that will not play, a chapter that reads badly. Say what happened and
-      what you expected instead.</p>
 
     <textarea id="repWhat" class="rep-what" rows="4" placeholder="On chapter 12, question 3 marked me wrong when I picked…"
       oninput="reportSaveDraft()">${draft.replace(/[<&]/g, c => c === "<" ? "&lt;" : "&amp;")}</textarea>
 
     <div class="setrow" style="border:0;padding-top:12px">
-      <span>Screenshot<br><small class="muted" id="repShotName">Optional — helps a great deal</small></span>
+      <span>Screenshot<br><small class="muted" id="repShotName">Optional</small></span>
       <label class="btn ghost small" style="cursor:pointer;margin:0">
         Choose<input type="file" id="repShot" accept="image/*" hidden onchange="reportShotPicked()">
       </label>
@@ -179,18 +175,6 @@ function reportCardHtml() {
       <button class="btn" style="flex:1" onclick="reportSend()">Send</button>
       <button class="btn ghost" style="flex:1" onclick="reportCopy()">Copy</button>
     </div>
-    <p class="muted" style="font-size:.8rem;margin:8px 0 0;text-align:center">
-      Goes to <a href="mailto:${REPORT.TO}">${REPORT.TO}</a></p>
-
-    <details style="margin-top:12px">
-      <summary class="muted" style="font-size:.82rem;cursor:pointer">What gets included</summary>
-      <pre class="rep-diag" id="repDiag">${reportDiag()
-        .replace(/[<&]/g, c => c === "<" ? "&lt;" : "&amp;")}</pre>
-      <p class="muted" style="font-size:.8rem;margin:6px 0 0">
-        Nothing is sent from this screen. Send opens your own mail app with the report
-        already written and addressed; Copy puts it on the clipboard. Your sync passphrase
-        is never read.</p>
-    </details>
   </div>`;
 }
 

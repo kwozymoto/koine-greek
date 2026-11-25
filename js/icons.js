@@ -65,7 +65,7 @@ const DRILL_KIND = {
   "The article": "grid",
   "Verb parsing": "parse",
   "Alphabet": "letters",
-  "Alphabet check": "letters",
+  "Alphabet test": "letters",
   "Listening — letters": "listen",
   "Listening — words": "listen",
   "Parsing builder": "parse",
@@ -78,8 +78,8 @@ const DRILL_KIND = {
   "Mixed grammar review": "mix",
   "Fill the grid": "grid",
   "Paradigm sprint": "sprint",
-  "Produce a real form": "choose",
-  "Write a real form": "type",
+  "Pick the form": "choose",
+  "Type the form": "type",
   "Read a sentence": "read",
   "Daily mix": "mix",
 };
@@ -200,7 +200,7 @@ function ringFill(root) {
    with nothing due; "Case functions" offered all twenty questions when
    caseEarned() was nought of twenty, every one of them about genitive
    absolutes and conditional classes from chapters the learner had not
-   reached; and "Write a real form" fell through to its cold-start pool and
+   reached; and "Type the form" fell through to its cold-start pool and
    asked for γυναικῶν on day one.
 
    Those fallbacks are deliberate — a drill that refuses to run is worse than
@@ -230,7 +230,7 @@ const DRILL_STATE = {
        it — choosing it is a choice — but the card must say why the row is
        missing, or its absence reads as a bug. */
     if (typeof lettersReady === "function" && !lettersReady())
-      return { n: alphaLeft(), note: "letters to settle — Today does those first",
+      return { note: "letters first",
                ready: false };
     return left ? { n: left, note: "not started" }
                 : { note: "every word started", ready: false };
@@ -246,7 +246,7 @@ const DRILL_STATE = {
     return left ? { n: left, note: `of ${ALPHABET.length} unsettled` }
                 : { note: "all settled", ready: true };
   },
-  "Alphabet check": () => {
+  "Alphabet test": () => {
     /* The bar and the distance to it, because this is the one drill whose
        whole point is a threshold. Ready once every letter has been taught;
        before that it is still here, as the way somebody who already reads
@@ -274,8 +274,8 @@ const DRILL_STATE = {
   },
   "Fill the grid": () => gridReach(),
   "Paradigm sprint": () => gridReach(),
-  "Write a real form": () => metForms(),
-  "Produce a real form": () => metForms(),
+  "Type the form": () => metForms(),
+  "Pick the form": () => metForms(),
 };
 
 /* Both grid drills draw one pool, so they report one state. Due first, then

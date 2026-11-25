@@ -305,12 +305,11 @@ function syncCardHtml() {
         <button class="btn small" onclick="syncNowClicked()">Sync now</button>
         <button class="btn ghost small" onclick="syncOff()">Turn off</button>
         <button class="btn ghost small" onclick="syncDelete()">Delete synced copy</button>
-      </div>
-      <p class="muted" style="font-size:.8rem;margin-bottom:0">Turning off leaves the stored copy where it is, so another device can still reach it. Deleting removes it for good — this device keeps its own progress.</p></div>`;
+      </div></div>`;
   }
   return `<div class="card">
     <h3 style="margin-top:0">Sync across devices</h3>
-    <p class="muted" style="font-size:.85rem">Keep your progress the same on your phone and your computer. No account: this device makes a private code, and you enter it on the others. Only a fingerprint of the code ever leaves the device.</p>
+    <p class="muted" style="font-size:.85rem">No account needed.</p>
     <button class="btn small" onclick="syncStart()">Start sync on this device</button>
     <p style="margin:14px 0 6px;font-size:.85rem">Already syncing on another device? Enter its code:</p>
     <input id="syncPhrase" autocomplete="off" autocapitalize="characters" spellcheck="false"

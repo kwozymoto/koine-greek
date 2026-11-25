@@ -350,10 +350,17 @@ if(testScrim){
   /* Not over a shared passage or chapter: the visit still counts, and the
      invitation waits for an ordinary one. */
   const byLink=typeof ARRIVED_BY_LINK!=="undefined" && ARRIVED_BY_LINK;
-  if(androidWeb() && !testerAsked() && visits>=2 && !byLink){
-    /* After the first paint, so it does not land on a blank screen. */
-    addEventListener("load",()=>setTimeout(testerShow,1400));
-  }
+  /* Not on load any more (2026-11-26): it landed on whatever screen the
+     person had just opened. It waits for the end of a session instead, on
+     the summary screen, where they have just done something and nothing is
+     interrupted. */
+  TESTER_DUE = androidWeb() && !testerAsked() && visits>=2 && !byLink;
+}
+var TESTER_DUE = TESTER_DUE || false;
+function testerAfterSession(){
+  if(!TESTER_DUE || testerAsked()) return;
+  TESTER_DUE = false;
+  setTimeout(testerShow, 900);
 }
 
 /* Reachable from Progress afterwards, the way the install row is — dismissing

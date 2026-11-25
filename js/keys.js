@@ -138,7 +138,7 @@ function gkKeyboard(opts) {
 /* ---------------------------------------------------------------------
    Type the form.
 
-   The same question "Produce a real form" asks, with the four options taken
+   The same question "Pick the form" asks, with the four options taken
    away. Picking λελύκαμεν from a list needs you to recognise it; producing
    it needs the reduplication, the κ and the ending, which is the whole
    difference between the two drills.

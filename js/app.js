@@ -1428,12 +1428,12 @@ function todaysPlan(){
        Today threw and rendered nothing at all. */
     /* The letters by name. "gamma to iota" read as a run of seven when the
        five were gamma, zeta, eta, theta and iota. */
-    const span=()=>teach.length===1 ? `${teach[0][1]} taught first`
-      : `${teach.length} taught first: ${teach.map(a=>a[1]).join(", ")}`;
+    /* Just the names (Fraser, 2026-11-26: less explaining on screen). */
+    const span=()=>teach.map(a=>a[1]).join(", ");
     tasks.push({id:"letters", mins:teach.length?3:2,
       label:"Letters and sounds",
       sub:teach.length
-        ? span()+(revise.length?`, then ${revise.length} to settle`:"")
+        ? span()+(revise.length?` · ${revise.length} to settle`:"")
         : `${left} of ${ALPHABET.length} still to settle`,
       run:()=>startSession(letterWarmup(),"letters")});
   }
@@ -1586,14 +1586,18 @@ function planHtml(){
   /* Progress in two numbers. "24 to go" stood still for the first three
      days, because a letter settles only after right answers on three
      separate days, while fourteen letters had been met and answered. */
+  /* Drawn, not written (2026-11-26): the 24 letters in a row, faint until
+     met, ink once met, gold once settled. It moves every day, which a
+     sentence of numbers under the plan did too, at four times the length;
+     "Studied Greek before?" went to the Start here card. */
   const settled=ALPHABET.length-alphaLeft();
   const met=ALPHABET.filter(a=>alphaScore(a)>0).length;
-  return rows+`<p class="muted" style="font-size:.78rem;margin:10px 2px 0;line-height:1.5">
-    New words start once the letters are settled: ${met} of ${ALPHABET.length} met,
-    ${settled} settled so far — each settles after right answers on three separate days.
-    Studied Greek before? <a href="#" class="tappable" style="color:var(--gold)"
-      onclick="go('prog');return false">Mark chapter 1 done in Settings</a> and the
-    whole alphabet counts as done.</p>`;
+  return rows+`<div class="alpha-strip" role="img"
+      aria-label="Letters: ${met} of ${ALPHABET.length} met, ${settled} settled">${
+    ALPHABET.map(a=>{
+      const s=alphaScore(a), cls=s<=0?"":(s>=ALPHA_SOLID?"set":"met");
+      return `<span class="${cls}">${a[0].split(" ")[1]||a[0]}</span>`;
+    }).join("")}</div>`;
 }
 
 /* Offered at the end of a session so finishing one thing leads to the next
@@ -1688,17 +1692,17 @@ function render(){
   /* The reassurance leads. An older learner was afraid to press on through
      the letters in case what they had not yet mastered never came back --
      which is the opposite of how the app works, and nothing said so. */
-  if(startEl) startEl.innerHTML = fresh ? `<h2 class="dgroup" data-tone="gold">Start here</h2>
-    <div class="card" style="border-color:var(--gold-dim)">
-      <p style="font-size:.92rem;margin:0 0 10px"><b>You cannot fall behind or miss anything.</b>
-        The app notices what you do not know yet and keeps bringing it back until
-        you do — so moving on is always safe.</p>
-      <p class="muted" style="font-size:.87rem;margin:0 0 12px">Work down the list above,
-        a little each day. The first few days are the letters, because everything
-        after them is unreadable without them. Words begin once the letters are
-        settled; from then on each day is the words the schedule brings back, a
-        few new ones, and a few minutes of a chapter.</p>
-      <button class="btn ghost small" onclick="go('help')">What else is in here</button>
+  /* Trimmed 2026-11-26 to the line that answers a real fear and the door
+     for people who already read Greek; "How this app works" at the foot of
+     Today has the rest. A learner back after a gap gets one line too, in the
+     same place, and it goes once they have done a session (S.last moves). */
+  const gap=S.last?daysBetween(S.last,today()):0;
+  if(startEl) startEl.innerHTML = fresh ? `<div class="card note-card">
+      <p><b>You cannot fall behind or miss anything.</b> What you don't know yet
+        keeps coming back until you do.</p>
+      <button class="btn ghost small" onclick="goStudied()">Studied Greek before? Skip ahead</button>
+    </div>` : gap>=3 ? `<div class="card note-card">
+      <p><b>Welcome back.</b> Nothing is lost: today starts with what has slipped.</p>
     </div>` : "";
 
   /* The passage you are working, and the two controls that matter: how much
@@ -1867,13 +1871,24 @@ function whatsNewHtml(){
     LOG_FRESH=CHANGES[0].d>seen;
     try{ localStorage.setItem(LOG_SEEN,CHANGES[0].d); }catch(e){}
   }
-  return `<div class="card">
-      <div class="between"><h3 style="margin:0">What's new</h3>${
-        LOG_FRESH?`<span class="lognew">New</span>`:""}</div>
+  /* One row, shut: the log is for whoever wants it, and open it filled the
+     top of Settings with notes for testers (Fraser, 2026-11-26). */
+  return `<details class="card whatsnew">
+      <summary class="between"><h3 style="margin:0">What's new</h3>${
+        LOG_FRESH?`<span class="lognew">New</span>`:""}</summary>
       ${logDayHtml(CHANGES[0])}
       ${CHANGES.length>1?`<details class="logmore"><summary>Earlier updates</summary>
         ${CHANGES.slice(1).map(logDayHtml).join("")}</details>`:""}
-    </div>`;
+    </details>`;
+}
+
+/* Today's "Studied Greek before? Skip ahead" lands on the card that does it. */
+function goStudied(){
+  go("prog");
+  setTimeout(()=>{
+    const h=document.getElementById("studiedBefore");
+    if(h) h.scrollIntoView({block:"start"});
+  },30);
 }
 
 /* The progress half of the Settings tab, from Today's link. */
@@ -1936,7 +1951,7 @@ function startSession(queue,label){
      it: drill a quick test's misses and the next "Learn 5 new words" graded
      into thin air. */
   PRACTICE=!!queue.__practice;
-  COMBO=0; COMBO_BEST=0; RIGHT=0; ASKED=0; REVIEWED=0; comboPaint();
+  COMBO=0; COMBO_BEST=0; RIGHT=0; ASKED=0; REVIEWED=0; TRACED=0; comboPaint();
   /* runPlanTask has always said "startSession clears PLAN_TASK … so claim it
      afterwards", and it did not. Leave a plan row mid-way by any route that
      is not finish() — the bottom nav, the back gesture — and the claim
@@ -1994,6 +2009,7 @@ function finish(early){
   const line=[];
   if(ASKED) line.push(`<b>${RIGHT} of ${ASKED}</b> right`);
   if(REVIEWED) line.push(`<b>${REVIEWED}</b> card${REVIEWED===1?"":"s"} reviewed`);
+  if(TRACED && (ASKED||REVIEWED)) line.push(`<b>${TRACED}</b> traced`);
   if(COMBO_BEST>=3) line.push(`best run <b>${COMBO_BEST}</b>`);
   const nx=nextTaskHtml(!!AGAIN);
   /* After a letters sitting, say what happens to what was missed. */
@@ -2004,8 +2020,11 @@ function finish(early){
      instead — claiming a score there would be inventing one. */
   const scored=ASKED>0;
   const pct=scored?RIGHT/ASKED:1;
-  const big=scored?`${RIGHT}/${ASKED}`:(REVIEWED||SESSION_XP?`${REVIEWED}`:"✓");
-  const small=scored?"right":(REVIEWED?`card${REVIEWED===1?"":"s"} reviewed`:"done");
+  /* Tracing is practice and never marked (js/write.js), so a session of it
+     counts letters traced, the way a review counts cards. */
+  const big=scored?`${RIGHT}/${ASKED}`:(REVIEWED?`${REVIEWED}`:TRACED?`${TRACED}`:"✓");
+  const small=scored?"right":(REVIEWED?`card${REVIEWED===1?"":"s"} reviewed`
+    :TRACED?`letter${TRACED===1?"":"s"} traced`:"done");
   const clean=scored&&RIGHT===ASKED;
   /* .endbtns is not cosmetic. On a short screen `#sessBody > .btn` is sticky
      at one fixed offset above the nav — written for a question card, where
@@ -2030,6 +2049,8 @@ function finish(early){
         AGAIN?"the drills":"today"}</button>
     </div>`;
   if(typeof ringFill==="function") ringFill(b);
+  // The tester invitation waits for a finished session (js/pwa.js).
+  if(typeof testerAfterSession==="function") testerAfterSession();
 }
 
 /* The example verse with its word picked out of the line. A gloss tells you
@@ -2211,7 +2232,7 @@ document.getElementById("btnUndo").onclick=()=>{
    at the top of app.css turns every animation off for anyone who asks for
    that, and the whole lot is silent when Answer sounds is Off.
    ============================================================ */
-let COMBO=0, COMBO_BEST=0, RIGHT=0, ASKED=0, REVIEWED=0;
+let COMBO=0, COMBO_BEST=0, RIGHT=0, ASKED=0, REVIEWED=0, TRACED=0;
 
 function comboPaint(){
   const el=document.getElementById("sessCombo");
@@ -3694,32 +3715,32 @@ function mixedQuiz(){
   return all.sort(()=>Math.random()-.5).slice(0,12);
 }
 const DRILLS=[
-["Vocabulary due now","Spaced repetition — the words and lesson questions the schedule has due",()=>startReview()],
-["Learn 5 new words","Next five by New Testament frequency",()=>startNew(5)],
-["Greek → English","Recognition, mixed multiple choice",()=>startSession(pairDrill(g2eBank(),"What does this mean?"),"d")],
-["English → Greek","Harder: production rather than recognition",()=>startSession(reverseVocab(),"d")],
-["The article","All 17 forms, parsed",()=>startSession(pairDrill(ART,"Parse this article:",ART.length,true),"d")],
-["Verb parsing","Person, number, tense, voice, mood",()=>startSession(pairDrill(PARSE,"Parse this form:",12,true),"d")],
-["Alphabet","Letter names and sounds",()=>startSession(alphaDrill(),"d")],
-["Alphabet check","All 24 in one pass — pass it and the letters are done",()=>startSession(alphaCheck(),"letters")],
-["Listening — letters","Hear a letter or diphthong and name it",()=>startSession(listenDrill(),"d")],
-["Listening — words","Hear a word from the course list and give its meaning",()=>startSession(wordListenDrill(),"d")],
-["Parsing builder","Assemble the parse yourself — tense, voice, person, number",()=>startSession(buildDrill(),"d")],
-["Parse a real form","Words from the Greek New Testament, not from λύω",()=>startSession(parseRealDrill(),"d")],
-["Principal parts","Future, aorist and perfect of the great irregulars",()=>startSession(ppDrill(),"d")],
-["Case functions","The genitive and dative decisions exegesis turns on",()=>startSession(caseDrill(),"d")],
+["Vocabulary due now","",()=>startReview()],
+["Learn 5 new words","",()=>startNew(5)],
+["Greek → English","",()=>startSession(pairDrill(g2eBank(),"What does this mean?"),"d")],
+["English → Greek","",()=>startSession(reverseVocab(),"d")],
+["The article","",()=>startSession(pairDrill(ART,"Parse this article:",ART.length,true),"d")],
+["Verb parsing","",()=>startSession(pairDrill(PARSE,"Parse this form:",12,true),"d")],
+["Alphabet","",()=>startSession(alphaDrill(),"d")],
+["Alphabet test","",()=>startSession(alphaCheck(),"letters")],
+["Listening — letters","",()=>startSession(listenDrill(),"d")],
+["Listening — words","",()=>startSession(wordListenDrill(),"d")],
+["Parsing builder","",()=>startSession(buildDrill(),"d")],
+["Parse a real form","",()=>startSession(parseRealDrill(),"d")],
+["Principal parts","",()=>startSession(ppDrill(),"d")],
+["Case functions","",()=>startSession(caseDrill(),"d")],
 ["Look-alikes","εἰς or εἷς · ἡ or ἥ or ἤ — one accent apart",()=>startSession(lookalikeDrill(),"d")],
-["Write the letters","Trace each one with a finger or the mouse",()=>startSession(writeLetterDrill(),"d")],
-["Write it from memory","No multiple choice — write the word, then mark yourself",()=>startSession(writeWordDrill(),"d")],
-["Mixed grammar review","Questions from lessons you've finished, interleaved",()=>startSession(mixedQuiz(),"d")],
-["Fill the grid","A real paradigm with its cells emptied — against the clock",()=>startSession(gridDrill(3,true),"grids")],
-["Paradigm sprint","One slot at a time, four ways, as fast as you can",()=>startSession(gridSprint(14,true),"d")],
-["Produce a real form","Name the slot, pick the word — from the Greek New Testament",()=>startSession(formDrill(),"d")],
-["Write a real form","Name the slot, type the word — no options to choose from",()=>startSession(typeDrill(),"d")],
-["Read a sentence","Real verses: find the verb, the case, the subject",()=>startSession(clauseDrill(6),"sent")],
-["Daily mix","A little of everything, interleaved — the hardest way to practise and the one that works",()=>startSession(dailyMix(),"d")],
-["Flash cards","Pick a set — a chapter, a kind of word, your sticking points — and drill it",()=>openDeckPicker()],
-["Quick test","10, 25 or 50 words from a chapter or the commonest — marked at the end, schedule untouched",()=>openQuickTest()]
+["Write the letters","",()=>startSession(writeLetterDrill(),"d")],
+["Write it from memory","",()=>startSession(writeWordDrill(),"d")],
+["Mixed grammar review","",()=>startSession(mixedQuiz(),"d")],
+["Fill the grid","",()=>startSession(gridDrill(3,true),"grids")],
+["Paradigm sprint","",()=>startSession(gridSprint(14,true),"d")],
+["Pick the form","",()=>startSession(formDrill(),"d")],
+["Type the form","",()=>startSession(typeDrill(),"d")],
+["Read a sentence","",()=>startSession(clauseDrill(6),"sent")],
+["Daily mix","A little of everything",()=>startSession(dailyMix(),"d")],
+["Flash cards","Choose a set",()=>openDeckPicker()],
+["Quick test","Doesn’t change your schedule",()=>openQuickTest()]
 ];
 /* Which heading each drill sits under. Held here rather than in DRILLS so
    the indices the menu calls by stay exactly as they were. */
@@ -3728,10 +3749,10 @@ const DRILL_GROUP={
                 "Listening — words","Write it from memory","Flash cards","Quick test"],
   "Reading":["Read a sentence","Case functions"],
   "Everything":["Daily mix"],
-  "Paradigms":["Fill the grid","Paradigm sprint","Produce a real form","Write a real form","Principal parts"],
+  "Paradigms":["Fill the grid","Paradigm sprint","Pick the form","Type the form","Principal parts"],
   "Grammar":["The article","Verb parsing","Parsing builder","Parse a real form",
              "Mixed grammar review"],
-  "Letters and sounds":["Alphabet","Alphabet check","Listening — letters",
+  "Letters and sounds":["Alphabet","Alphabet test","Listening — letters",
                         "Look-alikes","Write the letters"]
 };
 /* The order the page is drawn in, which is not the order the groups were
@@ -3768,7 +3789,7 @@ function drillCard(i,tone){
   return `<button class="lesson-item drill-item${st&&!st.ready?" not-ready":""}"
       data-tone="${tone}" onclick="runDrill(${i})">
       <span class="dwell">${typeof drillIcon==="function"?drillIcon(DRILLS[i][0]):""}</span>
-      <span class="t"><b>${DRILLS[i][0]}</b><span>${DRILLS[i][0]==="Learn 5 new words"&&onMounce()?"Next five in the order of Mounce’s chapters":DRILLS[i][1]}</span>${badge}</span>
+      <span class="t"><b>${DRILLS[i][0]}</b>${DRILLS[i][1]?`<span>${DRILLS[i][1]}</span>`:""}${badge}</span>
       <span class="muted">›</span></button>`;
 }
 function renderDrill(){
@@ -3825,14 +3846,13 @@ function renderRead(){
        <span class="muted">›</span></button>` : "";
   document.getElementById("readList").innerHTML= resume +
     `<button class="lesson-item" onclick="openGnt()" style="border-color:var(--gold-dim)">
-       <span class="t"><b>The whole Greek New Testament</b><span>Any chapter, every word parsed</span></span>
+       <span class="t"><b>The whole Greek New Testament</b></span>
        <span class="muted">›</span></button>
      <h2 style="margin:18px 0 10px">Graded passages</h2>`
     + READINGS.map(r=>{
     const k=readingKnown(r), pct=k.deck?Math.round(100*k.known/k.deck):0;
     return `<button class="lesson-item" onclick="openRead('${r.id}')">
-      <span class="t"><b>${r.ref}</b><span>${r.w.length} words</span>
-        <span class="lmeta">${k.known} of ${k.deck} of its words settled</span>
+      <span class="t"><b>${r.ref}</b>
         <span class="lbar"><i style="width:${pct}%"></i></span></span>
       <span class="muted">›</span>
     </button>`;}).join("");
@@ -4114,10 +4134,7 @@ function renderTables(){
   const body=document.getElementById("tablesBody");
   if(!q){
     // Nothing typed: the paradigms are worth browsing, so show them shut.
-    body.innerHTML=`<p class="muted" style="font-size:.84rem;margin-bottom:12px">
-        Type to search. Greek with or without accents, Latin letters
-        (<i>agape</i>), an English meaning, a grammar word, or the name of a
-        paradigm.</p>`
+    body.innerHTML=``
       /* Shut, like the paradigms, and first: a reader who does not know what
          a participle is cannot search for the word they are missing. */
       + `<div class="ptable" id="ptTerms">
@@ -4326,7 +4343,7 @@ function renderProgress(){
         <select id="setSpeak" aria-label="Word audio">${[[1,"Plays when you reveal"],[0,"Only when you tap"]].map(([v,l])=>`<option value="${v}" ${(S.speak===undefined?1:S.speak)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Playback speed</span>
         <select id="setRate" aria-label="Playback speed">${[[1,"Normal"],[0.75,"Slower"],[0.5,"Slowest"]].map(([v,l])=>`<option value="${v}" ${(+S.rate||1)===v?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="setrow"><span>Words you know<br><small class="muted">In Read, words still to come are dimmed</small></span>
+      <div class="setrow"><span>Words you haven’t learned (Read)</span>
         <select id="setLit" aria-label="Words you know">${[[1,"Dimmed"],[0,"All the same"]].map(([v,l])=>`<option value="${v}" ${(S.lit===undefined?1:S.lit)===v?"selected":""}>${l}</option>`).join("")}</select></div>
       <div class="setrow"><span>Appearance</span>
         <select id="setTheme" aria-label="Appearance">${[["","Same as device"],["light","Light"],["dark","Dark"]].map(([v,l])=>`<option value="${v}" ${themePref()===v?"selected":""}>${l}</option>`).join("")}</select></div>
@@ -4403,10 +4420,9 @@ function renderProgress(){
         <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
     ${typeof reportCardHtml==="function"?reportCardHtml():""}
     ${mounceCoverageHtml()}
-    <div class="card">
+    <div class="card" id="studiedBefore">
       <h3 style="margin-top:0">Studied Greek before?</h3>
-      <p class="muted" style="font-size:.85rem;margin-bottom:10px">Skip ahead: mark the chapters you once covered as done, and seed the commonest words into the review schedule instead of drip-feeding them as new.</p>
-      <div class="setrow"><span>Mark chapters done up to</span>
+            <div class="setrow"><span>Mark chapters done up to</span>
         <select id="setPlace"><option value="0">—</option>${LESSONS.map(l=>`<option value="${l.id}">${l.id}</option>`).join("")}</select></div>
       <button class="btn ghost small" style="margin-top:10px" onclick="seedVocab()">Seed the 100 commonest words as familiar</button>
       ${onMounce()?"":`<div class="setrow" style="margin-top:12px"><span>Seed the words of chapters up to</span>
@@ -4415,11 +4431,7 @@ function renderProgress(){
       ${mouncePlaceHtml()}
     </div>
     <h2>Your data</h2>
-    <p class="muted" style="font-size:.86rem">
-      ${canPersist?"Progress is saved on this device.":"This browser is blocking storage, so progress will be lost when you close the app. Export it, or open the app from a hosted address rather than a local file."}
-      ${typeof SYNC!=="undefined" && SYNC && SYNC.id
-        ? "A copy is also kept on the sync server so your other device can read it."
-        : "Nothing is sent anywhere."}</p>
+    ${canPersist?"":`<p class="muted" style="font-size:.86rem">This browser is blocking storage, so progress will be lost when you close the app. Export it, or open the app from a hosted address rather than a local file.</p>`}
     ${PRE_IMPORT?`<button class="btn ghost" onclick="undoImport()" style="border-color:var(--rust)">Undo the import</button><div style="height:9px"></div>`:""}
     <button class="btn ghost" onclick="exportData()">Export progress</button>
     <div style="height:9px"></div>
@@ -4429,8 +4441,7 @@ function renderProgress(){
     <button class="btn ghost" onclick="resetAll()" style="color:var(--rust)">Reset everything</button>
     <p class="muted" style="font-size:.82rem;margin:18px 0 0">
       <a href="about.html" class="tappable" style="color:var(--muted)">About Everyday Koine</a> ·
-      <a href="privacy.html" class="tappable" style="color:var(--muted)">Privacy policy</a> — what is
-      stored, what sync sends, and how to delete it.</p>
+      <a href="privacy.html" class="tappable" style="color:var(--muted)">Privacy policy</a></p>
     <div style="height:26px"></div>`;
 
   document.getElementById("setGoal").onchange=e=>{S.goal=+e.target.value;save();toast("Daily goal: "+S.goal);};
