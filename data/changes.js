@@ -12,7 +12,10 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-11-26", v:"v310", items:[
+{d:"2026-11-26", v:"v311", items:[
+  {k:"new", t:"Progress has a page of its own, reached from the streak on Today or Your progress at the foot of it. Settings now holds only settings."},
+  {k:"new", t:"Taking a break: start one in Settings and Today rests, your streak is kept, and when you are back the reviews come at your daily pace rather than all at once."},
+  {k:"better", t:"Each chapter in Learn now says what it lets you do, under its title."},
   {k:"new", t:"Today has a new look: the day's verse comes first, then the day as a short checklist with one button that names what it starts. When you are done it says so, and what tomorrow holds."},
   {k:"new", t:"The day's verse has the English of the Berean Standard Bible a tap away, so you can try the Greek first. Where its verse is not quite the same as the Greek, it says so."},
   {k:"better", t:"Learn shows where you are in the course; Drill puts what is due first, with the groups opening in place; Read lists the passages by their opening words in Greek. Milestones are marked with Greek numerals."},

@@ -427,6 +427,7 @@ function showScreen(name){
   if(name==="read")renderRead();
   if(name==="tables")renderTables();
   if(name==="prog")renderProgress();
+  if(name==="progress")renderProgressPage();
   if(name==="help")renderHelp();
 }
 
@@ -1674,7 +1675,7 @@ function render(){
   /* Back after three days or more, until the first row is done (S.last only
      moves when a session happens): the plan says so in its own heading. */
   const gap=S.last?daysBetween(S.last,today()):0;
-  const back=gap>=3 && !ticked;
+  const back=gap>=3 && !ticked && !S.pause;
   document.getElementById("planTitle").textContent = back ? "Welcome back" : "Today";
   document.getElementById("planMins").textContent =
     n && ticked>=n ? `${n} of ${n}` : ticked ? `${ticked} of ${n} · ${mins} min left` : `${mins} min`;
@@ -1689,7 +1690,18 @@ function render(){
     seal.title = `${S.streak} day${S.streak===1?"":"s"} in a row${rest?", one rest day used this week":""}`;
   }
   // The home-screen icon badge stays a count of work, not of plan steps.
-  paintBadge(due);
+  if(!S.pause) paintBadge(due);
+  if(S.pause){
+    /* On a break: no plan, no counts, one way back. */
+    document.getElementById("planTitle").textContent="On a break";
+    document.getElementById("planMins").textContent="";
+    document.getElementById("planList").innerHTML="";
+    document.getElementById("planAfter").innerHTML=
+      `<p class="muted plan-note">Since ${fmtDay(S.pause.since)}. Your reviews wait until you are back.</p>`;
+    const c=document.getElementById("btnContinue");
+    c.className="btn"; c.textContent="End the break"; c.onclick=endBreak;
+    paintBadge(0);
+  } else {
   document.getElementById("planList").innerHTML=`<div class="plan-box">${planHtml()}</div>`;
   document.getElementById("planAfter").innerHTML=afterPlanHtml(plan,back);
   /* One button, naming what it starts. Begin before anything is done,
@@ -1703,6 +1715,7 @@ function render(){
   cont.textContent = nextT ? `${ticked?"Continue":"Begin"} — ${lc(nextT.label)}`
                            : `Keep going — ${lc(xt.label)}`;
   cont.onclick = nextT ? ()=>runPlanTask(nextT.id) : xt.run;
+  }
 
   /* Only until the deck has been touched — then it goes and does not come
      back. A permanent link at the foot of the screen leads to the same page
@@ -1906,13 +1919,94 @@ function goStudied(){
   },30);
 }
 
-/* The progress half of Settings. */
-function goProgress(){
-  go("prog");
-  setTimeout(()=>{
-    const h=document.getElementById("progSection");
-    if(h) h.scrollIntoView({block:"start"});
-  },30);
+/* Progress, a page of its own since 2026-11-26 (it was the lower half of
+   Settings, so Settings now holds only settings). Reached from Today: the
+   streak seal and the "Your progress" link at the foot. */
+function goProgress(){ go("progress"); }
+function renderProgressPage(){
+  const total=LEARN_ORDER.length, started=Object.keys(S.cards).length, known=knownCount();
+  const nextWeek=Object.values(S.cards).filter(c=>daysBetween(today(),c.due)<=7&&c.due>today()).length;
+  document.getElementById("progressBody").innerHTML=`
+    <!-- These three came off Today when it became the day's plan. Streak and
+         best streak fold into the line beneath: Today already shows the
+         streak, and two tiles for it was one too many. -->
+    <div class="stat-grid">
+      <div class="stat"><b>${known}</b><span>words known</span></div>
+      <div class="stat"><b>${level()}</b><span>level</span></div>
+      <div class="stat"><b>${S.xp}</b><span>total XP</span></div>
+    </div>
+    <p class="muted" style="font-size:.82rem;margin:-4px 0 14px;text-align:center">
+      ${S.streak} day streak · best ${S.best||0}${
+        alphaLeft()?` · ${ALPHABET.length-alphaLeft()} of ${ALPHABET.length} letters settled`
+                   :" · alphabet settled"}</p>
+    ${coverageHtml()}
+    ${forecastHtml()}
+    <div class="card">
+      <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>
+      <small class="muted">${started} started · ${known} at six days or longer · ${nextWeek} due this week</small>
+    </div>
+    <div class="card">
+      <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
+      ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
+    </div>
+    ${gridStarted().length?(()=>{
+      const all=gridRounds(), st=gridStarted();
+      // fastest fill, which is the number anyone who plays these will want
+      const fast=st.filter(g=>S.grids[g.key].best)
+                   .sort((a,b)=>S.grids[a.key].best-S.grids[b.key].best)[0];
+      return `<div class="card">
+      <div class="between"><span>Paradigms</span><b>${st.length} / ${all.length}</b></div>
+      <div class="prog-bar" style="margin-top:9px"><i style="width:${st.length/all.length*100}%"></i></div>
+      <small class="muted">${st.length} round${st.length===1?"":"s"} started · ${
+        gridDue().length} due${fast?` · fastest ${gridName(fast)} in ${mmss(S.grids[fast.key].best)}`:""}</small>
+    </div>`;})():""}
+    ${weakHtml()}
+    ${(S.focusDone||[]).length?`<div class="card">
+      <div class="between"><span>Passages worked</span><b>${S.focusDone.length}</b></div>
+      <small class="muted">${S.focusDone.slice(0,6).map(r=>
+        `${r.ref} — ${r.n} word${r.n===1?"":"s"}`).join(" · ")}${
+        S.focusDone.length>6?` · and ${S.focusDone.length-6} more`:""}</small>
+    </div>`:""}
+    ${Object.keys(S.lcards||{}).length?`<div class="card">
+      <div class="between"><span>Beyond the course</span><b>${Object.keys(S.lcards).length}</b></div>
+      <small class="muted">Words met in a passage that the ${LEARN_ORDER.length}-word course does
+        not teach, on the same schedule as the rest${
+        Object.keys(S.myGloss||{}).length?` · ${Object.keys(S.myGloss).length} glossed in your own words`:""}.</small>
+    </div>`:""}
+    <h2>Badges</h2>
+    <div class="badges">${BADGES.map(b=>`
+      <div class="badge ${S.badges.includes(b.id)?"got":""}">
+        <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
+    ${mounceCoverageHtml()}
+    <div style="height:26px"></div>`;
+}
+
+/* ---- Taking a break (2026-11-26) ----
+   Illness, holidays and Easter week are normal for the people this is for.
+   A break keeps the streak, takes the plan and the icon badge off Today,
+   and on return the reviews come back at the daily goal's pace -- the rest
+   spread over the days after, as after any gap -- rather than as a wall.
+   Due dates are not rewritten: cards merge across devices by their own
+   history, and shifting them on one device would fight the other. The
+   break itself is per device, like the daily goal. */
+const fmtDay=d=>{ try{ return new Date(d+"T12:00:00").toLocaleDateString(undefined,{day:"numeric",month:"long"}); }catch(e){ return d; } };
+function startBreak(){
+  if(S.pause) return;
+  if(!confirm("Start a break? Today's plan and reminders stop until you end it, and your streak is kept.")) return;
+  S.pause={since:today()}; save();
+  if(typeof paintBadge==="function") paintBadge(0);
+  renderProgress(); toast("On a break — end it from Today or Settings");
+}
+function endBreak(){
+  if(!S.pause) return;
+  delete S.pause;
+  /* Kept, not reset: the streak carries on from yesterday. */
+  if(S.streak>0){ const d=new Date(); d.setDate(d.getDate()-1); S.last=ymd(d); }
+  save(); render();
+  if(document.getElementById("s-prog").classList.contains("on")) renderProgress();
+  toast("Welcome back");
 }
 
 /* ---------------------------------------------------- word of the day -----
@@ -2658,6 +2752,42 @@ function lessonMeta(l){
   const words=(l.v||[]).length;
   return [`${parts} parts`, words?`${words} words`:null].filter(Boolean).join(" · ");
 }
+/* What each chapter lets you do, said as an ability rather than a grammar
+   term (the report's item 14; drafted 2026-11-26 for Fraser to check). The
+   titles stay Black's, because they are what a reader with the book needs
+   and what the chapter pages are found by; this line is what Learn shows
+   under each one. Claims are kept modest on purpose. */
+const CHAPTER_CAN={
+  1:"Sound out any word in the Greek New Testament",
+  2:"Know what a Greek verb tells you before you meet one",
+  3:"Read present and future verbs: λύω, λύσω",
+  4:"Tell subject from object, with the article's help",
+  5:"Read the other great family of nouns, mostly feminine",
+  6:"Tell “the good word” from “the word is good”",
+  7:"Read the past tenses the Gospel stories are told in",
+  8:"Follow ἐν, εἰς, διά and the other prepositions",
+  9:"Read “I”, “you” and “he”, and the other jobs of αὐτός",
+  10:"Read actions finished, with results that last",
+  11:"Read “this” and “that”: οὗτος, ἐκεῖνος",
+  12:"Read verbs whose subject is acted on, or acts for itself",
+  13:"Read γέγραπται, “it is written”",
+  14:"Recognise the middle and passive in past time",
+  15:"Read ἠγέρθη, “he was raised”",
+  16:"Parse any indicative verb from one chart",
+  17:"Read nouns like σάρξ, πνεῦμα and πατήρ",
+  18:"Read “all”, “one” and “no one”: πᾶς, εἷς, οὐδείς",
+  19:"Recognise ἀγαπῶ and ποιεῖ once their vowels have merged",
+  20:"Spot a participle in any of its forms",
+  21:"Read a participle as “the one who…”, “while…” or “after…”",
+  22:"Read the infinitive: purpose, result and more",
+  23:"Read “who”, “which”, “himself” and “one another”",
+  24:"Read “so that”, “let us” and “whoever” clauses",
+  25:"Read commands, prohibitions and μὴ γένοιτο",
+  26:"Read the -μι verbs: give, put, stand, forgive",
+  27:"Read the New Testament on your own, with the right tools"
+};
+const chapterCan=l=>CHAPTER_CAN[l.id]||l.s;
+
 function renderLessons(){
   const done=S.lessons.length;
   const at=S.lessonPart;
@@ -2694,6 +2824,7 @@ function renderLessons(){
     <div class="jtop"><span class="jnum">${cur}</span>
       <span class="jof"><small>Chapter</small>of ${LESSONS.length}</span></div>
     <p class="jtitle">${curL?curL.t:""}</p>
+    ${curL?`<p class="jcan">${chapterCan(curL)}</p>`:""}
     <div class="jbar">${LESSONS.map(l=>`<i class="${S.lessons.includes(l.id)?"d":l.id===cur?"c":""}"></i>`).join("")}</div>
   </div>`;
   const list=LESSONS.map(l=>{
@@ -2703,7 +2834,7 @@ function renderLessons(){
     return `<button class="lesson-item ${fin?"done":""}${here||l.id===cur?" here":""}"
         onclick="openLesson(${l.id})">
       <span class="n">${l.id}</span>
-      <span class="t"><b>${l.t}</b><span>${l.s}</span>${
+      <span class="t"><b>${l.t}</b><span>${chapterCan(l)}</span>${
         here?`<span class="lmeta">part ${at.part+1} of ${n}</span>`:""}</span>
       ${fin?`<span class="ck">${ICON_TICK}<span class="vh">finished</span></span>`:""}
     </button>`;}).join("");
@@ -4295,7 +4426,8 @@ function renderHelp(){
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, in ${Object.keys(DRILL_GROUP).length} groups. Where a drill depends on how far you have got, it says what it is worth to you today, and dims when there is nothing in it for you yet.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
       <tr><th>Search</th><td>One search box for any word in the course and every paradigm table.</td></tr>
-      <tr><th>Settings</th><td>The gear on Today. Settings, sync and any words you have set aside first, then your progress — the numbers, where you struggle, badges — and your data.</td></tr>
+      <tr><th>Settings</th><td>The gear on Today: settings, a break, sync, any words you have set aside, and your data.</td></tr>
+      <tr><th>Progress</th><td>From Today, the streak or <b>Your progress</b> at the foot: the numbers, where you struggle, and the milestones.</td></tr>
     </table>
 
     <h2>Things worth knowing</h2>
@@ -4311,7 +4443,7 @@ function renderHelp(){
       <tr><th>Offline</th><td>All of it works with no connection — every recording and all ${GNT?GNT.books.length:27} books. Only the videos need the internet; the songs play inside the app, the lectures open in a browser.</td></tr>
       <tr><th>Two devices</th><td>Settings → Sync across devices. One device makes a private code; type it on the other. Your progress merges, there is no account, and only a fingerprint of the code ever leaves the device.</td></tr>
       <tr><th>Test yourself</th><td>Drill → <b>Quick test</b>: 10, 25 or 50 words from a chapter, the commonest words or the whole deck, each asked once and marked at the end, with the ones you missed listed. It leaves your review schedule alone.</td></tr>
-      <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Your progress, in Settings, names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
+      <tr><th>Where you struggle</th><td>The parsing drills, the paradigm grids and sprints, and the real-form drills are scored one category at a time, and Your progress, reached from Today, names the ones you miss most — the aorist, say, or the genitive — with a drill of just those forms.</td></tr>
       <tr><th>What's new</th><td>Settings → What's new lists the significant updates, newest first: features, fixes, audio and words.</td></tr>
       <tr><th>Light or dark</th><td>Settings → Appearance. It follows your device unless you choose Light or Dark.</td></tr>
       <tr><th>Audio</th><td>Every word is recorded. Settings can slow it down, or stop it playing until you ask.</td></tr>
@@ -4404,6 +4536,8 @@ function renderProgress(){
     <div class="card">
       <div class="setrow"><span>Daily review goal</span>
         <select id="setGoal" aria-label="Daily review goal">${[10,20,30,50].map(n=>`<option value="${n}" ${S.goal===n?"selected":""}>${n} cards</option>`).join("")}</select></div>
+      <div class="setrow"><span>${S.pause?`On a break<br><small class="muted">since ${fmtDay(S.pause.since)}</small>`:"Taking a break"}</span>
+        <button class="btn ghost small" onclick="${S.pause?"endBreak()":"startBreak()"}">${S.pause?"End the break":"Start"}</button></div>
       ${TB?`<div class="setrow"><span>Your textbook<br><small class="muted">the order new words come in</small></span>
         <select id="setTextbook" aria-label="Your textbook" onchange="setTextbook(this.value)">
           <option value="" ${onMounce()?"":"selected"}>Black (the course)</option>
@@ -4435,62 +4569,7 @@ function renderProgress(){
     </div>`:""}
     ${typeof syncCardHtml==="function"?syncCardHtml():""}
     ${whatsNewHtml()}
-    <!-- Today's "Your progress" link lands here. -->
-    <h2 id="progSection" class="dgroup" data-tone="gold">Your progress</h2>
-    <!-- These three came off Today when it became the day's plan. Streak and
-         best streak fold into the line beneath: Today already shows the
-         streak, and two tiles for it was one too many. -->
-    <div class="stat-grid">
-      <div class="stat"><b>${known}</b><span>words known</span></div>
-      <div class="stat"><b>${level()}</b><span>level</span></div>
-      <div class="stat"><b>${S.xp}</b><span>total XP</span></div>
-    </div>
-    <p class="muted" style="font-size:.82rem;margin:-4px 0 14px;text-align:center">
-      ${S.streak} day streak · best ${S.best||0}${
-        alphaLeft()?` · ${ALPHABET.length-alphaLeft()} of ${ALPHABET.length} letters settled`
-                   :" · alphabet settled"}</p>
-    ${coverageHtml()}
-    ${forecastHtml()}
-    <div class="card">
-      <div class="between"><span>Vocabulary</span><b>${known} / ${total}</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${known/total*100}%"></i></div>
-      <small class="muted">${started} started · ${known} at six days or longer · ${nextWeek} due this week</small>
-    </div>
-    <div class="card">
-      <div class="between"><span>Lessons</span><b>${S.lessons.length} / ${LESSONS.length}</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${Math.min(100,S.lessons.length/LESSONS.length*100)}%"></i></div>
-      ${Object.keys(S.gcards||{}).length?`<small class="muted">${Object.keys(S.gcards).length} grammar questions on the review schedule · ${gdueList().length} due</small>`:""}
-    </div>
-    ${gridStarted().length?(()=>{
-      const all=gridRounds(), st=gridStarted();
-      // fastest fill, which is the number anyone who plays these will want
-      const fast=st.filter(g=>S.grids[g.key].best)
-                   .sort((a,b)=>S.grids[a.key].best-S.grids[b.key].best)[0];
-      return `<div class="card">
-      <div class="between"><span>Paradigms</span><b>${st.length} / ${all.length}</b></div>
-      <div class="prog-bar" style="margin-top:9px"><i style="width:${st.length/all.length*100}%"></i></div>
-      <small class="muted">${st.length} round${st.length===1?"":"s"} started · ${
-        gridDue().length} due${fast?` · fastest ${gridName(fast)} in ${mmss(S.grids[fast.key].best)}`:""}</small>
-    </div>`;})():""}
-    ${weakHtml()}
-    ${(S.focusDone||[]).length?`<div class="card">
-      <div class="between"><span>Passages worked</span><b>${S.focusDone.length}</b></div>
-      <small class="muted">${S.focusDone.slice(0,6).map(r=>
-        `${r.ref} — ${r.n} word${r.n===1?"":"s"}`).join(" · ")}${
-        S.focusDone.length>6?` · and ${S.focusDone.length-6} more`:""}</small>
-    </div>`:""}
-    ${Object.keys(S.lcards||{}).length?`<div class="card">
-      <div class="between"><span>Beyond the course</span><b>${Object.keys(S.lcards).length}</b></div>
-      <small class="muted">Words met in a passage that the ${LEARN_ORDER.length}-word course does
-        not teach, on the same schedule as the rest${
-        Object.keys(S.myGloss||{}).length?` · ${Object.keys(S.myGloss).length} glossed in your own words`:""}.</small>
-    </div>`:""}
-    <h2>Badges</h2>
-    <div class="badges">${BADGES.map(b=>`
-      <div class="badge ${S.badges.includes(b.id)?"got":""}">
-        <div class="e">${b.e}</div><b>${b.t}</b><span>${b.d}</span></div>`).join("")}</div>
     ${typeof reportCardHtml==="function"?reportCardHtml():""}
-    ${mounceCoverageHtml()}
     <div class="card" id="studiedBefore">
       <h3 style="margin-top:0">Studied Greek before?</h3>
             <div class="setrow"><span>Mark chapters done up to</span>
@@ -4597,6 +4676,8 @@ function saneState(x){
     // whether the reader dims words you have not met; per-device like the rest
     lit: [0,1].includes(+x.lit)?+x.lit:1,
     restUsed: /^\d{4}-\d{2}-\d{2}$/.test(x.restUsed)?x.restUsed:null,
+    // a break in progress (startBreak); per device, but a restore keeps it
+    pause: (x.pause && /^\d{4}-\d{2}-\d{2}$/.test(x.pause.since)) ? {since:x.pause.since} : undefined,
     // the order new words come in; per-device, and lost on restore without this
     textbook: x.textbook==="mounce"?"mounce":undefined,
   };
@@ -4821,7 +4902,7 @@ function resetAll(){
 Object.keys(GLOSSARY_RAW).forEach(k=>{ GLOSSARY[norm(k)]=GLOSSARY_RAW[k]; });
 /* A two-day gap is survivable if this week's rest day is unspent; it is not
    spent here, only when the next session actually happens. */
-if(S.last){
+if(S.last && !S.pause){
   const gap=daysBetween(S.last,today());
   if(gap>2 || (gap===2 && !restAvailable())) S.streak=0;
 }
@@ -4893,7 +4974,7 @@ let ARRIVED_BY_LINK=false;
     }
     if(!q.has("go") && !q.has("ch")) return;
     const screens=new Set([...document.querySelectorAll("nav [data-go]")]
-      .map(b=>b.dataset.go).concat("help","prog"));
+      .map(b=>b.dataset.go).concat("help","prog","progress"));
     /* Cleared BEFORE navigating: the screens pushed below copy the address
        they are pushed from, and a list left holding ?ch= reopened the
        chapter on reload. */
