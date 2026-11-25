@@ -306,7 +306,7 @@ function applyGk(){ document.body.dataset.gk = S.gk || ""; }
    because every page's <head> reads it before first paint and must not parse
    the whole study record to do so. "" follows the device. THEME_BG is each
    theme's --bg, for the browser's own bar; check_theme holds the two equal. */
-const THEME_KEY="koine.theme", THEME_BG={dark:"#141b2b",light:"#f3f5f9"};
+const THEME_KEY="koine.theme", THEME_BG={dark:"#0f1522",light:"#f7f2e7"};
 function themePref(){
   try{ const t=localStorage.getItem(THEME_KEY); return t==="light"||t==="dark"?t:""; }
   catch(e){ return ""; }
@@ -1450,12 +1450,14 @@ function todaysPlan(){
     const due=dueList().length+Math.min(5,gdueList().length);
     if(due || Object.keys(S.cards).length) tasks.push(due
       ? {id:"review", mins:Math.max(1,Math.round(Math.min(due,Math.max(5,S.goal||20))*8/60)),
-         label:`Review ${due} due card${due===1?"":"s"}`,
+         /* A review serves the daily goal's worth of words; with more due than
+            that, the row says how many of them today takes. */
+         label:dueList().length>Math.max(5,S.goal||20)
+           ? `Review ${Math.max(5,S.goal||20)} of ${dueList().length} due`
+           : `Review ${due} due card${due===1?"":"s"}`,
          /* Say what is due. A review serves lesson questions too, and before
             the first word they are all it has. */
-         sub:!dueList().length ? "Lesson questions the schedule has brought back"
-           : gdueList().length ? "Words you are about to forget, and lesson questions"
-           : "The words the schedule says you are about to forget",
+         sub:"",
          run:()=>startReview()}
       : {id:"review", mins:2, label:"Practise what you know",
          sub:"Nothing is due — this will not touch the schedule",
@@ -1565,39 +1567,68 @@ function todaysPlan(){
   return tasks;
 }
 
+/* Today's rows, as a checklist (2026-11-26): a ring that fills with a tick,
+   the row's name and its one useful line, and how long it takes. The next
+   row's ring is gold -- that is what the button below it starts. */
+const ICON_TICK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const ICON_SPEAK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>';
 function planHtml(){
-  const rows=planRows().map(t=>{
-    const ok=t.done;
+  const rows=planRows();
+  const next=rows.find(t=>!t.done && !t.record);
+  return rows.map(t=>{
+    const tick=`<span class="tick">${t.done?ICON_TICK+'<span class="vh">Done: </span>':""}</span>`;
+    const sub=t.sub?`<span>${t.sub}</span>`:"";
+    const mins=(!t.done && t.mins)?`<span class="mins">${t.mins} min</span>`:"";
     /* A finished row the live plan no longer has is a record, not a door:
        tapping it would start whatever that id means now. */
-    if(t.record) return `<div class="plan-row done">
-      <span class="tick">✓</span>
-      <span class="t"><b>${t.label}</b><span>${t.sub}</span></span></div>`;
-    return `<button class="plan-row${ok?" done":""}" onclick="runPlanTask('${t.id}')">
-      <span class="tick">${ok?"✓":""}</span>
-      <span class="t"><b>${t.label}</b><span>${t.sub}</span></span>
-      <span class="chev">›</span></button>`;
+    if(t.record) return `<div class="plan-row done">${tick}
+      <span class="t"><b>${t.label}</b>${sub}</span></div>`;
+    return `<button class="plan-row${t.done?" done":""}${t===next?" next":""}" onclick="runPlanTask('${t.id}')">${tick}
+      <span class="t"><b>${t.label}</b>${sub}</span>${mins}</button>`;
   }).join("");
-  /* A row that is missing explains nothing by being missing. While the words
-     are waiting on the letters, the plan says so — and says where the door
-     is, because a good number of the people this is for did Greek at college
-     twenty years ago and can already read the alphabet. */
-  if(lettersReady()) return rows;
-  /* Progress in two numbers. "24 to go" stood still for the first three
-     days, because a letter settles only after right answers on three
-     separate days, while fourteen letters had been met and answered. */
-  /* Drawn, not written (2026-11-26): the 24 letters in a row, faint until
-     met, ink once met, gold once settled. It moves every day, which a
-     sentence of numbers under the plan did too, at four times the length;
-     "Studied Greek before?" went to the Start here card. */
+}
+/* While the words wait on the letters, the 24 letters in a row: faint until
+   met, ink once met, gold once settled. "24 to go" stood still for the first
+   three days, because a letter settles only after right answers on three
+   separate days; the row moves every day. */
+function letterStripHtml(){
+  if(lettersReady()) return "";
   const settled=ALPHABET.length-alphaLeft();
   const met=ALPHABET.filter(a=>alphaScore(a)>0).length;
-  return rows+`<div class="alpha-strip" role="img"
+  return `<div class="alpha-strip" role="img"
       aria-label="Letters: ${met} of ${ALPHABET.length} met, ${settled} settled">${
     ALPHABET.map(a=>{
       const s=alphaScore(a), cls=s<=0?"":(s>=ALPHA_SOLID?"set":"met");
       return `<span class="${cls}">${a[0].split(" ")[1]||a[0]}</span>`;
     }).join("")}</div>`;
+}
+/* What sits between the plan and its button: the day's ending, the share
+   of a backlog after a break, the letters, and on the first days where the
+   course is heading. */
+function afterPlanHtml(plan,back){
+  const n=plan.length, ticked=plan.filter(t=>t.done).length, out=[];
+  if(n && ticked>=n){
+    const xtra=extraDone();
+    out.push(`<p class="day-done">Done for today${xtra?`, and ${xtra} more past it`:""}.</p>`);
+    const k=Object.values(S.cards).filter(c=>c && c.due && daysBetween(today(),c.due)<=1).length;
+    const lp=S.lessonPart, l=(lp&&LESSONS.find(x=>x.id===lp.id))||LESSONS.find(x=>!S.lessons.includes(x.id));
+    const bits=[];
+    if(k) bits.push(`${k} review${k===1?"":"s"}`);
+    if(l) bits.push(`chapter ${l.id}`);
+    if(bits.length) out.push(`<p class="muted plan-note">Tomorrow · ${bits.join(", ")}</p>`);
+  }
+  if(back){
+    const dl=dueList().length, goal=Math.max(5,S.goal||20);
+    if(dl>goal){
+      const d=Math.ceil((dl-goal)/goal);
+      out.push(`<p class="muted plan-note">Today: ${goal} of ${dl} due; the rest over the next ${d} day${d===1?"":"s"}</p>`);
+    }
+  }
+  out.push(letterStripHtml());
+  if(!S.lessons.length && typeof READINGS!=="undefined" && READINGS[0])
+    out.push(`<button class="plan-link" onclick="go('read');openRead('${READINGS[0].id}')">
+      <span>First reading</span><span class="ref">${READINGS[0].ref} ›</span></button>`);
+  return out.join("");
 }
 
 /* Offered at the end of a session so finishing one thing leads to the next
@@ -1631,57 +1662,46 @@ function render(){
   // Grammar is part of the review, so it is part of the count — capped at the
   // five the session will actually serve.
   const due=dueList().length+Math.min(5,gdueList().length);
-  /* The ring measures the plan now, not raw reviews against a goal. The goal
+  /* The plan measures the day, not raw reviews against a goal. The goal
      setting still governs how many cards a review serves; what it no longer
      does is decide whether the day looks finished, which it did badly — a
      day 292 cards behind could paint a completed circle. */
   const plan=planRows();
-  const ticked=plan.filter(t=>t.done).length;
-  const pct=plan.length?ticked/plan.length:0;
-  const arc=document.getElementById("ringArc");
-  /* Full a moment ago and full now is not a moment; becoming full is. The
-     class is added only on the transition, so re-opening Today does not
-     replay a celebration the learner has already had. */
-  const wasFull=arc.dataset.full==="1", isFull=plan.length>0 && ticked>=plan.length;
-  arc.style.strokeDashoffset = 415-(415*pct);
-  arc.dataset.full = isFull?"1":"0";
-  const rEl=arc.closest(".ring");
-  if(rEl){
-    if(isFull && !wasFull){
-      /* remove, reflow, re-add, or a second completion in one session gets
-         no animation because the class was already there */
-      rEl.classList.remove("just-done"); void rEl.offsetWidth;
-      rEl.classList.add("just-done");
-    } else if(!isFull){
-      /* and take it off again, or tomorrow's empty ring is still green */
-      rEl.classList.remove("just-done");
-    }
-  }
-  document.getElementById("ringNum").textContent = `${ticked}/${plan.length}`;
-  const xtra=extraDone();
-  document.getElementById("ringLbl").textContent =
-    ticked>=plan.length ? (xtra?`+${xtra} past the plan`:"plan complete") : "today's plan";
+  const ticked=plan.filter(t=>t.done).length, n=plan.length;
   /* How long today actually is, added up from the rows rather than asserted.
-     "About ten minutes" was written when the plan was three rows; it is now
-     as many as six, and the review row alone is unbounded — a learner two
-     hundred cards behind has a long day whatever else is trimmed. A promise
-     the app can keep every day beats a number that was true once. */
+     A promise the app can keep every day beats a number that was true once. */
   const mins=plan.filter(t=>!t.done).reduce((a,t)=>a+(t.mins||2),0);
-  const el=document.getElementById("planMins");
-  if(el) el.textContent = ticked>=plan.length ? ""
-    : `${plan.length-ticked} left · about ${mins} minute${mins===1?"":"s"}`;
-  document.getElementById("streakN").textContent=S.streak;
-  const restEl=document.getElementById("streakRest");
-  if(restEl) restEl.textContent =
-    (S.restUsed && daysBetween(S.restUsed,today())<7) ? "\u00b7 rest day used" : "";
+  /* Back after three days or more, until the first row is done (S.last only
+     moves when a session happens): the plan says so in its own heading. */
+  const gap=S.last?daysBetween(S.last,today()):0;
+  const back=gap>=3 && !ticked;
+  document.getElementById("planTitle").textContent = back ? "Welcome back" : "Today";
+  document.getElementById("planMins").textContent =
+    n && ticked>=n ? `${n} of ${n}` : ticked ? `${ticked} of ${n} · ${mins} min left` : `${mins} min`;
+  /* The streak, only once there is one: a 0 is not news. A rest day in the
+     last week is said on the seal's label rather than as a separate line. */
+  const seal=document.getElementById("streakSeal");
+  if(seal){
+    seal.hidden=!(S.streak>=1);
+    document.getElementById("streakN").textContent=S.streak;
+    const rest=S.restUsed && daysBetween(S.restUsed,today())<7;
+    seal.lastElementChild.textContent = (S.streak===1?"day":"days");
+    seal.title = `${S.streak} day${S.streak===1?"":"s"} in a row${rest?", one rest day used this week":""}`;
+  }
   // The home-screen icon badge stays a count of work, not of plan steps.
   paintBadge(due);
-  document.getElementById("planList").innerHTML=planHtml();
+  document.getElementById("planList").innerHTML=`<div class="plan-box">${planHtml()}</div>`;
+  document.getElementById("planAfter").innerHTML=afterPlanHtml(plan,back);
+  /* One button, naming what it starts. Begin before anything is done,
+     Continue after; once the plan is done it steps down to a ghost, because
+     the day is finished and more is optional. */
   const nextT=plan.find(t=>!t.done);
   const cont=document.getElementById("btnContinue");
   const xt=nextT?null:extraTask();
-  cont.textContent = nextT ? `Continue — ${nextT.label.replace(/^./,c=>c.toLowerCase())}`
-                           : `Keep going — ${xt.label.replace(/^./,c=>c.toLowerCase())}`;
+  const lc=s=>s.replace(/^./,c=>c.toLowerCase());
+  cont.className = nextT ? "btn" : "btn ghost";
+  cont.textContent = nextT ? `${ticked?"Continue":"Begin"} — ${lc(nextT.label)}`
+                           : `Keep going — ${lc(xt.label)}`;
   cont.onclick = nextT ? ()=>runPlanTask(nextT.id) : xt.run;
 
   /* Only until the deck has been touched — then it goes and does not come
@@ -1696,13 +1716,10 @@ function render(){
      for people who already read Greek; "How this app works" at the foot of
      Today has the rest. A learner back after a gap gets one line too, in the
      same place, and it goes once they have done a session (S.last moves). */
-  const gap=S.last?daysBetween(S.last,today()):0;
   if(startEl) startEl.innerHTML = fresh ? `<div class="card note-card">
       <p><b>You cannot fall behind or miss anything.</b> What you don't know yet
         keeps coming back until you do.</p>
       <button class="btn ghost small" onclick="goStudied()">Studied Greek before? Skip ahead</button>
-    </div>` : gap>=3 ? `<div class="card note-card">
-      <p><b>Welcome back.</b> Nothing is lost: today starts with what has slipped.</p>
     </div>` : "";
 
   /* The passage you are working, and the two controls that matter: how much
@@ -1764,9 +1781,7 @@ const TODAY_SECTS=[
   {id:"start", el:"startHere", name:"Start here",
    sub:"How the first days work — shown until your first words"},
   {id:"pinned", el:"pinned", name:"This week's passage",
-   sub:"A chapter you pinned in Read"},
-  {id:"wotd", el:"wotd", name:"Word of the day",
-   sub:"One word a day, the same for everyone"}
+   sub:"A chapter you pinned in Read"}
 ];
 function todayPrefs(){
   let p={};
@@ -1891,7 +1906,7 @@ function goStudied(){
   },30);
 }
 
-/* The progress half of the Settings tab, from Today's link. */
+/* The progress half of Settings. */
 function goProgress(){
   go("prog");
   setTimeout(()=>{
@@ -1920,23 +1935,47 @@ function wordOfDayIndex(date){
   const o=wordOfDayIndex.order;
   return o[((day%o.length)+o.length)%o.length];
 }
+/* The top of Today (2026-11-26): the day's verse at reading size with the
+   word picked out, what form it takes there, the reference as a door, and
+   the word itself with its sound and gloss. The English under the Greek is
+   the Berean Standard Bible, chosen by Fraser 2026-11-26 (the ESV's terms
+   bar both an app this size and any AI handling of its text). */
 function wordOfDayHtml(){
   const i=wordOfDayIndex(), v=VOCAB[i];
   if(!v) return "";
-  const c=S.cards&&S.cards[i];
-  const status=c ? (c.ivl>=6 ? "One you know" : "In your deck") : "Not in your deck yet";
+  const e=(typeof EXAMPLES!=="undefined") && EXAMPLES[i];
   const hear=VOCAB_AUDIO[i]
-    ? `<button class="mini" onclick="playWord(${i},this)" aria-label="Hear it">\uD83D\uDD0A</button>` : "";
-  return `<h2 class="dgroup" data-tone="gold">Word of the day</h2>
-    <div class="card">
-      <div class="between" style="align-items:baseline">
-        <span><span class="gk" style="font-size:1.35rem">${v[0]}</span> ${hear}</span>
-        <span class="muted" style="font-size:.78rem">${status}</span>
-      </div>
-      <p style="margin:4px 0 0">${v[1]}</p>
-      <p class="muted" style="font-size:.8rem;margin:2px 0 0">${v[3]} · ${v[2]}× in the New Testament</p>
-      <div style="margin-top:8px">${exampleHtml(i)}</div>
-    </div>`;
+    ? `<button class="iconbtn" onclick="playWord(${i},this)" aria-label="Hear it">${ICON_SPEAK}</button>` : "";
+  let verse="";
+  if(e){
+    const w=e[1].split(" "), at=e[2];
+    let form="";
+    if(at>=0 && at<w.length){
+      if(e[3] && e[4] && typeof gntParse==="function"){
+        const p=gntParse(e[3],e[4]);
+        if(p) form=`<p class="vform"><span class="gk" lang="grc">${w[at].replace(/[.,;·:!?]+$/,"")}</span> — ${p}</p>`;
+      }
+      w[at]=`<b>${w[at]}</b>`;
+    }
+    /* The English is the Berean Standard Bible's verse of the same number
+       (public domain; data/english.js, built by tools/build_english.py). */
+    const en=(typeof EXAMPLES_EN!=="undefined") && EXAMPLES_EN[i];
+    const ref=e.length>=8
+      ? `<button class="vref" onclick="openGntChapter('${e[5]}',${e[6]},${e[7]})">${e[0]} ›</button>`
+      : `<span class="vref">${e[0]}</span>`;
+    /* Behind a tap (Fraser, 2026-11-26): try the Greek first, then check.
+       Where the BSB's verse is not exactly the Greek shown, it says so. */
+    const note=en && typeof EXAMPLES_EN_NOTE!=="undefined" && EXAMPLES_EN_NOTE[i];
+    const enHtml=en ? `<details class="ven-d"><summary>English <span class="muted">BSB</span></summary>
+      <p class="ven">${escHtml(en)}</p>${note?`<p class="ven-note">${note==="split"
+        ? "The BSB divides these verses differently, so its verse is not exactly the Greek above."
+        : "The BSB translates words that the Greek text here leaves out."}</p>`:""}</details>` : "";
+    verse=`<p class="vtext gk" lang="grc">${w.join(" ")}</p>${form}${ref}${enHtml}`;
+  }
+  return `<section class="vhero" aria-label="Word of the day">${verse}
+    <div class="wrow">${hear}<span class="lemma gk" lang="grc">${v[0]}</span>
+      <span class="wgloss">${v[1]}</span><span class="meta">${v[3]} · ${v[2]}×</span></div>
+  </section>`;
 }
 
 /* ============================================================
@@ -2645,20 +2684,31 @@ function renderLessons(){
         <span>Chapter ${l.id} · ${lessonMeta(l)}</span></span>
       <span class="muted">›</span></button>`;
   }
+  /* Where you are in the course, drawn (2026-11-26): the chapter you are on
+     large, its title, and one segment per chapter -- finished in ink, this
+     one in gold. It replaced "N of 27 finished". */
+  const cur=(at&&at.id)||nextId||LESSONS[LESSONS.length-1].id;
+  const curL=LESSONS.find(l=>l.id===cur);
+  const journey=`<div class="journey" role="img"
+      aria-label="Chapter ${cur} of ${LESSONS.length}; ${done} finished">
+    <div class="jtop"><span class="jnum">${cur}</span>
+      <span class="jof"><small>Chapter</small>of ${LESSONS.length}</span></div>
+    <p class="jtitle">${curL?curL.t:""}</p>
+    <div class="jbar">${LESSONS.map(l=>`<i class="${S.lessons.includes(l.id)?"d":l.id===cur?"c":""}"></i>`).join("")}</div>
+  </div>`;
   const list=LESSONS.map(l=>{
     const fin=S.lessons.includes(l.id);
     const here=at && at.id===l.id;
     const n=lessonParts(l).length;
-    return `<button class="lesson-item ${fin?"done":""}${here?" here":""}"
+    return `<button class="lesson-item ${fin?"done":""}${here||l.id===cur?" here":""}"
         onclick="openLesson(${l.id})">
-      <span class="n">${fin?"✓":l.id}</span>
-      <span class="t"><b>${l.t}</b><span>${l.s}</span>
-        <span class="lmeta">${here?`part ${at.part+1} of ${n} · carry on`
-          :(fin?"finished":lessonMeta(l))}</span></span>
+      <span class="n">${l.id}</span>
+      <span class="t"><b>${l.t}</b><span>${l.s}</span>${
+        here?`<span class="lmeta">part ${at.part+1} of ${n}</span>`:""}</span>
+      ${fin?`<span class="ck">${ICON_TICK}<span class="vh">finished</span></span>`:""}
     </button>`;}).join("");
   document.getElementById("lessonList").innerHTML=mounceLearnHtml()+
-    `<p class="lcount">${done} of ${LESSONS.length} finished</p>${head}${
-      head?'<h2 class="dgroup" data-tone="muted">All chapters<small>'+LESSONS.length+'</small></h2>':""}${list}`;
+    `${journey}${head}<h2 class="dgroup">Chapters</h2>${list}`;
 }
 /* ---- Watch ----
    Daily Dose serves its 26 lectures through its own player — no iframe in
@@ -3792,23 +3842,40 @@ function drillCard(i,tone){
       <span class="t"><b>${DRILLS[i][0]}</b>${DRILLS[i][1]?`<span>${DRILLS[i][1]}</span>`:""}${badge}</span>
       <span class="muted">›</span></button>`;
 }
+/* Drill, 2026-11-26: what is due and the daily mix in one quiet box at the
+   top, then the groups as rows that open in place (two levels, all six
+   headings on one screen). Which groups are open is kept per device. */
+const DRILL_OPEN_KEY="koine.drillOpen";
+function drillOpen(){
+  try{ const v=JSON.parse(localStorage.getItem(DRILL_OPEN_KEY)||"null"); if(Array.isArray(v)) return v; }catch(e){}
+  return ["Vocabulary"];
+}
+function toggleDrillGroup(g){
+  const o=drillOpen(), k=o.indexOf(g);
+  if(k<0) o.push(g); else o.splice(k,1);
+  try{ localStorage.setItem(DRILL_OPEN_KEY,JSON.stringify(o)); }catch(e){}
+  renderDrill();
+}
 function renderDrill(){
-  const seen=new Set();
+  const top=["Vocabulary due now","Daily mix"].map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0);
+  const seen=new Set(top), open=drillOpen();
+  let html=`<div class="top-box">${top.map(i=>drillCard(i,"muted")).join("")}</div>`;
   const ordered=(typeof DRILL_ORDER!=="undefined"
     ? DRILL_ORDER.filter(g=>DRILL_GROUP[g]).map(g=>[g,DRILL_GROUP[g]])
     : Object.entries(DRILL_GROUP));
-  let html=ordered.map(([group,names])=>{
-    const items=names.map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0);
+  html+=ordered.map(([group,names])=>{
+    const items=names.map(n=>DRILLS.findIndex(d=>d[0]===n)).filter(i=>i>=0 && !seen.has(i));
     items.forEach(i=>seen.add(i));
-    const tone=(typeof GROUP_TONE!=="undefined" && GROUP_TONE[group])||"muted";
-    return items.length?`<h2 class="dgroup" data-tone="${tone}">${group}${
-      items.length>1?`<small>${items.length}</small>`:""}</h2>`
-      +items.map(i=>drillCard(i,tone)).join(""):"";
+    if(!items.length) return "";
+    const isOpen=open.includes(group);
+    const icon=typeof drillIcon==="function"?drillIcon(DRILLS[items[0]][0]):"";
+    return `<button class="dgroup-row" aria-expanded="${isOpen}" onclick="toggleDrillGroup('${group}')">
+        <span class="dwell">${icon}</span><b>${group}</b><span class="chev">›</span></button>
+      <div class="dgroup-body"${isOpen?"":" hidden"}>${items.map(i=>drillCard(i,"muted")).join("")}</div>`;
   }).join("");
   // anything added later and not yet filed still appears
   const rest=DRILLS.map((d,i)=>i).filter(i=>!seen.has(i));
-  if(rest.length) html+=`<h2 class="dgroup" data-tone="muted">More<small>${
-      rest.length}</small></h2>`+rest.map(i=>drillCard(i,"muted")).join("");
+  if(rest.length) html+=`<h2 class="dgroup">More</h2>`+rest.map(i=>drillCard(i,"muted")).join("");
   document.getElementById("drillMenu").innerHTML=html;
 }
 
@@ -3845,15 +3912,19 @@ function renderRead(){
        <span class="t"><b>Continue — ${w.t} ${w.n}</b><span>Where you left off</span></span>
        <span class="muted">›</span></button>` : "";
   document.getElementById("readList").innerHTML= resume +
-    `<button class="lesson-item" onclick="openGnt()" style="border-color:var(--gold-dim)">
-       <span class="t"><b>The whole Greek New Testament</b></span>
+    `<button class="lesson-item whole" onclick="openGnt()">
+       <span class="t"><b>The whole Greek New Testament</b><span lang="grc">Ἡ Καινὴ Διαθήκη</span></span>
        <span class="muted">›</span></button>
-     <h2 style="margin:18px 0 10px">Graded passages</h2>`
+     <h2 class="dgroup">Graded passages</h2>`
     + READINGS.map(r=>{
     const k=readingKnown(r), pct=k.deck?Math.round(100*k.known/k.deck):0;
+    /* The passage by its opening words, in Greek: that is what you are
+       about to read, and it tells the passages apart better than a count. */
+    const opening=r.w.slice(0,6).map(w=>w[0]).join(" ");
     return `<button class="lesson-item" onclick="openRead('${r.id}')">
-      <span class="t"><b>${r.ref}</b>
-        <span class="lbar"><i style="width:${pct}%"></i></span></span>
+      <span class="t"><span class="ref">${r.ref.replace("-","–")}</span>
+        <span class="opening" lang="grc">${opening}…</span>
+        <span class="lbar" aria-label="${k.known} of ${k.deck} words settled"><i style="width:${pct}%"></i></span></span>
       <span class="muted">›</span>
     </button>`;}).join("");
   document.getElementById("readBody").innerHTML="";
@@ -4219,12 +4290,12 @@ function renderHelp(){
 
     <h2>The tabs</h2>
     <table>
-      <tr><th>Today</th><td>The day's plan, a few short things, ticked off as you do them. The ring fills as the plan does. Your streak sits under it, and a passage you pinned shows up here too.</td></tr>
+      <tr><th>Today</th><td>The day's verse, then the day's plan: a few short things, ticked off as you do them. Your streak sits at the top once you have one, and a passage you pinned shows up here too. The gear opens Settings.</td></tr>
       <tr><th>Learn</th><td>${LESSONS.length} chapters, from the letters to reading the text, following the order of David Alan Black's <i>Learn to Read New Testament Greek</i>. <b>Work through it</b> takes a chapter a section at a time with its questions in place, about ten minutes; the whole chapter is underneath to read straight through or come back to. Answering a question puts it on the review schedule — a wrong answer just brings it back sooner.</td></tr>
       <tr><th>Drill</th><td>${DRILLS.length} ways to practise, in ${Object.keys(DRILL_GROUP).length} groups. Where a drill depends on how far you have got, it says what it is worth to you today, and dims when there is nothing in it for you yet.</td></tr>
       <tr><th>Read</th><td>${READINGS.length} graded passages, and the whole Greek New Testament with every word parsed.</td></tr>
-      <tr><th>Look up</th><td>One search box for any word in the course and every paradigm table.</td></tr>
-      <tr><th>Settings</th><td>Settings, sync and any words you have set aside first, then your progress — the numbers, where you struggle, badges — and your data. Today's <b>Your progress</b> link goes straight there.</td></tr>
+      <tr><th>Search</th><td>One search box for any word in the course and every paradigm table.</td></tr>
+      <tr><th>Settings</th><td>The gear on Today. Settings, sync and any words you have set aside first, then your progress — the numbers, where you struggle, badges — and your data.</td></tr>
     </table>
 
     <h2>Things worth knowing</h2>
@@ -4822,7 +4893,7 @@ let ARRIVED_BY_LINK=false;
     }
     if(!q.has("go") && !q.has("ch")) return;
     const screens=new Set([...document.querySelectorAll("nav [data-go]")]
-      .map(b=>b.dataset.go).concat("help"));
+      .map(b=>b.dataset.go).concat("help","prog"));
     /* Cleared BEFORE navigating: the screens pushed below copy the address
        they are pushed from, and a list left holding ?ch= reopened the
        chapter on reload. */

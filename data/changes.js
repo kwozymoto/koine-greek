@@ -12,7 +12,12 @@
    k: "new" | "better" | "fix" | "audio" | "words". Plain text only — the
    page escapes it. */
 const CHANGES=[
-{d:"2026-11-26", v:"v309", items:[
+{d:"2026-11-26", v:"v310", items:[
+  {k:"new", t:"Today has a new look: the day's verse comes first, then the day as a short checklist with one button that names what it starts. When you are done it says so, and what tomorrow holds."},
+  {k:"new", t:"The day's verse has the English of the Berean Standard Bible a tap away, so you can try the Greek first. Where its verse is not quite the same as the Greek, it says so."},
+  {k:"better", t:"Learn shows where you are in the course; Drill puts what is due first, with the groups opening in place; Read lists the passages by their opening words in Greek. Milestones are marked with Greek numerals."},
+  {k:"better", t:"Settings is now the gear at the top of Today, so the bar has five tabs, and Look up is called Search."},
+  {k:"better", t:"A new typeface, Gentium, for the Greek and the headings, and warmer colours in both light and dark."},
   {k:"better", t:"Less text to read: most screens lose their explaining lines, and the drills show just their names."},
   {k:"better", t:"Write the letters is now practice, not a test: trace the letter, press Done, and your line is shown over it. No more percentages."},
   {k:"better", t:"Today shows the 24 letters as a row that fills in as you learn them, and a short welcome back after a few days away."},

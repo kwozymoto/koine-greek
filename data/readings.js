@@ -873,17 +873,21 @@ w:[
 ]}
 ];
 
+/* The marks are Greek, not emoji (2026-11-26): the number each milestone
+   counts, written as a Greek numeral with its keraia -- ζʹ is seven, λʹ
+   thirty, κζʹ twenty-seven -- and Ἐν, the first word of the first reading.
+   The alphabet's is its first letter. */
 const BADGES=[
-{id:"first",e:"🌱",t:"First light",d:"Finish one review session"},
-{id:"streak7",e:"🔥",t:"Seven days",d:"A week without missing"},
-{id:"streak30",e:"⛰️",t:"Thirty days",d:"A month without missing"},
-{id:"w50",e:"📖",t:"Fifty words",d:"50 words known"},
-{id:"w150",e:"📚",t:"Half the text",d:"150 words known"},
+{id:"first",e:"αʹ",t:"First light",d:"Finish one review session"},
+{id:"streak7",e:"ζʹ",t:"Seven days",d:"A week without missing"},
+{id:"streak30",e:"λʹ",t:"Thirty days",d:"A month without missing"},
+{id:"w50",e:"νʹ",t:"Fifty words",d:"50 words known"},
+{id:"w150",e:"ρνʹ",t:"Half the text",d:"150 words known"},
 {id:"alpha",e:"Α",t:"Alphabet",d:"Pass the alphabet test"},
-{id:"l8",e:"🏛️",t:"Eight chapters",d:"Finish 8 chapters"},
-{id:"l16",e:"🔖",t:"Sixteen chapters",d:"Finish 16 chapters"},
-{id:"l26",e:"🎓",t:"Every chapter",d:"Finish every chapter"},
-{id:"read",e:"🔍",t:"First reading",d:"Open a passage"}
+{id:"l8",e:"ηʹ",t:"Eight chapters",d:"Finish 8 chapters"},
+{id:"l16",e:"ιϛʹ",t:"Sixteen chapters",d:"Finish 16 chapters"},
+{id:"l26",e:"κζʹ",t:"Every chapter",d:"Finish every chapter"},
+{id:"read",e:"Ἐν",t:"First reading",d:"Open a passage"}
 ];
 
 /* Fallback glosses for high-frequency forms that recur across passages.

@@ -9,7 +9,7 @@
    Those are the pronunciation resources and they need a connection; the app
    greys them out when offline rather than caching a broken copy. */
 
-const VERSION = 'v309';
+const VERSION = 'v310';
 const CACHE   = `koine-${VERSION}`;
 
 /* The bulk set — 470 word clips and 27 New Testament books, 497 files and
@@ -1542,6 +1542,11 @@ const SHELL = [
   'print/vocabulary-22.html', 'print/vocabulary-23.html', 'print/vocabulary-24.html',
   'print/vocabulary-25.html', 'print/vocabulary-26.html',
   'css/app.css',
+  /* Gentium Book (SIL OFL), Today's and every page title's serif and the
+     Greek face: v310. */
+  'fonts/GentiumBook-Regular.woff2',
+  'fonts/GentiumBook-Italic.woff2',
+  'fonts/GentiumBook-SemiBold.woff2',
   'js/app.js',
   'js/report.js',
   'js/pwa.js',
@@ -1561,6 +1566,7 @@ const SHELL = [
   'data/readings.js',
   'data/audio.js',
   'data/examples.js',
+  'data/english.js',          /* v310: the BSB under Today's verse */
   'data/gnt/manifest.json',
   'data/offline.json',
   'data/paradigms.js',

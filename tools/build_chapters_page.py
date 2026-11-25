@@ -104,8 +104,8 @@ def headings(body):
 
 CSS = """
   :root{
-    --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
-    --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-ink:#1a1408;
+    --bg:#0f1522; --surface:#18202f; --surface-2:#222b3d; --line:#2a3448;
+    --text:#efe9da; --muted:#9aa3b5; --gold:#e2b44c; --gold-ink:#1a1408;
     --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
     --gk:"Gentium Plus","GFS Didot","Palatino Linotype",Palatino,Georgia,serif;
     color-scheme:dark;
@@ -115,14 +115,14 @@ CSS = """
   @media (prefers-color-scheme: light){
     :root:not([data-theme="dark"]){
       color-scheme:light;
-      --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
-      --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-ink:#ffffff;
+      --bg:#f7f2e7; --surface:#fffdf8; --surface-2:#efe8d9; --line:#e6ddca;
+      --text:#211c15; --muted:#6b6253; --gold:#85620a; --gold-ink:#ffffff;
     }
   }
   :root[data-theme="light"]{
     color-scheme:light;
-    --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
-    --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-ink:#ffffff;
+    --bg:#f7f2e7; --surface:#fffdf8; --surface-2:#efe8d9; --line:#e6ddca;
+    --text:#211c15; --muted:#6b6253; --gold:#85620a; --gold-ink:#ffffff;
   }
   *{box-sizing:border-box}
   body{margin:0; padding:2.25rem 1rem 5rem; background:var(--bg); color:var(--text);
@@ -187,7 +187,7 @@ CHAPTER_CSS = """
 # The theme lines every page's <head> carries: the browser bar's colour for
 # each theme, and the script that applies Settings > Appearance before first
 # paint. The same as index.html's; tools/check_theme.py holds them together.
-THEME_HEAD = '<meta name="theme-color" content="#141b2b" media="(prefers-color-scheme: dark)">\n<meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">\n<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. On an iPhone home-screen app the status bar\'s icons are white (black-translucent), so in light they switch to dark (default). */\nvar t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f3f5f9":"#141b2b";document.querySelectorAll(\'meta[name="theme-color"]\').forEach(function(m){m.content=c})}var s=document.querySelector(\'meta[name="apple-mobile-web-app-status-bar-style"]\');if(s&&(t==="light"||(t!=="dark"&&matchMedia("(prefers-color-scheme: light)").matches)))s.content="default"}catch(e){}</script>\n'
+THEME_HEAD = '<meta name="theme-color" content="#0f1522" media="(prefers-color-scheme: dark)">\n<meta name="theme-color" content="#f7f2e7" media="(prefers-color-scheme: light)">\n<script>/* Settings > Appearance, applied before first paint so a chosen theme never flashes the other. Stored per device under koine.theme; absent means follow the device. On an iPhone home-screen app the status bar\'s icons are white (black-translucent), so in light they switch to dark (default). */\nvar t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);var c=t==="light"?"#f7f2e7":"#0f1522";document.querySelectorAll(\'meta[name="theme-color"]\').forEach(function(m){m.content=c})}var s=document.querySelector(\'meta[name="apple-mobile-web-app-status-bar-style"]\');if(s&&(t==="light"||(t!=="dark"&&matchMedia("(prefers-color-scheme: light)").matches)))s.content="default"}catch(e){}</script>\n'
 
 
 # What a shared link shows. icons/share.png is built by build_share_image.py.

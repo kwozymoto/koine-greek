@@ -149,6 +149,8 @@ PAIRS = [
     ("--rust-text", "--surface-2", TEXT),
     # text on a fill: buttons, chosen chips, ticks, the marks on an answer
     ("--on-gold", "--gold", TEXT), ("--on-green", "--green", TEXT), ("--on-rust", "--rust", TEXT),
+    # the primary button: dark text on the bright gold fill
+    ("--on-fill", "--fill", TEXT),
     # the word lit while a chapter is read aloud
     ("--text", "--say-bg", TEXT),
 ]
@@ -220,8 +222,8 @@ strays("css/app.css", app_css)
 
 # JavaScript and the app page carry no colours of their own.
 JS_ALLOWED = {("js/write.js", "#fff"): "an offscreen mask the scorer reads by alpha, never shown",
-              ("js/app.js", "#141b2b"): "THEME_BG, checked against --bg below",
-              ("js/app.js", "#f3f5f9"): "THEME_BG, checked against --bg below"}
+              ("js/app.js", "#0f1522"): "THEME_BG, checked against --bg below",
+              ("js/app.js", "#f7f2e7"): "THEME_BG, checked against --bg below"}
 JS_LIT = re.compile(r"(?<=[\s\"'`:(,])#[0-9a-fA-F]{3,8}\b|\b(?:rgb|hsl)a?\(")
 JS_NAMED = re.compile(r"(?:color|background|border|fill|stroke|shadow|outline)[\w-]*\s*:\s*[^;\"'`\n]*?"
                       r"(?<![\w-])(white|black)(?![\w-])")

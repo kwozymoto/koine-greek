@@ -1,7 +1,14 @@
+/* Gentium Book (SIL, Open Font License; fonts/OFL.txt), the files exactly as
+   SIL ships them -- the licence reserves the name "Gentium", so a subset
+   would have to be renamed. Greek, headings, references and the primary
+   button use it; small labels, counts and tabs stay in the system sans. */
+@font-face{font-family:"Gentium Book";src:url(../fonts/GentiumBook-Regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Gentium Book";src:url(../fonts/GentiumBook-Italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Gentium Book";src:url(../fonts/GentiumBook-SemiBold.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
 :root{
   color-scheme:dark;
-  --bg:#141b2b; --surface:#1e2739; --surface-2:#29344a; --line:#38445d;
-  --text:#e9e5da; --muted:#97a1b5; --gold:#d4a537; --gold-dim:#8a6d24;
+  --bg:#0f1522; --surface:#18202f; --surface-2:#222b3d; --line:#2a3448;
+  --text:#efe9da; --muted:#9aa3b5; --gold:#e2b44c; --gold-dim:#6f5a26;
   /* --rust is TEXT ("Reset everything", a wrong option, a grade-1 pip) and
      --rust-solid is the same red as a BACKGROUND with white on it. They pull
      opposite ways against WCAG: as text the red has to be light enough to
@@ -16,13 +23,16 @@
      which put the text at 3.9:1. */
   --amber:#d6a05e; --rust-text:#e8907f;
   --on-gold:#1a1408; --on-green:#12191a; --on-rust:#1c0f0d;
-  --say-bg:#6f5719; --ring-track:#29344a;
-  --nav-bg:rgba(20,27,43,.94); --veil:rgba(20,27,43,.72); --scrim-bg:rgba(0,0,0,.55);
+  --say-bg:#6f5719; --ring-track:#263044;
+  /* The primary button: a bright gold fill with dark text in both themes.
+     --gold stays the text-safe gold; --fill is never text (2026-11-26). */
+  --fill:#e2b44c; --on-fill:#1a1408; --control:#66738e;
+  --nav-bg:rgba(12,17,28,.94); --veil:rgba(15,21,34,.72); --scrim-bg:rgba(0,0,0,.55);
   /* Opacities that dim text, per theme: the same fade reads fainter on a light
      ground, so light takes less of it. --k0..--k2 are how far Read dims a word
      you do not know yet; --dim-gold is a verse number or a lexicon dagger. */
   --k0:.44; --k1:.6; --k2:.82; --dim-gold:.75;
-  --gk:"Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --gk:"Gentium Book","Noto Serif","GFS Didot","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   --nav-h:60px;
   /* "Greek text size" used to reach exactly two places. Everything Greek is
@@ -42,25 +52,27 @@
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]){
     color-scheme:light;
-    --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
-    --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-dim:#dcc07a;
+    --bg:#f7f2e7; --surface:#fffdf8; --surface-2:#efe8d9; --line:#e6ddca;
+    --text:#211c15; --muted:#6b6253; --gold:#85620a; --gold-dim:#e6cf9a;
     --green:#2a7459; --rust:#b3412f; --rust-solid:#b3412f; --blue:#3a5fae;
     --violet:#6a52b0; --amber:#9a5b12; --rust-text:#9c3525;
     --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
-    --say-bg:#e5cf8f; --ring-track:#d9dfe9;
-    --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
+    --say-bg:#e5cf8f; --ring-track:#e6ddca;
+    --fill:#cf9d33; --on-fill:#211c15; --control:#8f8672;
+    --nav-bg:rgba(251,247,238,.94); --veil:rgba(247,242,231,.8); --scrim-bg:rgba(27,34,51,.4);
     --k0:.56; --k1:.7; --k2:.88; --dim-gold:1;
   }
 }
 :root[data-theme="light"]{
   color-scheme:light;
-  --bg:#f3f5f9; --surface:#ffffff; --surface-2:#e8ecf3; --line:#cfd6e2;
-  --text:#1b2233; --muted:#586277; --gold:#85620a; --gold-dim:#dcc07a;
+  --bg:#f7f2e7; --surface:#fffdf8; --surface-2:#efe8d9; --line:#e6ddca;
+  --text:#211c15; --muted:#6b6253; --gold:#85620a; --gold-dim:#e6cf9a;
   --green:#2a7459; --rust:#b3412f; --rust-solid:#b3412f; --blue:#3a5fae;
   --violet:#6a52b0; --amber:#9a5b12; --rust-text:#9c3525;
   --on-gold:#ffffff; --on-green:#ffffff; --on-rust:#ffffff;
-  --say-bg:#e5cf8f; --ring-track:#d9dfe9;
-  --nav-bg:rgba(243,245,249,.94); --veil:rgba(243,245,249,.8); --scrim-bg:rgba(27,34,51,.4);
+  --say-bg:#e5cf8f; --ring-track:#e6ddca;
+    --fill:#cf9d33; --on-fill:#211c15; --control:#8f8672;
+  --nav-bg:rgba(251,247,238,.94); --veil:rgba(247,242,231,.8); --scrim-bg:rgba(27,34,51,.4);
   --k0:.56; --k1:.7; --k2:.88; --dim-gold:1;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -97,7 +109,7 @@ button{font-family:inherit;font-size:inherit;color:inherit;background:none;borde
 h1{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
 h2{font-size:1.1rem;font-weight:600;margin:26px 0 10px}
 /* A screen's title: an h2, so the page keeps one h1, looking as the h1s did. */
-h2.title{font-size:1.45rem;font-weight:600;margin:0 0 2px;letter-spacing:-.01em}
+h2.title{font-family:var(--gk);font-size:1.75rem;font-weight:600;margin:0 0 6px;letter-spacing:0}
 /* Read by search engines and screen readers, not shown. */
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 h3{font-size:.95rem;font-weight:600;margin:18px 0 6px;color:var(--gold)}
@@ -159,12 +171,13 @@ small{font-size:.8rem}
 /* ---------- buttons ---------- */
 .btn{
   display:block;width:100%;padding:14px 18px;border-radius:12px;
-  background:var(--gold);color:var(--on-gold);font-weight:650;text-align:center;
+  background:var(--fill);color:var(--on-fill);font-weight:600;text-align:center;
+  font-family:var(--gk);font-size:1.06rem;min-height:52px;
   border:none;transition:transform .08s;
 }
 .btn:active{transform:scale(.985)}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text);font-weight:500}
-.btn.small{width:auto;padding:9px 16px;font-size:.87rem;border-radius:10px;min-height:44px}
+.btn.ghost{background:transparent;border:1px solid var(--control);color:var(--text);font-weight:500}
+.btn.small{width:auto;padding:9px 16px;font-size:.92rem;border-radius:10px;min-height:44px}
 .btn[disabled]{opacity:.4}
 /* A ghost button that is the current choice rather than an action — the
    finger/keyboard switch in "Write it from memory". Same gold-on-dark the
@@ -189,33 +202,78 @@ nav button{flex:1;display:flex;flex-direction:column;align-items:center;justify-
 nav button .ic{font-family:var(--gk);font-size:1.15rem;line-height:1}
 nav button.on{color:var(--gold)}
 
-/* ---------- today ---------- */
-.hero{text-align:center;padding:22px 0 6px}
+/* ---------- today ----------
+   Rebuilt 2026-11-26 from the refined direction-A mock-ups. Gold means
+   "act on this": the day's word, the reference, the next row's ring, the
+   button. Sizes keep to the scale in the mock-up spec (13, 15, 17, 20, 28). */
+.tbar{display:flex;align-items:center;gap:10px;min-height:48px;margin:0 0 14px}
+.wordmark{margin-right:auto;font-family:var(--gk);font-weight:600;font-size:.86rem;
+  letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.wordmark .gk{text-transform:none;letter-spacing:0;font-weight:400;font-size:1.2rem;
+  color:var(--gold);margin-left:4px}
+.seal{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
+.seal[hidden]{display:none}
+.seal b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  border:1.5px solid var(--gold);box-shadow:inset 0 0 0 2px var(--bg),inset 0 0 0 3px var(--gold);
+  color:var(--gold);font-family:var(--gk);font-weight:600;font-size:.86rem;line-height:1}
+.iconbtn{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:12px;color:var(--text)}
+.iconbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round}
+.tbar .iconbtn{margin-right:-12px}
+
+.vhero{margin:0}
+.vtext{font-size:calc(1.75rem * var(--gk-scale));line-height:1.4;margin:0 0 10px}
+.vtext b{font-weight:400;color:var(--gold)}
+.ven-d{margin:0}
+.ven-d>summary{display:inline-flex;align-items:center;gap:6px;min-height:44px;cursor:pointer;
+  list-style:none;color:var(--gold);font-size:.94rem}
+.ven-d>summary::-webkit-details-marker{display:none}
+.ven-d>summary::after{content:"›";transition:transform .15s}
+.ven-d[open]>summary::after{transform:rotate(90deg)}
+.ven{font-family:var(--gk);font-style:italic;font-size:1.06rem;line-height:1.5;margin:0 0 6px}
+.ven-note{font-size:.82rem;color:var(--muted);margin:0 0 6px}
+.vform{font-size:.94rem;color:var(--muted);margin:0 0 2px}
+.vform .gk{color:var(--text)}
+.vref{display:inline-block;font-family:var(--gk);font-size:1.06rem;color:var(--gold);
+  padding:12px 0;margin:-4px 0 -6px}
+.wrow{display:flex;align-items:center;gap:10px;min-height:56px;padding:4px 0;margin:14px 0 26px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wrow .iconbtn{color:var(--gold);margin-left:-12px;flex:0 0 auto}
+.wrow .lemma{font-size:calc(1.25rem * var(--gk-scale))}
+.wrow .wgloss{flex:1;min-width:0;font-family:var(--gk);font-style:italic}
+.wrow .meta{font-size:.82rem;color:var(--muted);white-space:nowrap}
+
+.plan-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 10px}
+.plan-head h2{margin:0;font-family:var(--gk);font-weight:400;font-size:1.25rem}
+#planMins{font-size:.94rem}
+.plan-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+/* Today's rows: a ring that fills with a tick, the name, one line, the time. */
+.plan-row{display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  min-height:56px;padding:10px 0;border-bottom:1px solid var(--line)}
+.plan-box > .plan-row:last-child{border-bottom:0}
+.plan-row .tick{flex:0 0 24px;width:24px;height:24px;border-radius:50%;
+  border:1.5px solid var(--control);display:grid;place-items:center}
+.plan-row.next .tick{border:2px solid var(--gold)}
+.plan-row.done .tick{background:var(--muted);border-color:var(--muted);color:var(--surface)}
+.plan-row .tick svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.plan-row .t{flex:1;min-width:0;display:flex;flex-direction:column}
+.plan-row .t b{font-weight:500;font-size:1.03rem}
+.plan-row .t span{font-size:.82rem;color:var(--muted);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plan-row .mins{font-size:.94rem;color:var(--muted);white-space:nowrap}
+.plan-row.done .t b{font-weight:400;color:var(--muted)}
+.day-done{font-family:var(--gk);font-size:1.25rem;margin:22px 0 2px}
+.plan-note{font-size:.94rem;margin:10px 2px 0}
+.plan-link{display:flex;align-items:center;justify-content:space-between;width:100%;
+  min-height:48px;margin-top:8px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.plan-link .ref{font-family:var(--gk);font-size:1.06rem;letter-spacing:0;text-transform:none;color:var(--gold)}
+#btnContinue{margin-top:22px}
+/* The ring now lives only on a session's summary (ringHtml). */
 .ring{width:150px;height:150px;margin:0 auto 14px;position:relative}
 .ring svg{transform:rotate(-90deg)}
 .ring .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .ring .big{font-size:2rem;font-weight:600;line-height:1}
-.streak{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:5px 13px;font-size:.83rem}
-.streak i{font-style:normal;color:var(--muted);font-size:.76rem}
-.streak i:empty{display:none}
-/* ---------- today's plan ----------
-   Built on .lesson-item's shape so the two lists read as one app. The tick
-   is a circle that fills when the row is done, which is the whole point of
-   the screen: you can see what today asks before you start it. */
-.plan-row{display:flex;align-items:center;gap:13px;width:100%;text-align:left;
-  padding:13px 15px;margin-bottom:9px;background:var(--surface);
-  border:1px solid var(--line);border-radius:12px;transition:opacity .2s}
-.plan-row .tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;
-  border:1.5px solid var(--line);display:flex;align-items:center;
-  justify-content:center;font-size:.76rem;font-weight:700;color:var(--on-green)}
-.plan-row .t{flex:1;min-width:0;display:flex;flex-direction:column}
-.plan-row .t b{font-weight:600;font-size:.95rem}
-.plan-row .t span{font-size:.76rem;color:var(--muted);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.plan-row .chev{color:var(--muted)}
-.plan-row.done{opacity:.55}
-.plan-row.done .tick{background:var(--green);border-color:var(--green)}
-.plan-row.done .t b{text-decoration:line-through;text-decoration-color:var(--muted)}
 
 /* the passage you are working. Gold-edged like the pinned row, because it is
    the same kind of thing: something you chose, that the day now bends around. */
@@ -1189,3 +1247,113 @@ details.whatsnew > summary::-webkit-details-marker{display:none}
 details.whatsnew > summary::after{content:"›";color:var(--muted);margin-left:auto;padding-left:10px}
 details.whatsnew[open] > summary{margin-bottom:10px}
 details.whatsnew[open] > summary::after{transform:rotate(90deg)}
+
+/* ============================================================
+   THE DESIGN PASS (v310, 2026-11-26)
+   ------------------------------------------------------------
+   From the UI research report and the refined mock-ups: lists of things
+   that are alike and in order are plain rows (hairlines and space), not
+   stacks of cards; group headings are small capitals; gold means "act on
+   this", so the drill groups lose their five tones and the icons go quiet.
+   Written as overrides, last in the file, so the rules above still say
+   what each component is and these say how it looks now. */
+.dgroup{margin:28px 0 4px;font-size:.8rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted)}
+.dgroup::before{display:none}
+.dgroup small{display:none}
+#todayMore .dgroup{margin:28px 0 8px}
+
+.lesson-item{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;
+  margin:0;padding:12px 0;min-height:56px}
+.lesson-item .t b{font-weight:500;font-size:1.03rem}
+.lesson-item .t span{font-size:.82rem}
+.lesson-item.resume{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;margin:0 0 8px}
+.lesson-item.resume .t b{color:var(--text)}
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+  .lesson-item.resume{background:var(--surface);border-color:var(--line)}
+}
+.lesson-item > .muted:last-child{font-size:1.2rem}
+
+/* the icon wells become plain line icons */
+.dwell{width:28px;height:28px;flex:0 0 28px;border:0;border-radius:0;background:none;color:var(--muted)}
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+  .dwell{background:none}
+}
+.drill-item:hover{border-color:var(--line)}
+.drill-item:hover .dwell{transform:none}
+.dicon{width:22px;height:22px}
+/* a chip only where it carries a number, in the one accent */
+.dbadge,.lesson-item .t .dbadge{color:var(--text);background:var(--surface-2);border:0;font-size:.78rem}
+.lesson-item .t .dbadge.cold,.dbadge.cold{color:var(--muted);background:none;padding-left:0}
+
+/* ---- Learn: where you are, then the chapters ---- */
+.journey{margin:6px 0 20px}
+.journey .jtop{display:flex;align-items:flex-end;gap:14px}
+.journey .jnum{font-family:var(--gk);font-size:3.5rem;line-height:.9;font-weight:400}
+.journey .jof{display:flex;flex-direction:column;font-family:var(--gk);font-size:1.25rem;color:var(--muted);line-height:1.1}
+.journey .jof small{font-family:var(--ui);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.journey .jtitle{font-family:var(--gk);font-size:1.25rem;line-height:1.3;margin:12px 0 12px}
+.jbar{display:flex;gap:3px}
+.jbar i{flex:1;height:6px;border-radius:2px;background:var(--line)}
+.jbar i.d{background:var(--text)}
+.jbar i.c{background:var(--gold)}
+#lessonList .lesson-item .t b{font-family:var(--gk);font-weight:400;font-size:1.08rem}
+#lessonList .lesson-item .n{width:26px;flex:0 0 26px;height:auto;border:0;border-radius:0;background:none;
+  font-family:var(--gk);font-size:1.08rem;color:var(--muted);font-weight:400}
+#lessonList .lesson-item.here .n{color:var(--gold);font-weight:600}
+#lessonList .lesson-item.here .t b{font-weight:600}
+#lessonList .lesson-item .ck{flex:0 0 22px;color:var(--muted)}
+#lessonList .lesson-item .ck svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- Drill: what is due on top, then the groups, opening in place ---- */
+.top-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:4px 0 18px}
+.top-box .lesson-item:last-child{border-bottom:0}
+.dgroup-row{display:flex;align-items:center;gap:13px;width:100%;min-height:56px;padding:12px 0;
+  border-bottom:1px solid var(--line);text-align:left}
+.dgroup-row b{flex:1;font-weight:500;font-size:1.03rem}
+.dgroup-row .chev{color:var(--muted);transition:transform .15s}
+.dgroup-row[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.dgroup-row[aria-expanded="true"] b{font-weight:600}
+.dgroup-body .lesson-item{padding-left:41px}
+.dgroup-body .lesson-item .dwell{display:none}
+
+/* ---- Read: the passages by their opening words ---- */
+#readList .lesson-item .t .ref{display:block;font-family:var(--gk);color:var(--gold);font-size:1rem}
+#readList .lesson-item .t .opening{display:block;font-family:var(--gk);font-size:calc(1.12rem * var(--gk-scale));
+  color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#readList .lesson-item.whole{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 6px}
+#readList .lesson-item.whole .t b{font-family:var(--gk);font-weight:400;font-size:1.12rem}
+#readList .lesson-item.whole .t span{font-family:var(--gk);color:var(--gold);font-size:1rem}
+.passage{font-size:calc(1.3rem * var(--gk-scale));line-height:1.7}
+/* the word's panel as a sheet rising from the bottom */
+.gloss{background:var(--surface);border:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;
+  margin:0 -18px;padding:16px 18px 18px;box-shadow:0 -6px 20px var(--scrim-bg)}
+
+/* ---- Search: the tables as rows that open ---- */
+.ptable{margin:0}
+.ptable>button{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:14px 0;min-height:52px;
+  font-weight:500}
+.ptable.open>button{font-weight:600}
+
+/* ---- Settings: headings as labels, milestones as seals ---- */
+#progBody > h2,#progBody .card > h3{font-family:var(--ui)}
+#progBody > h2{margin:28px 0 8px;font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stat{background:none;border:0;border-top:1px solid var(--line);border-radius:0}
+.stat b{font-family:var(--gk);font-weight:400;font-size:1.6rem}
+.badge{background:none;border:0;opacity:.45}
+.badge.got{opacity:1}
+.badge .e{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;
+  border:1.5px solid var(--muted);font-family:var(--gk);font-size:1.05rem;color:var(--muted)}
+.badge.got .e{border-color:var(--gold);color:var(--gold);
+  box-shadow:inset 0 0 0 2px var(--bg),inset 0 0 0 3.5px var(--gold)}
+.badge b{font-size:.8rem}
+.badge span{font-size:.72rem}
+/* the milestone's mark is a Greek numeral now, set in the Greek face */
+.fan-emblem{font-family:var(--gk);color:var(--gold)}
+/* Today's one button stays in reach: above the nav while the plan runs
+   past the screen, in its place once scrolled to. */
+#btnContinue{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 12px);z-index:5;
+  box-shadow:0 0 0 6px var(--bg)}
+#btnContinue.ghost{background:var(--bg)}
