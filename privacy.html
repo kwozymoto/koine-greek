@@ -82,7 +82,7 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <a class="back" href="/">&lsaquo; Everyday Koine</a>
 
   <h1>Privacy policy</h1>
-  <p class="date">Everyday Koine · last updated 25 September 2026</p>
+  <p class="date">Everyday Koine · last updated 26 November 2026</p>
 
   <div class="lede">
     <p><b>The app has no accounts and collects nothing about you.</b> There is
@@ -112,23 +112,28 @@ var t=null;try{t=localStorage.getItem("koine.theme")}catch(e){}try{if(t==="light
   <table>
     <tr><th><code>koine.v1</code></th><td>Your progress: which words you have
       studied and when each is next due, which chapters you have read, your
-      XP, streak and badges, your settings, and any notes or alternative
-      glosses you have typed against a word.</td></tr>
+      XP, streak and milestones, your settings, a break if you have started
+      one, and any notes or alternative glosses you have typed against a
+      word.</td></tr>
     <tr><th><code>koine.sync</code></th><td>Present only if you turn on sync.
       Holds your sync code, a fingerprint of it — see below — and the time
       of the last sync.</td></tr>
     <tr><th>Preferences</th><td>Small settings for this device alone, never
       synced: <code>koine.theme</code> (Light or Dark, if you chose one),
       <code>koine.wmode</code> (finger or keyboard in the writing drill),
-      <code>koine.lookupAll</code> (whether Look up searches the whole New
+      <code>koine.lookupAll</code> (whether Search looks through the whole New
       Testament), <code>koine.today</code> (the order of Today's sections and
-      any you have hidden), <code>koine.seenLog</code> (the date of the
+      any you have hidden), <code>koine.drillOpen</code> (which groups you
+      have open on the Drill tab), <code>koine.seenLog</code> (the date of the
       newest update you have seen, so What's new can mark later ones), <code>koine.report.draft</code> (a problem report you have
       started and not yet sent, cleared once it is), <code>koine.installDismissed</code> and
       <code>koine.testerAsked</code> (that you closed the install bar or the
-      Android-test invitation), and <code>koine.visits</code> (how many times
+      Android-test invitation), <code>koine.visits</code> (how many times
       the app has been opened here, so that invitation never appears on a
-      first visit).</td></tr>
+      first visit), and, in the Play Store app only, <code>koine.playApp</code>,
+      <code>koine.playHello</code> and <code>koine.playWeek</code> (that this
+      is the Play app, and that its welcome and one-week check-in have been
+      shown).</td></tr>
   </table>
   <p>So that it works offline, the app also keeps a copy of its own files,
   its recordings and the Greek text in the browser's cache. That is the app
